@@ -1,0 +1,90 @@
+{
+  "_doc": "Shared golden vectors for the budget-tier TWINS: build_budget_tiers (arena/scripts/generate_sweep_queue.py) and accumulateBudgetTiers/budgetTierSummaries (mt-eval-arena/supabase/functions/regenerate-queue/lib.ts). Both test suites replay these items in order and must produce exactly `expected`. Type-level bad costs (string, null, bool, negative) are here; NaN/Infinity cannot ride JSON and stay covered by each side's own unit tests. Values are chosen so no rounding-mode difference (Python banker's vs JS half-up) can surface.",
+  "tiers_usd": [
+    1,
+    10
+  ],
+  "items": [
+    {
+      "id": "a",
+      "language_pair": "eng>deu",
+      "model": "m1",
+      "priority": 1,
+      "est_cost_usd": 0.4
+    },
+    {
+      "id": "b",
+      "language_pair": "eng>fra",
+      "model": "m1",
+      "priority": 2,
+      "est_cost_usd": 0.4
+    },
+    {
+      "id": "c",
+      "language_pair": "eng>spa",
+      "model": "m2",
+      "priority": 3,
+      "est_cost_usd": 0.4
+    },
+    {
+      "id": "d",
+      "language_pair": "eng>ita",
+      "model": "m2",
+      "priority": 4,
+      "est_cost_usd": 0.15
+    },
+    {
+      "id": "e",
+      "language_pair": "eng>por",
+      "model": "m2",
+      "priority": 5,
+      "est_cost_usd": "0.5"
+    },
+    {
+      "id": "f",
+      "language_pair": "eng>nld",
+      "model": "m2",
+      "priority": 6,
+      "est_cost_usd": true
+    },
+    {
+      "id": "g",
+      "language_pair": "eng>swe",
+      "model": "m2",
+      "priority": 7,
+      "est_cost_usd": -1
+    },
+    {
+      "id": "h",
+      "language_pair": "eng>dan",
+      "model": "m2",
+      "priority": 8,
+      "est_cost_usd": null
+    },
+    {
+      "id": "i",
+      "language_pair": "fra>bam",
+      "model": "m3",
+      "priority": 9,
+      "est_cost_usd": 5.0
+    }
+  ],
+  "expected": [
+    {
+      "budget_usd": 1,
+      "items": 3,
+      "total_cost_usd": 0.95,
+      "pairs": 3,
+      "models": 2,
+      "max_priority": 4
+    },
+    {
+      "budget_usd": 10,
+      "items": 5,
+      "total_cost_usd": 6.35,
+      "pairs": 5,
+      "models": 3,
+      "max_priority": 9
+    }
+  ]
+}

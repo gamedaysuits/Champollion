@@ -1,0 +1,120 @@
+---
+title: "Atlas"
+description: "Atlas 是 Champollion 的语言索引——每种语言对应一张引用卡片。包含卡片断言的内容、禁止断言的内容、读取位置以及修正方法。"
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* 计数通过 SSOTCount 渲染（在构建时通过 docusaurus.config.js 的 customFields 读取机器 SSOT）—— 根据 SSOT 显示标准，绝不手动输入。没有 customFields SSOT 的数据（手语和人工语言的下限、濒危语言总数）会链接到拥有它们的受限页面，绝不在此处重述。 */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Atlas
+
+**The Atlas 是语言索引：包含 <SSOTCount field="catalogLanguageCount" /> 张卡片，每种语言一张，其中每个值都标明了其来源。**
+
+它是 Champollion 其余部分所依赖的参考层。[CLI](/docs/intro) 读取它以了解语言的行为方式。[Arena](/docs/arena) 读取它以了解基准测试*针对*的是什么。[Network](/docs/network/) 建立在它之上。而且它本身也非常有用：对于其中的大多数语言来说，该卡片是目前能在一个地方找到的、关于该语言状况最完整的带引用摘要。
+
+这些卡片是从其数据源生成的，而不是手工编写的。没有人会坐下来手动输入他们对某种语言的了解。
+
+---
+
+## Champollion 是索引，而不是仲裁者
+
+这是整个 The Atlas 构建时必须遵守的规则，而且它比听起来要严格得多。
+
+卡片上的每个值都会引用其来源，并报告该来源**实际表述的内容**——不是我们认为正确的内容，不是修正后的版本，也不是四舍五入的数字。当来源存在分歧时，卡片会**显示所有来源并注明出处**。使用者人数经常存在分歧：Wikidata 给出一个数字，Ethnologue 给出另一个，国家人口普查给出第三个，区域调查给出第四个。卡片会记录每一个数字及其来源和日期。我们不会对它们进行平均，不会在它们之间进行裁决，也不会悄悄挑选看起来最合理的一个。
+
+原因并非出于谦虚。如果一张卡片人为制造了共识，那将是我们凭空捏造的、关于某人语言的全新且无法引用的主张。保留分歧使得卡片能够与现实世界进行核对，并将判断权留给它应属的人——读者，以及该语言所属的社区。
+
+以下是三条阅读规则，在您使用卡片进行任何操作之前，有必要先了解它们：
+
+- **`null` 表示未知，而不是不适用。** 空白字段意味着我们尚未找到该字段的引用来源。这是一种邀请，而不是最终结论。如果某个字段确实不适用，卡片会用文字明确说明。
+- **派生值会标明其为派生。** 任何由 Champollion 计算得出的内容——中位数、复合值、重新编码的标志、从数据集中提取的计数——都会被打上 `champollion-derived` 标记，并附有注释说明其派生*来源*。它绝不会归档在上游数据集的名称下，因为那等同于把我们的计算结果强加于人。
+- **引用优于覆盖率。** 一张字段较少但来源可靠的卡片，比一张用第三手来源填充得满满当当的卡片更健康。维基百科、LLM 生成的文本和个人认知在这里不是主要来源，也不被接受为主要来源。
+
+[引用程序](/docs/reference/language-card-citation-procedure) 规定了哪种来源对哪种主张具有权威性，以及它们的优先级顺序。
+
+---
+
+## 卡片断言什么——以及它绝不断言什么
+
+卡片只做出两种类型的声明。
+
+**1. 语言的属性。** 分类和语系、音系库存、类型学、文字和正字法、活力和濒危状态、使用者估计人数。每一项都有引用，每一项都标明是派生还是断言。
+
+**2. 资源的存在性。** 该语言*存在*语料库、模型、FST、词典、指标插件或翻译方法，以及其访问级别。这是一种能力主张，而不是质量主张。
+
+此外，有一条它绝不跨越的红线：
+
+:::danger[测量分数绝不会出现在语言卡片上]
+任何**方法输出的测量分数**——chrF++、BLEU、COMET、TER、FST 接受率、“形态学有效百分比”——都是**运行结果**，与特定的方法、数据集和指标绑定。它属于 [排行榜](/leaderboard)，在 [Arena](/docs/arena) 内部，附加在带有指纹的运行卡片上。它**严禁出现在语言卡片上**，代码检查工具（linter）会拒绝任何带有此类分数的卡片。
+:::
+
+这种区别在于：“该语言存在 FST”——这是一个关于世界的事实，其真伪独立于我们而存在；而“该方法的 FST 接受率得分为 0.82”——这是一项测量结果，仅对一次运行、一个数据集版本和一个方法版本有效。如果将两者混为一谈，卡片就会悄无声息地变成关于某种语言的永久性质量主张，背后没有运行记录，也无法撤回。因此，它们不能混为一谈。The Atlas 告诉你**存在什么**；Arena 告诉你**它运作得有多好**。
+
+还有两个不变量也以同样的方式强制执行：声调主张不得与卡片自身的音系库存相矛盾，显示的说话者人数必须等于卡片上引用的估计值之一（或者被标记为我们自己的派生值）。包含每个字段及其规则的完整模式，请参见 [语言卡片规范](/docs/reference/language-card-spec)。
+
+---
+
+## 里面有什么，以及它来自哪里
+
+目录中收录了 <SSOTCount field="catalogLanguageCount" /> 种语言，这些语言构建自 <SSOTCount field="licensedSourceCount" /> 个已注册的上游来源，这些来源的许可证均被单独跟踪——因为只有当卡片上的所有内容都可重新分发时，该卡片才可重新分发，而且非商业来源是通过机制设计而非良好意愿被隔离在商业通道之外的。
+
+该目录将手语作为自然语言包含在内，包含 ISO 639-3 认可的人工语言，排除编程语言，并对单一语言而不是宏语言（macrolanguage）保护伞进行基准测试——因为翻译资源是特定于变体的，附加在保护伞代码上的分数将成为对无人评估过的变体的主张。当分类学存在分歧时，卡片会显示分歧，而不是挑选一个胜出者。这些选择中的每一个及其后果，都在 [这里什么才算作一种语言？](/docs/network/context/what-counts-as-a-language) 中进行了论证。
+
+**覆盖率不等于质量，存在也不等于覆盖率。** 一张列出某种语言三种资源的卡片是在告诉你存在这三样东西——而不是说其中任何一个可用，也不是说该语言得到了服务。该项目如何计算覆盖率，以及拒绝计算什么，请参见 [计算覆盖率](/docs/network/context/coverage-counting)。
+
+---
+
+## 在哪里阅读
+
+| 界面 | 提供的内容 |
+|---|---|
+| [语言图谱](/languages) | 卡片本身——搜索，按语系、地区、活力和复杂性进行过滤，并完整打开任何卡片 |
+| [索引](/catalogue) | 按语言分类的所有目录内容：基准测试、资源、方法、人工翻译服务，以及一个单独隔离的、仅供引用的外部发布结果层 |
+| [术语表](/glossary) | 卡片使用的每个术语的通俗定义 |
+| [支持的语言](/docs/reference/supported-languages) | CLI 目前可以翻译的语言，这比 The Atlas 目录中的集合要小得多 |
+
+机器可读的入口点是 `/llms.txt` 和 `/llms-full.txt`；代理（agents）可以通过 [MCP 服务器](/docs/network/getting-started/mcp-server) 直接搜索卡片。
+
+---
+
+## 当卡片出错时
+
+请假设其中一些是错误的。如此规模的索引，由相互存在分歧的来源汇编而成，必然会包含错误——而那些最关键的错误对我们来说通常是不可见的，但对该语言的使用者来说却显而易见。
+
+**每张卡片都带有一个“建议更正或添加”链接**，点击后会打开已预填该语言的更正表单。如果您有来源，请提供；对于社区的移除或限制请求，不需要引用，并且会被优先处理。
+
+更正应用于**生成器，而不是卡片**。卡片是从其来源重新生成的，因此手动编辑会在下一次构建时被悄悄覆盖——修复来源才是使更正永久生效的方法，而且它通常会修复共享该来源的所有其他卡片上的相同缺陷。这比直接编辑文件要慢，但它是唯一能持久保留的版本。具体机制请参见 [提交到索引](/docs/network/getting-started/submit-to-the-index)。
+
+**如果您是社区成员或权威人士**，并希望限制、更改或移除有关您语言的数据，该请求无需向我们提供理由，如果您不愿意，它也不会进入公开队列。语言数据就是生物数据：它承载着使用该语言的人们的身份和关系，并且无法进行有意义的匿名化。我们**以数据主权为目标，而非宣称已获认证**——我们构建机制并如实描述它们，至于它们是否真正实现了语言数据由社区拥有和控制，决定权在于相关社区，而不在于我们。完整的立场请参见 [数据管理](/docs/network/sovereignty/data-sovereignty)，社区入口请参见 [致语言社区](/docs/network/community/for-language-communities)。
+
+---
+
+## 延伸阅读
+
+- **您想查找一种语言** → [浏览 The Atlas](/languages)。
+- **您想知道某个字段的含义** → [语言卡片规范](/docs/reference/language-card-spec)。
+- **您想知道为什么卡片上会有某项主张** → [引用程序](/docs/reference/language-card-citation-procedure)。
+- **您想为服务不足的语言构建一种方法** → [支持低资源语言](/docs/network/community/low-resource-languages)。
+- **您想知道任何东西的实际翻译效果如何** → 这里没有。请前往 [Arena](/docs/arena) 和 [排行榜](/leaderboard)。

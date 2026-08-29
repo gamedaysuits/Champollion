@@ -1,0 +1,378 @@
+---
+sidebar_position: 3
+title: "Wie er baat bij heeft"
+slug: '/network/who-benefits'
+description: "Wie welk voordeel behaalt als Champollion slaagt — een universele, door de gemeenschap beheerde vertaallaag: sprekers, taalgemeenschappen, vertaalleveranciers, onderzoekers, financiers en de pers, elk met concrete eerste acties."
+related:
+  - label: "For Language Communities"
+    to: /docs/network/community/for-language-communities
+    kind: doc
+    note: "The full community door — sovereignty, ownership, and how to start"
+  - label: "How the Work Is Funded"
+    to: /docs/network/sovereignty/economic-model
+    kind: doc
+    note: "The economic model in full"
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "The end-to-end run-and-publish walkthrough"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: doc
+    note: "What we do not (yet) claim"
+---
+
+{/* Aantallen op deze pagina worden weergegeven via SSOTCount (build-time reads van de
+    machine SSOTs via docusaurus.config.js customFields) — nooit handmatig getypt,
+    volgens de SSOT-weergavestandaard. cli/scripts/check-prose-counts-parity.mjs
+    controleert de weinige onherleidbare proza-cijfers. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Wie er baat bij heeft
+
+> **Managementsamenvatting.** Minder dan 600 van de ruwweg 7.000 levende talen ter wereld
+> hebben enige vorm van automatische vertaling (machine translation), en meer dan de helft van die talen
+> loopt gevaar (volgens de Agglomerated Endangerment Status van Glottolog;
+> afgeleid door Champollion). Als Champollion slaagt — een universele,
+> door de gemeenschap beheerde vertaallaag — is de opbrengst tweeledig: communicatie
+> vandaag voor sprekers die de industrie overslaat, en een werkend instrument voor het
+> behoud en de revitalisering van bedreigde talen. De strategie is
+> weloverwogen: crowdsourced methode-ontwikkeling gemeten volgens open regels,
+> gesponsorde corpusopbouw tegen gepubliceerde tarieven, en gemeenschappen die de
+> sleutels in handen houden van hun data, hun testsets en elke methode die daartegen is gevalideerd.
+> Deze pagina beschrijft wat elke groep wint en wat u als eerste moet doen.
+
+## Sprekers en hun gemeenschappen \{#speakers}
+
+Als u een onderbediende taal en Engels spreekt, is uw oordeel het meest
+waardevolle in dit hele project — meer dan welk model of welke metriek dan ook.
+Computers kunnen tellen hoe vergelijkbaar twee zinnen eruitzien; ze kunnen niet vertellen of een
+zin iets is wat een echte spreker zou zeggen. Dat oordeel is aan u, en
+het is de absolute waarheid (ground truth) waartegen al het andere hier wordt gecontroleerd.
+
+**Sprekervalidatie is betaald werk tegen gepubliceerde professionele tarieven ($50–65
+CAD/uur), volgens uw eigen planning, zonder dat er technische expertise vereist is** — als u
+beide talen kunt lezen en een zin kunt beoordelen, bent u gekwalificeerd. Het
+[Speaker Validation Protocol](/docs/network/specifications/speaker-validation)
+publiceert drie soorten taken:
+
+| Taak | Wat u doet | Tijd | Gepubliceerde vergoeding |
+|------|-------------|------|---------------|
+| Vertalingen beoordelen | Automatische vertalingen lezen, elk beoordelen op "is het echt?" en "betekent het het juiste?" | ~8 uur, verspreid over weken | $400–520 CAD |
+| "Equivalente" paren beoordelen | Aangeven of twee formuleringen echt hetzelfde betekenen | ~2 uur | $100–130 CAD |
+| Afgewezen woorden beoordelen | Woorden controleren die door een grammaticatool als ongeldig zijn gemarkeerd — was dit juist? | ~1,5 uur | $75–100 CAD |
+
+Er is ook corpuswerk — het creëren van referentievertalingen van alledaagse
+zinnen — dat tegen dezelfde uurtarieven wordt betaald
+([details](/docs/network/perspectives/how-speakers-get-paid)). De voorwaarden, op
+één plek: **betaald, geen vrijwilligerswerk** (betaling binnen twee weken na elk takenblok,
+betaald ongeacht wat de resultaten aantonen); **erkenning op uw voorwaarden**
+(met naam of anoniem, optioneel co-auteurschap); **u kunt uw bijdragen op elk moment intrekken**,
+met vetorecht over de publicatie van resultaten die u problematisch vindt.
+
+:::note[Waar dit vandaag de dag staat]
+Eerlijkheid voorop: de bovenstaande tarieven en voorwaarden zijn gepubliceerde toezeggingen, maar
+[er heeft nog geen validatieronde door de gemeenschap plaatsgevonden](/docs/network/honest-limitations)
+— de eerste opdrachten worden momenteel opgezet. Nu contact opnemen betekent dat u zich aanmeldt
+om bij de eersten te horen, niet dat u zich aansluit bij een bestaand programma.
+:::
+
+**Eerste acties:** doe vandaag nog iets door zinnen toe te voegen aan
+[Tatoeba](https://tatoeba.org) — Champollion verzamelt of host zelf nooit corpora
+(testdata wordt altijd
+[opgehaald bij de bron](/docs/network/sovereignty/registering-corpora)),
+maar verschillende benchmarks hier zijn gebouwd op basis van Tatoeba-zinnen en open
+collecties zoals [OPUS](https://opus.nlpl.eu/). Lees vervolgens
+[How Speakers Get Paid](/docs/network/perspectives/how-speakers-get-paid)
+(vijf minuten, alle cijfers), en neem contact op —
+[info@champollion.dev](mailto:info@champollion.dev) of via een issue op de
+[openbare repository](https://github.com/gamedaysuits/Champollion/issues) —
+waarin u aangeeft welke taal u spreekt en welke variëteiten u comfortabel kunt beoordelen.
+
+## Taalgemeenschappen die corpora bouwen \{#communities}
+
+De sterkste positie die een gemeenschap in dit systeem kan innemen, is **het eigendom van de
+benchmark zelf**. Een testset is het antwoordmodel: wie deze in handen heeft, bepaalt
+wat "goede vertaling" betekent voor de taal, en elke methode — die van ons, van een
+bedrijf, van wie dan ook — wordt gemeten aan *uw* standaard.
+
+De basisregel komt op de eerste plaats: **uw taaldata is van u.** Het registreren van een
+corpus betekent het publiceren van een beschrijvende metadatakaart — nooit het uploaden van het
+corpus — in de [blootstellingscategorie (exposure lane) die u
+kiest](/docs/network/sovereignty/registering-corpora): open, afgeschermd (gated) of volledig
+soeverein (een testset die we nooit zien, gescoord op uw infrastructuur). Corpusopbouw
+en vertaalbeoordeling zijn professioneel werk dat
+[tegen gepubliceerde tarieven wordt betaald](/docs/network/perspectives/how-speakers-get-paid),
+en betaling koopt uw data niet. Wanneer een vertaalmethode die voor uw
+taal is gebouwd hier wordt gevalideerd, [gaat het eigendom
+over](/docs/network/sovereignty/ownership-transfer) naar de bestuursorganisatie van uw
+gemeenschap — code, gewichten (weights) en controle over de implementatie (deployment). Zelfs 50
+gecureerde vertaalparen zijn genoeg om een nieuwe leaderboard-track te openen.
+
+De volledige toegang voor gemeenschappen — soevereiniteitsgaranties, wat het Netwerk vraagt
+en teruggeeft, en de stapsgewijze start — is
+**[For Language Communities](/docs/network/community/for-language-communities)**,
+met [Run a Sovereign
+Contest](/docs/network/sovereignty/run-a-sovereign-contest) als het draaiboek voor
+een door de gemeenschap gecontroleerde evaluatie.
+
+## Vertaaldiensten & MT-leveranciers \{#vendors}
+
+Als u vertalingen bouwt of verkoopt — een MT-engine, een LLM-pijplijn, een
+regelgebaseerd systeem of een menselijke vertaaldienst — kunt u deze hier benchmarken
+op gepubliceerde testsets, verschijnen op het openbare leaderboard en de kaart, en
+beoordeeld worden volgens dezelfde regels als ieder ander. **Geen kosten, geen partnerschaps-
+overeenkomst, geen voorkeur voor enige technologie:** het harness is qua ontwerp methode-neutraal.
+U betaalt alleen uw eigen rekenkracht- of API-kosten
+([hoe het werk wordt gefinancierd](/docs/network/sovereignty/economic-model)).
+
+De meeste openbare MT-benchmarks dekken dezelfde paar honderd talen met veel bronnen (high-resource),
+en de meeste zijn gecontamineerd. De catalogus van Champollion registreert <SSOTCount field="registryDatasetCount" />
+evaluatiedatasets als sha-pinned, fetch-from-source metadatakaarten, waarbij de
+[contaminatiestatus per dataset wordt onthuld](/docs/network/leaderboard/datasets)
+en een categorie (lane) voor verse, nooit eerder gepubliceerde testsets. Scores gebruiken open,
+reproduceerbare metrieken (chrF++/BLEU/TER via sacreBLEU; COMET/AfriCOMET gerapporteerd in een
+aparte neurale categorie) onder gepubliceerde [scoringsregels](/docs/network/specifications/scoring).
+Methode-afhankelijkheden worden gedeclareerd, niet verborgen, en propriëtaire engines blijven
+propriëtair — het harness roept uw systeem aan, nooit uw gewichten of code. Twee eerlijke
+kanttekeningen: **het bord is jong** ([Honest Limitations](/docs/network/honest-limitations)
+zegt precies wat er vandaag de dag is geverifieerd), en **scores verlenen geen implementatierechten**
+— voor talen die door de gemeenschap worden beheerd, beslist de gemeenschap over de implementatie
+([Data Stewardship](/docs/network/sovereignty/data-sovereignty)).
+
+**Eerste acties (MT-engine of pijplijn):** kies uw paren uit de
+[evaluatiedatasets](/docs/network/leaderboard/datasets) en het
+[leaderboard](/leaderboard); `pipx install mt-eval-harness` en volg
+[Submit a Method](/docs/network/getting-started/submit-a-method); als uw
+engine niet bereikbaar is via OpenRouter, implementeer dan het
+[TranslationMethod protocol](/docs/network/specifications/methods#eval-harness-translationmethod-protocol)
+of stel het beschikbaar als een kleine API-service
+([gids](/docs/guides/serving-a-method)); voer het vervolgens uit en publiceer — inzendingen van de
+gemeenschap worden gepubliceerd op het self-benchmarked vertrouwensniveau, duidelijk gelabeld,
+volgens de [leaderboard-regels](/docs/network/leaderboard/rules).
+
+**Als u menselijke vertalingen verkoopt:** waar geen enkele machine betrouwbaar is voor een paar,
+zegt de site dit duidelijk en toont in plaats daarvan menselijke aanbieders met toestemmingsvereiste (consent-gated) —
+lees de [human services lane](/human-services), en vraag vervolgens een vermelding aan per
+e-mail ([info@champollion.dev](mailto:info@champollion.dev)) met vermelding van het paar en de
+variëteit die u dekt, uw voorwaarden en een toestemmingsbevestiging. Uw contactgegevens worden
+nooit zonder toestemming gepubliceerd. Menselijke vertaling is hier ook een methode zoals elke
+andere — sommige teams benchmarken hun post-editing pijplijnen om kopers de delta ten opzichte van
+ruwe MT te tonen.
+
+## Onderzoekers \{#researchers}
+
+De duurste manier om automatische vertaling naar een taal met weinig bronnen (low-resource) te brengen,
+is de manier die het vakgebied meestal probeert: een trainingscorpus bouwen. Dat
+betekent honderdduizenden zinsparen — veel te veel voor wie dan ook om te controleren —
+dus de kwaliteit varieert op manieren die niemand kan zien, en het falen komt pas aan het
+einde aan het licht, wanneer een model dat op die paren is getraind precies fout doet wat
+de data fout had. Maanden van verzamelwerk kunnen een corpus opleveren dat u
+niet volledig kunt vertrouwen en een model dat u niet kunt uitbrengen (shippen).
+
+Een evaluatieset keert die economie om. Een ontwikkelings- en achtergehouden (held-out) testset
+voor dezelfde taal ligt in de orde van grootte van een **duizendtal** paren — klein
+genoeg dat professionele curatie daadwerkelijk mogelijk is, waarbij elk paar wordt gecontroleerd
+door iemand die de taal kent. Zevenhonderdduizend paren die u niet kunt verifiëren, of
+duizend die u wel kunt verifiëren: de eval-set is de enige deliverable waarbij het oordeel van een
+onderzoeker elke zin bereikt. En in tegenstelling tot een trainingscorpus, veroudert het niet —
+elk nieuw model, elke engine of methode die verschijnt, kan er voor onbepaalde tijd aan worden gemeten.
+
+Dit is de gok waarop het hele project is gebouwd — de **generational-pair thesis**: bouw de
+evaluatiestandaard en de stimulans, en de gemeenschap bouwt de werkende oplossing. U
+cureert de duizend paren. Een prijs die is uitgeloofd voor uw achtergehouden set maakt de
+taal tot een doelwit waar elke methodebouwer zich op kan richten. Het leaderboard meet elke
+poging in het openbaar. Eén generatie van zorgvuldige curatie opent een open competitie voor
+al het andere.
+[Corpus Partnership](/docs/network/specifications/corpus-partnership) is het
+werkdocument voor precies dit — corpusgroottes, workflow, betaling van sprekers —
+en de [Prize Specification](/docs/network/specifications/prizes) is de stimuleringshelft.
+
+De meetinstrumenten zijn vandaag al klaar. `pipx install mt-eval-harness` geeft u het
+[eval harness](/docs/network/specifications/harness): deterministische scoring,
+ge-fingerprinte [run cards](/docs/network/specifications/run-card), paired
+bootstrap [significance](/docs/network/specifications/significance), en een
+publicatiepad naar het leaderboard. De
+[scoring spec](/docs/network/specifications/scoring) documenteert elke metriek
+met zijn validatiestatus — extern gevalideerd, proxy-gevalideerd of
+engineering heuristiek — en houdt de composiet deterministisch; neurale
+metrieken rapporteren in een aparte categorie, en worden nooit stilletjes ingevoegd. Standaard
+metrieken draaien op sacreBLEU en COMET/AfriCOMET, uitgebreid met structurele
+controles (FST-validiteit) die aan het licht brengen wat karakter-overlap metrieken missen in
+polysynthetische talen. Het harness is open-source AGPL-3.0; de CLI is
+PolyForm Noncommercial 1.0.0 — source-available, gratis voor niet-commercieel gebruik.
+
+Achter de tools bevinden zich de registers.
+**<SSOTCount field="registryDatasetCount" /> evaluatiedatasets**, elk een
+sha-pinned, fetch-from-source metadatakaart, gecatalogiseerd in
+[Evaluation Datasets](/docs/network/leaderboard/datasets);
+**<SSOTCount field="catalogLanguageCount" /> taalkaarten** waarbij
+[elk veld zijn bron benoemt](/docs/reference/language-card-spec) en
+tegenstrijdige bronnen allemaal worden getoond
+([correctieprocedure](/docs/reference/language-card-citation-procedure));
+een licentie-rollup van
+**<SSOTCount field="licensedSourceCount" /> geregistreerde upstream-bronnen**,
+waarbij niet-commerciële corpora door hun constructie zijn uitgesloten van elke commerciële, prijs- of API-categorie.
+Contaminatie is een eersteklas eigenschap: openbare benchmarks waarvan wordt aangenomen dat ze zijn gezien door frontier-modellen draaien in een **relative-only lane**, verse
+gemeenschapscorpora worden verzegeld en gesegmenteerd met hash-manifesten
+([corpus partnership §4](/docs/network/specifications/corpus-partnership#4-cryptographic-sealing-and-sandbox-testing)),
+en gemeenschappen kunnen soevereine benchmarks bezitten die we nooit zien. Het dreigingsmodel
+wordt vermeld in het
+[corpus design framework](/docs/network/specifications/corpus-design).
+
+Drie manieren om in te stappen, afhankelijk van wat u wilt bouwen. Een **corpus**: begin met het
+eval-first pad hierboven — [Corpus Partnership](/docs/network/specifications/corpus-partnership)
+end-to-end, waarbij betaalde sprekerstijd vanaf dag één wordt gebudgetteerd. Een **methode**: implementeer het
+[TranslationMethod protocol](/docs/network/specifications/methods) en volg
+[Submit a Method](/docs/network/getting-started/submit-a-method) — ongeveer 15
+minuten met een OpenRouter-sleutel. Een **metriek**: stel deze voor via het
+plugin-oppervlak van het harness (issue of PR op de
+[repository](https://github.com/gamedaysuits/Champollion); de drempel voor
+opname in de composiet staat in de scoring spec). Welke deur u ook kiest, lees eerst
+[Honest Limitations](/docs/network/honest-limitations) — inclusief
+het feit dat sprekervalidatie van de metrieken door de gemeenschap nog niet heeft plaatsgevonden — en
+de [microeval methodology](/docs/network/context/microeval-methodology) en
+het [MT evaluation landscape](/docs/network/context/mt-evaluation-landscape)
+voordat u iets ontwerpt.
+
+**Champollion citeren:** er is nog geen Champollion-paper — citeer er alstublieft geen.
+Citeer de repository en de specifieke geversioneerde specificatie of
+sha-pinned datasetkaart die u hebt gebruikt:
+
+```bibtex
+@software{champollion,
+  author  = {Forbes, Curtis},
+  title   = {Champollion: open evaluation infrastructure for machine
+             translation in low-resource languages},
+  url     = {https://github.com/gamedaysuits/Champollion},
+  year    = {2026},
+  note    = {Specifications at https://champollion.dev/docs/network}
+}
+```
+
+Als u een upstream-corpus via ons register gebruikt, **citeer dan de eigen makers van het corpus**
+— de datasetkaart bevat de upstream-attributie en licentie.
+
+## Financiers & sponsors \{#funders}
+
+**Champollion is niet-commercieel.** Sponsoring financiert corpusopbouw, tools,
+en gemeenschapswerk — **100% doorgeefluik (pass-through), publiek verantwoord, niets daarvan gaat naar
+Champollion**: geen overheadpercentage, geen inkomstendeling, geen aanspraak op
+gemeenschapsmiddelen. Geld dat binnenkomt, wordt betaald taalwerk dat eruit gaat — het gaat naar
+sprekers, corpusbouwers en prijswinnaars — en infrastructuurkosten worden
+momenteel gedragen door de oprichter
+([How the Work Is Funded](/docs/network/sovereignty/economic-model)).
+
+Het eerlijke uitgangspunt: alles hier beschrijft mechanismen die
+**gespecificeerd en klaar zijn, geen programma's die al op schaal draaien.** Er zijn nog geen
+subsidies of sponsors, het leaderboard is live en bevindt zich nog in een vroeg stadium, en het prijsmechanisme
+is een [voorgestelde specificatie](/docs/network/specifications/prizes) — er staat vandaag geen prijs
+open. Wat een financier krijgt van die eerlijkheid: gepubliceerde eenheidskosten, een
+claims ledger (claimgrootboek), en specificaties waaraan u ons kunt houden.
+
+**Categorie 1 — corpussponsoring.** Het schaarste goed in low-resource MT is een
+betrouwbare testset, en de kosten zijn gepubliceerd:
+
+| Wat een dollar koopt | Gepubliceerde kosten | Waar het naartoe gaat |
+|--------------------|---------------|----------------|
+| Een benchmarkcorpus voor één taal (50–150 gecureerde items) | $2.500–6.000 CAD | Tijd van tweetalige sprekers à $50–65/uur — bewust de grootste kostenpost |
+| Een metriek-validatieronde (drie sprekers die de geautomatiseerde metrieken controleren tegenover menselijk oordeel) | $1.475–1.920 CAD | Betaalde beoordelingstaken voor sprekers |
+| Beoordeling van methode-output | $500–1.500 CAD | Dezelfde gepubliceerde uurtarieven |
+| Volledige taal-onboarding, all-in | $3.350–8.500 CAD | Zie [Benchmark Specification §10](/docs/network/specifications/benchmark) |
+
+Het bezit overleeft de subsidie: het corpus behoort toe aan de bouwers/beheerders (stewards),
+niet aan Champollion — geregistreerd als metadata,
+[inhoud wordt nooit gehost](/docs/network/sovereignty/registering-corpora), onder
+de licentie- en categoriekeuzes van de beheerder. Voor academische financiers is de
+[Corpus Partnership Strategy](/docs/network/specifications/corpus-partnership)
+de afdelingsgerichte versie van deze categorie.
+
+**Categorie 2 — prijssponsoring.** Een prestatieprijs financiert een **resultaat, geen
+poging**: geld wordt pas vrijgegeven wanneer een methode aantoonbaar een
+gedefinieerde, methode-neutrale lat haalt, waarbij betaalde beoordeling door sprekers uit de gemeenschap deel uitmaakt van elke
+claim. Volgens de [Prize Specification](/docs/network/specifications/prizes),
+worden fondsen **door de sponsor beheerd** — ze blijven bij de sponsorende organisatie, of
+bij een gemeenschapstrust of externe escrow die de sponsor aanwijst, en
+**nooit bij Champollion**, dat de meting coördineert en geen
+geld aanraakt. **Er worden vandaag de dag nergens prijsfondsen aangehouden.** Als niemand de lat haalt,
+wordt niemand betaald; een verlopen prijs blijft bij de sponsor, om naar eigen inzicht te worden
+omgeleid of ingetrokken.
+Winnende methoden gaan over in eigendom van de gemeenschap onder de voorwaarden van de prijs.
+
+Wat een financier kan meten: corpora gebouwd en geregistreerd onder controle van de beheerder;
+betaalde spreker-uren geleverd aan taalgemeenschappen; talenparen
+gedekt door betrouwbare openbare benchmarks; methoden gemeten en, waar de prijsvoorwaarden
+dit bepalen, overgedragen aan het eigendom van de gemeenschap.
+
+**Eerste acties:** lees
+[How the Work Is Funded](/docs/network/sovereignty/economic-model) (tien
+minuten, het volledige model); kies een categorie op
+[Get Involved — sponsors](/get-involved#sponsors) — corpuswerk, een prijs, of
+rekenkracht/API-credits voor de [openbare benchmark-wachtrij](/contribute); neem vervolgens
+contact met ons op via [info@champollion.dev](mailto:info@champollion.dev) of op de
+[openbare repository](https://github.com/gamedaysuits/Champollion/issues).
+We zullen antwoorden met specifieke details, inclusief de onderdelen die nog niet zijn gebouwd.
+
+## Pers & media \{#press}
+
+Champollion is een niet-commercieel onderzoeksproject dat betrouwbare
+evaluatie van automatische vertalingen bouwt voor elke taal — source-available en gratis
+voor niet-commercieel gebruik, met een open-source evaluatie-harness en registers —
+infrastructuur om één vraag eerlijk te beantwoorden: *hoe goed is automatische vertaling voor deze taal, echt?*
+Het publiceert het testset-register, de scoringsregels, het harness dat ze uitvoert, en
+een openbaar leaderboard en kaart die laten zien wie wat kan vertalen en hoe goed —
+elke methode is welkom, mens en machine, beoordeeld volgens dezelfde open regels.
+Waar gemeenschappen de taaldata in handen hebben, hebben zij de sleutels in handen.
+
+Wat Champollion **niet** is: niet commercieel (geen product, geen betaalde API, geen
+metering, geen inkomstendeling, geen durfkapitaal —
+[zelf gefinancierd door de oprichter](/docs/network/sovereignty/economic-model)); niet
+een dataverzamelaar (corpusinhoud wordt **nooit gehost**; het register bevat
+sha-pinned metadatakaarten, en gemeenschapscorpora blijven volledig eigendom van de beheerder);
+geen AI-vertaalproduct (Champollion meet vertaalkwaliteit; de bijbehorende CLI is een
+ontwikkelaarstool); en niet af — het leaderboard is live maar jong, gemeenschapsprogramma's
+worden momenteel opgezet, en we worden liever accuraat geciteerd als zijnde in een vroege fase dan genereus als
+verder gevorderd.
+
+Belangrijkste feiten (elk is te herleiden tot een in-repo bron; het project houdt een openbaar claimgrootboek bij):
+
+| Feit | Bron |
+|------|--------|
+| <SSOTCount field="catalogLanguageCount" /> taalkaarten in de geciteerde index | `cli/shared/language-cards/` (één kaart per taal, geteld tijdens build-time), getoond op [/languages](/languages) |
+| <SSOTCount field="registryDatasetCount" /> evaluatiedatasets geregistreerd — alleen metadatakaarten, corpusinhoud wordt nooit gehost | `arena/datasets/registry.json` (geteld tijdens build-time); zie [Evaluation Datasets](/docs/network/leaderboard/datasets) |
+| <SSOTCount field="licensedSourceCount" /> gelicentieerde upstream-bronnen voor de taalindex | `shared/licenses.json` (geteld tijdens build-time) |
+| 160+ gebarentalen gecatalogiseerd — gemarkeerd als "nog niet bediend — nooit 'geen taal'" | [What counts as a language here?](/docs/network/context/what-counts-as-a-language) |
+| Standaard metrieken draaien op sacreBLEU (chrF++, BLEU, TER) en COMET/AfriCOMET, plus structurele FST-controles; neurale metrieken gerapporteerd in een aparte categorie | [Scoring Specification](/docs/network/specifications/scoring) |
+| Gepubliceerde betaling voor sprekers: $50–65 CAD/uur, onvoorwaardelijk, betaling binnen twee weken | [How Speakers Get Paid](/docs/network/perspectives/how-speakers-get-paid) |
+| Codelicenties: CLI PolyForm Noncommercial 1.0.0 (source-available, gratis voor niet-commercieel gebruik), eval harness AGPL-3.0 (open source) | project repositories |
+| Opgericht en zelf gefinancierd door Curtis Forbes; nog geen subsidies of sponsors | [How the Work Is Funded](/docs/network/sovereignty/economic-model) |
+
+Standaardtekst (Boilerplate):
+
+> Champollion is een niet-commercieel onderzoeksproject dat betrouwbare
+> evaluatie van automatische vertalingen bouwt voor elke taal — source-available en
+> gratis voor niet-commercieel gebruik, met een open-source evaluatie-harness en
+> gedeelde registers. Het onderhoudt
+> een geciteerde index van <SSOTCount field="catalogLanguageCount" /> talen, een
+> register van <SSOTCount field="registryDatasetCount" /> evaluatiedatasets
+> (corpusinhoud wordt nooit gehost), en een open harness en leaderboard waar
+> elke vertaalmethode — machinaal of menselijk — wordt gescoord volgens dezelfde
+> gepubliceerde regels. Gebouwd met taalgemeenschappen, nooit van hen gescrapet:
+> gemeenschappen bezitten hun data, hun testsets en elke methode die aan hen wordt overgedragen.
+> Champollion is opgericht door Curtis Forbes en is te vinden op champollion.dev.
+
+**Contact:** Curtis Forbes, oprichter —
+[info@champollion.dev](mailto:info@champollion.dev) —
+[github.com/gamedaysuits/Champollion](https://github.com/gamedaysuits/Champollion).
+We beantwoorden kritische vragen op dezelfde manier als vriendelijke vragen; als u
+een bewering op deze site aan het factchecken bent, is
+[Honest Limitations](/docs/network/honest-limitations) het juiste startpunt
+— het bestaat zodat niemand ons zomaar op ons woord hoeft te geloven.
+
+## Zie ook
+
+- [How the Network Works](/docs/network/how-it-works) — het hele systeem op één pagina
+- [Data Stewardship](/docs/network/sovereignty/data-sovereignty) — het soevereiniteitsstandpunt (First Nations-datasoevereiniteitsprincipes, CARE)
+- [Ownership & Terms](/docs/network/sovereignty/ownership-transfer) — wat "community-owned" contractueel betekent
+- [On the Name](/docs/the-name) — waarom "Champollion"

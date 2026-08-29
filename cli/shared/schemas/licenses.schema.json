@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/licenses.schema.json",
+  "title": "Champollion license registry (shared/licenses.json)",
+  "description": "GENERATED cross-runtime SSOT (mt-eval-arena/scripts/build-shared-licenses.mjs): per-source license facts for every card-data source. `sources` is a map keyed by source id; each value is a licenseEntry whose `source` field must equal its key. The bundled mini-schema validator does not support additionalProperties-as-schema, so per-entry validation iterates sources against $defs.licenseEntry (see cli/test/shared-ssot-schemas.test.js).",
+  "type": "object",
+  "required": [
+    "_generated",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "_generated": {
+      "type": "object",
+      "required": [
+        "generatedBy",
+        "generatedAt",
+        "counts"
+      ],
+      "properties": {
+        "generatedBy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generatedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "counts": {
+          "type": "object",
+          "required": [
+            "total"
+          ],
+          "properties": {
+            "fromTcLicenses": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "supplemental": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "description": "Map: source id -> licenseEntry (validated per-entry by the test)."
+    }
+  },
+  "$defs": {
+    "licenseEntry": {
+      "type": "object",
+      "required": [
+        "source",
+        "license_spdx",
+        "allows_redistribution",
+        "requires_attribution",
+        "requires_sharealike",
+        "non_commercial_only"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_spdx": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attribution": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "allows_redistribution": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "requires_attribution": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "requires_sharealike": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "non_commercial_only": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "dataset_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dataset_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registered_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "_pendingClaim": {
+          "type": "string",
+          "description": "An evidence stream disagrees with the committed license claim; parked for per-source founder adjudication (build-shared-licenses.mjs merge). The committed claim stands until accepted by name."
+        }
+      }
+    }
+  }
+}

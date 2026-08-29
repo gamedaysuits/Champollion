@@ -1,0 +1,167 @@
+---
+sidebar_position: 2
+title: "框架集成"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 框架集成
+
+使用流行框架设置 Champollion 的分步指南。
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### 项目结构
+
+Hugo 使用 `i18n/` 进行字符串翻译，使用 `content/` 进行页面内容：
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### 设置
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### 内容翻译详情
+
+**Front matter**：支持 YAML (`---`) 和 TOML (`+++`) 分隔符。默认翻译 `title`、`description`、`summary`、`subtitle`、`caption` 和 `linkTitle`。所有其他字段（日期、草稿、标签、权重、slug 等）都会保留。使用配置中的 `translatableFields` 进行自定义。
+
+**块保护**：代码块、Hugo shortcodes、内联代码和原始 HTML 会自动使用 Unicode 哨兵占位符进行屏蔽。它们会原封不动地通过。
+
+**文件名约定**：遵循 Hugo 的按文件名翻译模式：
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md`（去除源后缀）
+
+**跳过现有文件**：现有的已翻译文件永远不会被覆盖。删除目标文件以强制重新翻译。
+
+### 复数形式
+
+TOML 和 YAML 语言环境支持 CLDR 复数形式：
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+在内部表示为 `items.one` 和 `items.other` 用于差异比较，然后在写入时重新序列化为正确的分段格式。
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### 项目结构
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### 设置
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh", "pt", "ar"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+创建 `messages/fr.json`、`messages/ja.json` 等 — 完全翻译，保留嵌套的键结构。next-intl 会自动识别它们。
+
+### 开发工作流
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### 平面文件结构（推荐）
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+### 嵌套目录结构
+
+如果使用 `{locale}/{namespace}.json` 结构，请创建一个同步脚本来展平 → 翻译 → 还原。详见 [react-i18next 文档](https://react.i18next.com/)。
+
+  </TabItem>
+</Tabs>

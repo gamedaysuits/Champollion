@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "morpema",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "Ang pinakamaliit na bahagi ng salita na nagtataglay ng kahulugan. Ang salitang Ingles na “unhappiness” ay may tatlo: un-, happy, at -ness. Malaki ang pagkakaiba-iba ng mga wika sa dami ng morpemang isinasama nila sa isang salita.",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "Gumagana ang mga MT system sa mga token, at ang token na naglalaman ng maraming morpema ay nagtatago ng gramatikang kailangan ng system upang makapagsalin nang tama.",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "morpolohiya",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "Ang pag-aaral kung paano binubuo ang mga salita mula sa mas maliliit na bahaging may kahulugan, at ang mismong sistema ng pagbuo ng salita sa isang wika. Ipinapahayag ng wikang kumplikado ang morpolohiya sa pamamagitan ng mga hulapi ng salita ang ipinapahayag ng Ingles gamit ang magkakahiwalay na salita.",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "Pinaparami ng kumplikadong morpolohiya ang magkakaibang anyo ng salita na kailangang matutuhan ng isang MT system mula sa limitadong data.",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "infleksiyon",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "Pagbabago ng anyo ng isang salita upang ipahayag ang gramatika — panahunan, bilang, kaso, kasarian — nang hindi binabago ang pangunahing kahulugan nito, tulad ng Ingles na sing/sang o cat/cats. Maaaring markahan ng mga wikang mataas ang infleksiyon ang anim o higit pang kategorya sa iisang salita.",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "Bawat anyong may infleksiyon ay hiwalay na token para sa isang MT system, kaya ang mabigat na infleksiyon ay nangangahulugan ng mas maraming bihirang salita at mas maraming error sa agreement.",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "deribasyon",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "Pagbuo ng mga bagong salita mula sa mga umiiral na salita, tulad ng teach → teacher o happy → unhappy. Hindi tulad ng infleksiyon, lumilikha ang deribasyon ng bagong salita sa diksyunaryo sa halip na gramatikal na baryante ng parehong salita.",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "Pinahihintulutan ng produktibong deribasyon ang mga tagapagsalita na lumikha agad ng mga salitang hindi pa kailanman nakita ng isang MT system.",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "panlapi",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "Isang morpema na ikinakabit sa salitang-ugat upang baguhin ang kahulugan o gramatika nito. Ikinakabit ang mga unlapi bago ang salitang-ugat, ang mga hulapi pagkatapos nito, at gumagamit ang ilang wika ng mga gitlapi sa loob ng salitang-ugat.",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "Tinutukoy ng lugar kung saan ikinakabit ang mga panlapi kung saan dapat hatiin ng mga subword tokenizer ang mga salita para sa MT model.",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "unlapi",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "Isang panlapi na ikinakabit sa unahan ng salitang-ugat, tulad ng re- sa “rewrite”. Sa ilang wika, kabilang ang maraming wikang Bantu at Athabaskan, nasa mga sunod-sunod na unlapi ang karamihan ng kanilang gramatika.",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "Inilalagay ng mga wikang maraming unlapi ang impormasyong gramatikal sa simula ng mga salita, kabaligtaran ng inaasahan ng mga tokenizer na sinanay sa mga hulapi.",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "hulapi",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "Isang panlapi na ikinakabit sa dulo ng salitang-ugat, tulad ng -ness sa “kindness”. Ang paggamit ng hulapi ang pinakakaraniwang estratehiya ng paglalapi sa mga wika sa buong mundo.",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "Lumilikha ang magkakapatong na hulapi ng mahahaba at bihirang anyo ng salita na kailangang ma-segment nang tama ng mga MT system upang maisalin.",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "gitlapi",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "Isang panlapi na ipinapasok sa loob ng salitang-ugat sa halip na bago o pagkatapos nito. Halimbawa, sa Tagalog, ginagawang sumulat ang sulat “write” sa kahulugang “wrote” sa pamamagitan ng pagpasok ng -um- pagkatapos ng unang katinig.",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "Sinisira ng mga gitlapi ang palagay na ang salitang-ugat ng isang salita ay magkakadikit na string, kaya nabibigo ang simpleng subword segmentation.",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "klitiko",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "Isang maliit na salitang gramatikal na hindi maaaring tumayo nang mag-isa at nakasandig sa katabing salita, tulad ng 's sa “the queen of England's hat”. Ang mga clitic ay kumikilos nang bahagyang parang mga salita at bahagyang parang mga affix.",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "Pinalalabo ng mga clitic ang mga hangganan ng salita, kaya maaaring ikabit ng mga tokenizer ang mga ito sa maling host at magulo ang gramatika.",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "stem",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "Ang pangunahing bahagi ng salita na kinakabitan ng mga affix. Sa 'unbelievable', ang stem ng -able ay 'believe'. Sa maraming wika, ang stem ay hindi kailanman lumilitaw nang mag-isa at kailangang magdala ng kahit ilang inflection.",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "Ang pagtukoy sa magkakaparehong stem sa iba’t ibang anyo ng salita ang paraan ng mga MT system upang makapag-generalize mula sa limitadong training data.",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "ugat",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "Ang hindi na mahahating ubod ng salita matapos alisin ang lahat ng affix. Sa mga wikang Semitic, ang root ay kadalasang tatlong katinig lamang (tulad ng k-t-b 'write' sa Arabic) na ginagawang mga salita ng mga pattern ng patinig.",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "Ang mga wikang may discontinuous na root (mga balangkas ng katinig) ay nangangailangan ng espesyal na segmentation upang makita ng MT ang mga ugnayan ng salita.",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "paradigma",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "Ang buong hanay ng mga inflected form na maaaring taglayin ng isang salita — tulad ng talahanayan ng conjugation ng pandiwa. Ang mga paradigm ay maaaring mula sa dalawang anyo (English 'must') hanggang sa libo-libo sa mga polysynthetic na wika.",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "Tinitiyak ng malalaking paradigm na karamihan sa mga anyo ng salita ay bihira o hindi nakikita sa training data.",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "aglutinatibo",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "Isang paraan ng pagbuo ng salita kung saan ang bawat gramatikal na kahulugan ay may sarili nitong malinaw na nahihiwalay na affix, na pinagpapatong-patong nang sunod-sunod — gaya sa Turkish o Swahili. Maaaring humaba ang mga salita, ngunit may iisang tungkulin ang bawat bahagi.",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "Malinis na nase-segment ang mga agglutinative na salita sa mga subword, ngunit kung matutuhan lamang ng tokenizer ang ayos ng mga affix ng wika.",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "fusional",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "Isang paraan ng pagbuo ng salita kung saan pinagsasama ng isang affix ang ilang gramatikal na kahulugan nang sabay-sabay. Ang Spanish ending na -ó sa habló ay sabay-sabay na nagmamarka ng past tense, third person, at singular — walang bahagi nito ang maaaring iugnay sa iisang kahulugan lamang.",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "Hindi mahahati ng mga tokenizer ang fused endings, kaya kailangang matutuhan ang bawat kombinasyon bilang isang unit.",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "isolating",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "Isang paraan ng pagbuo ng salita kung saan ang mga salita ay kadalasang iisang morpheme at ang gramatika ay ipinapahayag sa pamamagitan ng ayos ng salita at mga helper word sa halip na mga ending — gaya sa Vietnamese o Mandarin. Ito ang kabaligtarang dulo ng polysynthesis.",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "Inililipat ng mga isolating language ang problema ng MT mula sa word segmentation patungo sa ayos ng salita at pagpili ng function word.",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "polisintesis",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "Isang paraan ng pagbuo ng salita kung saan ang isang pandiwa lamang ay maaaring maglaman ng ipinapahayag ng ibang mga wika bilang buong pangungusap — subject, object, lokasyon, instrumento, at iba pa, lahat bilang mga bahagi ng iisang salita. Maraming Indigenous American languages ang gumagana sa ganitong paraan.",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "Bihirang maulit nang eksakto ang mga polysynthetic na salita, kaya nakikita ng word-level MT ang tila walang katapusang daloy ng mga hindi kilalang token.",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "Plains Cree (crk): maaaring isama ng isang pandiwa ang subject/object pronouns, instrumentals, locations, at actions (card field linguisticChallenges.polysynthesis).",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "inkorporasyon ng pangngalan",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "Ang pagsasama ng pangngalan sa pandiwa upang makabuo ng isang salita, halos tulad ng paggawa sa 'hunt seals' bilang 'seal-hunt' na pandiwa. Karaniwan ito sa mga polysynthetic na wika, kung saan binabago nito ang diin at gramatika ng pangungusap.",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "Nawawala ang incorporated noun bilang hiwalay na salita sa pangungusap, kaya nawawala rin ito sa pagsasaling nakabatay sa alignment.",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "Lumalabas sa mga card bilang linguisticChallenges.nounIncorporation (batay sa Grambank), hal. Plains Cree (crk).",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "pagtatambal",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "Pagsasama ng dalawa o higit pang malayang salita upang makabuo ng isang bagong salita, tulad ng 'tooth' + 'brush' → 'toothbrush'. Sa compounding na estilo ng German, maaaring pagdugtung-dugtungin ang maraming salita sa napakahabang iisang token.",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "Ang mga bagong compound ay mga token na hindi pa nakita kaya kailangang hatiin ng MT sa mga kilalang bahagi upang maisalin.",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "reduplikasyon",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "Pag-uulit ng kabuuan o bahagi ng isang salita upang baguhin ang kahulugan nito — para markahan ang plural, intensidad, o patuloy na kilos. Ang Indonesian na orang 'person' ay nagiging orang-orang 'people'.",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "Kailangang kilalanin ng MT na ang dinobleng salita ay gramatika, hindi aksidenteng pag-uulit na dapat burahin.",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "ablaut",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "Pagbabago ng patinig sa loob ng isang salita upang baguhin ang gramatika nito, tulad ng English sing/sang/sung. Nananatili ang balangkas ng mga katinig ng salita habang ang patinig ang gumaganap ng gawaing gramatikal.",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "Itinatago ng ablaut ang inflection sa loob ng stem kung saan hindi ito madaling maihiwalay ng mga subword tokenizer.",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "suplesyon",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "Kapag ang mga inflected form ng isang salita ay nagmumula sa ganap na magkakaibang root, tulad ng go/went o good/better. Itinuturing ng gramatika ang mga ito bilang isang salita kahit wala silang magkakaparehong tunog.",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "Hindi maaaring derivahin sa tuntunin ang mga suppletive form, kaya kailangang nakita na ng MT ang bawat isa sa training data.",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "morpolohiyang root-and-pattern",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "Isang paraan ng pagbuo ng salita, karaniwan sa Arabic at Hebrew, kung saan ang consonant root tulad ng k-t-b 'write' ay isinasalansan sa mga vowel template: kitāb 'book', kātib 'writer', maktab 'office'. Parehong may dalang kahulugan ang root at ang pattern, ngunit wala sa dalawa ang magkakadikit na tipak.",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "Hindi nakikita ng karaniwang subword tokenization ang magkakaparehong root sa mga form na ito, kaya humihina ang generalization sa MT para sa mga wikang Semitic.",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "Lumalabas sa mga card bilang linguisticChallenges.rootPattern (hal. Arabic, Hebrew, Maltese).",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "vowel harmony",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "Tuntunin na ang lahat ng patinig sa isang salita ay dapat magkatugma sa isang katangian, tulad ng front/back o rounded/unrounded. Sa Turkish, nagbabago ang anyo ng mga patinig sa suffix upang tumugma sa stem: ev-ler 'houses' ngunit at-lar 'horses'.",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "May ilang surface form ang bawat suffix, kaya dumarami ang mga variant ng token na kailangang matutunan ng MT para sa iisang grammatical ending.",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "mutasyon ng katinig",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "Gramatikal na pagbabago sa unang katinig ng isang salita na pinasisimulan ng salitang nauuna rito. Ang Welsh cath 'cat' ay nagiging gath pagkatapos ng article: y gath 'the cat'. Maaaring magmukhang ibang-iba ang anyong nasa diksyunaryo at ang binibigkas na anyo.",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "Dahil sa mutation, lumilitaw ang iisang salita sa ilang baybay, kaya napagwa-wa-watak ang mga estadistika nito sa training data ng MT.",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "lenisyon",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "Ang pagpapalambot ng isang katinig, kadalasan sa pagitan ng mga patinig o dahil sa mga gramatikal na trigger — paghina ng “k” patungong “g” o “h”. Sa mga wikang Celtic, bahagi ng gramatika ang lenition, hindi lamang ng pagbigkas.",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "Binabago ng gramatikal na lenition ang baybay ng mga salita ayon sa konteksto, kaya lumilihis ang nakikitang teksto mula sa mga anyong nasa diksyunaryo.",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "geminasyon",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "Ang pagpapatagal ng isang katinig upang makabuo ng ibang salita — Italian pala “pala” vs palla “bola”. Isinusulat ng ilang script ang pagdodoble, habang ipinauubaya naman ito ng iba sa mambabasa.",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "Kapag hindi ipinapakita ng script ang gemination, nagsasanib sa iisang baybay ang magkakaibang salita at nawawala sa MT ang pagkakaiba.",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "sandhi",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "Mga pagbabagong-tunog na nangyayari kung saan nagtatagpo ang mga salita o morpheme, gaya ng “don’t you” na nagiging “dontcha”. Sa mga wikang tonal, maaaring magbago mismo ang mga tono ayon sa konteksto (tone sandhi).",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "Ginagawang nakadepende sa konteksto ng sandhi ang mga anyong nakasulat o natranscribe, kaya nagiging mas mahirap ang konsistent na tokenization.",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "umlaut",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "Pagbabago ng patinig na historikal na dulot ng kasunod na patinig, at nananatili bilang gramatika: German Apfel “mansanas” → Äpfel “mga mansanas”. Kaugnay ito ng ablaut ngunit may ibang pinagmulan sa kasaysayan.",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "Inilalagay ng umlaut ang marka ng plural o panahunan sa loob ng stem, kaya hindi ito nakikita ng segmentation na batay sa affix.",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "tokenisasyon",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "Paghahati ng teksto sa mga unit (token) na aktuwal na pinoproseso ng translation model. Hinahati ng mga modernong system ang mga bihirang salita sa mga subword piece; malaki ang pagkakaiba-iba ayon sa wika kung gaano kahusay tumutugma ang mga pirasong iyon sa tunay na mga morpheme.",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "Ang hindi magandang tokenization ay pangunahing sanhi ng pagkabigo ng MT para sa mga wikang may masalimuot na morpolohiya at mga wikang may kakaunting resource.",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "kaso gramatikal",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "Pagmamarka sa mga pangngalan at panghalip upang ipakita ang papel ng mga ito sa pangungusap — sino ang gumaganap, sino ang ginagawan, saan, at gamit ang ano. Kaunting bakas na lamang ang nananatili sa English (I/me/my); may labinlimang kaso ang Finnish; at walang ganito ang maraming wika.",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "Pinahihintulutan ng mga wikang may case marking ang malayang ayos ng salita, kaya kailangang basahin ng MT ang mga papel mula sa mga ending sa halip na sa posisyon — at bumuo rin ng tamang mga ending bilang kapalit.",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "nominatibo",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "Sa pinakapamilyar na alignment system, ang subject ng anumang verb ay kumukuha ng nominative case at ang direct object ay kumukuha ng accusative. Ganito gumagana ang karamihan sa mga wikang European, kaya ito ang labis na nangingibabaw sa MT training data.",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "Ang mga system na pangunahing sinanay sa mga wikang nominative–accusative ay nagkakamali sa pagtatalaga ng mga papel kapag nagsasalin ng mga wikang ergative.",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "ergatibidad",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "Isang alignment system kung saan ang subject ng intransitive verb (“she sleeps”) ay minamarkahan gaya ng object ng transitive verb (“saw her”), habang ang mga transitive subject ay may espesyal na ergative marking. Ganito gumagana ang Basque at maraming wikang Mayan, Australian, at Caucasian.",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "Binabaligtad ng ergative marking ang mga palatandaan ng papel na inaasahan ng MT, kaya nagdudulot ito ng mga error sa kung sino ang gumawa ng ano kanino.",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "absolutibo",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "Ang hindi minamarkahang case sa isang ergative system, na sumasaklaw sa mga intransitive subject at transitive object. Karaniwan itong citation form ng pangngalan.",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "Magkapareho ang anyo ng mga absolutive noun sa dalawang magkaibang papel, kaya dapat gamitin ng MT ang verb upang alisin ang kalabuan.",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "alinyamentong morposintaktiko",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "Ang sistemang ginagamit ng isang wika upang ipangkat ang tatlong pangunahing papel — intransitive subject, transitive subject, at object — para sa pagmamarka. Nominative–accusative at ergative–absolutive ang dalawang pangunahing pattern; may ilang wikang naghahati sa pagitan ng mga ito o gumagamit ng mga sistemang batay sa animacy.",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "Ang hindi pagtugma ng alignment sa pagitan ng source at target ay problemang pang-istruktura sa pagsasalin, hindi problema sa talasalitaan.",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "genitibo",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "Ang case na nagmamarka ng pagmamay-ari o malapit na ugnayan, gaya ng English “’s” o “of”. Nagkakaiba-iba ang mga wika kung nauuna o nahuhuli ang genitive phrase sa noun na binabago nito.",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "Ang mga pagkakaiba sa ayos ng genitive (“the king’s horse” vs “horse of-king”) ay nangangailangan ng sistematikong pag-aayos muli sa loob ng mga noun phrase.",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "datibo",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "Ang case na nagmamarka sa recipient o beneficiary — ang “to whom” ng pagbibigay at pagsasabi. German wem, Latin cui; ipinapahayag ito ng English sa pamamagitan ng ayos ng salita o “to”.",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "Dapat magpasya ang MT sa pagitan ng dative case marking at prepositional phrasing depende sa target na wika.",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "lokatibo",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "Isang case na nangangahulugang “at/in/on” sa isang lugar, na ipinapahayag sa pamamagitan ng hulapi ng noun sa halip na preposition. Hinahati ng Finnish at Hungarian ang lokasyon sa ilang tiyak na locative case (sa loob, sa ibabaw, malapit, paggalaw papunta, paggalaw mula).",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "Ang isang English preposition ay maaaring tumugma sa ilang locative case, kaya napipilitan ang MT na pumili batay sa konteksto.",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "instrumental",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "Isang case na nangangahulugang “using/by means of” — minamarkahan ng Russian ang “with a hammer” gamit ang hulapi sa halip na preposition. Maaaring isama ng mga polysynthetic language ang instrumento mismo sa loob ng verb.",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "Nagbabago-bago sa mga wika ang instrumental na kahulugan sa pagitan ng mga case ending, preposition, at verb-internal marking.",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "komitatibo",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "Isang case o marker na nangangahulugang “together with someone”. Ginagamit ng ilang wika ang parehong marker para sa “with” (pagsama) at “and” (coordination), na maaaring maging malabo sa mga hindi pamilyar dito.",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "Ang overlap ng comitative/coordination ay nangangahulugang maaaring iisang construction sa source ang “X with Y” at “X and Y”.",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "oblique",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "Anumang phrase sa clause na hindi subject ni direct object — karaniwang mga lokasyon, instrumento, recipient, at iba pang “extra”, na madalas minamarkahan ng case o adposition. Sa WALS, ang “X” sa mga ayos tulad ng VOX ay tumutukoy sa oblique phrase.",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "Nag-iiba ayon sa wika kung saan inilalagay ang mga oblique sa pangungusap, at dapat itong muling ayusin nang tama sa paligid ng verb at object.",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "differential object marking",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "Pagmamarka sa ilang direct object ngunit hindi sa iba, karaniwang depende sa animacy o definiteness. Nagdaragdag ang Spanish ng “a” bago ang human objects (veo a María) ngunit hindi bago ang mga bagay (veo la casa).",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "Dapat magpasya ang MT para sa bawat object kung kailangan ang marker, gamit ang mga cue sa animacy na maaaring hindi ipinapakita ng source.",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "kasariang gramatikal",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "Pag-uuri ng lahat ng pangngalan sa mga klase (madalas tawaging masculine/feminine/neuter) na nag-uutos ng katugmang anyo sa mga article, pang-uri, at kung minsan ay pandiwa. Gramatikal ang pagtatalaga, hindi biyolohikal — ang isang mesa sa German ay masculine, ang isa sa Spanish ay feminine.",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "Kapag nagsasalin sa isang wikang may kasariang gramatikal, kailangang pumili para sa mga tao at bagay na hindi tinukoy ng source, na isang pangunahing pinagmumulan ng bias sa MT.",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "klase ng pangngalan",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "Isang sistemang kahawig ng gender na may maraming klase — karaniwang may 10–20 ang mga wikang Bantu, at inuuri ang mga pangngalan ayon sa hugis, animacy, laki, at iba pa. Bawat klase ay nagpapagana ng sarili nitong mga agreement prefix sa buong pangungusap.",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "Bawat pagpili ng pangngalan ay nakaaapekto sa mga agreement marker sa buong sugnay, kaya ang isang maling klase ay nagbubunga ng maraming kapansin-pansing error.",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "animacy",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "Isang gramatikal na pagkakaiba sa pagitan ng mga referent na buhay (o tila buhay) at hindi buhay. Sa mga wikang Algonquian, bawat pangngalan ay gramatikal na animate o inanimate, at ganap na nagbabago ang anyo ng mga pandiwa depende sa kung alin ang kasama nila.",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "Ang animacy ang nagtutulak sa pagpili ng pandiwa at agreement sa maraming Indigenous languages, kahit walang hayag na palatandaan sa English source.",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "Plains Cree (crk): ganap na nagbabago ang conjugation ng pandiwa batay sa kung animate o inanimate ang subject/object nouns (card field linguisticChallenges.animacy).",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "obviation",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "Isang sistema, mahalaga sa mga wikang Algonquian tulad ng Plains Cree, na nagraranggo ng mga third person sa isang bahagi ng discourse: ang isa ay “proximate” (nasa pokus) at ang iba pa ay “obviative” (minarkahang nasa background, minsang tinatawag na fourth person). Sinusubaybayan nito kung sino ang sino nang walang mga panghalip tulad ng “he₁ vs he₂”.",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "Walang obviation ang English, kaya kapag nagsasalin ang MT sa Cree, kailangan nitong lumikha ng mga pagtatalagang proximate/obviative at panatilihing consistent ang mga ito sa magkakasunod na pangungusap.",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "Minamarkahan ng Plains Cree (crk) ang mga obviative referent sa mga pangngalan at pandiwa; tingnan ang crk card at ang dokumentasyon ng crk method.",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "klusibidad",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "Isang pagkakaiba sa pagitan ng dalawang uri ng “we”: inclusive (me + you, maybe others) at exclusive (me + others, but not you). Daan-daang wika ang obligadong gumagawa ng pagkakaibang ito.",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "Ang pagsasalin ng English na “we” ay nangangailangan ng pagpili kung inclusive o exclusive kahit walang palatandaan sa source — at maaaring maging seryoso sa lipunan ang maling pagpili.",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "bilang gramatikal",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "Kung paano minamarkahan ng isang wika kung ilan — singular, plural, at kung minsan dual (eksaktong dalawa) o paucal (ilan). Minamarkahan ng ilang wika ang number sa bawat pangngalan; ang iba naman ay ganap na iniiwan ito sa konteksto.",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "Kapag hindi minamarkahan ng source ang number, kailangang hulaan ito ng MT; kapag nangangailangan ang target ng mga dual form, kailangang ibigay ng MT ang mga iyon.",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "dalawahan",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "Isang grammatical number na nangangahulugang eksaktong dalawa, naiiba sa singular at plural. Mayroon nito ang Slovene, Arabic, at maraming Oceanic languages; nagdaragdag pa ang ilang wika ng trial (eksaktong tatlo) sa mga panghalip.",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "Kailangang matukoy ng MT papunta sa mga wikang nagmamarka ng dual ang pagiging dalawa na ipinapahayag lamang ng source sa pamamagitan ng mga salitang pambilang.",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "classifier",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "Isang salitang kailangan kapag nagbibilang o tumutukoy sa mga pangngalan, na inuuri ang mga ito ayon sa uri — tulad ng English na “three head of cattle” o “two sheets of paper”, ngunit obligado para sa lahat. Hindi makapagbilang ang Chinese, Japanese, Thai, at maraming iba pang wika nang wala ang tamang classifier.",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "Kailangang piliin ng MT ang tamang classifier para sa bawat pangngalan; agad itong mapapansin ng mga katutubong tagapagsalita kapag mali.",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "katiyakan",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "Kung ang isang pangngalan ay tumutukoy sa isang bagay na natutukoy na ng tagapakinig (“the dog”) o hindi (“a dog”). Maraming wika ang hindi kailanman nagmamarka ng pagkakaibang ito; ang iba naman ay nagmamarka nito gamit ang mga article, affix, o ayos ng salita.",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "Kapag nagsasalin mula sa wikang walang article, kailangang magpasya ang MT kung “the” o “a” ang gagamitin para sa bawat noun phrase batay lamang sa konteksto.",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "pantukoy",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "Isang maliit na salita na nagmamarka sa isang pangngalan bilang definite (“the”) o indefinite (“a”). Humigit-kumulang isang-katlo ng mga wika sa mundo ang walang article, at ang ilan ay gumagamit sa halip ng numeral na “one” o ng mga demonstrative.",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "Ang pagdaragdag at pagtatanggal ng article ay isa sa pinakamadalas na kategorya ng pag-edit sa MT sa pagitan ng mga wikang may article at walang article.",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "pamatlig",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "Mga salitang panturo tulad ng “this” at “that”. Magkakaiba ang paghahati ng mga wika sa espasyong tinuturo — ang ilan ay may tatlong-hating malapit-sa-akin / malapit-sa-iyo / malayo, habang ang iba ay nagdaragdag ng visibility o elevation.",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "Bihirang magtugma nang isa-sa-isa ang mga sistema ng demonstrative, kaya kailangang tantiyahin ng MT ang mga pagkakaiba sa layo at visibility.",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "pagmamay-ari",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "Kung paano ipinapahayag ng isang wika ang “my X / your X”. Maraming wika ang nagtatangi ng inalienable possession (mga bahagi ng katawan, kamag-anak — mga bagay na hindi mo maipamimigay) mula sa alienable possession, at minamarkahan ang mga ito gamit ang magkaibang construction.",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "Madalas mangailangan ang inalienable possession ng obligadong possessor marking na hindi inilalagay sa mga source na Ingles.",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "head-marking",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "Paglalagay ng grammatical marking sa head ng isang phrase — ipinapakita ng pandiwa kung sino ang subject at object nito, at ipinapakita ng possessed noun kung sino ang nagmamay-ari nito. Maaaring manatiling walang marka ang mga dependent (ang mismong mga pangngalan).",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "Ipinupunla ng head-marking ang gramatika ng clause sa pandiwa, kabaligtaran ng mga dependent-marking language na pinagmumulan ng karamihan sa data ng MT.",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "dependent-marking",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "Paglalagay ng grammatical marking sa mga dependent ng isang phrase — mga case ending sa mga pangngalan, mga possessive ending sa possessor — habang nananatiling walang marka ang head. Karamihan sa mga wikang Europeo ay nakahilig sa ganitong paraan.",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "Inilalagay ng dependent marking ang grammatical signal sa mga ending ng pangngalan, na kailangang ma-segment nang tama ng mga tokenizer.",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "ebidensiyalidad",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "Gramatika na nag-oobliga sa mga tagapagsalita na sabihin kung paano nila nalaman ang isang bagay — nakita ba nila ito, narinig mula sa iba, o hininuha. Sa Quechua o Turkish, ang pag-alis ng evidential ay parang pag-alis ng tense sa Ingles.",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "Kapag nagsasalin ang MT tungo sa mga wikang may evidentiality, kailangan nitong magpahayag ng pinagmulan ng impormasyon na hindi kailanman tinukoy ng orihinal na teksto.",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "panahunan",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "Grammatical marking na naglalagay sa isang pangyayari sa panahon — nakaraan, kasalukuyan, hinaharap. May ilang wikang walang grammatical tense (Mandarin), habang ang iba ay nagtatangi ng ilang antas ng kalayuan sa nakaraan.",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "Ang source text na walang tense ay nag-oobliga sa MT na hinuhaing ang sanggunian sa panahon; ang mga sistema ng remoteness ay nangangailangan ng mas pinong pagkakaiba kaysa sa ibinibigay ng source.",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "aspekto",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "Pagmamarka sa gramatika kung paano umuusad ang isang pangyayari sa panahon — natapos, nagpapatuloy, nakagawian, inuulit — na hiwalay sa kung kailan ito nangyari. Ang mga pandiwang Russian ay may mga pares na perfective/imperfective; gumagamit ang English ng “was doing” kumpara sa “did”.",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "Kailangang pumili ng aspekto sa bawat pandiwa kapag nagsasalin sa mga wikang nagmamarka ng aspekto, kadalasan nang walang pahiwatig mula sa source.",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "perpektibo",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "Aspektong ipinapakita ang isang pangyayari bilang kumpletong kabuuan — “she wrote the letter” na tinitingnan bilang isang tapos na katotohanan. Madalas itong ipares sa imperpektibo sa isang gramatikal na oposisyon.",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "Ang maling pagpili sa pagitan ng perpektibo at imperpektibo ay kabilang sa pinakakaraniwang error ng MT papunta sa mga wikang Slavic.",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "imperpektibo",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "Aspektong ipinapakita ang isang pangyayari mula sa loob — nagpapatuloy, nakagawian, o inuulit, tulad ng “she was writing” o “she used to write”. Ito ang katapat ng perpektibo.",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "Kailangang linawin ng konteksto ang mga pagbasa ng imperpektibo (nagpapatuloy kumpara sa nakagawian) para sa tamang pagsasalin.",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "panagano",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "Pagmamarka sa gramatika para sa pananaw ng nagsasalita tungkol sa isang pangyayari — katotohanan, hangarin, utos, posibilidad. Indicative, subjunctive, at imperative ang mga pamilyar na panagano sa Europa; may mas pinong antas na minamarkahan ang ibang mga wika.",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "Ang pagpili ng panagano (lalo na ang subjunctive) ay sumusunod sa mga tuntunin ng target language na hindi maaaring basta kopyahin mula sa source.",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "subhuntibo",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "Isang panagano ng pandiwa para sa nilalamang hindi ipinahahayag bilang tiyak — mga hangarin, pag-aalinlangan, hypothetical, at mga sugnay pagkatapos ng ilang pandiwa. Kinakailangan ito ng mga Romance language sa maraming subordinate clause kung saan gumagamit ang English ng mga simpleng anyo.",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "Ang mga trigger ng subjunctive ay partikular sa target language, kaya kailangang ilapat ng MT ang mga tuntunin ng gramatika sa halip na magsalin lamang ng mga anyo.",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "negasyon",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "Kung paano sinasabi ng isang wika ang “not”. Kabilang sa mga estratehiya ang particles (English not), affixes sa pandiwa, mga espesyal na negative verb, at dalawang-bahaging konstruksyon tulad ng French ne…pas. Nag-iiba ang posisyon: bago ang pandiwa, pagkatapos nito, o pareho.",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "Ganap na nababaligtad ng mga error sa negasyon ang kahulugan, kaya isa sa pinakamahalagang kinakailangan ng MT ang tamang paglalagay ng negatibo.",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "balintiyak",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "Isang konstruksyong ginagawang subject ang object at ibinababa o inaalis ang gumagawa: “the window was broken (by the boy)”. Maraming wika ang walang passive o gumagamit ng ibang mga estratehiya upang gawing hindi sentral ang agent.",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "Kapag walang passive ang target language, kailangang baguhin ng MT ang mga passive upang maging active, at likhain o bawiin ang agent.",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "tinig gramatikal",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "Ang sistemang gramatikal na kumokontrol kung aling participant ang subject — active, passive, middle, at sa ilang pamilya ng wika ay mas mayamang mga sistema. Binabago ng voice ang buong sugnay ayon sa napiling perspektiba.",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "Kapag hindi magkatugma ang voice, kailangang muling buuin ang buong mga sugnay, hindi lamang palitan ang mga salita.",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "balensiya",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "Kung ilang kalahok ang kinakailangan ng isang pandiwa at kung paano nito kinokodigo ang mga ito — ang ‘matulog’ ay nangangailangan ng isa, ang ‘magbigay’ ay nangangailangan ng tatlo. Nagkakaiba ang mga wika kung aling mga kalahok ang kinukuha ng mga partikular na pandiwa at kung paano minamarkahan ang mga ito.",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "Dahil sa mga hindi pagtutugma sa valency, maaaring maitalaga ng literal na salin ang maling mga papel o maiwan ang kinakailangang mga kalahok.",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "palipat",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "Naglalarawan sa isang pandiwa na tumatanggap ng tuwirang layon (direct object) — ‘binabasa niya ang aklat’. Ang pagiging palipat (transitivity) ay sentral sa gramatika: maraming wika ang nagmamarka sa simuno, layon, at mismong pandiwa nang magkakaiba depende kung ang sugnay ay palipat.",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "Pinamamahalaan ng transitivity ang pagmamarka ng kaukulan (case marking) at kasunduan (agreement), kaya ang maling paghusga kung ang isang pandiwa ay palipat ay magugulo ang kung-sino-ang-gumawa-ng-ano-kanino sa output.",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "katawanin",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "Naglalarawan sa isang pandiwa na hindi tumatanggap ng tuwirang layon — ‘natutulog siya’, ‘sumikat ang araw’. Sa mga wikang ergatibo (ergative), ang nag-iisang argumento ng isang pandiwang katawanin ay minamarkahan tulad ng layon ng isang pandiwang palipat, hindi tulad ng simuno nito.",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "Ang mga sugnay na katawanin ay nag-uudyok ng iba't ibang pattern ng kaukulan at kasunduan, lalo na sa mga wikang ergatibo, kaya dapat subaybayan ng MT ang transitivity upang mapili ang mga tamang anyo.",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "antipassive",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "Isang kayarian, na karaniwan sa mga wikang ergatibo, na nag-aalis o nagpapababa sa layon ng isang pandiwang palipat, na nag-iiwan ng isang sugnay na katawanin — ang kabaligtaran ng balintiyak (passive). Kung saan hindi binibigyang-diin ng balintiyak ang gumagawa, hindi naman binibigyang-diin ng antipassive ang bagay na ginawan ng kilos.",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "Binabago ng mga antipassive ang kayarian ng sugnay at ang pagmamarka ng kaukulan, kaya ang pagsasalin sa mga ito patungo sa isang wikang nakatuon sa balintiyak ay nangangahulugan ng muling pagbuo sa buong pangungusap sa halip na pagpapalit lamang ng mga salita.",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "kawsatibo",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "Isang kayarian na nagdaragdag ng tagasanhi (causer) sa isang pangyayari — ginagawang ‘binasag niya ang palayok’ o ‘pinabasag niya ito’ ang ‘nabasag ang palayok’. Maraming wika ang bumubuo ng mga kawsatibo gamit ang isang nakalaang panlapi ng pandiwa sa halip na isang hiwalay na pandiwa tulad ng ‘make’ sa Ingles.",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "Ang kahulugang kawsatibo ay maaaring magtago sa loob ng iisang anyo ng pandiwa, kaya dapat itong kilalanin ng MT at himayin sa isang periprastikong kayarian — o isama itong muli — para sa target na wika.",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "panghalip",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "Isang salita na humahalili sa isang pariralang pangngalan — ako, ikaw, siya, sila, ito, sino. Malaki ang pagkakaiba ng mga wika sa kung gaano karaming panghalip mayroon sila at kung aling mga pagkakaiba ang ipinipilit nila: kasarian, pormalidad, o ang inclusive/exclusive na ‘tayo/kami’, bukod sa iba pa.",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "Bihirang magtugma ang mga sistema ng panghalip sa pagitan ng mga wika, kaya dapat ibigay ng MT ang mga pagkakaibang hindi tinukoy ng pinagmulan (kasarian, pormalidad) o pagsamahin ang mga hindi maipahayag ng target.",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "pamilang",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "Isang salitang nagpapahayag ng numero — isa, labimpito, libo. Ang mga wika ay bumubuo ng mas matataas na pamilang sa iba't ibang batayan (sampu, dalawampu, o magkahalo) at maaaring mangailangan ng isang classifier o isang espesyal na anyo ng pagbibilang sa bawat numero.",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "Ang mga numero ay kritikal na nilalaman, at ang pagsasalin ng mga salitang pamilang sa iba't ibang batayan ng pagbibilang o mga kinakailangang classifier ay isang madaling lugar para sa MT na magpasok ng mga error.",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "ideophone",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "Isang matingkad na salita na pumupukaw ng isang pandamdam — isang tunog, galaw, tekstura, o liwanag — sa pamamagitan ng sarili nitong hugis, tulad ng ‘zigzag’ sa Ingles o kirakira ‘kumikinang’ sa Japanese. Maraming wika sa Africa at Asia ang may malalaki at natatanging klase ng mga ideophone sa gramatika.",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "Ang mga ideophone ay nagpapahayag at lubos na tiyak sa wika, kaya madalas itong inaalis o pinapatag ng MT, na nagwawala sa kahulugan na naririnig ng mga katutubong nagsasalita bilang tumpak at matingkad.",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "konstruksiyong seryal na pandiwa",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "Pagsusunod-sunod ng ilang pandiwa sa iisang sugnay nang walang “and” o “to” sa pagitan ng mga ito — “take knife cut bread” para sa “cut the bread with a knife”. Karaniwan ito sa mga wikang West African, Southeast Asian, at creole.",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "Kailangang himayin ang mga serial verb bilang mga preposition o subordinate clause kapag isinasalin sa mga wikang European, at muling buuin kapag pabalik ang direksiyon ng salin.",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "partisipyo",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "Anyong pandiwa na gumaganap na parang pang-uri o bumubuo ng compound tense — “the running water”, “has eaten”. Nagkakaiba-iba ang mga wika kung ilan ang kanilang participle at kung para saan ginagamit ang mga ito.",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "Madalas pinapalitan ng mga participial clause ang mga relative clause sa ibang wika, kaya nangangailangan ito ng estruktural na pagbabago.",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "pangngalang-diwa",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "Anyong pandiwa na ginagamit bilang pangngalan, tulad ng “swimming” sa “swimming is fun”. Gumagamit ang ibang mga wika ng infinitive, verbal noun, o espesyal na converb form kung saan gumagamit ang English ng mga gerund.",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "Ang mga English gerund ay tumutugma sa ilang magkakaibang konstruksiyon depende sa target na wika.",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "kopula",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "Ang linking verb na “be” sa mga pangungusap tulad ng “she is a doctor”. Inaalis ito ng maraming wika (zero copula) sa present tense — literal na sinasabi ng Russian at Arabic ang “she doctor”.",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "Dapat magpasok ang MT ng mga copula kapag nagsasalin mula sa mga wikang zero-copula, at alisin ang mga ito kapag papunta sa gayong mga wika.",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "pagkakatugma",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "Kapag kailangang tumugma ang anyo ng isang salita sa mga katangiang gramatikal ng isa pa — gaya ng pagtutugma ng mga pandiwa sa kanilang mga subject, at ng mga adjective sa kanilang mga noun ayon sa gender at number. Sa ilang wika, minamarkahan sa pandiwa ang agreement sa parehong subject at object.",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "Kailangang matugunan ng nabuong teksto ang lahat ng agreement chain; ang isang maling feature lamang ay nagdudulot ng maraming nakikitang error.",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "polypersonal na pagkakatugma",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "Agreement ng pandiwa sa higit sa isang kalahok nang sabay — may mga marker ang pandiwa para sa subject at object (at kung minsan ay higit pa). Sistematikong ginagawa ito ng Basque, Georgian, at mga wikang Algonquian.",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "Ini-encode ng anyo ng pandiwa kung sino ang kumikilos sa kanino, kaya kailangang maresolba ng MT ang parehong papel bago ito makabuo ng iisang wastong pandiwa.",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "conjunct order",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "Sa mga wikang Algonquian tulad ng Plains Cree, ang mga pandiwa ay may natatanging inflectional na mga “order”: ang independent order para sa mga pangunahing pahayag at ang conjunct order pangunahin para sa mga subordinate clause, tanong, at ilang konteksto ng diskurso. Gumagamit ang dalawa ng ganap na magkaibang mga hanay ng ending.",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "Ang pagpili sa pagitan ng independent at conjunct form ay desisyong nakabatay sa uri ng sugnay na walang direktang pahiwatig sa English.",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Plains Cree (crk): inilalarawan sa mga tala ng formality ng card at sa dokumentasyon ng crk method.",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "direksiyonal",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "Pagmamarka sa pandiwa na isinasama sa mismong pandiwa ang direksiyon ng paggalaw — patungo sa nagsasalita, palayo, paakyat sa ilog, paakyat sa burol. Karaniwan sa mga wikang Mayan, Tibeto-Burman, at maraming wikang Papuan.",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "Ang kahulugang pandireksiyon na nakapaloob sa mga pandiwa ay kailangang ilabas bilang mga pang-abay o preposisyon sa target.",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "benepaktibo",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "Pagmamarka na ang isang kilos ay ginawa para sa kapakinabangan ng isang tao — ‘I baked her a cake’. Minamarkahan ito ng ilang wika sa pamamagitan ng panlaping pandiwa (isang applicative) sa halip na ayos ng salita o preposisyon.",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "Maaaring nakatago ang mga beneficiary sa loob ng morpolohiya ng pandiwa, kaya kailangang matukoy ng MT ang mga ito at muling ipahayag bilang magkakahiwalay na parirala.",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "interogatibo",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "Ang gramatika ng pagtatanong. Maaaring markahan ang mga tanong na oo/hindi sa pamamagitan ng partikulo, anyo ng pandiwa, pagbabago sa ayos ng salita, o intonasyon lamang; nagkakaiba ang mga tanong na pangnilalaman kung inililipat ba sa unahan ang ‘who/what’.",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "Kung intonasyon lamang ang ginagamit ng source upang markahan ang mga tanong, walang senyal sa nakasulat na input para sa MT na may itinatanong.",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "ayos ng salita",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "Ang karaniwang pagkakaayos ng paksa (S), layon (O), at pandiwa (V) sa payak na pahayag. SOV (Japanese) at SVO (English) ang sumasaklaw sa karamihan ng mga wika; VSO (Welsh, Tagalog-type) ang ikatlong karaniwang uri, at may ilang wikang wala talagang takdang ayos.",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "Ang hindi pagtutugma ng ayos ng salita ang pinakamalaking sanhi ng mga error sa muling pagsasaayos sa pagitan ng mga pares ng wika.",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "adposisyon",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "Ang pangkalahatang termino para sa mga preposisyon (nasa unahan ng kanilang pangngalan: ‘in the house’) at mga postposisyon (nasa hulihan nito: Japanese uchi de ‘house in’). Malakas ang ugnayan ng pagpili ng isang wika rito sa ayos ng pandiwa–layon nito.",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "Binabaligtad ng conversion mula preposisyon tungo sa postposisyon ang pagkakagrupo ng bawat pariralang spatial at temporal.",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "sugnay na relatibo",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "Isang sugnay na naglalarawan sa pangngalan: ‘the book that I read’. Inilalagay ito ng mga wika bago o pagkatapos ng pangngalan, at gumagamit ng mga estratehiya mula sa relative pronouns hanggang gaps at mga espesyal na anyo ng pandiwa.",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "Ang mga prenominal relative clause (Japanese, Turkish) ay nangangailangan ng pagbabaligtad ng mahahabang bahagi ng teksto kumpara sa ayos ng English.",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "sistemang pokus",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "Isang sistema ng sugnay, pinakakilala mula sa mga wikang Philippine tulad ng Tagalog, kung saan pinipili ng morpolohiya ng pandiwa kung aling kalahok — actor, patient, location, instrument — ang magiging grammatical pivot ng pangungusap. Madalas itong tawaging symmetrical voice.",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "Sabay-sabay na binabago ng pagpili ng focus ang anyo ng pandiwa, paglalagay ng marker, at ayos ng salita, kaya hindi maaaring imapa ng MT ang mga sugnay nang salita-sa-salita.",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "Lumabas sa mga card bilang linguisticChallenges.voiceFocus para sa maraming wikang Austronesian.",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "partikulo",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "Isang maliit at hindi nagbabagong function word na nagdaragdag ng kahulugang gramatikal o attitudinal — mga question marker, topic marker, at politeness softener. Malawak ang paggamit ng mga wikang East Asian ng sentence-final particles.",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "Nagdadala ng kahulugan ang mga partikulo (pagiging tanong, saloobin, paksa) na kailangang muling ipahayag ng MT sa ganap na ibang paraan.",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "tono",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "Paggamit ng taas-baba ng tinig upang maiba ang mga salita: Mandarin mā 'mother' vs mǎ 'horse'. Ang mga simpleng sistema ay nagkokontrast ng dalawang antas; ang mga komplikadong sistema (maraming wika sa West Africa at Southeast Asia) ay gumagamit ng ilang antas at contour.",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "Karaniwang hindi nakikita ang tono sa romanized o walang-markang teksto, kaya napagsasama ang magkakaibang salita sa iisang baybay para sa sistemang MT.",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "pitch accent",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "Isang sistema kung saan ang pitch ay nagpapakilala ng pagkakaiba ng mga salita, ngunit iisang pantig lamang sa bawat salita ang nagdadala ng natatanging pitch — Japanese háshi 'chopsticks' vs hashí 'bridge'. Mas magaan kaysa sa buong tono, mas mabigat kaysa sa purong diin.",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "Tulad ng tono, bihirang isulat ang pitch accent, kaya dumarami ang mga homograph sa teksto.",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "mora",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "Isang yunit ng timing na mas maliit kaysa sa pantig: ang maikling pantig ay binibilang bilang isang mora, at ang mahabang patinig o pangwakas na katinig ay nagdaragdag ng isa pa. Ang ritmo, tula, at maging mga abbreviation sa Japanese ay nagbibilang ng morae, hindi mga pantig.",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "Hinuhubog ng ponolohiyang batay sa mora kung paano inaangkop ang mga loanword at pangalan, na nakaaapekto sa kalidad ng transliteration.",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "ejective",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "Isang katinig na binibigkas gamit ang bugso ng hangin mula sa saradong glottis sa halip na mula sa baga, kaya nagkakaroon ito ng matalas na tunog na parang pumuputok. Karaniwan ito sa mga wika ng Caucasus, Americas, at East Africa; isinusulat gamit ang apostrophe (k', t').",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "Madalas na naaalis ang mga markang ejective sa kaswal na pagta-type, kaya napagsasama ang magkakaibang salita sa input text.",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "impit na tunog",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "Ang impit sa lalamunan sa gitna ng 'uh-oh'. Sa maraming wika, ito ay ganap na katinig na nagpapakilala ng pagkakaiba ng mga salita — sa Hawaiian, isinusulat ito bilang ʻokina (ʻ), at nagbabago ang kahulugan kapag inalis ito.",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "Madalas na naiiwan ang mga glottal stop o nata-type gamit ang maling karakter ng apostrophe, kaya nahahati ang mga salita sa iba’t ibang baybay.",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "Hawaiian (haw): ang ʻokina ay isang ponemikong katinig; minamarkahan ng mga tala ng card orthography ang mga isyu sa variant ng apostrophe.",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "ubular",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "Mga katinig na ginagawa sa pinakadulong likod ng bibig laban sa uvula, tulad ng Arabic q o French r. Mas bihira ito kaysa sa mga tunog na velar k/g at isang palatandaan ng ilang partikular na lugar ng wika.",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "Madalas na hindi magkakapareho ang romanization ng mga uvular (q/k/kh), kaya nahahati ang iisang salita sa ilang anyong teksto.",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "click",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "Mga katinig na ginagawa sa paghigop ng hangin papasok, tulad ng English 'tsk-tsk' — ngunit ginagamit bilang karaniwang tunog ng pagsasalita. Ang Khoisan at ilang wika sa southern Bantu (Zulu, Xhosa) ay may kumpletong mga hanay ng click consonants.",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "Isinusulat ang mga click gamit ang di-karaniwang mga karakter (ǃ, ǂ, c, q, x) na madalas hindi maayos na napoproseso ng mga tokenizer at font.",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "implosive",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "Mga katinig na ginagawa sa panandaliang paghigop ng hangin papasok sa lalamunan, tulad ng ɓ at ɗ ng Hausa o Vietnamese. Para sa hindi sanay na pandinig, katunog ito ng mariing b/d ngunit magkakahiwalay na ponema ang mga ito.",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "Madalas na tina-type ang mga titik na implosive (ɓ, ɗ) bilang simpleng b/d, kaya napagsasama ang magkakaibang salita sa mga text corpus.",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "pailong",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "Isang katinig na ginagawa sa pamamagitan ng paglabas ng hangin sa ilong, tulad ng m, n, o ang ng sa ‘sing’. Halos bawat wika ay may mga katinig na pailong, at ang ilan ay nagpapalaganap din ng pagiging pailong (nasality) sa mga katabing patinig.",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "Bilang isang purong kategoryang ponetiko, ang mga katinig na pailong ay mahalaga para sa pagsasalita at transliterasyon sa halip na sa pagsasalin ng teksto, na gumagana sa mga nakasulat na salita.",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "prikatibo",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "Isang katinig na ginagawa sa pamamagitan ng pagpilit ng hangin sa isang makitid na puwang upang ito ay sumagitsit, tulad ng f, s, sh, o th. Ang mga prikatibo ay kabilang sa mga pinakakaraniwang uri ng katinig sa mga wika sa mundo.",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "Ang mga prikatibo ay isang kategoryang ponetiko na nakaaapekto sa pagbigkas at transliterasyon ng mga pangalan, hindi sa gramatika ng MT na nakabatay sa teksto.",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "retroflex",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "Isang katinig na ginagawa sa pamamagitan ng pagbaluktot ng dulo ng dila pataas at pabalik patungo sa ngalangala, na nagbibigay ng isang natatanging hungkag na tunog. Ang mga katinig na retroflex ay katangian ng mga wika sa Timog Asya tulad ng Hindi at Tamil.",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "Ang retroflexion ay kadalasang isang usapin ng pagsasalita at transliterasyon; sa teksto, lumalabas lamang ito bilang mga natatanging titik o diacritic na dapat panatilihin ng MT.",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "glotalisado",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "Ginagawa nang may paghihigpit o pagsasara ng glottis, na nagdaragdag ng pag-ipit o garalgal na katangian sa isang katinig o patinig. Ang mga ejective at implosive ay mga katinig na glotalisado, at ang ilang wika ay mayroon ding mga glotalisado (creaky-voiced) na sonorant at patinig.",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "Ang glottalization ay isang katangiang ponetiko na mahalaga para sa pagsasalita at transliterasyon; sa teksto, nananatili lamang ito bilang mga espesyal na titik o kudlit (apostrophe) na dapat panatilihing buo ng MT.",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "paringeal",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "Mga katinig na binibigkas sa pamamagitan ng pagsisikip ng lalamunan (pharynx), gaya ng Arabic ʿayn (ع). Bihira ang mga ito sa buong mundo at mahirap marinig o bigkasin para sa mga hindi katutubong tagapagsalita.",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "Maraming paraan ng pag-romanize ng mga pharyngeal (ʿ, ', 3, o wala), kaya nagkakaroon ng kaguluhan sa baybay sa impormal na text.",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "patinig na nasal",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "Patinig na binibigkas nang dumadaloy ang hangin sa ilong, gaya sa French bon o Portuguese são. Kapag kontrastibo ito, nakapag-iiba ng mga salita ang oral at nasal na mga patinig.",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "Karaniwang naaalis sa impormal na pagta-type ang mga marka ng nasalization (ã, ę, ą), kaya nagsasanib ang mga pares ng salita.",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "haba ng patinig",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "Pagpapahaba ng bigkas ng isang patinig upang makabuo ng ibang salita — Finnish tuli 'fire' vs tuuli 'wind'. Minamarkahan ito ng mga script gamit ang dobleng titik, macron (ā), o minsan ay hindi minamarkahan.",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "Kapag opsyonal ang pagmamarka ng haba (hal. Hawaiian kahakō, Arabic vowels), lumilitaw ang parehong salita sa maraming baybay.",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "Hawaiian (haw): minamarkahan ng kahakō (macron) ang mahahabang patinig at madalas itong inaalis sa kaswal na text.",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "ponema",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "Tunog ng pagsasalita na nakapag-iiba ng mga salita sa isang partikular na wika — palitan ang isang ponema ng iba at makakakuha kayo ng ibang salita (pat vs bat). Ang imbentaryo ng ponema ng isang wika ay maaaring mula humigit-kumulang isang dosenang tunog hanggang higit pa sa isang daan.",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "Tinutukoy ng laki at nilalaman ng imbentaryo kung paano muling hinuhubog sa wika ang mga banyagang pangalan at loanword.",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "downstep",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "Sa maraming wikang tonal sa Africa, ito ay pagbaba ng pitch na nakaaapekto sa lahat ng kasunod na mataas na tono sa parirala. Isa itong tonal landmark na maaari ring makapag-iba ng kahulugan.",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "Halos hindi kailanman isinusulat ang downstep, kaya sistematikong nawawala sa text data ang impormasyong tonal.",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "advanced tongue root",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "Katangian ng patinig na nalilikha sa pagtulak pasulong ng ugat ng dila, na nagpapaluwang sa lalamunan. Hinahati ng maraming wika sa Africa ang kanilang mga patinig sa mga set na +ATR at -ATR at hinihinging manatili ang mga salita sa loob ng isang set (ATR harmony).",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "Hindi pare-pareho ang pagmamarka ng mga pagkakaibang ATR sa mga orthography, kaya nahahati ang mga salita sa iba’t ibang baybay.",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "sistema ng pagsulat",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "Ang hanay ng mga simbolong ginagamit sa pagsulat ng isang wika — Latin, Cyrillic, Arabic, Han characters, at marami pang iba. Maaaring gumamit ang isang wika ng ilang script (Serbian), at maaaring magsilbi ang isang script sa daan-daang wika.",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "Pinapatakbo ng pagkakakilanlan ng script ang bawat downstream text process: encoding, tokenization, at kung aling mga MT model ang tumatanggap man lang ng input.",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "ortograpiya",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "Ang napagkasunduang mga tuntunin sa pagsulat ng isang wika sa script nito — kung aling mga titik, diacritic, at baybay ang tama. May ilang wikang may maraming nagkukumpitensiyang ortograpiya o wala pang ganap na na-standardize.",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "Hinahati ng nagkukumpitensiya o hindi na-standardize na mga ortograpiya ang kakaunting training data sa hindi magkatugmang mga variant ng baybay.",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "abugida",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "Isang script kung saan ang bawat simbolo ay katinig na may built-in na default na patinig, at ang ibang mga patinig ay minamarkahan sa pamamagitan ng pagbabago sa base sign — gaya ng sa Devanagari, Ethiopic, o Thai. Nasa pagitan ng alpabeto at silabaryo.",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "Ang mga marka ng patinig sa abugida ay mga combining character na maaaring alisin o muling isaayos ng naïve na pagproseso ng text, na sumisira sa mga salita.",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "silabaryo",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "Isang script na may isang simbolo kada pantig sa halip na kada tunog — Japanese kana o Cherokee. Pinakamainam ito para sa mga wikang may simpleng istruktura ng pantig.",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "Binabago ng mga silabaryo ang granularity ng text: pantig ang nakikita ng mga tokenizer, hindi mga katinig at patinig.",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "syllabics",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "Ang pamilya ng script na ginagamit para sa Cree, Inuktitut, Ojibwe, at iba pang Indigenous Canadian languages, kung saan ang bawat character ay nag-e-encode ng katinig at ang rotation nito ang nag-e-encode ng patinig. Naimbento noong 1840s at aktibo pa ring ginagamit ng mga komunidad.",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "Maraming text sa Cree/Inuktitut ang umiiral sa parehong syllabics at roman orthography, kaya kailangan ng mga MT pipeline ng maaasahang script conversion.",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "Plains Cree (crk): ang script ng card ay Cans (Canadian Aboriginal Syllabics) na may roman-orthography converter.",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "romanisasyon",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "Pagsulat ng isang wika gamit ang mga titik na Latin sa halip na ang katutubong script nito, ayon sa tuntunin (transliteration) o ayon sa tunog. Madalas na may ilang nagkakatunggaling pamantayan ng romanisasyon ang isang wika.",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "Ang romanized text at native-script text ay kumikilos na parang magkaibang wika sa isang MT model maliban kung tahasan silang iko-convert.",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "diakritiko",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "Mga markang idinadagdag sa mga titik — accent, tilde, tuldok, macron — upang ipahiwatig ang tono, haba, nasality, o ibang mga tunog. Ganap na umaasa rito ang ilang orthography; madalas namang inaalis ito ng mga user sa kaswal na pagta-type.",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "Ang text na tinanggalan ng diakritiko ay laganap na problema sa kalidad ng data: pinagsasama nito ang magkakaibang salita at hindi tumutugma sa malinis na training data.",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "direksiyon ng pagsulat",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "Kung saang direksiyon tumatakbo ang script: kaliwa-pakanan (Latin), kanan-pakaliwa (Arabic, Hebrew), o sa kasaysayan ay itaas-pababa (Mongolian, classical Chinese). Kailangan ng espesyal na paghawak ang mixed-direction text.",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "Sinisira ng RTL at bidirectional text ang naïve na paghawak ng string — ang mga numero, punctuation, at naka-embed na salitang Latin ay hindi mahulaang muling naaayos.",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "rehistro",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "Isang varyasyon ng wika na nakatali sa kontekstong panlipunan — pormal, kaswal, seremonyal, teknikal. Ginagawang gramatikal ng ilang wika ang mga rehistro: ang Javanese ay may magkakahiwalay na set ng bokabularyo para sa iba’t ibang antas ng paggalang.",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "Dapat panatilihin ng MT ang pare-parehong rehistro; ang paghahalo ng pormal at kaswal na anyo sa isang output ay nababasang sira o bastos.",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "distinksiyong T-V",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "Pagkakaroon ng dalawa (o higit pang) salita para sa “you” depende sa social distance, gaya ng French tu/vous o German du/Sie. Ipinapahiwatig ng pagpili ang paggalang, pagiging malapit, o hierarchy at mahirap itong bawiin kapag nagawa na.",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "Walang ibinibigay na pahiwatig ang English “you”, kaya dapat piliin ng MT ang antas ng pormalidad mula sa konteksto — isang madalas at madaling mapansing pagkakamaling panlipunan.",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "French (fra): tinutukoy ng data ng card formality ang pagkakaiba ng mga konteksto ng paggamit ng tu/vous.",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "honoripiko",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "Mga anyong gramatikal o leksikal na nagsasaad ng paggalang sa tagapakinig o sa taong tinutukoy — Japanese keigo, Korean speech levels, at mga espesyal na bokabularyo ng paggalang sa kamag-anak. Kadalasang obligado, hindi opsyonal na pagkamagalang.",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "Nangangailangan ang pagpili ng honoripiko ng kaalamang panlipunan (kung sino ang mas mataas ang katayuan kaysa kanino) na bihirang isinasaad ng source text.",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "pagkamagalang",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "Ang pagmamarka sa wika ng mga ugnayang panlipunan — sa pamamagitan ng pagpili ng panghalip, mga hulapi ng pandiwa, mga particle, o bokabularyo. Nag-iiba-iba ang mga wika mula sa walang gramatikal na pagkamagalang hanggang sa masalimuot na mga sistemang maraming antas.",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "Maaaring perpekto sa leksikon ang isang salin ngunit mabigo pa rin kung maling antas ng pagkamagalang ang pinili para sa sitwasyon.",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "diglosya",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "Isang matatag na sitwasyon kung saan gumagamit ang isang komunidad ng dalawang baryedad ng isang wika para sa magkaibang layunin — isang “mataas” na baryedad para sa pagsusulat at pormal na pananalita (Modern Standard Arabic) at isang “mababa” para sa pang-araw-araw na buhay (ang mga sinasalitang diyalekto). Nagpapalit ang mga tagapagsalita batay sa konteksto, hindi ayon sa simpleng kagustuhan.",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "Karaniwang nakasandig ang training data sa nakasulat na “mataas” na baryedad, kaya nabibigo ang MT sa sinasalitang baryedad na aktuwal na ginagamit ng mga tao.",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "code-switching",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "Pagpapalitan ng dalawa o higit pang wika sa loob ng isang pag-uusap o pangungusap, gaya ng likas na ginagawa ng mga bilingual na tagapagsalita. Sumusunod ito sa mga pattern na gramatikal sa halip na random na paghahalo.",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "Nalilito ang language detection sa mixed-language input at nagbubunga ng magulong output maliban kung kayang pangasiwaan ng system ang parehong code.",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "kreol",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "Isang ganap na likas na wika na umusbong mula sa masinsing ugnayan ng mga wika, karaniwang kumukuha ng karamihan ng bokabularyo mula sa isang wika (ang lexifier) habang bumubuo ng sarili nitong gramatika. Mga halimbawa ang Haitian Creole, Tok Pisin, at Papiamento.",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "Mapanlinlang na kahawig ng mga creole ang kanilang lexifier sa pagsulat, kaya sistematikong mali ang salin ng mga MT system na sinanay sa lexifier.",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "pidgin",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "Isang pinasimpleng contact language na walang native speakers, nilikha para sa kalakalan o trabaho sa pagitan ng mga grupong walang iisang wika. Kapag lumaki ang mga bata na sinasalita ito bilang unang wika, nagiging creole ito.",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "Mataas ang baryasyon ng mga pidgin at kaunti ang text data, kaya lalo pang mahirap ang konsistent na MT.",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "lexifier",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "Ang wikang pinagmulan ng karamihan ng bokabularyo ng isang creole o pidgin — English para sa Jamaican Patois, French para sa Haitian Creole, Portuguese para sa Papiamento. Gayunman, ang gramatika ay sariling gramatika ng creole.",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "Itinatago ng magkakaparehong bokabularyo sa lexifier ang malalalim na pagkakaibang gramatikal na hindi dapat palampasin ng MT.",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "salitang hiram",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "Salitang kinuha mula sa ibang wika at inangkop sa mga lokal na pattern ng tunog, gaya ng “sushi” sa English o “le weekend” sa French. Sa halip, humihiram ang calque ng estruktura, na isinasalin nang paisa-isang bahagi (“skyscraper” → French “gratte-ciel”).",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "Paulit-ulit na pagpapasya sa localization kung pananatilihin, iaangkop, o isasalin ang isang salitang hiram, lalo na para sa mga teknikal na termino.",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "makrowika",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "Isang kategorya sa pagtatala ng ISO 639-3: isang solong code (tulad ng “ara” Arabic o “zho” Chinese) na sumasaklaw sa ilang magkakaibang kasaping wika na itinuturing na iisa dahil sa mga dahilang historikal o politikal. May sariling code din ang bawat kasapi.",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "Ang data na nilagyan ng macrolanguage code ay naghahalo ng mga barayting hindi magkakaunawaan, na nakokontamina ang training at evaluation.",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "endonimo",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "Ang sariling pangalan ng isang komunidad para sa kanilang wika (endonym/autonym), kumpara sa pangalang ginagamit ng mga taga-labas (exonym). Ang “Deutsch” ay endonym para sa tinatawag ng English na “German”; mas pinipili ng maraming Katutubong komunidad ang kanilang mga endonym.",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "Ang hindi pagtutugma ng mga pangalan sa iba’t ibang database ay nagdudulot ng mga error sa language identification at data merging sa mga MT pipeline.",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "language isolate",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "Isang wikang walang napatunayang kamag-anak — isang pamilyang binubuo ng iisang wika. Kilalang mga halimbawa ang Basque, Ainu, at Burushaski; nakakagulat na karaniwan ang mga isolate sa buong mundo.",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "Hindi makahihiram ang mga isolate ng training signal mula sa mga kaugnay na wika, kaya nawawala ang isang pangunahing estratehiya sa low-resource MT (transfer learning).",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "sigla ng wika",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "Kung gaano katatag na naipapasa ang isang wika sa mga bata at nagagamit sa iba’t ibang larangan ng buhay. Ang mga iskala tulad ng EGIDS at endangerment status ng Glottolog ay mula sa “vigorous” hanggang “threatened” at “moribund” hanggang “dormant” (walang matatas na tagapagsalita, ngunit may potensiyal para sa revival).",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "Ipinapahiwatig ng vitality ang availability ng data at, para sa community-driven MT, kung anong papel ang dapat gampanan ng teknolohiya (hal. suporta sa revitalization, hindi kapalit).",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "moribund",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "Isang vitality status na nangangahulugang hindi na natututuhan ng mga bata ang wika; ang natitirang matatas na tagapagsalita ay pawang matatandang adult. Kung walang interbensiyon, nagiging dormant ang gayong wika sa loob ng isang henerasyon.",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "Ang mga moribund na wika ay may lumiliit na pangkat ng mga tagapagsalitang makapagpapatunay ng MT output, kaya mas tumataas ang kahalagahan ng bawat desisyon sa data.",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "Isang natatanging identifier mula sa database ng Glottolog (tulad ng stan1293 para sa English) na sumasaklaw sa mga wika, diyalekto, at pamilya. Mas fine-grained ito kaysa sa mga ISO code at patuloy na nire-revise ng mga lingguwista.",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "Pinapahintulutan ng mga glottocode ang mga pipeline na tumpak na pagdugtungin ang mga typological database, kahit para sa mga barayting walang ISO code.",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "Ang internasyonal na pamantayan ng tatlong-titik na code para sa mga wika ng mundo (eng, crk, haw), na pinananatili ng SIL. Layunin nitong saklawin ang bawat kilalang wika, buhay man o extinct, na may tig-iisang code.",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "Ang mga ISO 639-3 code ang mga join key ng multilingual NLP — tahimik na sinisira ng mali o malabong mga code ang mga dataset.",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "vigesimal",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "Isang sistema ng pagbibilang na nakabatay sa dalawampu sa halip na sampu. Ganito magbilang ang Maya, Yoruba, Nahuatl, at Danish (bahagya) — ang “eighty” ay literal na “four twenties” sa French (quatre-vingts).",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "Madaling magkamali sa pagsasalin ng number-word sa magkakaibang base, at mataas ang kahalagahan ng content na may mga numero.",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "Ipinapakita sa mga card sa pamamagitan ng numeralSystem.baseType mula sa data ng Numeralbank.",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "mga terminong pangmag-anak",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "Ang bokabularyo para sa mga ugnayang pampamilya, na hinahati ng iba’t ibang wika sa lubhang magkakaibang paraan — magkahiwalay na salita para sa nakatatanda vs nakababatang kapatid, o para sa tiyuhin sa panig ng ina vs sa panig ng ama. Ini-encode din ng ilang sistema ang sariling posisyon ng nagsasalita.",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "Ang English na “uncle” o “cousin” ay maaaring walang iisang katumbas, kaya napipilitan ang MT na pumili sa mga tiyak na termino ng pagkakamag-anak nang wala ang kinakailangang impormasyon tungkol sa pamilya.",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "Isang awtomatikong metric sa pagsusuri ng MT na nagmamarka sa overlap sa antas ng character sa pagitan ng output ng system at ng mga reference translation. Dahil gumagana ito sa mga character sa halip na mga salita, mas patas ito sa mga wikang mayaman sa morpolohiya kaysa sa mga metric na nakabatay sa salita.",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "Ang chrF ang mas pinipiling surface metric para sa mga agglutinative at polysynthetic na wika kung saan hindi na maaasahan ang pagtutugma sa antas ng salita.",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "Isang neural MT evaluation metric na gumagamit ng sinanay na multilingual model upang hulaan ang mga pagtataya ng tao sa kalidad, sa halip na bilangin ang surface overlap. Pinalalawak ng mga variant tulad ng AfriCOMET ang coverage sa mga wikang Aprikano.",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "Mas mahusay ang correlation ng COMET sa human judgment kaysa sa mga surface metric, ngunit para lamang sa mga wikang nakita na ng underlying model nito.",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "Isang finite-state transducer: rule-based na computational model na nagmamapa sa pagitan ng mga anyo ng salita at ng kanilang grammatical analysis. Para sa mga wikang komplikado ang morpolohiya, kayang suriin at bumuo ng mga anyo ng salita ng mga hand-built FST na hindi kailanman nakita ng mga statistical system.",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "Nagbibigay ang mga FST ng maaasahang morphological analysis at validation para sa mga wikang kulang sa datos upang matutuhan ang morpolohiya mula sa teksto lamang.",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "Plains Cree (crk): gumagamit ang eval pack ng FST-based semantic validator (card field evalMetrics.lyss-sem).",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "treebank",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "Isang corpus ng mga pangungusap na mano-manong inannotate ng grammatical structure (parse trees). Pinananatili ng Universal Dependencies project ang mga treebank sa iisang shared format para sa 150+ wika.",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "Ang pagkakaroon ng treebank ay palatandaan ng seryosong NLP infrastructure para sa isang wika at nagbibigay-daan sa syntax-aware evaluation.",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "paralelong korpus",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "Isang koleksiyon ng mga tekstong ipinares sa kanilang mga salin, na naka-align pangungusap sa pangungusap. Ang mga parallel corpora ang pangunahing fuel para sa pagsasanay at pagsusuri ng mga MT system.",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "Ang laki at domain ng available na parallel data ang pinakamalakas na iisang predictor ng kalidad ng MT para sa isang language pair.",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "Minamarkahan ng BLEU (Bilingual Evaluation Understudy) ang isang salin batay sa kung ilang word n-gram ang kapareho nito sa isa o higit pang reference translation. Ito ang pinakamatanda at pinakamadalas banggitin na MT metric, ngunit dahil buong salita ang itinutugma nito, mahigpit at hindi maaasahan ito para sa mga wikang mayaman sa morpolohiya at low-resource. Mas mataas ang mas mabuti, sa scale na 0–100.",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "Iniuulat ang BLEU para sa paghahambing sa mga nailathalang table, ngunit para sa mga wikang pinagtutuunan ng Champollion, mahina ang correlation nito sa human judgement — basahin ito kasabay ng chrF++ at COMET, at huwag kailanman nang mag-isa.",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "Ang spBLEU ay BLEU na kinompyut matapos hatiin ang teksto gamit ang FLORES-200 SentencePiece tokenizer — isang fixed subword model na pinagsasaluhan ng lahat ng 200 wika. Dahil dito, nagiging maihahambing ang mga score sa iba’t ibang script at writing system kung saan hindi angkop ang karaniwang word-level BLEU.",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "Ang spBLEU ang lingua-franca na bilang sa NLLB / FLORES low-resource literature — kapaki-pakinabang para sa paghahambing sa iba’t ibang wika, ngunit surface metric pa rin ito na hindi nakakakita ng kahulugan.",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "Binibilang ng Translation Edit Rate ang mga edit — insertion, deletion, substitution, at block shift — na kailangan upang gawing katulad ng reference ang output ng system, bilang porsiyento ng haba ng reference. Hindi tulad ng karamihan sa mga metric, MAS MABABA ay mas mabuti.",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "Ang TER ay madaling maunawaang signal ng “gaano karami ang kailangang ayusin ng tao rito?”, ngunit tulad ng iba pang surface metrics, nagpe-penalize ito ng valid paraphrase at mayamang morpolohiya.",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "kontaminasyon ng datos",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "Ang isang test set ay “contaminated” kapag malamang na nakita na ang mga pangungusap nito sa training ng model — halimbawa, dahil public at malawakang na-scrape ang corpus. Hindi mapatutunayan ng contaminated benchmark na mahusay ang isang model; maaaring inaalala lamang nito ang mga sagot na na-memorize nito. Ang “High” contamination ay nangangahulugang malamang na nakita na, kaya itinuturing ang resulta bilang relative comparison sa pagitan ng mga system sa halip na absolute quality claim (“relative-only”).",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "Karamihan sa mga public benchmark ay malawakang naisama sa training, kaya sina-score ng Champollion ang mga ito sa relative-only lane at inilalaan ang absolute rankings para sa mga sealed, hindi kailanman nai-publish na test set.",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "kompleksidad ng MT",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "Isang 0–100 estimate na kino-compute ng Champollion kung gaano kahirap i-machine-translate ang isang wika, na pinagsasama ang apat na signal: coverage ng commercial MT API, availability ng parallel corpora, typological distance mula sa mga wikang may maraming resource, at lalim ng linguistic documentation. Mas mataas ay nangangahulugang mas mahirap. Gabay ito sa difficulty, hindi sukat ng output ng anumang system.",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "Ang index ay isang derived guide na tumutulong sa pag-prioritize ng effort — HINDI ito benchmark result. Ang nasusukat na translation quality ay nasa leaderboard, na naka-key sa (method, dataset, metric).",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "held-out test set",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "Isang set ng translation examples na itinatagong hindi nakikita ng system habang nagde-develop at ginagamit lamang upang i-score ito. Kung hindi kailanman nakita ng system ang mga pangungusap na ito, ipinapakita ng score ang tunay na kakayahan sa halip na memorisation. Ang pinakamalakas na tier ng Champollion ay isang “sealed” test set na pinananatiling private ng isang community — sina-score ang isang method laban dito nang walang sinuman, kasama kami, ang nakakakita sa data.",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "Ang mga held-out (lalo na ang sealed) test set lamang ang paraan upang makagawa ng absolute quality claim; ang public, contaminated sets ay sumusuporta lamang sa relative comparison.",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

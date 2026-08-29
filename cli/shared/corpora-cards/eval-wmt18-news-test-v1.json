@@ -1,0 +1,195 @@
+{
+  "id": "eval-wmt18-news-test-v1",
+  "type": "multiway",
+  "name": "WMT2018 News Translation — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ces",
+    "cmn-Hans",
+    "deu",
+    "eng",
+    "est",
+    "fin",
+    "rus",
+    "tur"
+  ],
+  "description": "WMT2018 News Translation blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt18 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers news journalism. Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'news' (the WMT News Translation task).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "news",
+    "explicitPairs": [
+      {
+        "source": "ces",
+        "target": "eng",
+        "srcCode": "cs",
+        "tgtCode": "en",
+        "size": 2983,
+        "sha256": "2a5bf0ec330c1c3fbd8f097994e0e5fb65e691b4895d2ff975fceb9c19e4ab23"
+      },
+      {
+        "source": "deu",
+        "target": "eng",
+        "srcCode": "de",
+        "tgtCode": "en",
+        "size": 2998,
+        "sha256": "cd63c5f14258304575971ef4d65ba59d747456bb069a4eb3c44ed657b900359c"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs",
+        "size": 2983,
+        "sha256": "d509a1b06f6bd7799efe6b7465c976827e89f922e1c93152089d8df62ae7f51e"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de",
+        "size": 2998,
+        "sha256": "d776efdf83b1ffb91443928271e6acb2f21068bc224e5b1edb42604b9720cee1"
+      },
+      {
+        "source": "eng",
+        "target": "est",
+        "srcCode": "en",
+        "tgtCode": "et",
+        "size": 2000,
+        "sha256": "f1ec1b6cd9fb193e4a8190124238d90475a73a9991b21c59a7a8bc65c9cf61d6"
+      },
+      {
+        "source": "eng",
+        "target": "fin",
+        "srcCode": "en",
+        "tgtCode": "fi",
+        "size": 3000,
+        "sha256": "8df89e19ff5ce8651954da5e1116ad9bf752bf14929cb90ce16e884e784615c3"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 3000,
+        "sha256": "9f31a3dc7fde0af38f951840bce335405483653b2e84d0709fcbdead694f05e8"
+      },
+      {
+        "source": "eng",
+        "target": "tur",
+        "srcCode": "en",
+        "tgtCode": "tr",
+        "size": 3000,
+        "sha256": "a94b7a185411f52d6ac6593f381f7b9bd5efc5b385e02d781eebe35de08476e3"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hans",
+        "srcCode": "en",
+        "tgtCode": "zh",
+        "size": 3981,
+        "sha256": "77592c62bcca054d0797aa38c519b76a94aaadd0c169093ea316e67dc38f231b"
+      },
+      {
+        "source": "est",
+        "target": "eng",
+        "srcCode": "et",
+        "tgtCode": "en",
+        "size": 2000,
+        "sha256": "1db7a97093292dd981ac12991fab5c49ad6f6bc158de36d574b9b26ebedb8082"
+      },
+      {
+        "source": "fin",
+        "target": "eng",
+        "srcCode": "fi",
+        "tgtCode": "en",
+        "size": 3000,
+        "sha256": "0ac3b9073db1d806aec49cbea5d6a1a07a5e7a186fad1f2c166a210bb6721266"
+      },
+      {
+        "source": "rus",
+        "target": "eng",
+        "srcCode": "ru",
+        "tgtCode": "en",
+        "size": 3000,
+        "sha256": "49fe0aff4659fa744221ca655802ec213e24cf3dc5238ca05d6e9924872c2f5a"
+      },
+      {
+        "source": "tur",
+        "target": "eng",
+        "srcCode": "tr",
+        "tgtCode": "en",
+        "size": 3000,
+        "sha256": "cc5d37603f85acb8fb07869a3901503965142eee5aada474cb03f1c32d26b4b7"
+      },
+      {
+        "source": "cmn-Hans",
+        "target": "eng",
+        "srcCode": "zh",
+        "tgtCode": "en",
+        "size": 3981,
+        "sha256": "441ba0f2b7d5da4b6ca4a5f929c369c08f64ab22064885589514d73c65b336c3"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2018 News Translation test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (relative-comparison-only)",
+      "size": 41924
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt18/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt18 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt18/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2018 Conference on Machine Translation (WMT18). statmt.org/wmt18.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "WMT2018 News Translation test set — public since 2018 and in essentially every frontier model's training crawl. Maximally memorized, so its scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute translation quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt18']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 14
+  },
+  "varietyResolution": {
+    "est": {
+      "resolvedCode": "ekk",
+      "basis": "WMT news/general 'Estonian' is Standard Estonian (ekk); the macrolanguage's only other member, Voro (vro), is a separately coded regional language never labeled plain 'Estonian'.",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    }
+  }
+}

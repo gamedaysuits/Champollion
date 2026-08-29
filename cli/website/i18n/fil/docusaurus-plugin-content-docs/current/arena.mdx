@@ -1,0 +1,125 @@
+---
+title: "Ang Arena"
+description: "Sa Arena po nagaganap ang pagsusukat: ang pintuan kung saan ninyo isinusumite ang resulta, ang ledger na nag-iingat nito, at ang makinarya ng paligsahan na nakabatay sa dalawang ito. Kung ano ito, kung ano ang namamahala rito, at kung ano po ang inyong bahagi rito."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Ang mga bilang ay nagre-render sa pamamagitan ng SSOTCount (mga build-time read ng mga machine SSOT sa pamamagitan ng docusaurus.config.js customFields) — hindi kailanman manu-manong tina-type, alinsunod sa pamantayan ng pagpapakita ng SSOT. Ang live na estado ng board ay sadyang HINDI nakasaad dito: ito ay naka-link. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Ang Arena
+
+**Ang Arena ay kung saan nagaganap ang pagsukat.** Ito po ang pintuan kung saan kayo nagpapasa ng resulta, ang ledger na nagtatago ng resulta, at ang makinarya ng paligsahan na binuo sa ibabaw ng dalawang ito.
+
+Ito po ay isang imprastraktura, hindi isang scoreboard at hindi isang mapa. May tatlong bagay na madaling pagkamalian, kaya nararapat lamang na paghiwalayin ang mga ito nang malinaw:
+
+| | Ano ito | Saan ito tumatakbo |
+|---|---|---|
+| **Ang [MT-Eval Harness](/docs/network/specifications/harness)** | Ang tagapuntos (scorer). Kapag binigyan ng isang method at isang test set, naglalabas ito ng isang numero at isang run card. | **Sa inyong makina.** Hindi po namin pinapatakbo ang inyong method para sa inyo, at hindi rin po namin kailangang gawin iyon. |
+| **Ang Arena** | Ang pintuan ng pagpapasa, ang ledger ng run-card, at ang makinarya ng paligsahan at premyo. | Dito po. |
+| **Ang [Network](/docs/network/)** | Ang mapa na lumilitaw kapag sapat na ang dami ng mga run card — kung sino ang makakapagsalin ng ano, gaano kahusay, at kung saan ang mga bakanteng espasyo. Tinatahak ito ng routing. | Isang resulta, hindi isang bahagi. |
+
+Walang makapapasok sa Network maliban kung dadaan sa Arena, at walang makapapasok sa Arena maliban bilang isang may puntos at may fingerprint na run. Iyan po ang buong disenyo: ang isang sukat na walang pinagmulan (provenance) ay hindi maaaring maging bahagi ng mapa.
+
+---
+
+## Kung saan gawa ang Arena
+
+**Isang pintuan.** Sinuman ay maaaring magpasa — isang fine-tuned model, isang prompted frontier model, isang FST-gated pipeline, isang rule-based system, o isang propesyonal na tagasalin na tao. Ang method ay hindi mahalaga sa proseso; tanging ang pamamaraan lamang ang nakatakda. May dalawang magkaibang pintuan, depende sa kung ano ang mayroon kayo: [mag-publish ng isang run card](/docs/network/getting-started/submit-a-method) kung nakapagbigay na kayo ng puntos sa isang bagay, o [magmungkahi ng isang entry](/docs/network/getting-started/submit-to-the-index) kung mayroon kayong dataset, diksyunaryo, engine, serbisyo sa pagsasalin, isang resultang na-publish sa labas, o isang pagwawasto sa isang language card. Ang mga mungkahi ay binabasa ng isang tao, hindi ng isang robot, at walang anumang awtomatikong inaaprubahan.
+
+**Isang ledger.** Ang bawat na-publish na run ay isang run card: ang mga puntos, ang dataset hash, ang model slug, ang condition, at isang fingerprint sa lahat ng ito. Ang pagpapatakbo ng dalawang tao sa iisang configuration ay hindi nakakapinsala ayon sa disenyo — ang mga magkaparehong run ay nagde-deduplicate sa pag-publish, at ang independiyenteng replikasyon ay isang ebidensya sa halip na pag-aaksaya. Tinutukoy ng [Run Card Specification](/docs/network/specifications/run-card) kung ano ang dapat ibunyag ng isang card; tinutukoy naman ng [Benchmark Specification](/docs/network/specifications/benchmark) ang protocol na gumagawa nito.
+
+**Isang set ng mga target.** Ang <SSOTCount field="registryDatasetCount" /> na mga evaluation dataset ay nakarehistro. Ang bawat isa ay isang metadata card kasama ang isang fetch-from-source pointer — **ang nilalaman ng corpus ay hindi kailanman naka-host dito**. Kinukuha ng harness ang mga reference mula sa upstream sa oras ng pagtakbo (run time) at nagbibigay ng puntos laban sa kung ano ang kaniyang kinuha.
+
+Ang pagiging nakarehistro ay hindi katumbas ng pagiging maaaring patakbuhin kahit saan, at ang pagkakaibang ito ay sinadya. Ilang daan sa mga entry na iyon ay mayroong binago, pasadya, o hindi nakasaad na lisensya, at ang mga ito ay **tumatanggi sa remote evaluation** hanggang sa maitala ng may hawak ng karapatan ang isang malinaw na pahintulot sa pagpapadala (transmission consent) — walang ahente ang maaaring magdagdag nito para sa kanila. Nananatili silang maaaring patakbuhin nang lokal, at laban sa mga no-train channel kung saan pinahihintulutan ito ng lisensya. Tingnan ang [Evaluation Datasets](/docs/network/leaderboard/datasets) at [Data Stewardship](/docs/network/sovereignty/data-sovereignty).
+
+**Makinarya ng paligsahan.** Sa itaas ng isang solong run ay matatagpuan ang iba pa: [mga shared task at paligsahan](/shared-tasks), ang [pampublikong pila (public queue)](/docs/network/getting-started/contributing-compute) ng mga sukat na higit na magpapabuti sa mapa, at ang detalye para sa [kung ano ang kakailanganin ng isang premyo](/docs/network/specifications/prizes) kung may magbubukas. Ang isang komunidad ay maaaring magpatakbo ng sarili nitong paligsahan sa sarili nitong corpus gamit ang sarili nitong pera — [hindi hawak ng Champollion ang alinman sa mga ito](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## Ang mga panuntunang ipinapatupad saanman dito
+
+Ito po ang mga invariant. Ang bawat isa ay may pahina na naglalaman ng mga detalye.
+
+**Huwag mag-train sa evaluation data.** Anumang method na na-expose sa isang benchmark set — bilang training data, few-shot examples, mga entry sa diksyunaryo, o prompt material — ay madi-disqualify. Mag-fine-tune sa kahit anong gusto ninyo; huwag lamang sa test set. Ito po ang kaisa-isang panuntunan na hindi kakayanin ng buong sistema kapag nilabag, dahil ang isang kontaminadong puntos ay nakalalason sa bawat paghahambing na kasunod nito.
+([Mga panuntunan ng Leaderboard](/docs/network/leaderboard/rules))
+
+**Ang bawat numero ay nagdadala ng pinagmulan nito o hindi ito mabibilang.** Pinapangalanan ng isang run card ang bersyon ng dataset, ang model, ang condition, ang system prompt, at ang halaga. Ang mga puntos ay maaari lamang ihambing sa loob ng parehong bersyon ng dataset, at ang fingerprint ang nagpapahintulot na masuri ito sa halip na igiit lamang.
+([Benchmark Spec](/docs/network/specifications/benchmark))
+
+**Hindi po namin kailanman hinahawakan ang inyong corpus.** Ang pagpaparehistro ay metadata. Ang isang test set ay binibigyan ng puntos nang hindi isinusuko, at sa sovereign lane ay hindi ito kailanman umaalis sa imprastraktura ng komunidad — tanging ang puntos lamang ang naglalakbay.
+([Pagpaparehistro ng mga Corpus](/docs/network/sovereignty/registering-corpora))
+
+**Ang mga licence lane ay istruktural, hindi editoryal.** Ang mga non-commercial at research-only na corpus ay sadyang inihihiwalay sa bawat premyo, API, at komersyal na landas ayon sa pagkakabuo. Ang mga corpus sa ilalim ng binago, pasadya, o hindi nakasaad na mga lisensya ay karagdagang consent-gated: tumatanggi ang harness na ipadala ang kanilang teksto sa isang third-party model API hanggang sa maitala ang pahintulot ng may hawak ng karapatan.
+([Data Stewardship](/docs/network/sovereignty/data-sovereignty))
+
+**Ang isang puntos ay isang machine signal, hindi isang hatol.** Ang mga automated metric ay mga proxy para sa paghuhusga ng tao, at tinutukoy ng [Speaker Validation Protocol](/docs/network/specifications/speaker-validation) ang human gate na pinagsisilbihan nilang proxy *para* rito. Pinatutunayan ng isang posisyon sa leaderboard na mahusay ang sukat ng isang method. Hindi po nito pinatutunayan na maganda ang salin, at wala itong binibigyan ng pahintulot na i-deploy ito sa wika ng isang komunidad.
+
+**Ang panalo ay hindi ang huling estado.** Para sa mga Katutubong wika (Indigenous languages), ang disenyo ay ang isang gumaganang method ay inililipat sa organisasyon ng pamamahala ng komunidad at ide-deploy sa imprastraktura na kontrolado ng komunidad, kung saan ang Champollion ay hindi kukuha ng anumang bahagi sa kikitain nito roon.
+([Ang pangako sa derived-artifacts](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Kung saan kayo papasok
+
+Piliin po ang hilera na tumutugma sa kung ano ang mayroon na kayo.
+
+| Mayroon kayong… | Gawin ito | Magsimula sa |
+|---|---|---|
+| Isang method at isang API key | Patakbuhin ang harness laban sa isang nakarehistrong corpus at i-publish ang run card | [Magpasa ng isang Method](/docs/network/getting-started/submit-a-method) |
+| Isang bagay na kulang sa index — isang dataset, diksyunaryo, FST, engine, serbisyo sa pagsasalin ng tao, na-publish na resulta, o isang pagwawasto sa card | I-file ang nakabalangkas na mungkahi; susuriin ito nang manu-mano ng isang maintainer | [Magmungkahi sa Index](/docs/network/getting-started/submit-to-the-index) |
+| Sobrang API credit at walang sariling method | Patakbuhin ang mga bukas na item mula sa pampublikong pila gamit ang inyong sariling key at i-publish ang ibabalik nito | [Pag-aambag ng Compute](/docs/network/getting-started/contributing-compute) |
+| Isang corpus na pagmamay-ari ng inyong komunidad | Irehistro ito bilang metadata at piliin ang exposure lane nito — bukas (open), may limitasyon (gated), o ganap na soberano (fully sovereign) | [Pagpaparehistro ng mga Corpus](/docs/network/sovereignty/registering-corpora) |
+| Isang corpus at isang dahilan para magpatakbo ng isang kumpetisyon dito | Patakbuhin ito nang mag-isa, sa inyong sariling mga tuntunin; hindi po namin hawak ang data o ang pera | [Magpatakbo ng isang Sovereign Contest](/docs/network/sovereignty/run-a-sovereign-contest) |
+| Isang method na nakakakuha na ng mataas na puntos | I-export ito bilang isang plugin at ilagay ito sa production | [I-deploy sa Production](/docs/network/getting-started/deploy-to-production) |
+| Isang katanungan muna | Pagbibigay ng puntos, diskwalipikasyon, mga model, mga FST, soberanya | [FAQ](/docs/network/getting-started/faq) |
+
+Kung kayo po ay isang AI agent, ang pila, ang mga resulta, at ang mga run card ay lahat magagamit bilang mga tool — tingnan ang [MCP Server](/docs/network/getting-started/mcp-server).
+
+---
+
+## Kung ano ang aktwal na tumatakbo ngayon
+
+Ang Arena ay nasa yugto pa lamang ng paglulunsad (launch stage), at ang tapat na paglalarawan dito ay maikli lamang.
+
+- **Ang board ay live, pampubliko, at bukas para sa mga isusumite.** Ang mga kasalukuyang nilalaman nito ay live data, kaya hindi sasabihin sa inyo ng pahinang ito kung ano ang nasa loob nito — [basahin ang leaderboard](/leaderboard).
+- **"Self-reported" ang default na antas ng tiwala (trust tier).** Ang server-side verification — ang muling pagbibigay ng puntos sa isang isinumite laban sa SHA-pinned canonical corpus — ay umiiral at lumalawak, ngunit hindi pa unibersal. Basahin po ang badge sa bawat hilera.
+- **Walang bukas na premyo, at walang puntos sa site na ito ang nakapasa sa pamantayan ng premyo.** Ang [Prize Specification](/docs/network/specifications/prizes) ay isinulat upang maging malinaw ang pamantayan *kung at kapag* may magbukas. Ang mga premyo ay pinopondohan at hawak ng sponsor; hindi kailanman hinahawakan, inilalagay sa escrow, o ipinapadala ng Champollion ang mga pondo ng premyo.
+- **Walang isinagawang pagsusuri ng tagapagsalita ng komunidad (community speaker review).** Ang gate ay tinukoy na at ang mga tool ay kasalukuyang binubuo. Ang mga composite at chrF++ na numero ay mga machine signal, hindi isang hatol ng komunidad.
+- **Wala pang method na nailipat sa isang komunidad.** Ang modelo ng paglilipat ng pagmamay-ari (ownership-transfer model) ay isang nakatuong disenyo, hindi isang tumatakbong programa. Inilalarawan ito upang mapanagot ninyo kami rito, hindi upang ipahiwatig na ito ay gumagalaw na.
+- **Ang pangangalaga ng key (key custody) ay napagpasyahan na; ang mga tagapangalaga ay hindi pa.** Ang mekanismo ay isang threshold scheme kung saan ang Champollion ay may hawak na zero key shares. Ang mga tagapangalaga ay pinipili ng mga komunidad, at ang mga pag-uusap na iyon ay patuloy pa rin — kaya sinasabi naming **mga tagapangalaga ng key ng komunidad (nasa kumpirmasyon)**.
+
+Ang buong ledger ng kung ano ang *hindi* inaangkin ng proyektong ito ay ang [Mga Tapat na Limitasyon (Honest Limitations)](/docs/network/honest-limitations). Kung mayroon man sa pahinang ito na nagpapahiwatig ng higit pa sa pinahihintulutan ng pahinang iyon, ang pahinang iyon ang masusunod at ang isang ito ay isang bug.
+
+---
+
+## Susunod na basahin
+
+- **Gusto ninyong magpasa ng isang bagay ngayon** → [Magpasa ng isang Method](/docs/network/getting-started/submit-a-method), pagkatapos ay ang [Scoring Specification](/docs/network/specifications/scoring).
+- **Gusto ninyong malaman kung paano hinuhusgahan ang isang resulta** → [Mga Panuntunan sa MT Evaluation](/docs/network/leaderboard/rules) at [Statistical Significance](/docs/network/specifications/significance).
+- **Gusto ninyong makita kung ano ang kabuuan ng mga sukat** → [Ang Network](/docs/network/).
+- **Nangangasiwa kayo ng isang wika at gusto ninyong makita muna ang larawan ng soberanya** → [Para sa mga Komunidad ng Wika](/docs/network/community/for-language-communities).
+- **Bago pa lamang kayo sa lahat ng ito** → [Kung Ano ang Champollion](/docs/what-is-champollion).
+
+Ang bawat wika na pinangalanan sa board ay nagre-resolve sa card nito sa [Atlas](/docs/atlas) — klasipikasyon, sigla (vitality), at kung anong mga mapagkukunan ng pagsusuri (evaluation resources) ang umiiral para rito.

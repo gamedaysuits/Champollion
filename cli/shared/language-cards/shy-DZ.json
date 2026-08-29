@@ -1,0 +1,494 @@
+{
+  "code": "shy-DZ",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Tachawit",
+    "values": [
+      {
+        "value": "Tachawit",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Tachawit",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "afro1255",
+      "berb1260",
+      "grea1296",
+      "zena1250"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Afro-Asiatic",
+      "values": [
+        {
+          "value": "Afro-Asiatic",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Afro-Asiatic",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "afro1255",
+    "genus": "Berber"
+  },
+  "bcp47": "shy",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "shy-Latn-DZ",
+    "values": [
+      {
+        "value": "shy-Latn-DZ",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "shy-Latn-DZ",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"shy\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "shy",
+    "values": [
+      {
+        "value": "shy",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 8,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 210
+          },
+          {
+            "code": "kab",
+            "alignmentPairs": 111
+          },
+          {
+            "code": "ber",
+            "alignmentPairs": 89
+          },
+          {
+            "code": "arq",
+            "alignmentPairs": 26
+          },
+          {
+            "code": "rif",
+            "alignmentPairs": 18
+          }
+        ],
+        "alignmentPairsTotal": 479,
+        "pairsWithPublishedSize": 8,
+        "largestPairAlignments": 210
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 2,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1632
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 20
+          }
+        ],
+        "alignmentPairsTotal": 1652,
+        "pairsWithPublishedSize": 2,
+        "largestPairAlignments": 1632
+      }
+    ]
+  },
+  "countries": [
+    "DZ",
+    "TN"
+  ],
+  "dialectCount": 4,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Tachawit (shy-shy) = 6a* (Vigorous).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "Chaouïa",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "Tacawit",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "shy-latn",
+        "variantType": "language",
+        "note": "label language: shy-latn"
+      }
+    ]
+  },
+  "glottocode": "tach1249",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 35.1867,
+    "lng": 6.88901
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 39,
+        "concepts": 34,
+        "release": "asjp-v21"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "documentation": {
+    "medLevel": "grammar",
+    "medSourceId": "106461"
+  },
+  "methodSupport": {
+    "total": 19,
+    "byTier": {
+      "model-card-declared": 19
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "typologicalProfile": {
+    "negationOrder": "NegV",
+    "subjectVerbOrder": "No dominant order",
+    "wordOrder": "No dominant order"
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Arab",
+    "Latn",
+    "Tfng"
+  ],
+  "scriptNames": [
+    "Arabic",
+    "Latin",
+    "Tifinagh (Berber)"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "1400000",
+    "values": [
+      {
+        "value": "1400000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 11,
+    "componentsPresent": 32,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "shy-DZ",
+    "revision": "7bc46b11d2242abe",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder"
+    ]
+  },
+  "locale": {
+    "language": "shy",
+    "region": "DZ",
+    "script": "Latn",
+    "publishedTag": "shy-DZ",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Latn",
+  "localeScoped": {
+    "scriptName": "Latin"
+  }
+}

@@ -1,0 +1,123 @@
+name: "🔧 Submit a translation method"
+description: "Propose a translation method / MT engine / LLM provider for the method registry so it can be run and benchmarked."
+title: "[Method] "
+labels: ["submission", "submission:method", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a method. **This is an intake form, not an auto-add.**
+        A maintainer reviews it before it enters the method registry — see the
+        [submission guide](https://champollion.dev/docs/network/getting-started/submit-to-the-index)
+        and the [method interface](https://champollion.dev/docs/network/specifications/methods).
+
+        **License boundary:** AGPL components (e.g. some FSTs) are invoked as separate tools and
+        must not be bundled into commercial/proprietary paths. Declare the real license below.
+
+  - type: input
+    id: method-name
+    attributes:
+      label: Method / engine name
+      description: "Lowercase kebab-case id (becomes the registry key)."
+      placeholder: "e.g. apertium, my-coached-llm"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      description: "How the runtime dispatches it."
+      options:
+        - "mt-api — hosted MT HTTP API"
+        - "llm-provider — LLM behind an API"
+        - "local-model — local inference"
+        - "plugin — method-loader directory"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: method-class
+    attributes:
+      label: Method class
+      options:
+        - raw-llm
+        - coached-llm
+        - pipeline
+        - custom-plugin
+        - api
+        - human
+    validations:
+      required: true
+
+  - type: dropdown
+    id: paradigm
+    attributes:
+      label: Paradigm
+      options:
+        - rule-based
+        - statistical
+        - neural-nmt
+        - llm
+        - hybrid
+        - human
+        - unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: languages
+    attributes:
+      label: Languages / pairs supported
+      description: "ISO 639-3 codes or pairs, one per line. 'any' is fine for general engines."
+      placeholder: |
+        eng-crk
+        any
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: "The method's real license (Apache-2.0, AGPL-3.0, proprietary ToS, …)."
+      placeholder: "e.g. Apache-2.0"
+    validations:
+      required: true
+
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage / source URL
+      placeholder: "https://…"
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: API-key environment variable(s)
+      description: "Names only — never paste a key. Leave blank for keyless engines."
+      placeholder: "e.g. OPENROUTER_API_KEY"
+
+  - type: dropdown
+    id: commercial-ready
+    attributes:
+      label: Commercial-ready?
+      description: "Can it be used in a commercial path under its license/ToS?"
+      options:
+        - "yes"
+        - "no"
+        - "unknown"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "What it does and anything a maintainer needs to wire the adapter."
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Compliance attestation (required)
+      options:
+        - label: "I confirm this is publicly listable, contains NO corpus content or personal data, and respects the source's license and any community/sovereignty restrictions."
+          required: true

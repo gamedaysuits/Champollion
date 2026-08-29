@@ -1,0 +1,153 @@
+---
+sidebar_position: 3
+title: "누가 혜택을 받나요"
+slug: '/network/who-benefits'
+description: "보편적이고 커뮤니티가 소유하는 번역 레이어인 Champollion이 성공할 경우 누가 어떤 혜택을 얻게 되는지 알아봐요. 화자, 언어 커뮤니티, 번역 업체, 연구자, 후원자, 언론 등 각 대상이 얻는 이점과 구체적인 첫 번째 행동을 설명해요."
+related:
+  - label: "For Language Communities"
+    to: /docs/network/community/for-language-communities
+    kind: doc
+    note: "The full community door — sovereignty, ownership, and how to start"
+  - label: "How the Work Is Funded"
+    to: /docs/network/sovereignty/economic-model
+    kind: doc
+    note: "The economic model in full"
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "The end-to-end run-and-publish walkthrough"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: doc
+    note: "What we do not (yet) claim"
+---
+
+{/* 이 페이지의 수치는 SSOTCount를 통해 렌더링됩니다(docusaurus.config.js customFields를 통해 머신 SSOT를 빌드 타임에 읽어옴). SSOT 표시 표준에 따라 절대 수동으로 입력하지 않습니다. cli/scripts/check-prose-counts-parity.mjs가 몇 안 되는 축소 불가능한 산문 수치를 제어합니다. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# 대상별 혜택
+
+> **요약.** 전 세계 약 7,000개의 현존하는 언어 중 기계 번역이 지원되는 언어는 600개 미만이며, 그중 절반 이상이 소멸 위기에 처해 있어요(Glottolog의 Agglomerated Endangerment Status 기준, Champollion 파생 데이터). 보편적이고 커뮤니티가 소유하는 번역 레이어인 Champollion이 성공한다면, 두 가지 성과를 얻을 수 있어요. 하나는 현재 업계가 외면하고 있는 언어 화자들을 위한 소통의 길을 여는 것이고, 다른 하나는 소멸 위기 언어의 보존과 부흥을 위한 실질적인 도구를 제공하는 것이에요. 이 전략은 다분히 의도적이에요. 공개된 규칙에 따라 측정되는 크라우드소싱 방식의 방법론 개발, 공개된 단가로 후원받는 말뭉치(corpus) 구축, 그리고 커뮤니티가 자신들의 데이터, 테스트 세트, 이를 통해 검증된 모든 방법론에 대한 통제권을 갖도록 하는 것이죠. 이 페이지에서는 각 그룹이 얻을 수 있는 이점과 가장 먼저 해야 할 일을 설명해요.
+
+## 화자와 커뮤니티 \{#speakers}
+
+소외된 언어와 영어를 모두 구사할 수 있다면, 여러분의 판단은 이 프로젝트 전체에서 그 어떤 모델이나 지표보다도 가장 가치 있는 요소예요. 컴퓨터는 두 문장이 얼마나 비슷해 보이는지 계산할 수는 있지만, 실제 화자가 그 문장을 자연스럽게 사용할지는 판단할 수 없어요. 그 판단은 여러분의 몫이며, 이곳의 모든 것을 검증하는 기준(ground truth)이 돼요.
+
+**화자 검증은 공개된 전문 단가(시간당 $50–65 CAD)로 지급되는 유급 작업이며, 원하는 일정에 맞춰 진행할 수 있고 전문적인 기술 지식이 필요하지 않아요.** 두 언어를 모두 읽고 문장을 판단할 수 있다면 자격이 충분해요. [화자 검증 프로토콜(Speaker Validation Protocol)](/docs/network/specifications/speaker-validation)에서는 세 가지 작업 유형을 공개하고 있어요.
+
+| 작업 | 수행 내용 | 소요 시간 | 공개 단가 |
+|------|-------------|------|---------------|
+| 번역 평가 | 기계 번역을 읽고, 각각에 대해 "자연스러운가?"와 "의미가 정확한가?"를 평가해요 | 약 8시간, 몇 주에 걸쳐 진행 | $400–520 CAD |
+| "동등한" 쌍 검토 | 두 표현이 실제로 같은 의미인지 확인해요 | 약 2시간 | $100–130 CAD |
+| 거부된 단어 검토 | 문법 도구가 유효하지 않다고 표시한 단어를 확인해요 — 도구의 판단이 맞았나요? | 약 1.5시간 | $75–100 CAD |
+
+일상적인 문장의 참조 번역을 생성하는 말뭉치 작업도 있으며, 동일한 시간당 단가로 지급돼요([자세히 보기](/docs/network/perspectives/how-speakers-get-paid)). 조건을 한곳에 정리하면 다음과 같아요. **자원봉사가 아닌 유급 작업** (각 작업 블록 완료 후 2주 이내 지급, 결과와 무관하게 지급), **원하는 방식의 크레딧 표기** (실명 또는 익명, 선택적 공동 저자 등록), 언제든 기여를 **철회할 수 있으며**, 문제가 있다고 판단되는 결과의 게재에 대한 거부권을 가져요.
+
+:::note[현재 진행 상황]
+솔직히 말씀드리면, 위의 단가와 조건은 공개된 약속이지만 [아직 커뮤니티 검증 라운드가 진행된 적은 없어요](/docs/network/honest-limitations). 이제 막 첫 번째 참여를 준비하는 단계예요. 지금 연락 주시는 것은 기존 프로그램에 참여하는 것이 아니라, 첫 번째 참여자 중 한 명이 되기 위해 등록하는 것을 의미해요.
+:::
+
+**가장 먼저 해야 할 일:** 오늘 [Tatoeba](https://tatoeba.org)에 문장을 추가해 보세요. Champollion은 말뭉치를 직접 수집하거나 호스팅하지 않지만(테스트 데이터는 항상 [원본에서 가져와요](/docs/network/sovereignty/registering-corpora)), 이곳의 여러 벤치마크는 Tatoeba 문장과 [OPUS](https://opus.nlpl.eu/) 같은 공개 컬렉션을 기반으로 구축돼요. 그런 다음 [화자에게 급여가 지급되는 방식(How Speakers Get Paid)](/docs/network/perspectives/how-speakers-get-paid)을 읽어보시고(5분 소요, 모든 수치 포함), [info@champollion.dev](mailto:info@champollion.dev)로 이메일을 보내거나 [공개 저장소(public repository)](https://github.com/gamedaysuits/Champollion/issues)에 이슈를 남겨주세요. 어떤 언어를 구사하는지, 어떤 방언이나 변형을 평가할 수 있는지 알려주시면 돼요.
+
+## 말뭉치를 구축하는 언어 커뮤니티 \{#communities}
+
+이 시스템에서 커뮤니티가 가질 수 있는 가장 강력한 위치는 **벤치마크 자체를 소유하는 것**이에요. 테스트 세트는 정답지와 같아요. 이를 보유한 사람이 해당 언어에서 "좋은 번역"이 무엇인지 결정하며, 우리의 방법론이든 기업의 방법론이든 누구의 방법론이든 모두 *여러분*의 기준에 따라 측정돼요.
+
+가장 중요한 기본 원칙은 **여러분의 언어 데이터는 여러분의 것**이라는 점이에요. 말뭉치를 등록한다는 것은 말뭉치 자체를 업로드하는 것이 아니라, 설명이 포함된 메타데이터 카드를 [선택한 공개 레인(exposure lane)](/docs/network/sovereignty/registering-corpora)에 게시하는 것을 의미해요. 공개(open), 제한적 공개(gated), 또는 완전한 주권 보장(fully sovereign, 우리가 절대 볼 수 없으며 여러분의 인프라에서 채점되는 테스트 세트) 중 선택할 수 있어요. 말뭉치 구축과 번역 검토는 [공개된 단가로 지급되는](/docs/network/perspectives/how-speakers-get-paid) 전문적인 작업이며, 급여를 지급한다고 해서 여러분의 데이터를 구매하는 것은 아니에요. 여러분의 언어를 위해 구축된 번역 방법론이 이곳에서 검증되면, 코드, 가중치, 배포 제어권 등의 [소유권이 커뮤니티의 거버넌스 조직으로 이전돼요](/docs/network/sovereignty/ownership-transfer). 큐레이션된 번역 쌍이 50개만 있어도 새로운 리더보드 트랙을 열기에 충분해요.
+
+주권 보장, 네트워크가 요구하고 돌려주는 것, 단계별 시작 방법 등 커뮤니티를 위한 모든 정보는 **[언어 커뮤니티를 위하여(For Language Communities)](/docs/network/community/for-language-communities)**에 정리되어 있으며, 커뮤니티가 통제하는 평가를 위한 런북으로 [주권적 콘테스트 운영(Run a Sovereign Contest)](/docs/network/sovereignty/run-a-sovereign-contest)을 제공해요.
+
+## 번역 서비스 및 기계 번역(MT) 공급업체 \{#vendors}
+
+MT 엔진, LLM 파이프라인, 규칙 기반 시스템, 또는 인간 번역 서비스 등 번역을 구축하거나 판매하는 경우, 공개된 테스트 세트를 바탕으로 이곳에서 벤치마크를 수행하고, 공개 리더보드와 지도에 이름을 올리며, 다른 모든 사람과 동일한 규칙에 따라 평가받을 수 있어요. **수수료나 파트너십 계약이 없으며, 특정 기술을 우대하지 않아요.** 평가 하네스(harness)는 설계상 방법론에 중립적이에요. 여러분은 자체 컴퓨팅 또는 API 비용만 부담하면 돼요([작업 자금 조달 방식](/docs/network/sovereignty/economic-model)).
+
+대부분의 공개 MT 벤치마크는 자원이 풍부한 수백 개의 동일한 언어만 다루며, 대부분 오염(contaminated)되어 있어요. Champollion의 카탈로그는 <SSOTCount field="registryDatasetCount" />개의 평가 데이터 세트를 SHA로 고정된(sha-pinned), 원본에서 가져오는 메타데이터 카드로 등록하며, [데이터 세트별 오염 상태를 공개](/docs/network/leaderboard/datasets)하고 한 번도 공개된 적 없는 새로운 테스트 세트를 위한 레인을 제공해요. 점수는 공개된 [채점 규칙](/docs/network/specifications/scoring)에 따라 개방적이고 재현 가능한 지표(sacreBLEU를 통한 chrF++/BLEU/TER, 별도의 신경망 레인에서 보고되는 COMET/AfriCOMET)를 사용해요. 방법론의 종속성은 숨기지 않고 선언되며, 독점 엔진은 독점 상태를 유지해요. 하네스는 여러분의 시스템을 호출할 뿐, 가중치나 코드에는 절대 접근하지 않아요. 솔직하게 두 가지 주의 사항을 말씀드릴게요. **리더보드는 아직 초기 단계이며**([솔직한 한계(Honest Limitations)](/docs/network/honest-limitations)에서 현재 검증된 내용을 정확히 확인할 수 있어요), **점수가 배포 권한을 부여하지는 않아요.** 커뮤니티가 관리하는 언어의 경우, 배포 여부는 커뮤니티가 결정해요([데이터 스튜어드십(Data Stewardship)](/docs/network/sovereignty/data-sovereignty)).
+
+**가장 먼저 해야 할 일(MT 엔진 또는 파이프라인):** [평가 데이터 세트](/docs/network/leaderboard/datasets)와 [리더보드](/leaderboard)에서 언어 쌍을 선택하세요. `pipx install mt-eval-harness` 그리고 [방법론 제출(Submit a Method)](/docs/network/getting-started/submit-a-method)을 따르세요. 엔진이 OpenRouter를 통해 접근할 수 없는 경우, [TranslationMethod 프로토콜](/docs/network/specifications/methods#eval-harness-translationmethod-protocol)을 구현하거나 소규모 API 서비스로 노출하세요([가이드](/docs/guides/serving-a-method)). 그런 다음 실행하고 게시하세요. 커뮤니티 제출물은 [리더보드 규칙](/docs/network/leaderboard/rules)에 따라 명확하게 레이블이 지정된 자체 벤치마크 신뢰도 계층(self-benchmarked trust tier)에 게시돼요.
+
+**인간 번역을 판매하는 경우:** 특정 언어 쌍에 대해 신뢰할 수 있는 기계 번역이 없는 경우, 사이트에서는 이를 명확히 밝히고 동의를 얻은 인간 번역 제공자를 대신 보여줘요. [인간 서비스 레인(human services lane)](/human-services)을 읽어보신 후, 다루는 언어 쌍과 방언, 조건, 동의 확인서를 명시하여 이메일([info@champollion.dev](mailto:info@champollion.dev))로 목록 등록을 요청해 주세요. 연락처 정보는 동의 없이 절대 공개되지 않아요. 인간 번역 역시 이곳에서는 다른 것과 마찬가지로 하나의 방법론이에요. 일부 팀은 원시 MT 대비 개선된 정도(delta)를 구매자에게 보여주기 위해 포스트 에디팅 파이프라인을 벤치마킹하기도 해요.
+
+## 연구자 \{#researchers}
+
+자원이 부족한 언어에 기계 번역을 도입하는 가장 비용이 많이 드는 방법은 이 분야에서 주로 시도하는 방식, 즉 학습 말뭉치를 구축하는 것이에요. 이는 수십만 개의 문장 쌍을 의미하며, 누군가 일일이 확인하기에는 너무 많은 양이에요. 따라서 아무도 모르는 사이에 품질이 들쭉날쭉해지고, 그 데이터로 학습된 모델이 데이터의 오류를 그대로 답습할 때 비로소 실패가 표면화돼요. 수개월의 수집 작업을 거쳐도 완전히 신뢰할 수 없는 말뭉치와 배포할 수 없는 모델이 만들어질 수 있어요.
+
+평가 세트(evaluation set)는 이러한 경제성을 뒤집어요. 동일한 언어에 대한 개발 및 홀드아웃(held-out) 테스트 세트는 약 **천 개**의 쌍으로 구성돼요. 이는 해당 언어를 아는 사람이 모든 쌍을 확인하며 전문적인 큐레이션을 실제로 수행할 수 있을 만큼 적은 규모예요. 검증할 수 없는 70만 개의 쌍과 검증할 수 있는 천 개의 쌍 중, 평가 세트는 연구자의 판단이 모든 문장에 닿을 수 있는 유일한 결과물이에요. 또한 학습 말뭉치와 달리 시간이 지나도 쓸모없어지지 않아요. 새롭게 등장하는 모든 모델, 엔진, 방법론을 이 평가 세트를 기준으로 무기한 측정할 수 있어요.
+
+이것이 바로 이 프로젝트 전체가 기반을 두고 있는 **세대별 쌍 가설(generational-pair thesis)**이에요. 평가 기준과 인센티브를 구축하면, 커뮤니티가 작동하는 솔루션을 구축한다는 것이죠. 여러분은 천 개의 쌍을 큐레이션해요. 홀드아웃 세트에 상금을 걸면, 해당 언어는 모든 방법론 개발자가 목표로 삼을 수 있는 타겟이 돼요. 리더보드는 모든 시도를 공개적으로 측정해요. 한 세대의 신중한 큐레이션이 다른 모든 것에 대한 개방형 경쟁의 장을 여는 것이에요. [말뭉치 파트너십(Corpus Partnership)](/docs/network/specifications/corpus-partnership)은 말뭉치 크기, 워크플로우, 화자 급여 등 이를 정확히 다루는 실무 문서이며, [상금 명세서(Prize Specification)](/docs/network/specifications/prizes)는 인센티브 부분을 담당해요.
+
+측정 도구는 지금 바로 사용할 수 있어요. `pipx install mt-eval-harness` 명령어로 [평가 하네스(eval harness)](/docs/network/specifications/harness)를 얻을 수 있어요. 여기에는 결정론적 채점, 지문이 기록된 [실행 카드(run cards)](/docs/network/specifications/run-card), 쌍체 부트스트랩 [유의성(significance)](/docs/network/specifications/significance), 그리고 리더보드 게시 경로가 포함돼요. [채점 명세서(scoring spec)](/docs/network/specifications/scoring)는 외부 검증, 프록시 검증, 엔지니어링 휴리스틱 등 검증 상태와 함께 모든 지표를 문서화하고 복합 지표를 결정론적으로 유지해요. 신경망 지표는 별도의 레인에서 보고되며, 절대 몰래 통합되지 않아요. 표준 지표는 sacreBLEU와 COMET/AfriCOMET을 기반으로 하며, 포합어(polysynthetic languages)에서 문자 중복 지표가 놓치는 부분을 드러내는 구조적 검사(FST 유효성)로 확장돼요. 하네스는 오픈 소스인 AGPL-3.0 라이선스를 따르며, CLI는 PolyForm Noncommercial 1.0.0 라이선스를 따라 소스가 공개되어 있고 비상업적 용도로는 무료로 사용할 수 있어요.
+
+도구 이면에는 레지스트리가 있어요. **<SSOTCount field="registryDatasetCount" />개의 평가 데이터 세트**는 각각 SHA로 고정되어 원본에서 가져오는 메타데이터 카드로, [평가 데이터 세트(Evaluation Datasets)](/docs/network/leaderboard/datasets)에 카탈로그화되어 있어요. **<SSOTCount field="catalogLanguageCount" />개의 언어 카드**는 [모든 필드에 출처를 명시](/docs/reference/language-card-spec)하며, 일치하지 않는 출처도 모두 표시해요([수정 절차](/docs/reference/language-card-citation-procedure)). **<SSOTCount field="licensedSourceCount" />개의 등록된 업스트림 출처**의 라이선스 롤업을 통해, 비상업적 말뭉치는 구조적으로 상업적, 상금 또는 API 레인에서 제외돼요. 오염(Contamination)은 일급 속성(first-class property)이에요. 최첨단 모델이 이미 보았을 것으로 추정되는 공개 벤치마크는 **상대 평가 전용 레인(relative-only lane)**에서 실행되고, 새로운 커뮤니티 말뭉치는 해시 매니페스트로 봉인 및 분할되며([말뭉치 파트너십 §4](/docs/network/specifications/corpus-partnership#4-cryptographic-sealing-and-sandbox-testing)), 커뮤니티는 우리가 절대 볼 수 없는 주권적 벤치마크를 보유할 수 있어요. 위협 모델은 [말뭉치 설계 프레임워크(corpus design framework)](/docs/network/specifications/corpus-design)에 명시되어 있어요.
+
+구축하려는 대상에 따라 세 가지 진입 방법이 있어요. **말뭉치(corpus)**: 위의 평가 우선(eval-first) 경로에서 시작하세요. 첫날부터 유급 화자 시간을 예산에 포함하여 [말뭉치 파트너십(Corpus Partnership)](/docs/network/specifications/corpus-partnership)을 처음부터 끝까지 진행해요. **방법론(method)**: [TranslationMethod 프로토콜](/docs/network/specifications/methods)을 구현하고 [방법론 제출(Submit a Method)](/docs/network/getting-started/submit-a-method)을 따르세요. OpenRouter 키가 있다면 약 15분 정도 걸려요. **지표(metric)**: 하네스의 플러그인 표면을 통해 제안하세요([저장소(repository)](https://github.com/gamedaysuits/Champollion)에 이슈 또는 PR 작성. 복합 지표에 포함되기 위한 기준은 채점 명세서에 있어요). 어떤 경로를 선택하든, 무언가를 설계하기 전에 먼저 [솔직한 한계(Honest Limitations)](/docs/network/honest-limitations)(지표에 대한 커뮤니티 화자 검증이 아직 이루어지지 않았다는 점 포함)와 [마이크로 평가 방법론(microeval methodology)](/docs/network/context/microeval-methodology), 그리고 [MT 평가 환경(MT evaluation landscape)](/docs/network/context/mt-evaluation-landscape)을 읽어보세요.
+
+**Champollion 인용:** 아직 Champollion 논문은 없으니 논문을 인용하지는 말아주세요. 대신 저장소와 여러분이 사용한 특정 버전의 명세서 또는 SHA로 고정된 데이터 세트 카드를 인용해 주세요.
+
+```bibtex
+@software{champollion,
+  author  = {Forbes, Curtis},
+  title   = {Champollion: open evaluation infrastructure for machine
+             translation in low-resource languages},
+  url     = {https://github.com/gamedaysuits/Champollion},
+  year    = {2026},
+  note    = {Specifications at https://champollion.dev/docs/network}
+}
+```
+
+레지스트리를 통해 업스트림 말뭉치를 사용하는 경우, **해당 말뭉치의 원작자를 인용해 주세요.** 데이터 세트 카드에 업스트림 출처와 라이선스가 명시되어 있어요.
+
+## 자금 제공자 및 후원자 \{#funders}
+
+**Champollion은 비상업적 프로젝트예요.** 후원금은 말뭉치 구축, 도구, 커뮤니티 작업에 사용돼요. **100% 전달되고, 공개적으로 회계 처리되며, Champollion에는 전혀 돌아가지 않아요.** 간접비 비율, 수익 분배, 커뮤니티 자산에 대한 소유권 주장이 없어요. 들어온 자금은 유급 언어 작업으로 전환되어 화자, 말뭉치 구축자, 상금 수상자에게 지급되며, 인프라 비용은 현재 설립자가 부담하고 있어요([작업 자금 조달 방식(How the Work Is Funded)](/docs/network/sovereignty/economic-model)).
+
+솔직한 출발점은 다음과 같아요. 여기서 설명하는 모든 것은 **명세가 완료되어 준비된 메커니즘이지, 이미 대규모로 실행 중인 프로그램이 아니에요.** 아직 지원금이나 후원자는 없고, 리더보드는 운영 중이지만 아직 초기 단계이며, 상금 메커니즘은 [제안된 명세서](/docs/network/specifications/prizes)일 뿐 현재 열려 있는 상금은 없어요. 이러한 솔직함을 통해 자금 제공자는 공개된 단가, 청구 원장(claims ledger), 그리고 우리에게 책임을 물을 수 있는 명세서를 얻을 수 있어요.
+
+**레인 1 — 말뭉치 후원.** 자원이 부족한 MT에서 가장 희소한 자산은 신뢰할 수 있는 테스트 세트이며, 그 비용은 다음과 같이 공개되어 있어요.
+
+| 후원금의 가치 | 공개 비용 | 사용처 |
+|--------------------|---------------|----------------|
+| 단일 언어용 벤치마크 말뭉치(큐레이션된 항목 50–150개) | $2,500–6,000 CAD | 이중 언어 화자 시간당 $50–65 — 의도적으로 가장 큰 비중을 차지하는 항목이에요 |
+| 지표 검증 라운드(세 명의 화자가 인간의 판단과 자동화된 지표를 비교 검토) | $1,475–1,920 CAD | 유급 화자 검토 작업 |
+| 방법론 출력 결과 검토 | $500–1,500 CAD | 동일하게 공개된 시간당 단가 적용 |
+| 전체 언어 온보딩, 총비용 | $3,350–8,500 CAD | [벤치마크 명세서 §10](/docs/network/specifications/benchmark) 참조 |
+
+자산은 지원금보다 오래 지속돼요. 말뭉치는 Champollion이 아닌 구축자/스튜어드(stewards)의 소유이며, 스튜어드의 라이선스 및 레인 선택에 따라 메타데이터로 등록되고 [콘텐츠는 절대 호스팅되지 않아요](/docs/network/sovereignty/registering-corpora). 학술 자금 제공자의 경우, [말뭉치 파트너십 전략(Corpus Partnership Strategy)](/docs/network/specifications/corpus-partnership)이 이 레인의 학과 맞춤형 버전이에요.
+
+**레인 2 — 상금 후원.** 성취 상금은 **시도가 아닌 결과**에 자금을 지원해요. 방법론이 정의된 방법론 중립적 기준을 명확히 통과했을 때만 자금이 지급되며, 모든 청구에는 유급 커뮤니티 화자의 검토가 포함돼요. [상금 명세서(Prize Specification)](/docs/network/specifications/prizes)에 따라 자금은 **후원자가 보유**해요. 후원 조직, 커뮤니티 신탁, 또는 후원자가 지정한 제3자 에스크로에 보관되며, 측정을 조율할 뿐 돈을 만지지 않는 **Champollion에는 절대 보관되지 않아요.** **현재 그 어디에도 상금이 보관되어 있지 않아요.** 아무도 기준을 통과하지 못하면 아무에게도 지급되지 않으며, 만료된 상금은 후원자에게 남아 재량에 따라 용도를 변경하거나 회수할 수 있어요. 우승한 방법론은 상금 조건에 따라 커뮤니티 소유로 이전돼요.
+
+자금 제공자가 측정할 수 있는 항목은 다음과 같아요. 스튜어드의 통제하에 구축 및 등록된 말뭉치, 언어 커뮤니티에 제공된 유급 화자 시간, 신뢰할 수 있는 공개 벤치마크가 적용된 언어 쌍, 측정된 방법론, 그리고 상금 조건에 명시된 경우 커뮤니티 소유로 이전된 방법론 등이에요.
+
+**가장 먼저 해야 할 일:** [작업 자금 조달 방식(How the Work Is Funded)](/docs/network/sovereignty/economic-model)을 읽어보세요(10분 소요, 전체 모델 설명). [참여하기 — 후원자(Get Involved — sponsors)](/get-involved#sponsors)에서 말뭉치 작업, 상금, 또는 [공개 벤치마크 대기열(public benchmark queue)](/contribute)을 위한 컴퓨팅/API 크레딧 중 하나의 레인을 선택하세요. 그런 다음 [info@champollion.dev](mailto:info@champollion.dev)로 이메일을 보내거나 [공개 저장소(public repository)](https://github.com/gamedaysuits/Champollion/issues)에 문의해 주세요. 아직 구축되지 않은 부분을 포함하여 구체적으로 답변해 드릴게요.
+
+## 언론 및 미디어 \{#press}
+
+Champollion은 모든 언어에 대해 신뢰할 수 있는 기계 번역 평가를 구축하는 비상업적 연구 프로젝트예요. 소스가 공개되어 있고 비상업적 용도로는 무료이며, 오픈 소스 평가 하네스와 레지스트리를 갖추고 있어요. 이는 *"이 언어에 대한 기계 번역이 실제로 얼마나 훌륭한가?"*라는 단 하나의 질문에 정직하게 답하기 위한 인프라예요. 테스트 세트 레지스트리, 채점 규칙, 이를 실행하는 하네스, 그리고 누가 무엇을 얼마나 잘 번역할 수 있는지 보여주는 공개 리더보드와 지도를 게시해요. 인간이든 기계든 모든 방법론을 환영하며, 동일한 공개 규칙에 따라 평가받아요. 커뮤니티가 언어 데이터를 보유하고 있다면, 그들이 통제권을 쥐게 돼요.
+
+Champollion이 **아닌** 것은 다음과 같아요. 상업적이지 않아요(제품, 유료 API, 종량제, 수익 분배, 벤처 자금 지원이 없으며 [설립자가 자체 자금으로 운영해요](/docs/network/sovereignty/economic-model)). 데이터 수집기가 아니에요(말뭉치 콘텐츠는 **절대 호스팅되지 않으며**, 레지스트리에는 SHA로 고정된 메타데이터 카드만 보관되고, 커뮤니티 말뭉치는 전적으로 스튜어드의 소유로 남아요). AI 번역 제품이 아니에요(Champollion은 번역 품질을 측정하며, 함께 제공되는 CLI는 개발자 도구예요). 그리고 아직 완성되지 않았어요. 리더보드는 운영 중이지만 초기 단계이고, 커뮤니티 프로그램은 이제 막 구축되고 있어요. 우리는 과장되게 포장되기보다는 초기 단계라고 정확하게 인용되기를 원해요.
+
+주요 사실(각 항목은 저장소 내 출처로 추적 가능하며, 프로젝트는 공개 청구 원장을 유지해요):
+
+| 사실 | 출처 |
+|------|--------|
+| 인용된 색인에 <SSOTCount field="catalogLanguageCount" />개의 언어 카드 포함 | `cli/shared/language-cards/` (언어당 하나의 카드, 빌드 타임에 계산됨), [/languages](/languages)에 표시됨 |
+| <SSOTCount field="registryDatasetCount" />개의 평가 데이터 세트 등록 — 메타데이터 카드만 있으며, 말뭉치 콘텐츠는 절대 호스팅되지 않음 | `arena/datasets/registry.json` (빌드 타임에 계산됨); [평가 데이터 세트(Evaluation Datasets)](/docs/network/leaderboard/datasets) 참조 |
+| 언어 색인을 위한 <SSOTCount field="licensedSourceCount" />개의 라이선스 업스트림 출처 | `shared/licenses.json` (빌드 타임에 계산됨) |
+| 160개 이상의 수어 카탈로그화 — "아직 지원되지 않음"으로 표시되며, 절대 "언어가 아님"으로 표시되지 않음 | [여기서 언어로 인정되는 기준은 무엇인가요?](/docs/network/context/what-counts-as-a-language) |
+| 표준 지표는 sacreBLEU(chrF++, BLEU, TER) 및 COMET/AfriCOMET을 기반으로 하며, 구조적 FST 검사 추가; 신경망 지표는 별도의 레인에서 보고됨 | [채점 명세서(Scoring Specification)](/docs/network/specifications/scoring) |
+| 공개된 화자 급여: 시간당 $50–65 CAD, 무조건적이며 2주 이내 지급 | [화자에게 급여가 지급되는 방식(How Speakers Get Paid)](/docs/network/perspectives/how-speakers-get-paid) |
+| 코드 라이선스: CLI는 PolyForm Noncommercial 1.0.0(소스 공개, 비상업적 용도 무료), 평가 하네스는 AGPL-3.0(오픈 소스) | 프로젝트 저장소 |
+| Curtis Forbes가 설립 및 자체 자금 조달; 아직 지원금이나 후원자 없음 | [작업 자금 조달 방식(How the Work Is Funded)](/docs/network/sovereignty/economic-model) |
+
+보일러플레이트(Boilerplate):
+
+> Champollion은 모든 언어에 대해 신뢰할 수 있는 기계 번역 평가를 구축하는 비상업적 연구 프로젝트예요. 소스가 공개되어 있고 비상업적 용도로는 무료이며, 오픈 소스 평가 하네스와 공유 레지스트리를 갖추고 있어요. <SSOTCount field="catalogLanguageCount" />개 언어의 인용 색인, <SSOTCount field="registryDatasetCount" />개 평가 데이터 세트의 레지스트리(말뭉치 콘텐츠는 절대 호스팅되지 않음), 그리고 기계든 인간이든 모든 번역 방법론이 동일한 공개 규칙에 따라 채점되는 개방형 하네스와 리더보드를 유지 관리해요. 언어 커뮤니티와 함께 구축되며, 절대 그들로부터 무단 수집(scraping)하지 않아요. 커뮤니티는 자신들의 데이터, 테스트 세트, 그리고 자신들에게 이전된 모든 방법론을 소유해요. Champollion은 Curtis Forbes가 설립했으며 champollion.dev에서 확인할 수 있어요.
+
+**연락처:** Curtis Forbes, 설립자 — [info@champollion.dev](mailto:info@champollion.dev) — [github.com/gamedaysuits/Champollion](https://github.com/gamedaysuits/Champollion). 우리는 우호적인 질문에 답하는 것과 똑같은 방식으로 비판적인 질문에도 답변해요. 이 사이트의 주장에 대해 팩트 체크를 하고 싶다면 [솔직한 한계(Honest Limitations)](/docs/network/honest-limitations)부터 시작하는 것이 좋아요. 이 문서는 누구도 우리의 말을 맹신할 필요가 없도록 하기 위해 존재해요.
+
+## 참고 항목
+
+- [네트워크 작동 방식(How the Network Works)](/docs/network/how-it-works) — 전체 시스템을 한 페이지에 요약
+- [데이터 스튜어드십(Data Stewardship)](/docs/network/sovereignty/data-sovereignty) — 주권에 대한 입장(원주민 데이터 주권 원칙, CARE)
+- [소유권 및 약관(Ownership & Terms)](/docs/network/sovereignty/ownership-transfer) — 계약상 "커뮤니티 소유"의 의미
+- [이름의 유래(On the Name)](/docs/the-name) — 왜 "Champollion"인가

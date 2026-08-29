@@ -1,0 +1,55 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "clics3",
+  "upstream": "https://zenodo.org/records/3687530",
+  "license": "cc-by-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "Rzymski, Tresoldi et al. 2019. The Database of Cross-Linguistic Colexifications, reproducible analysis of cross-linguistic polysemies. DOI: 10.17613/5awv-6w15",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.1",
+    "doi": "10.5281/zenodo.3687530",
+    "date": "2020-02-26"
+  },
+  "files": [
+    {
+      "path": "clics3-v1.1.zip",
+      "bytes": 123687976,
+      "sha256": "065d7fe74d607a979073591c1f3ccc02460d6c74ce91ae6822b6ac2ab8204db8",
+      "url": "https://zenodo.org/api/records/3687530/files/clics/clics3-v1.1.zip/content",
+      "upstreamChecksum": "md5:2d6a6bee8f1489cf8deab0a38bfab74c",
+      "upstreamVerified": true
+    },
+    {
+      "path": "clics.sqlite",
+      "bytes": 408134656,
+      "sha256": "229b2eb1938c96d3796ae0fdf53ee64b09292ce5beaa5306e6118ec880fd8a91",
+      "url": null,
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "clics/clics3-v1.1.zip (pipeline output, not shipped by the deposit)"
+    },
+    {
+      "path": "datasets.txt",
+      "bytes": 2402,
+      "sha256": "020430e3b55dd3567678b568e0cd1c50593217feffd9a1c5ad5a01b6df3435e2",
+      "url": null,
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "clics/clics3-v1.1.zip (pipeline output, not shipped by the deposit)"
+    },
+    {
+      "path": "datasets.md",
+      "bytes": 5518,
+      "sha256": "1ad7f69427e40b682788c6b4229895b0b8d175070065c813f8dba10f3fefd914",
+      "url": null,
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "clics/clics3-v1.1.zip (pipeline output, not shipped by the deposit)"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/clics3.mjs",
+  "notes": "The deposit is the CLICS³ REPOSITORY — the dataset specification and the analysis code — not the built database. clics.sqlite is 627 MB of derived output from running that pipeline over 30 upstream corpora. This pin establishes WHICH VERSION of CLICS we mean; it does NOT prove the sqlite on disk is what that version produces, and the derived files are marked upstreamVerified:false for exactly that reason. Rebuilding them would require fetching all 30 corpora and running the pipeline. Derived files present: clics.sqlite, datasets.txt, datasets.md. CLICS 4 exists (10.5281/zenodo.19608447); upgrading is a deliberate decision with a diff to review, not a side effect of adding a fetcher.",
+  "fetchedAt": "2026-08-04T02:47:31.228Z"
+}

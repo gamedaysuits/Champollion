@@ -1,0 +1,433 @@
+{
+  "code": "nse",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Nsenga",
+    "values": [
+      {
+        "value": "Nsenga",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Nsenga",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "atla1278",
+      "volt1241",
+      "benu1247",
+      "bant1294",
+      "sout3152",
+      "narr1281",
+      "east2731",
+      "sabi1248"
+    ],
+    "family": {
+      "agreement": "conflicting",
+      "values": [
+        {
+          "value": "Atlantic-Congo",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Niger-Congo",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "atla1278",
+    "genus": "Bantu"
+  },
+  "bcp47": "nse",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "nse-Latn-ZM",
+    "values": [
+      {
+        "value": "nse-Latn-ZM",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "nse-Latn-ZM",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"nse\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "nse",
+    "values": [
+      {
+        "value": "nse",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "countries": [
+    "MZ",
+    "ZM",
+    "ZW"
+  ],
+  "dialectCount": 3,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Nsenga (nse-nse) = 5 (Developing).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "Chinsenga",
+    "values": [
+      {
+        "value": "Chinsenga",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "glottocode": "nsen1242",
+  "typologicalProfile": {
+    "hasCoreCase": false,
+    "hasGenderInPronouns": false,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": false,
+    "hasSexBasedGender": false,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "0",
+      "values": [
+        {
+          "value": "0",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": true,
+    "negationOrder": "Type 2 / Type 3",
+    "subjectVerbOrder": "SV",
+    "wordOrder": "SVO"
+  },
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": -15.3946,
+    "lng": 31.3544
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 206,
+        "concepts": 88,
+        "doculects": 4,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 40,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "22162"
+  },
+  "methodSupport": {
+    "total": 6,
+    "byTier": {
+      "model-card-declared": 6
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0-LoRA",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-i1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "quinary, decimal"
+  },
+  "orthographicStatus": "has-orthography",
+  "politenessDistinction": {
+    "agreement": "single",
+    "consensus": "1",
+    "values": [
+      {
+        "value": "1",
+        "source": "grambank-v1.0.3",
+        "scale": "grambank-v1.0.3"
+      }
+    ]
+  },
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "400000",
+    "values": [
+      {
+        "value": "400000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "resources": {
+    "typology": [
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 11,
+    "componentsPresent": 42,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "politenessDistinction": [
+      "grambank-v1.0.3"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "nse",
+    "revision": "30a07d64d15c9d8f",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "politenessDistinction",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder"
+    ]
+  }
+}

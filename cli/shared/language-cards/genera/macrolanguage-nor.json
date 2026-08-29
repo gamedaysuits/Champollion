@@ -1,0 +1,86 @@
+{
+  "code": "macrolanguage-nor",
+  "extends": "genus-germanic",
+  "name": "Norwegian Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "nor",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "T-V",
+    "description": "Norwegian historically had a T-V distinction (du/De), but De has become almost completely archaic in modern use. Contemporary Norwegian uses universal du for all contexts, similar to the Swedish du-reform. The formal De may appear in very traditional or ceremonial contexts. Formality is now primarily expressed through vocabulary choice and discourse style rather than pronoun selection."
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Both Norwegian written standards have grammatical gender. Bokmål has three genders (masculine, feminine, neuter) though feminine is optional — two-gender (common/neuter) usage is also accepted. Nynorsk strictly maintains three genders. Gender triggers agreement on articles, adjectives, and pronouns. The optional feminine in Bokmål creates a sociolinguistic choice (using feminine is perceived as less conservative)."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "twoWrittenStandards": "Norwegian has two official written standards: Bokmål (used by ~85–90% of the population, historically influenced by Danish) and Nynorsk (used by ~10–15%, based on Norwegian dialects). They share grammar but differ in vocabulary, morphology, and spelling. MT output MUST use the correct standard for the target audience — mixing standards is unacceptable.",
+    "v2WordOrder": "Norwegian follows V2 word order in main clauses — the finite verb must be the second constituent. Subordinate clauses have different word order (SVO with adverb placement before the verb). This alternation must be maintained.",
+    "compoundWords": "Norwegian forms compound nouns by concatenation without spaces: samferdseldepartementet ('transportation department'). Compound splitting and formation are both error-prone. Incorrect spacing (samferdsel departementet) is a visible error.",
+    "suffixedDefiniteArticle": "Norwegian suffixes the definite article to the noun: hus→huset ('the house'), bok→boka/boken ('the book'). With adjectives, both a freestanding article AND the suffixed article are used (double definiteness): det store huset ('the big house'). This interaction is a consistent MT error source.",
+    "bokmaalNynorskDifferences": "Key systematic differences: Bokmål -ene/-ene plurals vs. Nynorsk -ane/-ene; Bokmål optional feminine vs. Nynorsk mandatory feminine; Bokmål passive -s vs. Nynorsk bli + past participle; Bokmål loanword spelling closer to Danish vs. Nynorsk native-based forms.",
+    "dialectalVariation": "Norwegian has extreme dialectal variation — spoken Norwegian differs dramatically by region. Written standards do not directly correspond to any spoken dialect. Dialectal forms sometimes appear in informal writing and must not be mixed with standard forms."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Germanic",
+    "genusGlottocode": "germ1287",
+    "ancestry": [
+      "Indo-European",
+      "Germanic",
+      "North Germanic",
+      "Norwegian"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3",
+    "iso639-3-2024"
+  ],
+  "notes": "Macrolanguage card for Norwegian (nor). Covers Bokmål (nob) and Nynorsk (nno). Both share Latin script, V2 word order, three-gender system, and suffixed definite articles. The two-standard situation is the central challenge — MT must produce output in the correct standard.",
+  "regions": [
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "officialStatus": "official",
+      "region": "Norway (Bokmål dominant in cities/east, Nynorsk in western/rural areas)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null,
+  "iso639_3": "nor",
+  "_fieldSources": {
+    "iso639_3": "iso639-3-2024",
+    "isoType": "iso639-3-2024",
+    "modality": "derived:glottolog-sign-family+iso639-3-refname",
+    "members": "iso639-3-2024",
+    "supportTier": "derived:taxonomy-hub-policy (docs/LANGUAGE_TAXONOMY.md)"
+  },
+  "isoType": "L",
+  "modality": "spoken",
+  "taxonomyNotes": null,
+  "members": [
+    "nno",
+    "nob"
+  ],
+  "supportTier": "cataloged"
+}

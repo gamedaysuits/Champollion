@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/model-aliases.schema.json",
+  "title": "Champollion model aliases (shared/model-aliases.json)",
+  "description": "Cross-runtime SSOT mapping short convenience aliases (e.g. 'gemini-flash') to full provider-qualified model ids (e.g. 'google/gemini-3.5-flash'). Keys other than the underscore-prefixed metadata fields are alias names; their values are model ids. The bundled mini-schema validator does not support additionalProperties-as-schema, so per-entry validation iterates the entries against $defs.aliasName / $defs.modelId (see cli/test/shared-ssot-schemas.test.js).",
+  "type": "object",
+  "properties": {
+    "_comment": {
+      "type": "string",
+      "description": "Human note; not an alias."
+    }
+  },
+  "$defs": {
+    "aliasName": {
+      "type": "string",
+      "description": "Short alias key: lowercase alphanumerics and hyphens.",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "minLength": 2
+    },
+    "modelId": {
+      "type": "string",
+      "description": "Full OpenRouter-style model id: <provider>/<model>.",
+      "pattern": "^[a-z0-9-]+/[A-Za-z0-9._-]+$",
+      "minLength": 3
+    }
+  }
+}

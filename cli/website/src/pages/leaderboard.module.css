@@ -1,0 +1,2346 @@
+/* ===================================================================
+   Leaderboard Page — CSS Module
+   "Field Notes" theme: teal primary on scholarly ink/paper neutrals.
+   =================================================================== */
+
+/* ---------------------------------------------------------------
+   Page Header
+   --------------------------------------------------------------- */
+.pageHeader {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 118, 110, 0.08) 0%,
+    rgba(0, 210, 211, 0.04) 100%
+  );
+  padding: 3rem 0 2.5rem;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 640px;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+}
+
+.pageNote {
+  font-size: 0.88rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.75;
+}
+
+/* Board-total stat strip (header) — live counts from run_cards; hidden
+   entirely (component renders null) while the board is empty/unreachable. */
+.boardStats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.6rem;
+  margin: 0.35rem auto 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.boardStat strong {
+  color: var(--ifm-font-color-base);
+  font-variant-numeric: tabular-nums;
+}
+
+.pageNote a {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------
+   Controls Bar (pair filter + metric toggle)
+   --------------------------------------------------------------- */
+.controlsBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------------------------------------------------------
+   Pair Filter Pills
+   --------------------------------------------------------------- */
+.pairFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pairPill {
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ifm-color-primary);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.pairPill:hover {
+  background: rgba(15, 118, 110, 0.1);
+}
+
+.pairPillActive {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.3);
+}
+
+.pairPillActive:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------
+   Metric Toggle (segmented control)
+   --------------------------------------------------------------- */
+.metricToggle {
+  display: inline-flex;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.metricBtn {
+  padding: 0.4rem 1rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--ifm-color-primary);
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Divider between segments */
+.metricBtn + .metricBtn {
+  border-left: 1px solid var(--ifm-color-primary);
+}
+
+.metricBtn:hover {
+  background: rgba(15, 118, 110, 0.1);
+}
+
+.metricBtnActive {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.metricBtnActive:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------
+   Condition Filter
+   Sits below pair + metric controls as a full-width row.
+   Groups conditions into manageable categories.
+   --------------------------------------------------------------- */
+.conditionFilter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.conditionFilterLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-font-color-secondary);
+  white-space: nowrap;
+}
+
+.conditionPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.conditionPill {
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 16px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ifm-color-primary);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.conditionPill:hover {
+  background: rgba(15, 118, 110, 0.1);
+}
+
+.conditionPillActive {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.3);
+}
+
+.conditionPillActive:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* "Best Only" gets a teal/cyan accent to distinguish it
+   as a special mode rather than a regular condition */
+.conditionPillBest {
+  border-color: #00D2D3;
+  color: #00D2D3;
+}
+
+.conditionPillBest:hover {
+  background: rgba(0, 210, 211, 0.1);
+}
+
+.conditionPillBest.conditionPillActive {
+  background: #00D2D3;
+  color: #101312;
+  border-color: #00D2D3;
+  box-shadow: 0 2px 8px rgba(0, 210, 211, 0.35);
+}
+
+.conditionPillBest.conditionPillActive:hover {
+  background: #00D2D3;
+  color: #101312;
+}
+
+/* ---------------------------------------------------------------
+   Table Container
+   --------------------------------------------------------------- */
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-toc-border-color);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------------------------------------------------------------
+   Table
+   --------------------------------------------------------------- */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table Header */
+.table th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 118, 110, 0.06);
+  white-space: nowrap;
+  text-align: left;
+  color: var(--ifm-font-color-secondary);
+  user-select: none;
+  position: relative;
+}
+
+/* Sortable column header */
+.sortable {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.sortable:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Sort arrow indicator via ::after */
+.sortAsc::after {
+  content: " ▲";
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+
+.sortDesc::after {
+  content: " ▼";
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+
+/* Table Cells */
+.table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  vertical-align: middle;
+}
+
+/* Row hover / click + staggered slide-in on load (transform/opacity only;
+   --row-i is set inline by leaderboard.js, capped so deep rows don't wait) */
+.tableRow {
+  cursor: pointer;
+  transition: background 0.15s ease;
+  animation: rowIn 0.45s ease-out both;
+  animation-delay: calc(var(--row-i, 0) * 45ms);
+}
+
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tableRow {
+    animation: none;
+  }
+}
+
+.tableRow:hover {
+  background: rgba(15, 118, 110, 0.05);
+}
+
+/* Rank column styling */
+.rankCell {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-color-primary);
+  text-align: center;
+  min-width: 48px;
+}
+
+/* Metric cells — tabular numbers for alignment */
+.metricCell {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Highlight the active sort metric */
+.metricHighlight {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------
+   Trust Badges
+   --------------------------------------------------------------- */
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.trustSelf {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+}
+
+.trustVerified {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+}
+
+.trustCommunity {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3B82F6;
+}
+
+/* ---------------------------------------------------------------
+   Expanded Row Detail
+   --------------------------------------------------------------- */
+.expandedRow td {
+  padding: 0;
+  border-top: none;
+}
+
+.expandedContent {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.expandedContentOpen {
+  /* Tall enough for the full detail grid including the small-corpus
+     contribution CTA; transition still animates from 0. */
+  max-height: 1100px;
+}
+
+.expandedInner {
+  padding: 1.5rem;
+  background: rgba(15, 118, 110, 0.03);
+  border-top: 1px solid var(--ifm-toc-border-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem 2rem;
+}
+
+.detailField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-font-color-secondary);
+  font-weight: 600;
+}
+
+.detailValue {
+  font-size: 0.9rem;
+  color: var(--ifm-heading-color);
+}
+
+.mono {
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+
+/* One sacreBLEU signature per line in the expanded row detail. */
+.signatureLine {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ---------------------------------------------------------------
+   Info Tip — hover tooltip (ⓘ icon)
+   Pure CSS implementation using data-tooltip attribute.
+   --------------------------------------------------------------- */
+.infoTip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.65rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.55;
+  cursor: help;
+  position: relative;
+  vertical-align: middle;
+  margin-left: 2px;
+  transition: opacity 0.15s ease;
+}
+
+.infoTip:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary);
+}
+
+.infoTip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1F2421;
+  color: #E8EAE8;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: normal;
+  width: max-content;
+  max-width: 320px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.infoTip:hover::after {
+  opacity: 1;
+}
+
+/* Keep tooltip on-screen for left-edge columns */
+.table th:first-child .infoTip::after,
+.table th:nth-child(2) .infoTip::after {
+  left: 0;
+  transform: translateX(0);
+}
+
+/* Keep tooltip on-screen for right-edge columns */
+.table th:last-child .infoTip::after,
+.table th:nth-last-child(2) .infoTip::after {
+  left: auto;
+  right: 0;
+  transform: translateX(0);
+}
+
+/* ---------------------------------------------------------------
+   Trust Legend
+   --------------------------------------------------------------- */
+.trustLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  background: rgba(15, 118, 110, 0.04);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.legendTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-font-color-secondary);
+  margin-right: 0.5rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.legendStatus {
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------
+   Quality Tier Badges
+   --------------------------------------------------------------- */
+.tierBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tierBaseline {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.tierEmerging {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tierFunctional {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.tierDeployable {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.tierFluent {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #78350f;
+  border: 1px solid #f59e0b;
+}
+
+/* ---------------------------------------------------------------
+   Disclaimer Banner (proxy score warning)
+   --------------------------------------------------------------- */
+.disclaimerBanner {
+  margin: 0.75rem auto 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
+  background: var(--ifm-color-warning-contrast-background);
+  border-left: 3px solid var(--ifm-color-warning);
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-800);
+  line-height: 1.4;
+  max-width: 640px;
+}
+
+.disclaimerBanner a {
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------
+   Disclaimer (LLM non-determinism)
+   --------------------------------------------------------------- */
+.disclaimer {
+  font-size: 0.84rem;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+  margin-top: 1rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* ---------------------------------------------------------------
+   How It Works Section
+   --------------------------------------------------------------- */
+.howItWorks {
+  background: rgba(15, 118, 110, 0.04);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2.5rem;
+}
+
+.howItWorksTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-heading-color);
+}
+
+.howItWorksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.howItWorksItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  line-height: 1.55;
+}
+
+.howItWorksIcon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+.howItWorksText {
+  font-size: 0.92rem;
+  color: var(--ifm-font-color-base);
+}
+
+.howItWorksText strong {
+  color: var(--ifm-heading-color);
+}
+
+/* ---------------------------------------------------------------
+   Empty State
+   --------------------------------------------------------------- */
+.emptyState {
+  text-align: center;
+  color: var(--ifm-font-color-secondary);
+  padding: 3rem 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.emptyIcon {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.5;
+}
+
+/* ---------------------------------------------------------------
+   Content wrapper (inside Layout)
+   --------------------------------------------------------------- */
+.contentWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ---------------------------------------------------------------
+   Loading / Error States
+   --------------------------------------------------------------- */
+.loadingState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--ifm-font-color-secondary);
+  font-size: 1.1rem;
+}
+
+.errorState {
+  text-align: center;
+  padding: 2rem;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* ---------------------------------------------------------------
+   DARK MODE OVERRIDES
+   --------------------------------------------------------------- */
+[data-theme="dark"] .pageHeader {
+  background: linear-gradient(
+    135deg,
+    rgba(63, 193, 192, 0.1) 0%,
+    rgba(0, 229, 230, 0.04) 100%
+  );
+}
+
+[data-theme="dark"] .pairPill {
+  border-color: #3FC1C0;
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .pairPill:hover {
+  background: rgba(63, 193, 192, 0.15);
+}
+
+[data-theme="dark"] .pairPillActive {
+  background: #3FC1C0;
+  color: #101312;
+  box-shadow: 0 2px 12px rgba(63, 193, 192, 0.35);
+}
+
+[data-theme="dark"] .pairPillActive:hover {
+  background: #3FC1C0;
+  color: #101312;
+}
+
+[data-theme="dark"] .metricToggle {
+  border-color: #3FC1C0;
+}
+
+[data-theme="dark"] .metricBtn {
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .metricBtn + .metricBtn {
+  border-left-color: #3FC1C0;
+}
+
+[data-theme="dark"] .metricBtn:hover {
+  background: rgba(63, 193, 192, 0.15);
+}
+
+[data-theme="dark"] .metricBtnActive {
+  background: #3FC1C0;
+  color: #101312;
+}
+
+[data-theme="dark"] .metricBtnActive:hover {
+  background: #3FC1C0;
+  color: #101312;
+}
+
+[data-theme="dark"] .tableContainer {
+  border-color: #2A322E;
+}
+
+[data-theme="dark"] .table th {
+  background: rgba(63, 193, 192, 0.08);
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .table td {
+  border-top-color: #2A322E;
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .tableRow:hover {
+  background: rgba(63, 193, 192, 0.07);
+}
+
+[data-theme="dark"] .rankCell {
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .metricHighlight {
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .expandedInner {
+  background: rgba(63, 193, 192, 0.04);
+  border-top-color: #2A322E;
+}
+
+[data-theme="dark"] .detailLabel {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .detailValue {
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .trustLegend {
+  background: rgba(63, 193, 192, 0.05);
+  border-color: #2A322E;
+}
+
+[data-theme="dark"] .legendTitle {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .howItWorks {
+  background: rgba(63, 193, 192, 0.05);
+  border-color: #2A322E;
+}
+
+[data-theme="dark"] .sortable:hover {
+  color: #3FC1C0;
+}
+
+/* Tier badges — dark mode */
+[data-theme="dark"] .tierEmerging {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FCD34D;
+}
+
+[data-theme="dark"] .tierFunctional {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93C5FD;
+}
+
+[data-theme="dark"] .tierDeployable {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6EE7B7;
+}
+
+[data-theme="dark"] .tierFluent {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(251, 191, 36, 0.2));
+  color: #FCD34D;
+  border-color: #F59E0B;
+}
+
+/* Disclaimer banner — dark mode */
+[data-theme="dark"] .disclaimerBanner {
+  background: rgba(245, 158, 11, 0.08);
+  color: #E8EAE8;
+}
+
+/* Condition filter — dark mode */
+[data-theme="dark"] .conditionFilterLabel {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .conditionPill {
+  border-color: #3FC1C0;
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .conditionPill:hover {
+  background: rgba(63, 193, 192, 0.15);
+}
+
+[data-theme="dark"] .conditionPillActive {
+  background: #3FC1C0;
+  color: #101312;
+  box-shadow: 0 2px 12px rgba(63, 193, 192, 0.35);
+}
+
+[data-theme="dark"] .conditionPillActive:hover {
+  background: #3FC1C0;
+  color: #101312;
+}
+
+/* "Best Only" retains its teal accent in dark mode */
+[data-theme="dark"] .conditionPillBest {
+  border-color: #00E5E6;
+  color: #00E5E6;
+}
+
+[data-theme="dark"] .conditionPillBest:hover {
+  background: rgba(0, 229, 230, 0.12);
+}
+
+[data-theme="dark"] .conditionPillBest.conditionPillActive {
+  background: #00E5E6;
+  color: #101312;
+  border-color: #00E5E6;
+  box-shadow: 0 2px 12px rgba(0, 229, 230, 0.35);
+}
+
+[data-theme="dark"] .conditionPillBest.conditionPillActive:hover {
+  background: #00E5E6;
+  color: #101312;
+}
+
+/* ---------------------------------------------------------------
+   RESPONSIVE — mobile breakpoint
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 2rem 1rem 1.75rem;
+  }
+
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .controlsBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pairFilter {
+    flex-wrap: wrap;
+  }
+
+  .tableContainer {
+    border-radius: 8px;
+    /* Allow horizontal scroll for the table */
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .expandedInner {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  /* Single-column detail grid is much taller — keep the panel uncapped */
+  .expandedContentOpen {
+    max-height: 2400px;
+  }
+
+  .trustLegend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .howItWorks {
+    padding: 1.25rem;
+  }
+
+  .contentWrapper {
+    padding: 1.25rem 1rem 3rem;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Method Card Section (in expanded row detail)
+   --------------------------------------------------------------- */
+
+.methodCardSection {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 118, 110, 0.06) 0%,
+    rgba(0, 210, 211, 0.03) 100%
+  );
+  border: 1px solid rgba(15, 118, 110, 0.15);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  margin: 0.25rem 0;
+}
+
+.methodCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.375rem;
+}
+
+.classBadge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(15, 118, 110, 0.15);
+  color: var(--ifm-color-primary);
+  white-space: nowrap;
+}
+
+.methodCardName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ifm-heading-color);
+}
+
+.methodCardDesc {
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.45;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.toolTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 0.375rem;
+}
+
+.toolTag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.125rem 0.45rem;
+  border-radius: 3px;
+  background: rgba(0, 210, 211, 0.1);
+  color: var(--ifm-font-color-secondary);
+  border: 1px solid rgba(0, 210, 211, 0.15);
+}
+
+.methodCardMeta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.85;
+}
+
+.ossBadge {
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(46, 213, 115, 0.1);
+  color: rgb(46, 213, 115);
+}
+
+/* ── Pair search controls (source/target selects + completed toggle) ── */
+.pairSelectLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-right: 0.35rem;
+}
+.pairSelect {
+  appearance: none;
+  padding: 0.42rem 2rem 0.42rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E")
+    no-repeat right 0.7rem center;
+  color: var(--ifm-font-color-base);
+  font-size: 0.85rem;
+  font-weight: 500;
+  max-width: 15rem;
+  cursor: pointer;
+}
+.pairSelect:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+.completedToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+  cursor: pointer;
+  user-select: none;
+  margin-left: 0.5rem;
+}
+.completedToggle input {
+  accent-color: var(--ifm-color-primary);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.queuedNote {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------------
+   Corpus Size (n) Badges + "Help build this corpus" CTA
+   Floors (50/100) come from src/utils/corpusFloors.js — the badge
+   is a caveat plus a contribution opportunity, never a demotion.
+   --------------------------------------------------------------- */
+.corpusBadge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  cursor: help;
+}
+
+/* In a metric cell: sit beside the score without crowding it */
+.corpusBadgeCell {
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* n at or above the significance floor — informational only */
+.corpusBadgeNeutral {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.75;
+}
+
+/* n below the significance floor (amber, matches trustSelf) */
+.corpusBadgeCaution {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+/* n below the development-set floor */
+.corpusBadgeCritical {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+}
+
+[data-theme="dark"] .corpusBadgeCaution {
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .corpusBadgeCritical {
+  color: #f87171;
+}
+
+/* CTA callout inside the expanded row detail (spans the grid like
+   .methodCardSection, amber-tinted to pair with the caution badge) */
+.corpusCtaSection {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.07) 0%,
+    rgba(15, 118, 110, 0.04) 100%
+  );
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  margin: 0.25rem 0;
+}
+
+.corpusCtaHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.375rem;
+}
+
+.corpusCtaTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ifm-heading-color);
+}
+
+.corpusCtaText {
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.45;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.corpusCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.corpusCtaButton:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Full-width note inside the corpus-size legend */
+.legendNote {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.5;
+}
+
+/* ===================================================================
+   EXTENDED STYLES — Search, Faceted Filters, Cards, Column Chooser, etc.
+   Added 2026-06-14.  Everything below is additive — nothing above was
+   modified.
+   =================================================================== */
+
+/* ---------------------------------------------------------------
+   1. Search Bar
+   Full-width text input above the filter bar. Monospace font,
+   dark neutral background matching pairSelect styling.
+   --------------------------------------------------------------- */
+.searchBar {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  appearance: none;
+  padding: 0.6rem 2.4rem 0.6rem 2.4rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.6;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+/* 🔍 icon positioned inside the left of the input */
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.55;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* × clear button on the right side */
+.searchClear {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--ifm-font-color-secondary);
+  cursor: pointer;
+  padding: 0.2rem 0.35rem;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.searchClear:hover {
+  opacity: 1;
+  background: rgba(15, 118, 110, 0.08);
+}
+
+/* Dark mode — search bar */
+[data-theme="dark"] .searchInput {
+  border-color: #2A322E;
+  background: #1A201D;
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .searchInput:focus {
+  border-color: #3FC1C0;
+  box-shadow: 0 0 0 3px rgba(63, 193, 192, 0.2);
+}
+
+[data-theme="dark"] .searchIcon {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .searchClear {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .searchClear:hover {
+  background: rgba(63, 193, 192, 0.1);
+}
+
+/* ---------------------------------------------------------------
+   2. Faceted Filter Row
+   Horizontal row of filter dropdowns below search: Model, Tier,
+   Trust, Method.  Same select styling as pairSelect but compact.
+   --------------------------------------------------------------- */
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.filterLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  white-space: nowrap;
+}
+
+.filterSelect {
+  appearance: none;
+  padding: 0.35rem 1.8rem 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E")
+    no-repeat right 0.55rem center;
+  color: var(--ifm-font-color-base);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.filterSelect:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+
+/* Dark mode — filter row */
+[data-theme="dark"] .filterLabel {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .filterSelect {
+  border-color: #2A322E;
+  background-color: #1A201D;
+  color: #E8EAE8;
+}
+
+/* ---------------------------------------------------------------
+   3. Active Filter Chips
+   Row of removable pill badges showing active filters.
+   Teal background, white text, × button to remove.
+   --------------------------------------------------------------- */
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem 0.25rem 0.7rem;
+  border-radius: 16px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: chipIn 0.25s ease-out both;
+}
+
+@keyframes chipIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filterChip {
+    animation: none;
+  }
+}
+
+.filterChipRemove {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.15rem;
+  border-radius: 50%;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.filterChipRemove:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode — filter chips */
+[data-theme="dark"] .filterChip {
+  background: #3FC1C0;
+  color: #101312;
+}
+
+[data-theme="dark"] .filterChipRemove {
+  color: rgba(16, 19, 18, 0.6);
+}
+
+[data-theme="dark"] .filterChipRemove:hover {
+  color: #101312;
+  background: rgba(16, 19, 18, 0.15);
+}
+
+/* ---------------------------------------------------------------
+   4. Results Summary Bar
+   Right-aligned summary: "137 results" text + Export CSV button.
+   --------------------------------------------------------------- */
+.resultsSummary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.resultCount {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.exportBtn {
+  appearance: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-primary);
+  background: transparent;
+  color: var(--ifm-color-primary);
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.exportBtn:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* Dark mode — results summary */
+[data-theme="dark"] .resultCount {
+  color: #9AA5A0;
+}
+
+[data-theme="dark"] .exportBtn {
+  border-color: #3FC1C0;
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .exportBtn:hover {
+  background: #3FC1C0;
+  color: #101312;
+}
+
+/* ---------------------------------------------------------------
+   5. Column Chooser
+   Dropdown button + floating panel with column checkboxes.
+   Panel positioned below the button with position: absolute.
+   --------------------------------------------------------------- */
+.columnChooser {
+  position: relative;
+  display: inline-block;
+}
+
+.columnChooserBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.columnChooserBtn:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* Small chevron inside the button */
+.columnChooserBtn::after {
+  content: "▾";
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+/* Floating dropdown panel — hidden by default */
+.columnChooserDropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 200px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 0.5rem 0;
+  z-index: 50;
+  /* Visibility is controlled by React conditional rendering —
+     the component only mounts when the dropdown is open. */
+}
+
+.columnChooserItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: background 0.12s ease;
+  user-select: none;
+}
+
+.columnChooserItem:hover {
+  background: rgba(15, 118, 110, 0.06);
+}
+
+.columnChooserCheck {
+  accent-color: var(--ifm-color-primary);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Dark mode — column chooser */
+[data-theme="dark"] .columnChooserBtn {
+  border-color: #2A322E;
+  background: #1A201D;
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .columnChooserBtn:hover {
+  border-color: #3FC1C0;
+}
+
+[data-theme="dark"] .columnChooserDropdown {
+  background: #1A201D;
+  border-color: #2A322E;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .columnChooserItem {
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .columnChooserItem:hover {
+  background: rgba(63, 193, 192, 0.08);
+}
+
+/* ---------------------------------------------------------------
+   6. Sticky Table Header
+   Makes thead stick to the top on scroll with depth shadow.
+   --------------------------------------------------------------- */
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Background must be opaque so content doesn't bleed through.
+   Matches the subtle teal tint from .table th. */
+.stickyHeader th {
+  background: #f5f8f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode — sticky header */
+[data-theme="dark"] .stickyHeader th {
+  background: #161B18;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------------------------
+   7. Language Pair Column
+   Compact table cell for the language pair with a subtle arrow
+   separator between source → target codes.
+   --------------------------------------------------------------- */
+.pairCell {
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  color: var(--ifm-heading-color);
+}
+
+/* Arrow separator: styled via a span inside the cell */
+.pairCell span {
+  display: inline-block;
+  margin: 0 0.3rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------------
+   8. Mobile Card View
+   Below 768px, replace the table with vertical cards.
+   Each card: model header, method + pair subtitle, metric bars,
+   footer with tier/cost/author/date.
+   --------------------------------------------------------------- */
+.cardView {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cardView {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(15, 118, 110, 0.12);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.cardModel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  line-height: 1.3;
+}
+
+.cardMethod {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.15rem;
+}
+
+.cardPair {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Metric bars grid */
+.cardMetrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cardMetricLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-font-color-secondary);
+}
+
+.cardMetricValue {
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-heading-color);
+}
+
+/* Thin horizontal mini progress bar showing relative score */
+.cardMetricBar {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ifm-color-emphasis-200);
+  overflow: hidden;
+  margin-top: 0.1rem;
+}
+
+/* The filled portion — width set inline via style="--bar-pct: 72%" */
+.cardMetricBar::after {
+  content: "";
+  display: block;
+  width: calc(var(--bar-pct, 0) * 1%);
+  height: 100%;
+  border-radius: 2px;
+  background: var(--ifm-color-primary);
+  transition: width 0.4s ease-out;
+}
+
+/* Card footer: tier, cost, author, date — single row */
+.cardFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  font-size: 0.75rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.cardTier {
+  /* Re-uses .tierBadge sizing; this class adds card-specific margins if needed */
+}
+
+.cardCost {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.cardAuthor {
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardDate {
+  margin-left: auto;
+  opacity: 0.7;
+}
+
+/* Dark mode — card view */
+[data-theme="dark"] .card {
+  background: #1A201D;
+  border-color: #2A322E;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 4px 16px rgba(63, 193, 192, 0.15);
+}
+
+[data-theme="dark"] .cardModel {
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .cardPair {
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .cardMetricValue {
+  color: #E8EAE8;
+}
+
+[data-theme="dark"] .cardMetricBar {
+  background: #2A322E;
+}
+
+[data-theme="dark"] .cardMetricBar::after {
+  background: #3FC1C0;
+}
+
+[data-theme="dark"] .cardFooter {
+  border-top-color: #2A322E;
+}
+
+/* ---------------------------------------------------------------
+   9. Mobile Filter Panel
+   Below 768px: collapse all filters into a "Filters" button.
+   Clicking opens a slide-up panel from bottom with an overlay.
+   --------------------------------------------------------------- */
+.mobileFilterBtn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileFilterBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 40px;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--ifm-color-primary);
+    background: transparent;
+    color: var(--ifm-color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobileFilterBtn:hover {
+    background: rgba(15, 118, 110, 0.08);
+  }
+
+  /* Thumb-sized filter pills inside the slide-up panel. */
+  .conditionPill {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+}
+
+/* Semi-transparent overlay behind the slide-up panel */
+.mobileFilterOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 900;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.mobileFilterPanelOpen ~ .mobileFilterOverlay,
+.mobileFilterOverlay.mobileFilterPanelOpen {
+  display: block;
+  opacity: 1;
+}
+
+/* Slide-up panel from bottom — stacks filter controls vertically */
+.mobileFilterPanel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: var(--ifm-background-surface-color);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+  padding: 1.25rem 1rem 2rem;
+  z-index: 910;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileFilterPanelOpen {
+  transform: translateY(0);
+}
+
+/* Small drag handle at the top of the panel */
+.mobileFilterPanel::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ifm-color-emphasis-300);
+  margin: 0 auto 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Dark mode — mobile filter panel */
+[data-theme="dark"] .mobileFilterBtn {
+  border-color: #3FC1C0;
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .mobileFilterBtn:hover {
+  background: rgba(63, 193, 192, 0.12);
+}
+
+[data-theme="dark"] .mobileFilterPanel {
+  background: #1A201D;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .mobileFilterPanel::before {
+  background: #3D4A44;
+}
+
+[data-theme="dark"] .mobileFilterOverlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------------
+   10. Deep Link Highlight
+   Yellow/gold flash animation on a row that was deep-linked to.
+   Fades to normal after 2 seconds.
+   --------------------------------------------------------------- */
+.highlightedRow {
+  animation: deepLinkFlash 2s ease-out both;
+}
+
+@keyframes deepLinkFlash {
+  0% {
+    background: rgba(251, 191, 36, 0.35);
+  }
+  60% {
+    background: rgba(251, 191, 36, 0.15);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlightedRow {
+    /* Still show the highlight briefly, just no animation */
+    animation: none;
+    background: rgba(251, 191, 36, 0.12);
+  }
+}
+
+/* Dark mode — deep link highlight uses a slightly richer gold
+   so it reads clearly on the dark surface */
+[data-theme="dark"] .highlightedRow {
+  animation: deepLinkFlashDark 2s ease-out both;
+}
+
+@keyframes deepLinkFlashDark {
+  0% {
+    background: rgba(251, 191, 36, 0.25);
+  }
+  60% {
+    background: rgba(251, 191, 36, 0.1);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+/* ---------------------------------------------------------------
+   11. Desktop/Mobile Visibility & Missing References
+   Classes needed by leaderboard.js that bridge the desktop
+   table view and mobile card view.
+   --------------------------------------------------------------- */
+
+/* Desktop filters wrapper — hidden on mobile */
+.desktopFilters {
+  display: contents;
+}
+
+/* Sort button inside <th> — inherits all styles, removes button chrome */
+.sortButton {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+}
+.sortButton:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Filter badge count (on mobile filter button) */
+.filterBadgeCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 0.4rem;
+}
+
+/* "Clear all" link in filter chips row */
+.filterChipClearAll {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: #6B7C74;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+.filterChipClearAll:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Result actions row — holds count + column chooser + export */
+.resultActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Mobile filter panel header */
+.mobileFilterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1A2B22;
+}
+.mobileFilterHeader button {
+  all: unset;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #6B7C74;
+}
+[data-theme="dark"] .mobileFilterHeader {
+  color: #E8EAE8;
+}
+[data-theme="dark"] .mobileFilterHeader button {
+  color: #9AA5A0;
+}
+
+/* Mobile filter apply button */
+.mobileFilterApply {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.mobileFilterApply:hover {
+  background: #0D6960;
+}
+
+/* Card view — expanded card state */
+.cardExpanded {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 16px rgba(15, 118, 110, 0.12);
+}
+
+/* Card rank badge */
+.cardRank {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-right: 0.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card pair separator dot */
+.cardPairSep {
+  margin: 0 0.35rem;
+  color: #8A9A92;
+}
+
+/* Card metric bar wrapper — the track behind the fill */
+.cardMetricBarWrap {
+  flex: 1;
+  height: 4px;
+  background: rgba(15, 118, 110, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 0.5rem;
+}
+[data-theme="dark"] .cardMetricBarWrap {
+  background: rgba(63, 193, 192, 0.1);
+}
+
+/* Card detail section (expanded) */
+.cardDetail {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(15, 118, 110, 0.1);
+}
+[data-theme="dark"] .cardDetail {
+  border-top-color: rgba(63, 193, 192, 0.1);
+}
+
+/* Pair cell styling */
+.pairCell {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+/* ---------------------------------------------------------------
+   12. Responsive: table vs cards
+   Desktop shows the table, mobile shows cards.
+   --------------------------------------------------------------- */
+.tableContainer {
+  /* already defined above — just ensure it exists */
+}
+
+/* Card view hidden on desktop by default */
+.cardView {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide the desktop table on mobile */
+  .tableContainer {
+    display: none !important;
+  }
+  /* Show the card view */
+  .cardView {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+  /* Hide desktop filter controls, show mobile filter button */
+  .desktopFilters {
+    display: none;
+  }
+  .mobileFilterBtn {
+    display: flex !important;
+  }
+  /* Stack result actions below chips */
+  .resultsSummary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .resultActions {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+}
+
+/* ---------------------------------------------------------------
+   13. Load More Pagination
+   Centered button for loading the next page of results.
+   --------------------------------------------------------------- */
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.loadMoreBtn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 2rem;
+  border: 1px solid rgba(15, 118, 110, 0.3);
+  border-radius: 6px;
+  color: var(--ifm-color-primary);
+  font-family: 'IBM Plex Mono', 'Fira Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.loadMoreBtn:hover:not(:disabled) {
+  background: rgba(15, 118, 110, 0.06);
+  border-color: var(--ifm-color-primary);
+}
+
+.loadMoreBtn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+[data-theme="dark"] .loadMoreBtn {
+  border-color: rgba(63, 193, 192, 0.3);
+  color: #3FC1C0;
+}
+
+[data-theme="dark"] .loadMoreBtn:hover:not(:disabled) {
+  background: rgba(63, 193, 192, 0.08);
+  border-color: #3FC1C0;
+}
+
+/* ── Dataset license chip + restriction badges (NC research-only) ───────── */
+/* Surfaces a corpus license on every row; the NC badge is prominent so the
+   non-commercial / research-only restriction is visible at a glance. */
+.licenseChip {
+  display: inline-block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  color: var(--ifm-font-color-secondary);
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.licenseRestriction {
+  display: inline-block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ifm-color-warning-contrast-foreground);
+  background: var(--ifm-color-warning-contrast-background);
+  border: 1px solid var(--ifm-color-warning);
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 6px;
+  vertical-align: middle;
+  cursor: help;
+}
+
+/* The NonCommercial / research-only badge is the prominent one. */
+.licenseNc {
+  color: #fff;
+  background: var(--ifm-color-warning);
+  border-color: var(--ifm-color-warning);
+}
+
+/* ── Contamination lane badges (relative-comparison-only) ───────────────── */
+/* HIGH-contamination corpora (e.g. FLORES+, in models' training data) are
+   relative-comparison-only — never mixed into absolute-quality rankings. The
+   badge makes that visible at a glance; styled distinctly (red) from the
+   amber license badges so the two concerns don't read as the same thing. */
+.contaminationBadge {
+  display: inline-block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ifm-color-emphasis-500);
+  border: 1px solid var(--ifm-color-emphasis-500);
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 6px;
+  vertical-align: middle;
+  cursor: help;
+}
+
+/* HIGH — the prominent relative-only badge (scarlet, not amber). */
+.contaminationHigh {
+  color: #fff;
+  background: #dc2626; /* red-600 */
+  border-color: #dc2626;
+}
+
+[data-theme="dark"] .contaminationHigh {
+  background: #ef4444; /* red-500 — more legible on dark */
+  border-color: #ef4444;
+}
+
+/* MEDIUM — lighter caution; still rankable on absolute quality. */
+.contaminationMedium {
+  color: var(--ifm-color-warning-contrast-foreground);
+  background: var(--ifm-color-warning-contrast-background);
+  border-color: var(--ifm-color-warning);
+}
+
+/* Compact in-cell variant (rendered beside the composite score). */
+.contaminationCellBadge {
+  font-size: 0.62rem;
+  padding: 0 4px;
+  margin-left: 6px;
+  margin-right: 0;
+}
+
+/* The "Lane" segmented control reuses the condition-pill styling; this is the
+   explanatory note shown when the relative-only lane is active. */
+.laneNote {
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ifm-font-color-secondary);
+  background: var(--ifm-color-emphasis-100);
+  border-left: 3px solid #dc2626;
+  border-radius: 4px;
+}

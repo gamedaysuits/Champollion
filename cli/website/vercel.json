@@ -1,0 +1,251 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "git": {
+    "deploymentEnabled": false
+  },
+  "redirects": [
+    {
+      "source": "/give",
+      "destination": "/run_queue",
+      "permanent": true
+    },
+    {
+      "source": "/leaderboard",
+      "has": [
+        {
+          "type": "host",
+          "value": "mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/leaderboard?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/leaderboard",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/leaderboard?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/docs/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/docs/network/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/docs/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/docs/network/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/arena/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/arena/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/arena/docs/:path*",
+      "destination": "/docs/network/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/arena/docs",
+      "destination": "/docs/network",
+      "permanent": true
+    },
+    {
+      "source": "/arena/:locale/docs/:path*",
+      "destination": "/:locale/docs/network/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/arena/:locale/docs",
+      "destination": "/:locale/docs/network",
+      "permanent": true
+    },
+    {
+      "source": "/mesh",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mesh/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-preview",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/arena/landscape",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/arena/landscape/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/arena/language-tree",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/arena/language-tree/:path*",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/trading-cards",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/trading-cards/:path*",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/contests",
+      "destination": "/shared-tasks",
+      "permanent": false
+    },
+    {
+      "source": "/contests/:path*",
+      "destination": "/shared-tasks",
+      "permanent": false
+    },
+    {
+      "source": "/docs/network/audiences/for-translation-vendors",
+      "destination": "/docs/network/who-benefits#vendors",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/for-researchers",
+      "destination": "/docs/network/who-benefits#researchers",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/for-speakers",
+      "destination": "/docs/network/who-benefits#speakers",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/press",
+      "destination": "/docs/network/who-benefits#press",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/for-funders",
+      "destination": "/docs/network/who-benefits#funders",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/:path*",
+      "destination": "/docs/network/who-benefits",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/audiences/:path*",
+      "destination": "/:locale/docs/network/who-benefits",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/register-a-corpus",
+      "destination": "/docs/network/sovereignty/registering-corpora",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/(queue|queue-preview|registry|mesh|corpus-wishlist).json",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/(llms-full.txt|run_queue)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ]
+}

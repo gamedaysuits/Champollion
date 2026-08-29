@@ -1,0 +1,30 @@
+ID,Card_Field,Disposition,Retired_Reason,Former_Source
+_atlas,_atlas,RUNTIME,"build metadata, not a fact: stamps the atlas version a card was projected from so a consumer cannot blend two releases (requireAtlas). Never fetched, never cited.",
+archivePresence,archivePresence,DROP,"OLAC retired: unreachable upstream, no producer, and only 6.4% of the claim was a real archive. See shared/retired-sources.json",
+arealContext,arealContext,DROP,"719 distinct values across 5,000 cards (14.4% unique) — templated areal prose",
+codeSwitching,codeSwitching,DROP,RETIRED 2026-08-04 with the curated lane. Three cards of good but uncited content. Worth re-sourcing; not worth asserting unsourced.,shared/curated-facts/language-facts.json (archived 2026-08-04)
+contactInfluences,contactInfluences,DROP,"550 distinct across 3,360 (16.4%), and 140 entries name an 'unidentified donor', which is not a contact event",
+culturalAphorism,culturalAphorism,DROP,"RETIRED 2026-08-04 with the curated lane. 92 proverbs with no attribution, flagged for consent review and never cleared. Cultural expression needs a named holder and enthusiastic consent, not an editorial stamp.",shared/curated-facts/language-facts.json (archived 2026-08-04)
+digitalPresence,digitalPresence,DROP,incubator-wikis.json is orphaned output with no producer and no fetcher. Same rule as OLAC,
+encyclopedic,encyclopedic,DROP,"its own provenance says ""machine-assembled"" — GENERATED prose, not human knowledge. The founder ordering is explicit that prose comes last, regenerated from facts once the facts are right. Curating machine output as though it were curation would freeze today's errors into tomorrow's citations. Returns in Phase G",
+evalDatasets,evalDatasets,RUNTIME,"composed at runtime from shared/catalogue/card-config.json (346 languages), not projected onto cards — same reason as metricPlugins.",
+evalMetrics,evalMetrics,DROP,"a pip manifest entry listing metric plugins to install. Not a fact about a language; which metrics exist is a property of the harness, and which metrics were RUN is a leaderboard result.",
+evalPack,evalPack,DROP,"a pip manifest, not a fact about a language, and no runtime consumer",
+evalStandard,evalStandard,DROP,"a pip manifest entry naming which eval standard plugin to install. Not a fact about a language, and no runtime consumer reads it from a card.",
+experts,experts,DROP,"RETIRED 2026-08-04 with the curated lane. 1,854 entries whose values are ARCHIVES, not people — {""name"":""PARADISEC"",""type"":""institution""} recorded as an expert. A category error, not a thin fact.",shared/curated-facts/language-facts.json (archived 2026-08-04)
+extends,extends,DROP,"a card-template inheritance pointer, not a fact about a language. Cards are projected wholesale now, so template inheritance has no meaning",
+formality,formality,DROP,"119 distinct values across 1,781 cards (6.7% unique). Same",
+gender,gender,DROP,"150 distinct values across 2,404 cards (6.2% unique) — and Grambank CODES this properly (GB030, GB051-053), already extracted into typologicalProfile. A templated prose description beside a coded source is a second, worse truth",
+history,history,DROP,RETIRED 2026-08-04 with the curated lane. Uncited prose migrated out of the previous corpus.,shared/curated-facts/language-facts.json (archived 2026-08-04)
+humanReviewed,humanReviewed,DROP,"present on no card. Review state belongs to the correction lane, not to card data",
+keyboardSupport,keyboardSupport,DROP,firstvoices-keyboards has no fetcher and no data on disk. Retire or fetch — not assert,
+linguisticChallenges,linguisticChallenges,DROP,"1,248 distinct across 4,548 (27.4%) — the most per-language of the templated set, but its sole producer (enrich-from-typology.mjs) NO LONGER EXISTS, so it cannot be regenerated. The facts it summarised are now on the card directly (typologicalProfile, phonologicalInventory, numeralSystem), which is better than a prose gloss of them",
+metricPlugins,metricPlugins,RUNTIME,"composed at runtime from shared/catalogue/card-config.json, not projected onto cards. Keeping per-language plugin wiring in the config kernel is what stops one language being special-cased on the cards themselves.",
+nativeName,nativeName,RUNTIME,"never on a raw card by design. cli/lib/cards/reader.js normalizeCard() derives it from the cited endonym envelope at read time, so the disagreement stays on the card and the runtime gets one displayable value.",
+nativeNameVerdict,nativeNameVerdict,DROP,"RETIRED 2026-08-04 with the curated lane. 1,378 endonym adjudications with no citation, authored by ""champollion-curation"", which is not a person. Replaced by the `nativeName` parameter sourced from Wikidata P1705.",shared/curated-facts/language-facts.json (archived 2026-08-04)
+notes,notes,DROP,RETIRED 2026-08-04 with the curated lane. Uncited prose migrated out of the previous corpus.,shared/curated-facts/language-facts.json (archived 2026-08-04)
+registers,registers,DROP,"113 distinct values across 1,775 cards (6.4% unique). Templated register descriptions, not per-language description",
+rules,rules,DROP,"66 distinct values across 7,927 cards (0.8% unique) — typography and capitalisation templates applied by script family, stamped `manual-curation`",
+scriptConverter,scriptConverter,RUNTIME,live configuration read by cli/lib/pairs.js. Not card data; excluded from the audit rather than treated as a fact,
+supportTier,supportTier,DROP,"an editorial grade on 8,623 cards with NO _fieldSources entry at all. Deriving it from componentsPresent would relaunder the same unsourced judgement. If a tier is wanted it must be a curated call with an author, or a documented function a reader can apply and disagree with",
+taxonomyNotes,taxonomyNotes,DROP,"present on no card, live or projected — the entry was speculative",

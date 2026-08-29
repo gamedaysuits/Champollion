@@ -1,0 +1,368 @@
+{
+  "code": "tmh-NE",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Tamashek",
+    "values": [
+      {
+        "value": "Tamashek",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Tamashek",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "tmh",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "tmh-Latn-NE",
+    "values": [
+      {
+        "value": "tmh-Latn-NE",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "tmh-Latn-NE",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"tmh\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "tmh",
+    "values": [
+      {
+        "value": "tmh",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "canonicalisedMembers": {
+    "agreement": "unanimous",
+    "consensus": "ttq",
+    "values": [
+      {
+        "value": "ttq",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR canonicalises \"ttq\" to \"tmh\" with reason=macrolanguage"
+      },
+      {
+        "value": "ttq",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "SIL langtags records \"ttq\" as an additional ISO 639-3 code for tags of \"tmh\""
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "bible-uedin",
+        "corpusId": "corpus:opus:bible-uedin",
+        "pairCount": 99,
+        "topPartners": [
+          {
+            "code": "jap",
+            "alignmentPairs": 5530
+          },
+          {
+            "code": "vi",
+            "alignmentPairs": 5530
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 5530
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 5528
+          },
+          {
+            "code": "th",
+            "alignmentPairs": 5528
+          }
+        ],
+        "alignmentPairsTotal": 216370,
+        "pairsWithPublishedSize": 99,
+        "largestPairAlignments": 5530
+      }
+    ],
+    "keyboards": [
+      {
+        "name": "Clavier du Mali (Azerty)",
+        "keyboardId": "sil_mali_azerty",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/sil/sil_mali_azerty",
+        "publisher": "keyman",
+        "version": "3.4.2",
+        "lastModified": "2025-06-10"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "الطوارق",
+    "values": [
+      {
+        "value": "الطوارق",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "isoLanguageType": "Living",
+  "isoScope": "Macrolanguage",
+  "macroarea": "Africa",
+  "methodSupport": {
+    "total": 19,
+    "byTier": {
+      "model-card-declared": 19
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Arab",
+    "Latn",
+    "Tfng"
+  ],
+  "scriptNames": [
+    "Arabic",
+    "Latin",
+    "Tifinagh (Berber)"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "1400000",
+    "values": [
+      {
+        "value": "1400000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "suppressScript": "Latn",
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 18,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "canonicalisedMembers": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguageMembers": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "suppressScript": [
+      "iana-subtag-registry-2026-06-14"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "tmh-NE",
+    "revision": "17587889726e8398",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "canonicalisedMembers",
+      "endonym",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "macrolanguageMembers",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "resources.keyboards",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "suppressScript"
+    ]
+  },
+  "locale": {
+    "language": "tmh",
+    "region": "NE",
+    "script": "Latn",
+    "publishedTag": "tmh-NE",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Latn",
+  "localeScoped": {
+    "scriptName": "Latin"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "ud-treebanks",
+  "upstream": "https://raw.githubusercontent.com/UniversalDependencies/docs-automation/master/valdan/releases.json",
+  "license": "LicenseRef-UD-Per-Treebank",
+  "licenseUrl": "https://universaldependencies.org/",
+  "citation": "Universal Dependencies 2.18 treebank catalogue (Zeman et al., LINDAT/CLARIAH-CZ), release metadata retrieved 2026-08-18.",
+  "pin": {
+    "kind": "release",
+    "value": "2.18",
+    "doi": null,
+    "date": "2026-05-15"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "ud-treebanks.json",
+      "bytes": 44801,
+      "sha256": "5d791aff98e29c61d8b1f043dd51827bfe8222094fb94962f0460c683dc6a850",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/docs-automation/master/valdan/releases.json",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/ud-treebanks.mjs",
+  "notes": "UD release 2.18 (2026-05-15): 353 treebanks, counts read from each repository's own stats.xml at the r2.18 tag. METADATA ONLY: treebank name, language, and the maintainers' sentence/token/word totals — no CoNLL-U file crosses the wire, which is what lets a treebank card exist under the rule that corpus CONTENT is never tracked. LICENCE is per treebank and NOT uniform: UD aggregates hundreds of independently licensed treebanks, so the source licence is a LicenseRef and each treebank's own terms must be resolved before its content is used for anything; the release/registry metadata itself (releases.json, codes_and_flags.yaml) is published by UD docs-automation under Apache-2.0. LANGUAGE CODES are UD's own iso3 assignments from codes_and_flags.yaml, never inferred from display names — 0 treebank(s) name a language the registry does not carry. UNPUBLISHED COUNTS: 0 treebank(s) publish no sentence total; stored as null, never 0 — \"not published\" and \"measured, and empty\" are different facts. COMPLETE: every treebank in the release answered.",
+  "releaseVersion": "2.18",
+  "treebanks": 353,
+  "treebanksWithoutCounts": 0,
+  "treebanksWithoutRegistryCode": [],
+  "complete": true,
+  "unreachableTreebanks": [],
+  "fetchedAt": "2026-08-18T20:35:11.480Z"
+}

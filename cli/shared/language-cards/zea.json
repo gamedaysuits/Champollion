@@ -1,0 +1,538 @@
+{
+  "code": "zea",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Zeeuws",
+    "values": [
+      {
+        "value": "Zeeuws",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Zeeuws",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "indo1319",
+      "clas1257",
+      "germ1287",
+      "nort3152",
+      "west2793",
+      "macr1270",
+      "midd1347",
+      "mode1257",
+      "sout3292",
+      "zeeu1239"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Indo-European",
+      "values": [
+        {
+          "value": "Indo-European",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Indo-European",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "indo1319",
+    "genus": "Germanic"
+  },
+  "bcp47": "zea",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "zea-Latn-NL",
+    "values": [
+      {
+        "value": "zea-Latn-NL",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "zea-Latn-NL",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"zea\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "zea",
+    "values": [
+      {
+        "value": "zea",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 17,
+        "topPartners": [
+          {
+            "code": "gos",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "nl",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "cmn",
+            "alignmentPairs": 3
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 3
+          },
+          {
+            "code": "drt",
+            "alignmentPairs": 3
+          }
+        ],
+        "alignmentPairsTotal": 38,
+        "pairsWithPublishedSize": 17,
+        "largestPairAlignments": 4
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 917
+          }
+        ],
+        "alignmentPairsTotal": 917,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 917
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 6,
+        "topPartners": [
+          {
+            "code": "nl",
+            "alignmentPairs": 55
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 9
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 5
+          },
+          {
+            "code": "ig",
+            "alignmentPairs": 3
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 2
+          }
+        ],
+        "alignmentPairsTotal": 76,
+        "pairsWithPublishedSize": 6,
+        "largestPairAlignments": 55
+      }
+    ]
+  },
+  "countries": [
+    "NL"
+  ],
+  "dialectCount": 9,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "threatened",
+        "source": "glottolog-cldf-v5.3",
+        "note": "West Flemish (1476-vls, zea) = Vulnerable",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Vulnerable",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "unanimous",
+    "consensus": "Zeêuws",
+    "values": [
+      {
+        "value": "Zeêuws",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "Zeêuws",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "zea",
+        "variantType": "language",
+        "note": "label language: zea"
+      }
+    ]
+  },
+  "glottocode": "zeeu1238",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 51.4981,
+    "lng": 3.85428
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 41,
+        "concepts": 40,
+        "release": "asjp-v21"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "documentation": {
+    "medLevel": "grammar sketch",
+    "medSourceId": "578503"
+  },
+  "methodSupport": {
+    "total": 37,
+    "byTier": {
+      "model-card-declared": 37
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gem",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gmw",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gem-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gem-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0-LoRA",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-i1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-gem",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-gmw",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "240000",
+    "values": [
+      {
+        "value": "240000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "wikipediaEdition": {
+    "site": "zea",
+    "url": "https://zea.wikipedia.org",
+    "name": "Zeelandic"
+  },
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 30,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "zea",
+    "revision": "1d891f72ddba57cd",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "wikipediaEdition"
+    ]
+  }
+}

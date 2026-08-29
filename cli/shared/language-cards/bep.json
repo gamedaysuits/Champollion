@@ -1,0 +1,418 @@
+{
+  "code": "bep",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Besoa",
+    "values": [
+      {
+        "value": "Besoa",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Besoa",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "aust1307",
+      "mala1545",
+      "sout2923",
+      "ramp1244",
+      "bada1265",
+      "bada1260"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Austronesian",
+      "values": [
+        {
+          "value": "Austronesian",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "aust1307"
+  },
+  "bcp47": "bep",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "bep-Latn-ID",
+    "values": [
+      {
+        "value": "bep-Latn-ID",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "bep-Latn-ID",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"bep\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "bep",
+    "values": [
+      {
+        "value": "bep",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "countries": [
+    "ID"
+  ],
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "endangered",
+        "source": "elcat-v2024.1",
+        "note": "Percentage of people by age using Behoa: 70-100yo 100%, 50-69yo 100%, 30-49yo 100%, 20-29yo, 75% (most have receptive knowledge), 10-19yo 25% (many understand but reply in Indonesian), 0-9yo 10%. \r\nChildren receive some formal education in Behoa at school, but few parents teach it to their children. [Endangerment.Certainty: 1]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "threatened",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.2]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "shifting",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Behoa (1361-bep) = Endangered (100 percent certain, based on the evidence available) (Percentage of people by age using Behoa: 70-100yo 100%, 50-69yo 100%, 30-49yo 100%, 20-29yo, 75% (most have receptive knowledge), 10-19yo 25% (many understand but reply in Indonesian), 0-9yo 10%.\r\nChildren receive some formal education in Behoa at school, but few parents teach it to their children.) [Shore 2021](cldf:shore:21)",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Definitely endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "bahasa Behoa",
+    "values": [
+      {
+        "value": "bahasa Behoa",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "id",
+        "variantType": "language",
+        "note": "label language: id"
+      }
+    ]
+  },
+  "glottocode": "beso1237",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": -1.60095,
+    "lng": 120.379
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "barlowhandandfive",
+        "forms": 1,
+        "concepts": 1,
+        "release": "barlowhandandfive-v1.3"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 40,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      }
+    ]
+  },
+  "macroarea": "Papunesia",
+  "documentation": {
+    "medLevel": "grammar sketch",
+    "medSourceId": "108960"
+  },
+  "methodSupport": {
+    "total": 17,
+    "byTier": {
+      "model-card-declared": 17
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-map-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-map-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-poz-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-poz-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-poz-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-map-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-map-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-poz-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-poz-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-poz-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "decimal"
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "1000-9999",
+        "source": "elcat-v2024.1"
+      },
+      {
+        "value": "10000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "resources": {
+    "typology": [
+      {
+        "dataset": "barlowhandandfive",
+        "featuresCoded": 4,
+        "datasetFeatureTotal": 7
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 11,
+    "componentsPresent": 28,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "elcat-v2024.1",
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "elcat-v2024.1",
+      "linguameta-452a21ad3dae"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "bep",
+    "revision": "60806270ee434019",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates"
+    ]
+  }
+}

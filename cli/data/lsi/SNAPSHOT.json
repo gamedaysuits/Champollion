@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "lsi",
+  "upstream": "https://zenodo.org/records/8361936",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Grierson's \"Linguistic Survey of India\" from 1928 — Grierson, George Abraham",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.0",
+    "doi": "10.5281/zenodo.8361936",
+    "date": "2023-09-20"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 5405456,
+      "sha256": "8bb6747bf782c125c95785f80b260d4c3e2b3cb17b5a639d98acace1b0307722",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 14935,
+      "sha256": "4153837fe47320b12233ce5747f9aa11dc625e9204814cc5fe2a732b0fbb19db",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 7648352,
+      "sha256": "d4449e36e99855c093c9e6dbe766d250aebf1c843b6ea77ec8c2ee9d14046a99",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 46349,
+      "sha256": "e1142365dd772bc90f0025cedb9e7b9e7981fee32138cc42e525c0383bbbc474",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "4245b18333bb9894e8a1679a4f0850386983f76edaadb6d9939d503c650d4bb7",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "media.csv",
+      "bytes": 42524,
+      "sha256": "eaa6ac9b6708793ae2369220aa5d7b7d6b077299e4733ac9dd8227ee34d73500",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/media.csv"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 20902,
+      "sha256": "da04e3e93e3fee591047ad2b0dd90628f3e5a9062dc62e6bb0befc8b542f3361",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 1261,
+      "sha256": "2ee6e70d3c3ab90006af997f790626790c2325c9cb2b2627ad50168fc20e8a59",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 464,
+      "sha256": "52f17b963cd3ecec1f52150da7399674b4a8a194f73cc3454beeac5515f7f576",
+      "url": "https://zenodo.org/api/records/8361936/files/lexibank/lsi-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/lsi-v1.0.zip:lexibank-lsi-de3b554/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/lsi-v1.0.zip, whose md5 matched Zenodo's published checksum (md5:b55a1f8e2467723b15f85db9d59a59b0). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:58:11.187Z"
+}

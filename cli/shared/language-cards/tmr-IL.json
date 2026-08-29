@@ -1,0 +1,459 @@
+{
+  "code": "tmr-IL",
+  "name": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "Jewish Babylonian Aramaic (ca. 200-1200 CE)",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Jewish Babylonian Aramaic",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "afro1255",
+      "semi1276",
+      "west2786",
+      "cent2236",
+      "nort3165",
+      "aram1259",
+      "impe1236",
+      "midd1367",
+      "east2680",
+      "cent2217",
+      "nort3241"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Afro-Asiatic",
+      "values": [
+        {
+          "value": "Afro-Asiatic",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "afro1255"
+  },
+  "bcp47": "tmr",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "tmr-Syrc-IL",
+    "values": [
+      {
+        "value": "tmr-Syrc-IL",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "tmr-Syrc-IL",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"tmr\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "tmr",
+    "values": [
+      {
+        "value": "tmr",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 65,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 118
+          },
+          {
+            "code": "yi",
+            "alignmentPairs": 54
+          },
+          {
+            "code": "lad",
+            "alignmentPairs": 53
+          },
+          {
+            "code": "eo",
+            "alignmentPairs": 52
+          },
+          {
+            "code": "lfn",
+            "alignmentPairs": 38
+          }
+        ],
+        "alignmentPairsTotal": 782,
+        "pairsWithPublishedSize": 65,
+        "largestPairAlignments": 118
+      }
+    ],
+    "keyboards": [
+      {
+        "name": "Aramaic (Hebrew layout)",
+        "keyboardId": "aramaic_hebrew",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/a/aramaic_hebrew",
+        "publisher": "keyman",
+        "version": "1.3.1",
+        "lastModified": "2024-12-02"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "IL"
+  ],
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Jewish Babylonian Aramaic (tmr-tmr) = 9 (Second language only).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Extinct",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "documentation": {
+    "firstDocumented": 200,
+    "lastDocumented": 1200,
+    "medLevel": "long grammar",
+    "medSourceId": "552069"
+  },
+  "glottocode": "jewi1240",
+  "isIsolate": false,
+  "isoLanguageType": "Extinct",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 32.273,
+    "lng": 44.245
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 18,
+        "concepts": 17,
+        "release": "asjp-v21"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 27,
+    "byTier": {
+      "model-card-declared": 27
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-sem",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-sem-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-sem-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-sem-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-sem",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-sem-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 26,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.firstDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.lastDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "tmr-IL",
+    "revision": "4686eeb44ab34afb",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.firstDocumented",
+      "documentation.lastDocumented",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.corpora",
+      "resources.keyboards",
+      "resources.typology"
+    ]
+  },
+  "locale": {
+    "language": "tmr",
+    "region": "IL",
+    "script": "Syrc",
+    "publishedTag": "tmr-IL",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Syrc"
+}

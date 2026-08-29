@@ -1,0 +1,562 @@
+{
+  "_note": "Docent FAQ SSOT (en). Authored+verified 2026-07-20 by the docent-content-authoring swarm, grounded in cli/website/docs. Served free (no model call) by docent-chat on a strong match. Translated per-locale via the champollion sync pipeline.",
+  "faq": [
+    {
+      "id": "what-is-champollion",
+      "question": "What is Champollion?",
+      "answer": "Champollion is open-source infrastructure for trustworthy machine translation across the world's languages, with a focus on low-resource and Indigenous ones. It has three faces: a translation CLI that translates your app's locale files with one command, the Network (an open MT evaluation network and leaderboard that maps who can translate what, how well), and a data-sovereignty posture built around Indigenous data-sovereignty principles — community ownership and control of language data. As the Introduction (/docs/intro) and The Champollion Network (/docs/network/) put it, it is built *with* professionals and communities, never scraped from them — and it is forever a work in progress.",
+      "sources": [
+        "/docs/intro",
+        "/docs/network/",
+        "/docs/network/how-it-works"
+      ],
+      "keywords": [
+        "what is champollion",
+        "about",
+        "overview",
+        "mission",
+        "what does champollion do"
+      ]
+    },
+    {
+      "id": "free-and-open-source",
+      "question": "Is Champollion free? Is it open source? Does it cost anything?",
+      "answer": "Yes on both counts. Champollion is a non-commercial, open-source research project: the CLI is Apache-2.0 and the evaluation harness is AGPL-3.0, per How the Work Is Funded (/docs/network/sovereignty/economic-model). There is no paid API, no metering, and no revenue share — the only costs you'd incur are the API tokens you spend on your chosen model provider when you translate or benchmark. Champollion itself takes nothing.",
+      "sources": [
+        "/docs/network/sovereignty/economic-model",
+        "/docs/intro"
+      ],
+      "keywords": [
+        "free",
+        "open source",
+        "cost",
+        "price",
+        "license",
+        "pricing",
+        "how much"
+      ]
+    },
+    {
+      "id": "the-cli",
+      "question": "What is the champollion CLI and what does it do?",
+      "answer": "The CLI is the deployment end of Champollion: run `npx champollion sync` and it auto-detects your locale files, format, and target languages, translates what's missing, skips what's done, validates every result through a quality gate, and writes clean output. Per How It Works (/docs/how-it-works), it tracks every source string with SHA-256 hashes so re-runs only re-translate what changed, caches results in Translation Memory to save cost, and lets you pick a different translation method per language pair. It's a full i18n pipeline — sync, watch, lint, verify, audit, XLIFF export, and more (/docs/intro).",
+      "sources": [
+        "/docs/intro",
+        "/docs/how-it-works"
+      ],
+      "keywords": [
+        "cli",
+        "command line",
+        "sync",
+        "tool",
+        "npx champollion",
+        "locale files",
+        "i18n"
+      ]
+    },
+    {
+      "id": "install-and-run-cli",
+      "question": "How do I install and run the CLI?",
+      "answer": "You need Node.js 20.11+ and a translation API key. The fastest path is `npx champollion sync` with no install, or `npm install --save-dev champollion` — see Installation (/docs/getting-started/installation). Set a provider key (OpenRouter is recommended; Gemini has a free tier), then run `npx champollion sync` and it will translate your locale files in about 60 seconds, as walked through in the Quick Start (/docs/getting-started/quick-start).",
+      "sources": [
+        "/docs/getting-started/installation",
+        "/docs/getting-started/quick-start"
+      ],
+      "keywords": [
+        "install",
+        "setup",
+        "getting started",
+        "run",
+        "api key",
+        "node",
+        "npm",
+        "how to install"
+      ]
+    },
+    {
+      "id": "cli-methods",
+      "question": "What translation methods does the CLI support?",
+      "answer": "Methods are configured per language pair, so you can mix them in one project. How It Works (/docs/how-it-works) describes the core four — `llm` (any OpenRouter model), `llm-coached` (the same prompt plus grammar rules, a dictionary, and style notes), `google-translate`, and `api` (an HTTP endpoint you host) — plus `plugin` methods installed locally. Installation (/docs/getting-started/installation) lists the supported backends (OpenRouter, Gemini, OpenAI, Anthropic, DeepL, Google Translate, Microsoft Translator, LibreTranslate, Tilde, and Translated/Lara). You might use Google Translate for French and a coached LLM for a low-resource language, all under the same `sync` command.",
+      "sources": [
+        "/docs/how-it-works",
+        "/docs/getting-started/installation",
+        "/docs/guides/agent-guide"
+      ],
+      "keywords": [
+        "methods",
+        "llm",
+        "coached",
+        "google translate",
+        "deepl",
+        "api",
+        "plugin",
+        "providers",
+        "per pair"
+      ]
+    },
+    {
+      "id": "what-is-the-network",
+      "question": "What is the Network and the leaderboard?",
+      "answer": "The Champollion Network is open infrastructure to create and trust translation test sets and to map who can translate what, how well, across as many language pairs as possible. As The Champollion Network (/docs/network/) explains, you build a translation method, the eval harness benchmarks it with reproducible, fingerprinted scoring, and results appear on the public Method Leaderboard (/leaderboard). It runs on two kinds of benchmark: public benchmarks on open data, and sovereign benchmarks — secret community-owned test sets that Champollion never sees. Every method is welcome, human and machine.",
+      "sources": [
+        "/docs/network/",
+        "/docs/network/how-it-works",
+        "/leaderboard"
+      ],
+      "keywords": [
+        "network",
+        "arena",
+        "leaderboard",
+        "benchmark",
+        "evaluation",
+        "harness",
+        "scoreboard"
+      ]
+    },
+    {
+      "id": "leaderboard-status",
+      "question": "Is the leaderboard populated yet? What can I actually trust on it?",
+      "answer": "Honestly, not much is on it yet: the board is open for submissions and currently seeding — no runs have published, so there is nothing to rank (/docs/network/). Read the trust badge on any future row: 'self-reported' is the default and means exactly that, and no score on the site has yet cleared community speaker validation. Honest Limitations (/docs/network/honest-limitations) states these edges plainly — deep morphological validation currently covers one language pair, and community speaker-validation has not happened yet.",
+      "sources": [
+        "/docs/network/",
+        "/docs/network/honest-limitations",
+        "/docs/network/leaderboard/rules"
+      ],
+      "keywords": [
+        "leaderboard empty",
+        "status",
+        "populated",
+        "results",
+        "trust",
+        "verified",
+        "honest limitations"
+      ]
+    },
+    {
+      "id": "submit-a-method",
+      "question": "How do I submit a benchmark run or a method to the leaderboard?",
+      "answer": "Install the harness with `pip install mt-eval-harness`, run it against a registered corpus (for example `mt-eval run --corpus eval-amh-fra-globalvoices-test-v1 --model gemini-pro`), review the run card it produces, then publish with `mt-eval publish` — the full walkthrough is Submit a Method (/docs/network/getting-started/submit-a-method). Your run first appears as self-benchmarked; the server then re-scores your outputs against the sha-pinned corpus and, when it reproduces, promotes it to Champollion Verified. A hosted upload API and web UI are planned but not yet live, so `mt-eval publish` or a pull request to the harness repo are the working paths today.",
+      "sources": [
+        "/docs/network/getting-started/submit-a-method",
+        "/docs/network/leaderboard/rules"
+      ],
+      "keywords": [
+        "submit",
+        "publish",
+        "run card",
+        "mt-eval",
+        "leaderboard submission",
+        "benchmark run"
+      ]
+    },
+    {
+      "id": "scoring-and-metrics",
+      "question": "How is a method scored, and what do the quality tiers mean?",
+      "answer": "The leaderboard scores up to five metrics — chrF++, exact match, FST acceptance (morphological validity), equivalent match, and semantic score — combined into a composite whose exact weights live in the Scoring Specification (/docs/network/specifications/scoring), the single source of truth. MT Evaluation (/docs/network/leaderboard/rules) and the Network Agent Guide (/docs/network/getting-started/agent-guide) lay out the quality tiers: Baseline (0.00–0.30), Emerging (0.30–0.50), Functional (0.50–0.70), Deployable (0.70–0.85), and Fluent (0.85–1.00). These are automated proxies, not quality guarantees — only community speaker review confirms real usability.",
+      "sources": [
+        "/docs/network/leaderboard/rules",
+        "/docs/network/getting-started/agent-guide",
+        "/docs/network/specifications/scoring"
+      ],
+      "keywords": [
+        "scoring",
+        "metrics",
+        "chrf",
+        "fst",
+        "composite",
+        "quality tiers",
+        "deployable",
+        "how scored"
+      ]
+    },
+    {
+      "id": "the-one-rule",
+      "question": "What is 'the one rule' about training data?",
+      "answer": "Do not train on the evaluation data. As stated in The Champollion Network (/docs/network/) and MT Evaluation (/docs/network/leaderboard/rules): methods exposed to the benchmark dataset — as training data, few-shot examples, dictionary entries, or prompt material — will be disqualified. Fine-tune on whatever you want; just not on the test set. Every dataset carries a `do_not_train` flag for exactly this reason.",
+      "sources": [
+        "/docs/network/",
+        "/docs/network/leaderboard/rules",
+        "/docs/network/leaderboard/datasets"
+      ],
+      "keywords": [
+        "do not train",
+        "one rule",
+        "training data",
+        "contamination",
+        "disqualified",
+        "eval data"
+      ]
+    },
+    {
+      "id": "non-programmer-help",
+      "question": "Can I really help if I'm not a programmer?",
+      "answer": "Absolutely — and if you speak an Indigenous or low-resource language, you may be the most important person in this ecosystem. For Language Communities (/docs/network/community/for-language-communities) explains that reference translations, translation review, and coaching data (your knowledge of how the language works) need no code at all, and this work is paid, not volunteered. You could even start today by adding sentences to Tatoeba, which can become benchmark data at the next corpus build. No programming is required to make a real contribution.",
+      "sources": [
+        "/docs/network/community/for-language-communities",
+        "/docs/network/perspectives/how-speakers-get-paid",
+        "/get-involved"
+      ],
+      "keywords": [
+        "not a programmer",
+        "no coding",
+        "non technical",
+        "contribute",
+        "help",
+        "speaker",
+        "volunteer"
+      ]
+    },
+    {
+      "id": "language-community-involved",
+      "question": "I'm a language community or speaker — how do I get involved, and can I own my test set?",
+      "answer": "Start with Your Language (/my-language) and For Language Communities (/docs/network/community/for-language-communities). The strongest position you can hold is owning the benchmark itself: register your corpus as a metadata card (never the content) and choose an exposure lane — open, research-only, or fully sovereign, where the test set never leaves your infrastructure and we never see it. You decide who may develop methods for your language, and a high score never grants anyone permission to deploy. Reach out via info@champollion.dev, and note the ownership-transfer model is a committed design, not yet a running program.",
+      "sources": [
+        "/my-language",
+        "/docs/network/community/for-language-communities",
+        "/docs/network/sovereignty/registering-corpora"
+      ],
+      "keywords": [
+        "community",
+        "speaker",
+        "indigenous",
+        "my language",
+        "own test set",
+        "sovereign",
+        "get involved"
+      ]
+    },
+    {
+      "id": "researcher-involved",
+      "question": "I'm an ML researcher — how do I get involved?",
+      "answer": "Build a method and benchmark it. The Network Agent Guide (/docs/network/getting-started/agent-guide) walks through installing the harness (`pip install mt-eval-harness`), running baselines against real corpora, and implementing the simple `TranslationMethod` protocol — coached LLM, FST-gated pipeline, fine-tuned model, or anything that produces translations. You get standardized, reproducible, fingerprinted scoring against a shared corpus catalogue, and every run adds a point to a shared map of what works. Get Involved (/get-involved) points to the developer paths, including running the public benchmark queue.",
+      "sources": [
+        "/docs/network/getting-started/agent-guide",
+        "/get-involved",
+        "/docs/network/how-it-works"
+      ],
+      "keywords": [
+        "researcher",
+        "ml engineer",
+        "build a method",
+        "harness",
+        "research",
+        "developer",
+        "reproducible"
+      ]
+    },
+    {
+      "id": "translation-vendor-involved",
+      "question": "I'm a professional translator or a translation vendor — is there a place for me here?",
+      "answer": "Yes — human translation is a first-class method on the Network, listed and benchmarked alongside the machines, not treated as an afterthought (/docs/network/). To be listed, use Submit to the Index (/docs/network/getting-started/submit-to-the-index) and propose a 'human translation service' entry; a maintainer reviews every submission by hand, and your contact details are handled out-of-band, never posted in a public issue. Separately, the CLI's XLIFF workflow (/docs/guides/professional-translators) lets developers export machine drafts for professional review in memoQ, Trados, Phrase, or OmegaT and import your corrections back.",
+      "sources": [
+        "/docs/network/getting-started/submit-to-the-index",
+        "/docs/network/",
+        "/docs/guides/professional-translators"
+      ],
+      "keywords": [
+        "translator",
+        "vendor",
+        "agency",
+        "human translation",
+        "professional",
+        "xliff",
+        "service listing"
+      ]
+    },
+    {
+      "id": "sovereignty-aspirant-meaning",
+      "question": "What does 'sovereignty-aspirant' mean?",
+      "answer": "Champollion's posture is sovereignty-aspirant — built around Indigenous data-sovereignty principles: community ownership and control of language data. As Contact, Objections & Takedowns (/docs/network/community/contact-objections-takedown) puts it, the design is built so communities *can* exercise ownership and control of their data and anything derived from it — but whether it *achieves* that is for communities to decide, which is exactly why the objections channel exists. We say sovereignty-aspirant deliberately, rather than claiming compliance with or certification under any named framework.",
+      "sources": [
+        "/docs/network/community/contact-objections-takedown",
+        "/docs/network/sovereignty/data-sovereignty"
+      ],
+      "keywords": [
+        "sovereignty aspirant",
+        "sovereignty principles",
+        "ownership control access possession",
+        "indigenous"
+      ]
+    },
+    {
+      "id": "data-sovereignty",
+      "question": "What is data sovereignty here — do you store or scrape my language data?",
+      "answer": "No. Data Stewardship (/docs/network/sovereignty/data-sovereignty) states the position: language data is biodata, so the people who provide a corpus hold the keys to it and to anything measured against it. Champollion never holds the data — corpora are registered as hash-pinned metadata cards and fetched from the steward's own hosting at evaluation time; take your archive offline and evaluation simply stops. Every license and community restriction is respected by gate, not by promise (CI checks and database triggers), and the design is informed by Indigenous data-sovereignty principles — community ownership and control of language data — including the CARE Principles, Te Mana Raraunga, and Te Hiku Media's Kaitiakitanga License.",
+      "sources": [
+        "/docs/network/sovereignty/data-sovereignty",
+        "/docs/network/sovereignty/registering-corpora"
+      ],
+      "keywords": [
+        "data sovereignty",
+        "store data",
+        "scrape",
+        "biodata",
+        "fetch from source",
+        "care",
+        "kaitiakitanga",
+        "privacy"
+      ]
+    },
+    {
+      "id": "licensing-lanes",
+      "question": "What are the licensing lanes, and how do they work?",
+      "answer": "When you register a corpus you pick an exposure lane, described in Registering Corpora & Exposure Lanes (/docs/network/sovereignty/registering-corpora): public (open license, may rank on the public board), non-commercial research-only (benchmarkable but carved out of every commercial, prize, and API path), or private (your own scored runs, references never published). Enforcement is use-based and mechanical — the commercial lane is strict, the research lane is lenient, and quarantine always wins so an improper subset can never rank in any lane. The Evaluation Datasets page (/docs/network/leaderboard/datasets) shows the per-family license table; some restricted-license sets additionally refuse remote model-API evaluation until the rights-holder's consent is recorded.",
+      "sources": [
+        "/docs/network/sovereignty/registering-corpora",
+        "/docs/network/leaderboard/datasets"
+      ],
+      "keywords": [
+        "license",
+        "lanes",
+        "non-commercial",
+        "research-only",
+        "private",
+        "public",
+        "quarantine",
+        "commercial"
+      ]
+    },
+    {
+      "id": "secret-test-set",
+      "question": "Can my community keep its test set secret and still have methods scored against it?",
+      "answer": "Yes — that's the sovereign lane, and it is treated as core architecture, not an exception (/docs/network/sovereignty/data-sovereignty). In the sovereign/private lane the test set never leaves community infrastructure and Champollion never sees it; methods are scored on your side and only the score travels (/docs/network/sovereignty/registering-corpora). For Language Communities (/docs/network/community/for-language-communities) points to the Run a Sovereign Contest runbook for hosting a community-controlled evaluation on your own terms — your test set, your rules, your decision about what, if anything, gets published.",
+      "sources": [
+        "/docs/network/sovereignty/registering-corpora",
+        "/docs/network/community/for-language-communities",
+        "/docs/network/sovereignty/data-sovereignty"
+      ],
+      "keywords": [
+        "secret",
+        "sealed",
+        "sovereign",
+        "held-out",
+        "private test set",
+        "contest",
+        "keys",
+        "custody"
+      ]
+    },
+    {
+      "id": "speakers-paid",
+      "question": "Do speakers get paid, and how much?",
+      "answer": "Yes — paying speakers is treated as non-negotiable, and payment is unconditional (you're paid whether or not your ratings are used). How Speakers Get Paid (/docs/network/perspectives/how-speakers-get-paid) publishes the rates: bilingual speaker work at $50–65 CAD per hour, with corpus curation budgeted at $2,500–6,000 and a full metric-validation round at $1,475–1,920. Payment does not buy your data — you are paid for the work and remain the steward of what you build. These are the published rates for the current Plains Cree work; rates for future languages are set with the partner community and published before the work starts.",
+      "sources": [
+        "/docs/network/perspectives/how-speakers-get-paid",
+        "/docs/network/sovereignty/economic-model"
+      ],
+      "keywords": [
+        "paid",
+        "payment",
+        "speakers",
+        "rates",
+        "compensation",
+        "corpus work",
+        "validation",
+        "how much"
+      ]
+    },
+    {
+      "id": "ownership-transfer",
+      "question": "What happens when a method wins — who owns it?",
+      "answer": "For Indigenous-language corpora, the default Community Transfer Template (/docs/network/sovereignty/ownership-transfer) has the winning method — source code, weights, configuration, and coaching data — transfer to the community's governance organization, which owns it outright to inspect, modify, deploy, shelve, or license with no ongoing claim from Champollion. The developer keeps attribution and the right to publish and reuse their techniques. Deployment is entirely the community's decision, and Champollion takes no share of anything a community earns. Note this is a documented template, not yet a track record — no prize has opened and no transfer has happened.",
+      "sources": [
+        "/docs/network/sovereignty/ownership-transfer",
+        "/docs/network/getting-started/agent-guide"
+      ],
+      "keywords": [
+        "ownership",
+        "transfer",
+        "who owns",
+        "winning method",
+        "prize",
+        "community owns",
+        "deployment"
+      ]
+    },
+    {
+      "id": "explore-and-correct-languages",
+      "question": "How do I explore the languages Champollion knows, and fix something that's wrong?",
+      "answer": "Browse the Language Atlas at /languages — the one language-browse surface, with search, filters, and a detail card for each language showing classification, vitality, scripts, and resources. Champollion is an index, not an authority: every value on a card cites its source, and when sources disagree the card shows all of them attributed. If something is wrong, outdated, or missing, use Submit to the Index (/docs/network/getting-started/submit-to-the-index) — every card carries a 'Suggest a correction' link — and a maintainer applies a cited fix at the data source. Corrections from speakers outrank any database we ingest.",
+      "sources": [
+        "/languages",
+        "/docs/network/getting-started/submit-to-the-index",
+        "/my-language"
+      ],
+      "keywords": [
+        "languages",
+        "atlas",
+        "browse",
+        "language card",
+        "correction",
+        "fix",
+        "catalogue",
+        "explore"
+      ]
+    },
+    {
+      "id": "ai-agent-usage",
+      "question": "How should an AI agent use Champollion?",
+      "answer": "Two things are built for agents. First, the machine-readable /llms.txt index maps the whole site, the license lanes, and the public data feeds (queue, mesh, corpus registry). Second, the MCP server `champollion-mcp-server` (on npm) is the agent-facing door — translate with Translation-Memory caching and a deterministic quality gate, browse the benchmark queue, estimate cost, run benchmarks, read the leaderboard, and query per-language metric-trust evidence, all as tools. The Agent Guides (/docs/guides/agent-guide for the CLI, /docs/network/getting-started/agent-guide for benchmarking) give step-by-step recipes. The best pattern is to set up your own agent with a workspace and your own API key — tokens aren't free.",
+      "sources": [
+        "/llms.txt",
+        "/docs/guides/agent-guide",
+        "/docs/network/getting-started/agent-guide"
+      ],
+      "keywords": [
+        "ai agent",
+        "mcp",
+        "llms.txt",
+        "mcp server",
+        "automation",
+        "tools",
+        "claude",
+        "agent guide"
+      ]
+    },
+    {
+      "id": "contribute-compute",
+      "question": "How do I contribute compute by running the benchmark queue?",
+      "answer": "The leaderboard has empty squares — (language pair, model, condition) combinations nobody has measured — kept in a public queue at /queue.json. Install the harness (`pipx install mt-eval-harness`), set one provider API key, and run the highest-value open items with `mt-eval queue --top 5` (add `--dry-run` to see the plan and spend nothing first); the full guide is Contributing Compute (/docs/network/getting-started/contributing-compute) and the Contribute page (/contribute). No account is needed — results publish as 'anonymous' unless you sign in to put your name on the board — and every run is a real, citable contribution to low-resource MT evaluation.",
+      "sources": [
+        "/docs/network/getting-started/contributing-compute",
+        "/contribute"
+      ],
+      "keywords": [
+        "contribute compute",
+        "queue",
+        "run benchmarks",
+        "donate tokens",
+        "mt-eval queue",
+        "sweep",
+        "anonymous"
+      ]
+    },
+    {
+      "id": "objection-takedown",
+      "question": "How do I raise an objection or request a takedown?",
+      "answer": "We genuinely want to hear it — good objections make this better. Use the site guide's ticket form (the chat panel's 'Send a message') or email info@champollion.dev; for a removal, choose Takedown or put 'Takedown' in the subject, as described in Contact, Objections & Takedowns (/docs/network/community/contact-objections-takedown). Takedown requests get priority and the default posture is to act, not debate — and since we host no corpus content, most requests are a citation, listing, or card field we can correct or pull quickly. Security issues go to security@champollion.dev. You don't need an account or any technical background.",
+      "sources": [
+        "/docs/network/community/contact-objections-takedown"
+      ],
+      "keywords": [
+        "objection",
+        "takedown",
+        "remove",
+        "complaint",
+        "contact",
+        "report error",
+        "correction",
+        "security"
+      ]
+    },
+    {
+      "id": "translate-on-demand",
+      "question": "Can Champollion just translate something for me right now?",
+      "answer": "The site guide has no tools and can't translate on demand, but the CLI can do exactly this in about a minute. Follow the Quick Start (/docs/getting-started/quick-start): install with `npx champollion sync`, set an API key (Gemini has a free tier), and it translates your locale files. If you're driving a coding agent, the Agent Guide (/docs/guides/agent-guide) shows how to install, configure, and run it end to end. For one-off human-quality work, the Network can also help you find a professional translator via the index.",
+      "sources": [
+        "/docs/getting-started/quick-start",
+        "/docs/guides/agent-guide",
+        "/docs/network/getting-started/submit-to-the-index"
+      ],
+      "keywords": [
+        "translate for me",
+        "on demand",
+        "translate this",
+        "quick",
+        "free translation",
+        "use it now"
+      ]
+    },
+    {
+      "id": "write-code-for-me",
+      "question": "Can the site guide write code, debug, or run the harness for me?",
+      "answer": "No — the site guide is an index and a docent, not an engineering service; Contact, Objections & Takedowns (/docs/network/community/contact-objections-takedown) is explicit that this isn't a place to request development help or custom scripts. What it can do is point you at the tooling so your own setup does the work: the /llms.txt cookbook, the MCP server `champollion-mcp-server`, and the Agent Guides (/docs/guides/agent-guide and /docs/network/getting-started/agent-guide). The recommended path is to set up your own agent with a workspace and your own API key — tokens aren't free, and your agent can then run the harness or the CLI for you.",
+      "sources": [
+        "/docs/network/community/contact-objections-takedown",
+        "/docs/guides/agent-guide",
+        "/docs/network/getting-started/agent-guide"
+      ],
+      "keywords": [
+        "write code",
+        "debug",
+        "script",
+        "build for me",
+        "run harness",
+        "development help",
+        "engineering"
+      ]
+    },
+    {
+      "id": "mt-not-revitalization",
+      "question": "Will machine translation save or revitalize my language?",
+      "answer": "No, and we say so plainly: Translation Is Not Revitalization (/docs/network/perspectives/translation-is-not-revitalization) states that MT converts text between languages, while revitalization creates new speakers — different activities, and no leaderboard score changes that. Children learn language from people, not machines. What MT can honestly do is bounded: give overloaded community translators a draft to review instead of translating from scratch, provide practical leverage for language-rights obligations, and build reusable linguistic infrastructure — always under fluent-speaker review, and only if a community decides it helps. A community concluding it doesn't help is a valid outcome, not a failure.",
+      "sources": [
+        "/docs/network/perspectives/translation-is-not-revitalization",
+        "/docs/network/how-it-works"
+      ],
+      "keywords": [
+        "revitalization",
+        "save language",
+        "endangered",
+        "preserve",
+        "transmission",
+        "does MT help",
+        "post-editing"
+      ]
+    },
+    {
+      "id": "the-name",
+      "question": "Why is the project named 'Champollion'?",
+      "answer": "It's named for Jean-François Champollion, who deciphered Egyptian hieroglyphs in 1822 — the metaphor is restoring access to meaning and reading a language on its own terms (/the-name). But the page names the name's colonial history honestly: Champollion worked inside a colonial enterprise, and 'decipherment' can itself be an act of appropriation. What the project keeps is the method, not the man, and it is built to be the opposite of extraction — corpora are never held, ownership stays with communities, and the name is kept under ongoing review with the communities served.",
+      "sources": [
+        "/the-name"
+      ],
+      "keywords": [
+        "name",
+        "champollion",
+        "why named",
+        "hieroglyphs",
+        "colonial",
+        "jean-francois champollion"
+      ]
+    },
+    {
+      "id": "datasets-available",
+      "question": "What datasets and language pairs can I benchmark against today?",
+      "answer": "The Evaluation Datasets page (/docs/network/leaderboard/datasets) catalogues roughly 4,700 fetch-from-source datasets across 19 corpus families plus FLORES+ — for example Global Voices (news, 493 pairs, CC BY 3.0) and Tatoeba (conversational, 874 pairs, CC BY 2.0). Corpus content is never hosted here: each dataset is a sha-pinned metadata card, and the harness fetches references from the upstream source at run time. Note that a large catalogue is what methods *can* be scored against — it is not a populated board. FLORES+ is available for development only (it's high-contamination, relative-only), and the EdTeKLA Plains Cree set is research-only and carved out of all ranking.",
+      "sources": [
+        "/docs/network/leaderboard/datasets",
+        "/docs/network/"
+      ],
+      "keywords": [
+        "datasets",
+        "corpora",
+        "language pairs",
+        "tatoeba",
+        "global voices",
+        "flores",
+        "benchmark against",
+        "edtekla"
+      ]
+    },
+    {
+      "id": "funding-and-sponsor",
+      "question": "How is Champollion funded, who is behind it, and can I sponsor?",
+      "answer": "Today it is entirely self-funded by its founder — no grants, no sponsors, no institution behind it yet — and How the Work Is Funded (/docs/network/sovereignty/economic-model) says so plainly. It is non-commercial: every sponsorship dollar is 100% pass-through, funding corpus building, tooling, and community work at published rates, publicly accounted, with none of it going to Champollion. Sponsors are now actively invited via Get Involved (/get-involved#sponsors) — you can sponsor a specific language's corpus, benchmark bounties, or shared tooling. Write to info@champollion.dev; prize funds, when they exist, are held and awarded by a community-governed trust, not by Champollion.",
+      "sources": [
+        "/docs/network/sovereignty/economic-model",
+        "/get-involved"
+      ],
+      "keywords": [
+        "funding",
+        "funded",
+        "sponsor",
+        "who is behind",
+        "donate",
+        "grant",
+        "money",
+        "non-commercial"
+      ]
+    }
+  ]
+}

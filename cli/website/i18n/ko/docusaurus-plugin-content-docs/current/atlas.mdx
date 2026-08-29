@@ -1,0 +1,120 @@
+---
+title: "The Atlas"
+description: "The Atlas는 Champollion의 언어 인덱스예요. 언어당 출처가 명시된 카드 한 장으로 구성돼요. 카드가 명시하는 내용, 명시해서는 안 되는 내용, 확인하는 위치, 그리고 수정하는 방법을 다뤄요."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* 카운트는 SSOTCount(docusaurus.config.js customFields를 통한 머신 SSOT의 빌드 타임 읽기)를 통해 렌더링됩니다. SSOT 표시 표준에 따라 절대 수동으로 입력하지 않아요. customFields SSOT가 없는 수치(수어 및 인공어 하한선, 위기 언어 총계)는 해당 수치를 소유한 제한된 페이지로 링크(LINKED)되며, 여기에 다시 기재하지 않아요. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Atlas
+
+**The Atlas는 언어 인덱스예요. 언어당 하나씩 총 <SSOTCount field="catalogLanguageCount" />개의 카드로 구성되며, 모든 값에는 출처가 명시되어 있어요.**
+
+이것은 Champollion의 나머지 부분이 기반을 두는 참조 레이어예요. [CLI](/docs/intro)는 언어가 어떻게 동작하는지 알기 위해 이를 읽어요. [Arena](/docs/arena)는 벤치마크가 *무엇에 대한* 벤치마크인지 알기 위해 이를 읽어요. [Network](/docs/network/)는 그 위에 그려져요. 그리고 그 자체로도 매우 유용해요. 여기에 포함된 대부분의 언어에 대해, 이 카드는 한 곳에서 볼 수 있는 가장 완벽하게 인용된 언어 상황 요약본이거든요.
+
+카드는 수동으로 작성되는 것이 아니라 출처에서 생성돼요. 아무도 자리에 앉아 언어에 대해 아는 내용을 직접 타이핑하지 않아요.
+
+---
+
+## Champollion은 인덱스이지 중재자가 아니에요
+
+이것은 전체 The Atlas가 따르도록 구축된 규칙이며, 생각보다 훨씬 엄격해요.
+
+카드의 모든 값은 출처를 인용하며, 우리가 사실이라고 생각하는 것이나 수정된 버전, 반올림된 수치가 아니라 해당 출처가 **실제로 말하는 내용**을 보고해요. 출처 간에 내용이 다를 경우, 카드는 **출처를 명시하여 모든 내용을** 보여줘요. 화자 수는 끊임없이 엇갈려요. Wikidata의 수치가 다르고, Ethnologue가 다르고, 국가 인구 조사가 다르고, 지역 조사가 또 달라요. 카드는 각각의 수치를 출처 및 날짜와 함께 기재해요. 우리는 이를 평균 내거나, 그 사이에서 판결을 내리거나, 가장 그럴듯해 보이는 것을 조용히 선택하지 않아요.
+
+그 이유는 겸손함 때문이 아니에요. 합의를 만들어낸 카드는 누군가의 언어에 대해 우리가 발명해 낸, 인용할 수 없는 새로운 주장이 될 거예요. 불일치를 보존하면 카드를 세상과 대조하여 검증할 수 있으며, 판단의 몫을 마땅히 있어야 할 곳, 즉 독자와 해당 언어를 사용하는 커뮤니티에 맡길 수 있어요.
+
+다음의 세 가지 읽기 규칙은 카드를 사용하기 전에 알아둘 가치가 있어요.
+
+- **`null`은 해당 없음이 아니라 알 수 없음을 의미해요.** 빈 필드는 아직 인용된 출처를 찾지 못했음을 뜻해요. 이는 판결이 아니라 참여를 기다린다는 의미예요. 필드가 정말로 적용되지 않는 경우에는 카드에 말로 명시되어 있어요.
+- **파생된 값은 파생되었다고 표시돼요.** 중앙값, 합성값, 재코딩된 플래그, 데이터셋에서 추출한 카운트 등 Champollion이 계산한 모든 항목에는 *무엇에서* 파생되었는지 명시하는 메모와 함께 `champollion-derived` 스탬프가 찍혀요. 이는 절대 업스트림 데이터셋의 이름으로 등록되지 않아요. 그렇게 하면 우리의 계산 결과를 다른 사람의 입을 빌려 말하는 셈이 되니까요.
+- **인용이 커버리지보다 우선해요.** 출처가 명확한 필드가 적은 카드가 3차 출처로 채워진 꽉 찬 카드보다 더 건전해요. Wikipedia, LLM 생성 텍스트, 개인적 지식은 여기서 1차 출처가 아니며, 1차 출처로 인정되지도 않아요.
+
+[인용 절차(Citation Procedure)](/docs/reference/language-card-citation-procedure)는 어떤 종류의 주장에 대해 어떤 출처가 권위가 있는지, 그리고 그 순서는 어떻게 되는지 규정해요.
+
+---
+
+## 카드가 주장하는 것 — 그리고 절대 주장하지 않는 것
+
+카드는 정확히 두 가지 종류의 진술만 해요.
+
+**1. 언어의 속성.** 분류 및 어족, 음운 목록, 유형론, 문자 및 정서법, 활력 및 소멸 위기 상태, 화자 수 추정치예요. 각각 인용되며, 파생되었거나 주장된 것으로 라벨이 지정돼요.
+
+**2. 리소스의 존재 여부.** 이 언어에 대한 말뭉치, 모델, FST, 사전, 메트릭 플러그인 또는 번역 방법이 *존재하는지*, 그리고 어떤 액세스 수준인지 나타내요. 이는 품질에 대한 주장이 아니라 기능에 대한 주장이에요.
+
+그리고 절대 넘지 않는 엄격한 선이 있어요.
+
+:::danger[측정된 점수는 언어 카드에 절대 포함되지 않아요]
+chrF++, BLEU, COMET, TER, FST 수락률, "형태론적 유효성 백분율" 등 **방법론 출력의 측정된 점수**는 특정 방법론, 데이터셋, 메트릭에 연결된 **실행 결과(run result)**예요. 이는 [리더보드](/leaderboard)나 [Arena](/docs/arena) 내부의 지문이 찍힌 실행 카드에 첨부되어야 해요. 언어 카드에는 **금지되어 있으며**, 린터(linter)는 이를 포함하는 모든 카드를 거부해요.
+:::
+
+이러한 구분은 "이 언어에 대한 FST가 존재한다"(우리와 무관하게 참이거나 거짓인 세상에 대한 사실)와 "이 방법론은 0.82의 FST 수락률을 기록했다"(단 한 번의 실행, 하나의 데이터셋 버전, 하나의 방법론 버전에 대해서만 참인 측정값)의 차이예요. 이 둘을 합쳐버리면 카드는 실행 기록도 없고 철회할 방법도 없이 영구적으로 언어에 대한 품질 주장이 되어버려요. 그래서 이 둘을 합치지 않아요. The Atlas는 **무엇이 존재하는지** 알려주고, Arena는 **얼마나 잘 작동하는지** 알려줘요.
+
+두 가지 불변성(invariant)이 더 동일한 방식으로 강제돼요. 성조에 대한 주장은 카드 자체의 음운 목록과 모순되어서는 안 되며, 표시된 화자 수는 카드에 인용된 추정치 중 하나와 같아야 해요(또는 우리의 자체 파생값으로 스탬프가 찍혀야 해요). 모든 필드와 규칙이 포함된 전체 스키마는 [언어 카드 사양(Language Card Specification)](/docs/reference/language-card-spec)에 있어요.
+
+---
+
+## 무엇이 포함되어 있고, 어디서 왔는가
+
+<SSOTCount field="catalogLanguageCount" />개의 언어가 카탈로그화되어 있으며, 라이선스가 개별적으로 추적되는 <SSOTCount field="licensedSourceCount" />개의 등록된 업스트림 출처를 기반으로 구축되었어요. 카드에 있는 모든 내용이 재배포 가능해야만 카드 자체도 재배포할 수 있고, 비상업적 출처는 선의가 아닌 구조적인 차단벽을 통해 상업적 경로에서 배제되기 때문이에요.
+
+이 카탈로그는 수어를 자연어로서 포함하고, ISO 639-3이 인정하는 인공어를 포함하며, 프로그래밍 언어는 제외해요. 또한 대분류 언어(macrolanguage) 포괄 코드가 아닌 개별 언어를 벤치마킹해요. 번역 리소스는 변종(variety)에 따라 다르며, 포괄 코드에 부여된 점수는 아무도 평가하지 않은 변종에 대한 주장이 될 수 있기 때문이에요. 분류 체계가 일치하지 않는 경우, 카드는 승자를 선택하는 대신 불일치 자체를 보여줘요. 이러한 각각의 선택과 그 결과에 대한 논의는 [여기서 언어로 인정되는 것은 무엇인가?(What Counts as a Language Here?)](/docs/network/context/what-counts-as-a-language)에 나와 있어요.
+
+**커버리지는 품질이 아니며, 존재가 곧 커버리지는 아니에요.** 어떤 언어에 대해 세 개의 리소스가 나열된 카드는 세 가지가 존재한다는 것을 알려줄 뿐, 그중 어느 하나라도 사용 가능하다거나 해당 언어가 제대로 지원된다는 뜻은 아니에요. 프로젝트가 커버리지를 계산하는 방법과 계산하지 않는 항목은 [커버리지 계산(Counting Coverage)](/docs/network/context/coverage-counting)에 있어요.
+
+---
+
+## 어디서 읽을 수 있는가
+
+| 표면(Surface) | 제공하는 내용 |
+|---|---|
+| [The Language Atlas](/languages) | 카드 자체 — 검색, 어족, 지역, 활력 및 복잡도별 필터링, 모든 카드의 전체 내용 열람 |
+| [The Index](/catalogue) | 언어별로 카탈로그화된 모든 것: 벤치마크, 리소스, 방법론, 인간 번역 서비스, 그리고 외부에서 발표된 결과만 인용하는 별도로 분리된 티어 |
+| [용어집(Glossary)](/glossary) | 카드가 사용하는 모든 용어에 대한 쉬운 정의 |
+| [지원되는 언어(Supported Languages)](/docs/reference/supported-languages) | 현재 CLI가 번역할 수 있는 언어 (The Atlas가 카탈로그화한 것보다 훨씬 적은 집합) |
+
+기계 판독 가능한 진입점은 `/llms.txt` 및 `/llms-full.txt`예요. 에이전트는 [MCP 서버](/docs/network/getting-started/mcp-server)를 통해 카드를 직접 검색할 수 있어요.
+
+---
+
+## 카드가 잘못되었을 때
+
+일부는 잘못되었다고 가정하세요. 서로 일치하지 않는 출처들을 모아 만든 이 정도 규모의 인덱스에는 오류가 포함될 수밖에 없어요. 그리고 가장 중요한 오류는 대개 우리 눈에는 보이지 않지만 해당 언어 화자에게는 명백하게 보여요.
+
+**모든 카드에는 "수정 또는 추가 제안(Suggest a correction or addition)" 링크가 있으며**, 이를 클릭하면 해당 언어가 미리 채워진 수정 양식이 열려요. 출처가 있다면 함께 가져와 주세요. 커뮤니티의 삭제 또는 제한 요청의 경우 인용이 필요하지 않으며 최우선으로 처리돼요.
+
+수정 사항은 **카드가 아니라 생성기(generator)에 적용돼요**. 카드는 출처에서 다시 생성되므로, 수동으로 편집하면 다음 빌드 시 조용히 덮어쓰여져요. 출처를 수정해야만 수정 사항이 영구적으로 반영되며, 대개 해당 출처를 공유하는 다른 모든 카드의 동일한 결함도 함께 수정돼요. 이는 파일을 편집하는 것보다 느리지만, 지속되는 유일한 방법이에요. 작동 방식은 [인덱스에 제출하기(Submit to the Index)](/docs/network/getting-started/submit-to-the-index)에 있어요.
+
+**커뮤니티 구성원이거나 권위자로서** 귀하의 언어에 대한 데이터를 제한, 변경 또는 삭제하고 싶다면, 그 요청을 우리에게 정당화할 필요가 없으며 원치 않으실 경우 공개 대기열에 들어가지 않아요. 언어 데이터는 생체 데이터(biodata)예요. 이는 그 언어를 사용하는 사람들의 정체성과 관계를 담고 있으며, 의미 있는 수준으로 익명화할 수 없어요. 우리는 **주권 인증(sovereignty-certified)을 주장하는 것이 아니라 주권 지향(sovereignty-aspirant)**이에요. 우리는 메커니즘을 구축하고 이를 정직하게 설명하며, 그것이 표준을 충족하는지 여부는 우리가 아니라 관련된 커뮤니티가 결정할 몫이에요. 전체 입장은 [데이터 스튜어드십(Data Stewardship)](/docs/network/sovereignty/data-sovereignty)에 있으며, 커뮤니티 창구는 [언어 커뮤니티를 위한 안내(For Language Communities)](/docs/network/community/for-language-communities)에 있어요.
+
+---
+
+## 다음으로 읽을거리
+
+- **언어를 찾아보고 싶다면** → [The Atlas 둘러보기](/languages)를 확인하세요.
+- **필드의 의미를 알고 싶다면** → [언어 카드 사양(Language Card Specification)](/docs/reference/language-card-spec)을 확인하세요.
+- **카드에 특정 주장이 있는 이유를 알고 싶다면** → [인용 절차(Citation Procedure)](/docs/reference/language-card-citation-procedure)를 확인하세요.
+- **지원 부족 언어를 위한 방법론을 구축하고 싶다면** → [저자원 언어 지원하기(Support a Low-Resource Language)](/docs/network/community/low-resource-languages)를 확인하세요.
+- **실제로 번역이 얼마나 잘 되는지 알고 싶다면** → 여기에는 없어요. [Arena](/docs/arena)와 [리더보드](/leaderboard)를 확인하세요.

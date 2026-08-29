@@ -1,0 +1,502 @@
+{
+  "code": "bim",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Bimoba",
+    "values": [
+      {
+        "value": "Bimoba",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Bimoba",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "typologicalProfile": {
+    "affixPreference": "Strongly suffixing",
+    "negationOrder": "OptDoubleNeg",
+    "subjectVerbOrder": "SV",
+    "wordOrder": "SVO"
+  },
+  "classification": {
+    "ancestry": [
+      "atla1278",
+      "volt1241",
+      "nort3149",
+      "gura1261",
+      "cent2243",
+      "nort2777",
+      "bwam1248",
+      "otiv1239",
+      "nucl1743",
+      "gurm1247",
+      "gurm1248",
+      "gurm1249",
+      "gurm1250",
+      "gour1248",
+      "moba1243"
+    ],
+    "family": {
+      "agreement": "conflicting",
+      "values": [
+        {
+          "value": "Atlantic-Congo",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Niger-Congo",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "atla1278",
+    "genus": "Oti-Volta"
+  },
+  "bcp47": "bim",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "bim-Latn-GH",
+    "values": [
+      {
+        "value": "bim-Latn-GH",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "bim-Latn-GH",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"bim\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "bim",
+    "values": [
+      {
+        "value": "bim",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 22,
+    "hasTone": true,
+    "tones": 4,
+    "totalPhonemes": 44,
+    "vowels": 18
+  },
+  "countries": [
+    "GH",
+    "TG"
+  ],
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "threatened",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Bimoba (bim-bim) = 6b* (Threatened).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Vulnerable",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "glottocode": "bimo1239",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 10.4575,
+    "lng": 0.06121
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 122,
+        "concepts": 97,
+        "doculects": 2,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 93,
+        "concepts": 40,
+        "doculects": 2,
+        "release": "channumerals-v1.0.2"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "documentation": {
+    "medLevel": "grammar",
+    "medSourceId": "158376"
+  },
+  "methodSupport": {
+    "total": 80,
+    "byTier": {
+      "model-card-declared": 80
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:brauliobo/madlad400-7b-mt-bt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Cartik/Transti-1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ClausQ-dk/madlad400-10b-mt-Q2_K-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cstr/madlad400-3b-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-quantized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cyberunit/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Eddishockwave/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-7b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:fernandoruiz/madlad400-3b-mt-Q4_K_S-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "decimal"
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "440000",
+    "values": [
+      {
+        "value": "440000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "resources": {
+    "typology": [
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 37,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.affixPreference": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "bim",
+    "revision": "74af0d045f7e9c04",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.affixPreference",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder"
+    ]
+  }
+}

@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "형태소",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "의미를 지니는 단어의 가장 작은 단위예요. 영어 단어 'unhappiness'는 un-, happy, -ness 이렇게 세 개의 형태소로 이루어져 있어요. 언어마다 하나의 단어에 얼마나 많은 형태소를 담는지가 크게 달라요.",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "MT 시스템은 토큰 단위로 작동하는데, 여러 형태소를 포함한 토큰은 시스템이 올바르게 번역하는 데 필요한 문법 정보를 감춰 버려요.",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "형태론",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "단어가 더 작은 의미 단위로 어떻게 구성되는지를 연구하는 분야이자, 언어 자체의 단어 구성 체계를 뜻해요. 형태론적으로 복잡한 언어는 영어가 별도의 단어로 표현하는 것을 어미로 표현해요.",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "복잡한 형태론은 MT 시스템이 제한된 데이터로 학습해야 하는 서로 다른 단어 형태의 수를 크게 늘려요.",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "굴절",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "단어의 핵심 의미를 바꾸지 않으면서 시제, 수, 격, 성 같은 문법 정보를 나타내기 위해 형태를 바꾸는 것으로, 영어의 sing/sang나 cat/cats 같은 경우예요. 굴절이 심한 언어는 하나의 단어에 여섯 개 이상의 범주를 표시할 수 있어요.",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "굴절된 형태 하나하나가 MT 시스템에게는 별개의 토큰이므로, 굴절이 많으면 희귀 단어와 일치 오류가 더 많이 발생해요.",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "파생",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "기존 단어로부터 새 단어를 만드는 것으로, teach → teacher나 happy → unhappy 같은 경우예요. 굴절과 달리 파생은 같은 단어의 문법적 변형이 아니라 사전에 등재되는 새로운 단어를 만들어 내요.",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "생산적인 파생 덕분에 화자는 MT 시스템이 한 번도 본 적 없는 단어를 즉석에서 만들어 낼 수 있어요.",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "접사",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "단어의 어간에 붙어 의미나 문법을 바꾸는 형태소예요. 접두사는 어간 앞에, 접미사는 뒤에 붙고, 일부 언어는 어간 안에 접요사를 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "접사가 어디에 붙는지가 서브워드 토크나이저가 단어를 어디에서 분할해야 하는지를 결정해요.",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "접두사",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "'rewrite'의 re-처럼 단어 어간의 앞에 붙는 접사예요. 여러 Bantu 및 Athabaskan 언어를 포함한 일부 언어는 문법의 대부분을 일련의 접두사로 나타내요.",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "접두사가 많은 언어는 문법 정보를 단어의 앞부분에 두는데, 이는 접미사 위주로 학습된 토크나이저가 기대하는 것과는 정반대예요.",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "접미사",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "'kindness'의 -ness처럼 단어 어간의 끝에 붙는 접사예요. 접미는 세계 여러 언어에서 가장 흔한 접사 방식이에요.",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "여러 접미사가 겹쳐지면 길고 희귀한 단어 형태가 만들어지는데, MT 시스템은 이를 번역하기 위해 정확히 분절해야 해요.",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "접요사",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "단어 어간의 앞이나 뒤가 아니라 안쪽에 삽입되는 접사예요. 예를 들어 Tagalog는 첫 자음 뒤에 -um-을 삽입해 sulat('쓰다')를 sumulat('썼다')로 바꿔요.",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "접요사는 단어의 어간이 연속된 문자열이라는 전제를 깨뜨려, 단순한 서브워드 분절을 무력화해요.",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "접어",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "혼자서는 쓰일 수 없어 이웃한 단어에 기대는 작은 문법 요소예요. \"the queen of England's hat\"에서의 's가 그 예입니다. 접어는 부분적으로는 단어처럼, 부분적으로는 접사처럼 행동해요.",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "접어는 단어 경계를 흐리게 하므로, 토크나이저가 이를 잘못된 숙주 단어에 붙여 문법을 뒤섞을 수 있어요.",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "어간",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "접사가 붙는 단어의 핵심 부분이에요. 'unbelievable'에서 -able이 붙는 어간은 'believe'입니다. 많은 언어에서 어간은 단독으로 나타나지 않고 최소한 어느 정도의 굴절을 반드시 동반해요.",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "여러 단어 형태에서 공통된 어간을 식별하는 것은 MT 시스템이 제한된 학습 데이터로부터 일반화하는 방식이에요.",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "어근",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "모든 접사를 제거하고 남는, 더는 나눌 수 없는 단어의 핵심이에요. 셈어족 언어에서 어근은 흔히 자음 세 개(아랍어의 k-t-b '쓰다'처럼)로만 이루어지며, 모음 패턴이 이를 단어로 만들어요.",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "어근이 불연속적인(자음 골격으로 된) 언어는 MT가 단어 간 관계를 파악하려면 특화된 분절이 필요해요.",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "패러다임",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "한 단어가 취할 수 있는 굴절 형태의 전체 집합으로, 동사 활용표 같은 것이에요. 패러다임은 두 개의 형태(영어의 'must')부터 다합성 언어의 수천 개에 이르기까지 다양해요.",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "큰 패러다임은 대부분의 단어 형태가 학습 데이터에서 드물거나 나타나지 않도록 만들어요.",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "교착어",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "각 문법적 의미가 명확히 분리되는 고유한 접사를 갖고, 그것들이 차례차례 쌓이는 단어 구성 방식이에요. 터키어나 스와힐리어가 그렇습니다. 단어가 길어질 수 있지만, 각 조각은 하나의 역할만 담당해요.",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "교착어 단어는 하위 단어로 깔끔하게 분절되지만, 토크나이저가 그 언어의 접사 순서를 학습해야만 가능해요.",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "굴절어",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "하나의 접사가 여러 문법적 의미를 한꺼번에 융합하는 단어 구성 방식이에요. 스페인어 habló의 어미 -ó는 과거 시제, 3인칭, 단수를 동시에 나타내며, 그 어느 부분도 하나의 의미로만 배정될 수 없어요.",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "융합된 어미는 토크나이저가 분해할 수 없으므로, 각 조합을 하나의 단위로 학습해야 해요.",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "고립어",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "단어가 대부분 하나의 형태소로 이루어지고, 문법이 어미 대신 어순과 보조어로 표현되는 단어 구성 방식이에요. 베트남어나 표준 중국어가 그렇습니다. 다합성과는 정반대의 극단이에요.",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "고립어는 MT 문제를 단어 분절에서 어순과 기능어 선택으로 옮겨 놓아요.",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "다합성",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "다른 언어에서는 문장 전체로 표현하는 것을 하나의 동사가 담아낼 수 있는 단어 구성 방식이에요. 주어, 목적어, 장소, 도구 등을 모두 한 단어의 부분으로 나타냅니다. 많은 아메리카 원주민 언어가 이런 방식으로 작동해요.",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "다합성 단어는 정확히 똑같이 반복되는 경우가 드물어서, 단어 단위 MT는 끝없이 이어지는 미지의 토큰을 마주하게 돼요.",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "Plains Cree (crk): 하나의 동사가 주어/목적어 대명사, 도구, 장소, 동작을 통합할 수 있어요 (카드 필드 linguisticChallenges.polysynthesis).",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "명사 포합",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "명사를 동사에 결합해 하나의 단어로 만드는 것으로, 대략 'hunt seals'를 동사 형태의 'seal-hunt'로 바꾸는 것과 비슷해요. 포합어에서 흔히 나타나며, 문장의 강조점과 문법을 바꿔요.",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "포합된 명사는 문장에서 별개의 단어로 사라지므로, 정렬 기반 번역은 이를 놓치게 돼요.",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "카드에서 linguisticChallenges.nounIncorporation로 표시돼요(Grambank 기반). 예: Plains Cree (crk).",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "합성",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "둘 이상의 독립된 단어를 하나의 새로운 단어로 결합하는 것으로, 'tooth' + 'brush' → 'toothbrush'와 같아요. 독일어식 합성은 여러 단어를 이어 붙여 매우 긴 단일 토큰을 만들 수 있어요.",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "새로 만들어진 합성어는 처음 보는 토큰이므로, MT가 번역하려면 이를 알고 있는 부분들로 나눠야 해요.",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "중첩",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "단어의 전체 또는 일부를 반복해 의미를 바꾸는 것으로, 복수, 강조, 진행 중인 동작 등을 나타내요. 인도네시아어 orang '사람'은 orang-orang '사람들'이 돼요.",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "MT는 반복된 단어가 삭제할 우연한 중복이 아니라 문법적 요소임을 인식해야 해요.",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "모음교체",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "단어 내부의 모음을 바꿔 문법을 변화시키는 것으로, 영어의 sing/sang/sung과 같아요. 단어의 자음 틀은 그대로 유지되고 모음이 문법적 기능을 담당해요.",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "모음교체는 어간 안쪽에 굴절을 숨기기 때문에 서브워드 토크나이저가 이를 분리해낼 수 없어요.",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "보충법",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "단어의 굴절형이 완전히 다른 어근에서 오는 경우로, go/went나 good/better와 같아요. 소리를 전혀 공유하지 않아도 문법은 이들을 하나의 단어로 취급해요.",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "보충형은 규칙으로 유도할 수 없으므로, MT가 학습 데이터에서 각 형태를 본 적이 있어야 해요.",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "어근-패턴 형태론",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "아랍어와 히브리어에서 전형적인 단어 형성 방식으로, k-t-b '쓰다'와 같은 자음 어근이 모음 틀 사이를 관통해요: kitāb '책', kātib '작가', maktab '사무실'. 어근과 패턴은 각각 의미를 담지만, 어느 것도 연속된 덩어리는 아니에요.",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "표준 서브워드 토큰화는 이러한 형태들에 걸쳐 공유되는 어근을 볼 수 없어, 셈어 계열 MT의 일반화를 약화시켜요.",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "카드에서 linguisticChallenges.rootPattern로 표시돼요(예: 아랍어, 히브리어, 몰타어).",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "모음조화",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "단어 안의 모든 모음이 전설/후설, 원순/평순 같은 특정 속성에서 일치해야 한다는 규칙이에요. 터키어에서는 접미사 모음이 어간에 맞춰 형태를 바꿔요: ev-ler '집들'이지만 at-lar '말들'이에요.",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "각 접미사는 여러 표면형을 가지므로, MT가 하나의 문법적 어미에 대해 학습해야 할 토큰 변이형이 배가돼요.",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "자음변이",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "앞선 단어에 의해 촉발되는, 단어 첫 자음의 문법적 변화예요. 웨일스어 cath '고양이'는 관사 뒤에서 gath이 돼요: y gath '그 고양이'. 사전형과 발화형이 상당히 다르게 보일 수 있어요.",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "변이로 인해 같은 단어가 여러 철자로 나타나므로, MT 학습 데이터에서 그 단어의 통계가 분산돼요.",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "약화 (lenition)",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "자음이 부드러워지는 현상으로, 흔히 모음 사이나 문법적 요인에 의해 일어나요 — 'k'가 'g'나 'h'로 약해지는 식이에요. 켈트어에서 약화는 단순한 발음이 아니라 문법의 일부예요.",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "문법적 약화는 문맥에 따라 단어의 철자를 바꾸기 때문에, 표면에 나타난 텍스트가 사전형과 달라져요.",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "중자음화 (gemination)",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "자음을 더 길게 발음해 다른 단어를 만드는 현상으로, 이탈리아어 pala '삽'과 palla '공'이 그 예예요. 어떤 문자 체계는 이 중복을 표기하지만, 다른 체계는 독자가 알아서 판단하도록 남겨 둬요.",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "문자 체계가 중자음화를 표기하지 않으면 서로 다른 단어가 하나의 철자로 합쳐져 기계 번역이 그 차이를 놓치게 돼요.",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "연성 (sandhi)",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "단어나 형태소가 만나는 지점에서 일어나는 소리 변화로, 'don't you'가 'dontcha'가 되는 것과 같아요. 성조 언어에서는 성조 자체가 문맥에 따라 바뀌기도 해요(성조 연성).",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "연성은 표기된 형태나 전사된 형태를 문맥에 의존하게 만들어, 일관된 토큰화를 어렵게 해요.",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "움라우트 (umlaut)",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "역사적으로 뒤따르는 모음에 의해 일어난 모음 변화가 문법으로 남은 것으로, 독일어 Apfel '사과' → Äpfel '사과들'이 그 예예요. 모음 교체(ablaut)와 관련이 있지만 역사적 기원이 달라요.",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "움라우트는 복수형이나 시제 표시를 어간 안에 넣기 때문에, 접사 기반 분할에서는 이를 인식하지 못해요.",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "토큰화 (tokenization)",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "번역 모델이 실제로 처리하는 단위(토큰)로 텍스트를 나누는 과정이에요. 현대 시스템은 희귀 단어를 하위 단어 조각으로 나누는데, 이 조각들이 실제 형태소와 얼마나 잘 맞는지는 언어마다 크게 달라요.",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "잘못된 토큰화는 형태론적으로 복잡한 언어와 저자원 언어에서 기계 번역 실패의 근본 원인이 돼요.",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "문법격 (grammatical case)",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "명사와 대명사에 표시를 붙여 문장 안에서의 역할을 나타내는 것이에요 — 누가 행동하는지, 누가 행동을 받는지, 어디에서, 무엇으로 하는지 등이죠. 영어에는 흔적만 남아 있고(I/me/my), 핀란드어에는 열다섯 개의 격이 있으며, 많은 언어에는 아예 없어요.",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "격 표시가 있는 언어는 자유로운 어순을 허용하기 때문에, 기계 번역은 위치가 아니라 어미에서 역할을 읽어 내고 다시 올바른 어미를 생성해야 해요.",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "주격 (nominative)",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "가장 익숙한 정렬 체계에서는 모든 동사의 주어가 주격을 취하고 직접 목적어가 대격을 취해요. 대부분의 유럽 언어가 이 방식으로 작동하며, 기계 번역 학습 데이터도 압도적으로 이를 반영해요.",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "주로 주격-대격 언어로 학습된 시스템은 능격 언어를 번역할 때 역할을 잘못 배정해요.",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "능격성 (ergativity)",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "자동사의 주어('그녀가 잔다')가 타동사의 목적어('그녀를 보았다')처럼 표시되고, 타동사의 주어는 특별한 능격 표시를 받는 정렬 체계예요. 바스크어, 다수의 마야어, 오스트레일리아 언어, 캅카스 언어가 이 방식으로 작동해요.",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "능격 표시는 기계 번역이 기대하는 역할 단서를 뒤집기 때문에, 누가 누구에게 무엇을 했는지에 대한 오류를 일으켜요.",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "절대격 (absolutive)",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "능격 체계에서 표시되지 않는 격으로, 자동사의 주어와 타동사의 목적어를 모두 포함해요. 대개 명사의 사전 표제형이에요.",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "절대격 명사는 서로 다른 두 역할에서 동일하게 보이기 때문에, MT는 동사를 활용해 의미를 구분해야 해요.",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "형태통사적 정렬",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "언어가 세 가지 핵심 역할 — 자동사 주어, 타동사 주어, 목적어 — 을 표시 목적으로 묶는 방식이에요. 주격–대격과 능격–절대격이 대표적인 두 가지 패턴이며, 일부 언어는 이 둘을 나눠서 쓰거나 유정성 기반 체계를 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "원본 언어와 대상 언어 간의 정렬 불일치는 어휘가 아니라 구조에 관한 번역 문제예요.",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "속격",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "영어의 's나 'of'처럼 소유나 밀접한 관계를 표시하는 격이에요. 언어마다 속격구가 수식하는 명사의 앞에 오는지 뒤에 오는지가 달라요.",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "속격 어순 차이('the king's horse' vs 'horse of-king')는 명사구 내부에서 체계적인 재배열을 요구해요.",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "여격",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "수령자나 수혜자를 표시하는 격으로, 주거나 말할 때의 '누구에게'에 해당해요. 독일어 wem, 라틴어 cui가 그 예이고, 영어는 어순이나 'to'로 표현해요.",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "MT는 대상 언어에 따라 여격 격 표시와 전치사 구문 중 무엇을 쓸지 결정해야 해요.",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "처격",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "전치사가 아니라 명사 어미로 표현되는, 어떤 장소의 '~에/~안에/~위에'를 뜻하는 격이에요. 핀란드어와 헝가리어는 위치를 여러 개의 정밀한 처격(안쪽, 위쪽, 근처, ~쪽으로의 이동, ~에서의 이동)으로 나눠요.",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "하나의 영어 전치사가 여러 처격에 대응될 수 있어, MT는 문맥에 따라 선택해야 해요.",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "도구격",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "'~을 사용하여/~을 통해'를 뜻하는 격이에요. 러시아어는 '망치로'를 전치사 대신 어미로 표시해요. 포합어에서는 도구가 동사 안에 통합되기도 해요.",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "도구격 의미는 언어에 따라 격 어미, 전치사, 동사 내부 표시 사이를 오가요.",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "공동격",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "'누군가와 함께'를 뜻하는 격이나 표지예요. 일부 언어는 '~와 함께'(동반)와 '~그리고'(접속)에 같은 표지를 써서 외부인에게는 모호할 수 있어요.",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "공동격/접속의 중첩은 원본에서 'X와 함께 Y'와 'X와 Y'가 동일한 구성일 수 있음을 의미해요.",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "사격",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "절 안에서 주어도 직접 목적어도 아닌 모든 구로, 보통 장소, 도구, 수령자 및 기타 '부가 요소'를 가리키며 흔히 격이나 부치사로 표시돼요. WALS에서 VOX 같은 어순의 'X'가 바로 이 사격구를 나타내요.",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "사격이 문장에서 놓이는 위치는 언어마다 달라, 동사와 목적어를 중심으로 올바르게 재배열해야 해요.",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "차등적 목적어 표시",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "보통 유정성이나 한정성에 따라 일부 직접 목적어는 표시하고 다른 것은 표시하지 않는 현상이에요. 스페인어는 사람 목적어 앞에는 'a'를 붙이지만(veo a María) 사물에는 붙이지 않아요(veo la casa).",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "MT는 원문에는 드러나지 않을 수도 있는 유정성 단서를 활용해, 각 목적어마다 표지가 필요한지를 판단해야 해요.",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "문법성",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "모든 명사를 부류(흔히 남성/여성/중성으로 불림)로 나누어, 관사·형용사·때로는 동사에 일치된 형태를 강제하는 체계예요. 이 배정은 생물학적이 아니라 문법적이에요 — 독일어에서 탁자는 남성이고, 스페인어에서는 여성이에요.",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "문법성이 있는 언어로 번역하면 원문이 명시하지 않은 사람과 사물에 대한 성별 선택을 강제하게 되며, 이는 MT 편향의 주요 원인이에요.",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "명사 부류",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "부류가 많은, 성(gender)과 유사한 체계예요 — 반투어는 보통 10~20개의 부류를 가지며, 명사를 형태·유정성·크기 등으로 나눠요. 각 부류는 문장 전체에 걸쳐 고유한 일치 접두사를 유발해요.",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "명사 선택 하나가 절 전체에 일치 표지를 파급시키므로, 부류를 하나만 틀려도 눈에 띄는 오류가 여러 개 발생해요.",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "유정성",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "생물(또는 생물에 준하는) 지시 대상과 무생물 지시 대상을 구분하는 문법적 구별이에요. 알곤킨어족 언어에서는 모든 명사가 문법적으로 유정 또는 무정이며, 어떤 것과 결합하느냐에 따라 동사의 형태가 완전히 달라져요.",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "유정성은 많은 원주민 언어에서 동사 선택과 일치를 좌우하지만, 영어 원문에는 명시적 단서가 없어요.",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "Plains Cree (crk): 주어/목적어 명사가 유정인지 무정인지에 따라 동사 활용이 완전히 달라져요 (카드 필드 linguisticChallenges.animacy).",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "제삼자 구별(obviation)",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "Plains Cree 같은 알곤킨어족 언어의 핵심 체계로, 담화 구간 내의 제3자들에 서열을 매겨요: 하나는 '근칭(proximate)'(초점 대상)이고 나머지는 '원칭(obviative)'(배경으로 표시되며, 때로 제4인칭으로 불림)이에요. 'he₁ 대 he₂' 같은 대명사 없이도 누가 누구인지를 추적해요.",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "영어에는 제삼자 구별이 없으므로, Cree로 번역하는 MT는 근칭/원칭 배정을 스스로 만들어 문장 전체에 걸쳐 일관되게 유지해야 해요.",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "Plains Cree (crk)는 명사와 동사에 원칭 지시 대상을 표시해요. crk 카드와 crk 메서드 문서를 참고하세요.",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "포괄성 구별(clusivity)",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "두 종류의 '우리'를 구별하는 것이에요: 포괄적(나 + 너, 어쩌면 다른 사람들)과 배타적(나 + 다른 사람들, 단 너는 제외). 수백 개의 언어가 이 구별을 의무적으로 해요.",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "영어 'we'를 번역하려면 원문 측 단서 없이 포괄적인지 배타적인지 선택해야 하며 — 잘못 선택하면 사회적으로 심각한 문제가 될 수 있어요.",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "문법수",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "언어가 수량을 표시하는 방식이에요 — 단수, 복수, 때로는 양수(정확히 둘)나 소수(몇몇)까지 있어요. 어떤 언어는 모든 명사에 수를 표시하고, 다른 언어는 전적으로 맥락에 맡겨요.",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "원문이 수를 표시하지 않으면 MT는 그것을 추측해야 하고, 목표 언어가 양수 형태를 요구하면 MT가 이를 공급해야 해요.",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "양수",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "정확히 둘을 뜻하는 문법수로, 단수와 복수 모두와 구별돼요. 슬로베니아어, 아랍어, 그리고 많은 오세아니아 언어가 이를 가지며, 일부 언어는 대명사에 삼수(정확히 셋)를 더해요.",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "양수를 표시하는 언어로 번역하는 MT는 원문이 단어 수를 세어야만 표현하는 '둘임'을 감지해야 해요.",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "분류사",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "명사를 세거나 지칭할 때 유형별로 분류하며 반드시 필요한 단어예요. 영어의 'three head of cattle'(소 세 마리)이나 'two sheets of paper'(종이 두 장)와 비슷하지만, 모든 것에 대해 의무적으로 사용돼요. 중국어, 일본어, 태국어를 비롯한 여러 언어에서는 올바른 분류사 없이는 수를 셀 수 없어요.",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "MT는 각 명사에 맞는 올바른 분류사를 선택해야 하며, 잘못된 분류사는 원어민에게 즉시 눈에 띄어요.",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "한정성",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "명사가 청자가 이미 식별할 수 있는 대상을 가리키는지('the dog'), 아닌지('a dog')를 나타내요. 많은 언어는 이 구분을 전혀 표시하지 않으며, 다른 언어는 관사, 접사 또는 어순으로 이를 표시해요.",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "관사가 없는 언어에서 번역할 때 MT는 오직 문맥만으로 모든 명사구에 대해 'the'와 'a'를 결정해야 해요.",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "관사",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "명사를 한정('the') 또는 비한정('a')으로 표시하는 작은 단어예요. 전 세계 언어의 약 3분의 1은 관사가 전혀 없으며, 일부는 대신 수사 'one'이나 지시사를 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "관사 삽입과 삭제는 관사가 있는 언어와 없는 언어 간 MT에서 가장 빈번한 수정 유형 중 하나예요.",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "지시사",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "'this'와 'that' 같은 지시하는 단어예요. 언어마다 지시 공간을 다르게 나누는데, 일부는 나와 가까움 / 너와 가까움 / 멀리 있음의 세 방향 구분을 가지며, 다른 언어는 가시성이나 높낮이를 추가해요.",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "지시사 체계는 일대일로 대응되는 경우가 드물어서, MT는 거리와 가시성 구분을 근사적으로 처리해야 해요.",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "소유",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "언어가 '나의 X / 너의 X'를 표현하는 방식이에요. 많은 언어는 양도 불가능한 소유(신체 부위, 친족처럼 넘겨줄 수 없는 것)와 양도 가능한 소유를 구분하며, 서로 다른 구성으로 이를 표시해요.",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "양도 불가능한 소유는 영어 원문에서 생략되는 소유자 표시를 의무적으로 요구하는 경우가 많아요.",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "핵 표시",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "문법 표시를 구의 핵에 두는 방식이에요. 동사는 주어와 목적어가 누구인지 나타내고, 소유되는 명사는 소유자가 누구인지 나타내요. 의존 요소(명사 자체)는 표시 없이 그대로 둘 수 있어요.",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "핵 표시는 절 문법을 동사에 집중시키는데, 이는 대부분의 MT 데이터가 나오는 의존어 표시 언어와 정반대예요.",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "의존어 표시",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "문법 표시를 구의 의존 요소에 두는 방식이에요. 명사에 격 어미, 소유자에 소유 어미를 붙이며, 핵은 표시 없이 그대로 두어요. 대부분의 유럽 언어가 이 방식에 가까워요.",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "의존어 표시는 문법 신호를 명사 어미에 두는데, 토크나이저가 이를 정확히 분절해야 해요.",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "증거성",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "화자가 무언가를 어떻게 알게 되었는지(직접 봤는지, 들었는지, 추론했는지) 반드시 말하게 하는 문법이에요. 케추아어나 터키어에서 증거성 표지를 생략하는 것은 영어에서 시제를 생략하는 것과 같아요.",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "증거성 언어로 번역할 때 MT는 원문이 결코 명시하지 않는 정보 출처를 제시해야 해요.",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "시제",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "사건을 시간상에 위치시키는 문법 표시로, 과거, 현재, 미래가 있어요. 어떤 언어는 문법적 시제가 전혀 없는 반면(만다린어), 다른 언어는 과거의 먼 정도를 여러 단계로 구분해요.",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "시제가 없는 원문은 MT가 시간 관계를 추론하도록 강제하며, 시간 거리 표시 체계는 원문이 제공하는 것보다 더 세밀한 구분을 요구해요.",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "상(相)",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "사건이 시간 속에서 어떻게 전개되는지 — 완료, 진행, 습관, 반복 — 를 나타내는 문법 표시로, 사건이 언제 일어났는지와는 별개예요. 러시아어 동사는 완료상/불완료상 쌍으로 이루어지고, 영어는 'was doing'과 'did'로 구분해요.",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "상을 표시하는 언어로 번역할 때는 원문에 단서가 없더라도 모든 동사에 대해 상을 선택해야 해요.",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "완료상",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "사건을 하나의 완결된 전체로 제시하는 상 — 'she wrote the letter'를 하나의 끝난 사실로 보는 것이에요. 흔히 불완료상과 문법적 대립을 이루며 쌍을 이뤄요.",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "완료상과 불완료상을 잘못 선택하는 것은 슬라브어로의 MT에서 가장 흔한 오류 중 하나예요.",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "불완료상",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "사건을 내부에서 바라보며 제시하는 상 — 진행, 습관, 반복 등으로, 'she was writing'이나 'she used to write' 같은 표현이에요. 완료상의 상대 개념이에요.",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "불완료상의 해석(진행 대 습관)은 올바른 번역을 위해 문맥으로 구분해야 해요.",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "서법(敍法)",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "사건에 대한 화자의 태도 — 사실, 소망, 명령, 가능성 — 를 나타내는 문법 표시예요. 직설법, 접속법, 명령법이 유럽 언어에서 익숙한 서법이며, 다른 언어들은 더 세밀한 뉘앙스를 표시하기도 해요.",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "서법 선택(특히 접속법)은 원문에서 복사할 수 없는 목표 언어의 규칙을 따라요.",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "접속법",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "단정하지 않는 내용 — 소망, 의심, 가정, 특정 동사 뒤의 절 — 에 쓰이는 동사 서법이에요. 로망스어는 영어가 평서형을 쓰는 여러 종속절에서 접속법을 요구해요.",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "접속법을 유발하는 요인은 목표 언어마다 다르므로, MT는 형태를 번역하는 대신 문법 규칙을 적용해야 해요.",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "부정(否定)",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "언어가 '아니다'를 표현하는 방식이에요. 조사(영어의 not), 동사에 붙는 접사, 특수한 부정 동사, 프랑스어 ne…pas 같은 두 부분 구성 등이 있어요. 위치도 동사 앞, 뒤, 또는 양쪽 등으로 다양해요.",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "부정 오류는 의미를 완전히 뒤집기 때문에, 올바른 부정 위치는 가장 위험 부담이 큰 MT 요건 중 하나예요.",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "수동태",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "목적어를 주어로 올리고 행위자를 강등하거나 생략하는 구문이에요: 'the window was broken (by the boy)'. 많은 언어가 수동태를 전혀 갖지 않거나 행위자를 배경으로 두기 위해 다른 방식을 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "수동태가 없는 목표 언어에서는 MT가 수동태를 능동태로 재구성하면서 행위자를 만들어 내거나 복원해야 해요.",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "태(態)",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "어떤 참여자가 주어가 되는지를 제어하는 문법 체계로 — 능동, 수동, 중간태가 있고, 일부 어족에서는 훨씬 더 풍부한 체계를 갖춰요. 태는 선택된 관점을 중심으로 절 전체를 재구성해요.",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "태 불일치는 단어를 바꾸는 것이 아니라 절 전체를 재구성해야 해요.",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "결합가",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "동사가 몇 개의 참여자를 요구하며 이를 어떻게 부호화하는가를 말해요 — 'sleep(자다)'는 하나, 'give(주다)'는 셋을 취해요. 언어마다 특정 동사가 어떤 참여자를 취하고 어떻게 표시하는지가 서로 달라요.",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "결합가가 일치하지 않으면 직역 시 잘못된 역할을 부여하거나 필요한 참여자를 누락하게 돼요.",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "타동사",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "직접 목적어를 가지는 동사를 뜻해요(예: ‘그녀가 책을 읽는다’). 타동성은 문법적으로 매우 중요해요. 많은 언어에서 절이 타동사인지에 따라 주어, 목적어, 동사 자체를 다르게 표시하거든요.",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "타동성은 격 표시와 일치를 지배하므로, 동사가 타동사인지 잘못 판단하면 번역 결과에서 누가 누구에게 무엇을 했는지 뒤섞이게 돼요.",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "자동사",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "직접 목적어를 가지지 않는 동사를 뜻해요(예: ‘그녀가 잔다’, ‘해가 떴다’). 능격 언어(ergative languages)에서는 자동사의 단일 논항이 타동사의 주어가 아닌 목적어처럼 표시돼요.",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "자동사절은 특히 능격 언어에서 다른 격과 일치 패턴을 유발하므로, 기계 번역(MT)은 올바른 형태를 선택하기 위해 타동성을 추적해야 해요.",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "역수동태",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "능격 언어에서 흔히 볼 수 있는 구문으로, 타동사의 목적어를 제거하거나 격하시켜 자동사절로 남기는 수동태의 거울상 같은 구조예요. 수동태가 행위자를 배경으로 밀어낸다면, 역수동태는 행위의 대상을 배경으로 밀어내요.",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "역수동태는 절을 재구성하고 격 표시를 바꾸기 때문에, 이를 수동태 중심의 언어로 번역하려면 단순히 단어를 바꾸는 것이 아니라 문장 전체를 다시 구성해야 해요.",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "사동",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "사건에 원인 제공자를 추가하는 구문으로, ‘항아리가 깨졌다’를 ‘그녀가 항아리를 깼다’ 또는 ‘그녀가 항아리를 깨게 만들었다’로 바꿔줘요. 많은 언어에서 영어의 ‘make’ 같은 별도의 동사 대신 전용 동사 접사를 사용해 사동문을 만들어요.",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "사동의 의미는 단일 동사 형태 안에 숨어 있을 수 있으므로, 기계 번역은 이를 인식하고 도착어에 맞게 우회적인 구문으로 풀어내거나 다시 하나로 합쳐야 해요.",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "대명사",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "명사구를 대신하는 단어예요(예: 나, 너, 그녀, 그들, 이것, 누구). 언어마다 대명사의 개수와 강제하는 구분(성별, 격식, 또는 ‘우리’의 청자 포함/배제 여부 등)이 크게 달라요.",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "대명사 체계는 언어 간에 일치하는 경우가 드물기 때문에, 기계 번역은 출발어에서 명시되지 않은 구분(성별, 격식)을 채워 넣거나 도착어에서 표현할 수 없는 구분을 병합해야 해요.",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "수사",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "숫자를 표현하는 단어예요(예: 일, 십칠, 천). 언어마다 더 큰 숫자를 만드는 진법(10진법, 20진법 또는 혼합)이 다르며, 각 숫자와 함께 분류사나 특별한 세기 형태를 요구할 수도 있어요.",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "숫자는 매우 중요한 콘텐츠이며, 서로 다른 진법이나 분류사 요구 사항을 가로질러 숫자 단어를 번역하는 것은 기계 번역에서 오류가 발생하기 쉬운 부분이에요.",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "의성·의태어",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "소리, 움직임, 질감, 빛 등의 감각을 단어의 형태 자체로 생생하게 환기하는 단어예요(예: 영어의 ‘zigzag’나 일본어의 ‘kirakira(반짝반짝)’). 많은 아프리카 및 아시아 언어에는 문법적으로 구별되는 방대한 의성·의태어 부류가 있어요.",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "의성·의태어는 표현력이 풍부하고 특정 언어에 크게 의존하기 때문에, 기계 번역에서는 이를 누락하거나 평면적으로 번역하여 원어민이 느끼는 정확하고 생생한 의미를 잃는 경향이 있어요.",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "연속동사구성",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "하나의 절 안에서 'and'나 'to' 없이 여러 동사를 나란히 이어 붙이는 것으로 — 'cut the bread with a knife(칼로 빵을 자르다)'를 'take knife cut bread'로 표현하는 식이에요. 서아프리카, 동남아시아, 크리올어에서 흔해요.",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "연속동사는 유럽 언어로 번역할 때 전치사나 종속절로 분해해야 하며, 반대 방향으로는 다시 재구성해야 해요.",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "분사",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "형용사처럼 기능하거나 복합 시제를 만드는 동사 형태로 — 'the running water(흐르는 물)', 'has eaten(먹었다)' 등이에요. 언어마다 분사의 수와 용도가 달라요.",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "분사절은 다른 언어에서 관계절을 대체하는 경우가 많아 구조 변환이 필요해요.",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "동명사",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "'swimming is fun(수영은 재미있다)'의 'swimming'처럼 명사로 쓰이는 동사 형태예요. 영어가 동명사를 쓰는 자리에 다른 언어는 부정사, 동사성 명사, 또는 특수한 부동사 형태를 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "영어의 동명사는 대상 언어에 따라 여러 다른 구성으로 대응돼요.",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "계사",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "'she is a doctor(그녀는 의사이다)'와 같은 문장에서 연결 동사 'be'를 말해요. 많은 언어가 현재 시제에서는 이를 생략해요(무계사) — 러시아어와 아랍어는 문자 그대로 'she doctor'라고 표현해요.",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "MT는 무계사 언어에서 번역해 나올 때 계사를 삽입하고, 들어갈 때 삭제해야 해요.",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "일치",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "한 단어의 형태가 다른 단어의 문법 자질과 맞아야 하는 현상이에요 — 동사가 주어에 맞추거나, 형용사가 명사의 성과 수에 맞추는 것이죠. 어떤 언어는 동사에 주어와 목적어 모두의 일치를 표시해요.",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "생성된 텍스트는 모든 일치 관계를 충족해야 하며, 자질 하나만 틀려도 여러 개의 눈에 띄는 오류가 발생해요.",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "다인칭 일치",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "동사가 둘 이상의 참여자와 동시에 일치하는 현상이에요 — 동사가 주어와 목적어(때로는 그 이상)의 표지를 함께 지녀요. 바스크어, 조지아어, 알곤킨어족이 이를 체계적으로 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "동사 형태가 누가 누구에게 행위하는지를 부호화하므로, MT는 올바른 동사 하나를 만들기 전에 두 역할을 모두 확정해야 해요.",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "접속 어순(conjunct order)",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "Plains Cree 같은 알곤킨어족 언어에서 동사는 서로 다른 굴절 '어순(order)'을 갖는데, 주된 진술에 쓰이는 독립 어순(independent order)과 주로 종속절, 의문문, 특정 담화 맥락에 쓰이는 접속 어순(conjunct order)이 있어요. 두 어순은 완전히 다른 어미 체계를 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "독립형과 접속형 중 어느 것을 택할지는 영어가 직접적인 단서를 주지 않는 절 유형 결정이에요.",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Plains Cree (crk): 카드의 격식 관련 설명과 crk 방식 문서에 설명되어 있어요.",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "방향 표지(directional)",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "이동의 방향을 동사 자체에 담아내는 동사 표지예요 — 화자 쪽으로, 화자에게서 멀리, 강 상류로, 언덕 위로 등이 있어요. 마야어족, 티베트버마어파, 그리고 많은 파푸아 제어에서 흔히 나타나요.",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "동사에 압축되어 있는 방향 의미를 목표 언어에서는 부사나 전치사로 풀어내야 해요.",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "수혜격(benefactive)",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "어떤 행위가 누군가의 이익을 위해 행해짐을 나타내는 표지예요 — 'I baked her a cake'처럼요. 어떤 언어는 이를 어순이나 전치사가 아니라 동사 접사(적용태)로 나타내요.",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "수혜자는 동사 형태론 안에 숨어 있을 수 있어서, MT는 이를 감지해 별도의 구로 다시 표현해야 해요.",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "의문(interrogative)",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "질문을 하는 방식에 관한 문법이에요. 예/아니오 질문은 조사, 동사 형태, 어순 변화, 또는 억양만으로 표시될 수 있고, 내용 질문은 'who/what'이 문장 앞으로 이동하는지 여부에서 차이가 나요.",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "원문이 질문을 억양으로만 표시한다면, 글로 된 입력에서는 MT가 질문이라는 신호를 전혀 받지 못해요.",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "어순",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "평서문에서 주어(S), 목적어(O), 동사(V)가 배열되는 일반적인 방식이에요. SOV(일본어)와 SVO(영어)가 대부분의 언어를 차지하고, VSO(웨일스어, 타갈로그류)가 세 번째로 흔한 유형이며, 일부 언어는 정해진 어순이 아예 없어요.",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "어순 불일치는 언어 쌍 간 재배열 오류를 일으키는 가장 큰 단일 요인이에요.",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "부치사(adposition)",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "전치사(명사 앞에 옴: 'in the house')와 후치사(명사 뒤에 옴: 일본어 uchi de '집 안에')를 아우르는 용어예요. 언어의 선택은 그 언어의 동사–목적어 순서와 강하게 연관돼요.",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "전치사에서 후치사로의 전환은 모든 공간·시간 구의 묶음 구조를 뒤집어요.",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "관계절",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "명사를 수식하는 절이에요: 'the book that I read'처럼요. 언어에 따라 관계절을 명사 앞이나 뒤에 두고, 관계대명사부터 공백(gap), 특수한 동사 형태에 이르는 다양한 전략을 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "명사 앞에 오는 관계절(일본어, 터키어)은 영어 어순에 비해 긴 텍스트 구간을 뒤집어야 해요.",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "초점 체계(focus system)",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "타갈로그어 같은 필리핀 제어에서 가장 잘 알려진 절 체계로, 동사 형태론이 어느 참여자 — 행위자, 피행위자, 장소, 도구 — 를 문장의 문법적 중심축으로 삼을지 선택해요. 흔히 대칭태(symmetrical voice)라고 불려요.",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "초점 선택은 동사 형태, 표지 위치, 어순을 한꺼번에 바꾸기 때문에, MT는 절을 단어 단위로 대응시킬 수 없어요.",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "많은 오스트로네시아어족 언어에서 linguisticChallenges.voiceFocus로 카드에 표시돼요.",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "조사(particle)",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "문법적 또는 태도적 의미를 더하는, 굴절하지 않는 작은 기능어예요 — 의문 표지, 주제 표지, 공손함을 완화하는 표지 등이 있어요. 동아시아 언어는 문장 끝 조사를 많이 사용해요.",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "조사는 MT가 완전히 다른 수단으로 다시 표현해야 하는 의미(의문성, 태도, 주제)를 담고 있어요.",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "성조",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "음의 높낮이를 이용해 단어를 구별하는 방식입니다. 중국어의 mā '어머니'와 mǎ '말'이 그 예입니다. 단순한 체계는 두 단계를 대립시키고, 복잡한 체계(다수의 서아프리카 및 동남아시아 언어)는 여러 단계와 굴곡을 사용합니다.",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "성조는 로마자 표기나 표시가 생략된 텍스트에서는 대개 드러나지 않아, MT 시스템 입장에서는 서로 다른 단어가 하나의 철자로 합쳐집니다.",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "고저 악센트",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "음높이가 단어를 구별하되, 단어당 한 음절만 변별적인 음높이를 지니는 체계입니다. 일본어의 háshi '젓가락'와 hashí '다리'가 그 예입니다. 완전한 성조보다는 가볍고, 순수한 강세보다는 무겁습니다.",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "성조와 마찬가지로 고저 악센트는 거의 표기되지 않아, 텍스트에서 동형이의어가 늘어납니다.",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "모라(mora)",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "음절보다 작은 시간 단위입니다. 짧은 음절은 한 모라로 세고, 장모음이나 말음 자음이 있으면 하나가 더 추가됩니다. 일본어의 리듬, 시가, 심지어 약어까지도 음절이 아닌 모라를 기준으로 셉니다.",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "모라 기반 음운론은 외래어와 이름이 적응되는 방식을 결정하여 음역 품질에 영향을 줍니다.",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "방출음",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "폐가 아니라 닫힌 성문에서 나오는 공기의 파열로 만들어지는 자음으로, 날카롭게 튀는 듯한 음질을 냅니다. 캅카스, 아메리카, 동아프리카 언어에서 흔하며 어퍼스트로피(k', t')로 표기합니다.",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "방출음 표시는 일상적인 입력에서 자주 생략되어, 입력 텍스트에서 서로 다른 단어가 합쳐집니다.",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "성문 폐쇄음",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "'uh-oh'의 중간에서 목이 걸리는 소리입니다. 많은 언어에서 이것은 단어를 구별하는 완전한 자음입니다. 하와이어는 이를 ʻokina (ʻ)로 표기하며, 이를 빠뜨리면 의미가 바뀝니다.",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "성문 폐쇄음은 자주 생략되거나 잘못된 어퍼스트로피 문자로 입력되어, 단어가 여러 철자로 조각납니다.",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "하와이어(haw): ʻokina는 음소적 자음입니다. 카드 정서법 주석은 어퍼스트로피 변형 문제를 표시합니다.",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "구개수음",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "입 안 맨 뒤쪽에서 구개수(목젖)에 대고 만드는 자음으로, 아랍어의 q나 프랑스어의 r 같은 소리입니다. 연구개음 k/g보다 드물며 특정 언어권의 특징입니다.",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "구개수음은 로마자로 일관되지 않게(q/k/kh) 표기되는 경우가 많아, 한 단어가 여러 텍스트 형태로 나뉩니다.",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "흡착음",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "영어의 'tsk-tsk'처럼 공기를 안으로 빨아들여 만드는 자음이지만, 일반적인 말소리로 사용됩니다. 코이산어와 일부 남부 반투어(줄루어, 코사어)는 완전한 흡착음 자음 체계를 갖추고 있습니다.",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "흡착음은 흔치 않은 문자(ǃ, ǂ, c, q, x)로 표기되어, 토크나이저와 글꼴이 이를 잘못 처리하는 경우가 많습니다.",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "내파음",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "하우사어나 베트남어의 ɓ, ɗ처럼 목에서 공기를 순간적으로 안으로 빨아들이며 만드는 자음입니다. 훈련되지 않은 귀에는 강한 b/d처럼 들리지만 별개의 음소입니다.",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "내파음 문자(ɓ, ɗ)는 흔히 일반 b/d로 입력되어, 텍스트 코퍼스에서 서로 다른 단어가 합쳐집니다.",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "비음",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "공기가 코를 통해 빠져나가면서 만들어지는 자음이에요(예: m, n 또는 ‘sing’의 ng). 거의 모든 언어에 비음 자음이 있으며, 일부 언어에서는 비음성이 인접한 모음으로 퍼지기도 해요.",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "순수한 음성학적 범주인 비음 자음은 쓰인 단어를 다루는 텍스트 번역보다는 음성과 음역(transliteration)에서 더 중요해요.",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "마찰음",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "좁은 틈으로 공기를 밀어내어 마찰 소리를 내는 자음이에요(예: f, s, sh, th). 마찰음은 세계 언어에서 가장 흔한 자음 유형 중 하나예요.",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "마찰음은 발음과 이름의 음역에 영향을 미치는 음성학적 범주이며, 텍스트 기반 기계 번역의 문법에는 영향을 주지 않아요.",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "권설음",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "혀끝을 입천장 쪽으로 말아 올려 독특하고 울리는 소리를 내는 자음이에요. 권설음은 힌디어나 타밀어 같은 남아시아 언어의 특징이에요.",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "권설음화는 주로 음성과 음역의 문제예요. 텍스트에서는 기계 번역이 반드시 보존해야 하는 구별된 글자나 발음 구별 기호로만 나타나요.",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "성문음화",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "성문을 수축하거나 닫아서 발음하며, 자음이나 모음에 끊어지거나 삐걱거리는 특성을 더해요. 방출음(ejectives)과 내파음(implosives)이 성문음화된 자음이며, 일부 언어에는 성문음화된(삐걱거리는 목소리의) 공명음과 모음도 있어요.",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "성문음화는 음성과 음역에서 중요한 음성학적 특성이에요. 텍스트에서는 기계 번역이 온전하게 유지해야 하는 특수 문자나 아포스트로피로만 남아요.",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "인두음",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "아랍어 ʿayn(ع)처럼 목구멍(인두)을 조여서 내는 자음이에요. 전 세계적으로 드물고, 비원어민이 듣거나 발음하기 어려워요.",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "인두음은 여러 방식(ʿ, ', 3, 또는 표기 생략)으로 로마자화되어 비공식 텍스트에서 표기 혼란을 일으켜요.",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "비모음",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "프랑스어 bon이나 포르투갈어 são처럼 공기가 코를 통해 흐르며 발음되는 모음이에요. 변별적인 언어에서는 구강모음과 비모음이 서로 다른 단어를 구별해요.",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "비음화 기호(ã, ę, ą)는 비공식 타이핑에서 흔히 생략되어 단어 쌍이 합쳐져 버려요.",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "모음 길이",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "모음을 더 길게 발음하여 다른 단어를 만드는 것이에요 — 핀란드어 tuli '불' 대 tuuli '바람'. 문자 체계에 따라 겹글자, 장음 부호(ā)로 표기하거나 아예 표기하지 않아요.",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "길이 표기가 선택적인 경우(예: 하와이어 kahakō, 아랍어 모음)에는 같은 단어가 여러 철자로 나타나요.",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "하와이어(haw): kahakō(장음 부호)는 장모음을 표시하며 격식 없는 텍스트에서는 자주 생략돼요.",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "음소",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "특정 언어에서 단어를 구별하는 말소리로, 한 음소를 다른 음소로 바꾸면 다른 단어가 돼요(pat 대 bat). 언어의 음소 목록은 십여 개에서 백 개가 훌쩍 넘는 것까지 다양해요.",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "음소 목록의 크기와 내용은 외국어 이름과 차용어가 해당 언어에서 어떻게 변형되는지를 결정해요.",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "하강 단계",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "많은 아프리카 성조 언어에서 음높이가 한 단계 낮아지는 현상으로, 구절 내 이후의 모든 고성조에 영향을 줘요. 그 자체로 의미를 구별할 수 있는 성조적 표지예요.",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "하강 단계는 사실상 거의 표기되지 않아서 성조 정보가 텍스트 데이터에서 체계적으로 누락돼요.",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "혀뿌리 전진(ATR)",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "혀뿌리를 앞으로 밀어 목구멍을 확장하여 내는 모음의 성질이에요. 많은 아프리카 언어는 모음을 +ATR과 -ATR 그룹으로 나누고, 단어가 한 그룹 안에 머물도록 요구해요(ATR 조화).",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "ATR 구별은 정서법에서 일관되지 않게 표기되어 단어가 여러 철자로 나뉘어요.",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "문자",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "언어를 표기하는 기호 체계로 — 라틴, 키릴, 아랍, 한자 등 여러 가지가 있어요. 한 언어가 여러 문자를 사용할 수 있고(세르비아어), 한 문자가 수백 개 언어에 쓰일 수도 있어요.",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "문자 종류는 인코딩, 토큰화, 그리고 어떤 MT 모델이 입력을 받아들이는지 등 모든 후속 텍스트 처리를 좌우해요.",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "정서법",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "언어를 해당 문자로 표기하는 합의된 규칙이에요 — 어떤 글자, 발음 구별 부호, 철자가 올바른지를 정해요. 일부 언어는 경쟁하는 여러 정서법을 가지고 있거나 표준화된 것이 아예 없기도 해요.",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "경쟁하거나 표준화되지 않은 정서법은 부족한 학습 데이터를 서로 호환되지 않는 철자 변형으로 쪼개 버려요.",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "아부기다",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "각 기호가 기본 모음을 내장한 자음을 나타내고, 다른 모음은 기본 기호를 변형하여 표시하는 문자 체계입니다. 데바나가리, 에티오피아 문자, 태국 문자가 이에 해당해요. 알파벳과 음절 문자의 중간 형태입니다.",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "아부기다의 모음 표시는 결합 문자여서, 단순한 텍스트 처리는 이를 제거하거나 순서를 바꿔 단어를 손상시킬 수 있어요.",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "음절 문자",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "소리 단위가 아니라 음절 단위로 하나의 기호를 사용하는 문자 체계입니다. 일본어 가나나 체로키 문자가 이에 해당해요. 음절 구조가 단순한 언어에 가장 적합합니다.",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "음절 문자는 텍스트의 단위를 바꾸기 때문에, 토크나이저가 자음과 모음이 아니라 음절을 인식하게 돼요.",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "음절 문자(syllabics)",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "크리어, 이누크티투트어, 오지브웨어를 비롯한 캐나다 원주민 언어에 사용되는 문자 계열로, 각 문자가 자음을 나타내고 그 회전 방향이 모음을 나타냅니다. 1840년대에 만들어졌으며 지금도 공동체에서 활발히 사용되고 있어요.",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "많은 크리어/이누크티투트어 텍스트가 syllabics와 로마자 정서법 두 가지로 존재하기 때문에, MT 파이프라인에는 신뢰할 수 있는 문자 변환이 필요해요.",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "평원 크리어(crk): 카드 문자는 Cans(Canadian Aboriginal Syllabics)이며 로마자 정서법 변환기를 함께 제공합니다.",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "로마자 표기",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "언어를 고유 문자 대신 라틴 문자로 표기하는 것으로, 규칙에 따르거나(전자법) 소리에 따라 이루어집니다. 한 언어에도 서로 경쟁하는 여러 로마자 표기 표준이 있는 경우가 많아요.",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "명시적으로 변환하지 않으면 로마자 표기 텍스트와 고유 문자 텍스트는 MT 모델에게 서로 다른 언어처럼 취급돼요.",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "발음 구별 기호",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "성조, 장단, 비음화, 또는 다른 소리를 나타내기 위해 문자에 추가되는 표시입니다. 악센트, 틸데, 점, 마크론 등이 있어요. 일부 정서법은 이에 전적으로 의존하지만, 사용자는 일상적인 입력에서 이를 생략하는 경우가 많아요.",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "발음 구별 기호가 제거된 텍스트는 널리 퍼진 데이터 품질 문제로, 서로 다른 단어를 합쳐 버리고 깨끗한 학습 데이터와 어긋나게 만들어요.",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "표기 방향",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "문자가 진행되는 방향으로, 왼쪽에서 오른쪽(라틴 문자), 오른쪽에서 왼쪽(아랍 문자, 히브리 문자), 또는 역사적으로 위에서 아래로(몽골 문자, 고전 중국어) 쓰입니다. 방향이 혼합된 텍스트는 특별한 처리가 필요해요.",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "RTL 및 양방향 텍스트는 단순한 문자열 처리를 무너뜨려요. 숫자, 구두점, 삽입된 라틴 문자 단어의 순서가 예측할 수 없게 바뀌기 때문이에요.",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "언어 사용역",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "사회적 맥락과 결부된 언어의 변이형으로, 격식체, 일상체, 의례체, 전문체 등이 있어요. 일부 언어는 사용역을 문법화하는데, 자바어에는 서로 다른 공손 수준에 맞는 별개의 어휘 체계가 있어요.",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "MT는 일관된 사용역을 유지해야 해요. 하나의 결과물에서 격식체와 일상체를 섞으면 어색하거나 무례하게 읽혀요.",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "T-V 구분",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "프랑스어의 tu/vous나 독일어의 du/Sie처럼 사회적 거리에 따라 '너'를 가리키는 단어가 둘 이상 있는 것입니다. 그 선택은 존중, 친밀함, 위계를 나타내며, 한 번 선택하면 되돌리기 어려워요.",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "영어의 'you'는 아무런 단서를 주지 않기 때문에, MT는 맥락으로부터 격식 정도를 선택해야 하는데, 이는 흔하면서도 사회적으로 눈에 띄는 오류예요.",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "French (fra): 카드 격식 데이터가 tu/vous 사용 맥락을 구별해요.",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "경어법(honorific)",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "청자나 화제의 대상에 대한 존중을 나타내는 문법적·어휘적 형식이에요. 일본어의 keigo, 한국어의 상대 높임법, 친족 존대 어휘 등이 있어요. 선택적 공손함이 아니라 의무적인 경우가 많아요.",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "경어 선택에는 누가 누구보다 윗사람인지에 대한 사회적 지식이 필요한데, 원문에는 이런 정보가 드러나 있지 않은 경우가 많아요.",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "공손성(politeness)",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "대명사 선택, 동사 어미, 조사, 어휘를 통해 사회적 관계를 언어로 표현하는 것이에요. 언어마다 문법적 공손 표현이 전혀 없는 경우부터 정교한 다단계 체계까지 다양해요.",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "번역이 어휘적으로는 완벽하더라도 상황에 맞지 않는 공손 수준을 골라 실패할 수 있어요.",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "양층어 상황(diglossia)",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "한 공동체가 목적에 따라 한 언어의 두 변이형을 사용하는 안정적인 상황이에요. 글쓰기와 격식 있는 말에 쓰는 '상층' 변이형(현대 표준 아랍어)과 일상생활에 쓰는 '하층' 변이형(구어 방언)이 있어요. 화자는 선택이 아니라 맥락에 따라 전환해요.",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "학습 데이터가 문어체 '상층' 변이형에 치우쳐 있어서, MT는 사람들이 실제로 쓰는 구어 변이형에서 제대로 작동하지 못해요.",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "코드 전환(code-switching)",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "이중언어 화자가 자연스럽게 하듯이 하나의 대화나 문장 안에서 둘 이상의 언어를 번갈아 쓰는 것이에요. 무작위로 섞는 것이 아니라 문법적 규칙을 따라요.",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "언어가 섞인 입력은 언어 감지를 혼란스럽게 만들어, 시스템이 두 코드를 모두 처리하지 못하면 깨진 결과물이 나와요.",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "크리올어(creole)",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "격심한 언어 접촉에서 생겨난 완전한 자연어로, 보통 어휘 대부분을 한 언어(어휘 공급 언어)에서 가져오면서 자체 문법을 발전시켜요. 아이티 크리올어, Tok Pisin, Papiamento가 그 예예요.",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "크리올어는 글로 보면 어휘 공급 언어와 헷갈릴 만큼 비슷해서, 그 언어로 학습된 MT 시스템이 크리올어를 체계적으로 오역해요.",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "피진어(pidgin)",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "공통어가 없는 집단들이 교역이나 노동을 위해 만든, 모어 화자가 없는 단순화된 접촉 언어예요. 아이들이 이를 모어로 습득하면 크리올어가 돼요.",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "피진어는 변이성이 크고 텍스트 데이터가 빈약해서 일관된 MT가 특히 어려워요.",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "어휘 공급 언어(lexifier)",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "크리올어나 피진어에 어휘 대부분을 제공한 언어예요. 자메이카 파투아의 English, 아이티 크리올어의 French, Papiamento의 Portuguese가 이에 해당해요. 하지만 문법은 크리올어 자체의 것이에요.",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "어휘 공급 언어와 어휘를 공유하다 보니, MT가 넘겨서는 안 되는 깊은 문법적 차이가 가려져요.",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "차용어(loanword)",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "다른 언어에서 가져와 현지 음운 체계에 맞춰 적응시킨 단어예요. English의 'sushi'나 French의 'le weekend'가 그 예예요. 반면 번역차용(calque)은 구조를 빌려 조각조각 옮겨요('skyscraper' → French 'gratte-ciel').",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "차용어를 그대로 둘지, 적응시킬지, 번역할지 결정하는 것은 특히 기술 용어의 현지화에서 반복적으로 마주치는 선택이에요.",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "대언어",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "ISO 639-3의 관리용 분류 항목으로, 역사적·정치적 이유로 하나로 취급되는 여러 개별 언어를 포괄하는 단일 코드('ara' 아랍어나 'zho' 중국어 등)를 말해요. 각 개별 언어도 자체 코드를 가지고 있어요.",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "대언어 코드로 표기된 데이터는 상호 이해가 불가능한 변종들을 뒤섞어 학습과 평가를 오염시켜요.",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "내부 명칭",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "외부인이 사용하는 이름(외부 명칭, exonym)과 대비되는, 언어 공동체가 자신의 언어를 부르는 이름(내부 명칭/자칭, endonym/autonym)이에요. 'Deutsch'는 영어로 'German'이라 부르는 언어의 내부 명칭이며, 많은 원주민 공동체가 자신들의 내부 명칭을 선호해요.",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "데이터베이스 간 이름 불일치는 MT 파이프라인에서 언어 식별 및 데이터 병합 오류를 일으켜요.",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "고립어",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "친족 관계가 입증된 언어가 없는 언어, 즉 구성원이 하나뿐인 어족이에요. 바스크어, 아이누어, 부루샤스키어가 유명한 예이며, 고립어는 전 세계적으로 의외로 흔해요.",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "고립어는 친족 언어로부터 학습 신호를 빌려올 수 없어, 저자원 MT의 핵심 전략(전이 학습)을 사용할 수 없어요.",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "언어 활력",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "언어가 아이들에게 얼마나 견고하게 전승되고 삶의 여러 영역에서 얼마나 사용되는지를 나타내요. EGIDS나 Glottolog의 위기 등급 같은 척도는 '활발함'에서 '위협받음', '소멸 위기'를 거쳐 '휴면'(유창한 화자는 없으나 부활 가능성이 있는 상태)까지 이어져요.",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "활력은 데이터 가용성을 예측하며, 공동체 주도 MT에서는 기술이 어떤 역할을 해야 하는지(예: 대체가 아닌 활성화 지원)를 알려줘요.",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "소멸 위기",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "언어가 더 이상 아이들에게 학습되지 않으며, 남은 유창한 화자가 모두 나이 든 성인인 상태를 뜻하는 활력 등급이에요. 개입이 없으면 이러한 언어는 한 세대 안에 휴면 상태가 돼요.",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "소멸 위기 언어는 MT 출력을 검증할 화자층이 줄어들고 있어, 모든 데이터 결정의 중요성이 커져요.",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "Glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "언어, 방언, 어족을 포괄하는 Glottolog 데이터베이스의 고유 식별자예요(영어의 경우 stan1293). ISO 코드보다 세분화되어 있으며 언어학자들이 지속적으로 개정해요.",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "Glottocode를 사용하면 ISO 코드가 없는 변종의 경우에도 유형론 데이터베이스를 정확하게 연결할 수 있어요.",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "SIL이 관리하는, 세계 언어를 위한 세 글자 코드 국제 표준이에요(eng, crk, haw). 살아 있는 언어든 소멸한 언어든 알려진 모든 언어에 각각 하나의 코드를 부여하는 것을 목표로 해요.",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "ISO 639-3 코드는 다국어 NLP의 조인 키로, 잘못되거나 모호한 코드는 데이터셋을 소리 없이 손상시켜요.",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "20진법",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "10이 아닌 20을 기반으로 하는 셈 체계예요. 마야어, 요루바어, 나와틀어, 그리고 (부분적으로) 덴마크어가 이렇게 셈하며, 프랑스어에서 'eighty'는 문자 그대로 '4개의 20'(quatre-vingts)이에요.",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "서로 다른 진법 간의 수사 번역은 오류가 발생하기 쉬우며, 숫자는 중요도가 높은 콘텐츠예요.",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "Numeralbank 데이터의 numeralSystem.baseType를 통해 카드에 표시돼요.",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "친족어",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "가족 관계를 나타내는 어휘로, 언어마다 이를 매우 다르게 구분해요. 손위 형제와 손아래 형제를 구분하거나, 외삼촌과 친삼촌을 구분하는 별개의 단어가 있기도 하죠. 일부 체계는 화자 자신의 위치까지 부호화해요.",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "영어의 'uncle'이나 'cousin'은 대응하는 단일 단어가 없을 수 있어서, MT가 필요한 가족 정보 없이 정확한 친족어 중 하나를 선택해야 하는 상황에 놓여요.",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "시스템의 출력과 참조 번역 사이의 문자 단위 겹침을 채점하는 자동 MT 평가 지표예요. 단어가 아니라 문자를 기준으로 작동하기 때문에, 단어 기반 지표보다 형태론적으로 풍부한 언어에 더 공정해요.",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "chrF는 단어 단위 매칭이 제대로 작동하지 않는 교착어와 포합어에 선호되는 표면 지표예요.",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "표면적 겹침을 세는 대신, 학습된 다국어 모델을 사용해 사람의 품질 판단을 예측하는 신경망 기반 MT 평가 지표예요. AfriCOMET 같은 변형은 아프리카 언어로 범위를 확장해요.",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "COMET은 표면 지표보다 사람의 판단과 더 잘 상관되지만, 기반 모델이 학습한 언어에 한해서만 그래요.",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "유한 상태 변환기(finite-state transducer)로, 단어 형태와 그 문법적 분석 사이를 매핑하는 규칙 기반 계산 모델이에요. 형태론적으로 복잡한 언어의 경우, 수작업으로 구축한 FST는 통계 시스템이 한 번도 본 적 없는 단어 형태를 분석하고 생성할 수 있어요.",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "FST는 텍스트만으로 형태론을 학습하기에는 데이터가 너무 부족한 언어에 신뢰할 수 있는 형태론 분석과 검증을 제공해요.",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "Plains Cree (crk): 평가 팩은 FST 기반 의미 검증기를 사용해요(카드 필드 evalMetrics.lyss-sem).",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "트리뱅크",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "문법 구조(파스 트리)로 수작업 주석이 달린 문장들의 코퍼스예요. Universal Dependencies 프로젝트는 150개 이상의 언어에 대해 공통 형식의 트리뱅크를 관리하고 있어요.",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "트리뱅크의 존재는 해당 언어에 대한 진지한 NLP 인프라를 보여주며, 구문을 인식하는 평가를 가능하게 해요.",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "병렬 코퍼스",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "텍스트와 그 번역을 짝지어 문장 단위로 정렬한 모음이에요. 병렬 코퍼스는 MT 시스템을 학습하고 평가하는 데 필요한 주요 연료예요.",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "사용 가능한 병렬 데이터의 규모와 도메인은 특정 언어 쌍의 MT 품질을 예측하는 가장 강력한 단일 지표예요.",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU(Bilingual Evaluation Understudy)는 번역이 하나 이상의 참조 번역과 얼마나 많은 단어 n-gram을 공유하는지로 점수를 매겨요. 가장 오래되고 가장 많이 인용되는 MT 지표이지만, 단어 전체를 매칭하기 때문에 형태론적으로 풍부하고 저자원인 언어에는 가혹하고 신뢰하기 어려워요. 0–100 척도에서 높을수록 좋아요.",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "BLEU는 발표된 표와의 비교를 위해 보고되지만, Champollion이 집중하는 언어들에서는 사람의 판단과 상관성이 낮으므로 chrF++와 COMET과 함께 봐야 하며, 절대 단독으로 읽어서는 안 돼요.",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU는 FLORES-200 SentencePiece 토크나이저로 텍스트를 분할한 후 계산한 BLEU예요. 이 토크나이저는 200개 언어 전체에서 공유되는 단일 고정 서브워드 모델이에요. 덕분에 일반적인 단어 단위 BLEU로는 불가능한, 문자 체계와 표기 체계를 넘나드는 점수 비교가 가능해져요.",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU는 NLLB / FLORES 저자원 문헌에서 통용되는 공통 수치로, 언어 간 비교에 유용하지만 여전히 의미를 보지 못하는 표면 지표예요.",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "Translation Edit Rate(번역 편집률)는 시스템의 출력을 참조 번역으로 바꾸는 데 필요한 편집 — 삽입, 삭제, 치환, 블록 이동 — 의 수를 참조 번역 길이에 대한 백분율로 계산해요. 대부분의 지표와 달리 값이 낮을수록 좋아요.",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "TER는 '사람이 이걸 고치는 데 얼마나 손이 갈까?'를 직관적으로 보여주는 신호이지만, 다른 표면적 지표와 마찬가지로 타당한 의역과 풍부한 형태론에 불이익을 줘요.",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "데이터 오염(data contamination)",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "테스트 세트의 문장이 모델 학습 과정에서 이미 노출되었을 가능성이 높을 때 — 예를 들어 코퍼스가 공개되어 널리 스크래핑되었기 때문에 — 그 테스트 세트는 '오염'되었다고 해요. 오염된 벤치마크는 모델이 우수하다는 것을 증명할 수 없어요. 단지 암기한 답을 떠올리는 것일 수도 있으니까요. '높음' 오염은 노출되었을 가능성이 높다는 뜻이므로, 그 결과는 절대적인 품질 주장이 아니라 시스템 간의 상대적 비교('상대 전용')로 취급해요.",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "대부분의 공개 벤치마크는 광범위하게 학습에 사용되므로, Champollion은 이를 상대 전용 레인에서 채점하고 절대 순위는 봉인되어 공개된 적 없는 테스트 세트에만 사용해요.",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "기계 번역 복잡도",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "특정 언어가 기계 번역하기에 얼마나 어려운지를 Champollion이 계산한 0~100 추정치로, 네 가지 신호를 결합해요: 상업용 MT API 지원 범위, 병렬 코퍼스의 가용성, 자원이 풍부한 언어와의 유형론적 거리, 그리고 언어 문서화의 깊이예요. 값이 높을수록 어렵다는 뜻이에요. 이는 난이도를 안내하는 지표이지, 특정 시스템 출력의 측정값이 아니에요.",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "이 지수는 노력의 우선순위를 정하는 데 도움을 주는 파생 지표예요 — 벤치마크 결과가 아니에요. 측정된 번역 품질은 (방법, 데이터셋, 지표)로 구분되어 리더보드에 있어요.",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "홀드아웃 테스트 세트(held-out test set)",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "개발 과정에서 시스템에 노출되지 않도록 숨겨두고 채점에만 사용하는 번역 예제 모음이에요. 시스템이 이 문장들을 본 적이 없다면, 점수는 암기가 아니라 진정한 능력을 반영해요. Champollion의 가장 강력한 등급은 커뮤니티가 비공개로 유지하는 '봉인된' 테스트 세트예요 — 우리를 포함한 누구도 데이터를 보지 않은 채로 방법이 채점돼요.",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "홀드아웃(특히 봉인된) 테스트 세트는 절대적인 품질 주장을 할 수 있는 유일한 방법이에요. 공개되고 오염된 세트는 상대적 비교만 뒷받침해요.",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

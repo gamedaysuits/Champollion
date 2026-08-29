@@ -1,0 +1,82 @@
+{
+  "id": "eval-eng-knc-gamayun-test-v1",
+  "type": "eval",
+  "name": "Gamayun eng→knc Evaluation Corpus",
+  "version": "1.0.0",
+  "pair": {
+    "source": "eng",
+    "target": "knc",
+    "direction": "unidirectional"
+  },
+  "description": "English→Kanuri (Central) parallel evaluation corpus from CLEAR Global's Gamayun Parallel Sentence Kits. ~5,000 sentence pairs, humanitarian domain. Source sentences originate from Tatoeba but translations are unique, human-produced by CLEAR Global translators. Tail-split: last 2000 sentences held for test, remainder for dev. ISO 639-3 knc (Central Kanuri) used instead of macrolanguage kau.",
+  "source": {
+    "publisher": "CLEAR Global (formerly Translators without Borders)",
+    "url": "https://huggingface.co/datasets/CLEAR-Global/Gamayun-kits",
+    "paper": null,
+    "citation": null,
+    "fundedBy": null,
+    "repo_url": "https://huggingface.co/datasets/CLEAR-Global/Gamayun-kits",
+    "builder": "gamayun-parallel",
+    "recipe": {
+      "split": "tail",
+      "tail_n": 2000,
+      "note": "last 2000 pairs = test split, remainder = dev split"
+    },
+    "license": "LicenseRef-TWB-Gamayun",
+    "license_url": "https://huggingface.co/datasets/CLEAR-Global/Gamayun-kits/blob/main/LICENSE.txt"
+  },
+  "license": {
+    "spdx": "LicenseRef-TWB-Gamayun",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": null,
+    "notes": "Bespoke TWB/CLEAR Global license (upstream LICENSE.txt), NOT plain CC-BY-4.0 as previously mistagged. Commercial use requires prior notice, derivatives must be released under an open license, and use is limited to humanitarian/mission purposes. Tagged conservatively (commercial=false, redistribution=false) and kept quarantined so it never enters a commercial or prize lane."
+  },
+  "dev": {
+    "size": 3000,
+    "sizeUnit": "sentences",
+    "domain": "humanitarian",
+    "domainDistribution": {
+      "humanitarian": 1.0
+    },
+    "dataFile": "curated/eng-knc-gamayun-dev-v1.json",
+    "format": "harness-json"
+  },
+  "test": {
+    "size": 2000,
+    "sizeUnit": "sentences",
+    "domain": "humanitarian",
+    "domainDistribution": {
+      "humanitarian": 1.0
+    },
+    "dataFile": "curated/eng-knc-gamayun-test-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": "CLEAR Global professional translators",
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Source sentences originate from Tatoeba (which is publicly crawlable), but the Kanuri translations are unique human translations produced by CLEAR Global. Kanuri is extremely low-resource — very unlikely to appear in LLM training data. Hosted on HuggingFace but as a niche humanitarian dataset."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited",
+    "redistribution": "restricted",
+    "communityNotes": "Upstream uses a bespoke TWB/CLEAR Global license (LICENSE.txt), not plain CC-BY-4.0: commercial use requires prior notice, derivatives must stay open-licensed, and use is limited to humanitarian/mission purposes. Quarantined and kept out of any commercial or prize lane."
+  },
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": null,
+    "populatedFrom": "CLEAR Global Gamayun Parallel Sentence Kits on HuggingFace (https://huggingface.co/datasets/CLEAR-Global/Gamayun-kits). Sentence count (~5,000) from dataset description. License from HuggingFace dataset card (CC-BY-4.0). ISO 639-3 code knc for Central Kanuri per SIL Ethnologue."
+  },
+  "quarantine": true,
+  "quarantineReason": "gamayun-parallel builder not yet implemented; HF dataset layout unverified. Catalogued but not runnable."
+}

@@ -1,0 +1,165 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# PyPI distribution name is `mt-eval` (the CLI command); the import package
+# stays `mt_eval_harness`. Not to be confused with the unrelated `mteval` dist.
+name = "mt-eval-harness"
+version = "0.1.0"
+description = "A configurable, language-agnostic evaluation harness for machine translation pipelines."
+readme = "README.md"
+# AGPL-3.0-or-later, WITH an additional permission under §7 allowing the harness to
+# combine with separately-licensed (incl. noncommercial) eval-standard plugins via its
+# public plugin interface. See LICENSE-EXCEPTION.md.
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.11"
+authors = [
+    { name = "Curtis Forbes" },
+]
+keywords = ["machine-translation", "evaluation", "nlp", "low-resource-languages", "benchmarking"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+dependencies = [
+    "aiohttp>=3.9",
+    "python-dotenv>=1.0",
+    "sacrebleu>=2.3",
+    # spBLEU's FLORES-200 SentencePiece tokenizer (a default-reported comparability
+    # metric) needs sentencepiece. Small, pure-ish; keeps spBLEU working out of the box.
+    "sentencepiece>=0.2",
+    # Required for fetch-from-source: the corpora-builder adapters shipped in
+    # this wheel (corpora_builder.adapters.*) download upstream exports with
+    # `requests`. Without it, `mt-eval run --corpus <id>` cannot rebuild a
+    # missing corpus from source on a clean pip install — the core path for
+    # every contributor who runs the public queue.
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+comet = [
+    "unbabel-comet>=2.2",
+]
+# Guided, interactive dataset selection (`mt-eval run` with no corpus on a
+# TTY). OPTIONAL — the harness falls back to plain input() prompts when
+# questionary is absent, so the non-interactive path needs ZERO extra deps.
+interactive = [
+    "questionary>=2.0",
+]
+# Gated HuggingFace downloads (e.g. AI4Bharat IN22) via the official client.
+# OPTIONAL/lazy — non-gated corpora never need it; gated fetches fail honestly
+# with "pip install huggingface_hub" when it's absent.
+hf = [
+    "huggingface_hub>=0.23",
+]
+fst = [
+    "pyhfst>=1.4",
+]
+# Sovereign eval node: the threshold-custody lane (`mt-eval node ceremony`,
+# seal/unseal, signed score manifests). All primitives come from
+# `cryptography` (X25519, HKDF, AES-256-GCM, Ed25519) — nothing hand-rolled;
+# the vendored GF(256) Shamir is secret sharing, not a cipher. OPTIONAL/lazy:
+# every other lane runs without it; the sovereign modules fail loud with
+# "pip install 'mt-eval[node]'" when it is absent.
+node = [
+    "cryptography>=42,<50",
+]
+# Amazon Translate adapter uses boto3 (AWS SigV4 signing). Optional so the core
+# wheel stays slim; the adapter lazy-imports boto3 and fails loud with an
+# actionable message if it's missing.
+aws = [
+    "boto3>=1.34",
+]
+# Self-hosted local MT models (NLLB / OPUS-MT / MADLAD) via transformers.
+# Heavy (torch) — optional so the core wheel stays slim; LocalModelMethod
+# lazy-imports and fails loud if absent.
+local-models = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "sentencepiece>=0.2",
+    "sacremoses>=0.1",
+]
+# The other "usual way" to run a local NMT model: CTranslate2 — fast CPU/GPU
+# inference over a converted model directory (`ct2-transformers-converter`).
+# LocalModelMethod auto-detects a CT2 dir (a `model.bin`) and runs it via this
+# backend. Still needs transformers for the tokenizer; sentencepiece for the
+# NLLB/MADLAD/Marian vocabularies. Optional/lazy — LocalModelMethod fails loud
+# with this install hint if ctranslate2 is absent.
+ctranslate2 = [
+    "ctranslate2>=4.0",
+    "transformers>=4.40",
+    "sentencepiece>=0.2",
+]
+# FUSE-style comparator (opt-in, reported, never in the composite): LaBSE
+# embeddings + Soundex. Heavy, so optional — without it compute_fuse returns None.
+fuse = [
+    "sentence-transformers>=2.2",
+    "jellyfish>=1.0",
+]
+# MetricX-24 (Google, Apache-2.0) — the WMT24 Metrics shared-task winner and the
+# metric WMT24++/TranslateGemma report against. A LOWER-IS-BETTER neural error
+# metric (0–25) on an mT5 backbone. Reported in the neural lane, NEVER in the
+# composite. Heavy → optional; without it compute_metricx returns None. NOTE: the
+# MetricX model code itself is NOT on PyPI — also run:
+#   pip install git+https://github.com/google-research/metricx
+metricx = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "sentencepiece>=0.2",
+]
+# NOTE: per-language eval dependencies (spaCy, pyhfst, …) now live in the
+# external eval-standard packages (e.g. champollion-lyss), fetched on demand per
+# the language card's evalStandard. The core wheel names no single language.
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    # The sovereign-lane tests exercise real crypto (they skip cleanly
+    # without it, but a dev environment should run them).
+    "cryptography>=42,<50",
+]
+
+[project.scripts]
+mt-eval = "mt_eval_harness.cli:main"
+generate-plugin = "mt_eval_harness.cli:generate_plugin"
+
+[project.urls]
+Homepage = "https://github.com/gamedaysuits/Champollion"
+Repository = "https://github.com/gamedaysuits/Champollion"
+Issues = "https://github.com/gamedaysuits/Champollion/issues"
+
+# Ship the harness ONLY.
+#
+# scripts/corpora-builder/ was packaged here on the reasoning that "a standalone
+# pip install must carry them". That was wrong on two counts. Legally: the
+# builder is proprietary internal tooling (founder ruling 2026-08-01) and must
+# not ship in an AGPL distribution — it was also declaring Apache-2.0 in its own
+# pyproject while riding inside this AGPL wheel, so the same code carried two
+# incompatible licence statements. Functionally: the harness never treated it as
+# a dependency anyway — mt_eval_harness/corpus_fetch.py's own
+# _import_corpora_builder() docstring says it "is not installed as a dependency
+# of the harness; in the monorepo we add it to sys.path on demand".
+#
+# Effect on a pip-installed harness: evaluation, scoring and publishing are
+# unaffected. Building a corpus from a registry recipe is monorepo-only, and
+# corpus_fetch.py now says so out loud instead of raising ModuleNotFoundError.
+[tool.setuptools]
+# Ship the AGPL text AND the §7 eval-standard-plugin exception with every distribution.
+license-files = ["LICENSE", "LICENSE-EXCEPTION.md"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mt_eval_harness*"]
+
+# Bundle the registry inside the package (the offline fallback for the
+# remote-fetch path). build_registry.py writes mt_eval_harness/data/registry.json.
+[tool.setuptools.package-data]
+mt_eval_harness = ["data/*.json"]

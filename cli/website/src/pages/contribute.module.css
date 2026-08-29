@@ -1,0 +1,323 @@
+/* ===================================================================
+   /contribute — page-specific styles, layered on spoke.module.css.
+   Field Notes house style: flat surfaces, glass cards, teal accent,
+   tokens only (no raw hex — DESIGN.md §2 rules).
+   =================================================================== */
+
+/* ---------------------------------------------------------------
+   Copy buttons
+   --------------------------------------------------------------- */
+.copyBtn {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.32rem 0.7rem;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-medium);
+  background: var(--surface-glass);
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.copyBtn:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.copyBtn:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------
+   Agent prompt block
+   --------------------------------------------------------------- */
+.promptBlock {
+  margin: 1.2rem 0 0.8rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--surface-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 0 var(--border-subtle),
+    0 0 0 1px var(--accent-subtle);
+  overflow: hidden;
+}
+
+.promptHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Provider/budget controls + copy button won't fit one 375px row —
+     wrap instead of pushing the copy button past the viewport. */
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.promptPre {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* ---------------------------------------------------------------
+   Queue preview
+   --------------------------------------------------------------- */
+.queueList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.queueItem {
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 var(--border-subtle);
+}
+
+.queueItemHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.55rem;
+}
+
+.queuePair {
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.queueLang {
+  font-weight: 500;
+  color: var(--ifm-font-color-secondary);
+}
+
+.queueMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.queueModel {
+  font-size: 0.8rem;
+}
+
+.queueCond {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-medium);
+  color: var(--ifm-font-color-secondary);
+}
+
+.queueCost {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--ifm-color-primary);
+}
+
+.queueCmdRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.queueCmd {
+  flex: 1;
+  min-width: 0;
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm, 6px);
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* ---------------------------------------------------------------
+   Contribution ladder
+   --------------------------------------------------------------- */
+.tierList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.tier {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 var(--border-subtle);
+}
+
+.tierRung {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  margin-top: 0.15rem;
+  white-space: nowrap;
+}
+
+.tierBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.tierName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.tierEffort {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.tierText {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.tierLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+}
+
+.tierLink {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------
+   Responsive
+   --------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .tier {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .queueCmdRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .queueCmd {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  /* Thumb-sized controls; 16px fonts so iOS doesn't zoom on focus. */
+  .copyBtn {
+    min-height: 40px;
+    padding: 0.45rem 0.9rem;
+  }
+  .giveInput,
+  .giveSelect {
+    min-height: 40px;
+    padding: 0.35rem 0.6rem;
+    font-size: 1rem;
+  }
+}
+
+/* /give budget + provider widget */
+.promptControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.giveInputWrap {
+  font-family: var(--ifm-font-family-monospace);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.giveInput {
+  width: 5.5em;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+}
+
+.giveSelect {
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.providerHint {
+  margin: 0;
+  padding: 0.5rem 1rem 0.65rem;
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-secondary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.providerHint code {
+  font-size: 0.76rem;
+  padding: 0.1em 0.35em;
+  background: var(--ifm-background-surface-color);
+  border-radius: 4px;
+}
+
+.providerHint a {
+  font-weight: 600;
+}
+

@@ -1,0 +1,57 @@
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "format": "docusaurus",
+  "model": "google/gemini-3.1-pro-preview",
+  "defaultMethod": "llm",
+  "temperature": 0.0,
+  "batchSize": 50,
+  "apiKeyEnvVar": "OPENROUTER_API_KEY",
+  "_modelSelection": {
+    "benchmarkConfirmed": false,
+    "model": "google/gemini-3.1-pro-preview",
+    "policy": "single-default",
+    "note": "UNPINNED 2026-07-18 (founder decision): every pair uses ONE manually-chosen default (google/gemini-3.1-pro-preview), NOT a benchmark-selected winner. The former per-pair pins cited a 2026-06-11 internal selection sweep over Tatoeba dev corpora (DOGFOOD_PLAN.md §2/§4) whose raw run reports did not survive the 2026-07-08 machine handoff and were never on the post-2026-06-13-reset public board — so they were unverifiable and are removed rather than presented as confirmed winners. This flag must read benchmarkConfirmed=false until a fresh 12-pair selection sweep re-runs through the harness integrity gate; only then re-introduce a `pairs` block with cited winners and set benchmarkConfirmed=true. Do NOT publish a 'chosen by our own benchmarks' claim while this is false.",
+    "repinProcedure": "docs/dogfood/DOGFOOD_PLAN.md §0 (build dev corpora -> sweep -> pick winner per pair -> export into pairs -> flip this flag)"
+  },
+  "promptContext": "You are translating the documentation website for Champollion, an open-source CLI tool (npm package) that translates locale files and content for websites. Developer-facing technical documentation — professional tone, no marketing fluff. Preserve ALL markdown/MDX formatting, links, admonitions, code blocks, CLI commands, config keys, package names, and URLs exactly as-is. Keep proper nouns in English (Champollion, Docusaurus, OpenRouter, DeepL). The project was born from translating a production website into Plains Cree; treat references to Indigenous languages with cultural respect.",
+  "languages": {
+    "fr": {
+      "register": "formal-vous"
+    },
+    "de": {
+      "register": "formal-Sie"
+    },
+    "nl": {
+      "register": "formal-u"
+    },
+    "fil": {
+      "register": "formal"
+    },
+    "es": {
+      "register": "neutral-latam"
+    },
+    "zh": {
+      "register": "Professional Simplified Chinese (简体中文). Modern technical documentation register. Use established Chinese technical terms (批处理, 缓存, 插件) but keep proper nouns in English. Developer-facing — assume the reader writes code."
+    },
+    "ja": {
+      "register": "polite"
+    },
+    "ko": {
+      "register": "polite-haeyo"
+    },
+    "pt": {
+      "register": "professional"
+    },
+    "th": {
+      "register": "neutral-professional"
+    },
+    "vi": {
+      "register": "neutral-ban"
+    },
+    "ar": {
+      "register": "msa-professional"
+    }
+  }
+}

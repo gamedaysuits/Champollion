@@ -1,0 +1,86 @@
+# pr-gate.yml — PR gate for the Champollion monorepo. READY BUT INACTIVE.
+#
+# This file lives in .github/workflows-disabled/ so GitHub Actions ignores it.
+# Enable by moving to .github/workflows/ when external PRs open:
+#
+#   git mv .github/workflows-disabled/pr-gate.yml .github/workflows/pr-gate.yml
+#
+# Deploys do NOT depend on CI (Vercel builds from main); this gate exists only
+# to check external pull requests before merge. It mirrors the local pre-push
+# chain: sovereignty (quarantine) gate, language-card linter, and the two fast
+# test suites (CLI node --test, harness pytest).
+name: PR gate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  # Sovereignty gate — hard block. Corpus CONTENT (translation pairs, parallel
+  # text, reference answers, eval gold) must never be tracked in git, ANY
+  # license, ANYWHERE. Delegates to scripts/corpus_content_scan.py (stdlib
+  # only — no pip install needed).
+  quarantine-gate:
+    name: Sovereignty (quarantine) gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run quarantine gate
+        run: bash scripts/quarantine_gate.sh
+
+  # Language-card linter — schema, provenance, and license-register rules for
+  # cli/data language cards (node builtins only — no npm install needed).
+  # --ci keys the exit code on EVERY error-severity rule, mirroring the local
+  # scripts/card_integrity_gate.sh. Both were --integrity-ci (integrity rules
+  # only) while a backlog of out-of-scope card errors existed; that backlog is
+  # gone (measured 0 errors over 8,678 cards, 2026-08-01) and the two must stay
+  # in lockstep, so that this parked workflow is never silently weaker than the
+  # pre-push hook it mirrors.
+  card-linter:
+    name: Language-card linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Lint language cards
+        run: cd cli && node scripts/lint-language-cards.mjs --ci
+
+  # Fast suite 1/2 — CLI (node --test). Keyless: tests must pass without
+  # provider API keys.
+  cli-tests:
+    name: CLI tests (node --test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: cli/package-lock.json
+      - name: Install CLI dependencies
+        run: cd cli && npm ci
+      - name: Run CLI test suite
+        run: cd cli && npm test
+
+  # Fast suite 2/2 — eval harness (pytest). Core install only: the heavy
+  # optional extras (comet, metricx) are not needed for the fast suite.
+  harness-tests:
+    name: Harness tests (pytest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install harness (dev extras)
+        run: cd arena && pip install -e ".[dev]"
+      - name: Run harness test suite
+        run: cd arena && python -m pytest tests/

@@ -1,0 +1,85 @@
+{
+  "id": "eval-eng-sin-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba eng→sin Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "eng",
+    "target": "sin",
+    "direction": "unidirectional"
+  },
+  "description": "Dev corpus rebuilt fetch-from-source from OPUS-Tatoeba v2023-04-12. 44 entries, stratified across 3 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2023-04-12/moses/en-si.txt.zip",
+    "builder": "tatoeba-opus",
+    "sha256": "a3f03d6808a6888ad36d71bdf8c294a802b948818cfe829922fa6aafd27524dd",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "archive_sha256": "9b3c97897f4a1c30fef81925dedb99f3666f931d2eb08a0f385f2b4bfb4a2254",
+    "recipe": {
+      "release": "v2023-04-12",
+      "split": "all",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "chars",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-22T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 44,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.932,
+      "support": 0.045,
+      "ui": 0.023
+    },
+    "dataFile": "curated/eng-sin-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Clean human-translated Tatoeba pair, CC-BY-2.0. A lower-resource pair unlikely to be specifically targeted by training pipelines, though individual sentences may appear in broad tatoeba.org crawls."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "lastUpdated": "2026-06-22",
+    "populatedFrom": "Rebuilt fetch-from-source by restore_quarantined_bridges from OPUS-Tatoeba v2023-04-12 (was quarantined null-sha). Built-corpus sha256 + recipe pinned in the source block; corpus content not tracked."
+  },
+  "richness": {
+    "mean_source_chars": 21.7,
+    "mean_effective_words": 4.34,
+    "economy": 5.0,
+    "economy_basis": "measured",
+    "computed_from": "eng-sin-dev-v1.json",
+    "computed_at": "2026-06-22"
+  }
+}

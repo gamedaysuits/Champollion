@@ -1,0 +1,95 @@
+{
+  "code": "genus-indic",
+  "extends": "family-indo-european",
+  "name": "Indic (Indo-Aryan) Languages",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Indic languages have elaborate multi-level honorific systems that go far beyond European T-V. Hindi-Urdu distinguishes three levels: tū (intimate), tum (familiar), āp (formal/respectful). Bengali has tui/tumi/āpni. Many have distinct verb conjugations for each level. Honorifics extend to vocabulary — different verbs for 'eat', 'come', 'go' depending on the social status of the referent. Default to the highest formal register for professional/UI contexts.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Most Indic languages have a binary masculine/feminine gender system (Hindi, Punjabi, Marathi, Gujarati). Some have additionally neuter (Marathi). Bengali and Assamese have lost grammatical gender. Gender triggers agreement on verbs, adjectives, and postpositions. Assignment is partly semantic, partly morphological."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "complexVerbalSystem": "Indic languages have elaborate compound verb constructions — light verbs (vector verbs) combine with main verbs to express completion, benefaction, malefaction, and speaker attitude. Hindi jā (go), le (take), de (give), ḍāl (throw) combine as completive/intensive markers: kar denā 'to do (for someone)', kha lenā 'to eat up'. These compound verbs have no compositional translation.",
+    "conjunctVerbs": "Many Indic languages form predicates by combining a noun/adjective with a light verb: Hindi madad karnā 'help do' = 'to help', safāī karnā 'cleaning do' = 'to clean'. These conjunct verb constructions are the primary predicate-forming strategy and cannot be translated word-by-word.",
+    "postpositionalSystem": "Indic languages are strictly SOV with postpositions (not prepositions). Nouns take case markers that are postpositions: Hindi ghar mẽ 'house in' = 'in the house'. English prepositional phrases must be completely restructured.",
+    "honorificRegisters": "Verb conjugation, pronoun choice, vocabulary, and even postpositions change based on the social relationship between speaker and referent. Using the wrong register is a serious social error — more than just a stylistic issue.",
+    "echoWordFormation": "Indic languages productively form echo words by replacing the initial consonant/vowel of a word to express generalization: Hindi chāy-vāy 'tea and such things', khānā-vānā 'food and stuff'. These have no English equivalent.",
+    "retroflexConsonants": "All Indic languages distinguish retroflex from dental consonants (ṭ/t, ḍ/d, ṇ/n). These are separate phonemes that must be preserved in romanized output. Conflating them changes word meaning.",
+    "scriptDiversity": "Major Indic languages use different scripts: Devanagari (Hindi, Marathi, Nepali), Bengali-Assamese, Gujarati, Gurmukhi (Punjabi), Odia, Sinhala. Each script requires specific rendering support. Nastaliq/Shahmukhi (Arabic-based) is used for Urdu and some Punjabi."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Indic",
+    "genusGlottocode": "indo1321",
+    "ancestry": [
+      "Indo-European",
+      "Indo-Iranian",
+      "Indo-Aryan"
+    ]
+  },
+  "contactInfluences": [
+    {
+      "source": "Sanskrit",
+      "sourceIso639_3": "san",
+      "type": "substrate",
+      "domains": [
+        "all"
+      ],
+      "depth": "foundational",
+      "period": "parent language (Prakrit stage ~3rd century BCE onward)",
+      "notes": "Sanskrit is the classical ancestor of Indic languages via Prakrits. Sanskrit continues as a major source of formal and technical vocabulary (tatsama borrowings)."
+    },
+    {
+      "source": "Persian",
+      "sourceIso639_3": "fas",
+      "type": "adstrate",
+      "domains": [
+        "administration",
+        "law",
+        "literature",
+        "culture"
+      ],
+      "depth": "heavy",
+      "period": "Mughal era (13th–18th century)",
+      "notes": "Persian was the court language of the Mughal Empire. Hindi-Urdu, Punjabi, Bengali, and other northern Indic languages have extensive Persian/Arabic vocabulary, especially in administrative, literary, and cultural domains."
+    }
+  ],
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Indic (Indo-Aryan) languages (Hindi, Bengali, Urdu, Punjabi, Marathi, Gujarati, Odia, Sinhala, Nepali, Assamese, etc.). Script is null due to extreme script diversity — each major language uses a different script. All share SOV order, postpositions, compound verb constructions, and multi-level honorific systems.",
+  "regions": [
+    {
+      "country": "South Asia (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "India, Pakistan, Bangladesh, Nepal, Sri Lanka, Maldives",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

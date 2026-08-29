@@ -1,0 +1,2305 @@
+{
+  "id": "eval-smol-doc-v1",
+  "type": "multiway",
+  "name": "SMOL SmolDoc (document-level) — directed pairs",
+  "version": "1.0",
+  "languages": [
+    "aar",
+    "abq",
+    "ach",
+    "aeb",
+    "afr",
+    "ahr",
+    "aka",
+    "alz",
+    "amh",
+    "apd",
+    "arb",
+    "ary",
+    "arz",
+    "ayl",
+    "bam",
+    "bci",
+    "bem",
+    "ben",
+    "ber",
+    "ber-Latn",
+    "bfq",
+    "bfy",
+    "bgq",
+    "bns",
+    "bra",
+    "brh",
+    "ccp-Latn",
+    "cgg",
+    "che",
+    "chm",
+    "cmn",
+    "dhd",
+    "din",
+    "dje",
+    "doi",
+    "dov",
+    "dyu",
+    "efi",
+    "eng",
+    "ewe",
+    "fil",
+    "fon",
+    "ful",
+    "gaa",
+    "grt-Latn",
+    "guj",
+    "hau",
+    "hin",
+    "hoc-Wara",
+    "ibo",
+    "ind",
+    "jdt",
+    "jpn",
+    "kan",
+    "kau",
+    "kfy",
+    "khm",
+    "kik",
+    "kin",
+    "kon",
+    "kor",
+    "kri",
+    "kru",
+    "ktu",
+    "lep",
+    "lif-Limb",
+    "lij",
+    "lin",
+    "lub",
+    "lug",
+    "luo",
+    "mag",
+    "mal",
+    "mar",
+    "mfe",
+    "mhr",
+    "mjl",
+    "mlg",
+    "mos",
+    "mtr",
+    "mya",
+    "nbl",
+    "ndc",
+    "nde",
+    "noe",
+    "npi",
+    "nqo",
+    "nso",
+    "nya",
+    "orm",
+    "pan",
+    "pcm",
+    "pes",
+    "pus",
+    "run",
+    "rus",
+    "scn",
+    "sgj",
+    "sin",
+    "sjp",
+    "sna",
+    "snd-Deva",
+    "som",
+    "sot",
+    "spv",
+    "ssw",
+    "sus",
+    "swh",
+    "tam",
+    "tcy",
+    "tel",
+    "tha",
+    "tir",
+    "tiv",
+    "trp",
+    "tsn",
+    "tso",
+    "tum",
+    "tyv",
+    "unr-Deva",
+    "urd",
+    "ven",
+    "wbr",
+    "wol",
+    "xho",
+    "xnr",
+    "xsr-Tibt",
+    "yor",
+    "yue",
+    "zul"
+  ],
+  "description": "Google SMOL SmolDoc (document-level) MT evaluation across 100+ low-resource languages — the project's biggest breadth add. Each upstream file is one directed pair ({src}_{tgt}, mostly English-paired with a few Russian/Arabic/Chinese/etc. pivots). GATITOS is excluded (it is a lexicon, not an MT eval set). SMOL ships NO official eval split, so Champollion uses the FULL pinned release (at the commit revision below) as a deterministic, Champollion-defined held-out eval set; per-pair size + built-corpus sha256 are pinned from the revision (deterministic), so each runnable pair carries a verifiable integrity anchor. CC-BY-4.0. Domain 'mixed': general short factual content across many topics; domainDistribution is an approximate placeholder over general-informational domains, pending a per-corpus classifier pass on the built corpus.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 1,
+    "domain": "mixed",
+    "domainDistribution": {
+      "conv": 0.3,
+      "news": 0.3,
+      "edu": 0.2,
+      "tech": 0.1,
+      "gov": 0.1
+    },
+    "explicitPairs": [
+      {
+        "source": "aar",
+        "target": "eng",
+        "srcCode": "aa",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "d53d9bc2ccbf855a5575d544ade953689b753766a79fc4424316cd6578146dfb"
+      },
+      {
+        "source": "abq",
+        "target": "rus",
+        "srcCode": "abq",
+        "tgtCode": "ru",
+        "size": 825,
+        "sha256": "033f12b1812f0e3a30ba219672995e68c78323091bcedd2222f1a315dd158b2a"
+      },
+      {
+        "source": "ach",
+        "target": "eng",
+        "srcCode": "ach",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "700afec3254a0ade1ffa84431e5ab8cbeac800212f5602ab6778ff836c1f041b"
+      },
+      {
+        "source": "aeb",
+        "target": "eng",
+        "srcCode": "aeb",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "b655067b6ac8dc0525cf15de7473edb1494eec3f09feb2cb3e3409b2fcbdb8b3"
+      },
+      {
+        "source": "afr",
+        "target": "eng",
+        "srcCode": "af",
+        "tgtCode": "en",
+        "size": 2402,
+        "sha256": "0a3ec29c29bfa003f02b693309ad125c91095458d65ad54deba012d00198b0f9"
+      },
+      {
+        "source": "ahr",
+        "target": "eng",
+        "srcCode": "ahr",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "06bcb6b8ad3140bd3d598205770d9c988440b1ed6548d24870629086f10b7d2d"
+      },
+      {
+        "source": "aka",
+        "target": "eng",
+        "srcCode": "ak",
+        "tgtCode": "en",
+        "size": 4020,
+        "sha256": "d4241d4fff80d89f54ac0004721a5b0e251a1405b89c906790e87335a83fa5bb"
+      },
+      {
+        "source": "alz",
+        "target": "eng",
+        "srcCode": "alz",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "371073d70559231a602fbfd23db820135b12ea3545789f047cdae865954a446d"
+      },
+      {
+        "source": "amh",
+        "target": "arb",
+        "srcCode": "am",
+        "tgtCode": "ar",
+        "size": 3946,
+        "sha256": "aab18c14a68534d29c62149300ad2dbac8ad845cf7bc1d53d0cdeeb9111bbb11"
+      },
+      {
+        "source": "amh",
+        "target": "eng",
+        "srcCode": "am",
+        "tgtCode": "en",
+        "size": 7674,
+        "sha256": "b601b320b45f6373ad0198c321abf07c92ff3335a6b7c70fd120932385e02d87"
+      },
+      {
+        "source": "amh",
+        "target": "cmn",
+        "srcCode": "am",
+        "tgtCode": "zh",
+        "size": 3946,
+        "sha256": "bab9a1e741b71d86420821bc7ae8d5966bc7f84185e93cab880f8172c2e5a325"
+      },
+      {
+        "source": "apd",
+        "target": "eng",
+        "srcCode": "apd",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "d517178c694ba3755e68ea919c1770c2184d1e58b42076c1b24ebbe3f5cf35fd"
+      },
+      {
+        "source": "ary",
+        "target": "eng",
+        "srcCode": "ar-MA",
+        "tgtCode": "en",
+        "size": 3848,
+        "sha256": "88726df217c51763498dc5dd1b0d5ec39a11537118274f8e8279cb945b2cb68f"
+      },
+      {
+        "source": "arb",
+        "target": "amh",
+        "srcCode": "ar",
+        "tgtCode": "am",
+        "size": 3946,
+        "sha256": "703683d63bafbdff5ee7bcf3fcf8819d482e7c74dbda37e5ba416fc6d14d990f"
+      },
+      {
+        "source": "arb",
+        "target": "swh",
+        "srcCode": "ar",
+        "tgtCode": "sw",
+        "size": 3958,
+        "sha256": "4986cbb612ca9c5772751283be539e5e97c08e5569ba5393153110d750327c00"
+      },
+      {
+        "source": "arz",
+        "target": "eng",
+        "srcCode": "arz",
+        "tgtCode": "en",
+        "size": 3989,
+        "sha256": "43c9ef3f0cad54f44248516e83c5d7d46b7a1cd116b670cb6a016e9a2bd529db"
+      },
+      {
+        "source": "ayl",
+        "target": "eng",
+        "srcCode": "ayl",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "0daf186af8d035d43b81861f08bbe28ebfd8aff55253b40551ea0cc37f06e520"
+      },
+      {
+        "source": "bci",
+        "target": "eng",
+        "srcCode": "bci",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "daba41d5fb6ab1f7128534505377f507e95d3a8a7c3827ae891f7312e8a388b7"
+      },
+      {
+        "source": "bem",
+        "target": "eng",
+        "srcCode": "bem",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "cd5f5ee1de6cc858cd3c670510e0aa445ce50b71f887581733c8b681a0511694"
+      },
+      {
+        "source": "ber-Latn",
+        "target": "eng",
+        "srcCode": "ber-Latn",
+        "tgtCode": "en",
+        "size": 2346,
+        "sha256": "5de916d4a9e6254fa9b191062734266711f4a17f0784411c2cc4d0932b804c57"
+      },
+      {
+        "source": "ber",
+        "target": "eng",
+        "srcCode": "ber",
+        "tgtCode": "en",
+        "size": 2356,
+        "sha256": "819b51c1c33e4fe214de474d2c971120a2490328dc642cf94ea0f41182fe1a4b"
+      },
+      {
+        "source": "bfq",
+        "target": "eng",
+        "srcCode": "bfq",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "c5c18dd1bd9b6e02cbf950469e92af83db0f4f64db6b76ee4dd0aa0a2935f28f"
+      },
+      {
+        "source": "bfy",
+        "target": "eng",
+        "srcCode": "bfy",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "8af319fef72b55993560b07382b12d6bbe0b32902cc684a2e328f6843e28823d"
+      },
+      {
+        "source": "bgq",
+        "target": "eng",
+        "srcCode": "bgq",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "8cc4c541eb53ae75e9f6fe3588fb1be4216efbb0cabe921e24eb5faaeb0dd8e0"
+      },
+      {
+        "source": "bam",
+        "target": "eng",
+        "srcCode": "bm",
+        "tgtCode": "en",
+        "size": 3902,
+        "sha256": "407528da1727167a00096b831c6e8a1f940aa8224223152aaed02f0b3f2da2e1"
+      },
+      {
+        "source": "ben",
+        "target": "eng",
+        "srcCode": "bn",
+        "tgtCode": "en",
+        "size": 3035,
+        "sha256": "afd9933274c35ee0d311b3c13e41adb87af9db935fe3f0f1d9ea78a79d03e6dc"
+      },
+      {
+        "source": "bns",
+        "target": "eng",
+        "srcCode": "bns",
+        "tgtCode": "en",
+        "size": 6010,
+        "sha256": "0c6301f1af3b6b6c3d07fe25a91a31053cb1b5dc6d1c4028e8af58ce304ca91f"
+      },
+      {
+        "source": "bra",
+        "target": "eng",
+        "srcCode": "bra",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "d9031db3aaf9116d135fec7a68620d5e28b3b2a471549a3c5494da5feec6c65e"
+      },
+      {
+        "source": "brh",
+        "target": "eng",
+        "srcCode": "brh",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "9ad8e787890b3c7d43caaf697fa872b5e2a3ea8299f3854e361a8f6ac5c21dd7"
+      },
+      {
+        "source": "ccp-Latn",
+        "target": "eng",
+        "srcCode": "ccp-Latn",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "f5ff5315c47245117e82bea5e8b4bc0c2d3d49f38f63e77737f2369f3027ea23"
+      },
+      {
+        "source": "che",
+        "target": "rus",
+        "srcCode": "ce",
+        "tgtCode": "ru",
+        "size": 825,
+        "sha256": "4eb63d88e32303c69fbd6ad3cfd35f87c7e56684f2977531fafb5c754d984eb8"
+      },
+      {
+        "source": "cgg",
+        "target": "eng",
+        "srcCode": "cgg",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "ae8f796b3bd85c16dc754acad63f62b9c84181a152a085e967c5705699d2a980"
+      },
+      {
+        "source": "chm",
+        "target": "eng",
+        "srcCode": "chm",
+        "tgtCode": "en",
+        "size": 811,
+        "sha256": "1974746aa381b8d8f21450b19499cea642faaff22825665706a74a586db1a0d0"
+      },
+      {
+        "source": "dhd",
+        "target": "eng",
+        "srcCode": "dhd",
+        "tgtCode": "en",
+        "size": 6007,
+        "sha256": "f8ec47098111df047096ac27cc9b1fbbd011e3b3f169af69d03cdf6a48a61ecf"
+      },
+      {
+        "source": "din",
+        "target": "eng",
+        "srcCode": "din",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "fc9b90982d1f18022c2200418368888f6cbb4e5ed1962e62b91e5006be78e567"
+      },
+      {
+        "source": "dje",
+        "target": "eng",
+        "srcCode": "dje",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "352e2fff9a519db4dba4ad7ddf95a9440e3d3e991cf62da7e47bef0b4fcfe959"
+      },
+      {
+        "source": "doi",
+        "target": "eng",
+        "srcCode": "doi",
+        "tgtCode": "en",
+        "size": 5979,
+        "sha256": "8fc092d3aca443d178206b6848e788fbc7dcb16196b6548d4bfb75f4e883875f"
+      },
+      {
+        "source": "dov",
+        "target": "eng",
+        "srcCode": "dov",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "8fca6c3ade8f44af1494bd6f25488f330cdc300794c032d9d05b8a70ae670db4"
+      },
+      {
+        "source": "dyu",
+        "target": "eng",
+        "srcCode": "dyu",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "d177cb4ddc8a0cea4be65ae237d1791086d4f5a1c0bb77eaf952bc974c6463c4"
+      },
+      {
+        "source": "ewe",
+        "target": "eng",
+        "srcCode": "ee",
+        "tgtCode": "en",
+        "size": 2372,
+        "sha256": "840595303952768621bc16cdcf6a10a06fe3a5a46141dc26e5e690a6555f0e11"
+      },
+      {
+        "source": "efi",
+        "target": "eng",
+        "srcCode": "efi",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "763c12c172229de169739cd83edb9bf70edd6f51aef43db32d614cc80ed2298d"
+      },
+      {
+        "source": "eng",
+        "target": "aar",
+        "srcCode": "en",
+        "tgtCode": "aa",
+        "size": 1609,
+        "sha256": "9ba2fe7bab2228dd19bdfb9400e16b9e8c4c90655a74fac033203da8fadab54f"
+      },
+      {
+        "source": "eng",
+        "target": "ach",
+        "srcCode": "en",
+        "tgtCode": "ach",
+        "size": 1609,
+        "sha256": "0f9b893a8432ae52120d8f056729504886918c72eb3f5dde7e17429086cdc802"
+      },
+      {
+        "source": "eng",
+        "target": "aeb",
+        "srcCode": "en",
+        "tgtCode": "aeb",
+        "size": 1609,
+        "sha256": "c923ad0a2d294db29d877cc4862d66786fd45caf5db5b704d7ea029f4d694dcd"
+      },
+      {
+        "source": "eng",
+        "target": "afr",
+        "srcCode": "en",
+        "tgtCode": "af",
+        "size": 2402,
+        "sha256": "018f4ea25bbc120a95afd6481dc5f2255046f0ca9269a2620cc757e65e529033"
+      },
+      {
+        "source": "eng",
+        "target": "ahr",
+        "srcCode": "en",
+        "tgtCode": "ahr",
+        "size": 6021,
+        "sha256": "16abf09f4b6dedc81593c9087b1ed669b5e43371525e9b74e46068ec3d9e668c"
+      },
+      {
+        "source": "eng",
+        "target": "aka",
+        "srcCode": "en",
+        "tgtCode": "ak",
+        "size": 4020,
+        "sha256": "081fd66b1cce598d2cf4157593ba20e07815b20607d75727cd9df17fc0a5f17e"
+      },
+      {
+        "source": "eng",
+        "target": "alz",
+        "srcCode": "en",
+        "tgtCode": "alz",
+        "size": 1609,
+        "sha256": "0692f686adf4960ce7ab5c0f84cd8a5c52b017ed54306a4fbc738c7f175afe96"
+      },
+      {
+        "source": "eng",
+        "target": "amh",
+        "srcCode": "en",
+        "tgtCode": "am",
+        "size": 7674,
+        "sha256": "abf5d8ef1467492e0302aa41f010272cfd53c1f522c5fd3c3b5bc03017e2358f"
+      },
+      {
+        "source": "eng",
+        "target": "apd",
+        "srcCode": "en",
+        "tgtCode": "apd",
+        "size": 1609,
+        "sha256": "51fd98528879c04a9ece6d16da5312abe93fd01602fe2245aed71f87f54c4648"
+      },
+      {
+        "source": "eng",
+        "target": "ary",
+        "srcCode": "en",
+        "tgtCode": "ar-MA",
+        "size": 3848,
+        "sha256": "3d38e8fb3ea4bb410a44eafe7571190fd2b51b6fea607323b39de8e93efd6021"
+      },
+      {
+        "source": "eng",
+        "target": "arz",
+        "srcCode": "en",
+        "tgtCode": "arz",
+        "size": 3989,
+        "sha256": "7f4c4d26de1e2f66b72c0372a9771f3de38d648af15c0406b5b72086c220ce34"
+      },
+      {
+        "source": "eng",
+        "target": "ayl",
+        "srcCode": "en",
+        "tgtCode": "ayl",
+        "size": 1609,
+        "sha256": "a9028226df39b24db80721ce14099765171f3e4ed7f1c069659d8677454c9836"
+      },
+      {
+        "source": "eng",
+        "target": "bci",
+        "srcCode": "en",
+        "tgtCode": "bci",
+        "size": 1609,
+        "sha256": "aa55111c0c6d053168fa1ad518fa0af22a4b4c3a3bfc678989199e707f06e825"
+      },
+      {
+        "source": "eng",
+        "target": "bem",
+        "srcCode": "en",
+        "tgtCode": "bem",
+        "size": 1609,
+        "sha256": "ef414e68afae99f6b619a6fd5a2d49cf5356a571096b621c935aaad5d4491bb6"
+      },
+      {
+        "source": "eng",
+        "target": "ber",
+        "srcCode": "en",
+        "tgtCode": "ber",
+        "size": 2356,
+        "sha256": "8f35dcc11d81c588ae06211ae5efecb7011009b1a8bb2f225732e65c1b428b3d"
+      },
+      {
+        "source": "eng",
+        "target": "ber-Latn",
+        "srcCode": "en",
+        "tgtCode": "ber-Latn",
+        "size": 2346,
+        "sha256": "99a7691714e8cbb4958412149fb3a8e92e16fa6db371f15f1adc44d64631ab5f"
+      },
+      {
+        "source": "eng",
+        "target": "bfq",
+        "srcCode": "en",
+        "tgtCode": "bfq",
+        "size": 6021,
+        "sha256": "0e92ce2a99b26c132e706891051ba8611a56164af361ea8b6657c0186ed6ceea"
+      },
+      {
+        "source": "eng",
+        "target": "bfy",
+        "srcCode": "en",
+        "tgtCode": "bfy",
+        "size": 6021,
+        "sha256": "c0cc4bdf55fc76b84345e64f00e64cafe2eb4358cf56cc7eab0500a807acad5f"
+      },
+      {
+        "source": "eng",
+        "target": "bgq",
+        "srcCode": "en",
+        "tgtCode": "bgq",
+        "size": 6021,
+        "sha256": "6f559c4eff78795a583ac1a4fe4454d1ea5478465cfc6256e5c6cb8d457dad50"
+      },
+      {
+        "source": "eng",
+        "target": "bam",
+        "srcCode": "en",
+        "tgtCode": "bm",
+        "size": 3902,
+        "sha256": "ade7e5eaacbcdca3bb17ec5a5bf680a901b932229227ea8cdcab78091a1b2aac"
+      },
+      {
+        "source": "eng",
+        "target": "ben",
+        "srcCode": "en",
+        "tgtCode": "bn",
+        "size": 3035,
+        "sha256": "41851f0c648674c015e3ed30dafa21b324fff088ff81469066878ecf993cdd11"
+      },
+      {
+        "source": "eng",
+        "target": "bns",
+        "srcCode": "en",
+        "tgtCode": "bns",
+        "size": 6010,
+        "sha256": "72c0c4f4473a96c95086f2423cc4dc8a010308789c3bf9e1a50520be0679243a"
+      },
+      {
+        "source": "eng",
+        "target": "bra",
+        "srcCode": "en",
+        "tgtCode": "bra",
+        "size": 6021,
+        "sha256": "6b94bac6bc313ea62378e2e2ffd8b8b659537762392bf14fa472b80cae137036"
+      },
+      {
+        "source": "eng",
+        "target": "brh",
+        "srcCode": "en",
+        "tgtCode": "brh",
+        "size": 825,
+        "sha256": "ab62f95a9472e5cc4a42a720d5e8e72c38b7923849b3711d319d9383c3a7880f"
+      },
+      {
+        "source": "eng",
+        "target": "ccp-Latn",
+        "srcCode": "en",
+        "tgtCode": "ccp-Latn",
+        "size": 6021,
+        "sha256": "896f656d10d79447345f94dcfeecdd4d6ea64abd7d922294b9a4f582adf7339f"
+      },
+      {
+        "source": "eng",
+        "target": "cgg",
+        "srcCode": "en",
+        "tgtCode": "cgg",
+        "size": 1609,
+        "sha256": "2337d217bed3ff98e4869b44dcd2a18c209d678ed6326bf16873742dcbff23ef"
+      },
+      {
+        "source": "eng",
+        "target": "chm",
+        "srcCode": "en",
+        "tgtCode": "chm",
+        "size": 811,
+        "sha256": "a31f8de8cd4365774c9289a7fb122f370e47c4823d391bd47ccdecf2e59d1946"
+      },
+      {
+        "source": "eng",
+        "target": "dhd",
+        "srcCode": "en",
+        "tgtCode": "dhd",
+        "size": 6007,
+        "sha256": "345b5ec3c1248a393b68d2b858da100ca7ca699683f81f4c15c238dc94196fb2"
+      },
+      {
+        "source": "eng",
+        "target": "din",
+        "srcCode": "en",
+        "tgtCode": "din",
+        "size": 1609,
+        "sha256": "ea4c16595708e150eeb3ca4aebed6ebd55fc1f6b66b0ee27aca6c76f13626002"
+      },
+      {
+        "source": "eng",
+        "target": "dje",
+        "srcCode": "en",
+        "tgtCode": "dje",
+        "size": 1609,
+        "sha256": "2de5b541d1f12731cf6e22c208c1ae7676932a63e442138b878232ec70cf38de"
+      },
+      {
+        "source": "eng",
+        "target": "doi",
+        "srcCode": "en",
+        "tgtCode": "doi",
+        "size": 5979,
+        "sha256": "4ac912902bf87a111595a5cee9699156edebfc3d9a56d5f57a58fea08505b9aa"
+      },
+      {
+        "source": "eng",
+        "target": "dov",
+        "srcCode": "en",
+        "tgtCode": "dov",
+        "size": 1609,
+        "sha256": "b250dfd4441e11b89c89b9a13e1fefe5e5547ae8769b1e883e8f6487044458ab"
+      },
+      {
+        "source": "eng",
+        "target": "dyu",
+        "srcCode": "en",
+        "tgtCode": "dyu",
+        "size": 1609,
+        "sha256": "9b7d5f6efcb69c172da2af1c3f6c3857b098a50d953ca44ee33e4388bc962f09"
+      },
+      {
+        "source": "eng",
+        "target": "ewe",
+        "srcCode": "en",
+        "tgtCode": "ee",
+        "size": 2372,
+        "sha256": "d384ad3c26c2508fa92a040b22d9ea47832fd656003cd754314877b37964f6d4"
+      },
+      {
+        "source": "eng",
+        "target": "efi",
+        "srcCode": "en",
+        "tgtCode": "efi",
+        "size": 1609,
+        "sha256": "ca6772d07ad291f99e8282b3cfcae63de0d0923eec1da003c288e77b0588d672"
+      },
+      {
+        "source": "eng",
+        "target": "pes",
+        "srcCode": "en",
+        "tgtCode": "fa",
+        "size": 737,
+        "sha256": "0902ed20d8ef70d17d6d8643bd934e0df3ae3217df4d64ebb7fc9a5b0ba5b06e"
+      },
+      {
+        "source": "eng",
+        "target": "ful",
+        "srcCode": "en",
+        "tgtCode": "ff",
+        "size": 4036,
+        "sha256": "1b648ef9e269278249e0a22f476706b983bb35a2d9b3237ec5868bb3a65e1ed3"
+      },
+      {
+        "source": "eng",
+        "target": "fil",
+        "srcCode": "en",
+        "tgtCode": "fil",
+        "size": 737,
+        "sha256": "f07be6ae4f7136eadd480cf4dca4e867a3308b26166cbf0e1aa8ff8780d02110"
+      },
+      {
+        "source": "eng",
+        "target": "fon",
+        "srcCode": "en",
+        "tgtCode": "fon",
+        "size": 1609,
+        "sha256": "231d052811ec4a1554196a829b0aca7572602714db2d00527fd43a671cebd5be"
+      },
+      {
+        "source": "eng",
+        "target": "gaa",
+        "srcCode": "en",
+        "tgtCode": "gaa",
+        "size": 1609,
+        "sha256": "bb80a4fae080975fefaeab0de65b424906b72644192ec7cbbace5bc5568bc865"
+      },
+      {
+        "source": "eng",
+        "target": "grt-Latn",
+        "srcCode": "en",
+        "tgtCode": "grt-Latn",
+        "size": 6021,
+        "sha256": "52c0e206c689e605d26281237e95ba66c9db8206ca61e90d56fd303134f110ad"
+      },
+      {
+        "source": "eng",
+        "target": "guj",
+        "srcCode": "en",
+        "tgtCode": "gu",
+        "size": 3035,
+        "sha256": "f675276a4aa9fc9723fa93a14a96fd28ae3f27f5dc9dbddcf213b9f4b0dfb24b"
+      },
+      {
+        "source": "eng",
+        "target": "hau",
+        "srcCode": "en",
+        "tgtCode": "ha",
+        "size": 7805,
+        "sha256": "02c1453342136dc97673b04468cce8334f7005f9625a56214ad75413edf3eab2"
+      },
+      {
+        "source": "eng",
+        "target": "hin",
+        "srcCode": "en",
+        "tgtCode": "hi",
+        "size": 3123,
+        "sha256": "f5960a2dc29f5cdc3e772eee8bc6d40d6754049c0db335c809735014b2f7273c"
+      },
+      {
+        "source": "eng",
+        "target": "hoc-Wara",
+        "srcCode": "en",
+        "tgtCode": "hoc-Wara",
+        "size": 6021,
+        "sha256": "faf7cf78718f0031d6d6d853f7227da79f264b0f4ad5062acb6978f95a84a4f7"
+      },
+      {
+        "source": "eng",
+        "target": "ind",
+        "srcCode": "en",
+        "tgtCode": "id",
+        "size": 825,
+        "sha256": "2af3156082cd308a56cf5b59347cd6f3f0bdb99dceb02340c7622fa044028331"
+      },
+      {
+        "source": "eng",
+        "target": "ibo",
+        "srcCode": "en",
+        "tgtCode": "ig",
+        "size": 5521,
+        "sha256": "ef0b673a3dd918e176ab7742f220078b47e3cd795728649a836ba2192446aa89"
+      },
+      {
+        "source": "eng",
+        "target": "jpn",
+        "srcCode": "en",
+        "tgtCode": "ja",
+        "size": 3045,
+        "sha256": "7695980fb26da8ee3372943db4daa42a755522521965b021339859a95694ae81"
+      },
+      {
+        "source": "eng",
+        "target": "kfy",
+        "srcCode": "en",
+        "tgtCode": "kfy",
+        "size": 6021,
+        "sha256": "bc7ff4be49e4ea6f84505cbb14991384d80ada57d1a2b4573c94c23911dbcb9b"
+      },
+      {
+        "source": "eng",
+        "target": "kon",
+        "srcCode": "en",
+        "tgtCode": "kg",
+        "size": 1609,
+        "sha256": "cf6257d3da18cdac75eee37deabc29e0601cd4bdefa4613a5dfb1d937a3703f8"
+      },
+      {
+        "source": "eng",
+        "target": "kik",
+        "srcCode": "en",
+        "tgtCode": "ki",
+        "size": 1609,
+        "sha256": "c49ef1308cb6de7346078b4098dd46883fac6e796694016e12c3f11deed77941"
+      },
+      {
+        "source": "eng",
+        "target": "khm",
+        "srcCode": "en",
+        "tgtCode": "km",
+        "size": 3045,
+        "sha256": "49be083dcd3d8defc7833112a4c17805f5b5365af07b4699f07816de75c3febe"
+      },
+      {
+        "source": "eng",
+        "target": "kan",
+        "srcCode": "en",
+        "tgtCode": "kn",
+        "size": 3027,
+        "sha256": "fc67bd1a98b97524789e062c71b671755ea0eeeb47cc847e1d50344bb428604a"
+      },
+      {
+        "source": "eng",
+        "target": "kor",
+        "srcCode": "en",
+        "tgtCode": "ko",
+        "size": 3045,
+        "sha256": "b7b96dac3d6504f006c8817ab8a7c9c1c8f4fe6c6a3ab85bd83f6e488ccb090a"
+      },
+      {
+        "source": "eng",
+        "target": "kau",
+        "srcCode": "en",
+        "tgtCode": "kr",
+        "size": 1609,
+        "sha256": "574f7de82e702039fe63795f7658c8c9d19209d813d3966e6a59475eb89acfdf"
+      },
+      {
+        "source": "eng",
+        "target": "kri",
+        "srcCode": "en",
+        "tgtCode": "kri",
+        "size": 2391,
+        "sha256": "fa5574a8e9cf0a9ba2d570fd3808043c82c5bddd45c6abdd46f559674bcd2004"
+      },
+      {
+        "source": "eng",
+        "target": "kru",
+        "srcCode": "en",
+        "tgtCode": "kru",
+        "size": 6019,
+        "sha256": "93e6cda1ef43ca04062745f65d249e80cadc3dffbaf4eba5fd68d7fbb8b1d9af"
+      },
+      {
+        "source": "eng",
+        "target": "ktu",
+        "srcCode": "en",
+        "tgtCode": "ktu",
+        "size": 1609,
+        "sha256": "436c95d8a5cdc1c35be25616e21f92b1d2cdb5ccea2e8f421290463ac1b7289d"
+      },
+      {
+        "source": "eng",
+        "target": "lep",
+        "srcCode": "en",
+        "tgtCode": "lep",
+        "size": 6010,
+        "sha256": "6d9ec8e8e52f8324bb0310c19b8ce6786ce83aa835e5531998e6f59a437e13fb"
+      },
+      {
+        "source": "eng",
+        "target": "lug",
+        "srcCode": "en",
+        "tgtCode": "lg",
+        "size": 3947,
+        "sha256": "ac5284b3165e1032aee57da03264509e4c0a62b398f38f8b4855a47c79113507"
+      },
+      {
+        "source": "eng",
+        "target": "lif-Limb",
+        "srcCode": "en",
+        "tgtCode": "lif-Limb",
+        "size": 6021,
+        "sha256": "2baad6931dc9beb4753ac44bac08115ea7adb78751efeb4f2d3a5734abc095fd"
+      },
+      {
+        "source": "eng",
+        "target": "lij",
+        "srcCode": "en",
+        "tgtCode": "lij",
+        "size": 825,
+        "sha256": "5bd58adae30ba17a041e5467d74bfd079711ffdba3908ca47371f34d75117754"
+      },
+      {
+        "source": "eng",
+        "target": "lin",
+        "srcCode": "en",
+        "tgtCode": "ln",
+        "size": 3869,
+        "sha256": "d1ff21b2a35a786b5afe6b0347e25d15ce77fb54b670b789262273d30a363f8f"
+      },
+      {
+        "source": "eng",
+        "target": "lub",
+        "srcCode": "en",
+        "tgtCode": "lu",
+        "size": 1609,
+        "sha256": "9bd09028f2843c7fe88a933772bb8bd6a317d9db23cdf539b7ae2678a8e5ef42"
+      },
+      {
+        "source": "eng",
+        "target": "luo",
+        "srcCode": "en",
+        "tgtCode": "luo",
+        "size": 3895,
+        "sha256": "83339a0bc6dd3c20adf357df9d0d53574d4e7706bbf910f69ebf625ac240f8f8"
+      },
+      {
+        "source": "eng",
+        "target": "mag",
+        "srcCode": "en",
+        "tgtCode": "mag",
+        "size": 6006,
+        "sha256": "55b7b20614675ae4321fcf49a71a72229d2c8059f11b7728d0d9d37331246ca6"
+      },
+      {
+        "source": "eng",
+        "target": "mfe",
+        "srcCode": "en",
+        "tgtCode": "mfe",
+        "size": 1609,
+        "sha256": "d9d0f4f4deb74c70910f6f557db41b80c19f288b0db218d138b07fb52e362aee"
+      },
+      {
+        "source": "eng",
+        "target": "mlg",
+        "srcCode": "en",
+        "tgtCode": "mg",
+        "size": 5514,
+        "sha256": "0bd3d0188f1e6bae175fc1fd141d41b820d6a0506852360803447c8afc0f6afc"
+      },
+      {
+        "source": "eng",
+        "target": "mhr",
+        "srcCode": "en",
+        "tgtCode": "mhr",
+        "size": 825,
+        "sha256": "122f031a981cb65912304500b4127bc0c7b4c00c1ddfe1153ce6012a301a768e"
+      },
+      {
+        "source": "eng",
+        "target": "mjl",
+        "srcCode": "en",
+        "tgtCode": "mjl",
+        "size": 6021,
+        "sha256": "c14bf8c7fdc0ee9d677eec3949046d87b8245b029deb302eb5506e9fc2ca6090"
+      },
+      {
+        "source": "eng",
+        "target": "mal",
+        "srcCode": "en",
+        "tgtCode": "ml",
+        "size": 3045,
+        "sha256": "358beb1b7edb4ca3f0c74191ed34d8890b3bd97380a4e5e06dda77102a3f64e4"
+      },
+      {
+        "source": "eng",
+        "target": "mos",
+        "srcCode": "en",
+        "tgtCode": "mos",
+        "size": 1609,
+        "sha256": "07da1fccbe07ba987b7e4db0929fcc1ed51e6d1e2b605909616b7b09c70b22c9"
+      },
+      {
+        "source": "eng",
+        "target": "mar",
+        "srcCode": "en",
+        "tgtCode": "mr",
+        "size": 3021,
+        "sha256": "be7ec5ab1cfa1bb2595bb2f5954e06c7bb439008d994defc15d7f5728e307382"
+      },
+      {
+        "source": "eng",
+        "target": "mtr",
+        "srcCode": "en",
+        "tgtCode": "mtr",
+        "size": 6019,
+        "sha256": "f3c4875a7cb07c7664c7cf5966da941cd69757072aa1198eb1cc1af2a38caea6"
+      },
+      {
+        "source": "eng",
+        "target": "mya",
+        "srcCode": "en",
+        "tgtCode": "my",
+        "size": 2984,
+        "sha256": "c93bb22f83448f2c13a46666802d7a54f4e346641fcdf190097a9c22ec2000bb"
+      },
+      {
+        "source": "eng",
+        "target": "nde",
+        "srcCode": "en",
+        "tgtCode": "nd",
+        "size": 1609,
+        "sha256": "028aaafa199c7cb83c4c056fab954cce17df15eb7205408a781d28e7beedc11c"
+      },
+      {
+        "source": "eng",
+        "target": "ndc",
+        "srcCode": "en",
+        "tgtCode": "ndc",
+        "size": 1609,
+        "sha256": "255895903be6468e3ac994f67bb3f4a63532a9d603cf2c55a22d7ef99f58a44d"
+      },
+      {
+        "source": "eng",
+        "target": "npi",
+        "srcCode": "en",
+        "tgtCode": "ne",
+        "size": 913,
+        "sha256": "4a008cb399d15c673ce8f0ffba30970c2f2aedd3a2f5986c226fdca21230c7f6"
+      },
+      {
+        "source": "eng",
+        "target": "noe",
+        "srcCode": "en",
+        "tgtCode": "noe",
+        "size": 4219,
+        "sha256": "1934d67e1c25199a5bbfcd258d9c97c43433cc3b15a8156002d88736c3901c27"
+      },
+      {
+        "source": "eng",
+        "target": "nqo",
+        "srcCode": "en",
+        "tgtCode": "nqo",
+        "size": 825,
+        "sha256": "77ec069a3ac06f6dfd944633b0b3f40c33d3e26d1847902d58f676765745b1d2"
+      },
+      {
+        "source": "eng",
+        "target": "nbl",
+        "srcCode": "en",
+        "tgtCode": "nr",
+        "size": 1609,
+        "sha256": "b1fad4f6f4e43e724648155593caedba9ac1b5854c53706d9c0a0468627800ce"
+      },
+      {
+        "source": "eng",
+        "target": "nso",
+        "srcCode": "en",
+        "tgtCode": "nso",
+        "size": 2473,
+        "sha256": "56897d230ebb596fd32d2e0a730969f81ebb9fd5e97fb35f845959d38f91d7bf"
+      },
+      {
+        "source": "eng",
+        "target": "nya",
+        "srcCode": "en",
+        "tgtCode": "ny",
+        "size": 3908,
+        "sha256": "24d9369a3b48231fd313531b1e067456a215bfc887789d1e0d566f185d6dbccb"
+      },
+      {
+        "source": "eng",
+        "target": "orm",
+        "srcCode": "en",
+        "tgtCode": "om",
+        "size": 5495,
+        "sha256": "b6761c092ece21c7de61b5aafd74961766eed907762248eb7a82cbce67f8bafa"
+      },
+      {
+        "source": "eng",
+        "target": "pan",
+        "srcCode": "en",
+        "tgtCode": "pa",
+        "size": 3023,
+        "sha256": "7c1305ab966d884e112e07b695a59d458629f1f74bfcd8acd34cfc7153f38fd4"
+      },
+      {
+        "source": "eng",
+        "target": "pcm",
+        "srcCode": "en",
+        "tgtCode": "pcm",
+        "size": 2503,
+        "sha256": "796f2e17bdd0d48bff8114818dc1f0d3204c2f8cb5b8bfe8946c218698afce0e"
+      },
+      {
+        "source": "eng",
+        "target": "pus",
+        "srcCode": "en",
+        "tgtCode": "ps",
+        "size": 6021,
+        "sha256": "9ddd149339df8c120f5135b3954432aceb5c798ade5f0818b6966f05c3d5116e"
+      },
+      {
+        "source": "eng",
+        "target": "run",
+        "srcCode": "en",
+        "tgtCode": "rn",
+        "size": 1609,
+        "sha256": "f749616b2935de7aaa9e86d3027a538a27dead30f4835644947812057ba84cd4"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 825,
+        "sha256": "a327e2a2a6fa0924300eb01b2e69014d3cf0d6dbd86cc3ead8e3bbba22c178b8"
+      },
+      {
+        "source": "eng",
+        "target": "kin",
+        "srcCode": "en",
+        "tgtCode": "rw",
+        "size": 3976,
+        "sha256": "68d260b7f1a835a22485b40ac183a25dc4a3b6044d1465fa016126e99c96d937"
+      },
+      {
+        "source": "eng",
+        "target": "scn",
+        "srcCode": "en",
+        "tgtCode": "scn",
+        "size": 1256,
+        "sha256": "44695f9e76fdc701346f97cfcb925f15232a9ad075d3f018a1969ff2a2738ebf"
+      },
+      {
+        "source": "eng",
+        "target": "snd-Deva",
+        "srcCode": "en",
+        "tgtCode": "sd-Deva",
+        "size": 6011,
+        "sha256": "bb7bdff03b8dd8bff148c0fa7df03d06aa5e009b739c232dad4a8312cc6de78e"
+      },
+      {
+        "source": "eng",
+        "target": "sgj",
+        "srcCode": "en",
+        "tgtCode": "sgj",
+        "size": 4981,
+        "sha256": "c99e9e42d46002de2d358e9eff280e14b27ba3541f08478d728f55f1a2f6fb8f"
+      },
+      {
+        "source": "eng",
+        "target": "sin",
+        "srcCode": "en",
+        "tgtCode": "si",
+        "size": 3045,
+        "sha256": "815828568e4e08c0a1d0c16519f1c3c6bea0f740f21c21553d86a0ad6f8dff86"
+      },
+      {
+        "source": "eng",
+        "target": "sjp",
+        "srcCode": "en",
+        "tgtCode": "sjp",
+        "size": 4326,
+        "sha256": "09c581647e4b9d2a91ae365169d307ecc41fadf38887e252e6bb47131f86ef1c"
+      },
+      {
+        "source": "eng",
+        "target": "sna",
+        "srcCode": "en",
+        "tgtCode": "sn",
+        "size": 3837,
+        "sha256": "536de5dca5dedc0c6c81de408ac9beef613157e8a964bbe1557aea9bf9c1910f"
+      },
+      {
+        "source": "eng",
+        "target": "som",
+        "srcCode": "en",
+        "tgtCode": "so",
+        "size": 3982,
+        "sha256": "d6e34045bb90741722d35fcefbce27194478fa13778deefd18e15e51ef2d0a13"
+      },
+      {
+        "source": "eng",
+        "target": "spv",
+        "srcCode": "en",
+        "tgtCode": "spv",
+        "size": 6016,
+        "sha256": "faf407ff45ccb46736ec8bfa240203f6dd2a508cd9b12da301a1396d160147ca"
+      },
+      {
+        "source": "eng",
+        "target": "ssw",
+        "srcCode": "en",
+        "tgtCode": "ss",
+        "size": 1609,
+        "sha256": "0c951e42362d5bd5c9fcd06aa4f5a532fa2acbe71af707dcd53251b017749be2"
+      },
+      {
+        "source": "eng",
+        "target": "sot",
+        "srcCode": "en",
+        "tgtCode": "st",
+        "size": 3881,
+        "sha256": "956ad102b1a4d0b3ebb1d0ca51e963fdbb2d0f665a8e4f95e2b7cdd72e0c6646"
+      },
+      {
+        "source": "eng",
+        "target": "sus",
+        "srcCode": "en",
+        "tgtCode": "sus",
+        "size": 1609,
+        "sha256": "32d3d5bb484277d670f6717a5a05444371e3925e0dba517afaea075fb7077377"
+      },
+      {
+        "source": "eng",
+        "target": "swh",
+        "srcCode": "en",
+        "tgtCode": "sw",
+        "size": 7862,
+        "sha256": "1bb57c3b3badeffdedf4c34b66cff2e909bca88ebd0225d34089a1beb1955da6"
+      },
+      {
+        "source": "eng",
+        "target": "tam",
+        "srcCode": "en",
+        "tgtCode": "ta",
+        "size": 3035,
+        "sha256": "4a80c0d30f25700cbe07c0440fc4b312d0711de2ce4936ca6d105b24cf04e835"
+      },
+      {
+        "source": "eng",
+        "target": "tcy",
+        "srcCode": "en",
+        "tgtCode": "tcy",
+        "size": 5897,
+        "sha256": "9ba96cd4f9a701e801e2ea4ca0db11373a9fb6c150321861c15b186ff639587b"
+      },
+      {
+        "source": "eng",
+        "target": "tel",
+        "srcCode": "en",
+        "tgtCode": "te",
+        "size": 3035,
+        "sha256": "acf70facfb90b6a6e03e565e50e77d43fa6ff24609141aa4f8deca9980c689f6"
+      },
+      {
+        "source": "eng",
+        "target": "tha",
+        "srcCode": "en",
+        "tgtCode": "th",
+        "size": 3045,
+        "sha256": "84e954c53a1d5d5966646b7e0de590e0d39652f35be755e0bb679ed83175f42e"
+      },
+      {
+        "source": "eng",
+        "target": "tir",
+        "srcCode": "en",
+        "tgtCode": "ti",
+        "size": 3953,
+        "sha256": "abaa8fbf648602021b5722f55b8f19b83c253b467d4004918099e3c4ca712b2c"
+      },
+      {
+        "source": "eng",
+        "target": "tiv",
+        "srcCode": "en",
+        "tgtCode": "tiv",
+        "size": 1609,
+        "sha256": "98e21aead9bf62ffa3fa36e1deafe4f6af211f4ce9d933f9f710bd768dacf314"
+      },
+      {
+        "source": "eng",
+        "target": "tsn",
+        "srcCode": "en",
+        "tgtCode": "tn",
+        "size": 1609,
+        "sha256": "8ddef476aa365433aec3117ba15842300a38016eede62e0e27833e008d0b8c6c"
+      },
+      {
+        "source": "eng",
+        "target": "trp",
+        "srcCode": "en",
+        "tgtCode": "trp",
+        "size": 6021,
+        "sha256": "ab06ebe20e9463397f1ccafa95c67fade2cec574be244214b4811cc21d21408b"
+      },
+      {
+        "source": "eng",
+        "target": "tso",
+        "srcCode": "en",
+        "tgtCode": "ts",
+        "size": 1609,
+        "sha256": "ef0c3e57390dc8ad918f2e3df44bdb7c41c3095b9735ae5e331321a56861958b"
+      },
+      {
+        "source": "eng",
+        "target": "tum",
+        "srcCode": "en",
+        "tgtCode": "tum",
+        "size": 1609,
+        "sha256": "1538fa1d3e7ca58e068fd9109d981edc1b56b2bbf98e98e037180126bed93b4f"
+      },
+      {
+        "source": "eng",
+        "target": "tyv",
+        "srcCode": "en",
+        "tgtCode": "tyv",
+        "size": 825,
+        "sha256": "021a35dc283f2d778b43346b2c10a58303e1394656a663a808cdd657b19992e9"
+      },
+      {
+        "source": "eng",
+        "target": "unr-Deva",
+        "srcCode": "en",
+        "tgtCode": "unr-Deva",
+        "size": 6021,
+        "sha256": "0df22b8d66400f2b0b2260cc0a3d48601a0f6a029e60cc213841cc6362945d9f"
+      },
+      {
+        "source": "eng",
+        "target": "urd",
+        "srcCode": "en",
+        "tgtCode": "ur",
+        "size": 3035,
+        "sha256": "7420dbf3b16a065c9dbab570f6e90c5db7d542c177ec0f8b0192c3cfa6fa4dc2"
+      },
+      {
+        "source": "eng",
+        "target": "ven",
+        "srcCode": "en",
+        "tgtCode": "ve",
+        "size": 1609,
+        "sha256": "f60f067e41a07b0084d8bae0278a66d2ac79b18b0551f3bb19c3c7163d84ccbb"
+      },
+      {
+        "source": "eng",
+        "target": "wbr",
+        "srcCode": "en",
+        "tgtCode": "wbr",
+        "size": 5997,
+        "sha256": "e075ca7d3f193fd565a81baf1edaa828c0a4aa114083ab0ebbb5e7e45cda3ea2"
+      },
+      {
+        "source": "eng",
+        "target": "wol",
+        "srcCode": "en",
+        "tgtCode": "wo",
+        "size": 3851,
+        "sha256": "b0fff59cb0f8d4a8b364165c2d048bfb7142863308eae207ab07ca7cf3f20aba"
+      },
+      {
+        "source": "eng",
+        "target": "xho",
+        "srcCode": "en",
+        "tgtCode": "xh",
+        "size": 3917,
+        "sha256": "60b6e42b302a0530205051fb65f7f24c3126e25777a5a3a53c5733ebbf3cc429"
+      },
+      {
+        "source": "eng",
+        "target": "xnr",
+        "srcCode": "en",
+        "tgtCode": "xnr",
+        "size": 6021,
+        "sha256": "ea33c389941cd8d8d14ae6da2d4743b0f7c07570483cc7046466992f9d5d696f"
+      },
+      {
+        "source": "eng",
+        "target": "xsr-Tibt",
+        "srcCode": "en",
+        "tgtCode": "xsr-Tibt",
+        "size": 6021,
+        "sha256": "ca7f4ebe43da8ff77930024e3225a7546696ed8521491c31049f3b1c52183025"
+      },
+      {
+        "source": "eng",
+        "target": "yor",
+        "srcCode": "en",
+        "tgtCode": "yo",
+        "size": 7799,
+        "sha256": "35584ead03da76514a2e602c19168d826f5aec135aceb252882ee391fbd5b3ab"
+      },
+      {
+        "source": "eng",
+        "target": "yue",
+        "srcCode": "en",
+        "tgtCode": "yue",
+        "size": 6970,
+        "sha256": "7f82a4a8c6e29883531138590e489bd0b474f23d96f8a8deb342c4fc881688cf"
+      },
+      {
+        "source": "eng",
+        "target": "zul",
+        "srcCode": "en",
+        "tgtCode": "zu",
+        "size": 3982,
+        "sha256": "757d1adf368b628586f0b21d7d8720fede34354948465c0b9fe0c1a21ac292b1"
+      },
+      {
+        "source": "pes",
+        "target": "eng",
+        "srcCode": "fa",
+        "tgtCode": "en",
+        "size": 737,
+        "sha256": "7b0892673fa027c80c324387e5fd1f9ec8bdfa837f6ee00060856e37c61620e0"
+      },
+      {
+        "source": "ful",
+        "target": "eng",
+        "srcCode": "ff",
+        "tgtCode": "en",
+        "size": 4036,
+        "sha256": "84ef7d68a84f209049f96a5895677679d23b1e034b7200383768927a9481c1f6"
+      },
+      {
+        "source": "fil",
+        "target": "eng",
+        "srcCode": "fil",
+        "tgtCode": "en",
+        "size": 737,
+        "sha256": "83df81f604d3d858452968db8c988f0d365547288bf94596733d1bfc11dc2028"
+      },
+      {
+        "source": "fon",
+        "target": "eng",
+        "srcCode": "fon",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "77d62411741390b34529ea034d198f4639bdc3a631783bc272ca92829985e6ba"
+      },
+      {
+        "source": "gaa",
+        "target": "eng",
+        "srcCode": "gaa",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "01194ebcb05f4b99708a4e9fe9478a3f6cfb8c1c440108d989a98774022c360e"
+      },
+      {
+        "source": "grt-Latn",
+        "target": "eng",
+        "srcCode": "grt-Latn",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "ed1e83c4e58dc57171516af86a77f9f278f3657d6f3ae1dca8ff0bb4b2022bcc"
+      },
+      {
+        "source": "guj",
+        "target": "eng",
+        "srcCode": "gu",
+        "tgtCode": "en",
+        "size": 3035,
+        "sha256": "1bb3d5cc42baa57c27f727ebad08f91e30131ff042dd611df74b9a6ed1d6bc08"
+      },
+      {
+        "source": "hau",
+        "target": "eng",
+        "srcCode": "ha",
+        "tgtCode": "en",
+        "size": 7805,
+        "sha256": "51c3a402f34c89e747f74f41494435cb173fc788c8631be2f38dc445b3b13dde"
+      },
+      {
+        "source": "hin",
+        "target": "eng",
+        "srcCode": "hi",
+        "tgtCode": "en",
+        "size": 3123,
+        "sha256": "55f6e1c5e1c49196d5f2ce897c16a74c8f062da83a25f7cee6cef62a3d926531"
+      },
+      {
+        "source": "hoc-Wara",
+        "target": "eng",
+        "srcCode": "hoc-Wara",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "5789d59dac138642f8c010de66f0b7e160d63dcee1a818a13d76ae7af392831b"
+      },
+      {
+        "source": "ind",
+        "target": "eng",
+        "srcCode": "id",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "b6d4ecd9fd1b43332fcb534d36662b825e921743cb0ef75dd027d867aba9cb7a"
+      },
+      {
+        "source": "ibo",
+        "target": "eng",
+        "srcCode": "ig",
+        "tgtCode": "en",
+        "size": 5521,
+        "sha256": "a2bc877399e11fa40e61fab22627fa1c80d03955fc9e576018303d6f65beef75"
+      },
+      {
+        "source": "jpn",
+        "target": "eng",
+        "srcCode": "ja",
+        "tgtCode": "en",
+        "size": 3045,
+        "sha256": "9a50570a4ef945af5cda6fd399afdbc7c28fb91f0eee5c2a9c7d9a5b8c9bb640"
+      },
+      {
+        "source": "jdt",
+        "target": "rus",
+        "srcCode": "jdt",
+        "tgtCode": "ru",
+        "size": 6970,
+        "sha256": "c84efd1edaad9abc2efe3b31a7963e669734e2e47870723b43de28f8ab46502f"
+      },
+      {
+        "source": "kfy",
+        "target": "eng",
+        "srcCode": "kfy",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "9e9542701bdfd92f60da51f8987e739af2473ca1bb4f5b17867eec5c648d187b"
+      },
+      {
+        "source": "kon",
+        "target": "eng",
+        "srcCode": "kg",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "87150bfe91d3a14000919125a29bf22875fe82aa3870530c52f2e22b5de52245"
+      },
+      {
+        "source": "kik",
+        "target": "eng",
+        "srcCode": "ki",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "89266b208fd9df6bd332b35a87ab45c071e9770a5a18d18fd54f630032f2b098"
+      },
+      {
+        "source": "khm",
+        "target": "eng",
+        "srcCode": "km",
+        "tgtCode": "en",
+        "size": 3045,
+        "sha256": "7143b1bb9e45e67f667142aec0fdc30fb58113206697db3db22e45f81b035f6d"
+      },
+      {
+        "source": "kan",
+        "target": "eng",
+        "srcCode": "kn",
+        "tgtCode": "en",
+        "size": 3027,
+        "sha256": "d5ad39c8f83c2600c4b663d85c9daf1ea2e1ed2c030b875149a378865cca4e11"
+      },
+      {
+        "source": "kor",
+        "target": "eng",
+        "srcCode": "ko",
+        "tgtCode": "en",
+        "size": 3045,
+        "sha256": "3d57b1af193ee2131afa66e0d5125c25683dcf85ae2551fa23d19c9e9750208d"
+      },
+      {
+        "source": "kau",
+        "target": "eng",
+        "srcCode": "kr",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "b4954fdfbc37be2a126cb43dab1d7ba6fe2d49768c585671216cfd31241dd306"
+      },
+      {
+        "source": "kri",
+        "target": "eng",
+        "srcCode": "kri",
+        "tgtCode": "en",
+        "size": 2391,
+        "sha256": "2eb0cea3519cbb8c262897ea5359fe84259d1a070fa16ec7f8990e940839006d"
+      },
+      {
+        "source": "kru",
+        "target": "eng",
+        "srcCode": "kru",
+        "tgtCode": "en",
+        "size": 6019,
+        "sha256": "1a560838c48f0e9a6bc93b7cefdb4ef63a12537907b2c1ebd83cf8148d49cbb2"
+      },
+      {
+        "source": "ktu",
+        "target": "eng",
+        "srcCode": "ktu",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "b6f5aee6440fdcebc82d7af1a73b23cc7c160e473c9d07070a418c32eafdfe61"
+      },
+      {
+        "source": "lep",
+        "target": "eng",
+        "srcCode": "lep",
+        "tgtCode": "en",
+        "size": 6010,
+        "sha256": "aec4a23dc8ea0daad972e7fa18eab639ae6931be3fc5845e6d45c2133d1ab0cf"
+      },
+      {
+        "source": "lug",
+        "target": "eng",
+        "srcCode": "lg",
+        "tgtCode": "en",
+        "size": 3947,
+        "sha256": "ef140ea77f2fe89c052c3070ce61d5d70c4e2119db39f2983cc51f754aa8a97e"
+      },
+      {
+        "source": "lif-Limb",
+        "target": "eng",
+        "srcCode": "lif-Limb",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "a683c330bc66b787555c58a77c227a5d2a0f1d00598134c8e4a9fb507e3aa008"
+      },
+      {
+        "source": "lij",
+        "target": "eng",
+        "srcCode": "lij",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "2ac9fe9668b13e62c5b54ece58e954824ac25d4becda1708590baaa43ba874fe"
+      },
+      {
+        "source": "lin",
+        "target": "eng",
+        "srcCode": "ln",
+        "tgtCode": "en",
+        "size": 3869,
+        "sha256": "80cc5a6bb440c289b2aad7459e5164fb26cb1968a87000cf1d65478daae6d195"
+      },
+      {
+        "source": "lub",
+        "target": "eng",
+        "srcCode": "lu",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "3a59f54417ce6f89d67f8c3e04d759c24938f81d5c01b8aea6e913ba24dad2c0"
+      },
+      {
+        "source": "luo",
+        "target": "eng",
+        "srcCode": "luo",
+        "tgtCode": "en",
+        "size": 3895,
+        "sha256": "a70db6af709abf3b27d06b9d0bea28c52ee50ad038614d7b0fc14eea04b8dd81"
+      },
+      {
+        "source": "mag",
+        "target": "eng",
+        "srcCode": "mag",
+        "tgtCode": "en",
+        "size": 6006,
+        "sha256": "af93e32ab81854e64040c354ed0f231a0a8e3389b671f56f4d399aa0068de11f"
+      },
+      {
+        "source": "mfe",
+        "target": "eng",
+        "srcCode": "mfe",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "d9069a666faf1f102b70f0dd4c583590f952d8ef5c89b2f877257284694825e8"
+      },
+      {
+        "source": "mlg",
+        "target": "eng",
+        "srcCode": "mg",
+        "tgtCode": "en",
+        "size": 5514,
+        "sha256": "3ad508b882ac349b2dea4b1c320386e1844b3ad9286b645e1bedc670de6d810c"
+      },
+      {
+        "source": "mhr",
+        "target": "eng",
+        "srcCode": "mhr",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "3218f62658c8d85014b218db8659be4c87e7de90ebdec6c3d6dfd086d4a541c6"
+      },
+      {
+        "source": "mjl",
+        "target": "eng",
+        "srcCode": "mjl",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "f84c7828a6ea005eae553dbd68b49a3a87bee711f7b4ce0c163082332c50cd2b"
+      },
+      {
+        "source": "mal",
+        "target": "eng",
+        "srcCode": "ml",
+        "tgtCode": "en",
+        "size": 3045,
+        "sha256": "434d6637f5c140b0235347eeb39f91f59e4d1c3f38af4fca128370a19d4ccf6c"
+      },
+      {
+        "source": "mos",
+        "target": "eng",
+        "srcCode": "mos",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "a2da2a5eb1527c4a3b704835c1c8c51b7a2f80588129728b215c6b124e33616e"
+      },
+      {
+        "source": "mar",
+        "target": "eng",
+        "srcCode": "mr",
+        "tgtCode": "en",
+        "size": 3021,
+        "sha256": "20545ebf9f902ff5bd4af9e94f65a0357e1744e470188fa6589591559f4b8cf3"
+      },
+      {
+        "source": "mtr",
+        "target": "eng",
+        "srcCode": "mtr",
+        "tgtCode": "en",
+        "size": 6019,
+        "sha256": "85ed46ded0f4e697041aa4d72e21d9e7598bf2c3c4619f52dfe878ffe04ed82d"
+      },
+      {
+        "source": "mya",
+        "target": "eng",
+        "srcCode": "my",
+        "tgtCode": "en",
+        "size": 2984,
+        "sha256": "ccaa900d8cbd88acb411e74b1ec7d93fbc37a57b05d8529fc071133fdc13a919"
+      },
+      {
+        "source": "nde",
+        "target": "eng",
+        "srcCode": "nd",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "7b049295100b4860ae0e09243bfdbc63ab22e87f3cbb814f8a9a099556055356"
+      },
+      {
+        "source": "ndc",
+        "target": "eng",
+        "srcCode": "ndc",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "8d5f4a1d036e65419fff6c3ac46581e2ed27977bc601624a7ce8fe917ddf2f29"
+      },
+      {
+        "source": "npi",
+        "target": "eng",
+        "srcCode": "ne",
+        "tgtCode": "en",
+        "size": 913,
+        "sha256": "0d1d2c7fd583b93673490f404c5184033d6e84f86a38a9b33fc6922538a075ae"
+      },
+      {
+        "source": "noe",
+        "target": "eng",
+        "srcCode": "noe",
+        "tgtCode": "en",
+        "size": 4219,
+        "sha256": "8368621c73772309250795c0e07c5d6c51f449996d62c96eed4a0a341bd0dd4d"
+      },
+      {
+        "source": "nqo",
+        "target": "eng",
+        "srcCode": "nqo",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "51ea6a625c0aa1755741c1cf3d7573190ae3b2785f3ee31ba69e2e714418e093"
+      },
+      {
+        "source": "nbl",
+        "target": "eng",
+        "srcCode": "nr",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "a72baf96cdf755dad11669369abb03a921dd8d1e1db2073da7c0b0bc2d315136"
+      },
+      {
+        "source": "nso",
+        "target": "eng",
+        "srcCode": "nso",
+        "tgtCode": "en",
+        "size": 2473,
+        "sha256": "f93c6c21e7c844eda8e80d474ef8fbc43bca454eb0ac5f246b93324086e2e19e"
+      },
+      {
+        "source": "nya",
+        "target": "eng",
+        "srcCode": "ny",
+        "tgtCode": "en",
+        "size": 3908,
+        "sha256": "ef90ad2ce10cf88256f925eac47f941e513889fa29cf56c176d9aa430e449611"
+      },
+      {
+        "source": "orm",
+        "target": "eng",
+        "srcCode": "om",
+        "tgtCode": "en",
+        "size": 5495,
+        "sha256": "ddae9f5d05fe0c47d8cae60e9d22bb4d3903624270b78e27232ddc378df66210"
+      },
+      {
+        "source": "pan",
+        "target": "eng",
+        "srcCode": "pa",
+        "tgtCode": "en",
+        "size": 3023,
+        "sha256": "977f0446cee7612556f35d41aff2b416281e5c835cfaf5912de8439c439969e4"
+      },
+      {
+        "source": "pcm",
+        "target": "eng",
+        "srcCode": "pcm",
+        "tgtCode": "en",
+        "size": 2503,
+        "sha256": "ea851c9bbf5bfa26d051efe256a90fa1e6f2ff65db1ddceeb712565dd88ab3f8"
+      },
+      {
+        "source": "pus",
+        "target": "eng",
+        "srcCode": "ps",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "c3f5eb11f5fce7192965dc07716c46d0b02696b266bb4a9a541d92828f84ba4f"
+      },
+      {
+        "source": "run",
+        "target": "eng",
+        "srcCode": "rn",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "dc3b722339a764c4cdd6aa616964a8903763905338588f25247ece397276c0ea"
+      },
+      {
+        "source": "rus",
+        "target": "abq",
+        "srcCode": "ru",
+        "tgtCode": "abq",
+        "size": 825,
+        "sha256": "66b51f8088013ea9dd6ce9f1e138b7d078c89c81e644a4544634889db4816c7f"
+      },
+      {
+        "source": "rus",
+        "target": "che",
+        "srcCode": "ru",
+        "tgtCode": "ce",
+        "size": 825,
+        "sha256": "53d477cc37129b9c7598c884a5d27325a7ad577b8da53e18d828188ab4a2698c"
+      },
+      {
+        "source": "rus",
+        "target": "eng",
+        "srcCode": "ru",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "6dc1c03501b3c166b8c9203947307a244d52ea4c98e258805072adc33c506217"
+      },
+      {
+        "source": "rus",
+        "target": "jdt",
+        "srcCode": "ru",
+        "tgtCode": "jdt",
+        "size": 6970,
+        "sha256": "7cec544f5d21d429fe37a4070b204035b5b92e17fed7f3c7759e69046ab17dfb"
+      },
+      {
+        "source": "kin",
+        "target": "eng",
+        "srcCode": "rw",
+        "tgtCode": "en",
+        "size": 3976,
+        "sha256": "2feb41352a076463ff5644dcddec81557d13d2c841ceb54dc6c1c25ba4225d5d"
+      },
+      {
+        "source": "scn",
+        "target": "eng",
+        "srcCode": "scn",
+        "tgtCode": "en",
+        "size": 1256,
+        "sha256": "5113567ab9d053a7c8eaac7eff6a4b07860db85fd40b82d850c0af11cf5e81fe"
+      },
+      {
+        "source": "snd-Deva",
+        "target": "eng",
+        "srcCode": "sd-Deva",
+        "tgtCode": "en",
+        "size": 6011,
+        "sha256": "d6d2dfc1a3d146a4109501f5ab1d5be6197177999a10a42479b01ec11190db07"
+      },
+      {
+        "source": "sgj",
+        "target": "eng",
+        "srcCode": "sgj",
+        "tgtCode": "en",
+        "size": 4981,
+        "sha256": "44c1e1d8c92eb7fb83a804dc7fe631e6e66bc453fbce3f34c0636083b54bc1a7"
+      },
+      {
+        "source": "sin",
+        "target": "eng",
+        "srcCode": "si",
+        "tgtCode": "en",
+        "size": 3045,
+        "sha256": "a69bfbb8e56f80ae5edc76b0180e30211f85bf33f98a59855d5655f4f974fc83"
+      },
+      {
+        "source": "sjp",
+        "target": "eng",
+        "srcCode": "sjp",
+        "tgtCode": "en",
+        "size": 4326,
+        "sha256": "2b6b5a5fa8f50a60f8eb97f7e4c557f3aeb93012339e566577f2688d56bb0cba"
+      },
+      {
+        "source": "sna",
+        "target": "eng",
+        "srcCode": "sn",
+        "tgtCode": "en",
+        "size": 3837,
+        "sha256": "ef52a2bd3087d589bef173e4000443dfbb623d5adf591c432ca66875c5eb05cf"
+      },
+      {
+        "source": "som",
+        "target": "eng",
+        "srcCode": "so",
+        "tgtCode": "en",
+        "size": 3982,
+        "sha256": "8febec17342612b87125452136a6a89737208e85775bd529a3f78319b1bdf4ed"
+      },
+      {
+        "source": "spv",
+        "target": "eng",
+        "srcCode": "spv",
+        "tgtCode": "en",
+        "size": 6016,
+        "sha256": "caf0dd8e665c9c6e96e006a6321c1bfb8e200dd113029c94dfa7f948537f5548"
+      },
+      {
+        "source": "ssw",
+        "target": "eng",
+        "srcCode": "ss",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "98261cc37eaf9f3073f82541c5ba3e0554942969f8268d5f72256bcc72565395"
+      },
+      {
+        "source": "sot",
+        "target": "eng",
+        "srcCode": "st",
+        "tgtCode": "en",
+        "size": 3881,
+        "sha256": "2f92e37a141657a44f095d995ea233e04a0478ecbd792fa723a8ece18595b303"
+      },
+      {
+        "source": "sus",
+        "target": "eng",
+        "srcCode": "sus",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "1b90d4defa61c657a11ce61350296aaf14a755d2262ba9fdeda614cdd36523cc"
+      },
+      {
+        "source": "swh",
+        "target": "arb",
+        "srcCode": "sw",
+        "tgtCode": "ar",
+        "size": 3958,
+        "sha256": "1bd9853bfd4040826fd8bd6d34728bb11374de4b715e89cfa26796671988556e"
+      },
+      {
+        "source": "swh",
+        "target": "eng",
+        "srcCode": "sw",
+        "tgtCode": "en",
+        "size": 7862,
+        "sha256": "f991fb052d883e464c3920202abbf0d1d61d0ac8ea59808e36c522127c7a84c6"
+      },
+      {
+        "source": "swh",
+        "target": "cmn",
+        "srcCode": "sw",
+        "tgtCode": "zh",
+        "size": 3958,
+        "sha256": "529e15f662b1cf50a5ba803ad99e243f62091488948c0fa68226b95ecb7d074b"
+      },
+      {
+        "source": "tam",
+        "target": "eng",
+        "srcCode": "ta",
+        "tgtCode": "en",
+        "size": 3035,
+        "sha256": "5ec32f2f052883a329fbd4fd46816b39728d3b89b75ec1514b8c4ed3c2f889af"
+      },
+      {
+        "source": "tcy",
+        "target": "eng",
+        "srcCode": "tcy",
+        "tgtCode": "en",
+        "size": 5897,
+        "sha256": "4ee4e23cabf1ad9dd2b447f3bd9412c2f2356731ad368e9e418d6eb6744d7f4a"
+      },
+      {
+        "source": "tel",
+        "target": "eng",
+        "srcCode": "te",
+        "tgtCode": "en",
+        "size": 3035,
+        "sha256": "d8cc38bb2ee29850f721fc3a5b4a4a11cd2479a56032e31b19e4700d68071e0a"
+      },
+      {
+        "source": "tha",
+        "target": "eng",
+        "srcCode": "th",
+        "tgtCode": "en",
+        "size": 3045,
+        "sha256": "853942ec1bb2e7842117dd752ef117432f5bd5bd02ddba571f0441b45ccda3bd"
+      },
+      {
+        "source": "tir",
+        "target": "eng",
+        "srcCode": "ti",
+        "tgtCode": "en",
+        "size": 3953,
+        "sha256": "cf62795ca43ffa21d92205e35e3dcea4cd11b199f7eb48039be9059cf735779e"
+      },
+      {
+        "source": "tiv",
+        "target": "eng",
+        "srcCode": "tiv",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "2dc61065b52aa067e4b2fe84a8cd982f5ba50cb95b55e67b2c4fc5dc0e743cec"
+      },
+      {
+        "source": "tsn",
+        "target": "eng",
+        "srcCode": "tn",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "e763ed6861efb86de23ec447007842caa5cf6fc603f8ecd3c89c2fc22fefad28"
+      },
+      {
+        "source": "trp",
+        "target": "eng",
+        "srcCode": "trp",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "b5a5e2410e58143227559a58a65bd32b71cbdd062baac357b91d0ec239a33339"
+      },
+      {
+        "source": "tso",
+        "target": "eng",
+        "srcCode": "ts",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "01ed214b569a6c60805d7733d5b79a0fc177cb42e3f13a0ff4d57b0250a72cd3"
+      },
+      {
+        "source": "tum",
+        "target": "eng",
+        "srcCode": "tum",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "f3ec5348b0377f55dfb3c8e457116319c343184b1b9fba0d27c190ced6a29b86"
+      },
+      {
+        "source": "tyv",
+        "target": "eng",
+        "srcCode": "tyv",
+        "tgtCode": "en",
+        "size": 825,
+        "sha256": "e88cd696b60aaaa4fe1c8c6db94f81a3862169f04148b244da5bd1ea9efe7e5c"
+      },
+      {
+        "source": "unr-Deva",
+        "target": "eng",
+        "srcCode": "unr-Deva",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "4bdcdd1953917eb81657d9b6ae7965d97358c91283a875d595ee30f02ee0e48d"
+      },
+      {
+        "source": "urd",
+        "target": "eng",
+        "srcCode": "ur",
+        "tgtCode": "en",
+        "size": 3035,
+        "sha256": "3e9c7cb4bbfcb1dc3f183a2be437fff10547f0a237c3bf28fe07cd52e98a8e89"
+      },
+      {
+        "source": "ven",
+        "target": "eng",
+        "srcCode": "ve",
+        "tgtCode": "en",
+        "size": 1609,
+        "sha256": "5a5aafd2995bd2258079f958807b38057bbca99d9e1910fc770754e2e9d142f3"
+      },
+      {
+        "source": "wbr",
+        "target": "eng",
+        "srcCode": "wbr",
+        "tgtCode": "en",
+        "size": 5997,
+        "sha256": "6fb28ad701debf811614e99d60c7dd6c89a2b963e2c68a86891e561af853ae18"
+      },
+      {
+        "source": "wol",
+        "target": "eng",
+        "srcCode": "wo",
+        "tgtCode": "en",
+        "size": 3851,
+        "sha256": "bb274703c28b165661306475eda906dd507f984519332d40d52c615bd80105a2"
+      },
+      {
+        "source": "xho",
+        "target": "eng",
+        "srcCode": "xh",
+        "tgtCode": "en",
+        "size": 3917,
+        "sha256": "08c13d5b5bc1189c365ea585fe2d83685d85daab7cf8bed62ad15a8abf2f3ffc"
+      },
+      {
+        "source": "xnr",
+        "target": "eng",
+        "srcCode": "xnr",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "b529f631a02331659471a1b3715d1389619d8994cc080249f33a53666a8bdde4"
+      },
+      {
+        "source": "xsr-Tibt",
+        "target": "eng",
+        "srcCode": "xsr-Tibt",
+        "tgtCode": "en",
+        "size": 6021,
+        "sha256": "03266b7f6b54aa93b5abbcec868f8b89dda3df1aef05227b38498be754753193"
+      },
+      {
+        "source": "yor",
+        "target": "eng",
+        "srcCode": "yo",
+        "tgtCode": "en",
+        "size": 7799,
+        "sha256": "bafcc6f0e051b364d6f818f19bce180338a329c169ecdb4840b8c6a49133cb9b"
+      },
+      {
+        "source": "yue",
+        "target": "eng",
+        "srcCode": "yue",
+        "tgtCode": "en",
+        "size": 6970,
+        "sha256": "d8a95b77a0d7619974deebe9714c90dba09df614d77531c4a0c01ed2a6d54c73"
+      },
+      {
+        "source": "cmn",
+        "target": "amh",
+        "srcCode": "zh",
+        "tgtCode": "am",
+        "size": 3946,
+        "sha256": "0dea203ae4e50de7c16745358e326452c7d5ae9def5e7093a1dbd9510f747697"
+      },
+      {
+        "source": "cmn",
+        "target": "swh",
+        "srcCode": "zh",
+        "tgtCode": "sw",
+        "size": 3958,
+        "sha256": "bac60e9f0a05bac714f42387e912e3630327d9ade5ad446104ab1bfae291f353"
+      },
+      {
+        "source": "zul",
+        "target": "eng",
+        "srcCode": "zu",
+        "tgtCode": "en",
+        "size": 3982,
+        "sha256": "d9c30f6697adc4ce878cc12fe65d41cd1ba00f294727d937654a4204788bb7ba"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "SMOL eval (Champollion-defined)",
+      "size": 904190,
+      "sizeUnit": "documents",
+      "purpose": "MT evaluation — full pinned SMOL release as a Champollion-defined held-out set"
+    }
+  ],
+  "download": {
+    "method": "huggingface",
+    "url": "https://huggingface.co/datasets/google/smol",
+    "instructions": "Per-pair smoldoc/{src}_{tgt}.jsonl fetched from the pinned commit revision (immutable). SmolSent rows are src/trg sentence pairs; SmolDoc rows are parallel srcs/trgs document lists aligned element-wise. GATITOS excluded.",
+    "sha256": null,
+    "revision": "59fd221f9151af49a2d3d5e9c5d3835a7d9eec5a",
+    "subset": "smoldoc",
+    "filePattern": "smoldoc/{src}_{tgt}.jsonl",
+    "format": "jsonl"
+  },
+  "source": {
+    "publisher": "Google",
+    "url": "https://huggingface.co/datasets/google/smol",
+    "paper": "https://arxiv.org/abs/2502.12301",
+    "citation": "Caswell et al. (2025). SMOL: Professionally translated parallel data for 115 under-represented languages.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Permitted with attribution under CC-BY-4.0.",
+    "notes": "Published as training data; Champollion uses a deterministic, revision-pinned held-out slice as eval and sets doNotTrain to protect benchmark integrity."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "permitted",
+    "communityNotes": "SMOL ships as training data; the Champollion eval use is a deterministic held-out slice (the full pinned release). doNotTrain protects benchmark integrity."
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "SMOL is a public training resource on HuggingFace, so frontier models may have seen it. It is professionally translated and covers very low-resource languages that are otherwise scarce, but its training-data provenance means contamination is moderate.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "google/smol HF file listing; per-file directed pairs; HF commit revision pinned. Per-pair size + built-corpus sha256 pinned deterministically from the revision (pin_smol_wmt24pp_pairs.py).",
+    "pinnedPairs": 262,
+    "droppedUnservablePairs": [
+      "eng->scl (en_scl)",
+      "scl->eng (scl_en)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "_doc": "How Champollion reads three endangerment scales into ONE display tier. This file is a DECISION, recorded as data, not a fact any source asserts. ELCat, Glottolog (AES) and LinguaMeta each publish endangerment on their own vocabulary, and the atlas records all of them — `endangerment` on a card carries agreement 'incommensurable' precisely because 'severely endangered' (ELCat), 'moribund' (Glottolog) and 'Severely endangered' (LinguaMeta) are not the same statement on one scale. A badge, a map colour and a wall tile each need a single tier, so the choice of which scale to read, and how its words map, is made HERE where it can be argued with, rather than inside a display component where it would look like a fact.",
+  "_whatThisIsNot": "Not a consensus. Nothing here merges two sources into a third value. The tier a card displays comes from ONE named source, and the card keeps every other source's claim untouched for anything that reports rather than labels.",
+  "_authorityOrder": "ELCat first: it is the endangerment specialist, it publishes a certainty alongside each assessment, and it covers the most at-risk languages. Glottolog's AES second, LinguaMeta third. A language none of them assess gets tier 'unknown' — never a guess, and never 'safe' by default, which would read a silence as reassurance.",
+  "version": 1,
+  "authorityOrder": ["elcat", "glottolog-cldf", "linguameta"],
+  "tiers": ["safe", "vulnerable", "endangered", "extinct", "unknown"],
+  "scales": {
+    "elcat": {
+      "_source": "Endangered Languages Catalogue (ELCat), Endangerment.Level",
+      "map": {
+        "safe": "safe",
+        "not endangered": "safe",
+        "vulnerable": "vulnerable",
+        "threatened": "vulnerable",
+        "endangered": "endangered",
+        "severely endangered": "endangered",
+        "critically endangered": "endangered",
+        "awakening": "endangered",
+        "dormant": "extinct",
+        "extinct": "extinct"
+      }
+    },
+    "glottolog-cldf": {
+      "_source": "Glottolog Agglomerated Endangerment Status (AES)",
+      "map": {
+        "not endangered": "safe",
+        "threatened": "vulnerable",
+        "shifting": "endangered",
+        "moribund": "endangered",
+        "nearly extinct": "endangered",
+        "extinct": "extinct"
+      }
+    },
+    "linguameta": {
+      "_source": "LinguaMeta (Google Research) endangerment field",
+      "map": {
+        "not endangered": "safe",
+        "Not endangered": "safe",
+        "vulnerable": "vulnerable",
+        "Vulnerable": "vulnerable",
+        "threatened": "vulnerable",
+        "Threatened": "vulnerable",
+        "endangered": "endangered",
+        "Endangered": "endangered",
+        "severely endangered": "endangered",
+        "Severely endangered": "endangered",
+        "critically endangered": "endangered",
+        "Critically endangered": "endangered",
+        "extinct": "extinct",
+        "Extinct": "extinct"
+      }
+    }
+  }
+}

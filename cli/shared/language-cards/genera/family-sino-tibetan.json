@@ -1,0 +1,55 @@
+{
+  "code": "family-sino-tibetan",
+  "extends": null,
+  "name": "Sino-Tibetan Family",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Sino-Tibetan languages overwhelmingly lack grammatical gender. Pronouns are typically gender-neutral in spoken forms (though some writing systems, like Chinese, have introduced gendered third-person pronouns under Western influence)."
+  },
+  "rules": {
+    "typography": {
+      "punctuationSpacing": {
+        "doublePunctuation": "varies"
+      }
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "tonalSystems": "The vast majority of Sino-Tibetan languages are tonal, using pitch contours to distinguish lexical meaning. Tone systems range from 2 tones (some Tibeto-Burman) to 9+ (Cantonese). Tonal accuracy is critical — wrong tone = wrong word. MT systems frequently produce tone errors when generating romanized output.",
+    "classifierSystems": "Classifier (measure word) systems are pervasive across the family. Nouns require specific classifiers when counted or quantified, and classifier selection depends on semantic properties of the noun (shape, size, animacy, etc.). Using the wrong classifier sounds unnatural or comical.",
+    "topicProminence": "Most Sino-Tibetan languages are topic-prominent rather than subject-prominent. The topic-comment structure differs fundamentally from English SVO patterns and cannot be handled by simple word reordering.",
+    "proDrop": "Subject and object pronouns are routinely dropped when recoverable from context. MT systems trained on English tend to over-generate pronouns in Sino-Tibetan output.",
+    "morphologicalDiversity": "The family spans a huge morphological range: Sinitic languages are analytic/isolating (few affixes), while Tibeto-Burman languages range from analytic to highly agglutinative. Genus cards specify morphological type.",
+    "scriptDiversity": "The family uses CJK characters, Tibetan script, Burmese script, various Indic-derived scripts, and Latin (for romanization and some minority languages). Script handling differs radically between branches."
+  },
+  "classification": {
+    "family": "Sino-Tibetan",
+    "familyGlottocode": "sino1245",
+    "ancestry": [
+      "Sino-Tibetan"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Sino-Tibetan (~452 members). Covers Sinitic (Chinese varieties), Tibeto-Burman, and other branches. Properties vary enormously between Sinitic (analytic, CJK) and Tibeto-Burman (agglutinative, various scripts). Genus-level cards (genus-sinitic.json etc.) provide branch-specific properties.",
+  "regions": [
+    {
+      "country": "East and Southeast Asia (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "China, Tibet, Myanmar, Nepal, Bhutan, NE India, mainland Southeast Asia",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

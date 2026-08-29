@@ -1,0 +1,969 @@
+{
+  "code": "wol",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Wolof",
+    "values": [
+      {
+        "value": "Wolof",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Wolof",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "typologicalProfile": {
+    "affixPreference": "Little affixation",
+    "hasCoreCase": false,
+    "hasGenderInPronouns": false,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": true,
+    "hasSexBasedGender": false,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "0",
+      "values": [
+        {
+          "value": "0",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": false,
+    "negationOrder": "Type 1 / Type 4",
+    "reduplication": "Full reduplication only",
+    "subjectVerbOrder": "SV",
+    "wordOrder": "SVO"
+  },
+  "classification": {
+    "ancestry": [
+      "atla1278",
+      "nort3146",
+      "wolo1248",
+      "wolo1247"
+    ],
+    "family": {
+      "agreement": "conflicting",
+      "values": [
+        {
+          "value": "Atlantic-Congo",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Niger-Congo",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "atla1278",
+    "genus": "Wolof"
+  },
+  "bcp47": "wo",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "wo-Latn-SN",
+    "values": [
+      {
+        "value": "wo-Latn-SN",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "wo-Latn-SN",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"wo\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "wo",
+    "values": [
+      {
+        "value": "wo",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code: the ISO 639-1 \"wo\" over the ISO 639-3 \"wol\""
+      }
+    ]
+  },
+  "cldrOfficialStatus": "De facto official",
+  "codeAliases": [
+    "wo"
+  ],
+  "phonologicalInventory": {
+    "consonants": 47,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 64,
+    "vowels": 17
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "CCAligned",
+        "corpusId": "corpus:opus:CCAligned",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 88442
+          }
+        ],
+        "alignmentPairsTotal": 88442,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 88442
+      },
+      {
+        "corpus": "CCMatrix",
+        "corpusId": "corpus:opus:CCMatrix",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "sw",
+            "alignmentPairs": 4020
+          }
+        ],
+        "alignmentPairsTotal": 4020,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 4020
+      },
+      {
+        "corpus": "Mozilla-I10n",
+        "corpusId": "corpus:opus:Mozilla-I10n",
+        "pairCount": 196,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 13955
+          },
+          {
+            "code": "zh_cn",
+            "alignmentPairs": 7983
+          },
+          {
+            "code": "zh_tw",
+            "alignmentPairs": 7456
+          },
+          {
+            "code": "pt_br",
+            "alignmentPairs": 7119
+          },
+          {
+            "code": "el",
+            "alignmentPairs": 7100
+          }
+        ],
+        "alignmentPairsTotal": 697097,
+        "pairsWithPublishedSize": 196,
+        "largestPairAlignments": 13955
+      },
+      {
+        "corpus": "MultiCCAligned",
+        "corpusId": "corpus:opus:MultiCCAligned",
+        "pairCount": 110,
+        "topPartners": [
+          {
+            "code": "es",
+            "alignmentPairs": 26758
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 24256
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 22860
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 21103
+          },
+          {
+            "code": "id",
+            "alignmentPairs": 20491
+          }
+        ],
+        "alignmentPairsTotal": 576540,
+        "pairsWithPublishedSize": 110,
+        "largestPairAlignments": 26758
+      },
+      {
+        "corpus": "NLLB",
+        "corpusId": "corpus:opus:NLLB",
+        "pairCount": 46,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1460420
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 376455
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 302140
+          },
+          {
+            "code": "af",
+            "alignmentPairs": 237043
+          },
+          {
+            "code": "sw",
+            "alignmentPairs": 156839
+          }
+        ],
+        "alignmentPairsTotal": 4362890,
+        "pairsWithPublishedSize": 46,
+        "largestPairAlignments": 1460420
+      },
+      {
+        "corpus": "QED",
+        "corpusId": "corpus:opus:QED",
+        "pairCount": 73,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 199
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 148
+          },
+          {
+            "code": "th",
+            "alignmentPairs": 136
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 66
+          },
+          {
+            "code": "som",
+            "alignmentPairs": 54
+          }
+        ],
+        "alignmentPairsTotal": 1385,
+        "pairsWithPublishedSize": 73,
+        "largestPairAlignments": 199
+      },
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 7,
+        "topPartners": [
+          {
+            "code": "fr",
+            "alignmentPairs": 66
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 14
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 10
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 2
+          },
+          {
+            "code": "eo",
+            "alignmentPairs": 1
+          }
+        ],
+        "alignmentPairsTotal": 95,
+        "pairsWithPublishedSize": 7,
+        "largestPairAlignments": 66
+      },
+      {
+        "corpus": "Ubuntu",
+        "corpusId": "corpus:opus:Ubuntu",
+        "pairCount": 187,
+        "topPartners": [
+          {
+            "code": "ace",
+            "alignmentPairs": null
+          },
+          {
+            "code": "af",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ak",
+            "alignmentPairs": null
+          },
+          {
+            "code": "am",
+            "alignmentPairs": null
+          },
+          {
+            "code": "an",
+            "alignmentPairs": null
+          }
+        ],
+        "alignmentPairsTotal": null,
+        "pairsWithPublishedSize": 0,
+        "largestPairAlignments": null
+      },
+      {
+        "corpus": "XLEnt",
+        "corpusId": "corpus:opus:XLEnt",
+        "pairCount": 119,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 7887
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 4538
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 4287
+          },
+          {
+            "code": "nl",
+            "alignmentPairs": 4257
+          },
+          {
+            "code": "tr",
+            "alignmentPairs": 4189
+          }
+        ],
+        "alignmentPairsTotal": 222883,
+        "pairsWithPublishedSize": 118,
+        "largestPairAlignments": 7887
+      },
+      {
+        "corpus": "bible-uedin",
+        "corpusId": "corpus:opus:bible-uedin",
+        "pairCount": 101,
+        "topPartners": [
+          {
+            "code": "th",
+            "alignmentPairs": 15836
+          },
+          {
+            "code": "vi",
+            "alignmentPairs": 15836
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 15836
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 15833
+          },
+          {
+            "code": "jap",
+            "alignmentPairs": 15826
+          }
+        ],
+        "alignmentPairsTotal": 792587,
+        "pairsWithPublishedSize": 101,
+        "largestPairAlignments": 15836
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1700
+          }
+        ],
+        "alignmentPairsTotal": 1700,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 1700
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 8,
+        "topPartners": [
+          {
+            "code": "fr",
+            "alignmentPairs": 824
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 226
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 8
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 5
+          },
+          {
+            "code": "ban",
+            "alignmentPairs": 4
+          }
+        ],
+        "alignmentPairsTotal": 1072,
+        "pairsWithPublishedSize": 8,
+        "largestPairAlignments": 824
+      }
+    ],
+    "keyboards": [
+      {
+        "name": "Pan Africa Mnemonic (SIL)",
+        "keyboardId": "sil_pan_africa_mnemonic",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/sil/sil_pan_africa_mnemonic",
+        "publisher": "keyman",
+        "version": "1.2.1",
+        "lastModified": "2024-12-02"
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Wolof-WTB",
+        "sentences": 2107,
+        "tokens": 42832,
+        "words": 44258,
+        "release": "2.18"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "GM",
+    "GW",
+    "ML",
+    "MR",
+    "SN"
+  ],
+  "dialectCount": 8,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Wolof (wol-wol) = 3 (Wider communication). Recognized language (2001, Constitution, Article 1). Wolof has become an LWC through commerce and trade and is the lingua franca in much of the country. The phenomenon of ‘wolofization’ has meant that people from many ethnic groups have adopted Wolof as their L1; most of the Senegalese population can speak and understand Wolof (2015 J. Leclerc).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "Wolof làkk",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "Wolof",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "wo",
+        "variantType": "language",
+        "note": "label language: wo"
+      }
+    ]
+  },
+  "glottocode": "nucl1347",
+  "isIsolate": false,
+  "iso639_1": "wo",
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 15.2534,
+    "lng": -15.383
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 532,
+        "concepts": 96,
+        "doculects": 8,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 40,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "datsemshift",
+        "forms": 4,
+        "concepts": 3,
+        "release": "datsemshift-v1.1rc"
+      },
+      {
+        "dataset": "polyglottaafricana",
+        "forms": 313,
+        "concepts": 280,
+        "release": "polyglottaafricana-v2.1"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "128781"
+  },
+  "methodSupport": {
+    "total": 245,
+    "byTier": {
+      "model-card-declared": 245
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/nllb-moe-54b",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-12dec-full-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-12dec-full-ft-kd",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-4dec-iterative-481m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-6dec-iterative-514m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-8dec-iterative-548m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-8dec-middle-548m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-8enc-8dec-iterative-498m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-8enc-8dec-middle-498m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:alirezamsh/small100",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-3.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-3.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-distilled-1.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bilalfaye/nllb-200-distilled-600M-wo-fr-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bilalfaye/nllb-200-distilled-600M-wolof-english",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "quinary, decimal"
+  },
+  "orthographicStatus": "de-facto-standard",
+  "pluralCategories": [
+    "other"
+  ],
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "11000000",
+    "values": [
+      {
+        "value": "11000000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "textDirection": "left-to-right",
+  "wikipediaEdition": {
+    "site": "wo",
+    "url": "https://wo.wikipedia.org",
+    "name": "Wolof"
+  },
+  "coverage": {
+    "sourceCount": 18,
+    "componentsPresent": 57,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "cldrOfficialStatus": [
+      "linguameta-452a21ad3dae"
+    ],
+    "codeAliases": [
+      "iso639-3-20260715"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "iso639_1": [
+      "iso639-3-20260715"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "pluralCategories": [
+      "cldr-plurals-48.2.0"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "textDirection": [
+      "cldr-48.2.0"
+    ],
+    "typologicalProfile.affixPreference": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.reduplication": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "wol",
+    "revision": "91d7c12f699b8a3e",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "cldrOfficialStatus",
+      "codeAliases",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "iso639_1",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "pluralCategories",
+      "resources.corpora",
+      "resources.keyboards",
+      "resources.treebanks",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "textDirection",
+      "typologicalProfile.affixPreference",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.reduplication",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder",
+      "wikipediaEdition"
+    ]
+  }
+}

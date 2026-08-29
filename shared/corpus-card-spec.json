@@ -1,0 +1,242 @@
+{
+  "$schema": "./schemas/card-field-spec.schema.json",
+  "version": 1,
+  "entityType": "corpus",
+  "_doc": {
+    "what": "What a CORPUS card is: one entry per dataset, projected from the licence-evidence SSOT and the Zenodo harvest through the same facts→spec→projector chain as language and method cards.",
+    "why": "A language card says whether translation is possible; a method card says what can do it; a corpus card says what you are ALLOWED to do with the data. For this project that is the foundation, not a footnote — the difference between CC-BY-4.0 and a modified sovereignty-scoped CC-BY-NC-SA decides whether a corpus can be redistributed, benchmarked against, or transmitted to a model API at all.",
+    "rules": [
+      "UNVERIFIED is a VISIBLE state, never a silence. The register this replaces was 3.6% verified and granted redistribution BY DEFAULT — it recorded a non-commercial Bantu dataset as freely redistributable across 324 cards. A licence field that looks confident and is not is worse than an empty one.",
+      "A permission flag that could not be determined is ABSENT, not false. Absent means UNKNOWN, and unknown is not permission.",
+      "Every licence READING is kept and attributed to where it was read. The operative verdict is a separate field, because a project cannot act on a disagreement — but hiding the disagreement behind the verdict is how a wrong licence goes unnoticed."
+    ]
+  },
+  "fields": {
+    "id": {
+      "meaning": "Dataset key, as the harness and the licence register both use it.",
+      "rule": "identity",
+      "required": true
+    },
+    "title": {
+      "meaning": "The deposit's own title.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "title"
+        }
+      ],
+      "sources": [
+        "curated:license-evidence"
+      ],
+      "absence": "omit"
+    },
+    "creators": {
+      "meaning": "Who made it. Citation is not optional here — see the project's always-cite principle.",
+      "rule": "list",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "creator"
+        }
+      ],
+      "sources": [
+        "curated:license-evidence"
+      ],
+      "absence": "omit"
+    },
+    "licenseReadings": {
+      "meaning": "Every licence statement found upstream, attributed to where it was read.",
+      "rule": "attributed",
+      "facts": [
+        {
+          "domain": "licensing",
+          "property": "licenseReading"
+        }
+      ],
+      "sources": [
+        "curated:license-evidence"
+      ],
+      "absence": "omit",
+      "note": "Up to three independent statements per corpus — the Zenodo deposit, a shipped LICENSE file, and the CLDF metadata — and they disagree. `dryerorder` is CC-BY-4.0 on Zenodo and Apache-2.0 in its own metadata. agreement:'conflicting' says so on the card instead of burying it."
+    },
+    "effectiveLicense": {
+      "meaning": "The licence we ACT on when the readings disagree: the most restrictive one.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "licensing",
+          "property": "effectiveLicense"
+        }
+      ],
+      "sources": [
+        "curated:license-evidence"
+      ],
+      "absence": "omit",
+      "note": "Separate from licenseReadings on purpose. A consumer has to gate on ONE answer, so it gets one — but the readings stay visible beside it, because a verdict shown alone cannot be questioned."
+    },
+    "licenseStatus": {
+      "meaning": "Whether the effective licence rests on evidence: verified, or UNVERIFIED.",
+      "rule": "attributed",
+      "facts": [
+        {
+          "domain": "licensing",
+          "property": "licenseStatus"
+        }
+      ],
+      "sources": [
+        "curated:license-evidence"
+      ],
+      "absence": "omit",
+      "note": "90 of 402 corpora are UNVERIFIED. That is projected, loudly, rather than omitted — an unverified licence must not look the same as a permissive one."
+    },
+    "licenseConflict": {
+      "meaning": "True when upstream statements disagree about the licence.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "licensing",
+          "property": "licenseConflict"
+        }
+      ],
+      "sources": [
+        "curated:license-evidence"
+      ],
+      "absence": "omit"
+    },
+    "permissions": {
+      "meaning": "What the effective licence permits, as flags a consumer can gate on without parsing SPDX.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "Every flag is ABSENT when the evidence could not determine it. Absent means unknown; the old register defaulted these to permissive, which is how a non-commercial corpus came to be recorded as redistributable.",
+      "properties": {
+        "allowsRedistribution": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "allowsRedistribution"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "requiresAttribution": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "requiresAttribution"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "requiresShareAlike": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "requiresShareAlike"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "nonCommercialOnly": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "nonCommercialOnly"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "noDerivatives": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "noDerivatives"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit",
+          "note": "The flag the old toSpdx() had no branch for at all, which is how nts's ND condition vanished and the dataset was marked redistributable."
+        }
+      }
+    },
+    "provenance": {
+      "meaning": "Which release this corpus is, and whether we hold a verified copy.",
+      "rule": "object",
+      "absence": "omit",
+      "properties": {
+        "doi": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "provenance",
+              "property": "doi"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "version": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "provenance",
+              "property": "version"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "published": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "provenance",
+              "property": "published"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit"
+        },
+        "locallyPinned": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "provenance",
+              "property": "locallyPinned"
+            }
+          ],
+          "sources": [
+            "curated:license-evidence"
+          ],
+          "absence": "omit",
+          "note": "Whether cli/data holds a checksum-verified copy. False means the card describes a corpus we cannot currently rebuild from."
+        }
+      }
+    }
+  }
+}

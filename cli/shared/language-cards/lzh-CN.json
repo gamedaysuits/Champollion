@@ -1,0 +1,401 @@
+{
+  "code": "lzh-CN",
+  "name": {
+    "agreement": "single",
+    "consensus": "Literary Chinese",
+    "values": [
+      {
+        "value": "Literary Chinese",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "sino1245",
+      "sini1245",
+      "clas1255"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Sino-Tibetan",
+      "values": [
+        {
+          "value": "Sino-Tibetan",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "sino1245"
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "lzh-Hant-CN",
+    "values": [
+      {
+        "value": "lzh-Hant-CN",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "lzh-Hant-CN",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"lzh\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "lzh",
+    "values": [
+      {
+        "value": "lzh",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 14,
+        "topPartners": [
+          {
+            "code": "ru",
+            "alignmentPairs": 671
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 543
+          },
+          {
+            "code": "cmn",
+            "alignmentPairs": 126
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 86
+          },
+          {
+            "code": "he",
+            "alignmentPairs": 86
+          }
+        ],
+        "alignmentPairsTotal": 1663,
+        "pairsWithPublishedSize": 14,
+        "largestPairAlignments": 671
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 3138
+          }
+        ],
+        "alignmentPairsTotal": 3138,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 3138
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 13,
+        "topPartners": [
+          {
+            "code": "zh",
+            "alignmentPairs": 969
+          },
+          {
+            "code": "ja",
+            "alignmentPairs": 315
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 259
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 77
+          },
+          {
+            "code": "yue",
+            "alignmentPairs": 50
+          }
+        ],
+        "alignmentPairsTotal": 1736,
+        "pairsWithPublishedSize": 13,
+        "largestPairAlignments": 969
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Classical_Chinese-Kyoto",
+        "sentences": 86239,
+        "tokens": 433169,
+        "words": 433169,
+        "release": "2.18"
+      },
+      {
+        "treebank": "UD_Classical_Chinese-TueCL",
+        "sentences": 100,
+        "tokens": 648,
+        "words": 648,
+        "release": "2.18"
+      }
+    ]
+  },
+  "countries": [
+    "CN"
+  ],
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "extinct",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Literary Chinese (lzh-lzh) = 10 (Extinct).",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "文言文",
+    "values": [
+      {
+        "value": "文言文",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "zh",
+        "variantType": "language",
+        "note": "label language: zh"
+      }
+    ]
+  },
+  "documentation": {
+    "firstDocumented": -500,
+    "lastDocumented": 200,
+    "medLevel": "grammar sketch",
+    "medSourceId": "705556"
+  },
+  "glottocode": "lite1248",
+  "isIsolate": false,
+  "isoLanguageType": "Historical",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 34.09,
+    "lng": 109.05
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "datsemshift",
+        "forms": 2,
+        "concepts": 2,
+        "release": "datsemshift-v1.1rc"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "macrolanguage": "zho",
+  "methodSupport": {
+    "total": 7,
+    "byTier": {
+      "fetched": 1,
+      "model-card-declared": 6
+    },
+    "named": [
+      {
+        "value": "service",
+        "variant": "microsoft-translator",
+        "source": "vendor-languages-2026-08-06",
+        "confidence": "fetched"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0-LoRA",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-i1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "wikipediaEdition": {
+    "site": "lzh",
+    "url": "https://zh-classical.wikipedia.org",
+    "name": "Literary Chinese"
+  },
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 27,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.firstDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.lastDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10",
+      "vendor-languages-2026-08-06"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "lzh-CN",
+    "revision": "9ee3bdd6f4a0cbf3",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.firstDocumented",
+      "documentation.lastDocumented",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.corpora",
+      "resources.treebanks",
+      "wikipediaEdition"
+    ]
+  },
+  "locale": {
+    "language": "lzh",
+    "region": "CN",
+    "script": "Hant",
+    "publishedTag": "lzh-CN",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Hant"
+}

@@ -1,0 +1,487 @@
+{
+  "code": "bom-NG",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Berom",
+    "values": [
+      {
+        "value": "Berom",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Berom",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "typologicalProfile": {
+    "affixPreference": "Strong prefixing",
+    "negationOrder": "VNeg",
+    "subjectVerbOrder": "SV",
+    "wordOrder": "SVO"
+  },
+  "classification": {
+    "ancestry": [
+      "atla1278",
+      "volt1241",
+      "benu1247",
+      "benu1248",
+      "iten1244",
+      "iten1245",
+      "cara1274"
+    ],
+    "family": {
+      "agreement": "conflicting",
+      "values": [
+        {
+          "value": "Atlantic-Congo",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Niger-Congo",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "atla1278",
+    "genus": "Benue-Congo Plateau"
+  },
+  "bcp47": "bom",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "bom-Latn-NG",
+    "values": [
+      {
+        "value": "bom-Latn-NG",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "bom-Latn-NG",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"bom\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "bom",
+    "values": [
+      {
+        "value": "bom",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 26,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 33,
+    "vowels": 7
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 47
+          }
+        ],
+        "alignmentPairsTotal": 47,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 47
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 574
+          }
+        ],
+        "alignmentPairsTotal": 574,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 574
+      }
+    ],
+    "keyboards": [
+      {
+        "name": "Nigeria Dot (SIL)",
+        "keyboardId": "sil_nigeria_dot",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/sil/sil_nigeria_dot",
+        "publisher": "keyman",
+        "version": "1.6",
+        "lastModified": "2024-09-12"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "dryerorder",
+        "featuresCoded": 6,
+        "datasetFeatureTotal": 10
+      }
+    ]
+  },
+  "countries": [
+    "NG"
+  ],
+  "dialectCount": 8,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Berom (bom-bom) = 5 (Developing).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "Cèn Bèrom",
+    "values": [
+      {
+        "value": "Cèn Bèrom",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "glottocode": "bero1242",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 9.67037,
+    "lng": 8.81221
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 99,
+        "concepts": 37,
+        "doculects": 3,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 42,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "125830"
+  },
+  "methodSupport": {
+    "total": 11,
+    "byTier": {
+      "model-card-declared": 11
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-alv-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-alv-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "duodecimal"
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "1000000",
+    "values": [
+      {
+        "value": "1000000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 41,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.affixPreference": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "bom-NG",
+    "revision": "89abd7cb220b9485",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "resources.corpora",
+      "resources.keyboards",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.affixPreference",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder"
+    ]
+  },
+  "locale": {
+    "language": "bom",
+    "region": "NG",
+    "script": "Latn",
+    "publishedTag": "bom-NG",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Latn",
+  "localeScoped": {
+    "scriptName": "Latin"
+  }
+}

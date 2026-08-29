@@ -1,0 +1,479 @@
+{
+  "code": "bua",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Buriat",
+    "values": [
+      {
+        "value": "Buriat",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Buriat",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "bua",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "bua-Cyrl-RU",
+    "values": [
+      {
+        "value": "bua-Cyrl-RU",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "bua-Cyrl-RU",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"bua\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "bua",
+    "values": [
+      {
+        "value": "bua",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "canonicalisedMembers": {
+    "agreement": "unanimous",
+    "consensus": "bxr",
+    "values": [
+      {
+        "value": "bxr",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR canonicalises \"bxr\" to \"bua\" with reason=macrolanguage"
+      },
+      {
+        "value": "bxr",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "SIL langtags records \"bxr\" as an additional ISO 639-3 code for tags of \"bua\""
+      }
+    ]
+  },
+  "lexicalResources": {
+    "clicsContributingDatasets": 1,
+    "clicsTotalEntries": 1314,
+    "clicsUniqueForms": 1172,
+    "colexificationConcepts": 950,
+    "colexificationDensity": 0.865,
+    "colexifyingForms": 99,
+    "datasets": [
+      {
+        "dataset": "datsemshift",
+        "forms": 178,
+        "concepts": 162,
+        "release": "datsemshift-v1.1rc"
+      },
+      {
+        "dataset": "northeuralex",
+        "forms": 1313,
+        "concepts": 1013,
+        "release": "northeuralex-v4.1"
+      },
+      {
+        "dataset": "robbeetstriangulation",
+        "forms": 306,
+        "concepts": 253,
+        "release": "robbeetstriangulation-v0.3"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 3,
+        "topPartners": [
+          {
+            "code": "ru",
+            "alignmentPairs": 817
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 17
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 4
+          }
+        ],
+        "alignmentPairsTotal": 838,
+        "pairsWithPublishedSize": 3,
+        "largestPairAlignments": 817
+      },
+      {
+        "corpus": "Ubuntu",
+        "corpusId": "corpus:opus:Ubuntu",
+        "pairCount": 110,
+        "topPartners": [
+          {
+            "code": "af",
+            "alignmentPairs": null
+          },
+          {
+            "code": "am",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ast",
+            "alignmentPairs": null
+          },
+          {
+            "code": "az",
+            "alignmentPairs": null
+          }
+        ],
+        "alignmentPairsTotal": null,
+        "pairsWithPublishedSize": 0,
+        "largestPairAlignments": null
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "буряад",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "буряад хэлэн",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "bua",
+        "variantType": "language",
+        "note": "label language: bua"
+      },
+      {
+        "value": "ᠪᠤᠷᠢᠶᠠᠳ ᠮᠣᠩᠭᠣᠯ ᠬᠯᠡᠨ",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "bua",
+        "variantType": "language",
+        "note": "label language: bua"
+      }
+    ]
+  },
+  "isoLanguageType": "Living",
+  "isoScope": "Macrolanguage",
+  "macroarea": "Eurasia",
+  "macrolanguageMembers": [
+    "bxm",
+    "bxr",
+    "bxu"
+  ],
+  "methodSupport": {
+    "total": 81,
+    "byTier": {
+      "confirmed": 1,
+      "model-card-declared": 80
+    },
+    "named": [
+      {
+        "value": "service",
+        "variant": "google-translate",
+        "source": "curated:method-coverage-2a485dc249c6",
+        "confidence": "confirmed"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:brauliobo/madlad400-7b-mt-bt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Cartik/Transti-1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ClausQ-dk/madlad400-10b-mt-Q2_K-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cstr/madlad400-3b-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-quantized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cyberunit/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Eddishockwave/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-7b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:fernandoruiz/madlad400-3b-mt-Q4_K_S-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Cyrl"
+  ],
+  "scriptNames": [
+    "Cyrillic"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "440000",
+    "values": [
+      {
+        "value": "440000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "textDirection": "left-to-right",
+  "coverage": {
+    "sourceCount": 11,
+    "componentsPresent": 24,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "canonicalisedMembers": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.clicsContributingDatasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsTotalEntries": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsUniqueForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationConcepts": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationDensity": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexifyingForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguageMembers": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "curated:method-coverage-2a485dc249c6",
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "textDirection": [
+      "cldr-48.2.0"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "bua",
+    "revision": "0dd57c1a7fdc4553",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "canonicalisedMembers",
+      "endonym",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.clicsContributingDatasets",
+      "lexicalResources.clicsTotalEntries",
+      "lexicalResources.clicsUniqueForms",
+      "lexicalResources.colexificationConcepts",
+      "lexicalResources.colexificationDensity",
+      "lexicalResources.colexifyingForms",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguageMembers",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "textDirection"
+    ]
+  }
+}

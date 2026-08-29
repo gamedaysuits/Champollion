@@ -1,0 +1,167 @@
+---
+sidebar_position: 2
+title: "تكامل أطر العمل"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# التكامل مع أطر العمل
+
+إعداد champollion خطوة بخطوة مع أطر العمل الشائعة.
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### هيكل المشروع
+
+يستخدم Hugo `i18n/` لترجمة السلاسل النصية و `content/` لمحتوى الصفحة:
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### الإعداد
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### تفاصيل ترجمة المحتوى
+
+**البيانات التمهيدية (Front matter)**: يدعم محددات YAML (`---`) و TOML (`+++`). يترجم `title`، و `description`، و `summary`، و `subtitle`، و `caption`، و `linkTitle` افتراضياً. يتم الاحتفاظ بجميع الحقول الأخرى (date، و draft، و tags، و weight، و slug، إلخ). يمكنك التخصيص باستخدام `translatableFields` في ملف التكوين الخاص بك.
+
+**حماية الكتل**: تتم حماية كتل التعليمات البرمجية، والرموز القصيرة (shortcodes) الخاصة بـ Hugo، والتعليمات البرمجية المضمنة، و HTML الخام تلقائياً باستخدام عناصر نائبة حارسة من Unicode. وتمر كما هي دون أي تعديل.
+
+**اصطلاح تسمية الملفات**: يتبع نمط الترجمة حسب اسم الملف الخاص بـ Hugo:
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (يزيل لاحقة المصدر)
+
+**تخطي الملفات الموجودة**: لا يتم أبداً الكتابة فوق الملفات المترجمة الموجودة مسبقاً. احذف الملف الهدف لفرض إعادة الترجمة.
+
+### صيغ الجمع
+
+تدعم ملفات الترجمة بصيغتي TOML و YAML صيغ الجمع الخاصة بـ CLDR:
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+يتم تمثيلها داخلياً كـ `items.one` و `items.other` لإجراء المقارنة (diffing)، ثم يُعاد تسلسلها إلى التنسيق المقطعي الصحيح عند الكتابة.
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### هيكل المشروع
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### الإعداد
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh", "pt", "ar"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+ينشئ `messages/fr.json`، و `messages/ja.json`، إلخ — مترجمة بالكامل، مع الحفاظ على هيكل المفاتيح المتداخلة الخاص بك. يلتقطها next-intl تلقائياً.
+
+### سير عمل التطوير
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### هيكل الملفات المسطح (موصى به)
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+### هيكل الدلائل المتداخلة
+
+إذا كنت تستخدم هيكل `{locale}/{namespace}.json`، فقم بإنشاء برنامج نصي للمزامنة للقيام بالتسطيح (flatten) → الترجمة → إلغاء التسطيح (unflatten). راجع [وثائق react-i18next](https://react.i18next.com/) للحصول على التفاصيل.
+
+  </TabItem>
+</Tabs>

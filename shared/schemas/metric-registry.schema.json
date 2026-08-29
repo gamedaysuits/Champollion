@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/metric-registry.schema.json",
+  "title": "Champollion Metric Identity Registry (SSOT)",
+  "description": "Declarative registry of evaluation-metric identity — the one place that maps each canonical metric id to its Python plugin name, language-card evalMetrics key, and denormalized run_cards DB column. Shared by the Python arena harness and the JS CLI/website. See shared/metric-registry.json and cli/website/docs/network/specifications/scoring.md §2.",
+  "type": "object",
+  "required": ["version", "entries"],
+  "additionalProperties": true,
+  "properties": {
+    "_comment": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "entries": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/entry" },
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9_]*$",
+        "description": "canonical_id: the run-card scores key (snake_case). Also the primary lookup key across all runtimes."
+      }
+    },
+    "_proposed_renames": {
+      "type": "array",
+      "description": "Rename proposals the FOUNDER decides (published run cards embed these names). Advisory — not consumed by code.",
+      "items": {
+        "type": "object",
+        "required": ["current", "proposal", "impact", "decision"],
+        "additionalProperties": false,
+        "properties": {
+          "current": { "type": "string" },
+          "proposal": { "type": "string" },
+          "impact": { "type": "string" },
+          "decision": { "type": "string", "enum": ["founder-pending", "accepted", "rejected"] }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "category", "status", "display_name", "plugin_name", "card_key",
+        "db_column", "scale", "direction", "level", "in_composite",
+        "verifier_reproducible"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": ["surface", "structural", "semantic", "neural", "behavioral", "compliance", "comparator", "composite", "efficiency"],
+          "description": "The scoring-spec §2 category (plus composite/efficiency for §4/§6/§7 derived figures)."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["implemented", "partial", "planned", "proposed"],
+          "description": "Scoring spec §3 status tier: implemented (values in run cards today), partial (language-specific proxy only), planned (specified, not built), proposed (under discussion)."
+        },
+        "display_name": { "type": "string", "minLength": 1 },
+        "plugin_name": {
+          "type": ["string", "null"],
+          "description": "The Python MetricPlugin `name` attribute that computes this metric, or null for harness-core metrics with no plugin (e.g. exact_match_rate, chrf_plus_plus) and derived figures."
+        },
+        "card_key": {
+          "type": ["string", "null"],
+          "description": "The language-card evalMetrics key that declares the plugin (e.g. 'lyss-eq'), or null when the metric is not card-declared (harness-core or always-loaded behavioral plugins)."
+        },
+        "db_column": {
+          "type": ["string", "null"],
+          "description": "The denormalized run_cards column (arena/DATABASE_SCHEMA.md), or null when the metric lives only in the run_card JSONB / plugin_metrics."
+        },
+        "scale": {
+          "type": "string",
+          "description": "Human-readable value range (e.g. '0.0-1.0', '0-100', '0-25', '0-inf', 'USD', or a label enumeration)."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["higher", "lower", "neutral"],
+          "description": "Whether higher or lower is better (neutral = diagnostic/informational, e.g. length_ratio, coverage, quality_tier label)."
+        },
+        "level": {
+          "type": "string",
+          "enum": ["entry", "corpus", "both"],
+          "description": "Whether the metric is computed per-entry, corpus-level, or both."
+        },
+        "in_composite": {
+          "type": "boolean",
+          "description": "True iff the metric currently carries weight in at least one active profile in scoring.PROFILE_REGISTRY when available (declared-but-INACTIVE metrics like orthographic_accuracy are false)."
+        },
+        "verifier_reproducible": {
+          "type": "boolean",
+          "description": "True iff the verifier can deterministically re-derive it from the sha-pinned corpus + stored entries (+ card-pinned FST / pinned neural model under the fail-closed contract). Speed/cost/style metrics are false."
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

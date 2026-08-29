@@ -1,0 +1,1308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/language-card.schema.json",
+  "title": "champollion Language Card",
+  "description": "Complete reference for a single language's translation configuration, including metadata, formality system, register presets, method support, and eval dataset links. BOUNDARY INVARIANT: a language card asserts language PROPERTIES (classification, phonology, typology, vitality, speaker counts, script) and resource EXISTENCE/CAPABILITY (a corpus/model/FST/metric/method is AVAILABLE — including methodSupport, evalDatasets, metricPlugins listing metric NAMES, and pipelineReadiness.source='derived') ONLY — each value cited and labeled derived-vs-asserted. Any MEASURED score of method output (chrF/BLEU/COMET/TER values, FST acceptance rate, '% morphologically valid') is a RUN RESULT keyed by (method, dataset, metric) and belongs on the leaderboard/edge — it is FORBIDDEN on a language card. Champollion is an INDEX, not a truth-arbiter: every value faithfully reports what its cited source actually says, and where sources DISAGREE the card shows ALL of them attributed (e.g. speakerEstimates[]) rather than manufacturing a single winner. These invariants are enforced by lint-language-cards.mjs rules R1 (tone-consistent-with-phoible), R2 (speaker-count-supported-by-source), R3 (no-run-results), R4 (no-metric-mislabel), R5 (family-name-matches-glottolog: classification.family must be Glottolog's own name for the cited familyGlottocode; 'Language isolate' exempt), R6 (derived-fields-carry-derived-provenance: Champollion-computed fields like dialectCount and scriptUnicodeName must carry derived: provenance, never a bare upstream name).",
+  "type": "object",
+  "required": [
+    "code",
+    "name"
+  ],
+  "properties": {
+    "extends": {
+      "type": ["string", "null"],
+      "description": "Locale code of another card/family this card inherits from."
+    },
+    "code": {
+      "type": "string",
+      "description": "Language identifier. ISO 639-3 three-letter code (e.g., 'fra', 'crk') for individual languages, BCP 47 with region for regional variants (e.g., 'por-PT', 'spa-MX'), or prefixed codes for genera/families (e.g., 'genus-cree', 'family-algic'). For conlangs, use 'x-' prefix.",
+      "pattern": "^[a-z]{2,3}(-[A-Z][a-z]{3})?(-[A-Z]{2})?$|^x-[a-z-]+$|^tlh$|^(genus|family|macrolanguage)-[a-z-]+$|^[a-z0-9]{4}[0-9]{4}$"
+    },
+    "name": {
+      "type": ["string", "object"],
+      "description": "English display name of the language. ATLAS SHAPE: this field may instead carry an ATTRIBUTION ENVELOPE {agreement, consensus, values:[{value, source}]} wherever the ingested sources disagree — the standing rule is to show every source attributed rather than elect a winner. The envelope is why the type list admits 'object'; mini-schema has no anyOf, and the SEMANTICS are enforced by the R1-R6 card-integrity rules, not here."
+    },
+    "nativeName": {
+      "type": ["string", "null"],
+      "description": "Name of the language in its own script (endonym). For languages with dual orthographies (e.g., SRO and Syllabics for Cree, Latin and Cyrillic for Serbian), include both separated by ' / '. Must render correctly in the language's native script — e.g., 'Русский' not 'Russkiy', 'العربية' not 'al-Arabiyyah', 'nêhiyawêwin / ᓀᐦᐃᔭᐍᐏᐣ' not just 'nehiyawewin'. Null for conlangs without established endonyms."
+    },
+    "iso639_1": {
+      "type": ["string", "null"],
+      "description": "ISO 639-1 two-letter code. Null if no ISO 639-1 code exists (e.g., conlangs, some indigenous languages).",
+      "pattern": "^[a-z]{2}$"
+    },
+    "iso639_3": {
+      "type": ["string", "null"],
+      "description": "ISO 639-3 three-letter code. Null for conlangs.",
+      "pattern": "^[a-z]{3}$"
+    },
+    "bcp47": {
+      "type": ["string", "null"],
+      "description": "BCP 47 language tag (e.g., 'fr', 'en-US', 'iu-Cans-CA'). Null for languages without a registered BCP 47 subtag (many sign languages, small oral languages). 430+ languages in the database have null bcp47.",
+      "minLength": 2
+    },
+    "alternateNames": {
+      "type": "array",
+      "description": "Alternative English names for this language. Used for search and display.",
+      "items": { "type": "string" }
+    },
+    "isoScope": {
+      "type": ["string", "null"],
+      "description": "ISO 639-3 scope: 'I' (individual), 'M' (macrolanguage), 'S' (special). Null if not in ISO 639-3. This is the canonical 'scope' field per docs/LANGUAGE_TAXONOMY.md — only ISO 639-3 individual languages (scope 'I') are benchmark targets; 'M' cards are navigation hubs, never benchmarked.",
+      "enum": [null, "I", "M", "S", "Individual", "Macrolanguage", "Special"]
+    },
+    "isoType": {
+      "type": ["string", "null"],
+      "description": "ISO 639-3 type: 'L' (living), 'E' (extinct), 'A' (ancient), 'H' (historical), 'C' (constructed), 'S' (special). Null if not in ISO 639-3. This is the canonical 'languageType' field per docs/LANGUAGE_TAXONOMY.md — ISO's own type assignment is the SSOT for living/extinct/historical/ancient/constructed status. Source: cli/data/iso639-3/iso-639-3.tab (Language_Type column).",
+      "enum": [null, "L", "E", "A", "H", "C", "S"]
+    },
+    "modality": {
+      "type": ["string", "null"],
+      "description": "Primary language modality: 'spoken' or 'signed'. Sign languages (e.g., 'ase' American Sign Language, 'psd' Plains Indian Sign Language) are natural languages with full grammars, native acquisition, and language communities — modality 'signed' marks them as such, never as a lesser category. Writing is NOT a modality — it is an orthography attribute (see scripts[] and orthographicStatus); a language with no written form is still fully 'spoken' or 'signed'. Null when unknown or not yet derived. Whistled/drummed speech surrogates and tactile signing are not separate modalities in this model (acknowledged simplification — see docs/LANGUAGE_TAXONOMY.md). Derived by derive-taxonomy-fields.mjs from the Glottolog 'Sign Language' pseudo-family plus the ISO 639-3 reference-name heuristic.",
+      "enum": [null, "spoken", "signed"]
+    },
+    "isIsolate": {
+      "type": "boolean",
+      "description": "Whether this language is a language isolate (no known genetic relatives). Default: false."
+    },
+    "script": {
+      "type": ["string", "null"],
+      "description": "Primary ISO 15924 script code (e.g., 'Latn', 'Arab', 'Cans', 'Jpan'). Null for unwritten languages, languages with no standardized orthography, or when unknown. 1,400+ languages in the database have null script.",
+      "pattern": "^[A-Z][a-z]{3}$"
+    },
+    "scriptUnicodeName": {
+      "type": ["string", "null"],
+      "description": "Unicode script block name corresponding to the primary ISO 15924 script code. Derived from 'script' via a standard mapping (e.g., 'Latn' → 'Latin', 'Cans' → 'Canadian_Aboriginal', 'Arab' → 'Arabic', 'Jpan' → 'CJK'). Used by the code_switching metric plugin to detect script mixing. Auto-populated by enrich-script-unicode-names.mjs."
+    },
+    "dir": {
+      "type": ["string", "null"],
+      "description": "Text directionality. Null for unwritten languages or when the writing direction cannot be determined (e.g., no standardized orthography). 620+ languages in the database have null dir.",
+      "enum": ["ltr", "rtl", null]
+    },
+    "formality": {
+      "type": ["object", "null"],
+      "description": "Structured description of the language's formality system. Null for languages with no formal/informal distinction relevant to translation.",
+      "properties": {
+        "system": {
+          "type": "string",
+          "description": "Category of formality system. Examples: 'T-V' (French, German), 'speech-levels' (Korean), 'keigo' (Japanese), 'particles-and-pronouns' (Thai), 'pronoun-system' (Vietnamese), 'register-levels' (Arabic), 'none'."
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable explanation of how formality works in this language, written for a developer who doesn't speak it."
+        },
+        "default": {
+          "type": "string",
+          "description": "The register preset key to use by default. Must match a key in the registers object."
+        }
+      },
+      "required": ["system", "description", "default"]
+    },
+    "gender": {
+      "type": ["object", "null"],
+      "description": "Grammatical gender information. Null for languages with no gender considerations. THREE writer generations coexist (reconciled 2026-07-07, no key is required): (a) the curated translation-guidance form { grammatical, inclusiveGuidance }; (b) the Grambank-derived form { hasGrammaticalGender, genderCount, sexBased, nounClassSystem, phonologicallyPredictable, source } from enrich-gender-from-grambank.mjs; (c) the WALS 44A pronoun-system form { system, description, source }.",
+      "properties": {
+        "grammatical": {
+          "type": "boolean",
+          "description": "Whether the language has grammatical gender (e.g., French, German, Arabic) vs. no grammatical gender (e.g., Finnish, Korean, Turkish)."
+        },
+        "inclusiveGuidance": {
+          "type": ["string", "null"],
+          "description": "Guidance for gender-inclusive language. Injected into all register prompts. Null if not applicable."
+        },
+        "hasGrammaticalGender": {
+          "type": ["boolean", "null"],
+          "description": "Grambank-derived: whether any grammatical gender/noun-class system is documented."
+        },
+        "genderCount": {
+          "type": ["integer", "null"],
+          "description": "Grambank-derived: number of gender/noun-class distinctions, when documented."
+        },
+        "sexBased": { "type": ["boolean", "null"], "description": "Grambank-derived: sex-based gender system." },
+        "nounClassSystem": { "type": ["boolean", "null"], "description": "Grambank-derived: broader noun-class system." },
+        "phonologicallyPredictable": { "type": ["boolean", "null"], "description": "Grambank-derived: assignment predictable from phonology." },
+        "system": { "type": ["string", "null"], "description": "WALS 44A pronoun gender system label." },
+        "description": { "type": ["string", "null"], "description": "Cited prose description (WALS form)." },
+        "source": { "type": ["string", "null"], "description": "Source id that asserted this block (e.g. 'grambank-2023', 'wals-44A')." }
+      }
+    },
+    "registers": {
+      "type": ["object", "null"],
+      "description": "Named register presets specific to this language's formality system. Keys are preset identifiers (e.g., 'formal-vous', 'polite-haeyo'). Null on the (majority of) cataloged cards whose register research has not been done yet — a card with registers MUST have at least one preset, but null is the honest 'not populated' state (type widened 2026-07-07).",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["label", "description", "prompt"],
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Short display label shown in the CLI wizard and status output."
+          },
+          "description": {
+            "type": "string",
+            "description": "One-sentence explanation of when to use this preset."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "The actual register instruction injected into the LLM system prompt. This is the text that steers translation tone."
+          },
+          "deeplFormality": {
+            "type": "string",
+            "enum": ["prefer_more", "prefer_less", "default"],
+            "description": "DeepL API formality value for this preset. Only relevant when methodSupport.deepl.formality is true. 'prefer_more' for formal, 'prefer_less' for casual, 'default' for neutral."
+          }
+        }
+      }
+    },
+    "aliases": {
+      "type": "array",
+      "description": "Alternative locale codes that should resolve to this language card (e.g., 'no' for 'nb', 'iw' for 'he').",
+      "items": { "type": "string" }
+    },
+    "methodSupport": {
+      "type": "object",
+      "description": "Which translation APIs/methods support this language. Each entry is an object with 'supported' (boolean) plus optional metadata (dateAdded, qualityNotes, variety, NLLB code, etc.). This is the Single Source of Truth for method availability AND detail.",
+      "properties": {
+        "googleTranslate": {
+          "type": "object",
+          "description": "Google Cloud Translation API / Google Translate consumer product.",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "dateAdded": { "type": ["string", "null"], "description": "When support was added (e.g., '2006', '2024-07')." },
+            "qualityNotes": { "type": ["string", "null"], "description": "Known quality assessment." }
+          },
+          "required": ["supported"]
+        },
+        "deepl": {
+          "type": "object",
+          "description": "DeepL Translation API.",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "formality": {
+              "type": "boolean",
+              "description": "Whether DeepL supports the formality parameter for this language. When true, the DeepL method sends prefer_more/prefer_less based on the active register preset."
+            }
+          },
+          "required": ["supported"]
+        },
+        "microsoftTranslator": {
+          "type": "object",
+          "description": "Microsoft Azure Cognitive Services Translator.",
+          "properties": {
+            "supported": { "type": "boolean" }
+          },
+          "required": ["supported"]
+        },
+        "libreTranslate": {
+          "type": "object",
+          "description": "LibreTranslate open-source translation.",
+          "properties": {
+            "supported": { "type": "boolean" }
+          },
+          "required": ["supported"]
+        },
+        "nllb": {
+          "type": "object",
+          "description": "Meta's NLLB-200 (No Language Left Behind) model.",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "code": { "type": ["string", "null"], "description": "NLLB-200 language code (e.g., 'fra_Latn', 'yor_Latn', 'grn_Latn')." },
+            "variety": { "type": ["string", "null"], "description": "Which variety is covered if ambiguous (e.g., 'Ayacucho Quechua' for que_Latn)." },
+            "qualityNotes": { "type": ["string", "null"], "description": "Known quality assessment." }
+          },
+          "required": ["supported"]
+        },
+        "llm": {
+          "type": "object",
+          "description": "General LLM-based translation (via OpenRouter, direct API, etc.).",
+          "properties": {
+            "supported": { "type": "boolean" }
+          },
+          "required": ["supported"]
+        }
+      },
+      "additionalProperties": {
+        "type": "object",
+        "description": "Additional method support entries beyond the standard set.",
+        "properties": {
+          "supported": { "type": "boolean" }
+        },
+        "required": ["supported"]
+      }
+    },
+    "metricModelSupport": {
+      "type": ["object", "null"],
+      "description": "Which MT evaluation models produce reliable scores for this language. Drives automatic model selection in metrics_comet.py. Auto-populated by enrich-metric-model-support.mjs.",
+      "properties": {
+        "xlmr": {
+          "description": "XLM-R quality tier. NOTE: the harness code (language_cards.is_xlmr_high_resource) reads an OBJECT with a 'tier' field; a bare string/null is accepted for back-compat. 'high' = standard COMET is reliable.",
+          "oneOf": [
+            { "type": "null" },
+            { "type": "string", "enum": ["high", "medium", "low"] },
+            {
+              "type": "object",
+              "properties": {
+                "tier": { "type": ["string", "null"], "enum": [null, "high", "medium", "low"] },
+                "source": { "type": ["string", "null"] }
+              }
+            }
+          ]
+        },
+        "africomet": {
+          "description": "AfriCOMET coverage. NOTE: the harness code (language_cards.has_africomet / get_metric_model_for) reads an OBJECT with 'supported' (bool) and 'model'; a bare boolean/null is accepted for back-compat.",
+          "oneOf": [
+            { "type": "null" },
+            { "type": "boolean" },
+            {
+              "type": "object",
+              "properties": {
+                "supported": { "type": "boolean" },
+                "model": { "type": ["string", "null"] },
+                "note": { "type": ["string", "null"] },
+                "source": { "type": ["string", "null"] }
+              }
+            }
+          ]
+        },
+        "qe": {
+          "description": "Reference-free QE model coverage (read by language_cards.get_qe_model_for). Used by the no-reference scoring profile — e.g. masakhane/africomet-qe-stl for African languages.",
+          "type": ["object", "null"],
+          "properties": {
+            "supported": { "type": "boolean" },
+            "model": { "type": ["string", "null"] },
+            "note": { "type": ["string", "null"] },
+            "source": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "scoringProfile": {
+      "type": ["object", "null"],
+      "description": "Card-driven composite scoring profile (SCORING_SPEC §4.3). Resolved by language_cards.resolve_scoring_profile() and consumed by scoring.compute_composite_score(). When absent, the harness falls back to the legacy default (fst-coverage when an FST scored the run, else surface-only).",
+      "properties": {
+        "basis": {
+          "type": ["string", "null"],
+          "description": "Named profile from scoring.PROFILE_REGISTRY selecting the composite weight table.",
+          "enum": [null, "fst-coverage", "surface-only", "comet-validated"]
+        },
+        "lane": {
+          "type": ["string", "null"],
+          "description": "Composite lane: 'public' (Apache/MIT-clean, commercial-safe) or 'nc-research' (may include CC-BY-NC QE metrics).",
+          "enum": [null, "public", "nc-research"]
+        },
+        "metrics": {
+          "type": ["object", "null"],
+          "description": "Per-metric overrides keyed by metric id: { weight, applies, normalize, reference, model, interpretation }. Overrides the named profile's defaults for this language.",
+          "additionalProperties": { "type": "object" }
+        }
+      }
+    },
+    "evalMetrics": {
+      "type": ["object", "null"],
+      "description": "Language-specific eval-standard metric plugins to load (referee metrics, e.g. CRK's LYSS linter/semantic validator). Each key is a metric id; the value declares how to load it. Consumed by plugin_discovery._load_language_card_metrics().",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "module": { "type": "string", "description": "Importable module path for the metric class." },
+          "class": { "type": "string", "description": "Metric class implementing the MetricPlugin protocol." },
+          "description": { "type": ["string", "null"] },
+          "dependencies": { "type": ["array", "null"], "items": { "type": "string" } },
+          "spacy_models": { "type": ["array", "null"], "items": { "type": "string" } }
+        }
+      }
+    },
+    "evalStandard": {
+      "type": ["object", "null"],
+      "description": "How to fetch the EXTERNAL package that provides this language's evalMetrics (e.g. champollion-lyss for Cree). The harness core ships no language-specific scorer code; it installs this on demand (auto-fetch) and fails loud if it cannot. Consumed by plugin_discovery._ensure_eval_standard_installed().",
+      "properties": {
+        "package": { "type": "string", "description": "Distribution name, e.g. 'champollion-lyss'." },
+        "import": { "type": "string", "description": "Top-level import package, e.g. 'champollion_lyss'." },
+        "pip": { "type": "string", "description": "pip install target — a PEP 508 spec or VCS URL, e.g. 'champollion-lyss @ git+https://github.com/.../champollion-LYSS.git@main'." },
+        "description": { "type": ["string", "null"] }
+      }
+    },
+    "evalPack": {
+      "type": ["object", "null"],
+      "description": "On-demand dependency manifest for this language's eval, consumed by setup_wizard.install_lang(). Declares pip deps, post-install steps, and whether an FST is required.",
+      "properties": {
+        "pythonDeps": {
+          "type": ["object", "array", "null"],
+          "description": "Pip dependencies. Current form (2026): an object map of package name → pip requirement spec (e.g. { 'pyhfst': 'pyhfst>=1.4' }), which is what setup_wizard.install_lang() consumes. The legacy array-of-spec-strings form is still accepted."
+        },
+        "postInstall": {
+          "type": ["array", "null"],
+          "items": {
+            "type": ["string", "object"],
+            "description": "A post-install step: either a bare shell command string, or an object { command, label } (e.g. crk's spaCy model download)."
+          }
+        },
+        "requiresFst": { "type": ["boolean", "null"] },
+        "description": { "type": ["string", "null"] }
+      }
+    },
+    "metricPlugins": {
+      "type": ["object", "null"],
+      "description": "Declares which per-language metric plugin resource packs are available for this language. Each key is a plugin pack name, value is true if a resource file exists at plugins/resources/{packName}/{code}.json. Example: { 'formalityMarkers': true } means formality analysis has markers for this language.",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "databaseCoverage": {
+      "type": ["object", "null"],
+      "description": "Coverage in major linguistic databases and datasets (e.g., OPUS, NLLB, Tatoeba)."
+    },
+    "corpusAvailability": {
+      "type": ["object", "null"],
+      "description": "Available parallel and monolingual corpora. OPUS corpus counts, alignment pair counts, corpus names.",
+      "properties": {
+        "opus": {
+          "type": ["object", "boolean", "null"],
+          "description": "OPUS coverage. Object with corpus details when the OPUS API returned data; the boolean form (typically false) is the checked-but-not-available summary written by the corpus-availability enrichment for languages OPUS does not carry.",
+          "properties": {
+            "corpora": { "type": "integer", "description": "Number of OPUS corpora containing this language." },
+            "corpusNames": { "type": "array", "items": { "type": "string" }, "description": "Names of the most significant corpora." },
+            "source": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "keyboardSupport": {
+      "type": ["object", "null"],
+      "description": "Keyboard layout availability from the Keyman API and other sources.",
+      "properties": {
+        "keymanKeyboards": { "type": "integer", "description": "Number of Keyman keyboard layouts available." },
+        "keyboardNames": { "type": "array", "items": { "type": "string" } },
+        "source": { "type": ["string", "null"] }
+      }
+    },
+    "omt1600": {
+      "type": ["object", "null"],
+      "description": "Meta OMT-1600 benchmark coverage. Whether this language is in Meta's 1600-language translation model benchmark.",
+      "properties": {
+        "covered": { "type": "boolean", "description": "Whether the language is covered by OMT-1600." },
+        "tier": {
+          "type": ["string", "null"],
+          "enum": ["high", "mid", "low", "very_low", "zero", null],
+          "description": "Resource tier in the OMT-1600 paper's own vocabulary (arXiv:2603.16309 §3.3, Figure 3.2 buckets 0_high…4_zero): 'high' (>50M parallel documents), 'mid' (>1M), 'low' (40K–1M), 'very_low' — the paper's 'extremely low' (1K–40K), 'zero' (<1K). NEVER 'R1'…'R5': those are Met-BOUQuET annotation ROUNDS in the paper's tables, not resource tiers. The paper publishes no per-language tier table, so a per-language tier is uncitable — null it rather than inferring or remapping one."
+        },
+        "evalMetrics": { "type": "array", "items": { "type": "string" }, "description": "Evaluation metrics used for this language." },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "scriptConverter": {
+      "type": ["string", "null"],
+      "description": "Key in SCRIPT_CONVERTERS registry (from scripts.js) if this language has a deterministic script conversion step. Null if not applicable."
+    },
+    "evalDatasets": {
+      "type": "array",
+      "description": "IDs of evaluation datasets from the companion eval harness (the MT Eval Arena (arena/)). Not consumed by champollion at runtime — metadata only.",
+      "items": { "type": "string" }
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-form notes for developers and contributors."
+    },
+    "rules": {
+      "type": ["object", "null"],
+      "description": "Executable rules and constraints for typography, plurals, casing, and variables used in validation.",
+      "properties": {
+        "typography": {
+          "type": "object",
+          "properties": {
+            "quoteStart": { "type": "string" },
+            "quoteEnd": { "type": "string" },
+            "usesSpaces": { "type": "boolean" },
+            "punctuationSpacing": {
+              "type": "object",
+              "properties": {
+                "doublePunctuation": { "type": "string", "enum": ["none", "space", "thin-nbsp"] }
+              }
+            }
+          }
+        },
+        "plurals": {
+          "type": "object",
+          "properties": {
+            "categories": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "guidance": { "type": "string" }
+          }
+        },
+        "capitalization": {
+          "type": "object",
+          "properties": {
+            "hasCase": { "type": "boolean" },
+            "uiConventions": {
+              "type": "object",
+              "properties": {
+                "buttons": { "type": "string", "enum": ["title-case", "sentence-case", "all-caps", "none"] },
+                "headings": { "type": "string", "enum": ["title-case", "sentence-case", "all-caps", "none"] }
+              }
+            }
+          }
+        },
+        "variables": {
+          "type": "object",
+          "properties": {
+            "syntax": { "type": "string" },
+            "guidance": { "type": "string" }
+          }
+        }
+      }
+    },
+    "humanReviewed": {
+      "type": ["object", "null"],
+      "description": "Whether this card has been reviewed by a human for accuracy. Absent or null means not yet reviewed.",
+      "properties": {
+        "reviewed": {
+          "type": "boolean",
+          "description": "True if a human has verified the card's accuracy."
+        },
+        "reviewer": {
+          "type": "string",
+          "description": "GitHub handle or name of the reviewer."
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of last human review (ISO 8601, e.g. '2026-05-24')."
+        }
+      },
+      "required": ["reviewed"]
+    },
+    "supportTier": {
+      "type": ["string", "null"],
+      "description": "Champollion support tier for this language. Vocabulary is the deriveSupportTier() ladder in cli/scripts/derive-card-fields.mjs: 'supported' (formality+registers+challenges populated) > 'developing' (resources or 3+ supported methods) > 'emerging' (vitality/speaker data) > 'cataloged' (identity+classification only). (Enum reconciled to the writer 2026-07-07 — the earlier 'experimental'/'community' values were never produced.)",
+      "enum": [null, "supported", "developing", "emerging", "cataloged"]
+    },
+    "firstDocumented": {
+      "type": ["string", "integer", "null"],
+      "description": "When the LANGUAGE was first documented: a bare year (integer, from enrich-documentation-dates.mjs) or an ISO 8601 date string."
+    },
+    "lastDocumented": {
+      "type": ["string", "integer", "null"],
+      "description": "When the LANGUAGE was last documented: a bare year (integer, from enrich-documentation-dates.mjs) or an ISO 8601 date string."
+    },
+    "_generated": {
+      "type": ["object", "null"],
+      "description": "Generation metadata for auto-generated cards. Records which script generated this card, when, and from what sources.",
+      "properties": {
+        "by": { "type": "string", "description": "Script that generated this card." },
+        "at": { "type": "string", "description": "ISO 8601 timestamp of generation." },
+        "sources": { "type": "array", "items": { "type": "string" }, "description": "Data sources used." }
+      }
+    },
+    "_fieldSources": {
+      "type": ["object", "null"],
+      "description": "Per-field provenance map: field name → the source id(s) that produced that field's value. A value is a single source string ('phoible-2.0'), an array of source strings (composite fields like linguisticChallenges), or a nested object mirroring the field's shape (e.g. encyclopedic.typology). Derived values use a 'derived:'/'template-generated:'/'champollion-derived' prefix; any value Champollion computes must carry champollion-derived provenance, never an upstream's name (see the license-boundaries doctrine and the fact-provenance audit). This is the provenance layer the card-integrity gate enforces ('every fact cited'); it is intentionally heterogeneous, so values are not strictly typed here. Source ids must resolve in shared/licenses.json (the license-source-resolves rule). NOTE: provenance is field-group-coarse today — a single wrong bit inside a multi-source field can inherit a citation it did not earn; the card-integrity rules (R1–R2) cross-check the actual value against its claimed source rather than trusting this map alone."
+    },
+    "glottocode": {
+      "type": ["string", "null"],
+      "description": "Glottolog identifier for cross-referencing with the Glottolog language database (https://glottolog.org).",
+      "pattern": "^[a-z0-9]{4}[0-9]{4}$"
+    },
+    "macrolanguage": {
+      "type": ["string", "null"],
+      "description": "ISO 639-3 macrolanguage code if this language belongs to a macrolanguage umbrella (e.g., 'cre' for Cree varieties, 'ara' for Arabic varieties, 'zho' for Chinese varieties). Null if the language is not part of a macrolanguage. This is the canonical 'memberOf' field per docs/LANGUAGE_TAXONOMY.md. Source: cli/data/iso639-3/iso-639-3-macrolanguages.tab (M_Id column, I_Status 'A' rows only).",
+      "pattern": "^[a-z]{3}$"
+    },
+    "members": {
+      "type": ["array", "null"],
+      "description": "For macrolanguage hub cards only (isoScope 'M' or code 'macrolanguage-*'): the ISO 639-3 codes of the individual member languages this hub links to (e.g., for 'cre': ['crj', 'crk', 'crl', 'crm', 'csw', 'cwd']). Inverse of the members' own 'macrolanguage' field. Source: cli/data/iso639-3/iso-639-3-macrolanguages.tab (I_Id column, I_Status 'A' rows only). Hub cards are a typed navigation layer — never benchmark targets; benchmarks bind to individual member languages because corpora, FSTs, and methods are variety-specific. Null/absent on individual-language cards.",
+      "items": { "type": "string", "pattern": "^[a-z]{3}$" }
+    },
+    "taxonomyNotes": {
+      "type": ["string", "null"],
+      "description": "Free-text affordance for known taxonomy disputes affecting this language: cases where ISO 639-3 and Glottolog disagree on splitting/lumping, contested language-vs-dialect status, or naming disputes. Policy (docs/LANGUAGE_TAXONOMY.md): display both authorities' positions, never adjudicate between them; communities name themselves — community ownership and control of language data. Null when no dispute is documented — null means 'no note recorded', not 'no dispute exists'."
+    },
+    "classification": {
+      "type": ["object", "null"],
+      "description": "Genealogical classification from Glottolog + WALS. Auto-populated by build-language-tree.mjs --enrich. Null for conlangs.",
+      "properties": {
+        "family": {
+          "type": ["string", "object", "null"],
+          "description": "Top-level language family (e.g., 'Indo-European', 'Algic', 'Sino-Tibetan'). Source: Glottolog. Null — with glottologBucket + note carrying the citation — when Glottolog files the entry under a housekeeping bucket (e.g. 'Bookkeeping', book1242) rather than a genealogical family: the bucket is never displayed as a family (lint rule no-bookkeeping-family)."
+        },
+        "glottologBucket": {
+          "type": "string",
+          "description": "Glottocode of the Glottolog housekeeping pseudo-family the entry is filed under (e.g. 'book1242' = Bookkeeping: spurious, unattested, or retired entries). Present iff family is null because Glottolog asserts no genealogical classification for the entry.",
+          "pattern": "^[a-z0-9]{4}[0-9]{4}$"
+        },
+        "note": {
+          "type": "string",
+          "description": "Cited plain-language note on classification status — e.g. that Glottolog files the entry under its Bookkeeping bucket. Faithful-to-source per the Language-Card Boundary Invariant: reports what the upstream actually says, never adjudicates."
+        },
+        "familyGlottocode": {
+          "type": "string",
+          "description": "Glottocode of the top-level family node. Glottocodes are four alphanumerics + four digits — the alpha-only prefix assumption was wrong (real codes like 'b10b1234', '3adt1234' exist).",
+          "pattern": "^[a-z0-9]{4}[0-9]{4}$"
+        },
+        "genus": {
+          "type": "string",
+          "description": "WALS-style genus — the lowest-level grouping of related languages that share runtime properties (e.g., 'Plains Creeic', 'Arabic', 'Mandarinic'). Used for genus card inheritance. OPTIONAL: build-language-tree.mjs only writes a genus when the languoid has a family-level ancestor distinct from its top family — isolates and single-branch families legitimately have none."
+        },
+        "genusGlottocode": {
+          "type": "string",
+          "description": "Glottocode of the genus node. Optional, present iff genus is.",
+          "pattern": "^[a-z0-9]{4}[0-9]{4}$"
+        },
+        "ancestry": {
+          "type": "array",
+          "description": "Full ancestry chain from top-level family to genus (e.g., ['Algic', 'Algonquian-Blackfoot', 'Algonquian', 'Cree-Montagnais-Naskapi', 'Cree', 'Plains Creeic']). Isolates carry a single '<Name> (isolate)' entry; Glottolog housekeeping-bucket entries (family: null) carry an empty array — the bucket is not ancestry. Source: Glottolog.",
+          "items": { "type": "string" }
+        }
+      },
+      "_comment_required": "family is NOT required: a language Glottolog files under a housekeeping bucket (Unclassifiable, Pidgin, Artificial Language, ...) asserts glottologBucket and no family, because Glottolog makes no descent claim for it. 403 cards are in that position. mini-schema has no conditional required, and demanding family here would force the projector to invent one.",
+      "required": []
+    },
+    "contactInfluences": {
+      "type": ["array", "object", "null"],
+      "description": "Universal contact history — borrowing layers, superstrates, substrates. Affects ALL languages, not just creoles. English has French superstrate, Latin learned borrowings, Norse adstrate. Japanese has Chinese learned borrowings. This data informs MT method design and cognate detection. TWO GENERATIONS coexist (reconciled 2026-07-07): (a) the array-of-influences form below; (b) the areal-context object form written by the areal enrichment ({ arealZone, arealFeatures, contacts: [{ language, type, period, description }] }). The 'type'/'depth' vocabularies are curated free text, not closed enums — enrichment produces values like 'colonial/modern', 'trade lingua franca', 'deep', 'surface' alongside the canonical superstrate/substrate/adstrate + light…defining ladders.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "Name of the contact language (e.g., 'French', 'Latin', 'Old Norse'). Areal-derived entries use 'language' instead."
+          },
+          "language": {
+            "type": "string",
+            "description": "Contact language name (areal-enrichment vocabulary for 'source')."
+          },
+          "sourceIso639_3": {
+            "type": ["string", "null"],
+            "description": "ISO 639-3 code of the contact language, if applicable.",
+            "pattern": "^[a-z]{3}$"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of contact influence. Canonical values: superstrate, substrate, adstrate, learned_borrowing, lexical_borrowing, relexification — plus curated descriptive values (e.g. 'colonial/modern', 'religious/literary', 'trade lingua franca')."
+          },
+          "domains": {
+            "type": "array",
+            "description": "Domains affected by this contact (e.g., ['legal', 'culinary', 'scientific']).",
+            "items": { "type": "string" }
+          },
+          "depth": {
+            "type": "string",
+            "description": "Depth of contact influence. Canonical ladder: light, moderate, heavy, structural, defining — plus curated values ('deep', 'surface')."
+          },
+          "period": {
+            "type": ["string", "null"],
+            "description": "Historical period of contact (e.g., 'post-1066', '7th–9th century')."
+          },
+          "description": {
+            "type": ["string", "null"],
+            "description": "Prose description of this contact influence (areal-enrichment form)."
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Free-form notes about this contact influence."
+          }
+        }
+      },
+      "properties": {
+        "arealZone": { "type": ["string", "null"], "description": "Named convergence area (e.g. 'West African Convergence Area')." },
+        "arealFeatures": { "type": ["string", "null"], "description": "Cited prose summary of shared areal features." },
+        "contacts": {
+          "type": "array",
+          "description": "Contact influences in the areal-enrichment shape ({ language, type, period, description }).",
+          "items": { "type": "object" }
+        }
+      }
+    },
+    "scripts": {
+      "type": ["array", "null"],
+      "description": "ISO 15924 script tracking. Many languages use multiple scripts (e.g., Cree uses Cans + Latn, Serbian uses Cyrl + Latn). ATLAS SHAPE: entries may be bare ISO 15924 code STRINGS; the richer object form carries code/name/primary/source.",
+      "items": {
+        "type": ["object", "string"],
+        "required": ["code"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "ISO 15924 four-letter script code (e.g., 'Latn', 'Cans', 'Arab').",
+            "pattern": "^[A-Z][a-z]{3}$"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable script name. Optional — bulk-derived entries (derive-scripts-from-script.mjs / linguameta) carry only code+primary+source; names resolve via scriptUnicodeName / the ISO 15924 table."
+          },
+          "primary": {
+            "type": "boolean",
+            "description": "Whether this is the primary working script for computational purposes. Optional on secondary-script entries from linguameta enrichment."
+          },
+          "source": {
+            "type": ["string", "null"],
+            "description": "Source id that asserted this script (e.g. 'linguameta', 'cldr')."
+          }
+        }
+      }
+    },
+    "orthographicStatus": {
+      "type": ["string", "null"],
+      "description": "Status of the language's writing system. Vocabulary is the derive-orthographic-status.mjs decision ladder: standardized (official CLDR status) | de-facto-standard | has-orthography (known CLDR writing system / keyboard) | developing (script assigned, not standardized) | unwritten (no known script). (Enum reconciled to the writer 2026-07-07 — the earlier no-orthography/disputed/emerging/historical-only values were never produced.)",
+      "enum": [null, "standardized", "de-facto-standard", "has-orthography", "developing", "unwritten"]
+    },
+    "orthographies": {
+      "type": ["array", "null"],
+      "description": "Structured writing-convention entries, one per script the card's scripts[] asserts. Restructures scripts[] + orthographicStatus into the convention-level facts MT pipelines need (scheme name, long-vowel marking, canonical working form) — the conventions were previously prose-only. Populated by derive-orthographies.mjs; convention details (scheme/longVowelMarking) come only from the script entry's own name or the curated register (shared/curated-orthography-conventions.json). Optional keys are OMITTED when unknown — never guessed (index, not arbiter).",
+      "items": {
+        "type": "object",
+        "required": ["script", "source"],
+        "properties": {
+          "script": {
+            "type": "string",
+            "description": "ISO 15924 four-letter script code (e.g., 'Latn', 'Cans').",
+            "pattern": "^[A-Z][a-z]{3}$"
+          },
+          "scheme": {
+            "type": "string",
+            "description": "Named orthographic scheme/convention within the script (e.g., 'SRO' — Standard Roman Orthography for Cree). Omitted when no named scheme is documented."
+          },
+          "longVowelMarking": {
+            "type": "string",
+            "description": "How the scheme marks long vowels (e.g., 'circumflex', 'macron', 'double-vowel', 'none'). Omitted when not documented."
+          },
+          "canonicalForMt": {
+            "type": "boolean",
+            "description": "Whether this orthography is the canonical working form for MT/pipeline I/O — a Champollion capability designation (derived: sole-script cards, or curated, e.g. crk SRO-circumflex matching the GiellaLT FST). Omitted when undetermined."
+          },
+          "source": {
+            "type": "string",
+            "description": "Source id asserting this entry (the scripts[] entry's own source, or the curated-register citation)."
+          }
+        }
+      }
+    },
+    "dataSources": {
+      "type": ["array", "null"],
+      "description": "Provenance tracking — which data sources contributed to this card (e.g., ['glottolog-5.3', 'cldr-48', 'wals-2024']). Required for license compliance.",
+      "items": { "type": "string" }
+    },
+    "linguisticChallenges": {
+      "type": ["object", "null"],
+      "description": "MT-relevant linguistic challenges for this language (e.g., polysynthesis, animacy, tonal diacritics). Keys are challenge IDs, values are cited prose descriptions. PROVENANCE: each claim must cite a real source that supports it. For TONE the sole authority is PHOIBLE phonologicalInventory — a tone challenge must NOT appear when the card's own PHOIBLE block has isTonal=false/tones=0 (Grambank has NO tone feature; the v1 'phonemic tone present (Grambank)' string was a misread of GB079='verb prefixes'). Enforced by lint rule R1.",
+      "additionalProperties": { "type": "string" }
+    },
+    "typologicalProfile": {
+      "type": ["object", "null"],
+      "description": "Typological features from Grambank. Includes word order, morphological properties, and feature coverage. Auto-populated by enrich-grambank-typology.mjs.",
+      "properties": {
+        "featuresDocumented": {
+          "type": "integer",
+          "description": "Number of Grambank features documented for this language."
+        },
+        "featuresCoverage": {
+          "type": "number",
+          "description": "Fraction of Grambank features documented (0.0–1.0)."
+        },
+        "wordOrderDominant": {
+          "type": ["string", "null"],
+          "description": "Dominant word order (e.g., 'SVO', 'SOV', 'OV-flexible')."
+        },
+        "hasDefiniteArticle": { "type": ["boolean", "null"] },
+        "hasIndefiniteArticle": { "type": ["boolean", "null"] },
+        "hasGenderSystem": { "type": ["boolean", "null"] },
+        "hasCaseMorphology": { "type": ["boolean", "null"] },
+        "hasEvidentiality": { "type": ["boolean", "null"] },
+        "hasToneSystem": { "type": ["boolean", "null"] },
+        "morphologicalSynthesis": {
+          "type": ["string", "null"],
+          "enum": [null, "analytic", "synthetic", "polysynthetic"],
+          "description": "Champollion-DERIVED synthesis-degree enum — the 'does this language reward FST-driven morphological handling' signal. Computed by derive-morphological-synthesis.mjs strictly from cited signals already on the card: the WALS 22A categories-per-word value (encyclopedic.typology.verbSynthesis / linguisticChallenges.morphologicalComplexity; 0–1 → analytic, 2–7 → synthetic, 8+ → polysynthetic), WALS 26A 'Little affixation' (analytic), and explicitly cited polysynthesis prose (polysynthetic). Conflicting signals or no signal → field ABSENT (unknown is never defaulted). Provenance MUST be a derived: stamp in _fieldSources['typologicalProfile.morphologicalSynthesis'] naming the on-card signal — never a bare upstream name (CLAUDE.md derived-values doctrine; lint R6)."
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Data source and version (e.g., 'grambank-1.0.3')."
+        }
+      }
+    },
+    "phonologicalInventory": {
+      "type": ["object", "null"],
+      "description": "Phoneme inventory from PHOIBLE. Includes consonant/vowel counts, tone status, and inventory size classification. Auto-populated by enrich-phoible-phonemes.mjs.",
+      "properties": {
+        "consonants": {
+          "type": "integer",
+          "description": "Number of consonant phonemes."
+        },
+        "vowels": {
+          "type": "integer",
+          "description": "Number of vowel phonemes."
+        },
+        "tones": {
+          "type": "integer",
+          "description": "Number of tonal contrasts (0 for non-tonal)."
+        },
+        "totalPhonemes": {
+          "type": "integer",
+          "description": "Total phoneme count (consonants + vowels + tones)."
+        },
+        "isTonal": {
+          "type": "boolean",
+          "description": "Whether the language uses lexical or grammatical tone."
+        },
+        "inventorySize": {
+          "type": ["string", "null"],
+          "description": "Qualitative inventory size classification.",
+          "enum": [null, "small", "moderately-small", "average", "moderately-large", "large"]
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Data source and version (e.g., 'phoible-2.0')."
+        }
+      }
+    },
+    "encyclopedic": {
+      "type": ["object", "null"],
+      "description": "Encyclopedic metadata: family, demographics, dialect information, external resource links."
+    },
+    "resources": {
+      "type": ["object", "array", "null"],
+      "description": "NLP resources available for this language: corpora, models, FSTs, tools. TODO(2026-07-07, post-ACL migration): ~3,100 cards still carry the legacy flat-array shape (a bare list of resource entries) — the array type is accepted until derive-resources-from-coverage.mjs migrates them to the keyed object form below; the linter tracks this as the card-schema-resources-shape warning.",
+      "items": { "type": "object" },
+      "properties": {
+        "fsts": {
+          "type": "array",
+          "description": "Morphological analyzers and FSTs available for this language.",
+          "items": {
+            "type": "object",
+            "required": ["name", "type"],
+            "properties": {
+              "name": { "type": "string", "description": "Human-readable name of the FST/tool." },
+              "url": { "type": ["string", "null"], "description": "URL to the tool or its releases." },
+              "type": { "type": "string", "description": "Tool type (e.g., 'morphological-analyzer', 'tokenizer', 'spellchecker')." },
+              "technology": {
+                "type": ["string", "null"],
+                "description": "Underlying technology (e.g., 'hfst', 'xfst', 'foma', 'python', 'neural', 'spacy', 'lttoolbox')."
+              },
+              "coverage": {
+                "type": ["string", "null"],
+                "description": "Known naïve coverage percentage if available (e.g., '86-91%', '~96%')."
+              },
+              "license": {
+                "type": ["string", "null"],
+                "description": "License (e.g., 'GPL-3.0', 'MIT', 'Apache-2.0')."
+              },
+              "maintainer": {
+                "type": ["string", "null"],
+                "description": "Primary maintainer or organization."
+              },
+              "status": {
+                "type": ["string", "null"],
+                "description": "Maintenance status.",
+                "enum": [null, "active", "maintained", "legacy", "archived"]
+              },
+              "install": {
+                "type": ["object", "null"],
+                "description": "Installation metadata for automated FST download. Replaces the former hardcoded GIELLALT_FST_REGISTRY. Null if the FST must be installed manually. ⚠️ CHANNEL WARNING: GitHub Releases is NOT GiellaLT/ALTLab's distribution channel — they ship continuously and their lang-* release tags are VESTIGIAL. 'No release since YEAR' does not mean 'no update since YEAR'. crk sat on lang-crk's newest release tag (fst-v2021.7.8, 2021) for five years: because that build uses 'y' on the analysis side while the current lexicon uses 'ý', generation returned None SILENTLY for every ý-lemma — 4,989 of 28,268 lemmas (17.6%) were ungeneratable, with identical surfaces, so nothing looked wrong. Prefer 'giellalt-nightly-apt' for GiellaLT languages; a releaseTag is a point in time you must justify, never 'latest'.",
+                "properties": {
+                  "repo": {
+                    "type": "string",
+                    "description": "Upstream repository in 'owner/repo' format (e.g., 'giellalt/lang-crk'). For giellalt-nightly-apt this identifies the SOURCE repo — the artifact is NOT fetched from it."
+                  },
+                  "releaseTag": {
+                    "type": "string",
+                    "description": "GitHub release tag to download from (e.g., 'fst-v2021.7.8'). Used by legacy-zip / divvun-macos-pkg only. ⚠️ A POINT IN TIME, not 'latest' — verify it is not stale before relying on it."
+                  },
+                  "assetPattern": {
+                    "type": "string",
+                    "description": "Substring pattern to match the release asset filename."
+                  },
+                  "aptPool": {
+                    "type": "string",
+                    "description": "giellalt-nightly-apt: directory URL of the GiellaLT/Apertium nightly apt pool (e.g. 'https://apertium.projectjj.com/apt/nightly/pool/main/g/giella-crk/')."
+                  },
+                  "debFile": {
+                    "type": "string",
+                    "description": "giellalt-nightly-apt: exact .deb filename — THIS IS THE VERSION PIN. The filename carries the upstream commit (e.g. 'giella-crk_0.2.0+g4278~e1f96fea-1~sid1_all.deb'). Nightly pools are pruned over time; if it 404s, re-pin deliberately and re-verify — never fall back to a release tag."
+                  },
+                  "debSha256": {
+                    "type": "string",
+                    "description": "giellalt-nightly-apt: SHA256 of the .deb, verified BEFORE extraction. The install aborts on mismatch.",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "langCommit": {
+                    "type": "string",
+                    "description": "giellalt-nightly-apt: full upstream source commit the build was made from. Record it beside any lexicon extracted from the same commit — lexicon and binary MUST move together."
+                  },
+                  "include": {
+                    "type": "array",
+                    "description": "giellalt-nightly-apt: exact .hfstol basenames to install from the package. A GiellaLT .deb ships ~31 transducers of several different KINDS; installing all of them would waste ~250MB and invite comparing across kinds (strict / relaxed / -gt-desc descriptive / -gt-norm normative), which is never valid.",
+                    "items": { "type": "string" }
+                  },
+                  "stripSuffix": {
+                    "type": "string",
+                    "description": "giellalt-nightly-apt: suffix to strip from extracted filenames (e.g. '-giellaltbuild') so cached names match the conventional ones."
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Download and extraction format. 'giellalt-nightly-apt' is the CURRENT channel for GiellaLT languages.",
+                    "enum": ["giellalt-nightly-apt", "legacy-zip", "divvun", "divvun-macos-pkg", "manual"]
+                  },
+                  "bundlePattern": {
+                    "type": ["string", "null"],
+                    "description": "For divvun-macos-pkg format: glob pattern to locate the FST bundle inside the .pkg payload."
+                  },
+                  "maturity": {
+                    "type": ["string", "null"],
+                    "description": "FST quality/completeness level.",
+                    "enum": [null, "production", "beta", "stub"]
+                  }
+                },
+                "required": ["repo", "format"]
+              }
+            }
+          }
+        },
+        "corpora": {
+          "type": "array",
+          "description": "Parallel and monolingual corpora available for this language.",
+          "items": {
+            "type": "object",
+            "required": ["name", "type"],
+            "properties": {
+              "name": { "type": "string", "description": "Corpus name." },
+              "type": { "type": "string", "description": "Corpus type. 'ner' covers named-entity annotation sets (e.g. MasakhaNER).", "enum": ["parallel", "monolingual", "speech", "nmt", "ner"] },
+              "url": { "type": ["string", "null"], "description": "URL to the corpus." },
+              "size": { "type": ["string", "null"], "description": "Approximate size (e.g., '31K pairs', '97 hours', '2.3M sentences')." },
+              "pairLanguages": {
+                "type": ["array", "null"],
+                "description": "Language pairs available (e.g., ['en-crk', 'fr-crk']). Only for parallel/nmt type.",
+                "items": { "type": "string" }
+              },
+              "license": { "type": ["string", "null"], "description": "License (e.g., 'CC-BY-4.0', 'CC-BY-NC-4.0')." },
+              "domain": {
+                "type": ["string", "null"],
+                "description": "Primary domain (e.g., 'news', 'bible', 'government', 'web', 'mixed', 'conversation')."
+              },
+              "exposure": {
+                "type": ["string", "null"],
+                "description": "Data exposure level for contamination assessment. 'open-web': publicly available and easily scraped (likely in web-crawled training sets). 'proprietary-distributed': obtainable but not freely scrapable (behind auth/license). 'private-secret': held-out, never published (only available to project members).",
+                "enum": [null, "open-web", "proprietary-distributed", "private-secret"]
+              },
+              "notes": { "type": ["string", "null"], "description": "Free-form notes." }
+            }
+          }
+        },
+        "models": {
+          "type": "array",
+          "description": "Pretrained NLP/MT models available for this language.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": ["string", "null"] },
+              "type": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "tools": {
+          "type": "array",
+          "description": "Other NLP tools (tokenizers, diacritic restorers, language ID, etc.).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": ["string", "null"] },
+              "type": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "dictionaries": {
+          "type": "array",
+          "description": "Dictionaries and machine-readable lexical databases available for this language — resource EXISTENCE pointers only (name + URL + license flags), never dictionary content and never scores. Populated by derive-dictionaries.mjs, which promotes the free-form encyclopedic.resources.dictionaries entries and dictionary-shaped resources.lexical entries into this schematized form.",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string", "description": "Dictionary/lexical-database name (e.g., 'itwêwina (Plains Cree Dictionary)')." },
+              "url": { "type": ["string", "null"], "description": "URL to the resource. Null only when no stable URL is known." },
+              "license": { "type": ["string", "null"], "description": "License if actually known (e.g., 'CC-BY-4.0'). Omitted when unknown — never guessed." },
+              "machineReadable": { "type": "boolean", "description": "Whether the content is available in structured, machine-readable form (database/API/CLDF), not just human-browsable pages. Omitted when unknown." },
+              "redistributable": { "type": "boolean", "description": "Whether the underlying content may be redistributed. false = pointer-only resource: the content must never be copied into corpora, cards, exports, or public repos (e.g. itwêwina — the Wolvengrey CW / Maskwacîs MD / AECD content is not openly licensed, permission pending). Omitted when unknown." },
+              "source": { "type": ["string", "null"], "description": "Source id or card field this entry was promoted from (e.g., 'encyclopedic.resources.dictionaries', 'abvd-lexibank')." }
+            }
+          }
+        },
+        "grammars": {
+          "type": "array",
+          "description": "Bibliographic reference grammars — citation metadata only (author/year/title/URL), the MED-best few (≤3) per language, filtered to grammar-type records. Populated by enrich-grammars-from-glottolog.mjs from Glottolog's MED (Most Extensive Description) citation records: documentationDepth.med proves a grammar exists, these entries name it. Resource existence, never content and never scores.",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "properties": {
+              "author": { "type": ["string", "null"], "description": "Author(s) as given by the source record (Glottolog reference record, or a publisher archive record such as SIL REAP)." },
+              "year": { "type": ["integer", "string", "null"], "description": "Publication year as given by the reference record." },
+              "title": { "type": "string", "description": "Title of the reference grammar." },
+              "url": { "type": ["string", "null"], "description": "Stable reference URL — a Glottolog reference page (https://glottolog.org/resource/reference/id/<refid>) or a publisher archive page (e.g., SIL REAP https://www.sil.org/resources/archives/<id>)." },
+              "type": { "type": ["string", "null"], "description": "hhtype-style label of the record (Glottolog hhtype vocabulary, e.g., 'grammar', 'grammar_sketch', 'phonology'); null when the work does not fit that vocabulary." }
+            }
+          }
+        }
+      }
+    },
+    "experts": {
+      "type": ["array", "null"],
+      "description": "Researchers, institutions, and projects behind the resources this card cites. Used for collaboration outreach. 100% fact-based: every entry is derived from data already on the card (a cited resource, FST maintainer, corpus publisher) and carries a `source` field naming the card field/resource it came from. Never invented — public professional info only. Auto-populated by derive-experts.mjs.",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "role", "source"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the person, institution, or project (e.g., 'GiellaLT', 'University of Alberta ALTLab', 'Arok Wolvengrey')."
+          },
+          "type": {
+            "type": "string",
+            "description": "Kind of contact: an individual researcher, a formal institution (university, academy, lab), a community organization, or an open project/team.",
+            "enum": ["researcher", "institution", "community_org", "project"]
+          },
+          "affiliation": {
+            "type": ["string", "null"],
+            "description": "Host institution if applicable (e.g., 'UiT The Arctic University of Norway' for GiellaLT). Null if unknown or not applicable."
+          },
+          "role": {
+            "type": "string",
+            "description": "Relationship to this language's resources (e.g., 'FST maintainer', 'dictionary author', 'corpus publisher', 'language archive')."
+          },
+          "url": {
+            "type": ["string", "null"],
+            "description": "Public homepage or project URL. Null if none known."
+          },
+          "orcid": {
+            "type": ["string", "null"],
+            "description": "ORCID identifier for individual researchers (e.g., '0000-0002-1825-0097'). Null if unknown or not a person."
+          },
+          "source": {
+            "type": "string",
+            "description": "Which card field or resource this entry was derived from (e.g., 'resources.fsts[GiellaLT Plains Cree FST (lang-crk)].install.repo', 'encyclopedic.resources.foundations', 'digitalPresence.tatoeba'). Required for fact-traceability."
+          }
+        }
+      }
+    },
+    "vitality": {
+      "type": ["object", "null"],
+      "description": "Language vitality and endangerment status. Used for LRL prioritization and partnership planning.",
+      "properties": {
+        "unescoStatus": {
+          "type": ["string", "null"],
+          "description": "UNESCO vitality classification.",
+          "enum": [null, "safe", "vulnerable", "definitely-endangered", "severely-endangered", "critically-endangered", "extinct"]
+        },
+        "egids": {
+          "type": ["string", "null"],
+          "description": "Ethnologue EGIDS level (0-10). See https://www.ethnologue.com/about/language-status"
+        },
+        "speakerCount": {
+          "type": ["string", "integer", "null"],
+          "description": "The single displayed speaker count. Most cards carry the integer reconciled by derive-speaker-vitality-bridge.mjs; a string range ('~50M', '20K-25K') is also allowed. INDEX-NOT-ARBITER: this is one CITED value — it must equal an entry in speakerEstimates[] (the full attributed spread), or be a deliberate curated/blended figure carrying champollion-derived provenance in speakerCountSource. Never a bare upstream name whose own estimate disagrees with the number. Enforced by lint rule R2."
+        },
+        "speakerCountSource": {
+          "type": ["string", "null"],
+          "description": "Provenance of vitality.speakerCount specifically (distinct from vitality.source, which sources the vitality STATUS block). Either the source name of the speakerEstimates[] entry the count equals (e.g. 'wikidata', 'linguameta'), or 'champollion-derived' for a curated/blended figure. Stamped by derive-speaker-vitality-bridge.mjs."
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Source of the vitality STATUS fields (unescoStatus/egids/aes/elcat). NOT the source of speakerCount — see speakerCountSource."
+        },
+        "trend": {
+          "type": ["string", "null"],
+          "description": "Direction of speaker population trend. 'critically-declining' and 'shifting' (language shift in progress) come from the ELCat-derived trend bridge (enum reconciled 2026-07-07).",
+          "enum": [null, "growing", "stable", "declining", "rapidly-declining", "critically-declining", "shifting", "moribund"]
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Context notes (e.g., 'Resilient despite small population — co-official in Paraguay')."
+        }
+      }
+    },
+    "speakerEstimates": {
+      "type": ["array", "object"],
+      "description": "Speaker count estimates from multiple sources. Each entry has a source, count, and optional date. ATLAS SHAPE: may instead be an ATTRIBUTION ENVELOPE {agreement, consensus, values:[{value, source}]} — 2,173 languages have sources that genuinely disagree on speaker counts, and the envelope reports all of them rather than picking one. Semantics are enforced by the R1-R6 card-integrity rules (R2 requires a displayed vitality.speakerCount to match a cited estimate), not by this structural schema.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": { "type": "string", "description": "Data source (e.g., 'wikidata', 'linguameta', 'ethnologue')." },
+          "count": { "type": "integer", "description": "Estimated number of speakers." },
+          "date": { "type": ["string", "null"], "description": "Date of the estimate (ISO 8601)." },
+          "type": { "type": ["string", "null"], "description": "Type of speaker count: 'L1', 'L2', 'total'." }
+        }
+      }
+    },
+    "documentationDepth": {
+      "type": ["object", "null"],
+      "description": "Most Extensive Description (MED) level from Glottolog. Indicates depth of grammatical documentation.",
+      "properties": {
+        "med": { "type": ["string", "null"], "description": "MED category (e.g., 'long_grammar', 'grammar', 'grammar_sketch', 'phonology', 'wordlist')." },
+        "medLevel": { "type": ["integer", "null"], "description": "Numeric MED level (0=highest documentation)." },
+        "source": { "type": ["string", "null"], "description": "Data source and version." }
+      }
+    },
+    "digitalPresence": {
+      "type": ["object", "null"],
+      "description": "Digital presence indicators: Wikipedia edition, CommonVoice hours, Tatoeba sentence count, etc.",
+      "properties": {
+        "wikipedia": {
+          "type": ["object", "null"],
+          "properties": {
+            "code": { "type": "string" },
+            "url": { "type": "string" },
+            "source": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "dialectCount": {
+      "type": ["integer", "null"],
+      "description": "Number of recognized dialects or varieties. From Glottolog child language count or manual research."
+    },
+    "pipelineReadiness": {
+      "type": ["object", "null"],
+      "description": "Readiness assessment for the Champollion FST-gated translation pipeline, as computed by derive-pipeline-readiness.mjs: a 0–100 score over weighted resource-existence components, bucketed into tiers. source is always 'derived' (this is a Champollion computation, never an upstream assertion). (Schema reconciled to the writer 2026-07-07 — the earlier tier-1-ready/hasFST shape was a design draft the generator never produced.)",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "description": "Weighted resource-existence score (0–100).",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "tier": {
+          "type": "string",
+          "description": "Score bucket: minimal < low < moderate < good < strong.",
+          "enum": ["minimal", "low", "moderate", "good", "strong"]
+        },
+        "components": {
+          "type": "object",
+          "description": "Per-resource existence booleans that fed the score (commonVoice, wikipedia, opus, lexibank, ud, keyboard, resources, googleTranslate, deepl, nllb).",
+          "additionalProperties": { "type": "boolean" }
+        },
+        "source": {
+          "type": "string",
+          "description": "Always 'derived' — provenance marker.",
+          "enum": ["derived"]
+        }
+      },
+      "required": ["score", "tier"]
+    },
+    "regions": {
+      "type": ["array", "null"],
+      "description": "Geographic regions where this language is actively spoken. Each entry represents a country or territory with its official status and optional speaker estimate.",
+      "items": {
+        "type": "object",
+        "required": ["country", "countryCode"],
+        "properties": {
+          "country": {
+            "type": "string",
+            "description": "Country or territory display name."
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code (e.g., 'US', 'PH', 'NZ').",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "officialStatus": {
+            "type": ["string", "null"],
+            "description": "Official status of the language in this country.",
+            "enum": [null, "official", "co-official", "recognized", "regional", "widely-spoken", "minority", "diaspora"]
+          },
+          "region": {
+            "type": ["string", "null"],
+            "description": "Specific region within the country (e.g., 'Bicol Region', 'North Island')."
+          },
+          "speakerEstimate": {
+            "type": ["string", "null"],
+            "description": "Approximate speaker population in this region (e.g., '~2.5M', '800K')."
+          },
+          "coordinates": {
+            "type": ["array", "null"],
+            "description": "Geographic centroid [longitude, latitude] for map marker placement. Use the center of the actual speaking area, not the country capital. E.g., [-106.6, 52.1] for Saskatchewan (Plains Cree), not [-75.7, 45.4] (Ottawa).",
+            "items": { "type": "number" },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "admin1Codes": {
+            "type": ["array", "null"],
+            "description": "ISO 3166-2 codes for the specific provinces/states where the language is spoken. E.g., ['CA-SK', 'CA-AB', 'CA-MB'] for Plains Cree. Used for map boundary highlighting.",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "macroarea": {
+      "type": ["string", "null"],
+      "description": "Glottolog macroarea: the broad geographic region where the language is primarily spoken. A language can genuinely span two — Acehnese is Eurasia and Papunesia, Egyptian Arabic is Africa and Eurasia — and Glottolog says so, so the card joins them with ';' rather than picking one (8 of 8,685 cards). The joined form is kept, not reshaped into an array, because CLDF's own LanguageTable Macroarea column and the Supabase index row are both single-valued; splitting here would have to be undone at every consumer. The pattern below validates each member against the same vocabulary the enum used to.",
+      "pattern": "^(Africa|Australia|Eurasia|North America|Papunesia|South America)(;(Africa|Australia|Eurasia|North America|Papunesia|South America))*$"
+    },
+    "coordinates": {
+      "type": ["object", "null"],
+      "description": "Geographic coordinates of the language's primary area. From Glottolog or manual assignment.",
+      "properties": {
+        "lat": { "type": "number", "description": "Latitude in decimal degrees." },
+        "lng": { "type": "number", "description": "Longitude in decimal degrees." },
+        "source": { "type": ["string", "null"], "description": "Data source (e.g., 'glottolog-5.3')." }
+      }
+    },
+    "countries": {
+      "type": "array",
+      "description": "ISO 3166-1 alpha-2 country codes where this language is spoken.",
+      "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+    },
+    "arealContext": {
+      "type": ["object", "null"],
+      "description": "Areal-linguistic context: Sprachbund membership, contact zones, and convergence area details."
+    },
+    "numeralSystem": {
+      "type": ["object", "null"],
+      "description": "Numeral system properties: counting base, system type, and complexity. From Numeralbank/Chan's database. Null if undocumented.",
+      "properties": {
+        "base": {
+          "type": ["string", "integer", "null"],
+          "description": "VERBATIM from Chan's Base column, and a STRING because Chan records 94 distinct bases including 'binary', 'body tally', 'quinary-vigesimal' and 'complicated'. Coercing these to an integer destroyed exactly the numeral systems that change an MT pipeline. Primary counting base (e.g., 10 for decimal, 20 for vigesimal, 5 for quinary). Null if not determinable."
+        },
+        "baseType": {
+          "type": ["string", "null"],
+          "description": "Named base type: 'decimal', 'vigesimal', 'quinary', 'octal', 'duodecimal', 'senary', 'mixed', 'body-part', 'restricted'. Null if undocumented.",
+          "enum": ["decimal", "vigesimal", "quinary", "octal", "duodecimal", "senary", "mixed", "body-part", "restricted", null]
+        },
+        "highestDocumented": {
+          "type": ["integer", "null"],
+          "description": "Highest numeral documented in the source data. Null if unknown."
+        },
+        "bodyPartCounting": {
+          "type": ["boolean", "null"],
+          "description": "Whether the language uses a body-part counting system. Null if unknown."
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Data source identifier (e.g., 'numeralbank-2023', 'channumerals')."
+        }
+      }
+    },
+    "colexificationProfile": {
+      "type": ["object", "null"],
+      "description": "Cross-linguistic colexification data from CLICS³. Documents which semantic concepts share the same word form in this language. Null if not covered in CLICS³.",
+      "properties": {
+        "conceptsDocumented": {
+          "type": ["integer", "null"],
+          "description": "Number of Concepticon concept sets documented for this language."
+        },
+        "colexificationCount": {
+          "type": ["integer", "null"],
+          "description": "Number of colexification pairs (meanings sharing the same word form)."
+        },
+        "notableColexifications": {
+          "type": ["array", "null"],
+          "description": "Notable colexification patterns (e.g., HAND-ARM, EAR-LEAF).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "concepts": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Pair of Concepticon concept labels that share a word form."
+              }
+            }
+          }
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Data source identifier (e.g., 'clics3-2020')."
+        }
+      }
+    },
+    "archivePresence": {
+      "type": ["object", "null"],
+      "description": "Presence in language documentation archives (PARADISEC, ELAR, AILLA, etc.). Tracks how much archived material exists for this language. Null if not present in any archive.",
+      "properties": {
+        "paradisec": {
+          "type": ["object", "null"],
+          "description": "PARADISEC (Pacific And Regional Archive) holdings.",
+          "properties": {
+            "itemCount": { "type": ["integer", "null"], "description": "Number of archived items (recordings, transcripts, etc.). Null when the OAI harvest matched the language but returned no usable count." },
+            "collectionCount": { "type": ["integer", "null"], "description": "Number of distinct collections. Null when not reported by the harvest." },
+            "mediaTypes": {
+              "type": ["array", "null"],
+              "items": { "type": "string" },
+              "description": "Types of media available (e.g., 'audio', 'video', 'text'). Null when not reported."
+            }
+          }
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Data source identifier (e.g., 'paradisec-oai-2025')."
+        }
+      }
+    },
+    "culturalAphorism": {
+      "type": ["object", "null"],
+      "description": "An iconic proverb or saying that encapsulates the language community's worldview. Must be a real, documented proverb — never fabricated. Null if no verifiable proverb is available.",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The aphorism in the original language/script (e.g., Arabic script for Arabic, Devanagari for Hindi)."
+        },
+        "transliteration": {
+          "type": ["string", "null"],
+          "description": "Romanized form if the original script is non-Latin. Null for Latin-script languages."
+        },
+        "translation": {
+          "type": "string",
+          "description": "English translation of the aphorism."
+        },
+        "literal": {
+          "type": ["string", "null"],
+          "description": "Literal word-for-word translation if the idiomatic meaning differs significantly. Null if translation is already literal."
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Attribution or cultural context (e.g., 'Traditional proverb', 'ʻŌlelo Noʻeau', 'Whakatauki')."
+        }
+      },
+      "required": ["text", "translation"]
+    },
+    "varieties": {
+      "type": ["array", "null"],
+      "description": "Major dialect/variety differences relevant to MT. Critical for macrolanguages where FSTs and corpora may cover different varieties.",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string", "description": "Variety name (e.g., 'Cusco Quechua', 'Ayacucho Quechua')." },
+          "iso639_3": { "type": ["string", "null"], "description": "ISO 639-3 code if the variety has its own code." },
+          "region": { "type": ["string", "null"], "description": "Primary region." },
+          "fstCoverage": { "type": ["boolean", "null"], "description": "Whether this variety is covered by the listed FST(s)." },
+          "corpusCoverage": { "type": ["boolean", "null"], "description": "Whether parallel corpora exist for this variety." },
+          "nllbCoverage": { "type": ["boolean", "null"], "description": "Whether NLLB-200 covers this variety." },
+          "mutualIntelligibility": { "type": ["string", "null"], "description": "Intelligibility with the card's primary variety." },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "codeSwitching": {
+      "type": ["object", "null"],
+      "description": "Active code-switching patterns that affect MT input/output processing. Different from contactInfluences (historical) — this tracks live, current, active code-switching.",
+      "properties": {
+        "contactLanguage": { "type": "string", "description": "Name of the contact language." },
+        "contactIso639_3": { "type": ["string", "null"], "description": "ISO 639-3 code of the contact language." },
+        "mixedVarietyName": { "type": ["string", "null"], "description": "Named mixed variety (e.g., 'Jopará', 'Taglish', 'Hinglish')." },
+        "prevalence": {
+          "type": "string",
+          "description": "How common code-switching is in real-world input.",
+          "enum": ["rare", "common", "dominant"]
+        },
+        "morphologicalIntegration": {
+          "type": "boolean",
+          "description": "Whether borrowed words take target-language morphology (e.g., Guaraní prefixes on Spanish roots)."
+        },
+        "pipelineStrategy": {
+          "type": ["string", "null"],
+          "description": "Recommended pipeline strategy (e.g., 'hybrid-fst', 'language-id-preprocessing', 'ignore')."
+        },
+        "notes": { "type": ["string", "null"] }
+      },
+      "required": ["contactLanguage", "prevalence", "morphologicalIntegration"]
+    }
+  }
+}

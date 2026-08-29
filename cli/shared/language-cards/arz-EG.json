@@ -1,0 +1,845 @@
+{
+  "code": "arz-EG",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Egyptian Arabic",
+    "values": [
+      {
+        "value": "Egyptian Arabic",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Egyptian Arabic",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "typologicalProfile": {
+    "affixPreference": "Weakly suffixing",
+    "caseCount": "No morphological case-marking",
+    "fusion": "Ablaut/concatenative",
+    "genderCount": "Two",
+    "hasCoreCase": false,
+    "hasGenderInPronouns": true,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": true,
+    "hasSexBasedGender": true,
+    "inclusiveExclusive": {
+      "agreement": "incommensurable",
+      "values": [
+        {
+          "value": "0",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        },
+        {
+          "value": "No inclusive/exclusive",
+          "source": "wals-v2020.5",
+          "scale": "wals-v2020.5"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": true,
+    "negationOrder": "OptDoubleNeg",
+    "reduplication": "Productive full and partial reduplication",
+    "subjectVerbOrder": "SV",
+    "verbSynthesis": "6-7 categories per word",
+    "verbalAlignment": "Accusative",
+    "wordOrder": "SVO"
+  },
+  "classification": {
+    "ancestry": [
+      "afro1255",
+      "semi1276",
+      "west2786",
+      "cent2236",
+      "arab1394",
+      "arab1395",
+      "egyp1251",
+      "egyp1254"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Afro-Asiatic",
+      "values": [
+        {
+          "value": "Afro-Asiatic",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Afro-Asiatic",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "afro1255",
+    "genus": "Semitic"
+  },
+  "bcp47": "arz",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "arz-Arab-EG",
+    "values": [
+      {
+        "value": "arz-Arab-EG",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "arz-Arab-EG",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"arz\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "arz",
+    "values": [
+      {
+        "value": "arz",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 69,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 79,
+    "vowels": 10
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "QED",
+        "corpusId": "corpus:opus:QED",
+        "pairCount": 50,
+        "topPartners": [
+          {
+            "code": "es",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "nl",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 3
+          }
+        ],
+        "alignmentPairsTotal": 130,
+        "pairsWithPublishedSize": 50,
+        "largestPairAlignments": 4
+      },
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 53,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 740
+          },
+          {
+            "code": "tig",
+            "alignmentPairs": 61
+          },
+          {
+            "code": "nl",
+            "alignmentPairs": 38
+          },
+          {
+            "code": "eo",
+            "alignmentPairs": 36
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 36
+          }
+        ],
+        "alignmentPairsTotal": 1237,
+        "pairsWithPublishedSize": 53,
+        "largestPairAlignments": 740
+      },
+      {
+        "corpus": "WikiMatrix",
+        "corpusId": "corpus:opus:WikiMatrix",
+        "pairCount": 8,
+        "topPartners": [
+          {
+            "code": "ar",
+            "alignmentPairs": 29317
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 18232
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 12572
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 12164
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 12048
+          }
+        ],
+        "alignmentPairsTotal": 117403,
+        "pairsWithPublishedSize": 8,
+        "largestPairAlignments": 29317
+      },
+      {
+        "corpus": "XLEnt",
+        "corpusId": "corpus:opus:XLEnt",
+        "pairCount": 119,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 22047
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 12534
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 12236
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 12108
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 12091
+          }
+        ],
+        "alignmentPairsTotal": 757489,
+        "pairsWithPublishedSize": 118,
+        "largestPairAlignments": 22047
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 10937
+          }
+        ],
+        "alignmentPairsTotal": 10937,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 10937
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 55,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 121935
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 19800
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 1038
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 650
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 398
+          }
+        ],
+        "alignmentPairsTotal": 145251,
+        "pairsWithPublishedSize": 55,
+        "largestPairAlignments": 121935
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "dryerorder",
+        "featuresCoded": 2,
+        "datasetFeatureTotal": 10
+      },
+      {
+        "dataset": "tangclassifiers",
+        "featuresCoded": 2,
+        "datasetFeatureTotal": 2
+      },
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "EG",
+    "IL",
+    "LY"
+  ],
+  "dialectCount": 15,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Arabic, Egyptian (arz-arz) = 3 (Wider communication). De facto national working language. Originated in the Nile Delta in Lower Egypt. Brought to Egypt in the 7th century during the Muslim conquest. Used in daily exchanges, nonprint media, and as an unofficial medium of education.",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "unanimous",
+    "consensus": "اللغه المصريه الحديثه",
+    "values": [
+      {
+        "value": "اللغه المصريه الحديثه",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "اللغه المصريه الحديثه",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "arz",
+        "variantType": "language",
+        "note": "label language: arz"
+      }
+    ]
+  },
+  "glottocode": "egyp1253",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 31,
+    "lng": 31
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 40,
+        "concepts": 40,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 41,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "chechuroborrowing",
+        "forms": 161,
+        "concepts": 160,
+        "release": "chechuroborrowing-v0.1"
+      },
+      {
+        "dataset": "daniellinguafrancas",
+        "forms": 161,
+        "concepts": 160,
+        "release": "daniellinguafrancas-v1.0"
+      },
+      {
+        "dataset": "joophonosemantic",
+        "forms": 98,
+        "concepts": 98,
+        "release": "joophonosemantic-v1.2"
+      },
+      {
+        "dataset": "ratcliffearabic",
+        "forms": 99,
+        "concepts": 99,
+        "release": "ratcliffearabic-v1.1"
+      }
+    ]
+  },
+  "macroarea": "Africa;Eurasia",
+  "macrolanguage": "ara",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "667921"
+  },
+  "methodSupport": {
+    "total": 120,
+    "byTier": {
+      "model-card-declared": 120
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/nllb-moe-54b",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-12dec-full-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-12dec-full-ft-kd",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-4dec-iterative-481m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-6dec-iterative-514m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-8dec-iterative-548m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-12enc-8dec-middle-548m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-8enc-8dec-iterative-498m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AfriNLP/AfriNLLB-8enc-8dec-middle-498m-ft",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-3.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-3.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-distilled-1.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:chenchen12311/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Chris7v7/nllb-200-3.3B-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-1.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-3.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-distilled-1.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-distilled-600M-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:dev-vinod/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-1.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-1.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-3.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "orthographicStatus": "has-orthography",
+  "politenessDistinction": {
+    "agreement": "single",
+    "consensus": "No politeness distinction",
+    "values": [
+      {
+        "value": "No politeness distinction",
+        "source": "wals-v2020.5",
+        "scale": "wals-v2020.5"
+      }
+    ]
+  },
+  "scripts": [
+    "Arab"
+  ],
+  "scriptNames": [
+    "Arabic"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "78000000",
+    "values": [
+      {
+        "value": "78000000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "wikipediaEdition": {
+    "site": "arz",
+    "url": "https://arz.wikipedia.org",
+    "name": "Egyptian Arabic"
+  },
+  "coverage": {
+    "sourceCount": 13,
+    "componentsPresent": 56,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "politenessDistinction": [
+      "wals-v2020.5"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.affixPreference": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.caseCount": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.fusion": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.genderCount": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3",
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.reduplication": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.verbSynthesis": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.verbalAlignment": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "arz-EG",
+    "revision": "0c31db94af51505e",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "modality",
+      "name",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "politenessDistinction",
+      "resources.corpora",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.affixPreference",
+      "typologicalProfile.caseCount",
+      "typologicalProfile.fusion",
+      "typologicalProfile.genderCount",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.reduplication",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.verbSynthesis",
+      "typologicalProfile.verbalAlignment",
+      "typologicalProfile.wordOrder",
+      "wikipediaEdition"
+    ]
+  },
+  "locale": {
+    "language": "arz",
+    "region": "EG",
+    "script": "Arab",
+    "publishedTag": "arz-EG",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Arab",
+  "localeScoped": {
+    "scriptName": "Arabic"
+  }
+}

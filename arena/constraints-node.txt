@@ -1,0 +1,38 @@
+# constraints-node.txt — hash-pinned CRYPTOGRAPHY closure for the sovereign
+# offline bundle (`mt-eval node bundle`). This is the security-critical
+# dependency the 2026-08-17 sovereign-layer red-team flagged (finding F4): the
+# offline bundle used to `pip wheel` cryptography straight from PyPI with no
+# hash pinning, then sha256-manifest whatever arrived — attesting transfer,
+# not provenance. build_offline_bundle now fetches this closure with
+# `pip wheel --require-hashes --only-binary=:all: -r constraints-node.txt`, so
+# a compromised mirror or a dependency-confusion swap fails the hash check
+# BEFORE the wheel is ever bundled or carried across the air gap.
+#
+# TARGET: CPython 3.11 on the three common sovereign-node platforms —
+#   linux x86_64 (manylinux2014), linux aarch64 (manylinux2014), macOS arm64.
+# Hashes are wheel-identity, so they are PLATFORM- and PYTHON-VERSION-specific
+# (cryptography ships an abi3 wheel that serves 3.11+, but cffi is
+# version-tagged: a cp312/cp313 build, or a platform not listed here, will
+# fail the hash check — that is fail-closed, not a bug). Regenerate for your
+# build machine with:
+#
+#   arena/scripts/gen-node-constraints.sh > arena/constraints-node.txt
+#
+# The remaining runtime deps (aiohttp, requests, sacrebleu, sentencepiece,
+# python-dotenv) are still fetched by version range in the same bundle build;
+# extend this file to pin them too if your threat model requires it.
+#
+# Generated 2026-08-17 from PyPI via `pip download`/`pip hash`.
+
+cryptography==49.0.0 \
+    --hash=sha256:0e959b578856a3924bc0cbb710fc12c387b9412a951389f3ca61704a9e25f325 \
+    --hash=sha256:36d1709f992593689b45bda411498d62c6e365f2ca00b84657d4dadd24de16db \
+    --hash=sha256:966fe0e9c67490071f14c0d2b1cb2dfb3023c5ce39457343931415f08382f2db
+
+cffi==2.1.1 \
+    --hash=sha256:34e261f78cb6ceaaa36f42f2613f4380d94d9c759a9c73c769ee6e0247364632 \
+    --hash=sha256:3311ed60d36f83378794e1009ac6258bafbf81f7888b4caa7b35a521e3f95813 \
+    --hash=sha256:398aff33cee2767e3e781d2554c54bd0dff386bb437581e0d8011fde1a942ec1
+
+pycparser==3.0 \
+    --hash=sha256:b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992

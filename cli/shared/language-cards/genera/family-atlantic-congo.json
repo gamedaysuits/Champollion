@@ -1,0 +1,61 @@
+{
+  "code": "family-atlantic-congo",
+  "extends": null,
+  "name": "Atlantic-Congo Family",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Atlantic-Congo languages generally lack European-style T-V pronominal distinctions. Formality is expressed through kinship-based address, honorific vocabulary, greetings protocols, and discourse style. Many languages have elaborate greeting systems that encode social hierarchy."
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Atlantic-Congo languages overwhelmingly use noun class systems (5–20+ classes) rather than masculine/feminine grammatical gender. Noun classes categorize by semantic properties (human, animal, plant, abstract, mass, diminutive, augmentative, etc.) and trigger agreement on verbs, adjectives, pronouns, and demonstratives. These are NOT equivalent to European grammatical gender."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "nounClassSystems": "The vast majority of Atlantic-Congo languages have noun class systems with 5–20+ classes. Agreement marking cascades through entire clauses — verbs, adjectives, possessives, demonstratives, and relative markers must all agree with the noun class of their head noun. This cascading agreement is a major challenge for MT systems trained primarily on European languages.",
+    "toneSystem": "Most Atlantic-Congo languages are tonal, using pitch to distinguish both lexical items and grammatical categories (tense, aspect, mood). Tone is rarely marked in standard orthography, creating systematic ambiguity. Many have tone sandhi (contextual tone changes) that further complicates analysis.",
+    "agglutination": "Most members are agglutinative, particularly in verbal morphology. Verbs carry subject markers, object markers, tense/aspect/mood, negation, and derivational morphemes as affixes. A single verb form can encode a complete predication.",
+    "serialVerbConstructions": "Serial verb constructions (SVCs) are widespread — sequences of verbs sharing arguments without overt coordination or subordination. These have no structural equivalent in most target languages and require careful paraphrasing.",
+    "ideophones": "Atlantic-Congo languages make extensive use of ideophones — expressive words that evoke sensory imagery (sound, shape, texture, motion, color). These are often untranslatable and require creative adaptation."
+  },
+  "classification": {
+    "family": "Atlantic-Congo",
+    "familyGlottocode": "atla1278",
+    "ancestry": [
+      "Atlantic-Congo"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for the Atlantic-Congo family (~1,367 members), the world's largest language family by member count. Includes Bantu, Kwa, Gur, Adamawa, Atlantic, and many other branches. All share noun class systems and predominantly agglutinative verbal morphology. The genus-bantu.json card extends this for the Bantu subgroup specifically.",
+  "regions": [
+    {
+      "country": "Sub-Saharan Africa (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "West, Central, East, and Southern Africa",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

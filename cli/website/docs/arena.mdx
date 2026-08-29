@@ -1,0 +1,208 @@
+---
+title: The Arena
+description: "The Arena is where measurement happens: the door you submit a result through, the ledger that keeps it, and the contest machinery built on both. What it is, what governs it, and where you come in."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Counts render through SSOTCount (build-time reads of the machine SSOTs via
+    docusaurus.config.js customFields) — never hand-typed, per the SSOT display
+    standard. Live board state is deliberately NOT stated here: it is linked. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Arena
+
+**The Arena is where measurement happens.** It is the door you submit a result
+through, the ledger that keeps the result, and the contest machinery built on
+top of both.
+
+It is infrastructure, not a scoreboard and not a map. Three things are easy to
+confuse, so they are worth separating once, plainly:
+
+| | What it is | Where it runs |
+|---|---|---|
+| **The [MT-Eval Harness](/docs/network/specifications/harness)** | The scorer. Given a method and a test set, it produces a number and a run card. | **Your machine.** We do not run your method for you, and we do not need to. |
+| **The Arena** | The submission door, the run-card ledger, and the contest and prize machinery. | Here. |
+| **The [Network](/docs/network/)** | The map that emerges once enough run cards exist — who can translate what, how strongly, and where the empty space is. Routing traverses it. | A consequence, not a component. |
+
+Nothing enters the Network except through the Arena, and nothing enters the
+Arena except as a scored, fingerprinted run. That is the whole design: a
+measurement with no provenance cannot become part of the map.
+
+---
+
+## What the Arena is made of
+
+**A door.** Anyone can submit — a fine-tuned model, a prompted frontier model,
+an FST-gated pipeline, a rule-based system, a professional human translator.
+The method is irrelevant to the process; only the procedure is fixed. Two
+different doors, depending on what you have: [publish a run
+card](/docs/network/getting-started/submit-a-method) if you have already scored
+something, or [propose an entry](/docs/network/getting-started/submit-to-the-index)
+if you have a dataset, a dictionary, an engine, a translation service, an
+externally published result, or a correction to a language card. Proposals are
+read by a person, not a robot, and nothing is auto-approved.
+
+**A ledger.** Every published run is a run card: the scores, the dataset hash,
+the model slug, the condition, and a fingerprint over all of it. Two people
+running the same configuration is harmless by design — identical runs
+deduplicate on publish, and independent replication is evidence rather than
+waste. The [Run Card Specification](/docs/network/specifications/run-card)
+defines what a card must disclose; the [Benchmark
+Specification](/docs/network/specifications/benchmark) defines the protocol that
+produces one.
+
+**A set of targets.** <SSOTCount field="registryDatasetCount" /> evaluation
+datasets are registered. Each one is a metadata card plus a fetch-from-source
+pointer — **the corpus content is never hosted here**. The harness fetches the
+references from upstream at run time and scores against what it just fetched.
+
+Registered is not the same as runnable everywhere, and the difference is
+deliberate. A few hundred of those entries carry a modified, bespoke or
+unstated licence, and those **refuse remote evaluation** until the
+rights-holder has recorded an explicit transmission consent — no agent can add
+one on their behalf. They remain runnable locally, and against no-train
+channels where the licence allows it. See [Evaluation
+Datasets](/docs/network/leaderboard/datasets) and [Data
+Stewardship](/docs/network/sovereignty/data-sovereignty).
+
+**Contest machinery.** Above a single run sits the rest: [shared tasks and
+contests](/shared-tasks), the [public queue](/docs/network/getting-started/contributing-compute)
+of measurements that would most improve the map, and the specification for
+[what a prize would require](/docs/network/specifications/prizes) if one opens.
+A community can run its own contest on its own corpus with its own money —
+[Champollion holds neither](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## The rules that hold everywhere in here
+
+These are the invariants. Each one has a page that owns the detail.
+
+**Do not train on evaluation data.** Any method exposed to a benchmark set — as
+training data, few-shot examples, dictionary entries, or prompt material — is
+disqualified. Fine-tune on anything you like; just not on the test set. This is
+the only rule the whole system cannot survive being broken, because a
+contaminated score poisons every comparison downstream of it.
+([Leaderboard rules](/docs/network/leaderboard/rules))
+
+**Every number carries its provenance or it does not count.** A run card names
+the dataset version, the model, the condition, the system prompt, and the cost.
+Scores are comparable only within the same dataset version, and the fingerprint
+is what makes that checkable rather than asserted.
+([Benchmark Spec](/docs/network/specifications/benchmark))
+
+**We never hold your corpus.** Registration is metadata. A test set is scored
+against without being handed over, and in the sovereign lane it never leaves
+community infrastructure at all — only the score travels.
+([Registering Corpora](/docs/network/sovereignty/registering-corpora))
+
+**Licence lanes are structural, not editorial.** Non-commercial and
+research-only corpora are carved out of every prize, API and commercial path by
+construction. Corpora under modified, bespoke or unstated licences are
+additionally consent-gated: the harness refuses to transmit their text to a
+third-party model API until the rights-holder's permission is recorded.
+([Data Stewardship](/docs/network/sovereignty/data-sovereignty))
+
+**A score is a machine signal, not a verdict.** Automated metrics are proxies
+for human judgement, and the [Speaker Validation
+Protocol](/docs/network/specifications/speaker-validation) defines the human
+gate they are a proxy *for*. A leaderboard position proves a method measures
+well. It does not prove the translation is good, and it grants nobody
+permission to deploy it on a community's language.
+
+**Winning is not the end state.** For Indigenous languages the design is that a
+working method transfers to the community's governance organization and deploys
+on infrastructure the community controls, with Champollion taking no share of
+what it earns there.
+([The derived-artifacts commitment](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Where you come in
+
+Pick the row that matches what you already have.
+
+| You have… | Do this | Start at |
+|---|---|---|
+| A method and an API key | Run the harness against a registered corpus and publish the run card | [Submit a Method](/docs/network/getting-started/submit-a-method) |
+| Something the index is missing — a dataset, dictionary, FST, engine, human translation service, published result, or a card correction | File the structured proposal; a maintainer reviews it by hand | [Submit to the Index](/docs/network/getting-started/submit-to-the-index) |
+| Spare API credit and no method of your own | Run open items off the public queue with your own key and publish what comes back | [Contributing Compute](/docs/network/getting-started/contributing-compute) |
+| A corpus your community owns | Register it as metadata and choose its exposure lane — open, gated, or fully sovereign | [Registering Corpora](/docs/network/sovereignty/registering-corpora) |
+| A corpus and a reason to run a competition on it | Run it yourself, on your terms; we hold neither the data nor the money | [Run a Sovereign Contest](/docs/network/sovereignty/run-a-sovereign-contest) |
+| A method that already scores well | Export it as a plugin and put it into production | [Deploy to Production](/docs/network/getting-started/deploy-to-production) |
+| A question first | Scoring, disqualification, models, FSTs, sovereignty | [FAQ](/docs/network/getting-started/faq) |
+
+If you are an AI agent, the queue, the results and the run cards are all
+available as tools — see the [MCP
+Server](/docs/network/getting-started/mcp-server).
+
+---
+
+## What is actually running today
+
+The Arena is at launch stage, and the honest description of it is short.
+
+- **The board is live, public, and open for submissions.** Its
+  current contents are live data, so this page will not tell you what is on it —
+  [read the leaderboard](/leaderboard).
+- **"Self-reported" is the default trust tier.** Server-side verification —
+  re-scoring a submission against the SHA-pinned canonical corpus — exists and
+  is expanding, but is not universal. Read the badge on each row.
+- **No prize is open, and no score on this site has cleared a prize bar.** The
+  [Prize Specification](/docs/network/specifications/prizes) is written so that
+  the bar is unambiguous *if and when* one opens. Prizes are sponsor-funded and
+  sponsor-held; Champollion never holds, escrows or routes prize funds.
+- **No community speaker review has been conducted.** The gate is specified and
+  the tooling is under construction. Composite and chrF++ numbers are machine
+  signals, not a community verdict.
+- **No method has transferred to a community yet.** The ownership-transfer model
+  is a committed design, not a running program. It is described so you can hold
+  us to it, not to suggest it is already in motion.
+- **Key custody is decided; the custodians are not.** The mechanism is a
+  threshold scheme in which Champollion holds zero key shares. The custodians are
+  chosen by the communities, and those conversations are ongoing — so we say
+  **community key custodians (in confirmation)**.
+
+The full ledger of what this project does *not* claim is [Honest
+Limitations](/docs/network/honest-limitations). If anything on this page implies
+more than that page allows, that page wins and this one is a bug.
+
+---
+
+## Read next
+
+- **You want to submit something today** → [Submit a
+  Method](/docs/network/getting-started/submit-a-method), then the [Scoring
+  Specification](/docs/network/specifications/scoring).
+- **You want to know how a result is judged** → [MT Evaluation
+  Rules](/docs/network/leaderboard/rules) and [Statistical
+  Significance](/docs/network/specifications/significance).
+- **You want to see what the measurements add up to** → [The
+  Network](/docs/network/).
+- **You steward a language and want the sovereignty picture first** → [For
+  Language Communities](/docs/network/community/for-language-communities).
+- **You are new to all of this** → [What Champollion
+  Is](/docs/what-is-champollion).
+
+Every language named on the board resolves to its card in [the Atlas](/docs/atlas) — classification, vitality, and what evaluation resources exist for it.

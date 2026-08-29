@@ -1,0 +1,601 @@
+{
+  "code": "bum",
+  "name": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "Bulu (Cameroon)",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Bulu",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "atla1278",
+      "volt1241",
+      "benu1247",
+      "bant1294",
+      "sout3152",
+      "narr1281",
+      "bant1295",
+      "basa1292",
+      "yaun1239"
+    ],
+    "family": {
+      "agreement": "conflicting",
+      "values": [
+        {
+          "value": "Atlantic-Congo",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Niger-Congo",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "atla1278",
+    "genus": "Bantu"
+  },
+  "bcp47": "bum",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "bum-Latn-CM",
+    "values": [
+      {
+        "value": "bum-Latn-CM",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "bum-Latn-CM",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"bum\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "bum",
+    "values": [
+      {
+        "value": "bum",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 24,
+    "hasTone": true,
+    "tones": 5,
+    "totalPhonemes": 36,
+    "vowels": 7
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1
+          }
+        ],
+        "alignmentPairsTotal": 1,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 1
+      }
+    ],
+    "speech": [
+      {
+        "dataset": "common-voice",
+        "locale": "bum",
+        "validatedHours": 10.05,
+        "totalHours": 10.29,
+        "clips": 7957,
+        "contributors": 22,
+        "release": "cv-corpus-26.0-2026-06-12"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "CM"
+  ],
+  "dialectCount": 5,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Bulu (bum-bum) = 3 (Wider communication). In 19th century, spread through the work of Protestant missionaries establishing Bulu schools. Used in church, commerce, and education.",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "Nkobô Bulu",
+    "values": [
+      {
+        "value": "Nkobô Bulu",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "glottocode": "bulu1251",
+  "typologicalProfile": {
+    "hasCoreCase": false,
+    "hasGenderInPronouns": true,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": false,
+    "hasSexBasedGender": true,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "0",
+      "values": [
+        {
+          "value": "0",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": false,
+    "marksPresentTense": true,
+    "negationOrder": "NegV",
+    "reduplication": "Productive full and partial reduplication"
+  },
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 3.16141,
+    "lng": 11.6365
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 36,
+        "concepts": 36,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 52,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "grollemundbantu",
+        "forms": 95,
+        "concepts": 95,
+        "commercialUse": false,
+        "release": "grollemundbantu-v1.1"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "22676"
+  },
+  "methodSupport": {
+    "total": 71,
+    "byTier": {
+      "model-card-declared": 71
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:brauliobo/madlad400-7b-mt-bt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Cartik/Transti-1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ClausQ-dk/madlad400-10b-mt-Q2_K-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cstr/madlad400-3b-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-quantized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cyberunit/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Eddishockwave/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-7b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:fernandoruiz/madlad400-3b-mt-Q4_K_S-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "orthographicStatus": "has-orthography",
+  "politenessDistinction": {
+    "agreement": "single",
+    "consensus": "0",
+    "values": [
+      {
+        "value": "0",
+        "source": "grambank-v1.0.3",
+        "scale": "grambank-v1.0.3"
+      }
+    ]
+  },
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "1300000",
+    "values": [
+      {
+        "value": "1300000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 47,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "politenessDistinction": [
+      "grambank-v1.0.3"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.speech": [
+      "common-voice-cv-corpus-26.0-2026-06-12"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.reduplication": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "bum",
+    "revision": "93e1ecb01bb204b6",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "politenessDistinction",
+      "resources.corpora",
+      "resources.speech",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.reduplication"
+    ]
+  }
+}

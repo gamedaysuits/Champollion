@@ -1,0 +1,146 @@
+---
+title: "La Arena"
+description: "La Arena es donde ocurre la medición: la puerta por la que envía un resultado, el registro que lo conserva y la maquinaria del concurso construida sobre ambos. Qué es, qué la rige y dónde participa usted."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Los conteos se renderizan a través de SSOTCount (lecturas en tiempo de compilación de los SSOT de la máquina mediante customFields de docusaurus.config.js) — nunca se escriben a mano, según el estándar de visualización de SSOT. El estado en vivo del tablero deliberadamente NO se indica aquí: está enlazado. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# La Arena
+
+**La Arena es donde ocurre la medición.** Es la puerta por la que usted envía un resultado, el libro mayor que guarda el resultado y la maquinaria de concursos construida sobre ambos.
+
+Es infraestructura, no un marcador ni un mapa. Tres cosas son fáciles de confundir, por lo que vale la pena separarlas de una vez, de manera clara:
+
+| | Qué es | Dónde se ejecuta |
+|---|---|---|
+| **El [MT-Eval Harness](/docs/network/specifications/harness)** | El evaluador. Dado un método y un conjunto de pruebas, produce un número y una tarjeta de ejecución (*run card*). | **Su computadora.** No ejecutamos su método por usted, y no necesitamos hacerlo. |
+| **La Arena** | La puerta de envío, el libro mayor de tarjetas de ejecución y la maquinaria de concursos y premios. | Aquí. |
+| **La [Red](/docs/network/)** | El mapa que emerge una vez que existen suficientes tarjetas de ejecución: quién puede traducir qué, con qué solidez y dónde está el espacio vacío. El enrutamiento lo atraviesa. | Una consecuencia, no un componente. |
+
+Nada entra a la Red excepto a través de la Arena, y nada entra a la Arena excepto como una ejecución evaluada y con huella digital. Ese es todo el diseño: una medición sin procedencia no puede formar parte del mapa.
+
+---
+
+## De qué está hecha la Arena
+
+**Una puerta.** Cualquiera puede enviar: un modelo con ajuste fino, un modelo de frontera con *prompts*, un flujo de trabajo controlado por FST, un sistema basado en reglas, un traductor humano profesional. El método es irrelevante para el proceso; solo el procedimiento es fijo. Dos puertas diferentes, dependiendo de lo que usted tenga: [publicar una tarjeta de ejecución](/docs/network/getting-started/submit-a-method) si ya ha evaluado algo, o [proponer una entrada](/docs/network/getting-started/submit-to-the-index) si tiene un conjunto de datos, un diccionario, un motor, un servicio de traducción, un resultado publicado externamente o una corrección a una tarjeta de idioma. Las propuestas son leídas por una persona, no por un robot, y nada se aprueba automáticamente.
+
+**Un libro mayor.** Cada ejecución publicada es una tarjeta de ejecución: las puntuaciones, el *hash* del conjunto de datos, el *slug* del modelo, la condición y una huella digital sobre todo ello. Que dos personas ejecuten la misma configuración es inofensivo por diseño: las ejecuciones idénticas se deduplican al publicarse, y la replicación independiente es evidencia en lugar de desperdicio. La [Especificación de la Tarjeta de Ejecución](/docs/network/specifications/run-card) define lo que una tarjeta debe revelar; la [Especificación del Benchmark](/docs/network/specifications/benchmark) define el protocolo que produce una.
+
+**Un conjunto de objetivos.** Hay <SSOTCount field="registryDatasetCount" /> conjuntos de datos de evaluación registrados. Cada uno es una tarjeta de metadatos más un puntero de obtención desde la fuente: **el contenido del corpus nunca se aloja aquí**. El *harness* obtiene las referencias de la fuente original en tiempo de ejecución y evalúa contra lo que acaba de obtener.
+
+Registrado no es lo mismo que ejecutable en todas partes, y la diferencia es deliberada. Unos cientos de esas entradas tienen una licencia modificada, a medida o no declarada, y esas **rechazan la evaluación remota** hasta que el titular de los derechos haya registrado un consentimiento de transmisión explícito; ningún agente puede agregar uno en su nombre. Siguen siendo ejecutables localmente y en canales sin entrenamiento donde la licencia lo permita. Consulte [Conjuntos de datos de evaluación](/docs/network/leaderboard/datasets) y [Administración de datos](/docs/network/sovereignty/data-sovereignty).
+
+**Maquinaria de concursos.** Por encima de una sola ejecución se encuentra el resto: [tareas compartidas y concursos](/shared-tasks), la [cola pública](/docs/network/getting-started/contributing-compute) de mediciones que más mejorarían el mapa, y la especificación de [lo que requeriría un premio](/docs/network/specifications/prizes) si se abre uno. Una comunidad puede organizar su propio concurso en su propio corpus con su propio dinero: [Champollion no retiene ninguno de los dos](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## Las reglas que se aplican en todas partes aquí
+
+Estas son las invariantes. Cada una tiene una página que contiene los detalles.
+
+**No entrene con datos de evaluación.** Cualquier método expuesto a un conjunto de *benchmark* (como datos de entrenamiento, ejemplos *few-shot*, entradas de diccionario o material de *prompt*) queda descalificado. Realice ajustes finos en lo que desee; simplemente no en el conjunto de pruebas. Esta es la única regla cuya infracción el sistema completo no puede sobrevivir, porque una puntuación contaminada envenena cada comparación posterior a ella.
+([Reglas de la tabla de clasificación](/docs/network/leaderboard/rules))
+
+**Cada número lleva su procedencia o no cuenta.** Una tarjeta de ejecución nombra la versión del conjunto de datos, el modelo, la condición, el *prompt* del sistema y el costo. Las puntuaciones son comparables solo dentro de la misma versión del conjunto de datos, y la huella digital es lo que hace que esto sea verificable en lugar de solo afirmado.
+([Especificación del Benchmark](/docs/network/specifications/benchmark))
+
+**Nunca retenemos su corpus.** El registro son metadatos. Un conjunto de pruebas se evalúa sin ser entregado, y en la vía soberana nunca sale de la infraestructura de la comunidad en absoluto: solo viaja la puntuación.
+([Registro de corpus](/docs/network/sovereignty/registering-corpora))
+
+**Las vías de licencia son estructurales, no editoriales.** Los corpus no comerciales y solo para investigación quedan excluidos de cualquier premio, API y ruta comercial por diseño. Los corpus bajo licencias modificadas, a medida o no declaradas están adicionalmente restringidos por consentimiento: el *harness* se niega a transmitir su texto a una API de modelo de terceros hasta que se registre el permiso del titular de los derechos.
+([Administración de datos](/docs/network/sovereignty/data-sovereignty))
+
+**Una puntuación es una señal de la máquina, no un veredicto.** Las métricas automatizadas son aproximaciones del juicio humano, y el [Protocolo de Validación de Hablantes](/docs/network/specifications/speaker-validation) define la barrera humana de la cual son una aproximación. Una posición en la tabla de clasificación demuestra que un método mide bien. No demuestra que la traducción sea buena, y no otorga a nadie permiso para implementarlo en el idioma de una comunidad.
+
+**Ganar no es el estado final.** Para los idiomas indígenas, el diseño es que un método funcional se transfiera a la organización de gobernanza de la comunidad y se implemente en la infraestructura que la comunidad controla, sin que Champollion tome ninguna parte de lo que gane allí.
+([El compromiso de artefactos derivados](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Dónde entra usted
+
+Elija la fila que coincida con lo que ya tiene.
+
+| Usted tiene… | Haga esto | Comience en |
+|---|---|---|
+| Un método y una clave de API | Ejecute el *harness* contra un corpus registrado y publique la tarjeta de ejecución | [Enviar un método](/docs/network/getting-started/submit-a-method) |
+| Algo que falta en el índice: un conjunto de datos, diccionario, FST, motor, servicio de traducción humana, resultado publicado o una corrección de tarjeta | Presente la propuesta estructurada; un mantenedor la revisa manualmente | [Enviar al índice](/docs/network/getting-started/submit-to-the-index) |
+| Crédito de API de sobra y ningún método propio | Ejecute elementos abiertos de la cola pública con su propia clave y publique lo que regrese | [Contribuir con cómputo](/docs/network/getting-started/contributing-compute) |
+| Un corpus que pertenece a su comunidad | Regístrelo como metadatos y elija su vía de exposición: abierta, restringida o totalmente soberana | [Registro de corpus](/docs/network/sovereignty/registering-corpora) |
+| Un corpus y una razón para organizar una competencia en él | Ejecútelo usted mismo, en sus propios términos; no retenemos ni los datos ni el dinero | [Organizar un concurso soberano](/docs/network/sovereignty/run-a-sovereign-contest) |
+| Un método que ya obtiene buenas puntuaciones | Expórtelo como un *plugin* y póngalo en producción | [Implementar en producción](/docs/network/getting-started/deploy-to-production) |
+| Una pregunta primero | Puntuación, descalificación, modelos, FST, soberanía | [Preguntas frecuentes](/docs/network/getting-started/faq) |
+
+Si usted es un agente de IA, la cola, los resultados y las tarjetas de ejecución están disponibles como herramientas; consulte el [Servidor MCP](/docs/network/getting-started/mcp-server).
+
+---
+
+## Qué se está ejecutando realmente hoy
+
+La Arena se encuentra en etapa de lanzamiento, y la descripción honesta de la misma es breve.
+
+- **El tablero está en vivo, es público y está abierto para envíos.** Sus
+  contenidos actuales son datos en vivo, por lo que esta página no le dirá qué hay en él:
+  [lea la tabla de clasificación](/leaderboard).
+- **"Autodeclarado" es el nivel de confianza predeterminado.** La verificación del lado del servidor
+  (volver a evaluar un envío contra el corpus canónico fijado por SHA) existe y
+  se está expandiendo, pero no es universal. Lea la insignia en cada fila.
+- **Ningún premio está abierto, y ninguna puntuación en este sitio ha superado la barrera de un premio.** La
+  [Especificación de Premios](/docs/network/specifications/prizes) está escrita para que
+  la barrera sea inequívoca *si y cuando* se abra uno. Los premios son financiados y
+  retenidos por los patrocinadores; Champollion nunca retiene, custodia ni enruta fondos de premios.
+- **No se ha llevado a cabo ninguna revisión por parte de hablantes de la comunidad.** La barrera está especificada y
+  las herramientas están en construcción. Los números compuestos y chrF++ son señales
+  de la máquina, no un veredicto de la comunidad.
+- **Ningún método se ha transferido a una comunidad todavía.** El modelo de transferencia de propiedad
+  es un diseño comprometido, no un programa en ejecución. Se describe para que usted pueda exigirnos
+  su cumplimiento, no para sugerir que ya está en marcha.
+- **La custodia de claves está decidida; los custodios no.** El mecanismo es un
+  esquema de umbral en el que Champollion tiene cero partes de la clave. Los custodios son
+  elegidos por las comunidades, y esas conversaciones están en curso, por lo que decimos
+  **custodios de claves de la comunidad (en confirmación)**.
+
+El registro completo de lo que este proyecto *no* afirma es [Limitaciones honestas](/docs/network/honest-limitations). Si algo en esta página implica más de lo que esa página permite, esa página gana y esta es un error (*bug*).
+
+---
+
+## Leer a continuación
+
+- **Desea enviar algo hoy** → [Enviar un
+  método](/docs/network/getting-started/submit-a-method), luego la [Especificación
+  de puntuación](/docs/network/specifications/scoring).
+- **Desea saber cómo se juzga un resultado** → [Reglas de evaluación
+  de MT](/docs/network/leaderboard/rules) y [Significancia
+  estadística](/docs/network/specifications/significance).
+- **Desea ver a qué equivalen las mediciones** → [La
+  Red](/docs/network/).
+- **Usted administra un idioma y desea ver primero el panorama de soberanía** → [Para
+  comunidades lingüísticas](/docs/network/community/for-language-communities).
+- **Es nuevo en todo esto** → [Qué es
+  Champollion](/docs/what-is-champollion).
+
+Cada idioma nombrado en el tablero se resuelve en su tarjeta en [el Atlas](/docs/atlas): clasificación, vitalidad y qué recursos de evaluación existen para él.

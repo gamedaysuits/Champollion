@@ -1,0 +1,383 @@
+{
+  "code": "doi",
+  "name": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "Dogri (macrolanguage)",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Dogri",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "doi",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "doi-Deva-IN",
+    "values": [
+      {
+        "value": "doi-Deva-IN",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "doi-Deva-IN",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"doi\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "doi",
+    "values": [
+      {
+        "value": "doi",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "canonicalisedMembers": {
+    "agreement": "unanimous",
+    "consensus": "dgo",
+    "values": [
+      {
+        "value": "dgo",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR canonicalises \"dgo\" to \"doi\" with reason=macrolanguage"
+      },
+      {
+        "value": "dgo",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "SIL langtags records \"dgo\" as an additional ISO 639-3 code for tags of \"doi\""
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "डोगरी",
+    "values": [
+      {
+        "value": "डोगरी",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "isoLanguageType": "Living",
+  "isoScope": "Macrolanguage",
+  "resources": {
+    "keyboards": [
+      {
+        "name": "Rachitrali-Dogri",
+        "keyboardId": "rac_dogri",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/rac/rac_dogri",
+        "publisher": "keyman",
+        "version": "1.0.2",
+        "lastModified": "2026-01-13"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "macrolanguageMembers": [
+    "dgo",
+    "xnr"
+  ],
+  "methodSupport": {
+    "total": 76,
+    "byTier": {
+      "fetched": 1,
+      "confirmed": 1,
+      "model-card-declared": 74
+    },
+    "named": [
+      {
+        "value": "service",
+        "variant": "google-translate",
+        "source": "curated:method-coverage-2a485dc249c6",
+        "confidence": "confirmed"
+      },
+      {
+        "value": "service",
+        "variant": "microsoft-translator",
+        "source": "vendor-languages-2026-08-06",
+        "confidence": "fetched"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aarath97/mt5_final",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:adipras1407/indictrans2-en-indic-1B-conversational",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ai4bharat/indictrans2-en-indic-1B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ai4bharat/indictrans2-en-indic-dist-200M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ai4bharat/indictrans2-indic-en-1B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ai4bharat/indictrans2-indic-en-dist-200M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ai4bharat/indictrans2-indic-indic-1B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ai4bharat/indictrans2-indic-indic-dist-320M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Anonym-050326/nirukti-translate-1.3b",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:fischerman/sarvam-translate-gguf",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-1B-ONNX",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-1B-ONNX-fp16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-1B-ONNX-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-1B-ONNX-q4f16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-dist-200M-ONNX",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-dist-200M-ONNX-fp16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-dist-200M-ONNX-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-en-indic-dist-200M-ONNX-q4f16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-1B-ONNX",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-1B-ONNX-fp16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-1B-ONNX-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-1B-ONNX-q4f16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-dist-200M-ONNX",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-dist-200M-ONNX-fp16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:hari31416/indictrans2-indic-en-dist-200M-ONNX-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "orthographicStatus": "has-orthography",
+  "pluralCategories": [
+    "one",
+    "other"
+  ],
+  "scripts": [
+    "Arab",
+    "Deva",
+    "Latn"
+  ],
+  "scriptNames": [
+    "Arabic",
+    "Devanagari (Nagari)",
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "2700000",
+    "values": [
+      {
+        "value": "2700000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "textDirection": "left-to-right",
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 18,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "canonicalisedMembers": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguageMembers": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "curated:method-coverage-2a485dc249c6",
+      "hf-models-bde04db4d07c@2026-08-10",
+      "vendor-languages-2026-08-06"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "pluralCategories": [
+      "cldr-plurals-48.2.0"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "textDirection": [
+      "cldr-48.2.0"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "doi",
+    "revision": "a8309e2088ea7f23",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "canonicalisedMembers",
+      "endonym",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "macrolanguageMembers",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "pluralCategories",
+      "resources.keyboards",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "textDirection"
+    ]
+  }
+}

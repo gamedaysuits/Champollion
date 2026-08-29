@@ -1,0 +1,136 @@
+---
+slug: /what-is-champollion
+title: "Ce qu'est Champollion"
+description: "Champollion en termes simples : ce qu'il fait, à qui il s'adresse et comment tout s'articule. Commencez ici."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Ce qu'est Champollion
+
+**Champollion mesure la traduction automatique pour des langues que personne d'autre ne mesure,
+et publie ses résultats.**
+
+C'est là toute l'idée. Tout ce qui se trouve sur ce site est soit un outil qui effectue
+cette mesure, soit la carte que ces mesures construisent, soit les règles selon lesquelles nous opérons.
+
+---
+
+## Le problème
+
+Il existe environ 7 000 langues vivantes. Pour la plupart d'entre elles, vous ne pouvez pas répondre à une
+question fondamentale : *si j'ai besoin de traduire ceci, quelle est la meilleure méthode disponible, et
+est-elle suffisamment bonne pour être utilisée ?*
+
+Pas « quelle entreprise a une démo ». Quelle méthode — traducteur humain, système basé sur des règles,
+modèle de langage par prompt, modèle entraîné — fonctionne réellement pour **cette
+paire, sur ce type de texte**, et comment le savez-vous.
+
+Pour l'anglais↔français, cette question a été résolue mille fois. Pour
+l'anglais↔Plains Cree, ou l'Ayta Abellen, ou des milliers d'autres, elle n'a souvent
+jamais été posée. La couverture est annoncée ; la qualité est rarement démontrée.
+
+Personne ne mesure, donc personne ne peut distinguer une véritable amélioration d'un communiqué
+de presse — et les communautés qui souhaitent utiliser cette technologie n'ont aucun moyen de vérifier
+s'il est sûr de lui confier leur langue.
+
+## Ce que nous faisons à ce sujet
+
+Nous ne construisons pas de moteur de traduction. Les grandes entreprises technologiques construisent des
+moteurs. Nous construisons ce qui vous indique si un moteur fonctionne :
+
+1. **Exécuter une méthode sur un ensemble de test** et l'évaluer, avec la même procédure
+   pour chaque méthode et chaque langue.
+2. **Publier le résultat** avec sa provenance — quelles données, quelle version de la méthode,
+   quelle métrique, quel coût.
+3. **Répéter jusqu'à ce que la carte prenne forme** : quelles langues se connectent à quelles autres, avec quelle
+   force, et où se trouvent les espaces vides.
+
+Un honnête « aucune méthode ne fonctionne encore pour cette paire » est un résultat que nous publions. La majeure
+partie de la carte correspond à cette réponse à l'heure actuelle, et le dire est précisément le but — une lacune que
+vous pouvez voir est une lacune que quelqu'un peut financer ou combler.
+
+## Les règles selon lesquelles nous travaillons
+
+Ce sont des contraintes, pas du marketing. Elles façonnent ce que le logiciel peut faire.
+
+**Nous ne détenons jamais votre corpus.** Les ensembles de test sont enregistrés en indiquant l'endroit où
+ils se trouvent déjà, et non en nous les téléversant. Une méthode est évaluée par rapport à un
+corpus que nous ne possédons jamais. Pour les ensembles scellés, les données sont chiffrées sur votre machine
+avant que quoi que ce soit ne la quitte, et seul un seuil de gardiens de clés de la communauté
+réunis peut autoriser une exécution.
+
+**Les données linguistiques sont traitées comme des données biologiques.** Les personnes qui fournissent un corpus en détiennent
+les clés, ainsi que celles de tout ce qui est mesuré par rapport à celui-ci. Le consentement est demandé, et non
+présumé — et il peut être retiré.
+
+**Nous sommes aspirants à la souveraineté, non certifiés en souveraineté.** Le fait qu'un projet
+honore la propriété et le contrôle communautaires des données linguistiques n'est pas
+une affirmation que ce projet peut faire de lui-même. Nous faisons le travail et décrivons les
+mécanismes honnêtement ; la décision appartient aux communautés impliquées.
+
+**Toute méthode est la bienvenue, humaine comme automatique.** Un traducteur professionnel, un
+système de règles basé sur FST, un modèle de pointe par prompt et un modèle NMT affiné sont
+comparés de la même manière, sur le même ensemble de test. Ce qui nous importe, c'est que les langues
+soient traduites, et non de savoir quel outil gagne.
+
+**Nous publions ce que nous ne pouvons pas faire.** Voir les [Limites
+honnêtes](/docs/network/honest-limitations) — la liste des choses que ce
+projet ne prétend *pas* encore faire. Lisez-la avant de faire confiance à quoi que ce soit d'autre ici.
+
+---
+
+## Les composants, et à quoi chacun sert
+
+| Si vous souhaitez… | Utiliser | Ce que c'est |
+|---|---|---|
+| Traduire une application ou un site | **[Champollion CLI](/docs/intro)** | Une seule commande traduit vos fichiers de localisation ; vous choisissez la méthode par paire de langues. |
+| Évaluer une méthode, ou reproduire un score | **[MT-Eval Harness](/docs/network/specifications/harness)** | Le moteur d'évaluation Python. Chaque chiffre sur ce site en provient. |
+| Soumettre un résultat, ou organiser un concours | **[The Arena](/docs/network/getting-started/submit-a-method)** | La porte de soumission, la base de données et la mécanique du concours — là où la mesure a lieu. |
+| Voir ce qui est connu sur une paire | **[The Network](/docs/network/)** | La carte que les mesures construisent : couverture, force de connexion, routage, la file d'attente de ce qu'il faut mesurer ensuite. |
+| Rechercher une langue | **[The Atlas](/languages)** | <SSOTCount field="catalogLanguageCount" /> fiches de langues — classification, phonologie, vitalité, et quelles ressources existent. Chaque valeur cite sa source. |
+| Entraîner un modèle sans vous leurrer | **[NMT Forge](/docs/network/getting-started/training-honestly)** | Une suite d'entraînement dont les garde-fous rendent l'auto-illusion standard (fuite de données de test, répartitions non représentatives) structurellement difficile. |
+| Travailler sur ceci en tant qu'agent IA | **[Agent Guide](/docs/network/getting-started/agent-guide)** | Les outils, le serveur MCP, et ce que contiennent les points de terminaison lisibles par machine. |
+
+**Champollion est un index, pas un arbitre.** Chaque valeur cite sa source et
+rapporte ce que cette source dit réellement. Lorsque les sources sont en désaccord — et sur le
+nombre de locuteurs, c'est très souvent le cas — la fiche les affiche toutes, avec leur attribution. Nous ne
+désignons pas de vainqueur ni ne fabriquons de consensus.
+
+---
+
+## Le nom
+
+Jean-François Champollion a déchiffré les hiéroglyphes égyptiens à l'aide de la pierre de Rosette —
+le même texte en trois écritures. Les textes parallèles restent la manière dont la traduction
+s'apprend. Le nom porte également une tension qui mérite d'être formulée à voix haute : un
+érudit européen lisant les écrits de quelqu'un d'autre, à une époque d'extraction. Nous y
+réfléchissons. C'est pourquoi les règles de souveraineté ci-dessus sont des contraintes dans le logiciel et
+non une page dans une brochure.
+
+## Prochaines étapes
+
+- **Vous souhaitez traduire quelque chose** → [Démarrage
+  rapide](/docs/getting-started/quick-start).
+- **Vous parlez, enseignez ou préservez une langue** → [Pour les communautés
+  linguistiques](/docs/network/community/for-language-communities), puis
+  [Enregistrement de corpus](/docs/network/sovereignty/registering-corpora) pour savoir comment
+  un ensemble de test est utilisé sans être remis.
+- **Vous êtes un chercheur ou un créateur de méthode** → l'argument de la priorité à l'évaluation dans
+  [À qui cela profite](/docs/network/who-benefits#researchers) — pourquoi mille
+  paires sélectionnées valent mieux que sept cent mille non sélectionnées — puis
+  [Partenariat de corpus](/docs/network/specifications/corpus-partnership) pour
+  intégrer une langue, ou [Soumettre une
+  méthode](/docs/network/getting-started/submit-a-method) et la
+  [Spécification d'évaluation](/docs/network/specifications/scoring) pour concourir sur les
+  langues déjà présentes.
+- **Vous êtes un agent IA** → [Guide de
+  l'agent](/docs/network/getting-started/agent-guide) ; les points d'entrée lisibles par machine
+  sont `/llms.txt` et `/llms-full.txt`.
+- **Vous financez ce type de travail** → [À qui
+  cela profite](/docs/network/who-benefits#funders) et [Limites
+  honnêtes](/docs/network/honest-limitations).
+- **Vous voulez connaître le contexte** → [Comment le domaine en est
+  arrivé là](/docs/network/context/mt-field-briefing), [ce qui compte comme une
+  langue](/docs/network/context/what-counts-as-a-language), et [comment la couverture
+  est comptabilisée](/docs/network/context/coverage-counting).

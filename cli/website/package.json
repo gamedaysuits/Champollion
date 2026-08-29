@@ -1,0 +1,60 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "ensure-tc-index": "node scripts/build-data-from-supabase.mjs --index-only",
+    "ensure-network-artifacts": "node scripts/ensure-network-artifacts.mjs",
+    "build-hub-names": "node scripts/build-hub-names.mjs",
+    "ensure-data": "npm run ensure-network-artifacts && npm run ensure-tc-index && npm run build-hub-names",
+    "prestart": "npm run ensure-data",
+    "start": "docusaurus start",
+    "prebuild": "npm run ensure-data",
+    "build": "node scripts/build-all-locales.mjs",
+    "build:monolith": "NODE_OPTIONS='--max-old-space-size=6144' docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "bash scripts/deploy-prod.sh",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "glossary:i18n": "node scripts/generate-glossary-i18n.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.10.1",
+    "@docusaurus/faster": "3.10.1",
+    "@docusaurus/preset-classic": "3.10.1",
+    "@docusaurus/theme-mermaid": "^3.10.1",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
+    "@mdx-js/react": "^3.0.0",
+    "@vercel/functions": "^3.7.5",
+    "clsx": "^2.0.0",
+    "gsap": "^3.15.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-simple-maps": "^3.0.0",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.10.1",
+    "@docusaurus/types": "3.10.1",
+    "champollion": "file:.."
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0"
+  }
+}

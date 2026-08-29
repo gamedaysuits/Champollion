@@ -1,0 +1,633 @@
+{
+  "code": "qub-PE",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Huallaga Huánuco Quechua",
+    "values": [
+      {
+        "value": "Huallaga Huánuco Quechua",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Huallaga Huánuco Quechua",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "typologicalProfile": {
+    "affixPreference": "Strongly suffixing",
+    "hasCoreCase": true,
+    "hasGenderInPronouns": false,
+    "hasNumeralClassifiers": true,
+    "hasObliqueCase": true,
+    "hasSexBasedGender": false,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "1",
+      "values": [
+        {
+          "value": "1",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": true,
+    "negationOrder": "ObligDoubleNeg",
+    "subjectVerbOrder": "SV",
+    "wordOrder": "SOV"
+  },
+  "classification": {
+    "ancestry": [
+      "quec1387",
+      "quec1386",
+      "cent2141",
+      "apam1237"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Quechuan",
+      "values": [
+        {
+          "value": "Quechuan",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Quechuan",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "quec1387",
+    "genus": "Quechuan"
+  },
+  "bcp47": "qub",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "qub-Latn-PE",
+    "values": [
+      {
+        "value": "qub-Latn-PE",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "qub-Latn-PE",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"qub\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "qub",
+    "values": [
+      {
+        "value": "qub",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 16,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 22,
+    "vowels": 6
+  },
+  "countries": [
+    "PE"
+  ],
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "at risk",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.2]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "vulnerable",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.6]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "threatened",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Huallaga Quechua (8115-qub) = Vulnerable (60 percent certain, based on the evidence available) [Lewis et al. 2017](cldf:lewis:simons:etal:ed:17)",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Vulnerable",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "Wallaqa rimay",
+    "values": [
+      {
+        "value": "Wallaqa rimay",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "qu",
+        "variantType": "language",
+        "note": "label language: qu"
+      }
+    ]
+  },
+  "glottocode": "hual1241",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": -9.57135,
+    "lng": -75.594
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 44,
+        "concepts": 37,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 41,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "crossandean",
+        "forms": 153,
+        "concepts": 149,
+        "release": "crossandean-v1.3"
+      },
+      {
+        "dataset": "crossandean_morphology",
+        "forms": 112,
+        "concepts": 96,
+        "release": "crossandean_morphology-v1.0"
+      }
+    ]
+  },
+  "macroarea": "South America",
+  "macrolanguage": "que",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "145767"
+  },
+  "methodSupport": {
+    "total": 71,
+    "byTier": {
+      "model-card-declared": 71
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:brauliobo/madlad400-7b-mt-bt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Cartik/Transti-1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ClausQ-dk/madlad400-10b-mt-Q2_K-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cstr/madlad400-3b-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-quantized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cyberunit/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Eddishockwave/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-7b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:fernandoruiz/madlad400-3b-mt-Q4_K_S-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "decimal"
+  },
+  "orthographicStatus": "has-orthography",
+  "politenessDistinction": {
+    "agreement": "single",
+    "consensus": "0",
+    "values": [
+      {
+        "value": "0",
+        "source": "grambank-v1.0.3",
+        "scale": "grambank-v1.0.3"
+      }
+    ]
+  },
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "10000-99999",
+        "source": "elcat-v2024.1",
+        "note": "[Date Of Info: 1993]"
+      },
+      {
+        "value": "100000",
+        "source": "elcat-v2024.1",
+        "note": "Ethnologue distinguish two languages ere:\r\n\"Ambo-Pasco Quechua\" [qva: 90,000 speakers (1998 SIL), 18,000 monolinguals. (Unchanged 2016.)\r\n\"Panao Huánuco Quechua\" [qxh]: 50,000 speakers (2002 SIL), 10,000. (Unchanged 2016.) [Date Of Info: 1998, 2002]"
+      },
+      {
+        "value": "40000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "resources": {
+    "typology": [
+      {
+        "dataset": "dryerorder",
+        "featuresCoded": 10,
+        "datasetFeatureTotal": 10
+      },
+      {
+        "dataset": "levshinadifferentialmarking",
+        "featuresCoded": 23,
+        "datasetFeatureTotal": 24
+      },
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 13,
+    "componentsPresent": 48,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "elcat-v2024.1",
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "politenessDistinction": [
+      "grambank-v1.0.3"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "elcat-v2024.1",
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.affixPreference": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "qub-PE",
+    "revision": "339304c534996850",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "politenessDistinction",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.affixPreference",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder"
+    ]
+  },
+  "locale": {
+    "language": "qub",
+    "region": "PE",
+    "script": "Latn",
+    "publishedTag": "qub-PE",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Latn",
+  "localeScoped": {
+    "scriptName": "Latin"
+  }
+}

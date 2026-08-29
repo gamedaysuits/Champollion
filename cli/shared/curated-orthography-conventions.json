@@ -1,0 +1,26 @@
+{
+  "_comment": [
+    "Curated orthographic-convention register consumed by scripts/derive-orthographies.mjs.",
+    "One entry per language code, keyed by ISO 15924 script code. Each script entry may set",
+    "scheme / longVowelMarking / canonicalForMt and MUST set a source string that cites a",
+    "verifiable basis (on-card prose, a tool the card already lists, or a published convention).",
+    "Only add entries whose convention is actually documented — absence means unknown, and the",
+    "deriver writes nothing it cannot cite (index, not arbiter). Do NOT record measured scores here.",
+    "Data-over-code (docs/AGENTS.md §1): language-specific conventions live in this file,",
+    "never hardcoded in the deriver."
+  ],
+  "conventions": {
+    "crk": {
+      "Latn": {
+        "scheme": "SRO",
+        "longVowelMarking": "circumflex",
+        "canonicalForMt": true,
+        "source": "manual-curation (SRO = Standard Roman Orthography; long vowels marked with circumflexes as used by itwêwina/ALTLab and the GiellaLT lang-crk FST the card lists in resources.fsts; reference lexicon: Wolvengrey 2001, nēhiýawēwin: itwēwina / Cree: Words; the card's own formality prose names SRO as the working script)"
+      },
+      "Cans": {
+        "canonicalForMt": false,
+        "source": "manual-curation (Syllabics is the display script, SRO the working script — per the card's own formality prose and the crk scriptConverter)"
+      }
+    }
+  }
+}

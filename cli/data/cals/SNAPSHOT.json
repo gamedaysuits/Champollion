@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "cals",
+  "upstream": "https://zenodo.org/records/13149281",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Mennecier et al.'s \"Central Asian Language Survey\" from 2016 — Mennecier, P.; Nerbonne, J.; Heyer, E.; Manni, F.",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.1",
+    "doi": "10.5281/zenodo.13149281",
+    "date": "2024-08-01"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 1055689,
+      "sha256": "6c157fbf4d0810c81b19318d63743fa67d6343c6e81e12f45ec2a0954534d224",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13019,
+      "sha256": "75c0a8189d0e23698a579347eaa48073ab5036f3ec3ecc5b4f0add83a4d1efb0",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 1127581,
+      "sha256": "3e4e7d5eb6d795d2dadc897aac0d68c172b85578be2b754191281f0ce3ed3243",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 1547334,
+      "sha256": "8a0a5f19da6019f492157b8e60f078eed968e0813be78b1fd753b2f5dd1d3904",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 6713,
+      "sha256": "ca86e80377dcfc2fab072284bf6bb66efa3732dd3c566bf2ff5a423787a3d075",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "dc1bb85542babdcbf3a709d25dc0d094372c53c7935d74ba60b4c678886aff97",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 4462,
+      "sha256": "d2f184491a1c12b29c08ace4fe57246d0aefc34c306b1dd57b438d224b1e6d27",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 837,
+      "sha256": "523d3040c9931791c205502789ce8a183c2f6474d21f344f9850d2114b5acab8",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 339,
+      "sha256": "bd0985d6c5e06bd2296d30629cc6d1ecd80b9dc1960692df1c99b711affd316a",
+      "url": "https://zenodo.org/api/records/13149281/files/lexibank/cals-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/cals-v1.1.zip:lexibank-cals-5dd8025/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/cals-v1.1.zip, whose md5 matched Zenodo's published checksum (md5:a1da9ab0a891198652f094b36f49c5db). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:48:55.658Z"
+}

@@ -1,0 +1,251 @@
+{
+  "code": "otk-MN",
+  "name": {
+    "agreement": "single",
+    "consensus": "Old Turkish",
+    "values": [
+      {
+        "value": "Old Turkish",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "otk-Orkh-MN",
+    "values": [
+      {
+        "value": "otk-Orkh-MN",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "otk-Orkh-MN",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"otk\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "otk",
+    "values": [
+      {
+        "value": "otk",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 4,
+        "topPartners": [
+          {
+            "code": "es",
+            "alignmentPairs": 2
+          },
+          {
+            "code": "tr",
+            "alignmentPairs": 2
+          },
+          {
+            "code": "tt",
+            "alignmentPairs": 2
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 1
+          }
+        ],
+        "alignmentPairsTotal": 7,
+        "pairsWithPublishedSize": 4,
+        "largestPairAlignments": 2
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Old_Turkish-Clausal",
+        "sentences": 20,
+        "tokens": 158,
+        "words": 158,
+        "release": "2.18"
+      }
+    ]
+  },
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "extinct",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Old Turkish (otk-otk) = 10 (Extinct)",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "isoLanguageType": "Historical",
+  "isoScope": "Individual",
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 45,
+        "concepts": 37,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "datsemshift",
+        "forms": 19,
+        "concepts": 19,
+        "release": "datsemshift-v1.1rc"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 10,
+    "byTier": {
+      "model-card-declared": 10
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-trk",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-trk-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-trk",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-trk-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "coverage": {
+    "sourceCount": 8,
+    "componentsPresent": 11,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "otk-MN",
+    "revision": "10306b15db090b3e",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "endangerment",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "name",
+      "resources.corpora",
+      "resources.treebanks"
+    ]
+  },
+  "locale": {
+    "language": "otk",
+    "region": "MN",
+    "script": "Orkh",
+    "publishedTag": "otk-MN",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Orkh"
+}

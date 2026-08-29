@@ -1,0 +1,148 @@
+---
+title: "竞技场"
+description: "竞技场是进行测量的场所：它是提交结果的入口、记录数据的账本，以及构建于两者之上的竞赛机制。这里将介绍它的概念、运行规则，以及你如何参与其中。"
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* 计数通过 SSOTCount 渲染（在构建时通过 docusaurus.config.js customFields 读取机器 SSOT）—— 根据 SSOT 显示标准，绝不手动输入。这里故意不说明实时看板状态：而是通过链接提供。 */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Arena
+
+**The Arena 是进行衡量的地方。** 它是你提交结果的入口，是保存结果的账本，也是建立在这两者之上的竞赛机制。
+
+它是基础设施，既不是记分板，也不是地图。有三件事很容易混淆，因此有必要简单明了地将它们区分开来：
+
+| | 它是什么 | 运行位置 |
+|---|---|---|
+| **[MT-Eval Harness](/docs/network/specifications/harness)** | 评分器。给定一个方法和测试集，它会生成一个分数和一张运行卡片 (run card)。 | **你的机器。** 我们不会替你运行你的方法，也不需要这么做。 |
+| **The Arena** | 提交入口、运行卡片账本，以及竞赛和奖金机制。 | 这里。 |
+| **The [Network](/docs/network/)** | 一旦存在足够的运行卡片就会浮现的地图 —— 谁能翻译什么、能力有多强，以及空白区域在哪里。路由 (Routing) 会遍历它。 | 这是一个结果，而不是一个组件。 |
+
+除了通过 The Arena，没有任何东西能进入 The Network；除了作为带有评分和指纹的运行记录，没有任何东西能进入 The Arena。这就是整个设计的核心：没有出处的衡量结果不能成为地图的一部分。
+
+---
+
+## The Arena 的构成
+
+**一个入口。** 任何人都可以提交 —— 微调模型、带有提示词的前沿模型、FST 门控流水线、基于规则的系统，或是专业的人类译者。方法与流程无关；只有程序是固定的。根据你拥有的内容，有两个不同的入口：如果你已经对某些内容进行了评分，请 [发布运行卡片 (publish a run card)](/docs/network/getting-started/submit-a-method)；如果你有数据集、词典、引擎、翻译服务、外部发布的结果或对语言卡片的修正，请 [提议一个条目 (propose an entry)](/docs/network/getting-started/submit-to-the-index)。提议由人工而非机器人阅读，没有任何内容会被自动批准。
+
+**一个账本。** 每次发布的运行记录都是一张运行卡片 (run card)：包含分数、数据集哈希、模型标识符 (slug)、条件，以及涵盖所有这些内容的指纹。两个人运行相同的配置在设计上是无害的 —— 相同的运行记录在发布时会去重，而独立的复现是证据而非浪费。[运行卡片规范 (Run Card Specification)](/docs/network/specifications/run-card) 定义了卡片必须披露的内容；[基准测试规范 (Benchmark Specification)](/docs/network/specifications/benchmark) 定义了生成卡片的协议。
+
+**一组目标。** 已注册 <SSOTCount field="registryDatasetCount" /> 个评估数据集。每一个都是一张元数据卡片加上一个从源获取的指针 —— **语料库内容绝不会托管在这里**。Harness 在运行时从上游获取参考内容，并根据刚刚获取的内容进行评分。
+
+已注册并不等同于可以在任何地方运行，这种差异是刻意为之的。其中有几百个条目带有修改过的、定制的或未声明的许可证，这些条目会 **拒绝远程评估**，直到权利人记录了明确的传输同意 —— 任何代理都不能代表他们添加同意。它们仍然可以在本地运行，并且在许可证允许的情况下，可以在无训练 (no-train) 渠道上运行。请参阅 [评估数据集 (Evaluation Datasets)](/docs/network/leaderboard/datasets) 和 [数据管理 (Data Stewardship)](/docs/network/sovereignty/data-sovereignty)。
+
+**竞赛机制。** 在单次运行之上是其余部分：[共享任务和竞赛 (shared tasks and contests)](/shared-tasks)、最能完善地图的衡量指标 [公共队列 (public queue)](/docs/network/getting-started/contributing-compute)，以及如果设立奖项，[奖项的要求规范](/docs/network/specifications/prizes)。社区可以用自己的资金在自己的语料库上举办自己的竞赛 —— [Champollion 既不持有数据也不持有资金](/docs/network/sovereignty/run-a-sovereign-contest)。
+
+---
+
+## 适用于此处的通用规则
+
+这些是不变原则。每一项都有专门的页面详细说明。
+
+**不要在评估数据上进行训练。** 任何接触过基准测试集的方法 —— 无论是作为训练数据、少样本 (few-shot) 示例、词典条目还是提示词材料 —— 都将被取消资格。你可以对任何你喜欢的内容进行微调；只是不能在测试集上。这是整个系统唯一无法承受被打破的规则，因为受污染的分数会毒害其下游的每一次比较。
+([排行榜规则 (Leaderboard rules)](/docs/network/leaderboard/rules))
+
+**每个数字都必须带有其出处，否则无效。** 运行卡片会指明数据集版本、模型、条件、系统提示词和成本。分数只能在相同的数据集版本内进行比较，而指纹使得这一点可被验证，而不仅仅是口头声明。
+([基准测试规范 (Benchmark Spec)](/docs/network/specifications/benchmark))
+
+**我们绝不持有你的语料库。** 注册的只是元数据。测试集在不被移交的情况下进行评分，而在主权通道 (sovereign lane) 中，它根本不会离开社区基础设施 —— 只有分数会被传输。
+([注册语料库 (Registering Corpora)](/docs/network/sovereignty/registering-corpora))
+
+**许可证通道是结构性的，而非编辑性的。** 非商业和仅限研究的语料库在机制上被排除在所有奖项、API 和商业路径之外。带有修改过的、定制的或未声明许可证的语料库还受到同意门控的限制：在记录权利人的许可之前，Harness 拒绝将其文本传输给第三方模型 API。
+([数据管理 (Data Stewardship)](/docs/network/sovereignty/data-sovereignty))
+
+**分数是机器信号，而不是最终裁决。** 自动化指标是人类判断的代理，而 [母语者验证协议 (Speaker Validation Protocol)](/docs/network/specifications/speaker-validation) 定义了它们所*代理*的人工门槛。排行榜上的位置证明了一种方法在衡量指标上表现良好。它并不能证明翻译质量好，也不授予任何人将其部署在社区语言上的权限。
+
+**获胜并不是最终状态。** 对于原住民语言，我们的设计是：有效的方法将移交给社区的治理组织，并部署在社区控制的基础设施上，Champollion 不会从中抽取任何收益。
+([衍生制品承诺 (The derived-artifacts commitment)](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## 你的参与方式
+
+选择与你已有条件相匹配的行。
+
+| 你拥有… | 这样做 | 从这里开始 |
+|---|---|---|
+| 一个方法和一个 API 密钥 | 针对已注册的语料库运行 Harness 并发布运行卡片 | [提交方法 (Submit a Method)](/docs/network/getting-started/submit-a-method) |
+| 索引中缺少的内容 —— 数据集、词典、FST、引擎、人工翻译服务、已发布的结果或卡片修正 | 提交结构化提议；维护者将进行人工审核 | [提交至索引 (Submit to the Index)](/docs/network/getting-started/submit-to-the-index) |
+| 多余的 API 额度，但没有自己的方法 | 使用你自己的密钥运行公共队列中的开放项目，并发布返回的结果 | [贡献算力 (Contributing Compute)](/docs/network/getting-started/contributing-compute) |
+| 你的社区拥有的语料库 | 将其注册为元数据并选择其暴露通道 —— 开放、门控或完全主权 | [注册语料库 (Registering Corpora)](/docs/network/sovereignty/registering-corpora) |
+| 一个语料库以及在上面举办比赛的理由 | 按照你的条款自己运行；我们既不持有数据也不持有资金 | [举办主权竞赛 (Run a Sovereign Contest)](/docs/network/sovereignty/run-a-sovereign-contest) |
+| 一个已经取得高分的方法 | 将其导出为插件并投入生产环境 | [部署到生产环境 (Deploy to Production)](/docs/network/getting-started/deploy-to-production) |
+| 首先有个问题 | 评分、取消资格、模型、FST、主权 | [常见问题 (FAQ)](/docs/network/getting-started/faq) |
+
+如果你是 AI 智能体 (AI agent)，队列、结果和运行卡片都可以作为工具使用 —— 请参阅 [MCP
+服务器 (MCP Server)](/docs/network/getting-started/mcp-server)。
+
+---
+
+## 目前实际运行的情况
+
+The Arena 正处于发布阶段，对它的如实描述很简短。
+
+- **看板已上线、公开，并开放提交。** 其
+  当前内容是实时数据，因此本页面不会告诉你上面有什么 ——
+  请 [查看排行榜 (read the leaderboard)](/leaderboard)。
+- **“自我报告 (Self-reported)”是默认的信任层级。** 服务器端验证 ——
+  针对固定 SHA 的规范语料库对提交内容进行重新评分 —— 已经存在并
+  正在扩展，但尚未普及。请阅读每一行上的徽章。
+- **目前没有开放的奖项，本网站上也没有任何分数达到了奖项标准。** 编写
+  [奖项规范 (Prize Specification)](/docs/network/specifications/prizes) 的目的是，
+  *如果且当* 奖项开放时，标准是明确无误的。奖金由赞助商提供并
+  持有；Champollion 绝不持有、托管或路由奖金资金。
+- **尚未进行社区母语者审查。** 门槛已明确，
+  工具正在建设中。综合分数和 chrF++ 分数是机器
+  信号，而不是社区裁决。
+- **目前还没有方法移交给社区。** 所有权移交模型
+  是一项承诺的设计，而不是正在运行的程序。对其进行描述是为了让你可以监督
+  我们执行，而不是暗示它已经开始运作。
+- **密钥托管方式已确定；但托管人尚未确定。** 该机制是一个
+  阈值方案，其中 Champollion 持有零个密钥份额。托管人由
+  社区选择，这些对话正在进行中 —— 因此我们称之为
+  **社区密钥托管人（确认中）**。
+
+关于本项目*不*主张什么的完整记录在 [诚实的局限性 (Honest
+Limitations)](/docs/network/honest-limitations) 中。如果本页面上的任何内容暗示了超出该页面允许范围的信息，以该页面为准，而本页面的描述则是一个错误 (bug)。
+
+---
+
+## 下一步阅读
+
+- **你今天想提交一些内容** → [提交方法 (Submit a
+  Method)](/docs/network/getting-started/submit-a-method)，然后阅读 [评分
+  规范 (Scoring Specification)](/docs/network/specifications/scoring)。
+- **你想知道结果是如何评判的** → [机器翻译评估
+  规则 (MT Evaluation Rules)](/docs/network/leaderboard/rules) 和 [统计
+  显著性 (Statistical Significance)](/docs/network/specifications/significance)。
+- **你想看看这些衡量指标汇总成了什么** → [The
+  Network](/docs/network/)。
+- **你管理着一种语言，并希望首先了解主权情况** → [致
+  语言社区 (For Language Communities)](/docs/network/community/for-language-communities)。
+- **你对这一切都是新手** → [Champollion 是
+  什么 (What Champollion Is)](/docs/what-is-champollion)。
+
+看板上命名的每种语言都会解析到其在 [图谱 (the Atlas)](/docs/atlas) 中的卡片 —— 包含分类、活力以及存在哪些评估资源。

@@ -1,0 +1,548 @@
+{
+  "code": "acm-IQ",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Mesopotamian Arabic",
+    "values": [
+      {
+        "value": "Mesopotamian Arabic",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Mesopotamian Arabic",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "typologicalProfile": {
+    "affixPreference": "Equal prefixing and suffixing",
+    "negationOrder": "[Neg-V]",
+    "subjectVerbOrder": "SV",
+    "wordOrder": "SVO"
+  },
+  "classification": {
+    "ancestry": [
+      "afro1255",
+      "semi1276",
+      "west2786",
+      "cent2236",
+      "arab1394",
+      "arab1395",
+      "east2729"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Afro-Asiatic",
+      "values": [
+        {
+          "value": "Afro-Asiatic",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Afro-Asiatic",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "afro1255",
+    "genus": "Semitic"
+  },
+  "bcp47": "acm",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "acm-Arab-IQ",
+    "values": [
+      {
+        "value": "acm-Arab-IQ",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "acm-Arab-IQ",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"acm\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "acm",
+    "values": [
+      {
+        "value": "acm",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 2,
+        "topPartners": [
+          {
+            "code": "ja",
+            "alignmentPairs": 35
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 11
+          }
+        ],
+        "alignmentPairsTotal": 46,
+        "pairsWithPublishedSize": 2,
+        "largestPairAlignments": 35
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 4270
+          }
+        ],
+        "alignmentPairsTotal": 4270,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 4270
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "afbo",
+        "featuresCoded": 4,
+        "datasetFeatureTotal": 42
+      },
+      {
+        "dataset": "dryerorder",
+        "featuresCoded": 3,
+        "datasetFeatureTotal": 10
+      },
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "IQ",
+    "IR",
+    "JO",
+    "SY",
+    "TR"
+  ],
+  "dialectCount": 4,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Arabic, Mesopotamian (acm-acm) = 3 (Wider communication). De facto national working language. Originated in Mesopotamia, spread throughout the Middle East. Lingua franca of the whole region before the 7th century. Used in most everyday domains.",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "لهجة بلاد ما بين النهرين",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "لهجة عراقية",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "ar",
+        "variantType": "language",
+        "note": "label language: ar"
+      }
+    ]
+  },
+  "glottocode": "meso1252",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 33.8178,
+    "lng": 43.1095
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 83,
+        "concepts": 40,
+        "doculects": 2,
+        "release": "asjp-v21"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "macrolanguage": "ara",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "138143"
+  },
+  "methodSupport": {
+    "total": 99,
+    "byTier": {
+      "model-card-declared": 99
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/nllb-moe-54b",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-3.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-3.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-distilled-1.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:chenchen12311/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Chris7v7/nllb-200-3.3B-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-1.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-3.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-distilled-1.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-distilled-600M-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:dev-vinod/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-1.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-1.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-3.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-3.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-1.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-1.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-600M-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-600M-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:entai2965/nllb-200-3.3B-ctranslate2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:entai2965/nllb-200-3.3B-ctranslate2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:entai2965/nllb-200-distilled-1.3B-ctranslate2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Arab"
+  ],
+  "scriptNames": [
+    "Arabic"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "17000000",
+    "values": [
+      {
+        "value": "17000000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 11,
+    "componentsPresent": 35,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.affixPreference": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.wordOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "acm-IQ",
+    "revision": "0cd20b44f61af13c",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "modality",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.affixPreference",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder",
+      "typologicalProfile.wordOrder"
+    ]
+  },
+  "locale": {
+    "language": "acm",
+    "region": "IQ",
+    "script": "Arab",
+    "publishedTag": "acm-IQ",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Arab",
+  "localeScoped": {
+    "scriptName": "Arabic"
+  }
+}

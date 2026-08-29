@@ -1,0 +1,236 @@
+{
+  "_comment": "SSOT for translation METHODS (MT engines) and LLM PROVIDERS, consumed by BOTH the Python arena harness (arena/mt_eval_harness) and the JS CLI (cli/lib/translate.js). Adding an entry here + the matching thin adapter in each runtime keeps the two tools interchangeable. Parity tests in each suite (arena/tests/test_method_registry_ssot.py + the CLI suite) FAIL if a runtime's registry drifts from this file. The imperative request/response code stays per-runtime; this file is the declarative contract. method_class must be in config.VALID_METHOD_CLASSES; paradigm in config.VALID_PARADIGMS. Availability/readiness surfaces judge credential_env only (see schemas/method-registry.schema.json): non-credential config vars like AWS_REGION stay in env for the adapter but never make a method read READY, and credential_env_all marks key-pair auth where every var is required.",
+  "version": 1,
+  "entries": {
+    "openrouter": {
+      "kind": "llm-provider",
+      "cli_name": "llm",
+      "method_class": "raw-llm",
+      "paradigm": "llm",
+      "env": [
+        "OPENROUTER_API_KEY"
+      ],
+      "default_base_url": "https://openrouter.ai/api/v1",
+      "homepage": "https://openrouter.ai",
+      "license": "Proprietary (per-model)",
+      "commercialReady": true,
+      "cost_note": "Per-model token pricing (fetched at runtime)"
+    },
+    "openai": {
+      "kind": "llm-provider",
+      "method_class": "raw-llm",
+      "paradigm": "llm",
+      "env": [
+        "OPENAI_API_KEY"
+      ],
+      "default_base_url": "https://api.openai.com/v1",
+      "homepage": "https://platform.openai.com",
+      "license": "Proprietary (OpenAI ToS)",
+      "commercialReady": true,
+      "cost_note": "Per-model token pricing"
+    },
+    "anthropic": {
+      "kind": "llm-provider",
+      "method_class": "raw-llm",
+      "paradigm": "llm",
+      "env": [
+        "ANTHROPIC_API_KEY"
+      ],
+      "default_base_url": "https://api.anthropic.com/v1",
+      "homepage": "https://docs.anthropic.com",
+      "license": "Proprietary (Anthropic ToS)",
+      "commercialReady": true,
+      "cost_note": "Per-model token pricing"
+    },
+    "gemini": {
+      "kind": "llm-provider",
+      "method_class": "raw-llm",
+      "paradigm": "llm",
+      "env": [
+        "GEMINI_API_KEY"
+      ],
+      "default_base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "homepage": "https://ai.google.dev",
+      "license": "Proprietary (Google ToS)",
+      "commercialReady": true,
+      "cost_note": "Per-model token pricing"
+    },
+    "local": {
+      "kind": "llm-provider",
+      "method_class": "raw-llm",
+      "paradigm": "llm",
+      "env": [
+        "LOCAL_API_BASE",
+        "OPENAI_API_BASE",
+        "OPENAI_API_KEY"
+      ],
+      "default_base_url": "http://localhost:11434/v1",
+      "homepage": "https://github.com/ollama/ollama",
+      "license": "Varies (self-hosted / OpenAI-compatible gateway)",
+      "commercialReady": false,
+      "cost_note": "Unknown to the harness — never priced (UNKNOWN, not $0)"
+    },
+    "google-translate": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "GOOGLE_TRANSLATE_API_KEY",
+        "GOOGLE_API_KEY"
+      ],
+      "homepage": "https://cloud.google.com/translate",
+      "license": "Proprietary (Google ToS)",
+      "commercialReady": true,
+      "cost_note": "~$20 / 1M characters",
+      "max_batch": 128,
+      "locale_map": {
+        "he": "iw",
+        "jv": "jw"
+      }
+    },
+    "deepl": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "DEEPL_API_KEY"
+      ],
+      "homepage": "https://www.deepl.com/pro-api",
+      "license": "Proprietary (DeepL ToS)",
+      "commercialReady": true,
+      "cost_note": "Proprietary; free tier 500K chars/month (':fx' keys)",
+      "max_batch": 128,
+      "locale_map": {}
+    },
+    "microsoft-translator": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "MICROSOFT_TRANSLATOR_API_KEY",
+        "AZURE_TRANSLATOR_KEY",
+        "MICROSOFT_TRANSLATOR_REGION",
+        "MICROSOFT_TRANSLATOR_ENDPOINT"
+      ],
+      "credential_env": [
+        "MICROSOFT_TRANSLATOR_API_KEY",
+        "AZURE_TRANSLATOR_KEY"
+      ],
+      "homepage": "https://learn.microsoft.com/azure/ai-services/translator/",
+      "license": "Proprietary (Microsoft ToS)",
+      "commercialReady": true,
+      "cost_note": "Proprietary; free tier 2M chars/month",
+      "max_batch": 100,
+      "locale_map": {}
+    },
+    "libretranslate": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "LIBRETRANSLATE_API_URL",
+        "LIBRETRANSLATE_API_KEY"
+      ],
+      "homepage": "https://libretranslate.com",
+      "license": "AGPL-3.0",
+      "commercialReady": false,
+      "cost_note": "Free / self-hosted (AGPL-3.0 obligations apply)",
+      "max_batch": 64,
+      "locale_map": {}
+    },
+    "apertium": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "rule-based",
+      "env": [
+        "APERTIUM_API_URL",
+        "APERTIUM_API_KEY"
+      ],
+      "default_base_url": "https://apertium.org/apy",
+      "homepage": "https://www.apertium.org",
+      "license": "GPL-3.0+ (Apertium)",
+      "commercialReady": false,
+      "cost_note": "Free public API (rate-limited; self-host for volume)",
+      "max_batch": 1,
+      "locale_map": {}
+    },
+    "amazon-translate": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY",
+        "AWS_REGION"
+      ],
+      "credential_env": [
+        "AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY"
+      ],
+      "credential_env_all": true,
+      "homepage": "https://aws.amazon.com/translate/",
+      "license": "Proprietary (AWS Service Terms)",
+      "commercialReady": true,
+      "cost_note": "~$15 / 1M characters (free tier 2M chars/month for 12 months)",
+      "max_batch": 1,
+      "locale_map": {},
+      "optional_extra": "aws",
+      "runtimes": [
+        "harness"
+      ]
+    },
+    "tilde": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "TILDE_API_KEY"
+      ],
+      "default_base_url": "https://translate.tilde.ai/api/translate/text",
+      "homepage": "https://tilde.ai/machine-translation/",
+      "license": "Proprietary (Tilde ToS)",
+      "commercialReady": true,
+      "cost_note": "Proprietary; free trial 250K chars (no card)",
+      "max_batch": 25,
+      "locale_map": {}
+    },
+    "translated": {
+      "kind": "mt-api",
+      "method_class": "api",
+      "paradigm": "neural-nmt",
+      "env": [
+        "LARA_ACCESS_KEY_ID",
+        "LARA_ACCESS_KEY_SECRET"
+      ],
+      "credential_env": [
+        "LARA_ACCESS_KEY_ID",
+        "LARA_ACCESS_KEY_SECRET"
+      ],
+      "credential_env_all": true,
+      "default_base_url": "https://laratranslate.com",
+      "homepage": "https://laratranslate.com",
+      "license": "Proprietary (Translated ToS)",
+      "commercialReady": true,
+      "cost_note": "Proprietary; plan-based pricing (per-character cost not published)",
+      "max_batch": 50,
+      "locale_map": {}
+    },
+    "local-model": {
+      "kind": "local-model",
+      "method_class": "pipeline",
+      "paradigm": "neural-nmt",
+      "env": [
+        "LOCAL_MODEL_ID"
+      ],
+      "homepage": "https://huggingface.co/models?pipeline_tag=translation",
+      "license": "Per-model (open weights; see the chosen model's card)",
+      "commercialReady": false,
+      "cost_note": "Free to run; local compute only (UNKNOWN to the harness, never $0)",
+      "max_batch": 8,
+      "optional_extra": "local-models",
+      "runtimes": [
+        "harness"
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/* MetricPop — pooled slate instrument chips (metric name + rolling score).
+   Slate = metric-instrument chrome (brandColors contract): the NAME is never
+   a quality colour; the NUMBER earns its spectrum colour only when it locks. */
+
+.chip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: rgba(10, 16, 24, 0.86);
+  border: 1px solid rgba(139, 149, 167, 0.28);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  white-space: nowrap;
+  will-change: transform, opacity, filter;
+}
+
+.chip i {
+  font-style: normal;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: #8b95a7; /* SLATE — instrument chrome, never a quality colour */
+}
+
+.chip b {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 15px;
+  font-weight: 700;
+  color: #e9ecf4; /* neutral while rolling; locks into its spectrum colour */
+}
+
+/* rtl:end:ignore */

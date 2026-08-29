@@ -1,0 +1,3737 @@
+{
+  "theme.ErrorPageContent.title": {
+    "message": "此页面已崩溃。",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "滚动回到顶部",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "归档",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "归档",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "博客列表页面导航",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "较新的文章",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "较旧的文章",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "博客文章页面导航",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "较新的文章",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "较旧的文章",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "查看所有标签",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "系统模式",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "浅色模式",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "深色模式",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "在深色和浅色模式之间切换（当前 {mode}）",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "面包屑导航",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "文档页面",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "上一页",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一页",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "1 篇文档已标记|{count} 篇文档已标记",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged}，标签为 \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "这是 {siteTitle} {versionLabel} 版本的未发布文档。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "这是 {siteTitle} {versionLabel} 的文档，该版本不再被积极维护。",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "如需最新文档，请查看 {latestVersionLink}（{versionLabel}）。",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新版本",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "编辑此页面",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "直接链接到 {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " 于 {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " 由 {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "最后更新{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "页面未找到",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "标签：",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "注意",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危险",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "信息",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "备注",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "提示",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "警告",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "博客最新文章导航",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展开侧边栏分类 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "折叠侧边栏分类 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "（在新标签页中打开）",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主导航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "我们找不到您要查找的内容。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系链接到原始 URL 的网站所有者，告知他们该链接已失效。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本页内容",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读更多关于 {title} 的内容",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 分钟阅读|{readingTime} 分钟阅读",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "复制",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "已复制",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "复制代码到剪贴板",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "主页",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "折叠侧边栏",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "折叠侧边栏",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "关闭导航栏",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切换导航栏",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 返回主菜单",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "展开下拉菜单",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "折叠下拉菜单",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "展开侧边栏",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "展开侧边栏",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchBar.noResultsText": {
+    "message": "无结果"
+  },
+  "theme.SearchBar.seeAllOutsideContext": {
+    "message": "查看 \"{context}\" 外的所有结果"
+  },
+  "theme.SearchBar.searchInContext": {
+    "message": "查看 \"{context}\" 内的所有结果"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "查看所有结果"
+  },
+  "theme.SearchBar.label": {
+    "message": "搜索",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "\"{query}\" 的搜索结果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "搜索文档",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.searchContext.everywhere": {
+    "message": "所有位置"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "找到 1 个文档|找到 {count} 个文档",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "未找到任何文档",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳转到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
+  },
+  "theme.blog.post.plurals": {
+    "message": "1 篇文章|{count} 篇文章",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "标签为 \"{tagName}\" 的 {nPosts}",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts} 篇文章",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "作者",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "查看所有作者",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "该作者尚未发布任何文章。",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "未列出的页面",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "此页面未列出。搜索引擎不会对其进行索引，只有拥有直接链接的用户才能访问。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "草稿页面",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "此页面是草稿。它仅在开发环境中可见，并将从生产构建中排除。",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 项|{count} 项",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "homepage.hero.titleLine1": {
+    "message": "完全可定制的",
+    "description": "Hero title line 1"
+  },
+  "homepage.hero.titleLine2": {
+    "message": "国际化",
+    "description": "Hero title line 2"
+  },
+  "homepage.hero.subtitle": {
+    "message": "一条命令翻译你的语言文件。每种翻译方法——Google Translate、LLM、自定义 API、定制管道——都是一个配置选项。选择适合每种语言的方案。",
+    "description": "Hero subtitle explaining the product"
+  },
+  "homepage.hero.ctaPrimary": {
+    "message": "开始使用 →",
+    "description": "Primary call-to-action button"
+  },
+  "homepage.hero.ctaSecondary": {
+    "message": "查看方法",
+    "description": "Secondary call-to-action button"
+  },
+  "homepage.stats.tests": {
+    "message": "测试",
+    "description": "Stats bar label for test count"
+  },
+  "homepage.stats.dependencies": {
+    "message": "依赖项",
+    "description": "Stats bar label for dependency count"
+  },
+  "homepage.stats.scriptConverters": {
+    "message": "脚本转换器",
+    "description": "Stats bar label for script converter count"
+  },
+  "homepage.stats.languageRegisters": {
+    "message": "语言变体",
+    "description": "Stats bar label for language register count"
+  },
+  "homepage.quickExample.title": {
+    "message": "按语言对混合使用不同方法",
+    "description": "Quick example section heading"
+  },
+  "homepage.quickExample.description": {
+    "message": "每个源语言→目标语言对都有自己的翻译方法、模型和质量配置。为每种语言选择最适合的方案——而不是一刀切。",
+    "description": "Quick example section description"
+  },
+  "homepage.quickExample.cta": {
+    "message": "了解翻译方法 →",
+    "description": "Quick example CTA button"
+  },
+  "homepage.useCases.sectionTitle": {
+    "message": "适用场景",
+    "description": "Use cases section heading"
+  },
+  "homepage.comparison.title": {
+    "message": "不是另一个 TMS 平台",
+    "description": "Comparison section title"
+  },
+  "homepage.comparison.description": {
+    "message": "Crowdin、Phrase 和 Locize 是云平台，需要账户、仪表板和月费。Champollion 是在你的项目中运行的 CLI 工具——无需账户、无需仪表板、无供应商锁定。",
+    "description": "Comparison section description"
+  },
+  "homepage.comparison.cta": {
+    "message": "查看完整对比 →",
+    "description": "Comparison section CTA"
+  },
+  "homepage.arena.eyebrow": {
+    "message": "竞技场",
+    "description": "Arena section eyebrow label"
+  },
+  "homepage.arena.titleLine1": {
+    "message": "认为你有最好的",
+    "description": "Arena title line 1"
+  },
+  "homepage.arena.titleLine2": {
+    "message": "用于翻译",
+    "description": "Arena title line 2"
+  },
+  "homepage.arena.tagline": {
+    "message": "证明它。",
+    "description": "Arena section tagline"
+  },
+  "homepage.arena.description": {
+    "message": "7,000+ 种语言。约 130 种有机器翻译。其余的是未解决的问题——也是开放的邀请。Champollion 的评估工具可以用指纹化、可重现的评分对任何方法进行基准测试。排行榜跟踪每一次提交。",
+    "description": "Arena section description paragraph"
+  },
+  "homepage.arena.calloutLine1": {
+    "message": "这是一个未解决的问题，世界上每个人都可以为之做出贡献。",
+    "description": "Arena callout line 1"
+  },
+  "homepage.arena.calloutLine2": {
+    "message": "构建一个方法。评分。贡献回来。",
+    "description": "Arena callout line 2"
+  },
+  "homepage.leaderboard.title": {
+    "message": "🏆 方法排行榜",
+    "description": "Leaderboard widget title"
+  },
+  "homepage.leaderboard.subtitle": {
+    "message": "按 chrF++ 分数排名的顶级翻译方法。",
+    "description": "Leaderboard widget subtitle"
+  },
+  "homepage.leaderboard.cta": {
+    "message": "你能超越他们吗？",
+    "description": "Leaderboard widget call to action"
+  },
+  "homepage.leaderboard.runHarness": {
+    "message": "运行评估工具",
+    "description": "Leaderboard run harness link"
+  },
+  "homepage.leaderboard.fullLeaderboard": {
+    "message": "完整排行榜 →",
+    "description": "Full leaderboard link button"
+  },
+  "homepage.leaderboard.colMethod": {
+    "message": "方法",
+    "description": "Leaderboard table header: Method"
+  },
+  "homepage.leaderboard.colModel": {
+    "message": "模型",
+    "description": "Leaderboard table header: Model"
+  },
+  "homepage.leaderboard.colPair": {
+    "message": "语言对",
+    "description": "Leaderboard table header: Pair"
+  },
+  "homepage.seo.titleSuffix": {
+    "message": "完全可定制的国际化",
+    "description": "SEO title suffix for the homepage"
+  },
+  "homepage.seo.description": {
+    "message": "一个 i18n 框架，其中每个翻译方法都是一个配置选项。Google Translate、LLM、自定义管道——一条命令、按对控制、质量把关。",
+    "description": "SEO meta description for the homepage"
+  },
+  "homepage.features.oneCommand.title": {
+    "message": "一条命令",
+    "description": "Feature card title: One Command"
+  },
+  "homepage.features.oneCommand.description": {
+    "message": "自动检测你的语言文件、格式和目标语言。翻译已更改的内容。跳过未更改的部分。",
+    "description": "Feature card description: One Command"
+  },
+  "homepage.features.perPairMethods.title": {
+    "message": "按语言对配置方法",
+    "description": "Feature card title: Per-Pair Methods"
+  },
+  "homepage.features.perPairMethods.description": {
+    "message": "法语用 Google Translate，日语用 LLM，平原克里语用经过指导的插件——全部在同一个配置中。",
+    "description": "Feature card description: Per-Pair Methods"
+  },
+  "homepage.features.registersCoaching.title": {
+    "message": "语言风格与指导",
+    "description": "Feature card title: Registers & Coaching"
+  },
+  "homepage.features.registersCoaching.description": {
+    "message": "通过按语言的语气指令来引导 LLM。德语用正式的 Sie 形式，菲律宾语用 Taglish 代码混用，克林贡语用战士的荣誉感。",
+    "description": "Feature card description: Registers & Coaching"
+  },
+  "homepage.features.contentAware.title": {
+    "message": "内容感知",
+    "description": "Feature card title: Content Aware"
+  },
+  "homepage.features.contentAware.description": {
+    "message": "代码块、shortcode、插值变量和原始 HTML 在翻译期间受到保护。LLM 永远看不到你的代码。",
+    "description": "Feature card description: Content Aware"
+  },
+  "homepage.features.zeroDependencies.title": {
+    "message": "零依赖",
+    "description": "Feature card title: Zero Dependencies"
+  },
+  "homepage.features.zeroDependencies.description": {
+    "message": "仅使用 Node.js 内置模块。无 SDK、无原生模块、无构建步骤。在任何 Node 20+ 环境中运行。",
+    "description": "Feature card description: Zero Dependencies"
+  },
+  "homepage.features.qualityGate.title": {
+    "message": "质量门控",
+    "description": "Feature card title: Quality Gate"
+  },
+  "homepage.features.qualityGate.description": {
+    "message": "每次翻译在写入前都经过验证。错误的字符集输出、源文本回显、长度膨胀和占位符损坏都会被捕获并拒绝。",
+    "description": "Feature card description: Quality Gate"
+  },
+  "homepage.useCases.saas.title": {
+    "message": "SaaS 国际化",
+    "description": "Use case title: SaaS Internationalization"
+  },
+  "homepage.useCases.saas.description": {
+    "message": "使用按语言对的质量控制将你的 Next.js、Hugo 或 React 应用翻译成 30+ 种语言。",
+    "description": "Use case description: SaaS Internationalization"
+  },
+  "homepage.useCases.saas.linkText": {
+    "message": "翻译 30 种语言 →",
+    "description": "Use case link text: SaaS Internationalization"
+  },
+  "homepage.useCases.pipeline.title": {
+    "message": "构建自定义管道",
+    "description": "Use case title: Build a Custom Pipeline"
+  },
+  "homepage.useCases.pipeline.description": {
+    "message": "将 LLM 与 FST 验证器、字典和后处理器链接起来。将其打包为插件。",
+    "description": "Use case description: Build a Custom Pipeline"
+  },
+  "homepage.useCases.pipeline.linkText": {
+    "message": "FST 管道食谱 →",
+    "description": "Use case link text: Build a Custom Pipeline"
+  },
+  "homepage.useCases.preservation.title": {
+    "message": "语言保护",
+    "description": "Use case title: Language Preservation"
+  },
+  "homepage.useCases.preservation.description": {
+    "message": "为没有 API 覆盖的语言提供经过指导的 LLM 翻译——土著语言、濒危语言、人工构造语言。",
+    "description": "Use case description: Language Preservation"
+  },
+  "homepage.useCases.preservation.linkText": {
+    "message": "低资源指南 →",
+    "description": "Use case link text: Language Preservation"
+  },
+  "homepage.arena.cards.plugTest.title": {
+    "message": "即插即测",
+    "description": "Arena card title: Plug and Test"
+  },
+  "homepage.arena.cards.plugTest.description": {
+    "message": "针对标准化基准测试运行你的方法。chrF++、精确匹配、FST 接受度——全部由同一个测试框架计算。",
+    "description": "Arena card description: Plug and Test"
+  },
+  "homepage.arena.cards.plugTest.linkText": {
+    "message": "评估工具 →",
+    "description": "Arena card link text: Plug and Test"
+  },
+  "homepage.arena.cards.claimScore.title": {
+    "message": "声明你的分数",
+    "description": "Arena card title: Claim Your Score"
+  },
+  "homepage.arena.cards.claimScore.description": {
+    "message": "每次提交都会关联到 Git 提交记录并针对相同数据集进行评分。打开 PR 来提交。",
+    "description": "Arena card description: Claim Your Score"
+  },
+  "homepage.arena.cards.claimScore.linkText": {
+    "message": "排行榜 →",
+    "description": "Arena card link text: Claim Your Score"
+  },
+  "homepage.arena.cards.respectData.title": {
+    "message": "尊重数据",
+    "description": "Arena card title: Respect the Data"
+  },
+  "homepage.arena.cards.respectData.linkText": {
+    "message": "数据主权 →",
+    "description": "Arena card link text: Respect the Data"
+  },
+  "homepage.hero.titlePrefix": {
+    "message": "用您选择的语言构建整个网站",
+    "description": "Hero title text before the animated language flipper"
+  },
+  "homepage.hero.titleSuffix": {
+    "message": "一条命令构建你的整个网站，或进行无限定制",
+    "description": "Hero title text after the animated language flipper"
+  },
+  "homepage.hero.languagesSuffix": {
+    "message": "种语言",
+    "description": "Suffix after the language count number in the hero"
+  },
+  "homepage.hero.languagesSupported": {
+    "message": "支持的语言",
+    "description": "Languages supported button label"
+  },
+  "theme.docs.relatedRail.title": {
+    "message": "如果你对此感兴趣 →",
+    "description": "Heading of the related-content rail at the bottom of a doc page"
+  },
+  "homepage.rosetta.morph.crk.typology": {
+    "message": "多综合型",
+    "description": "Typology label for the Plains Cree morph sequence"
+  },
+  "homepage.rosetta.morph.crk.meaning": {
+    "message": "— 「我看到他」，一个词",
+    "description": "Meaning line under the fused Cree verb"
+  },
+  "homepage.rosetta.morph.crk.caption": {
+    "message": "三个英文词重组为一个 Cree 动词 — 主语、时态和宾语融合在其中。",
+    "description": "Caption for the Plains Cree morph sequence"
+  },
+  "homepage.rosetta.morph.spa.typology": {
+    "message": "融合型",
+    "description": "Typology label for the Spanish morph sequence"
+  },
+  "homepage.rosetta.morph.spa.meaning": {
+    "message": "— 「她说话了」，一个融合的词尾",
+    "description": "Meaning line under the fused Spanish verb"
+  },
+  "homepage.rosetta.morph.spa.caption": {
+    "message": "三个语法意义融合成一个词尾，任何分词器都无法拆分。",
+    "description": "Caption for the Spanish morph sequence"
+  },
+  "homepage.rosetta.morph.arb.typology": {
+    "message": "词根-词式型",
+    "description": "Typology label for the Arabic morph sequence"
+  },
+  "homepage.rosetta.morph.arb.meaning1": {
+    "message": "— 「书」",
+    "description": "Meaning line under the Arabic form kitāb"
+  },
+  "homepage.rosetta.morph.arb.meaning2": {
+    "message": "— 「作者」",
+    "description": "Meaning line under the Arabic form kātib"
+  },
+  "homepage.rosetta.morph.arb.caption": {
+    "message": "词根辅音 k-t-b 保持不变；元音词式重新穿过它们形成新词。",
+    "description": "Caption for the Arabic morph sequence"
+  },
+  "homepage.rosetta.morph.sectionLabel": {
+    "message": "翻译如何重组词汇 — 三个真实例子，附引用注释",
+    "description": "Accessible label for the interactive morph stage"
+  },
+  "homepage.rosetta.morph.glossHint": {
+    "message": "触摸一个部分 — 每个注释都有引用。",
+    "description": "Hint under the morph word inviting tile interaction"
+  },
+  "homepage.rosetta.morph.again": {
+    "message": "再次变形 ↻",
+    "description": "Button advancing the morph stage to the next language"
+  },
+  "homepage.field.frozenLabel": {
+    "message": "一个真实的翻译流程：一个英文句子、模型输出的翻译结果，以及该基准测试运行的语料库级复合评分",
+    "description": "Accessible label for the static translation-field example"
+  },
+  "homepage.field.modelOutput": {
+    "message": "模型输出",
+    "description": "Label marking field text as a model output"
+  },
+  "homepage.field.reference": {
+    "message": "参考翻译：",
+    "description": "Label for the gold reference translation"
+  },
+  "homepage.field.legend": {
+    "message": "真实语料句子 · 真实模型输出 · 每个芯片：该运行的全语料复合分数",
+    "description": "Provenance legend for the translation field background"
+  },
+  "homepage.rosetta.wall.tier.safe": {
+    "message": "蓬勃发展",
+    "description": "Vitality tier label on wall chip hover"
+  },
+  "homepage.rosetta.wall.tier.vulnerable": {
+    "message": "濒危",
+    "description": "Vitality tier label on wall chip hover"
+  },
+  "homepage.rosetta.wall.tier.endangered": {
+    "message": "濒危",
+    "description": "Vitality tier label on wall chip hover"
+  },
+  "homepage.rosetta.hero.decipherLabel": {
+    "message": "「语言」一词用多种语言和文字书写",
+    "description": "Accessible label for the cycling endonym headline"
+  },
+  "homepage.rosetta.hero.subtitle": {
+    "message": "目前约 200 种语言拥有机器翻译。其余的正是我们存在的原因——开放基准、社区所有权、每个事实都有出处。",
+    "description": "Homepage hero subline"
+  },
+  "homepage.rosetta.hero.searchPlaceholder": {
+    "message": "查找您的语言——名称、自名或 ISO 代码…",
+    "description": "Placeholder for the homepage language search input"
+  },
+  "homepage.rosetta.hero.searchLabel": {
+    "message": "搜索语言",
+    "description": "Aria label for the homepage language search input"
+  },
+  "homepage.rosetta.hero.searchButton": {
+    "message": "搜索",
+    "description": "Homepage search submit button"
+  },
+  "homepage.rosetta.wall.eyebrow": {
+    "message": "每种语言，用其自己的名字",
+    "description": "Wall tile eyebrow"
+  },
+  "homepage.rosetta.wall.more": {
+    "message": "探索语言地图 →",
+    "description": "Wall tile onward link"
+  },
+  "homepage.rosetta.wall.legendSafe": {
+    "message": "蓬勃发展",
+    "description": "Wall legend: safe vitality"
+  },
+  "homepage.rosetta.wall.legendVulnerable": {
+    "message": "脆弱",
+    "description": "Wall legend: vulnerable vitality"
+  },
+  "homepage.rosetta.wall.legendEndangered": {
+    "message": "濒危",
+    "description": "Wall legend: endangered vitality"
+  },
+  "homepage.rosetta.wall.legendNote": {
+    "message": "— UNESCO 语言活力状态。每个名称链接到其语言卡片。",
+    "description": "Wall legend note"
+  },
+  "homepage.rosetta.board.loading": {
+    "message": "加载排行榜中…",
+    "description": "Leaderboard tile label while live rows load"
+  },
+  "homepage.rosetta.board.more": {
+    "message": "完整排行榜 →",
+    "description": "Leaderboard tile link to full leaderboard"
+  },
+  "homepage.rosetta.board.live": {
+    "message": "排行榜实时更新",
+    "description": "Leaderboard tile label when live"
+  },
+  "homepage.rosetta.board.static": {
+    "message": "已验证结果",
+    "description": "Leaderboard tile label for static fallback"
+  },
+  "homepage.rosetta.featured.eyebrow": {
+    "message": "每种语言都是一张卡片",
+    "description": "Featured card eyebrow"
+  },
+  "homepage.rosetta.featured.cta": {
+    "message": "打开完整卡片 →",
+    "description": "Featured card CTA"
+  },
+  "homepage.rosetta.stats.eyebrow": {
+    "message": "数据统计",
+    "description": "Stats tile eyebrow"
+  },
+  "homepage.rosetta.stats.cards": {
+    "message": "语言卡片",
+    "description": "Stats tile: language cards label"
+  },
+  "homepage.rosetta.stats.sources": {
+    "message": "许可源",
+    "description": "Stats tile: licensed sources label"
+  },
+  "homepage.rosetta.stats.runs": {
+    "message": "排行榜记录",
+    "description": "Stats tile: leaderboard runs label"
+  },
+  "homepage.rosetta.glossary.eyebrow": {
+    "message": "术语，已翻译",
+    "description": "Glossary tile eyebrow"
+  },
+  "homepage.rosetta.glossary.more": {
+    "message": "127 个术语，用简明语言解释 →",
+    "description": "Glossary tile onward link"
+  },
+  "homepage.rosetta.quote.text": {
+    "message": "尚未支持 — 但绝不是「非语言」。",
+    "description": "Position-piece pull quote (sign languages: not yet served, never not a language)"
+  },
+  "homepage.rosetta.quote.attrib": {
+    "message": "关于目录中 160+ 种手语，摘自立场声明",
+    "description": "Pull quote attribution"
+  },
+  "homepage.rosetta.quote.link": {
+    "message": "这里如何定义语言？",
+    "description": "Pull quote source link text"
+  },
+  "homepage.rosetta.quote.sovereignty": {
+    "message": "数据主权：答案始终在社区 →",
+    "description": "Quote tile second onward link"
+  },
+  "homepage.rosetta.install.eyebrow": {
+    "message": "运行",
+    "description": "Install tile eyebrow"
+  },
+  "homepage.rosetta.install.cli": {
+    "message": "翻译",
+    "description": "Install strip label: CLI"
+  },
+  "homepage.rosetta.install.harness": {
+    "message": "基准测试",
+    "description": "Install strip label: harness"
+  },
+  "homepage.rosetta.install.more": {
+    "message": "快速开始 →",
+    "description": "Install tile onward link"
+  },
+  "homepage.rosetta.donate.eyebrow": {
+    "message": "运行队列",
+    "description": "Run-queue tile eyebrow"
+  },
+  "homepage.rosetta.donate.copy": {
+    "message": "有 API 额度？运行基准测试，推动地图前进。",
+    "description": "Donate tile copy"
+  },
+  "homepage.rosetta.donate.more": {
+    "message": "如何贡献 →",
+    "description": "Donate tile onward link"
+  },
+  "homepage.rosetta.paths.eyebrow": {
+    "message": "无论你是谁，总有一扇门为你打开",
+    "description": "Funnels section eyebrow"
+  },
+  "homepage.rosetta.paths.title": {
+    "message": "选择你的路径",
+    "description": "Choose your path section title"
+  },
+  "homepage.rosetta.seo.title": {
+    "message": "Champollion — 面向所有语言的可信机器翻译开源基础设施",
+    "description": "SEO title for the homepage"
+  },
+  "homepage.rosetta.seo.description": {
+    "message": "面向所有语言的可信机器翻译开源基础设施：测试集与地图，展示谁能翻译什么、每种方法有多好、差距在哪里。公开基准在开放数据上为每种方法排名；主权基准是社区自有的保密测试集，我们永远不会看到。与社区共建，绝不从社区抓取——钥匙由社区掌握。欢迎一切方法，无论人工还是机器。",
+    "description": "SEO meta description for the homepage"
+  },
+  "glossary.mark.more": {
+    "message": "更多 →",
+    "description": "Glossary tooltip link to the term's full entry on the /glossary page"
+  },
+  "glossary.page.metaTitle": {
+    "message": "术语表",
+    "description": "The browser/meta title of the /glossary page"
+  },
+  "glossary.page.metaDescription": {
+    "message": "语言卡片中使用的语言学术语的通俗定义——形态学、声调、证据性，以及每个术语为什么会增加机器翻译的难度。",
+    "description": "The meta description of the /glossary page"
+  },
+  "glossary.page.eyebrow": {
+    "message": "术语表",
+    "description": "Eyebrow label above the /glossary page title"
+  },
+  "glossary.page.title": {
+    "message": "用通俗语言讲解语言学",
+    "description": "The /glossary page title"
+  },
+  "glossary.page.subtitle": {
+    "message": "语言卡片使用的每个技术术语——它的含义，以及为什么它会增加机器翻译的难度。{count} 个术语，每个都附有标准参考文献的引用。",
+    "description": "The /glossary page subtitle; {count} is the number of terms"
+  },
+  "glossary.page.searchPlaceholder": {
+    "message": "搜索 {count} 个术语…",
+    "description": "Placeholder of the /glossary search input; {count} is the number of terms"
+  },
+  "glossary.page.searchAriaLabel": {
+    "message": "搜索术语表",
+    "description": "ARIA label of the /glossary search input"
+  },
+  "glossary.page.searchClearAriaLabel": {
+    "message": "清除搜索",
+    "description": "ARIA label of the /glossary search clear button"
+  },
+  "glossary.page.alphabetAriaLabel": {
+    "message": "字母索引",
+    "description": "ARIA label of the /glossary A–Z index"
+  },
+  "glossary.page.emptyState": {
+    "message": "没有术语匹配「{query}」。",
+    "description": "Shown when the /glossary search matches nothing; {query} is the search text"
+  },
+  "glossary.page.termAnchorAriaLabel": {
+    "message": "链接到 {term}",
+    "description": "ARIA label of the # anchor link next to a glossary term"
+  },
+  "glossary.page.alsoLabel": {
+    "message": "另见：",
+    "description": "Label before the list of alternate surface forms of a glossary term (the variants themselves stay in English — they mirror the English card prose)"
+  },
+  "glossary.page.mtRelevanceLabel": {
+    "message": "为什么对机器翻译很重要：",
+    "description": "Label before the note on why a glossary term matters for machine translation"
+  },
+  "glossary.page.exampleLabel": {
+    "message": "示例：",
+    "description": "Label before a glossary term's example"
+  },
+  "glossary.page.relatedLabel": {
+    "message": "相关：",
+    "description": "Label before the list of related glossary terms"
+  },
+  "glossary.page.whereTheseSurface": {
+    "message": "这些术语在卡片文本中任何地方都用虚线下划线标记——在 {atlasLink} 或{catalogueLink}中将鼠标悬停在任何卡片上的术语上可查看简短版本，然后点击「更多 →」返回此处。",
+    "description": "Footer note on the /glossary page; {atlasLink} and {catalogueLink} are links"
+  },
+  "glossary.page.whereTheseSurface.atlasLink": {
+    "message": "Atlas",
+    "description": "Link text (the Atlas) inside the /glossary footer note"
+  },
+  "glossary.page.whereTheseSurface.catalogueLink": {
+    "message": "语言图集",
+    "description": "Link text (language atlas) inside the /glossary footer note"
+  },
+  "getInvolved.eyebrow": {
+    "message": "与我们一起构建",
+    "description": "Get-involved page eyebrow"
+  },
+  "getInvolved.title": {
+    "message": "参与其中",
+    "description": "Get-involved page title"
+  },
+  "getInvolved.subtitle": {
+    "message": "全球 7,077 种现存语言中，只有不到 600 种拥有机器翻译支持。缩小这一差距需要四种形式的帮助——而且这些都不会为我们带来任何利润。",
+    "description": "Get-involved page subtitle"
+  },
+  "getInvolved.nc": {
+    "message": "Champollion 是一个非商业性的开源研究项目。赞助资金用于语料库构建、工具开发和社区工作——公开透明，不流向我们。社区保留其数据的所有权，本网站上的每个事实都注明了来源。",
+    "description": "Get-involved NC banner"
+  },
+  "getInvolved.contact": {
+    "message": "不确定你的角色？请写信给我们——",
+    "description": "Get-involved contact band"
+  },
+  "getInvolved.issues": {
+    "message": "或提交一个 issue",
+    "description": "Get-involved issues link"
+  },
+  "homepage.v4.hero.eyebrow": {
+    "message": "CHAMPOLLION 项目",
+    "description": "Eyebrow over the homepage network hero"
+  },
+  "homepage.v4.hero.title": {
+    "message": "每种语言，翻译成每种语言。",
+    "description": "Homepage hero headline (the mission)"
+  },
+  "homepage.v4.hero.subline": {
+    "message": "为弱势、濒危及资源匮乏的语言提供开放的机器翻译支持。",
+    "description": "Homepage hero subline (founder wording 2026-07-19): names the mission’s beneficiaries — at-risk, endangered, and underserved languages — over the binary covered/uncovered map."
+  },
+  "homepage.v4.hero.pledge": {
+    "message": "非商业 · 源码公开 · 社区掌握主导权",
+    "description": "Homepage hero pledge micro-line under the stat (non-commercial promise + sovereignty)"
+  },
+  "homepage.v5.roles.eyebrow": {
+    "message": "参与其中",
+    "description": "Funnels section eyebrow"
+  },
+  "homepage.v5.roles.headline": {
+    "message": "只有我们一起构建，这才能成功。",
+    "description": "Funnels section headline"
+  },
+  "homepage.v5.roles.ncBanner": {
+    "message": "Champollion 是非商业性的。每一笔赞助资金都用于构建语料库和工具——不流向我们。",
+    "description": "Non-commercial promise banner"
+  },
+  "homepage.v5.roles.title": {
+    "message": "参与方式",
+    "description": "Get-involved roles accessible label"
+  },
+  "homepage.v5.use.title": {
+    "message": "只想使用它？",
+    "description": "Use-it links row accessible label"
+  },
+  "homepage.v5.use.eyebrow": {
+    "message": "只想使用它？",
+    "description": "Use-it row lead-in label"
+  },
+  "homepage.v4.evolving.eyebrow": {
+    "message": "项目进行中",
+    "description": "Evolving-project band eyebrow"
+  },
+  "homepage.v4.evolving.headline": {
+    "message": "这是一个不断演进的研究项目。",
+    "description": "Evolving-project band headline"
+  },
+  "homepage.v4.evolving.body": {
+    "message": "设计本身就很灵活，其中一些部分还没有构建——文档会说明哪些部分。如果你发现有什么错误、夸大或缺失的地方，我们想听听你的意见：批评在这里和热情一样受欢迎。",
+    "description": "Evolving-project band body copy"
+  },
+  "homepage.v4.evolving.critique": {
+    "message": "欢迎批评——提交 issue →",
+    "description": "Evolving band link: GitHub issues"
+  },
+  "homepage.v4.evolving.email": {
+    "message": "或写信给我们：info@champollion.dev",
+    "description": "Evolving band link: contact email"
+  },
+  "homepage.v4.evolving.limits": {
+    "message": "我们还不能声称的内容 →",
+    "description": "Evolving band link: honest limitations"
+  },
+  "homepage.proof.eyebrow": {
+    "message": "每个事实，都有出处",
+    "description": "Proof strip eyebrow"
+  },
+  "homepage.proof.headline": {
+    "message": "一个索引，而非权威。",
+    "description": "Proof strip headline"
+  },
+  "homepage.proof.body": {
+    "message": "每张语言卡片上的每个数值都可以追溯到一个具名来源。当来源不一致时，我们展示所有来源——我们从不选择赢家，也从不凭空编造数字。",
+    "description": "Proof strip body"
+  },
+  "homepage.proof.stat.cataloged": {
+    "message": "已编目的语言",
+    "description": "Proof stat label: languages cataloged"
+  },
+  "homepage.proof.stat.sources": {
+    "message": "引用的来源",
+    "description": "Proof stat label: cited sources"
+  },
+  "homepage.proof.link.atlas": {
+    "message": "探索地图集 →",
+    "description": "Proof link: atlas"
+  },
+  "homepage.proof.link.index": {
+    "message": "浏览索引 →",
+    "description": "Proof link: index"
+  },
+  "community.section.aria": {
+    "message": "将你的语言纳入网络——按你的条件注册语料库，可公开、仅限研究或私密"
+  },
+  "community.headline": {
+    "message": "贡献你的语言"
+  },
+  "community.subCopy": {
+    "message": "这个地图属于它所代表的社区。按你的条件注册语料库——公开、仅限研究或私密——并保持所有权、控制权、访问权和拥有权。我们从源头获取；数据始终属于你。"
+  },
+  "community.cta": {
+    "message": "用你的语言开始"
+  },
+  "community.moreLink": {
+    "message": "语料库注册如何运作"
+  },
+  "donate.section.aria": {
+    "message": "使用你的 API 额度运行公开评估队列，推动翻译地图的发展"
+  },
+  "donate.headline": {
+    "message": "运行队列"
+  },
+  "donate.subCopy": {
+    "message": "有 API 额度？运行基准测试。推动地图发展。"
+  },
+  "donate.copied": {
+    "message": "已复制到剪贴板"
+  },
+  "donate.copy": {
+    "message": "复制命令到剪贴板"
+  },
+  "donate.copiedLabel": {
+    "message": "已复制！"
+  },
+  "donate.copyLabel": {
+    "message": "复制"
+  },
+  "donate.budgetLabel": {
+    "message": "预算"
+  },
+  "donate.budget.aria": {
+    "message": "预算（美元）"
+  },
+  "donate.advancedToggle": {
+    "message": "高级选项"
+  },
+  "donate.provider.label": {
+    "message": "提供商"
+  },
+  "donate.model.label": {
+    "message": "模型"
+  },
+  "donate.key.label": {
+    "message": "API 密钥"
+  },
+  "donate.pair.label": {
+    "message": "目标语言对"
+  },
+  "donate.pair.placeholder": {
+    "message": "eng-pam（或留空）"
+  },
+  "donate.moreLink": {
+    "message": "了解更多关于贡献的信息"
+  },
+  "homepage.v4.hero.ctaInvolved": {
+    "message": "参与其中",
+    "description": "Hero primary CTA"
+  },
+  "homepage.v4.hero.ctaExplore": {
+    "message": "探索语言",
+    "description": "Hero secondary CTA"
+  },
+  "homepage.v4.hero.ctaLearn": {
+    "message": "了解更多",
+    "description": "Hero tertiary CTA"
+  },
+  "homepage.v4.hero.statLabel": {
+    "message": "种活语言已拥有机器翻译",
+    "description": "Hero coverage stat label"
+  },
+  "homepage.v4.hero.ctaMap": {
+    "message": "查看实时地图",
+    "description": "Hero map door"
+  },
+  "homepage.v4.hero.scrollCue": {
+    "message": "继续滚动以了解更多",
+    "description": "Hero scroll cue"
+  },
+  "homepage.v4.map.back": {
+    "message": "返回",
+    "description": "Explore-mode back button"
+  },
+  "homepage.v4.map.getInvolved": {
+    "message": "参与其中",
+    "description": "Explore-mode funnel link"
+  },
+  "homepage.recentRuns.label": {
+    "message": "最新网络运行记录",
+    "description": "Label of the latest-runs strip under the hero"
+  },
+  "homepage.recentRuns.allRuns": {
+    "message": "自动化代理评分 · 所有运行记录 →",
+    "description": "Link from the latest-runs strip to the leaderboard (which carries the proxy-score disclaimer)"
+  },
+  "page.myLanguage.link1": {
+    "message": "面向语言社区",
+    "description": "/my-language doc link title"
+  },
+  "page.myLanguage.link1Desc": {
+    "message": "用通俗易懂的语言介绍本项目是什么——以及它绝不会向任何人索取什么。",
+    "description": "/my-language doc link desc"
+  },
+  "page.myLanguage.link2": {
+    "message": "数据主权",
+    "description": "/my-language doc link title"
+  },
+  "page.myLanguage.link2Desc": {
+    "message": "原住民数据主权原则、CARE 和 Māori Data Sovereignty 如何塑造本平台。",
+    "description": "/my-language doc link desc"
+  },
+  "page.myLanguage.link3": {
+    "message": "所有权转移",
+    "description": "/my-language doc link title"
+  },
+  "page.myLanguage.link3Desc": {
+    "message": "将方法和基础设施移交给其所服务社区的计划。",
+    "description": "/my-language doc link desc"
+  },
+  "page.myLanguage.seoTitle": {
+    "message": "你的语言",
+    "description": "/my-language SEO title"
+  },
+  "page.myLanguage.seoDesc": {
+    "message": "你的语言，你的数据，你的决定。母语者和社区如何探索、纠正和管理围绕其语言构建的技术。",
+    "description": "/my-language SEO description"
+  },
+  "page.myLanguage.eyebrow": {
+    "message": "GUARDIAN",
+    "description": "/my-language eyebrow"
+  },
+  "page.myLanguage.title": {
+    "message": "你的语言。你的数据。你来做主。",
+    "description": "/my-language h1"
+  },
+  "page.myLanguage.subtitle": {
+    "message": "如果你使用的是被大型科技公司忽视的语言，这个项目就是为你而建的——并且旨在让你保持对它的掌控权。",
+    "description": "/my-language subtitle"
+  },
+  "page.myLanguage.believe": {
+    "message": "我们的理念",
+    "description": "section heading"
+  },
+  "page.myLanguage.p1": {
+    "message": "你的数据归你所有",
+    "description": "principle title"
+  },
+  "page.myLanguage.p1Text": {
+    "message": "社区贡献的语料库带有“禁止训练”（do-not-train）标记以及其所有者选择的许可证。我们遵循 First Nations 数据主权原则——语言数据由社区拥有和控制——以及 CARE 原则进行构建。在这里，它们是设计约束，而不是公关说辞。",
+    "description": "principle text"
+  },
+  "page.myLanguage.p2": {
+    "message": "基于社区知识构建的方法属于社区",
+    "description": "principle title"
+  },
+  "page.myLanguage.p2Text": {
+    "message": "如果一种翻译方法之所以有效，仅仅是因为母语者分享了他们的语法、词典或时间，那么社区对该方法拥有永久的权利。所有权转移文档详细说明了这一机制的运作方式。",
+    "description": "principle text"
+  },
+  "page.myLanguage.p3": {
+    "message": "每一个事实都有出处",
+    "description": "principle title"
+  },
+  "page.myLanguage.p3Text": {
+    "message": "每张语言卡片都记录了每个事实的来源——这意味着每个事实都可以被真正使用该语言的人质疑和纠正。你才是你所用语言的权威，我们不是。",
+    "description": "principle text"
+  },
+  "page.myLanguage.start": {
+    "message": "如何开始",
+    "description": "section heading"
+  },
+  "page.myLanguage.s1": {
+    "message": "查找你的语言卡片",
+    "description": "step title"
+  },
+  "page.myLanguage.s1Text": {
+    "message": "查看公开记录中关于你的语言的描述——名称、活力、文字、资源——以及其中的错误之处。",
+    "description": "step text"
+  },
+  "page.myLanguage.s1Link": {
+    "message": "寻找你的语言 →",
+    "description": "step link"
+  },
+  "page.myLanguage.s2": {
+    "message": "告诉我们哪里错了（或遗漏了什么）",
+    "description": "step title"
+  },
+  "page.myLanguage.s2Text": {
+    "message": "来自母语者的纠正优先级高于我们接入的任何数据库。在 {github} 上提交 Issue 或发送邮件至 {email}——不需要技术背景，用通俗的语言描述即可。如果你想今天就让你的语言获得关注：你添加到 {tatoeba} 的句子可以在下一次语料库构建时成为这里的基准数据——我们从不自行收集语料库。",
+    "description": "step text; {github}/{email}/{tatoeba} are links"
+  },
+  "page.myLanguage.s3": {
+    "message": "塑造构建的内容",
+    "description": "step title"
+  },
+  "page.myLanguage.s3Text": {
+    "message": "针对你的语言的基准测试应该由使用该语言的人来审查。如果你希望你的社区按照你们的条件参与该审查，请从下方的社区文档开始并与我们联系。",
+    "description": "step text"
+  },
+  "page.myLanguage.note": {
+    "message": "竞赛和社区计划正在开发中。在它们真正落地之前，我们不会在这里进行宣布。",
+    "description": "honesty note"
+  },
+  "page.myLanguage.readMore": {
+    "message": "了解更多",
+    "description": "section heading"
+  },
+  "page.translate.seoTitle": {
+    "message": "翻译你的应用",
+    "description": "/translate SEO title"
+  },
+  "page.translate.seoDesc": {
+    "message": "只需一条命令即可翻译你的本地化文件。十种翻译方法——Google Translate、LLM、指导流水线、自定义 API——每个语言对都可以选择自己的方法。",
+    "description": "/translate SEO description"
+  },
+  "page.translate.eyebrow": {
+    "message": "TRANSLATOR",
+    "description": "/translate eyebrow"
+  },
+  "page.translate.title": {
+    "message": "一条命令。所有本地化语言。",
+    "description": "/translate h1"
+  },
+  "page.translate.subtitle": {
+    "message": "champollion 能够翻译你应用的本地化文件（JSON、TOML、YAML、Markdown），并支持针对每个语言对控制翻译方法、模型和质量。可在任何支持 Node 20+ 的环境中运行。",
+    "description": "/translate subtitle"
+  },
+  "page.translate.humanLink": {
+    "message": "需要人工翻译？ →",
+    "description": "/translate human-translator link"
+  },
+  "page.translate.install": {
+    "message": "安装",
+    "description": "/translate install heading"
+  },
+  "page.translate.adhoc": {
+    "message": "或者使用 {cmd} 临时运行。",
+    "description": "/translate ad hoc note"
+  },
+  "page.translate.threeSteps": {
+    "message": "翻译三步走",
+    "description": "/translate steps heading"
+  },
+  "page.translate.step1": {
+    "message": "初始化",
+    "description": "step 1 title"
+  },
+  "page.translate.step1Text": {
+    "message": "向导会检测你的本地化文件、源语言和格式，然后写入 {cfg}。",
+    "description": "step 1 text"
+  },
+  "page.translate.step2": {
+    "message": "配置提供商",
+    "description": "step 2 title"
+  },
+  "page.translate.step2Text": {
+    "message": "只需一个密钥即可开始——OpenRouter 支持 200 多种模型，或者你也可以使用 Gemini 的免费额度。",
+    "description": "step 2 text"
+  },
+  "page.translate.step3": {
+    "message": "同步",
+    "description": "step 3 title"
+  },
+  "page.translate.step3Text": {
+    "message": "翻译已更改的内容，跳过未更改的内容，在写入之前通过质量门禁验证每个字符串。",
+    "description": "step 3 text"
+  },
+  "page.translate.methods": {
+    "message": "十种方法，按语言对混合使用",
+    "description": "/translate methods heading"
+  },
+  "page.translate.methodsBody": {
+    "message": "法语使用 Google Translate，日语使用 LLM，形态丰富的低资源语言使用带有 FST 门禁的指导插件——所有这些都在同一个配置中。每种翻译方法都是一个配置选项，每个源语言→目标语言对都可以选择自己的方法。",
+    "description": "/translate methods body"
+  },
+  "page.translate.cardMethods": {
+    "message": "翻译方法",
+    "description": "link card"
+  },
+  "page.translate.cardMethodsDesc": {
+    "message": "完整的方法矩阵——LLM 提供商、传统 MT、插件。",
+    "description": "link card desc"
+  },
+  "page.translate.cardQuick": {
+    "message": "快速开始",
+    "description": "link card"
+  },
+  "page.translate.cardQuickDesc": {
+    "message": "60 秒内从本地化文件到翻译完成的应用，分步指南。",
+    "description": "link card desc"
+  },
+  "page.translate.cardCli": {
+    "message": "CLI 参考",
+    "description": "link card"
+  },
+  "page.translate.cardCliDesc": {
+    "message": "所有命令和标志 —— sync、init、audit、doctor 等。",
+    "description": "link card desc"
+  },
+  "page.translate.card30": {
+    "message": "翻译 30 种语言",
+    "description": "link card"
+  },
+  "page.translate.card30Desc": {
+    "message": "针对生产规模语言环境集的真实演练。",
+    "description": "link card desc"
+  },
+  "docent.ticket.needMessage": {
+    "message": "请输入留言内容。"
+  },
+  "docent.ticket.sent": {
+    "message": "谢谢 —— 您的留言已记录。"
+  },
+  "docent.ticket.failed": {
+    "message": "发送失败 —— 您也可以发送邮件至 info@champollion.dev。"
+  },
+  "docent.open": {
+    "message": "打开网站指南"
+  },
+  "docent.launcher": {
+    "message": "询问指南"
+  },
+  "docent.title": {
+    "message": "Champollion 网站指南"
+  },
+  "docent.experimental": {
+    "message": "实验性 · 基于我们的公开文档"
+  },
+  "docent.register.hint": {
+    "message": "对话语气"
+  },
+  "docent.register.aria": {
+    "message": "对话语气"
+  },
+  "docent.register.warm": {
+    "message": "友好"
+  },
+  "docent.register.formal": {
+    "message": "正式"
+  },
+  "docent.close": {
+    "message": "关闭"
+  },
+  "docent.tab.chat": {
+    "message": "提问"
+  },
+  "docent.tab.ticket": {
+    "message": "发送留言"
+  },
+  "docent.intro": {
+    "message": "你好！我是网站指南。我可以解释 Champollion 是什么、Network 如何运作，以及你如何参与其中 —— 这些都基于我们的公开文档。我不能为你编写代码或进行翻译，但我可以为你指明正确的页面。你想了解什么？"
+  },
+  "docent.degraded": {
+    "message": "实时指南正在休息；以下是最相关的页面。"
+  },
+  "docent.placeholder": {
+    "message": "询问关于项目的问题…"
+  },
+  "docent.inputAria": {
+    "message": "你的问题"
+  },
+  "docent.send": {
+    "message": "发送"
+  },
+  "docent.ticket.intro": {
+    "message": "提出异议、请求更正或下架，或者询问我无法回答的问题。这会发送给 info@champollion.dev 团队。我们真诚欢迎合理的异议。"
+  },
+  "docent.ticket.kind": {
+    "message": "类型"
+  },
+  "docent.ticket.message": {
+    "message": "留言"
+  },
+  "docent.ticket.email": {
+    "message": "邮箱（可选 —— 留空以保持匿名）"
+  },
+  "docent.ticket.sending": {
+    "message": "发送中…"
+  },
+  "docent.ticket.submit": {
+    "message": "发送留言"
+  },
+  "docent.ticket.mailtoFallback": {
+    "message": "改用邮件发送 —— 您输入的内容不会丢失"
+  },
+  "getInvolved.role.developers": {
+    "message": "开发者",
+    "description": "/get-involved role title"
+  },
+  "getInvolved.role.developersNeed": {
+    "message": "大约 6,500 种未覆盖的语言中，大多数只有在有人构建翻译器时才能得到支持。我们需要方法构建者（挑战高难度的语言对，在公开基准测试中获得评分）、工具贡献者（CLI、评估工具、本网站），以及使用自己的 API 密钥运行公共基准测试队列的算力捐赠者。",
+    "description": "/get-involved role need paragraph"
+  },
+  "getInvolved.step.how-the-network-works": {
+    "message": "Network 如何运作",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.submit-a-method": {
+    "message": "提交方法",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.submit-to-the-index-datasets-resources-r": {
+    "message": "提交至索引（数据集、资源、结果）",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.run-the-public-queue-contribute-compute": {
+    "message": "运行公共队列（贡献算力）",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.the-code-on-github": {
+    "message": "GitHub 上的代码",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.role.sponsors": {
+    "message": "赞助者",
+    "description": "/get-involved role title"
+  },
+  "getInvolved.role.sponsorsNeed": {
+    "message": "语料库构建是瓶颈：如果没有记录在案且获得许可的文本，一种语言就无法获得翻译器 —— 而构建该语料库需要有偿的、熟练的社区工作。企业社会责任（CSR）项目、基金会和政府语言机构可以赞助特定语言的语料库、语言对（就像认养一段公路一样）、基准测试赏金或共享工具。每一分钱都是直接拨付的：它资助母语者、语料库构建者和获奖者，并公开记账 —— Champollion 是非商业性的，不收取任何费用。",
+    "description": "/get-involved role need paragraph"
+  },
+  "getInvolved.step.write-to-us-sponsor-a-language": {
+    "message": "联系我们 —— 赞助一种语言",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.the-economic-model-where-money-goes": {
+    "message": "经济模型（资金去向）",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.who-benefits-if-this-works": {
+    "message": "如果成功，谁将受益",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.role.corpora": {
+    "message": "语料库构建者",
+    "description": "/get-involved role title"
+  },
+  "getInvolved.role.corporaNeed": {
+    "message": "一个可用的评估集大约包含一千个语言对 —— 规模足够小，可以进行专业策划，而包含数十万条数据的训练语料库则永远无法做到这一点 —— 一旦它存在，世界上每一种方法都可以根据你的标准进行衡量。你的数据仍然属于你（以数据主权为目标）：你可以选择许可证，可以保留只有你的社区掌握的封闭测试集，并且数据永远不会被抓取。",
+    "description": "/get-involved role need paragraph"
+  },
+  "getInvolved.step.bring-your-language": {
+    "message": "引入你的语言",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.why-a-small-eval-set-beats-a-big-trainin": {
+    "message": "为什么小型评估集胜过大型训练语料库",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.the-partnership-workflow-end-to-end": {
+    "message": "合作伙伴工作流（端到端）",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.registering-a-corpus-step-by-step": {
+    "message": "注册语料库（分步指南）",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.post-a-prize-against-your-test-set": {
+    "message": "针对你的测试集发布奖金",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.role.coordinators": {
+    "message": "社区协调员",
+    "description": "/get-involved role title"
+  },
+  "getInvolved.role.coordinatorsNeed": {
+    "message": "非政府组织、文化机构和地方机构是关键的纽带：他们了解母语者社区，能够召集语料库项目，并能为所在地区主办共享基准测试任务。如果您与语言社区合作，您正是本项目所缺少的桥梁。",
+    "description": "/get-involved role need paragraph"
+  },
+  "getInvolved.step.for-language-communities-start-here": {
+    "message": "面向语言社区 —— 从这里开始",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.host-a-shared-task": {
+    "message": "主办共享任务",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.fix-what-a-card-says-about-your-language": {
+    "message": "修正卡片中关于您语言的描述",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.step.talk-to-us-about-coordinating": {
+    "message": "与我们探讨协调合作",
+    "description": "/get-involved step link label"
+  },
+  "getInvolved.seoTitle": {
+    "message": "参与其中",
+    "description": "/get-involved SEO title"
+  },
+  "getInvolved.seoDesc": {
+    "message": "Champollion 需要开发者、赞助商、语料库构建者和社区协调员。非商业性质：每一分赞助资金都用于构建语料库和工具 —— 我们不从中抽取任何费用。",
+    "description": "/get-involved SEO description"
+  },
+  "page.arena.chrfTip": {
+    "message": "一种自动评分指标，用于衡量翻译结果与参考译文在字符层面的重合度。对于屈折变化丰富的语言，它比基于词的评分更公平 —— 但它只检查表面相似度，而不验证词汇是否真实存在。",
+    "description": "/arena chrF++ tooltip"
+  },
+  "page.arena.fstTerm": {
+    "message": "形态分析器 (FST)",
+    "description": "/arena FST tooltip term"
+  },
+  "page.arena.fstTip": {
+    "message": "一种基于规则的工具，掌握语言的构词语法，因此能够检查每个输出词是否为有效且结构正确的词汇 —— 这是表面重合度评分无法做到的。",
+    "description": "/arena FST tooltip"
+  },
+  "page.arena.spec1": {
+    "message": "运作原理",
+    "description": "/arena spec link"
+  },
+  "page.arena.spec1Desc": {
+    "message": "完整的流水线 —— 数据集、运行记录、运行卡片、信任层级。",
+    "description": "/arena spec link desc"
+  },
+  "page.arena.spec2": {
+    "message": "评分规范",
+    "description": "/arena spec link"
+  },
+  "page.arena.spec2Desc": {
+    "message": "综合评分、指标定义、层级阈值。",
+    "description": "/arena spec link desc"
+  },
+  "page.arena.spec3": {
+    "message": "基准测试规范",
+    "description": "/arena spec link"
+  },
+  "page.arena.spec3Desc": {
+    "message": "什么是有效的基准测试运行及其原因。",
+    "description": "/arena spec link desc"
+  },
+  "page.arena.spec4": {
+    "message": "奖项规范",
+    "description": "/arena spec link"
+  },
+  "page.arena.spec4Desc": {
+    "message": "竞赛与验证的运作方式。",
+    "description": "/arena spec link desc"
+  },
+  "page.arena.recentRuns": {
+    "message": "最近运行",
+    "description": "/arena mini leaderboard heading"
+  },
+  "page.arena.thModel": {
+    "message": "模型",
+    "description": "table header"
+  },
+  "page.arena.thCondition": {
+    "message": "条件",
+    "description": "table header"
+  },
+  "page.arena.thPair": {
+    "message": "语言对",
+    "description": "table header"
+  },
+  "page.arena.thCost": {
+    "message": "成本",
+    "description": "table header"
+  },
+  "page.arena.fullLeaderboard": {
+    "message": "完整排行榜 →",
+    "description": "/arena leaderboard link"
+  },
+  "page.arena.seoTitle": {
+    "message": "Network 运作原理",
+    "description": "/arena SEO title"
+  },
+  "page.arena.seoDesc": {
+    "message": "面向低资源语言的开放、可复现的机器翻译基础设施。添加一种方法，在共享测试集上运行，并获得可追溯的评分 —— 那些行之有效的方法将被部署到它们所服务的社区中。",
+    "description": "/arena SEO description"
+  },
+  "page.arena.eyebrow": {
+    "message": "THE CHAMPOLLION NETWORK",
+    "description": "/arena eyebrow"
+  },
+  "page.arena.title": {
+    "message": "Network 运作原理",
+    "description": "/arena h1"
+  },
+  "page.arena.subtitle": {
+    "message": "Network 是一个开放的共享平台，用于衡量各种方法在大型科技公司忽略的语言上的翻译表现。添加一种方法（人工或机器），在与其他人相同的测试集上运行，并获得任何人都可以核查的评分。这里没有内定的赢家；结果会说明一切。",
+    "description": "/arena subtitle"
+  },
+  "page.arena.threeSteps": {
+    "message": "三个步骤",
+    "description": "section heading"
+  },
+  "page.arena.step1": {
+    "message": "{b} 任何能够翻译文本的方法 —— 提示词驱动的语言模型、微调模型、基于规则的系统，甚至是人类译者 —— 都可以参与。",
+    "description": "step; {b} is the bold lead-in"
+  },
+  "page.arena.step1Lead": {
+    "message": "添加方法。",
+    "description": "bold lead"
+  },
+  "page.arena.step2": {
+    "message": "{b} 所有人使用相同的、带版本控制且从源头获取的语料库，以便两种方法可以在各个语言对上进行公平比较。",
+    "description": "step; {b} is the bold lead-in"
+  },
+  "page.arena.step2Lead": {
+    "message": "在共享测试集上运行。",
+    "description": "bold lead"
+  },
+  "page.arena.step3": {
+    "message": "{b} 每一个数据都能追溯到生成它的具体语料库和设置 —— 没有抓取数据的黑盒，没有任何你无法自行重新运行的内容。",
+    "description": "step; {b} is the bold lead-in"
+  },
+  "page.arena.step3Lead": {
+    "message": "获得可追溯的评分。",
+    "description": "bold lead"
+  },
+  "page.arena.whyHeading": {
+    "message": "为什么我们不仅衡量词汇重合度",
+    "description": "section heading"
+  },
+  "page.arena.whyBody": {
+    "message": "一段译文可能看起来很流畅但仍然是错误的 —— 它可能由目标语言中根本不存在的词汇组成。最常见的自动评分指标（如 {chrf}）只检查输出字符与参考译文的重合度；它们从不验证词汇是否真实存在。对于屈折变化丰富的语言来说，这种缺陷是致命的。因此，Network 还会运行 {fst} 和基于语义的检查 —— 而不仅仅是表面重合度。（完整的指标集请见 {spec}。）",
+    "description": "/arena thesis paragraph; {chrf} and {fst} are jargon tooltips, {spec} a link"
+  },
+  "page.arena.fstJargon": {
+    "message": "形态分析器",
+    "description": "jargon span"
+  },
+  "page.arena.scoringSpec": {
+    "message": "评分规范",
+    "description": "scoring spec link"
+  },
+  "page.arena.tryIt": {
+    "message": "试一试",
+    "description": "section heading"
+  },
+  "page.arena.tryBody": {
+    "message": "只需一条命令即可安装评估工具包。任何类型的方法都可以参与 —— 提示词驱动的语言模型、微调模型、基于规则的系统或人类译者。",
+    "description": "try-it body"
+  },
+  "page.arena.installNote": {
+    "message": "从 PyPI ({pkg}) 安装 —— 使用 python3 + pipx，全程无需 sudo。第一次来？{guide} 将引导您完成首次运行。",
+    "description": "install note; {pkg} is a code span, {guide} a link"
+  },
+  "page.arena.guideLink": {
+    "message": "提交方法指南",
+    "description": "guide link text"
+  },
+  "page.arena.readRules": {
+    "message": "阅读规则",
+    "description": "section heading"
+  },
+  "atlas.detail.example": {
+    "message": "示例：",
+    "description": "example label"
+  },
+  "atlas.detail.whyMatters": {
+    "message": "为何重要：",
+    "description": "why-it-matters label"
+  },
+  "atlas.detail.partOfHub": {
+    "message": "属于 {hub} 宏语言",
+    "description": "macrolanguage note; {hub} is the hub name"
+  },
+  "atlas.detail.labFamily": {
+    "message": "语系",
+    "description": "detail panel label"
+  },
+  "atlas.detail.labRegion": {
+    "message": "地区",
+    "description": "detail panel label"
+  },
+  "atlas.detail.labWordOrder": {
+    "message": "语序",
+    "description": "detail panel label"
+  },
+  "atlas.detail.labCounting": {
+    "message": "计数",
+    "description": "detail panel label"
+  },
+  "atlas.detail.labSpeakers": {
+    "message": "使用人数",
+    "description": "detail panel label"
+  },
+  "atlas.detail.loading": {
+    "message": "正在加载语言数据...",
+    "description": "detail panel label"
+  },
+  "atlas.detail.secMTComplexityIndex": {
+    "message": "MT 复杂度指数",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.secClassification": {
+    "message": "分类",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.isolate": {
+    "message": "孤立语言",
+    "description": "detail panel label"
+  },
+  "atlas.detail.ancestryHint": {
+    "message": "点击分支浏览其语言。",
+    "description": "detail panel label"
+  },
+  "atlas.detail.aka": {
+    "message": "又称：",
+    "description": "detail panel label"
+  },
+  "atlas.detail.spokenIn": {
+    "message": "使用地区：",
+    "description": "detail panel label"
+  },
+  "atlas.detail.secNotableFeatures": {
+    "message": "显著特征",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.secPhonologicalInventory": {
+    "message": "音素表",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.loadingVocab": {
+    "message": "正在加载词汇...",
+    "description": "detail panel label"
+  },
+  "atlas.detail.secRelatedLanguages": {
+    "message": "相关语言",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.bestPartner": {
+    "message": "最佳翻译配对：",
+    "description": "detail panel label"
+  },
+  "atlas.detail.sharedDepth": {
+    "message": "共享深度",
+    "description": "bold lead"
+  },
+  "atlas.detail.sharedDepthText": {
+    "message": "衡量语系树中共享的层级数量",
+    "description": "shared depth explainer opening"
+  },
+  "atlas.detail.secColexificationdataCLICS": {
+    "message": "共词化数据 (CLICS³)",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.secDigitalEcosystem": {
+    "message": "数字生态系统",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.secTaxonomynotes": {
+    "message": "分类说明",
+    "description": "detail panel section title"
+  },
+  "atlas.detail.secSourcesLicenses": {
+    "message": "来源与许可证",
+    "description": "detail panel section title"
+  },
+  "page.catalogue.contamTerm": {
+    "message": "污染情况",
+    "description": "tooltip term"
+  },
+  "page.catalogue.contamTip": {
+    "message": "该语料库是否可能已出现在模型的训练数据中。“高” = 可能已出现，因此结果应被视为系统之间的相对比较，而不是绝对的质量声明（“仅限相对”）。低污染 / 封闭数据集可支持绝对排名。",
+    "description": "tooltip body"
+  },
+  "page.catalogue.signalTerm": {
+    "message": "信号强度 (A–F)",
+    "description": "tooltip term"
+  },
+  "page.catalogue.signalTip": {
+    "message": "对测试语料库的客观评分——包括其规模、示例长度、领域广度和污染情况——与数据的来源无关。A = 强信号，F = 弱信号。它评估的是基准测试，而不是模型。",
+    "description": "tooltip body"
+  },
+  "page.catalogue.tabOverview": {
+    "message": "概览",
+    "description": "tab"
+  },
+  "page.catalogue.tabOverviewHint": {
+    "message": "全局摘要",
+    "description": "tab hint"
+  },
+  "page.catalogue.tabBenchmarks": {
+    "message": "基准测试",
+    "description": "tab"
+  },
+  "page.catalogue.tabBenchmarksHint": {
+    "message": "我们运行的数据集",
+    "description": "tab hint"
+  },
+  "page.catalogue.tabLanguages": {
+    "message": "按语言",
+    "description": "tab"
+  },
+  "page.catalogue.tabLanguagesHint": {
+    "message": "各语言资源",
+    "description": "tab hint"
+  },
+  "page.catalogue.tabMethods": {
+    "message": "方法",
+    "description": "tab"
+  },
+  "page.catalogue.tabMethodsHint": {
+    "message": "MT 引擎与提供商",
+    "description": "tab hint"
+  },
+  "page.catalogue.tabServices": {
+    "message": "人工翻译",
+    "description": "tab"
+  },
+  "page.catalogue.tabServicesHint": {
+    "message": "翻译服务",
+    "description": "tab hint"
+  },
+  "page.catalogue.tabExternal": {
+    "message": "外部结果",
+    "description": "tab"
+  },
+  "page.catalogue.tabExternalHint": {
+    "message": "仅引用 · 未经验证",
+    "description": "tab hint"
+  },
+  "page.catalogue.tabExcluded": {
+    "message": "未索引内容",
+    "description": "tab"
+  },
+  "page.catalogue.tabExcludedHint": {
+    "message": "及其原因",
+    "description": "tab hint"
+  },
+  "page.catalogue.lede": {
+    "message": "该索引是网络视角下整个机器翻译领域的目录——我们{run}什么，每种语言已经{has}什么，我们{cite}什么，以及我们故意{out}什么。它不需要排行榜分数就能发挥作用，并且会随着底层数据的增长而自我完善。",
+    "description": "overview lede; {run}/{has}/{cite}/{out} are bold spans"
+  },
+  "page.catalogue.ledeRun": {
+    "message": "运行",
+    "description": "bold word"
+  },
+  "page.catalogue.ledeHas": {
+    "message": "拥有",
+    "description": "bold word"
+  },
+  "page.catalogue.ledeCite": {
+    "message": "引用但未复现",
+    "description": "bold phrase"
+  },
+  "page.catalogue.ledeOut": {
+    "message": "排除",
+    "description": "bold phrase"
+  },
+  "page.catalogue.fourWays": {
+    "message": "四种入口：",
+    "description": "browse label"
+  },
+  "page.catalogue.wayGlobal": {
+    "message": "全局",
+    "description": "browse chip"
+  },
+  "page.catalogue.wayLanguage": {
+    "message": "按语言",
+    "description": "browse chip"
+  },
+  "page.catalogue.wayDomain": {
+    "message": "按领域",
+    "description": "browse chip"
+  },
+  "page.catalogue.wayType": {
+    "message": "按类型",
+    "description": "browse chip"
+  },
+  "page.catalogue.statFamilies": {
+    "message": "我们运行的基准测试系列",
+    "description": "stat label"
+  },
+  "page.catalogue.statDatasets": {
+    "message": "评估数据集",
+    "description": "stat label"
+  },
+  "page.catalogue.statLangs": {
+    "message": "已进行基准测试的语言",
+    "description": "stat label"
+  },
+  "page.catalogue.statResources": {
+    "message": "已索引资源的语言",
+    "description": "stat label"
+  },
+  "page.catalogue.statMethods": {
+    "message": "方法与提供商",
+    "description": "stat label"
+  },
+  "page.catalogue.statExternal": {
+    "message": "外部结果（已引用）",
+    "description": "stat label"
+  },
+  "page.catalogue.statPairs": {
+    "message": "已索引的已发布语言对",
+    "description": "stat label"
+  },
+  "page.catalogue.byType": {
+    "message": "按类型 — 跨语言资源",
+    "description": "section heading"
+  },
+  "page.catalogue.byTypeNote": {
+    "message": "从语言卡片中索引的具体命名资源。点击类型以浏览包含该类型的语言。",
+    "description": "section note"
+  },
+  "page.catalogue.archives": {
+    "message": "语言档案",
+    "description": "subheading"
+  },
+  "page.catalogue.archivesNote": {
+    "message": "按语言记录的濒危语言和文档档案（计数为馆藏数量，而非我们托管的语料库）。",
+    "description": "section note"
+  },
+  "page.catalogue.langsCount": {
+    "message": "{n} 种语言",
+    "description": "archive chip count; {n} is a number"
+  },
+  "page.catalogue.byDomain": {
+    "message": "按领域 — 基准测试涵盖的内容",
+    "description": "section heading"
+  },
+  "page.catalogue.byDomainNote": {
+    "message": "点击领域以查看其中的基准测试系列。",
+    "description": "section note"
+  },
+  "page.catalogue.provenance": {
+    "message": "来源",
+    "description": "section heading"
+  },
+  "page.catalogue.provenanceNote": {
+    "message": "索引中的每一行都是在构建时从代码库中的单一事实来源（source of truth）提取的：",
+    "description": "section note"
+  },
+  "page.catalogue.provBench": {
+    "message": "基准测试",
+    "description": "provenance row"
+  },
+  "page.catalogue.provRes": {
+    "message": "语言资源",
+    "description": "provenance row"
+  },
+  "page.catalogue.provResCards": {
+    "message": "语言卡片 ({path})",
+    "description": "the language cards; {path} is a code span"
+  },
+  "page.catalogue.provMethods": {
+    "message": "方法",
+    "description": "provenance row"
+  },
+  "page.catalogue.provServices": {
+    "message": "人工服务",
+    "description": "provenance row"
+  },
+  "page.catalogue.provExternal": {
+    "message": "外部结果",
+    "description": "provenance row"
+  },
+  "page.catalogue.citeOnly": {
+    "message": "仅引用",
+    "description": "cite-only marker"
+  },
+  "page.catalogue.degraded": {
+    "message": "⚠️ 构建时语料库注册表不可用，因此在此次部署中基准测试部分为空。清单、方法、服务和外部层级仍会渲染。",
+    "description": "degraded-build warning"
+  },
+  "page.catalogue.benchLede": {
+    "message": "Network 在其自有测试框架中运行的带版本评估语料库 — 从源获取，从不重新托管。每个系列都会显示其许可证和污染情况：大多数公开基准测试都被广泛用于训练，因此它们在 {rel} 赛道上评分，而不是作为绝对的质量声明。",
+    "description": "benchmarks lede; {rel} is a bold span"
+  },
+  "page.catalogue.relOnly": {
+    "message": "仅相对",
+    "description": "bold phrase"
+  },
+  "page.catalogue.filterDomain": {
+    "message": "领域",
+    "description": "filter label"
+  },
+  "page.catalogue.filterLicense": {
+    "message": "许可证",
+    "description": "filter label"
+  },
+  "page.catalogue.clear": {
+    "message": "清除",
+    "description": "clear filters"
+  },
+  "page.catalogue.familiesCount": {
+    "message": "{b} 个系列中的 {a} 个",
+    "description": "result count; {a} shown, {b} total"
+  },
+  "page.catalogue.nDatasets": {
+    "message": "{n} 个数据集",
+    "description": "badge; {n} is a number"
+  },
+  "page.catalogue.nLanguages": {
+    "message": "{n} 种语言",
+    "description": "badge; {n} is a number"
+  },
+  "page.catalogue.gatedTitle": {
+    "message": "需要受限 / 令牌下载",
+    "description": "badge title"
+  },
+  "page.catalogue.nGated": {
+    "message": "{n} 个受限",
+    "description": "badge; {n} is a number"
+  },
+  "page.catalogue.examples": {
+    "message": "示例数据集",
+    "description": "details summary"
+  },
+  "page.catalogue.benchFoot": {
+    "message": "每个数据集的完整机器可读目录在 {reg} 提供。被隔离的“不当子集”切片在此处被有意排除 — 参见 {tab}。",
+    "description": "benchmarks footnote; {reg} is a link, {tab} the excluded-tab name"
+  },
+  "page.catalogue.excludedRef": {
+    "message": "我们不索引的内容",
+    "description": "tab reference"
+  },
+  "page.catalogue.langsLoading": {
+    "message": "正在加载各语言资源目录…",
+    "description": "loading state"
+  },
+  "page.catalogue.langsLede": {
+    "message": "每种语言已有的资源：语料库、模型、形态转换器（FST）、词典和工具，以及在文档档案（OLAC、PARADISEC、AILLA、Rosetta、Kaipuleohone）和数据平台（OPUS、HuggingFace、Lexibank）中的存在情况。每个资源都会显示其类型、许可证和访问级别，并链接到来源。按每种语言已有的资源数量排序。",
+    "description": "languages lede"
+  },
+  "page.catalogue.searchPh": {
+    "message": "搜索名称、内名或 ISO 代码…",
+    "description": "search placeholder"
+  },
+  "page.catalogue.filterRegion": {
+    "message": "地区",
+    "description": "filter label"
+  },
+  "page.catalogue.filterType": {
+    "message": "资源类型",
+    "description": "filter label"
+  },
+  "page.catalogue.filterArchive": {
+    "message": "档案",
+    "description": "filter label"
+  },
+  "page.catalogue.benchOnly": {
+    "message": "仅基准测试",
+    "description": "checkbox label"
+  },
+  "page.catalogue.clear2": {
+    "message": "清除",
+    "description": "clear filters"
+  },
+  "page.catalogue.nLangsCount": {
+    "message": "{n} 种语言",
+    "description": "result count; {n} is a number"
+  },
+  "page.catalogue.showMore": {
+    "message": "显示更多（还有 {n} 个）",
+    "description": "pagination; {n} remaining"
+  },
+  "page.catalogue.rowResources": {
+    "message": "{n} 个资源",
+    "description": "row count; {n} number"
+  },
+  "page.catalogue.rowBenchmarks": {
+    "message": "{n} 个基准测试",
+    "description": "row count; {n} number"
+  },
+  "page.catalogue.rowArchives": {
+    "message": "{n} 个归档",
+    "description": "row count; {n} number"
+  },
+  "page.catalogue.rowPairs": {
+    "message": "{n} 个已发布语言对",
+    "description": "row count; {n} number"
+  },
+  "page.catalogue.dResources": {
+    "message": "资源",
+    "description": "detail heading"
+  },
+  "page.catalogue.dBench": {
+    "message": "基准测试覆盖率",
+    "description": "detail heading"
+  },
+  "page.catalogue.nPairs": {
+    "message": "{n} 个语言对",
+    "description": "{n} pairs"
+  },
+  "page.catalogue.dPublished": {
+    "message": "最佳已发布结果（公开基准测试）",
+    "description": "detail heading"
+  },
+  "page.catalogue.dPublishedNote": {
+    "message": "从 Helsinki-NLP 排行榜索引——此处为已发布的数据，未在此处复现；基于公开测试集，因此仅作为方向性参考，绝非绝对的质量声明。",
+    "description": "detail note"
+  },
+  "page.catalogue.pairsCarry": {
+    "message": "{n} 个语言对包含该语言的已发布分数。",
+    "description": "published-pairs note; {n} number"
+  },
+  "page.catalogue.dArchives": {
+    "message": "归档",
+    "description": "detail heading"
+  },
+  "page.catalogue.present": {
+    "message": "存在",
+    "description": "archive presence marker"
+  },
+  "page.catalogue.dAvail": {
+    "message": "数据可用性",
+    "description": "detail heading"
+  },
+  "page.catalogue.noRes": {
+    "message": "暂无已索引的资源。",
+    "description": "empty state"
+  },
+  "page.catalogue.methodsLede": {
+    "message": "harness 和 CLI 可调度的翻译方法——LLM 提供商、神经机器翻译 API、基于规则的引擎和本地模型。任何实现了 {sig} 的方法都可以被添加。",
+    "description": "methods lede; {sig} is a code span"
+  },
+  "page.catalogue.thMethod": {
+    "message": "方法",
+    "description": "th"
+  },
+  "page.catalogue.thKind": {
+    "message": "类型",
+    "description": "th"
+  },
+  "page.catalogue.thParadigm": {
+    "message": "范式",
+    "description": "th"
+  },
+  "page.catalogue.thLicense": {
+    "message": "许可证",
+    "description": "th"
+  },
+  "page.catalogue.thCommercial": {
+    "message": "商业用途",
+    "description": "th"
+  },
+  "page.catalogue.thCost": {
+    "message": "成本",
+    "description": "th"
+  },
+  "page.catalogue.ready": {
+    "message": "就绪",
+    "description": "badge"
+  },
+  "page.catalogue.restricted": {
+    "message": "受限",
+    "description": "badge"
+  },
+  "page.catalogue.servicesLede": {
+    "message": "人工翻译提供者——社区组织、机构和独立译者——按语言对索引。列表采用选择加入和同意机制：提供者只有在明确同意后才会显示为上线状态。",
+    "description": "services lede"
+  },
+  "page.catalogue.servicesEmpty": {
+    "message": "暂无已同意的提供者上线——此目录将随着提供者的加入而填充。以下条目是展示列表结构的录入模板。{hub}",
+    "description": "empty state; {hub} is a link"
+  },
+  "page.catalogue.hubLink": {
+    "message": "查看人工翻译中心 →",
+    "description": "hub link"
+  },
+  "page.catalogue.consented": {
+    "message": "已同意",
+    "description": "badge"
+  },
+  "page.catalogue.consentPending": {
+    "message": "待同意",
+    "description": "badge"
+  },
+  "page.catalogue.listService": {
+    "message": "提供某个语言对的翻译服务？{link}",
+    "description": "services footnote; {link} is a link"
+  },
+  "page.catalogue.listServiceLink": {
+    "message": "列出服务 →",
+    "description": "link text"
+  },
+  "page.catalogue.mai": {
+    "message": "方法可用性索引",
+    "description": "section heading"
+  },
+  "page.catalogue.maiNote": {
+    "message": "这些结果背后的每种方法——无论 Champollion 目前是否可以调度它。我们索引了每个系统的可用性，以便现在为您指明方向，并在以后为您实现它。这是可运行的 {tab} 选项卡的超集：{badge} 条目今天即可调度；其余的仅供引用。",
+    "description": "section note; {tab} is the Methods tab name, {badge} the runnable badge"
+  },
+  "page.catalogue.maiTabRef": {
+    "message": "方法",
+    "description": "tab name"
+  },
+  "page.catalogue.runnable": {
+    "message": "可运行",
+    "description": "badge"
+  },
+  "page.catalogue.thMethod2": {
+    "message": "方法",
+    "description": "th"
+  },
+  "page.catalogue.thOrg": {
+    "message": "组织",
+    "description": "th"
+  },
+  "page.catalogue.thWeights": {
+    "message": "权重",
+    "description": "th"
+  },
+  "page.catalogue.thAccess": {
+    "message": "访问权限",
+    "description": "th"
+  },
+  "page.catalogue.thLicense2": {
+    "message": "许可证",
+    "description": "th"
+  },
+  "page.catalogue.thCommercial2": {
+    "message": "商业用途",
+    "description": "th"
+  },
+  "page.catalogue.weightsLink": {
+    "message": "权重",
+    "description": "weights link"
+  },
+  "page.catalogue.nonCommercial": {
+    "message": "非商业用途",
+    "description": "badge"
+  },
+  "page.catalogue.runnable2": {
+    "message": "可运行",
+    "description": "badge"
+  },
+  "page.catalogue.citedOnly": {
+    "message": "仅供引用",
+    "description": "badge"
+  },
+  "page.catalogue.pubIndex": {
+    "message": "已发布结果索引",
+    "description": "section heading"
+  },
+  "page.catalogue.statPairsIdx": {
+    "message": "已索引语言对",
+    "description": "stat label"
+  },
+  "page.catalogue.statCells": {
+    "message": "语言对 × 测试集单元格",
+    "description": "stat label"
+  },
+  "page.catalogue.statSystems": {
+    "message": "已发布系统",
+    "description": "stat label"
+  },
+  "page.catalogue.whoHolds": {
+    "message": "谁在 {testset} 上拥有最佳的已发布 {metric}？",
+    "description": "family-wins question; {metric}/{testset} are values"
+  },
+  "page.catalogue.nPairs2": {
+    "message": "{n} 个语言对",
+    "description": "{n} pairs"
+  },
+  "page.catalogue.sourcesPinned": {
+    "message": "来源（固定 commit）：",
+    "description": "sources label"
+  },
+  "page.catalogue.extBanner": {
+    "message": "{lead} 这些是其他人发布的数据。我们记录了引用来源、指标变体和覆盖范围——我们从不重新托管底层语料库。不同的来源报告不同的指标变体（传统的 BLEU、FLORES spBLEU、chrF、chrF++ 或特定的 COMET 版本）——{noncomp}，每条记录都会说明其使用的变体。请结合徽章阅读每个数据。",
+    "description": "cite-only banner; {lead} bold lead, {noncomp} emphasized phrase"
+  },
+  "page.catalogue.extBannerLead": {
+    "message": "仅供引用 · 未经 Champollion 复现。",
+    "description": "bold lead"
+  },
+  "page.catalogue.extBannerNoncomp": {
+    "message": "这些数据无法直接比较",
+    "description": "emphasized"
+  },
+  "page.catalogue.provSignal": {
+    "message": "{lead} 外部数据会被标记为 {flag}，但它 {not_} 会因为是外部数据而在评级上受到惩罚。{signal} 评级（A–F）反映了测量该数据所用语料库的客观强度——包括规模、示例长度、领域广度和污染程度——因此，在微小或被广泛记忆的测试集上获得的高模型得分，其优势依然很弱。",
+    "description": "provenance/signal note; {lead} bold lead, {flag}/{not} emphasized, {signal} bold"
+  },
+  "page.catalogue.provSignalLead": {
+    "message": "出处与信号强度是分开的。",
+    "description": "bold lead"
+  },
+  "page.catalogue.notReproduced": {
+    "message": "未复现",
+    "description": "emphasized"
+  },
+  "page.catalogue.notWord": {
+    "message": "不",
+    "description": "emphasized"
+  },
+  "page.catalogue.signalWord": {
+    "message": "信号",
+    "description": "bold"
+  },
+  "page.catalogue.reported": {
+    "message": "报告结果",
+    "description": "section heading"
+  },
+  "page.catalogue.filterTypeExt": {
+    "message": "类型",
+    "description": "filter label"
+  },
+  "page.catalogue.clear3": {
+    "message": "清除",
+    "description": "clear filters"
+  },
+  "page.catalogue.nResults": {
+    "message": "{n} 个结果",
+    "description": "{n} results"
+  },
+  "page.catalogue.citedTitle": {
+    "message": "引用的数据已根据其发布的来源进行了验证；它并未在 Champollion 测试框架中独立复现。",
+    "description": "badge title"
+  },
+  "page.catalogue.citedBadge": {
+    "message": "已引用 · 未复现",
+    "description": "badge"
+  },
+  "page.catalogue.signalGrade": {
+    "message": "信号 {g}",
+    "description": "badge; {g} is the grade letter"
+  },
+  "page.catalogue.dtScore": {
+    "message": "得分",
+    "description": "dt"
+  },
+  "page.catalogue.lowerBetter": {
+    "message": "越低越好",
+    "description": "score direction"
+  },
+  "page.catalogue.higherBetter": {
+    "message": "越高越好",
+    "description": "score direction"
+  },
+  "page.catalogue.dtSignal": {
+    "message": "信号 {g}",
+    "description": "dt; {g} grade"
+  },
+  "page.catalogue.dtCaveat": {
+    "message": "注意事项",
+    "description": "dt"
+  },
+  "page.catalogue.dtCoverage": {
+    "message": "覆盖范围",
+    "description": "dt"
+  },
+  "page.catalogue.dtNotes": {
+    "message": "备注",
+    "description": "dt"
+  },
+  "page.catalogue.sourceLink": {
+    "message": "来源",
+    "description": "source link"
+  },
+  "page.catalogue.exclLede": {
+    "message": "一个诚实的索引会说明它遗漏了什么。这些是我们故意不索引的系列——这不是疏忽，而是领域素养。了解为什么排除某个基准测试是正确理解该领域的一部分。",
+    "description": "excluded lede"
+  },
+  "page.catalogue.exclWhy": {
+    "message": "已排除——及其原因",
+    "description": "section heading"
+  },
+  "page.catalogue.citedNot": {
+    "message": "已引用，未复现",
+    "description": "section heading"
+  },
+  "page.catalogue.citedNotNote": {
+    "message": "我们指向但未重新运行的来源——请参阅 {tab} 选项卡查看记录。",
+    "description": "section note; {tab} is the External-results tab name"
+  },
+  "page.catalogue.extTabRef": {
+    "message": "外部结果",
+    "description": "tab name"
+  },
+  "page.catalogue.runOwn": {
+    "message": "运行——我们自己持有的基准测试",
+    "description": "section heading"
+  },
+  "page.catalogue.runOwnNote": {
+    "message": "作为对比：我们自己运行的系列，从源获取，及其污染态势。请参阅 {tab} 选项卡查看实时计数。",
+    "description": "section note; {tab} is the Benchmarks tab name"
+  },
+  "page.catalogue.benchTabRef": {
+    "message": "基准测试",
+    "description": "tab name"
+  },
+  "page.catalogue.thFamily": {
+    "message": "系列",
+    "description": "th"
+  },
+  "page.catalogue.thLicense3": {
+    "message": "许可证",
+    "description": "th"
+  },
+  "page.catalogue.thPosture": {
+    "message": "态势",
+    "description": "th"
+  },
+  "page.catalogue.thNote": {
+    "message": "备注",
+    "description": "th"
+  },
+  "page.catalogue.seoTitle": {
+    "message": "索引",
+    "description": "/catalogue SEO title"
+  },
+  "page.catalogue.seoDesc": {
+    "message": "机器翻译领域的可浏览目录：我们运行的基准测试、各语言资源、方法、人工翻译服务，以及仅供引用的外部发布结果层——外加关于我们不索引哪些内容及其原因的诚实说明。",
+    "description": "/catalogue SEO description"
+  },
+  "page.catalogue.eyebrow": {
+    "message": "THE CHAMPOLLION NETWORK",
+    "description": "eyebrow"
+  },
+  "page.catalogue.title": {
+    "message": "索引",
+    "description": "h1"
+  },
+  "page.catalogue.subtitle": {
+    "message": "机器翻译背后的计算语言学资源索引——语言社区、专业语言学家和志愿者构建的语料库、模型、转换器、词典和基准测试，汇集于一处并注明其来源。我们对该领域进行目录分类；我们并不拥有它。",
+    "description": "page subtitle"
+  },
+  "page.catalogue.loadError": {
+    "message": "无法加载目录数据。它是在构建时从仓库内的真实来源生成的；如果您在本地运行，请先构建网站。",
+    "description": "load error"
+  },
+  "page.catalogue.loading": {
+    "message": "正在加载索引…",
+    "description": "loading state"
+  },
+  "page.contribute.provider": {
+    "message": "提供商：",
+    "description": "configurator label"
+  },
+  "page.contribute.budget": {
+    "message": "预算：",
+    "description": "configurator label"
+  },
+  "page.contribute.copyCmd": {
+    "message": "复制命令",
+    "description": "copy button"
+  },
+  "page.contribute.requires": {
+    "message": "需要 {env} — {link} ({note})",
+    "description": "provider hint; {env} code span, {link} a link, {note} provider note"
+  },
+  "page.contribute.getKey": {
+    "message": "获取密钥",
+    "description": "get a key link"
+  },
+  "page.contribute.copy": {
+    "message": "复制",
+    "description": "copy button default"
+  },
+  "page.contribute.copied": {
+    "message": "已复制 ✓",
+    "description": "copied state"
+  },
+  "page.contribute.queueFail": {
+    "message": "无法在此浏览器中加载实时队列——请在 {link} 查看完整列表。",
+    "description": "queue load failure; {link} is queue.json link"
+  },
+  "page.contribute.queueLoading": {
+    "message": "正在加载队列…",
+    "description": "loading state"
+  },
+  "page.contribute.openItems": {
+    "message": "{n} 个待处理项",
+    "description": "open item count; {n} is the number"
+  },
+  "page.contribute.openItemsBare": {
+    "message": "待处理项",
+    "description": "open items label"
+  },
+  "page.contribute.acrossCorpora": {
+    "message": "涵盖 {n} 个语料库",
+    "description": "corpora count; {n} is the number"
+  },
+  "page.contribute.generated": {
+    "message": "生成于 {d}",
+    "description": "generation date; {d} is the date"
+  },
+  "page.contribute.queueNote": {
+    "message": "每对语言占一行，排名靠前的优先 · 无认领锁定机制 —— 可选择任意项目",
+    "description": "queue preview note"
+  },
+  "page.contribute.cmdExplain": {
+    "message": "每条命令都会精确运行对应的基准测试：测试框架 (harness) 会获取指定的语料库，使用指定的模型进行翻译（两种语言均全拼写出），进行评分，并生成一份可供你发布的本地报告。预估成本来自我们的基准扫描；你的实际花费取决于服务商的费率。",
+    "description": "what each command does"
+  },
+  "page.contribute.fullQueue": {
+    "message": "完整队列{mb} →",
+    "description": "full queue link; {mb} is e.g. ' (86 MB)' or empty"
+  },
+  "page.contribute.tier1": {
+    "message": "运行基准测试",
+    "description": "tier name"
+  },
+  "page.contribute.tier1Effort": {
+    "message": "约 10 分钟 · 大多数项目低于 $0.55，中位数 ≈ $0.09",
+    "description": "tier effort line"
+  },
+  "page.contribute.tier1Body": {
+    "message": "安装测试框架，选择任意开放的队列项目，粘贴其命令，并发布报告。这就是一个真实的、带有指纹的数据点，针对的是尚未有人测量过的语言对。无需机器翻译 (MT) 背景。",
+    "description": "tier body"
+  },
+  "page.contribute.linkGuide": {
+    "message": "贡献算力指南",
+    "description": "tier link"
+  },
+  "page.contribute.tier2": {
+    "message": "编写辅导提示词",
+    "description": "tier name"
+  },
+  "page.contribute.tier2Effort": {
+    "message": "一个下午 · 每次运行成本与基准相同",
+    "description": "tier effort line"
+  },
+  "page.contribute.tier2Body": {
+    "message": "编写一份辅导文件——包含目标语言的语法规则、小型词汇表和风格说明——并通过 {flag} 传递它。测试框架会将其作为系统提示词 (system prompt) 注入，并将全文记录在运行卡片中，从而确保你的提示词工程是可复现的。在低资源语言对上击败朴素基准测试是一项真正的发现。",
+    "description": "tier body; {flag} is a code span"
+  },
+  "page.contribute.linkCoached": {
+    "message": "Cookbook: 指导式 LLM 提示词",
+    "description": "tier link"
+  },
+  "page.contribute.tier3": {
+    "message": "构建方法",
+    "description": "tier name"
+  },
+  "page.contribute.tier3Effort": {
+    "message": "数天至数周 · 预算由你决定",
+    "description": "tier effort line"
+  },
+  "page.contribute.tier3Body": {
+    "message": "实现 {sig}，测试框架将对其中的任何内容进行基准测试：FST 门控生成、字典查找、检索、链式模型。声明的依赖类 (S/O/A1/A2) 确保方法具有可比性和可审计性。",
+    "description": "tier body; {sig} is a code span"
+  },
+  "page.contribute.linkMethods": {
+    "message": "方法接口与依赖类",
+    "description": "tier link"
+  },
+  "page.contribute.linkFst": {
+    "message": "实践指南：FST 门控流水线",
+    "description": "tier link"
+  },
+  "page.contribute.linkDict": {
+    "message": "Cookbook: 字典增强型 LLM",
+    "description": "tier link"
+  },
+  "page.contribute.seoTitle": {
+    "message": "贡献算力",
+    "description": "/contribute SEO title"
+  },
+  "page.contribute.seoDesc": {
+    "message": "运行公开评估队列：使用你自己的 API 密钥在低资源语言对上运行开放的机器翻译 (MT) 基准测试，并将结果发布到公开排行榜。",
+    "description": "/contribute SEO description"
+  },
+  "page.contribute.eyebrow": {
+    "message": "运行队列",
+    "description": "eyebrow"
+  },
+  "page.contribute.title": {
+    "message": "贡献算力",
+    "description": "h1"
+  },
+  "page.contribute.subtitle": {
+    "message": "队列是一个尚未有人运行过的基准测试排名列表——针对没有任何商业服务覆盖的语言对的 LLM 测试。只需一条命令，即可使用你的 API 密钥运行排名最靠前的测试（最高不超过你设定的预算），并将每个结果发布到公开排行榜。无需注册账号。",
+    "description": "page subtitle"
+  },
+  "page.contribute.oneCommand": {
+    "message": "一条命令",
+    "description": "section heading"
+  },
+  "page.contribute.oneCommandBody": {
+    "message": "粘贴到终端中。它在执行任何操作前都会进行询问，必要时会安装测试框架，并在消耗任何 token 之前向你展示确切的运行内容和成本。",
+    "description": "section body"
+  },
+  "page.contribute.keyNote": {
+    "message": "你的密钥保留在你的机器上——我们永远不会看到它。结果将以 {anon} 身份发布，或者登录一次以获得署名。无需 sudo；{uninstall} 会移除所有内容。该脚本是纯 bash：{script} · 完整演练请见 {guide}。",
+    "description": "key/trust note; {anon}/{uninstall} code spans, {script}/{guide} links"
+  },
+  "page.contribute.guideLink": {
+    "message": "贡献者指南",
+    "description": "contributor guide link"
+  },
+  "page.contribute.fastPath": {
+    "message": "快捷路径：交给你的智能体",
+    "description": "section heading"
+  },
+  "page.contribute.fastPathBody": {
+    "message": "正在使用 Claude Code 或其他编程智能体？只需粘贴一条提示词——智能体就会安装测试框架，使用你的密钥运行项目，并发布报告。",
+    "description": "section body"
+  },
+  "page.contribute.pasteAgent": {
+    "message": "粘贴到 Claude Code / 你的智能体中",
+    "description": "prompt block label"
+  },
+  "page.contribute.copyPrompt": {
+    "message": "复制提示词",
+    "description": "copy button"
+  },
+  "page.contribute.queueNow": {
+    "message": "当前队列",
+    "description": "section heading"
+  },
+  "page.contribute.queueNowBody": {
+    "message": "每一行都是一个尚未有人运行过的基准测试：包含语言对、模型以及运行它的确切命令。排名依据是每美元的结果能在多大程度上强化整个版图——该公式是公开且可重新推导的。重复运行无害（指纹机制会去重；复现本身也是数据）。",
+    "description": "section body"
+  },
+  "page.contribute.ladder": {
+    "message": "贡献阶梯",
+    "description": "section heading"
+  },
+  "page.contribute.tierRung": {
+    "message": "层级 {n}",
+    "description": "tier rung; {n} is the tier number"
+  },
+  "page.contribute.whichKey": {
+    "message": "我需要哪个 API 密钥？",
+    "description": "section heading"
+  },
+  "page.contribute.whichKeyBody": {
+    "message": "以下四者之一即可：{or}（推荐——一个密钥即可访问阵容中的所有模型）、OpenAI、Anthropic 或 Google Gemini，通过 {flag} 传递或从你的环境中自动检测。密钥保留在你的机器上；排行榜报告的运行成本即为你的密钥被计费的金额。",
+    "description": "providers body; {or} is the OpenRouter link, {flag} a code span"
+  },
+  "page.contribute.counts": {
+    "message": "你的运行算作什么",
+    "description": "section heading"
+  },
+  "page.contribute.trust1": {
+    "message": "自主基准测试是信任模型的运作方式",
+    "description": "principle title"
+  },
+  "page.contribute.trust1Body": {
+    "message": "社区提交的内容将发布在 {tier} 层级——明确标记为“由运行者提交”。这不是免责声明，而是设计初衷。每张运行卡片都包含数据集哈希、模型、条件、完整的系统提示词和成本，因此任何人都可以重新运行你的确切配置并检查结果。更高级别（验证）是通过审查授予的，而不是通过自我声明。",
+    "description": "principle body; {tier} is the bold tier name"
+  },
+  "page.contribute.selfBench": {
+    "message": "自主基准测试",
+    "description": "tier name"
+  },
+  "page.contribute.trust2": {
+    "message": "署名即是奖励",
+    "description": "principle title"
+  },
+  "page.contribute.trust2Body": {
+    "message": "你的提交者名称将显示在排行榜的对应行中。这就是目前提供的认可——我们不会承诺尚未存在的徽章、赏金或计划。",
+    "description": "principle body"
+  },
+  "page.contribute.trust3": {
+    "message": "重复项不会污染排行榜",
+    "description": "principle title"
+  },
+  "page.contribute.trust3Body": {
+    "message": "每张运行卡片都带有指纹（基于数据集哈希、模型、条件和系统提示词的 SHA-256）。完全相同的重复运行在发布时会被去重；提示词不同的近似重复项则是独立的、可比较的实验。",
+    "description": "principle body"
+  },
+  "page.contribute.trust4": {
+    "message": "是评估集，而非训练数据",
+    "description": "principle title"
+  },
+  "page.contribute.trust4Body": {
+    "message": "队列中的每个语料库都标记有 {flag}，并在运行卡片中附带其许可证（CC-BY 系列，源自 Tatoeba）。非商业许可的语料库被完全排除在开放队列之外。",
+    "description": "principle body; {flag} is a code span"
+  },
+  "page.contribute.specNote": {
+    "message": "信任层级、数据集规则和评分标准在 {rules} 中有详细说明。发布后，可在 {board} 上查看你的结果。",
+    "description": "closing note; {rules}/{board} are links"
+  },
+  "page.contribute.boardLink": {
+    "message": "排行榜",
+    "description": "leaderboard link"
+  },
+  "page.growth.seoTitle": {
+    "message": "构建记录——人们如何构建网络",
+    "description": "/growth SEO title"
+  },
+  "page.growth.seoDesc": {
+    "message": "Champollion 网络的时间序列，来自真实的公开数据：已测量的语言对随着每次运行不断积累，按连接强度 (cchrF++) 着色，并为每位贡献者署名。空空如也的排行榜代表着空白的记录——记录始于第一次运行。",
+    "description": "/growth SEO description"
+  },
+  "page.human.seoTitle": {
+    "message": "人工翻译服务",
+    "description": "/human-services SEO title"
+  },
+  "page.human.seoDesc": {
+    "message": "当机器翻译不再可靠时，请联系人工翻译——并遵循他们的条款。这是一个基于选择加入和知情同意的注册表。",
+    "description": "/human-services SEO description"
+  },
+  "page.human.title": {
+    "message": "人工翻译服务",
+    "description": "h1"
+  },
+  "page.human.p1": {
+    "message": "我们映射的每一种机器翻译方法——Google、Microsoft、DeepL、Amazon、Apertium、LibreTranslate 以及各种 LLM——都仅仅是机器而已。对于许多低资源语言，当被要求“将此翻译成我的语言”时，最诚实的回答是{claim}。我们所缺少的，正是坦白承认这一点，然后将需求指向能够胜任这项工作的人。",
+    "description": "intro; {claim} is bold"
+  },
+  "page.human.p1Bold": {
+    "message": "这里的任何机器都不可靠",
+    "description": "bold claim"
+  },
+  "page.human.p2": {
+    "message": "在任何语言对的排行榜视图中，如果列出了人工服务，它们将显示在每个语言对的置信度展示旁边：{quote}",
+    "description": "leaderboard note; {quote} is the emphasized quote"
+  },
+  "page.human.p2Quote": {
+    "message": "“没有可靠的机器翻译——这些人工服务支持此语言对。”",
+    "description": "quoted string"
+  },
+  "page.human.h2Registry": {
+    "message": "基于社区条款的选择加入注册表",
+    "description": "section heading"
+  },
+  "page.human.p3": {
+    "message": "提供者（社区语言办公室、低资源语言机构和个人认证翻译）只有在获得其{consent}后才会被列出。在获得确认之前，Champollion 绝不会将某个社区或其保管人命名为翻译提供者；在此之前，社区提供的服务将显示为{custodians}。每个列表都包含提供者自己的条款：提供的语言对和变体（因此 Plains Cree 绝不会与 Moose Cree 混淆）、周转时间、费率以及任何非商业或社区设定的使用条款。",
+    "description": "registry body; {consent} bold, {custodians} emphasized"
+  },
+  "page.human.p3Bold": {
+    "message": "明确同意",
+    "description": "bold"
+  },
+  "page.human.p3Em": {
+    "message": "社区关键保管人（确认中）",
+    "description": "emphasized"
+  },
+  "page.human.p4": {
+    "message": "提供者的联系方式绝不会被公开，也绝不会在开放注册表中被追踪——公开列表仅包含提供者同意展示的内容。",
+    "description": "privacy note"
+  },
+  "page.human.h2Listed": {
+    "message": "如何被列入",
+    "description": "section heading"
+  },
+  "page.human.p5": {
+    "message": "v0 是一个发现注册表：只读，列表在显示之前会经过外部审查和批准。要被列入，只需向我们发送电子邮件——该按钮将打开您的邮件应用程序，并预先填写我们需要的一些信息（您提供的语言对和变体、您的条款以及同意确认）。这大约需要两分钟。",
+    "description": "how-to-be-listed body"
+  },
+  "page.human.emailBtn": {
+    "message": "发送邮件以列出服务 →",
+    "description": "email button"
+  },
+  "page.human.p6": {
+    "message": "或者直接通过 {email} 给我们写信。列表只有在获得同意证明并获得批准后才会公开——在此之前，它不会出现在任何公开视图中，您的联系方式也绝不会被公开。",
+    "description": "closing; {email} is the address link"
+  },
+  "page.atlas.fAll": {
+    "message": "所有复杂度",
+    "description": "complexity filter"
+  },
+  "page.atlas.fExtreme": {
+    "message": "🔮 极高",
+    "description": "complexity filter"
+  },
+  "page.atlas.fSevere": {
+    "message": "⭐ 严峻",
+    "description": "complexity filter"
+  },
+  "page.atlas.fHigh": {
+    "message": "💎 高",
+    "description": "complexity filter"
+  },
+  "page.atlas.fModerate": {
+    "message": "🔷 中等",
+    "description": "complexity filter"
+  },
+  "page.atlas.fLow": {
+    "message": "🟢 低",
+    "description": "complexity filter"
+  },
+  "page.atlas.fMinimal": {
+    "message": "⚪ 极低",
+    "description": "complexity filter"
+  },
+  "page.atlas.sortName": {
+    "message": "名称 (A–Z)",
+    "description": "sort option"
+  },
+  "page.atlas.sortComplexity": {
+    "message": "复杂度 (最高)",
+    "description": "sort option"
+  },
+  "page.atlas.sortChallenge": {
+    "message": "挑战评级 (最难)",
+    "description": "sort option"
+  },
+  "page.atlas.sortToolkit": {
+    "message": "数字工具包 (最少)",
+    "description": "sort option"
+  },
+  "page.atlas.sortSpeakers": {
+    "message": "使用者人数 (最少)",
+    "description": "sort option"
+  },
+  "page.atlas.cAll": {
+    "message": "所有语言",
+    "description": "contest filter"
+  },
+  "page.atlas.cOpen": {
+    "message": "🔥 开放竞赛",
+    "description": "contest filter"
+  },
+  "page.atlas.cPast": {
+    "message": "📜 往期竞赛",
+    "description": "contest filter"
+  },
+  "page.atlas.seoTitle": {
+    "message": "语言图集",
+    "description": "/languages SEO title"
+  },
+  "page.atlas.seoDesc": {
+    "message": "浏览 Champollion 收录的每一种语言——搜索、按机器翻译难度过滤、按使用者人数或资源排序，并打开任何卡片以查看其完整的、带有引用的档案。",
+    "description": "/languages SEO description"
+  },
+  "page.atlas.title": {
+    "message": "语言图集",
+    "description": "h1"
+  },
+  "page.atlas.subtitle": {
+    "message": "{n} 种语言，每个事实都引用了其来源。搜索、按机器翻译难度过滤、按使用者人数或资源排序——打开任何卡片以查看完整档案。",
+    "description": "page subtitle; {n} is the language count"
+  },
+  "page.atlas.pillLanguages": {
+    "message": "语言",
+    "description": "stat pill"
+  },
+  "page.atlas.pillExtreme": {
+    "message": "🔮 极高",
+    "description": "stat pill"
+  },
+  "page.atlas.pillSevere": {
+    "message": "⭐ 严峻",
+    "description": "stat pill"
+  },
+  "page.atlas.pillHigh": {
+    "message": "💎 高",
+    "description": "stat pill"
+  },
+  "page.atlas.pillContests": {
+    "message": "🔥 开放竞赛",
+    "description": "stat pill"
+  },
+  "page.atlas.findRoute": {
+    "message": "🧭 查找路线",
+    "description": "door pill"
+  },
+  "page.atlas.glossary": {
+    "message": "📖 词汇表",
+    "description": "door pill"
+  },
+  "page.atlas.allRegions": {
+    "message": "🌍 所有地区",
+    "description": "filter option"
+  },
+  "page.atlas.allVitality": {
+    "message": "🫀 所有活力状态",
+    "description": "filter option"
+  },
+  "page.atlas.allFamilies": {
+    "message": "🌳 所有语系",
+    "description": "filter option"
+  },
+  "page.atlas.searchPh": {
+    "message": "搜索语言...",
+    "description": "search placeholder"
+  },
+  "page.atlas.lineage": {
+    "message": "🌳 谱系：",
+    "description": "ancestry chip label"
+  },
+  "page.atlas.oneLang": {
+    "message": "{n} 种语言",
+    "description": "singular count; {n} is 1"
+  },
+  "page.atlas.manyLangs": {
+    "message": "{n} 种语言",
+    "description": "plural count; {n} number"
+  },
+  "page.atlas.clearChip": {
+    "message": "清除 ✕",
+    "description": "clear chip"
+  },
+  "page.atlas.streaming": {
+    "message": "正在加载图谱——目前已加载 {n} 种语言…",
+    "description": "streaming progress; {n} count so far"
+  },
+  "page.atlas.loadFail": {
+    "message": "语言索引加载失败。",
+    "description": "error state"
+  },
+  "page.atlas.tryAgain": {
+    "message": "重试",
+    "description": "retry button"
+  },
+  "page.atlas.loading": {
+    "message": "正在加载图谱…",
+    "description": "loading state"
+  },
+  "page.atlas.noMatch": {
+    "message": "没有符合筛选条件的卡片。",
+    "description": "empty state"
+  },
+  "page.atlas.resetFilters": {
+    "message": "重置筛选条件",
+    "description": "reset button"
+  },
+  "page.atlas.showing": {
+    "message": "显示 {a} / {b} 张卡片 — 向下滚动查看更多",
+    "description": "pagination; {a} shown, {b} total"
+  },
+  "page.board.colRank": {
+    "message": "排名",
+    "description": "column/metric label"
+  },
+  "page.board.colPair": {
+    "message": "语言对",
+    "description": "column/metric label"
+  },
+  "page.board.colMethod": {
+    "message": "方法",
+    "description": "column/metric label"
+  },
+  "page.board.colModel": {
+    "message": "模型",
+    "description": "column/metric label"
+  },
+  "page.board.colComposite": {
+    "message": "综合得分",
+    "description": "column/metric label"
+  },
+  "page.board.colSemantic": {
+    "message": "语义",
+    "description": "column/metric label"
+  },
+  "page.board.colTrust": {
+    "message": "信任度",
+    "description": "column/metric label"
+  },
+  "page.board.colTier": {
+    "message": "等级",
+    "description": "column/metric label"
+  },
+  "page.board.colAuthor": {
+    "message": "作者",
+    "description": "column/metric label"
+  },
+  "page.board.colDate": {
+    "message": "日期",
+    "description": "column/metric label"
+  },
+  "page.board.colDeterministic": {
+    "message": "确定性",
+    "description": "column/metric label"
+  },
+  "page.board.colExactMatch": {
+    "message": "完全匹配",
+    "description": "column/metric label"
+  },
+  "page.board.colFSTAcceptance": {
+    "message": "FST 接受率",
+    "description": "column/metric label"
+  },
+  "page.board.colEquivMatch": {
+    "message": "等效匹配",
+    "description": "column/metric label"
+  },
+  "page.board.tt_composite": {
+    "message": "确定性综合得分 (0.0–1.0) — 这是一个透明的排序键（SORT KEY），而非绝对的质量裁定。它是某次运行中可用的表层/结构信号（chrF++、完全匹配以及任何 FST / 等效 / 语义得分）的加权平均值。神经指标（COMET / QE）被刻意排除并单独报告。请使用它对行进行排序；质量判断应基于置信区间 + 每行的证据，以及 COMET-22。详见评分规范 §4。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_comet": {
+    "message": "COMET-22 (Unbabel/wmt22-comet-da) — 一种基于神经嵌入的翻译质量评估方法，也是自 WMT 2022 以来的主要系统级机器翻译指标。它与人类判断的吻合程度因语系而异 — 在源自 WMT 的可靠性数据中，它在某些语系上优于表层指标，而在其他语系上则落后于 chrF++，并且对于世界上大多数语言尚未进行测量（详见指标可靠性规范）。与综合得分同等重要。AfriCOMET 会为受支持的非洲语言自动选择；对于 XLM-R 高资源层级之外的低资源目标语言，请将得分视为具有更宽误差棒的相对信号（展开的行会对此进行标记）。不可跨语言对进行比较。单独报告 — 绝不计入确定性综合得分。越高越好 (0.0–1.0)。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_chrF": {
+    "message": "字符 n-gram F-score (chrF++)。与人类判断具有良好的相关性，特别是对于形态丰富的语言。越高越好。范围：0–100。不可跨语言对进行比较：每种书写系统都会因偶然性而获得一定的重叠分数（偶然性下限因正字法而异），因此只能在同一语言对内比较 chrF++ — 网络图上的跨语言强度使用的是经过偶然性校正的 cchrF++（详见连接强度规范）。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_bleu": {
+    "message": "语料库 BLEU（sacreBLEU，默认 13a 分词器）。一种词汇 n-gram 精确度指标 — 便于与已发布的表格进行比较，但对于形态丰富、低资源的语言，与人类判断的相关性较弱。越高越好。展开行可查看其确切的 sacreBLEU 签名。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_spbleu": {
+    "message": "spBLEU — 基于 FLORES-200 SentencePiece 分词器的 BLEU，可跨脚本和分词进行比较（NLLB/FLORES 通用语数值）。作为可比性辅助指标报告，绝不计入综合得分。越高越好。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_ter": {
+    "message": "翻译编辑率 (sacreBLEU) — 将输出转换为参考译文所需的编辑距离，以百分比表示。越低越好。不计入综合得分（它与 chrF++ 相关）。展开行可查看其确切的 sacreBLEU 签名。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_sacrebleuSignatures": {
+    "message": "每个表层指标的完整 sacreBLEU 签名（分词器、平滑处理、大小写、参考译文数量、sacreBLEU 版本）。任何人都可以使用相同的签名针对固定 SHA 的语料库重新运行 sacreBLEU，并复现确切的得分。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_exactMatch": {
+    "message": "完全匹配率。与黄金标准参考译文完全匹配的翻译百分比。一项严格的指标 — 即使是微小的空格差异也会被视为不匹配。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_fstAcceptance": {
+    "message": "有限状态转换器 (FST) 接受率。根据该语言的 FST 语法，形态上有效的输出百分比。仅在启用 FST 验证时适用。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_equivalentMatch": {
+    "message": "等效匹配率。与黄金标准中任何可接受变体（不仅限于主要参考译文）匹配的翻译百分比。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_semanticScore": {
+    "message": "语义相似度得分。基于神经嵌入的输出与参考译文之间的相似度，捕捉超越表层匹配的意义保留程度。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_tier": {
+    "message": "基于综合得分阈值的质量等级分类（评分规范 §5.1）：基线 (Baseline) < 0.30，起步 (Emerging) < 0.50，可用 (Functional) < 0.70，可部署 (Deployable) < 0.85，流利 (Fluent) ≥ 0.85。自动化得分上的启发式标签 — 只有双语使用者的社区审查才能确认实际可用性；没有它，任何方法都不能声称达到“可部署”或以上级别。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_trust": {
+    "message": "验证等级。自我基准测试 (Self-benchmarked) = 在经过身份验证的情况下通过 CLI 提交，但得分是自我报告的，且未经独立重新评分 — 请将其视为声明，而非验证结果。Champollion 验证 (Champollion Verified) = 由项目方根据提交者的模型输出，针对固定 SHA 的语料库进行独立重新评分（唯一有资格参与排名和获奖的等级）。社区验证 (Community Validated) = 目标语言的双语使用者（根据社区自身协议获得资格）审查了该方法输出的分层样本（≥30 个条目，≥2 名审查者），且 ≥70% 达到了社区标准 — 仅由社区自行测试并酌情授予；抽查降级是对称的，且同样公开。验证功能正在逐步推出；目前的行均为自我基准测试。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_author": {
+    "message": "通过 mt-eval publish 提交这些结果的经过身份验证的用户。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_condition": {
+    "message": "使用的提示词策略。“naive” = 直接翻译提示词。“coached” = 带有语言上下文的提示词。自定义条件可能包括工具使用或后处理。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_method": {
+    "message": "翻译方法的描述。“Harness-native” 表示标准的测试框架提示词，未附加自定义方法卡片。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_paradigm": {
+    "message": "翻译范式 — 该方法在算法层面的工作原理（基于规则、统计、神经机器翻译、大语言模型、混合、人工）。与方法类别和依赖类别正交；它使得基于规则、神经网络和 LLM 的系统能够进行同类比较。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_cost": {
+    "message": "本次评估运行的总 API 成本（美元），由 OpenRouter 报告。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_duration": {
+    "message": "完整运行的实际耗时。如果重复使用了缓存的翻译，该时间可能较短。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_fingerprint": {
+    "message": "运行配置的确定性哈希值。具有相同指纹的两次运行使用了完全相同的模型、提示词、温度和数据集设置。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_provenance": {
+    "message": "运行时的 Git 提交和仓库。确认产生这些结果的确切代码版本。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.tt_harnessVersion": {
+    "message": "产生这些结果的 mt-eval 测试框架版本。不同版本可能使用不同的提示词策略或评分逻辑。",
+    "description": "leaderboard tooltip"
+  },
+  "page.board.relOnlyTitle": {
+    "message": "高污染 — 仅供相对比较，不代表绝对质量",
+    "description": "badge tooltip"
+  },
+  "page.board.relOnly": {
+    "message": "仅相对",
+    "description": "badge"
+  },
+  "page.board.searchPh": {
+    "message": "搜索模型、作者、方法…",
+    "description": "search placeholder"
+  },
+  "page.board.from": {
+    "message": "源语言",
+    "description": "pair filter label"
+  },
+  "page.board.anySource": {
+    "message": "任意源语言",
+    "description": "filter option"
+  },
+  "page.board.to": {
+    "message": "→ 目标语言",
+    "description": "pair filter label"
+  },
+  "page.board.anyTarget": {
+    "message": "任意目标语言",
+    "description": "filter option"
+  },
+  "page.board.completedOnly": {
+    "message": "仅显示已完成的运行",
+    "description": "checkbox label"
+  },
+  "page.board.model": {
+    "message": "模型",
+    "description": "filter label"
+  },
+  "page.board.anyModel": {
+    "message": "任意模型",
+    "description": "filter option"
+  },
+  "page.board.tier": {
+    "message": "等级",
+    "description": "filter label"
+  },
+  "page.board.anyTier": {
+    "message": "任意等级",
+    "description": "filter option"
+  },
+  "page.board.trust": {
+    "message": "信任度",
+    "description": "filter label"
+  },
+  "page.board.anyTrust": {
+    "message": "任意信任度",
+    "description": "filter option"
+  },
+  "page.board.methodClass": {
+    "message": "方法类别",
+    "description": "filter label"
+  },
+  "page.board.anyMethodClass": {
+    "message": "任意方法类别",
+    "description": "filter option"
+  },
+  "page.board.paradigm": {
+    "message": "范式",
+    "description": "filter label"
+  },
+  "page.board.anyParadigm": {
+    "message": "任意范式",
+    "description": "filter option"
+  },
+  "page.board.seoTitle": {
+    "message": "方法排行榜",
+    "description": "/leaderboard SEO title"
+  },
+  "page.board.seoDesc": {
+    "message": "通过可复现的评估，对原住民语言和低资源语言的翻译方法进行基准测试。",
+    "description": "/leaderboard SEO description"
+  },
+  "page.board.title": {
+    "message": "排行榜",
+    "description": "h1"
+  },
+  "page.board.subtitle": {
+    "message": "通过可复现且带有指纹的评估，对原住民语言和低资源语言的翻译方法进行基准测试。",
+    "description": "page subtitle"
+  },
+  "page.board.disclaimer": {
+    "message": "⚠️ 这些是自动化的代理分数，并非经过验证的质量评判。是否具备部署条件由社区审查决定。有关方法论的详细信息，请参阅 {spec}。",
+    "description": "disclaimer banner; {spec} is a link"
+  },
+  "page.board.specLink": {
+    "message": "评分规范",
+    "description": "link text"
+  },
+  "page.board.runOne": {
+    "message": "次运行",
+    "description": "singular"
+  },
+  "page.board.runMany": {
+    "message": "次运行",
+    "description": "plural"
+  },
+  "page.board.pairMeasured": {
+    "message": "个已测语种对",
+    "description": "singular"
+  },
+  "page.board.pairsMeasured": {
+    "message": "个已测语种对",
+    "description": "plural"
+  },
+  "page.board.methodOne": {
+    "message": "种方法",
+    "description": "singular"
+  },
+  "page.board.methodMany": {
+    "message": "种方法",
+    "description": "plural"
+  },
+  "page.board.latest": {
+    "message": "最新：{d}",
+    "description": "latest run date; {d} is the date"
+  },
+  "page.board.submitNote": {
+    "message": "有方法要提交？{plugin} · {contests}",
+    "description": "submit note; {plugin}/{contests} are links"
+  },
+  "page.board.pluginLink": {
+    "message": "构建插件并提交你的分数 →",
+    "description": "link text"
+  },
+  "page.board.contestsLink": {
+    "message": "竞赛与共享任务 →",
+    "description": "link text"
+  },
+  "page.board.filtersBtn": {
+    "message": "筛选",
+    "description": "mobile filter button"
+  },
+  "page.board.condition": {
+    "message": "条件：",
+    "description": "filter label"
+  },
+  "page.board.condAll": {
+    "message": "全部",
+    "description": "condition pill"
+  },
+  "page.board.condBest": {
+    "message": "★ 仅显示最佳",
+    "description": "condition pill"
+  },
+  "page.board.lane": {
+    "message": "赛道：",
+    "description": "filter label"
+  },
+  "page.board.laneAbsTitle": {
+    "message": "可按绝对质量排名 — 排除高污染（HIGH-contamination）语料库",
+    "description": "lane tooltip"
+  },
+  "page.board.laneAbs": {
+    "message": "绝对质量",
+    "description": "lane pill"
+  },
+  "page.board.laneRelTitle": {
+    "message": "高污染语料库 — 分数仅供相对比较",
+    "description": "lane tooltip"
+  },
+  "page.board.laneRel": {
+    "message": "仅限相对比较",
+    "description": "lane pill"
+  },
+  "page.board.laneAllTitle": {
+    "message": "显示所有语料库（高污染行带有“仅限相对比较”徽章）",
+    "description": "lane tooltip"
+  },
+  "page.board.laneAll": {
+    "message": "全部",
+    "description": "lane pill"
+  },
+  "page.board.laneNote": {
+    "message": "仅限相对比较赛道。这些语料库（例如 FLORES+）很可能已包含在模型的训练数据中，因此分数仅用于在同一语料库上对不同方法进行相互排名 — 它们{not}绝对质量的衡量标准，且不计入主排名。",
+    "description": "relative lane note; {not} is bold"
+  },
+  "page.board.notWord": {
+    "message": "不是",
+    "description": "bold"
+  },
+  "page.board.clearAll": {
+    "message": "全部清除",
+    "description": "clear filters"
+  },
+  "page.board.results": {
+    "message": "{shown} 条结果",
+    "description": "result count; {shown} is like '25' or '25 of 100'"
+  },
+  "page.board.exportTitle": {
+    "message": "将筛选结果导出为 CSV",
+    "description": "export tooltip"
+  },
+  "page.board.export": {
+    "message": "导出 CSV",
+    "description": "export button"
+  },
+  "page.board.filtersPanel": {
+    "message": "筛选",
+    "description": "mobile panel header"
+  },
+  "page.board.apply": {
+    "message": "应用",
+    "description": "apply button"
+  },
+  "page.board.loading": {
+    "message": "正在加载排行榜数据...",
+    "description": "loading state"
+  },
+  "page.board.loadingMore": {
+    "message": "加载中…",
+    "description": "loading state"
+  },
+  "page.board.loadMore": {
+    "message": "加载更多（{a} / {b}）",
+    "description": "pagination; {a} shown, {b} total"
+  },
+  "page.board.how": {
+    "message": "工作原理",
+    "description": "section heading"
+  },
+  "page.board.how1": {
+    "message": "{b} — 每次提交都与特定的 Git 提交和流水线配置绑定，确保结果可以追溯到生成它们的具体代码。",
+    "description": "how-it-works item; {b} bold lead"
+  },
+  "page.board.how1Lead": {
+    "message": "带有指纹的流水线",
+    "description": "bold lead"
+  },
+  "page.board.how2": {
+    "message": "{b} — 评估数据集经过内容哈希处理并进行版本控制。分数只能在同一数据集版本内进行比较，从而防止隐性的数据污染。",
+    "description": "how-it-works item; {b} bold lead"
+  },
+  "page.board.how2Lead": {
+    "message": "版本化数据集",
+    "description": "bold lead"
+  },
+  "page.board.how3": {
+    "message": "{b} — 所有指标均由共享的 champollion 评估框架计算，消除了不同提交之间的实现差异。",
+    "description": "how-it-works item; {b} bold lead"
+  },
+  "page.board.how3Lead": {
+    "message": "标准化框架",
+    "description": "bold lead"
+  },
+  "page.board.how4": {
+    "message": "{b} — 任何人都可以通过开启 pull request，提交其方法的 JSON 条目和流水线指纹来提交结果。Verified（已验证）和 Community（社区）信任层级即将推出。",
+    "description": "how-it-works item; {b} bold lead"
+  },
+  "page.board.how4Lead": {
+    "message": "开放提交",
+    "description": "bold lead"
+  },
+  "page.research.spec1": {
+    "message": "基准测试规范",
+    "description": "spec link"
+  },
+  "page.research.spec1Desc": {
+    "message": "有效运行的构成要素：数据集、指纹和运行卡片。",
+    "description": "spec desc"
+  },
+  "page.research.spec2": {
+    "message": "评分规范",
+    "description": "spec link"
+  },
+  "page.research.spec2Desc": {
+    "message": "综合评分构建、指标定义、质量层级。",
+    "description": "spec desc"
+  },
+  "page.research.spec3": {
+    "message": "显著性检验",
+    "description": "spec link"
+  },
+  "page.research.spec3Desc": {
+    "message": "Bootstrap 置信区间和配对比较方法。",
+    "description": "spec desc"
+  },
+  "page.research.spec4": {
+    "message": "语料库设计",
+    "description": "spec link"
+  },
+  "page.research.spec4Desc": {
+    "message": "评估语料库的构建、版本控制及污染检查方法。",
+    "description": "spec desc"
+  },
+  "page.research.seoTitle": {
+    "message": "研究",
+    "description": "/research SEO title"
+  },
+  "page.research.seoDesc": {
+    "message": "开放规范、带版本控制的评估语料库，以及完全引用的语言卡片数据集。复现一切。",
+    "description": "/research SEO description"
+  },
+  "page.research.eyebrow": {
+    "message": "研究人员",
+    "description": "eyebrow"
+  },
+  "page.research.title": {
+    "message": "复现一切",
+    "description": "h1"
+  },
+  "page.research.subtitle": {
+    "message": "每一次基准测试运行都通过指纹绑定到一个 git commit。每一个语料库都进行了版本控制和内容哈希处理。每一张语言卡片上的每一个事实都标明了出处。这就是完整的方法论。",
+    "description": "page subtitle"
+  },
+  "page.research.specsHeading": {
+    "message": "规范",
+    "description": "section heading"
+  },
+  "page.research.corpora": {
+    "message": "语料库",
+    "description": "section heading"
+  },
+  "page.research.corporaBody": {
+    "message": "数据集注册表追踪了 {n} 个从源获取的评估数据集，每个数据集都带有许可证、出处说明和“禁止训练 (do-not-train)”标志。保留的测试集保持封闭；开发集开放用于迭代。污染发现会被公开，而不是被掩盖——请参阅语料库设计规范以获取审计跟踪。",
+    "description": "corpora body; {n} is the dataset count"
+  },
+  "page.research.citation": {
+    "message": "引用与许可",
+    "description": "section heading"
+  },
+  "page.research.citationBody": {
+    "message": "语言卡片层利用了 {n} 个已注册的上游来源——Glottolog、WALS、Grambank、PHOIBLE、Lexibank 等——每个来源都追踪了其许可证和署名要求。卡片记录了每个字段的出处 ({field})，因此任何事实都可以被追溯、质疑和纠正。",
+    "description": "citation body; {n} source count, {field} code span"
+  },
+  "page.research.citeProc": {
+    "message": "引用流程",
+    "description": "link card"
+  },
+  "page.research.citeProcDesc": {
+    "message": "事实如何进入卡片以及来源如何被记录。",
+    "description": "link card desc"
+  },
+  "page.research.cardSpec": {
+    "message": "语言卡片规范",
+    "description": "link card"
+  },
+  "page.research.cardSpecDesc": {
+    "message": "包含 {n} 张卡片的数据集的完整 schema。",
+    "description": "link card desc; {n} is the card count"
+  },
+  "page.research.touch": {
+    "message": "联系我们",
+    "description": "section heading"
+  },
+  "page.research.touchBody": {
+    "message": "合作、语料库伙伴关系、纠错或质疑——我们都欢迎。在 {gh} 上开启一个 issue，或者从 {spec} 开始。",
+    "description": "get-in-touch body; {gh}/{spec} are links"
+  },
+  "page.research.partnershipLink": {
+    "message": "语料库合作规范",
+    "description": "link text"
+  },
+  "page.route.pickerPh": {
+    "message": "输入语言名称…",
+    "description": "picker placeholder"
+  },
+  "page.route.floorUnknown": {
+    "message": "chrF++ {v} · 下限未知（未校正）",
+    "description": "strength chip; {v} is the score"
+  },
+  "page.route.provisional": {
+    "message": "暂定 (n<100)",
+    "description": "chip marker"
+  },
+  "page.route.seoTitle": {
+    "message": "查找路线",
+    "description": "/route SEO title"
+  },
+  "page.route.seoDesc": {
+    "message": "任意两种语言之间经过测量的最佳翻译路线——或者用于映射该路线的命令。",
+    "description": "/route SEO description"
+  },
+  "page.route.title": {
+    "message": "查找路线",
+    "description": "h1"
+  },
+  "page.route.sub": {
+    "message": "选择任意两种语言。如果有经过测量的干净翻译数据将它们连接起来（直接连接或通过枢纽语言），这里将显示损失最小的路线及其预测质量。如果没有，它会告诉你真实情况，并提供开始映射该路线的确切命令。",
+    "description": "page subtitle"
+  },
+  "page.route.from": {
+    "message": "源语言",
+    "description": "picker label"
+  },
+  "page.route.to": {
+    "message": "目标语言",
+    "description": "picker label"
+  },
+  "page.route.samePair": {
+    "message": "请选择两种不同的语言。",
+    "description": "same-pair note"
+  },
+  "page.route.resultTitle": {
+    "message": "当前最佳路线 · 预测保留 {q} 的含义 · 预期损失 {loss}",
+    "description": "route result; {q}/{loss} are bold percentages"
+  },
+  "page.route.disclaimer": {
+    "message": "这是一个{pred}——由每一跳测得的 chrF++ 复合相乘得出。它不是测得的端到端分数。链路仅穿过干净（低污染）的已测量语料库；{spec}。",
+    "description": "prediction disclaimer; {pred} bold, {spec} a link"
+  },
+  "page.route.predWord": {
+    "message": "预测值",
+    "description": "bold"
+  },
+  "page.route.strengthLink": {
+    "message": "强度是如何测量的",
+    "description": "link text"
+  },
+  "page.route.awaiting": {
+    "message": "等待测量",
+    "description": "hop state"
+  },
+  "page.route.unmapped": {
+    "message": "⚠ 尚未有测量的映射",
+    "description": "unmapped heading"
+  },
+  "page.route.noData": {
+    "message": "目前在公开面板上，没有任何经过测量的干净翻译数据能够将 {a} 和 {b} 连接起来——无论是直接连接还是通过任何枢纽语言。",
+    "description": "unmapped body; {a}/{b} are language names"
+  },
+  "page.route.registered": {
+    "message": "该语言对的语料库{reg}，目前位于开放队列中——只是尚未运行。",
+    "description": "corpus registered note; {reg} is bold"
+  },
+  "page.route.isRegistered": {
+    "message": "已注册",
+    "description": "bold"
+  },
+  "page.route.notRegistered": {
+    "message": "该语言对尚未注册任何评估语料库。",
+    "description": "no corpus note"
+  },
+  "page.route.mapIt": {
+    "message": "{b} 此命令将在您的预算范围内运行最高价值的开放基准测试——每一次完成的运行都会在地图上点亮新的边缘，并缩短像这样的路线：",
+    "description": "map-it lead; {b} is the bold lead"
+  },
+  "page.route.mapItLead": {
+    "message": "开始映射。",
+    "description": "bold lead"
+  },
+  "page.route.budget": {
+    "message": "预算 $",
+    "description": "budget label"
+  },
+  "page.route.provider": {
+    "message": "提供商",
+    "description": "provider label"
+  },
+  "page.route.openPair": {
+    "message": "要开放这个特定的语言对：母语者今天就可以向 {tatoeba} 添加句子（我们的开发语料库基于 Tatoeba 的发布版本重建），或者 {register}——50 个精选的句子对就足以开启一条路线。",
+    "description": "open-this-pair note; {tatoeba}/{register} are links"
+  },
+  "page.route.registerLink": {
+    "message": "注册语料库",
+    "description": "link text"
+  },
+  "page.route.registerNote": {
+    "message": "语域级别的路由（正式 / 非正式 / 传统叙事……）将在带有语域标记的运行记录到达排行榜时启用——评分通道已经记录了每次运行的语域；一旦首批带有标记的运行记录落地，路由就会对其进行追踪。",
+    "description": "register-routing note"
+  },
+  "page.sharedTasks.statusOpen": {
+    "message": "开放",
+    "description": "contest status"
+  },
+  "page.sharedTasks.statusClosed": {
+    "message": "已关闭",
+    "description": "contest status"
+  },
+  "page.sharedTasks.statusArchived": {
+    "message": "已归档",
+    "description": "contest status"
+  },
+  "page.sharedTasks.noContests": {
+    "message": "此版本尚未注册任何单语对竞赛。",
+    "description": "empty state"
+  },
+  "page.sharedTasks.thPair": {
+    "message": "语言对",
+    "description": "table header"
+  },
+  "page.sharedTasks.thContest": {
+    "message": "竞赛",
+    "description": "table header"
+  },
+  "page.sharedTasks.thStatus": {
+    "message": "状态",
+    "description": "table header"
+  },
+  "page.sharedTasks.cycle": {
+    "message": "{year} 周期",
+    "description": "edition year cycle; {year} is the year"
+  },
+  "page.sharedTasks.archived": {
+    "message": "已归档",
+    "description": "archived marker"
+  },
+  "page.sharedTasks.pairOne": {
+    "message": "语言对",
+    "description": "singular"
+  },
+  "page.sharedTasks.pairMany": {
+    "message": "语言对",
+    "description": "plural"
+  },
+  "page.sharedTasks.seoTitle": {
+    "message": "共享任务与竞赛",
+    "description": "/shared-tasks SEO title"
+  },
+  "page.sharedTasks.seoDesc": {
+    "message": "参与 Champollion 网络——主办共享任务或独立竞赛，向开放队列贡献算力，或挑战排行榜。包含资格赛限制和组织者评分流水线的多语对共享任务版本。",
+    "description": "/shared-tasks SEO description"
+  },
+  "page.sharedTasks.eyebrow": {
+    "message": "THE CHAMPOLLION NETWORK",
+    "description": "eyebrow"
+  },
+  "page.sharedTasks.title": {
+    "message": "共享任务与竞赛",
+    "description": "h1"
+  },
+  "page.sharedTasks.subtitle": {
+    "message": "共享评估是该领域取得可靠进展的方式——自 2006 年以来，WMT 每年都会举办翻译共享任务，而 SemEval、CoNLL 共享任务和 AmericasNLP 也以同样的方式建立了共识：每个人都在相同的数据上进行测量，因此结果对所有人来说意义相同。本页面正是实现这一目标的地方。如果做得好，它能帮助我们沟通——重点不在于竞争，而在于分享人类最古老的问题之一，并共同解决它。",
+    "description": "page subtitle"
+  },
+  "page.sharedTasks.threeWays": {
+    "message": "三种参与方式",
+    "description": "section heading"
+  },
+  "page.sharedTasks.host": {
+    "message": "主办",
+    "description": "card title"
+  },
+  "page.sharedTasks.hostDesc": {
+    "message": "按照您自己的条件运行共享任务或独立竞赛。您的盲测参考数据永远不会离开您的机器——组织者流水线会根据这些数据对提交的内容进行评分，并仅发布分数。指南将引导您完成每个语言对的设置；版本总览会将您的语言对分组到这里的一个页面中。",
+    "description": "card body"
+  },
+  "page.sharedTasks.contribute": {
+    "message": "贡献",
+    "description": "card title"
+  },
+  "page.sharedTasks.contributeDesc": {
+    "message": "将算力指向开放队列——只需一条命令，即可在您的预算范围内运行价值最高且尚未测量的语言对，并将每个结果发布到地图上。语料库贡献（来自使用者的句子，基于社区条款）：敬请期待。",
+    "description": "card body"
+  },
+  "page.sharedTasks.challenge": {
+    "message": "挑战",
+    "description": "card title"
+  },
+  "page.sharedTasks.challengeDesc": {
+    "message": "认为您的翻译方法更好？参加下方的公开竞赛，或者在公共数据集上进行基准测试，并将其与所有其他人的结果一起展示在排行榜上——欢迎任何方法，无论是人工还是机器。插件使新方法和新指标成为一等公民。",
+    "description": "card body"
+  },
+  "page.sharedTasks.prizes": {
+    "message": "奖项（适时推出）",
+    "description": "section heading"
+  },
+  "page.sharedTasks.prizesBody": {
+    "message": "这里的竞赛可以设立奖项，其结构与科学挑战奖类似：发布的规范、固定的标准、盲测评估以及任何人都可以验证的结果。{spec} 定义了运行方式——并明确指出目前尚未开放任何奖项。今天开放的是测量：队列、排行榜以及下方的共享任务。",
+    "description": "prizes body; {spec} is a link"
+  },
+  "page.sharedTasks.prizeSpecLink": {
+    "message": "奖项规范",
+    "description": "link text"
+  },
+  "page.sharedTasks.editions": {
+    "message": "版本",
+    "description": "section heading"
+  },
+  "page.sharedTasks.editionsBody": {
+    "message": "一个共享任务在一个年度周期内涵盖一种源语言和多种目标语言——类似 AmericasNLP 的风格。每个语言对都作为独立的竞赛运行，拥有自己的公开资格赛和盲测集；版本将它们分组在这里，以便参与者看到的是一个完整的任务，而不是零散的竞赛。",
+    "description": "editions body"
+  },
+  "page.sharedTasks.loading": {
+    "message": "正在加载共享任务版本…",
+    "description": "loading state"
+  },
+  "page.sharedTasks.backAll": {
+    "message": "← 所有共享任务",
+    "description": "back link"
+  },
+  "page.sharedTasks.notFound": {
+    "message": "未注册名为 {id} 的共享任务版本。",
+    "description": "unknown edition; {id} is a code span"
+  },
+  "page.sharedTasks.backAll2": {
+    "message": "← 所有共享任务",
+    "description": "back link"
+  },
+  "page.sharedTasks.empty": {
+    "message": "尚未注册任何共享任务版本。当组织者注册一个版本并附加其单语对竞赛时，它将作为一个页面显示在这里。",
+    "description": "empty state"
+  },
+  "page.sharedTasks.runOne": {
+    "message": "举办任务",
+    "description": "section heading"
+  },
+  "page.sharedTasks.runOneBody": {
+    "message": "正在组织多语对共享任务？每个语言对都保留其自己的带有资格赛限制和组织者评分的流水线——您的测试参考数据永远不会离开您的机器。{guide} 将引导您完成每个语言对的设置；版本总览将这些语言对分组到您在这里看到的单个页面中。",
+    "description": "run-one body; {guide} is a link"
+  },
+  "page.sharedTasks.guideLink": {
+    "message": "运行独立竞赛指南",
+    "description": "link text"
+  },
+  "page.tc.seoTitle": {
+    "message": "语言图集",
+    "description": "redirect SEO title"
+  },
+  "page.tc.seoDesc": {
+    "message": "正在重定向至 Language Atlas。",
+    "description": "redirect SEO description"
+  },
+  "page.tc.moved": {
+    "message": "Language Index 已迁移至 {atlas}。",
+    "description": "redirect note; {atlas} is a link"
+  },
+  "page.tc.atlasLink": {
+    "message": "Language Atlas",
+    "description": "link text"
+  }
+}

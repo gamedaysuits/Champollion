@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "wangbcd",
+  "upstream": "https://zenodo.org/records/5136930",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Wang's \"Basic Words in Chinese Dialects\" from 2004 — Wang Feng",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.0",
+    "doi": "10.5281/zenodo.5136930",
+    "date": "2021-07-26"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 330,
+      "sha256": "b47b6e0fb000779d74d4c7c477b75e9c7f836eabd5b0dec8ccaa153359f19c80",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13092,
+      "sha256": "e729733417fd30c0c963a583ba03cf12c0af726c8d4a1181e16c047d85d706b1",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 442780,
+      "sha256": "d854272c20dcc9262462f091b1d41d9a702ff559ee5420e6292085760b5fd59c",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 348614,
+      "sha256": "d1f1f6b919499169f3b8b8b2706f83d83c40399940b4e5133c08f88d51ae0941",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 1941,
+      "sha256": "b39e1dfb6e4d4da24b50ea7af60f1c9fdf740ae307396373bac7f6d531b9e6ab",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "e9d4f193a25966863d93a1f822c12bf5b23ccc9e9812707364ebd69756c3e4e6",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 4597,
+      "sha256": "0d1952b34e2d6fc26a4b057ae1f5ad9229dd80bb23a6f814a0d268ae93e204ef",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 740,
+      "sha256": "bce8c76890c82f89869cb596854688992d7f4a4a15ad503e3781f1cde4919c5b",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 456,
+      "sha256": "28d4bafd7a53d9e14c9af7adb8659c3972586c60eba3d5f742b2b6094d6b0ac8",
+      "url": "https://zenodo.org/api/records/5136930/files/lexibank/wangbcd-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/wangbcd-v1.0.zip:lexibank-wangbcd-2beb377/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/wangbcd-v1.0.zip, whose md5 matched Zenodo's published checksum (md5:c9058e5d60ee24edafa9bf0b71abd795). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T19:01:17.496Z"
+}

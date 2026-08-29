@@ -1,0 +1,54 @@
+{
+  "id": "ref-flores-plus",
+  "type": "reference",
+  "name": "FLORES+",
+  "version": "2.0",
+  "description": "Multi-way parallel evaluation benchmark covering 200+ languages, created by Meta's NLLB team. Sentences are drawn from English Wikipedia and Wikinews, professionally translated into all target languages. Widely used as an MT benchmark but heavily contaminated in frontier LLM training data.",
+  "source": {
+    "publisher": "Meta AI (NLLB Team)",
+    "url": "https://github.com/openlanguagedata/flores",
+    "paper": "https://arxiv.org/abs/2207.04672",
+    "citation": "NLLB Team et al. (2022). No Language Left Behind: Scaling Human-Centered Machine Translation.",
+    "fundedBy": "Meta AI"
+  },
+  "license": {
+    "spdx": "CC-BY-SA-4.0",
+    "commercial": false,
+    "redistribution": true,
+    "aiTraining": "Permitted with attribution under CC-BY-SA-4.0 terms.",
+    "notes": null
+  },
+  "languages": ["ace", "acm", "acq", "aeb", "afr", "ajp", "aka", "als", "amh", "apc", "arb", "ars", "ary", "arz", "asm", "ast", "awa", "ayr", "azb", "azj", "bak", "bam", "ban", "bel", "bem", "ben", "bho", "bjn", "bod", "bos", "bug", "bul", "cat", "ceb", "ces", "cjk", "ckb", "cmn", "crh", "cym", "dan", "deu", "dik", "dyu", "dzo", "ell", "eng", "epo", "est", "eus", "ewe", "fao", "fij", "fin", "fon", "fra", "fur", "fuv", "gaz", "gla", "gle", "glg", "grn", "guj", "hat", "hau", "heb", "hin", "hne", "hrv", "hun", "hye", "ibo", "ilo", "ind", "isl", "ita", "jav", "jpn", "kab", "kac", "kam", "kan", "kas", "kat", "kaz", "kbp", "kea", "khk", "khm", "kik", "kin", "kir", "kmb", "kmr", "knc", "kon", "kor", "lao", "lij", "lim", "lin", "lit", "lmo", "ltg", "ltz", "lua", "lug", "luo", "lus", "lvs", "mag", "mai", "mal", "mar", "min", "mkd", "mlt", "mni", "mos", "mri", "mya", "nld", "nno", "nob", "npi", "nso", "nus", "nya", "oci", "ory", "pag", "pan", "pap", "pbt", "pes", "plt", "pol", "por", "prs", "que", "ron", "run", "rus", "sag", "san", "sat", "scn", "shn", "sin", "slk", "slv", "smo", "sna", "snd", "som", "sot", "spa", "sqi", "srd", "srp", "ssw", "sun", "swe", "swh", "szl", "tam", "tat", "tel", "tgk", "tgl", "tha", "tir", "tpi", "tsn", "tso", "tuk", "tum", "tur", "twi", "tzm", "uig", "ukr", "umb", "urd", "uzb", "vec", "vie", "war", "wol", "xho", "ydd", "yor", "yue", "zho", "zsm", "zul"],
+  "segments": [
+    {
+      "id": "dev",
+      "name": "Development",
+      "size": 997,
+      "sizeUnit": "sentences",
+      "purpose": "Hyperparameter tuning, prompt development"
+    },
+    {
+      "id": "devtest",
+      "name": "Development Test",
+      "size": 1012,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — standard devtest split"
+    }
+  ],
+  "download": {
+    "method": "git-clone",
+    "url": "https://github.com/openlanguagedata/flores.git",
+    "instructions": "Clone the repository. Parallel text files are at flores200/{segment}/{lang_code}.{segment} (one sentence per line, aligned across languages).",
+    "sha256": null
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "FLORES+ is one of the most widely used MT benchmarks. The NLLB paper (§4) notes it was used to evaluate NLLB-200. Multiple frontier models (GPT-4, PaLM 2, Gemini) likely include FLORES data in training. Scores on FLORES+ from frontier LLMs should be interpreted as relative comparisons only, not absolute quality measures.",
+    "knownInTrainingOf": ["NLLB-200"]
+  },
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "lastUpdated": null,
+    "populatedFrom": "FLORES+ GitHub repository README (https://github.com/openlanguagedata/flores), NLLB paper (arXiv:2207.04672) §3-4. Language list from flores200/README.md."
+  }
+}

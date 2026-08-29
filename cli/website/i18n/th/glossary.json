@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "หน่วยคำ",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "หน่วยที่เล็กที่สุดของคำที่มีความหมาย คำว่า 'unhappiness' ในภาษาอังกฤษประกอบด้วยสามหน่วยคำ ได้แก่ un-, happy และ -ness ภาษาต่าง ๆ มีความแตกต่างกันอย่างมากในจำนวนหน่วยคำที่บรรจุอยู่ในคำเดียว",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "ระบบ MT ทำงานบน token และ token ที่ประกอบด้วยหน่วยคำหลายหน่วยจะซ่อนโครงสร้างไวยากรณ์ที่ระบบต้องการเพื่อแปลได้อย่างถูกต้อง",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "สัณฐานวิทยา",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "การศึกษาวิธีที่คำถูกสร้างขึ้นจากส่วนที่มีความหมายขนาดเล็กกว่า รวมถึงระบบการสร้างคำของภาษานั้น ๆ ภาษาที่มีสัณฐานวิทยาซับซ้อนจะแสดงความหมายผ่านการเปลี่ยนรูปคำ แทนที่จะใช้คำแยกต่างหากเหมือนภาษาอังกฤษ",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "สัณฐานวิทยาที่ซับซ้อนทำให้จำนวนรูปแบบคำที่แตกต่างกันเพิ่มขึ้นหลายเท่า ซึ่งระบบ MT ต้องเรียนรู้จากข้อมูลที่มีอยู่อย่างจำกัด",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "การผันคำ",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "การเปลี่ยนรูปคำเพื่อแสดงไวยากรณ์ เช่น กาล จำนวน กรณี หรือเพศ โดยไม่เปลี่ยนความหมายหลักของคำ เช่น sing/sang หรือ cat/cats ในภาษาอังกฤษ ภาษาที่มีการผันคำสูงอาจระบุหมวดหมู่ได้ถึงหกหมวดหรือมากกว่าในคำเดียว",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "รูปแบบที่ผันแล้วแต่ละรูปแบบถือเป็น token แยกต่างหากสำหรับระบบ MT ดังนั้นการผันคำที่หนักจึงหมายถึงคำที่พบได้น้อยมากขึ้นและข้อผิดพลาดด้านความสอดคล้องมากขึ้น",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "การสร้างคำใหม่",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "การสร้างคำใหม่จากคำที่มีอยู่ เช่น teach → teacher หรือ happy → unhappy ต่างจากการผันคำตรงที่การสร้างคำใหม่สร้างคำในพจนานุกรมใหม่ ไม่ใช่แค่รูปแบบทางไวยากรณ์ของคำเดิม",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "การสร้างคำใหม่ที่มีประสิทธิผลช่วยให้ผู้พูดสร้างคำขึ้นมาใหม่ได้ทันที ซึ่งระบบ MT อาจไม่เคยพบคำเหล่านั้นมาก่อน",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "คำเติม",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "หน่วยคำที่ต่อเข้ากับรากศัพท์เพื่อปรับความหมายหรือไวยากรณ์ คำเติมหน้าต่อก่อนรากศัพท์ คำเติมท้ายต่อหลังรากศัพท์ และบางภาษาใช้คำเติมกลางที่แทรกอยู่ภายในรากศัพท์",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "ตำแหน่งที่คำเติมต่อเข้ากับรากศัพท์เป็นตัวกำหนดว่า subword tokenizer ควรแบ่งคำตรงจุดใดสำหรับโมเดล MT",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "คำเติมหน้า",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "คำเติมที่ต่อเข้ากับด้านหน้าของรากศัพท์ เช่น re- ใน 'rewrite' บางภาษา รวมถึงภาษากลุ่ม Bantu และ Athabaskan หลายภาษา ถ่ายทอดไวยากรณ์ส่วนใหญ่ผ่านสายของคำเติมหน้า",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "ภาษาที่ใช้คำเติมหน้าเป็นหลักจะวางข้อมูลไวยากรณ์ไว้ที่ต้นคำ ซึ่งตรงข้ามกับที่ tokenizer ที่ฝึกด้วยคำเติมท้ายคาดหวัง",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "คำเติมท้าย",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "คำเติมที่ต่อเข้ากับด้านท้ายของรากศัพท์ เช่น -ness ใน 'kindness' การเติมท้ายเป็นกลยุทธ์การเติมคำที่พบบ่อยที่สุดในภาษาต่าง ๆ ทั่วโลก",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "คำเติมท้ายที่ซ้อนกันหลายชั้นสร้างรูปแบบคำที่ยาวและพบได้น้อย ซึ่งระบบ MT ต้องแบ่งส่วนให้ถูกต้องเพื่อแปลได้อย่างแม่นยำ",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "คำเติมกลาง",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "คำเติมที่แทรกอยู่ภายในรากศัพท์แทนที่จะต่อก่อนหรือหลัง ตัวอย่างเช่น ในภาษาตากาล็อก คำว่า sulat ที่แปลว่า 'เขียน' เปลี่ยนเป็น sumulat ที่แปลว่า 'เขียน (อดีต)' โดยการแทรก -um- หลังพยัญชนะตัวแรก",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "คำเติมกลางทำลายข้อสมมติที่ว่ารากศัพท์ของคำเป็นสายอักขระต่อเนื่อง ซึ่งทำให้การแบ่งส่วนคำแบบ subword ทั่วไปใช้ไม่ได้ผล",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "คำเกาะ",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "คำไวยากรณ์ขนาดเล็กที่ไม่สามารถยืนอยู่ได้ด้วยตัวเอง และต้องอาศัยคำข้างเคียง เช่น 's ใน \"the queen of England's hat\" clitic มีพฤติกรรมที่อยู่ระหว่างคำอิสระและ affix",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "Clitic ทำให้ขอบเขตของคำไม่ชัดเจน ส่งผลให้ tokenizer อาจเชื่อม clitic เข้ากับ host ที่ผิด และทำให้โครงสร้างไวยากรณ์คลาดเคลื่อน",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "ต้นคำ",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "ส่วนหลักของคำที่ affix ต่างๆ เกาะติด ใน 'unbelievable' stem ของ -able คือ 'believe' ในหลายภาษา stem ไม่ปรากฏเดี่ยวๆ และต้องมี inflection อย่างน้อยหนึ่งรูปแบบ",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "การระบุ stem ที่ร่วมกันระหว่างรูปแบบคำต่างๆ คือวิธีที่ระบบ MT ใช้สรุปความรู้จากข้อมูลฝึกสอนที่มีจำกัด",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "รากคำ",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "แกนกลางที่ลดทอนไม่ได้ของคำ หลังจากถอด affix ทั้งหมดออกแล้ว ในภาษากลุ่ม Semitic root มักเป็นพยัญชนะสามตัว (เช่น k-t-b แปลว่า 'write' ในภาษาอาหรับ) ที่รูปแบบสระเปลี่ยนให้กลายเป็นคำต่างๆ",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "ภาษาที่มี root แบบไม่ต่อเนื่อง (โครงสร้างพยัญชนะ) ต้องการการแบ่งส่วนคำแบบพิเศษเพื่อให้ MT เข้าใจความสัมพันธ์ระหว่างคำ",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "ตารางผันคำ",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "ชุดรูปแบบ inflected ทั้งหมดที่คำหนึ่งสามารถมีได้ เช่น ตารางการผันกริยา paradigm มีตั้งแต่สองรูปแบบ (เช่น 'must' ในภาษาอังกฤษ) ไปจนถึงหลายพันรูปแบบในภาษา polysynthetic",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "Paradigm ขนาดใหญ่ทำให้รูปแบบคำส่วนใหญ่พบได้น้อยหรือไม่ปรากฏในข้อมูลฝึกสอนเลย",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "คำติดต่อ",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "รูปแบบการสร้างคำที่ความหมายทางไวยากรณ์แต่ละอย่างมี affix ของตัวเองที่แยกออกได้ชัดเจน เรียงต่อกันทีละชิ้น เช่นในภาษาตุรกีหรือสวาฮีลี คำอาจยาวมาก แต่แต่ละส่วนมีหน้าที่เดียว",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "คำ agglutinative แบ่งส่วนเป็น subword ได้ชัดเจน แต่ต้องอาศัย tokenizer ที่เรียนรู้ลำดับ affix ของภาษานั้นๆ",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "fusional",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "รูปแบบการสร้างคำที่ affix หนึ่งตัวรวมความหมายทางไวยากรณ์หลายอย่างไว้พร้อมกัน เช่น คำลงท้าย -ó ใน habló ของภาษาสเปน บ่งบอกทั้ง past tense, บุรุษที่สาม และเอกพจน์พร้อมกัน โดยไม่สามารถแยกส่วนใดส่วนหนึ่งออกมาให้ตรงกับความหมายเดียวได้",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "คำลงท้ายแบบ fusional ไม่สามารถแยกส่วนได้ด้วย tokenizer ดังนั้นแต่ละชุดผสมต้องเรียนรู้เป็นหน่วยเดียว",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "คำโดด",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "รูปแบบการสร้างคำที่คำส่วนใหญ่เป็น morpheme เดี่ยว และไวยากรณ์แสดงออกผ่านลำดับคำและคำช่วยแทนการใช้คำลงท้าย เช่นในภาษาเวียดนามหรือภาษาจีนกลาง ซึ่งเป็นขั้วตรงข้ามกับ polysynthesis",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "ภาษา isolating เปลี่ยนโจทย์ของ MT จากการแบ่งส่วนคำ ไปเป็นการจัดลำดับคำและการเลือกใช้ function word",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "คำควบรวม",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "รูปแบบการสร้างคำที่กริยาคำเดียวสามารถบรรจุสิ่งที่ภาษาอื่นต้องใช้ทั้งประโยค ทั้งประธาน กรรม สถานที่ เครื่องมือ และอื่นๆ ไว้ในคำเดียว ภาษาพื้นเมืองอเมริกันหลายภาษาทำงานในลักษณะนี้",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "คำ polysynthetic แทบไม่ซ้ำกันเลย ทำให้ MT ระดับคำเผชิญกับ token ที่ไม่รู้จักอยู่ตลอดเวลา",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "Plains Cree (crk): กริยาคำเดียวสามารถรวม pronoun ของประธาน/กรรม, instrumental, สถานที่ และการกระทำไว้ด้วยกัน (card field linguisticChallenges.polysynthesis)",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "noun incorporation",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "การนำ noun มารวมเข้ากับกริยาเพื่อสร้างเป็นคำเดียว คล้ายกับการเปลี่ยน 'hunt seals' ให้กลายเป็น 'seal-hunt' ในรูปกริยา พบได้บ่อยในภาษา polysynthetic ซึ่งการรวมนี้จะเปลี่ยนการเน้นความและโครงสร้างไวยากรณ์ของประโยค",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "คำนามที่ถูกรวมเข้าไปจะหายไปจากประโยคในฐานะคำแยกต่างหาก ทำให้การแปลแบบ alignment-based สูญเสียคำนั้นไป",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "แสดงบนการ์ดในรูปแบบ linguisticChallenges.nounIncorporation (อ้างอิงจาก Grambank) เช่น Plains Cree (crk)",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "การประสมคำ (compounding)",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "การนำคำอิสระตั้งแต่สองคำขึ้นไปมารวมกันเป็นคำใหม่คำเดียว เช่น 'tooth' + 'brush' → 'toothbrush' การประสมคำแบบภาษาเยอรมันสามารถเชื่อมหลายคำจนได้ token ที่ยาวมาก",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "คำประสมใหม่ที่ไม่เคยปรากฏมาก่อนจะเป็น token ที่ระบบ MT ต้องแยกส่วนออกเป็นส่วนที่รู้จักก่อนจึงจะแปลได้",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "การซ้ำคำ (reduplication)",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "การทำซ้ำทั้งหมดหรือบางส่วนของคำเพื่อเปลี่ยนความหมาย เช่น ใช้บอกพหูพจน์ ความเข้มข้น หรือการกระทำที่ต่อเนื่อง ในภาษาอินโดนีเซีย orang ที่แปลว่า 'คน' จะกลายเป็น orang-orang ที่แปลว่า 'ผู้คน'",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "ระบบ MT ต้องรู้จักว่าคำที่ซ้ำกันคือโครงสร้างทางไวยากรณ์ ไม่ใช่การพิมพ์ซ้ำโดยไม่ตั้งใจที่ควรตัดออก",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "ablaut",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "การเปลี่ยนสระภายในคำเพื่อแสดงหน้าที่ทางไวยากรณ์ เช่น sing/sang/sung ในภาษาอังกฤษ โครงสร้างพยัญชนะของคำยังคงเดิม ในขณะที่สระทำหน้าที่ทางไวยากรณ์แทน",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "Ablaut ซ่อนการผันคำไว้ภายใน stem ซึ่ง subword tokenizer ไม่สามารถแยกออกมาได้",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "suppletion",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "เมื่อรูปแบบที่ผันแล้วของคำมาจากรากศัพท์ที่แตกต่างกันโดยสิ้นเชิง เช่น go/went หรือ good/better ไวยากรณ์ถือว่าเป็นคำเดียวกัน แม้จะไม่มีเสียงร่วมกันเลย",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "รูปแบบ suppletive ไม่สามารถสร้างได้จากกฎ ดังนั้นระบบ MT จึงต้องเคยเห็นแต่ละรูปแบบในข้อมูลฝึกสอนมาก่อน",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "สัณฐานวิทยาแบบรากและรูปแบบ (root-and-pattern morphology)",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "รูปแบบการสร้างคำที่พบในภาษาอาหรับและภาษาฮีบรู โดยรากพยัญชนะ เช่น k-t-b ที่แปลว่า 'เขียน' จะถูกสอดแทรกเข้ากับแม่แบบสระ ได้แก่ kitāb 'หนังสือ', kātib 'ผู้เขียน', maktab 'สำนักงาน' ทั้งรากและแม่แบบต่างมีความหมาย แต่ไม่มีส่วนใดที่เป็นกลุ่มตัวอักษรต่อเนื่องกัน",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "การแบ่ง subword แบบมาตรฐานไม่สามารถมองเห็นรากร่วมระหว่างรูปแบบเหล่านี้ได้ ทำให้การสรุปความรู้ในระบบ MT สำหรับภาษากลุ่ม Semitic อ่อนแอลง",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "แสดงบนการ์ดในรูปแบบ linguisticChallenges.rootPattern (เช่น ภาษาอาหรับ, ภาษาฮีบรู, ภาษา Maltese)",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "สระสอดคล้อง (vowel harmony)",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "กฎที่กำหนดให้สระทุกตัวในคำต้องสอดคล้องกันในคุณสมบัติบางอย่าง เช่น หน้า/หลัง หรือห่อ/ไม่ห่อริมฝีปาก ในภาษาตุรกี สระของ suffix จะเปลี่ยนรูปตาม stem: ev-ler 'บ้านหลายหลัง' แต่ at-lar 'ม้าหลายตัว'",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "suffix แต่ละตัวมีรูปแบบพื้นผิวหลายแบบ ทำให้จำนวน token variant ที่ระบบ MT ต้องเรียนรู้สำหรับ ending ทางไวยากรณ์หนึ่งตัวเพิ่มขึ้นมาก",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "การแปรพยัญชนะ (consonant mutation)",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "การเปลี่ยนแปลงทางไวยากรณ์ที่พยัญชนะตัวแรกของคำ ซึ่งถูกกระตุ้นโดยคำที่อยู่ก่อนหน้า ในภาษาเวลส์ cath ที่แปลว่า 'แมว' จะกลายเป็น gath หลัง article: y gath 'แมวตัวนั้น' รูปแบบในพจนานุกรมและรูปแบบที่ใช้พูดอาจดูแตกต่างกันมาก",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "การแปรพยัญชนะทำให้คำเดียวกันปรากฏในการสะกดหลายแบบ ส่งผลให้สถิติของคำนั้นในข้อมูลฝึกสอน MT กระจัดกระจาย",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "lenition",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "การทำให้พยัญชนะออกเสียงอ่อนลง มักเกิดขึ้นระหว่างสระหรือเมื่อมีตัวกระตุ้นทางไวยากรณ์ เช่น 'k' ที่อ่อนตัวไปเป็น 'g' หรือ 'h' ในภาษากลุ่ม Celtic lenition เป็นส่วนหนึ่งของไวยากรณ์ ไม่ใช่แค่การออกเสียง",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "Lenition ทางไวยากรณ์ทำให้การสะกดคำเปลี่ยนไปตามบริบท ส่งผลให้รูปแบบที่ปรากฏในข้อความแตกต่างจากรูปในพจนานุกรม",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "gemination",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "การยืดพยัญชนะให้ยาวขึ้นเพื่อสร้างคำที่มีความหมายต่างกัน เช่น ภาษาอิตาลี pala แปลว่า 'พลั่ว' กับ palla แปลว่า 'ลูกบอล' บางระบบการเขียนแสดงการซ้ำพยัญชนะไว้ในตัวอักษร บางระบบปล่อยให้ผู้อ่านตีความเอง",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "เมื่อระบบการเขียนไม่แสดง gemination คำที่ต่างกันจะมีการสะกดเหมือนกัน ทำให้ระบบ MT สูญเสียความแตกต่างนั้น",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "สนธิ",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "การเปลี่ยนแปลงเสียงที่เกิดขึ้นตรงรอยต่อระหว่างคำหรือหน่วยคำ เช่น 'don't you' ที่กลายเป็น 'dontcha' ในภาษาที่มีวรรณยุกต์ วรรณยุกต์เองก็สามารถเปลี่ยนแปลงตามบริบทได้ (tone sandhi)",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "Sandhi ทำให้รูปแบบที่เขียนหรือถอดเสียงขึ้นอยู่กับบริบท ส่งผลให้การแบ่ง token อย่างสม่ำเสมอทำได้ยากขึ้น",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "อุมเลาต์",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "การเปลี่ยนแปลงสระที่เกิดจากสระในพยางค์ถัดไปในอดีต และยังคงทำหน้าที่ทางไวยากรณ์อยู่ เช่น ภาษาเยอรมัน Apfel 'แอปเปิล' → Äpfel 'แอปเปิล (พหูพจน์)' มีความเกี่ยวข้องกับ ablaut แต่มีที่มาทางประวัติศาสตร์ต่างกัน",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "Umlaut ฝังข้อมูลพหูพจน์หรือกาลไว้ภายในรากคำ ทำให้การแบ่งส่วนที่อิงคำต่อท้ายมองไม่เห็นการเปลี่ยนแปลงนั้น",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "การตัดคำ",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "การแบ่งข้อความออกเป็นหน่วย (token) ที่โมเดลแปลภาษาใช้ประมวลผลจริง ระบบสมัยใหม่จะแบ่งคำที่พบน้อยออกเป็นชิ้นส่วนย่อย (subword) โดยความสอดคล้องระหว่างชิ้นส่วนเหล่านั้นกับหน่วยคำจริงแตกต่างกันมากในแต่ละภาษา",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "Tokenization ที่ไม่ดีเป็นสาเหตุหลักของความล้มเหลวของ MT สำหรับภาษาที่มีสัณฐานวิทยาซับซ้อนและภาษาที่มีทรัพยากรน้อย",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "case ทางไวยากรณ์",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "การทำเครื่องหมายบนคำนามและสรรพนามเพื่อแสดงบทบาทในประโยค ไม่ว่าจะเป็นผู้กระทำ ผู้ถูกกระทำ สถานที่ หรือเครื่องมือ ภาษาอังกฤษเหลือร่องรอยเพียงเล็กน้อย (I/me/my) ภาษาฟินแลนด์มีถึงสิบห้า case ในขณะที่หลายภาษาไม่มีเลย",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "ภาษาที่ใช้ case ทางไวยากรณ์อนุญาตให้เรียงลำดับคำได้อย่างอิสระ ดังนั้น MT จึงต้องอ่านบทบาทจากคำลงท้ายแทนที่จะอ่านจากตำแหน่ง และต้องสร้างคำลงท้ายที่ถูกต้องในการแปลด้วย",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "กรรตุการก",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "ในระบบ alignment ที่คุ้นเคยที่สุด ประธานของกริยาใดก็ตามจะใช้ nominative case และกรรมตรงจะใช้ accusative case ภาษาในยุโรปส่วนใหญ่ทำงานในลักษณะนี้ จึงเป็นสิ่งที่ข้อมูลฝึก MT สะท้อนให้เห็นเป็นส่วนใหญ่",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "ระบบที่ฝึกด้วยภาษา nominative–accusative เป็นหลักมักกำหนดบทบาทผิดพลาดเมื่อแปลภาษาที่ใช้ระบบ ergative",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "ergativity",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "ระบบ alignment ที่ประธานของกริยาอกรรม ('เธอนอนหลับ') ถูกทำเครื่องหมายเหมือนกรรมของกริยากรรม ('เห็นเธอ') ในขณะที่ประธานของกริยากรรมได้รับเครื่องหมาย ergative พิเศษ ภาษา Basque ภาษา Mayan หลายภาษา รวมถึงภาษาออสเตรเลียและ Caucasian ทำงานในลักษณะนี้",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "เครื่องหมาย ergative กลับทิศทางของสัญญาณบทบาทที่ MT คาดหวัง ทำให้เกิดข้อผิดพลาดในการระบุว่าใครทำอะไรกับใคร",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "absolutive",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "case ที่ไม่มีเครื่องหมายในระบบ ergative ครอบคลุมทั้งประธานของกริยาอกรรมและกรรมของกริยากรรม โดยทั่วไปจะเป็นรูปอ้างอิงของคำนาม",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "คำนามในรูป absolutive มีหน้าตาเหมือนกันในสองบทบาทที่ต่างกัน ดังนั้น MT จึงต้องอาศัยกริยาเพื่อแยกความหมาย",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "morphosyntactic alignment",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "ระบบที่ภาษาใช้จัดกลุ่มบทบาทหลักสามประการ ได้แก่ ประธานของกริยาอกรรม ประธานของกริยาสกรรม และกรรม เพื่อการทำเครื่องหมายทางไวยากรณ์ รูปแบบหลักสองแบบคือ nominative–accusative และ ergative–absolutive โดยบางภาษาใช้ระบบผสมหรือระบบที่ขึ้นอยู่กับ animacy",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "ความไม่ตรงกันของ alignment ระหว่างภาษาต้นทางและปลายทางเป็นปัญหาเชิงโครงสร้างในการแปล ไม่ใช่ปัญหาด้านคำศัพท์",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "สัมพันธการก",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "กรณีที่ใช้แสดงความเป็นเจ้าของหรือความสัมพันธ์ใกล้ชิด เช่น 's หรือ 'of' ในภาษาอังกฤษ แต่ละภาษาแตกต่างกันในเรื่องตำแหน่งของวลี genitive ว่าอยู่ก่อนหรือหลังคำนามที่ขยาย",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "ความแตกต่างของลำดับ genitive เช่น 'the king's horse' กับ 'horse of-king' ต้องการการจัดเรียงใหม่อย่างเป็นระบบภายในวลีนาม",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "สัมปทานการก",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "กรณีที่ทำเครื่องหมายผู้รับหรือผู้ได้รับประโยชน์ คือ 'ผู้ที่ได้รับ' ในการให้หรือการบอก เช่น wem ในภาษาเยอรมัน และ cui ในภาษาละติน ส่วนภาษาอังกฤษแสดงด้วยลำดับคำหรือคำว่า 'to'",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "MT ต้องตัดสินใจระหว่างการใช้เครื่องหมาย dative case กับการใช้วลีบุพบทตามที่ภาษาปลายทางกำหนด",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "อธิกรณการก",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "กรณีที่มีความหมายว่า 'ที่/ใน/บน' สถานที่ โดยแสดงด้วยการผันท้ายคำนามแทนที่จะใช้บุพบท ภาษาฟินแลนด์และฮังการีแยก locative ออกเป็นหลายกรณีที่แม่นยำ เช่น ข้างใน บนสุด ใกล้ การเคลื่อนที่เข้าหา และการเคลื่อนที่ออกจาก",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "บุพบทภาษาอังกฤษคำเดียวอาจตรงกับ locative case หลายรูปแบบ ทำให้ MT ต้องเลือกโดยอาศัยบริบท",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "กรณการก",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "กรณีที่มีความหมายว่า 'โดยใช้/ด้วยวิธีของ' เช่น ภาษารัสเซียแสดง 'with a hammer' ด้วยการผันท้ายคำแทนบุพบท ส่วนภาษาแบบ polysynthetic อาจรวมเครื่องมือไว้ในกริยาโดยตรง",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "ความหมาย instrumental สลับกันระหว่างการผันท้ายคำ บุพบท และการทำเครื่องหมายภายในกริยาในแต่ละภาษา",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "comitative",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "กรณีหรือเครื่องหมายที่มีความหมายว่า 'ร่วมกับบางคน' บางภาษาใช้เครื่องหมายเดียวกันสำหรับทั้ง 'with' (การร่วมไป) และ 'and' (การประสาน) ซึ่งอาจทำให้ผู้ที่ไม่คุ้นเคยเกิดความสับสน",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "การทับซ้อนระหว่าง comitative กับการประสานความหมายทำให้ 'X with Y' และ 'X and Y' อาจเป็นโครงสร้างเดียวกันในภาษาต้นทาง",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "oblique",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "วลีใดก็ตามในประโยคที่ไม่ใช่ประธานหรือกรรมตรง โดยทั่วไปได้แก่ สถานที่ เครื่องมือ ผู้รับ และองค์ประกอบ 'เสริม' อื่น ๆ ซึ่งมักทำเครื่องหมายด้วย case หรือ adposition ใน WALS 'X' ในลำดับอย่าง VOX หมายถึงวลี oblique",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "ตำแหน่งของ oblique ในประโยคแตกต่างกันตามภาษา และต้องจัดเรียงใหม่ให้ถูกต้องรอบกริยาและกรรม",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "differential object marking",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "การทำเครื่องหมายกรรมตรงบางคำแต่ไม่ทำกับคำอื่น โดยทั่วไปขึ้นอยู่กับ animacy หรือความชัดเจน เช่น ภาษาสเปนเติม 'a' ก่อนกรรมที่เป็นมนุษย์ (veo a María) แต่ไม่ใช้กับสิ่งของ (veo la casa)",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "MT ต้องตัดสินใจเป็นรายกรรมว่าควรใส่เครื่องหมายหรือไม่ โดยอาศัยสัญญาณ animacy ที่ภาษาต้นทางอาจไม่แสดงให้เห็น",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "เพศทางไวยากรณ์",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "การจัดคำนามทั้งหมดเป็นกลุ่ม (มักเรียกว่า เพศชาย/เพศหญิง/กลาง) ซึ่งบังคับให้คำนำหน้า คำคุณศัพท์ และบางครั้งกริยาต้องสอดคล้องกัน การจัดกลุ่มนี้เป็นเรื่องของไวยากรณ์ ไม่ใช่ชีววิทยา เช่น คำว่า \"โต๊ะ\" ในภาษาเยอรมันเป็นเพศชาย แต่ในภาษาสเปนเป็นเพศหญิง",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "การแปลเป็นภาษาที่มีเพศทางไวยากรณ์บังคับให้ต้องเลือกเพศของบุคคลและสิ่งของที่ต้นฉบับไม่ได้ระบุไว้ ซึ่งเป็นแหล่งสำคัญของอคติใน MT",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "ประเภทคำนาม",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "ระบบที่คล้ายเพศทางไวยากรณ์แต่มีหลายประเภทกว่า — ภาษากลุ่ม Bantu มักมี 10–20 ประเภท โดยจัดคำนามตามรูปร่าง ความมีชีวิต ขนาด และอื่น ๆ แต่ละประเภทกำหนดคำนำหน้าที่สอดคล้องกันทั่วทั้งประโยค",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "การเลือกคำนามแต่ละคำส่งผลต่อตัวบ่งชี้ความสอดคล้องตลอดทั้งประโยค ดังนั้นการเลือกประเภทผิดเพียงครั้งเดียวจะก่อให้เกิดข้อผิดพลาดที่มองเห็นได้หลายจุด",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "ความมีชีวิต",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "ความแตกต่างทางไวยากรณ์ระหว่างสิ่งที่มีชีวิต (หรือมีลักษณะคล้ายมีชีวิต) กับสิ่งที่ไม่มีชีวิต ในภาษากลุ่ม Algonquian คำนามทุกคำจะเป็น animate หรือ inanimate ทางไวยากรณ์ และกริยาจะเปลี่ยนรูปแบบทั้งหมดขึ้นอยู่กับว่าใช้กับคำนามประเภทใด",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "ความมีชีวิตเป็นตัวกำหนดการเลือกกริยาและความสอดคล้องในภาษาพื้นเมืองหลายภาษา โดยไม่มีสัญญาณที่ชัดเจนในต้นฉบับภาษาอังกฤษ",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "ใน Plains Cree (crk): การผันกริยาเปลี่ยนแปลงอย่างสิ้นเชิงขึ้นอยู่กับว่าคำนามที่เป็นประธาน/กรรมเป็น animate หรือ inanimate (card field linguisticChallenges.animacy)",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "obviation",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "ระบบที่เป็นแกนกลางของภาษากลุ่ม Algonquian เช่น Plains Cree ซึ่งจัดลำดับบุรุษที่สามในช่วงของวาทกรรม: บุคคลหนึ่งเป็น 'proximate' (อยู่ในโฟกัส) และบุคคลอื่น ๆ เป็น 'obviative' (ถูกทำเครื่องหมายว่าอยู่เบื้องหลัง บางครั้งเรียกว่าบุรุษที่สี่) ระบบนี้ช่วยติดตามว่าใครคือใครโดยไม่ต้องใช้สรรพนามแบบ \"เขา₁ กับ เขา₂\"",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "ภาษาอังกฤษไม่มี obviation ดังนั้น MT ที่แปลเป็น Cree จะต้องสร้างการกำหนด proximate/obviative ขึ้นมาเองและรักษาความสอดคล้องตลอดทุกประโยค",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "Plains Cree (crk) ทำเครื่องหมาย obviative บนคำนามและกริยา ดูรายละเอียดได้ที่ crk card และเอกสารประกอบของ crk method",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "clusivity",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "ความแตกต่างระหว่าง \"เรา\" สองแบบ: inclusive (ฉัน + คุณ และอาจมีคนอื่น) กับ exclusive (ฉัน + คนอื่น แต่ไม่รวมคุณ) ภาษาหลายร้อยภาษาบังคับให้แยกความแตกต่างนี้",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "การแปลคำว่า \"we\" ในภาษาอังกฤษต้องเลือกระหว่าง inclusive หรือ exclusive โดยไม่มีสัญญาณจากต้นฉบับ และการเลือกผิดอาจส่งผลกระทบทางสังคมอย่างมีนัยสำคัญ",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "จำนวนทางไวยากรณ์",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "วิธีที่ภาษาบ่งบอกจำนวน ได้แก่ เอกพจน์ พหูพจน์ และบางครั้ง dual (สองสิ่งพอดี) หรือ paucal (จำนวนน้อย) บางภาษาระบุจำนวนบนคำนามทุกคำ ในขณะที่บางภาษาปล่อยให้บริบทเป็นตัวกำหนด",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "เมื่อต้นฉบับไม่ระบุจำนวน MT จะต้องเดา และเมื่อภาษาปลายทางต้องการรูป dual MT จะต้องสร้างรูปนั้นขึ้นมา",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "ทวิพจน์",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "จำนวนทางไวยากรณ์ที่หมายถึงสองสิ่งพอดี แตกต่างจากทั้งเอกพจน์และพหูพจน์ ภาษาสโลวีเนีย ภาษาอาหรับ และภาษาในกลุ่ม Oceanic หลายภาษามีรูปแบบนี้ บางภาษายังมี trial (สามสิ่งพอดี) ในสรรพนามด้วย",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "MT ที่แปลเป็นภาษาที่มีรูป dual จะต้องตรวจจับความหมาย \"สองสิ่ง\" ที่ต้นฉบับแสดงออกมาเพียงแค่การนับคำ",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "ลักษณนาม",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "คำที่จำเป็นต้องใช้เมื่อนับหรืออ้างถึงคำนาม โดยจัดประเภทตามลักษณะ เช่น ภาษาอังกฤษมี 'three head of cattle' หรือ 'two sheets of paper' แต่ใน classifier language จะบังคับใช้กับทุกสิ่ง ภาษาจีน ญี่ปุ่น ไทย และภาษาอื่น ๆ อีกมากไม่สามารถนับโดยไม่ใช้ classifier ที่ถูกต้อง",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "MT ต้องเลือก classifier ที่ถูกต้องสำหรับคำนามแต่ละคำ การเลือกผิดจะสังเกตเห็นได้ทันทีโดยเจ้าของภาษา",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "ความชัดเจนของนาม (definiteness)",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "การระบุว่าคำนามหมายถึงสิ่งที่ผู้ฟังสามารถระบุตัวตนได้อยู่แล้ว ('the dog') หรือไม่ ('a dog') ภาษาจำนวนมากไม่มีการทำเครื่องหมายความแตกต่างนี้ ในขณะที่บางภาษาใช้ article คำต่อท้าย หรือลำดับคำแทน",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "การแปลจากภาษาที่ไม่มี article บังคับให้ MT ต้องตัดสินใจเลือกระหว่าง 'the' กับ 'a' สำหรับทุกวลีนามโดยอาศัยบริบทเพียงอย่างเดียว",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "คำนำหน้านาม",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "คำขนาดเล็กที่ทำเครื่องหมายคำนามว่าชัดเจน ('the') หรือไม่ชัดเจน ('a') ประมาณหนึ่งในสามของภาษาในโลกไม่มี article เลย และบางภาษาใช้ตัวเลข 'หนึ่ง' หรือ demonstrative แทน",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "การแทรกและการลบ article เป็นหนึ่งในประเภทการแก้ไขที่พบบ่อยที่สุดใน MT ระหว่างภาษาที่มีและไม่มี article",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "คำชี้เฉพาะ",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "คำชี้เฉพาะ เช่น 'นี้' และ 'นั้น' ภาษาต่าง ๆ แบ่งพื้นที่การชี้แตกต่างกัน บางภาษามีการแบ่งสามทาง ได้แก่ ใกล้ผู้พูด / ใกล้ผู้ฟัง / ไกล บางภาษาเพิ่มความสามารถในการมองเห็นหรือระดับความสูง",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "ระบบ demonstrative แทบไม่เคยสอดคล้องกันแบบหนึ่งต่อหนึ่ง ดังนั้น MT จึงต้องประมาณความแตกต่างด้านระยะทางและการมองเห็น",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "การแสดงความเป็นเจ้าของ (possession)",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "วิธีที่ภาษาแสดงความหมาย 'X ของฉัน / X ของคุณ' ภาษาจำนวนมากแยกแยะระหว่าง inalienable possession (อวัยวะร่างกาย ญาติพี่น้อง — สิ่งที่ไม่สามารถโอนให้ผู้อื่นได้) กับ alienable possession โดยใช้โครงสร้างที่แตกต่างกัน",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "Inalienable possession มักต้องการการทำเครื่องหมายผู้ครอบครองที่บังคับ ซึ่งต้นฉบับภาษาอังกฤษมักละเว้น",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "head-marking",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "การวางเครื่องหมายทางไวยากรณ์ไว้ที่ head ของวลี กล่าวคือ กริยาแสดงว่าประธานและกรรมคือใคร คำนามที่ถูกครอบครองแสดงว่าใครเป็นเจ้าของ ส่วน dependent (ตัวคำนามเอง) สามารถอยู่ในรูปแบบพื้นฐานได้",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "Head marking รวมไวยากรณ์ของประโยคไว้ที่กริยา ซึ่งเป็นภาพสะท้อนตรงข้ามกับภาษา dependent-marking ที่ข้อมูลการฝึก MT ส่วนใหญ่มาจาก",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "dependent-marking",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "การวางเครื่องหมายทางไวยากรณ์ไว้ที่ dependent ของวลี เช่น case ending บนคำนาม และ possessive ending บนผู้ครอบครอง ในขณะที่ head ไม่มีเครื่องหมาย ภาษาในยุโรปส่วนใหญ่มีแนวโน้มนี้",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "Dependent marking วางสัญญาณทางไวยากรณ์ไว้ที่ ending ของคำนาม ซึ่ง tokenizer ต้องแบ่งส่วนให้ถูกต้อง",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "evidentiality",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "ไวยากรณ์ที่บังคับให้ผู้พูดระบุว่าตนรู้ข้อมูลนั้นมาอย่างไร เช่น เห็นด้วยตนเอง ได้ยินมา หรืออนุมาน ในภาษา Quechua หรือ Turkish การละ evidential ไว้เปรียบเสมือนการละ tense ในภาษาอังกฤษ",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "MT ที่แปลเป็นภาษาที่มี evidentiality ต้องระบุแหล่งที่มาของข้อมูลที่ต้นฉบับไม่เคยกำหนดไว้",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "กาล (tense)",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "เครื่องหมายทางไวยากรณ์ที่ระบุตำแหน่งของเหตุการณ์ในเวลา ได้แก่ อดีต ปัจจุบัน อนาคต บางภาษาไม่มี tense ทางไวยากรณ์เลย (เช่น ภาษาจีนกลาง) ในขณะที่บางภาษาแยกแยะระดับความห่างไกลของอดีตได้หลายระดับ",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "ต้นฉบับที่ไม่มี tense บังคับให้ MT ต้องอนุมานการอ้างอิงเวลา ส่วนระบบที่มีหลายระดับความห่างไกลต้องการความละเอียดที่ต้นฉบับไม่ได้ให้ไว้",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "aspect",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "การทำเครื่องหมายทางไวยากรณ์ที่แสดงว่าเหตุการณ์หนึ่งดำเนินไปอย่างไรในเวลา — สมบูรณ์ ต่อเนื่อง เป็นนิสัย หรือซ้ำ — โดยไม่ขึ้นกับว่าเกิดขึ้นเมื่อใด ภาษารัสเซียมีคู่กริยา perfective/imperfective ส่วนภาษาอังกฤษใช้ 'was doing' กับ 'did'",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "การเลือก aspect ต้องทำกับกริยาทุกตัวเมื่อแปลเป็นภาษาที่มีการทำเครื่องหมาย aspect โดยมักไม่มีสัญญาณชัดเจนจากภาษาต้นทาง",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "perfective",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "aspect ที่นำเสนอเหตุการณ์ในฐานะสิ่งที่สมบูรณ์ครบถ้วน เช่น 'เธอเขียนจดหมาย' ซึ่งมองเป็นข้อเท็จจริงที่เสร็จสิ้นแล้ว มักจับคู่กับ imperfective ในฐานะคู่ตรงข้ามทางไวยากรณ์",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "การเลือก perfective กับ imperfective ผิดพลาดถือเป็นหนึ่งในข้อผิดพลาดของ MT ที่พบบ่อยที่สุดเมื่อแปลเป็นภาษากลุ่ม Slavic",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "imperfective",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "aspect ที่นำเสนอเหตุการณ์จากมุมมองภายใน — ต่อเนื่อง เป็นนิสัย หรือซ้ำ เช่น 'เธอกำลังเขียน' หรือ 'เธอเคยเขียน' เป็นคู่ตรงข้ามของ perfective",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "การตีความ imperfective (ต่อเนื่องหรือเป็นนิสัย) ต้องอาศัยบริบทในการแยกแยะเพื่อให้แปลได้ถูกต้อง",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "มาลา",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "การทำเครื่องหมายทางไวยากรณ์ที่แสดงทัศนคติของผู้พูดต่อเหตุการณ์ — ข้อเท็จจริง ความปรารถนา คำสั่ง หรือความเป็นไปได้ Indicative, subjunctive และ imperative เป็น mood ที่คุ้นเคยในภาษายุโรป ส่วนภาษาอื่นอาจแสดงความแตกต่างละเอียดกว่านี้",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "การเลือก mood (โดยเฉพาะ subjunctive) เป็นไปตามกฎของภาษาปลายทางซึ่งไม่สามารถคัดลอกมาจากภาษาต้นทางได้",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "subjunctive",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "verb mood สำหรับเนื้อหาที่ไม่ได้ยืนยันว่าเป็นความจริง เช่น ความปรารถนา ข้อสงสัย สมมติฐาน และอนุประโยคหลังกริยาบางประเภท ภาษากลุ่ม Romance กำหนดให้ใช้ในอนุประโยคหลายประเภทที่ภาษาอังกฤษใช้รูปกริยาธรรมดา",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "ตัวกระตุ้น subjunctive เป็นเรื่องเฉพาะของภาษาปลายทาง ดังนั้น MT จึงต้องใช้กฎไวยากรณ์แทนการแปลรูปแบบตรงๆ",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "การปฏิเสธ",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "วิธีที่ภาษาหนึ่งแสดงความหมาย 'ไม่' กลยุทธ์ที่ใช้ได้แก่ particle (เช่น not ในภาษาอังกฤษ) คำเติมบนกริยา กริยาปฏิเสธพิเศษ และโครงสร้างสองส่วนอย่าง ne…pas ในภาษาฝรั่งเศส ตำแหน่งแตกต่างกัน: ก่อนกริยา หลังกริยา หรือทั้งสองตำแหน่ง",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "ข้อผิดพลาดด้านการปฏิเสธทำให้ความหมายกลับตรงข้ามโดยสิ้นเชิง จึงทำให้การวางตำแหน่งการปฏิเสธที่ถูกต้องเป็นหนึ่งในข้อกำหนดที่สำคัญที่สุดของ MT",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "กรรมวาจก",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "โครงสร้างที่เลื่อนกรรมขึ้นเป็นประธานและลดความสำคัญหรือละผู้กระทำ เช่น 'กระจกถูกทุบ (โดยเด็กชาย)' หลายภาษาไม่มีโครงสร้าง passive เลย หรือใช้กลยุทธ์อื่นในการลดความสำคัญของผู้กระทำ",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "ภาษาปลายทางที่ไม่มี passive บังคับให้ MT ต้องแปลงโครงสร้าง passive เป็น active โดยต้องสร้างหรือกู้คืนผู้กระทำ",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "วาจก",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "ระบบไวยากรณ์ที่ควบคุมว่าผู้เข้าร่วมคนใดเป็นประธาน — active, passive, middle และในบางตระกูลภาษามีระบบที่ซับซ้อนกว่านี้มาก voice จัดรูปประโยคทั้งหมดใหม่รอบมุมมองที่เลือก",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "ความไม่ตรงกันของ voice ต้องการการจัดโครงสร้างประโยคทั้งหมดใหม่ ไม่ใช่แค่การแทนที่คำ",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "วาเลนซี",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "จำนวนผู้เข้าร่วมที่กริยาต้องการและวิธีที่ภาษาเข้ารหัสผู้เข้าร่วมเหล่านั้น — 'นอนหลับ' ต้องการหนึ่งคน 'ให้' ต้องการสาม ภาษาต่าง ๆ ไม่ตรงกันในเรื่องว่ากริยาใดต้องการผู้เข้าร่วมใดและมีการทำเครื่องหมายอย่างไร",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "ความไม่ตรงกันของ valency ทำให้การแปลตรงตัวกำหนดบทบาทผิดหรือละทิ้งผู้เข้าร่วมที่จำเป็น",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "สกรรมกริยา",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "อธิบายถึงคำกริยาที่ต้องมีกรรมตรงมารองรับ — “เธออ่านหนังสือ” ความเป็นสกรรมกริยา (Transitivity) เป็นหัวใจสำคัญทางไวยากรณ์: หลายภาษาจะมีการทำเครื่องหมายประธาน กรรม และตัวคำกริยาแตกต่างกันไป ขึ้นอยู่กับว่าอนุประโยคนั้นเป็นสกรรมกริยาหรือไม่",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "ความเป็นสกรรมกริยาควบคุมการทำเครื่องหมายการก (case marking) และความสอดคล้อง (agreement) ดังนั้นการตัดสินผิดว่าคำกริยาเป็นสกรรมกริยาหรือไม่ จะทำให้ความหมายว่าใครทำอะไรกับใครในผลลัพธ์การแปลผิดเพี้ยนไป",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "อกรรมกริยา",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "อธิบายถึงคำกริยาที่ไม่ต้องมีกรรมตรงมารองรับ — “เธอนอนหลับ”, “พระอาทิตย์ขึ้น” ในภาษาประเภทสัมพันธการก (ergative languages) อาร์กิวเมนต์เดี่ยวของอกรรมกริยาจะถูกทำเครื่องหมายเหมือนกับกรรมของสกรรมกริยา ไม่ใช่เหมือนกับประธาน",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "อนุประโยคแบบอกรรมกริยาจะกระตุ้นรูปแบบการกและความสอดคล้องที่แตกต่างกัน โดยเฉพาะในภาษาประเภทสัมพันธการก ดังนั้นระบบแปลภาษาด้วยเครื่อง (MT) จึงต้องติดตามความเป็นสกรรมกริยาเพื่อเลือกใช้รูปแบบที่ถูกต้อง",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "แอนติพาสซีฟ",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "โครงสร้างที่พบได้บ่อยในภาษาประเภทสัมพันธการก ซึ่งจะตัดหรือลดความสำคัญของกรรมในสกรรมกริยา ทำให้เหลือเพียงอนุประโยคแบบอกรรมกริยา — เป็นภาพสะท้อนของกรรมวาจก (passive) ในขณะที่กรรมวาจกจะลดความสำคัญของผู้กระทำ แอนติพาสซีฟจะลดความสำคัญของสิ่งที่ถูกกระทำ",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "แอนติพาสซีฟจะปรับโครงสร้างของอนุประโยคและเปลี่ยนการทำเครื่องหมายการก ดังนั้นการแปลโครงสร้างนี้ไปเป็นภาษาที่เน้นกรรมวาจกจึงหมายถึงการสร้างประโยคขึ้นใหม่ทั้งหมด แทนที่จะเป็นแค่การสลับคำ",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "การิตวาจก",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "โครงสร้างที่เพิ่มผู้กระทำให้เกิดเหตุการณ์ — เปลี่ยนจาก “หม้อแตก” เป็น “เธอทำหม้อแตก” หรือ “เธอทำให้มันแตก” หลายภาษาสร้างการิตวาจกด้วยการเติมหน่วยคำเติม (affix) ที่คำกริยาโดยเฉพาะ แทนที่จะใช้คำกริยาแยกต่างหากเหมือนคำว่า “make” ในภาษาอังกฤษ",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "ความหมายเชิงการิตวาจกอาจซ่อนอยู่ในรูปคำกริยาเพียงคำเดียว ดังนั้น MT จึงต้องจดจำและแยกแยะออกมาเป็นโครงสร้างแบบใช้คำขยาย (periphrastic construction) — หรือรวมกลับเข้าไป — สำหรับภาษาปลายทาง",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "สรรพนาม",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "คำที่ใช้แทนที่นามวลี — ฉัน, คุณ, เธอ, พวกเขา, สิ่งนี้, ใคร แต่ละภาษามีความแตกต่างกันอย่างมากในเรื่องจำนวนคำสรรพนามและข้อกำหนดในการแยกแยะ เช่น เพศ, ระดับความเป็นทางการ, หรือการใช้ “พวกเรา” แบบรวม/ไม่รวมผู้ฟัง เป็นต้น",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "ระบบคำสรรพนามของแต่ละภาษามักจะไม่ตรงกัน ดังนั้น MT จึงต้องเติมเต็มการแยกแยะที่ภาษาต้นทางไม่ได้ระบุไว้ (เช่น เพศ, ระดับความเป็นทางการ) หรือยุบรวมสิ่งที่ภาษาปลายทางไม่สามารถสื่อออกมาได้",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "คำบอกจำนวน",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "คำที่แสดงถึงตัวเลข — หนึ่ง, สิบเจ็ด, พัน แต่ละภาษาสร้างคำบอกจำนวนที่สูงขึ้นด้วยฐานที่ต่างกัน (ฐานสิบ, ฐานยี่สิบ, หรือแบบผสม) และอาจต้องใช้ลักษณนามหรือรูปแบบการนับพิเศษสำหรับตัวเลขแต่ละตัว",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "ตัวเลขเป็นเนื้อหาที่มีความสำคัญสูง และการแปลคำบอกจำนวนข้ามระบบฐานการนับหรือข้อกำหนดด้านลักษณนามที่แตกต่างกัน เป็นจุดที่ MT มักจะสร้างข้อผิดพลาดได้ง่าย",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "คำเลียนเสียงและอาการ",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "คำที่ให้ภาพพจน์ชัดเจนซึ่งกระตุ้นความรู้สึก — เสียง, การเคลื่อนไหว, พื้นผิว, หรือแสง — ผ่านรูปคำของมันเอง เช่น คำว่า “zigzag” ในภาษาอังกฤษ หรือ kirakira “เป็นประกาย” ในภาษาญี่ปุ่น ภาษาในแอฟริกาและเอเชียหลายภาษามีกลุ่มคำเลียนเสียงและอาการที่แยกตามหลักไวยากรณ์อย่างชัดเจนเป็นจำนวนมาก",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "คำเลียนเสียงและอาการมีความหมายลึกซึ้งและมีความเฉพาะตัวสูงในแต่ละภาษา ดังนั้น MT จึงมักจะตัดทิ้งหรือลดทอนความหมายลง ทำให้สูญเสียความหมายที่เจ้าของภาษารู้สึกว่ามีความแม่นยำและชัดเจน",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "กริยาเรียง",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "การเรียงกริยาหลายตัวติดกันในประโยคเดียวโดยไม่มี 'และ' หรือ 'เพื่อ' คั่น — เช่น 'เอามีดตัดขนมปัง' แทน 'ตัดขนมปังด้วยมีด' พบบ่อยในภาษาแอฟริกาตะวันตก เอเชียตะวันออกเฉียงใต้ และภาษาครีโอล",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "Serial verbs ต้องถูกแยกออกเป็น preposition หรืออนุประโยคเมื่อแปลเป็นภาษายุโรป และต้องสร้างใหม่เมื่อแปลกลับ",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "participle",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "รูปกริยาที่ทำหน้าที่เหมือนคำคุณศัพท์หรือสร้างกาลประกอบ — เช่น 'น้ำที่ไหล' หรือ 'กินแล้ว' ภาษาต่าง ๆ มีจำนวน participle และการใช้งานที่แตกต่างกัน",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "อนุประโยค participial มักต้องแปลงเป็น relative clause ในภาษาอื่น ซึ่งต้องการการแปลงโครงสร้าง",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "อาการนาม",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "รูปกริยาที่ใช้เป็นคำนาม เช่น 'การว่ายน้ำ' ในประโยค 'การว่ายน้ำเป็นเรื่องสนุก' ภาษาอื่นอาจใช้ infinitive คำนามกริยา หรือรูป converb พิเศษในที่ที่ภาษาอังกฤษใช้ gerund",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "Gerund ในภาษาอังกฤษสามารถแมปกับโครงสร้างที่แตกต่างกันหลายแบบขึ้นอยู่กับภาษาเป้าหมาย",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "กริยาเชื่อม",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "กริยาเชื่อม 'เป็น' ในประโยคเช่น 'เธอเป็นหมอ' หลายภาษาละเว้น copula (zero copula) ในกาลปัจจุบัน — ภาษารัสเซียและอาหรับพูดตรง ๆ ว่า 'เธอหมอ'",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "MT ต้องแทรก copula เมื่อแปลจากภาษาที่ใช้ zero copula และต้องลบออกเมื่อแปลเข้าสู่ภาษาเหล่านั้น",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "ความสอดคล้อง",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "เมื่อรูปแบบของคำหนึ่งต้องสอดคล้องกับลักษณะทางไวยากรณ์ของคำอื่น — กริยาสอดคล้องกับประธาน คำคุณศัพท์สอดคล้องกับคำนามในเพศและจำนวน บางภาษาทำเครื่องหมาย agreement ทั้งประธานและกรรมบนกริยา",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "ข้อความที่สร้างขึ้นต้องตอบสนองห่วงโซ่ agreement ทั้งหมด ลักษณะที่ผิดเพียงอย่างเดียวก็ก่อให้เกิดข้อผิดพลาดที่มองเห็นได้หลายจุด",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "polypersonal agreement",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "การที่กริยาสอดคล้องกับผู้เข้าร่วมมากกว่าหนึ่งคนพร้อมกัน — กริยาบรรจุเครื่องหมายทั้งประธานและกรรม (และบางครั้งมากกว่านั้น) ภาษา Basque, Georgian และภาษากลุ่ม Algonquian ใช้ระบบนี้อย่างเป็นระบบ",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "รูปกริยาเข้ารหัสว่าใครกระทำต่อใคร ดังนั้น MT ต้องระบุทั้งสองบทบาทก่อนจึงจะสร้างกริยาที่ถูกต้องได้",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "conjunct order",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "ในภาษากลุ่ม Algonquian เช่น Plains Cree กริยามี 'order' การผันที่แตกต่างกัน ได้แก่ independent order สำหรับประโยคหลัก และ conjunct order สำหรับอนุประโยค คำถาม และบริบทวาทกรรมบางอย่าง ทั้งสองใช้ชุดคำลงท้ายที่แตกต่างกันโดยสิ้นเชิง",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "การเลือกระหว่างรูป independent และ conjunct เป็นการตัดสินใจตามประเภทของอนุประโยค ซึ่งภาษาอังกฤษไม่ได้ให้สัญญาณโดยตรง",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Plains Cree (crk): อธิบายไว้ในหมายเหตุความเป็นทางการของการ์ดและเอกสารประกอบของ method crk",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "คำบอกทิศทาง",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "การทำเครื่องหมายบนกริยาที่บรรจุทิศทางการเคลื่อนที่ไว้ในตัวกริยาเอง เช่น เข้าหาผู้พูด ออกห่าง ขึ้นแม่น้ำ หรือขึ้นเนิน พบได้ทั่วไปในภาษาตระกูล Mayan, Tibeto-Burman และภาษาปาปัวหลายภาษา",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "ความหมายเชิงทิศทางที่ฝังอยู่ในกริยาต้องถูกแปลงออกมาเป็น adverb หรือ preposition ในภาษาเป้าหมาย",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "Benefactive",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "การทำเครื่องหมายว่าการกระทำนั้นเกิดขึ้นเพื่อประโยชน์ของบุคคลใดบุคคลหนึ่ง เช่น \"ฉันอบเค้กให้เธอ\" บางภาษาใช้ afffix ของกริยา (applicative) แทนการเรียงลำดับคำหรือ preposition",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "ผู้รับประโยชน์อาจซ่อนอยู่ใน morphology ของกริยา ดังนั้น MT จึงต้องตรวจจับและแสดงออกมาเป็น phrase แยกต่างหาก",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "คำปฤจฉา",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "ไวยากรณ์ที่ใช้ในการตั้งคำถาม คำถามแบบ yes/no อาจถูกทำเครื่องหมายด้วย particle รูปแบบกริยา การเปลี่ยนลำดับคำ หรือเพียงแค่ intonation ส่วนคำถามเชิงเนื้อหาจะแตกต่างกันตรงที่คำว่า who/what จะเลื่อนมาอยู่ต้นประโยคหรือไม่",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "หากภาษาต้นทางระบุคำถามด้วย intonation เพียงอย่างเดียว ข้อความที่เป็นลายลักษณ์อักษรจะไม่มีสัญญาณบอก MT ว่ากำลังถามคำถาม",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "ลำดับคำ",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "การจัดเรียงทั่วไปของประธาน (S) กรรม (O) และกริยา (V) ในประโยคบอกเล่าธรรมดา SOV (ญี่ปุ่น) และ SVO (อังกฤษ) ครอบคลุมภาษาส่วนใหญ่ VSO (เวลส์ ตากาล็อก) เป็นประเภทที่สามที่พบบ่อย และบางภาษาไม่มีลำดับคำที่ตายตัว",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "ความไม่ตรงกันของลำดับคำเป็นสาเหตุหลักที่สุดของข้อผิดพลาดในการเรียงลำดับระหว่างคู่ภาษา",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "คำบุพบท",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "คำครอบคลุมสำหรับ preposition (วางก่อนคำนาม เช่น \"in the house\") และ postposition (วางหลังคำนาม เช่น ภาษาญี่ปุ่น uchi de แปลว่า \"house in\") การเลือกใช้ของภาษาหนึ่งมีความสัมพันธ์อย่างมากกับลำดับกริยา–กรรม",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "การแปลง preposition เป็น postposition จะพลิกโครงสร้างของทุก phrase ที่แสดงตำแหน่งและเวลา",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "อนุประโยคสัมพันธ์",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "อนุประโยคที่ขยายคำนาม เช่น \"หนังสือที่ฉันอ่าน\" ภาษาต่างๆ วางอนุประโยคนี้ก่อนหรือหลังคำนาม และใช้กลวิธีตั้งแต่ relative pronoun ไปจนถึงช่องว่างหรือรูปแบบกริยาพิเศษ",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "อนุประโยคสัมพันธ์แบบ prenominal (ญี่ปุ่น ตุรกี) ต้องการการกลับลำดับข้อความยาวๆ เมื่อเทียบกับลำดับภาษาอังกฤษ",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "ระบบ focus",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "ระบบอนุประโยคที่รู้จักกันดีในภาษาตระกูล Philippine เช่น Tagalog ซึ่ง morphology ของกริยาเป็นตัวเลือกว่าผู้เข้าร่วม — ผู้กระทำ ผู้ถูกกระทำ สถานที่ เครื่องมือ — ใดเป็น pivot ทางไวยากรณ์ของประโยค มักเรียกว่า symmetrical voice",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "การเลือก focus จะเปลี่ยนรูปแบบกริยา ตำแหน่ง marker และลำดับคำพร้อมกัน ทำให้ MT ไม่สามารถแปลอนุประโยคแบบคำต่อคำได้",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "ปรากฏบนการ์ดในชื่อ linguisticChallenges.voiceFocus สำหรับภาษาตระกูล Austronesian หลายภาษา",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "คำอนุภาค",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "คำหน้าที่ขนาดเล็กที่ไม่มีการผันรูปซึ่งเพิ่มความหมายทางไวยากรณ์หรือทัศนคติ เช่น ตัวบ่งชี้คำถาม ตัวบ่งชี้ topic และตัวลดความรุนแรงเชิงสุภาพ ภาษาในเอเชียตะวันออกใช้ sentence-final particle อย่างหนัก",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "Particle บรรจุความหมาย (การถาม ทัศนคติ topic) ที่ MT ต้องแสดงออกมาด้วยวิธีการที่แตกต่างกันโดยสิ้นเชิง",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "วรรณยุกต์",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "การใช้ระดับเสียงเพื่อแยกความหมายของคำ เช่น mā ในภาษาจีนกลางแปลว่า 'แม่' ส่วน mǎ แปลว่า 'ม้า' ระบบเสียงวรรณยุกต์แบบง่ายมีสองระดับ ส่วนระบบที่ซับซ้อน (พบในหลายภาษาของแอฟริกาตะวันตกและเอเชียตะวันออกเฉียงใต้) มีหลายระดับและรูปแบบเสียง",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "วรรณยุกต์มักไม่ปรากฏในข้อความที่เขียนด้วยอักษรโรมันหรือข้อความที่ไม่มีเครื่องหมายกำกับ ทำให้คำที่มีความหมายต่างกันถูกสะกดเหมือนกันในระบบ MT",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "Pitch accent",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "ระบบที่ใช้ระดับเสียงแยกความหมายของคำ โดยมีเพียงพยางค์เดียวในแต่ละคำที่มีระดับเสียงเฉพาะ เช่น háshi ในภาษาญี่ปุ่นแปลว่า 'ตะเกียบ' ส่วน hashí แปลว่า 'สะพาน' ระบบนี้มีความซับซ้อนน้อยกว่าวรรณยุกต์เต็มรูปแบบ แต่มากกว่าการเน้นเสียงแบบธรรมดา",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "เช่นเดียวกับวรรณยุกต์ pitch accent แทบไม่ปรากฏในการเขียน ทำให้คำที่สะกดเหมือนกันแต่มีความหมายต่างกันเพิ่มขึ้นในข้อความ",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "โมรา",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "หน่วยจังหวะที่เล็กกว่าพยางค์ โดยพยางค์สั้นนับเป็นหนึ่ง mora ส่วนสระยาวหรือพยัญชนะท้ายพยางค์จะเพิ่มอีกหนึ่ง mora จังหวะ บทกวี และแม้แต่การย่อคำในภาษาญี่ปุ่นล้วนนับ mora ไม่ใช่พยางค์",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "สัทวิทยาที่อิงหน่วย mora ส่งผลต่อการดัดแปลงคำทับศัพท์และชื่อเฉพาะ ซึ่งกระทบต่อคุณภาพการถอดอักษร",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "เสียงกักพ่นลม",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "พยัญชนะที่เกิดจากการปล่อยลมจากกล่องเสียงที่ปิดอยู่แทนที่จะมาจากปอด ให้เสียงที่ดังกึกก้องคล้ายเสียงระเบิด พบบ่อยในภาษาแถบคอเคซัส อเมริกา และแอฟริกาตะวันออก เขียนแทนด้วยเครื่องหมายอะพอสทรอฟี เช่น k', t'",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "เครื่องหมายกำกับ ejective มักถูกละเว้นเมื่อพิมพ์แบบไม่เป็นทางการ ทำให้คำที่มีความหมายต่างกันถูกรวมเป็นคำเดียวกันในข้อความ",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "เสียงกักเส้นเสียง",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "เสียงสะดุดในลำคอที่ได้ยินในคำว่า 'uh-oh' ในหลายภาษา เสียงนี้เป็นพยัญชนะเต็มรูปแบบที่ใช้แยกความหมายของคำ ภาษาฮาวายเขียนแทนด้วยสัญลักษณ์ ʻokina (ʻ) และการละเว้นสัญลักษณ์นี้จะเปลี่ยนความหมายของคำ",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "Glottal stop มักถูกละเว้นหรือพิมพ์ด้วยอักขระอะพอสทรอฟีที่ไม่ถูกต้อง ทำให้คำเดียวกันถูกสะกดหลายรูปแบบ",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "ภาษาฮาวาย (haw): ʻokina เป็นพยัญชนะที่มีหน้าที่ทางสัทวิทยา หมายเหตุในบัตรคำศัพท์จะแจ้งเตือนปัญหาที่เกิดจากการใช้อะพอสทรอฟีต่างรูปแบบ",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "เสียงฐานลิ้นไก่",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "พยัญชนะที่เกิดจากการออกเสียงบริเวณส่วนหลังสุดของปากโดยใช้ลิ้นไก่ เช่น q ในภาษาอาหรับหรือ r ในภาษาฝรั่งเศส พบน้อยกว่าเสียง velar k/g และเป็นลักษณะเฉพาะของภาษาในบางพื้นที่",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "เสียง uvular มักถูกถอดอักษรโรมันไม่สม่ำเสมอ (q/k/kh) ทำให้คำเดียวกันปรากฏในหลายรูปแบบการสะกด",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "เสียงเดาะ",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "พยัญชนะที่เกิดจากการดูดอากาศเข้า คล้ายเสียง 'tsk-tsk' ในภาษาอังกฤษ แต่ใช้เป็นเสียงพูดปกติ ภาษา Khoisan และภาษา Bantu ทางใต้บางภาษา (เช่น Zulu, Xhosa) มีชุดพยัญชนะ click ครบถ้วน",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "เสียง click เขียนด้วยอักขระพิเศษ (ǃ, ǂ, c, q, x) ที่ตัวแบ่งคำ (tokenizer) และฟอนต์มักจัดการได้ไม่ถูกต้อง",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "เสียงกักลมเข้า",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "พยัญชนะที่เกิดจากการดูดอากาศเข้าสั้น ๆ ที่ลำคอ เช่น ɓ และ ɗ ในภาษา Hausa หรือภาษาเวียดนาม เสียงเหล่านี้ฟังดูคล้าย b/d ที่เน้นเสียงสำหรับผู้ที่ไม่คุ้นเคย แต่เป็นหน่วยเสียงที่แตกต่างกัน",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "อักษร implosive (ɓ, ɗ) มักถูกพิมพ์เป็น b/d ธรรมดา ทำให้คำที่มีความหมายต่างกันถูกรวมเป็นคำเดียวกันในคลังข้อความ",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "นาสิก",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "พยัญชนะที่เกิดจากการปล่อยให้อากาศไหลออกทางจมูก เช่น m, n, หรือ ng ในคำว่า “sing” แทบทุกภาษามีพยัญชนะนาสิก และบางภาษายังมีการกระจายเสียงนาสิกไปยังสระที่อยู่ติดกันด้วย",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "ในฐานะหมวดหมู่ทางสัทศาสตร์ล้วนๆ พยัญชนะนาสิกมีความสำคัญต่อการพูดและการทับศัพท์มากกว่าการแปลข้อความ ซึ่งทำงานกับคำที่เขียนเป็นลายลักษณ์อักษร",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "เสียดแทรก",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "พยัญชนะที่เกิดจากการบีบให้อากาศผ่านช่องแคบๆ จนเกิดเสียงฟู่ เช่น f, s, sh, หรือ th เสียงเสียดแทรกเป็นหนึ่งในประเภทพยัญชนะที่พบได้บ่อยที่สุดในภาษาต่างๆ ทั่วโลก",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "เสียงเสียดแทรกเป็นหมวดหมู่ทางสัทศาสตร์ที่มีผลต่อการออกเสียงและการทับศัพท์ชื่อเฉพาะ ไม่ใช่ไวยากรณ์ของ MT ที่อิงตามข้อความ",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "ม้วนลิ้น",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "พยัญชนะที่เกิดจากการม้วนปลายลิ้นขึ้นและถอยไปทางเพดานปาก ทำให้เกิดเสียงก้องที่มีเอกลักษณ์เฉพาะตัว พยัญชนะม้วนลิ้นเป็นลักษณะเด่นของภาษาในเอเชียใต้ เช่น ภาษาฮินดีและภาษาทมิฬ",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "การม้วนลิ้นส่วนใหญ่เป็นเรื่องของการพูดและการทับศัพท์ ในข้อความจะปรากฏเป็นเพียงตัวอักษรหรือเครื่องหมายกำกับการออกเสียง (diacritics) ที่แตกต่างกันซึ่ง MT จะต้องรักษาไว้",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "เสียงกักเส้นเสียง",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "เกิดจากการตีบหรือปิดของเส้นเสียง (glottis) ซึ่งเพิ่มลักษณะการกักหรือเสียงแหบพร่า (creaky) ให้กับพยัญชนะหรือสระ เสียงพ่นลม (ejectives) และเสียงดูดลม (implosives) เป็นพยัญชนะที่มีเสียงกักเส้นเสียง และบางภาษายังมีเสียงก้อง (sonorants) และสระที่มีเสียงกักเส้นเสียง (เสียงแหบพร่า) ด้วย",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "การกักเส้นเสียงเป็นคุณสมบัติทางสัทศาสตร์ที่มีความสำคัญต่อการพูดและการทับศัพท์ ในข้อความจะหลงเหลืออยู่เพียงตัวอักษรพิเศษหรือเครื่องหมายอะพอสทรอฟี (apostrophes) ซึ่ง MT จะต้องคงไว้ตามเดิม",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "เสียงฐานผนังคอ",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "พยัญชนะที่เกิดจากการบีบคอหอย (pharynx) เช่น อักษรอาหรับ ʿayn (ع) พบได้น้อยมากทั่วโลก และผู้ที่ไม่ใช่เจ้าของภาษามักได้ยินหรือออกเสียงได้ยาก",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "พยัญชนะ pharyngeal มีการถอดเสียงเป็นอักษรโรมันหลายแบบ (ʿ, ', 3 หรือละไว้) ทำให้การสะกดในข้อความไม่เป็นทางการสับสนมาก",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "สระนาสิก",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "สระที่ออกเสียงโดยให้ลมผ่านทางจมูก เช่น bon ในภาษาฝรั่งเศส หรือ são ในภาษาโปรตุเกส ในภาษาที่มีความแตกต่างนี้ สระนาสิกและสระปากจะใช้แยกความหมายของคำที่ต่างกัน",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "เครื่องหมายนาสิก (ã, ę, ą) มักถูกละเว้นเมื่อพิมพ์แบบไม่เป็นทางการ ทำให้คำที่ควรต่างกันกลายเป็นคำเดียวกัน",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "ความยาวสระ",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "การออกเสียงสระยาวขึ้นเพื่อสร้างคำที่มีความหมายต่างกัน เช่น tuli 'ไฟ' กับ tuuli 'ลม' ในภาษาฟินแลนด์ ระบบการเขียนแต่ละแบบแสดงความยาวสระด้วยการซ้ำตัวอักษร เครื่องหมายมาครง (ā) หรือไม่แสดงเลย",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "เมื่อการแสดงความยาวสระเป็นทางเลือก (เช่น kahakō ในภาษาฮาวาย หรือสระในภาษาอาหรับ) คำเดียวกันจะปรากฏในหลายรูปแบบการสะกด",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "ภาษาฮาวาย (haw): kahakō (เครื่องหมายมาครง) ใช้แสดงสระยาว และมักถูกละเว้นในข้อความที่ไม่เป็นทางการ",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "หน่วยเสียง",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "เสียงพูดที่ใช้แยกความหมายของคำในภาษาหนึ่ง ๆ — เปลี่ยนหน่วยเสียงหนึ่งเป็นอีกหน่วยเสียงหนึ่งก็ได้คำที่ต่างออกไป (เช่น pat กับ bat) ภาษาแต่ละภาษามีจำนวนหน่วยเสียงตั้งแต่ประมาณสิบกว่าเสียงไปจนถึงกว่าร้อยเสียง",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "ขนาดและองค์ประกอบของคลังหน่วยเสียงกำหนดว่าชื่อต่างประเทศและคำยืมจะถูกปรับรูปอย่างไรในภาษานั้น",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "Downstep",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "ในภาษาวรรณยุกต์หลายภาษาในแอฟริกา downstep คือการลดระดับเสียงที่ส่งผลให้เสียงสูงทุกเสียงที่ตามมาในวลีนั้นต่ำลงด้วย ถือเป็นจุดสังเกตทางวรรณยุกต์ที่สามารถแยกความหมายได้ด้วยตัวเอง",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "downstep แทบไม่เคยถูกเขียนแสดงไว้ ทำให้ข้อมูลวรรณยุกต์ขาดหายไปอย่างเป็นระบบจากข้อมูลข้อความ",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "Advanced tongue root",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "คุณภาพสระที่เกิดจากการดันโคนลิ้นไปข้างหน้าเพื่อขยายช่องคอ ภาษาแอฟริกันหลายภาษาแบ่งสระออกเป็นกลุ่ม +ATR และ -ATR และกำหนดให้คำต้องอยู่ในกลุ่มเดียวกัน (ATR harmony)",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "ความแตกต่าง ATR มักถูกแสดงไม่สม่ำเสมอในระบบการเขียน ทำให้คำเดียวกันปรากฏในหลายรูปแบบการสะกด",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "อักษร",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "ชุดสัญลักษณ์ที่ใช้เขียนภาษา เช่น Latin, Cyrillic, Arabic, อักษรจีน และอื่น ๆ อีกมาก ภาษาหนึ่งอาจใช้หลายอักษร (เช่น ภาษาเซอร์เบีย) และอักษรหนึ่งอาจรองรับได้หลายร้อยภาษา",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "ชนิดของอักษรส่งผลต่อกระบวนการประมวลผลข้อความทุกขั้นตอน ทั้ง encoding, tokenization และการที่โมเดล MT จะรับข้อมูลนั้นได้หรือไม่",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "อักขรวิธี",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "กฎที่ตกลงกันไว้สำหรับการเขียนภาษาในอักษรของตน ครอบคลุมตัวอักษร เครื่องหมายกำกับเสียง และการสะกดที่ถูกต้อง บางภาษามีอักขรวิธีที่แข่งขันกันหลายแบบ หรือยังไม่มีมาตรฐานที่ยอมรับร่วมกัน",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "อักขรวิธีที่แข่งขันกันหรือไม่มีมาตรฐานจะแบ่งข้อมูลฝึกสอนที่มีอยู่อย่างจำกัดออกเป็นรูปแบบการสะกดที่เข้ากันไม่ได้",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "อักษรอาบูกีดา",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "ระบบอักษรที่แต่ละสัญลักษณ์แทนพยัญชนะพร้อมสระเริ่มต้นในตัว และสระอื่นแสดงด้วยการดัดแปลงสัญลักษณ์ฐาน เช่น อักษรเทวนาครี อักษรเอธิโอปิก หรืออักษรไทย อยู่ระหว่างอักษรแบบ alphabet และ syllabary",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "เครื่องหมายสระใน abugida เป็น combining characters ที่กระบวนการประมวลผลข้อความแบบไม่รอบคอบอาจตัดทิ้งหรือเรียงลำดับใหม่จนทำให้คำเสียหาย",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "ระบบอักษรพยางค์",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "ระบบอักษรที่มีสัญลักษณ์หนึ่งตัวต่อหนึ่งพยางค์ ไม่ใช่ต่อหนึ่งเสียง เช่น kana ของญี่ปุ่น หรืออักษร Cherokee เหมาะกับภาษาที่มีโครงสร้างพยางค์เรียบง่าย",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "Syllabary เปลี่ยนระดับความละเอียดของข้อความ: tokenizer มองเห็นพยางค์ ไม่ใช่พยัญชนะและสระแยกกัน",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "อักษรพยางค์",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "ตระกูลอักษรที่ใช้สำหรับภาษา Cree, Inuktitut, Ojibwe และภาษาพื้นเมืองแคนาดาอื่น ๆ โดยแต่ละตัวอักษรเข้ารหัสพยัญชนะและการหมุนของตัวอักษรเข้ารหัสสระ ประดิษฐ์ขึ้นในทศวรรษ 1840 และยังคงใช้งานอยู่ในชุมชนจนถึงปัจจุบัน",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "ข้อความ Cree/Inuktitut จำนวนมากมีทั้งในรูปแบบ syllabics และอักษรโรมัน ดังนั้น pipeline ของ MT จึงต้องการการแปลงอักษรที่เชื่อถือได้",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "Plains Cree (crk): card script คือ Cans (Canadian Aboriginal Syllabics) พร้อม roman-orthography converter",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "การถอดอักษรโรมัน",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "การเขียนภาษาด้วยอักษรละตินแทนอักษรดั้งเดิม ไม่ว่าจะโดยกฎ (การถ่ายอักษร) หรือตามเสียง ภาษาหนึ่งมักมีมาตรฐาน romanization หลายแบบที่แข่งขันกัน",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "ข้อความที่ใช้อักษรโรมันและข้อความที่ใช้อักษรดั้งเดิมถูกมองว่าเป็นภาษาคนละภาษาโดยโมเดล MT หากไม่มีการแปลงอักษรอย่างชัดเจน",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "เครื่องหมายเสริมอักษร",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "เครื่องหมายที่เพิ่มลงบนตัวอักษร เช่น accent, tilde, จุด, macron เพื่อระบุวรรณยุกต์ ความยาวเสียง เสียงนาสิก หรือเสียงที่แตกต่างกัน บางระบบการเขียนพึ่งพาเครื่องหมายเหล่านี้อย่างสมบูรณ์ แต่ผู้ใช้มักละเว้นในการพิมพ์ทั่วไป",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "ข้อความที่ถูกลบ diacritic ออกเป็นปัญหาคุณภาพข้อมูลที่พบได้ทั่วไป เนื่องจากทำให้คำที่ต่างกันกลายเป็นคำเดียวกันและไม่ตรงกับข้อมูล training ที่สะอาด",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "ทิศทางการเขียน",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "ทิศทางที่อักษรดำเนินไป: ซ้ายไปขวา (อักษรละติน) ขวาไปซ้าย (อาหรับ ฮีบรู) หรือบนลงล่างในอดีต (มองโกเลีย จีนคลาสสิก) ข้อความที่มีหลายทิศทางต้องการการจัดการพิเศษ",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "ข้อความ RTL และ bidirectional ทำให้การจัดการ string แบบไม่รอบคอบเกิดข้อผิดพลาด เนื่องจากตัวเลข เครื่องหมายวรรคตอน และคำภาษาละตินที่แทรกอยู่อาจเรียงลำดับใหม่อย่างคาดเดาไม่ได้",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "ระดับภาษา",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "รูปแบบภาษาที่ผูกกับบริบททางสังคม เช่น ทางการ ไม่เป็นทางการ พิธีการ หรือเทคนิค บางภาษามี register ที่ฝังอยู่ในไวยากรณ์ เช่น ภาษาชวามีชุดคำศัพท์ที่แตกต่างกันสำหรับระดับความสุภาพที่ต่างกัน",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "MT ต้องรักษา register ให้สม่ำเสมอ เนื่องจากการผสมรูปแบบทางการและไม่เป็นทางการในผลลัพธ์เดียวกันจะดูผิดปกติหรือหยาบคาย",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "T-V distinction",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "การมีคำสรรพนามบุรุษที่สองสองคำขึ้นไปขึ้นอยู่กับระยะห่างทางสังคม เช่น tu/vous ในภาษาฝรั่งเศส หรือ du/Sie ในภาษาเยอรมัน การเลือกใช้สื่อถึงความเคารพ ความสนิทสนม หรือลำดับชั้น และยากที่จะแก้ไขภายหลัง",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "คำว่า \"you\" ในภาษาอังกฤษไม่ให้ข้อมูลใด ๆ ดังนั้น MT จึงต้องเลือกระดับความเป็นทางการจากบริบท ซึ่งเป็นข้อผิดพลาดที่พบบ่อยและสังเกตเห็นได้ชัดในเชิงสังคม",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "French (fra): card formality data แยกแยะบริบทการใช้งาน tu/vous",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "คำยกย่อง",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "รูปแบบทางไวยากรณ์หรือคำศัพท์ที่แสดงความเคารพต่อผู้ฟังหรือบุคคลที่กล่าวถึง เช่น keigo ในภาษาญี่ปุ่น ระดับการพูดในภาษาเกาหลี หรือคำศัพท์แสดงความเคารพในระบบเครือญาติ มักเป็นสิ่งที่บังคับใช้ ไม่ใช่ทางเลือก",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "การเลือกใช้ honorific ต้องอาศัยความรู้ทางสังคม (ใครมีสถานะสูงกว่าใคร) ซึ่งข้อความต้นฉบับมักไม่ได้ระบุไว้",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "ความสุภาพ",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "การเข้ารหัสความสัมพันธ์ทางสังคมผ่านภาษา ไม่ว่าจะเป็นการเลือกใช้สรรพนาม คำลงท้ายกริยา อนุภาค หรือคำศัพท์ ภาษาต่าง ๆ มีระบบความสุภาพตั้งแต่ไม่มีไวยากรณ์ความสุภาพเลย ไปจนถึงระบบหลายระดับที่ซับซ้อน",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "การแปลอาจถูกต้องในระดับคำศัพท์แต่ยังล้มเหลวได้ หากเลือกระดับความสุภาพไม่เหมาะสมกับสถานการณ์",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "ภาวะสองภาษา",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "สถานการณ์ที่มั่นคงซึ่งชุมชนใช้ภาษาสองรูปแบบเพื่อวัตถุประสงค์ต่างกัน ได้แก่ รูปแบบ \"สูง\" สำหรับการเขียนและการพูดในทางการ (เช่น ภาษาอาหรับมาตรฐานสมัยใหม่) และรูปแบบ \"ต่ำ\" สำหรับชีวิตประจำวัน (เช่น ภาษาถิ่นที่พูดกัน) ผู้พูดสลับใช้ตามบริบท ไม่ใช่ตามความชอบ",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "ข้อมูลฝึกสอนมักเอนเอียงไปทางรูปแบบ \"สูง\" ที่เป็นลายลักษณ์อักษร ทำให้ MT ทำงานได้ไม่ดีกับรูปแบบพูดที่ผู้คนใช้จริง",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "การสลับรหัสภาษา",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "การสลับใช้ภาษาตั้งแต่สองภาษาขึ้นไปภายในการสนทนาหรือประโยคเดียวกัน ซึ่งเป็นสิ่งที่ผู้พูดสองภาษาทำตามธรรมชาติ โดยเป็นไปตามรูปแบบทางไวยากรณ์ ไม่ใช่การผสมแบบสุ่ม",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "ข้อความที่ผสมหลายภาษาทำให้การตรวจจับภาษาสับสนและได้ผลลัพธ์ที่ผิดพลาด หากระบบไม่รองรับทั้งสองภาษา",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "ภาษาครีโอล",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "ภาษาธรรมชาติที่สมบูรณ์ซึ่งเกิดจากการสัมผัสภาษาอย่างเข้มข้น โดยมักดึงคำศัพท์ส่วนใหญ่มาจากภาษาหนึ่ง (lexifier) แต่พัฒนาไวยากรณ์เป็นของตัวเอง ตัวอย่างเช่น Haitian Creole, Tok Pisin และ Papiamento",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "ภาษา creole มีลักษณะคล้าย lexifier ในการเขียน ทำให้ระบบ MT ที่ฝึกบน lexifier แปลผิดพลาดอย่างเป็นระบบ",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "ภาษาพิดจิน",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "ภาษาติดต่อแบบเรียบง่ายที่ไม่มีเจ้าของภาษา สร้างขึ้นเพื่อการค้าหรือการทำงานระหว่างกลุ่มที่ไม่มีภาษากลางร่วมกัน เมื่อเด็กเติบโตขึ้นโดยใช้ภาษานี้เป็นภาษาแม่ ก็จะกลายเป็น creole",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "ภาษา pidgin มีความหลากหลายสูงและข้อมูลข้อความน้อย ทำให้การแปลด้วย MT อย่างสม่ำเสมอเป็นเรื่องยากเป็นพิเศษ",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "ภาษาแม่แบบ",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "ภาษาที่เป็นแหล่งคำศัพท์หลักของภาษา creole หรือ pidgin เช่น ภาษาอังกฤษสำหรับ Jamaican Patois ภาษาฝรั่งเศสสำหรับ Haitian Creole และภาษาโปรตุเกสสำหรับ Papiamento อย่างไรก็ตาม ไวยากรณ์เป็นของภาษา creole เอง",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "คำศัพท์ที่ร่วมกับ lexifier ปิดบังความแตกต่างทางไวยากรณ์เชิงลึกที่ MT ต้องไม่มองข้าม",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "คำยืม",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "คำที่นำมาจากภาษาอื่นและปรับให้เข้ากับรูปแบบเสียงของภาษาปลายทาง เช่น \"sushi\" ในภาษาอังกฤษ หรือ \"le weekend\" ในภาษาฝรั่งเศส ส่วน calque คือการยืมโครงสร้างแทน โดยแปลทีละส่วน เช่น \"skyscraper\" → ภาษาฝรั่งเศส \"gratte-ciel\"",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "การตัดสินใจว่าจะคงไว้ ปรับ หรือแปลคำยืมเป็นทางเลือกที่เกิดขึ้นซ้ำในงาน localization โดยเฉพาะสำหรับคำศัพท์ทางเทคนิค",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "ภาษามหภาค",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "หมวดหมู่ทางบัญชีของ ISO 639-3: รหัสเดียว (เช่น 'ara' สำหรับภาษาอาหรับ หรือ 'zho' สำหรับภาษาจีน) ที่ครอบคลุมภาษาสมาชิกหลายภาษาซึ่งถูกนับรวมเป็นหนึ่งด้วยเหตุผลทางประวัติศาสตร์หรือการเมือง โดยแต่ละภาษาสมาชิกยังมีรหัสของตนเองด้วย",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "ข้อมูลที่ติดป้ายด้วยรหัส macrolanguage จะผสมรวมภาษาถิ่นที่ไม่สามารถเข้าใจซึ่งกันและกันได้ ซึ่งทำให้ข้อมูลสำหรับการฝึกและการประเมินผลปนเปื้อน",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "endonym (ชื่อตนเอง)",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "ชื่อที่ชุมชนใช้เรียกภาษาของตนเอง (endonym/autonym) ซึ่งต่างจากชื่อที่คนภายนอกใช้ (exonym) เช่น 'Deutsch' คือ endonym ของภาษาที่ภาษาอังกฤษเรียกว่า 'German' และชุมชนพื้นเมืองหลายแห่งก็นิยมใช้ endonym ของตนเอง",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "ความไม่ตรงกันของชื่อภาษาในฐานข้อมูลต่าง ๆ ก่อให้เกิดข้อผิดพลาดในการระบุภาษาและการรวมข้อมูลในระบบ MT",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "ภาษาโดดเดี่ยว (language isolate)",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "ภาษาที่ไม่มีความสัมพันธ์ที่พิสูจน์ได้กับภาษาอื่นใด — เป็นตระกูลภาษาที่มีสมาชิกเพียงภาษาเดียว ตัวอย่างที่รู้จักกันดี ได้แก่ ภาษา Basque, Ainu และ Burushaski โดย language isolate พบได้ทั่วโลกมากกว่าที่คาดคิด",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "ภาษาโดดเดี่ยวไม่สามารถอาศัยสัญญาณการฝึกจากภาษาที่เกี่ยวข้องได้ ทำให้ไม่สามารถใช้กลยุทธ์ transfer learning ซึ่งเป็นแนวทางหลักสำหรับ MT ที่มีทรัพยากรน้อย",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "ความมีชีวิตชีวาของภาษา (language vitality)",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "ระดับความแข็งแกร่งในการถ่ายทอดภาษาสู่คนรุ่นใหม่และการใช้งานในชีวิตประจำวันด้านต่าง ๆ มาตรวัด เช่น EGIDS และสถานะความเสี่ยงของ Glottolog มีระดับตั้งแต่ 'vigorous' ผ่าน 'threatened' และ 'moribund' ไปจนถึง 'dormant' (ไม่มีผู้พูดคล่องแล้ว แต่ยังมีโอกาสฟื้นฟู)",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "ความมีชีวิตชีวาของภาษาเป็นตัวบ่งชี้ความพร้อมของข้อมูล และสำหรับ MT ที่ขับเคลื่อนโดยชุมชน ยังบ่งบอกถึงบทบาทที่เทคโนโลยีควรมี (เช่น สนับสนุนการฟื้นฟูภาษา ไม่ใช่การทดแทน)",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "moribund (ภาษาใกล้สูญ)",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "สถานะความมีชีวิตชีวาที่บ่งชี้ว่าภาษานั้นไม่มีเด็กเรียนรู้อีกต่อไป โดยผู้พูดคล่องที่เหลืออยู่ล้วนเป็นผู้สูงอายุ หากไม่มีการแทรกแซง ภาษาดังกล่าวจะกลายเป็น dormant ภายในหนึ่งชั่วอายุคน",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "ภาษา moribund มีกลุ่มผู้พูดที่ลดลงเรื่อย ๆ สำหรับการตรวจสอบผลลัพธ์ MT ทำให้การตัดสินใจเกี่ยวกับข้อมูลทุกครั้งมีความสำคัญยิ่งขึ้น",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "Glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "รหัสเฉพาะจากฐานข้อมูล Glottolog (เช่น stan1293 สำหรับภาษาอังกฤษ) ที่ครอบคลุมภาษา ภาษาถิ่น และตระกูลภาษา มีความละเอียดกว่ารหัส ISO และได้รับการปรับปรุงอย่างต่อเนื่องโดยนักภาษาศาสตร์",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "Glottocodes ช่วยให้ระบบสามารถเชื่อมต่อฐานข้อมูลเชิงประเภทวิทยาได้อย่างแม่นยำ แม้แต่สำหรับภาษาถิ่นที่ไม่มีรหัส ISO",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "มาตรฐานสากลของรหัสสามตัวอักษรสำหรับภาษาต่าง ๆ ทั่วโลก (eng, crk, haw) ดูแลโดย SIL โดยมีเป้าหมายครอบคลุมทุกภาษาที่รู้จัก ทั้งที่ยังใช้งานอยู่และที่สูญหายไปแล้ว ด้วยรหัสหนึ่งรหัสต่อหนึ่งภาษา",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "รหัส ISO 639-3 คือ join key ของ NLP หลายภาษา — รหัสที่ผิดหรือกำกวมจะทำให้ชุดข้อมูลเสียหายโดยไม่มีการแจ้งเตือน",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "ระบบนับฐานยี่สิบ (vigesimal)",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "ระบบการนับที่ใช้ยี่สิบเป็นฐานแทนที่จะเป็นสิบ ภาษา Maya, Yoruba, Nahuatl และ Danish (บางส่วน) ใช้ระบบนี้ — คำว่า 'eighty' ในภาษาฝรั่งเศสคือ 'quatre-vingts' ซึ่งแปลตรงตัวว่า 'สี่คูณยี่สิบ'",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "การแปลคำแสดงตัวเลขระหว่างระบบที่มีฐานต่างกันมีโอกาสเกิดข้อผิดพลาดสูง และตัวเลขถือเป็นเนื้อหาที่มีความสำคัญสูง",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "แสดงบนการ์ดผ่าน numeralSystem.baseType จากข้อมูล Numeralbank",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "คำเรียกญาติ (kinship terms)",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "คำศัพท์ที่ใช้เรียกความสัมพันธ์ในครอบครัว ซึ่งแต่ละภาษาแบ่งแยกแตกต่างกันมาก เช่น มีคำแยกสำหรับพี่และน้อง หรือสำหรับลุงฝ่ายแม่และลุงฝ่ายพ่อ บางระบบยังเข้ารหัสตำแหน่งของผู้พูดเองด้วย",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "คำว่า 'uncle' หรือ 'cousin' ในภาษาอังกฤษอาจไม่มีคำเทียบเท่าเพียงคำเดียว ทำให้ระบบ MT ต้องเลือกใช้คำเรียกญาติที่เฉพาะเจาะจงโดยไม่มีข้อมูลครอบครัวที่จำเป็น",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "เมตริกประเมินผล MT อัตโนมัติที่ให้คะแนนความทับซ้อนในระดับอักขระระหว่างผลลัพธ์ของระบบกับการแปลอ้างอิง เนื่องจากทำงานในระดับอักขระแทนที่จะเป็นคำ จึงมีความยุติธรรมกว่าเมตริกแบบอิงคำสำหรับภาษาที่มีสัณฐานวิทยาซับซ้อน",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "chrF เป็นเมตริก surface ที่นิยมใช้สำหรับภาษาแบบ agglutinative และ polysynthetic ซึ่งการจับคู่ในระดับคำให้ผลที่ไม่น่าเชื่อถือ",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "เมตริกประเมินผล MT แบบ neural ที่ใช้โมเดลหลายภาษาที่ผ่านการฝึกมาเพื่อทำนายการตัดสินคุณภาพของมนุษย์ แทนที่จะนับความทับซ้อนของ surface รูปแบบต่าง ๆ เช่น AfriCOMET ขยายการครอบคลุมไปยังภาษาแอฟริกัน",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "COMET มีความสัมพันธ์กับการตัดสินของมนุษย์ดีกว่าเมตริก surface แต่ใช้ได้เฉพาะกับภาษาที่โมเดลพื้นฐานเคยเห็นมาแล้วเท่านั้น",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "finite-state transducer: โมเดลเชิงคำนวณแบบ rule-based ที่แมประหว่างรูปแบบคำกับการวิเคราะห์ทางไวยากรณ์ สำหรับภาษาที่มีสัณฐานวิทยาซับซ้อน FST ที่สร้างด้วยมือสามารถวิเคราะห์และสร้างรูปแบบคำที่ระบบสถิติไม่เคยเห็นมาก่อนได้",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "FST ให้การวิเคราะห์สัณฐานวิทยาและการตรวจสอบที่เชื่อถือได้สำหรับภาษาที่มีข้อมูลน้อยเกินกว่าจะเรียนรู้สัณฐานวิทยาจากข้อความเพียงอย่างเดียว",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "Plains Cree (crk): ชุดประเมินผลใช้ตัวตรวจสอบความหมายแบบ FST (ฟิลด์การ์ด evalMetrics.lyss-sem)",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "Treebank",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "คลังข้อมูลประโยคที่มีการกำกับโครงสร้างทางไวยากรณ์ด้วยมือ (parse trees) โครงการ Universal Dependencies ดูแล treebank ในรูปแบบร่วมกันสำหรับภาษามากกว่า 150 ภาษา",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "การมี treebank บ่งชี้ถึงโครงสร้างพื้นฐาน NLP ที่จริงจังสำหรับภาษานั้น และเปิดใช้งานการประเมินผลที่คำนึงถึงไวยากรณ์",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "คลังข้อมูลคู่ขนาน",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "คอลเลกชันข้อความที่จับคู่กับคำแปล โดยจัดเรียงทีละประโยค parallel corpora เป็นแหล่งข้อมูลหลักสำหรับการฝึกและประเมินผลระบบ MT",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "ขนาดและโดเมนของข้อมูล parallel ที่มีอยู่เป็นตัวทำนายคุณภาพ MT ที่แข็งแกร่งที่สุดสำหรับคู่ภาษาหนึ่ง ๆ",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU (Bilingual Evaluation Understudy) ให้คะแนนการแปลโดยดูว่า word n-gram ใดบ้างที่ตรงกับการแปลอ้างอิงหนึ่งรายการหรือมากกว่า เป็นเมตริก MT ที่เก่าแก่และถูกอ้างถึงมากที่สุด แต่เนื่องจากจับคู่คำทั้งคำ จึงเข้มงวดและไม่น่าเชื่อถือสำหรับภาษาที่มีสัณฐานวิทยาซับซ้อนและภาษาที่มีทรัพยากรน้อย คะแนนสูงกว่าดีกว่า บนสเกล 0–100",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "BLEU รายงานเพื่อเปรียบเทียบกับตารางที่เผยแพร่ไว้ แต่สำหรับภาษาที่ Champollion มุ่งเน้น มีความสัมพันธ์กับการตัดสินของมนุษย์ต่ำ — ควรอ่านควบคู่กับ chrF++ และ COMET เสมอ ไม่ใช่ดูเพียงอย่างเดียว",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU คือ BLEU ที่คำนวณหลังจากแบ่งข้อความด้วย FLORES-200 SentencePiece tokenizer ซึ่งเป็นโมเดล subword คงที่เดียวที่ใช้ร่วมกันใน 200 ภาษา ทำให้คะแนนเปรียบเทียบได้ข้ามสคริปต์และระบบการเขียนที่ BLEU ระดับคำธรรมดาทำไม่ได้",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU เป็นตัวเลขกลางในวรรณกรรม NLLB / FLORES สำหรับภาษาที่มีทรัพยากรน้อย — สะดวกสำหรับการเปรียบเทียบข้ามภาษา แต่ยังคงเป็นเมตริก surface ที่ไม่สามารถมองเห็นความหมายได้",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "Translation Edit Rate นับจำนวนการแก้ไข — การแทรก การลบ การแทนที่ และการเลื่อนบล็อก — ที่จำเป็นต้องใช้เพื่อเปลี่ยนผลลัพธ์ของระบบให้เป็นข้อความอ้างอิง แสดงเป็นเปอร์เซ็นต์ของความยาวข้อความอ้างอิง ต่างจากตัวชี้วัดส่วนใหญ่ ค่าที่ต่ำกว่าหมายถึงดีกว่า",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "TER เป็นสัญญาณที่เข้าใจง่ายในแง่ \"มนุษย์ต้องแก้ไขมากแค่ไหน\" แต่เช่นเดียวกับตัวชี้วัดระดับพื้นผิวอื่น ๆ มันลงโทษการถอดความที่ถูกต้องและสัณฐานวิทยาที่ซับซ้อน",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "การปนเปื้อนของข้อมูล",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "ชุดทดสอบถือว่า \"ปนเปื้อน\" เมื่อประโยคในชุดนั้นมีแนวโน้มว่าโมเดลเคยเห็นระหว่างการฝึกแล้ว เช่น เพราะ corpus นั้นเป็นสาธารณะและถูกดึงข้อมูลไปอย่างแพร่หลาย benchmark ที่ปนเปื้อนไม่สามารถพิสูจน์ได้ว่าโมเดลมีคุณภาพดี เพราะอาจเป็นแค่การเรียกคืนคำตอบที่จำไว้ ระดับ \"สูง\" หมายความว่ามีแนวโน้มเคยเห็นแล้ว ดังนั้นผลลัพธ์จึงถูกใช้เป็นการเปรียบเทียบเชิงสัมพัทธ์ระหว่างระบบเท่านั้น ไม่ใช่การอ้างสิทธิ์คุณภาพเชิงสัมบูรณ์ (\"relative-only\")",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "benchmark สาธารณะส่วนใหญ่ถูกนำไปฝึกโมเดลอย่างกว้างขวาง ดังนั้น Champollion จึงประเมินคะแนนในเลนแบบ relative-only และสงวนการจัดอันดับเชิงสัมบูรณ์ไว้สำหรับชุดทดสอบที่ปิดผนึกและไม่เคยเผยแพร่",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "ความซับซ้อนของ MT",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "ค่าประมาณ 0–100 ที่ Champollion คำนวณขึ้นเพื่อบ่งชี้ว่าภาษาหนึ่งยากแค่ไหนสำหรับการแปลด้วยเครื่อง โดยรวมสัญญาณสี่ประการ ได้แก่ ความครอบคลุมของ commercial MT API ความพร้อมใช้งานของ parallel corpora ระยะห่างทางประเภทวิทยาจากภาษาที่มีทรัพยากรมาก และความลึกของเอกสารทางภาษาศาสตร์ ค่าสูงหมายถึงยากกว่า ค่านี้เป็นแนวทางบ่งชี้ความยาก ไม่ใช่การวัดผลลัพธ์ของระบบใดระบบหนึ่ง",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "ดัชนีนี้เป็นแนวทางที่ได้มาจากการคำนวณเพื่อช่วยจัดลำดับความสำคัญของความพยายาม — ไม่ใช่ผลลัพธ์ benchmark คุณภาพการแปลที่วัดได้จริงอยู่บน leaderboard โดยจัดเรียงตาม (method, dataset, metric)",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "ชุดข้อมูลทดสอบที่แยกไว้",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "ชุดตัวอย่างการแปลที่ถูกซ่อนไว้จากระบบระหว่างการพัฒนา และใช้เฉพาะเพื่อให้คะแนนเท่านั้น หากระบบไม่เคยเห็นประโยคเหล่านี้ คะแนนที่ได้จะสะท้อนความสามารถที่แท้จริง ไม่ใช่การจำ ระดับสูงสุดของ Champollion คือชุดทดสอบแบบ \"sealed\" ที่ชุมชนเก็บเป็นความลับ — โมเดลจะถูกประเมินกับชุดนี้โดยที่ไม่มีใคร รวมถึงเราด้วย ได้เห็นข้อมูล",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "ชุดทดสอบแบบ held-out (โดยเฉพาะแบบ sealed) เป็นวิธีเดียวที่จะอ้างสิทธิ์คุณภาพเชิงสัมบูรณ์ได้ ชุดสาธารณะที่ปนเปื้อนรองรับเฉพาะการเปรียบเทียบเชิงสัมพัทธ์เท่านั้น",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

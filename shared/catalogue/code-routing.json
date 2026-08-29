@@ -1,0 +1,18 @@
+{
+  "_doc": "Which language a NON-SPECIFIC code routes to. This is CLI configuration, not a fact about any language: it records what Champollion does when a user types a code that does not identify one language, and every entry is an editorial decision that could reasonably have gone another way.",
+  "_whyItIsNotACardField": "A card asserts what SOURCES say about a language. 'When someone types zh, give them Mandarin' is not something Glottolog or SIL says — it is a routing choice we make, and putting it on a card would dress our decision up as an upstream fact. It lives here so it can be argued with.",
+  "_derivedRoutingIsElsewhere": "Codes that unambiguously identify one language — fr to fra, am to amh, and 82 others — are DERIVED from SIL's own ISO 639-1 column and projected as the codeAlias parameter. Only the ambiguous cases are listed here.",
+  "version": 1,
+  "status": "carried forward from the previous corpus, AWAITING FOUNDER REVIEW",
+  "reviewNote": "Each of these picks ONE individual language to stand for a macrolanguage. That is defensible and it is a choice: routing 'ar' to Modern Standard Arabic serves most callers and serves none of the 30-odd other Arabic varieties. The alternative — refusing to route and asking the caller to be specific — is also defensible. Nobody has ruled.",
+  "routes": {
+    "ar":  { "to": "arb", "from": "ara", "rationale": "Modern Standard Arabic for the Arabic macrolanguage. The variety with the most MT support and written material." },
+    "ara": { "to": "arb", "from": "ara", "rationale": "Same decision, reached by the macrolanguage code rather than its ISO 639-1." },
+    "zh":  { "to": "cmn", "from": "zho", "rationale": "Mandarin for the Chinese macrolanguage. Note this routes past written-form questions (Hans/Hant) that a locale tag would carry." },
+    "zho": { "to": "cmn", "from": "zho", "rationale": "Same decision by macrolanguage code." },
+    "no":  { "to": "nob", "from": "nor", "rationale": "Bokmål for Norwegian. Nynorsk (nno) is a co-official written standard, so this is the sharpest of these choices." },
+    "nor": { "to": "nob", "from": "nor", "rationale": "Same decision by macrolanguage code." },
+    "sq":  { "to": "als", "from": "sqi", "rationale": "Tosk Albanian for the Albanian macrolanguage — the basis of the standard language." },
+    "sqi": { "to": "als", "from": "sqi", "rationale": "Same decision by macrolanguage code." }
+  }
+}

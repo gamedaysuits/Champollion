@@ -1,0 +1,388 @@
+---
+sidebar_position: 3
+title: Who Benefits
+slug: '/network/who-benefits'
+description: 'Who gains what if Champollion succeeds — a universal, community-owned translation layer: speakers, language communities, translation vendors, researchers, funders, and the press, each with concrete first actions.'
+related:
+  - label: "For Language Communities"
+    to: /docs/network/community/for-language-communities
+    kind: doc
+    note: "The full community door — sovereignty, ownership, and how to start"
+  - label: "How the Work Is Funded"
+    to: /docs/network/sovereignty/economic-model
+    kind: doc
+    note: "The economic model in full"
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "The end-to-end run-and-publish walkthrough"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: doc
+    note: "What we do not (yet) claim"
+---
+
+{/* Counts on this page render through SSOTCount (build-time reads of the
+    machine SSOTs via docusaurus.config.js customFields) — never hand-typed,
+    per the SSOT display standard. cli/scripts/check-prose-counts-parity.mjs
+    gates the few irreducible prose figures. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Who Benefits
+
+> **Executive Summary.** Fewer than 600 of the world's roughly 7,000 living languages
+> have machine translation of any kind, and more than half of those languages
+> are at risk (per Glottolog's Agglomerated Endangerment Status;
+> champollion-derived). If Champollion succeeds — a universal,
+> community-owned translation layer — the payoff is twofold: communication
+> today for speakers the industry skips, and a working tool in the
+> preservation and revitalization of at-risk languages. The strategy is
+> deliberate: crowdsourced method development measured by open rules,
+> sponsored corpus building at published rates, and communities holding the
+> keys to their data, their test sets, and any method validated against them.
+> This page says what each group gains and what to do first.
+
+## Speakers and their communities \{#speakers}
+
+If you speak an underserved language and English, your judgment is the most
+valuable thing in this entire project — more than any model or metric.
+Computers can count how similar two sentences look; they cannot tell whether a
+sentence is something a real speaker would say. That judgment is yours, and
+it's the ground truth everything else here is checked against.
+
+**Speaker validation is paid work at published professional rates ($50–65
+CAD/hour), on your schedule, with no technical expertise required** — if you
+can read both languages and judge a sentence, you are qualified. The
+[Speaker Validation Protocol](/docs/network/specifications/speaker-validation)
+publishes three task types:
+
+| Task | What you do | Time | Published pay |
+|------|-------------|------|---------------|
+| Rate translations | Read machine translations, rate each for "is it real?" and "does it mean the right thing?" | ~8 hours, spread over weeks | $400–520 CAD |
+| Review "equivalent" pairs | Say whether two phrasings really mean the same thing | ~2 hours | $100–130 CAD |
+| Review rejected words | Check words a grammar tool flagged as invalid — was it right? | ~1.5 hours | $75–100 CAD |
+
+There is also corpus work — creating reference translations of everyday
+sentences — paid at the same hourly rates
+([details](/docs/network/perspectives/how-speakers-get-paid)). The terms, in
+one place: **paid, not volunteer** (payment within two weeks of each task
+block, paid regardless of what the results show); **credit on your terms**
+(named or anonymous, optional co-authorship); **you can withdraw** your
+contributions at any time, with veto power over publication of results you
+find problematic.
+
+:::note[Where this stands today]
+Honesty first: the pay rates and terms above are published commitments, but
+[no community validation round has run yet](/docs/network/honest-limitations)
+— the first engagements are being set up. Reaching out now means signing up
+to be among the first, not joining an existing program.
+:::
+
+**First actions:** do something today by adding sentences to
+[Tatoeba](https://tatoeba.org) — Champollion never collects or hosts corpora
+itself (test data is always
+[fetched from its source](/docs/network/sovereignty/registering-corpora)),
+but several benchmarks here are built from Tatoeba sentences and open
+collections like [OPUS](https://opus.nlpl.eu/). Then read
+[How Speakers Get Paid](/docs/network/perspectives/how-speakers-get-paid)
+(five minutes, all the numbers), and reach out —
+[info@champollion.dev](mailto:info@champollion.dev) or an issue on the
+[public repository](https://github.com/gamedaysuits/Champollion/issues) —
+saying what language you speak and what varieties you're comfortable judging.
+
+## Language communities building corpora \{#communities}
+
+The strongest position a community can hold in this system is **owning the
+benchmark itself**. A test set is the answer key: whoever holds it decides
+what "good translation" means for the language, and every method — ours, a
+corporation's, anyone's — is measured against *your* standard.
+
+The ground rule comes first: **your language data is yours.** Registering a
+corpus means publishing a descriptive metadata card — never uploading the
+corpus — in the [exposure lane you
+choose](/docs/network/sovereignty/registering-corpora): open, gated, or fully
+sovereign (a test set we never see, scored on your infrastructure). Corpus
+building and translation review are professional work
+[paid at published rates](/docs/network/perspectives/how-speakers-get-paid),
+and payment does not buy your data. When a translation method built for your
+language is validated here, [ownership
+transfers](/docs/network/sovereignty/ownership-transfer) to your community's
+governance organization — code, weights, and deployment control. Even 50
+curated translation pairs are enough to open a new leaderboard track.
+
+The full door for communities — sovereignty guarantees, what the Network asks
+and gives back, and the step-by-step start — is
+**[For Language Communities](/docs/network/community/for-language-communities)**,
+with [Run a Sovereign
+Contest](/docs/network/sovereignty/run-a-sovereign-contest) as the runbook for
+a community-controlled evaluation.
+
+## Translation services & MT vendors \{#vendors}
+
+If you build or sell translation — an MT engine, an LLM pipeline, a
+rule-based system, or a human translation service — you can benchmark it here
+on published test sets, appear on the public leaderboard and map, and be
+judged by the same rules as everyone else. **No fee, no partnership
+agreement, no preference for any technology:** the harness is method-neutral
+by design. You pay only your own compute or API costs
+([how the work is funded](/docs/network/sovereignty/economic-model)).
+
+Most public MT benchmarks cover the same few hundred high-resource languages,
+and most are contaminated. Champollion's catalogue registers <SSOTCount field="registryDatasetCount" />
+evaluation datasets as sha-pinned, fetch-from-source metadata cards, with
+[contamination status disclosed per
+dataset](/docs/network/leaderboard/datasets) and a lane for fresh,
+never-published test sets. Scores use open, reproducible metrics
+(chrF++/BLEU/TER via sacreBLEU; COMET/AfriCOMET reported in a separate neural
+lane) under published [scoring
+rules](/docs/network/specifications/scoring). Method dependencies are
+declared, not hidden, and proprietary engines stay proprietary — the harness
+calls your system, never your weights or code. Two honest caveats: **the
+board is young** ([Honest Limitations](/docs/network/honest-limitations) says
+exactly what is verified today), and **scores do not grant deployment
+rights** — for community-stewarded languages, the community decides
+deployment ([Data Stewardship](/docs/network/sovereignty/data-sovereignty)).
+
+**First actions (MT engine or pipeline):** pick your pairs from the
+[evaluation datasets](/docs/network/leaderboard/datasets) and the
+[leaderboard](/leaderboard); `pipx install mt-eval-harness` and follow
+[Submit a Method](/docs/network/getting-started/submit-a-method); if your
+engine isn't reachable through OpenRouter, implement the
+[TranslationMethod protocol](/docs/network/specifications/methods#eval-harness-translationmethod-protocol)
+or expose it as a small API service
+([guide](/docs/guides/serving-a-method)); then run and publish — community
+submissions publish at the self-benchmarked trust tier, clearly labeled,
+under the [leaderboard rules](/docs/network/leaderboard/rules).
+
+**If you sell human translation:** where no machine is reliable for a pair,
+the site says so plainly and shows consent-gated human providers instead —
+read the [human services lane](/human-services), then request a listing by
+email ([info@champollion.dev](mailto:info@champollion.dev)) stating the pair
+and variety you cover, your terms, and a consent confirmation. Your contact
+details are never published without consent. Human translation is also a
+method here like any other — some teams benchmark their post-editing
+pipelines to show buyers the delta over raw MT.
+
+## Researchers \{#researchers}
+
+The most expensive way to bring machine translation to a low-resource
+language is the way the field usually tries: build a training corpus. That
+means hundreds of thousands of sentence pairs — far too many for anyone to
+check — so quality varies in ways nobody can see, and the failure surfaces
+only at the end, when a model trained on those pairs gets wrong exactly what
+the data got wrong. Months of collection work can produce a corpus you
+cannot fully trust and a model you cannot ship.
+
+An evaluation set inverts those economics. A development and held-out test
+set for the same language is on the order of a **thousand** pairs — small
+enough that professional curation is actually possible, every pair checked
+by someone who knows the language. Seven hundred thousand pairs you can't
+verify, or a thousand you can: the eval set is the one deliverable where a
+researcher's judgment reaches every sentence. And unlike a training corpus,
+it doesn't go stale — every new model, engine, or method that appears can be
+measured against it, indefinitely.
+
+This is the bet the whole project is built on — the **generational-pair
+thesis**: build the evaluation standard and the incentive, and the community
+builds the working solution. You curate the thousand pairs. A prize posted
+against your held-out set makes the language a target any method builder can
+aim at. The leaderboard measures every attempt in public. One generation of
+careful curation opens open-ended competition on everything else.
+[Corpus Partnership](/docs/network/specifications/corpus-partnership) is the
+working document for exactly this — corpus sizes, workflow, speaker payment —
+and the [Prize Specification](/docs/network/specifications/prizes) is the
+incentive half.
+
+The measuring tools are ready today. `pipx install mt-eval-harness` gets you the
+[eval harness](/docs/network/specifications/harness): deterministic scoring,
+fingerprinted [run cards](/docs/network/specifications/run-card), paired
+bootstrap [significance](/docs/network/specifications/significance), and a
+publish path to the leaderboard. The
+[scoring spec](/docs/network/specifications/scoring) documents every metric
+with its validation status — externally validated, proxy-validated, or
+engineering heuristic — and keeps the composite deterministic; neural
+metrics report in a separate lane, never silently folded in. Standard
+metrics ride on sacreBLEU and COMET/AfriCOMET, extended with structural
+checks (FST validity) that surface what character-overlap metrics miss in
+polysynthetic languages. The harness is open-source AGPL-3.0; the CLI is
+PolyForm Noncommercial 1.0.0 — source-available, free for noncommercial use.
+
+Behind the tools sit the registries.
+**<SSOTCount field="registryDatasetCount" /> evaluation datasets**, each a
+sha-pinned, fetch-from-source metadata card, catalogued in
+[Evaluation Datasets](/docs/network/leaderboard/datasets);
+**<SSOTCount field="catalogLanguageCount" /> language cards** where
+[every field names its source](/docs/reference/language-card-spec) and
+disagreeing sources are all shown
+([correction procedure](/docs/reference/language-card-citation-procedure));
+a license rollup of
+**<SSOTCount field="licensedSourceCount" /> registered upstream sources**,
+with non-commercial corpora carved out of any commercial, prize, or API lane
+by construction. Contamination is a first-class property: public benchmarks
+presumed seen by frontier models run in a **relative-only lane**, fresh
+community corpora are sealed and segmented with hash manifests
+([corpus partnership §4](/docs/network/specifications/corpus-partnership#4-cryptographic-sealing-and-sandbox-testing)),
+and communities can hold sovereign benchmarks we never see. The threat model
+is stated in the
+[corpus design framework](/docs/network/specifications/corpus-design).
+
+Three ways in, by what you want to build. A **corpus**: start from the
+eval-first path above — [Corpus Partnership](/docs/network/specifications/corpus-partnership)
+end to end, budgeting paid speaker time from day one. A **method**:
+implement the
+[TranslationMethod protocol](/docs/network/specifications/methods) and follow
+[Submit a Method](/docs/network/getting-started/submit-a-method) — about 15
+minutes with an OpenRouter key. A **metric**: propose it through the
+harness's plugin surface (issue or PR on the
+[repository](https://github.com/gamedaysuits/Champollion); the bar for
+entering the composite is in the scoring spec). Whichever door, read
+[Honest Limitations](/docs/network/honest-limitations) first — including
+that community speaker-validation of the metrics has not happened yet — and
+the [microeval methodology](/docs/network/context/microeval-methodology) and
+[MT evaluation landscape](/docs/network/context/mt-evaluation-landscape)
+before designing anything.
+
+**Citing Champollion:** there is no Champollion paper yet — please don't cite
+one. Cite the repository and the specific versioned specification or
+sha-pinned dataset card you used:
+
+```bibtex
+@software{champollion,
+  author  = {Forbes, Curtis},
+  title   = {Champollion: open evaluation infrastructure for machine
+             translation in low-resource languages},
+  url     = {https://github.com/gamedaysuits/Champollion},
+  year    = {2026},
+  note    = {Specifications at https://champollion.dev/docs/network}
+}
+```
+
+If you use an upstream corpus through our registry, **cite the corpus's own
+creators** — the dataset card carries the upstream attribution and license.
+
+## Funders & sponsors \{#funders}
+
+**Champollion is non-commercial.** Sponsorship funds corpus building, tools,
+and community work — **100% pass-through, publicly accounted, none of it to
+Champollion**: no overhead percentage, no revenue share, no claim on
+community assets. Money in becomes paid language work out — it goes to
+speakers, corpus builders, and prize winners — and infrastructure costs are
+currently carried by the founder
+([How the Work Is Funded](/docs/network/sovereignty/economic-model)).
+
+The honest starting point: everything here describes mechanisms that are
+**specified and ready, not programs already running at scale.** There are no
+grants or sponsors yet, the leaderboard is live and still early, and the prize mechanism
+is a [proposed specification](/docs/network/specifications/prizes) — no prize
+is open today. What a funder gets from that honesty: published unit costs, a
+claims ledger, and specifications you can hold us to.
+
+**Lane 1 — corpus sponsorship.** The scarcest asset in low-resource MT is a
+trustworthy test set, and the costs are published:
+
+| What a dollar buys | Published cost | Where it goes |
+|--------------------|---------------|----------------|
+| A benchmark corpus for one language (50–150 curated entries) | $2,500–6,000 CAD | Bilingual speaker time at $50–65/hr — the largest line item, deliberately |
+| A metric-validation round (three speakers checking the automated metrics against human judgment) | $1,475–1,920 CAD | Paid speaker review tasks |
+| Method-output review | $500–1,500 CAD | Same published hourly rates |
+| Full language onboarding, all-in | $3,350–8,500 CAD | See [Benchmark Specification §10](/docs/network/specifications/benchmark) |
+
+The asset outlives the grant: the corpus belongs to its builders/stewards,
+not to Champollion — registered as metadata,
+[content never hosted](/docs/network/sovereignty/registering-corpora), under
+the steward's license and lane choices. For academic funders, the
+[Corpus Partnership Strategy](/docs/network/specifications/corpus-partnership)
+is the department-shaped version of this lane.
+
+**Lane 2 — prize sponsorship.** An achievement prize funds a **result, not
+an attempt**: money is released only when a method demonstrably clears a
+defined, method-neutral bar, with paid community speaker review part of every
+claim. Per the [Prize Specification](/docs/network/specifications/prizes),
+funds are **sponsor-held** — they stay with the sponsoring organization, or
+with a community trust or third-party escrow that the sponsor designates, and
+**never with Champollion**, which coordinates measurement and touches no
+money. **No prize funds are held anywhere today.** If nobody clears the bar,
+nobody is paid; an expired prize stays with the sponsor, to be redirected or
+withdrawn at their discretion.
+Winning methods transfer to community ownership under the prize's terms.
+
+What a funder can measure: corpora built and registered under steward
+control; paid speaker-hours delivered to language communities; language pairs
+covered by trustworthy public benchmarks; methods measured and, where prize
+terms say so, transferred to community ownership.
+
+**First actions:** read
+[How the Work Is Funded](/docs/network/sovereignty/economic-model) (ten
+minutes, the full model); pick a lane on
+[Get Involved — sponsors](/get-involved#sponsors) — corpus work, a prize, or
+compute/API credits for the [public benchmark queue](/contribute); then talk
+to us at [info@champollion.dev](mailto:info@champollion.dev) or on the
+[public repository](https://github.com/gamedaysuits/Champollion/issues).
+We'll answer with specifics, including the parts that aren't built yet.
+
+## Press & media \{#press}
+
+Champollion is a non-commercial research project building trustworthy
+machine-translation evaluation for every language — source-available and free
+for noncommercial use, with an open-source evaluation harness and registries —
+infrastructure for answering one question honestly: *how good is machine
+translation for this language, really?* It publishes the test-set registry,
+the scoring rules, the harness that runs them, and a public leaderboard and
+map showing who can translate what and how well — every method welcome,
+human and machine, judged by the same open rules. Where communities hold the
+language data, they hold the keys.
+
+What Champollion is **not**: not commercial (no product, no paid API, no
+metering, no revenue share, no venture funding —
+[self-funded by its founder](/docs/network/sovereignty/economic-model)); not
+a data harvester (corpus content is **never hosted**; the registry holds
+sha-pinned metadata cards, and community corpora remain the steward's
+property outright); not an AI translation product (Champollion measures
+translation quality; the companion CLI is a developer tool); and not finished
+— the leaderboard is live but young, community programs are being established, and
+we would rather be quoted accurately as early-stage than generously as
+further along.
+
+Key facts (each traces to an in-repo source; the project keeps a public
+claims ledger):
+
+| Fact | Source |
+|------|--------|
+| <SSOTCount field="catalogLanguageCount" /> language cards in the cited index | `cli/shared/language-cards/` (one card per language, counted at build time), shown at [/languages](/languages) |
+| <SSOTCount field="registryDatasetCount" /> evaluation datasets registered — metadata cards only, corpus content never hosted | `arena/datasets/registry.json` (counted at build time); see [Evaluation Datasets](/docs/network/leaderboard/datasets) |
+| <SSOTCount field="licensedSourceCount" /> licensed upstream sources for the language index | `shared/licenses.json` (counted at build time) |
+| 160+ sign languages catalogued — marked "not yet served — never 'not a language'" | [What counts as a language here?](/docs/network/context/what-counts-as-a-language) |
+| Standard metrics ride on sacreBLEU (chrF++, BLEU, TER) and COMET/AfriCOMET, plus structural FST checks; neural metrics reported in a separate lane | [Scoring Specification](/docs/network/specifications/scoring) |
+| Published speaker pay: $50–65 CAD/hour, unconditional, payment within two weeks | [How Speakers Get Paid](/docs/network/perspectives/how-speakers-get-paid) |
+| Code licenses: CLI PolyForm Noncommercial 1.0.0 (source-available, free for noncommercial use), eval harness AGPL-3.0 (open source) | project repositories |
+| Founded and self-funded by Curtis Forbes; no grants or sponsors yet | [How the Work Is Funded](/docs/network/sovereignty/economic-model) |
+
+Boilerplate:
+
+> Champollion is a non-commercial research project building trustworthy
+> machine-translation evaluation for every language — source-available and
+> free for noncommercial use, with an open-source evaluation harness and
+> shared registries. It maintains
+> a cited index of <SSOTCount field="catalogLanguageCount" /> languages, a
+> registry of <SSOTCount field="registryDatasetCount" /> evaluation datasets
+> (corpus content is never hosted), and an open harness and leaderboard where
+> any translation method — machine or human — is scored under the same
+> published rules. Built with language communities, never scraped from them:
+> communities own their data, their test sets, and any method transferred to
+> them. Champollion was founded by Curtis Forbes and is at champollion.dev.
+
+**Contact:** Curtis Forbes, founder —
+[info@champollion.dev](mailto:info@champollion.dev) —
+[github.com/gamedaysuits/Champollion](https://github.com/gamedaysuits/Champollion).
+We answer critical questions the same way we answer friendly ones; if you're
+fact-checking a claim on this site,
+[Honest Limitations](/docs/network/honest-limitations) is the right starting
+point — it exists so that nobody has to take our word for anything.
+
+## See Also
+
+- [How the Network Works](/docs/network/how-it-works) — the whole system in one page
+- [Data Stewardship](/docs/network/sovereignty/data-sovereignty) — the sovereignty position (Indigenous data-sovereignty principles, CARE)
+- [Ownership & Terms](/docs/network/sovereignty/ownership-transfer) — what "community-owned" means contractually
+- [On the Name](/docs/the-name) — why "Champollion"

@@ -1,0 +1,322 @@
+{
+  "code": "egy-EG",
+  "name": {
+    "agreement": "single",
+    "consensus": "Egyptian (Ancient)",
+    "values": [
+      {
+        "value": "Egyptian (Ancient)",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "afro1255",
+      "egyp1245"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Afro-Asiatic",
+      "values": [
+        {
+          "value": "Afro-Asiatic",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "afro1255"
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "egy-Egyp-EG",
+    "values": [
+      {
+        "value": "egy-Egyp-EG",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "egy-Egyp-EG",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"egy\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "egy",
+    "values": [
+      {
+        "value": "egy",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "countries": [
+    "EG"
+  ],
+  "dialectCount": 5,
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "extinct",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Egyptian (Ancient) (egy-egy) = 10 (Extinct).",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "multiple-assessments",
+    "values": [
+      {
+        "value": "r n km.t",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "egy",
+        "variantType": "language",
+        "note": "label language: egy"
+      },
+      {
+        "value": "𓂋𓏤𓈖𓆎𓅓𓏏𓊖",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "egy",
+        "variantType": "language",
+        "note": "label language: egy"
+      }
+    ]
+  },
+  "glottocode": "egyp1246",
+  "isIsolate": false,
+  "isoLanguageType": "Historical",
+  "isoScope": "Individual",
+  "resources": {
+    "keyboards": [
+      {
+        "name": "Hieroglyphic",
+        "keyboardId": "hieroglyphic",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/h/hieroglyphic",
+        "publisher": "keyman",
+        "version": "1.4.1",
+        "lastModified": "2023-11-30"
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Egyptian-PC",
+        "sentences": 3089,
+        "tokens": 32796,
+        "words": 34234,
+        "release": "2.18"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "documentation": {
+    "lastDocumented": -3000,
+    "medLevel": "long grammar",
+    "medSourceId": "598558"
+  },
+  "coordinates": {
+    "lat": 28.381735,
+    "lng": 30.834959
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "datsemshift",
+        "forms": 20,
+        "concepts": 19,
+        "release": "datsemshift-v1.1rc"
+      }
+    ]
+  },
+  "macroarea": "Africa",
+  "methodSupport": {
+    "total": 6,
+    "byTier": {
+      "model-card-declared": 6
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:bumblelbee/hiero-m2m100-conservative",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bumblelbee/hiero-m2m100-doc-clean",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bumblelbee/hiero-m2m100-hybrid",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bumblelbee/hiero-m2m100-script-reproduction",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bumblelbee/hiero-mbart50",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:bumblelbee/nllb-600m-ancient-egyptian-hieroglyphics",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 26,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.lastDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "egy-EG",
+    "revision": "5b05fa220b3fd75b",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.lastDocumented",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.keyboards",
+      "resources.treebanks",
+      "resources.typology"
+    ]
+  },
+  "locale": {
+    "language": "egy",
+    "region": "EG",
+    "script": "Egyp",
+    "publishedTag": "egy-EG",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Egyp"
+}

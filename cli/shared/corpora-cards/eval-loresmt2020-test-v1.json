@@ -1,0 +1,129 @@
+{
+  "id": "eval-loresmt2020-test-v1",
+  "type": "multiway",
+  "name": "LoResMT 2020 — shared task (test)",
+  "version": "1.0",
+  "languages": [
+    "bho",
+    "hin",
+    "mag",
+    "rus"
+  ],
+  "description": "LoResMT 2020 Shared Task test sets — Hindi ↔ Bhojpuri, Hindi ↔ Magahi, and Hindi ↔ Russian (per-direction test files; bho→hi is 218 sentences, the rest 500). Fetched on demand from the shared-task repo at a pinned commit; Champollion never hosts the content. Upstream does not document the test-set domain (labelled 'conv' with that caveat). Contamination HIGH — public since 2020 — so scores are relative-comparison-only. License CC BY-NC-SA 4.0 → non-commercial lanes only; cleared by the license review of 2026-08-24 into the NC research lane: benchmarkable; never in a commercial, prize, or API lane; remote evaluation only over no-train channels.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "conv",
+    "explicitPairs": [
+      {
+        "source": "hin",
+        "target": "bho",
+        "srcCode": "hi",
+        "tgtCode": "bho",
+        "size": 500,
+        "sha256": "f5da0bc2f895fc58d0eab754bcd470e8a1049994bb605f5a7690829074a73a98"
+      },
+      {
+        "source": "bho",
+        "target": "hin",
+        "srcCode": "bho",
+        "tgtCode": "hi",
+        "size": 218,
+        "sha256": "b4f8783384d72d603d1ce4d87bb59e6a670f61246dcc06413e8375cc0816ba91"
+      },
+      {
+        "source": "hin",
+        "target": "mag",
+        "srcCode": "hi",
+        "tgtCode": "mag",
+        "size": 500,
+        "sha256": "2ca2d9fd5e26487f5bf5e9f180ce1059bf124247477e517f8250187fd756edae"
+      },
+      {
+        "source": "mag",
+        "target": "hin",
+        "srcCode": "mag",
+        "tgtCode": "hi",
+        "size": 500,
+        "sha256": "e5797c80954b589bbc3decbeac4edf3781810149a68199a4292db20890591485"
+      },
+      {
+        "source": "hin",
+        "target": "rus",
+        "srcCode": "hi",
+        "tgtCode": "ru",
+        "size": 500,
+        "sha256": "5ee12259faecd5193a6e52cc4006c5ec860c8d43ed535d097c52f45b7cb2209e"
+      },
+      {
+        "source": "rus",
+        "target": "hin",
+        "srcCode": "ru",
+        "tgtCode": "hi",
+        "size": 500,
+        "sha256": "541d664b1476c0f644f146cc4400e0e632e2b87f855b056918a3da1ca88fe2f0",
+        "srcMember": "rui2hi.test.ru",
+        "tgtMember": "ru2hi.test.hi"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "LoResMT 2020 test",
+      "size": 2718,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out shared-task test set (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/loresmt/loresmt-2020",
+    "instructions": "Root-level {src}2{tgt}.test.{code} files fetched from the pinned commit (immutable), line-parallel two-file pairing. The ru→hi source file is 'rui2hi.test.ru' (upstream typo, pinned explicitly).",
+    "sha256": null,
+    "revision": "91d66c2b38d700f9e24609f14dfa103ccafddfe1",
+    "filePattern": "{src_code}2{tgt_code}.test.{lang_code}",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "LoResMT Workshop (shared-task organizers)",
+    "url": "https://github.com/loresmt/loresmt-2020",
+    "paper": null,
+    "citation": "LoResMT 2020 Shared Task on zero-shot / low-resource MT (Ojha et al., 2020), 3rd Workshop on Technologies for MT of Low Resource Languages. Monolingual data credited to Panlingua and PMIndia per the repo README.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-NC-SA-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out shared-task test set; not licensed for training. doNotTrain protects benchmark integrity.",
+    "notes": "LICENSE at the pinned commit: 'The LoResMT-2020 Shared Task data is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License' (stated identically in LICENSE, license.md, license.txt). NC → non-commercial lanes only. Champollion never hosts the content."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out shared-task benchmark: training on it defeats its purpose. CC BY-NC-SA 4.0 → kept out of every commercial / prize / API lane. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "LoResMT 2020 test sets — public since 2020. Scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "cleared",
+    "lane": "nc-research",
+    "basis": "CC BY-NC-SA 4.0, stated and verified at the pinned revision. Plain standard SPDX non-commercial license: benchmarkable; excluded from every commercial, prize, and API lane; remote evaluation only over channels that do not train on inputs (transmission_policy no-train lane)."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/loresmt/loresmt-2020 at commit 91d66c2b38d7; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/loresmt2020.json.",
+    "pinnedPairs": 6
+  }
+}

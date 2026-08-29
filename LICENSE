@@ -1,0 +1,123 @@
+Champollion — Licensing Overview
+================================
+
+Champollion is source-available infrastructure — free for noncommercial use,
+with open-source components — organized as a monorepo of separately licensed
+components. There is no single repository-wide license: each component is
+governed by the LICENSE file in its own directory, which is authoritative.
+This file is a pointer/summary only — where it disagrees with a component's own
+LICENSE, that component's LICENSE controls.
+
+The shape of the split (founder decision, 2026-08-17): the PRODUCT lanes (the
+CLI, the training forge, the MCP server) are PolyForm Noncommercial — free for
+research, education, and community use; commercial use requires permission.
+The PROTOCOL-and-verifiability lanes (the eval harness, the shared registries,
+the database machinery) stay open-source (AGPL / Apache-2.0) so the evaluation
+standard can spread and the sovereignty machinery can be inspected by anyone.
+Commercial licenses for the noncommercial components can be granted
+case-by-case by the copyright holder.
+
+Per-component licenses
+----------------------
+
+  cli/            PolyForm Noncommercial License 1.0.0
+                  SPDX: PolyForm-Noncommercial-1.0.0. See cli/LICENSE. Authoritative for the published `champollion`
+                  npm package. Free for noncommercial use; commercial use
+                  requires the licensor's permission. (Relicensed from
+                  Apache-2.0 on 2026-08-17, before any publication — no
+                  release ever shipped under the old license.)
+
+  mcp-server/     PolyForm Noncommercial License 1.0.0
+                  SPDX: PolyForm-Noncommercial-1.0.0. See mcp-server/LICENSE. Covers the published
+                  `@champollion/mcp-server` npm package. Same relicensing note
+                  as cli/.
+
+  arena/          GNU Affero General Public License v3.0 or later, WITH a §7
+                  Eval-Standard Plugin additional-permission exception.
+                  See arena/LICENSE and arena/LICENSE-EXCEPTION.md. Covers the
+                  published `mt-eval` PyPI package.
+
+  forge/          PolyForm Noncommercial License 1.0.0
+                  SPDX: PolyForm-Noncommercial-1.0.0. See forge/LICENSE and
+                  forge/pyproject.toml. The nmt-forge
+                  NMT model-training suite — a product lane, relicensed from
+                  AGPL-3.0-or-later on 2026-08-17 before any publication
+                  (supersedes the F3 AGPL decision of 2026-07-20; nothing ever
+                  shipped under it). It consumes the harness for all scoring
+                  and implements no metrics of its own. Contains no corpus
+                  content.
+
+  lyss/           Champollion-LYSS Interim License — use by permission only
+                  (SPDX: LicenseRef-Champollion-Interim-Permission-Required).
+                  See lyss/LICENSE and lyss/NOTICE. Source-available, not OSI:
+                  permission is ordinarily granted without charge for
+                  noncommercial research, education, and community-benefit use;
+                  no commercial use is permitted pending consultation with the
+                  nêhiyaw language community. Kept in its own repository as a
+                  license boundary; developed here under lyss/.
+
+  shared/         Apache License, Version 2.0
+                  See shared/LICENSE. Cross-runtime SSOT data (model aliases,
+                  method registry, license register), also distributed bundled
+                  inside the `champollion` npm package; read at runtime by the
+                  AGPL harness as well.
+
+  mt-eval-arena/  Apache License, Version 2.0
+                  See mt-eval-arena/LICENSE. Database/migration infrastructure
+                  (Supabase migrations plus build/upload scripts), included in
+                  the public tree so the quarantine, integrity, and sovereignty
+                  machinery is publicly verifiable. Third-party DATA it
+                  references is not redistributed here and remains under its
+                  upstream licenses, as recorded in shared/licenses.json.
+
+  arena/scripts/corpora-builder/
+                  PROPRIETARY — all rights reserved. No license is granted.
+                  SPDX: LicenseRef-Champollion-Proprietary. See
+                  arena/scripts/corpora-builder/LICENSE. Internal corpus-
+                  construction tooling; not published to PyPI, not bundled into
+                  the `mt-eval` wheel, not in the public squash.
+                  (Resolved 2026-08-01. It formerly declared Apache-2.0 while
+                  setuptools packed it into the AGPL-3.0-or-later `mt-eval`
+                  distribution, which shipped only arena's AGPL text — two
+                  incompatible statements over one body of code.)
+
+  research/cchrf/
+                  MIT License. See research/cchrf/LICENSE. The cchrF++
+                  chance-floor study (paper + floor atlas), folded from the
+                  sibling champollion-cchrf checkout 2026-08-09. Private:
+                  excluded from the public squash until the paper publishes;
+                  the MIT grant is authored for its eventual standalone
+                  release.
+
+  research/afri-calibration/
+                  MIT License. See research/afri-calibration/LICENSE. The L3
+                  African-cluster calibration pilot, folded 2026-08-09.
+                  Private: excluded from the public squash. Committed
+                  aggregates only; the SSA-MTE data it analyses is
+                  fetch-from-source and never tracked.
+
+  research/w2-irt/, research/crk-paper/
+                  No license file yet — founder to stamp (flagged in the
+                  2026-08-09 fold commits). Private and squash-excluded, so
+                  no statement reaches any distribution channel meanwhile.
+
+Not in this repository
+----------------------
+
+  crk-translate   The Plains Cree (nêhiyawêwin) translation pipeline was
+                  extracted to its own repository (2026-06-23) and is no longer
+                  part of this tree.
+
+Third-party components and data
+-------------------------------
+
+Champollion interoperates with third-party tools, models, and datasets under
+their own licenses, and honors every obligation each imposes (attribution,
+share-alike, non-commercial, no-redistribution). In particular: AGPL components
+(for example the GiellaLT/ALTLab Plains Cree FST) are invoked as separate tools
+and are never bundled into or linked from the CLI code paths, whatever the
+CLI's own license; non-commercial or no-redistribution corpus content is never
+tracked in this repository — corpora are fetched from their upstream sources,
+with metadata cards only.
+
+Copyright © 2026 Curtis Forbes (Champollion) and contributors.

@@ -1,0 +1,146 @@
+---
+title: "The Arena"
+description: "The Arena is de plek waar metingen plaatsvinden: de poort waardoor u een resultaat indient, het register dat het bijhoudt, en het wedstrijdmechanisme dat op beide is gebouwd. Wat het is, wat het aanstuurt en waar u in beeld komt."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Aantallen worden weergegeven via SSOTCount (build-time reads van de machine SSOTs via docusaurus.config.js customFields) — nooit handmatig getypt, volgens de SSOT-weergavestandaard. De live status van het bord wordt hier opzettelijk NIET vermeld: er wordt naar gelinkt. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Arena
+
+**The Arena is waar de meting plaatsvindt.** Het is de deur waardoor u een resultaat indient, het grootboek dat het resultaat bewaart, en het wedstrijdmechanisme dat op beide is gebouwd.
+
+Het is infrastructuur, geen scorebord en geen kaart. Drie dingen zijn gemakkelijk door elkaar te halen, dus het is de moeite waard om ze eenmalig en duidelijk van elkaar te scheiden:
+
+| | Wat het is | Waar het draait |
+|---|---|---|
+| **The [MT-Eval Harness](/docs/network/specifications/harness)** | De beoordelaar. Gegeven een methode en een testset, produceert het een getal en een run card. | **Uw machine.** Wij draaien uw methode niet voor u, en dat is ook niet nodig. |
+| **The Arena** | De inzendingsdeur, het run-card grootboek, en het wedstrijd- en prijzenmechanisme. | Hier. |
+| **The [Network](/docs/network/)** | De kaart die ontstaat zodra er genoeg run cards bestaan — wie wat kan vertalen, hoe sterk, en waar de lege ruimte is. Routing doorkruist dit. | Een gevolg, geen component. |
+
+Niets komt het Network binnen behalve via de Arena, en niets komt de Arena binnen behalve als een gescoorde run met een vingerafdruk. Dat is het volledige ontwerp: een meting zonder herkomst kan geen deel uitmaken van de kaart.
+
+---
+
+## Waaruit de Arena bestaat
+
+**Een deur.** Iedereen kan indienen — een fine-tuned model, een geprompt frontier model, een FST-gated pipeline, een regelgebaseerd systeem, een professionele menselijke vertaler. De methode is irrelevant voor het proces; alleen de procedure staat vast. Twee verschillende deuren, afhankelijk van wat u heeft: [publiceer een run card](/docs/network/getting-started/submit-a-method) als u al iets heeft gescoord, of [stel een invoer voor](/docs/network/getting-started/submit-to-the-index) als u een dataset, een woordenboek, een engine, een vertaaldienst, een extern gepubliceerd resultaat, of een correctie op een language card heeft. Voorstellen worden gelezen door een persoon, niet door een robot, en niets wordt automatisch goedgekeurd.
+
+**Een grootboek.** Elke gepubliceerde run is een run card: de scores, de dataset hash, de model slug, de conditie, en een vingerafdruk van dit alles. Twee personen die dezelfde configuratie draaien is by design onschadelijk — identieke runs worden gededupliceerd bij publicatie, en onafhankelijke replicatie is bewijs in plaats van verspilling. De [Run Card Specification](/docs/network/specifications/run-card) definieert wat een card moet onthullen; de [Benchmark Specification](/docs/network/specifications/benchmark) definieert het protocol dat er een produceert.
+
+**Een set doelen.** <SSOTCount field="registryDatasetCount" /> evaluatiedatasets zijn geregistreerd. Elk daarvan is een metadata card plus een fetch-from-source pointer — **de corpusinhoud wordt hier nooit gehost**. De harness haalt de referenties tijdens runtime upstream op en scoort tegen wat het zojuist heeft opgehaald.
+
+Geregistreerd is niet hetzelfde als overal uitvoerbaar, en dit verschil is opzettelijk. Enkele honderden van deze invoeren hebben een gewijzigde, op maat gemaakte of onvermelde licentie, en deze **weigeren evaluatie op afstand** totdat de rechthebbende een expliciete toestemming voor overdracht heeft vastgelegd — geen enkele agent kan dit namens hen toevoegen. Ze blijven lokaal uitvoerbaar, en tegen no-train kanalen waar de licentie dit toestaat. Zie [Evaluation Datasets](/docs/network/leaderboard/datasets) en [Data Stewardship](/docs/network/sovereignty/data-sovereignty).
+
+**Wedstrijdmechanisme.** Boven een enkele run bevindt zich de rest: [gedeelde taken en wedstrijden](/shared-tasks), de [openbare wachtrij](/docs/network/getting-started/contributing-compute) van metingen die de kaart het meest zouden verbeteren, en de specificatie voor [wat een prijs zou vereisen](/docs/network/specifications/prizes) als er een wordt geopend. Een gemeenschap kan haar eigen wedstrijd organiseren op haar eigen corpus met haar eigen geld — [Champollion beheert geen van beide](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## De regels die hier overal gelden
+
+Dit zijn de invarianten. Elk daarvan heeft een pagina die de details bevat.
+
+**Train niet op evaluatiedata.** Elke methode die is blootgesteld aan een benchmarkset — als trainingsdata, few-shot voorbeelden, woordenboekinvoeren of promptmateriaal — wordt gediskwalificeerd. Fine-tune op wat u maar wilt; alleen niet op de testset. Dit is de enige regel waarvan het hele systeem het niet kan overleven als deze wordt overtreden, omdat een besmette score elke vergelijking stroomafwaarts vergiftigt.
+([Leaderboard rules](/docs/network/leaderboard/rules))
+
+**Elk getal draagt zijn herkomst of het telt niet mee.** Een run card benoemt de datasetversie, het model, de conditie, de systeemprompt en de kosten. Scores zijn alleen vergelijkbaar binnen dezelfde datasetversie, en de vingerafdruk is wat dit controleerbaar maakt in plaats van slechts een bewering.
+([Benchmark Spec](/docs/network/specifications/benchmark))
+
+**Wij bewaren nooit uw corpus.** Registratie is metadata. Er wordt tegen een testset gescoord zonder dat deze wordt overgedragen, en in de sovereign lane verlaat deze de infrastructuur van de gemeenschap helemaal nooit — alleen de score reist.
+([Registering Corpora](/docs/network/sovereignty/registering-corpora))
+
+**Licentiebanen zijn structureel, niet redactioneel.** Niet-commerciële en uitsluitend voor onderzoek bestemde corpora zijn by construction uitgesloten van elke prijs, API en commercieel pad. Corpora onder gewijzigde, op maat gemaakte of onvermelde licenties zijn bovendien consent-gated: de harness weigert hun tekst naar een third-party model API te verzenden totdat de toestemming van de rechthebbende is vastgelegd.
+([Data Stewardship](/docs/network/sovereignty/data-sovereignty))
+
+**Een score is een machinesignaal, geen oordeel.** Geautomatiseerde metrieken zijn proxy's voor menselijk oordeel, en het [Speaker Validation Protocol](/docs/network/specifications/speaker-validation) definieert de menselijke poort waarvoor zij een proxy *zijn*. Een positie op het leaderboard bewijst dat een methode goed meet. Het bewijst niet dat de vertaling goed is, en het verleent niemand toestemming om deze in te zetten op de taal van een gemeenschap.
+
+**Winnen is niet de eindstatus.** Voor inheemse talen is het ontwerp dat een werkende methode wordt overgedragen aan de bestuursorganisatie van de gemeenschap en wordt ingezet op infrastructuur die de gemeenschap beheert, waarbij Champollion geen deel neemt van wat het daar verdient.
+([The derived-artifacts commitment](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Waar u in beeld komt
+
+Kies de rij die overeenkomt met wat u al heeft.
+
+| U heeft… | Doe dit | Begin bij |
+|---|---|---|
+| Een methode en een API-sleutel | Draai de harness tegen een geregistreerd corpus en publiceer de run card | [Submit a Method](/docs/network/getting-started/submit-a-method) |
+| Iets wat in de index ontbreekt — een dataset, woordenboek, FST, engine, menselijke vertaaldienst, gepubliceerd resultaat, of een card-correctie | Dien het gestructureerde voorstel in; een maintainer beoordeelt het handmatig | [Submit to the Index](/docs/network/getting-started/submit-to-the-index) |
+| Overtollig API-tegoed en geen eigen methode | Draai openstaande items uit de openbare wachtrij met uw eigen sleutel en publiceer wat terugkomt | [Contributing Compute](/docs/network/getting-started/contributing-compute) |
+| Een corpus dat eigendom is van uw gemeenschap | Registreer het als metadata en kies de blootstellingsbaan — open, gated, of volledig sovereign | [Registering Corpora](/docs/network/sovereignty/registering-corpora) |
+| Een corpus en een reden om er een competitie op te houden | Organiseer het zelf, op uw voorwaarden; wij beheren noch de data noch het geld | [Run a Sovereign Contest](/docs/network/sovereignty/run-a-sovereign-contest) |
+| Een methode die al goed scoort | Exporteer het als een plugin en neem het in productie | [Deploy to Production](/docs/network/getting-started/deploy-to-production) |
+| Eerst een vraag | Scoren, diskwalificatie, modellen, FST's, soevereiniteit | [FAQ](/docs/network/getting-started/faq) |
+
+Als u een AI-agent bent, zijn de wachtrij, de resultaten en de run cards allemaal beschikbaar als tools — zie de [MCP Server](/docs/network/getting-started/mcp-server).
+
+---
+
+## Wat er vandaag daadwerkelijk draait
+
+The Arena bevindt zich in de lanceringsfase, en de eerlijke beschrijving ervan is kort.
+
+- **Het bord is live, openbaar en open voor inzendingen.** De
+  huidige inhoud bestaat uit live data, dus deze pagina vertelt u niet wat erop staat —
+  [lees het leaderboard](/leaderboard).
+- **"Self-reported" is het standaard vertrouwensniveau.** Server-side verificatie —
+  het opnieuw scoren van een inzending tegen het SHA-pinned canonieke corpus — bestaat en
+  breidt zich uit, maar is niet universeel. Lees de badge op elke rij.
+- **Er staat geen prijs open, en geen enkele score op deze site heeft een prijzenlimiet gehaald.** De
+  [Prize Specification](/docs/network/specifications/prizes) is zo geschreven dat
+  de limiet ondubbelzinnig is *indien en wanneer* er een wordt geopend. Prijzen worden door sponsors gefinancierd en
+  door sponsors beheerd; Champollion beheert, bewaart of routeert nooit prijzengelden.
+- **Er is geen beoordeling door sprekers uit de gemeenschap uitgevoerd.** De poort is gespecificeerd en
+  de tooling is in aanbouw. Composite en chrF++ getallen zijn machinesignalen,
+  geen oordeel van de gemeenschap.
+- **Er is nog geen methode overgedragen aan een gemeenschap.** Het model voor eigendomsoverdracht
+  is een vastgelegd ontwerp, geen lopend programma. Het wordt beschreven zodat u ons
+  eraan kunt houden, niet om te suggereren dat het al in gang is gezet.
+- **Sleutelbeheer is besloten; de beheerders nog niet.** Het mechanisme is een
+  drempelschema waarin Champollion nul sleutelaandelen bezit. De beheerders worden
+  gekozen door de gemeenschappen, en die gesprekken zijn gaande — dus we zeggen
+  **community key custodians (in confirmation)**.
+
+Het volledige overzicht van wat dit project *niet* claimt is [Honest Limitations](/docs/network/honest-limitations). Als iets op deze pagina meer impliceert dan die pagina toestaat, wint die pagina en is deze een bug.
+
+---
+
+## Lees hierna
+
+- **U wilt vandaag iets indienen** → [Submit a
+  Method](/docs/network/getting-started/submit-a-method), daarna de [Scoring
+  Specification](/docs/network/specifications/scoring).
+- **U wilt weten hoe een resultaat wordt beoordeeld** → [MT Evaluation
+  Rules](/docs/network/leaderboard/rules) en [Statistical
+  Significance](/docs/network/specifications/significance).
+- **U wilt zien waar de metingen toe leiden** → [The
+  Network](/docs/network/).
+- **U beheert een taal en wilt eerst het soevereiniteitsplaatje zien** → [For
+  Language Communities](/docs/network/community/for-language-communities).
+- **U bent nieuw in dit alles** → [What Champollion
+  Is](/docs/what-is-champollion).
+
+Elke taal die op het bord wordt genoemd, verwijst naar zijn card in [the Atlas](/docs/atlas) — classificatie, vitaliteit, en welke evaluatiebronnen ervoor bestaan.

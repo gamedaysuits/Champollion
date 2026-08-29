@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nmt-forge"
+version = "0.1.0"
+description = "NMT training suite that makes catalogued training/eval mistakes structurally hard: group-disjoint splits, dev fencing, leak audits, coverage maps, CIs by default, preregistration."
+readme = "README.md"
+# Same license posture as mt-eval (the harness dist that forge import-links for
+# all scoring), matching its SPDX so the AGPL copyleft is coherent across the
+# two. Public-squash inclusion approved 2026-07-20 (founder).
+license = "PolyForm-Noncommercial-1.0.0"
+requires-python = ">=3.11"
+authors = [
+    { name = "Curtis Forbes" },
+]
+keywords = ["machine-translation", "nmt", "training", "low-resource-languages", "data-synthesis", "evaluation-hygiene"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+dependencies = [
+    # The eval harness is the ONLY scoring engine forge uses (mistake #10 in
+    # the requirements ledger: never re-implement scoring). Until the harness
+    # is on PyPI, install it from the monorepo: `pip install -e ../arena`.
+    # In-monorepo development needs no install at all — nmt_forge._harness
+    # falls back to the sibling arena/ checkout.
+    # PyPI dist renamed mt-eval-harness -> mt-eval on 2026-07-12
+    # (arena/pyproject.toml `name`); the import package stays mt_eval_harness.
+    "mt-eval>=0.1.0",
+]
+
+[project.optional-dependencies]
+# The HF trainer backend. Core forge never imports torch.
+hf = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "peft>=0.10",
+]
+# HFST lookup for FST-backed language packs (the FST model files themselves
+# are AGPL upstream artifacts the USER fetches; forge never bundles them).
+fst = [
+    "pyhfst>=1.4",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+nmt-forge = "nmt_forge.cli:main"
+
+[project.urls]
+Homepage = "https://champollion.dev"
+Repository = "https://github.com/gamedaysuits/Champollion"
+Issues = "https://github.com/gamedaysuits/Champollion/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nmt_forge*"]

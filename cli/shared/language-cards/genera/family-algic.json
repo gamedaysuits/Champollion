@@ -1,0 +1,57 @@
+{
+  "code": "family-algic",
+  "extends": null,
+  "name": "Algic Family",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Algic languages express formality through kinship-based respectful address, ceremonial discourse patterns, and elder-directed speech. There is no European-style T-V pronominal distinction. Respectful language is context-dependent rather than pronoun-driven.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Algic languages use an animacy distinction (animate vs. inanimate noun classes) rather than masculine/feminine grammatical gender. Verbs, demonstratives, quantifiers, and plural markers all agree with the animacy class of their head noun. Animacy assignment is partially arbitrary — some inanimate objects are grammatically animate."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "polysynthesis": "Algic languages are highly polysynthetic. Verbs carry person markers for both subject and object, plus tense, aspect, mode, and derivational morphemes. A single verb form can express what requires a full clause in English. Word-level MT is fundamentally inadequate for these languages.",
+    "animacySystem": "The animate/inanimate noun classification triggers agreement throughout the sentence — verbs, demonstratives, and quantifiers all agree with noun animacy. This binary classification system has no parallel in most target languages. Animacy assignment must be memorized per noun.",
+    "directInverseVoice": "Algic languages use a direct/inverse voice system that marks whether the agent or patient is higher on a person/animacy hierarchy, replacing the active/passive distinction found in European languages. Direct forms are used when the agent outranks the patient; inverse forms when the patient outranks the agent.",
+    "obviation": "Algic languages have a proximate/obviative distinction for third-person referents — when two third-person entities interact, one is marked as 'proximate' (topical) and the other as 'obviative' (secondary). This discourse-tracking system is typologically rare and routinely mishandled by MT.",
+    "headMarking": "Algic languages are predominantly head-marking — grammatical relations are marked on the head of a phrase (the verb) rather than on dependents (nouns). This is the opposite of dependent-marking languages like Latin or Turkish."
+  },
+  "classification": {
+    "family": "Algic",
+    "familyGlottocode": "algi1248",
+    "ancestry": [
+      "Algic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Algic (~50 members). This is the broader family containing Algonquian (Cree, Ojibwe, Blackfoot, Mi'kmaq, etc.) plus Yurok and Wiyot. The existing family-algonquian.json card covers the Algonquian branch specifically. This card replaces a previous family-algonquian.json concept at the top-level family position — Algic is the correct top-level family node.",
+  "regions": [
+    {
+      "country": "North America (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Canada (coast to coast), United States (Great Lakes, Plains, Northeast, Southeast)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

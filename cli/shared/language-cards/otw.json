@@ -1,0 +1,441 @@
+{
+  "code": "otw",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Ottawa",
+    "values": [
+      {
+        "value": "Ottawa",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Ottawa",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "algi1248",
+      "algo1256",
+      "algo1257",
+      "east2765",
+      "ojib1240",
+      "ojib1241"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Algic",
+      "values": [
+        {
+          "value": "Algic",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "algi1248"
+  },
+  "bcp47": "otw",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "otw-Latn-CA",
+    "values": [
+      {
+        "value": "otw-Latn-CA",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "otw-Latn-CA",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"otw\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "otw",
+    "values": [
+      {
+        "value": "otw",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "countries": [
+    "CA",
+    "US"
+  ],
+  "lexicalResources": {
+    "dictionaries": [
+      {
+        "name": "dict-otw-eng",
+        "url": "https://github.com/giellalt/dict-otw-eng",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "eng",
+        "direction": "from"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset": "channumerals",
+        "forms": 80,
+        "concepts": 40,
+        "doculects": 2,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "valpal",
+        "forms": 148,
+        "concepts": 81,
+        "release": "valpal-v1.1"
+      }
+    ]
+  },
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "endangered",
+        "source": "elcat-v2024.1",
+        "note": "Dying out in many areas. Still vigorous on Manitoulin Island. Mainly adults. [Endangerment.Certainty: 0.8]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "severely endangered",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.8]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "threatened",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.2]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "moribund",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Ottawa (4938-otw) = Severely Endangered (80 percent certain, based on the evidence available) [Golla et al. 2008](cldf:golla:goddard:etal:08)",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Severely endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "glottocode": "otta1242",
+  "typologicalProfile": {
+    "hasCoreCase": false,
+    "hasGenderInPronouns": true,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": false,
+    "hasSexBasedGender": false,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "1",
+      "values": [
+        {
+          "value": "1",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": true
+  },
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 44.5988,
+    "lng": -83.226
+  },
+  "macroarea": "North America",
+  "macrolanguage": "oji",
+  "documentation": {
+    "medLevel": "grammar sketch",
+    "medSourceId": "61454"
+  },
+  "methodSupport": {
+    "total": 6,
+    "byTier": {
+      "model-card-declared": 6
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0-LoRA",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-i1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "-5"
+  },
+  "orthographicStatus": "has-orthography",
+  "politenessDistinction": {
+    "agreement": "single",
+    "consensus": "0",
+    "values": [
+      {
+        "value": "0",
+        "source": "grambank-v1.0.3",
+        "scale": "grambank-v1.0.3"
+      }
+    ]
+  },
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "1000-9999",
+        "source": "elcat-v2024.1"
+      },
+      {
+        "value": "10000-99999",
+        "source": "elcat-v2024.1",
+        "note": "Ethnologue cites Ojibwa figures together with Ottawa counts, making it difficult to see what is meant to refer only to Ottawa. \r\nCanada: 7100 (1996 First Nations Language of Origin Map). Nishnaabemwin is an emergent language, fusion of Ottawa and Eastern Ojibwa [ojg], having a couple thousand speakers (Golla 2007). Ethnic population: 60,000. Total users in all countries: 12,500.\r\nUS: 330 Ottawa (1990 census). 5400 in United States (1990 census). 330 Ottawa, 5,070 Ojibwa. Ethnic population: 8,910 (2000 census). 560 Ottawa, 8,350 Ojibwa. [Date Of Info: 1996 (Canada), 1990 (US)]"
+      },
+      {
+        "value": "13000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "resources": {
+    "typology": [
+      {
+        "dataset": "dryerorder",
+        "featuresCoded": 6,
+        "datasetFeatureTotal": 10
+      },
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 38,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "elcat-v2024.1",
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.dictionaries": [
+      "giellalt-resources-2026-08-06"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "politenessDistinction": [
+      "grambank-v1.0.3"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "elcat-v2024.1",
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "otw",
+    "revision": "35ea2d41df6111af",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "lexicalResources.dictionaries",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "politenessDistinction",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/* RunCard — the tape head's instrument panel. House chrome only: mono for
+   the instrument fields (slate = never a quality colour), the site heading
+   serif for the pair; NO italic footnote styles (R1 font-hierarchy cleanup).
+   Metric values earn their spectrum colour only when a run locks. */
+
+.card {
+  position: absolute;
+  right: calc(clamp(130px, 14vw, 184px) + 4.5%);
+  top: 20%;
+  width: min(46vw, 252px);
+  padding: 11px 15px 9px;
+  border-radius: 11px;
+  background: rgba(10, 16, 24, 0.88);
+  border: 1px solid rgba(77, 216, 255, 0.24);
+  box-shadow: 0 8px 34px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  will-change: opacity, transform, filter;
+}
+
+.kicker {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  color: #7fd6f2;
+  margin-bottom: 4px;
+}
+
+.pair {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #eef2f8;
+  margin-bottom: 2px;
+}
+
+.runline {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10.5px;
+  color: #8b95a7;
+  margin-bottom: 8px;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(139, 149, 167, 0.16);
+}
+
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.metricRow i {
+  font-style: normal;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 11px;
+  color: #8b95a7; /* SLATE — instrument chrome */
+}
+
+.metricRow b {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 15px;
+  font-weight: 700;
+  color: #dfe6f0; /* neutral while rolling; locks into its spectrum colour */
+}
+
+.foot {
+  margin-top: 7px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  color: #6f7787;
+}
+
+@media (max-width: 640px) {
+  .card {
+    right: calc(92px + 4%);
+    width: min(52vw, 220px);
+  }
+}
+
+/* rtl:end:ignore */

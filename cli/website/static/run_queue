@@ -1,0 +1,539 @@
+#!/usr/bin/env bash
+#
+# champollion.dev/run_queue — run the public MT-eval queue for a set
+# budget, in one command:
+#
+#   curl -fsSL https://champollion.dev/run_queue | bash -s -- --budget 2
+#   curl -fsSL https://champollion.dev/run_queue | bash -s -- --budget 5 --provider anthropic
+#
+# What it does (and nothing more):
+#   1. Explains itself and asks before doing anything.
+#   2. Installs the mt-eval harness from PyPI if missing — never sudo:
+#      pipx when you have it, pip --user where allowed, else a private
+#      venv under ~/.local/share/champollion (PEP 668 Pythons). Falls
+#      back to a git install from the public repo until the PyPI
+#      release lands.
+#   3. Publishing identity — NO ACCOUNT NEEDED. Sign in (GitHub or
+#      Google, one-time, tokens cached locally) only if you want your
+#      name on the board; otherwise results publish as 'anonymous'.
+#      Non-interactive runs with no cached sign-in publish anonymously
+#      by default (--anonymous forces it).
+#   4. Finds your API key — the harness supports OpenRouter,
+#      OpenAI, Anthropic, and Google Gemini. It auto-detects
+#      which key you have, or you can specify --provider.
+#      The key stays on this machine; we never see it.
+#   5. Runs the top of the public queue up to your budget. The exact
+#      plan and estimated spend are shown and confirmed before a
+#      single token is spent. Language eval packs (FSTs etc.)
+#      auto-install per run.
+#   6. Auto-publishes each result to the leaderboard as it completes.
+#      Your edges light up on champollion.dev/mesh within minutes.
+#
+# Concurrency-safe: the harness skips any (corpus x model x condition)
+# already on the leaderboard — both at selection time and re-checked just
+# before each run — so two contributors running at once never redo the same
+# item or double-publish it (identical runs also dedupe on a deterministic
+# fingerprint). Donated compute moves THROUGH the lineup, never piles onto one
+# row. (Disable the check with MT_EVAL_NO_COVERAGE_SKIP=1.)
+#
+# Budget:
+#   --budget is required so you always know the exact spend cap up
+#   front. The budget is a cap:
+#   items are selected only if they fit entirely within it, and
+#   actual cost is tracked between runs — if prices have changed,
+#   the runner stops early rather than exceeding your budget.
+#
+# Providers:
+#   --provider selects which API key to use. Auto-detected by default.
+#     openrouter  → OPENROUTER_API_KEY  (default — proxies any model)
+#     openai      → OPENAI_API_KEY      (direct OpenAI API)
+#     anthropic   → ANTHROPIC_API_KEY   (direct Anthropic API)
+#     gemini      → GOOGLE_API_KEY      (direct Google Gemini API)
+#
+# Safety posture:
+#   - Never uses sudo. Never phones home. Your key goes only into
+#     your environment / your local .env.local (chmod 600).
+#   - All prompts read from your terminal (/dev/tty); in a
+#     non-interactive context nothing is installed or spent unless
+#     you passed --yes AND a key is already in the environment.
+#   - --dry-run shows the run plan and exits without spending.
+#
+set -u
+
+BUDGET=""
+TOP=""
+PROVIDER=""
+ASSUME_YES=0
+DRY_RUN=0
+TIMEOUT=""
+ANONYMOUS=0
+# PyPI distribution name (mt-eval-harness since 2026-08-27 — the plain
+# `mt-eval` name is blocked on PyPI as too similar to the pre-existing
+# `mteval` project; the CLI command is still `mt-eval` — see
+# arena/pyproject.toml).
+PYPI_PKG="mt-eval-harness"
+# The harness lives in the arena/ subdirectory of the monorepo, so the git
+# fallback install needs pip's #subdirectory= selector.
+# Both URLs are env-overridable (MT_EVAL_REPO_URL / MT_EVAL_QUEUE_URL) so the
+# launch runbook can smoke-test this exact script against a staging queue or a
+# local checkout BEFORE the public repo/site flip; contributors never set them.
+REPO_URL="${MT_EVAL_REPO_URL:-https://github.com/gamedaysuits/Champollion.git#subdirectory=arena}"
+QUEUE_URL="${MT_EVAL_QUEUE_URL:-https://champollion.dev/queue.json}"
+
+say()  { printf '%s\n' "$*"; }
+err()  { printf 'error: %s\n' "$*" >&2; }
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --budget)    shift; BUDGET="${1:-}";;
+    --budget=*)  BUDGET="${1#*=}";;
+    --top)       shift; TOP="${1:-}";;
+    --top=*)     TOP="${1#*=}";;
+    --provider)  shift; PROVIDER="${1:-}";;
+    --provider=*) PROVIDER="${1#*=}";;
+    --yes|-y)    ASSUME_YES=1;;
+    --dry-run)   DRY_RUN=1;;
+    --anonymous) ANONYMOUS=1;;
+    --timeout)   shift; TIMEOUT="${1:-}";;
+    --timeout=*) TIMEOUT="${1#*=}";;
+    -h|--help)
+      sed -n '2,58p' "$0" 2>/dev/null || true
+      echo "Usage: run_queue --budget USD [--provider NAME] [--top N] [--timeout SECS] [--anonymous] [--dry-run] [--yes]"
+      exit 0
+      ;;
+    *) err "unknown option: $1 (try --help)"; exit 2;;
+  esac
+  shift
+done
+
+# Budget is required — no silent defaults
+if [ -z "$BUDGET" ] && [ -z "$TOP" ]; then
+  err "--budget is required (e.g. --budget 2 for ~\$2.00)."
+  say ""
+  say "  Usage:"
+  say "    curl -fsSL https://champollion.dev/run_queue | bash -s -- --budget 2"
+  say ""
+  say "  This ensures you always know the exact spend cap up front."
+  say "  The budget is a cap — you'll never be charged more than this amount."
+  exit 2
+fi
+
+# --top and --budget select differently (item count vs spend cap) and the
+# harness treats them as mutually exclusive. Passing both used to silently
+# drop --budget and run --top — i.e. ignore the spend cap. Refuse loudly
+# instead of guessing which one the user meant.
+if [ -n "$TOP" ] && [ -n "$BUDGET" ]; then
+  err "--top and --budget cannot be combined."
+  say "  Pass ONE: --budget N for a spend cap, or --top N for an item count."
+  exit 2
+fi
+
+if [ -n "$BUDGET" ]; then
+  # Shape: a positive decimal — digits with at most one '.' (e.g. 2, 2.50,
+  # .5). Rejects '', '.', '2.3.4', '1.2.3', 'abc', '-1' before the harness
+  # (and the plan banner) ever sees the value.
+  if ! printf '%s' "$BUDGET" | grep -Eq '^([0-9]+\.?[0-9]*|\.[0-9]+)$'; then
+    err "--budget must be a positive number like 2 or 2.50 (got: '$BUDGET')"
+    exit 2
+  fi
+  # Value must be > 0 (the harness rejects <=0, but fail fast and clearly so
+  # we don't print a confident plan for a budget that can't run).
+  if [ "$(awk -v b="$BUDGET" 'BEGIN{print (b+0>0)?1:0}')" != "1" ]; then
+    err "--budget must be greater than 0 (got: '$BUDGET')"
+    exit 2
+  fi
+fi
+if [ -n "$TOP" ]; then
+  case "$TOP" in
+    *[!0-9]*|'') err "--top must be a positive integer (got: '$TOP')"; exit 2;;
+  esac
+  # Reject 0 / 00 / 000… — a zero-item run is never what was meant.
+  if [ "$(awk -v t="$TOP" 'BEGIN{print (t+0>0)?1:0}')" != "1" ]; then
+    err "--top must be greater than 0 (got: '$TOP')"
+    exit 2
+  fi
+fi
+if [ -n "$PROVIDER" ]; then
+  case "$PROVIDER" in
+    openrouter|openai|anthropic|gemini) ;;
+    *) err "--provider must be one of: openrouter, openai, anthropic, gemini (got: '$PROVIDER')"; exit 2;;
+  esac
+fi
+if [ -n "$TIMEOUT" ]; then
+  case "$TIMEOUT" in
+    *[!0-9]*|'') err "--timeout must be a positive integer (seconds)"; exit 2;;
+  esac
+fi
+
+# ---- interactivity ---------------------------------------------------------
+HAVE_TTY=0
+if [ -e /dev/tty ] && { : < /dev/tty; } 2>/dev/null; then
+  HAVE_TTY=1
+fi
+
+ask_yn() {
+  # ask_yn "question" -> 0 yes / 1 no. --yes answers everything yes.
+  if [ "$ASSUME_YES" -eq 1 ]; then return 0; fi
+  if [ "$HAVE_TTY" -eq 0 ]; then return 1; fi
+  printf '%s [y/N]: ' "$1" > /dev/tty
+  read -r reply < /dev/tty || reply=""
+  case "$reply" in y|Y|yes|YES|Yes) return 0;; *) return 1;; esac
+}
+
+say ""
+say "  champollion.dev/run_queue — run the public MT-eval"
+say "  queue for a set budget."
+say ""
+if [ -n "$TOP" ]; then
+  say "  Plan: run the top $TOP item(s) of the public queue."
+elif [ -n "$BUDGET" ]; then
+  say "  Plan: run the top of the public queue up to \$$BUDGET (estimated)."
+fi
+if [ "$ASSUME_YES" -eq 1 ]; then
+  # --yes was passed: be honest that the per-step prompts are skipped. The
+  # harness still echoes a one-line "spending … publishing …" notice before
+  # any tokens are spent (it never spends + publishes silently), but THIS
+  # run will not stop to ask you. Don't promise confirmation we won't give.
+  say "  --yes given: this runs WITHOUT stopping to confirm each step. It will:"
+  say "    1. install the mt-eval harness if missing (no sudo)"
+  if [ "$ANONYMOUS" -eq 1 ]; then
+    say "    2. publish as 'anonymous' (--anonymous — no account, not"
+    say "       attributed to you)"
+  else
+    say "    2. reuse your cached sign-in if you have one — otherwise"
+    say "       publish as 'anonymous' (no account needed)"
+  fi
+  say "    3. use your API key — and SPEND it"
+  say "    4. run the selected items (the harness echoes the spend + who"
+  say "       it publishes as, just before spending)"
+  say "    5. auto-publish each result to the public leaderboard"
+else
+  say "  This will, with your confirmation at each step:"
+  say "    1. install the mt-eval harness if missing (no sudo)"
+  if [ "$ANONYMOUS" -eq 1 ]; then
+    say "    2. publish as 'anonymous' (--anonymous — no account needed)"
+  else
+    say "    2. choose a publishing identity — sign in (OAuth) to be"
+    say "       credited on the board, or continue anonymously. No"
+    say "       account needed."
+  fi
+  say "    3. use your API key — or help you add one"
+  say "    4. show you the exact runs + estimated cost, then run them"
+  say "    5. auto-publish each result as it completes"
+fi
+say ""
+say "  Supported API keys: OpenRouter, OpenAI, Anthropic, Google Gemini."
+say "  Your API key stays on this machine. We never see it."
+say ""
+
+if [ "$DRY_RUN" -eq 0 ]; then
+  if ! ask_yn "  Continue?"; then
+    if [ "$HAVE_TTY" -eq 0 ] && [ "$ASSUME_YES" -eq 0 ]; then
+      err "no terminal available for confirmation."
+      say "  Non-interactive use needs an explicit opt-in and a key:"
+      say "    export OPENROUTER_API_KEY=sk-or-...   # or any supported key"
+      if [ -n "$BUDGET" ]; then
+        say "    curl -fsSL https://champollion.dev/run_queue | bash -s -- --budget $BUDGET --yes"
+      else
+        say "    curl -fsSL https://champollion.dev/run_queue | bash -s -- --top $TOP --yes"
+      fi
+    else
+      say "  Cancelled — nothing was installed or spent."
+    fi
+    exit 1
+  fi
+fi
+
+# ---- 1. harness ------------------------------------------------------------
+ensure_path() {
+  case ":$PATH:" in
+    *":$HOME/.local/bin:"*) ;;
+    *) PATH="$HOME/.local/bin:$PATH"; export PATH;;
+  esac
+}
+ensure_path
+
+# Install $1 (a PyPI name or a git URL), no sudo on any path:
+#   1. pipx if present (isolated, the recommended tool);
+#   2. pip --user on Pythons that allow it;
+#   3. a private venv under ~/.local/share/champollion, linked into
+#      ~/.local/bin — the working path on PEP 668 "externally managed"
+#      Pythons (Homebrew macOS, Debian/Ubuntu) when pipx isn't installed,
+#      where pip --user refuses outright.
+VENV_DIR="$HOME/.local/share/champollion/mt-eval-venv"
+INSTALLED_VIA=""
+
+python_is_externally_managed() {
+  python3 - <<'PY' 2>/dev/null
+import os, sys, sysconfig
+sys.exit(0 if os.path.exists(os.path.join(sysconfig.get_path("stdlib"), "EXTERNALLY-MANAGED")) else 1)
+PY
+}
+
+venv_install() {
+  python3 -m venv "$VENV_DIR" || return 1
+  "$VENV_DIR/bin/pip" install --upgrade "$1" || return 1
+  mkdir -p "$HOME/.local/bin"
+  ln -sf "$VENV_DIR/bin/mt-eval" "$HOME/.local/bin/mt-eval"
+  INSTALLED_VIA="venv"
+}
+
+pipx_or_pip_install() {
+  if command -v pipx >/dev/null 2>&1; then
+    pipx install "$1" && INSTALLED_VIA="pipx"
+    return $?
+  fi
+  if python_is_externally_managed; then
+    # pip --user would refuse (PEP 668) — go straight to the private venv
+    # instead of spraying the refusal text at the user.
+    say "  (this Python is externally managed and pipx is not installed —"
+    say "   using a private venv at $VENV_DIR)"
+    venv_install "$1"
+    return $?
+  fi
+  if python3 -m pip install --user --upgrade "$1"; then
+    INSTALLED_VIA="pip"
+    return 0
+  fi
+  venv_install "$1"
+}
+
+if ! command -v mt-eval >/dev/null 2>&1; then
+  say ""
+  say "  → mt-eval not found; installing the harness from PyPI (no sudo)…"
+  if ! command -v python3 >/dev/null 2>&1; then
+    err "python3 not found — install Python 3.11+ and re-run."
+    exit 1
+  fi
+  # PyPI first (the published release)…
+  pipx_or_pip_install "$PYPI_PKG" || true
+  ensure_path; hash -r 2>/dev/null || true
+  # …falling back to a git install from the public repo until the PyPI release is live.
+  if ! command -v mt-eval >/dev/null 2>&1; then
+    say "  (PyPI package '$PYPI_PKG' not available yet — installing from the public repo…)"
+    pipx_or_pip_install "git+$REPO_URL" || true
+    ensure_path; hash -r 2>/dev/null || true
+  fi
+  if ! command -v mt-eval >/dev/null 2>&1; then
+    err "harness install did not complete (mt-eval still not on PATH)."
+    say "  Open a new terminal and re-run, or install manually:"
+    say "    pipx install $PYPI_PKG    # brew install pipx / apt install pipx first if needed"
+    exit 1
+  fi
+  say "  ✓ harness installed"
+else
+  say "  ✓ harness already installed ($(command -v mt-eval))"
+fi
+
+# ---- 2. key ----------------------------------------------------------------
+# Search for any supported API key, in priority order.
+# The queue runner auto-detects the provider, so we just need to make
+# sure at least one key exists.
+
+# Map of: provider_name → env_var_name → key_prefix (for display)
+key_env_vars="OPENROUTER_API_KEY OPENAI_API_KEY ANTHROPIC_API_KEY GOOGLE_API_KEY"
+key_labels="OpenRouter OpenAI Anthropic Gemini"
+provider_names="openrouter openai anthropic gemini"
+
+have_key=0
+found_provider=""
+found_env_var=""
+
+# Check environment first
+set -- $key_env_vars
+set_labels="$key_labels"
+set_providers="$provider_names"
+idx=0
+for env_var in $key_env_vars; do
+  idx=$((idx + 1))
+  val=$(eval "echo \"\${${env_var}:-}\"")
+  if [ -n "$val" ]; then
+    have_key=1
+    # Extract the label at position $idx
+    label=$(echo "$key_labels" | awk "{print \$$idx}")
+    p_name=$(echo "$provider_names" | awk "{print \$$idx}")
+    found_provider="$p_name"
+    found_env_var="$env_var"
+    say "  ✓ using $env_var from your environment ($label)"
+    break
+  fi
+done
+
+# Check .env.local / .env files if not found in environment.
+#
+# We walk UP from $PWD so a key saved at a project root is found from a
+# subdirectory. But that walk can also reach an UNRELATED ancestor's
+# .env.local — and combined with --yes it would spend on a key the user
+# didn't mean to use, silently. So we record the exact file we picked and
+# announce it loudly below, with an extra warning when it's an ancestor
+# (not a file in the directory you're actually standing in).
+found_key_file=""
+found_label=""
+if [ "$have_key" -eq 0 ]; then
+  d="$PWD"
+  while [ -n "$d" ] && [ "$d" != "/" ]; do
+    for f in "$d/.env.local" "$d/.env"; do
+      if [ -f "$f" ]; then
+        for env_var in $key_env_vars; do
+          if grep -q "^${env_var}=" "$f" 2>/dev/null; then
+            have_key=1
+            idx=0
+            for ev in $key_env_vars; do
+              idx=$((idx + 1))
+              if [ "$ev" = "$env_var" ]; then
+                label=$(echo "$key_labels" | awk "{print \$$idx}")
+                p_name=$(echo "$provider_names" | awk "{print \$$idx}")
+                found_provider="$p_name"
+                found_env_var="$env_var"
+                found_label="$label"
+                found_key_file="$f"
+                break
+              fi
+            done
+            break 3
+          fi
+        done
+      fi
+    done
+    d="${d%/*}"
+  done
+fi
+
+# Announce the chosen key file — loudly, with its absolute path. If it came
+# from a PARENT directory rather than the one you're in, make that impossible
+# to miss: spending is charged to THIS key.
+if [ -n "$found_key_file" ]; then
+  if [ "$found_key_file" = "$PWD/.env.local" ] || [ "$found_key_file" = "$PWD/.env" ]; then
+    say "  ✓ found $found_env_var in $found_key_file ($found_label)"
+  else
+    say ""
+    say "  ⚠ Using an API key from a PARENT directory — not the one you're in:"
+    say "      $found_key_file"
+    say "      ($found_env_var — $found_label)"
+    say "  Spending will be charged to THIS key. If that isn't what you want,"
+    say "  cd into the right directory, or export the key explicitly:"
+    say "      export $found_env_var=...   # then re-run"
+    say ""
+  fi
+fi
+
+if [ "$have_key" -eq 0 ] && [ "$DRY_RUN" -eq 1 ]; then
+  say "  (dry run — key not needed to show the plan)"
+elif [ "$have_key" -eq 0 ]; then
+  if [ "$HAVE_TTY" -eq 0 ]; then
+    err "no API key found and no terminal to ask for one."
+    say "  The harness supports these providers:"
+    say "    OpenRouter:  export OPENROUTER_API_KEY=sk-or-..."
+    say "    OpenAI:      export OPENAI_API_KEY=sk-..."
+    say "    Anthropic:   export ANTHROPIC_API_KEY=sk-ant-..."
+    say "    Gemini:      export GOOGLE_API_KEY=AI..."
+    say ""
+    say "  Get a key from any of these providers, then re-run."
+    exit 1
+  fi
+  say ""
+  say "  You need an API key from one of these providers:"
+  say ""
+  say "    1) OpenRouter  (openrouter.ai/keys) — proxies all models"
+  say "    2) OpenAI      (platform.openai.com/api-keys)"
+  say "    3) Anthropic   (console.anthropic.com/settings/keys)"
+  say "    4) Google      (aistudio.google.com/apikey)"
+  say ""
+  say "  OpenRouter is recommended: one key gives you access to"
+  say "  every model, and a few dollars of credit funds hundreds of"
+  say "  benchmark runs."
+  say ""
+  printf '  Which provider? [1/2/3/4]: ' > /dev/tty
+  read -r provider_choice < /dev/tty || provider_choice=""
+  case "$provider_choice" in
+    1|openrouter|"") found_env_var="OPENROUTER_API_KEY"; found_provider="openrouter";;
+    2|openai)        found_env_var="OPENAI_API_KEY";     found_provider="openai";;
+    3|anthropic)     found_env_var="ANTHROPIC_API_KEY";   found_provider="anthropic";;
+    4|gemini|google) found_env_var="GOOGLE_API_KEY";      found_provider="gemini";;
+    *) err "invalid choice: '$provider_choice'"; exit 1;;
+  esac
+  printf '  Paste your %s key (input hidden): ' "$found_provider" > /dev/tty
+  # shellcheck disable=SC2162
+  read -s key_input < /dev/tty; printf '\n' > /dev/tty
+  if [ -z "$key_input" ]; then
+    err "no key entered."
+    exit 1
+  fi
+  eval "export $found_env_var=\"\$key_input\""
+  unset key_input
+  if ask_yn "  Save it to $PWD/.env.local (private file, chmod 600) so future runs find it?"; then
+    touch .env.local && chmod 600 .env.local
+    eval "printf '%s=%s\n' \"$found_env_var\" \"\$$found_env_var\"" >> .env.local
+    say "  ✓ saved (delete the line in .env.local to remove it)"
+  else
+    say "  ✓ key kept in this session only"
+  fi
+fi
+
+# ---- 3. run the queue (with auto-publish) ----------------------------------
+# The queue runner handles: the publishing-identity door (sign in or
+# anonymous — no account required), provider detection, budget guard,
+# auto-publish, and the end-of-run summary.
+say ""
+select_args=""
+if [ -n "$TOP" ]; then
+  select_args="--top $TOP"
+elif [ -n "$BUDGET" ]; then
+  select_args="--budget $BUDGET"
+fi
+anon_args=""
+if [ "$ANONYMOUS" -eq 1 ]; then
+  anon_args="--anonymous"
+fi
+
+# Pass --provider if explicitly specified or detected during key setup
+provider_args=""
+if [ -n "$PROVIDER" ]; then
+  provider_args="--provider $PROVIDER"
+elif [ -n "$found_provider" ]; then
+  provider_args="--provider $found_provider"
+fi
+
+# Pass --timeout if explicitly specified
+timeout_args=""
+if [ -n "$TIMEOUT" ]; then
+  timeout_args="--timeout $TIMEOUT"
+fi
+
+say "  → mt-eval queue $select_args $provider_args $timeout_args $anon_args"
+say "    (the exact runs and estimated cost are shown next; nothing is"
+say "     spent until you confirm. Eval packs like FSTs auto-install.)"
+say ""
+
+# shellcheck disable=SC2086
+if [ "$DRY_RUN" -eq 1 ]; then
+  mt-eval queue $select_args $provider_args $timeout_args $anon_args --queue "$QUEUE_URL" --dry-run
+  rc=$?
+elif [ "$ASSUME_YES" -eq 1 ]; then
+  mt-eval queue $select_args $provider_args $timeout_args $anon_args --queue "$QUEUE_URL" --yes
+  rc=$?
+elif [ "$HAVE_TTY" -eq 1 ]; then
+  mt-eval queue $select_args $provider_args $timeout_args $anon_args --queue "$QUEUE_URL" < /dev/tty
+  rc=$?
+else
+  err "no terminal for the spend confirmation (and --yes not given)."
+  exit 1
+fi
+
+# The queue runner handles its own end-of-run summary. We only
+# need the dry-run hint and the uninstall escape hatch here.
+say ""
+if [ $rc -eq 0 ] && [ "$DRY_RUN" -eq 0 ]; then
+  say "  Changed your mind about any of it?"
+  if [ "$INSTALLED_VIA" = "venv" ]; then
+    say "    rm -rf \"$VENV_DIR\" \"\$HOME/.local/bin/mt-eval\"    # removes the harness entirely"
+  else
+    say "    pipx uninstall mt-eval-harness    # removes the harness entirely"
+  fi
+  say "    (and revoke your key on the provider's site — then nothing can"
+  say "     ever be spent again)"
+elif [ "$DRY_RUN" -eq 1 ]; then
+  say "  That was the plan — nothing was spent. Re-run without --dry-run"
+  say "  when ready."
+fi
+exit $rc

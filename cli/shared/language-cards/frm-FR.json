@@ -1,0 +1,373 @@
+{
+  "code": "frm-FR",
+  "name": {
+    "agreement": "single",
+    "consensus": "Middle French (ca. 1400-1600)",
+    "values": [
+      {
+        "value": "Middle French (ca. 1400-1600)",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "frm-Latn-FR",
+    "values": [
+      {
+        "value": "frm-Latn-FR",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "frm-Latn-FR",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"frm\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "frm",
+    "values": [
+      {
+        "value": "frm",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "lexicalResources": {
+    "clicsContributingDatasets": 1,
+    "clicsTotalEntries": 127,
+    "clicsUniqueForms": 127,
+    "colexificationConcepts": 110,
+    "colexificationDensity": 0.866,
+    "datasets": [
+      {
+        "dataset": "diacl",
+        "forms": 127,
+        "concepts": 110,
+        "release": "diacl-v3.0"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 2,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 18
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 15
+          }
+        ],
+        "alignmentPairsTotal": 33,
+        "pairsWithPublishedSize": 2,
+        "largestPairAlignments": 18
+      },
+      {
+        "corpus": "Ubuntu",
+        "corpusId": "corpus:opus:Ubuntu",
+        "pairCount": 175,
+        "topPartners": [
+          {
+            "code": "ace",
+            "alignmentPairs": null
+          },
+          {
+            "code": "af",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ak",
+            "alignmentPairs": null
+          },
+          {
+            "code": "am",
+            "alignmentPairs": null
+          },
+          {
+            "code": "an",
+            "alignmentPairs": null
+          }
+        ],
+        "alignmentPairsTotal": null,
+        "pairsWithPublishedSize": 0,
+        "largestPairAlignments": null
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Middle_French-ALTM",
+        "sentences": 217,
+        "tokens": 6953,
+        "words": 7084,
+        "release": "2.18"
+      },
+      {
+        "treebank": "UD_Middle_French-PROFITEROLE",
+        "sentences": 5971,
+        "tokens": 117419,
+        "words": 119001,
+        "release": "2.18"
+      }
+    ]
+  },
+  "isoLanguageType": "Historical",
+  "isoScope": "Individual",
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 29,
+    "byTier": {
+      "model-card-declared": 29
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-itc",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-roa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-itc-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-itc-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-itc-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-roa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-roa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-itc",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-roa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-itc-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-itc-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-itc-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "coverage": {
+    "sourceCount": 8,
+    "componentsPresent": 15,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.clicsContributingDatasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsTotalEntries": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsUniqueForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationConcepts": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationDensity": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "frm-FR",
+    "revision": "f48d5dc1bc7f3873",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.clicsContributingDatasets",
+      "lexicalResources.clicsTotalEntries",
+      "lexicalResources.clicsUniqueForms",
+      "lexicalResources.colexificationConcepts",
+      "lexicalResources.colexificationDensity",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "name",
+      "resources.corpora",
+      "resources.treebanks"
+    ]
+  },
+  "locale": {
+    "language": "frm",
+    "region": "FR",
+    "script": "Latn",
+    "publishedTag": "frm-FR",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Latn"
+}

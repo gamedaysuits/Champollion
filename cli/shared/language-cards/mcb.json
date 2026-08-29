@@ -1,0 +1,452 @@
+{
+  "code": "mcb",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Machiguenga",
+    "values": [
+      {
+        "value": "Machiguenga",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Machiguenga",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "araw1281",
+      "sout3131",
+      "kamp1244",
+      "prea1240",
+      "asha1244",
+      "mats1245"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Arawakan",
+      "values": [
+        {
+          "value": "Arawakan",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Arawakan",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "araw1281",
+    "genus": "Pre-Andine Arawakan"
+  },
+  "bcp47": "mcb",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "mcb-Latn-PE",
+    "values": [
+      {
+        "value": "mcb-Latn-PE",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "mcb-Latn-PE",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"mcb\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "mcb",
+    "values": [
+      {
+        "value": "mcb",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 18,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 27,
+    "vowels": 9
+  },
+  "countries": [
+    "PE"
+  ],
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "threatened",
+        "source": "elcat-v2024.1",
+        "note": "Quechua and Spanish [spa] are replacing Machiguenga in some areas where children no longer acquire the language. Not endangered on the Manu River, where teachers from Urubamba River area are interested in implementing a formalized bilingual education program (Crevels 2007). All ages. [Endangerment.Certainty: 0.8]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "vulnerable",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.2]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "shifting",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Machiguenga (3022-mcb) = Threatened (20 percent certain, based on the evidence available) [Crevels 2012](cldf:crevels:12:3)",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Definitely endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "glottocode": "mach1267",
+  "typologicalProfile": {
+    "hasCoreCase": false,
+    "hasGenderInPronouns": true,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": false,
+    "hasSexBasedGender": true,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "1",
+      "values": [
+        {
+          "value": "1",
+          "source": "grambank-v1.0.3",
+          "note": "Datapoint inherited from Danielsen’s work in the database of South American Indigenous Language Structures (SAILS).",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": false,
+    "marksPresentTense": false,
+    "negationOrder": "NegV",
+    "subjectVerbOrder": "VS"
+  },
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": -12.1291,
+    "lng": -72.5017
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "amazonianvoices",
+        "forms": 238,
+        "concepts": 235,
+        "commercialUse": false,
+        "release": "amazonianvoices-v0.1"
+      },
+      {
+        "dataset": "asjp",
+        "forms": 40,
+        "concepts": 37,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 7,
+        "concepts": 3,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "huntergatherer",
+        "forms": 1,
+        "concepts": 1,
+        "release": "huntergatherer-v2.1"
+      },
+      {
+        "dataset": "ideobank",
+        "forms": 224,
+        "concepts": 216,
+        "release": "ideobank-v0.2"
+      },
+      {
+        "dataset": "walkerarawakan",
+        "forms": 107,
+        "concepts": 100,
+        "release": "walkerarawakan-v1.1"
+      }
+    ]
+  },
+  "macroarea": "South America",
+  "documentation": {
+    "medLevel": "grammar sketch",
+    "medSourceId": "581889"
+  },
+  "methodSupport": {
+    "total": 7,
+    "byTier": {
+      "model-card-declared": 7
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "1000-9999",
+        "source": "elcat-v2024.1",
+        "note": "[Date Of Info: 2007]"
+      },
+      {
+        "value": "10000-99999",
+        "source": "elcat-v2024.1",
+        "note": "[Date Of Info: 2000]"
+      },
+      {
+        "value": "6200",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 11,
+    "componentsPresent": 41,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "elcat-v2024.1",
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "elcat-v2024.1",
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.negationOrder": [
+      "wals-v2020.5"
+    ],
+    "typologicalProfile.subjectVerbOrder": [
+      "wals-v2020.5"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "mcb",
+    "revision": "fcb5dcf3304e7ce4",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "typologicalProfile.negationOrder",
+      "typologicalProfile.subjectVerbOrder"
+    ]
+  }
+}

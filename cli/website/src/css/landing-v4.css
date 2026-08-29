@@ -1,0 +1,67 @@
+/**
+ * landing-v4.css — palette + base tokens for the v4 landing experience
+ * ("The Living Index & The Seam", docs/HERO_V4_PLAN.md).
+ *
+ * Scoped to the .labV4 wrapper so it themes the v4 surface WITHOUT touching
+ * the global Docusaurus/Infima theme or the existing teal docs system. The
+ * homepage swap (Phase D) will promote these to the appropriate scope.
+ *
+ * Palette (founder, 2026-06-12):
+ *   ink-black base · GDS blue #0E1B4D (gamedaysuits.ca dark navy) ·
+ *   electric light blue accent · GDS cobalt #4770DB secondary · white.
+ */
+
+.labV4 {
+  --ink: #06070b;
+  --gds-blue: #0e1b4d;
+  --gds-cobalt: #4770db;
+  --electric: #4dd8ff;
+  --electric-hot: #7be6ff;
+  --paper: #ffffff;
+
+  /* Derived section tints for the alternating-background rhythm. */
+  --wash-blue: color-mix(in srgb, var(--gds-blue) 55%, var(--ink));
+  --hairline: color-mix(in srgb, var(--electric) 22%, transparent);
+
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Section background rhythm (alternating, per founder). */
+.labV4 .sectionInk {
+  background: var(--ink);
+}
+.labV4 .sectionBlue {
+  background: radial-gradient(
+      120% 80% at 50% 0%,
+      var(--wash-blue) 0%,
+      var(--ink) 70%
+    ),
+    var(--ink);
+}
+.labV4 .sectionPaper {
+  background: var(--paper);
+  color: #0b1020;
+}
+
+/* A reusable electric hairline rule. */
+.labV4 .hairline {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--electric) 50%,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* Honor reduced-motion globally inside the lab surface. */
+@media (prefers-reduced-motion: reduce) {
+  .labV4 * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

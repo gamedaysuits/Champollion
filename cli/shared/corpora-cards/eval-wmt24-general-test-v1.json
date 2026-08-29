@@ -1,0 +1,172 @@
+{
+  "id": "eval-wmt24-general-test-v1",
+  "type": "multiway",
+  "name": "WMT2024 General MT — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ces",
+    "cmn-Hans",
+    "deu",
+    "eng",
+    "hin",
+    "isl",
+    "jpn",
+    "rus",
+    "spa",
+    "ukr"
+  ],
+  "description": "WMT2024 General MT blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt24 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers several genres (news, social, speech, literary). Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'mixed' with an APPROXIMATE domainDistribution (the General MT task spans genres; exact per-segment proportions are not published).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "mixed",
+    "domainDistribution": {
+      "news": 0.25,
+      "conv": 0.25,
+      "subtitles": 0.25,
+      "literary": 0.25
+    },
+    "explicitPairs": [
+      {
+        "source": "ces",
+        "target": "ukr",
+        "srcCode": "cs",
+        "tgtCode": "uk",
+        "size": 2316,
+        "sha256": "e93fbc6a472d01ebbea5d9c68d58d5e26eb23749e2b63413839c57030b226cd6"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs",
+        "size": 997,
+        "sha256": "ff86fdccd92143cf0e1f014dbca7abcae09957eae4628d5fd9f8fda4d8b7e6f1"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de",
+        "size": 997,
+        "sha256": "1b7f86a9410619abec388fcb26b539de64c0c5ac1f0f86fd5647a52dd9a984e1"
+      },
+      {
+        "source": "eng",
+        "target": "spa",
+        "srcCode": "en",
+        "tgtCode": "es",
+        "size": 997,
+        "sha256": "7bd3b7f2ba4adf929070c6a9ba7b5aacbdf30e9e93a84b204864b54b7c28f899"
+      },
+      {
+        "source": "eng",
+        "target": "hin",
+        "srcCode": "en",
+        "tgtCode": "hi",
+        "size": 997,
+        "sha256": "54dc885d5230865d7da9db3a4115a8ddef78c8efc6f2165812980bf596d1e349"
+      },
+      {
+        "source": "eng",
+        "target": "isl",
+        "srcCode": "en",
+        "tgtCode": "is",
+        "size": 997,
+        "sha256": "f8002c9af7d9e00970bb59b3b67fb224fd35c471b6899e136f20a6600ea540a3"
+      },
+      {
+        "source": "eng",
+        "target": "jpn",
+        "srcCode": "en",
+        "tgtCode": "ja",
+        "size": 997,
+        "sha256": "c2f7960908edc716110f6b99d4e06f86ad09521ce146a2713c990d8b99c8fec3"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 997,
+        "sha256": "5d30a0246f2c95a7c5623b0dad0d2c1e1164a13d197d81414caab6ca35cf4d1e"
+      },
+      {
+        "source": "eng",
+        "target": "ukr",
+        "srcCode": "en",
+        "tgtCode": "uk",
+        "size": 997,
+        "sha256": "b88d27f3981caca74b85955fae6b2b07146ae9a3413c1cb82e8e570423e2af23"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hans",
+        "srcCode": "en",
+        "tgtCode": "zh",
+        "size": 997,
+        "sha256": "77956223eec80154dab5217750e6ed77162384d8a5fb38d29385bfb04b730222"
+      },
+      {
+        "source": "jpn",
+        "target": "cmn-Hans",
+        "srcCode": "ja",
+        "tgtCode": "zh",
+        "size": 721,
+        "sha256": "f6acea04a03ca81f668dd23a7ddd84598e1f8ead51172872fcdfbfe2fb457451"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2024 General MT test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (absolute-rankable)",
+      "size": 12010
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt24/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt24 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt24/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2024 Conference on Machine Translation (WMT24). statmt.org/wmt24.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "WMT24 General MT blind test set — the freshest fully-released WMT edition (the blind eval WMT24 systems were judged on). The least-contaminated released WMT set, so it is graded LOW + freshBlindTestSet to rank on absolute quality. Honest caveat: released 2024-09, so models trained on late-2024+ crawls may have partial exposure — it remains the current blind benchmark and rotates out as fresher editions (WMT25) land.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt24']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 11
+  },
+  "freshBlindTestSet": true
+}

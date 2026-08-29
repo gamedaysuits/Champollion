@@ -1,0 +1,125 @@
+---
+title: "Die Arena"
+description: "Die Arena ist der Ort, an dem Messungen stattfinden: das Tor, durch das Sie ein Ergebnis einreichen, das Register, das es speichert, und die Wettbewerbsmaschinerie, die auf beidem aufbaut. Was sie ist, welchen Regeln sie unterliegt und wo Sie ins Spiel kommen."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Zählungen werden durch SSOTCount gerendert (Build-Zeit-Lesezugriffe auf die maschinellen SSOTs via docusaurus.config.js customFields) — niemals manuell eingegeben, gemäß dem SSOT-Anzeigestandard. Der Live-Status des Boards wird hier absichtlich NICHT angegeben: Er ist verlinkt. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Die Arena
+
+**Die Arena ist der Ort, an dem gemessen wird.** Sie ist die Tür, durch die Sie ein Ergebnis einreichen, das Register, das das Ergebnis festhält, und die Wettbewerbsmaschinerie, die auf beidem aufbaut.
+
+Sie ist Infrastruktur, keine Anzeigetafel und keine Karte. Drei Dinge sind leicht zu verwechseln, daher lohnt es sich, sie einmal klar voneinander abzugrenzen:
+
+| | Was es ist | Wo es ausgeführt wird |
+|---|---|---|
+| **Das [MT-Eval Harness](/docs/network/specifications/harness)** | Der Bewerter (Scorer). Bei Vorgabe einer Methode und eines Testdatensatzes erzeugt es eine Zahl und eine Run Card. | **Auf Ihrer Maschine.** Wir führen Ihre Methode nicht für Sie aus, und das müssen wir auch nicht. |
+| **Die Arena** | Die Einreichungstür, das Run-Card-Register und die Wettbewerbs- und Preis-Maschinerie. | Hier. |
+| **Das [Netzwerk](/docs/network/)** | Die Karte, die entsteht, sobald genügend Run Cards existieren — wer was übersetzen kann, wie gut, und wo der leere Raum ist. Das Routing durchquert sie. | Eine Konsequenz, keine Komponente. |
+
+Nichts gelangt in das Netzwerk außer durch die Arena, und nichts gelangt in die Arena außer als bewerteter, mit einem Fingerabdruck versehener Durchlauf (Run). Das ist das gesamte Design: Eine Messung ohne Herkunftsnachweis (Provenance) kann nicht Teil der Karte werden.
+
+---
+
+## Woraus die Arena besteht
+
+**Eine Tür.** Jeder kann einreichen — ein feingetuntes Modell, ein gepromptetes Frontier-Modell, eine FST-gesteuerte Pipeline, ein regelbasiertes System, ein professioneller menschlicher Übersetzer. Die Methode ist für den Prozess irrelevant; nur das Verfahren ist festgelegt. Zwei verschiedene Türen, je nachdem, was Sie haben: [Veröffentlichen Sie eine Run Card](/docs/network/getting-started/submit-a-method), wenn Sie bereits etwas bewertet haben, oder [schlagen Sie einen Eintrag vor](/docs/network/getting-started/submit-to-the-index), wenn Sie einen Datensatz, ein Wörterbuch, eine Engine, einen Übersetzungsdienst, ein extern veröffentlichtes Ergebnis oder eine Korrektur für eine Language Card haben. Vorschläge werden von einer Person gelesen, nicht von einem Roboter, und nichts wird automatisch genehmigt.
+
+**Ein Register.** Jeder veröffentlichte Durchlauf ist eine Run Card: die Punktzahlen (Scores), der Datensatz-Hash, der Modell-Slug, die Bedingung und ein Fingerabdruck über all das. Wenn zwei Personen dieselbe Konfiguration ausführen, ist dies absichtlich unbedenklich — identische Durchläufe werden bei der Veröffentlichung dedupliziert, und unabhängige Replikation ist ein Beweis und keine Verschwendung. Die [Run Card-Spezifikation](/docs/network/specifications/run-card) definiert, was eine Karte offenlegen muss; die [Benchmark-Spezifikation](/docs/network/specifications/benchmark) definiert das Protokoll, das sie erzeugt.
+
+**Eine Menge von Zielen.** <SSOTCount field="registryDatasetCount" /> Evaluierungsdatensätze sind registriert. Jeder davon ist eine Metadatenkarte plus ein Zeiger zum Abrufen von der Quelle (Fetch-from-Source) — **der Korpusinhalt wird niemals hier gehostet**. Das Harness ruft die Referenzen zur Laufzeit von Upstream ab und bewertet anhand dessen, was es gerade abgerufen hat.
+
+Registriert ist nicht dasselbe wie überall ausführbar, und dieser Unterschied ist beabsichtigt. Einige hundert dieser Einträge haben eine modifizierte, maßgeschneiderte oder nicht angegebene Lizenz, und diese **verweigern die Remote-Evaluierung**, bis der Rechteinhaber eine ausdrückliche Übertragungszustimmung hinterlegt hat — kein Agent kann diese in ihrem Namen hinzufügen. Sie bleiben lokal ausführbar, sowie gegen No-Train-Kanäle, sofern die Lizenz dies zulässt. Siehe [Evaluierungsdatensätze](/docs/network/leaderboard/datasets) und [Datenverantwortung (Data Stewardship)](/docs/network/sovereignty/data-sovereignty).
+
+**Wettbewerbsmaschinerie.** Über einem einzelnen Durchlauf steht der Rest: [Shared Tasks und Wettbewerbe](/shared-tasks), die [öffentliche Warteschlange (Public Queue)](/docs/network/getting-started/contributing-compute) von Messungen, die die Karte am meisten verbessern würden, und die Spezifikation dafür, [was ein Preis erfordern würde](/docs/network/specifications/prizes), falls einer ausgeschrieben wird. Eine Gemeinschaft kann ihren eigenen Wettbewerb auf ihrem eigenen Korpus mit ihrem eigenen Geld durchführen — [Champollion verwaltet keines von beiden](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## Die Regeln, die hier überall gelten
+
+Dies sind die Invarianten. Jede davon hat eine Seite, die die Details enthält.
+
+**Trainieren Sie nicht mit Evaluierungsdaten.** Jede Methode, die einem Benchmark-Set ausgesetzt war — als Trainingsdaten, Few-Shot-Beispiele, Wörterbucheinträge oder Prompt-Material — wird disqualifiziert. Führen Sie Fine-Tuning mit allem durch, was Sie möchten; nur nicht mit dem Testdatensatz. Dies ist die einzige Regel, deren Verletzung das gesamte System nicht überleben kann, da ein kontaminierter Score jeden nachgelagerten Vergleich vergiftet.
+([Leaderboard-Regeln](/docs/network/leaderboard/rules))
+
+**Jede Zahl trägt ihren Herkunftsnachweis, oder sie zählt nicht.** Eine Run Card benennt die Datensatzversion, das Modell, die Bedingung, den System-Prompt und die Kosten. Scores sind nur innerhalb derselben Datensatzversion vergleichbar, und der Fingerabdruck macht dies überprüfbar anstatt nur behauptet.
+([Benchmark-Spezifikation](/docs/network/specifications/benchmark))
+
+**Wir speichern niemals Ihren Korpus.** Die Registrierung besteht aus Metadaten. Ein Testdatensatz wird bewertet, ohne übergeben zu werden, und in der souveränen Spur (Sovereign Lane) verlässt er die Infrastruktur der Gemeinschaft überhaupt nicht — nur der Score wird übertragen.
+([Korpora registrieren](/docs/network/sovereignty/registering-corpora))
+
+**Lizenzspuren sind strukturell, nicht redaktionell.** Nicht-kommerzielle und rein für die Forschung bestimmte Korpora sind konstruktionsbedingt von jedem Preis, jeder API und jedem kommerziellen Pfad ausgenommen. Korpora unter modifizierten, maßgeschneiderten oder nicht angegebenen Lizenzen sind zusätzlich an eine Zustimmung gebunden (Consent-gated): Das Harness weigert sich, deren Text an eine Drittanbieter-Modell-API zu übertragen, bis die Erlaubnis des Rechteinhabers hinterlegt ist.
+([Datenverantwortung](/docs/network/sovereignty/data-sovereignty))
+
+**Ein Score ist ein Maschinensignal, kein Urteil.** Automatisierte Metriken sind Stellvertreter (Proxies) für menschliches Urteilsvermögen, und das [Sprecher-Validierungsprotokoll (Speaker Validation Protocol)](/docs/network/specifications/speaker-validation) definiert die menschliche Schranke, für die sie ein Stellvertreter *sind*. Eine Position auf dem Leaderboard beweist, dass eine Methode gut misst. Sie beweist nicht, dass die Übersetzung gut ist, und sie erteilt niemandem die Erlaubnis, sie für die Sprache einer Gemeinschaft einzusetzen.
+
+**Gewinnen ist nicht der Endzustand.** Für indigene Sprachen sieht das Design vor, dass eine funktionierende Methode an die Governance-Organisation der Gemeinschaft übertragen und auf einer von der Gemeinschaft kontrollierten Infrastruktur bereitgestellt wird, wobei Champollion keinen Anteil an den dortigen Einnahmen beansprucht.
+([Die Verpflichtung zu abgeleiteten Artefakten](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Wo Sie ins Spiel kommen
+
+Wählen Sie die Zeile, die zu dem passt, was Sie bereits haben.
+
+| Sie haben… | Tun Sie dies | Starten Sie bei |
+|---|---|---|
+| Eine Methode und einen API-Schlüssel | Führen Sie das Harness gegen einen registrierten Korpus aus und veröffentlichen Sie die Run Card | [Eine Methode einreichen](/docs/network/getting-started/submit-a-method) |
+| Etwas, das im Index fehlt — ein Datensatz, Wörterbuch, FST, Engine, menschlicher Übersetzungsdienst, veröffentlichtes Ergebnis oder eine Kartenkorrektur | Reichen Sie den strukturierten Vorschlag ein; ein Maintainer überprüft ihn manuell | [Für den Index einreichen](/docs/network/getting-started/submit-to-the-index) |
+| Überschüssiges API-Guthaben und keine eigene Methode | Führen Sie offene Elemente aus der öffentlichen Warteschlange mit Ihrem eigenen Schlüssel aus und veröffentlichen Sie das Ergebnis | [Rechenleistung beisteuern](/docs/network/getting-started/contributing-compute) |
+| Einen Korpus, der Ihrer Gemeinschaft gehört | Registrieren Sie ihn als Metadaten und wählen Sie seine Freigabespur — offen, zugangsbeschränkt (gated) oder vollständig souverän | [Korpora registrieren](/docs/network/sovereignty/registering-corpora) |
+| Einen Korpus und einen Grund, einen Wettbewerb darauf durchzuführen | Führen Sie ihn selbst durch, zu Ihren Bedingungen; wir verwalten weder die Daten noch das Geld | [Einen souveränen Wettbewerb durchführen](/docs/network/sovereignty/run-a-sovereign-contest) |
+| Eine Methode, die bereits gut abschneidet | Exportieren Sie sie als Plugin und bringen Sie sie in die Produktion | [In die Produktion überführen](/docs/network/getting-started/deploy-to-production) |
+| Zuerst eine Frage | Bewertung, Disqualifikation, Modelle, FSTs, Souveränität | [FAQ](/docs/network/getting-started/faq) |
+
+Wenn Sie ein KI-Agent sind, stehen die Warteschlange, die Ergebnisse und die Run Cards alle als Werkzeuge zur Verfügung — siehe den [MCP-Server](/docs/network/getting-started/mcp-server).
+
+---
+
+## Was heute tatsächlich läuft
+
+Die Arena befindet sich in der Startphase, und die ehrliche Beschreibung davon ist kurz.
+
+- **Das Board ist live, öffentlich und offen für Einreichungen.** Seine aktuellen Inhalte sind Live-Daten, daher wird Ihnen diese Seite nicht sagen, was darauf steht — [lesen Sie das Leaderboard](/leaderboard).
+- **"Selbst gemeldet" (Self-reported) ist die standardmäßige Vertrauensstufe.** Serverseitige Verifizierung — die erneute Bewertung einer Einreichung gegen den SHA-gepinnten kanonischen Korpus — existiert und wird ausgebaut, ist aber nicht universell. Lesen Sie das Badge in jeder Zeile.
+- **Es ist kein Preis ausgeschrieben, und kein Score auf dieser Website hat eine Preishürde überschritten.** Die [Preis-Spezifikation](/docs/network/specifications/prizes) ist so verfasst, dass die Hürde eindeutig ist, *falls und sobald* einer ausgeschrieben wird. Preise werden von Sponsoren finanziert und verwaltet; Champollion hält, verwahrt oder leitet niemals Preisgelder weiter.
+- **Es wurde keine Überprüfung durch Sprecher der Gemeinschaft durchgeführt.** Die Schranke ist spezifiziert und die Werkzeuge befinden sich im Aufbau. Composite- und chrF++-Zahlen sind Maschinensignale, kein Urteil der Gemeinschaft.
+- **Bisher wurde keine Methode an eine Gemeinschaft übertragen.** Das Modell der Eigentumsübertragung ist ein verbindliches Design, kein laufendes Programm. Es wird beschrieben, damit Sie uns beim Wort nehmen können, nicht um zu suggerieren, dass es bereits in Gang ist.
+- **Die Schlüsselverwahrung ist entschieden; die Verwahrer sind es nicht.** Der Mechanismus ist ein Schwellenwert-Schema (Threshold Scheme), bei dem Champollion null Schlüsselanteile hält. Die Verwahrer werden von den Gemeinschaften ausgewählt, und diese Gespräche dauern an — daher sagen wir **Schlüsselverwahrer der Gemeinschaft (in Bestätigung)**.
+
+Das vollständige Register dessen, was dieses Projekt *nicht* beansprucht, findet sich unter [Ehrliche Einschränkungen (Honest Limitations)](/docs/network/honest-limitations). Wenn irgendetwas auf dieser Seite mehr impliziert, als jene Seite zulässt, gewinnt jene Seite und diese hier ist ein Fehler (Bug).
+
+---
+
+## Als Nächstes lesen
+
+- **Sie möchten heute etwas einreichen** → [Eine Methode einreichen](/docs/network/getting-started/submit-a-method), dann die [Bewertungs-Spezifikation](/docs/network/specifications/scoring).
+- **Sie möchten wissen, wie ein Ergebnis beurteilt wird** → [MT-Evaluierungsregeln](/docs/network/leaderboard/rules) und [Statistische Signifikanz](/docs/network/specifications/significance).
+- **Sie möchten sehen, was die Messungen insgesamt ergeben** → [Das Netzwerk](/docs/network/).
+- **Sie betreuen eine Sprache und möchten zuerst das Bild zur Souveränität sehen** → [Für Sprachgemeinschaften](/docs/network/community/for-language-communities).
+- **Sie sind neu in all dem** → [Was Champollion ist](/docs/what-is-champollion).
+
+Jede auf dem Board genannte Sprache verweist auf ihre Karte im [Atlas](/docs/atlas) — Klassifikation, Vitalität und welche Evaluierungsressourcen dafür existieren.

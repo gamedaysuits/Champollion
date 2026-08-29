@@ -1,0 +1,464 @@
+{
+  "code": "rom-Cyrl-BG",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Romany",
+    "values": [
+      {
+        "value": "Romany",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Romany",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "rom",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "rom-Latn-RO",
+    "values": [
+      {
+        "value": "rom-Latn-RO",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "rom-Latn-RO",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"rom\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "rom",
+    "values": [
+      {
+        "value": "rom",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "canonicalisedMembers": {
+    "agreement": "unanimous",
+    "consensus": "rmy",
+    "values": [
+      {
+        "value": "rmy",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR canonicalises \"rmy\" to \"rom\" with reason=macrolanguage"
+      },
+      {
+        "value": "rmy",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "SIL langtags records \"rmy\" as an additional ISO 639-3 code for tags of \"rom\""
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 16,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 725
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 20
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 11
+          },
+          {
+            "code": "pl",
+            "alignmentPairs": 10
+          },
+          {
+            "code": "ro",
+            "alignmentPairs": 6
+          }
+        ],
+        "alignmentPairsTotal": 794,
+        "pairsWithPublishedSize": 16,
+        "largestPairAlignments": 725
+      },
+      {
+        "corpus": "Ubuntu",
+        "corpusId": "corpus:opus:Ubuntu",
+        "pairCount": 175,
+        "topPartners": [
+          {
+            "code": "ace",
+            "alignmentPairs": null
+          },
+          {
+            "code": "af",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ak",
+            "alignmentPairs": null
+          },
+          {
+            "code": "am",
+            "alignmentPairs": null
+          },
+          {
+            "code": "an",
+            "alignmentPairs": null
+          }
+        ],
+        "alignmentPairsTotal": null,
+        "pairsWithPublishedSize": 0,
+        "largestPairAlignments": null
+      },
+      {
+        "corpus": "bible-uedin",
+        "corpusId": "corpus:opus:bible-uedin",
+        "pairCount": 101,
+        "topPartners": [
+          {
+            "code": "th",
+            "alignmentPairs": 15862
+          },
+          {
+            "code": "vi",
+            "alignmentPairs": 15862
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 15860
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 15855
+          },
+          {
+            "code": "jap",
+            "alignmentPairs": 15848
+          }
+        ],
+        "alignmentPairsTotal": 793536,
+        "pairsWithPublishedSize": 101,
+        "largestPairAlignments": 15862
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "романи",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "Romani chib",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "rmy",
+        "variantType": "language",
+        "note": "label language: rmy"
+      }
+    ]
+  },
+  "isoLanguageType": "Living",
+  "isoScope": "Macrolanguage",
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "datsemshift",
+        "forms": 126,
+        "concepts": 95,
+        "release": "datsemshift-v1.1rc"
+      },
+      {
+        "dataset": "lsi",
+        "forms": 201,
+        "concepts": 165,
+        "release": "lsi-v1.0"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 103,
+    "byTier": {
+      "confirmed": 1,
+      "model-card-declared": 102
+    },
+    "named": [
+      {
+        "value": "service",
+        "variant": "google-translate",
+        "source": "curated:method-coverage-2a485dc249c6",
+        "confidence": "confirmed"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:brauliobo/madlad400-7b-mt-bt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Cartik/Transti-1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ClausQ-dk/madlad400-10b-mt-Q2_K-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cstr/madlad400-3b-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:CXDuncan/madlad400-3b-mt-optimized-quantized-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:cyberunit/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Eddishockwave/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-10b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-3b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/madlad400-7b-mt-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-10b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:enacimie/madlad400-7b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:fernandoruiz/madlad400-3b-mt-Q4_K_S-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Cyrl",
+    "Latn"
+  ],
+  "scriptNames": [
+    "Cyrillic",
+    "Latin"
+  ],
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 16,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "canonicalisedMembers": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguageMembers": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "curated:method-coverage-2a485dc249c6",
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "rom-Cyrl-BG",
+    "revision": "cbbd5433a0f6a7d5",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "canonicalisedMembers",
+      "endonym",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguageMembers",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "scriptNames",
+      "scripts"
+    ]
+  },
+  "locale": {
+    "language": "rom",
+    "region": "BG",
+    "script": "Cyrl",
+    "publishedTag": "rom-Cyrl-BG",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Cyrl",
+  "localeScoped": {
+    "scriptName": "Cyrillic"
+  }
+}

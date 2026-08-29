@@ -1,0 +1,89 @@
+{
+  "id": "eval-eng-uzb-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba eng→uzb Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "eng",
+    "target": "uzb",
+    "direction": "unidirectional"
+  },
+  "description": "Dev corpus rebuilt fetch-from-source from Tatoeba Challenge v2023-09-26. 70 entries, stratified across 7 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/Tatoeba-Challenge-devtest/test-v2023-09-26.tar",
+    "builder": "tatoeba-challenge",
+    "sha256": "9ffc88d49c8f45ce8bfc42170783f116646bee3fb559db2f7aca8bec49bbc483",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "member": "data/test-v2023-09-26/eng-uzb/test.txt",
+    "recipe": {
+      "release": "v2023-09-26",
+      "split": "test",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "chars",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-12T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 70,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.629,
+      "ecommerce": 0.014,
+      "edu": 0.129,
+      "financial": 0.014,
+      "subtitles": 0.014,
+      "support": 0.043,
+      "ui": 0.157
+    },
+    "dataFile": "curated/eng-uzb-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Clean human-translated Tatoeba pair, CC-BY-2.0. A lower-resource pair unlikely to be specifically targeted by training pipelines, though individual sentences may appear in broad tatoeba.org crawls."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "lastUpdated": "2026-06-22",
+    "populatedFrom": "Rebuilt fetch-from-source by restore_quarantined_bridges from Tatoeba Challenge v2023-09-26 (was quarantined null-sha). Built-corpus sha256 + recipe pinned in the source block; corpus content not tracked."
+  },
+  "richness": {
+    "mean_source_chars": 34.3,
+    "mean_effective_words": 6.85,
+    "economy": 5.0,
+    "economy_basis": "measured",
+    "computed_from": "eng-uzb-dev-v1.json",
+    "computed_at": "2026-06-22"
+  }
+}

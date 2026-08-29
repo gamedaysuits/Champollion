@@ -1,0 +1,151 @@
+{
+  "id": "eval-wmt25-general-test-v1",
+  "type": "multiway",
+  "name": "WMT2025 General MT — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ces",
+    "cmn-Hans",
+    "deu",
+    "eng",
+    "hin",
+    "isl",
+    "jpn",
+    "rus",
+    "spa",
+    "ukr"
+  ],
+  "description": "WMT2025 General MT blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt25 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers several genres (news, social, speech, literary). Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'mixed' with an APPROXIMATE domainDistribution (the General MT task spans genres; exact per-segment proportions are not published).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "mixed",
+    "domainDistribution": {
+      "news": 0.25,
+      "conv": 0.25,
+      "subtitles": 0.25,
+      "literary": 0.25
+    },
+    "explicitPairs": [
+      {
+        "source": "ces",
+        "target": "ukr",
+        "srcCode": "cs",
+        "tgtCode": "uk"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de"
+      },
+      {
+        "source": "eng",
+        "target": "spa",
+        "srcCode": "en",
+        "tgtCode": "es"
+      },
+      {
+        "source": "eng",
+        "target": "hin",
+        "srcCode": "en",
+        "tgtCode": "hi"
+      },
+      {
+        "source": "eng",
+        "target": "isl",
+        "srcCode": "en",
+        "tgtCode": "is"
+      },
+      {
+        "source": "eng",
+        "target": "jpn",
+        "srcCode": "en",
+        "tgtCode": "ja"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru"
+      },
+      {
+        "source": "eng",
+        "target": "ukr",
+        "srcCode": "en",
+        "tgtCode": "uk"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hans",
+        "srcCode": "en",
+        "tgtCode": "zh"
+      },
+      {
+        "source": "jpn",
+        "target": "cmn-Hans",
+        "srcCode": "ja",
+        "tgtCode": "zh"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2025 General MT test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (absolute-rankable)"
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt25/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt25 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt25/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2025 Conference on Machine Translation (WMT25). statmt.org/wmt25.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "WMT25 General MT blind test set — the freshest WMT edition and explicitly DIFFICULTY-SAMPLED ('Time to Stop Evaluating on Easy Test Sets', Kocmi et al., ACL 2025, 2025.wmt-1.22). The cleanest absolute-rankable tier; graded LOW + freshBlindTestSet so it rides the absolute-quality lane. (Catalogue-only until the installed sacreBLEU bundles it — see quarantine.)",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt25']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 0
+  },
+  "freshBlindTestSet": true,
+  "quarantine": true,
+  "quarantineReason": "WMT25 is not bundled in sacreBLEU 2.6.0; pairs are PROVISIONAL (the WMT24 continuation set, unpinned). Catalogue-only until a later sacreBLEU ships wmt25 — then re-run build_wmt_general_cards.py to pin real pairs + drop this flag."
+}

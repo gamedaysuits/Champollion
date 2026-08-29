@@ -1,0 +1,120 @@
+---
+title: "L'Atlas"
+description: "L'Atlas est l'index des langues de Champollion — une fiche sourcée par langue. Ce qu'une fiche affirme, ce qu'il est interdit d'y affirmer, où la consulter et comment la corriger."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Les décomptes sont rendus via SSOTCount (lectures au moment de la compilation des SSOT de la machine via les customFields de docusaurus.config.js) — jamais saisis manuellement, conformément à la norme d'affichage SSOT. Les chiffres sans SSOT customFields (seuils pour les langues des signes et les langues construites, totaux des langues menacées) sont LIÉS à la page restreinte qui les possède, et ne sont jamais répétés ici. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# L'Atlas
+
+**L'Atlas est l'index des langues : <SSOTCount field="catalogLanguageCount" /> fiches, une par langue, où chaque valeur indique la source dont elle provient.**
+
+Il s'agit de la couche de référence sur laquelle repose le reste de Champollion. La [CLI](/docs/intro) le lit pour savoir comment une langue se comporte. L'[Arena](/docs/arena) le lit pour savoir *sur quoi* porte un benchmark. Le [Network](/docs/network/) est dessiné par-dessus. Et il est utile en soi : pour la plupart des langues qui s'y trouvent, la fiche constitue le résumé sourcé le plus complet de la situation de la langue disponible en un seul endroit.
+
+Les fiches sont générées à partir de leurs sources, et non rédigées à la main. Personne ne s'assoit pour taper ce qu'il sait d'une langue.
+
+---
+
+## Champollion est un index, pas un arbitre
+
+C'est la règle que l'ensemble de l'Atlas est tenu de respecter, et elle est plus stricte qu'il n'y paraît.
+
+Chaque valeur sur une fiche cite sa source et rapporte ce que cette source **dit réellement** — pas ce que nous pensons être vrai, ni une version corrigée, ni un chiffre arrondi. Lorsque les sources divergent, la fiche les affiche **toutes, avec leur attribution**. Les nombres de locuteurs divergent constamment : Wikidata indique un chiffre, Ethnologue un autre, un recensement national un troisième, une enquête régionale un quatrième. Une fiche présente chacun d'eux avec sa source et sa date. Nous n'en faisons pas la moyenne, nous ne tranchons pas entre eux, et nous ne choisissons pas discrètement celui qui présente le mieux.
+
+La raison n'est pas la modestie. Une fiche qui fabriquerait un consensus constituerait une affirmation nouvelle et non citable sur la langue de quelqu'un, inventée par nos soins. Préserver le désaccord permet à la fiche de rester vérifiable par rapport au monde réel, et laisse le jugement là où il doit être : au lecteur, et à la communauté à qui appartient la langue.
+
+Trois règles de lecture en découlent, et il est utile de les connaître avant d'utiliser une fiche pour quoi que ce soit :
+
+- **`null` signifie inconnu, et non inapplicable.** Un champ vide signifie que nous n'avons pas encore trouvé de source citée pour celui-ci. C'est une invitation, pas un verdict. Lorsqu'un champ ne s'applique véritablement pas, la fiche l'indique en toutes lettres.
+- **Les valeurs dérivées indiquent qu'elles sont dérivées.** Tout ce que Champollion calcule — une médiane, un composite, un indicateur recodé, un décompte extrait d'un jeu de données — est estampillé `champollion-derived` avec une note indiquant *de quoi* il a été dérivé. Ce n'est jamais classé sous le nom du jeu de données en amont, car cela reviendrait à attribuer notre arithmétique à quelqu'un d'autre.
+- **La citation prime sur la couverture.** Une fiche comportant moins de champs, mais bien sourcés, est plus saine qu'une fiche complète remplie à partir de sources tertiaires. Wikipédia, les textes générés par des LLM et les connaissances personnelles ne sont pas des sources primaires ici, et ne sont pas acceptés comme telles.
+
+La [Procédure de citation](/docs/reference/language-card-citation-procedure) définit quelle source fait autorité pour quel type d'affirmation, et dans quel ordre.
+
+---
+
+## Ce qu'une fiche affirme — et ce qu'elle n'affirme jamais
+
+Une fiche fait exactement deux types de déclarations.
+
+**1. Les propriétés de la langue.** Classification et famille, inventaire phonologique, typologie, écriture et orthographe, vitalité et statut de menace, estimations du nombre de locuteurs. Chacune est citée, chacune est étiquetée comme dérivée ou affirmée.
+
+**2. L'existence d'une ressource.** Qu'un corpus, un modèle, un FST, un dictionnaire, un plugin de métrique ou une méthode de traduction *existe* pour cette langue, et à quel niveau d'accès. Il s'agit d'une déclaration de capacité, et non d'une déclaration de qualité.
+
+Et il y a une ligne stricte qu'elle ne franchit pas :
+
+:::danger[Les scores mesurés ne figurent jamais sur une fiche de langue]
+Tout **score mesuré du résultat d'une méthode** — chrF++, BLEU, COMET, TER, taux d'acceptation FST, "pourcentage morphologiquement valide" — est un **résultat d'exécution**, associé à une méthode, un jeu de données et une métrique spécifiques. Il a sa place dans le [classement](/leaderboard), au sein de [l'Arena](/docs/arena), rattaché à une fiche d'exécution avec empreinte numérique. Il est **interdit sur une fiche de langue**, et un linter rejette toute fiche qui en contient un.
+:::
+
+La distinction réside dans la différence entre "un FST existe pour cette langue" — un fait concernant le monde, vrai ou faux indépendamment de nous — et "cette méthode obtient un score d'acceptation FST de 0,82" — une mesure, vraie uniquement pour une exécution, une version de jeu de données et une version de méthode. Confondez les deux et une fiche devient silencieusement une déclaration de qualité sur une langue, de façon permanente, sans aucune exécution derrière elle et sans aucun moyen de la retirer. Ils ne sont donc pas confondus. L'Atlas vous indique **ce qui existe** ; l'Arena vous indique **à quel point cela fonctionne bien**.
+
+Deux autres invariants sont appliqués de la même manière : une affirmation sur les tons ne doit pas contredire l'inventaire phonologique de la fiche elle-même, et un nombre de locuteurs affiché doit être égal à l'une des estimations citées sur la fiche (ou être estampillé comme notre propre dérivation). Le schéma complet, avec chaque champ et ses règles, se trouve dans la [Spécification de la fiche de langue](/docs/reference/language-card-spec).
+
+---
+
+## Ce qu'il contient, et d'où cela provient
+
+<SSOTCount field="catalogLanguageCount" /> langues sont cataloguées, construites à partir de <SSOTCount field="licensedSourceCount" /> sources en amont enregistrées dont les licences sont suivies individuellement — car une fiche n'est redistribuable que si tout ce qu'elle contient l'est également, et les sources non commerciales sont exclues des circuits commerciaux par conception plutôt que par de bonnes intentions.
+
+Le catalogue inclut les langues des signes en tant que langues naturelles qu'elles sont, inclut les langues construites reconnues par la norme ISO 639-3, exclut les langages de programmation, et évalue les langues individuelles plutôt que les macrolangues globales — car les ressources de traduction sont spécifiques à chaque variété, et un score rattaché à un code global constituerait une affirmation sur des variétés que personne n'a évaluées. Lorsque les taxonomies divergent, la fiche montre le désaccord plutôt que de désigner un vainqueur. Chacun de ces choix est argumenté, avec ses conséquences, dans [Qu'est-ce qui compte comme une langue ici ?](/docs/network/context/what-counts-as-a-language).
+
+**La couverture n'est pas la qualité, et l'existence n'est pas la couverture.** Une fiche listant trois ressources pour une langue vous indique que trois choses existent — non pas que l'une d'entre elles est utilisable, ni que la langue est desservie. La manière dont le projet comptabilise la couverture, et ce qu'il refuse de comptabiliser, est détaillée dans [Comptabiliser la couverture](/docs/network/context/coverage-counting).
+
+---
+
+## Où le lire
+
+| Surface | Ce qu'elle vous apporte |
+|---|---|
+| [L'Atlas des langues](/languages) | Les fiches elles-mêmes — recherchez, filtrez par famille, région, vitalité et complexité, et ouvrez n'importe quelle fiche dans son intégralité |
+| [L'Index](/catalogue) | Tout ce qui est catalogué, par langue : benchmarks, ressources, méthodes, services de traduction humaine, et un niveau séparé de résultats publiés en externe, uniquement pour citation |
+| [Glossaire](/glossary) | Des définitions en langage clair pour chaque terme utilisé dans une fiche |
+| [Langues prises en charge](/docs/reference/supported-languages) | Ce que la CLI peut traduire aujourd'hui, ce qui représente un ensemble beaucoup plus restreint que ce que l'Atlas catalogue |
+
+Les points d'entrée lisibles par machine sont `/llms.txt` et `/llms-full.txt` ; les agents peuvent rechercher les fiches directement via le [serveur MCP](/docs/network/getting-started/mcp-server).
+
+---
+
+## Lorsqu'une fiche est erronée
+
+Partez du principe que certaines le sont. Un index de cette taille, assemblé à partir de sources qui se contredisent, contiendra des erreurs — et celles qui importent le plus sont généralement invisibles pour nous et évidentes pour un locuteur.
+
+**Chaque fiche comporte un lien "Suggérer une correction ou un ajout"**, qui ouvre le formulaire de correction avec la langue pré-remplie. Apportez une source si vous en avez une ; pour une demande de suppression ou de restriction émanant de la communauté, aucune citation n'est requise et elle est traitée en priorité.
+
+Les corrections sont appliquées **au niveau du générateur, et non sur la fiche**. Les fiches sont régénérées à partir de leurs sources, de sorte qu'une modification manuelle serait silencieusement écrasée lors de la prochaine compilation — c'est la correction de la source qui rend une modification permanente, et cela corrige généralement le même défaut sur toutes les autres fiches qui partagent cette source. C'est plus lent que de modifier un fichier, mais c'est la seule version qui perdure. Les mécanismes sont détaillés dans [Soumettre à l'Index](/docs/network/getting-started/submit-to-the-index).
+
+**Si vous êtes un membre ou une autorité de la communauté** et que vous souhaitez que les données concernant votre langue soient restreintes, modifiées ou supprimées, cette demande n'a pas besoin de nous être justifiée et n'est pas placée dans une file d'attente publique si vous préférez qu'elle ne le soit pas. Les données linguistiques sont des biodonnées : elles portent l'identité et les relations des personnes qui les parlent, et elles ne peuvent pas être anonymisées de manière significative. Nous sommes **aspirants à la souveraineté, et non certifiés en souveraineté** — nous construisons les mécanismes et les décrivons honnêtement, et déterminer s'ils honorent la propriété et le contrôle communautaires des données linguistiques est une décision qui appartient aux communautés impliquées, et non à nous. La position complète se trouve dans [Intendance des données](/docs/network/sovereignty/data-sovereignty), et la porte d'entrée pour les communautés est [Pour les communautés linguistiques](/docs/network/community/for-language-communities).
+
+---
+
+## À lire ensuite
+
+- **Vous souhaitez rechercher une langue** → [parcourir l'Atlas](/languages).
+- **Vous souhaitez savoir ce que signifie un champ** → [Spécification de la fiche de langue](/docs/reference/language-card-spec).
+- **Vous souhaitez savoir pourquoi une affirmation figure sur une fiche** → [Procédure de citation](/docs/reference/language-card-citation-procedure).
+- **Vous souhaitez créer une méthode pour une langue mal desservie** → [Soutenir une langue à faibles ressources](/docs/network/community/low-resource-languages).
+- **Vous souhaitez savoir dans quelle mesure un élément se traduit réellement bien** → ce n'est pas ici. C'est dans [l'Arena](/docs/arena) et le [classement](/leaderboard).

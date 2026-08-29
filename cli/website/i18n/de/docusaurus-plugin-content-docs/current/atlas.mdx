@@ -1,0 +1,120 @@
+---
+title: "Der Atlas"
+description: "Der Atlas ist Champollions Sprachindex – eine referenzierte Karte pro Sprache. Was eine Karte behauptet, was sie nicht behaupten darf, wo sie nachzulesen ist und wie sie korrigiert werden kann."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Zählungen werden durch SSOTCount gerendert (Lesezugriffe zur Build-Zeit auf die maschinellen SSOTs via docusaurus.config.js customFields) — niemals von Hand eingegeben, gemäß dem SSOT-Anzeigestandard. Zahlen ohne eine customFields SSOT (Untergrenzen für Gebärdensprachen und konstruierte Sprachen, Gesamtzahlen der gefährdeten Sprachen) sind mit der geschützten Seite VERLINKT, die sie besitzt, und werden hier niemals wiederholt. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Der Atlas
+
+**Der Atlas ist der Sprachindex: <SSOTCount field="catalogLanguageCount" /> Karten, eine pro Sprache, bei denen jeder Wert die Quelle benennt, aus der er stammt.**
+
+Er ist die Referenzschicht, auf der der Rest von Champollion aufbaut. Das [CLI](/docs/intro) liest ihn, um zu wissen, wie sich eine Sprache verhält. Die [Arena](/docs/arena) liest ihn, um zu wissen, *wovon* ein Benchmark überhaupt ein Benchmark ist. Das [Network](/docs/network/) wird darüber gespannt. Und er ist auch für sich allein genommen nützlich: Für die meisten der darin enthaltenen Sprachen ist die Karte die vollständigste, mit Quellen belegte Zusammenfassung der Situation der Sprache, die an einem Ort verfügbar ist.
+
+Die Karten werden aus ihren Quellen generiert und nicht von Hand geschrieben. Niemand setzt sich hin und tippt ein, was er über eine Sprache weiß.
+
+---
+
+## Champollion ist ein Index, kein Schiedsrichter
+
+Dies ist die Regel, nach der der gesamte Atlas aufgebaut ist, und sie ist strenger, als sie klingt.
+
+Jeder Wert auf einer Karte zitiert seine Quelle und gibt wieder, was diese Quelle **tatsächlich aussagt** — nicht das, was wir für wahr halten, keine korrigierte Version, keine gerundete Zahl. Wenn Quellen widersprüchlich sind, zeigt die Karte **alle an, mit entsprechender Zuordnung**. Sprecherzahlen weichen ständig voneinander ab: Wikidata nennt eine Zahl, Ethnologue eine andere, eine nationale Volkszählung eine dritte, eine regionale Erhebung eine vierte. Eine Karte führt jede davon mit ihrer Quelle und ihrem Datum auf. Wir bilden keinen Durchschnitt, wir fällen kein Urteil zwischen ihnen und wir wählen nicht stillschweigend diejenige aus, die sich am besten liest.
+
+Der Grund dafür ist nicht Bescheidenheit. Eine Karte, die einen Konsens herstellt, wäre eine neue und nicht zitierfähige Behauptung über die Sprache von jemandem, die von uns erfunden wurde. Die Beibehaltung der Diskrepanz hält die Karte anhand der Realität überprüfbar und belässt die Beurteilung dort, wo sie hingehört — beim Leser und bei der Gemeinschaft, deren Sprache es ist.
+
+Daraus ergeben sich drei Leseregeln, die Sie kennen sollten, bevor Sie eine Karte für irgendetwas verwenden:
+
+- **`null` bedeutet unbekannt, nicht unzutreffend.** Ein leeres Feld bedeutet, dass wir dafür noch keine zitierte Quelle gefunden haben. Es ist eine Einladung, kein Urteil. Wo ein Feld tatsächlich nicht zutrifft, drückt die Karte dies in Worten aus.
+- **Abgeleitete Werte geben an, dass sie abgeleitet sind.** Alles, was Champollion berechnet — ein Median, ein zusammengesetzter Wert, ein umcodiertes Flag, eine aus einem Datensatz extrahierte Zählung — wird mit `champollion-derived` versehen, zusammen mit einem Hinweis, *woraus* es abgeleitet wurde. Es wird niemals unter dem Namen des ursprünglichen Datensatzes abgelegt, da dies unsere Berechnungen jemand anderem in den Mund legen würde.
+- **Zitierung schlägt Abdeckung.** Eine Karte mit weniger, aber gut belegten Feldern ist gesünder als eine volle, die mit tertiären Quellen aufgefüllt wurde. Wikipedia, LLM-generierter Text und eigenes Wissen sind hier keine Primärquellen und werden als solche nicht akzeptiert.
+
+Das [Zitierverfahren](/docs/reference/language-card-citation-procedure) legt fest, welche Quelle für welche Art von Behauptung maßgeblich ist und in welcher Reihenfolge.
+
+---
+
+## Was eine Karte aussagt — und was sie niemals aussagt
+
+Eine Karte trifft genau zwei Arten von Aussagen.
+
+**1. Eigenschaften der Sprache.** Klassifikation und Sprachfamilie, phonologisches Inventar, Typologie, Schrift und Orthographie, Vitalität und Gefährdungsstatus, Schätzungen der Sprecherzahl. Jede zitiert, jede als abgeleitet oder behauptet gekennzeichnet.
+
+**2. Existenz einer Ressource.** Dass ein Korpus, ein Modell, ein FST, ein Wörterbuch, ein Metrik-Plugin oder eine Übersetzungsmethode für diese Sprache *existiert*, und auf welcher Zugriffsebene. Dies ist eine Aussage über Fähigkeiten, keine Aussage über Qualität.
+
+Und es gibt eine harte Grenze, die sie nicht überschreitet:
+
+:::danger[Gemessene Werte stehen niemals auf einer Sprachkarte]
+Jeder **gemessene Wert einer Methodenausgabe** — chrF++, BLEU, COMET, TER, FST-Akzeptanzrate, "Prozent morphologisch gültig" — ist ein **Laufergebnis**, das an eine spezifische Methode, einen Datensatz und eine Metrik gebunden ist. Es gehört auf die [Bestenliste](/leaderboard), in [die Arena](/docs/arena), angehängt an eine mit Fingerabdruck versehene Laufkarte. Es ist **auf einer Sprachkarte verboten**, und ein Linter weist jede Karte zurück, die einen solchen Wert enthält.
+:::
+
+Die Unterscheidung ist der Unterschied zwischen "ein FST existiert für diese Sprache" — eine Tatsache über die Welt, wahr oder falsch unabhängig von uns — und "diese Methode erreicht 0,82 FST-Akzeptanz" — eine Messung, die nur für einen Lauf, eine Datensatzversion und eine Methodenversion wahr ist. Vermischt man beides, wird eine Karte stillschweigend zu einer Qualitätsaussage über eine Sprache, dauerhaft, ohne einen Lauf dahinter und ohne Möglichkeit, sie zurückzuziehen. Daher werden sie nicht vermischt. Der Atlas sagt Ihnen, **was existiert**; die Arena sagt Ihnen, **wie gut es funktioniert**.
+
+Zwei weitere Invarianten werden auf die gleiche Weise durchgesetzt: Eine Aussage über Tonalität darf dem eigenen phonologischen Inventar der Karte nicht widersprechen, und eine angezeigte Sprecherzahl muss einer der zitierten Schätzungen auf der Karte entsprechen (oder als unsere eigene Ableitung gekennzeichnet sein). Das vollständige Schema mit jedem Feld und seinen Regeln ist die [Sprachkarten-Spezifikation](/docs/reference/language-card-spec).
+
+---
+
+## Was darin enthalten ist und woher es kommt
+
+<SSOTCount field="catalogLanguageCount" /> Sprachen sind katalogisiert, erstellt aus <SSOTCount field="licensedSourceCount" /> registrierten Upstream-Quellen, deren Lizenzen einzeln nachverfolgt werden — denn eine Karte ist nur dann weiterverbreitbar, wenn alles darauf weiterverbreitbar ist, und nicht-kommerzielle Quellen werden durch Konstruktion und nicht durch gute Absichten von kommerziellen Wegen abgeschirmt.
+
+Der Katalog schließt Gebärdensprachen als die natürlichen Sprachen ein, die sie sind, umfasst die von ISO 639-3 anerkannten konstruierten Sprachen, schließt Programmiersprachen aus und bewertet einzelne Sprachen anstelle von Makrosprachen-Dachbegriffen — denn Übersetzungsressourcen sind varietätenspezifisch, und ein Wert, der an einen Dachcode angehängt wird, wäre eine Behauptung über Varietäten, die niemand evaluiert hat. Wo Taxonomien nicht übereinstimmen, zeigt die Karte die Diskrepanz, anstatt einen Gewinner zu küren. Jede dieser Entscheidungen wird mit ihren Konsequenzen in [Was zählt hier als Sprache?](/docs/network/context/what-counts-as-a-language) erörtert.
+
+**Abdeckung ist nicht Qualität, und Existenz ist nicht Abdeckung.** Eine Karte, die drei Ressourcen für eine Sprache auflistet, sagt Ihnen, dass drei Dinge existieren — nicht, dass eines davon nutzbar ist, und nicht, dass die Sprache damit versorgt ist. Wie das Projekt die Abdeckung zählt und was es sich weigert zu zählen, finden Sie unter [Abdeckung zählen](/docs/network/context/coverage-counting).
+
+---
+
+## Wo man ihn lesen kann
+
+| Oberfläche | Was sie Ihnen bietet |
+|---|---|
+| [Der Sprachatlas](/languages) | Die Karten selbst — suchen, filtern nach Sprachfamilie, Region, Vitalität und Komplexität, und jede Karte vollständig öffnen |
+| [Der Index](/catalogue) | Alles Katalogisierte, nach Sprache: Benchmarks, Ressourcen, Methoden, menschliche Übersetzungsdienste und eine separat abgeschirmte, nur zitierfähige Ebene von extern veröffentlichten Ergebnissen |
+| [Glossar](/glossary) | Klar verständliche Definitionen für jeden Begriff, den eine Karte verwendet |
+| [Unterstützte Sprachen](/docs/reference/supported-languages) | Was das CLI heute übersetzen kann, was eine viel kleinere Menge ist als das, was der Atlas katalogisiert |
+
+Maschinenlesbare Einstiegspunkte sind `/llms.txt` und `/llms-full.txt`; Agenten können die Karten direkt über den [MCP-Server](/docs/network/getting-started/mcp-server) durchsuchen.
+
+---
+
+## Wenn eine Karte falsch ist
+
+Gehen Sie davon aus, dass einige davon falsch sind. Ein Index dieser Größe, der aus Quellen zusammengestellt wird, die einander widersprechen, wird Fehler enthalten — und diejenigen, die am wichtigsten sind, sind für uns meist unsichtbar und für einen Sprecher offensichtlich.
+
+**Jede Karte enthält einen Link "Korrektur oder Ergänzung vorschlagen"**, der das Korrekturformular mit der bereits vorausgefüllten Sprache öffnet. Bringen Sie eine Quelle mit, falls Sie eine haben; für eine Anfrage einer Gemeinschaft auf Entfernung oder Einschränkung ist kein Zitat erforderlich und sie wird mit Priorität behandelt.
+
+Korrekturen werden **am Generator angewendet, nicht an der Karte**. Karten werden aus ihren Quellen neu generiert, sodass eine manuelle Bearbeitung beim nächsten Build stillschweigend überschrieben würde — die Korrektur der Quelle macht eine Korrektur dauerhaft, und sie behebt in der Regel denselben Fehler auf jeder anderen Karte, die diese Quelle teilt. Dies ist langsamer als das Bearbeiten einer Datei und es ist die einzige Version, die Bestand hat. Die Mechanismen finden Sie unter [Beim Index einreichen](/docs/network/getting-started/submit-to-the-index).
+
+**Wenn Sie ein Mitglied oder eine Autorität einer Gemeinschaft sind** und möchten, dass Daten über Ihre Sprache eingeschränkt, geändert oder entfernt werden, muss diese Anfrage uns gegenüber nicht gerechtfertigt werden und gelangt nicht in eine öffentliche Warteschlange, wenn Sie dies nicht wünschen. Sprachdaten sind Biodaten: Sie tragen die Identität und die Beziehungen der Menschen in sich, die sie sprechen, und sie können nicht sinnvoll anonymisiert werden. Wir sind **souveränitätsanstrebend, nicht souveränitätszertifiziert** — wir bauen die Mechanismen und beschreiben sie ehrlich, und ob sie das Eigentum und die Kontrolle der Gemeinschaften über ihre Sprachdaten wahren, ist eine Entscheidung, die den beteiligten Gemeinschaften obliegt, nicht uns. Die vollständige Position finden Sie unter [Datenverantwortung](/docs/network/sovereignty/data-sovereignty), und der Zugang für Gemeinschaften ist [Für Sprachgemeinschaften](/docs/network/community/for-language-communities).
+
+---
+
+## Als Nächstes lesen
+
+- **Sie möchten eine Sprache nachschlagen** → [den Atlas durchsuchen](/languages).
+- **Sie möchten wissen, was ein Feld bedeutet** → [Sprachkarten-Spezifikation](/docs/reference/language-card-spec).
+- **Sie möchten wissen, warum eine Behauptung auf einer Karte steht** → [Zitierverfahren](/docs/reference/language-card-citation-procedure).
+- **Sie möchten eine Methode für eine unterversorgte Sprache entwickeln** → [Eine ressourcenarme Sprache unterstützen](/docs/network/community/low-resource-languages).
+- **Sie möchten wissen, wie gut etwas tatsächlich übersetzt** → das finden Sie nicht hier. Dafür gibt es [die Arena](/docs/arena) und die [Bestenliste](/leaderboard).

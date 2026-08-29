@@ -1,0 +1,121 @@
+---
+sidebar_position: 1
+title: "설치"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 설치
+
+## 요구 사항
+
+- **Node.js 20.11+** (네이티브 ESM)
+- 번역 API 키 (아래 참조)
+
+## 설치
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## API 키 발급받기
+
+Champollion에는 번역 백엔드가 필요해요. 다음 중 하나를 선택하세요:
+
+| 제공자 | 환경 변수 | 추천 용도 |
+|----------|---------------------|----------|
+| **OpenRouter** (권장) | `OPENROUTER_API_KEY` | 콘텐츠가 많은 프로젝트, Markdown, 200개 이상의 모델 |
+| **Gemini** (무료 티어) | `GEMINI_API_KEY` | 비용 없이 시작, 좋은 품질 |
+| **OpenAI** | `OPENAI_API_KEY` | GPT-4o 직접 액세스 |
+| **Anthropic** | `ANTHROPIC_API_KEY` | Claude 직접 액세스, 미묘한 뉘앙스의 텍스트 |
+| **DeepL** | `DEEPL_API_KEY` | 유럽어, 격식 설정 기능 내장 |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | 대량의 키-값 쌍, 194개 언어 |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure, 135개 언어 |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | 자체 호스팅, 개인정보 보호 우선 |
+| **Tilde MT** | `TILDE_API_KEY` | 발트해 및 유럽어, EU 호스팅 |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | 전문 기계 번역(MT), 200개 언어 |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+[OpenRouter](https://openrouter.ai)는 200개 이상의 LLM 모델을 위한 통합 API를 제공해요. 무료 등급도 이용할 수 있어요.
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+또는 `.env.local`에 추가하세요:
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+가장 적합한 용도: 콘텐츠가 많은 프로젝트, Markdown 번역, 그리고 콘텐츠 인식 보호(코드 블록, 숏코드, 보간 변수)가 필요한 프로젝트에 적합해요.
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+추천 용도: 대량의 키-값 문자열 쌍(194개 언어). Markdown 콘텐츠에는 **권장하지 않아요** — Google Translate는 코드 블록, 숏코드 또는 보간 변수를 인식하지 못해요.
+
+:::tip[스마트 감지]
+`GOOGLE_TRANSLATE_API_KEY`만 설정되어 있고 OpenRouter 키가 없으면 champollion이 자동으로 Google Translate로 전환해요. 설정을 변경할 필요가 없어요.
+:::
+
+  </TabItem>
+</Tabs>
+
+## 설치 확인
+
+```bash
+npx champollion --help
+```
+
+사용 가능한 명령어 목록이 표시될 거예요. 이제 [빠른 시작](/docs/getting-started/quick-start)을 진행할 준비가 되었어요.

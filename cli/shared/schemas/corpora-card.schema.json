@@ -1,0 +1,957 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/corpora-card.schema.json",
+  "title": "Champollion Corpora Card",
+  "description": "Schema for corpora cards — SSOT metadata for reference corpora, pair-specific evaluation sets, and multi-way parallel corpora. Reference corpora (ref-*) catalogue external datasets for development use. Evaluation sets (eval-*) are community-curated, pair-specific benchmarks with optional secret test splits, steward-controlled authorization, and sovereignty-aspirant metadata. Multi-way corpora (multiway type with eval-* id) represent sentence-aligned parallel datasets covering many languages — a single card expands into N×(N-1) directional pairs at registry build time. Sovereignty fields record governance facts — who governs this data, what they've said about it, and what frameworks they've invoked. See DATA-SOVEREIGNTY.md for field reference.",
+  "type": "object",
+  "required": ["id", "type", "name", "version", "description", "source", "license", "contamination", "_provenance"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(ref|eval)-[a-z0-9][a-z0-9-]*$",
+      "description": "Unique identifier. Must start with 'ref-' for reference corpora or 'eval-' for Champollion evaluation sets. Kebab-case. This is also the card filename (minus .json)."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["reference", "eval", "multiway"],
+      "description": "'reference' = external corpus catalogued for development use (FLORES+, NTREX, Tatoeba). 'eval' = community-curated pair-specific benchmark used for official Champollion evaluation. 'multiway' = multi-way parallel corpus covering many languages — one card expands into N×(N-1) directional eval pairs at registry build time."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the corpus or evaluation set."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version string (semver recommended). Tracks corpus revisions."
+    },
+    "description": {
+      "type": "string",
+      "description": "What this corpus is and why it matters. Be specific about content, methodology, and intended use."
+    },
+
+    "pair": {
+      "type": "object",
+      "description": "Language pair for eval-type cards. Not used for reference corpora (which cover many languages).",
+      "required": ["source", "target"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "ISO 639-3 code of the source language."
+        },
+        "target": {
+          "type": "string",
+          "description": "ISO 639-3 code of the target language."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["unidirectional", "bidirectional"],
+          "description": "Whether the dataset supports translation in both directions or only source→target."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ISO 639-3 codes of all languages covered. Used for reference corpora that span many languages."
+    },
+
+    "source": {
+      "type": "object",
+      "description": "Provenance — who created this corpus and where to find it.",
+      "required": ["publisher", "url"],
+      "properties": {
+        "publisher": {
+          "type": "string",
+          "description": "Organization or team that created the corpus."
+        },
+        "url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Canonical URL. Null for private/unpublished corpora."
+        },
+        "paper": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Academic paper URL (arXiv, ACL Anthology, etc.)."
+        },
+        "citation": {
+          "type": ["string", "null"],
+          "description": "Short citation string (Author et al. (Year). Title.)."
+        },
+        "fundedBy": {
+          "type": ["string", "null"],
+          "description": "Funding body, if known."
+        },
+        "repo_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Fetch-from-source: URL of the upstream repository the corpus is built from at fetch time. Champollion does not host third-party corpora — when this field is set, the data is downloaded from this repo and built locally by the declared builder adapter."
+        },
+        "ref": {
+          "type": "string",
+          "description": "Fetch-from-source: git ref (commit SHA preferred; tag or branch otherwise) of the upstream repo that the build is pinned to. Use a commit SHA for reproducible builds."
+        },
+        "ref_note": {
+          "type": ["string", "null"],
+          "description": "Fetch-from-source: free-text note about the ref, e.g. a TODO to pin a branch ref to a commit SHA."
+        },
+        "builder": {
+          "type": "string",
+          "description": "Fetch-from-source: corpora-builder adapter id that rebuilds this corpus from the upstream repo (e.g. 'edtekla' → corpora_builder.adapters.edtekla_adapter)."
+        },
+        "sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Fetch-from-source: SHA-256 of the built corpus file (the dev.dataFile output). Used to verify that a local rebuild reproduced the published corpus byte-for-byte. Null if the build has not been hash-pinned yet."
+        },
+        "archive_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Fetch-from-source: SHA-256 of the UPSTREAM archive the builder downloads, verified on fetch before the build runs (distinct from sha256, which is the built corpus). Used by per-pair archive builders (e.g. 'tatoeba-opus', whose moses .txt.zip is independently hashable); the consolidated 'tatoeba-challenge' tar relies on the builder's well-known pin instead."
+        },
+        "license": {
+          "type": "string",
+          "description": "Fetch-from-source: SPDX id of the upstream data license, shown in the license-acceptance prompt before download. Duplicates the card-level license.spdx for builder convenience."
+        },
+        "license_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Fetch-from-source: canonical URL of the upstream data license text."
+        },
+        "member": {
+          "type": "string",
+          "description": "Fetch-from-source: path of the relevant member inside the upstream archive/repo the builder extracts (e.g. 'data/test-v2023-09-26/ara-ber/test.txt' inside the Tatoeba Challenge tar)."
+        },
+        "recipe": {
+          "type": "object",
+          "description": "Fetch-from-source: deterministic build parameters passed to the builder adapter (split, seed, size caps, length filters, etc.). Shape is builder-specific; the adapter is the SSOT for which keys it honours.",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "license": {
+      "type": "object",
+      "description": "License terms. Every field must be verified against the actual license file or documentation.",
+      "required": ["spdx", "commercial", "redistribution"],
+      "properties": {
+        "spdx": {
+          "type": "string",
+          "description": "SPDX license identifier (e.g., 'CC-BY-SA-4.0', 'MIT', 'Apache-2.0') or 'custom' for non-standard licenses."
+        },
+        "commercial": {
+          "type": "boolean",
+          "description": "Can this corpus be used for commercial purposes?"
+        },
+        "redistribution": {
+          "type": "boolean",
+          "description": "Can this corpus be redistributed?"
+        },
+        "aiTraining": {
+          "type": ["string", "null"],
+          "description": "Terms for use in AI/ML model training, if specified in the license."
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Additional license restrictions not captured by the fields above (e.g., ELAR access terms)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "dev": {
+      "type": "object",
+      "description": "Development split — public data for local testing and prompt tuning. Only for eval-type cards.",
+      "required": ["size", "sizeUnit"],
+      "properties": {
+        "size": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of entries/sentences in the dev split."
+        },
+        "sizeUnit": {
+          "type": "string",
+          "enum": ["entries", "sentences", "segments", "documents"],
+          "description": "Unit of the size count."
+        },
+        "domain": {
+          "type": "string",
+          "enum": ["ui", "legal", "medical", "financial", "edu", "ecommerce", "marketing", "gov", "scientific", "religious", "support", "subtitles", "news", "literary", "conv", "tech", "humanitarian", "mixed"],
+          "description": "Primary domain of the data. Closed taxonomy — one of the 17 content codes in shared/domain-taxonomy.json (ui, legal, medical, financial, edu, ecommerce, marketing, gov, scientific, religious, support, subtitles, news, literary, conv, tech, humanitarian) OR the composite marker 'mixed'. 'mixed' means no single dominant domain and MUST be paired with a domainDistribution (build_registry hard-fails on bare 'mixed')."
+        },
+        "domainDistribution": {
+          "type": "object",
+          "description": "Breakdown of domains within the data. Keys are content domain codes (the 17 codes; never 'mixed'), values are proportions (0.0-1.0) or counts. Required whenever domain='mixed'.",
+          "propertyNames": { "enum": ["ui", "legal", "medical", "financial", "edu", "ecommerce", "marketing", "gov", "scientific", "religious", "support", "subtitles", "news", "literary", "conv", "tech", "humanitarian"] },
+          "additionalProperties": { "type": "number" }
+        },
+        "dataFile": {
+          "type": "string",
+          "description": "Relative path to the data file within arena/datasets/ (e.g., 'curated/eng-crk-dev-v1.json')."
+        },
+        "format": {
+          "type": "string",
+          "enum": ["harness-json", "jsonl", "tsv", "parallel-text"],
+          "description": "Format of the data file."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "test": {
+      "type": "object",
+      "description": "Public test split — the non-secured portion of a Champollion-built test corpus. For prize corpora, 'test' is the public portion and 'secretTest' is the cryptographically secured holdout from the same master corpus. Distinct from 'dev' which is for development/prompt-tuning.",
+      "required": ["size", "sizeUnit"],
+      "properties": {
+        "size": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of entries/sentences in the public test split."
+        },
+        "sizeUnit": {
+          "type": "string",
+          "enum": ["entries", "sentences", "segments", "documents"],
+          "description": "Unit of the size count."
+        },
+        "domain": {
+          "type": "string",
+          "enum": ["ui", "legal", "medical", "financial", "edu", "ecommerce", "marketing", "gov", "scientific", "religious", "support", "subtitles", "news", "literary", "conv", "tech", "humanitarian", "mixed"],
+          "description": "Primary domain of the data. Closed taxonomy — one of the 17 content codes in shared/domain-taxonomy.json OR the composite marker 'mixed'. 'mixed' means no single dominant domain and MUST be paired with a domainDistribution (build_registry hard-fails on bare 'mixed')."
+        },
+        "domainDistribution": {
+          "type": "object",
+          "description": "Breakdown of domains within the data. Keys are content domain codes (the 17 codes; never 'mixed'), values are proportions (0.0-1.0) or counts. Required whenever domain='mixed'.",
+          "propertyNames": { "enum": ["ui", "legal", "medical", "financial", "edu", "ecommerce", "marketing", "gov", "scientific", "religious", "support", "subtitles", "news", "literary", "conv", "tech", "humanitarian"] },
+          "additionalProperties": { "type": "number" }
+        },
+        "dataFile": {
+          "type": "string",
+          "description": "Relative path to the data file within arena/datasets/ (e.g., 'curated/eng-crk-test-v1.json')."
+        },
+        "format": {
+          "type": "string",
+          "enum": ["harness-json", "jsonl", "tsv", "parallel-text"],
+          "description": "Format of the data file."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "segments": {
+      "type": "array",
+      "description": "For reference corpora — available data splits (dev, devtest, test, etc.).",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "description": "Segment identifier (e.g., 'devtest', 'dev', 'test')." },
+          "name": { "type": "string", "description": "Human-readable segment name." },
+          "size": { "type": "integer", "minimum": 1, "description": "Number of entries/sentences." },
+          "sizeUnit": { "type": "string", "enum": ["entries", "sentences", "segments", "documents"] },
+          "purpose": { "type": "string", "description": "Intended use of this segment." }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "download": {
+      "type": "object",
+      "description": "How to obtain the data. For reference corpora (users download themselves), eval dev splits, or multiway parallel corpora.",
+      "required": ["method", "url"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["url", "git-clone", "pip", "huggingface", "manual", "restricted", "bundled"],
+          "description": "Download method. 'bundled' means the data ships with the harness in curated/."
+        },
+        "url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Download URL. Null if method is 'restricted' or 'bundled'."
+        },
+        "instructions": {
+          "type": ["string", "null"],
+          "description": "Human-readable download and setup instructions."
+        },
+        "sha256": {
+          "type": ["string", "null"],
+          "description": "SHA-256 hash of the download artifact for integrity verification."
+        },
+        "filePattern": {
+          "type": "string",
+          "description": "For multiway parallel corpora: path pattern within the repo to locate per-language files. Uses {lang_code} for the source language code and {segment} for the split name. Example: 'flores200/{segment}/{lang_code}.{segment}'."
+        },
+        "format": {
+          "type": "string",
+          "enum": ["parallel-text", "jsonl", "tsv"],
+          "description": "For multiway parallel corpora: format of the per-language files. 'parallel-text' = one sentence per line, files aligned by line number."
+        },
+        "gated": {
+          "type": "boolean",
+          "description": "Gated-source metadata: true when the upstream requires accepting terms (and an access token) before download — e.g. a gated HuggingFace dataset. Drives the TUI's per-dataset accept-terms instructions and the fail-honest download errors. Defaults to false (open download) when absent."
+        },
+        "termsUrl": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Gated-source metadata: the exact page where a user accepts the dataset's terms (e.g. the HuggingFace dataset page). Shown verbatim in the accept-terms prompt and the gated-download error. Null/absent when not gated."
+        },
+        "tokenEnv": {
+          "type": ["string", "null"],
+          "description": "Gated-source metadata: name of the environment variable the access token is read from (e.g. 'HF_TOKEN'). Surfaced verbatim in the token-export instructions. Null/absent when not gated."
+        },
+        "revision": {
+          "type": ["string", "null"],
+          "description": "Immutable upstream commit/revision to pin (e.g. a HuggingFace dataset commit sha). When set, files are fetched from resolve/{revision}/ so the bytes are frozen — the integrity anchor for per-file HF sources (SMOL/WMT24++/BOUQuET) that have no single downloadable archive sha."
+        },
+        "splitSha256": {
+          "type": ["string", "null"],
+          "description": "SHA-256 of a secondary split-definition file fetched alongside the main archive (e.g. ALT's URL-{segment}.txt, which defines the ALT-Standard test split). Verified at fetch time when present."
+        },
+        "subset": {
+          "type": ["string", "null"],
+          "description": "For multi-subset sources sharing one builder (e.g. SMOL 'smolsent'/'smoldoc'): which subset this card builds. Propagated to every expanded pair's source_export so the harness fetches the right files."
+        },
+        "builder": {
+          "type": "string",
+          "description": "Explicit TRANSPORT override ('recipes, not adapters', 2026-07-07): corpus_fetch builder id that rebuilds this card's pairs (e.g. 'lineparallel' → the generic line-parallel builder). When set, the family token (card_id.split('-')[1]) rides each expanded pair's source_export.family instead of deriving the builder id — so promotion, held-out-contamination forcing, and the built corpus's source_dataset tag keep keying off the family while ONE generic builder serves every recipe benchmark. Absent = legacy family-derived builder id."
+        },
+        "pairing": {
+          "type": "object",
+          "description": "Single-file pairing config for the 'lineparallel' builder (2026-07-07 extension). Absent = 'line-zip' (two line-aligned files, the default). Single-file modes fetch ONE file per pair (filePattern resolved with {src_code}/{tgt_code} only) and pair columns/fields of the same row/record, so they cannot misalign. Carried verbatim to every expanded pair's source_export so the harness rebuild pairs exactly what the pin build paired — part of the sha-pin contract.",
+          "required": ["mode"],
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": ["line-zip", "tsv-columns", "csv-columns", "json-fields"],
+              "description": "'tsv-columns' = one tab-separated file (plain split, no quoting); 'csv-columns' = one RFC-4180 CSV (quoting, embedded newlines); 'json-fields' = one JSON file walked via recordPath. 'line-zip' is the explicit spelling of the two-file default."
+            },
+            "columns": {
+              "type": "object",
+              "description": "For tsv-columns/csv-columns: maps each side's upstream lang code (the pair's srcCode/tgtCode) to its column — a header name (string) or 0-based index (integer). E.g. NusaX {\"ind\": \"indonesian\", \"ace\": \"acehnese\", ...}; NusaTranslation maps every local-language code to 'tgt_text'.",
+              "additionalProperties": { "type": ["string", "integer"] }
+            },
+            "hasHeader": {
+              "type": "boolean",
+              "description": "For tsv-columns/csv-columns: whether row 1 is a header (default true). Headerless files must select columns by integer index."
+            },
+            "fields": {
+              "type": "object",
+              "description": "For json-fields: maps each side's upstream lang code to its record field name (e.g. BSD {\"en\": \"en_sentence\", \"ja\": \"ja_sentence\"}).",
+              "additionalProperties": { "type": "string" }
+            },
+            "recordPath": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "For json-fields: path from the JSON root to the paired records — a list of object keys where the literal '[]' descends into each list element (e.g. BSD [\"[]\", \"conversation\", \"[]\"]). Records are flattened in file order (deterministic)."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "pairGeneration": {
+      "type": "object",
+      "description": "For multiway cards: how to expand the multi-language corpus into directional evaluation pairs at registry build time.",
+      "required": ["mode", "segment", "direction"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["all-pairs", "explicit"],
+          "description": "'all-pairs' = generate one eval entry for every ordered (source, target) pair where source ≠ target (genuinely N-way parallel sets). 'explicit' = generate exactly the pairs listed in 'explicitPairs' (directed/curated sets like WMT24++ eng→xx, SMOL per-file directed pairs, AraBench dialect↔eng — which are NOT all-pairs and would otherwise be misrepresented)."
+        },
+        "explicitPairs": {
+          "type": "array",
+          "description": "For mode='explicit': the exact pairs to generate. Each item maps a project ISO pair to its upstream file codes (so the adapter can locate the right files) and may pin its own size.",
+          "items": {
+            "type": "object",
+            "required": ["source", "target"],
+            "properties": {
+              "source": { "type": "string", "description": "Source language — project ISO 639-3 (+ optional script/region subtag) code." },
+              "target": { "type": "string", "description": "Target language — project ISO 639-3 (+ optional script/region subtag) code." },
+              "srcCode": { "type": "string", "description": "Upstream source-side file code (e.g. SMOL 'en', WMT24++ source 'en')." },
+              "tgtCode": { "type": "string", "description": "Upstream target-side file code (e.g. WMT24++ 'fr_CA', SMOL 'af'). Disambiguates regional variants that collide on the project label." },
+              "size": { "type": "integer", "minimum": 1, "description": "Number of entries in this specific built pair (enforced at fetch time when set)." },
+              "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$", "description": "SHA-256 of the deterministically built corpus file for this pair (the hash corpus_fetch verifies). Pinned per pair from the immutable revision so the runnable-queue item carries a non-null corpus_sha256 (the sha-pin doctrine that gates the runnable lane)." },
+              "filePattern": { "type": "string", "description": "Per-pair override of download.filePattern (recipe cards): direction-specific member-path template for upstreams whose reverse direction lives under the forward pair's directory (e.g. MAFAND yor→en still reads data/text_files/en-yor/). Rides the expanded entry's source_export so fetch-time rebuilds resolve the exact members the pin build used." },
+              "srcMember": { "type": "string", "description": "Explicit source-side member path (recipe cards, two-file line-zip only): escape hatch for upstream filenames that defy any template (e.g. LoResMT-2020's 'rui2hi.test.ru' typo). Overrides filePattern for this side." },
+              "tgtMember": { "type": "string", "description": "Explicit target-side member path (recipe cards, two-file line-zip only): see srcMember." }
+            },
+            "additionalProperties": false
+          }
+        },
+        "segment": {
+          "type": "string",
+          "description": "Which data segment to use for evaluation (e.g., 'devtest', 'test'). Must match an entry in the card's 'segments' array."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["unidirectional", "bidirectional"],
+          "description": "Whether each generated pair is unidirectional (A→B only) or bidirectional."
+        },
+        "doNotTrain": {
+          "type": "boolean",
+          "description": "Applied to all generated eval entries. Must be true for benchmark corpora."
+        },
+        "sizePerPair": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Default entries per generated pair, used when 'pairSizes' has no entry for a pair. For uniformly-aligned parallel corpora this is the line count of the segment (e.g., 1012 for FLORES+ devtest); for sets whose directions vary in length, also provide 'pairSizes'."
+        },
+        "pairSizes": {
+          "type": "object",
+          "description": "For mode='all-pairs' sets whose per-direction sizes are NOT uniform (e.g. Turkic X-WMT, 300–1000 sentences/direction): maps the generated pair slug '{isoSource}-{isoTarget}' to that direction's true entry count, read from the sha-pinned upstream archive. build_registry uses it per pair, falling back to 'sizePerPair' for any pair not listed.",
+          "additionalProperties": { "type": "integer", "minimum": 1 }
+        },
+        "domain": {
+          "type": "string",
+          "enum": ["ui", "legal", "medical", "financial", "edu", "ecommerce", "marketing", "gov", "scientific", "religious", "support", "subtitles", "news", "literary", "conv", "tech", "humanitarian", "mixed"],
+          "description": "Uniform domain applied to all generated pairs. Closed taxonomy — one of the 17 content codes in shared/domain-taxonomy.json OR the composite marker 'mixed'. Use 'mixed' (with domainDistribution) when the source spans several domains — e.g. FLORES+ is Wikinews/Wikijunior/Wikivoyage, not pure news. build_registry hard-fails on bare 'mixed' (no distribution)."
+        },
+        "domainDistribution": {
+          "type": "object",
+          "description": "Breakdown of domains across all generated pairs. Keys are content domain codes (the 17 codes; never 'mixed'), values are proportions (0.0-1.0) or counts. Required whenever domain='mixed'. Propagated to every expanded pair's domain_distribution in the registry.",
+          "propertyNames": { "enum": ["ui", "legal", "medical", "financial", "edu", "ecommerce", "marketing", "gov", "scientific", "religious", "support", "subtitles", "news", "literary", "conv", "tech", "humanitarian"] },
+          "additionalProperties": { "type": "number" }
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "promotedSubset": {
+      "type": "object",
+      "description": "Curated subset of a contaminated multiway card's languages PROMOTED into the runnable lane (segment=development) so a representative slice is evaluable, while the full N-way catalogue stays catalogue-only. Used for HIGH-contamination sets (e.g. FLORES+) that ride the relative-comparison-only lane — their scores compare methods on the same corpus, never as absolute quality. Expanded all-pairs over its own language list; per-pair built shas pin integrity.",
+      "required": ["languages"],
+      "additionalProperties": false,
+      "properties": {
+        "rationale": { "type": "string", "description": "Why this subset was chosen (coverage rationale)." },
+        "revision": { "type": ["string", "null"], "description": "Immutable upstream commit pinned for the promoted pairs (defaults to download.revision)." },
+        "sizePerPair": { "type": "integer", "minimum": 1, "description": "Entries per promoted pair (defaults to pairGeneration.sizePerPair)." },
+        "languages": {
+          "type": "array",
+          "minItems": 2,
+          "description": "The curated languages. Each maps a project ISO code to its exact upstream per-language file code — e.g. FLORES+ 'quy_Latn' (Ayacucho Quechua) under project ISO 'que'.",
+          "items": {
+            "type": "object",
+            "required": ["iso", "sourceCode"],
+            "additionalProperties": false,
+            "properties": {
+              "iso": { "type": "string", "description": "Project ISO 639-3 (+ optional script/region) code — the pair-id label." },
+              "sourceCode": { "type": "string", "description": "Exact upstream per-language file code (FLORES+ stem, e.g. 'quy_Latn', 'fao_Latn')." },
+              "variety": { "type": "string", "description": "Human note disambiguating the variety (e.g. 'Ayacucho Quechua (quy) — NOT Cusco quz')." }
+            }
+          }
+        },
+        "builtShas": {
+          "type": "object",
+          "description": "Per-pair SHA-256 of the deterministically built corpus (slug '{srcIso}-{tgtIso}' → sha). Pinned from the immutable revision so each runnable entry carries a non-null corpus_sha256 (sha-pin doctrine).",
+          "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+
+    "secretTest": {
+      "type": ["object", "null"],
+      "description": "Secret test set — the cryptographically secured holdout portion of a Champollion-built test corpus. Encrypted at rest, decrypted only inside the air-gapped evaluation sandbox, never distributed. Steward authorization (TSS threshold signature) required for each evaluation run. See sandbox-evaluation-spec.md.",
+      "required": ["status", "size", "sha256", "createdBy"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["active", "planned", "retired"],
+          "description": "'active' = secret set exists, encrypted, and in use. 'planned' = community is creating it. 'retired' = compromised or replaced."
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of entries in the secret test set."
+        },
+        "sha256": {
+          "type": "string",
+          "description": "SHA-256 hash of the secret test file. Published so anyone can verify integrity. The hash is public, the data is not."
+        },
+        "createdBy": {
+          "type": "string",
+          "enum": ["community"],
+          "description": "Secret test sets must be created by the language community. This field enforces that constraint."
+        },
+        "keyScheme": {
+          "type": ["string", "null"],
+          "description": "Cryptographic custody model for the secret test set. Documents how the encryption key is managed. e.g., 'TSS-3-of-5' (Threshold Signature Scheme, 3 of 5 stewards needed), 'Shamir-2-of-3'. Null if key custody not yet established."
+        },
+        "serverEndpoint": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "URL of the sandbox evaluation VPS endpoint. Null until sandbox infrastructure is deployed."
+        },
+        "lastVerified": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Date the secret test set integrity was last verified (ISO 8601)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "stewardship": {
+      "type": ["object", "null"],
+      "description": "Community stewardship model for prize evaluation sets. Stewards are chosen by the language community and authorize evaluation runs via TSS push-button approval. Only required when secretTest.status is 'active'.",
+      "properties": {
+        "stewards": {
+          "type": "array",
+          "description": "List of authorized stewards. Minimum 5 for prize evaluation sets with active secret test splits.",
+          "items": {
+            "type": "object",
+            "required": ["name", "role"],
+            "properties": {
+              "name": { "type": "string", "description": "Steward name or organizational title." },
+              "role": { "type": "string", "enum": ["primary", "secondary"], "description": "Primary stewards initiate reviews. Secondary stewards authorize." },
+              "publicKey": {
+                "type": ["string", "null"],
+                "description": "Steward's public key for TSS threshold signature. Used to verify steward identity during MPC authorization. Null until key generation ceremony is performed."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "threshold": {
+          "type": "string",
+          "description": "Multi-signature threshold (e.g., '3 of 5'). Number of steward approvals needed to authorize a secret test evaluation run."
+        },
+        "authorizationModel": {
+          "type": "string",
+          "enum": ["per-submission", "blanket", "open"],
+          "description": "Consent model for evaluation runs. 'per-submission' = each method needs fresh steward approval (default for prize sets). 'blanket' = pre-authorized for all submissions meeting criteria. 'open' = no authorization gate."
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Additional governance notes."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "submission": {
+      "type": ["object", "null"],
+      "description": "Terms for submitting a method for prize evaluation. Defines what transfers to the governance org, what the researcher retains, and what methods are admissible. The core sovereignty deal: you want the prize, you transfer the complete self-hostable method to the language trust. See method-submission-agreement.md.",
+      "properties": {
+        "acceptanceThreshold": {
+          "type": ["string", "null"],
+          "description": "Score or criteria that triggers transfer and community review. Defined by each community's governance body. Null if not yet defined."
+        },
+        "transfer": {
+          "type": ["object", "null"],
+          "description": "What transfers to the governance org upon acceptance. Each field is a scoped right. Maps to community ownership and possession of the method.",
+          "properties": {
+            "sourceCode": {
+              "type": "boolean",
+              "description": "Source code ownership transfers to governance org. The community can inspect, modify, and deploy the code."
+            },
+            "modelWeights": {
+              "type": "boolean",
+              "description": "Trained model weights transfer to governance org. The community possesses the actual model files."
+            },
+            "deploymentRights": {
+              "type": "boolean",
+              "description": "Exclusive deployment rights transfer to governance org. The community controls where and how the method is deployed."
+            },
+            "revenueModel": {
+              "type": ["string", "null"],
+              "description": "Community-set terms for any commercial deployment, held by the community's governance org (e.g., 'commercial use by written permission only'). Null if not yet defined. Maps to CARE Collective Benefit. Champollion is non-commercial and takes no share of any kind."
+            }
+          },
+          "additionalProperties": false
+        },
+        "retained": {
+          "type": ["object", "null"],
+          "description": "What the researcher explicitly retains after transfer. The deal: you give up the artifact, you keep your ideas.",
+          "properties": {
+            "publicationRights": {
+              "type": "boolean",
+              "description": "Researcher retains the right to publish about the method — describe the approach, write the paper."
+            },
+            "techniqueReuse": {
+              "type": "boolean",
+              "description": "Researcher retains the right to reuse the same techniques and architectural ideas in other work."
+            },
+            "attribution": {
+              "type": "boolean",
+              "description": "Researcher retains attribution credit as the method's creator."
+            }
+          },
+          "additionalProperties": false
+        },
+        "admissibility": {
+          "type": ["object", "null"],
+          "description": "What methods are eligible for prize evaluation. The sandbox is air-gapped (no network access), so all methods must be fully self-contained. This is a technical constraint, not a policy choice — community possession of the method requires the community to own every byte needed to run the method.",
+          "properties": {
+            "selfHostable": {
+              "type": "boolean",
+              "description": "Method must run on community infrastructure without any third-party dependencies. If the community can't run it independently, it's not admissible."
+            },
+            "inadmissible": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Explicitly inadmissible method types. e.g., 'coached-api-calls' (can't own the API), 'proprietary-api-wrappers' (method dies when key expires), 'external-api-dependencies' (sandbox has no network)."
+            },
+            "notes": {
+              "type": ["string", "null"],
+              "description": "Rationale for admissibility constraints. Should reference community possession of the method and the air-gapped sandbox architecture."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "quality": {
+      "type": ["object", "null"],
+      "description": "Quality metadata. Only populate fields verifiable from primary sources (papers, documentation).",
+      "properties": {
+        "humanTranslated": {
+          "type": "boolean",
+          "description": "Are the translations produced by humans (vs. machine-generated)?"
+        },
+        "translatorQualifications": {
+          "type": ["string", "null"],
+          "description": "Who translated — qualifications, L1 status, certifications. Null if unknown."
+        },
+        "reviewProcess": {
+          "type": ["string", "null"],
+          "description": "How translations were quality-assured. Null if unknown."
+        },
+        "orthography": {
+          "type": ["string", "null"],
+          "description": "Target language orthographic standard used (e.g., 'SRO', 'syllabics'). Null if standard or not applicable."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "contamination": {
+      "type": "object",
+      "description": "Contamination risk assessment — is this data in known LLM training sets?",
+      "required": ["risk", "reasoning"],
+      "properties": {
+        "risk": {
+          "type": "string",
+          "enum": ["NONE", "LOW", "MEDIUM", "HIGH"],
+          "description": "NONE = private/unpublished. LOW = niche/recent. MEDIUM = public but not widely used. HIGH = known to be in major training sets."
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Evidence-based explanation for the risk rating. Must cite sources."
+        },
+        "knownInTrainingOf": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Model names known or strongly suspected to include this data. Only list when evidence exists (e.g., model paper cites this dataset)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "doNotTrain": {
+      "type": "boolean",
+      "description": "If true, this data must not be used for training any ML model. Simple boolean for harness consumption. usageRestrictions.training adds the WHY and BY WHOM. These must be consistent: if doNotTrain is true, usageRestrictions.training must not be 'permitted'."
+    },
+
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alternative identifiers for dataset resolution. The harness resolver matches these in addition to the card id. Example: ['edtekla-dev', 'crk-dev'] for the card 'eval-eng-crk-edtekla-dev-v1'."
+    },
+
+    "freshBlindTestSet": {
+      "type": "boolean",
+      "description": "If true, this card is a FRESH held-out BLIND test set (e.g. WMT24/25 general) whose low contamination comes from recency, not from being a dev split. It is the ONE narrow, explicit opt-out to build_registry's fail-safe rule that any 'test'-split corpus is forced to contamination=HIGH: with this flag set, the card's own honest contamination.risk (LOW/MEDIUM) governs instead, so a fresh blind set can rank on ABSOLUTE quality. Deliberately weak — it only suppresses the test-split rule; a card whose family is in HELD_OUT_BENCHMARK_FAMILIES (e.g. the older WMT editions) is STILL forced HIGH. Must never be set on a stale/memorized test split. Defaults to false."
+    },
+    "quarantine": {
+      "type": "boolean",
+      "description": "If true, this corpus is catalogued but explicitly NOT runnable/rankable — it is excluded from the public queue and the leaderboard. Use for corpora whose fetch builder is not yet implemented, or improper subsets that must never rank. build_registry reports quarantined cards loudly rather than silently dropping them. Pair with quarantineReason."
+    },
+    "quarantineReason": {
+      "type": "string",
+      "description": "Human-readable reason a card is quarantined (e.g. 'gamayun-parallel builder not yet implemented'). Required whenever quarantine is true so the exclusion is never unexplained."
+    },
+    "transmissionPolicy": {
+      "type": "string",
+      "enum": ["no-train", "consent-required"],
+      "description": "Explicit data-side transmission mode for this corpus (docs/DATA_BOUNDARIES.md §'Transmission to model APIs'). Absent = license-string default: redistribution-cleared → unrestricted; plain standard SPDX NC/ND → 'no-train' (remote eval only over channels that do not retain/train on inputs); any LicenseRef/modified/bespoke/unstated grant → 'consent-required' (remote eval refuses until the rights-holder's permission is recorded). Set this only with a recorded rationale in the card notes — e.g. flipping a LicenseRef research-use license to 'no-train' because its license text itself grants evaluation use."
+    },
+    "transmissionConsent": {
+      "type": "object",
+      "description": "The rights-holder's EXPLICIT permission for remote model-API evaluation of this corpus. Recording this is a founder/steward action — never inferred, never assumed from 'academic use'. Its presence downgrades 'consent-required' to 'no-train' (channel discipline still applies; it never clears a corpus entirely).",
+      "required": ["granted_by", "date"],
+      "properties": {
+        "granted_by": {
+          "type": "string",
+          "description": "Who granted the permission (person/organization, as they identified themselves)."
+        },
+        "date": {
+          "type": "string",
+          "description": "Date the permission was granted (YYYY-MM-DD)."
+        },
+        "scope": {
+          "type": "string",
+          "description": "What exactly was permitted (e.g. 'non-commercial benchmark evaluation via no-train channels')."
+        },
+        "evidence": {
+          "type": "string",
+          "description": "Pointer to the record of the grant (email/doc path). Never paste the correspondence itself into the card."
+        }
+      }
+    },
+
+    "exposureTier": {
+      "type": "string",
+      "enum": ["local-only", "private", "public", "sealed"],
+      "description": "Exposure tier chosen by the corpus author at registration (champollion register-corpus). Records the author's intent about how far this corpus travels. 'local-only' = never registered or uploaded — the card and the text stay entirely on the author's machine (cards with this value live OUTSIDE this tracked directory). 'private' = a sovereign / WMT-style held-out set: metadata is registered here but the text is NEVER uploaded or hosted; the author keeps custody (paired with quarantine=true so it is catalogued but not publicly runnable). 'public' = a fetch-from-source pointer + metadata card is published; the text is NEVER hosted by Champollion — it is fetched from source.repo_url on demand by the declared builder. 'sealed' = a community-controlled secret test set encrypted CLIENT-SIDE under the custodian group's threshold key before anything leaves the author's device; Champollion holds only ciphertext (in an off-git store) + a content-free card and cannot decrypt it (no single party can — M-of-N custodian approval is required). Paired with quarantine=true and a 'sealed' block; see the sealed property and the community-custodian multisig plan (docs/governance). Public is gated by cli/lib/license-gate.mjs: NC / no-redistribute / unconfirmed-license sets may not use the public tier. Champollion never hosts corpus PLAINTEXT in ANY tier. Defaults to the most private tier (local-only) when unspecified.",
+      "default": "local-only"
+    },
+
+    "sealed": {
+      "type": ["object", "null"],
+      "description": "Sealed-tier crypto metadata (exposureTier='sealed'). CONTENT-FREE: records how a community-controlled secret test set was encrypted client-side, never the plaintext. The ciphertext lives in an off-git, off-allowlist store; this block only names the cipher suite, the custodian group, the ciphertext digest, and the AAD binding, plus the paired public qualifier a method must clear before a sealed run can be proposed. The decryption key exists only as M-of-N custodian shares — Champollion cannot decrypt. See cli/lib/seal.mjs and the community-custodian multisig plan (docs/governance) (M1).",
+      "required": ["cipher", "custodianGroupId", "ciphertextDigest", "aad"],
+      "properties": {
+        "cipher": {
+          "type": "string",
+          "description": "Cipher suite id of the sealed artifact (e.g. 'x25519-hkdf-sha256+aes-256-gcm'). The hybrid sealed-box scheme used by cli/lib/seal.mjs."
+        },
+        "custodianGroupId": {
+          "type": "string",
+          "description": "Id of the community custodian group whose threshold key controls this set. The group that must reach M-of-N approval to authorize a decryption grant."
+        },
+        "ciphertextDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 (hex) of the ciphertext bytes. Published so integrity of the off-git sealed artifact is verifiable; the digest is public, the plaintext is not."
+        },
+        "aad": {
+          "type": "string",
+          "description": "Additional Authenticated Data string binding the ciphertext to this card + custodian group (e.g. 'champollion-sealed:v1|card=…|group=…'). Authenticated by the GCM tag so the ciphertext cannot be transplanted to another card. Metadata only — never corpus content."
+        },
+        "thresholdKeyId": {
+          "type": ["string", "null"],
+          "description": "Stable short id (sha256 prefix) of the custodian group's threshold PUBLIC key the corpus was sealed to. Names which group key was used without embedding the key."
+        },
+        "keyScheme": {
+          "type": ["string", "null"],
+          "description": "Custody scheme for the threshold key, e.g. 'TSS-3-of-5'. In Wave 1 a single stand-in threshold key is used; Wave 2 replaces it with the aggregated 3-of-5 FROST group key from the custodian ceremony."
+        },
+        "qualifierId": {
+          "type": ["string", "null"],
+          "description": "Card id of the paired PUBLIC qualifier (a disjoint CC-BY/CC0 twin, vYYYY-rotated) that a method must clear before a sealed run can be proposed. See cli/lib/sealed-qualifier.mjs."
+        },
+        "qualifierThreshold": {
+          "type": ["number", "null"],
+          "description": "Score a method must reach on the paired qualifier to become eligible to propose a sealed run."
+        },
+        "artifactRef": {
+          "type": ["string", "null"],
+          "description": "Pointer/name of the ciphertext artifact in the off-git encrypted store. Content-free; never a hosted-plaintext path."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "richness": {
+      "type": "object",
+      "description": "Measured corpus complexity metrics computed at build time. Used for queue prioritization and corpus profiling.",
+      "properties": {
+        "mean_source_chars": { "type": "number", "description": "Mean character count of source-language entries." },
+        "mean_effective_words": { "type": "number", "description": "Mean effective word count of source-language entries." },
+        "economy": { "type": "number", "description": "Characters per effective word — higher values indicate morphologically richer or agglutinative source text." },
+        "economy_basis": { "type": "string", "enum": ["measured", "estimated"], "description": "Whether economy was measured from the corpus or estimated from language typology." },
+        "computed_from": { "type": "string", "description": "Filename of the data file this was computed from." },
+        "computed_at": { "type": "string", "format": "date", "description": "Date the metrics were computed." }
+      },
+      "additionalProperties": false
+    },
+
+    "sovereignty": {
+      "type": ["object", "null"],
+      "description": "Governance structures that actually exist for this data. Records facts, not aspirations. Null means no formal governance structures are in place. Fields are forward-looking infrastructure — ready for when governance bodies are identified and communities assert their terms. See DATA-SOVEREIGNTY.md for field reference and standards mapping.",
+      "properties": {
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["community-ownership-control", "CARE", "Te-Mana-Raraunga", "FAIR", "IEEE-2890"]
+          },
+          "description": "Data sovereignty frameworks that the data creators or governing body have explicitly invoked. Only list frameworks where there is documented evidence of adoption — do not infer from language vitality, geography, or ethnicity."
+        },
+        "governanceOrg": {
+          "type": ["string", "null"],
+          "description": "Organization or body with governance authority over this data. For Indigenous-governed corpora this is the language trust, tribal council, or delegated body. Null if no governance body has been identified or established."
+        },
+        "custodian": {
+          "type": ["string", "null"],
+          "description": "Who physically holds the data. Distinct from governanceOrg — a university may be custodian while a community is the governance authority. Null if custodian is the same as source.publisher."
+        },
+        "consentModel": {
+          "type": ["string", "null"],
+          "enum": ["per-submission", "blanket", "open-access", null],
+          "description": "How consent is structured for use of this data in method evaluation. 'per-submission' = each evaluation run needs fresh approval (maps to stewardship.authorizationModel). 'blanket' = pre-authorized for all qualifying submissions. 'open-access' = freely usable under license terms. Null if no consent model has been established."
+        },
+        "tkLabels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["labelType"],
+            "properties": {
+              "labelType": {
+                "type": "string",
+                "description": "Local Contexts TK or BC Label code (e.g., 'TK-A' for Attribution, 'TK-NC' for Non-Commercial, 'BC-P' for Provenance). Only populated if the community has actually applied labels via the Local Contexts Hub."
+              },
+              "projectId": {
+                "type": ["string", "null"],
+                "description": "Local Contexts Hub project ID. Enables dynamic label updates by communities without touching our metadata. Null if labels are referenced but not registered on the Hub."
+              },
+              "url": {
+                "type": ["string", "null"],
+                "format": "uri",
+                "description": "URL to the label on the Local Contexts Hub."
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Local Contexts Traditional Knowledge or Biocultural Labels applied by the data's governing community. Empty array means no labels have been applied. These are community-asserted, never platform-assigned."
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Free-text governance context that structured fields can't capture. Document nuance here rather than forcing it into enums. e.g., 'Governance body identification in progress with advisory guidance from Matthew Wildcat.'"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "usageRestrictions": {
+      "type": ["object", "null"],
+      "description": "Usage guidance beyond what the license field captures. Records community assertions, concerns, and context that users should know about. The license field records legal facts. usageRestrictions records what communities have said — even when it differs from or supplements the license. We inform users, we don't prohibit. See DATA-SOVEREIGNTY.md for the three-source model (license / community / who decided).",
+      "required": ["training"],
+      "properties": {
+        "training": {
+          "type": "string",
+          "enum": ["prohibited-by-license", "prohibited-by-community", "discouraged", "permitted"],
+          "description": "Whether this data may be used for ML model training. The enum value identifies WHO imposed the restriction — the license terms (legal fact), a community governance decision (assertion), or no one (permitted). 'discouraged' = not prohibited but the data custodians prefer it not be used for training."
+        },
+        "commercialUse": {
+          "type": ["string", "null"],
+          "enum": ["prohibited-by-license", "prohibited-by-community", "requires-agreement", "permitted", null],
+          "description": "Commercial use restrictions. Identifies source of restriction. Null = defer to license.commercial field — no additional community guidance."
+        },
+        "redistribution": {
+          "type": ["string", "null"],
+          "enum": ["prohibited", "same-terms", "permitted", null],
+          "description": "Redistribution restrictions. Null = defer to license.redistribution field."
+        },
+        "communityNotes": {
+          "type": ["string", "null"],
+          "description": "Documented community concerns, context, or guidance that users should know about — even if the license technically permits the use. This is where legitimate community objections get surfaced. e.g., 'Plains Cree is severely endangered; data created by L1 educators for educational purposes. Community interests in language revitalization should be considered.'"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "_provenance": {
+      "type": "object",
+      "description": "Audit trail for this card's metadata. Every card must document where its field values came from.",
+      "required": ["addedAt", "populatedFrom"],
+      "properties": {
+        "addedAt": {
+          "type": "string",
+          "format": "date",
+          "description": "Date this card was created (ISO 8601)."
+        },
+        "lastUpdated": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Date this card was last modified."
+        },
+        "populatedFrom": {
+          "type": "string",
+          "description": "Specific documents, URLs, or data files consulted to populate this card. Be precise — 'NLLB paper §3.2' not just 'paper'."
+        },
+        "pinnedPairs": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "For explicit-pair multiway cards: count of pairs whose size + sha256 were pinned from the immutable revision (pin_smol_wmt24pp_pairs.py)."
+        },
+        "droppedUnservablePairs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "For explicit-pair multiway cards: pairs removed because they were not servable at the pinned revision (404, file/row-label mismatch, or empty/0-byte upstream). Documented so the card stays honest about what was excluded."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "eval" } } },
+      "then": {
+        "required": ["pair", "dev", "doNotTrain", "usageRestrictions"],
+        "properties": {
+          "pair": { "description": "Required for eval cards — specifies the source→target language pair." },
+          "dev": { "description": "Required for eval cards — describes the public development split." },
+          "doNotTrain": { "description": "Required for eval cards — must be explicitly set." },
+          "usageRestrictions": { "description": "Required for eval cards — captures community guidance beyond the license." }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "reference" } } },
+      "then": {
+        "required": ["languages", "download"],
+        "properties": {
+          "languages": { "description": "Required for reference cards — lists all languages covered." },
+          "download": { "description": "Required for reference cards — how to obtain the data." }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "multiway" } } },
+      "then": {
+        "required": ["languages", "download", "pairGeneration"],
+        "properties": {
+          "languages": { "description": "Required for multiway cards — all language codes in the parallel corpus." },
+          "download": { "description": "Required for multiway cards — how to obtain the upstream data." },
+          "pairGeneration": { "description": "Required for multiway cards — how to expand into directional eval pairs." }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "secretTest": {
+            "type": "object",
+            "properties": { "status": { "const": "active" } },
+            "required": ["status"]
+          }
+        },
+        "required": ["secretTest"]
+      },
+      "then": {
+        "required": ["stewardship"],
+        "properties": {
+          "stewardship": {
+            "type": "object",
+            "properties": {
+              "stewards": { "type": "array", "minItems": 5 }
+            },
+            "required": ["stewards", "threshold", "authorizationModel"]
+          }
+        }
+      }
+    }
+  ],
+
+  "additionalProperties": false
+}

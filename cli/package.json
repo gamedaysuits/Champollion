@@ -1,0 +1,93 @@
+{
+  "name": "champollion",
+  "version": "0.3.3",
+  "description": "Research-grade translation engine for i18n projects. Pluggable methods, per-pair quality tiers, and deterministic script converters. Supports JSON (next-intl, i18next), TOML, and YAML (Hugo).",
+  "type": "module",
+  "bin": {
+    "champollion": "bin/cli.js"
+  },
+  "exports": "./index.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:unit": "node --test test/sync.test.js",
+    "test:redteam": "node --test test/redteam.test.js",
+    "test:format": "node --test test/format.test.js",
+    "test:content": "node --test test/content.test.js",
+    "test:content-sync": "node --test test/content-sync.test.js",
+    "test:hugo": "node --test test/hugo-e2e.test.js",
+    "test:lint": "node --test test/lint.test.js",
+    "test:pairs": "node --test test/pairs.test.js",
+    "test:methods": "node --test test/methods.test.js",
+    "test:init-help": "node --test test/init-help.test.js",
+    "test:sync-pairs": "node --test test/sync-pairs.test.js",
+    "build:fallback": "node scripts/build-cards-fallback.mjs",
+    "export:cldf": "node scripts/export-cldf.mjs",
+    "audit:licenses": "node scripts/audit-license-gate.mjs",
+    "sync:shared": "node scripts/sync-shared.mjs",
+    "prepack": "npm run sync:shared && node scripts/build-cards-fallback.mjs",
+    "prepublishOnly": "npm test && npm run test:pack",
+    "test:pack": "node --test test/e2e/*.test.js",
+    "sync": "node bin/cli.js sync",
+    "watch": "node bin/cli.js watch",
+    "audit": "node bin/cli.js audit",
+    "lint": "node bin/cli.js lint",
+    "init": "node bin/cli.js init"
+  },
+  "author": "Curtis Forbes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamedaysuits/Champollion.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/gamedaysuits/Champollion#readme",
+  "bugs": {
+    "url": "https://github.com/gamedaysuits/Champollion/issues"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "translation",
+    "openrouter",
+    "openai",
+    "anthropic",
+    "gemini",
+    "deepl",
+    "localization",
+    "l10n",
+    "auto-translate",
+    "multilingual",
+    "machine-translation",
+    "language-pairs",
+    "seo",
+    "hugo",
+    "toml",
+    "yaml",
+    "next-intl",
+    "i18next",
+    "markdown"
+  ],
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "files": [
+    "index.js",
+    "bin/",
+    "lib/",
+    "shared/",
+    "!shared/language-cards/",
+    "!shared/corpora-cards/",
+    "!shared/curated-intros/crk.md"
+  ],
+  "devDependencies": {
+    "better-sqlite3": "^12.10.0",
+    "cldr-core": "48.2.0",
+    "cldr-localenames-full": "^48.2.0",
+    "cldr-misc-full": "^48.2.0",
+    "language-subtag-registry": "^0.4.2"
+  },
+  "dependencies": {
+    "@translated/lara": "^1.12.1"
+  }
+}

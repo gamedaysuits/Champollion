@@ -1,0 +1,435 @@
+{
+  "code": "ase-US",
+  "name": {
+    "agreement": "single",
+    "consensus": "American Sign Language",
+    "values": [
+      {
+        "value": "American Sign Language",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "sign1238",
+      "deaf1237",
+      "lsfi1234",
+      "asli1244",
+      "amer1258"
+    ],
+    "family": {
+      "agreement": "conflicting",
+      "values": [
+        {
+          "value": "Sign Language",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "other",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "sign1238",
+    "genus": "Sign Languages"
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "ase-Sgnw-US",
+    "values": [
+      {
+        "value": "ase-Sgnw-US",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "ase-Sgnw-US",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"ase\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "ase",
+    "values": [
+      {
+        "value": "ase",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "QED",
+        "corpusId": "corpus:opus:QED",
+        "pairCount": 90,
+        "topPartners": [
+          {
+            "code": "fr",
+            "alignmentPairs": 1092
+          },
+          {
+            "code": "nl",
+            "alignmentPairs": 1058
+          },
+          {
+            "code": "br",
+            "alignmentPairs": 881
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 480
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 397
+          }
+        ],
+        "alignmentPairsTotal": 9821,
+        "pairsWithPublishedSize": 90,
+        "largestPairAlignments": 1092
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 568
+          }
+        ],
+        "alignmentPairsTotal": 568,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 568
+      }
+    ]
+  },
+  "countries": [
+    "BB",
+    "BF",
+    "BJ",
+    "BO",
+    "CA",
+    "CD",
+    "CF",
+    "CI",
+    "CN",
+    "GA",
+    "GH",
+    "JM",
+    "KE",
+    "MG",
+    "MR",
+    "NG",
+    "PH",
+    "SG",
+    "TD",
+    "TG",
+    "US",
+    "ZW"
+  ],
+  "dialectCount": 2,
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "not endangered",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "American Sign Language (ase-ase) = 5 (Developing). Provincially recognized language in various states, state laws cover a variety of issues: approving ASL for college credit, regulating interpreter services, deaf children’s education, etc. Recognized language (1990, Americans with Disabilities Act, ADA), requires governments, nonprofit organizations and private businesses to make their services accessible to deaf people, and mandates equal access to telecommunications services.",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "𝣷𝪜 𝤃𝪜 𝣜𝪜",
+    "values": [
+      {
+        "value": "𝣷𝪜 𝤃𝪜 𝣜𝪜",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "ase",
+        "variantType": "language",
+        "note": "label language: ase"
+      }
+    ]
+  },
+  "glottocode": "amer1248",
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 33.8117,
+    "lng": -81.6121
+  },
+  "lexicalResources": {
+    "datasets": [
+      {
+        "dataset": "powerma",
+        "forms": 104,
+        "concepts": 26,
+        "doculects": 4,
+        "release": "powerma-v1.0.2"
+      }
+    ]
+  },
+  "macroarea": "Africa;North America",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "315528"
+  },
+  "methodSupport": {
+    "total": 19,
+    "byTier": {
+      "model-card-declared": 19
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:manohonsy/asl-mbart-50-lora",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-ase-de",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-ase-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-ase-es",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-ase-fr",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-ase-sv",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-de-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-es-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-fr-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-sv-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-ase-de",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-ase-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-ase-es",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-ase-fr",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-ase-sv",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-de-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-es-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-fr-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-sv-ase",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "signed",
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 24,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "ase-US",
+    "revision": "246754534024841a",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.corpora"
+    ]
+  },
+  "locale": {
+    "language": "ase",
+    "region": "US",
+    "script": "Sgnw",
+    "publishedTag": "ase-US",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Sgnw"
+}

@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "形態素",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "意味を持つ語の最小単位です。英語の「unhappiness」には un-、happy、-ness という3つの形態素が含まれています。1つの語にいくつの形態素を詰め込むかは、言語によって大きく異なります。",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "MT システムはトークン単位で処理するため、多くの形態素を含むトークンには、正確な翻訳に必要な文法情報が埋もれてしまいます。",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "形態論",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "語が意味を持つ小さな部品からどのように構成されるかを研究する分野であり、言語そのものの語形成システムを指します。形態論的に複雑な言語では、英語が別々の語で表すことを語尾によって表現します。",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "形態論的に複雑な言語では、MT システムが限られたデータから学習しなければならない語形の種類が大幅に増加します。",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "屈折",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "語の核となる意味を変えずに、時制・数・格・性などの文法を表すために語形を変化させることです。英語の sing/sang や cat/cats がその例です。屈折が豊富な言語では、1つの語に6つ以上の文法カテゴリーを標示することがあります。",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "屈折した語形はそれぞれ MT システムにとって別個のトークンとなるため、屈折が多い言語では低頻度語が増え、一致エラーも起きやすくなります。",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "派生",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "teach → teacher や happy → unhappy のように、既存の語から新しい語を作ることです。屈折とは異なり、派生は同じ語の文法的変形ではなく、新たな辞書見出し語を生み出します。",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "派生の生産性が高い言語では、話者がその場で造語することができ、MT システムが未知語に遭遇する頻度が高まります。",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "接辞",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "語幹に付加されて意味や文法を修飾する形態素です。語幹の前に付くものを接頭辞、後に付くものを接尾辞と呼び、一部の言語では語幹の内部に挿入される接中辞も使われます。",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "接辞がどこに付くかによって、MT モデル向けのサブワードトークナイザーが語をどこで分割すべきかが決まります。",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "接頭辞",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "「rewrite」の re- のように、語幹の前に付く接辞です。Bantu 語族や Athabaskan 語族を含む一部の言語では、文法情報の大部分を接頭辞の連鎖によって表します。",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "接頭辞が多い言語では文法情報が語の先頭に集中するため、接尾辞を前提として設計されたトークナイザーの想定と逆になります。",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "接尾辞",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "「kindness」の -ness のように、語幹の後ろに付く接辞です。接尾辞による付加は、世界の言語の中で最も一般的な接辞付加の方法です。",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "接尾辞が重なると長くて低頻度の語形が生まれるため、MT システムが正確に翻訳するには適切な分割が不可欠です。",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "接中辞",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "語幹の前後ではなく内部に挿入される接辞です。たとえばタガログ語では、sulat（書く）の最初の子音の後に -um- を挿入することで sumulat（書いた）を作ります。",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "接中辞は語幹が連続した文字列であるという前提を崩すため、単純なサブワード分割では対応できません。",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "接語",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "「the queen of England's hat」の 's のように、単独では成立せず隣の語に寄りかかる小さな文法語です。接語（clitic）は語と接辞の中間的な性質を持ちます。",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "接語は語の境界を曖昧にするため、トークナイザーが誤ったホスト語に付加し、文法を崩してしまうことがあります。",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "語幹",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "接辞が付加される語の中核部分です。「unbelievable」では、-able の語幹は「believe」です。多くの言語では語幹が単独で現れることはなく、何らかの活用形を伴う必要があります。",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "語形をまたいで共通の語幹を特定することで、MT システムは限られた学習データから汎化できます。",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "語根",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "すべての接辞を取り除いた後に残る、語の最小核です。セム語族では語根が子音のみで構成されることが多く（アラビア語の k-t-b「書く」など）、母音パターンによって語が形成されます。",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "語根が不連続（子音骨格）な言語では、MT が語の関係を把握するために専用の分割処理が必要です。",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "パラダイム",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "ある語が取りうる活用形の全体集合で、動詞活用表のようなものです。英語の「must」のように2形式しかない場合から、多合成語言語では数千に及ぶ場合まで様々です。",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "パラダイムが大きいほど、ほとんどの語形が学習データに稀にしか現れないか、まったく現れないことになります。",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "膠着語的",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "文法的な意味ごとに独立した接辞を順番に積み重ねていく語形成の方式で、トルコ語やスワヒリ語がその例です。語は長くなりますが、各要素は一つの役割を担います。",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "膠着語の語はサブワードへの分割が比較的きれいにできますが、トークナイザーがその言語の接辞順序を学習している場合に限ります。",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "融合語的",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "一つの接辞が複数の文法的意味を同時に表す語形成の方式です。スペイン語の habló における語尾 -ó は過去時制・三人称・単数を同時に示しており、その一部を単一の意味に切り分けることはできません。",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "融合した語尾はトークナイザーで分解できないため、各組み合わせを一つの単位として学習する必要があります。",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "孤立語的",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "語がほぼ単一の形態素からなり、文法を語順や助詞・助動詞などの機能語で表す語形成の方式です。ベトナム語や北京語がその例で、多合成語とは対極に位置します。",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "孤立語では MT の課題が語の分割から語順と機能語の選択へと移行します。",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "多合成語性",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "他の言語では文全体で表すような内容（主語・目的語・場所・道具など）を、一つの動詞語形の中に収める語形成の方式です。北米の多くの先住民言語がこの特徴を持ちます。",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "多合成語の語形はほぼ繰り返されないため、語レベルの MT には未知トークンが際限なく現れます。",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "Plains Cree（crk）では、一つの動詞語形に主語・目的語の人称、道具、場所、動作をすべて組み込むことができます（カードフィールド linguisticChallenges.polysynthesis 参照）。",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "名詞抱合",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "名詞を動詞に組み込んで一語にする現象で、「アザラシを狩る」が「アザラシ狩りをする」という動詞になるようなイメージです。多合成語言語に多く見られ、文の焦点や文法構造が変わります。",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "組み込まれた名詞は文中から独立した語として消えるため、アライメントベースの翻訳では見落とされてしまいます。",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "カード上では linguisticChallenges.nounIncorporation（Grambank ベース）として表示されます。例：Plains Cree (crk)。",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "複合語形成（compounding）",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "二つ以上の独立した語を結合して新しい一語を作ること。例えば「tooth」＋「brush」→「toothbrush」のようなものです。ドイツ語式の複合語では多数の語が連結され、非常に長い一語になることがあります。",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "新造複合語は未知トークンとなるため、MT はそれを既知の部分に分割して翻訳しなければなりません。",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "重複（reduplication）",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "語の全体または一部を繰り返すことで意味を変える現象で、複数・強調・継続などを表します。インドネシア語の orang「人」は orang-orang で「人々」になります。",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "MT は語の重複が文法的な操作であり、誤って削除すべき偶発的な繰り返しではないと認識しなければなりません。",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "アブラウト（ablaut）",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "語内の母音を変えることで文法的な意味を表す現象で、英語の sing/sang/sung がその例です。子音の骨格はそのままで、母音が文法的な役割を担います。",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "アブラウトは語幹の内部に活用情報を隠すため、サブワードトークナイザーでは切り出すことができません。",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "補充法（suppletion）",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "go/went や good/better のように、活用形が全く異なる語根から来る現象です。音形を共有しないにもかかわらず、文法上は同一の語として扱われます。",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "補充形は規則から導き出せないため、MT は各形を訓練データで個別に学習している必要があります。",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "語根・パターン形態論（root-and-pattern morphology）",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "アラビア語やヘブライ語に典型的な語形成の方式で、k-t-b「書く」のような子音語根を母音テンプレートに通して語を作ります。kitāb「本」、kātib「書き手」、maktab「事務所」のように、語根とパターンがそれぞれ意味を担いますが、どちらも連続した塊にはなりません。",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "標準的なサブワードトークナイズでは各形に共通する語根を認識できないため、セム語系言語の MT における汎化能力が低下します。",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "カード上では linguisticChallenges.rootPattern として表示されます（例：Arabic、Hebrew、Maltese）。",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "母音調和（vowel harmony）",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "語内のすべての母音が前舌・後舌や円唇・非円唇などの特性で一致しなければならないという規則です。トルコ語では接尾辞の母音が語幹に合わせて変化し、ev-ler「家々」に対して at-lar「馬たち」となります。",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "一つの文法的語尾に対して複数の表層形が生じるため、MT が学習すべきトークンの種類が増加します。",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "子音変異（consonant mutation）",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "直前の語によって語頭子音が文法的に変化する現象です。ウェールズ語の cath「猫」は冠詞の後で gath となり、y gath「その猫」になります。辞書形と実際に発音・表記される形がかなり異なることがあります。",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "変異によって同一の語が複数の綴りで現れるため、MT 訓練データ内での統計が分散してしまいます。",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "軟子音化（レニション）",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "子音が弱まる音変化で、母音間や文法的な条件によって起こります。例えば「k」が「g」や「h」に近づくような変化です。ケルト語派では、レニションは発音上の現象にとどまらず、文法の一部として機能しています。",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "文法的なレニションは文脈によって単語のつづりを変えるため、表層の語形が辞書の見出し語と一致しなくなります。",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "子音重複（ジェミネーション）",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "子音を長く保持することで意味が変わる現象です。イタリア語の pala（シャベル）と palla（ボール）がその例です。この重複を表記する文字体系もあれば、読み手の判断に委ねる体系もあります。",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "表記上でジェミネーションが省略されると、異なる単語が同じつづりに統合され、機械翻訳はその区別を失います。",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "サンディ（連声）",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "単語や形態素の境界で起こる音変化のことです。英語の「don't you」が「dontcha」になるような例が挙げられます。声調言語では、声調そのものが文脈によって変化する「声調サンディ」も見られます。",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "サンディによって書き言葉や転写形が文脈依存になるため、一貫したトークン化が難しくなります。",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "ウムラウト",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "後続する母音の影響で歴史的に生じた母音変化で、現在は文法機能として残っています。ドイツ語の Apfel（リンゴ）が複数形で Äpfel になるのがその例です。アブラウトと関連しますが、歴史的な起源は異なります。",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "ウムラウトは複数形や時制の情報を語幹内部に埋め込むため、接辞ベースの分割では検出できません。",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "トークン化",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "翻訳モデルが実際に処理する単位（トークン）にテキストを分割する処理です。現代のシステムでは、未知語をサブワード単位に分割することが多いですが、その分割が実際の形態素とどれだけ一致するかは言語によって大きく異なります。",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "不適切なトークン化は、形態論的に複雑な言語や低リソース言語における機械翻訳の失敗の根本原因となります。",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "格（文法格）",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "名詞や代名詞に印を付けて、文中での役割（主体・対象・場所・手段など）を示す仕組みです。英語では I/me/my のような痕跡が残る程度ですが、フィンランド語には15の格があり、格を持たない言語も多くあります。",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "格を持つ言語は語順が自由なため、機械翻訳は語尾から役割を読み取り、かつ正しい語尾を生成しなければなりません。",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "主格（ノミナティブ）",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "最も一般的な格体系では、あらゆる動詞の主語が主格を取り、直接目的語が対格を取ります。ほとんどのヨーロッパ言語はこの体系に従っており、機械翻訳の学習データの大部分もこの体系を反映しています。",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "主格・対格言語を中心に学習されたシステムは、能格言語を翻訳する際に文法的役割を誤って割り当てることがあります。",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "能格性（エルガティビティ）",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "自動詞の主語（「彼女は眠る」）が他動詞の目的語（「彼女を見た」）と同じ格で標示され、他動詞の主語には特別な能格が付く格体系です。バスク語、多くのマヤ語族、オーストラリアやコーカサスの言語がこの体系を持ちます。",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "能格の標示は機械翻訳が想定する役割の手がかりを逆転させるため、「誰が誰に何をしたか」の誤訳を引き起こします。",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "絶対格（アブソルーティブ）",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "絶対格は能格体系における無標の格で、自動詞の主語と他動詞の目的語を同じ形で表します。通常、名詞の引用形として使われます。",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "絶対格の名詞は異なる二つの役割で同一の形をとるため、機械翻訳は動詞を手がかりに曖昧さを解消する必要があります。",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "形態統語的アラインメント",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "言語が三つの中核的な役割——自動詞の主語・他動詞の主語・目的語——をどのようにグループ化して標示するかを決める体系です。主格・対格型と能格・絶対格型が二大パターンですが、両者を混在させる言語や有生性に基づく体系を持つ言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "原言語と目標言語のアラインメントの違いは、語彙の問題ではなく構造的な翻訳上の問題です。",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "属格",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "所有や密接な関係を表す格で、英語の 's や「of」に相当します。属格句が修飾する名詞の前に置かれるか後に置かれるかは言語によって異なります。",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "属格の語順の違い（「王の馬」対「馬 of 王」）は、名詞句内での体系的な語順変換を必要とします。",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "与格",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "受け手や受益者——「誰に」与えたり伝えたりするか——を表す格です。ドイツ語の wem、ラテン語の cui がその例で、英語では語順や「to」で表現します。",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "機械翻訳は、目標言語に応じて与格の格標示と前置詞句のどちらを使うかを判断しなければなりません。",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "処格",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "「〜で／〜に／〜の上に」という場所を表す格で、前置詞ではなく名詞語尾によって示されます。フィンランド語やハンガリー語では、内部・上面・近接・移動先・移動元など複数の精密な処格に分かれています。",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "英語の一つの前置詞が複数の処格に対応することがあるため、機械翻訳は文脈から適切な格を選ぶ必要があります。",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "具格",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "「〜を使って／〜によって」という手段を表す格で、ロシア語では「ハンマーで」を前置詞ではなく語尾で表します。多合成語言語では道具を動詞の中に組み込む場合もあります。",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "具格の意味は、言語によって格語尾・前置詞・動詞内部の標示のいずれかで表現されます。",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "共格",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "「〜と一緒に」という同伴を表す格または標示です。言語によっては「〜と（同伴）」と「〜と（並列）」に同じ標示を使うため、外部の話者には曖昧に映ることがあります。",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "共格と並列の重複により、原言語では「X with Y」と「X and Y」が同一の構造で表されることがあります。",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "斜格句",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "節の中で主語にも直接目的語にもならない句の総称で、場所・手段・受け手などの「付加的要素」が該当し、格や後置詞・前置詞で標示されることが多いです。WALS では VOX のような語順の「X」が斜格句を指します。",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "斜格句が文中に置かれる位置は言語によって異なるため、動詞や目的語との関係を考慮した正確な語順変換が必要です。",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "差異的目的語標示",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "直接目的語の一部にのみ格標示を行う現象で、通常は有生性や定性に基づいて決まります。スペイン語では人間の目的語の前に「a」を置きますが（veo a María）、物には置きません（veo la casa）。",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "機械翻訳は、ソース言語に明示されていない有生性の手がかりをもとに、各目的語にマーカーが必要かどうかを判断しなければなりません。",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "文法的性",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "すべての名詞を（男性・女性・中性などと呼ばれる）クラスに分類し、冠詞・形容詞、場合によっては動詞の形を一致させる仕組みです。この分類は文法上のものであり、生物学的な性別とは無関係です。たとえばドイツ語の「テーブル」は男性名詞、スペイン語では女性名詞になります。",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "性のある言語に翻訳する際、ソース言語では明示されていない人物や物事の性を選択しなければならず、これは機械翻訳のバイアスの主要な原因となっています。",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "名詞クラス",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "文法的性に似た仕組みですが、クラスの数がより多いシステムです。バントゥ語族では通常10〜20のクラスがあり、形状・有生性・大きさなどによって名詞を分類します。各クラスは文中の一致接頭辞を独自に決定します。",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "名詞の選択が節全体の一致マーカーに連鎖的に影響するため、クラスを一つ間違えると多くの目に見えるエラーが生じます。",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "有生性",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "生きている（または生き物に近い）指示対象と、生きていない指示対象を区別する文法的カテゴリーです。アルゴンキン語族の言語では、すべての名詞が文法的に有生または無生に分類され、動詞の形はどちらと組み合わさるかによって大きく変わります。",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "有生性は多くの先住民言語において動詞の選択と一致を決定しますが、英語のソーステキストにはその手がかりが明示されていません。",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "Plains Cree（crk）では、主語・目的語の名詞が有生か無生かによって動詞の活用形が完全に変わります（カードフィールド linguisticChallenges.animacy 参照）。",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "遠称",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "Plains Cree などアルゴンキン語族の言語に中心的な仕組みで、談話中の三人称を序列付けします。一方は「近称（proximate）」（焦点となる人物）、それ以外は「遠称（obviative）」（背景化されたものとしてマークされ、「第四人称」とも呼ばれます）となります。これにより「彼₁ vs 彼₂」のような代名詞を使わずに誰が誰かを追跡できます。",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "英語には遠称の概念がないため、Cree への機械翻訳では近称・遠称の割り当てを独自に決定し、文をまたいで一貫して維持しなければなりません。",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "Plains Cree（crk）では遠称の指示対象が名詞と動詞の両方にマークされます。詳細は crk カードおよび crk メソッドのドキュメントを参照してください。",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "包除性",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "「私たち」を二種類に区別する仕組みです。包括形（inclusive）は「私＋あなた、場合によって他の人も」、除外形（exclusive）は「私＋他の人たち（ただしあなたを除く）」を指します。数百の言語でこの区別が義務的に行われます。",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "英語の「we」を翻訳する際、ソース側に手がかりがない状態で包括形か除外形かを選択しなければならず、誤った選択は社会的に重大な問題を引き起こす可能性があります。",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "文法的数",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "言語が「いくつか」を表す方法です。単数・複数のほか、双数（ちょうど二つ）や少数（少数）を持つ言語もあります。すべての名詞に数を標示する言語もあれば、文脈に完全に委ねる言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "ソース言語が数を標示しない場合、機械翻訳は推測しなければならず、ターゲット言語が双数形を要求する場合はそれを補わなければなりません。",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "双数",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "ちょうど二つを意味する文法的数で、単数とも複数とも異なります。スロベニア語・アラビア語・多くのオセアニア語族の言語に存在し、代名詞に三数（ちょうど三つ）を加える言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "双数を標示する言語への機械翻訳では、ソース言語が語数を数えることでしか表現していない「二つ」という概念を検出しなければなりません。",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "類別詞",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "名詞を数えたり指示したりする際に必要な語で、名詞をその種類によって分類します。英語の「three head of cattle（牛3頭）」や「two sheets of paper（紙2枚）」に似ていますが、すべての名詞に義務的に使用します。中国語・日本語・タイ語など多くの言語では、適切な類別詞なしに数を数えることができません。",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "MTは各名詞に対して正しい類別詞を選択しなければならず、誤った類別詞はネイティブスピーカーにすぐ気づかれます。",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "定性",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "名詞が聞き手にとってすでに特定できるもの（「その犬」）を指すか、そうでないもの（「ある犬」）を指すかを表します。この区別を標示しない言語も多く、冠詞・接辞・語順で標示する言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "冠詞を持たない言語からの翻訳では、MTが文脈だけを頼りにすべての名詞句について「the」か「a」かを判断しなければなりません。",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "冠詞",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "名詞が定（「the」）か不定（「a」）かを標示する小辞です。世界の言語の約3分の1には冠詞がなく、数詞の「one」や指示詞で代用する言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "冠詞を持つ言語と持たない言語の間のMT翻訳では、冠詞の挿入・削除が最も頻繁な編集カテゴリの一つです。",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "指示詞",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "「これ」「あれ」のような指示を表す語です。言語によって指示空間の分け方が異なり、話し手の近く・聞き手の近く・遠方の三者区別を持つものや、可視性や高低を加えるものもあります。",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "指示詞の体系は一対一で対応することがほとんどないため、MTは距離や可視性の区別を近似的に処理しなければなりません。",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "所有",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "「私のX／あなたのX」を言語がどのように表現するかを指します。多くの言語では、譲渡不可能な所有（身体部位・親族関係など、手放せないもの）と譲渡可能な所有を区別し、異なる構文で標示します。",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "譲渡不可能な所有では所有者の標示が義務的に求められることが多く、英語の原文にはその情報が省略されている場合があります。",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "主要部標示",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "句の主要部に文法的標示を置く方式です。動詞がその主語と目的語を示し、被所有名詞が所有者を示します。依存部（名詞そのもの）は無標のままでいられます。",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "主要部標示では節の文法情報が動詞に集中しており、これはほとんどのMT学習データが依拠する依存部標示言語とは対照的な構造です。",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "依存部標示",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "句の依存部に文法的標示を置く方式です。名詞に格語尾を付け、所有者に所有語尾を付ける一方、主要部は無標のままにします。ヨーロッパの言語の多くはこの方式を取ります。",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "依存部標示では文法的な信号が名詞の語尾に現れるため、トークナイザーが正確に分割する必要があります。",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "証拠性",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "話し手が情報をどのように得たか（直接目撃・伝聞・推論など）を文法的に示すことを義務付ける仕組みです。ケチュア語やトルコ語では、証拠標示を省略することは、英語でテンスを省略するのと同様に不自然です。",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "証拠性を持つ言語へのMT翻訳では、原文に明示されていない情報源を指定しなければなりません。",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "時制",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "出来事を時間軸上に位置づける文法的標示で、過去・現在・未来などを表します。文法的な時制を持たない言語（北京語など）もあれば、過去の遠近を複数段階で区別する言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "時制のないソーステキストでは、MTが時間的参照を推論しなければならず、遠近性の体系はソースが提供する以上に細かい区別を要求します。",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "アスペクト（相）",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "出来事が時間の中でどのように展開するかを示す文法的標示で、完了・進行・習慣・反復などを表し、いつ起きたかとは独立しています。ロシア語の動詞は完了体と不完了体のペアで存在し、英語では「was doing」と「did」の対比に相当します。",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "アスペクトを標示する言語に翻訳する際は、ソースに手がかりがなくても、すべての動詞でアスペクトの選択が必要です。",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "完了体（perfective）",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "出来事をひとつの完結した全体として提示するアスペクトで、「彼女は手紙を書いた」をひとつの完了した事実として捉えます。文法的対立において不完了体と対をなすことが多いです。",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "完了体と不完了体の誤った選択は、スラブ語系言語へのMT翻訳で最も多いエラーのひとつです。",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "不完了体（imperfective）",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "出来事を内側から提示するアスペクトで、「書いていた」や「書いていたものだ」のように、進行中・習慣的・反復的な事象を表します。完了体の対概念です。",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "不完了体の解釈（進行か習慣か）は、正確な翻訳のために文脈から曖昧性を解消する必要があります。",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "法（mood）",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "出来事に対する話者の態度（事実・願望・命令・可能性など）を示す文法的標示です。直説法・接続法・命令法がヨーロッパ言語でよく知られており、他の言語ではさらに細かいニュアンスを標示するものもあります。",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "法の選択（特に接続法）はターゲット言語固有のルールに従うため、ソースからそのまま転用することはできません。",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "接続法（subjunctive）",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "願望・疑念・仮定、および特定の動詞に続く節など、断言されていない内容に用いられる動詞の法です。ロマンス語では英語が普通形を使う多くの従属節で接続法が必要です。",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "接続法の使用条件はターゲット言語に固有のため、MTは語形を翻訳するのではなく文法規則を適用しなければなりません。",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "否定（negation）",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "言語が「〜ではない」を表す方法です。英語の not のような助詞、動詞への接辞、専用の否定動詞、フランス語の ne…pas のような二部構成など、さまざまな方略があります。位置も動詞の前・後・両方と言語によって異なります。",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "否定のエラーは意味を完全に逆転させるため、否定の正確な配置はMTにおいて最も重要な要件のひとつです。",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "受動態（passive）",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "目的語を主語に昇格させ、動作主を降格または省略する構文です（例：「窓が（少年によって）割られた」）。受動態を持たない言語も多く、動作主を背景化するために別の方略を用います。",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "受動態のないターゲット言語では、MTが受動態を能動態に再構成し、動作主を補完または復元する必要があります。",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "態（grammatical voice）",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "どの参与者を主語にするかを制御する文法体系で、能動態・受動態・中動態などがあり、言語族によってはさらに豊富な体系を持つものもあります。態は選ばれた視点を中心に節全体を再編成します。",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "態の不一致は単語の置き換えではなく、節全体の再構成を必要とします。",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "結合価",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "動詞が必要とする参与者の数とその表し方のことです。たとえば「眠る」は参与者が一つ、「与える」は三つです。どの参与者をどのように標示するかは言語によって異なります。",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "結合価のずれがあると、直訳では役割の割り当てが誤ったり、必須の参与者が脱落したりします。",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "他動詞",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "直接目的語をとる動詞（例：「彼女が本を読む」）を指します。他動性は文法において中心的な役割を果たします。多くの言語では、節が他動詞であるかどうかによって、主語、目的語、そして動詞自体の標示が異なります。",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "他動性は格標示や呼応（一致）を支配するため、動詞が他動詞であるかの判断を誤ると、出力結果において「誰が誰に何をしたか」が混乱してしまいます。",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "自動詞",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "直接目的語をとらない動詞（例：「彼女が眠る」「太陽が昇った」）を指します。能格言語では、自動詞の唯一の項は、他動詞の主語ではなく目的語と同じように標示されます。",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "自動詞の節は、特に能格言語において異なる格や呼応のパターンを引き起こすため、機械翻訳（MT）は適切な形式を選択するために他動性を追跡する必要があります。",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "逆受動態",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "能格言語によく見られる構文で、他動詞の目的語を削除または降格させ、自動詞の節を残すものであり、受動態の鏡写しのような存在です。受動態が行為者を背景化するのに対し、逆受動態は行為の対象を背景化します。",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "逆受動態は節を再構築し格標示を変化させるため、受動態中心の言語に翻訳する際は、単語を置き換えるのではなく文全体を組み立て直す必要があります。",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "使役",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "出来事に原因者（引き起こす者）を追加する構文です。「壺が割れた」を「彼女が壺を割った」や「彼女が壺を割らせた」に変えるような働きをします。多くの言語では、英語の「make」のような独立した動詞ではなく、専用の動詞接辞を用いて使役を形成します。",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "使役の意味は単一の動詞形の中に隠れていることがあるため、機械翻訳はそれを認識し、ターゲット言語に合わせて迂言的な構文に展開したり、逆に一つの形にまとめたりする必要があります。",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "代名詞",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "名詞句の代わりとなる単語（私、あなた、彼女、彼ら、これ、誰など）です。言語によって代名詞の数や、性別、丁寧さ、包括的/除外的な「私たち」など、強制される区別が大きく異なります。",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "代名詞の体系が言語間で完全に一致することは稀であるため、機械翻訳は原文で指定されていない区別（性別や丁寧さなど）を補ったり、ターゲット言語で表現できない区別を統合したりする必要があります。",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "数詞",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "数を表す単語（一、十七、千など）です。言語によって大きな数の構築の基準（十進法、二十進法、またはその混合）が異なり、各数字に類別詞や特別な数え方の形式が必要になる場合があります。",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "数字は非常に重要なコンテンツであり、異なる記数法や類別詞の要件をまたいで数詞を翻訳することは、機械翻訳がエラーを起こしやすい部分です。",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "イデオフォン",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "英語の「zigzag」や日本語の「キラキラ」のように、その語形自体を通じて音、動き、質感、光などの感覚を鮮やかに喚起する単語です。多くのアフリカやアジアの言語には、文法的に区別された大規模なイデオフォンのクラスが存在します。",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "イデオフォンは表現豊かで言語特有の性質が強いため、機械翻訳では省略されたり平坦化されたりしやすく、ネイティブスピーカーが感じる正確で鮮やかな意味が失われがちです。",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "連続動詞構文",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "「and」や「to」を挟まずに複数の動詞を一つの節に並べる構文です。たとえば「take knife cut bread」で「ナイフでパンを切る」を表します。西アフリカ・東南アジア・クレオール語に多く見られます。",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "ヨーロッパ系言語に翻訳する際は連続動詞を前置詞句や従属節に分解する必要があり、逆方向では再構築が必要です。",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "分詞",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "形容詞のように使われたり複合時制を作ったりする動詞形です。「the running water（流れる水）」や「has eaten（食べた）」がその例です。分詞の種類や用途は言語によって異なります。",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "分詞節は他の言語では関係節に置き換えられることが多く、構造の変換が必要になります。",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "動名詞",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "「swimming is fun（泳ぐことは楽しい）」の「swimming」のように、名詞として使われる動詞形です。英語が動名詞を使う場面で、他の言語は不定詞・動詞的名詞・コンバーブなど別の形式を用います。",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "英語の動名詞は対象言語によって複数の異なる構文に対応します。",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "繋辞",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "「she is a doctor（彼女は医者だ）」のような文をつなぐ動詞「be」のことです。ロシア語やアラビア語など多くの言語では現在時制で繋辞を省略し、文字通り「彼女 医者」と言います（ゼロ繋辞）。",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "ゼロ繋辞言語から翻訳する際は繋辞を挿入し、逆方向では削除する必要があります。",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "一致",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "ある語の形が別の語の文法的特徴に合わせて変化することです。動詞が主語に一致したり、形容詞が名詞の性・数に一致したりします。言語によっては動詞が主語と目的語の両方に一致します。",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "生成されるテキストはすべての一致の連鎖を満たす必要があり、特徴が一つ誤るだけで複数の箇所に誤りが生じます。",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "多人称一致",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "動詞が複数の参与者と同時に一致する現象で、主語と目的語（場合によってはそれ以上）の標示を動詞が担います。バスク語・グルジア語・アルゴンキン語族がこれを体系的に行います。",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "動詞形が「誰が誰に作用するか」を表すため、機械翻訳は正しい動詞形を生成する前に両方の役割を解決しなければなりません。",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "接続形",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "Plains Cree などアルゴンキン語族の言語では、動詞に異なる活用「法」があります。主文の陳述には独立形が使われ、従属節・疑問文・特定の談話文脈には主に接続形が使われます。両者はまったく異なる語尾セットを持ちます。",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "独立形と接続形のどちらを選ぶかは節の種類による判断であり、英語にはその直接的な手がかりがありません。",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Plains Cree (crk): このカードの formality notes および crk メソッドのドキュメントに記載されています。",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "方向辞",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "動詞自体に移動の方向（話者に向かう、離れる、川上へ、丘の上へなど）を組み込む動詞標示です。マヤ語族、チベット・ビルマ語族、多くのパプア諸語に見られます。",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "動詞に内包された方向の意味は、翻訳先言語では副詞や前置詞に展開する必要があります。",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "受益格",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "ある行為が誰かの利益のために行われることを示す標示です（例：「彼女のためにケーキを焼いた」）。言語によっては語順や前置詞ではなく、動詞の接辞（適用形）でこれを表します。",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "受益者が動詞の形態素に埋め込まれている場合、機械翻訳はそれを検出して独立した句として再表現しなければなりません。",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "疑問文",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "質問を表す文法カテゴリーです。はい／いいえ疑問文は助詞・動詞形・語順変化・イントネーションのみで標示される場合があり、疑問詞疑問文は「誰／何」が文頭に移動するかどうかで言語によって異なります。",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "疑問文がイントネーションのみで標示される言語では、書き言葉の入力から機械翻訳が疑問の意図を読み取る手がかりがありません。",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "語順",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "平叙文における主語（S）・目的語（O）・動詞（V）の典型的な配列です。SOV（日本語）とSVO（英語）が大多数の言語をカバーし、VSO（ウェールズ語、タガログ語型）が3番目に多いタイプです。語順が固定されていない言語もあります。",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "語順の不一致は、言語ペア間の語順変換エラーを引き起こす最大の要因です。",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "前後置詞",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "前置詞（名詞の前に置く：「in the house」）と後置詞（名詞の後に置く：日本語の「家で」）を総称する用語です。言語がどちらを使うかは、動詞と目的語の語順と強く相関しています。",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "前置詞から後置詞への変換は、すべての空間的・時間的句の括り方を逆転させます。",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "関係節",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "名詞を修飾する節です（例：「私が読んだ本」）。言語によって名詞の前後どちらに置くかが異なり、関係代名詞・空所・特殊な動詞形など様々な方略が使われます。",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "名詞前置型の関係節（日本語、トルコ語）は、英語の語順に対して長い文字列を逆転させる必要があります。",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "フォーカス体系",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "タガログ語などフィリピン系言語に典型的な節の体系で、動詞の形態論によって行為者・被動者・場所・道具のどの参与者が文の文法的な軸となるかを選択します。「対称的ヴォイス」とも呼ばれます。",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "フォーカスの選択によって動詞形・標示の位置・語順が同時に変わるため、機械翻訳は節を語単位でマッピングすることができません。",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "多くのオーストロネシア語族の言語において、linguisticChallenges.voiceFocus としてカードに表示されます。",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "助詞・小辞",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "文法的または態度的な意味を付加する、活用しない機能語の総称です（疑問標示、話題標示、丁寧さを和らげる表現など）。東アジアの言語では文末小辞が多用されます。",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "助詞・小辞は疑問性・態度・話題といった意味を担っており、機械翻訳はそれをまったく異なる手段で再表現しなければなりません。",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "声調",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "声の高低を使って単語を区別する仕組みです。例えば北京語の mā（母）と mǎ（馬）のように、同じ音でも高低のパターンが異なれば意味が変わります。単純なシステムでは高低の2段階を対比させ、複雑なシステム（西アフリカや東南アジアの多くの言語）では複数の高低レベルや輪郭を使います。",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "声調はローマ字表記や無標のテキストでは通常表記されないため、本来は異なる単語が同じスペルに統合されてしまい、MT システムの精度に影響します。",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "ピッチアクセント",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "音の高低によって単語を区別するシステムですが、1語につき1つの音節だけが特徴的なピッチを担います。例えば日本語の「はし（箸）」と「はし（橋）」のように区別されます。完全な声調よりは軽く、純粋な強弱アクセントよりは重い仕組みです。",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "声調と同様に、ピッチアクセントはほとんど文字で表記されないため、テキスト上で同形異義語が増加します。",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "モーラ",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "音節より小さい時間的単位です。短い音節は1モーラ、長母音や末尾の子音はさらに1モーラを加えます。日本語のリズム、詩、さらには略語もモーラを基準に数えます。",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "モーラに基づく音韻体系は外来語や固有名詞の取り込み方を左右するため、音訳の品質に影響します。",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "放出音",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "肺からの空気ではなく、閉じた声門からの空気の圧力で発音する子音で、鋭いポッという音が特徴です。コーカサス地方、南北アメリカ大陸、東アフリカの言語に多く見られ、アポストロフィを使って（k'、t' のように）表記されます。",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "放出音の記号は日常的な入力では省略されることが多く、本来は異なる単語が同じ表記に統合されてしまいます。",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "声門閉鎖音",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "「あっ、おっと」と言うときのような、喉の奥で一瞬息を止める音です。多くの言語では単語を区別する完全な子音として機能し、ハワイ語では ʻokina（ʻ）として表記されます。この記号を省略すると意味が変わってしまいます。",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "声門閉鎖音は省略されたり誤ったアポストロフィ文字で入力されたりすることが多く、同じ単語が複数の異なる表記に分散してしまいます。",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "ハワイ語（haw）では ʻokina は音素としての子音です。カード正書法のノートにはアポストロフィの異体字に関する問題が記録されています。",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "口蓋垂音",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "アラビア語の q やフランス語の r のように、口の最奥部で口蓋垂に当てて発音する子音です。軟口蓋音の k/g よりも稀で、特定の言語地域の特徴的な音です。",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "口蓋垂音はローマ字表記が一定しないことが多く（q/k/kh など）、同じ単語が複数の異なるテキスト形式に分かれてしまいます。",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "クリック音",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "英語の「tsk-tsk」のように空気を吸い込んで発音する子音ですが、通常の言語音として使われます。コイサン諸語や一部の南部バントゥー語（ズールー語、コサ語など）には完全なクリック子音の体系があります。",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "クリック音は特殊な文字（ǃ、ǂ、c、q、x）で表記されるため、トークナイザーやフォントが正しく処理できないことがよくあります。",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "入破音",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "ハウサ語やベトナム語の ɓ や ɗ のように、喉で空気を一瞬吸い込むようにして発音する子音です。訓練を受けていない耳には強調された b/d のように聞こえますが、独立した音素です。",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "入破音の文字（ɓ、ɗ）は通常の b/d として入力されることが多く、テキストコーパス上で本来は異なる単語が統合されてしまいます。",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "鼻音",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "m、n、または「sing」のngのように、鼻から空気を抜いて発音される子音です。ほぼすべての言語に鼻音の子音があり、一部の言語では隣接する母音にも鼻音化が広がります。",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "純粋な音声学的カテゴリーとして、鼻音の子音は書かれた単語を扱うテキスト翻訳よりも、音声や翻字において重要になります。",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "摩擦音",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "f、s、sh、thのように、狭い隙間から空気を押し出して摩擦音（シューという音）を出す子音です。摩擦音は、世界の言語において最も一般的な子音のタイプの一つです。",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "摩擦音は発音や名前の翻字に影響を与える音声学的カテゴリーであり、テキストベースの機械翻訳の文法には影響しません。",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "そり舌音",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "舌先を上顎に向かって丸め上げることで作られ、独特のくぐもった響きを持つ子音です。そり舌音は、ヒンディー語やタミル語などの南アジアの言語に特徴的です。",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "そり舌音化は主に音声と翻字の問題であり、テキスト上では機械翻訳が保持すべき固有の文字や発音区別符号としてのみ現れます。",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "声門化音",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "声門の狭窄または閉鎖を伴って発音され、子音や母音に引っかかりやきしみ（creaky）の性質を加えます。放出音や入破音は声門化子音であり、一部の言語には声門化（きしみ声）された共鳴音や母音も存在します。",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "声門化は音声や翻字において重要な音声学的特性であり、テキスト上では機械翻訳がそのまま保持すべき特殊な文字やアポストロフィとしてのみ残ります。",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "咽頭音",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "アラビア語のʿayn（ع）のように、咽頭（のど）を締めて発音する子音です。世界的に珍しく、母語話者以外には聞き取りも発音も難しい音です。",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "咽頭音のローマ字表記は多様（ʿ、'、3、または省略）で、非公式なテキストでは表記が統一されていません。",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "鼻母音",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "フランス語のbonやポルトガル語のsãoのように、鼻から空気を流しながら発音する母音です。対立がある言語では、口母音と鼻母音で異なる単語を区別します。",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "鼻音化の記号（ã、ę、ą）は非公式な入力で省略されることが多く、単語の区別が失われてしまいます。",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "母音の長さ",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "母音を長く伸ばすことで別の単語を表す特徴です。たとえばフィンランド語のtuli（火）とtuuli（風）がその例です。表記方法は二重字、マクロン（ā）、または無表記とさまざまです。",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "長音記号が任意表記の場合（ハワイ語のkahakō、アラビア語の母音記号など）、同じ単語が複数の綴りで現れます。",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "ハワイ語（haw）：kahakō（マクロン）は長母音を示しますが、日常的なテキストでは省略されることがよくあります。",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "音素",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "ある言語において単語を区別する音の単位です。一つの音素を別の音素に置き換えると異なる単語になります（例：patとbat）。言語によって音素の数は十数個から百個以上まで幅があります。",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "音素の種類と数によって、外来語や固有名詞がその言語でどのように音訳されるかが決まります。",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "ダウンステップ",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "アフリカの声調言語の多くで見られる現象で、句中のそれ以降の高声調が段階的に低下していくものです。それ自体が意味の区別に関わる声調上の重要な特徴です。",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "ダウンステップはほぼ文字で表記されないため、声調情報がテキストデータから体系的に失われています。",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "舌根前進（ATR）",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "舌根を前方に押し出して咽頭を広げることで生まれる母音の特性です。多くのアフリカ言語では母音が+ATRと-ATRの二群に分かれており、単語内で同じ群の母音のみを使うATR調和が求められます。",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "ATRの区別は正書法で一貫して表記されないことが多く、同じ単語が異なる綴りに分散してしまいます。",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "文字体系",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "言語を書き表すために使う記号の集合です。ラテン文字、キリル文字、アラビア文字、漢字など多数あります。一つの言語が複数の文字体系を使う場合（セルビア語など）もあれば、一つの文字体系が数百の言語に使われる場合もあります。",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "文字体系の種類は、エンコーディング、トークン化、そしてどのMTモデルが入力を受け付けるかといった、後続のすべてのテキスト処理に影響します。",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "正書法",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "ある言語をその文字体系で書く際の取り決め——どの文字、発音区別符号、綴りが正しいかを定めたルールです。複数の正書法が競合している言語や、標準化されていない言語も存在します。",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "正書法が複数あったり標準化されていなかったりすると、乏しい学習データが互換性のない綴りのバリアントに分散してしまいます。",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "アブギダ",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "各記号が子音と既定の母音を持ち、他の母音は基本記号を変形して表す文字体系です（デーヴァナーガリー、エチオピア文字、タイ文字など）。アルファベットと音節文字の中間に位置します。",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "アブギダの母音記号は結合文字であるため、テキスト処理が不適切だと削除または並び替えられ、単語が破損することがあります。",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "音節文字",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "個々の音ではなく音節ごとに1つの記号を持つ文字体系です（日本語の仮名やチェロキー文字など）。音節構造が単純な言語に適しています。",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "音節文字はテキストの粒度を変えるため、トークナイザーは子音・母音単位ではなく音節単位でテキストを認識します。",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "音節文字",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "クリー語、イヌクティトゥット語、オジブウェー語などカナダ先住民の言語に使われる文字体系で、各文字が子音を表し、その回転方向が母音を示します。1840年代に考案され、現在もコミュニティで活発に使用されています。",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "クリー語やイヌクティトゥット語のテキストは syllabics とローマ字正書法の両方で存在するため、MT パイプラインには信頼性の高い文字変換が必要です。",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "Plains Cree（crk）のカードスクリプトは Cans（Canadian Aboriginal Syllabics）で、ローマ字正書法へのコンバーターが付属しています。",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "ローマ字化",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "言語を本来の文字体系ではなくラテン文字で表記することで、規則に基づく翻字または発音に基づく転写があります。1つの言語に複数の競合するローマ字化規格が存在することも珍しくありません。",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "ローマ字化されたテキストと本来の文字体系のテキストは、明示的に変換しない限り MT モデルには別の言語として扱われます。",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "発音区別符号",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "声調・長短・鼻音化・異なる音を示すために文字に付加される記号で、アクセント記号、チルダ、ドット、長音符などがあります。これらに完全に依存する正書法もありますが、カジュアルな入力では省略されることがよくあります。",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "発音区別符号が除去されたテキストは広く見られるデータ品質の問題であり、異なる単語が同一視されたり、クリーンな学習データとの不一致が生じたりします。",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "書字方向",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "文字の進む方向を指します。左から右（ラテン文字）、右から左（アラビア文字、ヘブライ文字）、または歴史的に上から下（モンゴル文字、古典中国語）があります。方向が混在するテキストには特別な処理が必要です。",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "RTL および双方向テキストは単純な文字列処理を破綻させ、数字・句読点・埋め込まれたラテン文字が予測不能な順序に並び替えられることがあります。",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "言語レジスター",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "社会的文脈に結びついた言語の変種で、フォーマル、カジュアル、儀礼的、専門的などがあります。言語によってはレジスターが文法化されており、ジャワ語では丁寧さのレベルごとに異なる語彙体系があります。",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "MT は一貫したレジスターを維持する必要があり、フォーマルとカジュアルな表現が混在した出力は不自然または失礼に聞こえます。",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "T-V 区別",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "フランス語の tu/vous やドイツ語の du/Sie のように、社会的距離に応じて「あなた」に相当する語が2つ以上ある現象です。どちらを選ぶかは敬意・親密さ・上下関係を示し、一度選択すると変更が難しいです。",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "英語の「you」には丁寧さの手がかりがないため、MT は文脈から丁寧さを判断しなければならず、これは頻繁に起こる社会的に目立つエラーの原因となります。",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "フランス語（fra）：カードの形式データが tu/vous の使用文脈を区別しています。",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "敬語（honorific）",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "聞き手や話題の人物への敬意を表す文法的・語彙的形式のことです。日本語の敬語、韓国語の待遇表現、親族敬語の語彙体系などが該当します。多くの場合、任意の丁寧表現ではなく、文法的に義務的な形式です。",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "敬語の選択には「誰が誰より上位か」という社会的知識が必要ですが、その情報は原文にほとんど明示されていません。",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "丁寧さ（politeness）",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "代名詞の選択、動詞の語尾、助詞、語彙などを通じて社会的関係を言語的に表現することです。文法的な丁寧さを持たない言語から、複雑な多段階システムを持つ言語まで、言語によって大きく異なります。",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "翻訳は語彙的に正確であっても、状況に合わない丁寧さのレベルを選んでしまうと失敗になります。",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "ダイグロシア（diglossia）",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "ある言語共同体が、同じ言語の二つの変種を異なる目的で安定的に使い分けている状況です。「高変種」は文章語や改まった場面（現代標準アラビア語など）に、「低変種」は日常生活（口語方言）に使われます。話者は選択ではなく文脈によって切り替えます。",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "学習データは文章語の「高変種」に偏りがちなため、人々が実際に使う口語変種では機械翻訳の精度が低下します。",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "コードスイッチング（code-switching）",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "バイリンガルの話者が自然に行うように、一つの会話や文の中で二つ以上の言語を交互に使うことです。無秩序な混用ではなく、文法的なパターンに従っています。",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "複数言語が混在した入力は言語検出を混乱させ、システムが両方のコードに対応していなければ出力が乱れます。",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "クレオール語（creole）",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "激しい言語接触から生まれた完全な自然言語で、語彙の大部分を一つの言語（語彙提供言語）から受け継ぎながら、独自の文法を発達させています。ハイチ・クレオール語、トク・ピシン、パピアメント語などがその例です。",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "クレオール語は書き言葉では語彙提供言語に似て見えるため、語彙提供言語で学習した機械翻訳システムは体系的な誤訳を起こします。",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "ピジン語（pidgin）",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "共通言語を持たない集団間の交易や労働のために生まれた、母語話者のいない簡略化された接触言語です。子どもたちがそれを母語として育つようになると、クレオール語へと発展します。",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "ピジン語は変異が大きくテキストデータも少ないため、一貫した機械翻訳は特に困難です。",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "語彙提供言語（lexifier）",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "クレオール語やピジン語の語彙の大部分を供給した言語のことです。ジャマイカ・パトワに対する英語、ハイチ・クレオール語に対するフランス語、パピアメント語に対するポルトガル語などが該当します。ただし、文法はクレオール語独自のものです。",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "語彙提供言語との語彙の共通性が深い文法的差異を覆い隠すため、機械翻訳はその差異を見落とさないようにする必要があります。",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "借用語（loanword）",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "他の言語から取り入れ、自言語の音韻体系に合わせて適応させた語のことです。英語の「sushi」やフランス語の「le weekend」などが例として挙げられます。なお、構造を借用して逐語的に翻訳したものはカルク（翻訳借用）と呼ばれます（例：「skyscraper」→ フランス語「gratte-ciel」）。",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "借用語をそのまま保持するか、適応させるか、翻訳するかの判断は、特に専門用語のローカライズにおいて繰り返し生じる課題です。",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "大言語",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "ISO 639-3 における管理上のカテゴリで、歴史的・政治的な理由から一つとして扱われる複数の異なる言語をまとめた単一のコード（例：アラビア語の「ara」、中国語の「zho」）です。各メンバー言語にも個別のコードが割り当てられています。",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "大言語コードでラベル付けされたデータには相互に理解できない複数の変種が混在しており、学習データや評価データを汚染する原因となります。",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "自称名（エンドニム）",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "その言語を話すコミュニティ自身が使う言語の名称（自称名・autonym）で、外部の人が使う名称（他称名・exonym）とは区別されます。「Deutsch」は英語で「German」と呼ばれる言語の自称名であり、多くの先住民コミュニティも自称名の使用を好みます。",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "データベース間での名称の不一致は、MT パイプラインにおける言語識別やデータ統合のエラーを引き起こします。",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "孤立語族",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "系統的な親族関係が証明されていない言語で、それ自体が一つの語族を成します。バスク語、アイヌ語、ブルシャスキー語が有名な例であり、孤立語族は世界各地に意外なほど多く存在します。",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "孤立語族は関連言語から学習シグナルを借用できないため、低リソース MT の主要な戦略である転移学習が使えません。",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "言語活力",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "ある言語が子どもたちに伝承され、生活のさまざまな場面で使われている度合いを指します。EGIDS や Glottolog の危機度スケールでは、「活発（vigorous）」から「危機（threatened）」「消滅寸前（moribund）」を経て「休眠（dormant）」（流暢な話者はいないが復興の可能性あり）まで段階が設けられています。",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "言語活力はデータの入手可能性を左右し、コミュニティ主導の MT においては技術が果たすべき役割（例：言語復興支援であり代替ではない）を示す指標となります。",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "消滅寸前",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "子どもたちへの伝承が途絶えた言語の活力状態を指します。流暢に話せる話者は高齢者のみとなっており、介入がなければ一世代以内に休眠状態となります。",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "消滅寸前の言語は MT 出力を検証できる話者が減り続けており、データに関するあらゆる判断の重要性が高まります。",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "グロットコード",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "Glottolog データベースが付与する一意の識別子（例：英語の stan1293）で、言語・方言・語族を網羅しています。ISO コードよりも細粒度であり、言語学者によって継続的に改訂されています。",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "glottocode を使うことで、ISO コードを持たない変種であっても類型論データベースをパイプライン内で正確に結合できます。",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "SIL が管理する、世界の言語に対する3文字コードの国際標準（eng、crk、haw など）です。現存する言語から絶滅した言語まで、既知のすべての言語を1言語1コードで網羅することを目指しています。",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "ISO 639-3 コードは多言語 NLP における結合キーであり、コードの誤りや曖昧さはデータセットを気づかないうちに破損させます。",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "二十進法",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "十ではなく二十を基数とする数え方です。マヤ語、ヨルバ語、ナワトル語、そして一部のデンマーク語がこの方式を採用しており、フランス語では「80」が文字通り「quatre-vingts（4×20）」と表現されます。",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "異なる基数をまたぐ数詞の翻訳はエラーが起きやすく、数値は重要度の高いコンテンツです。",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "Numeralbank のデータから取得した numeralSystem.baseType を通じて、カード上に表示されます。",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "親族呼称",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "家族関係を表す語彙のことです。言語によって区分の仕方が大きく異なり、兄と弟を別々の語で区別したり、母方と父方の叔父を使い分けたりします。話者自身の立場を語形に組み込む体系もあります。",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "英語の「uncle」や「cousin」に対応する語が一つに定まらない言語では、家族関係の情報がなければ MT が適切な親族呼称を選ぶことができません。",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "MT の出力と参照訳の文字レベルの一致度を測る自動評価指標です。単語単位ではなく文字単位で比較するため、形態論的に複雑な言語に対して単語ベースの指標より公平な評価が可能です。",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "chrF は、単語レベルのマッチングが機能しにくい膠着語・多合成語に対して推奨される表層指標です。",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "表層的な一致を数えるのではなく、学習済みの多言語モデルを使って人間の品質評価を予測するニューラル MT 評価指標です。AfriCOMET などの派生版はアフリカ諸語への対応を拡張しています。",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "COMET は表層指標より人間の判断との相関が高いですが、基盤モデルが学習した言語にのみ有効です。",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "有限状態変換器（Finite-State Transducer）のことで、語形とその文法的分析の間を変換するルールベースの計算モデルです。形態論的に複雑な言語では、手作りの FST が統計的システムの未知語形を分析・生成できます。",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "FST は、テキストだけでは形態論を学習するのに十分なデータがない言語に対して、信頼性の高い形態素解析と検証を提供します。",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "Plains Cree (crk): この eval パックは FST ベースのセマンティックバリデーター（カードフィールド evalMetrics.lyss-sem）を使用しています。",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "ツリーバンク",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "文法構造（構文木）を人手でアノテーションした文のコーパスです。Universal Dependencies プロジェクトは 150 以上の言語について共通フォーマットの treebank を整備しています。",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "treebank の存在はその言語に本格的な NLP インフラが整っていることを示し、構文を考慮した評価を可能にします。",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "対訳コーパス",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "テキストとその翻訳を文単位で対応付けたコレクションです。対訳コーパスは MT システムの学習と評価における主要なリソースです。",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "利用可能な対訳データの規模とドメインは、言語ペアの MT 品質を左右する最も重要な単一の予測因子です。",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU（Bilingual Evaluation Understudy）は、翻訳結果と一つ以上の参照訳の間で単語 n-gram がどれだけ一致するかを測る指標です。最も古く最も引用される MT 指標ですが、単語全体を照合するため、形態論的に複雑な言語や低リソース言語には厳しく信頼性が低くなります。スコアは 0〜100 の範囲で、高いほど良好です。",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "BLEU は公開済みの比較表との対照のために報告しますが、Champollion が重点を置く言語では人間の判断との相関が低いため、chrF++ や COMET と併せて参照し、単独では判断しないでください。",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU は、FLORES-200 の SentencePiece トークナイザーでテキストを分割してから計算する BLEU です。200 言語すべてに共通する固定のサブワードモデルを使うため、通常の単語レベル BLEU では比較できないスクリプトや表記体系をまたいだスコアの比較が可能になります。",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU は NLLB / FLORES の低リソース研究における共通指標であり、言語横断的な比較に便利ですが、意味を捉えられない表層指標であることに変わりはありません。",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "TER（Translation Edit Rate）は、システムの出力を参照訳に修正するために必要な編集（挿入・削除・置換・ブロック移動）の回数を、参照訳の長さに対するパーセンテージで表したものです。多くの指標とは異なり、値が低いほど良好です。",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "TER は「人間がどれだけ修正する必要があるか」を直感的に示す指標ですが、他の表層的な指標と同様に、有効な言い換えや豊かな形態論を誤ってペナルティとして扱うことがあります。",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "データ汚染",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "テストセットの文がモデルの学習中にすでに使用されていた可能性がある場合、そのテストセットは「汚染されている」と言います。たとえば、コーパスが公開されており広くスクレイピングされている場合がこれに当たります。汚染されたベンチマークはモデルの性能を証明できません。モデルが記憶した答えを再現しているだけかもしれないからです。「汚染度が高い」とは、学習済みである可能性が高いことを意味し、その結果は絶対的な品質の主張としてではなく、システム間の相対的な比較として扱われます（「相対比較のみ」）。",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "公開されているベンチマークの多くは広く学習に使用されているため、Champollion ではそれらを相対比較専用の区分でスコアリングし、絶対的なランキングは非公開の未公開テストセットに限定しています。",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "MT 複雑度",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "MT 複雑度は、Champollion が算出する 0〜100 のスコアで、ある言語を機械翻訳することがどれほど難しいかを推定します。商用 MT API のカバレッジ、対訳コーパスの利用可能性、リソースが豊富な言語との類型論的距離、言語学的な記述の深さという 4 つの指標を組み合わせています。値が高いほど難易度が高いことを示します。これはシステムの出力を測定したものではなく、難易度の目安です。",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "このインデックスは作業の優先順位付けを助けるための派生的な目安であり、ベンチマーク結果ではありません。実際の翻訳品質の測定値は、（手法、データセット、指標）をキーとするリーダーボードに掲載されています。",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "ホールドアウトテストセット",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "開発中はシステムから隠しておき、評価時にのみ使用する翻訳例のセットです。システムがこれらの文を一度も見ていなければ、スコアは記憶ではなく真の能力を反映します。Champollion の最上位区分は、コミュニティが非公開に保つ「封印された」テストセットです。私たちを含め誰もデータを見ることなく、手法がそのセットに対してスコアリングされます。",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "ホールドアウト（特に封印された）テストセットのみが絶対的な品質の主張を可能にします。公開されている汚染済みのセットは相対的な比較にしか使用できません。",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

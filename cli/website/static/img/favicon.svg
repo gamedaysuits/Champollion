@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    Champollion — favicon. "Rosetta stela" mark, theme-adaptive via
+    prefers-color-scheme: ink stone on light browser chrome, carved
+    granite (lit edge + bright fracture facet) on dark — the wave-3
+    dark variant; the white "paper squeeze" is retired. Heavy
+    broken-stela silhouette (no rounded corners, no folded-corner
+    cue). Pure paths — no font dependencies. See DESIGN.md.
+  -->
+  <style>
+    .stone { fill: #1F2421; }
+    .edge { stroke: transparent; }
+    .break { stroke: transparent; }
+    .r1 { stroke: #3FC1C0; }
+    .r2 { stroke: #E8B339; }
+    .r3 { stroke: #F08A93; }
+    @media (prefers-color-scheme: dark) {
+      .stone { fill: #414C46; }
+      .edge { stroke: #67746D; }
+      .break { stroke: #8C9A92; }
+    }
+  </style>
+  <clipPath id="stela">
+    <path d="M5 29.5 L6.6 4.2 L18.2 3 L20.6 6.4 L24.6 4.9 L27.4 9.6 L26.6 29.5 Z"/>
+  </clipPath>
+  <path class="stone" d="M5 29.5 L6.6 4.2 L18.2 3 L20.6 6.4 L24.6 4.9 L27.4 9.6 L26.6 29.5 Z"/>
+  <g clip-path="url(#stela)" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path class="edge" d="M5 29.5 L6.6 4.2 L18.2 3"/>
+    <path class="break" d="M18.2 3 L20.6 6.4 L24.6 4.9 L27.4 9.6"/>
+  </g>
+  <g stroke-width="2.6" stroke-linecap="round" fill="none">
+    <path class="r1" d="M9.6 12.6h5.2"/>
+    <path class="r1" d="M17.6 12.6h5.6"/>
+    <path class="r2" d="M9.5 17.6h2.6"/>
+    <path class="r2" d="M15 17.6h5"/>
+    <path class="r2" d="M22.8 17.6h0.8"/>
+    <path class="r3" d="M9.4 22.6h7"/>
+    <path class="r3" d="M19.4 22.6h3.8"/>
+  </g>
+</svg>

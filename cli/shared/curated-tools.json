@@ -1,0 +1,41 @@
+{
+  "_comment": [
+    "Curated per-language NLP tool registrations consumed by scripts/derive-tools.mjs",
+    "(populates resources.tools[] — resource EXISTENCE only, boundary invariant kind 2).",
+    "Two sections: perLanguage lists explicit entries; fromCaches derives per-language",
+    "entries from a downloaded upstream cache in cli/data/ (fetch-from-source; the cache",
+    "is rebuilt by the named download script and is the citable evidence). Every entry",
+    "MUST carry a source string citing its basis. No measured scores here ever (lint R3).",
+    "Data-over-code (docs/AGENTS.md §1): language-specific facts live in this file,",
+    "never hardcoded in the deriver."
+  ],
+  "perLanguage": {
+    "crk": [
+      {
+        "name": "morphodict — intelligent dictionary platform (powers itwêwina)",
+        "url": "https://github.com/UAlbertaALTLab/morphodict",
+        "type": "dictionary-platform",
+        "source": "github.com/UAlbertaALTLab/morphodict (Apache-2.0; \"The Language Independent Intelligent Dictionary\"; production deployment itwewina.altlab.app) — verified 2026-07-19"
+      },
+      {
+        "name": "crk-db — Plains Cree lexical database aggregation tooling",
+        "url": "https://github.com/UAlbertaALTLab/crk-db",
+        "type": "lexical-database-tooling",
+        "source": "github.com/UAlbertaALTLab/crk-db (GPL-3.0; aggregates CW/MD/AECD sources for ALTLab's dictionary — the repo deliberately excludes the dictionary data, which lives in a private ALTLab repository) — verified 2026-07-19"
+      }
+    ]
+  },
+  "fromCaches": [
+    {
+      "cache": "data/nrc-g2p-langs.json",
+      "downloadScript": "scripts/download-nrc-g2p.mjs",
+      "codesField": "iso639_3",
+      "entry": {
+        "name": "NRC g2p — grapheme-to-phoneme mapping",
+        "urlTemplate": "https://github.com/roedoejet/g2p/tree/main/g2p/mappings/langs/{code}",
+        "type": "g2p",
+        "source": "NRC Canada Indigenous Languages Technology — per-language mapping directory in the g2p library (MIT; the language-support basis for NRC tools such as ReadAlong Studio); cache data/nrc-g2p-langs.json"
+      }
+    }
+  ]
+}

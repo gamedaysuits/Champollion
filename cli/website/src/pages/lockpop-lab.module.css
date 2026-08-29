@@ -1,0 +1,331 @@
+/* ====================================================================
+   /lockpop-lab — motion study for the "lock-and-pop" house-style effect.
+   Unlinked, noindex. Isolates the branding primitive (src/utils/lockPop.mjs)
+   in the three contexts the founder named as the visual guide: word
+   emphasis, the chrF++ score climbing through tests, and the sovereign
+   strength pulse. Approve the FEEL here before it goes into the seam.
+   ==================================================================== */
+
+.main {
+  --lp-ink: #06070b;
+  --lp-surface: #101312;
+  --lp-line: #2a302d;
+  --lp-text: #e4e8e6;
+  --lp-dim: #a4aca8;
+  --lp-amber: #e8b339;
+  --lp-green: #4caf50;
+  --lp-green-bright: #66bb6a;
+  --lp-coral: #f08a93;
+  --lp-ember: #e0503a;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(232, 179, 57, 0.06), transparent 55%),
+    var(--lp-ink);
+  color: var(--lp-text);
+  padding: 4rem 1.5rem 6rem;
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+}
+
+.inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pageHead {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.pageKicker {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lp-amber);
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.pageSub {
+  color: var(--lp-dim);
+  font-size: 0.98rem;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* --- demo cards --- */
+.card {
+  border: 1px solid var(--lp-line);
+  border-radius: 14px;
+  background: var(--lp-surface);
+  padding: 2rem 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  min-height: 190px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cardLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lp-dim);
+}
+
+.cardNote {
+  font-size: 0.82rem;
+  color: var(--lp-dim);
+  max-width: 46ch;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+  text-align: center;
+}
+
+/* --- 1. word emphasis --- */
+.line {
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* The emphasis phrase is amber-600 AT REST — the lock-and-pop makes it
+   ignite rather than introduce a foreign color. */
+.popPhrase {
+  display: inline-block;
+  color: var(--lp-amber);
+  font-weight: 700;
+  will-change: transform, filter;
+}
+
+/* --- 2. score climb through tests --- */
+.scoreRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.scoreChip {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 999px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  /* starts in the "frontier/unverified" coral, climbs to verified green */
+  background: rgba(240, 138, 147, 0.16);
+  color: var(--lp-coral);
+  border: 1px solid rgba(240, 138, 147, 0.3);
+  will-change: transform, filter;
+}
+
+.scoreChip[data-verified='true'] {
+  background: rgba(76, 175, 80, 0.16);
+  color: var(--lp-green-bright);
+  border-color: rgba(76, 175, 80, 0.4);
+}
+
+.scoreUnit {
+  font-size: 0.55em;
+  color: var(--lp-dim);
+  margin-left: 4px;
+}
+
+.testTicks {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.testTick {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  transition: none;
+}
+
+.testTick[data-on='true'] {
+  background: var(--lp-amber);
+}
+
+.testTick[data-final='true'][data-on='true'] {
+  background: var(--lp-green-bright);
+}
+
+.testCaption {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  color: var(--lp-dim);
+  letter-spacing: 0.04em;
+}
+
+/* --- 3. sovereign strength --- */
+.seal {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  min-width: 260px;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(232, 179, 57, 0.06), transparent 60%),
+    rgba(12, 14, 13, 0.82);
+  border: 1px solid rgba(232, 179, 57, 0.32);
+  will-change: transform, filter;
+}
+
+.sealHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sealBadge {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lp-amber);
+  font-weight: 700;
+}
+
+.sealTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--lp-text);
+}
+
+/* Redacted bars with the perpetual shimmer — "live but sealed". */
+.sealBars {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sealBar {
+  display: block;
+  height: 9px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(120, 132, 144, 0.28), rgba(120, 132, 144, 0.12));
+}
+
+.sealBar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(190, 200, 210, 0.16), transparent);
+  transform: translateX(-100%);
+  animation: lpShimmer 2.8s ease-in-out infinite;
+}
+
+.sealBar:nth-child(2)::after {
+  animation-delay: 0.5s;
+}
+.sealBar:nth-child(3)::after {
+  animation-delay: 0.9s;
+}
+
+@keyframes lpShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  55%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+/* --- controls --- */
+.controls {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--lp-line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--lp-text);
+  border-radius: 9px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--lp-amber);
+  background: rgba(232, 179, 57, 0.08);
+}
+
+.btnPrimary {
+  border-color: rgba(232, 179, 57, 0.5);
+  background: rgba(232, 179, 57, 0.12);
+}
+
+.cardBtn {
+  align-self: flex-start;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+}
+
+.reducedNote {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--lp-dim);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sealBar::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .line {
+    font-size: 1.4rem;
+  }
+  .scoreChip {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,478 @@
+{
+  "code": "ofs",
+  "name": {
+    "agreement": "single",
+    "consensus": "Old Frisian",
+    "values": [
+      {
+        "value": "Old Frisian",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "indo1319",
+      "clas1257",
+      "germ1287",
+      "nort3152",
+      "west2793",
+      "nort3175",
+      "angl1264",
+      "fris1239"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Indo-European",
+      "values": [
+        {
+          "value": "Indo-European",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "indo1319"
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "ofs-Latn-NL",
+    "values": [
+      {
+        "value": "ofs-Latn-NL",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "ofs-Latn-NL",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"ofs\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "ofs",
+    "values": [
+      {
+        "value": "ofs",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "lexicalResources": {
+    "clicsContributingDatasets": 1,
+    "clicsTotalEntries": 205,
+    "clicsUniqueForms": 195,
+    "colexificationConcepts": 151,
+    "colexificationDensity": 0.774,
+    "colexifyingForms": 9,
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 47,
+        "concepts": 39,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "diacl",
+        "forms": 205,
+        "concepts": 151,
+        "release": "diacl-v3.0"
+      },
+      {
+        "dataset": "iecor",
+        "forms": 110,
+        "concepts": 110,
+        "release": "iecor-v1.2"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 10,
+        "topPartners": [
+          {
+            "code": "nl",
+            "alignmentPairs": 10
+          },
+          {
+            "code": "fy",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "gos",
+            "alignmentPairs": 4
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 2
+          },
+          {
+            "code": "hbo",
+            "alignmentPairs": 2
+          }
+        ],
+        "alignmentPairsTotal": 27,
+        "pairsWithPublishedSize": 10,
+        "largestPairAlignments": 10
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "audersetinterrog",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      },
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "NL"
+  ],
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "extinct",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Old Frisian (ofs-ofs) = 10 (Extinct).",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "Frysk",
+    "values": [
+      {
+        "value": "Frysk",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "mis",
+        "variantType": "language",
+        "note": "label language: mis"
+      }
+    ]
+  },
+  "glottocode": "oldf1241",
+  "isIsolate": false,
+  "isoLanguageType": "Historical",
+  "isoScope": "Individual",
+  "documentation": {
+    "lastDocumented": 1200,
+    "medLevel": "grammar",
+    "medSourceId": "129921"
+  },
+  "coordinates": {
+    "lat": 53.35,
+    "lng": 6.8
+  },
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 27,
+    "byTier": {
+      "model-card-declared": 27
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gem",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gmw",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gem-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-gmw-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-gem",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-gmw",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-gem-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-gmw-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-gmw-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-gmw-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "modality": "spoken",
+  "coverage": {
+    "sourceCount": 9,
+    "componentsPresent": 30,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.lastDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.clicsContributingDatasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsTotalEntries": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsUniqueForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationConcepts": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationDensity": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexifyingForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "ofs",
+    "revision": "08e7b01d90a9305f",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "documentation.lastDocumented",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.clicsContributingDatasets",
+      "lexicalResources.clicsTotalEntries",
+      "lexicalResources.clicsUniqueForms",
+      "lexicalResources.colexificationConcepts",
+      "lexicalResources.colexificationDensity",
+      "lexicalResources.colexifyingForms",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.corpora",
+      "resources.typology"
+    ]
+  }
+}

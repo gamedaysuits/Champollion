@@ -1,0 +1,356 @@
+{
+  "code": "lfn",
+  "name": {
+    "agreement": "single",
+    "consensus": "Lingua Franca Nova",
+    "values": [
+      {
+        "value": "Lingua Franca Nova",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "arti1236"
+    ],
+    "familyGlottocode": "arti1236",
+    "glottologBucket": "arti1236"
+  },
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "lfn-Latn-001",
+    "values": [
+      {
+        "value": "lfn-Latn-001",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "lfn-Latn-001",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"lfn\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "lfn",
+    "values": [
+      {
+        "value": "lfn",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 109,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 15404
+          },
+          {
+            "code": "eo",
+            "alignmentPairs": 6446
+          },
+          {
+            "code": "yi",
+            "alignmentPairs": 4066
+          },
+          {
+            "code": "ia",
+            "alignmentPairs": 3629
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 3610
+          }
+        ],
+        "alignmentPairsTotal": 47261,
+        "pairsWithPublishedSize": 109,
+        "largestPairAlignments": 15404
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 5747
+          }
+        ],
+        "alignmentPairsTotal": 5747,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 5747
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 10,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 279
+          },
+          {
+            "code": "eo",
+            "alignmentPairs": 61
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 31
+          },
+          {
+            "code": "ca",
+            "alignmentPairs": 15
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 13
+          }
+        ],
+        "alignmentPairsTotal": 420,
+        "pairsWithPublishedSize": 10,
+        "largestPairAlignments": 279
+      }
+    ]
+  },
+  "countries": [
+    "US"
+  ],
+  "endonym": {
+    "agreement": "multiple-assessments",
+    "values": [
+      {
+        "value": "elefen",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "lfn",
+        "variantType": "language",
+        "note": "label language: lfn"
+      },
+      {
+        "value": "lingua franca nova",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "lfn",
+        "variantType": "language",
+        "note": "label language: lfn"
+      }
+    ]
+  },
+  "glottocode": "ling1267",
+  "isIsolate": false,
+  "isoLanguageType": "Constructed",
+  "isoScope": "Individual",
+  "macroarea": "North America",
+  "documentation": {
+    "medLevel": "Wordlist or less",
+    "medSourceId": "500595"
+  },
+  "methodSupport": {
+    "total": 15,
+    "byTier": {
+      "model-card-declared": 15
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0-LoRA",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-i1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "wikipediaEdition": {
+    "site": "lfn",
+    "url": "https://lfn.wikipedia.org",
+    "name": "Lingua Franca Nova"
+  },
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 19,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.glottologBucket": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "lfn",
+    "revision": "18195554d75f35ff",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.familyGlottocode",
+      "classification.glottologBucket",
+      "countries",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.corpora",
+      "wikipediaEdition"
+    ]
+  }
+}

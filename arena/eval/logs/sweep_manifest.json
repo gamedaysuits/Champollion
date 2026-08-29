@@ -1,0 +1,4192 @@
+{
+  "started": "2026-08-25T04:22:02.620278+00:00",
+  "budget": 75.0,
+  "lineup": [
+    {
+      "slug": "google/gemini-3.5-flash",
+      "pricing": {
+        "prompt": "0.0000015",
+        "completion": "0.000009",
+        "image": "0.0000015",
+        "audio": "0.000003",
+        "input_audio_cache": "0.0000003",
+        "web_search": "0.014",
+        "internal_reasoning": "0.000009",
+        "input_cache_read": "0.00000015",
+        "input_cache_write": "0.0000000833333333333333"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "anthropic/claude-haiku-4.5",
+      "pricing": {
+        "prompt": "0.000001",
+        "completion": "0.000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000001",
+        "input_cache_write": "0.00000125",
+        "input_cache_write_1h": "0.000002"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "anthropic/claude-fable-5",
+      "pricing": {
+        "prompt": "0.00001",
+        "completion": "0.00005",
+        "web_search": "0.01",
+        "input_cache_read": "0.000001",
+        "input_cache_write": "0.0000125",
+        "input_cache_write_1h": "0.00002"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "anthropic/claude-opus-4.8",
+      "pricing": {
+        "prompt": "0.000005",
+        "completion": "0.000025",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000005",
+        "input_cache_write": "0.00000625",
+        "input_cache_write_1h": "0.00001"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "anthropic/claude-sonnet-4.6",
+      "pricing": {
+        "prompt": "0.000003",
+        "completion": "0.000015",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000003",
+        "input_cache_write": "0.00000375",
+        "input_cache_write_1h": "0.000006"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "openai/gpt-5.5",
+      "pricing": {
+        "prompt": "0.000005",
+        "completion": "0.00003",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.00001",
+            "completion": "0.000045",
+            "input_cache_read": "0.000001"
+          }
+        ]
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "google/gemini-3.1-pro-preview",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000012",
+        "image": "0.000002",
+        "audio": "0.000002",
+        "input_audio_cache": "0.0000002",
+        "web_search": "0.014",
+        "internal_reasoning": "0.000012",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.000000375",
+        "overrides": [
+          {
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004",
+            "completion": "0.000018",
+            "audio": "0.000004",
+            "input_audio_cache": "0.0000004",
+            "input_cache_read": "0.0000004"
+          }
+        ]
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "anthropic/claude-opus-5",
+      "pricing": {
+        "prompt": "0.000005",
+        "completion": "0.000025",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000005",
+        "input_cache_write": "0.00000625",
+        "input_cache_write_1h": "0.00001"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "anthropic/claude-sonnet-5",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.00001",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.0000025",
+        "input_cache_write_1h": "0.000004"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "openai/gpt-5.6-terra-pro",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000012",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.0000025",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.000004",
+            "completion": "0.000018",
+            "input_cache_read": "0.0000004",
+            "input_cache_write": "0.000005"
+          }
+        ]
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "openai/gpt-5.6-luna",
+      "pricing": {
+        "prompt": "0.0000002",
+        "completion": "0.0000012",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000002",
+        "input_cache_write": "0.00000025",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000004",
+            "completion": "0.0000018",
+            "input_cache_read": "0.00000004",
+            "input_cache_write": "0.0000005"
+          }
+        ]
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "google/gemini-3.7-flash",
+      "pricing": {
+        "prompt": "0.000000375",
+        "completion": "0.000001875",
+        "image": "0.000000375",
+        "audio": "0.000000375",
+        "input_audio_cache": "0.0000000375",
+        "web_search": "0.014",
+        "internal_reasoning": "0.000001875",
+        "input_cache_read": "0.0000000375",
+        "input_cache_write": "0.0000000208333333333333"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "x-ai/grok-4.6",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000006",
+        "web_search": "0.005",
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004",
+            "completion": "0.000012",
+            "input_cache_read": "0.000001"
+          }
+        ]
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "deepseek/deepseek-v4-pro-0813",
+      "pricing": {
+        "prompt": "0.000001122",
+        "completion": "0.000003366",
+        "input_cache_read": "0.0000000374"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "deepseek/deepseek-v4-flash-0731",
+      "pricing": {
+        "prompt": "0.00000014",
+        "completion": "0.00000028",
+        "input_cache_read": "0.000000028"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "qwen/qwen3.8-max",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000006",
+        "input_cache_read": "0.00000025",
+        "input_cache_write": "0.0000025"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "z-ai/glm-5.3",
+      "pricing": {
+        "prompt": "0.0000014",
+        "completion": "0.0000044",
+        "input_cache_read": "0.00000026"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "mistralai/mistral-medium-3-5",
+      "pricing": {
+        "prompt": "0.0000015",
+        "completion": "0.0000075"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    },
+    {
+      "slug": "tencent/hy-mt2-30b-a3b",
+      "pricing": {
+        "prompt": "0.000000074",
+        "completion": "0.000000295"
+      },
+      "validated_at": "2026-08-25T04:22:02.620278+00:00"
+    }
+  ],
+  "runs": [
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Faroese",
+      "cost": 0.2319,
+      "ok": true,
+      "ts": "2026-06-11T09:49:56.329406+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Luxembourgish",
+      "cost": 0.1929,
+      "ok": true,
+      "ts": "2026-06-11T09:52:15.193272+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Amharic",
+      "cost": 0.0684,
+      "ok": true,
+      "ts": "2026-06-11T09:53:06.952090+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Bosnian",
+      "cost": 0.0478,
+      "ok": true,
+      "ts": "2026-06-11T09:53:44.048907+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Cebuano",
+      "cost": 0.119,
+      "ok": true,
+      "ts": "2026-06-11T09:53:58.557326+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Plains Cree",
+      "cost": 0.9011,
+      "ok": true,
+      "ts": "2026-06-11T10:04:02.146171+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Welsh",
+      "cost": 0.0415,
+      "ok": true,
+      "ts": "2026-06-11T10:04:34.963999+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Gujarati",
+      "cost": 0.1879,
+      "ok": true,
+      "ts": "2026-06-11T10:06:51.900751+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hausa",
+      "cost": 0.129,
+      "ok": true,
+      "ts": "2026-06-11T10:08:32.078415+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hawaiian",
+      "cost": 0.2119,
+      "ok": true,
+      "ts": "2026-06-11T10:10:59.177980+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hiligaynon",
+      "cost": 0.0729,
+      "ok": true,
+      "ts": "2026-06-11T10:11:53.266718+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Igbo",
+      "cost": 0.0491,
+      "ok": true,
+      "ts": "2026-06-11T10:12:29.486671+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Ilocano",
+      "cost": 0.114,
+      "ok": true,
+      "ts": "2026-06-11T10:13:58.556677+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Kannada",
+      "cost": 0.0672,
+      "ok": true,
+      "ts": "2026-06-11T10:14:46.205229+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Kazakh",
+      "cost": 0.0965,
+      "ok": true,
+      "ts": "2026-06-11T10:15:58.008998+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Lao",
+      "cost": 0.1387,
+      "ok": true,
+      "ts": "2026-06-11T10:17:23.458817+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Ganda",
+      "cost": 0.1584,
+      "ok": true,
+      "ts": "2026-06-11T10:19:27.071757+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Malayalam",
+      "cost": 0.0547,
+      "ok": true,
+      "ts": "2026-06-11T10:20:13.916516+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Maltese",
+      "cost": 0.3864,
+      "ok": true,
+      "ts": "2026-06-11T10:23:14.425151+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Mongolian",
+      "cost": 0.1308,
+      "ok": true,
+      "ts": "2026-06-11T10:24:49.075399+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Burmese",
+      "cost": 0.0812,
+      "ok": true,
+      "ts": "2026-06-11T10:25:46.991873+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Pangasinan",
+      "cost": 0.0812,
+      "ok": true,
+      "ts": "2026-06-11T10:26:47.149103+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Kapampangan",
+      "cost": 0.0461,
+      "ok": true,
+      "ts": "2026-06-11T10:27:23.573480+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Panjabi",
+      "cost": 0.0891,
+      "ok": true,
+      "ts": "2026-06-11T10:28:31.363095+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Sinhala",
+      "cost": 0.0798,
+      "ok": true,
+      "ts": "2026-06-11T10:29:24.609546+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.0969,
+      "ok": true,
+      "ts": "2026-06-11T10:30:32.949989+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Shona",
+      "cost": 0.0491,
+      "ok": true,
+      "ts": "2026-06-11T10:31:13.245165+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Tamil",
+      "cost": 0.1245,
+      "ok": true,
+      "ts": "2026-06-11T10:32:47.390617+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Telugu",
+      "cost": 0.0751,
+      "ok": true,
+      "ts": "2026-06-11T10:33:38.888616+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Tigrinya",
+      "cost": 0.0688,
+      "ok": true,
+      "ts": "2026-06-11T10:34:28.638861+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Turkmen",
+      "cost": 0.1667,
+      "ok": true,
+      "ts": "2026-06-11T10:36:21.554732+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Urdu",
+      "cost": 0.1276,
+      "ok": true,
+      "ts": "2026-06-11T10:38:02.006643+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Uzbek",
+      "cost": 0.1465,
+      "ok": true,
+      "ts": "2026-06-11T10:39:46.116350+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Waray",
+      "cost": 0.1407,
+      "ok": true,
+      "ts": "2026-06-11T10:41:29.223538+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Xhosa",
+      "cost": 0.0758,
+      "ok": true,
+      "ts": "2026-06-11T10:42:25.899915+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Yoruba",
+      "cost": 0.0739,
+      "ok": true,
+      "ts": "2026-06-11T10:43:17.742049+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Standard Malay",
+      "cost": 0.1215,
+      "ok": true,
+      "ts": "2026-06-11T10:44:47.291410+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Zulu",
+      "cost": 0.1244,
+      "ok": true,
+      "ts": "2026-06-11T10:46:19.130553+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Catalan",
+      "cost": 0.0578,
+      "ok": true,
+      "ts": "2026-06-11T10:47:01.863900+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Basque",
+      "cost": 0.0587,
+      "ok": true,
+      "ts": "2026-06-11T10:47:44.772199+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hausa",
+      "cost": 0.1581,
+      "ok": true,
+      "ts": "2026-06-11T10:49:42.484135+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Luxembourgish",
+      "cost": 0.1909,
+      "ok": true,
+      "ts": "2026-06-11T10:51:57.697582+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Maltese",
+      "cost": 0.199,
+      "ok": true,
+      "ts": "2026-06-11T10:54:23.705605+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Western Frisian",
+      "cost": 0.0518,
+      "ok": true,
+      "ts": "2026-06-11T10:55:06.239750+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Amharic",
+      "cost": 0.0684,
+      "ok": true,
+      "ts": "2026-06-11T10:57:01.704508+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Bosnian",
+      "cost": 0.0478,
+      "ok": true,
+      "ts": "2026-06-11T10:57:01.982523+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Welsh",
+      "cost": 0.0415,
+      "ok": true,
+      "ts": "2026-06-11T10:57:10.056120+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Cebuano",
+      "cost": 0.119,
+      "ok": true,
+      "ts": "2026-06-11T10:57:10.654136+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Luxembourgish",
+      "cost": 0.1929,
+      "ok": true,
+      "ts": "2026-06-11T10:57:13.634920+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Faroese",
+      "cost": 0.2319,
+      "ok": true,
+      "ts": "2026-06-11T10:57:18.982646+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hiligaynon",
+      "cost": 0.0729,
+      "ok": true,
+      "ts": "2026-06-11T10:57:24.273784+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Igbo",
+      "cost": 0.0491,
+      "ok": true,
+      "ts": "2026-06-11T10:57:27.141911+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hausa",
+      "cost": 0.129,
+      "ok": true,
+      "ts": "2026-06-11T10:57:29.523983+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Gujarati",
+      "cost": 0.1879,
+      "ok": true,
+      "ts": "2026-06-11T10:57:31.401582+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Ilocano",
+      "cost": 0.114,
+      "ok": true,
+      "ts": "2026-06-11T10:57:39.281287+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hawaiian",
+      "cost": 0.2119,
+      "ok": true,
+      "ts": "2026-06-11T10:57:39.284761+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Kannada",
+      "cost": 0.0672,
+      "ok": true,
+      "ts": "2026-06-11T10:57:39.366055+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Kazakh",
+      "cost": 0.0965,
+      "ok": true,
+      "ts": "2026-06-11T10:57:45.127111+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Lao",
+      "cost": 0.1387,
+      "ok": true,
+      "ts": "2026-06-11T10:57:48.423131+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Malayalam",
+      "cost": 0.0547,
+      "ok": true,
+      "ts": "2026-06-11T10:57:51.027910+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Maltese",
+      "cost": 0.3864,
+      "ok": true,
+      "ts": "2026-06-11T10:57:59.076933+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Burmese",
+      "cost": 0.0812,
+      "ok": true,
+      "ts": "2026-06-11T10:57:59.604439+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Ganda",
+      "cost": 0.1584,
+      "ok": true,
+      "ts": "2026-06-11T10:58:01.118757+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Pangasinan",
+      "cost": 0.0812,
+      "ok": true,
+      "ts": "2026-06-11T10:58:02.448466+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Mongolian",
+      "cost": 0.1308,
+      "ok": true,
+      "ts": "2026-06-11T10:58:03.617325+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Kapampangan",
+      "cost": 0.0461,
+      "ok": true,
+      "ts": "2026-06-11T10:58:06.852660+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Plains Cree",
+      "cost": 0.9011,
+      "ok": true,
+      "ts": "2026-06-11T10:58:08.981444+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Sinhala",
+      "cost": 0.0798,
+      "ok": true,
+      "ts": "2026-06-11T10:58:11.781717+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Shona",
+      "cost": 0.0491,
+      "ok": true,
+      "ts": "2026-06-11T10:58:12.156880+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.0969,
+      "ok": true,
+      "ts": "2026-06-11T10:58:12.582004+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Panjabi",
+      "cost": 0.0891,
+      "ok": true,
+      "ts": "2026-06-11T10:58:14.957717+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Tigrinya",
+      "cost": 0.0688,
+      "ok": true,
+      "ts": "2026-06-11T10:58:19.599736+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Telugu",
+      "cost": 0.0751,
+      "ok": true,
+      "ts": "2026-06-11T10:58:22.539719+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Tamil",
+      "cost": 0.1245,
+      "ok": true,
+      "ts": "2026-06-11T10:58:30.467515+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Turkmen",
+      "cost": 0.1667,
+      "ok": true,
+      "ts": "2026-06-11T10:58:35.065056+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Xhosa",
+      "cost": 0.0758,
+      "ok": true,
+      "ts": "2026-06-11T10:58:36.355047+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Uzbek",
+      "cost": 0.1465,
+      "ok": true,
+      "ts": "2026-06-11T10:58:36.710490+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Waray",
+      "cost": 0.1407,
+      "ok": true,
+      "ts": "2026-06-11T10:58:37.451808+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Urdu",
+      "cost": 0.1276,
+      "ok": true,
+      "ts": "2026-06-11T10:58:37.656566+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Yoruba",
+      "cost": 0.0739,
+      "ok": true,
+      "ts": "2026-06-11T10:58:41.414917+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Catalan",
+      "cost": 0.0578,
+      "ok": true,
+      "ts": "2026-06-11T10:58:44.683080+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Basque",
+      "cost": 0.0587,
+      "ok": true,
+      "ts": "2026-06-11T10:58:46.254354+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Zulu",
+      "cost": 0.1244,
+      "ok": true,
+      "ts": "2026-06-11T10:58:54.657349+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Western Frisian",
+      "cost": 0.0518,
+      "ok": true,
+      "ts": "2026-06-11T10:58:55.151650+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Standard Malay",
+      "cost": 0.1215,
+      "ok": true,
+      "ts": "2026-06-11T10:58:55.580122+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Hausa",
+      "cost": 0.1581,
+      "ok": true,
+      "ts": "2026-06-11T10:59:00.059429+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Luxembourgish",
+      "cost": 0.1909,
+      "ok": true,
+      "ts": "2026-06-11T10:59:05.020741+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Maltese",
+      "cost": 0.199,
+      "ok": true,
+      "ts": "2026-06-11T10:59:06.511423+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Amharic",
+      "cost": 0.0098,
+      "ok": true,
+      "ts": "2026-06-11T10:59:39.486889+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Uzbek",
+      "cost": 0.0631,
+      "ok": true,
+      "ts": "2026-06-11T10:59:42.568031+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Luxembourgish",
+      "cost": 0.0126,
+      "ok": true,
+      "ts": "2026-06-11T10:59:51.576461+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Bosnian",
+      "cost": 0.0041,
+      "ok": true,
+      "ts": "2026-06-11T10:59:57.120063+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Faroese",
+      "cost": 0.0159,
+      "ok": true,
+      "ts": "2026-06-11T10:59:59.570102+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Galician",
+      "cost": 0.1178,
+      "ok": true,
+      "ts": "2026-06-11T11:00:05.216065+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Welsh",
+      "cost": 0.0037,
+      "ok": true,
+      "ts": "2026-06-11T11:00:11.603405+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Quechua",
+      "cost": 0.1109,
+      "ok": true,
+      "ts": "2026-06-11T11:00:17.210733+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Cebuano",
+      "cost": 0.0092,
+      "ok": true,
+      "ts": "2026-06-11T11:00:17.688878+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Igbo",
+      "cost": 0.004,
+      "ok": true,
+      "ts": "2026-06-11T11:00:36.795350+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Hiligaynon",
+      "cost": 0.0051,
+      "ok": true,
+      "ts": "2026-06-11T11:00:39.272702+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Hausa",
+      "cost": 0.0095,
+      "ok": true,
+      "ts": "2026-06-11T11:00:47.992974+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Ilocano",
+      "cost": 0.0077,
+      "ok": true,
+      "ts": "2026-06-11T11:01:09.515878+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Hawaiian",
+      "cost": 0.0181,
+      "ok": true,
+      "ts": "2026-06-11T11:01:13.224243+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Gujarati",
+      "cost": 0.024,
+      "ok": true,
+      "ts": "2026-06-11T11:01:20.055842+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Kannada",
+      "cost": 0.0165,
+      "ok": true,
+      "ts": "2026-06-11T11:01:21.618091+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Kazakh",
+      "cost": 0.0094,
+      "ok": true,
+      "ts": "2026-06-11T11:01:32.165571+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Malayalam",
+      "cost": 0.009,
+      "ok": true,
+      "ts": "2026-06-11T11:01:47.482844+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Maltese",
+      "cost": 0.0102,
+      "ok": true,
+      "ts": "2026-06-11T11:01:58.981664+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Ganda",
+      "cost": 0.0123,
+      "ok": true,
+      "ts": "2026-06-11T11:02:05.471981+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Lao",
+      "cost": 0.0233,
+      "ok": true,
+      "ts": "2026-06-11T11:02:19.504851+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Kapampangan",
+      "cost": 0.0034,
+      "ok": true,
+      "ts": "2026-06-11T11:02:21.082962+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Burmese",
+      "cost": 0.0111,
+      "ok": true,
+      "ts": "2026-06-11T11:02:22.578607+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Pangasinan",
+      "cost": 0.0057,
+      "ok": true,
+      "ts": "2026-06-11T11:02:22.763975+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Mongolian",
+      "cost": 0.0126,
+      "ok": true,
+      "ts": "2026-06-11T11:02:23.869049+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Plains Cree",
+      "cost": 0.0587,
+      "ok": true,
+      "ts": "2026-06-11T11:02:38.366056+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Shona",
+      "cost": 0.0039,
+      "ok": true,
+      "ts": "2026-06-11T11:02:40.333780+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.0052,
+      "ok": true,
+      "ts": "2026-06-11T11:02:45.810859+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Sinhala",
+      "cost": 0.0091,
+      "ok": true,
+      "ts": "2026-06-11T11:02:50.408155+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Panjabi",
+      "cost": 0.0274,
+      "ok": true,
+      "ts": "2026-06-11T11:03:14.756292+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Telugu",
+      "cost": 0.0117,
+      "ok": true,
+      "ts": "2026-06-11T11:03:15.844809+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Tamil",
+      "cost": 0.0204,
+      "ok": true,
+      "ts": "2026-06-11T11:03:23.567257+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Urdu",
+      "cost": 0.0192,
+      "ok": true,
+      "ts": "2026-06-11T11:03:44.483673+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Waray",
+      "cost": 0.0092,
+      "ok": true,
+      "ts": "2026-06-11T11:03:55.633058+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Xhosa",
+      "cost": 0.0071,
+      "ok": true,
+      "ts": "2026-06-11T11:03:56.041202+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Turkmen",
+      "cost": 0.0181,
+      "ok": true,
+      "ts": "2026-06-11T11:03:58.501365+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Uzbek",
+      "cost": 0.0118,
+      "ok": true,
+      "ts": "2026-06-11T11:04:05.783358+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Yoruba",
+      "cost": 0.0066,
+      "ok": true,
+      "ts": "2026-06-11T11:04:07.929049+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Catalan",
+      "cost": 0.0034,
+      "ok": true,
+      "ts": "2026-06-11T11:04:12.875765+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Basque",
+      "cost": 0.0036,
+      "ok": true,
+      "ts": "2026-06-11T11:04:21.781539+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Standard Malay",
+      "cost": 0.0107,
+      "ok": true,
+      "ts": "2026-06-11T11:04:32.638544+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Zulu",
+      "cost": 0.0104,
+      "ok": true,
+      "ts": "2026-06-11T11:04:41.792486+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Western Frisian",
+      "cost": 0.0044,
+      "ok": true,
+      "ts": "2026-06-11T11:04:51.127849+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Hausa",
+      "cost": 0.0115,
+      "ok": true,
+      "ts": "2026-06-11T11:04:56.330129+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Luxembourgish",
+      "cost": 0.0135,
+      "ok": true,
+      "ts": "2026-06-11T11:05:03.104447+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Galician",
+      "cost": 0.0068,
+      "ok": true,
+      "ts": "2026-06-11T11:05:07.583033+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Uzbek",
+      "cost": 0.0044,
+      "ok": true,
+      "ts": "2026-06-11T11:05:11.565036+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Maltese",
+      "cost": 0.0142,
+      "ok": true,
+      "ts": "2026-06-11T11:05:16.201297+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Quechua",
+      "cost": 0.0084,
+      "ok": true,
+      "ts": "2026-06-11T11:05:28.195169+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Tigrinya",
+      "cost": 0.1683,
+      "ok": true,
+      "ts": "2026-06-11T11:09:52.168283+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Bosnian",
+      "cost": 0.0517,
+      "ok": true,
+      "ts": "2026-06-11T11:17:14.826881+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Welsh",
+      "cost": 0.1133,
+      "ok": true,
+      "ts": "2026-06-11T11:17:54.750288+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Amharic",
+      "cost": 0.1026,
+      "ok": true,
+      "ts": "2026-06-11T11:18:00.999086+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Cebuano",
+      "cost": 0.2689,
+      "ok": true,
+      "ts": "2026-06-11T11:18:28.134355+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Luxembourgish",
+      "cost": 0.3201,
+      "ok": true,
+      "ts": "2026-06-11T11:18:54.438478+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Faroese",
+      "cost": 0.4601,
+      "ok": true,
+      "ts": "2026-06-11T11:19:48.184567+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Hiligaynon",
+      "cost": 0.1518,
+      "ok": true,
+      "ts": "2026-06-11T11:19:56.035214+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Hausa",
+      "cost": 0.2864,
+      "ok": true,
+      "ts": "2026-06-11T11:20:12.276148+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Igbo",
+      "cost": 0.0553,
+      "ok": true,
+      "ts": "2026-06-11T11:20:27.973221+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Hawaiian",
+      "cost": 0.5128,
+      "ok": true,
+      "ts": "2026-06-11T11:21:26.997809+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Kannada",
+      "cost": 0.1728,
+      "ok": true,
+      "ts": "2026-06-11T11:21:42.696433+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Ilocano",
+      "cost": 0.2497,
+      "ok": true,
+      "ts": "2026-06-11T11:21:42.700110+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Gujarati",
+      "cost": 0.2488,
+      "ok": true,
+      "ts": "2026-06-11T11:21:59.308213+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Kazakh",
+      "cost": 0.2143,
+      "ok": true,
+      "ts": "2026-06-11T11:22:03.242852+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Malayalam",
+      "cost": 0.135,
+      "ok": true,
+      "ts": "2026-06-11T11:23:01.371113+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Maltese",
+      "cost": 0.2713,
+      "ok": true,
+      "ts": "2026-06-11T11:23:52.155268+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Mongolian",
+      "cost": 0.186,
+      "ok": true,
+      "ts": "2026-06-11T11:23:57.632038+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Ganda",
+      "cost": 0.3576,
+      "ok": true,
+      "ts": "2026-06-11T11:24:13.883411+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Burmese",
+      "cost": 0.1076,
+      "ok": true,
+      "ts": "2026-06-11T11:24:14.203144+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Kapampangan",
+      "cost": 0.1087,
+      "ok": true,
+      "ts": "2026-06-11T11:24:48.656176+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Pangasinan",
+      "cost": 0.1885,
+      "ok": true,
+      "ts": "2026-06-11T11:25:04.920719+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Panjabi",
+      "cost": 0.2797,
+      "ok": true,
+      "ts": "2026-06-11T11:25:48.216880+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Shona",
+      "cost": 0.1091,
+      "ok": true,
+      "ts": "2026-06-11T11:25:49.430513+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Sinhala",
+      "cost": 0.1222,
+      "ok": true,
+      "ts": "2026-06-11T11:25:52.361382+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.167,
+      "ok": true,
+      "ts": "2026-06-11T11:26:03.887527+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Lao",
+      "cost": 0.3144,
+      "ok": true,
+      "ts": "2026-06-11T11:26:10.711976+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Plains Cree",
+      "cost": 1.712,
+      "ok": true,
+      "ts": "2026-06-11T11:26:58.816271+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Telugu",
+      "cost": 0.1166,
+      "ok": true,
+      "ts": "2026-06-11T11:27:11.432447+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Tigrinya",
+      "cost": 0.1834,
+      "ok": true,
+      "ts": "2026-06-11T11:27:24.674592+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Tamil",
+      "cost": 0.2076,
+      "ok": true,
+      "ts": "2026-06-11T11:27:47.133973+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Urdu",
+      "cost": 0.2105,
+      "ok": true,
+      "ts": "2026-06-11T11:28:01.304795+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Uzbek",
+      "cost": 0.1442,
+      "ok": true,
+      "ts": "2026-06-11T11:28:29.799320+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Xhosa",
+      "cost": 0.1996,
+      "ok": true,
+      "ts": "2026-06-11T11:28:39.871307+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Yoruba",
+      "cost": 0.1483,
+      "ok": true,
+      "ts": "2026-06-11T11:28:47.513745+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Turkmen",
+      "cost": 0.4238,
+      "ok": true,
+      "ts": "2026-06-11T11:29:00.973459+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Catalan",
+      "cost": 0.0469,
+      "ok": true,
+      "ts": "2026-06-11T11:29:09.069076+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Waray",
+      "cost": 0.3107,
+      "ok": true,
+      "ts": "2026-06-11T11:29:16.677602+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Standard Malay",
+      "cost": 0.1548,
+      "ok": true,
+      "ts": "2026-06-11T11:29:18.782759+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Basque",
+      "cost": 0.103,
+      "ok": true,
+      "ts": "2026-06-11T11:29:30.005695+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Western Frisian",
+      "cost": 0.1067,
+      "ok": true,
+      "ts": "2026-06-11T11:30:03.580403+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Zulu",
+      "cost": 0.3171,
+      "ok": true,
+      "ts": "2026-06-11T11:30:36.288866+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Galician",
+      "cost": 0.1515,
+      "ok": true,
+      "ts": "2026-06-11T11:30:36.430890+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Uzbek",
+      "cost": 0.0829,
+      "ok": true,
+      "ts": "2026-06-11T11:30:52.869374+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Hausa",
+      "cost": 0.2947,
+      "ok": true,
+      "ts": "2026-06-11T11:31:09.820614+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Luxembourgish",
+      "cost": 0.3773,
+      "ok": true,
+      "ts": "2026-06-11T11:31:34.473551+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Maltese",
+      "cost": 0.3336,
+      "ok": true,
+      "ts": "2026-06-11T11:31:37.671456+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Bosnian",
+      "cost": 0.0247,
+      "ok": true,
+      "ts": "2026-06-11T11:32:01.950205+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Quechua",
+      "cost": 0.2932,
+      "ok": true,
+      "ts": "2026-06-11T11:32:14.511455+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Luxembourgish",
+      "cost": 0.0805,
+      "ok": true,
+      "ts": "2026-06-11T11:32:18.869873+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Amharic",
+      "cost": 0.0515,
+      "ok": true,
+      "ts": "2026-06-11T11:32:28.876799+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Faroese",
+      "cost": 0.0968,
+      "ok": true,
+      "ts": "2026-06-11T11:32:32.809773+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Welsh",
+      "cost": 0.0236,
+      "ok": true,
+      "ts": "2026-06-11T11:32:43.983266+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Cebuano",
+      "cost": 0.055,
+      "ok": true,
+      "ts": "2026-06-11T11:32:48.199681+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Igbo",
+      "cost": 0.0256,
+      "ok": true,
+      "ts": "2026-06-11T11:33:24.326561+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Hiligaynon",
+      "cost": 0.0326,
+      "ok": true,
+      "ts": "2026-06-11T11:33:26.528473+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Hausa",
+      "cost": 0.0607,
+      "ok": true,
+      "ts": "2026-06-11T11:33:59.259931+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Hawaiian",
+      "cost": 0.1007,
+      "ok": true,
+      "ts": "2026-06-11T11:34:23.808611+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Ilocano",
+      "cost": 0.0478,
+      "ok": true,
+      "ts": "2026-06-11T11:34:32.034135+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Kannada",
+      "cost": 0.0851,
+      "ok": true,
+      "ts": "2026-06-11T11:35:04.089868+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Kazakh",
+      "cost": 0.0491,
+      "ok": true,
+      "ts": "2026-06-11T11:35:09.798429+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Gujarati",
+      "cost": 0.1227,
+      "ok": true,
+      "ts": "2026-06-11T11:35:57.531399+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Ganda",
+      "cost": 0.0729,
+      "ok": true,
+      "ts": "2026-06-11T11:36:16.726106+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Maltese",
+      "cost": 0.0588,
+      "ok": true,
+      "ts": "2026-06-11T11:36:21.223501+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Malayalam",
+      "cost": 0.0445,
+      "ok": true,
+      "ts": "2026-06-11T11:36:24.271735+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Kapampangan",
+      "cost": 0.0199,
+      "ok": true,
+      "ts": "2026-06-11T11:36:54.144985+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Pangasinan",
+      "cost": 0.0349,
+      "ok": true,
+      "ts": "2026-06-11T11:37:14.446833+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Burmese",
+      "cost": 0.0492,
+      "ok": true,
+      "ts": "2026-06-11T11:37:28.873080+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Mongolian",
+      "cost": 0.0626,
+      "ok": true,
+      "ts": "2026-06-11T11:37:37.049754+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Lao",
+      "cost": 0.1184,
+      "ok": true,
+      "ts": "2026-06-11T11:37:56.917317+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Shona",
+      "cost": 0.0231,
+      "ok": true,
+      "ts": "2026-06-11T11:38:08.428810+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.0292,
+      "ok": true,
+      "ts": "2026-06-11T11:38:16.655606+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Sinhala",
+      "cost": 0.0424,
+      "ok": true,
+      "ts": "2026-06-11T11:38:19.678881+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Panjabi",
+      "cost": 0.1367,
+      "ok": true,
+      "ts": "2026-06-11T11:38:31.340268+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Plains Cree",
+      "cost": 0.2953,
+      "ok": true,
+      "ts": "2026-06-11T11:38:50.732579+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Telugu",
+      "cost": 0.0584,
+      "ok": true,
+      "ts": "2026-06-11T11:39:18.688469+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Tigrinya",
+      "cost": 0.0405,
+      "ok": true,
+      "ts": "2026-06-11T11:39:20.250419+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Tamil",
+      "cost": 0.1018,
+      "ok": true,
+      "ts": "2026-06-11T11:39:52.237143+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Urdu",
+      "cost": 0.0989,
+      "ok": true,
+      "ts": "2026-06-11T11:40:12.459393+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Xhosa",
+      "cost": 0.0423,
+      "ok": true,
+      "ts": "2026-06-11T11:40:21.551981+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Uzbek",
+      "cost": 0.0703,
+      "ok": true,
+      "ts": "2026-06-11T11:40:22.535517+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Waray",
+      "cost": 0.0594,
+      "ok": true,
+      "ts": "2026-06-11T11:40:40.784412+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Yoruba",
+      "cost": 0.0391,
+      "ok": true,
+      "ts": "2026-06-11T11:40:41.021802+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Catalan",
+      "cost": 0.0195,
+      "ok": true,
+      "ts": "2026-06-11T11:40:45.553262+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Turkmen",
+      "cost": 0.1102,
+      "ok": true,
+      "ts": "2026-06-11T11:40:54.257032+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Basque",
+      "cost": 0.0208,
+      "ok": true,
+      "ts": "2026-06-11T11:41:09.072523+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Standard Malay",
+      "cost": 0.0653,
+      "ok": true,
+      "ts": "2026-06-11T11:41:17.006446+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Western Frisian",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-06-11T11:41:18.993911+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Zulu",
+      "cost": 0.0638,
+      "ok": true,
+      "ts": "2026-06-11T11:41:52.393317+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Uzbek",
+      "cost": 0.0261,
+      "ok": true,
+      "ts": "2026-06-11T11:41:52.702405+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Hausa",
+      "cost": 0.0713,
+      "ok": true,
+      "ts": "2026-06-11T11:42:14.998247+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Luxembourgish",
+      "cost": 0.0833,
+      "ok": true,
+      "ts": "2026-06-11T11:42:21.028623+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Maltese",
+      "cost": 0.0805,
+      "ok": true,
+      "ts": "2026-06-11T11:42:35.345863+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Galician",
+      "cost": 0.0397,
+      "ok": true,
+      "ts": "2026-06-11T11:42:55.054630+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Quechua",
+      "cost": 0.0524,
+      "ok": true,
+      "ts": "2026-06-11T11:42:57.933512+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Bosnian",
+      "cost": 0.0122,
+      "ok": true,
+      "ts": "2026-06-11T11:43:03.497625+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Amharic",
+      "cost": 0.0298,
+      "ok": true,
+      "ts": "2026-06-11T11:43:21.179789+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Welsh",
+      "cost": 0.0113,
+      "ok": true,
+      "ts": "2026-06-11T11:43:29.468599+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Luxembourgish",
+      "cost": 0.0376,
+      "ok": true,
+      "ts": "2026-06-11T11:43:29.598473+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Faroese",
+      "cost": 0.049,
+      "ok": true,
+      "ts": "2026-06-11T11:43:45.196241+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Cebuano",
+      "cost": 0.0273,
+      "ok": true,
+      "ts": "2026-06-11T11:43:55.018912+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Igbo",
+      "cost": 0.0133,
+      "ok": true,
+      "ts": "2026-06-11T11:44:25.728251+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Hiligaynon",
+      "cost": 0.0155,
+      "ok": true,
+      "ts": "2026-06-11T11:44:28.860673+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Hausa",
+      "cost": 0.03,
+      "ok": true,
+      "ts": "2026-06-11T11:44:40.911760+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Hawaiian",
+      "cost": 0.0558,
+      "ok": true,
+      "ts": "2026-06-11T11:45:10.732313+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Ilocano",
+      "cost": 0.0229,
+      "ok": true,
+      "ts": "2026-06-11T11:45:24.829027+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Gujarati",
+      "cost": 0.0718,
+      "ok": true,
+      "ts": "2026-06-11T11:45:42.098999+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Kannada",
+      "cost": 0.0511,
+      "ok": true,
+      "ts": "2026-06-11T11:45:50.501019+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Kazakh",
+      "cost": 0.029,
+      "ok": true,
+      "ts": "2026-06-11T11:45:51.038430+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Malayalam",
+      "cost": 0.0263,
+      "ok": true,
+      "ts": "2026-06-11T11:46:32.962611+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Ganda",
+      "cost": 0.0366,
+      "ok": true,
+      "ts": "2026-06-11T11:46:51.396184+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Maltese",
+      "cost": 0.0308,
+      "ok": true,
+      "ts": "2026-06-11T11:46:55.833230+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Mongolian",
+      "cost": 0.0362,
+      "ok": true,
+      "ts": "2026-06-11T11:47:07.993149+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Lao",
+      "cost": 0.0707,
+      "ok": true,
+      "ts": "2026-06-11T11:47:25.735224+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Kapampangan",
+      "cost": 0.0102,
+      "ok": true,
+      "ts": "2026-06-11T11:47:26.947966+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Pangasinan",
+      "cost": 0.0171,
+      "ok": true,
+      "ts": "2026-06-11T11:47:34.873931+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Burmese",
+      "cost": 0.0335,
+      "ok": true,
+      "ts": "2026-06-11T11:47:35.743473+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Shona",
+      "cost": 0.0113,
+      "ok": true,
+      "ts": "2026-06-11T11:48:03.899130+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.0152,
+      "ok": true,
+      "ts": "2026-06-11T11:48:06.181171+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Sinhala",
+      "cost": 0.0245,
+      "ok": true,
+      "ts": "2026-06-11T11:48:12.726841+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Plains Cree",
+      "cost": 0.164,
+      "ok": true,
+      "ts": "2026-06-11T11:48:47.217928+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Tigrinya",
+      "cost": 0.0223,
+      "ok": true,
+      "ts": "2026-06-11T11:48:58.805704+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Panjabi",
+      "cost": 0.0814,
+      "ok": true,
+      "ts": "2026-06-11T11:49:05.470498+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Telugu",
+      "cost": 0.0346,
+      "ok": true,
+      "ts": "2026-06-11T11:49:11.391840+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Tamil",
+      "cost": 0.0593,
+      "ok": true,
+      "ts": "2026-06-11T11:49:18.489884+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Yoruba",
+      "cost": 0.0208,
+      "ok": true,
+      "ts": "2026-06-11T11:49:58.777391+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Xhosa",
+      "cost": 0.0209,
+      "ok": true,
+      "ts": "2026-06-11T11:50:03.123307+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Waray",
+      "cost": 0.0287,
+      "ok": true,
+      "ts": "2026-06-11T11:50:16.219120+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Turkmen",
+      "cost": 0.0549,
+      "ok": true,
+      "ts": "2026-06-11T11:50:17.558370+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Urdu",
+      "cost": 0.0582,
+      "ok": true,
+      "ts": "2026-06-11T11:50:19.348290+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Uzbek",
+      "cost": 0.0353,
+      "ok": true,
+      "ts": "2026-06-11T11:50:21.317591+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Catalan",
+      "cost": 0.0104,
+      "ok": true,
+      "ts": "2026-06-11T11:50:39.134572+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Basque",
+      "cost": 0.0109,
+      "ok": true,
+      "ts": "2026-06-11T11:50:42.470964+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Standard Malay",
+      "cost": 0.0324,
+      "ok": true,
+      "ts": "2026-06-11T11:50:58.335272+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Western Frisian",
+      "cost": 0.0134,
+      "ok": true,
+      "ts": "2026-06-11T11:51:11.755760+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Zulu",
+      "cost": 0.0313,
+      "ok": true,
+      "ts": "2026-06-11T11:51:15.915861+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Hausa",
+      "cost": 0.0354,
+      "ok": true,
+      "ts": "2026-06-11T11:51:36.129872+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Galician",
+      "cost": 0.0205,
+      "ok": true,
+      "ts": "2026-06-11T11:51:43.044100+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Uzbek",
+      "cost": 0.0138,
+      "ok": true,
+      "ts": "2026-06-11T11:51:44.389554+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Luxembourgish",
+      "cost": 0.041,
+      "ok": true,
+      "ts": "2026-06-11T11:51:54.633326+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Quechua",
+      "cost": 0.0265,
+      "ok": true,
+      "ts": "2026-06-11T11:52:09.613399+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Maltese",
+      "cost": 0.0409,
+      "ok": true,
+      "ts": "2026-06-11T11:52:09.751682+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Bosnian",
+      "cost": 0.0664,
+      "ok": true,
+      "ts": "2026-06-11T11:52:47.504811+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Welsh",
+      "cost": 0.0705,
+      "ok": true,
+      "ts": "2026-06-11T11:53:51.982823+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Cebuano",
+      "cost": 0.1619,
+      "ok": true,
+      "ts": "2026-06-11T11:54:26.636087+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Amharic",
+      "cost": 0.235,
+      "ok": true,
+      "ts": "2026-06-11T11:54:58.086524+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Luxembourgish",
+      "cost": 0.3414,
+      "ok": true,
+      "ts": "2026-06-11T11:56:31.695406+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Faroese",
+      "cost": 0.4203,
+      "ok": true,
+      "ts": "2026-06-11T11:57:39.230659+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Hausa",
+      "cost": 0.1998,
+      "ok": true,
+      "ts": "2026-06-11T11:57:41.940043+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Hiligaynon",
+      "cost": 0.0844,
+      "ok": true,
+      "ts": "2026-06-11T11:57:49.362782+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Gujarati",
+      "cost": 0.1919,
+      "ok": true,
+      "ts": "2026-06-11T11:58:34.379560+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Igbo",
+      "cost": 0.0632,
+      "ok": true,
+      "ts": "2026-06-11T11:58:49.395807+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Kannada",
+      "cost": 0.067,
+      "ok": true,
+      "ts": "2026-06-11T11:59:50.071659+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Hawaiian",
+      "cost": 0.2698,
+      "ok": true,
+      "ts": "2026-06-11T12:00:03.976419+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Kazakh",
+      "cost": 0.0942,
+      "ok": true,
+      "ts": "2026-06-11T12:00:20.117796+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Ilocano",
+      "cost": 0.223,
+      "ok": true,
+      "ts": "2026-06-11T12:00:48.111763+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Malayalam",
+      "cost": 0.0568,
+      "ok": true,
+      "ts": "2026-06-11T12:01:33.846418+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Mongolian",
+      "cost": 0.1471,
+      "ok": true,
+      "ts": "2026-06-11T12:03:13.362695+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Maltese",
+      "cost": 0.1952,
+      "ok": true,
+      "ts": "2026-06-11T12:03:13.559408+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Lao",
+      "cost": 0.4216,
+      "ok": true,
+      "ts": "2026-06-11T12:03:27.294834+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Ganda",
+      "cost": 0.2734,
+      "ok": true,
+      "ts": "2026-06-11T12:03:56.440719+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Burmese",
+      "cost": 0.0975,
+      "ok": true,
+      "ts": "2026-06-11T12:04:18.301496+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Kapampangan",
+      "cost": 0.1549,
+      "ok": true,
+      "ts": "2026-06-11T12:05:17.574571+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Sinhala",
+      "cost": 0.0852,
+      "ok": true,
+      "ts": "2026-06-11T12:06:05.940511+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Shona",
+      "cost": 0.0635,
+      "ok": true,
+      "ts": "2026-06-11T12:06:12.250437+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Pangasinan",
+      "cost": 0.2273,
+      "ok": true,
+      "ts": "2026-06-11T12:06:31.321553+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.2104,
+      "ok": true,
+      "ts": "2026-06-11T12:07:09.255933+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Panjabi",
+      "cost": 0.1302,
+      "ok": true,
+      "ts": "2026-06-11T12:07:20.227979+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Telugu",
+      "cost": 0.0795,
+      "ok": true,
+      "ts": "2026-06-11T12:08:17.906360+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Tigrinya",
+      "cost": 0.177,
+      "ok": true,
+      "ts": "2026-06-11T12:09:26.773151+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Tamil",
+      "cost": 0.131,
+      "ok": true,
+      "ts": "2026-06-11T12:09:34.828744+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Uzbek",
+      "cost": 0.1649,
+      "ok": true,
+      "ts": "2026-06-11T12:10:32.518839+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Urdu",
+      "cost": 0.1552,
+      "ok": true,
+      "ts": "2026-06-11T12:10:47.260975+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Turkmen",
+      "cost": 0.2187,
+      "ok": true,
+      "ts": "2026-06-11T12:11:00.014872+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Xhosa",
+      "cost": 0.1244,
+      "ok": true,
+      "ts": "2026-06-11T12:11:28.474482+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Yoruba",
+      "cost": 0.0899,
+      "ok": true,
+      "ts": "2026-06-11T12:11:54.399514+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Catalan",
+      "cost": 0.0806,
+      "ok": true,
+      "ts": "2026-06-11T12:12:31.145002+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Standard Malay",
+      "cost": 0.1302,
+      "ok": true,
+      "ts": "2026-06-11T12:12:35.638107+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Waray",
+      "cost": 0.2344,
+      "ok": true,
+      "ts": "2026-06-11T12:12:39.387758+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Basque",
+      "cost": 0.0741,
+      "ok": true,
+      "ts": "2026-06-11T12:13:00.431277+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Western Frisian",
+      "cost": 0.0932,
+      "ok": true,
+      "ts": "2026-06-11T12:14:14.110275+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Zulu",
+      "cost": 0.2219,
+      "ok": true,
+      "ts": "2026-06-11T12:14:22.071974+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Uzbek",
+      "cost": 0.0822,
+      "ok": true,
+      "ts": "2026-06-11T12:15:20.923379+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Galician",
+      "cost": 0.1713,
+      "ok": true,
+      "ts": "2026-06-11T12:16:35.187765+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Hausa",
+      "cost": 0.2732,
+      "ok": true,
+      "ts": "2026-06-11T12:16:39.846920+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Luxembourgish",
+      "cost": 0.334,
+      "ok": true,
+      "ts": "2026-06-11T12:17:16.310216+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Quechua",
+      "cost": 0.1788,
+      "ok": true,
+      "ts": "2026-06-11T12:17:42.465254+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Maltese",
+      "cost": 0.4036,
+      "ok": true,
+      "ts": "2026-06-11T12:17:58.834577+00:00"
+    },
+    {
+      "corpus": "eng-amh-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Amharic",
+      "cost": 0.095,
+      "ok": true,
+      "ts": "2026-06-11T12:18:25.665238+00:00"
+    },
+    {
+      "corpus": "eng-bos-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Bosnian",
+      "cost": 0.0624,
+      "ok": true,
+      "ts": "2026-06-11T12:18:49.615414+00:00"
+    },
+    {
+      "corpus": "dan-fao-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Faroese",
+      "cost": 0.2304,
+      "ok": true,
+      "ts": "2026-06-11T12:19:23.615992+00:00"
+    },
+    {
+      "corpus": "eng-cym-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Welsh",
+      "cost": 0.0621,
+      "ok": true,
+      "ts": "2026-06-11T12:19:44.773580+00:00"
+    },
+    {
+      "corpus": "deu-ltz-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Luxembourgish",
+      "cost": 0.2336,
+      "ok": true,
+      "ts": "2026-06-11T12:19:52.358832+00:00"
+    },
+    {
+      "corpus": "eng-ceb-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Cebuano",
+      "cost": 0.1342,
+      "ok": true,
+      "ts": "2026-06-11T12:20:02.368762+00:00"
+    },
+    {
+      "corpus": "eng-hil-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Hiligaynon",
+      "cost": 0.0755,
+      "ok": true,
+      "ts": "2026-06-11T12:21:05.681617+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Igbo",
+      "cost": 0.062,
+      "ok": true,
+      "ts": "2026-06-11T12:21:54.547584+00:00"
+    },
+    {
+      "corpus": "eng-hau-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Hausa",
+      "cost": 0.1535,
+      "ok": true,
+      "ts": "2026-06-11T12:22:05.378078+00:00"
+    },
+    {
+      "corpus": "eng-guj-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Gujarati",
+      "cost": 0.2225,
+      "ok": true,
+      "ts": "2026-06-11T12:22:13.251479+00:00"
+    },
+    {
+      "corpus": "eng-kan-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Kannada",
+      "cost": 0.0756,
+      "ok": true,
+      "ts": "2026-06-11T12:23:11.440198+00:00"
+    },
+    {
+      "corpus": "eng-haw-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Hawaiian",
+      "cost": 0.2604,
+      "ok": true,
+      "ts": "2026-06-11T12:23:32.285627+00:00"
+    },
+    {
+      "corpus": "eng-ilo-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Ilocano",
+      "cost": 0.1311,
+      "ok": true,
+      "ts": "2026-06-11T12:23:56.058445+00:00"
+    },
+    {
+      "corpus": "eng-kaz-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Kazakh",
+      "cost": 0.1308,
+      "ok": true,
+      "ts": "2026-06-11T12:23:56.507354+00:00"
+    },
+    {
+      "corpus": "eng-mal-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Malayalam",
+      "cost": 0.0651,
+      "ok": true,
+      "ts": "2026-06-11T12:24:50.148299+00:00"
+    },
+    {
+      "corpus": "eng-lao-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Lao",
+      "cost": 0.1385,
+      "ok": true,
+      "ts": "2026-06-11T12:24:55.799357+00:00"
+    },
+    {
+      "corpus": "eng-lug-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Ganda",
+      "cost": 0.1824,
+      "ok": true,
+      "ts": "2026-06-11T12:26:05.917606+00:00"
+    },
+    {
+      "corpus": "eng-mya-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Burmese",
+      "cost": 0.0876,
+      "ok": true,
+      "ts": "2026-06-11T12:26:13.226220+00:00"
+    },
+    {
+      "corpus": "eng-mlt-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Maltese",
+      "cost": 0.1645,
+      "ok": true,
+      "ts": "2026-06-11T12:26:15.871952+00:00"
+    },
+    {
+      "corpus": "eng-mon-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Mongolian",
+      "cost": 0.163,
+      "ok": true,
+      "ts": "2026-06-11T12:26:57.818986+00:00"
+    },
+    {
+      "corpus": "eng-pam-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Kapampangan",
+      "cost": 0.0516,
+      "ok": true,
+      "ts": "2026-06-11T12:27:02.907569+00:00"
+    },
+    {
+      "corpus": "eng-pag-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Pangasinan",
+      "cost": 0.0772,
+      "ok": true,
+      "ts": "2026-06-11T12:27:11.086631+00:00"
+    },
+    {
+      "corpus": "eng-pan-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Panjabi",
+      "cost": 0.1041,
+      "ok": true,
+      "ts": "2026-06-11T12:27:44.269777+00:00"
+    },
+    {
+      "corpus": "eng-sna-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Shona",
+      "cost": 0.0705,
+      "ok": true,
+      "ts": "2026-06-11T12:28:10.118556+00:00"
+    },
+    {
+      "corpus": "eng-sin-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Sinhala",
+      "cost": 0.0944,
+      "ok": true,
+      "ts": "2026-06-11T12:28:13.634785+00:00"
+    },
+    {
+      "corpus": "eng-sme-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Northern S\u00e1mi",
+      "cost": 0.112,
+      "ok": true,
+      "ts": "2026-06-11T12:28:44.526684+00:00"
+    },
+    {
+      "corpus": "eng-tir-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Tigrinya",
+      "cost": 0.0965,
+      "ok": true,
+      "ts": "2026-06-11T12:29:47.115711+00:00"
+    },
+    {
+      "corpus": "eng-tam-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Tamil",
+      "cost": 0.1667,
+      "ok": true,
+      "ts": "2026-06-11T12:30:12.053534+00:00"
+    },
+    {
+      "corpus": "eng-tuk-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Turkmen",
+      "cost": 0.1925,
+      "ok": true,
+      "ts": "2026-06-11T12:31:11.766037+00:00"
+    },
+    {
+      "corpus": "eng-tel-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Telugu",
+      "cost": 0.095,
+      "ok": true,
+      "ts": "2026-06-11T12:31:28.160785+00:00"
+    },
+    {
+      "corpus": "eng-urd-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Urdu",
+      "cost": 0.1783,
+      "ok": true,
+      "ts": "2026-06-11T12:32:32.657265+00:00"
+    },
+    {
+      "corpus": "eng-uzb-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Uzbek",
+      "cost": 0.1806,
+      "ok": true,
+      "ts": "2026-06-11T12:32:47.560826+00:00"
+    },
+    {
+      "corpus": "eng-xho-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Xhosa",
+      "cost": 0.0954,
+      "ok": true,
+      "ts": "2026-06-11T12:32:48.165530+00:00"
+    },
+    {
+      "corpus": "eng-war-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Waray",
+      "cost": 0.1545,
+      "ok": true,
+      "ts": "2026-06-11T12:33:22.194245+00:00"
+    },
+    {
+      "corpus": "eng-yor-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Yoruba",
+      "cost": 0.1007,
+      "ok": true,
+      "ts": "2026-06-11T12:33:48.002946+00:00"
+    },
+    {
+      "corpus": "fra-cat-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Catalan",
+      "cost": 0.095,
+      "ok": true,
+      "ts": "2026-06-11T12:34:38.921747+00:00"
+    },
+    {
+      "corpus": "eng-zul-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Zulu",
+      "cost": 0.1423,
+      "ok": true,
+      "ts": "2026-06-11T12:34:49.386965+00:00"
+    },
+    {
+      "corpus": "fra-eus-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Basque",
+      "cost": 0.074,
+      "ok": true,
+      "ts": "2026-06-11T12:34:55.652773+00:00"
+    },
+    {
+      "corpus": "eng-zsm-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Standard Malay",
+      "cost": 0.1628,
+      "ok": true,
+      "ts": "2026-06-11T12:35:04.584701+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Western Frisian",
+      "cost": 0.0744,
+      "ok": true,
+      "ts": "2026-06-11T12:36:14.921445+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Plains Cree",
+      "cost": 3.3096,
+      "ok": true,
+      "ts": "2026-06-11T12:36:19.518826+00:00"
+    },
+    {
+      "corpus": "rus-uzb-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Uzbek",
+      "cost": 0.0612,
+      "ok": true,
+      "ts": "2026-06-11T12:37:10.530643+00:00"
+    },
+    {
+      "corpus": "fra-hau-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Hausa",
+      "cost": 0.2142,
+      "ok": true,
+      "ts": "2026-06-11T12:38:03.930384+00:00"
+    },
+    {
+      "corpus": "eng-crk-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Plains Cree",
+      "cost": 1.5427,
+      "ok": true,
+      "ts": "2026-06-11T12:38:04.696457+00:00"
+    },
+    {
+      "corpus": "fra-ltz-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Luxembourgish",
+      "cost": 0.2508,
+      "ok": true,
+      "ts": "2026-06-11T12:38:12.652870+00:00"
+    },
+    {
+      "corpus": "ita-mlt-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Maltese",
+      "cost": 0.2757,
+      "ok": true,
+      "ts": "2026-06-11T12:38:23.813186+00:00"
+    },
+    {
+      "corpus": "por-glg-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Galician",
+      "cost": 0.1599,
+      "ok": true,
+      "ts": "2026-06-11T12:38:37.617809+00:00"
+    },
+    {
+      "corpus": "spa-que-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Quechua",
+      "cost": 0.1653,
+      "ok": true,
+      "ts": "2026-06-11T12:39:28.045023+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Mandarin Chinese",
+      "cost": 0.1712,
+      "ok": true,
+      "ts": "2026-06-11T12:42:02.455331+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Japanese",
+      "cost": 0.2023,
+      "ok": true,
+      "ts": "2026-06-11T12:42:29.098773+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "German",
+      "cost": 0.1814,
+      "ok": true,
+      "ts": "2026-06-11T12:42:29.769904+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Standard Arabic",
+      "cost": 0.1822,
+      "ok": true,
+      "ts": "2026-06-11T12:42:35.614503+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Korean",
+      "cost": 0.215,
+      "ok": true,
+      "ts": "2026-06-11T12:42:36.971903+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "French",
+      "cost": 0.1992,
+      "ok": true,
+      "ts": "2026-06-11T12:42:39.284999+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Dutch",
+      "cost": 0.1637,
+      "ok": true,
+      "ts": "2026-06-11T12:44:15.430706+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Thai",
+      "cost": 0.161,
+      "ok": true,
+      "ts": "2026-06-11T12:44:45.051160+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.1767,
+      "ok": true,
+      "ts": "2026-06-11T12:44:48.992613+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Vietnamese",
+      "cost": 0.1601,
+      "ok": true,
+      "ts": "2026-06-11T12:44:57.342223+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Spanish",
+      "cost": 0.1948,
+      "ok": true,
+      "ts": "2026-06-11T12:45:01.026435+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Filipino",
+      "cost": 0.2174,
+      "ok": true,
+      "ts": "2026-06-11T12:45:27.185988+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Standard Arabic",
+      "cost": 0.0262,
+      "ok": true,
+      "ts": "2026-06-11T12:45:34.018022+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Mandarin Chinese",
+      "cost": 0.0209,
+      "ok": true,
+      "ts": "2026-06-11T12:45:37.378603+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "German",
+      "cost": 0.0229,
+      "ok": true,
+      "ts": "2026-06-11T12:46:06.935732+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "French",
+      "cost": 0.0217,
+      "ok": true,
+      "ts": "2026-06-11T12:46:19.788339+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Japanese",
+      "cost": 0.0279,
+      "ok": true,
+      "ts": "2026-06-11T12:46:20.061095+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Korean",
+      "cost": 0.0284,
+      "ok": true,
+      "ts": "2026-06-11T12:46:38.398084+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Dutch",
+      "cost": 0.0191,
+      "ok": true,
+      "ts": "2026-06-11T12:46:53.871104+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.0198,
+      "ok": true,
+      "ts": "2026-06-11T12:46:56.344949+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Spanish",
+      "cost": 0.0212,
+      "ok": true,
+      "ts": "2026-06-11T12:47:24.420334+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Filipino",
+      "cost": 0.0215,
+      "ok": true,
+      "ts": "2026-06-11T12:47:48.732615+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Thai",
+      "cost": 0.029,
+      "ok": true,
+      "ts": "2026-06-11T12:47:48.820889+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Vietnamese",
+      "cost": 0.0298,
+      "ok": true,
+      "ts": "2026-06-11T12:48:12.692810+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Mandarin Chinese",
+      "cost": 0.2208,
+      "ok": true,
+      "ts": "2026-06-11T12:48:43.706449+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Standard Arabic",
+      "cost": 0.2712,
+      "ok": true,
+      "ts": "2026-06-11T12:49:01.366742+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "German",
+      "cost": 0.3275,
+      "ok": true,
+      "ts": "2026-06-11T12:49:42.442282+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "French",
+      "cost": 0.2914,
+      "ok": true,
+      "ts": "2026-06-11T12:50:01.500815+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Korean",
+      "cost": 0.2886,
+      "ok": true,
+      "ts": "2026-06-11T12:50:18.548623+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Japanese",
+      "cost": 0.3535,
+      "ok": true,
+      "ts": "2026-06-11T12:50:19.287855+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Dutch",
+      "cost": 0.2556,
+      "ok": true,
+      "ts": "2026-06-11T12:50:53.720160+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.2619,
+      "ok": true,
+      "ts": "2026-06-11T12:51:09.563293+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Spanish",
+      "cost": 0.2784,
+      "ok": true,
+      "ts": "2026-06-11T12:51:51.801910+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Filipino",
+      "cost": 0.2848,
+      "ok": true,
+      "ts": "2026-06-11T12:52:25.140114+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Mandarin Chinese",
+      "cost": 0.1095,
+      "ok": true,
+      "ts": "2026-06-11T12:52:29.545184+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Standard Arabic",
+      "cost": 0.137,
+      "ok": true,
+      "ts": "2026-06-11T12:52:50.416799+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Thai",
+      "cost": 0.3013,
+      "ok": true,
+      "ts": "2026-06-11T12:53:01.422567+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Vietnamese",
+      "cost": 0.3291,
+      "ok": true,
+      "ts": "2026-06-11T12:53:02.641504+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "German",
+      "cost": 0.1555,
+      "ok": true,
+      "ts": "2026-06-11T12:53:53.934758+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "French",
+      "cost": 0.139,
+      "ok": true,
+      "ts": "2026-06-11T12:54:19.890691+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Japanese",
+      "cost": 0.1407,
+      "ok": true,
+      "ts": "2026-06-11T12:54:24.276641+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Korean",
+      "cost": 0.1432,
+      "ok": true,
+      "ts": "2026-06-11T12:54:47.260815+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.1304,
+      "ok": true,
+      "ts": "2026-06-11T12:54:47.393511+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Dutch",
+      "cost": 0.1257,
+      "ok": true,
+      "ts": "2026-06-11T12:54:52.402182+00:00"
+    },
+    {
+      "corpus": "nld-fry-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Western Frisian",
+      "cost": 0.0265,
+      "ok": true,
+      "ts": "2026-06-11T12:55:23.452258+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Spanish",
+      "cost": 0.1383,
+      "ok": true,
+      "ts": "2026-06-11T12:55:42.737999+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Filipino",
+      "cost": 0.139,
+      "ok": true,
+      "ts": "2026-06-11T12:56:35.492320+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Thai",
+      "cost": 0.1486,
+      "ok": true,
+      "ts": "2026-06-11T12:56:47.283146+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Mandarin Chinese",
+      "cost": 0.063,
+      "ok": true,
+      "ts": "2026-06-11T12:56:48.561804+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Standard Arabic",
+      "cost": 0.0799,
+      "ok": true,
+      "ts": "2026-06-11T12:57:03.483940+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Vietnamese",
+      "cost": 0.1623,
+      "ok": true,
+      "ts": "2026-06-11T12:57:10.274128+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "German",
+      "cost": 0.0692,
+      "ok": true,
+      "ts": "2026-06-11T12:57:35.207546+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "French",
+      "cost": 0.0654,
+      "ok": true,
+      "ts": "2026-06-11T12:58:26.166559+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Korean",
+      "cost": 0.085,
+      "ok": true,
+      "ts": "2026-06-11T12:58:39.881332+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Dutch",
+      "cost": 0.0578,
+      "ok": true,
+      "ts": "2026-06-11T12:58:51.139133+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Japanese",
+      "cost": 0.0819,
+      "ok": true,
+      "ts": "2026-06-11T12:58:54.475753+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.0598,
+      "ok": true,
+      "ts": "2026-06-11T12:58:55.067840+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Spanish",
+      "cost": 0.0639,
+      "ok": true,
+      "ts": "2026-06-11T12:59:21.133904+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Mandarin Chinese",
+      "cost": 0.1118,
+      "ok": true,
+      "ts": "2026-06-11T13:00:29.161924+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Filipino",
+      "cost": 0.0645,
+      "ok": true,
+      "ts": "2026-06-11T13:00:49.909445+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Thai",
+      "cost": 0.0872,
+      "ok": true,
+      "ts": "2026-06-11T13:01:07.706426+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Vietnamese",
+      "cost": 0.0891,
+      "ok": true,
+      "ts": "2026-06-11T13:01:25.290768+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Standard Arabic",
+      "cost": 0.2109,
+      "ok": true,
+      "ts": "2026-06-11T13:02:25.254401+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "German",
+      "cost": 0.2413,
+      "ok": true,
+      "ts": "2026-06-11T13:02:45.147821+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Korean",
+      "cost": 0.1749,
+      "ok": true,
+      "ts": "2026-06-11T13:03:12.482593+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "French",
+      "cost": 0.1693,
+      "ok": true,
+      "ts": "2026-06-11T13:03:18.145894+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Japanese",
+      "cost": 0.2208,
+      "ok": true,
+      "ts": "2026-06-11T13:03:23.220741+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Dutch",
+      "cost": 0.1862,
+      "ok": true,
+      "ts": "2026-06-11T13:04:17.438062+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.1507,
+      "ok": true,
+      "ts": "2026-06-11T13:04:53.458804+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Spanish",
+      "cost": 0.1477,
+      "ok": true,
+      "ts": "2026-06-11T13:05:02.769509+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Thai",
+      "cost": 0.1424,
+      "ok": true,
+      "ts": "2026-06-11T13:05:18.822013+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Vietnamese",
+      "cost": 0.1629,
+      "ok": true,
+      "ts": "2026-06-11T13:05:37.907064+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Filipino",
+      "cost": 0.2159,
+      "ok": true,
+      "ts": "2026-06-11T13:06:57.957023+00:00"
+    },
+    {
+      "corpus": "eng-cmn-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Mandarin Chinese",
+      "cost": 0.2269,
+      "ok": true,
+      "ts": "2026-06-11T13:08:08.223254+00:00"
+    },
+    {
+      "corpus": "eng-arb-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Standard Arabic",
+      "cost": 0.2802,
+      "ok": true,
+      "ts": "2026-06-11T13:08:24.250983+00:00"
+    },
+    {
+      "corpus": "eng-deu-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "German",
+      "cost": 0.2585,
+      "ok": true,
+      "ts": "2026-06-11T13:08:38.856651+00:00"
+    },
+    {
+      "corpus": "eng-fra-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "French",
+      "cost": 0.2963,
+      "ok": true,
+      "ts": "2026-06-11T13:09:12.290325+00:00"
+    },
+    {
+      "corpus": "eng-jpn-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Japanese",
+      "cost": 0.2982,
+      "ok": true,
+      "ts": "2026-06-11T13:09:26.663059+00:00"
+    },
+    {
+      "corpus": "eng-por-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Portuguese (Brazilian)",
+      "cost": 0.2203,
+      "ok": true,
+      "ts": "2026-06-11T13:11:47.055349+00:00"
+    },
+    {
+      "corpus": "eng-spa-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Spanish",
+      "cost": 0.2549,
+      "ok": true,
+      "ts": "2026-06-11T13:12:20.198669+00:00"
+    },
+    {
+      "corpus": "eng-tgl-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Filipino",
+      "cost": 0.2651,
+      "ok": true,
+      "ts": "2026-06-11T13:12:46.328380+00:00"
+    },
+    {
+      "corpus": "eng-tha-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Thai",
+      "cost": 0.2276,
+      "ok": true,
+      "ts": "2026-06-11T13:12:46.783538+00:00"
+    },
+    {
+      "corpus": "eng-kor-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Korean",
+      "cost": 0.247,
+      "ok": true,
+      "ts": "2026-06-11T13:12:47.104482+00:00"
+    },
+    {
+      "corpus": "eng-nld-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Dutch",
+      "cost": 0.1856,
+      "ok": true,
+      "ts": "2026-06-11T13:13:29.754450+00:00"
+    },
+    {
+      "corpus": "eng-vie-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Vietnamese",
+      "cost": 0.2233,
+      "ok": true,
+      "ts": "2026-06-11T13:15:02.595304+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "anthropic/claude-opus-5",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:52.170901+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "openai/gpt-5.6-terra-pro",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:52.178459+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "openai/gpt-5.6-luna",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:52.181404+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "anthropic/claude-sonnet-5",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:52.182928+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:55.528341+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "deepseek/deepseek-v4-pro-0813",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:55.529209+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "x-ai/grok-4.6",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:55.530978+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "google/gemini-3.7-flash",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:55.531782+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "z-ai/glm-5.3",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:58.786119+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "mistralai/mistral-medium-3-5",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:58.787058+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "meta/muse-spark-1.2",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:58.788709+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "qwen/qwen3.8-max",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:20:58.793778+00:00"
+    },
+    {
+      "corpus": "eng-ibo-dev-v1",
+      "model": "tencent/hy-mt2-30b-a3b",
+      "lang": "Igbo",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:21:01.786544+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "anthropic/claude-fable-5",
+      "lang": "Spanish",
+      "cost": 0.0073,
+      "ok": true,
+      "ts": "2026-08-25T04:22:12.135930+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "anthropic/claude-haiku-4.5",
+      "lang": "Spanish",
+      "cost": 0.0026,
+      "ok": true,
+      "ts": "2026-08-25T04:22:14.024407+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "anthropic/claude-opus-4.8",
+      "lang": "Spanish",
+      "cost": 0.0151,
+      "ok": true,
+      "ts": "2026-08-25T04:22:16.498083+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "anthropic/claude-sonnet-4.6",
+      "lang": "Spanish",
+      "cost": 0.0078,
+      "ok": true,
+      "ts": "2026-08-25T04:22:26.406064+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "google/gemini-3.5-flash",
+      "lang": "Spanish",
+      "cost": 0.0296,
+      "ok": true,
+      "ts": "2026-08-25T04:22:29.130724+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "openai/gpt-5.5",
+      "lang": "Spanish",
+      "cost": 0.0354,
+      "ok": true,
+      "ts": "2026-08-25T04:22:39.978128+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "anthropic/claude-sonnet-5",
+      "lang": "Spanish",
+      "cost": 0.0062,
+      "ok": true,
+      "ts": "2026-08-25T04:22:44.502572+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "anthropic/claude-opus-5",
+      "lang": "Spanish",
+      "cost": 0.0154,
+      "ok": true,
+      "ts": "2026-08-25T04:22:44.675349+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "google/gemini-3.1-pro-preview",
+      "lang": "Spanish",
+      "cost": 0.046,
+      "ok": true,
+      "ts": "2026-08-25T04:22:55.215408+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "openai/gpt-5.6-luna",
+      "lang": "Spanish",
+      "cost": 0.0007,
+      "ok": true,
+      "ts": "2026-08-25T04:22:57.386894+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "google/gemini-3.7-flash",
+      "lang": "Spanish",
+      "cost": 0.0042,
+      "ok": true,
+      "ts": "2026-08-25T04:23:11.243768+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "openai/gpt-5.6-terra-pro",
+      "lang": "Spanish",
+      "cost": 0.048,
+      "ok": true,
+      "ts": "2026-08-25T04:23:19.071056+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "deepseek/deepseek-v4-pro-0813",
+      "lang": "Spanish",
+      "cost": 0.0042,
+      "ok": true,
+      "ts": "2026-08-25T04:23:19.571623+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "lang": "Spanish",
+      "cost": 0.0011,
+      "ok": true,
+      "ts": "2026-08-25T04:24:11.744467+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "meta/muse-spark-1.2",
+      "lang": "Spanish",
+      "cost": 0.0,
+      "ok": false,
+      "ts": "2026-08-25T04:24:15.167871+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "mistralai/mistral-medium-3-5",
+      "lang": "Spanish",
+      "cost": 0.003,
+      "ok": true,
+      "ts": "2026-08-25T04:24:25.570280+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "z-ai/glm-5.3",
+      "lang": "Spanish",
+      "cost": 0.0238,
+      "ok": true,
+      "ts": "2026-08-25T04:24:30.948246+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "tencent/hy-mt2-30b-a3b",
+      "lang": "Spanish",
+      "cost": 0.0001,
+      "ok": true,
+      "ts": "2026-08-25T04:24:39.091590+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "x-ai/grok-4.6",
+      "lang": "Spanish",
+      "cost": 0.0391,
+      "ok": true,
+      "ts": "2026-08-25T04:24:51.134751+00:00"
+    },
+    {
+      "corpus": "bos-spa-dev-v1",
+      "model": "qwen/qwen3.8-max",
+      "lang": "Spanish",
+      "cost": 0.0581,
+      "ok": true,
+      "ts": "2026-08-25T04:27:10.055545+00:00"
+    }
+  ]
+}

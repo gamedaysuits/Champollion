@@ -1,0 +1,121 @@
+---
+sidebar_position: 1
+title: "Installation"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+## Prérequis
+
+- **Node.js 20.11+** (ESM natif)
+- Une clé d'API de traduction (voir ci-dessous)
+
+## Installation
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## Obtenir une clé d'API
+
+Champollion nécessite un service de traduction. Choisissez l'un des suivants :
+
+| Fournisseur | Variable d'environnement | Idéal pour |
+|----------|---------------------|----------|
+| **OpenRouter** (recommandé) | `OPENROUTER_API_KEY` | Projets riches en contenu, Markdown, plus de 200 modèles |
+| **Gemini** (niveau gratuit) | `GEMINI_API_KEY` | Démarrage sans frais, bonne qualité |
+| **OpenAI** | `OPENAI_API_KEY` | Accès direct à GPT-4o |
+| **Anthropic** | `ANTHROPIC_API_KEY` | Accès direct à Claude, texte nuancé |
+| **DeepL** | `DEEPL_API_KEY` | Langues européennes, formalité intégrée |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | Paires clé-valeur à fort volume, 194 langues |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure, 135 langues |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | Auto-hébergé, priorité à la confidentialité |
+| **Tilde MT** | `TILDE_API_KEY` | Langues baltes et européennes, hébergé dans l'UE |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | Traduction automatique professionnelle, 200 langues |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+[OpenRouter](https://openrouter.ai) fournit une API unifiée pour 200+ modèles LLM. Niveau gratuit disponible.
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+Ou ajoutez à `.env.local` :
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+Idéal pour : les projets riches en contenu, la traduction Markdown, et les projets nécessitant une protection du contenu consciente (blocs de code, shortcodes, variables d'interpolation).
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+Idéal pour : les paires de chaînes clé-valeur à fort volume (194 langues). **Non recommandé** pour le contenu Markdown — Google Translate ne reconnaît pas les blocs de code, les shortcodes ou les variables d'interpolation.
+
+:::tip[Détection intelligente]
+Si seul `GOOGLE_TRANSLATE_API_KEY` est défini (aucune clé OpenRouter), champollion bascule automatiquement vers Google Translate. Aucune modification de configuration n'est nécessaire.
+:::
+
+  </TabItem>
+</Tabs>
+
+## Vérifier l'installation
+
+```bash
+npx champollion --help
+```
+
+Vous devriez voir la liste des commandes disponibles. Vous êtes prêt pour le [Démarrage rapide](/docs/getting-started/quick-start).

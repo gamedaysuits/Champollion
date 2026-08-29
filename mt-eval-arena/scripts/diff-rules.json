@@ -1,0 +1,233 @@
+{
+  "_comment": "Gate-1 classification rules for diff-catalogue.mjs (B6 SSOT cutover). Every rule's reason was VERIFIED against the data on 2026-08-18 — see catalogue-diff-report.md for the counts each claim rests on. bucket: intended-fix = the staging value is right and the baseline was wrong/stale; intended-drop = the field or value leaves deliberately. A field with no rule that differs is a REGRESSION and blocks.",
+  "index": {
+    "nativeName": {
+      "bucket": "intended-fix",
+      "reason": "Endonym now comes from the card-endonym lane (atlas SSOT): 1,070 filled from null, 290 revised, 5 emptied (crj/crl/crm/cwd/got) where the normalized card asserts no endonym — verified against normalizeCard(cwd/got): nativeName undefined on the card."
+    },
+    "family": {
+      "bucket": "intended-fix",
+      "reason": "Glottolog pseudo-families are no longer asserted as genealogical families: Bookkeeping(118)/Unclassifiable(127)/Pidgin(86)/Unattested(54)/Artificial Language(30)/Speech Register(19)/Mixed(4) -> 'Unknown'; ~30 rows gain a real family from the card envelope (Unknown -> Hokan/Pama-Nyungan/...). Verified transition histogram in the report."
+    },
+    "genus": {
+      "bucket": "intended-fix",
+      "reason": "Coverage rises from null: 2,459 filled, 0 changed, 0 emptied (e.g. aaa null -> 'Edoid', matching the card's classification.genus)."
+    },
+    "macroarea": {
+      "bucket": "intended-fix",
+      "reason": "Coverage rises from null: 8,564 filled, 0 lost — the legacy build never carried macroarea on the index; the atlas projects Glottolog's."
+    },
+    "iso639_1": {
+      "bucket": "intended-fix",
+      "reason": "New index field (resolution identity, migration 032 column already in prod): 184 filled, never present in the baseline entries."
+    },
+    "aliases": {
+      "bucket": "intended-fix",
+      "reason": "New index field (search aliases; existing prod column): 653 filled, never present in the baseline entries."
+    },
+    "ancestryGlottocodes": {
+      "bucket": "intended-fix",
+      "reason": "New staging-only field: the glottocode spine behind the resolved ancestry names (8,005 filled). No upload column yet — build-side companion of the ancestry name resolution."
+    },
+    "scripts": {
+      "bucket": "intended-fix",
+      "reason": "Card-derived with PINNED source ids (linguameta-452a21ad3dae); retires the legacy unicode-cldr rows and 1,003 linguameta name:null junk entries. 1,172 rows now assert no scripts, matching the card SSOT (verified akk/ang: normalized card carries no scripts)."
+    },
+    "script": {
+      "bucket": "intended-fix",
+      "reason": "8 multi-script rows (cmn/cwd/emk/gno/ttq/uzn/xpe/zyb) no longer elect a primary the card does not cite — verified normalizeCard(cmn/cwd): script undefined; scripts[] retains the full set."
+    },
+    "scriptName": {
+      "bucket": "intended-fix",
+      "reason": "4 primary-script elections revised to the card's cited primary (arc Palm->Armi, chu Glag->Cyrl, pal Phlp->Phli, +1)."
+    },
+    "dir": {
+      "bucket": "intended-fix",
+      "reason": "The baseline's reconstruction DEFAULTED null dir to 'ltr' (tc-index-remote.js indexRowToEntry: row.dir || 'ltr'): 953 unwritten/unknown-script rows (script null or Zxxx) return to honest null; 39 fixed from the cited script (ara/fas/aju ltr->rtl; ful/hau/kaz/kur rtl->ltr)."
+    },
+    "vitalityBadge": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed from the pinned glottolog-aes lane (glottolog-cldf v5.3): 1,201 changed, including unknown->assessed (abai1241) and aes re-reads in both directions; the thriving-by-default lane is retired (f6b533965)."
+    },
+    "rarity": {
+      "bucket": "intended-fix",
+      "reason": "Rarity recalibration — see data/staging/rarity-recalibration-report.{json,md}: 5,676 tier changes, both directions (2,913 up / 2,763 down by rarityOrder)."
+    },
+    "rarityOrder": {
+      "bucket": "intended-fix",
+      "reason": "Companion of the rarity recalibration (same 5,676 rows)."
+    },
+    "stats": {
+      "bucket": "intended-fix",
+      "reason": "Challenge-rating recalibration: components recomputed on the atlas basis (docDepth from glottolog-cldf-v5.3 MED, corpus from card-resources(opus/treebanks/speech), typDistance from the feature catalog). sources[] carries the new pinned names; tooltip follows."
+    },
+    "factCount": {
+      "bucket": "intended-fix",
+      "reason": "Unit change, stamped in provenance._unit: 'cited-card-fields (was: facts)' — counts cited card fields instead of legacy champollion.db fact rows (aaa 260 -> 27)."
+    },
+    "sourceCount": {
+      "bucket": "intended-fix",
+      "reason": "Same unit change as factCount: distinct cited card sources instead of legacy fact-store source rows (aaa 21 -> 8)."
+    },
+    "hasConflicts": {
+      "bucket": "intended-fix",
+      "reason": "Semantics change: now true when the card carries disputed attribution envelopes. Strictly additive — 3,292 false->true, 0 true->false."
+    },
+    "hasVocabulary": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed from the staged tc-vocab lane itself: 0 mismatches against tc-vocab/*.json presence (6,823 files). 858 lose (legacy forms whose pinned license withholds redistribution are no longer staged), 96 gain."
+    },
+    "hasTypology": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed basis: typology now means feature-catalog keyFeatures on the card (4,451 true->false where only legacy fact rows existed, 4 false->true)."
+    },
+    "hasPhonology": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed basis: phonology now means an actual cited inventory — baseline counted phoible stub objects with zero displayable facts (e.g. aaa {sources:['phoible'],totalFacts:1}). 6,571 true->false, 0 false->true."
+    },
+    "hasNearest": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed over the atlas neighbor set (glottolog-only codes now participate): 744 gain, 338 lose (incl. Bookkeeping rows that no longer claim coordinates/lineage)."
+    },
+    "hasNaturalPair": {
+      "bucket": "intended-fix",
+      "reason": "Same recomputation as hasNearest: 742 gain, 314 lose."
+    },
+    "dialectCount": {
+      "bucket": "intended-fix",
+      "reason": "Glottolog child_dialect_count carried card-verbatim: 19 emptied where the card carries null (verified ckm: card dialectCount null, glottocode null)."
+    },
+    "glottocode": {
+      "bucket": "intended-drop",
+      "reason": "All-and-only the 120 Glottolog Bookkeeping rows (verified: 120/120 baseline family='Bookkeeping'): spurious/retired languoids no longer claim a glottolog identity — the cards carry none (verified acb)."
+    },
+    "regions": {
+      "bucket": "intended-drop",
+      "reason": "Same 114 Bookkeeping rows as the glottocode drop (114/114 overlap verified): no glottolog identity, no derived geography."
+    },
+    "ancestry": {
+      "bucket": "intended-fix",
+      "reason": "75 changed: lineage names now resolved from glottocodes (ancestryGlottocodes is the spine); 120 emptied: all-and-only the Bookkeeping rows (verified 120/120)."
+    },
+    "digitalToolkit": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed from card resources (parallel corpora/treebanks/speech objects now embedded in details): 752 rows gain pips, 18 lose, on the card-resources basis the stats lane also uses."
+    }
+  },
+  "detail": {
+    "vocabulary": {
+      "bucket": "intended-drop",
+      "reason": "Vocabulary moved out of the detail blob to the trading_card_vocabulary table (migration 069) / tc-vocab staging — it was 70-95 percent of every blob. vocabularySummary replaces it for the header."
+    },
+    "vocabularySummary": {
+      "bucket": "intended-fix",
+      "reason": "New summary header ({totalForms, sources, asjpOnly}) for the lazy-fetch vocabulary lane."
+    },
+    "encyclopedic": {
+      "bucket": "intended-fix",
+      "reason": "The generated encyclopedic intro returns (178/203 sampled filled from null) — cited, template-filled from card facts."
+    },
+    "experts": {
+      "bucket": "intended-fix",
+      "reason": "Experts return (14 sampled filled from []) — derived from card resources (corpus hosts/publishers)."
+    },
+    "typology": {
+      "bucket": "intended-fix",
+      "reason": "Shape change: keyFeatures now from the feature catalog (human property names, featureId), plus rawFeatureCount/totalFeatures/sourceBreakdown with pinned source ids (wals-v2020.5)."
+    },
+    "colexification": {
+      "bucket": "intended-fix",
+      "reason": "Shape change: the 5-stat object (colexificationConcepts, colexifyingForms, clicsUniqueForms, clicsTotalEntries, clicsContributingDatasets + density) replaces the legacy items[] fact list."
+    },
+    "orthographicStatus": {
+      "bucket": "intended-fix",
+      "reason": "Positive-only assertion: filled (145 sampled null -> 'has-orthography'), never emptied."
+    },
+    "provenance": {
+      "bucket": "intended-fix",
+      "reason": "Unit change stamped in-band: _unit='cited-card-fields (was: facts)'; sources renamed to pinned ids (glottolog-v5.3, champollion-derived-v1) with per-source cited-field counts."
+    },
+    "statSources": {
+      "bucket": "intended-fix",
+      "reason": "Companion of the stats recalibration: card-resources(opus/treebanks/speech) + glottolog-cldf-v5.3 replace opus/ud/commonvoice + multiScript:linguameta."
+    },
+    "statTooltip": {
+      "bucket": "intended-fix",
+      "reason": "Follows the recalibrated stats components (Speech replaces CV; MED from glottolog-cldf-v5.3)."
+    },
+    "externalLinks": {
+      "bucket": "intended-fix",
+      "reason": "Derived from the resources actually present — e.g. the PHOIBLE link leaves aaa exactly where its stub phonology left; key order also normalized."
+    },
+    "classification": {
+      "bucket": "intended-fix",
+      "reason": "genus coverage rises (aaa null -> 'Edoid') and ancestryGlottocodes joins the object; ancestry names resolved from glottocodes."
+    },
+    "nearestLanguages": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed over the atlas neighbor set — glottolog-only codes now participate as neighbors (ads gains nana1261); Bookkeeping rows lose theirs."
+    },
+    "speakerEstimates": {
+      "bucket": "intended-fix",
+      "reason": "ELCat estimates now carry their source notes verbatim (ads/aif gain 'note' fields); counts unchanged."
+    },
+    "naturalPair": {
+      "bucket": "intended-fix",
+      "reason": "Recomputed with the atlas neighbor/geography basis: glottolog-only rows gain derived-from-country-official-language pairs; Bookkeeping rows lose theirs."
+    },
+    "evalDatasets": {
+      "bucket": "intended-fix",
+      "reason": "The eval-config lane now writes card-config evalConfig (sync-eval-datasets, 0bb3cd659): chv/crk gain their dataset lists."
+    },
+    "evalPack": {
+      "bucket": "intended-fix",
+      "reason": "Same eval-config lane: crk gains its LYSS eval pack."
+    },
+    "evalMetrics": {
+      "bucket": "intended-fix",
+      "reason": "Same eval-config lane: crk gains lyss-eq/lyss-sem."
+    },
+    "evalStandard": {
+      "bucket": "intended-fix",
+      "reason": "Same eval-config lane: crk gains champollion-lyss."
+    },
+    "metricPlugins": {
+      "bucket": "intended-fix",
+      "reason": "Same eval-config lane (2 sampled filled)."
+    },
+    "metricModelSupport": {
+      "bucket": "intended-fix",
+      "reason": "Refreshed from the method/metric coverage SSOT (dan/eng revised)."
+    },
+    "apiSupport": {
+      "bucket": "intended-fix",
+      "reason": "Refreshed from method-coverage.json (the provider-coverage SSOT): chv gains Google Translate support."
+    },
+    "resources": {
+      "bucket": "intended-fix",
+      "reason": "speech/treebanks sections added; corpora and monolingualCorpora SETS verified identical for dan (order changed only)."
+    },
+    "regions": {
+      "bucket": "intended-drop",
+      "reason": "Bookkeeping rows only (verified dume1236/gok): no glottolog identity, no derived geography."
+    },
+    "countries": {
+      "bucket": "intended-drop",
+      "reason": "Same Bookkeeping rows as regions (dume1236/gok)."
+    },
+    "glottocode": {
+      "bucket": "intended-drop",
+      "reason": "Same Bookkeeping rows: spurious languoids no longer claim a glottolog identity."
+    },
+    "coordinates": {
+      "bucket": "intended-drop",
+      "reason": "Same Bookkeeping lane (gok/kyv): no glottolog identity, no coordinates."
+    },
+    "phonology": {
+      "bucket": "intended",
+      "reason": "Three verified sub-classes, none a loss of defensible data. (1) shape rename: isTonal→hasTone, per-metric source keys collapsed, provenance now the versioned champollion-derived-v1 (counts are OUR arithmetic over PHOIBLE, per the derivation doctrine). (2) 6,559 baseline blocks were count-less stubs ({sources:['phoible'], totalFacts:N} with no consonants/vowels/tones) — nothing the panel could render; staging emits null. (3) 12 baseline blocks carried real counts citing 'phoible' for languages ABSENT from the pinned PHOIBLE v2.0.1 languages.csv (bqv cld hax muz slh sot swo ule wgu yro ywg zgn — verified: no row, not even under an alternate Sotho glottocode). Those legacy claims cite a release that does not contain them and cannot be re-derived; refusing them is the point of the pinned rebuild. Listed for the Gate 1 founder review."
+    }
+  },
+  "ignoreIndex": [],
+  "ignoreDetail": []
+}

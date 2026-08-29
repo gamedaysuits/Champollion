@@ -1,0 +1,32 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "common-voice",
+  "upstream": "https://raw.githubusercontent.com/common-voice/cv-dataset/main/datasets/scripted-speech/cv-corpus-26.0-2026-06-12.json",
+  "license": "MPL-2.0",
+  "licenseUrl": "https://github.com/common-voice/cv-dataset/blob/main/LICENSE",
+  "citation": "Mozilla Common Voice dataset statistics, cv-corpus-26.0-2026-06-12 (common-voice/cv-dataset), retrieved 2026-08-18.",
+  "pin": {
+    "kind": "release",
+    "value": "cv-corpus-26.0-2026-06-12",
+    "doi": null,
+    "date": "2026-06-12"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "common-voice-stats.json",
+      "bytes": 22123,
+      "sha256": "bd57ac4a670ccf0d3d61e767399a9975b5701a16deedab6677abf06757c69fa8",
+      "url": "https://raw.githubusercontent.com/common-voice/cv-dataset/main/datasets/scripted-speech/cv-corpus-26.0-2026-06-12.json",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/common-voice.mjs",
+  "notes": "cv-corpus-26.0-2026-06-12 (2026-06-12): 294 locales, 288 with more than zero validated hours. STATS ONLY: validated/total hours, clip and contributor counts from Mozilla's own per-release stats file — no audio clip or transcript crosses the wire, which is what lets a speech-resource claim exist under the rule that corpus CONTENT is never tracked. LICENCE: MPL-2.0 is what the cv-dataset repository declares and covers the stats file read here; the audio corpus itself is distributed under Mozilla's own dataset terms, which are not interpreted here and must be resolved before the corpus is used for anything. LOCALES are Mozilla's BCP-47-ish codes recorded verbatim (pt, zh-CN, ga-IE, rm-sursilv); resolution onto the spine happens at ingest, where an unresolvable locale is counted and named rather than corrected. An unpublished number is stored as null and never as 0 — \"not published\" and \"measured, and empty\" are different facts.",
+  "release": "cv-corpus-26.0-2026-06-12",
+  "locales": 294,
+  "localesWithValidatedHours": 288,
+  "fetchedAt": "2026-08-18T20:30:36.994Z"
+}

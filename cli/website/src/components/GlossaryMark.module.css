@@ -1,0 +1,96 @@
+/**
+ * GlossaryMark — CSS Module
+ *
+ * Dotted-underline term mark + CSS-only tooltip. Colors come from the same
+ * design tokens DetailPanel uses, so marks blend into panel prose.
+ */
+
+.mark {
+  position: relative;
+  display: inline;
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--accent, var(--ifm-color-primary));
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  outline: none;
+}
+
+.mark:hover,
+.mark:focus-visible {
+  text-decoration-style: solid;
+}
+
+.tooltip {
+  /* Hidden by default; revealed on hover/focus of the mark (or the tooltip
+     itself, so the More → link stays clickable). display:none (not just
+     visibility) — hidden bubbles anchored near the viewport edge otherwise
+     widen the page's scroll extent on phones. */
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-fast, 0.15s) ease;
+
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1200; /* above the DetailPanel side sheet (z-index 1000) */
+  flex-direction: column;
+  gap: 4px;
+  width: 280px;
+  max-width: 78vw;
+  padding: var(--space-sm, 8px) var(--space-md, 12px);
+  border-radius: 8px;
+  border: 1px solid var(--border-medium, var(--ifm-toc-border-color));
+  background: var(--surface-2, var(--ifm-background-surface-color));
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.35));
+
+  font-size: var(--text-xs, 0.78rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary, var(--ifm-font-color-secondary));
+  text-align: left;
+  white-space: normal;
+  pointer-events: none;
+}
+
+.mark:hover .tooltip,
+.mark:focus-within .tooltip,
+.mark:focus .tooltip {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltipTerm {
+  font-weight: 700;
+  color: var(--text-primary, var(--ifm-font-color-base));
+  text-transform: lowercase;
+}
+
+.tooltipPlain {
+  display: block;
+}
+
+.tooltipMore {
+  align-self: flex-end;
+  font-weight: 600;
+  color: var(--accent, var(--ifm-color-primary));
+  text-decoration: none;
+}
+
+.tooltipMore:hover {
+  text-decoration: underline;
+}
+
+/* Keep tooltips on-screen inside the narrow DetailPanel: clamp horizontal
+   overflow near viewport edges on small screens. */
+@media (max-width: 480px) {
+  .tooltip {
+    left: 0;
+    transform: none;
+  }
+}

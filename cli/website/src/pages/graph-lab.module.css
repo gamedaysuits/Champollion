@@ -1,0 +1,48 @@
+/* /graph-lab — lab-only chrome (the hero itself styles via
+   GraphHero.module.css). */
+
+.labMain {
+  position: relative;
+}
+
+.labBar {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--surface-glass, rgba(16, 19, 18, 0.6));
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.labBarLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: var(--ifm-font-color-secondary);
+}
+
+.labBtn,
+.labBtnActive {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.labBtnActive {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}

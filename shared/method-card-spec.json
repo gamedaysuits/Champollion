@@ -1,0 +1,175 @@
+{
+  "$schema": "./schemas/card-field-spec.schema.json",
+  "version": 1,
+  "entityType": "method",
+  "_doc": {
+    "what": "What a METHOD card is: one entry per translation engine or LLM provider, projected from shared/method-registry.json through the same facts→spec→projector chain as a language card.",
+    "why": "Reading the registry directly in the website build would have been quicker, and is exactly how the language corpus acquired 93 scripts and no definition of what a card is. Going through the same machinery means a correction propagates the same way, absence behaves the same way, and there is ONE answer to 'where does this value come from' across all three card types.",
+    "rules": [
+      "No measured score may appear here. chrF, BLEU and COMET are keyed by (method, dataset, metric) and are properties of a RUN, not of a method. Same boundary as the language card's lint R3.",
+      "A field with no entry in this spec is not projected. `unmodelled` facts exist in the store so a key added upstream cannot pass unnoticed, but they do not reach a card until someone gives them a place.",
+      "Absence omits. A method with no recorded cost shows no cost row, rather than an empty one."
+    ]
+  },
+  "fields": {
+    "id": {
+      "meaning": "Registry key — the name the CLI and harness both use.",
+      "rule": "identity",
+      "required": true
+    },
+    "kind": {
+      "meaning": "What sort of thing this is: an MT API, an LLM provider, or a local runtime.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "kind"
+        }
+      ],
+      "sources": [
+        "curated:method-registry"
+      ],
+      "absence": "omit"
+    },
+    "paradigm": {
+      "meaning": "How it produces a translation — neural NMT, raw LLM, rule-based.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "paradigm"
+        }
+      ],
+      "sources": [
+        "curated:method-registry"
+      ],
+      "absence": "omit",
+      "note": "The single most useful thing to know before reading any score against this method."
+    },
+    "methodClass": {
+      "meaning": "The harness's own class for the method.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "methodClass"
+        }
+      ],
+      "sources": [
+        "curated:method-registry"
+      ],
+      "absence": "omit"
+    },
+    "homepage": {
+      "meaning": "Where to read about it.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "homepage"
+        }
+      ],
+      "sources": [
+        "curated:method-registry"
+      ],
+      "absence": "omit"
+    },
+    "licensing": {
+      "meaning": "What the method's licence permits.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "The constraint that actually gates use. An UNSTATED licence is not a permissive one — where the registry records none the field is absent, and absent must be read as 'unknown, therefore do not assume'.",
+      "properties": {
+        "license": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "license"
+            }
+          ],
+          "sources": [
+            "curated:method-registry"
+          ],
+          "absence": "omit"
+        },
+        "commercialReady": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "licensing",
+              "property": "commercialReady"
+            }
+          ],
+          "sources": [
+            "curated:method-registry"
+          ],
+          "absence": "omit",
+          "note": "A human's reading of the licence, recorded once so the CLI and the harness cannot answer it differently."
+        }
+      }
+    },
+    "cost": {
+      "meaning": "What it costs to run, in the registry's own words.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "cost",
+          "property": "costNote"
+        }
+      ],
+      "sources": [
+        "curated:method-registry"
+      ],
+      "absence": "omit",
+      "note": "Kept as prose, never parsed into a number. '~$20 / 1M characters' and 'per-model token pricing (fetched at runtime)' are not the same kind of claim, and flattening them into one numeric field would invent a comparison neither supports."
+    },
+    "operations": {
+      "meaning": "What running it requires.",
+      "rule": "object",
+      "absence": "omit",
+      "properties": {
+        "requiresCredential": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "operations",
+              "property": "requiresCredential"
+            }
+          ],
+          "sources": [
+            "curated:method-registry"
+          ],
+          "absence": "omit"
+        },
+        "runsLocally": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "operations",
+              "property": "runsLocally"
+            }
+          ],
+          "sources": [
+            "curated:method-registry"
+          ],
+          "absence": "omit",
+          "note": "A locally-run method sends no text to a third party, which is what makes it usable for sealed corpora and for any LicenseRef set awaiting a transmission-consent grant."
+        },
+        "maxBatch": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "operations",
+              "property": "maxBatch"
+            }
+          ],
+          "sources": [
+            "curated:method-registry"
+          ],
+          "absence": "omit"
+        }
+      }
+    }
+  }
+}

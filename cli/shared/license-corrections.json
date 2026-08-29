@@ -1,0 +1,261 @@
+{
+  "_meta": {
+    "purpose": "Champollion's resolved license determinations — overrides applied on top of shared/licenses.json (which is regenerated from the facts DB and was stale for these sources). Read by cli/lib/license-gate.mjs.",
+    "resolvedAt": "2026-06-16",
+    "resolvedBy": "license-respect remediation (docs/LICENSING.md); see also cli/scripts/populate-licenses.mjs MANUAL_LICENSES",
+    "note": "Flags are 0/1 to match shared/licenses.json. Once a full `populate-licenses.mjs` + `build-trading-card-data.mjs` + `build-shared-licenses.mjs` run folds these into shared/licenses.json, this file becomes redundant and can be deleted. | 2026-08-01: this file is now OUTRANKED by shared/license-evidence.json for any source with a recorded upstream statement — EXCEPT where an entry here is MORE restrictive than the upstream grant, which is a deliberate policy choice (see elcat) and is preserved. See cli/lib/license-gate.mjs::loadLicenseRegister.",
+    "posture": "Conservative for the commercial/redistribution lanes: NonCommercial, ShareAlike, no-redistribution, mixed, and license-unstated sources are NOT commercial-safe and NOT freely redistributable. They remain fully usable in the open, non-commercial project WITH attribution."
+  },
+  "sources": {
+    "elcat": {
+      "license_spdx": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attribution": "Catalogue of Endangered Languages (ELCat). University of Hawaii at Manoa / Endangered Languages Project.",
+      "allows_redistribution": 1,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "cldf-datasets/elcat metadata declares CC-BY-4.0, but kept NonCommercial as a conservative, sovereignty-aware call (endangered-language data). Fine for the open project; excluded from the commercial API."
+    },
+    "elcat-normalized": {
+      "license_spdx": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attribution": "Catalogue of Endangered Languages (ELCat) — Champollion-normalized.",
+      "allows_redistribution": 1,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "Inherits ELCat (NC)."
+    },
+    "lapsyd": {
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "LAPSyD — Lyon-Albuquerque Phonological Systems Database (Maddieson et al.).",
+      "allows_redistribution": 1,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "CLTS / clld catalogue (clts.clld.org) records LAPSyD transcription data as CC-BY-4.0."
+    },
+    "petersonsouthasia": {
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Peterson (2017), Towards a linguistic prehistory of eastern-central South Asia (CLDF).",
+      "allows_redistribution": 1,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "Zenodo 2022 release (DOI 10.5281/zenodo.7140152) declares CC-BY-4.0."
+    },
+    "linguameta": {
+      "license_spdx": "CC-BY-SA-4.0",
+      "license_url": "https://github.com/google-research/url-nlp/blob/main/linguameta/LICENSE",
+      "attribution": "LinguaMeta (Google Research, 2024).",
+      "allows_redistribution": 1,
+      "requires_attribution": 1,
+      "requires_sharealike": 1,
+      "non_commercial_only": 0,
+      "_basis": "Corrected 2026-07-19 (was CC-BY-4.0 — the README 'Sources and licensing' table's row for Google-contributed data, not the governing license). The LICENSE file shipped in linguameta/ is CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International), verified at pinned url-nlp commit 452a21ad3dae5668c06ceeac21ff073e1e40f9be; the url-nlp repo has no repo-level license, so the directory LICENSE governs. Agrees with the register entry (build-shared-licenses.mjs supplemental, verified 2026-06-11)."
+    },
+    "wikidata-rdfs-label-own": {
+      "license_spdx": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "Wikidata contributors.",
+      "allows_redistribution": 1,
+      "requires_attribution": 0,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "Wikidata data is CC0."
+    },
+    "manual-curation": {
+      "license_spdx": "LicenseRef-Champollion-Own",
+      "license_url": null,
+      "attribution": "Champollion Project (manual curation).",
+      "allows_redistribution": 1,
+      "requires_attribution": 0,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "Champollion's own curated values."
+    },
+    "segbo": {
+      "license_spdx": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Grossman et al. SegBo: A Database of Borrowed Sounds.",
+      "allows_redistribution": 1,
+      "requires_attribution": 1,
+      "requires_sharealike": 1,
+      "non_commercial_only": 0,
+      "_basis": "Local data/segbo/LICENSE.txt = Attribution-ShareAlike 4.0 International."
+    },
+    "sil-iso639-3": {
+      "license_spdx": "LicenseRef-SIL-Terms",
+      "license_url": "https://iso639-3.sil.org/code_tables/download_tables",
+      "attribution": "SIL International — ISO 639-3 Registration Authority.",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "SIL terms: codes may be USED (incl. commercially) with attribution, but the product may NOT provide a means to REDISTRIBUTE the code table. → redistribution=0."
+    },
+    "saphon": {
+      "license_spdx": "LicenseRef-Unstated",
+      "license_url": null,
+      "attribution": "SAPhon — South American Phonological Inventory Database (Michael, Stark, Clem & Chang).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "No public license found (GitHub/README/Zenodo/CLTS all silent). Attribution + non-commercial use only; confirm before any commercial/redistribution use. (Underlying inventories flow into PHOIBLE under CC-BY-SA-3.0.)"
+    },
+    "tonodb": {
+      "license_spdx": "LicenseRef-Unstated",
+      "license_url": null,
+      "attribution": "TonoDB (cldf-datasets/tonodb).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "No public license found. Attribution + non-commercial only; confirm before commercial/redistribution use."
+    },
+    "hayniecolorterms": {
+      "license_spdx": "LicenseRef-Unstated",
+      "license_url": null,
+      "attribution": "Haynie color terms (lexibank/hayniecolorterms).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "Metadata only said 'CC' (no version); GitHub/README/Zenodo silent on the exact license. Treat as unstated until confirmed."
+    },
+    "williamsonbenuecongo": {
+      "license_spdx": "LicenseRef-Unstated",
+      "license_url": null,
+      "attribution": "Williamson/Blench Benue-Congo (lexibank/blenchbenuecongo).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "No public license found. Attribution + non-commercial only; confirm before commercial/redistribution use."
+    },
+    "wustphylogenies": {
+      "license_spdx": "LicenseRef-Unstated",
+      "license_url": null,
+      "attribution": "Bodt phylogeny data (seagal-project/bodtphylogeny_data).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "No public license found. Attribution + non-commercial only; confirm before commercial/redistribution use."
+    },
+    "opus": {
+      "license_spdx": "LicenseRef-OPUS-Mixed",
+      "license_url": "https://opus.nlpl.eu/",
+      "attribution": "OPUS — the open parallel corpus (Tiedemann).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "OPUS metadata is open, but individual corpora carry per-corpus licenses → use counts/metadata only; never redistribute or serve content commercially without per-corpus clearance."
+    },
+    "opus-api": {
+      "license_spdx": "LicenseRef-OPUS-Mixed",
+      "license_url": "https://opus.nlpl.eu/",
+      "attribution": "OPUS API (language availability).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "Per-corpus licenses; metadata/counts only."
+    },
+    "paradisec": {
+      "license_spdx": "LicenseRef-Archive-Catalogue-Counts",
+      "license_url": "https://www.paradisec.org.au/",
+      "attribution": "Pacific and Regional Archive for Digital Sources in Endangered Cultures (PARADISEC).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "FOUNDER RULING 2026-08-01: a COUNT of items held by a public archive catalogue is a statable fact, not licensed content. What we store is only 'N documented items exist, in these archives' (1294 cards) — no recordings, transcripts or documents are taken or reproduced. OLAC exists to be harvested (OAI-PMH), which is why the counts are obtainable at all. NOT YET VERIFIED: language-archives.org was unreachable on 2026-08-01 (connection timeout), so the catalogue's own published terms have not been read and quoted here. This entry records the ruling and the outstanding verification honestly rather than asserting a 'Verified:' note nobody can check — the register already carries 53 of those. allows_redistribution=0: we state counts, we do not redistribute the catalogue."
+    },
+    "elar": {
+      "license_spdx": "LicenseRef-ELAR-Mixed",
+      "license_url": "https://elar.soas.ac.uk/",
+      "attribution": "ELAR — Endangered Languages Archive, SOAS.",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "Per-deposit access controls; metadata only. Sovereignty-sensitive — never serve content."
+    },
+    "huggingface": {
+      "license_spdx": "LicenseRef-HuggingFace-Mixed",
+      "license_url": "https://huggingface.co/datasets",
+      "attribution": "Hugging Face dataset hub (per-dataset licenses).",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "Per-dataset licenses; metadata/counts only."
+    },
+    "wurm-hattori-pacific-atlas": {
+      "license_spdx": "LicenseRef-Citation-Only",
+      "attribution": "Wurm, S. A. & Hattori, S. (eds.) 1981-1983. Language Atlas of the Pacific Area. Australian Academy of the Humanities / Japan Academy.",
+      "license_url": null,
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "FOUNDER RULING 2026-08-01: state the fact, cite the source. Facts are not copyrightable and citing the work they come from is ordinary scholarship, so a per-language claim carrying a real citation stays. NO TEXT from either work is reproduced. What does NOT survive is any claim copied verbatim across hundreds of cards — the atlas truth pass removes those regardless (arealContext is 99 distinct strings over 14,141 instances). allows_redistribution stays 0: we hold no grant to the work itself. | Supersedes the retired LicenseRef-Copyrighted-Reference / LicenseRef-Literature-Citation pseudo-licences, which asserted allows_redistribution = 1 over copyrighted works on the register's own authority. Wurm, S. A. & Hattori, S. (eds.) 1981-1983. Language Atlas of the Pacific Area."
+    },
+    "areal-linguistics": {
+      "license_spdx": "LicenseRef-Citation-Only",
+      "attribution": "Scholarly literature on areal linguistics; per-claim citations are carried on the cards (e.g. Heine & Nurse 2008; Emeneau 1956; Masica 1976).",
+      "license_url": null,
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "FOUNDER RULING 2026-08-01: state the fact, cite the source. Facts are not copyrightable and citing the work they come from is ordinary scholarship, so a per-language claim carrying a real citation stays. NO TEXT from either work is reproduced. What does NOT survive is any claim copied verbatim across hundreds of cards — the atlas truth pass removes those regardless (arealContext is 99 distinct strings over 14,141 instances). allows_redistribution stays 0: we hold no grant to the work itself. | Supersedes the retired LicenseRef-Copyrighted-Reference / LicenseRef-Literature-Citation pseudo-licences, which asserted allows_redistribution = 1 over copyrighted works on the register's own authority. Scholarly areal-linguistics literature; per-claim citations carried on the cards."
+    },
+    "sails": {
+      "license_spdx": "LicenseRef-CC-NonCommercial-Unversioned",
+      "license_url": "https://zenodo.org/records/3608862",
+      "attribution": "South American Indigenous Language Structures (SAILS). cldf-datasets/sails.",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 1,
+      "_basis": "Zenodo deposit (10.5281/zenodo.3608862, resource_type=dataset) declares licence id 'cc-nc' — Creative Commons NonCommercial, version not stated. The register said Apache-2.0, a CODE licence applied to a typological dataset. NonCommercial is recorded because the depositor stated it; the VERSION is not, because they did not, and inventing one is the exact defect this pass removed from toSpdx(). Cited by 165 language cards."
+    },
+    "olac": {
+      "license_spdx": "LicenseRef-Archive-Catalogue-Counts",
+      "license_url": "https://www.language-archives.org/",
+      "attribution": "Open Language Archives Community (OLAC) union catalogue.",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "FOUNDER RULING 2026-08-01: a COUNT of items held by a public archive catalogue is a statable fact, not licensed content. What we store is only 'N documented items exist, in these archives' (7438 cards) — no recordings, transcripts or documents are taken or reproduced. OLAC exists to be harvested (OAI-PMH), which is why the counts are obtainable at all. NOT YET VERIFIED: language-archives.org was unreachable on 2026-08-01 (connection timeout), so the catalogue's own published terms have not been read and quoted here. This entry records the ruling and the outstanding verification honestly rather than asserting a 'Verified:' note nobody can check — the register already carries 53 of those. allows_redistribution=0: we state counts, we do not redistribute the catalogue."
+    },
+    "ailla": {
+      "license_spdx": "LicenseRef-Archive-Catalogue-Counts",
+      "license_url": "https://www.ailla.utexas.org/",
+      "attribution": "Archive of the Indigenous Languages of Latin America (AILLA), UT Austin.",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "FOUNDER RULING 2026-08-01: a COUNT of items held by a public archive catalogue is a statable fact, not licensed content. What we store is only 'N documented items exist, in these archives' (497 cards) — no recordings, transcripts or documents are taken or reproduced. OLAC exists to be harvested (OAI-PMH), which is why the counts are obtainable at all. NOT YET VERIFIED: language-archives.org was unreachable on 2026-08-01 (connection timeout), so the catalogue's own published terms have not been read and quoted here. This entry records the ruling and the outstanding verification honestly rather than asserting a 'Verified:' note nobody can check — the register already carries 53 of those. allows_redistribution=0: we state counts, we do not redistribute the catalogue."
+    },
+    "kaipuleohone": {
+      "license_spdx": "LicenseRef-Archive-Catalogue-Counts",
+      "license_url": "https://ling.hawaii.edu/kaipuleohone/",
+      "attribution": "Kaipuleohone Language Archive, University of Hawaiʻi at Mānoa.",
+      "allows_redistribution": 0,
+      "requires_attribution": 1,
+      "requires_sharealike": 0,
+      "non_commercial_only": 0,
+      "_basis": "FOUNDER RULING 2026-08-01: a COUNT of items held by a public archive catalogue is a statable fact, not licensed content. What we store is only 'N documented items exist, in these archives' (84 cards) — no recordings, transcripts or documents are taken or reproduced. OLAC exists to be harvested (OAI-PMH), which is why the counts are obtainable at all. NOT YET VERIFIED: language-archives.org was unreachable on 2026-08-01 (connection timeout), so the catalogue's own published terms have not been read and quoted here. This entry records the ruling and the outstanding verification honestly rather than asserting a 'Verified:' note nobody can check — the register already carries 53 of those. allows_redistribution=0: we state counts, we do not redistribute the catalogue."
+    }
+  }
+}

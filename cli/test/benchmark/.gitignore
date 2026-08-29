@@ -1,0 +1,26 @@
+# Deprecated CLI translation benchmark — corpus CONTENT is never tracked.
+# This whole tree is deprecated (see DEPRECATED.md) and unused by `npm test`.
+# The data it holds is corpus content and must stay out of git (corpora are
+# fetch-from-source; ANY license is blocked — see scripts/quarantine_gate.sh).
+#
+#   fixtures/       FLORES-200 devtest sentences, one file per language. Split
+#                   across files (monolingual {id,text}), so EN is the source
+#                   and every other language a reference — together a parallel
+#                   corpus. CC-BY-SA, still corpus content → never tracked.
+#   results/raw/    Per-model FLORES translations ({"translations":{"0":…}}) —
+#                   the translated other side of that corpus → never tracked.
+#   content-bench/  scraped third-party commercial website text (Apple, Airbnb,
+#                   …) aligned EN<->locale — copyrighted, archived negative result.
+#   ui-bench/       Signal Desktop UI localization strings (EN -> de/es/fr/ja/ko/zh).
+#
+# Regenerate locally with the scrape/extract scripts (kept tracked). Stats,
+# config, READMEs and scripts stay tracked; only the parallel text is de-hosted.
+# (flores-metadata.json = id/word_count/category only, no text → stays tracked;
+#  results/costs.json + results/benchmark.log = run stats only → stay tracked.)
+fixtures/flores-devtest.*.json
+results/raw/
+content-bench/raw/
+content-bench/source/
+content-bench/reference/
+ui-bench/source/
+ui-bench/reference/

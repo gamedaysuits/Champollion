@@ -1,0 +1,201 @@
+{
+  "code": "sam",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Samaritan Aramaic",
+    "values": [
+      {
+        "value": "Samaritan Aramaic",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Samaritan Aramaic",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "sam",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "sam-Samr-PS",
+    "values": [
+      {
+        "value": "sam-Samr-PS",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "sam-Samr-PS",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"sam\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "sam",
+    "values": [
+      {
+        "value": "sam",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Samaritan Aramaic (sam-sam) = 9 (Second language only).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Extinct",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "documentation": {
+    "firstDocumented": 200,
+    "lastDocumented": 1100,
+    "medLevel": "grammar",
+    "medSourceId": "126705"
+  },
+  "isoLanguageType": "Extinct",
+  "isoScope": "Individual",
+  "resources": {
+    "keyboards": [
+      {
+        "name": "Aramaic (Hebrew layout)",
+        "keyboardId": "aramaic_hebrew",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/a/aramaic_hebrew",
+        "publisher": "keyman",
+        "version": "1.3.1",
+        "lastModified": "2024-12-02"
+      }
+    ]
+  },
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 2,
+    "byTier": {
+      "model-card-declared": 2
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:johnlockejrr/marianmt-smp-sam",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:johnlockejrr/marianmt-smp-sam-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Hebr",
+    "Samr"
+  ],
+  "scriptNames": [
+    "Hebrew",
+    "Samaritan"
+  ],
+  "coverage": {
+    "sourceCount": 8,
+    "componentsPresent": 17,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "documentation.firstDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.lastDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "sam",
+    "revision": "94fc1c8432dc5f59",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "documentation.firstDocumented",
+      "documentation.lastDocumented",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.keyboards",
+      "scriptNames",
+      "scripts"
+    ]
+  }
+}

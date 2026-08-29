@@ -1,0 +1,487 @@
+{
+  "code": "twi-Latn",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Twi",
+    "values": [
+      {
+        "value": "Twi",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Twi",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "tw",
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "tw",
+    "values": [
+      {
+        "value": "tw",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code: the ISO 639-1 \"tw\" over the ISO 639-3 \"twi\""
+      }
+    ]
+  },
+  "codeAliases": [
+    "tw"
+  ],
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "NLLB",
+        "corpusId": "corpus:opus:NLLB",
+        "pairCount": 45,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 4037214
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 935134
+          },
+          {
+            "code": "af",
+            "alignmentPairs": 567621
+          },
+          {
+            "code": "sw",
+            "alignmentPairs": 514581
+          },
+          {
+            "code": "zu",
+            "alignmentPairs": 321639
+          }
+        ],
+        "alignmentPairsTotal": 11954650,
+        "pairsWithPublishedSize": 45,
+        "largestPairAlignments": 4037214
+      },
+      {
+        "corpus": "PHP",
+        "corpusId": "corpus:opus:PHP",
+        "pairCount": 21,
+        "topPartners": [
+          {
+            "code": "cs",
+            "alignmentPairs": 0
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 0
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 0
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 0
+          },
+          {
+            "code": "fi",
+            "alignmentPairs": 0
+          }
+        ],
+        "alignmentPairsTotal": 0,
+        "pairsWithPublishedSize": 21,
+        "largestPairAlignments": 0
+      },
+      {
+        "corpus": "QED",
+        "corpusId": "corpus:opus:QED",
+        "pairCount": 35,
+        "topPartners": [
+          {
+            "code": "ja",
+            "alignmentPairs": 64
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 20
+          },
+          {
+            "code": "ay",
+            "alignmentPairs": 17
+          },
+          {
+            "code": "la",
+            "alignmentPairs": 17
+          },
+          {
+            "code": "aa",
+            "alignmentPairs": 16
+          }
+        ],
+        "alignmentPairsTotal": 582,
+        "pairsWithPublishedSize": 35,
+        "largestPairAlignments": 64
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 3201
+          }
+        ],
+        "alignmentPairsTotal": 3201,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 3201
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 16,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 5346
+          },
+          {
+            "code": "vi",
+            "alignmentPairs": 162
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 19
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 11
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 10
+          }
+        ],
+        "alignmentPairsTotal": 5581,
+        "pairsWithPublishedSize": 16,
+        "largestPairAlignments": 5346
+      }
+    ],
+    "speech": [
+      {
+        "dataset": "common-voice",
+        "locale": "tw",
+        "validatedHours": 0.36,
+        "totalHours": 1.36,
+        "clips": 966,
+        "contributors": 20,
+        "release": "cv-corpus-26.0-2026-06-12"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "unanimous",
+    "consensus": "twi",
+    "values": [
+      {
+        "value": "twi",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "twi",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "tw",
+        "variantType": "language",
+        "note": "label language: tw"
+      }
+    ]
+  },
+  "iso639_1": "tw",
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "macroarea": "Africa",
+  "macrolanguage": "aka",
+  "methodSupport": {
+    "total": 138,
+    "byTier": {
+      "model-card-declared": 138
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/nllb-moe-54b",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-3.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-3.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-distilled-1.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:chenchen12311/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Chris7v7/nllb-200-3.3B-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-1.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-3.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-distilled-1.3B-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Derur/nllb-200-distilled-600M-ct2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:dev-vinod/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-1.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-1.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-3.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-3.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-1.3B-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-1.3B-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-600M-4bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Emilio407/nllb-200-distilled-600M-8bit",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:entai2965/nllb-200-3.3B-ctranslate2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:entai2965/nllb-200-3.3B-ctranslate2-float16",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:entai2965/nllb-200-distilled-1.3B-ctranslate2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "orthographicStatus": "developing",
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "9000000",
+    "values": [
+      {
+        "value": "9000000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "wikipediaEdition": {
+    "site": "tw",
+    "url": "https://tw.wikipedia.org",
+    "name": "Twi"
+  },
+  "coverage": {
+    "sourceCount": 9,
+    "componentsPresent": 18,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "codeAliases": [
+      "iso639-3-20260715"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "iso639_1": [
+      "iso639-3-20260715"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.speech": [
+      "common-voice-cv-corpus-26.0-2026-06-12"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "twi-Latn",
+    "revision": "c56b2400cf47597c",
+    "correctableFields": [
+      "bcp47",
+      "bcp47Tag",
+      "codeAliases",
+      "endonym",
+      "iso639_1",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "resources.speech",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "wikipediaEdition"
+    ]
+  },
+  "script": "Latn",
+  "locale": {
+    "language": "twi",
+    "script": "Latn",
+    "publishedTag": "tw-Latn-GH",
+    "source": "sil-langtags",
+    "note": "Script-scoped projection. SIL publishes this script only in territory-qualified tags; this card answers for the script alone, carrying its language's facts with the script-scoped values resolved."
+  },
+  "localeScoped": {
+    "scriptName": "Latin"
+  }
+}

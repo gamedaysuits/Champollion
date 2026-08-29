@@ -1,0 +1,59 @@
+[
+  {
+    "service_id": "example-community-eng-crk",
+    "display_name": "Community key custodians (in confirmation)",
+    "provider_type": "community_org",
+    "source_lang": "eng",
+    "target_lang": "crk",
+    "variety": "SRO",
+    "dispatch_channel": "email",
+    "turnaround_days": 5,
+    "rate_per_word": null,
+    "domains": ["education", "community"],
+    "sovereignty_flags": {
+      "off_community_processing": false,
+      "attribution_required": true,
+      "sovereignty_review": "pending"
+    },
+    "nc_terms": "Community-set terms; non-commercial use pending custodian confirmation.",
+    "consent_attested": false,
+    "status": "pending"
+  },
+  {
+    "service_id": "example-agency-eng-crk",
+    "display_name": "Example LRL Translation Collective (template)",
+    "provider_type": "agency",
+    "source_lang": "eng",
+    "target_lang": "crk",
+    "variety": "SRO",
+    "dispatch_channel": "webhook",
+    "turnaround_days": 2,
+    "rate_per_word": 0.3,
+    "domains": ["legal", "health"],
+    "sovereignty_flags": {
+      "off_community_processing": true,
+      "attribution_required": true
+    },
+    "nc_terms": null,
+    "consent_attested": false,
+    "status": "pending"
+  },
+  {
+    "service_id": "example-individual-eng-crk",
+    "display_name": "Independent certified translator (template)",
+    "provider_type": "individual",
+    "source_lang": "eng",
+    "target_lang": "crk",
+    "variety": "SRO",
+    "dispatch_channel": "email",
+    "turnaround_days": 7,
+    "rate_per_word": 0.22,
+    "domains": ["general"],
+    "sovereignty_flags": {
+      "attribution_required": true
+    },
+    "nc_terms": null,
+    "consent_attested": false,
+    "status": "pending"
+  }
+]

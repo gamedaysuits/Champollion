@@ -1,0 +1,1368 @@
+{
+  "_doc": "What each pinned source contributes to the atlas, DECLARED rather than inferred. A source absent from this file contributes nothing, and that is a decision someone made rather than a gap nobody noticed. `module` is the CLDF module the publisher declares in its own descriptor — dispatch follows their taxonomy, not our guess. `nullTokens` are the strings a source uses for 'no answer'; an undeclared token is a hard error rather than a value, because ingesting one writes 'we do not know' as though it were a fact. `parameterMap` maps the source's own parameter IDs onto ours; entries may be an object when the source stores JSON in its Value column, declaring which key to read and, where the source has no CodeTable, the closed vocabulary an unlisted value must fail against.",
+  "version": 1,
+  "sources": {
+    "aaleykusunda": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "abrahammonpa": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "abvdoceanic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "abvdphilippines": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "acd": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "amazonianvoices": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "asjp": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "backstromnorthernpakistan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "baf2": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "bantubvd": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "barlowkilliantomoip": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "barlowlote": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "bdpa": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "beidazihui": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "bendermicropower": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "birchallchapacuran": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "bodtkhobwa": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "bowernpny": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "bremerberta": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "cals": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "carvalhopurus": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "castrosui": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "castroyi": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "castrozhuang": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chacolanguages": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chaconarawakan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chaconbaniwa": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chaconcolumbian": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chaconnorthwestarawakan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chacontukanoan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "channumerals": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Wordlist module, but its languages.csv carries a Base column -- the numeral system, VERBATIM. 52% are empty and stay empty; a previous generator filled them and invented 2,005 values.",
+      "languageTableColumns": {
+        "Base": "numeralBase"
+      }
+    },
+    "chechuroborrowing": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chenhmongmien": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "chindialectsurvey": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "clarkkimmun": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "constenlachibchan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "crossandean": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "curated:method-coverage": {
+      "module": "(curated)",
+      "handler": "methods",
+      "license": "CC-BY-4.0",
+      "contributes": "which translation methods cover which languages",
+      "note": "OURS. Each entry is transcribed cite-only from a provider's own published language list, with the URL and the date read, so it pins to its own content hash and the commit that last changed it -- never under a provider's name, because Google did not tell us this, we read their page. Two entries (translated, omt1600) publish a headline count and NO enumeration; their counts are real and cannot become per-language facts, so they are skipped and the skip is reported."
+    },
+    "curated:metric-coverage": {
+      "module": "(curated)",
+      "handler": "metrics",
+      "license": "CC-BY-4.0",
+      "contributes": "which evaluation metric models cover which languages",
+      "note": "OURS, transcribed cite-only from each model's own published list. AfriCOMET publishes language NAMES; the ISO 639-3 mapping is ours and the register says so. XLM-R is recorded as UNRESOLVED: its model card gives the count (100) and not the list, and transcribing an appendix by hand is how the previous register acquired a 'Top-100' note over a list of 77."
+    },
+    "daakaka": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "daniellinguafrancas": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "datsemshift": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "davletshinaztecan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "deepadungpalaung": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "dhakalsouthwesttibetic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "diacl": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "diidxaza": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "dravlex": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "dunnaslian": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "duonglachi": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "elcat": {
+      "module": "StructureDataset",
+      "license": "CC-BY-4.0",
+      "contributes": "vitality",
+      "nullTokens": [
+        "",
+        "Unknown",
+        "unknown"
+      ],
+      "nullTokenNote": "ELCat packs JSON into Value; a missing key reads as absent rather than as a token.",
+      "parameterMap": {
+        "vitality": {
+          "parameter": "endangerment",
+          "jsonPath": "Endangerment.Level",
+          "contextPath": "Endangerment.Certainty",
+          "vocabulary": [
+            "safe",
+            "at risk",
+            "vulnerable",
+            "threatened",
+            "endangered",
+            "severely endangered",
+            "critically endangered",
+            "dormant",
+            "awakening"
+          ],
+          "vocabularyNote": "ELCat's own nine-level scale, which is NOT Glottolog AES's six. Declared here so a tenth level fails the build instead of arriving silently. 'awakening' and 'dormant' have no AES equivalent at all — which is why the two are separate Source_Scales rather than one merged vocabulary."
+        },
+        "speakers": {
+          "parameter": "speakerCount",
+          "jsonPath": "Speaker Number",
+          "contextPath": "Date Of Info",
+          "vocabularyNote": "No vocabulary: ELCat publishes BANDS (1-9, 10-99, 100-999, 1000-9999, 10000-99999, 100000) plus the word 'Awakening'. Six of its seven forms are not numbers. Kept verbatim as a string — a midpoint would manufacture precision no source claims. 'Date Of Info' is FREE TEXT ('the 2002 census of the Russian Federation'), so it is preserved in Comment; parsing a year out of it would be a derivation and must not wear ELCat's name."
+        }
+      }
+    },
+    "felekesemitic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "galuciotupi": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "gerarditupi": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "glottolog-cldf": {
+      "module": "StructureDataset",
+      "license": "CC-BY-4.0",
+      "contributes": "vitality, geography, documentation",
+      "nullTokens": [],
+      "parameterMap": {
+        "aes": {
+          "parameter": "endangerment",
+          "useCodeLabel": true,
+          "scaleNote": "Glottolog's Agglomerated Endangerment Status: six levels (not endangered, threatened, shifting, moribund, nearly extinct, extinct). This is NOT ELCat's nine-level scale — there is no AES equivalent of 'awakening' or 'dormant' — so the two are separate Source_Scales and a card showing both reports them as incommensurable rather than as a disagreement."
+        },
+        "med": {
+          "parameter": "medLevel",
+          "useCodeLabel": true,
+          "scaleNote": "Most Extensive Description level: the ordinal is an index, the label (grammar, grammar sketch, wordlist, ...) is the fact.",
+          "sourceColumnTo": "medSourceId"
+        },
+        "Macroarea": {
+          "parameter": "macroarea",
+          "fromLanguageTable": true
+        },
+        "First_Year_Of_Documentation": {
+          "parameter": "firstDocumented",
+          "fromLanguageTable": true
+        },
+        "Last_Year_Of_Documentation": {
+          "parameter": "lastDocumented",
+          "fromLanguageTable": true
+        }
+      }
+    },
+    "grambank": {
+      "module": "StructureDataset",
+      "license": "CC-BY-4.0",
+      "contributes": "typology",
+      "nullTokens": [
+        "?"
+      ],
+      "nullTokenNote": "'?' means the coder read the grammar and it does not answer. 79,638 rows — 18% of the dataset. It becomes not_attested, never the string '?'.",
+      "parameterMap": {
+        "GB030": "hasGenderInPronouns",
+        "GB051": "hasSexBasedGender",
+        "GB057": "hasNumeralClassifiers",
+        "GB070": "hasCoreCase",
+        "GB071": "hasObliqueCase",
+        "GB083": "marksPastTense",
+        "GB084": "marksPresentTense",
+        "GB415": {
+          "parameter": "politenessDistinction",
+          "useCodeLabel": true,
+          "scaleNote": "Grambank codes this BINARY: absent/present. WALS 45A codes the same question in four levels, so the two are separate Source_Scales and a card showing both reports them incommensurable."
+        },
+        "GB028": "inclusiveExclusive"
+      },
+      "featureCatalog": true
+    },
+    "gravinachadic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "grollemundbantu": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "guarayu": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "halenepal": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "hantganbangime": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "hdi": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "hillburmish": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "hruschkaturkic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "hsiuhmongmien": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "hubercolumbian": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "huntergatherer": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "ideobank": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "ids": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "iecor": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "iquito": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "ivanisuansu": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "johanssonsoundsymbolic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "joophonosemantic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "kalamang": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "kitchensemitic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "kleinewillinghoeferbikwinjen": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "kochtukanoan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "kraftchadic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "lairgyalrong": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "lamanisoic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "leeainu": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "leecaijia": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "leejaponic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "leekoreanic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "lieberherrkhobwa": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "lionnetyotonahua": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "liunewari": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "liusinitic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "logos": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "lsi": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "luangthongkumkaren": {
+      "module": "Wordlist",
+      "license": "CC-BY-NC-ND-4.0",
+      "contributes": "nothing — metadata only",
+      "metadataOnly": true,
+      "metadataOnlyReason": "CC-BY-NC-ND-4.0 forbids derivative distribution. Values are never ingested and no count is computed over them; the resource is recorded as existing, with its DOI and coverage, which is a fact about a published dataset rather than a derivative of its content."
+    },
+    "lundgrenomagoa": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "mannburmish": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "marrisonnaga": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "mcd": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "mcelhanonhuon": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "medialengua": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "mitterhoferbena": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "mixezoqueanvoices": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "mixtecansubgrouping": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "naganorgyalrongic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "nagarajakhasian": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "nen": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "northeuralex": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "northperulex": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "nts": {
+      "module": "StructureDataset",
+      "license": "CC-BY-NC-ND-2.0",
+      "contributes": "nothing — metadata only",
+      "metadataOnly": true,
+      "metadataOnlyReason": "CC-BY-NC-ND-2.0 forbids derivative distribution. Values are never ingested and no count is computed over them; the resource is recorded as existing, with its DOI and coverage, which is a fact about a published dataset rather than a derivative of its content."
+    },
+    "oskolskayatungusic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "othanieljen": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "palula": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "panobodyparts": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "papuanvoices": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "peirosaustroasiatic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "petersonsouthasia": {
+      "module": "StructureDataset",
+      "license": "LicenseRef-Unestablished-petersonsouthasia",
+      "contributes": "nothing — metadata only",
+      "metadataOnly": true,
+      "metadataOnlyReason": "No licence could be established from the SNAPSHOT, the CLDF descriptor, or the Zenodo record. Nothing is ingested, because no permission is inferred from silence. See shared/cldf/licence-reconciliation.json."
+    },
+    "pharaocoracholaztecan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "phoible": {
+      "module": "StructureDataset",
+      "handler": "aggregate",
+      "license": "CC-BY-3.0",
+      "contributes": "phonology",
+      "nullTokens": [],
+      "aggregateNote": "PHOIBLE publishes one row per SEGMENT and states no counts anywhere. consonantCount and its siblings are therefore OURS, computed over a cited release and stamped champollion-derived with Derived_From naming that release. Counting DISTINCT segments, not rows: a language may have several contributing inventories and counting rows would inflate it.",
+      "groupBy": "SegmentClass",
+      "counts": {
+        "consonant": "consonantCount",
+        "vowel": "vowelCount",
+        "tone": "toneCount"
+      },
+      "totals": {
+        "totalPhonemes": {
+          "from": [
+            "consonantCount",
+            "vowelCount",
+            "toneCount"
+          ]
+        }
+      },
+      "presence": {
+        "hasTone": {
+          "from": "toneCount"
+        }
+      }
+    },
+    "polyglottaafricana": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "powerma": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "GPL-3.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "ratcliffearabic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "robbeetstriangulation": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "robinsonap": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "ronataswestoldturkic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "rutulbasiclexicon": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "saenkoromance": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sagartst": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sails": {
+      "module": "StructureDataset",
+      "license": "CC-BY-NC-ND-2.0",
+      "contributes": "nothing — metadata only",
+      "metadataOnly": true,
+      "metadataOnlyReason": "CC-BY-NC-ND-2.0 forbids derivative distribution. Values are never ingested and no count is computed over them; the resource is recorded as existing, with its DOI and coverage, which is a fact about a published dataset rather than a derivative of its content."
+    },
+    "sanzhi": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "satterthwaitetb": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "savelyevturkic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sawkatokaleya": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "seabor": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "seifartecheverriboran": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "servamalagasy": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sidaama": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sidwellbahnaric": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sidwellvietic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "simsrma": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "sohartmannchin": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "starostinkaren": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "starostintujia": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "streitberggothic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "suntb": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "syrjaenenuralic": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "teanu": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "teop": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "tls": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "tolmiebritishcolumbia": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "tppsr": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "transnewguineaorg": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "tryonsolomon": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "tseltal": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "tuled": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "uralex": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "utoaztecan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "valpal": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-3.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "vanuatuvoices": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "walkerarawakan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wals": {
+      "module": "StructureDataset",
+      "license": "CC-BY-4.0",
+      "contributes": "typology",
+      "nullTokens": [],
+      "useCodeLabelNote": "WALS stores Value='2' with Code_ID='81A-2', whose code Name is 'SVO'. The ordinal is an index into the CodeTable, not a fact about the language, so every WALS parameter reads its label.",
+      "parameterMap": {
+        "81A": {
+          "parameter": "wordOrder",
+          "useCodeLabel": true
+        },
+        "82A": {
+          "parameter": "subjectVerbOrder",
+          "useCodeLabel": true
+        },
+        "20A": {
+          "parameter": "fusion",
+          "useCodeLabel": true
+        },
+        "22A": {
+          "parameter": "verbSynthesis",
+          "useCodeLabel": true
+        },
+        "26A": {
+          "parameter": "affixPreference",
+          "useCodeLabel": true
+        },
+        "27A": {
+          "parameter": "reduplication",
+          "useCodeLabel": true
+        },
+        "30A": {
+          "parameter": "genderCount",
+          "useCodeLabel": true
+        },
+        "49A": {
+          "parameter": "caseCount",
+          "useCodeLabel": true
+        },
+        "100A": {
+          "parameter": "verbalAlignment",
+          "useCodeLabel": true
+        },
+        "143A": {
+          "parameter": "negationOrder",
+          "useCodeLabel": true
+        },
+        "Family": {
+          "parameter": "family",
+          "fromLanguageTable": true
+        },
+        "Genus": {
+          "parameter": "genus",
+          "fromLanguageTable": true
+        },
+        "45A": {
+          "parameter": "politenessDistinction",
+          "useCodeLabel": true,
+          "scaleNote": "WALS's four levels (no distinction / binary / multiple / pronouns avoided) are finer than Grambank's binary. Neither is wrong; they are different questions about the same phenomenon."
+        },
+        "39A": {
+          "parameter": "inclusiveExclusive",
+          "useCodeLabel": true,
+          "scaleNote": "WALS codes five types where Grambank GB028 is binary — separate Source_Scales; a card showing both reports them incommensurable."
+        }
+      },
+      "featureCatalog": true
+    },
+    "walworthpolynesian": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wangbai": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wangbcd": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wanukaka": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wersing": {
+      "module": "Dictionary",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wheelerutoaztecan": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-NC-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wichmannmixezoquean": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "wold": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "yamfinder": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "yanglalo": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "yangyi": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "zgraggenmadang": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "zhaobai": {
+      "module": "Wordlist",
+      "handler": "lexical",
+      "license": "CC-BY-4.0",
+      "contributes": "lexical resource existence and coverage",
+      "note": "Existence and coverage only. A wordlist says how a language expresses a concept; it is not evidence of typology, and nothing typological is derived from it."
+    },
+    "apics": {
+      "module": "StructureDataset",
+      "license": "CC-BY-4.0",
+      "contributes": "typology",
+      "nullTokens": [],
+      "featureCatalog": true,
+      "note": "APiCS Online v2013.1 (pidgins and creoles). No card-field parameter map by decision: its 334 features feed the typology feature catalog (store-only), not card fields."
+    }
+  },
+  "_migration": "2026-08-09: the 16 (native) entries moved into their fetchers as `export const manifest` — one fact, one home. What remains here is what cannot self-declare: the CLDF datasets’ DECISION data (parameterMap, nullTokens, scale notes), and the two hand-transcribed curated sources this rebuild exists to retire. A native entry left here would silently OVERLAY its fetcher’s declaration, which is the two-homes drift this file used to cause at full scale."
+}

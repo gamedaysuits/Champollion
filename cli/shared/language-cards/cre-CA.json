@@ -1,0 +1,383 @@
+{
+  "code": "cre-CA",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Cree",
+    "values": [
+      {
+        "value": "Cree",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Cree",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "cr",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "cr-Cans-CA",
+    "values": [
+      {
+        "value": "cr-Cans-CA",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "cr-Cans-CA",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"cr\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "cr",
+    "values": [
+      {
+        "value": "cr",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code: the ISO 639-1 \"cr\" over the ISO 639-3 \"cre\""
+      }
+    ]
+  },
+  "canonicalisedMembers": {
+    "agreement": "unanimous",
+    "consensus": "cwd",
+    "values": [
+      {
+        "value": "cwd",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR canonicalises \"cwd\" to \"cr\" with reason=macrolanguage"
+      },
+      {
+        "value": "cwd",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "SIL langtags records \"cwd\" as an additional ISO 639-3 code for tags of \"cr\""
+      }
+    ]
+  },
+  "cldrOfficialStatus": "Regional official",
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "QED",
+        "corpusId": "corpus:opus:QED",
+        "pairCount": 43,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 68
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 39
+          },
+          {
+            "code": "aka",
+            "alignmentPairs": 38
+          },
+          {
+            "code": "hy",
+            "alignmentPairs": 38
+          },
+          {
+            "code": "el",
+            "alignmentPairs": 24
+          }
+        ],
+        "alignmentPairsTotal": 257,
+        "pairsWithPublishedSize": 43,
+        "largestPairAlignments": 68
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 6
+          }
+        ],
+        "alignmentPairsTotal": 6,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 6
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 21,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 54
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 43
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 30
+          },
+          {
+            "code": "iu",
+            "alignmentPairs": 12
+          },
+          {
+            "code": "hi",
+            "alignmentPairs": 3
+          }
+        ],
+        "alignmentPairsTotal": 164,
+        "pairsWithPublishedSize": 21,
+        "largestPairAlignments": 54
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "ᓀᐦᐃᔭᐍᐏᐣ",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "nēhiyawēwin",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "cr",
+        "variantType": "language",
+        "note": "label language: cr"
+      },
+      {
+        "value": "ᐃᔨᔨᐤ ᐊᔨᒧᐎᓐ'",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "cr",
+        "variantType": "language",
+        "note": "label language: cr"
+      }
+    ]
+  },
+  "isoLanguageType": "Living",
+  "isoScope": "Macrolanguage",
+  "macroarea": "North America",
+  "documentation": {
+    "medLevel": "grammar",
+    "medSourceId": "683529"
+  },
+  "methodSupport": {
+    "total": 11,
+    "byTier": {
+      "model-card-declared": 11
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mickymultani/Cree-Llama-3.3-70B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Zusakhe/Trade",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "orthographicStatus": "standardized",
+  "scripts": [
+    "Cans",
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin",
+    "Unified Canadian Aboriginal Syllabics"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "96000",
+    "values": [
+      {
+        "value": "96000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "coverage": {
+    "sourceCount": 9,
+    "componentsPresent": 21,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "canonicalisedMembers": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "cldrOfficialStatus": [
+      "linguameta-452a21ad3dae"
+    ],
+    "codeAliases": [
+      "iso639-3-20260715"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "iso639_1": [
+      "iso639-3-20260715"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguageMembers": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "cre-CA",
+    "revision": "c1ebb31ee7d0fb99",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "canonicalisedMembers",
+      "cldrOfficialStatus",
+      "codeAliases",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endonym",
+      "iso639_1",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "macrolanguageMembers",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates"
+    ]
+  },
+  "locale": {
+    "language": "cre",
+    "region": "CA",
+    "script": "Cans",
+    "publishedTag": "cr-CA",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Cans",
+  "localeScoped": {
+    "scriptName": "Unified Canadian Aboriginal Syllabics",
+    "cldrOfficialStatus": "Regional official"
+  }
+}

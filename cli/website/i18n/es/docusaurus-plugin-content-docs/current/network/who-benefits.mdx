@@ -1,0 +1,153 @@
+---
+sidebar_position: 3
+title: "Quiénes se benefician"
+slug: '/network/who-benefits'
+description: "Quién gana qué si Champollion tiene éxito —una capa de traducción universal y de propiedad comunitaria—: hablantes, comunidades lingüísticas, proveedores de traducción, especialistas en investigación, entidades financiadoras y la prensa, cada cual con acciones iniciales concretas."
+related:
+  - label: "For Language Communities"
+    to: /docs/network/community/for-language-communities
+    kind: doc
+    note: "The full community door — sovereignty, ownership, and how to start"
+  - label: "How the Work Is Funded"
+    to: /docs/network/sovereignty/economic-model
+    kind: doc
+    note: "The economic model in full"
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "The end-to-end run-and-publish walkthrough"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: doc
+    note: "What we do not (yet) claim"
+---
+
+{/* Los recuentos en esta página se renderizan a través de SSOTCount (lecturas en tiempo de compilación de los SSOT de la máquina a través de customFields de docusaurus.config.js) — nunca se escriben a mano, según el estándar de visualización de SSOT. cli/scripts/check-prose-counts-parity.mjs controla las pocas cifras de prosa irreducibles. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Quiénes se benefician
+
+> **Resumen ejecutivo.** Menos de 600 de los aproximadamente 7,000 idiomas vivos del mundo tienen traducción automática de algún tipo, y más de la mitad de esos idiomas están en riesgo (según el Estado de Peligro Aglomerado de Glottolog; derivado de champollion). Si Champollion tiene éxito —una capa de traducción universal y de propiedad comunitaria— la recompensa es doble: comunicación hoy para los hablantes que la industria ignora, y una herramienta de trabajo en la preservación y revitalización de idiomas en riesgo. La estrategia es deliberada: desarrollo de métodos mediante colaboración abierta (crowdsourced) medido por reglas abiertas, construcción de corpus patrocinada a tarifas publicadas, y comunidades que tienen las llaves de sus datos, sus conjuntos de prueba y cualquier método validado contra ellos. Esta página explica qué gana cada grupo y qué hacer primero.
+
+## Hablantes y sus comunidades \{#speakers}
+
+Si usted habla un idioma subrepresentado y también inglés, su juicio es lo más valioso en todo este proyecto, más que cualquier modelo o métrica. Las computadoras pueden contar qué tan similares se ven dos oraciones; no pueden decir si una oración es algo que diría un hablante real. Ese juicio es suyo, y es la verdad fundamental contra la cual se verifica todo lo demás aquí.
+
+**La validación por parte de hablantes es un trabajo remunerado a tarifas profesionales publicadas ($50–65 CAD/hora), en su propio horario, sin requerir experiencia técnica**; si usted puede leer ambos idiomas y juzgar una oración, está calificado. El [Protocolo de Validación de Hablantes](/docs/network/specifications/speaker-validation) publica tres tipos de tareas:
+
+| Tarea | Qué hace usted | Tiempo | Pago publicado |
+|------|-------------|------|---------------|
+| Calificar traducciones | Leer traducciones automáticas, calificar cada una según "¿es real?" y "¿significa lo correcto?" | ~8 horas, repartidas en semanas | $400–520 CAD |
+| Revisar pares "equivalentes" | Decir si dos frases realmente significan lo mismo | ~2 horas | $100–130 CAD |
+| Revisar palabras rechazadas | Revisar palabras que una herramienta gramatical marcó como inválidas: ¿tenía razón? | ~1.5 horas | $75–100 CAD |
+
+También hay trabajo de corpus —crear traducciones de referencia de oraciones cotidianas— pagado a las mismas tarifas por hora ([detalles](/docs/network/perspectives/how-speakers-get-paid)). Los términos, en un solo lugar: **remunerado, no voluntario** (pago dentro de las dos semanas posteriores a cada bloque de tareas, pagado independientemente de lo que muestren los resultados); **crédito en sus propios términos** (nombrado o anónimo, coautoría opcional); **usted puede retirar** sus contribuciones en cualquier momento, con poder de veto sobre la publicación de resultados que considere problemáticos.
+
+:::note[Dónde se encuentra esto hoy]
+La honestidad primero: las tarifas de pago y los términos anteriores son compromisos publicados, pero [aún no se ha ejecutado ninguna ronda de validación comunitaria](/docs/network/honest-limitations); se están estableciendo los primeros acuerdos. Ponerse en contacto ahora significa registrarse para estar entre los primeros, no unirse a un programa existente.
+:::
+
+**Primeras acciones:** haga algo hoy agregando oraciones a [Tatoeba](https://tatoeba.org) —Champollion nunca recopila ni aloja corpus por sí mismo (los datos de prueba siempre [se obtienen de su fuente](/docs/network/sovereignty/registering-corpora)), pero varios puntos de referencia (benchmarks) aquí se construyen a partir de oraciones de Tatoeba y colecciones abiertas como [OPUS](https://opus.nlpl.eu/). Luego lea [Cómo se les paga a los hablantes](/docs/network/perspectives/how-speakers-get-paid) (cinco minutos, todos los números), y comuníquese —[info@champollion.dev](mailto:info@champollion.dev) o un *issue* en el [repositorio público](https://github.com/gamedaysuits/Champollion/issues)— indicando qué idioma habla y qué variedades se siente cómodo juzgando.
+
+## Comunidades lingüísticas construyendo corpus \{#communities}
+
+La posición más fuerte que una comunidad puede tener en este sistema es **ser dueña del propio benchmark**. Un conjunto de pruebas es la clave de respuestas: quien lo posee decide qué significa una "buena traducción" para el idioma, y cada método —el nuestro, el de una corporación, el de cualquiera— se mide contra *su* estándar.
+
+La regla fundamental es lo primero: **los datos de su idioma son suyos.** Registrar un corpus significa publicar una tarjeta de metadatos descriptiva —nunca subir el corpus— en el [carril de exposición que usted elija](/docs/network/sovereignty/registering-corpora): abierto, restringido o totalmente soberano (un conjunto de pruebas que nunca vemos, calificado en su infraestructura). La construcción de corpus y la revisión de traducciones son trabajos profesionales [pagados a tarifas publicadas](/docs/network/perspectives/how-speakers-get-paid), y el pago no compra sus datos. Cuando un método de traducción construido para su idioma se valida aquí, [la propiedad se transfiere](/docs/network/sovereignty/ownership-transfer) a la organización de gobernanza de su comunidad: código, pesos y control de implementación. Incluso 50 pares de traducción curados son suficientes para abrir una nueva pista en la tabla de clasificación (leaderboard).
+
+La puerta completa para las comunidades —garantías de soberanía, lo que la Red pide y devuelve, y el inicio paso a paso— es **[Para las comunidades lingüísticas](/docs/network/community/for-language-communities)**, con [Ejecutar un concurso soberano](/docs/network/sovereignty/run-a-sovereign-contest) como el manual de operaciones (runbook) para una evaluación controlada por la comunidad.
+
+## Servicios de traducción y proveedores de TA \{#vendors}
+
+Si usted construye o vende traducciones —un motor de TA, un pipeline de LLM, un sistema basado en reglas o un servicio de traducción humana— puede evaluarlo (benchmark) aquí en conjuntos de prueba publicados, aparecer en la tabla de clasificación pública y en el mapa, y ser juzgado por las mismas reglas que todos los demás. **Sin tarifas, sin acuerdos de asociación, sin preferencia por ninguna tecnología:** el entorno de pruebas (harness) es neutral en cuanto a métodos por diseño. Usted solo paga sus propios costos de computación o API ([cómo se financia el trabajo](/docs/network/sovereignty/economic-model)).
+
+La mayoría de los benchmarks públicos de TA cubren los mismos cientos de idiomas de altos recursos, y la mayoría están contaminados. El catálogo de Champollion registra <SSOTCount field="registryDatasetCount" /> conjuntos de datos de evaluación como tarjetas de metadatos ancladas por SHA (sha-pinned) y obtenidas de la fuente, con el [estado de contaminación divulgado por conjunto de datos](/docs/network/leaderboard/datasets) y un carril para conjuntos de prueba nuevos y nunca publicados. Las puntuaciones utilizan métricas abiertas y reproducibles (chrF++/BLEU/TER a través de sacreBLEU; COMET/AfriCOMET reportados en un carril neuronal separado) bajo [reglas de puntuación](/docs/network/specifications/scoring) publicadas. Las dependencias de los métodos se declaran, no se ocultan, y los motores propietarios se mantienen propietarios: el entorno de pruebas llama a su sistema, nunca a sus pesos o código. Dos advertencias honestas: **la tabla de clasificación es joven** ([Limitaciones honestas](/docs/network/honest-limitations) dice exactamente qué está verificado hoy), y **las puntuaciones no otorgan derechos de implementación**; para los idiomas administrados por la comunidad, la comunidad decide la implementación ([Administración de datos](/docs/network/sovereignty/data-sovereignty)).
+
+**Primeras acciones (motor de TA o pipeline):** elija sus pares de los [conjuntos de datos de evaluación](/docs/network/leaderboard/datasets) y la [tabla de clasificación](/leaderboard); `pipx install mt-eval-harness` y siga [Enviar un método](/docs/network/getting-started/submit-a-method); si su motor no es accesible a través de OpenRouter, implemente el [protocolo TranslationMethod](/docs/network/specifications/methods#eval-harness-translationmethod-protocol) o expóngalo como un pequeño servicio API ([guía](/docs/guides/serving-a-method)); luego ejecute y publique: los envíos de la comunidad se publican en el nivel de confianza autoevaluado (self-benchmarked), claramente etiquetados, bajo las [reglas de la tabla de clasificación](/docs/network/leaderboard/rules).
+
+**Si usted vende traducción humana:** donde ninguna máquina es confiable para un par, el sitio lo dice claramente y muestra en su lugar proveedores humanos con acceso mediante consentimiento; lea el [carril de servicios humanos](/human-services), luego solicite ser listado por correo electrónico ([info@champollion.dev](mailto:info@champollion.dev)) indicando el par y la variedad que cubre, sus términos y una confirmación de consentimiento. Sus datos de contacto nunca se publican sin su consentimiento. La traducción humana también es un método aquí como cualquier otro: algunos equipos evalúan sus pipelines de posedición para mostrar a los compradores la diferencia (delta) sobre la TA sin procesar.
+
+## Investigadores \{#researchers}
+
+La forma más costosa de llevar la traducción automática a un idioma de bajos recursos es la forma en que el campo generalmente lo intenta: construir un corpus de entrenamiento. Eso significa cientos de miles de pares de oraciones —demasiados para que alguien los revise— por lo que la calidad varía de maneras que nadie puede ver, y la falla sale a la superficie solo al final, cuando un modelo entrenado en esos pares se equivoca exactamente en lo que los datos se equivocaron. Meses de trabajo de recopilación pueden producir un corpus en el que no se puede confiar plenamente y un modelo que no se puede lanzar.
+
+Un conjunto de evaluación invierte esa economía. Un conjunto de desarrollo y un conjunto de prueba reservado (held-out) para el mismo idioma es del orden de **mil** pares: lo suficientemente pequeño como para que la curación profesional sea realmente posible, cada par revisado por alguien que conoce el idioma. Setecientos mil pares que no puede verificar, o mil que sí puede: el conjunto de evaluación es el único entregable donde el juicio de un investigador llega a cada oración. Y a diferencia de un corpus de entrenamiento, no se vuelve obsoleto: cada nuevo modelo, motor o método que aparece puede medirse contra él, indefinidamente.
+
+Esta es la apuesta sobre la que se construye todo el proyecto, la **tesis del par generacional**: construya el estándar de evaluación y el incentivo, y la comunidad construirá la solución funcional. Usted cura los mil pares. Un premio publicado contra su conjunto reservado convierte al idioma en un objetivo al que cualquier creador de métodos puede apuntar. La tabla de clasificación mide cada intento en público. Una generación de curación cuidadosa abre una competencia abierta en todo lo demás. La [Asociación de corpus](/docs/network/specifications/corpus-partnership) es el documento de trabajo exactamente para esto —tamaños de corpus, flujo de trabajo, pago a hablantes— y la [Especificación de premios](/docs/network/specifications/prizes) es la mitad del incentivo.
+
+Las herramientas de medición están listas hoy. `pipx install mt-eval-harness` le proporciona el [entorno de evaluación (eval harness)](/docs/network/specifications/harness): puntuación determinista, [tarjetas de ejecución (run cards)](/docs/network/specifications/run-card) con huella digital, [significancia](/docs/network/specifications/significance) de bootstrap emparejado y una ruta de publicación hacia la tabla de clasificación. La [especificación de puntuación](/docs/network/specifications/scoring) documenta cada métrica con su estado de validación —validada externamente, validada por proxy o heurística de ingeniería— y mantiene el compuesto determinista; las métricas neuronales se reportan en un carril separado, nunca se integran silenciosamente. Las métricas estándar se basan en sacreBLEU y COMET/AfriCOMET, extendidas con verificaciones estructurales (validez FST) que sacan a la luz lo que las métricas de superposición de caracteres pasan por alto en los idiomas polisintéticos. El entorno de pruebas es de código abierto AGPL-3.0; la CLI es PolyForm Noncommercial 1.0.0: de código disponible, gratuita para uso no comercial.
+
+Detrás de las herramientas se encuentran los registros. **<SSOTCount field="registryDatasetCount" /> conjuntos de datos de evaluación**, cada uno una tarjeta de metadatos anclada por SHA y obtenida de la fuente, catalogados en [Conjuntos de datos de evaluación](/docs/network/leaderboard/datasets); **<SSOTCount field="catalogLanguageCount" /> tarjetas de idioma** donde [cada campo nombra su fuente](/docs/reference/language-card-spec) y se muestran todas las fuentes que discrepan ([procedimiento de corrección](/docs/reference/language-card-citation-procedure)); un resumen de licencias de **<SSOTCount field="licensedSourceCount" /> fuentes ascendentes (upstream) registradas**, con corpus no comerciales excluidos por diseño de cualquier carril comercial, de premios o de API. La contaminación es una propiedad de primera clase: los benchmarks públicos que se presume han sido vistos por modelos de frontera se ejecutan en un **carril solo relativo**, los corpus comunitarios nuevos se sellan y segmentan con manifiestos hash ([asociación de corpus §4](/docs/network/specifications/corpus-partnership#4-cryptographic-sealing-and-sandbox-testing)), y las comunidades pueden mantener benchmarks soberanos que nunca vemos. El modelo de amenazas se establece en el [marco de diseño de corpus](/docs/network/specifications/corpus-design).
+
+Tres formas de entrar, según lo que desee construir. Un **corpus**: comience desde la ruta de evaluación primero (eval-first) mencionada anteriormente: [Asociación de corpus](/docs/network/specifications/corpus-partnership) de principio a fin, presupuestando el tiempo pagado a los hablantes desde el primer día. Un **método**: implemente el [protocolo TranslationMethod](/docs/network/specifications/methods) y siga [Enviar un método](/docs/network/getting-started/submit-a-method): aproximadamente 15 minutos con una clave de OpenRouter. Una **métrica**: propóngala a través de la superficie de complementos (plugins) del entorno de pruebas (*issue* o PR en el [repositorio](https://github.com/gamedaysuits/Champollion); el estándar para ingresar al compuesto está en la especificación de puntuación). Cualquiera que sea la puerta, lea [Limitaciones honestas](/docs/network/honest-limitations) primero —incluyendo que la validación comunitaria de las métricas por parte de los hablantes aún no ha ocurrido— y la [metodología de microevaluación](/docs/network/context/microeval-methodology) y el [panorama de evaluación de TA](/docs/network/context/mt-evaluation-landscape) antes de diseñar cualquier cosa.
+
+**Cómo citar a Champollion:** aún no hay un artículo (paper) de Champollion; por favor, no cite uno. Cite el repositorio y la especificación versionada específica o la tarjeta de conjunto de datos anclada por SHA que utilizó:
+
+```bibtex
+@software{champollion,
+  author  = {Forbes, Curtis},
+  title   = {Champollion: open evaluation infrastructure for machine
+             translation in low-resource languages},
+  url     = {https://github.com/gamedaysuits/Champollion},
+  year    = {2026},
+  note    = {Specifications at https://champollion.dev/docs/network}
+}
+```
+
+Si utiliza un corpus ascendente (upstream) a través de nuestro registro, **cite a los propios creadores del corpus**: la tarjeta del conjunto de datos incluye la atribución y la licencia ascendentes.
+
+## Financiadores y patrocinadores \{#funders}
+
+**Champollion no es comercial.** El patrocinio financia la construcción de corpus, herramientas y trabajo comunitario: **100% de transferencia directa (pass-through), contabilizado públicamente, nada de ello para Champollion**: sin porcentaje de gastos generales, sin participación en los ingresos, sin reclamos sobre los activos de la comunidad. El dinero que entra se convierte en trabajo lingüístico remunerado que sale —va a los hablantes, constructores de corpus y ganadores de premios— y los costos de infraestructura actualmente los asume el fundador ([Cómo se financia el trabajo](/docs/network/sovereignty/economic-model)).
+
+El punto de partida honesto: todo aquí describe mecanismos que están **especificados y listos, no programas que ya se ejecutan a escala.** Aún no hay subvenciones ni patrocinadores, la tabla de clasificación está activa y todavía en sus primeras etapas, y el mecanismo de premios es una [especificación propuesta](/docs/network/specifications/prizes): ningún premio está abierto hoy. Lo que obtiene un financiador de esa honestidad: costos unitarios publicados, un libro mayor de reclamos y especificaciones por las que puede exigirnos cuentas.
+
+**Carril 1 — patrocinio de corpus.** El activo más escaso en la TA de bajos recursos es un conjunto de pruebas confiable, y los costos están publicados:
+
+| Qué compra un dólar | Costo publicado | A dónde va |
+|--------------------|---------------|----------------|
+| Un corpus de benchmark para un idioma (50–150 entradas curadas) | $2,500–6,000 CAD | Tiempo de hablantes bilingües a $50–65/h: la partida más grande, deliberadamente |
+| Una ronda de validación de métricas (tres hablantes verificando las métricas automatizadas contra el juicio humano) | $1,475–1,920 CAD | Tareas de revisión de hablantes remuneradas |
+| Revisión de resultados de métodos | $500–1,500 CAD | Mismas tarifas por hora publicadas |
+| Incorporación completa del idioma, todo incluido | $3,350–8,500 CAD | Consulte la [Especificación de benchmark §10](/docs/network/specifications/benchmark) |
+
+El activo sobrevive a la subvención: el corpus pertenece a sus constructores/administradores, no a Champollion; registrado como metadatos, [el contenido nunca se aloja](/docs/network/sovereignty/registering-corpora), bajo la licencia y las opciones de carril del administrador. Para los financiadores académicos, la [Estrategia de asociación de corpus](/docs/network/specifications/corpus-partnership) es la versión de este carril adaptada a los departamentos.
+
+**Carril 2 — patrocinio de premios.** Un premio por logros financia un **resultado, no un intento**: el dinero se libera solo cuando un método supera de manera demostrable una barrera definida y neutral en cuanto a métodos, con la revisión remunerada de hablantes de la comunidad como parte de cada reclamo. Según la [Especificación de premios](/docs/network/specifications/prizes), los fondos son **retenidos por el patrocinador**: permanecen en la organización patrocinadora, o en un fideicomiso comunitario o depósito en garantía (escrow) de terceros que el patrocinador designe, y **nunca en Champollion**, que coordina la medición y no toca ningún dinero. **Hoy en día no se retienen fondos de premios en ningún lugar.** Si nadie supera la barrera, no se le paga a nadie; un premio vencido permanece con el patrocinador, para ser redirigido o retirado a su discreción. Los métodos ganadores se transfieren a la propiedad de la comunidad bajo los términos del premio.
+
+Lo que un financiador puede medir: corpus construidos y registrados bajo el control del administrador; horas de hablantes remuneradas entregadas a las comunidades lingüísticas; pares de idiomas cubiertos por benchmarks públicos confiables; métodos medidos y, cuando los términos del premio lo indiquen, transferidos a la propiedad de la comunidad.
+
+**Primeras acciones:** lea [Cómo se financia el trabajo](/docs/network/sovereignty/economic-model) (diez minutos, el modelo completo); elija un carril en [Involúcrese — patrocinadores](/get-involved#sponsors): trabajo de corpus, un premio o créditos de computación/API para la [cola de benchmarks públicos](/contribute); luego hable con nosotros en [info@champollion.dev](mailto:info@champollion.dev) o en el [repositorio público](https://github.com/gamedaysuits/Champollion/issues). Responderemos con detalles específicos, incluidas las partes que aún no están construidas.
+
+## Prensa y medios \{#press}
+
+Champollion es un proyecto de investigación no comercial que construye una evaluación confiable de traducción automática para cada idioma —de código disponible y gratuito para uso no comercial, con un entorno de evaluación de código abierto y registros— infraestructura para responder una pregunta honestamente: *¿qué tan buena es realmente la traducción automática para este idioma?* Publica el registro de conjuntos de prueba, las reglas de puntuación, el entorno de pruebas que las ejecuta, y una tabla de clasificación y un mapa públicos que muestran quién puede traducir qué y qué tan bien: todos los métodos son bienvenidos, humanos y automáticos, juzgados por las mismas reglas abiertas. Donde las comunidades poseen los datos del idioma, poseen las llaves.
+
+Lo que Champollion **no** es: no es comercial (sin producto, sin API de pago, sin medición de uso, sin participación en los ingresos, sin financiamiento de riesgo —[autofinanciado por su fundador](/docs/network/sovereignty/economic-model)); no es un recolector de datos (el contenido del corpus **nunca se aloja**; el registro contiene tarjetas de metadatos ancladas por SHA, y los corpus comunitarios siguen siendo propiedad absoluta del administrador); no es un producto de traducción de IA (Champollion mide la calidad de la traducción; la CLI complementaria es una herramienta para desarrolladores); y no está terminado: la tabla de clasificación está activa pero es joven, los programas comunitarios se están estableciendo, y preferimos ser citados con precisión como en etapa inicial que generosamente como más avanzados.
+
+Datos clave (cada uno se remonta a una fuente en el repositorio; el proyecto mantiene un libro mayor público de afirmaciones):
+
+| Dato | Fuente |
+|------|--------|
+| <SSOTCount field="catalogLanguageCount" /> tarjetas de idioma en el índice citado | `cli/shared/language-cards/` (una tarjeta por idioma, contada en tiempo de compilación), mostradas en [/languages](/languages) |
+| <SSOTCount field="registryDatasetCount" /> conjuntos de datos de evaluación registrados: solo tarjetas de metadatos, el contenido del corpus nunca se aloja | `arena/datasets/registry.json` (contados en tiempo de compilación); consulte [Conjuntos de datos de evaluación](/docs/network/leaderboard/datasets) |
+| <SSOTCount field="licensedSourceCount" /> fuentes ascendentes (upstream) con licencia para el índice de idiomas | `shared/licenses.json` (contadas en tiempo de compilación) |
+| Más de 160 lenguajes de señas catalogados: marcados como "aún no atendidos, nunca 'no es un idioma'" | [¿Qué cuenta como un idioma aquí?](/docs/network/context/what-counts-as-a-language) |
+| Las métricas estándar se basan en sacreBLEU (chrF++, BLEU, TER) y COMET/AfriCOMET, además de verificaciones estructurales FST; las métricas neuronales se reportan en un carril separado | [Especificación de puntuación](/docs/network/specifications/scoring) |
+| Pago publicado a hablantes: $50–65 CAD/hora, incondicional, pago dentro de dos semanas | [Cómo se les paga a los hablantes](/docs/network/perspectives/how-speakers-get-paid) |
+| Licencias de código: CLI PolyForm Noncommercial 1.0.0 (código disponible, gratuito para uso no comercial), entorno de evaluación AGPL-3.0 (código abierto) | repositorios del proyecto |
+| Fundado y autofinanciado por Curtis Forbes; aún sin subvenciones ni patrocinadores | [Cómo se financia el trabajo](/docs/network/sovereignty/economic-model) |
+
+Texto estándar (Boilerplate):
+
+> Champollion es un proyecto de investigación no comercial que construye una evaluación confiable de traducción automática para cada idioma: de código disponible y gratuito para uso no comercial, con un entorno de evaluación de código abierto y registros compartidos. Mantiene un índice citado de <SSOTCount field="catalogLanguageCount" /> idiomas, un registro de <SSOTCount field="registryDatasetCount" /> conjuntos de datos de evaluación (el contenido del corpus nunca se aloja), y un entorno de pruebas y una tabla de clasificación abiertos donde cualquier método de traducción —automático o humano— se califica bajo las mismas reglas publicadas. Construido con las comunidades lingüísticas, nunca extraído de ellas: las comunidades son dueñas de sus datos, sus conjuntos de prueba y cualquier método que se les transfiera. Champollion fue fundado por Curtis Forbes y se encuentra en champollion.dev.
+
+**Contacto:** Curtis Forbes, fundador — [info@champollion.dev](mailto:info@champollion.dev) — [github.com/gamedaysuits/Champollion](https://github.com/gamedaysuits/Champollion). Respondemos a las preguntas críticas de la misma manera que respondemos a las amistosas; si está verificando una afirmación en este sitio, [Limitaciones honestas](/docs/network/honest-limitations) es el punto de partida correcto: existe para que nadie tenga que creer ciegamente en nuestra palabra.
+
+## Consulte también
+
+- [Cómo funciona la Red](/docs/network/how-it-works) — todo el sistema en una página
+- [Administración de datos](/docs/network/sovereignty/data-sovereignty) — la posición de soberanía (principios indígenas de soberanía de datos, CARE)
+- [Propiedad y términos](/docs/network/sovereignty/ownership-transfer) — qué significa contractualmente "propiedad de la comunidad"
+- [Sobre el nombre](/docs/the-name) — por qué "Champollion"

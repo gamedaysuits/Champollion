@@ -1,0 +1,246 @@
+{
+  "_doc": "What still stands between the built atlas and a cutover that sticks. Measured, not estimated: each entry names the consumers that break, what they need, and why the field is not simply rebuilt. This exists because the last cutover attempt was reverted after 211 test failures that nobody had enumerated in advance, and 'migrate the consumers' is not a plan.",
+  "version": 1,
+  "atlasState": {
+    "sources": 176,
+    "values": 294038,
+    "cards": 8686,
+    "registerDone": 62,
+    "registerPending": 1,
+    "note": "The generator is complete and every source meets its ingestion contract. Nothing below is a data problem."
+  },
+  "blockers": {
+    "metricModelSupport": {
+      "severity": "functional",
+      "whatBreaks": "arena/mt_eval_harness/language_cards.py::get_metric_model_for and resolve_scoring_profile, used by metrics_comet.py and scoring.py to select a specialised COMET model per language.",
+      "liveData": "109 cards: xlmr {tier:'high'} on 76, africomet {supported:true, model:'masakhane/africomet-...'} on 34.",
+      "whyNotRebuilt": "No pinned source carries per-language metric-model coverage. The live values came from two hardcoded ISO lists inside enrich-metric-model-support.mjs, and its AfriCOMET entry cited 'wan-2022' where the paper is Wang et al. 2024 -- wrong on 109 cards.",
+      "theFix": "A curated register at shared/catalogue/metric-coverage.json with the same discipline as method-coverage.json: per metric model, the supported-language list transcribed cite-only from the model's own published list, with source_url, asOf and a verification level. That both restores the capability and corrects the citation.",
+      "whyItMatters": "AfriCOMET genuinely evaluates African languages better than default COMET. Dropping the field silently degrades every eval for those languages, which is worse than the wrong citation it currently carries.",
+      "doNotDo": "Do not migrate the lists out of the live cards. They belong to the papers, not to our corpus, and copying them forward would launder an uncited list into a cited-looking one -- the exact defect this rebuild removed.",
+      "status": "RESOLVED 2026-08-05",
+      "resolution": "shared/catalogue/metric-coverage.json now carries AfriCOMET's 20 languages, transcribed cite-only from its own model card with the publisher's coverage caveat quoted, and the citation corrected to arXiv:2311.09828. metricModelSupport is DONE and projects onto 20 cards as the model identifier a harness loads. XLM-R remains UNRESOLVED and fails safe: is_xlmr_high_resource returns False for every language, so every score carries the low-resource caveat -- over-warning rather than under-warning, which is the only safe direction for a reliability flag."
+    },
+    "cardInheritance": {
+      "severity": "structural",
+      "whatBreaks": "arena/mt_eval_harness/language_cards.py::_resolve_card_with_inheritance and _deep_merge; 5 references to `extends`.",
+      "whyNotRebuilt": "`extends` is a card-TEMPLATE pointer, not a fact about a language. Projection is wholesale now, so every card carries its own values and there is nothing to inherit.",
+      "theFix": "Delete the inheritance path. Verify first that no card in the projected corpus relies on it -- the projector never emits `extends`, so this should be a deletion rather than a migration.",
+      "verified": "Confirmed before writing this: the projector emits no `extends`, and 0 of 8,686 projected cards carry one. This is a deletion, not a migration.",
+      "liveData": "extends on 5,299 cards, members on 56 hub cards.",
+      "note": "Larger than it looked. 5,299 cards inherit from a genus/family/macrolanguage hub, so deleting inheritance is only a deletion once whatever those hubs supplied is either projected onto each card or moved to config with the rest of the prompt configuration."
+    },
+    "evalPackMetricsStandard": {
+      "severity": "low",
+      "whatBreaks": "language_cards.py::get_eval_pack, get_eval_metrics, get_eval_standard -- one reference each.",
+      "whyNotRebuilt": "These were pip manifests naming which plugin to install, not facts about a language, and no runtime consumer read them from a card.",
+      "theFix": "Confirm the no-consumer finding against the current tree, then delete the three accessors with it."
+    },
+    "codeAliases": {
+      "severity": "resolved",
+      "status": "RESOLVED 2026-08-05",
+      "resolution": "I had merged `aliases` (CODES: sq, ar) into `alternateName` (NAMES: 'Northern Tosk Albanian'). They are different things and the mistake broke every two-letter lookup. 84 entries derive from SIL's ISO 639-1 column and are now the codeAlias parameter on 184 cards; the 14 ambiguous macrolanguage routings live in shared/catalogue/code-routing.json as editorial decisions awaiting review. registers.js reads codeAliases and applies the routing table. 58 -> 50."
+    },
+    "translationPromptConfig": {
+      "severity": "architectural",
+      "status": "DONE — config extracted and composed at read time",
+      "founderQuestion": "'1, but we need to audit this, is all this stuff really necessary?'",
+      "audit": {
+        "whatWasMeasured": "For each field: which runtime files consume it, how many distinct values it holds, and what fraction of the data any code actually reads.",
+        "allFiveAreConsumed": "rules (icu.js), registers (6 files), formality (10 files), gender (3 files), scriptConverter (4 files). None is dead.",
+        "butMostOfTheDATAIsNot": "2.80 MB across 13,892 card-field instances reduces to 131 KB of distinct values — 4.6% of the bytes. The other 95.4% is the same object copied onto thousands of cards.",
+        "findings": {
+          "rules": {
+            "cards": 7927,
+            "distinct": 66,
+            "finding": "97.7% of these cards carry NOTHING any code reads. icu.js consumes only rules.plurals.categories, which is present on 182 cards in 10 distinct sets. The other 7,745 carry typography and capitalisation booleans no runtime touches.",
+            "andTheConsumedPartIsNotConfig": "The 10 category sets ARE CLDR's plural categories — ['zero','one','two','few','many','other'] is Arabic's, verbatim. That is published Unicode data, not something we authored. It should be an atlas parameter from CLDR, sourced like anything else.",
+            "verdict": "Do not move. Fetch CLDR plural rules and project pluralCategories; delete the rest."
+          },
+          "gender": {
+            "cards": 2404,
+            "distinct": 150,
+            "finding": "95.5% carry a SOURCE citation — grambank-2023 and wals-44A (Siewierska 2013). This is not prompt configuration at all; it is Grambank and WALS typology copied into a config-shaped field.",
+            "andTheAtlasAlreadyHasIt": "hasSexBasedGender (GB051), genderCount (WALS 30A) and hasGenderInPronouns (GB030) are already projected, properly sourced.",
+            "verdict": "Do not move. Delete, and point the consumers at the atlas parameters."
+          },
+          "registers": {
+            "cards": 1775,
+            "distinct": 113,
+            "verdict": "MOVE. Genuine authored config — 113 presets, not 1,775."
+          },
+          "formality": {
+            "cards": 1781,
+            "distinct": 119,
+            "verdict": "MOVE. Genuine authored config — 119 presets, not 1,781."
+          },
+          "scriptConverter": {
+            "cards": 5,
+            "distinct": 5,
+            "verdict": "MOVE. Already known to be runtime config."
+          }
+        },
+        "conclusion": "Of roughly 14,000 values, about 237 distinct objects are genuine translation configuration (113 registers + 119 formality + 5 scriptConverter). The rest is duplication, data no code reads, or sourced typology the atlas already carries under proper parameters. Roughly 2% of it needs a new home.",
+        "deeperAudit": {
+          "founderQuestion": "'audit the formality and register presets for whether they are legit, whether they have ballooned, whether register and formality need to be separated'",
+          "haveTheyBallooned": "Yes, by roughly two orders of magnitude.",
+          "formality": {
+            "cards": 1781,
+            "templateGenerated": 1669,
+            "pct": "93.7%",
+            "sources": {
+              "grambank-GB415 (Skirgard et al. 2023)": 1514,
+              "wals-45A (Helmbrecht 2013)": 155,
+              "unsourced": 112
+            },
+            "finding": "This is not configuration. It is Grambank GB415 (politeness distinction in 2nd-person pronouns) and WALS 45A, rendered as prose, on 1,669 cards that say so in their own `templateGenerated` flag. Ten distinct 'systems' exist and 1,475 of the 1,781 are the single value 'none'.",
+            "verdict": "The FACT belongs in the atlas as a politenessDistinction parameter, attributed across Grambank and WALS. The prose does not need to exist per language at all."
+          },
+          "registers": {
+            "cards": 1775,
+            "derivedFromFormality": 1669,
+            "pct": "94.0%",
+            "distinctKeySets": 34,
+            "distinctPromptTexts": 110,
+            "distribution": {
+              "standard (1 prompt shared)": 1462,
+              "formal+informal (3 prompts)": 205,
+              "professional (71 distinct prompts)": 71,
+              "bespoke key-sets used by one language": 28
+            },
+            "finding": "1,775 register blocks carry 110 distinct prompt texts. 1,462 languages share ONE prompt. The genuinely per-language content is the 71 'professional' prompts and 28 bespoke key-sets -- things like Czech formal-vy/informal-ty, Bulgarian formal-vie/informal-ti, Arabic msa-formal, Bengali formal-shuddho, German casual-du/formal-Sie."
+          },
+          "doTheyNeedToBeSeparated": {
+            "answer": "No.",
+            "why": "registers is 94% derived from formality, which is 94% derived from ONE Grambank parameter. The chain is GB415 -> formality prose -> register prompt: one fact rendered three times, with only the last rendering carrying anything a translator uses.",
+            "shape": "An atlas parameter for the fact; a small set of prompt templates keyed by system type; and the ~110 genuinely authored prompts as exceptions."
+          },
+          "revisedTotal": {
+            "wasEstimated": "237 distinct config objects",
+            "actuallyNeeded": "about 115 prompt texts plus 5 script converters — call it 120 objects",
+            "from": "roughly 14,000 card-field values",
+            "plus": "one new atlas parameter (politenessDistinction, Grambank GB415 + WALS 45A) and one fetched parameter (pluralCategories, CLDR)"
+          }
+        }
+      },
+      "theFix": [
+        "Add cldr-core to the pinned dependencies; fetch plural rules; project pluralCategories. APPROVED by founder.",
+        "Project politenessDistinction from Grambank GB415 + WALS 45A as an attributed atlas parameter — this is the fact behind both formality and registers.",
+        "Move ~110 distinct register prompts + 5 scriptConverters to shared/catalogue/ as translation config, keyed by system type with per-language exceptions.",
+        "Delete formality prose entirely (93.7% is generated from the parameter above).",
+        "Delete gender (95.5% cites Grambank/WALS the atlas already projects) and the 7,745 unread rules blocks.",
+        "Repoint consumers, regenerate cards-fallback.json, then cutover."
+      ],
+      "notBlockingTheAtlas": "The atlas is complete and correct without any of this. It blocks the CUTOVER.",
+      "extracted": {
+        "shared/catalogue/register-presets.json": "110 presets (4 shared covering 1,669 languages, 106 bespoke), 109 KB. Carries the prompts, the default register, and OUR name for the politeness system. Was 773 KB across 1,775 cards.",
+        "shared/catalogue/gender-guidance.json": "103 authored guidance texts, all distinct, 18 KB. Was 357 KB across 2,404 cards — of which 2,301 carried ONLY Grambank/WALS typology the atlas already projects.",
+        "shared/catalogue/code-routing.json": "8 editorial macrolanguage routings, awaiting review."
+      },
+      "foldedAway": {
+        "formality.default": "Gone. Matched the preset's own isDefault flag on all 1,669 cards carrying both, with ZERO mismatches. A second field for a value already present.",
+        "formality.description": "Gone. 93.7% generated from Grambank GB415 / WALS 45A, which is now the politenessDistinction parameter.",
+        "gender typology": "Gone. hasSexBasedGender (GB051), hasGenderInPronouns (GB030) and genderCount (WALS 30A) already carry it, cited.",
+        "rules typography": "To delete. 7,745 cards carrying values no runtime reads.",
+        "rules.plurals": "Now pluralCategories, sourced from CLDR — verified 100% identical to the live values on all 153 overlapping languages, plus 65 CLDR covers that the corpus did not."
+      },
+      "nowInTheAtlasAsFacts": [
+        "politenessDistinction (Grambank GB415 + WALS 45A, attributed, 1,778 cards)",
+        "pluralCategories (CLDR cardinal rules, 218 cards)",
+        "codeAlias (SIL ISO 639-1, 184 cards)"
+      ],
+      "tally": "~14,000 card-field values reduced to 3 config files totalling 127 KB and 3 new atlas parameters. The rest was duplication, unread data, or facts the atlas already carried better.",
+      "howConsumersSeeIt": "getLanguageCard() composes a runtime VIEW: facts from the card, prompts from shared/catalogue/. Consumers still see card.registers and card.formality and never learn that two files exist. Storage keeps fact and config apart; the view puts them back together."
+    }
+  },
+  "notBlocking": {
+    "supportTier": "Dropped. An editorial grade on 8,623 cards with NO _fieldSources entry at all. 0 references in arena.",
+    "nativeName": "Merged into `endonym` as an attributed field across LinguaMeta and Wikidata. The one arena occurrence is a docstring in card_reader.py describing the old corpus, not a functional dependency -- checked, because a grep count is not a dependency count.",
+    "cardsFallback": "The bundled cards-fallback.json is a build artefact and regenerates from the projected corpus."
+  },
+  "sequence": [
+    "1. DONE - metric-coverage register, cite-only from AfriCOMET's model card.",
+    "2. DONE - codeAlias parameter + code-routing.json; registers.js rewired.",
+    "3. DECIDED (founder, 2026-08-07→09, recorded 2026-08-10) — translation-prompt and typography config lives ON the cards under a non-fact namespace. The founder's words: \"I guess we have a 'Champollion config' section on the cards?\", approving the split proposed the same day: what is a FACT about a script (spaces, case) is a cited parameter like any other; what is OUR choice (prompt wording, formatting, the x-* product locales) is product config, marked as such, never cited, never claimed as knowledge. The existing underscore convention (_card, _fieldSources, _atlas) already means \"not a claim\", so config rides as _config. Facts are fetched; configuration is declared and labelled.",
+    "4. Then: delete the inheritance path, migrate the remaining cli/lib readers, regenerate cards-fallback.json.",
+    "5. cutover-cards.mjs --apply, then all four suites."
+  ],
+  "measuredAgainstProjectedCorpus": {
+    "howMeasured": "CHAMPOLLION_CARDS_DIR pointed at build/atlas/cards-language, full cli suite run. Both runtimes honour that variable, so the real damage is measurable without touching the live corpus.",
+    "failures": {
+      "previouslyReported": 211,
+      "initialMeasurement": 58,
+      "afterCodeAliases": 50,
+      "afterPromptConfigComposition": 31,
+      "afterPluralAndDirection": 29,
+      "note": "Measured each time rather than estimated. The live corpus stays at 0 throughout — a migration that breaks what works is not progress."
+    },
+    "note": "58, not 211. The larger figure predated the reader and the alias fix and was never enumerated."
+  },
+  "remainingFailures": {
+    "count": 29,
+    "clusters": {
+      "hubCardsAndInheritance": "macrolanguage-ara and genus hubs, `extends`, `members`, supportTier inheritance. The projected corpus has no hub cards — every card carries its own values.",
+      "conlangs": "x-pirate and novelty languages, deliberately excluded from the spine.",
+      "localeSetGates": "NON_LATIN_LOCALES, CJK/Cyrillic/RTL locale sets and validateTranslations, which enumerate locales from card fields.",
+      "deeplFormality": "has deepl.formality=true for French/Japanese — reads the composed formality to set a provider flag.",
+      "legacyFieldNames": "'fr card includes enrichment fields' and similar, asserting field names the atlas retired."
+    }
+  },
+  "correctionsToMyOwnAudit": {
+    "_doc": "Errors I made auditing this, found by running the thing rather than reasoning about it. Recorded because an audit whose mistakes are not written down is just a second opinion.",
+    "shallowMeasurement": {
+      "whatIClaimed": "All 5,299 cards carrying `extends` inherit NOTHING — 100%. Called the inheritance path vestigial and deleted it.",
+      "whatWasTrue": "All 5,299 inherit SOMETHING — 100%, the exact inverse. I compared TOP-LEVEL keys; _deepMerge merges nested ones. rules.variables.syntax and gender.grammatical are inherited and my check could not see them.",
+      "howItWasCaught": "The live suite went from 0 failures to 1 — a test asserting crk resolves its extends chain. Reverted immediately.",
+      "consequence": "Two earlier numbers in this audit were counted DIRECTLY and are wrong as runtime figures: gender.inclusiveGuidance reaches 3,469 cards, not 103; rules.plurals.categories reaches 2,395, not 182. `registers` is not inherited, so 1,775 stands."
+    },
+    "whatTheInheritanceIsActuallyDoing": {
+      "finding": "The hub cards apply FAMILY-LEVEL TEMPLATES to thousands of members. family-atlantic-congo supplies plurals ['one','other'] to every Atlantic-Congo language; family-turkic, family-uralic, family-dravidian and genus-bantu do the same.",
+      "whyItMatters": "CLDR speaks for 222 base locales. The other ~2,200 plural category sets came from a family hub, not from CLDR — a guess propagated to thousands of languages and stored as though it were a fact.",
+      "theCounterexample": "Checked against CLDR where CLDR speaks. Swahili, Zulu, Xhosa, Hausa, Shona and Chichewa are ['one','other'] and agree with the family default. YORUBA AND IGBO ARE ['other'] — the family default would have been WRONG for both, and they are among the largest languages in that family.",
+      "verdict": {
+        "pluralCategories": "The CLDR-sourced 218 are right and the inherited ~2,200 were manufactured. A language CLDR does not cover has no plural categories on its card — absent, not guessed from its relatives.",
+        "genderGuidance": "DIFFERENT judgement. 'Bantu languages use noun class systems' is explicitly a statement ABOUT THE FAMILY, it is prompt guidance rather than a fact, and it is true. It should be keyed by family and applied to members, not copied onto each card — but it is not manufacturing.",
+        "inheritanceItself": "Cannot simply be deleted. It carries real config (family-level guidance) alongside manufactured facts (family-level plurals). The fix is to move the config to shared/catalogue/ keyed by FAMILY, and let the manufactured facts go."
+      }
+    },
+    "inheritedPluralsAreWrongOneTimeInFour": {
+      "measurement": "Took every card that INHERITS plural categories from a hub and where CLDR can adjudicate: 35 cases. 26 agree with CLDR. 9 do not — 25.7% wrong.",
+      "examples": [
+        "hrv (Croatian) inherits [one,few,many,other] from genus-slavic; CLDR says [few,one,other]. Croatian has no 'many'.",
+        "slv (Slovenian) inherits the Slavic default; CLDR says it has 'two' — Slovenian has a DUAL, and the default omits it.",
+        "gla (Scottish Gaelic) inherits [one,two,few,many,other] from genus-celtic; CLDR says [few,one,other,two].",
+        "wol (Wolof) and sag (Sango) inherit [one,other] from family-atlantic-congo; CLDR says [other] for both.",
+        "kal (Kalaallisut) inherits [one,two,other] from family-eskimo-aleut; CLDR says [one,other]."
+      ],
+      "whyItMatters": "Plural categories determine how many plural forms a message must supply. A wrong set does not produce an awkward translation, it produces a grammatically impossible one — a missing dual in Slovenian or a phantom 'many' in Croatian is a broken string, not a stylistic choice.",
+      "scope": "Only 35 of roughly 2,200 inherited cases can be checked at all, because CLDR covers 222 locales. The other ~2,165 are unverifiable guesses, and there is no reason to expect them to be better than the checkable ones.",
+      "verdict": "Inherited plural categories are dropped. A language CLDR does not cover has NO plural categories on its card. 218 sourced values replace roughly 2,200 guesses, one in four of which was demonstrably wrong."
+    },
+    "familyGuidanceNowResolvedNotCopied": {
+      "before": "Hub inheritance copied family guidance onto 3,469 cards, making a family generalisation look like a per-language claim.",
+      "after": "11 family texts and 103 per-language overrides, resolved at read time through classification.family. Reaches 3,317 via family plus 99 with their own — 3,416 of 8,686.",
+      "theGap": "53 short of the old reach. Two causes, both visible rather than silent: 23 genus-level hubs are recorded but not applied (a genus sits below a family and needs a subgroup match against the ancestry chain), and a few families are named differently by Glottolog than the hub assumed.",
+      "attributedFamilies": "The family is ATTRIBUTED across Glottolog and WALS, which disagree on 905 cards (Atlantic-Congo vs Niger-Congo). Both names are tried, so guidance written against one taxonomy does not vanish because the other sorts first."
+    }
+  },
+  "_gate3RecordedBy": "fetcher-system agent, transcribing the founder's in-session decision — not deciding",
+  "measuredAgainstProjectedCorpus_2026_08_10": {
+    "baseline": "31 failures (was 29; +2 from this session's atlas changes), measured with CHAMPOLLION_CARDS_DIR=build/atlas/cards-language against 46e590abd's build (contentHash 9cdbc2317e5086ac…, 19,089 cards).",
+    "theFactsExistUnderHonESTNames": "Most identity failures are NAME/SHAPE adaptation, not missing data. The store already holds: endonym (2,758 — crk has ᓀᐦᐃᔭᐍᐏᐣ from wikidata), textDirection (162), codeAlias (440), script/scriptName (6,944), bcp47Tag (7,927). The runtime reads legacy names; per plan v15 Part 5 the READER is the adapter, the atlas keeps honest names.",
+    "fieldMap": {
+      "nativeName": "endonym — ATTRIBUTED (multi-source); use display()/attributions()",
+      "script": "scripts[] — runtime wants the primary; choosing which is primary is a derivation the reader makes explicit, not a projector flattening",
+      "dir": "textDirection — only 162 asserted; absent must stay absent, never default ltr",
+      "aliases": "codeAliases",
+      "name": "name envelope — display() passes flat values through, call it on everything"
+    },
+    "configTaxonomy_measured": {
+      "authoredKernel": "scriptConverter ×5 · canonicalForMt as a CHOICE only where a curation record exists (crk, via curated-orthography-conventions.json) · register-presets.json (110, already a shared file) · gender-guidance.json (already a shared file)",
+      "derivedFromFactsNotConfig": "rules.typography on ALL 7,927 = templated from script facts; orthographies bulk incl. canonicalForMt on 6,408 = mass-derived. These should be DERIVED at read time from scripts/textDirection (auditable), not relocated as if authored — relocating 3.7 MB of template output as 'decisions' would launder derivation as authorship.",
+      "needsOneClassificationPass": "formality where system!='none' (306) and registers (1,775): preset-applied vs hand-enriched, undetermined. Small enough to eyeball."
+    },
+    "xStarLocales": "the five x-* product locales survive as _config-only cards per plan v15 Part 6 ② — they are not on the spine and the projector does not yet emit config-only cards; that emission is part of the reader/config step, gate 3 now being decided."
+  }
+}

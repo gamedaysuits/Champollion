@@ -1,0 +1,115 @@
+{
+  "id": "eval-loresmt2021-test-v1",
+  "type": "multiway",
+  "name": "LoResMT 2021 — shared task (test)",
+  "version": "1.0",
+  "languages": [
+    "eng",
+    "gle",
+    "mar"
+  ],
+  "description": "LoResMT 2021 Shared Task test sets — English ↔ Irish and English ↔ Marathi, COVID-domain public-health content (per-direction test files; ga→en is 250 sentences, the rest 500). Fetched on demand from the shared-task repo at a pinned commit; Champollion never hosts the content. Domain 'humanitarian' (COVID public-health, TICO-19 precedent). Contamination HIGH — public since 2021 — so scores are relative-comparison-only. License CC BY-NC-SA 4.0 → non-commercial lanes only; cleared by the license review of 2026-08-24 into the NC research lane: benchmarkable; never in a commercial, prize, or API lane; remote evaluation only over no-train channels.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "humanitarian",
+    "explicitPairs": [
+      {
+        "source": "eng",
+        "target": "gle",
+        "srcCode": "en",
+        "tgtCode": "ga",
+        "size": 500,
+        "sha256": "52cdeaec314f7688fefaf69f8311540a156ff8fe47fe3083526ff66382fbfb14"
+      },
+      {
+        "source": "gle",
+        "target": "eng",
+        "srcCode": "ga",
+        "tgtCode": "en",
+        "size": 249,
+        "sha256": "39550e8a7e5b6eff961fd3b0a2e2c9c2f0cd94cd8f99f26209c9ab00696fddc3",
+        "filePattern": "data/{tgt_code}_{src_code}/test.{src_code}2{tgt_code}.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "mar",
+        "srcCode": "en",
+        "tgtCode": "mr",
+        "size": 500,
+        "sha256": "d18e598f802eeb98e04e741910fdbb2b08fa06fbcd09eefa6658a0b26b1df6a8"
+      },
+      {
+        "source": "mar",
+        "target": "eng",
+        "srcCode": "mr",
+        "tgtCode": "en",
+        "size": 500,
+        "sha256": "48cc227178c5e61b74c1cb8cbe6442360fd911c585e61581c66469bc0edef008",
+        "filePattern": "data/{tgt_code}_{src_code}/test.{src_code}2{tgt_code}.{lang_code}"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "LoResMT 2021 test",
+      "size": 1749,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out shared-task test set (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/loresmt/loresmt-2021",
+    "instructions": "data/{pair}/test.{direction}.{code} files fetched from the pinned commit (immutable), line-parallel two-file pairing; the pair directory is fixed while the file prefix encodes the direction.",
+    "sha256": null,
+    "revision": "c22949f578d6f628ef667690d34395a10cf80a37",
+    "filePattern": "data/{src_code}_{tgt_code}/test.{src_code}2{tgt_code}.{lang_code}",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "LoResMT Workshop (shared-task organizers)",
+    "url": "https://github.com/loresmt/loresmt-2021",
+    "paper": null,
+    "citation": "LoResMT 2021 Shared Task on COVID and Sign Language for low-resource languages (Ojha et al., 2021), 4th Workshop on Technologies for MT of Low Resource Languages (MT Summit 2021).",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-NC-SA-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out shared-task test set; not licensed for training. doNotTrain protects benchmark integrity.",
+    "notes": "LICENSE file present at the pinned commit (CC BY-NC-SA 4.0). NC → non-commercial lanes only. Champollion never hosts the content."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out shared-task benchmark: training on it defeats its purpose. CC BY-NC-SA 4.0 → kept out of every commercial / prize / API lane. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "LoResMT 2021 test sets — public since 2021. Scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "cleared",
+    "lane": "nc-research",
+    "basis": "CC BY-NC-SA 4.0, stated and verified at the pinned revision. Plain standard SPDX non-commercial license: benchmarkable; excluded from every commercial, prize, and API lane; remote evaluation only over channels that do not train on inputs (transmission_policy no-train lane)."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/loresmt/loresmt-2021 at commit c22949f578d6; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/loresmt2021.json.",
+    "pinnedPairs": 4,
+    "excluded": {
+      "sign_language": "LoResMT 2021 also ran a sign-language subtask (data/sign_language/) — out of scope: text-only directive (founder, 2026-07-07)."
+    }
+  }
+}

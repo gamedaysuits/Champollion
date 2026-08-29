@@ -1,0 +1,67 @@
+{
+  "id": "eval-eng-crk-edtekla-dev-v1",
+  "type": "eval",
+  "name": "EDTeKLA Development Corpus v1",
+  "version": "1.0.0",
+  "aliases": [
+    "edtekla-dev",
+    "crk-dev"
+  ],
+  "pair": {
+    "source": "eng",
+    "target": "crk",
+    "direction": "unidirectional"
+  },
+  "description": "Full EDTeKLA textbook dev corpus: 436 entries across difficulty tiers 1-5 (from 486 total: 436 dev + 50 held-out test).",
+  "quarantine": true,
+  "quarantineReason": "EdTeKLA's corpora carry a modified, sovereignty-scoped CC BY-NC-SA (LicenseRef-EdTeKLA-Modified-CC-BY-NC-SA-4.0; non-commercial; corpus content not hosted or redistributed by Champollion). Per the crk-incident dataset doctrine, EdTeKLA-derived crk assets are carved out of every prize/API/commercial lane and must never rank. Quarantined as defense-in-depth so no run can be published or ranked against it.",
+  "source": {
+    "publisher": "EDTeKLA Project, University of Alberta",
+    "url": "https://github.com/EdTeKLA/IndigenousLanguages_Corpora",
+    "paper": null,
+    "citation": null,
+    "fundedBy": null,
+    "repo_url": "https://github.com/EdTeKLA/IndigenousLanguages_Corpora",
+    "ref": "f85a31abc52e1610251e21e6bdd1b5ce9c96c10b",
+    "ref_note": "Pinned to the upstream master HEAD verified on 2026-06-11; a rebuild at this commit reproduces the published dev corpus byte-for-byte.",
+    "builder": "edtekla",
+    "sha256": "a46394d036c632b681cf441fba257d8d871639f1d19666235172b1069fbec745",
+    "license": "LicenseRef-EdTeKLA-Modified-CC-BY-NC-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "license": {
+    "spdx": "LicenseRef-EdTeKLA-Modified-CC-BY-NC-SA-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "non-commercial only",
+    "notes": "Not plain CC BY-NC-SA: EdTeKLA's repo README modifies the license to maintain the sovereignty and control of the content creators — materials designated for community/academic/educational uses, sharing scoped to educational purposes in classrooms and communities, the original speaker retains rights, and per-corpus restrictions may apply (verified 2026-07-19, github.com/EdTeKLA/IndigenousLanguages_Corpora README). License chain: the root work 'Cree: Language of the Plains' (Okimāsis, U of R Press open textbook) is CC BY-NC-ND 4.0. Champollion rebuilds locally from upstream at a pinned ref and never hosts or redistributes the content; transmission to model APIs only over no-train channels (docs/DATA_BOUNDARIES.md §Transmission to model APIs)."
+  },
+  "dev": {
+    "size": 436,
+    "sizeUnit": "entries",
+    "domain": "edu",
+    "domainDistribution": {},
+    "dataFile": "curated/eng-crk-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": "L1 Plains Cree speakers, certified educators",
+    "reviewProcess": "multi-pass expert review",
+    "orthography": "SRO (Standard Roman Orthography)"
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "The source data is public on GitHub (EdTeKLA/IndigenousLanguages_Corpora), so it may appear in web-crawl-derived LLM training data. No direct evidence of inclusion in a specific model's training set. The earlier 'NONE / private corpus' rating was incorrect and was corrected on 2026-06-11."
+  },
+  "heldOutBenchmark": true,
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "lastUpdated": "2026-06-11",
+    "populatedFrom": "Migrated from arena/datasets/registry.json entry 'edtekla-dev-v1'. Quality metadata from EDTeKLA project documentation. Fetch-from-source block added 2026-06-11: repo_url/ref from github.com/EdTeKLA/IndigenousLanguages_Corpora (git ls-remote), sha256 computed from arena/datasets/curated/eng-crk-dev-v1.json and verified byte-identical against a deterministic rebuild via corpora_builder.adapters.edtekla_adapter."
+  }
+}

@@ -1,0 +1,137 @@
+---
+slug: /what-is-champollion
+title: What Champollion Is
+description: "Champollion in plain language: what it does, who it is for, and how the pieces fit. Start here."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# What Champollion Is
+
+**Champollion measures machine translation for languages nobody else measures,
+and publishes what it finds.**
+
+That is the whole idea. Everything on this site is either a tool that does that
+measuring, the map those measurements build, or the rules we do it under.
+
+---
+
+## The problem
+
+There are roughly 7,000 living languages. For most of them, you cannot answer a
+basic question: *if I need this translated, what is the best available way, and
+is it good enough to use?*
+
+Not "which company has a demo." Which method — human translator, rule-based
+system, prompted language model, trained model — actually works for **this
+pair, on this kind of text**, and how do you know.
+
+For English↔French that question has been answered a thousand times. For
+English↔Plains Cree, or Ayta Abellen, or thousands of others, it has often
+never been asked at all. Coverage gets announced; quality rarely gets shown.
+
+Nobody is measuring, so nobody can tell a real improvement from a press
+release — and communities who want to use this technology have no way to check
+whether it is safe to trust with their language.
+
+## What we do about it
+
+We are not building a translation engine. Big technology companies build
+engines. We build the thing that tells you whether an engine works:
+
+1. **Run a method against a test set** and score it, with the same procedure
+   for every method and every language.
+2. **Publish the result** with its provenance — what data, what method version,
+   what metric, what it cost.
+3. **Repeat until the map has shape**: which languages connect to which, how
+   strongly, and where the empty space is.
+
+An honest "no method works for this pair yet" is a result we publish. Most of
+the map is that answer right now, and saying so is the point — a gap you can
+see is a gap someone can fund or fill.
+
+## The rules we work under
+
+These are constraints, not marketing. They shape what the software can do.
+
+**We never hold your corpus.** Test sets are registered by pointing at where
+they already live, not by uploading them to us. A method gets scored against a
+corpus we never possess. For sealed sets, the data is encrypted on your machine
+before anything leaves it, and only a threshold of community key custodians
+together can authorize a run.
+
+**Language data is treated like biodata.** The people who provide a corpus hold
+the keys to it, and to anything measured against it. Consent is asked for, not
+assumed — and it can be withdrawn.
+
+**We are sovereignty-aspirant, not sovereignty-certified.** Whether a project
+honours community ownership and control of language data is not a claim that
+project gets to make about itself. We do the work and describe the mechanisms
+honestly; the determination belongs to the communities involved.
+
+**Every method is welcome, human and machine.** A professional translator, an
+FST-based rule system, a prompted frontier model and a fine-tuned NMT model are
+compared the same way, on the same test set. We care about getting languages
+translated, not about which tool wins.
+
+**We publish what we can't do.** See [Honest
+Limitations](/docs/network/honest-limitations) — the list of things this
+project does *not* yet claim. Read it before you trust anything else here.
+
+---
+
+## The pieces, and what each is for
+
+| If you want to… | Use | What it is |
+|---|---|---|
+| Translate an app or site | **[Champollion CLI](/docs/intro)** | One command translates your locale files; you choose the method per language pair. |
+| Score a method, or reproduce a score | **[MT-Eval Harness](/docs/network/specifications/harness)** | The Python evaluation engine. Every number on this site comes out of it. |
+| Submit a result, or run a contest | **[The Arena](/docs/network/getting-started/submit-a-method)** | The submission door, the database and the contest machinery — where measurement happens. |
+| See what is known about a pair | **[The Network](/docs/network/)** | The map the measurements build: coverage, connection strength, routing, the queue of what to measure next. |
+| Look up a language | **[The Atlas](/languages)** | <SSOTCount field="catalogLanguageCount" /> language cards — classification, phonology, vitality, and what resources exist. Every value cites its source. |
+| Train a model without fooling yourself | **[NMT Forge](/docs/network/getting-started/training-honestly)** | A training suite whose guardrails make the standard self-deception (leaked test data, unrepresentative splits) structurally hard. |
+| Work on this as an AI agent | **[Agent Guide](/docs/network/getting-started/agent-guide)** | Tools, the MCP server, and what the machine-readable endpoints contain. |
+
+**Champollion is an index, not an arbiter.** Every value cites its source and
+reports what that source actually says. Where sources disagree — and on speaker
+counts they very often do — the card shows all of them, attributed. We do not
+pick a winner or manufacture a consensus.
+
+---
+
+## The name
+
+Jean-François Champollion deciphered Egyptian hieroglyphs using the Rosetta
+Stone — the same text in three scripts. Parallel text is still how translation
+gets learned. The name also carries a tension worth naming out loud: a European
+scholar reading someone else's writing, in an era of extraction. We think about
+that. It is why the sovereignty rules above are constraints in the software and
+not a page in a brochure.
+
+## Where to go next
+
+- **You want to translate something** → [Quick
+  Start](/docs/getting-started/quick-start).
+- **You speak, teach or steward a language** → [For Language
+  Communities](/docs/network/community/for-language-communities), then
+  [Registering Corpora](/docs/network/sovereignty/registering-corpora) for how
+  a test set is used without being handed over.
+- **You are a researcher or method builder** → the eval-first argument in
+  [Who Benefits](/docs/network/who-benefits#researchers) — why a thousand
+  curated pairs beat seven hundred thousand uncurated ones — then
+  [Corpus Partnership](/docs/network/specifications/corpus-partnership) to
+  bring a language in, or [Submit a
+  Method](/docs/network/getting-started/submit-a-method) and the
+  [Scoring Spec](/docs/network/specifications/scoring) to compete on the
+  languages already here.
+- **You are an AI agent** → [Agent
+  Guide](/docs/network/getting-started/agent-guide); machine-readable entry
+  points are `/llms.txt` and `/llms-full.txt`.
+- **You fund this kind of work** → [Who
+  Benefits](/docs/network/who-benefits#funders) and [Honest
+  Limitations](/docs/network/honest-limitations).
+- **You want the background** → [How the field got
+  here](/docs/network/context/mt-field-briefing), [what counts as a
+  language](/docs/network/context/what-counts-as-a-language), and [how coverage
+  is counted](/docs/network/context/coverage-counting).
+

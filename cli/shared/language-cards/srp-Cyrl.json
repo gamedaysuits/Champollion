@@ -1,0 +1,1494 @@
+{
+  "code": "srp-Cyrl",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Serbian",
+    "values": [
+      {
+        "value": "Serbian",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Serbian",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "sr",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "sr-Cyrl-RS",
+    "values": [
+      {
+        "value": "sr-Cyrl-RS",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "sr-Cyrl-RS",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"sr\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "sr",
+    "values": [
+      {
+        "value": "sr",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code: the ISO 639-1 \"sr\" over the ISO 639-3 \"srp\""
+      }
+    ]
+  },
+  "cldrOfficialStatus": "Official",
+  "lexicalResources": {
+    "clicsContributingDatasets": 1,
+    "clicsTotalEntries": 295,
+    "clicsUniqueForms": 287,
+    "colexificationConcepts": 182,
+    "colexificationDensity": 0.634,
+    "colexifyingForms": 8,
+    "datasets": [
+      {
+        "dataset": "channumerals",
+        "forms": 80,
+        "concepts": 40,
+        "doculects": 2,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "datsemshift",
+        "forms": 863,
+        "concepts": 678,
+        "release": "datsemshift-v1.1rc"
+      },
+      {
+        "dataset": "diacl",
+        "forms": 295,
+        "concepts": 182,
+        "release": "diacl-v3.0"
+      }
+    ]
+  },
+  "codeAliases": [
+    "sr"
+  ],
+  "phonologicalInventory": {
+    "consonants": 24,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 34,
+    "vowels": 10
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "CCAligned",
+        "corpusId": "corpus:opus:CCAligned",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1992692
+          }
+        ],
+        "alignmentPairsTotal": 1992692,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 1992692
+      },
+      {
+        "corpus": "CCMatrix",
+        "corpusId": "corpus:opus:CCMatrix",
+        "pairCount": 43,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 26510872
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 14188817
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 12587589
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 12327844
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 11982598
+          }
+        ],
+        "alignmentPairsTotal": 230953163,
+        "pairsWithPublishedSize": 43,
+        "largestPairAlignments": 26510872
+      },
+      {
+        "corpus": "DocHPLT",
+        "corpusId": "corpus:opus:DocHPLT",
+        "pairCount": 28,
+        "topPartners": [
+          {
+            "code": "bg",
+            "alignmentPairs": null
+          },
+          {
+            "code": "bs",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ca",
+            "alignmentPairs": null
+          },
+          {
+            "code": "cs",
+            "alignmentPairs": null
+          },
+          {
+            "code": "da",
+            "alignmentPairs": null
+          }
+        ],
+        "alignmentPairsTotal": null,
+        "pairsWithPublishedSize": 0,
+        "largestPairAlignments": null
+      },
+      {
+        "corpus": "ELRC-3041-wikipedia_health",
+        "corpusId": "corpus:opus:ELRC-3041-wikipedia_health",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 744
+          }
+        ],
+        "alignmentPairsTotal": 744,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 744
+      },
+      {
+        "corpus": "ELRC-416-Swedish_Social_Secur",
+        "corpusId": "corpus:opus:ELRC-416-Swedish_Social_Secur",
+        "pairCount": 14,
+        "topPartners": [
+          {
+            "code": "es",
+            "alignmentPairs": 174
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 173
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 164
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 163
+          },
+          {
+            "code": "fi",
+            "alignmentPairs": 155
+          }
+        ],
+        "alignmentPairsTotal": 1667,
+        "pairsWithPublishedSize": 14,
+        "largestPairAlignments": 174
+      },
+      {
+        "corpus": "ELRC-wikipedia_health",
+        "corpusId": "corpus:opus:ELRC-wikipedia_health",
+        "pairCount": 51,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 12707
+          },
+          {
+            "code": "hu",
+            "alignmentPairs": 1533
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 1381
+          },
+          {
+            "code": "ms",
+            "alignmentPairs": 1002
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 383
+          }
+        ],
+        "alignmentPairsTotal": 21961,
+        "pairsWithPublishedSize": 51,
+        "largestPairAlignments": 12707
+      },
+      {
+        "corpus": "ELRC_2922",
+        "corpusId": "corpus:opus:ELRC_2922",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 743
+          }
+        ],
+        "alignmentPairsTotal": 743,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 743
+      },
+      {
+        "corpus": "EUbookshop",
+        "corpusId": "corpus:opus:EUbookshop",
+        "pairCount": 34,
+        "topPartners": [
+          {
+            "code": "sq",
+            "alignmentPairs": 2253
+          },
+          {
+            "code": "mk",
+            "alignmentPairs": 1949
+          },
+          {
+            "code": "el",
+            "alignmentPairs": 1946
+          },
+          {
+            "code": "tr",
+            "alignmentPairs": 1946
+          },
+          {
+            "code": "hr",
+            "alignmentPairs": 1923
+          }
+        ],
+        "alignmentPairsTotal": 39936,
+        "pairsWithPublishedSize": 34,
+        "largestPairAlignments": 2253
+      },
+      {
+        "corpus": "GNOME",
+        "corpusId": "corpus:opus:GNOME",
+        "pairCount": 253,
+        "topPartners": [
+          {
+            "code": "af",
+            "alignmentPairs": 103339
+          },
+          {
+            "code": "nso",
+            "alignmentPairs": 65886
+          },
+          {
+            "code": "ps",
+            "alignmentPairs": 61159
+          },
+          {
+            "code": "li",
+            "alignmentPairs": 56419
+          },
+          {
+            "code": "bs",
+            "alignmentPairs": 56093
+          }
+        ],
+        "alignmentPairsTotal": 1324874,
+        "pairsWithPublishedSize": 253,
+        "largestPairAlignments": 103339
+      },
+      {
+        "corpus": "GlobalVoices",
+        "corpusId": "corpus:opus:GlobalVoices",
+        "pairCount": 39,
+        "topPartners": [
+          {
+            "code": "es",
+            "alignmentPairs": 21031
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 20309
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 14969
+          },
+          {
+            "code": "mg",
+            "alignmentPairs": 10440
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 6829
+          }
+        ],
+        "alignmentPairsTotal": 134191,
+        "pairsWithPublishedSize": 39,
+        "largestPairAlignments": 21031
+      },
+      {
+        "corpus": "GoURMET",
+        "corpusId": "corpus:opus:GoURMET",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 329004
+          }
+        ],
+        "alignmentPairsTotal": 329004,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 329004
+      },
+      {
+        "corpus": "HPLT",
+        "corpusId": "corpus:opus:HPLT",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 8495542
+          }
+        ],
+        "alignmentPairsTotal": 8495542,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 8495542
+      },
+      {
+        "corpus": "KDE4",
+        "corpusId": "corpus:opus:KDE4",
+        "pairCount": 91,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 60827
+          },
+          {
+            "code": "pl",
+            "alignmentPairs": 57882
+          },
+          {
+            "code": "uk",
+            "alignmentPairs": 56518
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 56506
+          },
+          {
+            "code": "sv",
+            "alignmentPairs": 56505
+          }
+        ],
+        "alignmentPairsTotal": 2822258,
+        "pairsWithPublishedSize": 91,
+        "largestPairAlignments": 60827
+      },
+      {
+        "corpus": "KDEdoc",
+        "corpusId": "corpus:opus:KDEdoc",
+        "pairCount": 19,
+        "topPartners": [
+          {
+            "code": "da",
+            "alignmentPairs": 29
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 29
+          },
+          {
+            "code": "en_GB",
+            "alignmentPairs": 29
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 29
+          },
+          {
+            "code": "hu",
+            "alignmentPairs": 29
+          }
+        ],
+        "alignmentPairsTotal": 507,
+        "pairsWithPublishedSize": 19,
+        "largestPairAlignments": 29
+      },
+      {
+        "corpus": "MaCoCu",
+        "corpusId": "corpus:opus:MaCoCu",
+        "pairCount": 2,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1589660
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 479259
+          }
+        ],
+        "alignmentPairsTotal": 2068919,
+        "pairsWithPublishedSize": 2,
+        "largestPairAlignments": 1589660
+      },
+      {
+        "corpus": "Mozilla-I10n",
+        "corpusId": "corpus:opus:Mozilla-I10n",
+        "pairCount": 196,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 59513
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 33737
+          },
+          {
+            "code": "fy_nl",
+            "alignmentPairs": 33468
+          },
+          {
+            "code": "pt_br",
+            "alignmentPairs": 33449
+          },
+          {
+            "code": "cs",
+            "alignmentPairs": 33290
+          }
+        ],
+        "alignmentPairsTotal": 2623594,
+        "pairsWithPublishedSize": 196,
+        "largestPairAlignments": 59513
+      },
+      {
+        "corpus": "MultiCCAligned",
+        "corpusId": "corpus:opus:MultiCCAligned",
+        "pairCount": 110,
+        "topPartners": [
+          {
+            "code": "es",
+            "alignmentPairs": 967028
+          },
+          {
+            "code": "hr",
+            "alignmentPairs": 915923
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 910840
+          },
+          {
+            "code": "pl",
+            "alignmentPairs": 883801
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 881406
+          }
+        ],
+        "alignmentPairsTotal": 32168493,
+        "pairsWithPublishedSize": 110,
+        "largestPairAlignments": 967028
+      },
+      {
+        "corpus": "MultiHPLT",
+        "corpusId": "corpus:opus:MultiHPLT",
+        "pairCount": 28,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 8495542
+          },
+          {
+            "code": "el",
+            "alignmentPairs": 2875469
+          },
+          {
+            "code": "ro",
+            "alignmentPairs": 2836315
+          },
+          {
+            "code": "da",
+            "alignmentPairs": 2669346
+          },
+          {
+            "code": "bg",
+            "alignmentPairs": 2656396
+          }
+        ],
+        "alignmentPairsTotal": 50038278,
+        "pairsWithPublishedSize": 28,
+        "largestPairAlignments": 8495542
+      },
+      {
+        "corpus": "MultiMaCoCu",
+        "corpusId": "corpus:opus:MultiMaCoCu",
+        "pairCount": 34,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1589659
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 479259
+          },
+          {
+            "code": "sr_Latn",
+            "alignmentPairs": 265379
+          },
+          {
+            "code": "sr_Cyrl",
+            "alignmentPairs": 265379
+          },
+          {
+            "code": "sq",
+            "alignmentPairs": 71452
+          }
+        ],
+        "alignmentPairsTotal": 2856598,
+        "pairsWithPublishedSize": 34,
+        "largestPairAlignments": 1589659
+      },
+      {
+        "corpus": "NLLB",
+        "corpusId": "corpus:opus:NLLB",
+        "pairCount": 42,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 26510872
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 14188817
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 12587589
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 12327844
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 11982598
+          }
+        ],
+        "alignmentPairsTotal": 230123146,
+        "pairsWithPublishedSize": 42,
+        "largestPairAlignments": 26510872
+      },
+      {
+        "corpus": "NeuLab-TedTalks",
+        "corpusId": "corpus:opus:NeuLab-TedTalks",
+        "pairCount": 58,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 152477
+          },
+          {
+            "code": "he",
+            "alignmentPairs": 145156
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 144812
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 143560
+          },
+          {
+            "code": "ko",
+            "alignmentPairs": 142990
+          }
+        ],
+        "alignmentPairsTotal": 3888948,
+        "pairsWithPublishedSize": 58,
+        "largestPairAlignments": 152477
+      },
+      {
+        "corpus": "OpenSubtitles",
+        "corpusId": "corpus:opus:OpenSubtitles",
+        "pairCount": 88,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 56609882
+          },
+          {
+            "code": "pt_BR",
+            "alignmentPairs": 48283237
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 47131579
+          },
+          {
+            "code": "ro",
+            "alignmentPairs": 46000790
+          },
+          {
+            "code": "tr",
+            "alignmentPairs": 39449202
+          }
+        ],
+        "alignmentPairsTotal": 1009985910,
+        "pairsWithPublishedSize": 88,
+        "largestPairAlignments": 56609882
+      },
+      {
+        "corpus": "QED",
+        "corpusId": "corpus:opus:QED",
+        "pairCount": 211,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 284942
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 227113
+          },
+          {
+            "code": "ko",
+            "alignmentPairs": 211061
+          },
+          {
+            "code": "bg",
+            "alignmentPairs": 210394
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 206678
+          }
+        ],
+        "alignmentPairsTotal": 5793901,
+        "pairsWithPublishedSize": 211,
+        "largestPairAlignments": 284942
+      },
+      {
+        "corpus": "SETIMES",
+        "corpusId": "corpus:opus:SETIMES",
+        "pairCount": 9,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 225169
+          },
+          {
+            "code": "sq",
+            "alignmentPairs": 224595
+          },
+          {
+            "code": "el",
+            "alignmentPairs": 224311
+          },
+          {
+            "code": "bg",
+            "alignmentPairs": 211172
+          },
+          {
+            "code": "ro",
+            "alignmentPairs": 210612
+          }
+        ],
+        "alignmentPairsTotal": 1849081,
+        "pairsWithPublishedSize": 9,
+        "largestPairAlignments": 225169
+      },
+      {
+        "corpus": "TED2020",
+        "corpusId": "corpus:opus:TED2020",
+        "pairCount": 173,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 260966
+          },
+          {
+            "code": "pt_br",
+            "alignmentPairs": 259501
+          },
+          {
+            "code": "es",
+            "alignmentPairs": 259486
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 258534
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 258322
+          }
+        ],
+        "alignmentPairsTotal": 7297943,
+        "pairsWithPublishedSize": 173,
+        "largestPairAlignments": 260966
+      },
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 58,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 22596
+          },
+          {
+            "code": "nb",
+            "alignmentPairs": 11029
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 6393
+          },
+          {
+            "code": "eo",
+            "alignmentPairs": 4372
+          },
+          {
+            "code": "de",
+            "alignmentPairs": 1200
+          }
+        ],
+        "alignmentPairsTotal": 48146,
+        "pairsWithPublishedSize": 58,
+        "largestPairAlignments": 22596
+      },
+      {
+        "corpus": "TildeMODEL",
+        "corpusId": "corpus:opus:TildeMODEL",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 2024
+          }
+        ],
+        "alignmentPairsTotal": 2024,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 2024
+      },
+      {
+        "corpus": "Ubuntu",
+        "corpusId": "corpus:opus:Ubuntu",
+        "pairCount": 243,
+        "topPartners": [
+          {
+            "code": "ace",
+            "alignmentPairs": null
+          },
+          {
+            "code": "af",
+            "alignmentPairs": null
+          },
+          {
+            "code": "ak",
+            "alignmentPairs": null
+          },
+          {
+            "code": "am",
+            "alignmentPairs": null
+          },
+          {
+            "code": "an",
+            "alignmentPairs": null
+          }
+        ],
+        "alignmentPairsTotal": null,
+        "pairsWithPublishedSize": 0,
+        "largestPairAlignments": null
+      },
+      {
+        "corpus": "WikiMatrix",
+        "corpusId": "corpus:opus:WikiMatrix",
+        "pairCount": 53,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 395569
+          },
+          {
+            "code": "sh",
+            "alignmentPairs": 373729
+          },
+          {
+            "code": "hr",
+            "alignmentPairs": 205176
+          },
+          {
+            "code": "bs",
+            "alignmentPairs": 130891
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 114776
+          }
+        ],
+        "alignmentPairsTotal": 3422126,
+        "pairsWithPublishedSize": 53,
+        "largestPairAlignments": 395569
+      },
+      {
+        "corpus": "XLEnt",
+        "corpusId": "corpus:opus:XLEnt",
+        "pairCount": 119,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1474447
+          },
+          {
+            "code": "pl",
+            "alignmentPairs": 444335
+          },
+          {
+            "code": "cs",
+            "alignmentPairs": 437098
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 435031
+          },
+          {
+            "code": "hu",
+            "alignmentPairs": 427892
+          }
+        ],
+        "alignmentPairsTotal": 20044111,
+        "pairsWithPublishedSize": 118,
+        "largestPairAlignments": 1474447
+      },
+      {
+        "corpus": "bible-uedin",
+        "corpusId": "corpus:opus:bible-uedin",
+        "pairCount": 101,
+        "topPartners": [
+          {
+            "code": "vi",
+            "alignmentPairs": 62140
+          },
+          {
+            "code": "th",
+            "alignmentPairs": 62138
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 62134
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 62131
+          },
+          {
+            "code": "jap",
+            "alignmentPairs": 62072
+          }
+        ],
+        "alignmentPairsTotal": 2228488,
+        "pairsWithPublishedSize": 101,
+        "largestPairAlignments": 62140
+      },
+      {
+        "corpus": "tldr-pages",
+        "corpusId": "corpus:opus:tldr-pages",
+        "pairCount": 36,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1356
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 1326
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 1319
+          },
+          {
+            "code": "ko",
+            "alignmentPairs": 681
+          },
+          {
+            "code": "it",
+            "alignmentPairs": 667
+          }
+        ],
+        "alignmentPairsTotal": 24916,
+        "pairsWithPublishedSize": 36,
+        "largestPairAlignments": 1356
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 3,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 45484
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 35469
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 173
+          }
+        ],
+        "alignmentPairsTotal": 81126,
+        "pairsWithPublishedSize": 3,
+        "largestPairAlignments": 45484
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 62,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 406592
+          },
+          {
+            "code": "mk",
+            "alignmentPairs": 90508
+          },
+          {
+            "code": "bs",
+            "alignmentPairs": 63959
+          },
+          {
+            "code": "ru",
+            "alignmentPairs": 12697
+          },
+          {
+            "code": "hr",
+            "alignmentPairs": 9989
+          }
+        ],
+        "alignmentPairsTotal": 618807,
+        "pairsWithPublishedSize": 62,
+        "largestPairAlignments": 406592
+      }
+    ],
+    "speech": [
+      {
+        "dataset": "common-voice",
+        "locale": "sr",
+        "validatedHours": 7.61,
+        "totalHours": 12.74,
+        "clips": 14069,
+        "contributors": 185,
+        "release": "cv-corpus-26.0-2026-06-12"
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Serbian-SET",
+        "sentences": 4384,
+        "tokens": 97673,
+        "words": 97673,
+        "release": "2.18"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "dryerorder",
+        "featuresCoded": 5,
+        "datasetFeatureTotal": 10
+      }
+    ]
+  },
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "not endangered",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Serbian (srp-srp) = 1 (National). Statutory national language (2006, Constitution, Article 10(1)).",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "multiple-variants",
+    "values": [
+      {
+        "value": "српски",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "српски",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "sr",
+        "variantType": "language",
+        "note": "label language: sr"
+      },
+      {
+        "value": "српски језик",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "sr",
+        "variantType": "language",
+        "note": "label language: sr"
+      },
+      {
+        "value": "srpski jezik",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "sr-latn",
+        "variantType": "language",
+        "note": "label language: sr-latn"
+      }
+    ]
+  },
+  "iso639_1": "sr",
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "macroarea": "Eurasia",
+  "macrolanguage": "hbs",
+  "documentation": {
+    "medLevel": "grammar",
+    "medSourceId": "679075"
+  },
+  "methodSupport": {
+    "total": 289,
+    "byTier": {
+      "fetched": 2,
+      "confirmed": 1,
+      "model-card-declared": 286
+    },
+    "named": [
+      {
+        "value": "service",
+        "variant": "google-translate",
+        "source": "curated:method-coverage-2a485dc249c6",
+        "confidence": "confirmed"
+      },
+      {
+        "value": "service",
+        "variant": "libretranslate",
+        "source": "vendor-languages-2026-08-06",
+        "confidence": "fetched"
+      },
+      {
+        "value": "service",
+        "variant": "microsoft-translator",
+        "source": "vendor-languages-2026-08-06",
+        "confidence": "fetched"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-ct2",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-10b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/madlad400-7b-mt-bt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Abu-Dju/nllb-moe-54b",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:alirezamsh/small100",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:AnHoang200901/madlad400-3b-mt-Q8_0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/madlad400-3b-mt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-3.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-1.3B",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-3.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:arrayiterator/nllb-200-distilled-1.3B-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ATH-MaaS/Marco-MT-Algharb",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:athaze/madlad400-3b-mt-ct2-int8",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ben-xl8/wmt22-cometkiwi-da",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:brauliobo/madlad400-7b-mt-bt-Q4_K_M-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:BSC-LT/salamandraTA-2b-instruct",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:BSC-LT/salamandraTA-2B-instruct-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:BSC-LT/salamandraTA-7b-instruct",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:BSC-LT/salamandraTA-7B-instruct-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Cartik/Transti-1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:casawolice/small100-onnx",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:chenchen12311/nllb-200-distilled-600M",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "metricModelSupport": {
+    "agreement": "single",
+    "consensus": "xlm-roberta-large",
+    "values": [
+      {
+        "value": "xlm-roberta-large",
+        "source": "curated:metric-coverage-de695f0e725a",
+        "variant": "xlmr",
+        "variantType": "metric",
+        "note": "XLM-R top-tier training languages — COMET reliability signal: languages with high XLM-R representation produce more reliable COMET scores — list read undefined from undefined"
+      }
+    ]
+  },
+  "orthographicStatus": "standardized",
+  "pluralCategories": [
+    "one",
+    "few",
+    "other"
+  ],
+  "scripts": [
+    "Cyrl",
+    "Latn"
+  ],
+  "scriptNames": [
+    "Cyrillic",
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "7890000",
+    "values": [
+      {
+        "value": "7890000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "supersededCodes": [
+    "scc"
+  ],
+  "textDirection": "left-to-right",
+  "wikipediaEdition": {
+    "site": "sr",
+    "url": "https://sr.wikipedia.org",
+    "name": "Serbian"
+  },
+  "coverage": {
+    "sourceCount": 17,
+    "componentsPresent": 41,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "cldrOfficialStatus": [
+      "linguameta-452a21ad3dae"
+    ],
+    "codeAliases": [
+      "iso639-3-20260715"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "iso639_1": [
+      "iso639-3-20260715"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.clicsContributingDatasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsTotalEntries": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsUniqueForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationConcepts": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationDensity": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexifyingForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "macrolanguage": [
+      "iso639-3-20260715"
+    ],
+    "methodSupport": [
+      "curated:method-coverage-2a485dc249c6",
+      "hf-models-bde04db4d07c@2026-08-10",
+      "vendor-languages-2026-08-06"
+    ],
+    "metricModelSupport": [
+      "curated:metric-coverage-de695f0e725a"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "pluralCategories": [
+      "cldr-plurals-48.2.0"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.speech": [
+      "common-voice-cv-corpus-26.0-2026-06-12"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "supersededCodes": [
+      "iso639-3-20260715"
+    ],
+    "textDirection": [
+      "cldr-48.2.0"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "srp-Cyrl",
+    "revision": "9277e19aa99558da",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "cldrOfficialStatus",
+      "codeAliases",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "iso639_1",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.clicsContributingDatasets",
+      "lexicalResources.clicsTotalEntries",
+      "lexicalResources.clicsUniqueForms",
+      "lexicalResources.colexificationConcepts",
+      "lexicalResources.colexificationDensity",
+      "lexicalResources.colexifyingForms",
+      "lexicalResources.datasets",
+      "macroarea",
+      "macrolanguage",
+      "methodSupport",
+      "metricModelSupport",
+      "name",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "pluralCategories",
+      "resources.corpora",
+      "resources.speech",
+      "resources.treebanks",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "supersededCodes",
+      "textDirection",
+      "wikipediaEdition"
+    ]
+  },
+  "script": "Cyrl",
+  "locale": {
+    "language": "srp",
+    "script": "Cyrl",
+    "publishedTag": "sr-Cyrl-ME",
+    "source": "sil-langtags",
+    "note": "Script-scoped projection. SIL publishes this script only in territory-qualified tags; this card answers for the script alone, carrying its language's facts with the script-scoped values resolved."
+  },
+  "localeScoped": {
+    "scriptName": "Cyrillic"
+  }
+}

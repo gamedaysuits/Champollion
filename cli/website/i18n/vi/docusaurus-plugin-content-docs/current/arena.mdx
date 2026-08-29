@@ -1,0 +1,138 @@
+---
+title: "The Arena"
+description: "The Arena là nơi diễn ra quá trình đo lường: là cổng để bạn gửi kết quả, là sổ cái lưu trữ kết quả đó, và là cơ chế thi đấu được xây dựng dựa trên cả hai. Nó là gì, điều gì chi phối nó, và bạn đóng vai trò gì."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Số lượng được hiển thị thông qua SSOTCount (đọc các SSOT của máy tại thời điểm build thông qua customFields của docusaurus.config.js) — không bao giờ nhập thủ công, theo tiêu chuẩn hiển thị SSOT. Trạng thái bảng trực tiếp cố tình KHÔNG được nêu ở đây: nó được liên kết. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Arena
+
+**The Arena là nơi diễn ra việc đo lường.** Đây là cánh cửa để bạn gửi kết quả, là sổ cái lưu giữ kết quả và là bộ máy tổ chức cuộc thi được xây dựng trên cả hai yếu tố đó.
+
+Nó là cơ sở hạ tầng, không phải là bảng điểm và cũng không phải là bản đồ. Có ba thứ rất dễ nhầm lẫn, vì vậy chúng cần được phân biệt rõ ràng một lần:
+
+| | Nó là gì | Nơi nó chạy |
+|---|---|---|
+| **[MT-Eval Harness](/docs/network/specifications/harness)** | Bộ chấm điểm. Khi được cung cấp một phương pháp và một tập kiểm thử, nó sẽ tạo ra một điểm số và một thẻ chạy (run card). | **Máy của bạn.** Chúng tôi không chạy phương pháp thay cho bạn và chúng tôi cũng không cần làm vậy. |
+| **The Arena** | Cánh cửa gửi bài, sổ cái lưu thẻ chạy, cùng với bộ máy tổ chức cuộc thi và giải thưởng. | Tại đây. |
+| **[Network](/docs/network/)** | Bản đồ xuất hiện khi có đủ số lượng thẻ chạy — ai có thể dịch gì, mức độ tốt ra sao và khoảng trống nằm ở đâu. Việc định tuyến sẽ đi qua nó. | Là một hệ quả, không phải là một thành phần. |
+
+Không có gì đi vào Network ngoại trừ thông qua The Arena, và không có gì đi vào The Arena ngoại trừ dưới dạng một lần chạy đã được chấm điểm và gắn dấu vân tay (fingerprint). Đó là toàn bộ thiết kế: một phép đo không có nguồn gốc không thể trở thành một phần của bản đồ.
+
+---
+
+## The Arena được cấu thành từ gì
+
+**Một cánh cửa.** Bất kỳ ai cũng có thể gửi bài — một mô hình đã được tinh chỉnh (fine-tuned), một mô hình tiên tiến (frontier model) được prompt, một pipeline có cổng FST, một hệ thống dựa trên quy tắc, hoặc một dịch giả con người chuyên nghiệp. Phương pháp không quan trọng đối với quá trình; chỉ có quy trình là cố định. Có hai cánh cửa khác nhau, tùy thuộc vào những gì bạn có: [công bố một thẻ chạy](/docs/network/getting-started/submit-a-method) nếu bạn đã chấm điểm một thứ gì đó, hoặc [đề xuất một mục nhập](/docs/network/getting-started/submit-to-the-index) nếu bạn có một tập dữ liệu, một từ điển, một engine, một dịch vụ dịch thuật, một kết quả đã được công bố bên ngoài, hoặc một bản sửa lỗi cho thẻ ngôn ngữ. Các đề xuất được đọc bởi con người, không phải robot, và không có gì được tự động phê duyệt.
+
+**Một sổ cái.** Mỗi lần chạy được công bố là một thẻ chạy (run card): điểm số, mã băm (hash) của tập dữ liệu, slug của mô hình, điều kiện và dấu vân tay cho tất cả những thông tin đó. Việc hai người chạy cùng một cấu hình là vô hại theo thiết kế — các lần chạy giống hệt nhau sẽ được loại bỏ trùng lặp khi công bố, và việc sao chép độc lập là bằng chứng chứ không phải là sự lãng phí. [Đặc tả Thẻ chạy](/docs/network/specifications/run-card) xác định những gì một thẻ phải tiết lộ; [Đặc tả Benchmark](/docs/network/specifications/benchmark) xác định giao thức tạo ra thẻ đó.
+
+**Một tập hợp các mục tiêu.** <SSOTCount field="registryDatasetCount" /> tập dữ liệu đánh giá đã được đăng ký. Mỗi tập dữ liệu là một thẻ siêu dữ liệu (metadata) cộng với một con trỏ tìm-nạp-từ-nguồn (fetch-from-source) — **nội dung ngữ liệu không bao giờ được lưu trữ tại đây**. Harness sẽ tìm nạp các bản tham chiếu từ nguồn gốc (upstream) tại thời điểm chạy và chấm điểm dựa trên những gì nó vừa tìm nạp.
+
+Được đăng ký không có nghĩa là có thể chạy ở mọi nơi, và sự khác biệt này là có chủ ý. Vài trăm mục trong số đó mang giấy phép được sửa đổi, thiết kế riêng hoặc không được nêu rõ, và những mục này **từ chối đánh giá từ xa** cho đến khi chủ sở hữu quyền ghi nhận sự đồng ý truyền tải rõ ràng — không một đại diện nào có thể thêm sự đồng ý thay cho họ. Chúng vẫn có thể chạy cục bộ và trên các kênh không-huấn-luyện (no-train) nếu giấy phép cho phép. Xem [Tập dữ liệu Đánh giá](/docs/network/leaderboard/datasets) và [Quản lý Dữ liệu](/docs/network/sovereignty/data-sovereignty).
+
+**Bộ máy tổ chức cuộc thi.** Phía trên một lần chạy đơn lẻ là những phần còn lại: [các tác vụ chia sẻ và cuộc thi](/shared-tasks), [hàng đợi công khai](/docs/network/getting-started/contributing-compute) của các phép đo sẽ cải thiện bản đồ nhiều nhất, và đặc tả cho [những gì một giải thưởng sẽ yêu cầu](/docs/network/specifications/prizes) nếu nó được mở. Một cộng đồng có thể tự tổ chức cuộc thi trên ngữ liệu của riêng họ bằng tiền của chính họ — [Champollion không giữ cả hai thứ đó](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## Các quy tắc áp dụng ở mọi nơi tại đây
+
+Đây là những bất biến. Mỗi quy tắc đều có một trang trình bày chi tiết.
+
+**Không huấn luyện trên dữ liệu đánh giá.** Bất kỳ phương pháp nào tiếp xúc với tập benchmark — dưới dạng dữ liệu huấn luyện, ví dụ few-shot, mục từ điển hoặc tài liệu prompt — đều bị loại. Bạn có thể tinh chỉnh (fine-tune) trên bất cứ thứ gì bạn thích; chỉ là không được trên tập kiểm thử. Đây là quy tắc duy nhất mà toàn bộ hệ thống không thể tồn tại nếu bị phá vỡ, bởi vì một điểm số bị ô nhiễm sẽ làm hỏng mọi so sánh ở các bước sau đó.
+([Quy tắc Bảng xếp hạng](/docs/network/leaderboard/rules))
+
+**Mỗi con số đều mang theo nguồn gốc của nó, nếu không nó sẽ không được tính.** Một thẻ chạy nêu tên phiên bản tập dữ liệu, mô hình, điều kiện, system prompt và chi phí. Điểm số chỉ có thể so sánh trong cùng một phiên bản tập dữ liệu, và dấu vân tay là thứ giúp điều đó có thể kiểm chứng được thay vì chỉ là lời khẳng định.
+([Đặc tả Benchmark](/docs/network/specifications/benchmark))
+
+**Chúng tôi không bao giờ giữ ngữ liệu của bạn.** Đăng ký chỉ là siêu dữ liệu. Một tập kiểm thử được chấm điểm mà không cần phải bàn giao, và trong luồng chủ quyền (sovereign lane), nó không bao giờ rời khỏi cơ sở hạ tầng của cộng đồng — chỉ có điểm số được truyền đi.
+([Đăng ký Ngữ liệu](/docs/network/sovereignty/registering-corpora))
+
+**Các luồng giấy phép mang tính cấu trúc, không phải biên tập.** Các ngữ liệu phi thương mại và chỉ dành cho nghiên cứu được tách biệt khỏi mọi giải thưởng, API và con đường thương mại theo thiết kế. Các ngữ liệu theo giấy phép được sửa đổi, thiết kế riêng hoặc không được nêu rõ sẽ bị kiểm soát thêm bằng sự đồng ý: harness từ chối truyền văn bản của chúng tới API mô hình của bên thứ ba cho đến khi sự cho phép của chủ sở hữu quyền được ghi nhận.
+([Quản lý Dữ liệu](/docs/network/sovereignty/data-sovereignty))
+
+**Điểm số là tín hiệu của máy, không phải là phán quyết.** Các số liệu tự động là đại diện cho đánh giá của con người, và [Giao thức Xác thực của Người bản ngữ](/docs/network/specifications/speaker-validation) xác định cổng kiểm duyệt của con người mà chúng *đại diện*. Vị trí trên bảng xếp hạng chứng minh một phương pháp đo lường tốt. Nó không chứng minh bản dịch là tốt, và nó không cấp cho bất kỳ ai quyền triển khai phương pháp đó trên ngôn ngữ của một cộng đồng.
+
+**Chiến thắng không phải là trạng thái cuối cùng.** Đối với các ngôn ngữ Bản địa, thiết kế là một phương pháp hiệu quả sẽ được chuyển giao cho tổ chức quản trị của cộng đồng và triển khai trên cơ sở hạ tầng do cộng đồng kiểm soát, trong đó Champollion không lấy bất kỳ phần chia nào từ những gì nó kiếm được tại đó.
+([Cam kết về các tạo tác phái sinh](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Vai trò của bạn
+
+Chọn hàng phù hợp với những gì bạn đã có.
+
+| Bạn có… | Hãy làm điều này | Bắt đầu tại |
+|---|---|---|
+| Một phương pháp và một API key | Chạy harness với một ngữ liệu đã đăng ký và công bố thẻ chạy | [Gửi một Phương pháp](/docs/network/getting-started/submit-a-method) |
+| Một thứ gì đó mà chỉ mục (index) đang thiếu — tập dữ liệu, từ điển, FST, engine, dịch vụ dịch thuật của con người, kết quả đã công bố, hoặc bản sửa lỗi thẻ | Gửi đề xuất có cấu trúc; một maintainer sẽ xem xét thủ công | [Gửi lên Chỉ mục](/docs/network/getting-started/submit-to-the-index) |
+| Credit API dư thừa và không có phương pháp riêng | Chạy các mục mở từ hàng đợi công khai bằng key của riêng bạn và công bố kết quả trả về | [Đóng góp Compute](/docs/network/getting-started/contributing-compute) |
+| Một ngữ liệu thuộc sở hữu của cộng đồng bạn | Đăng ký nó dưới dạng siêu dữ liệu và chọn luồng hiển thị — mở, có kiểm soát (gated), hoặc hoàn toàn có chủ quyền | [Đăng ký Ngữ liệu](/docs/network/sovereignty/registering-corpora) |
+| Một ngữ liệu và lý do để tổ chức cuộc thi trên đó | Tự tổ chức theo điều khoản của bạn; chúng tôi không giữ dữ liệu cũng như tiền bạc | [Tổ chức Cuộc thi Chủ quyền](/docs/network/sovereignty/run-a-sovereign-contest) |
+| Một phương pháp đã có điểm số tốt | Xuất nó dưới dạng plugin và đưa vào môi trường production | [Triển khai lên Production](/docs/network/getting-started/deploy-to-production) |
+| Một câu hỏi trước tiên | Chấm điểm, truất quyền, mô hình, FST, chủ quyền | [FAQ](/docs/network/getting-started/faq) |
+
+Nếu bạn là một AI agent, hàng đợi, kết quả và các thẻ chạy đều có sẵn dưới dạng công cụ — xem [MCP Server](/docs/network/getting-started/mcp-server).
+
+---
+
+## Những gì thực sự đang chạy hôm nay
+
+The Arena đang ở giai đoạn ra mắt, và mô tả trung thực về nó rất ngắn gọn.
+
+- **Bảng đang hoạt động, công khai và mở cho các bài gửi.** Nội dung hiện tại của nó là dữ liệu trực tiếp, vì vậy trang này sẽ không cho bạn biết có gì trên đó —
+  [đọc bảng xếp hạng](/leaderboard).
+- **"Tự báo cáo" (Self-reported) là cấp độ tin cậy mặc định.** Xác minh phía máy chủ —
+  chấm điểm lại một bài gửi dựa trên ngữ liệu chuẩn được ghim SHA — đã tồn tại và
+  đang mở rộng, nhưng chưa phổ biến. Hãy đọc huy hiệu trên mỗi hàng.
+- **Không có giải thưởng nào đang mở, và không có điểm số nào trên trang web này vượt qua mức giải thưởng.**
+  [Đặc tả Giải thưởng](/docs/network/specifications/prizes) được viết sao cho
+  mức tiêu chuẩn là rõ ràng *nếu và khi* một giải thưởng được mở. Các giải thưởng do nhà tài trợ cấp vốn và
+  nhà tài trợ nắm giữ; Champollion không bao giờ nắm giữ, ký quỹ hoặc định tuyến quỹ giải thưởng.
+- **Chưa có đánh giá nào từ người bản ngữ trong cộng đồng được thực hiện.** Cổng kiểm duyệt đã được chỉ định và
+  công cụ đang được xây dựng. Các con số Composite và chrF++ là tín hiệu của máy,
+  không phải là phán quyết của cộng đồng.
+- **Chưa có phương pháp nào được chuyển giao cho cộng đồng.** Mô hình chuyển giao quyền sở hữu
+  là một thiết kế đã được cam kết, không phải là một chương trình đang chạy. Nó được mô tả để bạn có thể yêu cầu
+  chúng tôi thực hiện, chứ không phải để ám chỉ rằng nó đã được tiến hành.
+- **Quyền lưu giữ khóa đã được quyết định; người lưu giữ thì chưa.** Cơ chế là một
+  sơ đồ ngưỡng (threshold scheme) trong đó Champollion giữ không (0) phần chia khóa. Những người lưu giữ được
+  chọn bởi các cộng đồng, và các cuộc thảo luận đó đang diễn ra — vì vậy chúng tôi gọi là
+  **người lưu giữ khóa của cộng đồng (đang xác nhận)**.
+
+Sổ cái đầy đủ về những gì dự án này *không* tuyên bố nằm ở [Những Hạn chế Trung thực](/docs/network/honest-limitations). Nếu bất cứ điều gì trên trang này ngụ ý nhiều hơn những gì trang đó cho phép, trang đó sẽ thắng và trang này là một lỗi (bug).
+
+---
+
+## Đọc tiếp
+
+- **Bạn muốn gửi một thứ gì đó ngay hôm nay** → [Gửi một Phương pháp](/docs/network/getting-started/submit-a-method), sau đó là [Đặc tả Chấm điểm](/docs/network/specifications/scoring).
+- **Bạn muốn biết một kết quả được đánh giá như thế nào** → [Quy tắc Đánh giá MT](/docs/network/leaderboard/rules) và [Ý nghĩa Thống kê](/docs/network/specifications/significance).
+- **Bạn muốn xem các phép đo tổng hợp lại thành gì** → [The Network](/docs/network/).
+- **Bạn quản lý một ngôn ngữ và muốn xem bức tranh chủ quyền trước tiên** → [Dành cho Cộng đồng Ngôn ngữ](/docs/network/community/for-language-communities).
+- **Bạn mới làm quen với tất cả những điều này** → [Champollion là gì](/docs/what-is-champollion).
+
+Mỗi ngôn ngữ được nêu tên trên bảng đều dẫn đến thẻ của nó trong [the Atlas](/docs/atlas) — phân loại, sức sống và những tài nguyên đánh giá nào tồn tại cho ngôn ngữ đó.

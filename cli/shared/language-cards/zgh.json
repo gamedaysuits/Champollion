@@ -1,0 +1,477 @@
+{
+  "code": "zgh",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Standard Moroccan Tamazight",
+    "values": [
+      {
+        "value": "Standard Moroccan Tamazight",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Standard Moroccan Tamazight",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "bcp47": "zgh",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "zgh-Tfng-MA",
+    "values": [
+      {
+        "value": "zgh-Tfng-MA",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "zgh-Tfng-MA",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"zgh\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "zgh",
+    "values": [
+      {
+        "value": "zgh",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Mozilla-I10n",
+        "corpusId": "corpus:opus:Mozilla-I10n",
+        "pairCount": 191,
+        "topPartners": [
+          {
+            "code": "zh_cn",
+            "alignmentPairs": 418
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 404
+          },
+          {
+            "code": "zh_tw",
+            "alignmentPairs": 390
+          },
+          {
+            "code": "en_gb",
+            "alignmentPairs": 293
+          },
+          {
+            "code": "ia",
+            "alignmentPairs": 293
+          }
+        ],
+        "alignmentPairsTotal": 30393,
+        "pairsWithPublishedSize": 191,
+        "largestPairAlignments": 418
+      },
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 18,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 1432
+          },
+          {
+            "code": "shi",
+            "alignmentPairs": 432
+          },
+          {
+            "code": "ar",
+            "alignmentPairs": 184
+          },
+          {
+            "code": "rif",
+            "alignmentPairs": 53
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 32
+          }
+        ],
+        "alignmentPairsTotal": 2217,
+        "pairsWithPublishedSize": 18,
+        "largestPairAlignments": 1432
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 4126
+          }
+        ],
+        "alignmentPairsTotal": 4126,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 4126
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 9,
+        "topPartners": [
+          {
+            "code": "ar",
+            "alignmentPairs": 507
+          },
+          {
+            "code": "fr",
+            "alignmentPairs": 159
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 141
+          },
+          {
+            "code": "shi",
+            "alignmentPairs": 117
+          },
+          {
+            "code": "pt",
+            "alignmentPairs": 18
+          }
+        ],
+        "alignmentPairsTotal": 955,
+        "pairsWithPublishedSize": 9,
+        "largestPairAlignments": 507
+      }
+    ],
+    "speech": [
+      {
+        "dataset": "common-voice",
+        "locale": "zgh",
+        "validatedHours": 1.45,
+        "totalHours": 2.22,
+        "clips": 2229,
+        "contributors": 51,
+        "release": "cv-corpus-26.0-2026-06-12"
+      }
+    ]
+  },
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "not endangered",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Tamazight, Standard Moroccan (zgh-zgh) = 1 (National). Statutory national language (2011, Constitution, Article 5).",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Not endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "zgh",
+        "variantType": "language",
+        "note": "label language: zgh"
+      }
+    ]
+  },
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "macroarea": "Africa",
+  "methodSupport": {
+    "total": 29,
+    "byTier": {
+      "model-card-declared": 29
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ilyasaqit/opus-mt-en-atlasic_tamazight-synth169k-nmv",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ilyasaqit/opus-mt-en-atlasic_tamazight-synth486k-nmv",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ilyasaqit/opus-mt-en-atlasic_tamazight-synth893k-nmv",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:ilyasaqit/opus-mt-en-atlasic_tamazight-synth97k-nmv",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.0-LoRA",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:MihaiPopa-1/OmniTranslate-1.1",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.0-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:mradermacher/OmniTranslate-1.1-i1-GGUF",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-afa-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "orthographicStatus": "has-orthography",
+  "scripts": [
+    "Latn",
+    "Tfng"
+  ],
+  "scriptNames": [
+    "Latin",
+    "Tifinagh (Berber)"
+  ],
+  "speakerEstimates": {
+    "agreement": "single",
+    "consensus": "7800000",
+    "values": [
+      {
+        "value": "7800000",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "textDirection": "left-to-right",
+  "wikipediaEdition": {
+    "site": "zgh",
+    "url": "https://zgh.wikipedia.org",
+    "name": "Standard Moroccan Tamazight"
+  },
+  "coverage": {
+    "sourceCount": 12,
+    "componentsPresent": 18,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.speech": [
+      "common-voice-cv-corpus-26.0-2026-06-12"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "linguameta-452a21ad3dae"
+    ],
+    "textDirection": [
+      "cldr-48.2.0"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "zgh",
+    "revision": "1fc1c5c9d484d42d",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "endangerment",
+      "endonym",
+      "isoLanguageType",
+      "isoScope",
+      "macroarea",
+      "methodSupport",
+      "name",
+      "orthographicStatus",
+      "resources.corpora",
+      "resources.speech",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "textDirection",
+      "wikipediaEdition"
+    ]
+  }
+}

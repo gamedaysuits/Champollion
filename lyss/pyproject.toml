@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "champollion-lyss"
+version = "0.1.2"
+description = "Champollion-LYSS — community language-validation plugins (FST-gated linters + semantic validators) for the MT Eval Harness"
+readme = "README.md"
+# >=3.11, matching the harness. It said >=3.10 until 2026-08-01, which was
+# satisfiable in itself but NOT jointly satisfiable with this package's own
+# dependency: mt-eval requires >=3.11. On Python 3.10, `pip install
+# champollion-lyss` resolved lyss and then failed resolving mt-eval — the user
+# is told the package supports their interpreter and finds out otherwise one
+# step later. Better to refuse up front, in the metadata, honestly.
+requires-python = ">=3.11"
+# INTERIM: use by permission only (see LICENSE). The Cree standard is built on
+# ALTLab/GiellaLT infrastructure and encodes decisions that belong with the
+# nêhiyaw community; until those consultations happen, distribution is
+# permission-gated. Permission is ordinarily granted free for noncommercial /
+# research / community use. See NOTICE.
+license = { text = "LicenseRef-Champollion-Interim-Permission-Required" }
+authors = [{ name = "Curtis Forbes" }]
+keywords = ["machine-translation", "evaluation", "low-resource", "morphology", "FST", "Plains Cree"]
+classifiers = [
+    # Source-available, but NOT OSI "open source": noncommercial-only.
+    "License :: Other/Proprietary License",
+    # Declare every supported version, and the bare "3" every sibling carries.
+    # This listed 3.14 ALONE, so the metadata advertised support for exactly one
+    # interpreter while requires-python accepted five.
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+# The harness core supplies the MetricPlugin protocol + the FST installer that the
+# Cree standard's fst_adapter calls. Plugins depend on the core; the core fetches
+# plugins on demand (no install-time cycle — the harness does NOT depend on this).
+# The harness is at 0.1.0 (reset, aligned with the CLI) — pin to >=0.1, not >=3.0.
+# Gloss fetching uses the stdlib (urllib); no `requests` dependency.
+dependencies = [
+    "mt-eval-harness>=0.1",
+    "pyhfst>=1.4",
+]
+
+[project.urls]
+Homepage = "https://champollion.dev"
+Repository = "https://github.com/gamedaysuits/champollion-LYSS"
+
+[project.optional-dependencies]
+# LYSS-sem (semantic validator) needs spaCy for content-word overlap. Installed by
+# the harness's `mt-eval setup --lang crk` (the crk card's evalPack/postInstall also
+# pulls the en_core_web_md model).
+crk = ["spacy>=3.7"]
+
+# Offline unit tests (mock the itwêwina API + FST + spaCy — no network/binaries).
+test = ["pytest>=8.0"]
+
+# Discovery hook: the harness can enumerate installed eval standards via this group.
+# Per-run LOADING stays card-driven (the language card names the module + class).
+[project.entry-points."champollion.eval_standards"]
+crk = "champollion_lyss.crk:EVAL_STANDARD"
+
+[tool.setuptools]
+# Ship the interim permission-only LICENSE and the data-sovereignty NOTICE in
+# the sdist/wheel; the LICENSE requires both to travel with any permitted
+# redistribution.
+license-files = ["LICENSE", "NOTICE"]
+
+[tool.setuptools.packages.find]
+include = ["champollion_lyss*"]
+
+# Ship CODE only. Never package licensed gloss/corpus data (e.g. a local lemmas.json)
+# — it is operator-provided or fetched from the public itwêwina API at runtime.
+[tool.setuptools.package-data]
+champollion_lyss = []

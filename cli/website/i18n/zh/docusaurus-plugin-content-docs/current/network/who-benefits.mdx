@@ -1,0 +1,153 @@
+---
+sidebar_position: 3
+title: "谁将受益"
+slug: '/network/who-benefits'
+description: "如果 Champollion 取得成功——成为一个通用的、社区共有的翻译层，谁将获得什么：语言使用者、语言社区、翻译供应商、研究人员、资助者和媒体，每一方都有具体的首要行动。"
+related:
+  - label: "For Language Communities"
+    to: /docs/network/community/for-language-communities
+    kind: doc
+    note: "The full community door — sovereignty, ownership, and how to start"
+  - label: "How the Work Is Funded"
+    to: /docs/network/sovereignty/economic-model
+    kind: doc
+    note: "The economic model in full"
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "The end-to-end run-and-publish walkthrough"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: doc
+    note: "What we do not (yet) claim"
+---
+
+{/* 本页面的计数通过 SSOTCount 渲染（在构建时通过 docusaurus.config.js customFields 读取机器 SSOT）—— 根据 SSOT 显示标准，绝不手动输入。cli/scripts/check-prose-counts-parity.mjs 会对少数不可简化的散文数字进行把关。 */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# 谁将受益
+
+> **内容摘要。** 在全球约 7,000 种现存语言中，只有不到 600 种拥有某种形式的机器翻译，而其中超过一半的语言正面临濒危风险（根据 Glottolog 的综合濒危状态；由 Champollion 衍生）。如果 Champollion 取得成功——成为一个通用的、由社区拥有的翻译层——其回报将是双重的：既能为被行业忽视的语言使用者提供当下的沟通手段，又能为濒危语言的保护和复兴提供实用工具。我们的策略是经过深思熟虑的：通过公开规则衡量众包方法的开发，以公开费率赞助语料库建设，并让社区掌握其数据、测试集以及任何基于这些数据验证的方法的控制权。本页面说明了各个群体能获得什么，以及首先应该做什么。
+
+## 语言使用者及其社区 \{#speakers}
+
+如果你会说一种服务不足的语言和英语，那么你的判断就是整个项目中最宝贵的财富——比任何模型或指标都重要。计算机可以计算两个句子的相似程度；但它们无法判断一个句子是否是真正的母语者会说的话。这种判断属于你，它是这里所有其他事物进行校验的基准事实（ground truth）。
+
+**语言使用者验证是一项有偿工作，按公布的专业费率（50-65 加元/小时）支付，时间由你安排，且无需任何技术专长**——只要你能阅读这两种语言并对句子做出判断，你就符合资格。[语言使用者验证协议](/docs/network/specifications/speaker-validation)公布了三种任务类型：
+
+| 任务 | 你的工作内容 | 时间 | 公布薪酬 |
+|------|-------------|------|---------------|
+| 评估翻译 | 阅读机器翻译，评估每条翻译“是否真实？”以及“意思是否正确？” | 约 8 小时，分摊在几周内 | 400–520 加元 |
+| 审查“等效”句对 | 判断两种表达方式是否真正表达相同的意思 | 约 2 小时 | 100–130 加元 |
+| 审查被拒词汇 | 检查语法工具标记为无效的词汇——它标记对了吗？ | 约 1.5 小时 | 75–100 加元 |
+
+此外还有语料库工作——创建日常句子的参考翻译——按相同的每小时费率支付（[详情](/docs/network/perspectives/how-speakers-get-paid)）。条款汇总如下：**有偿，非志愿**（每个任务块完成后两周内付款，无论结果如何均会支付）；**按你的意愿署名**（实名或匿名，可选共同作者身份）；**你可以随时撤回**你的贡献，并对你认为有问题的结果的发布拥有否决权。
+
+:::note[目前的进展]
+坦诚地说：上述薪酬费率和条款是已公布的承诺，但[目前尚未开展任何社区验证轮次](/docs/network/honest-limitations)——首批合作正在筹备中。现在联系我们意味着报名成为首批参与者，而不是加入一个现有的成熟项目。
+:::
+
+**第一步行动：** 今天就可以行动起来，向 [Tatoeba](https://tatoeba.org) 添加句子——Champollion 从不自行收集或托管语料库（测试数据始终[从其源头获取](/docs/network/sovereignty/registering-corpora)），但这里的几个基准测试是基于 Tatoeba 的句子和 [OPUS](https://opus.nlpl.eu/) 等开放集合构建的。然后阅读[语言使用者如何获得报酬](/docs/network/perspectives/how-speakers-get-paid)（只需五分钟，包含所有数字），并联系我们——发送邮件至 [info@champollion.dev](mailto:info@champollion.dev) 或在[公共仓库](https://github.com/gamedaysuits/Champollion/issues)上提交 Issue——说明你使用的语言以及你能够胜任评估的语言变体。
+
+## 建设语料库的语言社区 \{#communities}
+
+在这个系统中，社区能占据的最有利位置就是**拥有基准测试本身**。测试集就是标准答案：谁掌握了它，谁就能决定该语言“好的翻译”意味着什么，而每一种方法——无论是我们的、某家公司的，还是任何人的——都将根据*你们的*标准进行衡量。
+
+基本原则放在首位：**你们的语言数据属于你们。** 注册语料库意味着发布一张描述性的元数据卡片——绝不是上传语料库——并发布在[你选择的公开通道](/docs/network/sovereignty/registering-corpora)中：开放、受限或完全主权（我们永远看不到的测试集，在你们的基础设施上进行评分）。语料库建设和翻译审查是专业工作，[按公布的费率支付报酬](/docs/network/perspectives/how-speakers-get-paid)，且支付报酬并不意味着购买你们的数据。当为你们的语言构建的翻译方法在这里得到验证时，[所有权将转移](/docs/network/sovereignty/ownership-transfer)给你们社区的治理组织——包括代码、权重和部署控制权。即使只有 50 个精心策划的翻译句对，也足以开启一个新的排行榜赛道。
+
+面向社区的完整入口——主权保证、网络的要求与回馈，以及循序渐进的启动指南——请见**[面向语言社区](/docs/network/community/for-language-communities)**，其中[运行主权竞赛](/docs/network/sovereignty/run-a-sovereign-contest)是社区控制评估的操作手册。
+
+## 翻译服务与机器翻译（MT）供应商 \{#vendors}
+
+如果你构建或销售翻译服务——无论是 MT 引擎、LLM 管道、基于规则的系统，还是人工翻译服务——你都可以在这里使用已发布的测试集对其进行基准测试，出现在公开的排行榜和地图上，并接受与所有人相同的规则评判。**无费用，无需合作协议，不偏袒任何技术：** 测试工具（harness）在设计上是方法中立的。你只需支付自己的计算或 API 成本（[工作资金来源](/docs/network/sovereignty/economic-model)）。
+
+大多数公开的 MT 基准测试只覆盖相同的几百种高资源语言，而且大多数都受到了污染。Champollion 的目录将 <SSOTCount field="registryDatasetCount" /> 个评估数据集注册为通过 SHA 固定的、从源获取的元数据卡片，并[按数据集披露污染状态](/docs/network/leaderboard/datasets)，同时为全新的、从未发布的测试集提供了一个通道。评分使用公开、可复现的指标（通过 sacreBLEU 的 chrF++/BLEU/TER；COMET/AfriCOMET 在单独的神经通道中报告），并遵循已发布的[评分规则](/docs/network/specifications/scoring)。方法依赖项是公开声明的，而非隐藏的，专有引擎保持专有——测试工具只调用你的系统，绝不触及你的权重或代码。两个坦诚的注意事项：**排行榜还很年轻**（[诚实的局限性](/docs/network/honest-limitations)准确说明了目前已验证的内容），并且**评分不授予部署权**——对于由社区管理的语言，由社区决定部署（[数据管理](/docs/network/sovereignty/data-sovereignty)）。
+
+**第一步行动（MT 引擎或管道）：** 从[评估数据集](/docs/network/leaderboard/datasets)和[排行榜](/leaderboard)中选择你的语言对；`pipx install mt-eval-harness` 并遵循[提交方法](/docs/network/getting-started/submit-a-method)；如果你的引擎无法通过 OpenRouter 访问，请实现 [TranslationMethod 协议](/docs/network/specifications/methods#eval-harness-translationmethod-protocol)或将其暴露为一个小型 API 服务（[指南](/docs/guides/serving-a-method)）；然后运行并发布——社区提交的内容将在自我基准测试信任层级发布，带有清晰的标签，并遵循[排行榜规则](/docs/network/leaderboard/rules)。
+
+**如果你销售人工翻译：** 如果某个语言对没有可靠的机器翻译，网站会明确说明，并转而显示经过同意的人工服务提供商——请阅读[人工服务通道](/human-services)，然后通过电子邮件（[info@champollion.dev](mailto:info@champollion.dev)）申请列出，说明你涵盖的语言对和变体、你的条款以及同意确认书。未经同意，绝不会公布你的联系方式。人工翻译在这里也和其他方法一样被视为一种方法——一些团队会对他们的译后编辑管道进行基准测试，向买家展示其相对于原始 MT 的提升。
+
+## 研究人员 \{#researchers}
+
+为低资源语言引入机器翻译最昂贵的方式，正是该领域通常尝试的方式：构建训练语料库。这意味着数十万个句对——数量庞大到无人能够逐一检查——因此质量参差不齐且无人察觉，而失败往往在最后才会显现，即当基于这些句对训练的模型犯下与数据完全相同的错误时。数月的收集工作可能会产生一个你无法完全信任的语料库，以及一个你无法发布的模型。
+
+评估集颠覆了这种经济学。同一种语言的开发集和保留测试集大约在**一千**个句对的数量级——规模足够小，使得专业策划成为可能，每个句对都可以由懂该语言的人进行检查。七十万个你无法验证的句对，或者一千个你可以验证的句对：评估集是研究人员的判断能够触及每一个句子的唯一交付物。而且与训练语料库不同，它不会过时——出现的每一个新模型、引擎或方法都可以无限期地用它来进行衡量。
+
+这就是整个项目赖以建立的赌注——**生成对理论（generational-pair thesis）**：建立评估标准和激励机制，社区就会构建出可行的解决方案。你策划这一千个句对。针对你的保留测试集设立的奖项，使该语言成为任何方法构建者都可以瞄准的目标。排行榜公开衡量每一次尝试。一代人的精心策划开启了在其他所有方面开放式的竞争。[语料库合作](/docs/network/specifications/corpus-partnership)正是为此制定的工作文档——涵盖语料库规模、工作流程、语言使用者报酬——而[奖项规范](/docs/network/specifications/prizes)则是激励部分。
+
+测量工具今天已经准备就绪。`pipx install mt-eval-harness` 为你提供[评估测试工具（eval harness）](/docs/network/specifications/harness)：确定性评分、带指纹的[运行卡片](/docs/network/specifications/run-card)、配对自举[显著性](/docs/network/specifications/significance)，以及发布到排行榜的路径。[评分规范](/docs/network/specifications/scoring)记录了每个指标及其验证状态——外部验证、代理验证或工程启发式——并保持复合指标的确定性；神经指标在单独的通道中报告，绝不会被悄悄折叠进去。标准指标依赖于 sacreBLEU 和 COMET/AfriCOMET，并扩展了结构检查（FST 有效性），以揭示字符重叠指标在多式综合语中遗漏的问题。测试工具是开源的 AGPL-3.0 协议；CLI 是 PolyForm Noncommercial 1.0.0 协议——源码可用，非商业用途免费。
+
+在工具背后是注册表。**<SSOTCount field="registryDatasetCount" /> 个评估数据集**，每一个都是通过 SHA 固定的、从源获取的元数据卡片，记录在[评估数据集](/docs/network/leaderboard/datasets)中；**<SSOTCount field="catalogLanguageCount" /> 张语言卡片**，其中[每个字段都标明了其来源](/docs/reference/language-card-spec)，并且显示了所有存在分歧的来源（[纠正程序](/docs/reference/language-card-citation-procedure)）；**<SSOTCount field="licensedSourceCount" /> 个注册上游来源**的许可证汇总，通过架构设计将非商业语料库从任何商业、奖项或 API 通道中剥离出来。污染是一个一等属性：假定已被前沿模型看过的公开基准测试在**仅限相对比较的通道**中运行，新的社区语料库通过哈希清单进行密封和分段（[语料库合作 §4](/docs/network/specifications/corpus-partnership#4-cryptographic-sealing-and-sandbox-testing)），并且社区可以持有我们永远看不到的主权基准测试。威胁模型在[语料库设计框架](/docs/network/specifications/corpus-design)中进行了说明。
+
+根据你想构建的内容，有三种参与方式。**语料库**：从上述评估优先的路径开始——端到端的[语料库合作](/docs/network/specifications/corpus-partnership)，从第一天起就将语言使用者的有偿时间纳入预算。**方法**：实现 [TranslationMethod 协议](/docs/network/specifications/methods)并遵循[提交方法](/docs/network/getting-started/submit-a-method)——使用 OpenRouter 密钥大约需要 15 分钟。**指标**：通过测试工具的插件接口提出（在[仓库](https://github.com/gamedaysuits/Champollion)上提交 Issue 或 PR；进入复合指标的门槛在评分规范中）。无论选择哪扇门，请先阅读[诚实的局限性](/docs/network/honest-limitations)——包括社区对指标的语言使用者验证尚未进行——并在设计任何东西之前阅读[微评估方法论](/docs/network/context/microeval-methodology)和 [MT 评估概览](/docs/network/context/mt-evaluation-landscape)。
+
+**引用 Champollion：** 目前还没有 Champollion 的论文——请不要引用。请引用代码仓库以及你使用的特定版本规范或通过 SHA 固定的数据集卡片：
+
+```bibtex
+@software{champollion,
+  author  = {Forbes, Curtis},
+  title   = {Champollion: open evaluation infrastructure for machine
+             translation in low-resource languages},
+  url     = {https://github.com/gamedaysuits/Champollion},
+  year    = {2026},
+  note    = {Specifications at https://champollion.dev/docs/network}
+}
+```
+
+如果你通过我们的注册表使用了上游语料库，**请引用语料库本身的创建者**——数据集卡片上附有上游的归属信息和许可证。
+
+## 资助者与赞助商 \{#funders}
+
+**Champollion 是非商业性的。** 赞助资金用于语料库建设、工具和社区工作——**100% 穿透支付，公开记账，没有任何资金流向 Champollion**：没有管理费抽成，没有收入分成，不对社区资产提出任何要求。投入的资金将转化为有偿的语言工作——支付给语言使用者、语料库建设者和获奖者——而基础设施成本目前由创始人承担（[工作资金来源](/docs/network/sovereignty/economic-model)）。
+
+坦诚的起点：这里描述的一切都是**已规范并准备就绪的机制，而不是已经大规模运行的项目。** 目前还没有拨款或赞助商，排行榜已上线但仍处于早期阶段，奖项机制是一个[提议的规范](/docs/network/specifications/prizes)——今天还没有开放任何奖项。资助者从这种坦诚中得到的是：公布的单位成本、声明账本，以及你可以用来监督我们的规范。
+
+**通道 1 — 语料库赞助。** 低资源 MT 中最稀缺的资产是值得信赖的测试集，其成本已公布：
+
+| 资金用途 | 公布成本 | 资金去向 |
+|--------------------|---------------|----------------|
+| 一种语言的基准语料库（50–150 个精心策划的条目） | 2,500–6,000 加元 | 双语使用者的工作时间，按 50–65 加元/小时计——这是最大的支出项目，有意为之 |
+| 一轮指标验证（三名语言使用者将自动化指标与人工判断进行对比检查） | 1,475–1,920 加元 | 有偿的语言使用者审查任务 |
+| 方法输出审查 | 500–1,500 加元 | 相同的公布小时费率 |
+| 完整的语言引入，全包 | 3,350–8,500 加元 | 参见[基准测试规范 §10](/docs/network/specifications/benchmark) |
+
+资产的寿命长于拨款：语料库属于其建设者/管理者，而不属于 Champollion——作为元数据注册，[内容从不托管](/docs/network/sovereignty/registering-corpora)，并遵循管理者的许可证和通道选择。对于学术资助者，[语料库合作策略](/docs/network/specifications/corpus-partnership)是该通道的院系定制版本。
+
+**通道 2 — 奖项赞助。** 成就奖资助的是**结果，而不是尝试**：只有当一种方法被证明达到了明确的、方法中立的标准时，资金才会被释放，并且有偿的社区语言使用者审查是每项声明的一部分。根据[奖项规范](/docs/network/specifications/prizes)，资金由**赞助商持有**——资金留在赞助组织，或赞助商指定的社区信托或第三方托管机构，**绝不留在 Champollion**，Champollion 只协调测量，不接触任何资金。**今天没有任何地方持有奖金。** 如果没有人达到标准，就没有人获得报酬；过期的奖金留在赞助商处，由其自行决定重新分配或撤回。获奖方法将根据奖项条款转移为社区所有。
+
+资助者可以衡量的内容：在管理者控制下建立和注册的语料库；提供给语言社区的有偿语言使用者工时；由值得信赖的公开基准测试覆盖的语言对；被衡量的方法，以及在奖项条款规定的情况下，转移为社区所有的方法。
+
+**第一步行动：** 阅读[工作资金来源](/docs/network/sovereignty/economic-model)（十分钟，完整模型）；在[参与其中 — 赞助商](/get-involved#sponsors)中选择一个通道——语料库工作、奖项，或为[公共基准测试队列](/contribute)提供计算/API 额度；然后通过 [info@champollion.dev](mailto:info@champollion.dev) 或在[公共仓库](https://github.com/gamedaysuits/Champollion/issues)上与我们交流。我们将提供具体的答复，包括尚未构建的部分。
+
+## 新闻与媒体 \{#press}
+
+Champollion 是一个非商业研究项目，旨在为每种语言构建值得信赖的机器翻译评估——源码可用且非商业用途免费，配有开源的评估测试工具和注册表——它是为了诚实地回答一个问题而建立的基础设施：*这种语言的机器翻译到底有多好？* 它发布了测试集注册表、评分规则、运行它们的测试工具，以及一个公开的排行榜和地图，展示谁能翻译什么以及翻译得有多好——欢迎每一种方法，无论是人工还是机器，都由相同的公开规则进行评判。当社区掌握了语言数据，他们就掌握了控制权。
+
+Champollion **不是**什么：不是商业项目（没有产品，没有付费 API，没有计量收费，没有收入分成，没有风险投资——[由其创始人自筹资金](/docs/network/sovereignty/economic-model)）；不是数据收割机（语料库内容**从不托管**；注册表保存的是通过 SHA 固定的元数据卡片，社区语料库完全属于管理者的财产）；不是 AI 翻译产品（Champollion 衡量翻译质量；配套的 CLI 是一个开发者工具）；并且尚未完成——排行榜已上线但还很年轻，社区项目正在建立中，我们宁愿被准确地引用为处于早期阶段，也不愿被慷慨地夸大为进展深入。
+
+关键事实（每一项都可以追溯到仓库内的来源；该项目保留了一个公开的声明账本）：
+
+| 事实 | 来源 |
+|------|--------|
+| 引用索引中有 <SSOTCount field="catalogLanguageCount" /> 张语言卡片 | `cli/shared/language-cards/`（每种语言一张卡片，在构建时统计），显示在 [/languages](/languages) |
+| 注册了 <SSOTCount field="registryDatasetCount" /> 个评估数据集——仅限元数据卡片，从不托管语料库内容 | `arena/datasets/registry.json`（在构建时统计）；参见[评估数据集](/docs/network/leaderboard/datasets) |
+| 语言索引有 <SSOTCount field="licensedSourceCount" /> 个获得许可的上游来源 | `shared/licenses.json`（在构建时统计） |
+| 记录了 160 多种手语——标记为“尚未提供服务——绝不是‘不是一种语言’” | [在这里什么算作一种语言？](/docs/network/context/what-counts-as-a-language) |
+| 标准指标依赖于 sacreBLEU (chrF++, BLEU, TER) 和 COMET/AfriCOMET，外加结构性 FST 检查；神经指标在单独的通道中报告 | [评分规范](/docs/network/specifications/scoring) |
+| 公布的语言使用者薪酬：50–65 加元/小时，无条件，两周内付款 | [语言使用者如何获得报酬](/docs/network/perspectives/how-speakers-get-paid) |
+| 代码许可证：CLI 为 PolyForm Noncommercial 1.0.0（源码可用，非商业用途免费），评估测试工具为 AGPL-3.0（开源） | 项目仓库 |
+| 由 Curtis Forbes 创立并自筹资金；目前没有拨款或赞助商 | [工作资金来源](/docs/network/sovereignty/economic-model) |
+
+样板文本（Boilerplate）：
+
+> Champollion 是一个非商业研究项目，旨在为每种语言构建值得信赖的机器翻译评估——源码可用且非商业用途免费，配有开源的评估测试工具和共享注册表。它维护着一个包含 <SSOTCount field="catalogLanguageCount" /> 种语言的引用索引、一个包含 <SSOTCount field="registryDatasetCount" /> 个评估数据集的注册表（从不托管语料库内容），以及一个开放的测试工具和排行榜，任何翻译方法——无论是机器还是人工——都在相同的公开规则下进行评分。与语言社区共同构建，绝不从他们那里抓取数据：社区拥有他们的数据、他们的测试集，以及任何转移给他们的方法。Champollion 由 Curtis Forbes 创立，网址为 champollion.dev。
+
+**联系方式：** Curtis Forbes，创始人 — [info@champollion.dev](mailto:info@champollion.dev) — [github.com/gamedaysuits/Champollion](https://github.com/gamedaysuits/Champollion)。我们以回答友好问题同样的方式回答批评性问题；如果你正在核实本网站上的某项声明，[诚实的局限性](/docs/network/honest-limitations)是正确的起点——它的存在就是为了让任何人都不必盲目相信我们的话。
+
+## 另请参阅
+
+- [网络如何运作](/docs/network/how-it-works) — 一页了解整个系统
+- [数据管理](/docs/network/sovereignty/data-sovereignty) — 主权立场（原住民数据主权原则、CARE）
+- [所有权与条款](/docs/network/sovereignty/ownership-transfer) — “社区所有”在合同上的含义
+- [关于名称](/docs/the-name) — 为什么叫“Champollion”

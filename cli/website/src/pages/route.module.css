@@ -1,0 +1,261 @@
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.4rem 1.2rem 4rem;
+  /* Docusaurus's .main-wrapper is a flex container; without this the
+     command <pre> min-content stretches the page past the viewport
+     instead of scrolling inside its own box. */
+  min-width: 0;
+  width: 100%;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 0.4rem;
+}
+
+.sub {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.02rem;
+  max-width: 640px;
+}
+
+.pickers {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 1.6rem 0 1rem;
+}
+
+.arrow {
+  font-size: 1.6rem;
+  padding-bottom: 8px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.picker {
+  position: relative;
+  min-width: 260px;
+  flex: 1;
+}
+
+.pickerLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 4px;
+}
+
+.pickerInput {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.pickerList {
+  position: absolute;
+  z-index: 30;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 4px 0 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.pickerItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pickerItem:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.pickerCode {
+  float: right;
+  color: var(--ifm-color-emphasis-500);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+}
+
+.result {
+  margin-top: 1.6rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+}
+
+.resultTitle {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.hops {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.hop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+
+.hopPair {
+  font-weight: 600;
+}
+
+.hopChrf {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.85rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 2px 9px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.unmapped {
+  margin-top: 1.6rem;
+  padding: 1.3rem 1.5rem;
+  border: 2px solid #e5484d;
+  border-radius: 12px;
+}
+
+.unmappedTitle {
+  color: #e5484d;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.mapIt {
+  margin-top: 0.9rem;
+}
+
+.mapItLabel {
+  margin-bottom: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+  font-size: 0.92rem;
+}
+
+.budget {
+  width: 74px;
+  margin-left: 6px;
+  padding: 4px 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.cmd {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  overflow-x: auto;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-top: 0.6rem;
+}
+
+.registerNote {
+  margin-top: 2rem;
+  font-size: 0.88rem;
+  color: var(--ifm-color-emphasis-600);
+  border-left: 3px solid var(--ifm-color-emphasis-300);
+  padding-left: 12px;
+  max-width: 640px;
+}
+
+/* ------------------------------------------------------------- mobile */
+@media (max-width: 640px) {
+  /* Pickers stack full-width; the inline arrow reads wrong stacked. */
+  .pickers {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .picker {
+    min-width: 0;
+  }
+
+  .pickerInput {
+    min-height: 44px;
+  }
+
+  /* Thumb-sized dropdown rows. */
+  .pickerItem {
+    min-height: 44px;
+    padding: 11px 12px;
+  }
+
+  /* Budget + provider: tap-sized, and 16px font so iOS doesn't zoom
+     the page on focus. */
+  .budget {
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    width: 88px;
+  }
+
+  .controls select {
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 1rem;
+  }
+
+  .result,
+  .unmapped {
+    padding: 1rem 1rem;
+  }
+}

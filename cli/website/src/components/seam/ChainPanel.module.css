@@ -1,0 +1,266 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/* ChainPanel — the card-based translation-linkage chain, adapted from the live
+   / homepage Beat-4 into the /home-preview seam (founder R3, 2026-07-22d).
+   Self-contained palette (teal aim, slate chrome, spectrum green/red, amber
+   sovereign) — does NOT import ZipperSeam's module. Fonts follow the site SSOT
+   (heading serif for endonyms, mono for instrument chrome). */
+
+/* R4 (founder): a full-width strip pinned to the lower third; the flow centres
+   the cards within it (robustly horizontal-centred, no left:50% drift). */
+.wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9%;
+  transform: translateY(16px);
+  z-index: 6;
+  text-align: center;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.flow {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+  max-width: min(96vw, 940px);
+  margin: 0 auto;
+  pointer-events: auto;
+}
+/* a soft dark halo so the chain reads as a distinct strip over the bright map */
+.flow::before {
+  content: '';
+  position: absolute;
+  inset: -16px -28px -10px;
+  z-index: -1;
+  background: radial-gradient(ellipse 74% 120% at 50% 58%, rgba(5, 9, 14, 0.76), rgba(5, 9, 14, 0) 74%);
+  pointer-events: none;
+}
+
+/* ── hop cards (glass, teal endonym) ── */
+.hopCard,
+.pivotCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 9px 10px 8px;
+  border-radius: 11px;
+  background: rgba(12, 16, 22, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 100px;
+  max-width: 168px;
+  flex-shrink: 0; /* keep content width — never squish (mis-centres the chain) */
+  text-align: center;
+  overflow: hidden;
+  will-change: opacity, transform;
+}
+.pivotCard {
+  min-width: 92px;
+  border-style: dashed;
+  border-color: rgba(77, 216, 255, 0.34);
+  background: rgba(12, 16, 22, 0.6);
+}
+
+.hopEndo {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #4dd8ff;
+}
+.hopEn {
+  font-size: 0.74rem;
+  color: #8b95a7;
+  margin-top: -2px;
+}
+.pivotRole {
+  margin-top: 3px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7fd6f2;
+}
+
+.hopText {
+  font-size: 0.72rem;
+  font-style: italic;
+  line-height: 1.38;
+  color: #dbe2ee;
+  margin-top: 2px;
+}
+/* the coached (fixed) rendering + the improved chip start collapsed —
+   improve() animates height:auto + opacity. */
+.hopTextFixed {
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #6fb56f;
+  overflow: hidden;
+}
+
+/* ── score chips on the target card ── */
+.chipBad {
+  margin-top: 6px;
+  padding: 4px 11px;
+  border-radius: 11px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: normal;
+  max-width: 100%;
+  background: rgba(214, 69, 80, 0.2);
+  color: #e8737d;
+  border: 1px solid rgba(214, 69, 80, 0.34);
+}
+.chipGood {
+  margin-top: 6px;
+  padding: 4px 11px;
+  border-radius: 11px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: normal;
+  max-width: 100%;
+  background: rgba(76, 175, 80, 0.2);
+  color: #6fb56f;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 14px rgba(76, 175, 80, 0.22);
+  overflow: hidden;
+}
+.chipDelta {
+  color: #6fb56f;
+  font-weight: 800;
+}
+/* the secondary lenses on a quz chip — dimmer than the headline chrF++ */
+.chipLenses {
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* ── bridge cards (corpus · method · licence · valid metrics) ── */
+/* bridge = a live mini run-card between two hops (R4): corpus · method · licence
+   + a metric table whose values roll while the tape head measures that pair and
+   lock in its spectrum colour. */
+.bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(77, 216, 255, 0.06);
+  border: 1px solid rgba(77, 216, 255, 0.14);
+  min-width: 104px;
+  flex-shrink: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+/* the "test is running" glow — synced to the zipper head dwelling on this pair */
+.bridgeMeasuring {
+  border-color: rgba(214, 238, 255, 0.55);
+  box-shadow: 0 0 14px rgba(120, 200, 245, 0.3);
+}
+/* R8 — a bridge whose reading has been IMPROVED holds a quiet green rim after
+   its lock-and-pop decays. The pop is the EVENT ("a better measurement just
+   landed"); this is the standing FACT ("this hop is better than it was"). With
+   six re-measurements crossing three cards, the events alone would leave no
+   trace of which hops had moved. */
+.bridgeImproved {
+  border-color: rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.2);
+}
+/* the method that took THIS reading — mono chrome, never a quality colour */
+.bridgeMeta b {
+  font-weight: 700;
+  color: #aeb7c6;
+}
+.bridgeArrow {
+  color: #4dd8ff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+.bridgeCorpus {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7fd6f2;
+  text-align: center;
+}
+.bridgeMeta {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.62rem;
+  color: #8b95a7;
+  text-align: center;
+}
+.bridgeMetrics {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 3px;
+  padding-top: 3px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.bridgeMetricRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.bridgeMetricRow i {
+  font-style: normal;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  color: #8b95a7;
+}
+.bridgeMetricRow b {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #cdd5e1;
+}
+
+.caveat {
+  margin-top: 10px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  color: #6f7787;
+}
+
+/* train-crossing garnish — a brief teal ring pulse on the crossed card */
+.hopPulse {
+  animation: hopPulse 0.7s ease-out;
+}
+@keyframes hopPulse {
+  0% { box-shadow: 0 0 0 0 rgba(77, 216, 255, 0.5); }
+  100% { box-shadow: 0 0 0 12px rgba(77, 216, 255, 0); }
+}
+
+/* hide the whole panel on narrow viewports — mobile gets map + tape only */
+@media (max-width: 900px) {
+  .wrap {
+    display: none;
+  }
+}
+
+/* rtl:end:ignore */

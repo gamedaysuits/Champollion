@@ -1,0 +1,13 @@
+{
+  "_fixture": "Synthetic CC-BY corpus content used ONLY by scripts/tests/test_corpus_content_scan.py to prove the gate is license-agnostic. Allowlisted in normal repo scans (scripts/tests/fixtures/) so it does not trip the real gate; the test copies it into a throwaway git repo where it is NOT allowlisted and asserts the gate exits non-zero. This is NOT a real corpus.",
+  "license": "CC-BY-4.0",
+  "language_pair": {"source": "eng", "target": "spa"},
+  "entries": [
+    {"source": "The dog runs in the field.", "reference": "El perro corre en el campo."},
+    {"source": "I drink water every morning.", "reference": "Bebo agua todas las mañanas."},
+    {"source": "She reads a book by the window.", "reference": "Ella lee un libro junto a la ventana."},
+    {"source": "We walked to the old market.", "reference": "Caminamos hasta el viejo mercado."},
+    {"source": "The children played in the rain.", "reference": "Los niños jugaron bajo la lluvia."},
+    {"source": "He sells fresh bread on Sundays.", "reference": "Él vende pan fresco los domingos."}
+  ]
+}

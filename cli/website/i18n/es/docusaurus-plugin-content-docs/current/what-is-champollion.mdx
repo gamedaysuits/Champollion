@@ -1,0 +1,136 @@
+---
+slug: /what-is-champollion
+title: "Qué es Champollion"
+description: "Champollion en palabras sencillas: qué hace, para quién es y cómo encajan las piezas. Comience aquí."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Qué es Champollion
+
+**Champollion mide la traducción automática para idiomas que nadie más mide,
+y publica lo que encuentra.**
+
+Esa es toda la idea. Todo en este sitio es o bien una herramienta que realiza esa
+medición, el mapa que construyen esas mediciones, o las reglas bajo las cuales lo hacemos.
+
+---
+
+## El problema
+
+Existen aproximadamente 7,000 idiomas vivos. Para la mayoría de ellos, no se puede responder una
+pregunta básica: *si necesito traducir esto, ¿cuál es la mejor manera disponible, y
+es lo suficientemente buena para usarla?*
+
+No "qué empresa tiene una demostración". Qué método —traductor humano, sistema basado en
+reglas, modelo de lenguaje con prompts, modelo entrenado— realmente funciona para **este
+par, en este tipo de texto**, y cómo puede saberlo.
+
+Para Inglés↔Francés esa pregunta se ha respondido mil veces. Para
+Inglés↔Plains Cree, o Ayta Abellen, o miles de otros, a menudo
+nunca se ha hecho en absoluto. Se anuncia la cobertura; rara vez se muestra la calidad.
+
+Nadie está midiendo, por lo que nadie puede distinguir una mejora real de un comunicado
+de prensa — y las comunidades que desean usar esta tecnología no tienen forma de comprobar
+si es seguro confiarles su idioma.
+
+## Qué hacemos al respecto
+
+No estamos construyendo un motor de traducción. Las grandes empresas de tecnología construyen
+motores. Nosotros construimos lo que le dice si un motor funciona:
+
+1. **Ejecutar un método contra un conjunto de pruebas** y calificarlo, con el mismo procedimiento
+   para cada método y cada idioma.
+2. **Publicar el resultado** con su procedencia — qué datos, qué versión del método,
+   qué métrica, cuánto costó.
+3. **Repetir hasta que el mapa tome forma**: qué idiomas se conectan con cuáles, con qué
+   fuerza, y dónde está el espacio vacío.
+
+Un honesto "ningún método funciona para este par todavía" es un resultado que publicamos. La mayor
+parte del mapa es esa respuesta en este momento, y decirlo es el punto — una brecha que
+usted puede ver es una brecha que alguien puede financiar o llenar.
+
+## Las reglas bajo las que trabajamos
+
+Estas son restricciones, no marketing. Dan forma a lo que el software puede hacer.
+
+**Nunca retenemos su corpus.** Los conjuntos de pruebas se registran apuntando a donde
+ya residen, no subiéndolos a nosotros. Un método se califica contra un
+corpus que nunca poseemos. Para los conjuntos sellados, los datos se cifran en su computadora
+antes de que algo salga de ella, y solo un umbral de custodios de claves de la comunidad
+en conjunto puede autorizar una ejecución.
+
+**Los datos lingüísticos se tratan como biodatos.** Las personas que proporcionan un corpus tienen
+las claves del mismo, y de cualquier cosa medida contra él. El consentimiento se solicita, no
+se asume — y puede ser retirado.
+
+**Somos aspirantes a la soberanía, no certificados en soberanía.** Si un proyecto
+honra la propiedad y el control comunitarios de los datos lingüísticos no
+es una afirmación que el proyecto pueda hacer sobre sí mismo. Hacemos el trabajo y describimos los
+mecanismos honestamente; la determinación pertenece a las comunidades involucradas.
+
+**Todo método es bienvenido, humano y automático.** Un traductor profesional, un
+sistema de reglas basado en FST, un modelo de frontera con prompts y un modelo NMT ajustado
+se comparan de la misma manera, en el mismo conjunto de pruebas. Nos importa lograr que los idiomas
+se traduzcan, no qué herramienta gana.
+
+**Publicamos lo que no podemos hacer.** Consulte las [Limitaciones
+honestas](/docs/network/honest-limitations) — la lista de cosas que este
+proyecto *aún no* afirma hacer. Léala antes de confiar en cualquier otra cosa aquí.
+
+---
+
+## Las piezas, y para qué sirve cada una
+
+| Si usted desea… | Use | Qué es |
+|---|---|---|
+| Traducir una aplicación o sitio | **[Champollion CLI](/docs/intro)** | Un comando traduce sus archivos de configuración regional (locale); usted elige el método por par de idiomas. |
+| Calificar un método, o reproducir una calificación | **[MT-Eval Harness](/docs/network/specifications/harness)** | El motor de evaluación en Python. Cada número en este sitio proviene de él. |
+| Enviar un resultado, o realizar un concurso | **[The Arena](/docs/network/getting-started/submit-a-method)** | La puerta de envío, la base de datos y la maquinaria del concurso — donde ocurre la medición. |
+| Ver lo que se sabe sobre un par | **[The Network](/docs/network/)** | El mapa que construyen las mediciones: cobertura, fuerza de conexión, enrutamiento, la cola de lo que se medirá a continuación. |
+| Buscar un idioma | **[The Atlas](/languages)** | <SSOTCount field="catalogLanguageCount" /> tarjetas de idiomas — clasificación, fonología, vitalidad y qué recursos existen. Cada valor cita su fuente. |
+| Entrenar un modelo sin engañarse a sí mismo | **[NMT Forge](/docs/network/getting-started/training-honestly)** | Una suite de entrenamiento cuyas barreras de seguridad hacen que el autoengaño estándar (datos de prueba filtrados, divisiones no representativas) sea estructuralmente difícil. |
+| Trabajar en esto como un agente de IA | **[Agent Guide](/docs/network/getting-started/agent-guide)** | Herramientas, el servidor MCP y lo que contienen los endpoints legibles por máquina. |
+
+**Champollion es un índice, no un árbitro.** Cada valor cita su fuente e
+informa lo que esa fuente realmente dice. Cuando las fuentes no están de acuerdo —y en el
+recuento de hablantes muy a menudo lo están— la tarjeta las muestra todas, con su respectiva atribución. No
+elegimos un ganador ni fabricamos un consenso.
+
+---
+
+## El nombre
+
+Jean-François Champollion descifró los jeroglíficos egipcios usando la Piedra de
+Rosetta — el mismo texto en tres escrituras. El texto paralelo sigue siendo cómo
+se aprende la traducción. El nombre también conlleva una tensión que vale la pena mencionar en voz
+alta: un erudito europeo leyendo la escritura de otra persona, en una era de extracción. Pensamos
+en eso. Es por eso que las reglas de soberanía anteriores son restricciones en el software y
+no una página en un folleto.
+
+## A dónde ir a continuación
+
+- **Usted desea traducir algo** → [Inicio
+  rápido](/docs/getting-started/quick-start).
+- **Usted habla, enseña o es custodio de un idioma** → [Para comunidades
+  lingüísticas](/docs/network/community/for-language-communities), luego
+  [Registro de corpus](/docs/network/sovereignty/registering-corpora) para saber cómo
+  se usa un conjunto de pruebas sin ser entregado.
+- **Usted es investigador o creador de métodos** → el argumento de evaluación primero en
+  [Quién se beneficia](/docs/network/who-benefits#researchers) — por qué mil
+  pares curados superan a setecientos mil no curados — luego
+  [Asociación de corpus](/docs/network/specifications/corpus-partnership) para
+  incorporar un idioma, o [Enviar un
+  método](/docs/network/getting-started/submit-a-method) y la
+  [Especificación de calificación](/docs/network/specifications/scoring) para competir en los
+  idiomas que ya están aquí.
+- **Usted es un agente de IA** → [Guía del
+  agente](/docs/network/getting-started/agent-guide); los puntos de entrada
+  legibles por máquina son `/llms.txt` y `/llms-full.txt`.
+- **Usted financia este tipo de trabajo** → [Quién
+  se beneficia](/docs/network/who-benefits#funders) y [Limitaciones
+  honestas](/docs/network/honest-limitations).
+- **Usted desea conocer los antecedentes** → [Cómo llegó el campo
+  hasta aquí](/docs/network/context/mt-field-briefing), [qué cuenta como un
+  idioma](/docs/network/context/what-counts-as-a-language), y [cómo se cuenta
+  la cobertura](/docs/network/context/coverage-counting).

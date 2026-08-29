@@ -1,0 +1,29 @@
+/* Reveal — scroll-triggered entrance. Hidden state exists ONLY when JS has
+   set data-reveal="pending" (so SSR / no-JS / reduced-motion users always
+   see content). Transform + opacity only. */
+
+.reveal {
+  transition:
+    opacity var(--duration-reveal, 650ms) ease-out,
+    transform var(--duration-reveal, 650ms) var(--ease-out, ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-reveal='pending'] {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.reveal[data-reveal='in'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-reveal='pending'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

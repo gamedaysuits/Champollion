@@ -1,0 +1,340 @@
+{
+  "code": "mul",
+  "name": {
+    "agreement": "single",
+    "consensus": "Multiple languages",
+    "values": [
+      {
+        "value": "Multiple languages",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "bcp47FullTag": {
+    "agreement": "single",
+    "consensus": "mul-Zyyy-001",
+    "values": [
+      {
+        "value": "mul-Zyyy-001",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"mul\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "mul",
+    "values": [
+      {
+        "value": "mul",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "lexicalResources": {
+    "dictionaries": [
+      {
+        "name": "dict-kpv-mul",
+        "url": "https://github.com/giellalt/dict-kpv-mul",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "kpv",
+        "direction": "to"
+      },
+      {
+        "name": "dict-mdf-mul",
+        "url": "https://github.com/giellalt/dict-mdf-mul",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "mdf",
+        "direction": "to"
+      },
+      {
+        "name": "dict-myv-mul",
+        "url": "https://github.com/giellalt/dict-myv-mul",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "myv",
+        "direction": "to"
+      },
+      {
+        "name": "dict-sjd-mul",
+        "url": "https://github.com/giellalt/dict-sjd-mul",
+        "publisher": "giellalt",
+        "license": "NOASSERTION",
+        "licenceEstablished": false,
+        "archived": false,
+        "pairedWith": "sjd",
+        "direction": "to"
+      },
+      {
+        "name": "dict-sje-mul",
+        "url": "https://github.com/giellalt/dict-sje-mul",
+        "publisher": "giellalt",
+        "license": "NOASSERTION",
+        "licenceEstablished": false,
+        "archived": false,
+        "pairedWith": "sje",
+        "direction": "to"
+      },
+      {
+        "name": "dict-sma-mul",
+        "url": "https://github.com/giellalt/dict-sma-mul",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "sma",
+        "direction": "to"
+      },
+      {
+        "name": "dict-sms-mul",
+        "url": "https://github.com/giellalt/dict-sms-mul",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "sms",
+        "direction": "to"
+      }
+    ]
+  },
+  "isoLanguageType": "Special",
+  "isoScope": "Special",
+  "resources": {
+    "keyboards": [
+      {
+        "name": "SIL Ethiopic Power-G",
+        "keyboardId": "sil_ethiopic_power_g",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/sil/sil_ethiopic_power_g",
+        "publisher": "keyman",
+        "version": "1.2.6",
+        "lastModified": "2024-12-03"
+      },
+      {
+        "name": "SIL Ethiopic",
+        "keyboardId": "sil_ethiopic",
+        "url": "https://github.com/keymanapp/keyboards/tree/master/release/sil/sil_ethiopic",
+        "publisher": "keyman",
+        "version": "2.0.7",
+        "lastModified": "2024-12-03"
+      }
+    ]
+  },
+  "methodSupport": {
+    "total": 28,
+    "byTier": {
+      "model-card-declared": 28
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:aoiandroid/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Dims002/mbart-yemba-translator",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-en-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-mul-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:JSCreatorPro/offline-cpu-marianmt",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-en-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-mul-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-en-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-mul-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tcbig-bible_deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tcbig-bible_mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tcbig-bible_mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/translate-tcbig-bible_mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-en-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-mul-en",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindyWord/translate-tcbig-bible_deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": true
+  },
+  "coverage": {
+    "sourceCount": 6,
+    "componentsPresent": 8,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.dictionaries": [
+      "giellalt-resources-2026-08-06"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.keyboards": [
+      "keyman-keyboards-2026-08-08"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "mul",
+    "revision": "8acb5230c459dc8b",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.dictionaries",
+      "methodSupport",
+      "name",
+      "resources.keyboards"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "iso15924",
+  "upstream": "https://www.unicode.org/iso15924/iso15924.txt",
+  "license": "Unicode-3.0",
+  "licenseUrl": "https://www.unicode.org/license.txt",
+  "citation": "Unicode Consortium (ISO 15924 Registration Authority). 2025-04-24. ISO 15924 script codes.",
+  "pin": {
+    "kind": "release",
+    "value": "2025-04-24",
+    "doi": null,
+    "date": "2025-04-24"
+  },
+  "files": [
+    {
+      "path": "iso15924.txt",
+      "bytes": 14444,
+      "sha256": "98a9be293c706f7e6302e9a54ed959c36f15f53e4ca618356d80c10be2928426",
+      "url": "https://www.unicode.org/iso15924/iso15924.txt",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/iso15924.mjs",
+  "notes": "Unicode publishes no checksum for this file, so `upstreamVerified` is false by necessity: the sha256 is what we received. The header declares no release date, so the pin is the most recent per-entry date in the file — the registry as of its latest change, derived from the data rather than declared. 226 script codes parsed.",
+  "fetchedAt": "2026-08-05T07:32:12.871Z"
+}

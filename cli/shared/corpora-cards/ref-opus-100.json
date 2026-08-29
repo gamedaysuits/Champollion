@@ -1,0 +1,38 @@
+{
+  "id": "ref-opus-100",
+  "type": "reference",
+  "name": "OPUS-100",
+  "version": "1.0",
+  "description": "English-centric massively multilingual corpus sampled from OPUS. 99 language pairs (all include English) with up to 2,000 test sentences each. NOT used for evaluation due to mixed/unknown licensing — OpenSubtitles component has copyright concerns and per-sentence provenance is not tracked.",
+  "languages": [
+    "afr", "amh", "arb", "asm", "aze", "bel", "ben", "bre", "bos", "bul",
+    "cat", "ces", "cym", "dan", "deu", "dzo", "ell", "eng", "epo", "est",
+    "eus", "fas", "fin", "fra", "fry", "gle", "gla", "glg", "guj", "hau",
+    "heb", "hin", "hrv", "hun", "hye", "ibo", "ind", "isl", "ita", "jpn",
+    "kan", "kat", "kaz", "khm", "kir", "kor", "kur", "lav", "lit", "mal",
+    "mar", "mkd", "mlt", "mon", "msa", "mya", "nld", "nno", "nob", "npi",
+    "ori", "pan", "pol", "por", "pbt", "ron", "rus", "kin", "sme", "sin",
+    "slk", "slv", "sqi", "srp", "swe", "swh", "tam", "tat", "tel", "tgk",
+    "tha", "tur", "tuk", "uig", "ukr", "urd", "uzb", "vie", "wal", "xho",
+    "yid", "yor", "cmn", "zul"
+  ],
+  "source": {
+    "publisher": "Helsinki-NLP",
+    "url": "https://huggingface.co/datasets/Helsinki-NLP/opus-100",
+    "paper": "https://arxiv.org/abs/2004.11867",
+    "citation": "Zhang et al. (2020). Improving Massively Multilingual Neural Machine Translation and Zero-Shot Translation.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-OPUS-Mixed",
+    "commercial": null,
+    "redistribution": null,
+    "aiTraining": null,
+    "notes": "Mixed/unknown licensing. Sampled from OPUS which aggregates many sub-corpora with different licenses. OpenSubtitles component has derivative work copyright concerns. Per-sentence provenance is not tracked, making license-compliant filtering impossible."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "reason_excluded": "Mixed/unknown licensing with OpenSubtitles copyright risk. No per-sentence provenance makes license-compliant usage impossible."
+  }
+}

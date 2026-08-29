@@ -1,0 +1,432 @@
+{
+  "$comment": "Every field the live card corpus carries, with a DECISION. The projector builds only what the spec defines, so a field absent from the spec silently disappears at cutover — this register is what makes each disappearance a choice rather than an oversight. Status must be one of: DONE (projected), EXTRACT (a pinned source exists, extractor needed), DERIVE (computable from facts we hold), CURATE (human knowledge, needs the curated lane with citations), DROP (manufactured, retired, or not a fact about a language), RUNTIME (live config, not card data).",
+  "version": 1,
+  "fields": {
+    "name": {
+      "status": "DONE",
+      "why": "projected as an attributed field across ISO, Glottolog and LinguaMeta"
+    },
+    "alternateNames": {
+      "status": "DONE",
+      "why": "projected from the ISO name index"
+    },
+    "aliases": {
+      "status": "DONE",
+      "why": "same concept as alternateNames; merged rather than kept as a second field",
+      "liveCards": 7918
+    },
+    "iso639_3": {
+      "status": "DONE",
+      "why": ""
+    },
+    "iso639_1": {
+      "status": "DONE",
+      "why": ""
+    },
+    "isoScope": {
+      "status": "DONE",
+      "why": ""
+    },
+    "isoType": {
+      "status": "DONE",
+      "why": "projected as isoLanguageType — renamed to say it is a REGISTRY classification, not a vitality claim",
+      "liveCards": 8270
+    },
+    "glottocode": {
+      "status": "DONE",
+      "why": ""
+    },
+    "classification": {
+      "status": "DONE",
+      "why": ""
+    },
+    "isIsolate": {
+      "status": "DONE",
+      "why": ""
+    },
+    "dialectCount": {
+      "status": "DONE",
+      "why": ""
+    },
+    "coordinates": {
+      "status": "DONE",
+      "why": ""
+    },
+    "countries": {
+      "status": "DONE",
+      "why": ""
+    },
+    "macrolanguage": {
+      "status": "DONE",
+      "why": ""
+    },
+    "bcp47": {
+      "status": "DONE",
+      "why": ""
+    },
+    "scripts": {
+      "status": "DONE",
+      "why": ""
+    },
+    "vitality": {
+      "status": "DONE",
+      "why": "projected as `endangerment`, one attributed field over ELCat + Glottolog AES + LinguaMeta instead of four fields meaning the same thing",
+      "liveCards": 8537
+    },
+    "vitalityStatuses": {
+      "status": "DONE",
+      "why": "folded into endangerment.values — it WAS the multi-source list, now the standard attributed shape",
+      "liveCards": 7745
+    },
+    "speakerEstimates": {
+      "status": "DONE",
+      "why": ""
+    },
+    "documentationDepth": {
+      "status": "DONE",
+      "why": "projected as documentation.mostExtensiveDescription, from Glottolog MED with its bibliography id — the old field had no fetchable source at all",
+      "liveCards": 7918
+    },
+    "firstDocumented": {
+      "status": "DONE",
+      "why": "projected as documentation.firstDocumented",
+      "liveCards": 7918
+    },
+    "lastDocumented": {
+      "status": "DONE",
+      "why": "projected as documentation.lastDocumented",
+      "liveCards": 7918
+    },
+    "colexificationProfile": {
+      "status": "DONE",
+      "why": "projected as lexicalResources; notableColexifications deliberately removed (15% tautologies)",
+      "liveCards": 7918
+    },
+    "dir": {
+      "status": "DONE",
+      "why": "projected as textDirection; absent rather than defaulted for the 8,562 languages CLDR does not cover",
+      "liveCards": 7918
+    },
+    "numeralSystem": {
+      "status": "DONE",
+      "why": "rebuilt from Chan verbatim — 2,005 invented bases removed"
+    },
+    "macroarea": {
+      "status": "DONE",
+      "why": "projected from glottolog-cldf — NOT from languoid.csv, which has no such column",
+      "liveCards": 8421
+    },
+    "regions": {
+      "status": "DONE",
+      "why": "projected as `countries` — the same Glottolog country data. Keeping both would be two fields for one fact",
+      "liveCards": 8669
+    },
+    "nativeName": {
+      "status": "RUNTIME",
+      "why": "never on a raw card by design. cli/lib/cards/reader.js normalizeCard() derives it from the cited endonym envelope at read time, so the disagreement stays on the card and the runtime gets one displayable value."
+    },
+    "varieties": {
+      "status": "DONE",
+      "why": "projected as `macrolanguageMembers`, the inverse of `macrolanguage` read from the same ISO rows so the two cannot disagree"
+    },
+    "members": {
+      "status": "DONE",
+      "why": "same concept as varieties; merged rather than kept as a second field",
+      "liveCards": 56
+    },
+    "orthographies": {
+      "status": "DONE",
+      "why": "script + name + primary flag, folded into `scripts`. `canonicalForMt` was the only extra, and it is a JUDGEMENT — it belongs in the curated lane, not smuggled in beside a code",
+      "liveCards": 6703
+    },
+    "scriptUnicodeName": {
+      "status": "DONE",
+      "why": "projected as `scriptNames`, derived from the ISO 15924 table with lineage to the script fact — the old field asserted the same lookup with no provenance",
+      "liveCards": 7918
+    },
+    "databaseCoverage": {
+      "status": "DONE",
+      "why": "projected as `coverage.coveredBy`, computed FROM the fact store rather than hand-kept, so it cannot drift from what we hold",
+      "liveCards": 8669
+    },
+    "corpusAvailability": {
+      "status": "DONE",
+      "why": "folded into `lexicalResources` — ASJP wordlist and form counts are the same concept",
+      "liveCards": 8669
+    },
+    "pipelineReadiness": {
+      "status": "DONE",
+      "why": "projected as coverage.componentsPresent / componentsTotal — the same idea without the weighted 'score', which hid an opinion about what matters inside a number",
+      "liveCards": 8669
+    },
+    "supportTier": {
+      "status": "DROP",
+      "why": "an editorial grade on 8,623 cards with NO _fieldSources entry at all. Deriving it from componentsPresent would relaunder the same unsourced judgement. If a tier is wanted it must be a curated call with an author, or a documented function a reader can apply and disagree with",
+      "liveCards": 8669
+    },
+    "dataSources": {
+      "status": "DONE",
+      "why": "superseded by computed _fieldSources and _generated.from — a hand-kept source list beside a computed one is two truths",
+      "liveCards": 8669
+    },
+    "methodSupport": {
+      "status": "DONE",
+      "why": "projected from method-coverage.json, 11 methods, capability only — never a score",
+      "liveCards": 8669
+    },
+    "metricPlugins": {
+      "status": "RUNTIME",
+      "why": "composed at runtime from shared/catalogue/card-config.json, not projected onto cards. Keeping per-language plugin wiring in the config kernel is what stops one language being special-cased on the cards themselves."
+    },
+    "metricModelSupport": {
+      "status": "DONE",
+      "why": "projected from shared/catalogue/metric-coverage.json — the model IDENTIFIER a harness must load (e.g. AfriCOMET), never a score. Was registered BLOCKED before the register was ever compared against the real build output."
+    },
+    "evalDatasets": {
+      "status": "RUNTIME",
+      "why": "composed at runtime from shared/catalogue/card-config.json (346 languages), not projected onto cards — same reason as metricPlugins."
+    },
+    "omt1600": {
+      "status": "DONE",
+      "why": "projected as methodSupport.omt1600 — Omnilingual MT is one of the 11 methods in method-coverage.json, never a separate concept",
+      "liveCards": 8669
+    },
+    "evalPack": {
+      "status": "DROP",
+      "why": "a pip manifest, not a fact about a language, and no runtime consumer",
+      "liveCards": 12
+    },
+    "evalStandard": {
+      "status": "DROP",
+      "why": "a pip manifest entry naming which eval standard plugin to install. Not a fact about a language, and no runtime consumer reads it from a card.",
+      "liveCards": 1
+    },
+    "evalMetrics": {
+      "status": "DROP",
+      "why": "a pip manifest entry listing metric plugins to install. Not a fact about a language; which metrics exist is a property of the harness, and which metrics were RUN is a leaderboard result.",
+      "liveCards": 1
+    },
+    "formality": {
+      "status": "DROP",
+      "why": "119 distinct values across 1,781 cards (6.7% unique). Same",
+      "liveCards": 1781
+    },
+    "registers": {
+      "status": "DROP",
+      "why": "113 distinct values across 1,775 cards (6.4% unique). Templated register descriptions, not per-language description",
+      "liveCards": 1775
+    },
+    "gender": {
+      "status": "DROP",
+      "why": "150 distinct values across 2,404 cards (6.2% unique) — and Grambank CODES this properly (GB030, GB051-053), already extracted into typologicalProfile. A templated prose description beside a coded source is a second, worse truth",
+      "liveCards": 2404
+    },
+    "linguisticChallenges": {
+      "status": "DROP",
+      "why": "1,248 distinct across 4,548 (27.4%) — the most per-language of the templated set, but its sole producer (enrich-from-typology.mjs) NO LONGER EXISTS, so it cannot be regenerated. The facts it summarised are now on the card directly (typologicalProfile, phonologicalInventory, numeralSystem), which is better than a prose gloss of them",
+      "liveCards": 4548
+    },
+    "contactInfluences": {
+      "status": "DROP",
+      "why": "550 distinct across 3,360 (16.4%), and 140 entries name an 'unidentified donor', which is not a contact event",
+      "liveCards": 3360
+    },
+    "codeSwitching": {
+      "status": "DONE",
+      "why": "migrated to shared/curated-facts/language-facts.json and projected through the curated lane; editorial with an author and date, confidence 'unverified' because a human assertion with no upstream is unverified by construction",
+      "liveCards": 3
+    },
+    "culturalAphorism": {
+      "status": "DONE",
+      "why": "migrated to shared/curated-facts/language-facts.json and projected through the curated lane; editorial with an author and date, confidence 'unverified' because a human assertion with no upstream is unverified by construction",
+      "liveCards": 92
+    },
+    "encyclopedic": {
+      "status": "DROP",
+      "why": "its own provenance says \"machine-assembled\" — GENERATED prose, not human knowledge. The founder ordering is explicit that prose comes last, regenerated from facts once the facts are right. Curating machine output as though it were curation would freeze today's errors into tomorrow's citations. Returns in Phase G",
+      "liveCards": 7907
+    },
+    "rules": {
+      "status": "DROP",
+      "why": "66 distinct values across 7,927 cards (0.8% unique) — typography and capitalisation templates applied by script family, stamped `manual-curation`",
+      "liveCards": 7927
+    },
+    "taxonomyNotes": {
+      "status": "DROP",
+      "why": "present on no card, live or projected — the entry was speculative"
+    },
+    "notes": {
+      "status": "DONE",
+      "why": "migrated to shared/curated-facts/language-facts.json and projected through the curated lane; editorial with an author and date, confidence 'unverified' because a human assertion with no upstream is unverified by construction",
+      "liveCards": 45
+    },
+    "experts": {
+      "status": "DONE",
+      "why": "migrated to shared/curated-facts/language-facts.json and projected through the curated lane; editorial with an author and date, confidence 'unverified' because a human assertion with no upstream is unverified by construction",
+      "liveCards": 1854
+    },
+    "humanReviewed": {
+      "status": "DROP",
+      "why": "present on no card. Review state belongs to the correction lane, not to card data"
+    },
+    "nativeNameVerdict": {
+      "status": "DONE",
+      "why": "migrated to shared/curated-facts/language-facts.json and projected through the curated lane; editorial with an author and date, confidence 'unverified' because a human assertion with no upstream is unverified by construction",
+      "liveCards": 1378
+    },
+    "arealContext": {
+      "status": "DROP",
+      "why": "719 distinct values across 5,000 cards (14.4% unique) — templated areal prose",
+      "liveCards": 5000
+    },
+    "modality": {
+      "status": "DONE",
+      "why": "restored 2026-08-12 and now DERIVED rather than heuristic: Glottolog states the parent edges, we walk them to the root and test it against the Sign Language pseudo-family (sign1238). Replaces an ISO-Ref_Name regex plus a hand-written allowlist of four endonymous codes, which missed 64 sign languages. Matters because a signed language has no written modality, so every text-in/text-out assumption is wrong for it."
+    },
+    "orthographicStatus": {
+      "status": "DONE",
+      "why": "SPLIT 2026-08-18. The MANUFACTURED half stays dead: 'unwritten' was asserted about 1,318 languages — 1,059 of them living — because WE had failed to harvest a script; script absence stays absence and 'unwritten' is never derived. The POSITIVE rungs returned as an in-store derivation over cited signals (cldrOfficialStatus → standardized/de-facto-standard; script + CLDR-presence-or-keyboard → has-orthography; script alone → developing). See cli/scripts/cldf/derive-orthographic-status.mjs and retired-parameters.csv.",
+      "liveCards": 13724
+    },
+    "archivePresence": {
+      "status": "DROP",
+      "why": "OLAC retired: unreachable upstream, no producer, and only 6.4% of the claim was a real archive. See shared/retired-sources.json",
+      "liveCards": 7918
+    },
+    "digitalPresence": {
+      "status": "DROP",
+      "why": "incubator-wikis.json is orphaned output with no producer and no fetcher. Same rule as OLAC",
+      "liveCards": 8669
+    },
+    "keyboardSupport": {
+      "status": "DROP",
+      "why": "firstvoices-keyboards has no fetcher and no data on disk. Retire or fetch — not assert",
+      "liveCards": 8669
+    },
+    "resources": {
+      "status": "DONE",
+      "why": "projected: the per-language resource EXISTENCE block (grammars, dictionaries, keyboards, corpora). Existence and capability are what a card may assert; measured scores stay on the leaderboard."
+    },
+    "extends": {
+      "status": "DROP",
+      "why": "a card-template inheritance pointer, not a fact about a language. Cards are projected wholesale now, so template inheritance has no meaning",
+      "liveCards": 7918
+    },
+    "scriptConverter": {
+      "status": "RUNTIME",
+      "why": "live configuration read by cli/lib/pairs.js. Not card data; excluded from the audit rather than treated as a fact",
+      "liveCards": 7918
+    },
+    "code": {
+      "status": "DONE",
+      "why": "the card's primary key; projected as the identity field"
+    },
+    "script": {
+      "status": "DONE",
+      "why": "projected as `scripts` — a list with a primary flag, because a language can use more than one and picking one silently is what the old single `script` field did",
+      "liveCards": 6609
+    },
+    "typologicalProfile": {
+      "status": "DONE",
+      "why": "projected from WALS and Grambank, each sub-field naming exactly ONE of them so a card never blends two codings into one claim",
+      "liveCards": 4050
+    },
+    "phonologicalInventory": {
+      "status": "DONE",
+      "why": "projected from PHOIBLE; counts are medians across its disagreeing inventories, and tone is PHOIBLE-only per lint R1",
+      "liveCards": 2180
+    },
+    "history": {
+      "status": "DONE",
+      "why": "migrated to the curated lane (54 entries)"
+    },
+    "bcp47FullTag": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from sil-langtags|cldr-supplemental — this register mirrors that decision, it does not make a second one"
+    },
+    "bcp47Tag": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from sil-langtags|cldr-supplemental — this register mirrors that decision, it does not make a second one"
+    },
+    "endangerment": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from elcat|glottolog-cldf|linguameta — this register mirrors that decision, it does not make a second one"
+    },
+    "isoLanguageType": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from sil-iso639-3 — this register mirrors that decision, it does not make a second one"
+    },
+    "lexicalResources": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from cldf-dictionary;giellalt-resources — this register mirrors that decision, it does not make a second one"
+    },
+    "documentation": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from glottolog-cldf — this register mirrors that decision, it does not make a second one"
+    },
+    "scriptNames": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from champollion-derived — this register mirrors that decision, it does not make a second one"
+    },
+    "coverage": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=PROJECTED), sourced from champollion-derived — this register mirrors that decision, it does not make a second one"
+    },
+    "politenessDistinction": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from grambank|wals — this register mirrors that decision, it does not make a second one"
+    },
+    "endonym": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from linguameta|wikidata — this register mirrors that decision, it does not make a second one"
+    },
+    "codeAliases": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from champollion-derived — this register mirrors that decision, it does not make a second one"
+    },
+    "textDirection": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from unicode-cldr — this register mirrors that decision, it does not make a second one"
+    },
+    "supersededCodes": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from sil-iso639-3 — this register mirrors that decision, it does not make a second one"
+    },
+    "cldrOfficialStatus": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from linguameta — this register mirrors that decision, it does not make a second one"
+    },
+    "suppressScript": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from iana-subtag-registry — this register mirrors that decision, it does not make a second one"
+    },
+    "wikipediaEdition": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from wikipedia — this register mirrors that decision, it does not make a second one"
+    },
+    "pluralCategories": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from cldr-plurals — this register mirrors that decision, it does not make a second one"
+    },
+    "canonicalisedMembers": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from cldr-supplemental|sil-langtags — this register mirrors that decision, it does not make a second one"
+    },
+    "macrolanguageMembers": {
+      "status": "DONE",
+      "why": "decided in shared/cldf/parameters.csv (Disposition=DONE), sourced from sil-iso639-3 — this register mirrors that decision, it does not make a second one"
+    },
+    "_atlas": {
+      "status": "RUNTIME",
+      "why": "build metadata, not a fact: stamps the atlas version a card was projected from so a consumer cannot blend two releases (requireAtlas). Never fetched, never cited."
+    },
+    "locale": {
+      "status": "PROJECTED",
+      "why": "Constructed by the locale projector from an already-projected language card — which language, territory and script this locale resolves, plus the SIL langtags tag that caused it to exist. It has NO parameter row by design: the store holds language, corpus and method subjects only (schema.mjs CHECK), because a locale asserts nothing of its own. Enumerated from the registry, never curated."
+    },
+    "localeScoped": {
+      "status": "PROJECTED",
+      "why": "The territory- and script-scoped values resolved for THIS locale, selected from the value layer's territory and script axes. The only place a locale card differs in substance from its language; everything else is the parent's facts unchanged, attribution envelopes included. Same reason as `locale` for having no parameter row."
+    }
+  }
+}

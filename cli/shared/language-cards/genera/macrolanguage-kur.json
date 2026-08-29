@@ -1,0 +1,72 @@
+{
+  "code": "macrolanguage-kur",
+  "extends": "genus-iranian",
+  "name": "Kurdish Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "kur",
+  "script": null,
+  "dir": null,
+  "formality": {
+    "system": "T-V",
+    "description": "Kurdish varieties have T-V pronominal distinctions: Kurmanji tu/hûn, Sorani to/êwe. Formal address uses plural pronouns for singular referents. Formality is also expressed through vocabulary choice and discourse particles. The system is similar across varieties despite script and structural differences.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": null,
+    "inclusiveGuidance": "Gender varies WITHIN the macrolanguage: Kurmanji (Northern Kurdish) retains a full masculine/feminine gender system with agreement on articles, adjectives, and verbs. Sorani (Central Kurdish) has LOST grammatical gender — no gender agreement, gender-neutral pronouns. This is a fundamental structural difference between the two main varieties. Cards for individual varieties MUST override this field."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": null
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "scriptSplit": "Kurdish varieties use different scripts: Kurmanji (Northern Kurdish) uses Latin script (Hawar alphabet, LTR) in Turkey and Syria. Sorani (Central Kurdish) uses modified Arabic/Persian script (RTL) in Iraq and Iran. This is NOT just a transliteration difference — orthographic conventions, word boundaries, and even morphological representation differ by script. MT must handle both scripts correctly.",
+    "splitErgativity": "Both major Kurdish varieties exhibit split ergativity — ergative-absolutive alignment in past tenses (the agent of a past transitive verb takes oblique case) and nominative-accusative in present tenses. The ergative split is more prominent in Kurmanji than Sorani.",
+    "ezafeConstruction": "Both varieties use the ezāfe construction (Kurmanji -a/-ê/-ên, Sorani -î/-y) to link nouns to modifiers, shared with Persian. Ezāfe forms differ by variety and interact with gender (in Kurmanji) and definiteness.",
+    "genderAsymmetry": "Kurmanji's full M/F gender system vs. Sorani's genderless system is the most dramatic structural difference within a single macrolanguage. MT systems must apply completely different agreement rules depending on the target variety.",
+    "lightVerbs": "Both varieties use light verb constructions shared with the Iranian genus: noun/adjective + light verb (kirin 'to do', bûn 'to become', dan 'to give', etc.). Compound verb inventories differ between Kurmanji and Sorani.",
+    "dialectContinuum": "Kurdish forms a dialect continuum — Kurmanji, Sorani, and Southern Kurdish (Kelhuri/Feyli) grade into each other geographically. Written standards exist for Kurmanji and Sorani but are not fully standardized. Vocabulary, morphology, and syntax all show continuous variation."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Iranian",
+    "genusGlottocode": "iran1269",
+    "ancestry": [
+      "Indo-European",
+      "Indo-Iranian",
+      "Iranian",
+      "Western Iranian",
+      "Northwestern Iranian",
+      "Kurdish"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Macrolanguage card for Kurdish (kur). Covers Kurmanji/Northern Kurdish (kmr, Latin script), Sorani/Central Kurdish (ckb, Arabic script), and Southern Kurdish (sdh). Script and direction are null because of the Latin (LTR)/Arabic (RTL) split. Gender is null because Kurmanji has it and Sorani doesn't. Individual variety cards MUST override script, dir, and gender.",
+  "regions": [
+    {
+      "country": "Kurdistan region (cross-border)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Turkey (Kurmanji), Iraq (Sorani, official in Kurdistan Region), Iran (Sorani/Southern), Syria (Kurmanji)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

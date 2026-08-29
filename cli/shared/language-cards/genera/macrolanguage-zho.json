@@ -1,0 +1,98 @@
+{
+  "code": "macrolanguage-zho",
+  "extends": "genus-sinitic",
+  "name": "Chinese Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "zho",
+  "script": "Hani",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Chinese varieties share a register-based formality system expressed through vocabulary choice (colloquial vs. literary), discourse particles, and specific honorific/humble word pairs. Mandarin has the nǐ/nín (你/您) T-V pronoun distinction. Written formal Chinese across all varieties draws on Classical Chinese (文言文) vocabulary. Cantonese, Wu, and other varieties rely more on lexical register than pronominal formality.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Chinese has no grammatical gender. The spoken third-person pronoun tā is gender-neutral across all varieties. Written Mandarin introduced gendered characters (他/她/它) in the 20th century as an orthographic convention — they share pronunciation. Other varieties generally do not distinguish gender in writing either."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": false,
+      "punctuationSpacing": {
+        "doublePunctuation": "fullwidth"
+      },
+      "fullwidthPunctuation": true
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "classifierSystem": "All Chinese varieties use classifier/measure word systems. Each noun requires a specific classifier when counted or used with demonstratives. Classifier inventories and preferences differ between varieties (Mandarin vs. Cantonese classifiers are partially overlapping but not identical).",
+    "simplifiedTraditional": "The Chinese macrolanguage spans two standard character sets: Simplified (简体, mainland China/Singapore) and Traditional (繁體, Taiwan/Hong Kong/Macau). Output MUST use the correct variant for the target region. One-to-many and many-to-one character mappings exist between the sets — conversion is not trivial.",
+    "tonalVariation": "Tonal systems differ dramatically across varieties: Mandarin has 4 tones (+neutral), Cantonese 6–9, Min varieties 7–8, Wu 5–7. Romanization systems differ accordingly (Pinyin, Jyutping, POJ). Tone marks are essential for disambiguation in all romanized output.",
+    "topicDrop": "All Chinese varieties are strongly topic-prominent and pro-drop. Subjects, objects, and topics are omitted when recoverable. Over-generating pronouns is the most common MT error in Chinese output.",
+    "analyticGrammar": "No inflection across any variety. Tense/aspect/mood expressed through particles that differ between varieties (Mandarin 了/着/过 vs. Cantonese 咗/緊/過). Particle systems are NOT interchangeable between varieties.",
+    "mutualIntelligibility": "Chinese varieties are NOT mutually intelligible in spoken form — Mandarin, Cantonese, Wu, Min, Hakka are as different as Romance languages. However, they share a written standard (with variation). Do NOT treat Chinese as a single spoken language."
+  },
+  "classification": {
+    "family": "Sino-Tibetan",
+    "familyGlottocode": "sino1245",
+    "genus": "Sinitic",
+    "genusGlottocode": "sini1245",
+    "ancestry": [
+      "Sino-Tibetan",
+      "Sinitic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3",
+    "iso639-3-2024"
+  ],
+  "notes": "Macrolanguage card for Chinese (zho). Covers 15+ member varieties (Mandarin cmn, Cantonese yue, Wu wuu, Min Nan nan, Min Dong cdo, Hakka hak, Gan gan, Xiang hsn, etc.). All share CJK characters, analytic grammar, classifier systems, and topic-prominence. Individual variety cards should extend this card.",
+  "regions": [
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "officialStatus": "national",
+      "region": "China, Taiwan, Hong Kong, Macau, Singapore, Malaysia, global diaspora",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null,
+  "iso639_3": "zho",
+  "_fieldSources": {
+    "iso639_3": "iso639-3-2024",
+    "isoType": "iso639-3-2024",
+    "modality": "derived:glottolog-sign-family+iso639-3-refname",
+    "members": "iso639-3-2024",
+    "supportTier": "derived:taxonomy-hub-policy (docs/LANGUAGE_TAXONOMY.md)"
+  },
+  "isoType": "L",
+  "modality": "spoken",
+  "taxonomyNotes": null,
+  "members": [
+    "cdo",
+    "cjy",
+    "cmn",
+    "cnp",
+    "cpx",
+    "csp",
+    "czh",
+    "czo",
+    "gan",
+    "hak",
+    "hnm",
+    "hsn",
+    "luh",
+    "lzh",
+    "mnp",
+    "nan",
+    "sjc",
+    "wuu",
+    "yue"
+  ],
+  "supportTier": "cataloged"
+}

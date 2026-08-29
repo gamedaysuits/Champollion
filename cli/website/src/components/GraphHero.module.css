@@ -1,0 +1,1438 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/**
+ * GraphHero — THE TRANSLATION NETWORK (lab stage).
+ * Art direction bar: "cities at night against a living dark network."
+ * All motion is transform/opacity only (canvas excepted — the
+ * sanctioned rAF layer); every animated affordance has a
+ * reduced-motion fallback (the SSR poster IS the composition).
+ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  /* Full viewport minus the navbar (lab keeps normal chrome flow; the
+     integrated homepage runs under a transparent navbar instead). */
+  height: calc(100svh - var(--ifm-navbar-height, 60px));
+  min-height: 560px;
+  overflow: hidden;
+  /* The night field: deep ink with a faint teal aurora — nodes supply
+     the rest of the light. */
+  background:
+    radial-gradient(115% 80% at 50% 8%, rgba(63, 193, 192, 0.07), transparent 60%),
+    radial-gradient(120% 100% at 50% 110%, rgba(232, 179, 57, 0.05), transparent 55%),
+    var(--ifm-background-color);
+}
+
+[data-theme='light'] .hero {
+  background:
+    radial-gradient(115% 80% at 50% 8%, rgba(15, 118, 110, 0.06), transparent 60%),
+    var(--ifm-background-color);
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+}
+
+/* Depth fog: the network breathes out of darkness at the edges —
+   "cities at night", never a flat scatterplot. */
+.stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 95% at 50% 46%,
+    transparent 52%,
+    color-mix(in srgb, var(--ifm-background-color) 40%, transparent) 82%,
+    var(--ifm-background-color) 100%
+  );
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvasTop {
+  /* Cursor is set by JS: grab when interactive, default when ambient. */
+}
+
+/* ---------------------------------------------------------------- poster */
+
+.poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* The poster sits ABOVE the live canvases during the handoff crossfade;
+     hover/click must reach the fx canvas underneath from frame one. */
+  pointer-events: none;
+  transition: opacity 420ms ease;
+}
+
+.posterHidden {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster {
+    /* Reduced-motion users never leave the poster; if the engine is
+       explicitly opted into, the swap is instant rather than animated. */
+    transition: none;
+  }
+}
+
+/* ------------------------------------------------------------- map view */
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem 0.85rem;
+  margin: 1.35rem 0 1.15rem;
+  /* .copy is pointer-events:none (the map shows through the text block);
+     the CTA opts back in like .counter/.coverage do. */
+  pointer-events: auto;
+}
+
+/* CTA hierarchy (founder 2026-07-17): ONE loud door (Get involved), one
+   outlined (Explore languages), one quiet text link (Learn more). */
+.ctaPrimary {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  color: #06201f;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.95rem;
+  font-weight: 680;
+  letter-spacing: 0.02em;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.ctaPrimary:hover {
+  color: #06201f;
+  text-decoration: none;
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ifm-font-color-base) 34%, transparent);
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.ctaSecondary:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  border-color: color-mix(in srgb, var(--ifm-font-color-base) 60%, transparent);
+  transform: translateY(-1px);
+}
+
+.ctaTertiary {
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.92rem;
+  font-weight: 550;
+  letter-spacing: 0.02em;
+  text-underline-offset: 3px;
+}
+
+.ctaTertiary:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: underline;
+}
+
+/* The map's own quiet door, below the pledge. */
+.mapRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.05rem;
+  pointer-events: auto;
+}
+
+.viewMapBtn {
+  padding: 0.42rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 55%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-primary) 9%, transparent);
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.84rem;
+  font-weight: 620;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.viewMapBtn:hover {
+  background: color-mix(in srgb, var(--ifm-color-primary) 20%, transparent);
+  transform: translateY(-1px);
+}
+
+.scrollCue {
+  /* Fixed to the VIEWPORT: the hero's own bottom edge can sit below the
+     fold (announcement bar + navbar push it down), and the cue must be
+     visible without scrolling. Hidden once the reader has scrolled
+     (html[data-field-scrolled], set by the homepage chrome hook). */
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  transition: opacity 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+html[data-field-scrolled] .scrollCue {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* /home-preview seam (R4): while the chain strip is up, the hero's bottom
+   legend + scroll cue fade so nothing collides at the viewport bottom.
+   data-seam-chain is toggled on <html> by home-preview.js.
+
+   2026-08-19: the legend now yields for the WHOLE pin (data-seam-top), not
+   just the chain beat. It states the Act I coverage triad — bright green /
+   dim green / red — which stops being true the moment the tape starts and the
+   map switches to the quality spectrum and teal-aim. A key that describes a
+   previous act is worse than no key. The seam owns this band instead, and
+   changes its grammar with the map: see `.register` in home-preview.module.css. */
+:global(html[data-seam-top]) .legend,
+:global(html[data-seam-chain]) .scrollCue,
+:global(html[data-seam-chain]) .legend {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Short viewports: the copy column's own "view the live map" pill reaches
+   the viewport bottom and the fixed cue would land on top of it. */
+@media (max-height: 780px) {
+  .scrollCue {
+    display: none;
+  }
+}
+
+.scrollCueArrow {
+  font-size: 1rem;
+  animation: cueBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes cueBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollCueArrow {
+    animation: none;
+  }
+}
+
+.backBtn {
+  /* Explore-mode chrome is viewport-fixed: the page chrome has faded and
+     the map view owns the screen (the hero box itself may extend below
+     the fold). */
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 8;
+  min-height: 42px;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  background: color-mix(in srgb, var(--ifm-background-color) 72%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ifm-font-color-base);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mapControls {
+  position: fixed;
+  left: 14px;
+  right: 14px;
+  bottom: calc(44px + env(safe-area-inset-bottom, 0px));
+  z-index: 6;
+  /* Column: legend/explorer panels stack ABOVE the chip row in the SAME
+     containing block, so a wrapped chip row can never collide with a
+     legend again (the old absolute bottom-left legend did). */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: copyFadeIn 0.25s ease;
+  pointer-events: none; /* panels/rows re-enable — the column gap stays click-through to the map */
+}
+
+.controlsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Surface chips sit over the brightest part of the field — give them a
+   real backdrop so the four-control surface stays legible at a glance. */
+.controlsRow > .coverageChip {
+  background: color-mix(in srgb, var(--ifm-background-color, #0b0f14) 68%, transparent);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/* A panel in the controls column (connection key / endangerment explorer).
+   Visual chrome inherited from the old .arcLegend overlay. */
+.controlsPanel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 12px;
+  max-width: min(92vw, 640px);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ifm-background-color, #0b0f14) 78%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700, #9aa4b2);
+  pointer-events: auto;
+  animation: copyFadeIn 0.2s ease;
+}
+
+/* Categorized groups inside a controls panel (services panel: commercial
+   APIs vs open models; connections panel: the layer toggles). */
+.panelGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 8px;
+  width: 100%;
+}
+
+.panelGroupLabel {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* Endangerment explorer rows — the AES gradient, one tappable row per
+   level (swatch · label · count · no-MT remainder). */
+.vitRows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 8px;
+  width: 100%;
+}
+
+.vitRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-color-emphasis-800, #c3ccd9);
+  font-size: 11.5px;
+  cursor: pointer;
+}
+
+.vitRow:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.vitRowOn {
+  border-color: var(--vital-vulnerable, #e8b339);
+  background: color-mix(in srgb, var(--vital-vulnerable, #e8b339) 12%, transparent);
+}
+
+.vitSwatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.vitLabel {
+  font-weight: 600;
+}
+
+.vitCount {
+  font-variant-numeric: tabular-nums;
+}
+
+.vitCount em {
+  font-style: normal;
+  opacity: 0.72;
+}
+
+/* Service card (hub tap) — column layout: prose on top, actions in a
+   wrapped row below (the shared row-flex crushed multi-line prose). */
+.hubCard {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  max-width: min(420px, calc(100% - 28px));
+}
+
+.hubCardMeta {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-700, #9aa4b2);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.hubCardActions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hubCard .miniCardClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.getInvolved {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--vital-vulnerable);
+  color: var(--vital-vulnerable);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.getInvolved:hover {
+  text-decoration: none;
+  background: color-mix(in srgb, var(--vital-vulnerable) 14%, transparent);
+  color: var(--vital-vulnerable);
+}
+
+/* -------------------------------------------------------- brief card */
+
+.chipSwatch {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.miniCard {
+  position: fixed;
+  left: 14px;
+  bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  z-index: 7; /* above legend + tooltip; legends unmount while open */
+  background: color-mix(in srgb, var(--ifm-background-color) 94%, transparent);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(440px, calc(100% - 28px));
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: copyFadeIn 0.2s ease;
+}
+
+/* Coarse pointers get a bottom sheet — thumb-reach, full width. */
+.miniCardSheet {
+  left: 12px;
+  right: 12px;
+  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  max-width: none;
+}
+
+.miniCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.miniCardName {
+  font-size: 1.02rem;
+  font-weight: 650;
+  color: var(--ifm-font-color-base);
+}
+
+.miniCardGo {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-primary);
+  background: transparent;
+  color: var(--ifm-color-primary);
+  font-size: 0.82rem;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.miniCardClose {
+  flex: 0 0 auto;
+  min-width: 40px;
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Binary poster (founder 2026-07-19): covered = teal-green halo with a
+   WHITE-HOT core (the core is the colorblind channel); uncovered living =
+   one soft solid red dot, no core. The uncovered mass is the story. */
+.posterUncovered {
+  fill: #e0503a; /* vitalityScale critical ember — the binary red */
+  opacity: 0.5;
+}
+
+[data-theme='light'] .posterUncovered {
+  fill: #c44532;
+  opacity: 0.55;
+}
+
+.posterCoveredCore {
+  fill: #ffffff;
+  opacity: 0.95;
+}
+
+[data-theme='light'] .posterCoveredCore {
+  fill: #ffffff;
+}
+
+.posterCoveredHalo {
+  fill: var(--vital-safe);
+  opacity: 0.28;
+}
+
+/* Open-model-only coverage (tier 1, v17): the language is in an open research
+   model's list (MADLAD-400/NLLB/…) but NO deployed service ships it. Same teal
+   hue as covered, but DIM and with NO white core — the colorblind channel is
+   core-present (service) vs core-absent-but-green (open) vs red (uncovered):
+   luminance + structure, not hue alone. */
+.posterCoveredOpen {
+  fill: var(--vital-safe);
+  opacity: 0.42;
+}
+
+[data-theme='light'] .posterCoveredOpen {
+  opacity: 0.5;
+}
+
+/* (v15: the poster is the binary frame — the old route/spoke/ember/hub
+   poster classes are gone with the layers they styled; the full data view
+   is engine mesh mode behind "View the live map".) */
+
+/* ------------------------------------------------------------------ copy */
+
+.copy {
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 760px);
+  text-align: center;
+  pointer-events: none;
+  z-index: 3;
+  /* Quiet scrim so copy holds AA over busy node fields. */
+  text-shadow: 0 1px 18px var(--ifm-background-color);
+}
+
+.copy::before {
+  content: '';
+  position: absolute;
+  inset: -22% -14%;
+  z-index: -1;
+  background: radial-gradient(
+    58% 70% at 50% 44%,
+    color-mix(in srgb, var(--ifm-background-color) 60%, transparent) 0,
+    color-mix(in srgb, var(--ifm-background-color) 24%, transparent) 62%,
+    transparent 100%
+  );
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-body, 'Inter Variable', Inter, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+}
+
+.title {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display, Fraunces, serif);
+  font-optical-sizing: auto;
+  font-size: clamp(2.1rem, 5.4vw, 3.9rem);
+  font-weight: 620;
+  letter-spacing: -0.014em;
+  line-height: 1.06;
+  color: var(--ifm-font-color-base);
+}
+
+.subline {
+  margin: 0 auto 1.1rem;
+  max-width: 36em;
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* The pledge is a micro-line now (non-commercial · source-available ·
+   communities hold the keys) — quiet, letterspaced, under the stat. */
+.pledge {
+  margin: 0 auto;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  line-height: 1.5;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* The ONE hero stat (v10): "383 of 7,077 living languages have machine
+   translation today" — big honest numbers, one sentence, never a mid-stat
+   orphan wrap (the old three-stat strip dropped "benchmark" to its own
+   line because .counterItem had no rule at all). */
+.counter {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+  color: var(--ifm-font-color-secondary);
+  pointer-events: auto;
+}
+
+.counterItem {
+  display: inline;
+  line-height: 1.9;
+}
+
+.counterNum {
+  font-family: var(--font-display, Fraunces, serif);
+  font-size: 1.7rem;
+  font-weight: 640;
+  color: var(--ifm-font-color-base);
+  padding: 0 0.06em;
+}
+
+/* Per-engine coverage breakdown — small, muted chips under the headline
+   counter (founder: "separately list how many are covered by each engine"). */
+.coverage {
+  margin: 0.55rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.55rem;
+  pointer-events: auto;
+}
+
+.coverageLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.7;
+}
+
+.coverageChip {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  color: var(--ifm-font-color-secondary);
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+  background: var(--accent-subtle, rgba(63, 193, 192, 0.1));
+  white-space: nowrap;
+}
+
+.coverageChip b {
+  color: var(--ifm-font-color-base);
+  font-weight: 680;
+}
+
+/* Interactive method toggles (live engine). Off = dim outline; on = lit. */
+.coverageToggle {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.16));
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.55;
+  transition: opacity var(--duration-fast, 150ms) ease,
+    background var(--duration-fast, 150ms) ease,
+    border-color var(--duration-fast, 150ms) ease;
+}
+.coverageToggle:hover {
+  opacity: 0.85;
+  border-color: var(--accent, #3fc1c0);
+}
+.coverageChipOn {
+  opacity: 1;
+  background: var(--accent-subtle, rgba(63, 193, 192, 0.14));
+  border-color: var(--accent, #3fc1c0);
+  color: var(--ifm-font-color-base);
+}
+.coverageToggle:focus-visible {
+  outline: 2px solid var(--accent, #3fc1c0);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------- tooltip */
+
+.tooltip {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 280px;
+  padding: 9px 12px 10px;
+  border-radius: var(--radius-md, 10px);
+  background: var(--surface-glass, rgba(16, 19, 18, 0.82));
+  border: 1px solid var(--ifm-color-emphasis-300);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.tooltipEndonym {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.tooltipName {
+  font-size: 0.86rem;
+  color: var(--ifm-font-color-base);
+}
+
+.tooltipEndonym + .tooltipName {
+  color: var(--ifm-font-color-secondary);
+}
+
+.tooltipMeta {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* ------------------------------------------------- inscription register */
+
+.register {
+  position: absolute;
+  left: 50%;
+  bottom: 9%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: min(94%, 880px);
+  margin: 0;
+  border-radius: 10px;
+  /* Carved stone: layered gradients = mass + tool-dressed surface. */
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055) 0, transparent 14%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.28) 0, transparent 18%),
+    repeating-linear-gradient(
+      94deg,
+      rgba(255, 255, 255, 0.014) 0 3px,
+      transparent 3px 7px
+    ),
+    linear-gradient(180deg, #2e3431 0%, #272d2a 52%, #232927 100%);
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.35),
+    0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='light'] .register {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0, transparent 14%),
+    linear-gradient(0deg, rgba(31, 36, 33, 0.12) 0, transparent 18%),
+    repeating-linear-gradient(
+      94deg,
+      rgba(31, 36, 33, 0.02) 0 3px,
+      transparent 3px 7px
+    ),
+    linear-gradient(180deg, #ddd8cb 0%, #d3cec0 52%, #ccc6b7 100%);
+  border-color: rgba(31, 36, 33, 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -2px 6px rgba(31, 36, 33, 0.18),
+    0 14px 36px rgba(31, 36, 33, 0.18);
+}
+
+/* Register hairlines — the Rosetta's three-register rule lines. */
+.registerInner {
+  position: relative;
+  padding: 0.7rem 1.3rem 0.8rem;
+}
+
+.registerInner::before,
+.registerInner::after {
+  content: '';
+  position: absolute;
+  left: 1.3rem;
+  right: 1.3rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.13) 18%,
+    rgba(255, 255, 255, 0.13) 82%,
+    transparent
+  );
+}
+
+.registerInner::before {
+  top: 2.05rem;
+}
+
+.registerInner::after {
+  bottom: 2.1rem;
+}
+
+[data-theme='light'] .registerInner::before,
+[data-theme='light'] .registerInner::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(31, 36, 33, 0.22) 18%,
+    rgba(31, 36, 33, 0.22) 82%,
+    transparent
+  );
+}
+
+.registerCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.regMeta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  margin: 0 0 0.55rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(232, 234, 232, 0.62);
+}
+
+[data-theme='light'] .regMeta {
+  color: rgba(31, 36, 33, 0.62);
+}
+
+.regPair {
+  font-weight: 700;
+  color: rgba(232, 234, 232, 0.85);
+}
+
+[data-theme='light'] .regPair {
+  color: rgba(31, 36, 33, 0.85);
+}
+
+.regChip {
+  padding: 1px 8px 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 179, 57, 0.5);
+  color: var(--vital-vulnerable);
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+
+.regCorpus {
+  margin-left: auto;
+  opacity: 0.8;
+}
+
+/* Incised type: letterpress shadow craft — text sits IN the stone. */
+.regSource,
+.regOutput {
+  font-family: var(--font-display, Fraunces, serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  color: #b8c0ba;
+  text-shadow:
+    0 -1px 0 rgba(0, 0, 0, 0.75),
+    0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] .regSource,
+[data-theme='light'] .regOutput {
+  color: #4d4a3f;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55),
+    0 -1px 0 rgba(31, 36, 33, 0.35);
+}
+
+.regSource {
+  display: block;
+  margin: 0 0 0.45rem;
+  opacity: 0.82;
+}
+
+.regOutputRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  min-height: 1.9em;
+}
+
+.regOutput {
+  color: #e7ece8;
+  transition: opacity 0.25s ease;
+}
+
+[data-theme='light'] .regOutput {
+  color: #2c2a22;
+}
+
+/* While the chisel works, the DOM glyphs hide (particles own them);
+   layout space is reserved so the band never jumps. */
+.regOutputPending {
+  opacity: 0;
+}
+
+.regChipScore {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  padding: 1px 8px 2px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 55%, transparent);
+  color: var(--ifm-color-primary);
+}
+
+.regRef {
+  margin: 0.5rem 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(232, 234, 232, 0.55);
+}
+
+[data-theme='light'] .regRef {
+  color: rgba(31, 36, 33, 0.6);
+}
+
+.regRefLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.regModelTag {
+  margin-left: auto;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}
+
+/* ----------------------------------------------------------- pills/legend */
+
+.pills {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 6;
+  display: flex;
+  gap: 8px;
+}
+
+.pill {
+  font-family: var(--font-body, Inter, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 6px 13px;
+  border-radius: 999px;
+  color: var(--ifm-font-color-base);
+  background: var(--surface-glass, rgba(16, 19, 18, 0.6));
+  border: 1px solid var(--ifm-color-emphasis-300);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.pill:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.legend {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 5;
+  margin: 0;
+  max-width: 94%;
+  text-align: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.85;
+}
+
+/* ----------------------------------------------------------------- mobile */
+
+@media (max-width: 640px) {
+  /* Compact copy overlay: the MAP is the hero — the copy takes the top
+     third, not the whole viewport. Fixed offset clears the top pills. */
+  .copy {
+    top: 60px;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.45rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.26em;
+  }
+
+  .title {
+    font-size: clamp(1.7rem, 7.6vw, 2.1rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .subline {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 0.7rem;
+  }
+
+  .pledge {
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  /* The single stat sentence scales down whole. */
+  .counter {
+    font-size: 0.74rem;
+  }
+
+  .counterNum {
+    font-size: 1.25rem;
+  }
+
+  .ctaRow {
+    gap: 0.5rem 0.6rem;
+    margin: 1rem 0 0.85rem;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    min-height: 40px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.86rem;
+  }
+
+  .mapRow {
+    margin-top: 0.75rem;
+  }
+
+  /* Method toggles: one thumb-scrollable strip instead of a 3-row stack
+     (wide content scrolls inside its own container, never the page). */
+  .coverage {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 0.45rem;
+    padding: 3px 2px 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .coverage::-webkit-scrollbar {
+    display: none;
+  }
+
+  .coverageLabel {
+    flex: 0 0 auto;
+  }
+
+  .coverageChip {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    /* Text nodes become flex items — the gap stands in for the literal
+       space between label and count that inline-flex swallows. */
+    gap: 0.3em;
+    min-height: 40px;
+    padding: 0.3rem 0.75rem;
+  }
+
+  /* The copy now shares the viewport with the live map — strengthen the
+     scrim so the counter + pledge hold AA over the bright node field. */
+  .copy::before {
+    inset: -14% -10%;
+    background: radial-gradient(
+      62% 74% at 50% 44%,
+      color-mix(in srgb, var(--ifm-background-color) 82%, transparent) 0,
+      color-mix(in srgb, var(--ifm-background-color) 46%, transparent) 64%,
+      transparent 100%
+    );
+  }
+
+  .register {
+    bottom: 11%;
+    width: 94%;
+  }
+
+  .registerInner {
+    padding: 0.55rem 0.85rem 0.65rem;
+  }
+
+  .regCorpus {
+    display: none;
+  }
+
+  .regModelTag {
+    display: none;
+  }
+
+  /* Pills ride the top-right on phones: the banner + navbar push the
+     hero's bottom edge below the fold, so bottom pills were invisible
+     without scrolling. Top placement keeps "View the map" one thumb away. */
+  .pills {
+    top: 10px;
+    right: 10px;
+  }
+
+  .pill {
+    min-height: 40px;
+    padding: 10px 15px;
+    font-size: 0.78rem;
+  }
+
+  /* "View the map" gets the accent so the map is one obvious tap away. */
+  .pillMap {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+  }
+
+  .legend {
+    left: 12px;
+    right: 12px;
+    bottom: 8px;
+    transform: none;
+    max-width: none;
+    text-align: center;
+    font-size: 0.58rem;
+  }
+}
+
+/* ---- Connection-key panel items --------------------------------------- */
+/* The legend lives INSIDE the controls column now (.controlsPanel, opened
+   by the "Key" chip) — the old absolute bottom-left .arcLegend overlay
+   collided with a wrapped chip row and is gone (founder flag 2026-07-19).
+   These item styles are shared by both panels. */
+
+.arcLegendTitle {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ifm-color-emphasis-800, #c3ccd9);
+  margin-right: 2px;
+}
+
+.arcLegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.arcLegendSwatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.arcLegendLink {
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* The always-visible legend's onward link to /growth (the build record). */
+.legendLink {
+  white-space: nowrap;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legendLink:hover {
+  color: var(--electric-hot, #7be6ff);
+}
+
+@media (max-width: 640px) {
+  .controlsPanel {
+    max-width: 96vw;
+    max-height: 42vh;
+    overflow-y: auto;
+    font-size: 10.5px;
+    gap: 3px 9px;
+  }
+}
+
+/* "View the map" — fade the copy overlay away, then GraphHero unmounts it.
+   A keyframe ANIMATION (not a transition) on purpose: animations win the
+   cascade over the inline opacity other overlay engines may set, and the
+   unmount at the animation's end guarantees the hidden state regardless. */
+.copyFading {
+  animation: copyFadeOut 0.35s ease forwards;
+  pointer-events: none !important;
+}
+
+@keyframes copyFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Soft return when the copy remounts. */
+.copy {
+  animation: copyFadeIn 0.35s ease;
+}
+
+@keyframes copyFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---- ArcCard — the per-pair connection card (click a measured arc) ---- */
+
+/* Method rows stack under the strength lines; actions wrap below on
+   narrow screens. The card inherits .miniCard's chrome. */
+.arcCard {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.arcCardRows {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.arcCardRow {
+  display: grid;
+  grid-template-columns: 14px 1fr auto auto;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 0.74rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.arcCardWin {
+  color: var(--teal, #3fc1c0);
+  font-size: 0.7rem;
+}
+
+.arcCardMethod {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.72rem;
+  color: var(--ifm-font-color-base);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arcCardDir {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+.arcCardScore {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--teal, #3fc1c0);
+}
+
+.arcCardMore {
+  grid-template-columns: 1fr;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.arcCardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* ---- MapLineKey — the complete line legend (from lineTaxonomy.mjs) ---- */
+
+.lineKey {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 560px;
+}
+
+.lineKeyTitle {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  width: 100%;
+}
+
+.lineKeyItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.66rem;
+  color: var(--ifm-font-color-secondary, #a8b3ac);
+  cursor: help;
+  white-space: nowrap;
+}
+
+.lineKeySwatch {
+  flex-shrink: 0;
+}
+
+.lineKeyToken {
+  font-size: 0.55rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .lineKey {
+    max-width: 100%;
+  }
+}
+
+/* ── DARK-ONLY MOUNT (2026-08-19) ──────────────────────────────────────────
+   The homepage seam is a night atlas: every caption, instrument, backdrop and
+   seal in it is a hardcoded ink value. A light-theme visitor was getting that
+   dark play staged on a light map with a red that reads as an error state.
+   Rather than dual-author a second piece (paper chart, printed red, hairline
+   cards — a real design, not a token swap), the page commits to dark.
+
+   It does NOT do that by writing data-theme on <html>: that attribute belongs
+   to Docusaurus and rewriting it would fight the navbar toggle and desync the
+   rest of the site. The palette is scoped HERE, and GraphEngine resolves its
+   tokens against this element (forceDark + tokenRoot), so the canvas and the
+   copy agree without anything outside this section changing. */
+.hero[data-force-dark] {
+  --ifm-font-color-base: #e8eae8;
+  --ifm-font-color-secondary: #9aa5a0;
+  --vital-safe: #3fc1c0;
+  --vital-vulnerable: #e8b339;
+  --vital-critical: #d64550;
+  color: #e8eae8;
+  background: #06070b;
+}
+
+/* On a phone the seam's honesty register owns the bottom band, and the hero's
+   scroll cue lands on top of it. The pinned scroll makes the invitation
+   obvious without the cue; the disclosure is not optional, so the cue yields. */
+@media (max-width: 640px) {
+  :global(html[data-seam-top]) .scrollCue {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* rtl:end:ignore */

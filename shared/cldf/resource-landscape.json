@@ -1,0 +1,162 @@
+{
+  "_doc": "What EXISTS in the world per resource class, and our verdict on each publisher. The source manifest says what we fetch; this says what there is TO fetch. Without it the atlas can report what it holds and never what it is missing.",
+  "_whyThisExists": "The atlas indexed 78 keyboard layouts from GiellaLT and that number was reported as the keyboard coverage. Keyman publishes over a thousand and FirstVoices distributes through it, so the Indigenous North American layouts reported as absent were there the whole time. We had roughly 7% and no mechanism could have told us. A count is not a coverage figure unless something states what it is a count OF.",
+  "_theRule": "Every publisher carries exactly one verdict. `known-not-indexed` is the important one: it is the backlog that was previously invisible, and a build prints it so a subset can never again be passed off as a total.",
+  "_exhaustiveIsBounded": "This lists publishers WE HAVE FOUND. It converts unknown-unknowns into known-unknowns; it cannot discover a publisher nobody named. 'Exhaustive' therefore means 'every publisher we have found, each with a verdict' — never 'everything that exists', which is unprovable. Periodic discovery sweeps (Zenodo communities, HuggingFace by task, GitHub by naming convention) propose candidates for human review.",
+  "version": 1,
+  "updated": "2026-08-13",
+  "verdicts": [
+    "indexed",
+    "partial",
+    "known-not-indexed",
+    "rejected",
+    "unreachable"
+  ],
+  "classes": {
+    "keyboards": {
+      "whyItMatters": "For a language whose orthography needs characters no standard layout produces, a keyboard is the difference between the language being typable at all and not. It is a precondition for a community writing its own corpus, dictionary or Wikipedia.",
+      "publishers": {
+        "giellalt": {
+          "verdict": "indexed",
+          "source": "giellalt-resources",
+          "count": 78,
+          "evidence": "keyboard-<iso> repositories across the giellalt and UAlbertaALTLab organisations, swept 2026-08-06."
+        },
+        "keyman": {
+          "verdict": "partial",
+          "source": "keyman-keyboards",
+          "count": 534,
+          "countOf": "languages with a keyboard compiled for KeymanWeb",
+          "evidence": "api.keyman.com/cloud/4.0/languages returns 534 languages / 116 distinct web keyboards in one call, verified 2026-08-07.",
+          "knownGap": "Desktop-only packages are absent from this endpoint. Plains Cree has FirstVoices layouts for Windows/Android/iOS that never appear, so an absence here is NOT evidence a language has no keyboard. The complete catalogue is ~1,010 keyboards in keymanapp/keyboards with language tags inside per-keyboard .kps XML; that repository is 1.2 GB, disproportionate for metadata, and the search API caps at ten results with no total so it cannot enumerate. Closing this needs a proportionate route to the .kps tags."
+        },
+        "firstvoices": {
+          "verdict": "indexed",
+          "via": "keyman",
+          "evidence": "FirstVoices distributes THROUGH Keyman — the fv_* prefix in keymanapp/keyboards, and the fv_all package. A separate FirstVoices fetcher was planned and would have produced a subset of what Keyman already carries; github.com/FirstVoices/keyboards returns 404."
+        },
+        "cldr-keyboards": {
+          "verdict": "known-not-indexed",
+          "evidence": "unicode-org/cldr/keyboards exists (verified 2026-08-07, has a 3.0 directory). Unicode's own keyboard layout data, LDML-specified. Not yet assessed for language coverage or overlap with Keyman."
+        }
+      }
+    },
+    "dictionaries": {
+      "publishers": {
+        "giellalt": {
+          "verdict": "indexed",
+          "source": "giellalt-resources",
+          "count": 109,
+          "evidence": "dict-<src>-<tgt> repositories, bilingual and directed."
+        },
+        "cldf-dictionaries": {
+          "verdict": "indexed",
+          "source": "cldf-zenodo",
+          "evidence": "Dictionary datasets in the CLDF/Zenodo harvest, DOI-pinned."
+        },
+        "panlex": {
+          "verdict": "known-not-indexed",
+          "count": 7558,
+          "countOf": "languages with lexical entry counts",
+          "priority": "highest — largest single coverage gain available",
+          "evidence": "cli/data/panlex-lang-sizes.json holds 7,558 languages with entry counts (aaa=1595). CC0. But it is LOCAL DATA, not a source: api.panlex.org no longer resolves (verified 2026-08-07), so nothing in this repo can re-fetch it. Under the law it is quarantined until a live upstream is found. panlex.org itself is up, so a current dump or API almost certainly exists and needs research."
+        },
+        "apertium": {
+          "verdict": "known-not-indexed",
+          "evidence": "Apertium publishes monolingual and bilingual dictionaries per language pair. Already indexed as a METHOD (apertium.org/apy/listPairs, HTTP 200 verified 2026-08-07); its lexical resources are not."
+        },
+        "wiktionary-kaikki": {
+          "verdict": "known-not-indexed",
+          "evidence": "kaikki.org publishes machine-readable Wiktionary extractions per language. Not assessed."
+        },
+        "wolvengrey": {
+          "verdict": "rejected",
+          "evidence": "Standing founder ruling: indexed pointer-only, permanently. Redistribution consent will not be sought and is not needed. Never copy its content into corpora, cards, exports or repos."
+        }
+      }
+    },
+    "corpora": {
+      "publishers": {
+        "opus": {
+          "verdict": "indexed",
+          "source": "opus-corpora",
+          "count": 1215,
+          "evidence": "1,215 collections, 128,015 language pairs, metadata only — no text crosses the wire."
+        },
+        "giellalt": {
+          "verdict": "indexed",
+          "source": "giellalt-resources",
+          "count": 103,
+          "evidence": "corpus-<iso> repositories; monolingual, kept separate from OPUS's parallel sets."
+        },
+        "huggingface-datasets": {
+          "verdict": "known-not-indexed",
+          "evidence": "HF models are indexed (hf-models, 17,730); datasets are not. Same API shape, same cursor pagination."
+        },
+        "common-voice": {
+          "verdict": "known-not-indexed",
+          "evidence": "Mozilla Common Voice — speech corpora per language, CC0. Referenced by the retired pipelineReadiness composite, never fetched."
+        },
+        "olac-archives": {
+          "verdict": "unreachable",
+          "checkedOn": "2026-08-07",
+          "evidence": "OLAC aggregates ~50 archives with per-language indexes over OAI-PMH — the right upstream for the Aeta pilot's SIL register. Every endpoint timed out: www.language-archives.org (128.91.252.143) and olac.ldc.upenn.edu both hang on connect while opus.nlpl.eu, ebible.org and api.github.com answer from the same machine, and DNS resolves. Upstream outage or a network block on the UPenn host, not a fetcher problem. No fetcher written: one built against an endpoint nobody can reach is a guess about a response shape."
+        }
+      }
+    },
+    "analysers": {
+      "publishers": {
+        "giellalt": {
+          "verdict": "indexed",
+          "source": "giellalt-resources",
+          "count": 158,
+          "evidence": "lang-<iso> repositories across both organisations. bla, crk and sto have two independent implementations each, kept apart by publisher."
+        },
+        "apertium": {
+          "verdict": "known-not-indexed",
+          "evidence": "Apertium ships morphological analysers alongside its translation pairs. Indexed as a method, not as an analyser resource."
+        }
+      }
+    },
+    "methods": {
+      "publishers": {
+        "huggingface": {
+          "verdict": "indexed",
+          "source": "hf-models",
+          "count": 17730,
+          "evidence": "Translation-tagged models, cursor-paginated. Reads cardData.language, never tags."
+        },
+        "vendor-endpoints": {
+          "verdict": "partial",
+          "source": "vendor-languages",
+          "evidence": "microsoft-translator, libretranslate, apertium and google-translate fetched from their own published endpoints. DeepL needs credentials and degrades to its last pinned snapshot with a stated reason."
+        }
+      }
+    },
+    "speech": {
+      "publishers": {
+        "giellalt": {
+          "verdict": "indexed",
+          "source": "giellalt-resources",
+          "count": 4,
+          "evidence": "speech-<iso> repositories. Four is the whole class there — small, and stated as such."
+        },
+        "common-voice": {
+          "verdict": "known-not-indexed",
+          "evidence": "see corpora."
+        }
+      }
+    },
+    "localeNames": {
+      "whyItMatters": "A locale card inherits its language's name, so fra-CA and cmn-Hant both display as their bare language (\"French\", \"Mandarin Chinese\"). That is TRUE but not distinguishing, and a user choosing a translation target cannot tell two locales apart by name. The old corpus solved this with hand-written variant names (\"Chinese (Traditional)\") — curation of exactly the kind this rebuild replaces with cited data.",
+      "publishers": {
+        "cldr-localenames": {
+          "verdict": "known-not-indexed",
+          "source": null,
+          "count": null,
+          "evidence": "CLDR publishes localeDisplayNames (\"Canadian French\", \"Chinese (Traditional)\") in the cldr-localenames-full package. We pin cldr-core and cldr-json per-locale files, which carry only the identity and layout sections — verified on disk 2026-08-13, cli/data/cldr/en.json has no localeDisplayNames key. Indexing it means adding an upstream package to the CLDR fetcher, which is a scope decision, not a bug fix. Until then a locale card carries its language's name and asserts nothing it cannot cite."
+        }
+      }
+    }
+  }
+}

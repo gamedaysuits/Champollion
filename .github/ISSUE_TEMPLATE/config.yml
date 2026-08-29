@@ -1,0 +1,23 @@
+# GitHub issue-template chooser config.
+#
+# These are INTAKE FORMS ONLY — the human-review queue for community
+# submissions to the Champollion index. There is NO automation: no GitHub
+# Actions, no auto-labelling, no auto-merge. A maintainer reads each issue and
+# reviews it against the IP / license / sovereignty rules before anything is
+# added to a source-of-truth (registry, card, method/human-service registry, or
+# the external-results catalogue). See docs/SUBMISSION_REVIEW.md (internal) and
+# the public guide linked below.
+#
+# Blank issues stay enabled so people can still file bugs and questions; the
+# structured forms below are the front door for submissions.
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Submission guide — what you can submit & how review works
+    url: https://champollion.dev/docs/network/getting-started/submit-to-the-index
+    about: Read this first. Every submission is human-reviewed for IP, license, and community/sovereignty compliance — nothing is auto-approved.
+  - name: 🧰 Prefer the terminal? Use `champollion submit`
+    url: https://champollion.dev/docs/network/getting-started/submit-to-the-index
+    about: The champollion CLI gathers the fields and opens a pre-filled version of these forms (champollion submit).
+  - name: 💬 Questions & general help
+    url: https://champollion.dev/docs/network/getting-started/faq
+    about: Not a submission? Check the FAQ before opening an issue.

@@ -1,0 +1,229 @@
+{
+  "id": "eval-wmt19-news-test-v1",
+  "type": "multiway",
+  "name": "WMT2019 News Translation — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ces",
+    "cmn-Hans",
+    "deu",
+    "eng",
+    "fin",
+    "fra",
+    "guj",
+    "kaz",
+    "lit",
+    "rus"
+  ],
+  "description": "WMT2019 News Translation blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt19 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers news journalism. Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'news' (the WMT News Translation task).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "news",
+    "explicitPairs": [
+      {
+        "source": "ces",
+        "target": "deu",
+        "srcCode": "cs",
+        "tgtCode": "de",
+        "size": 1997,
+        "sha256": "bf0d71d6bfa1e92cc91f2277a264070cffa7027226165c603e00f69097e1f172"
+      },
+      {
+        "source": "deu",
+        "target": "ces",
+        "srcCode": "de",
+        "tgtCode": "cs",
+        "size": 1997,
+        "sha256": "5bc89b44edc17b918de3ae197895cfb95d0c52ca67b22a8c41ea8bccce2b747b"
+      },
+      {
+        "source": "deu",
+        "target": "eng",
+        "srcCode": "de",
+        "tgtCode": "en",
+        "size": 2000,
+        "sha256": "97f65d661ce9faf248f803bfe7c6f2666450276d62671f9f0274e809afa1d56e"
+      },
+      {
+        "source": "deu",
+        "target": "fra",
+        "srcCode": "de",
+        "tgtCode": "fr",
+        "size": 1701,
+        "sha256": "e5335869691831824e75825f0b1a07bb4fdd6d9baf9918c232355d7349623408"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs",
+        "size": 1997,
+        "sha256": "888479744f6cbc8ae97573a591179f0e724353eaefc05b4db44a884b52e44a50"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de",
+        "size": 1997,
+        "sha256": "2ba0789e49ea26e5d568fff52a50eddcf6b9227bf8cad02f6132de942654a4a8"
+      },
+      {
+        "source": "eng",
+        "target": "fin",
+        "srcCode": "en",
+        "tgtCode": "fi",
+        "size": 1997,
+        "sha256": "5bdc3ec8caea1debd145a2f00c105f4aa973ae61b7a982ce98025555e6b1c3f4"
+      },
+      {
+        "source": "eng",
+        "target": "guj",
+        "srcCode": "en",
+        "tgtCode": "gu",
+        "size": 998,
+        "sha256": "6537f55eaf7e17adf7a767f5b1f9fb98a896d9a2ff5fec527d59c71801e2e83f"
+      },
+      {
+        "source": "eng",
+        "target": "kaz",
+        "srcCode": "en",
+        "tgtCode": "kk",
+        "size": 998,
+        "sha256": "3d5973c79dedd3e6c0a52f3a76aeeafca47ce01b1677acd20b9e55efb2398ff2"
+      },
+      {
+        "source": "eng",
+        "target": "lit",
+        "srcCode": "en",
+        "tgtCode": "lt",
+        "size": 998,
+        "sha256": "a5f70018b9a703f31166ac5d834d9f871ba7c5e4e138de4db225c9db4705e30a"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 1997,
+        "sha256": "59724d31e08c3f12fe3ec22785052960a0262843f93dc497e4bd9df8658d6663"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hans",
+        "srcCode": "en",
+        "tgtCode": "zh",
+        "size": 1997,
+        "sha256": "7e7434d4c057c3e64e3c3cb6cf02dff37e0f55f39fe33de91ca07c99c4a3ab7d"
+      },
+      {
+        "source": "fin",
+        "target": "eng",
+        "srcCode": "fi",
+        "tgtCode": "en",
+        "size": 1996,
+        "sha256": "4a24509dd61a5b69dc4cb9507fefbae34929c916a38ca162c973f707ac01b479"
+      },
+      {
+        "source": "fra",
+        "target": "deu",
+        "srcCode": "fr",
+        "tgtCode": "de",
+        "size": 1701,
+        "sha256": "b62e3af43488f6eedbfccbbe5172048f1636801b2838c7cc685b36baca0a0fb2"
+      },
+      {
+        "source": "guj",
+        "target": "eng",
+        "srcCode": "gu",
+        "tgtCode": "en",
+        "size": 1016,
+        "sha256": "a09ef4f171403eaf6f690d4f99c00a544a6915d5ba74fe7380ef05d04eeaa5f5"
+      },
+      {
+        "source": "kaz",
+        "target": "eng",
+        "srcCode": "kk",
+        "tgtCode": "en",
+        "size": 1000,
+        "sha256": "9a35f072b01edc2ef32cb3ff7ad991c04482b433ebe1ff2e96a9febc59039f50"
+      },
+      {
+        "source": "lit",
+        "target": "eng",
+        "srcCode": "lt",
+        "tgtCode": "en",
+        "size": 1000,
+        "sha256": "3e060638584d42628478078034011092451dca47dbdf03ecddb9442c4a4f35cf"
+      },
+      {
+        "source": "rus",
+        "target": "eng",
+        "srcCode": "ru",
+        "tgtCode": "en",
+        "size": 2000,
+        "sha256": "60fc01a1b9f533bb7ce8693eccbedc0782576829d1f33d03e16fde1454def2a7"
+      },
+      {
+        "source": "cmn-Hans",
+        "target": "eng",
+        "srcCode": "zh",
+        "tgtCode": "en",
+        "size": 2000,
+        "sha256": "0d0e27a9a27f167465cd5093394eec799a638cebcc6d83ba9ed72e37d323262c"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2019 News Translation test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (relative-comparison-only)",
+      "size": 31387
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt19/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt19 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt19/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2019 Conference on Machine Translation (WMT19). statmt.org/wmt19.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "WMT2019 News Translation test set — public since 2019 and in essentially every frontier model's training crawl. Maximally memorized, so its scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute translation quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt19']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 19
+  }
+}

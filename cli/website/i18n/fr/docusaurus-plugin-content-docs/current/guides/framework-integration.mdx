@@ -1,0 +1,167 @@
+---
+sidebar_position: 2
+title: "Intégration de Framework"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Intégration Framework
+
+Configuration étape par étape de champollion avec les frameworks populaires.
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### Structure du projet
+
+Hugo utilise `i18n/` pour les traductions de chaînes de caractères et `content/` pour le contenu des pages :
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### Configuration
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### Détails de la traduction du contenu
+
+**Front matter** : Supporte à la fois les délimiteurs YAML (`---`) et TOML (`+++`). Traduit `title`, `description`, `summary`, `subtitle`, `caption` et `linkTitle` par défaut. Tous les autres champs (date, draft, tags, weight, slug, etc.) sont préservés. Personnalisez avec `translatableFields` dans votre configuration.
+
+**Protection des blocs** : Les blocs de code, les shortcodes Hugo, le code en ligne et le HTML brut sont automatiquement protégés à l'aide de marqueurs sentinelles Unicode. Ils passent sans modification.
+
+**Convention de nommage** : Suit le modèle de traduction par nom de fichier de Hugo :
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (supprime le suffixe source)
+
+**Ignorer les fichiers existants** : Les fichiers traduits existants ne sont jamais écrasés. Supprimez un fichier cible pour forcer une re-traduction.
+
+### Formes plurielles
+
+Les locales TOML et YAML supportent les formes plurielles CLDR :
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+Représentées en interne sous la forme `items.one` et `items.other` pour la comparaison, puis re-sérialisées au format sectionné correct lors de l'écriture.
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### Structure du projet
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### Configuration
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh", "pt", "ar"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+Crée `messages/fr.json`, `messages/ja.json`, etc. — entièrement traduits, en préservant votre structure de clés imbriquées. next-intl les récupère automatiquement.
+
+### Flux de travail de développement
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### Structure de fichier plat (recommandée)
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+### Structure de répertoire imbriquée
+
+Si vous utilisez la structure `{locale}/{namespace}.json`, créez un script de synchronisation pour aplatir → traduire → dépla­tir. Consultez la [documentation react-i18next](https://react.i18next.com/) pour plus de détails.
+
+  </TabItem>
+</Tabs>

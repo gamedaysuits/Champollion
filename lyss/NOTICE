@@ -1,0 +1,63 @@
+Champollion-LYSS
+Copyright 2026 Champollion
+
+This product may be used BY PERMISSION ONLY (see LICENSE — interim posture
+pending consultation with the nêhiyaw language community and the ALTLab /
+GiellaLT maintainers whose infrastructure this standard builds on). Permission
+is ordinarily granted without charge for noncommercial, research, education,
+and community-benefit use — contact Champollion.
+
+Required Notice: Copyright 2026 Champollion (https://champollion.dev) — Plains
+Cree (nêhiyawêwin) LYSS standard; held in trust pending community governance;
+use by permission.
+
+================================================================================
+DATA SOVEREIGNTY & RESPONSIBLE-USE NOTICE
+================================================================================
+This NOTICE is part of the distribution. The LICENSE requires it, together
+with the Required Notice above, to be carried forward into any permitted
+redistribution. The permission requirement is set by the LICENSE; the clauses
+below add the data-rights / sovereignty context that governs the Cree data and
+standard.
+
+1. COMMUNITY PROPERTY / NON-COMMERCIAL (Plains Cree standard).
+   The Plains Cree (nêhiyawêwin) language-validation standard provided here —
+   the `crk` lane (linter, semantic validator, and the validation rubric it
+   encodes) — and any Plains Cree language data it operates on are treated as
+   the property of the nêhiyaw (Plains Cree) language community. This standard
+   is offered for NON-COMMERCIAL, community-benefit use. Commercial use of the
+   Cree standard is reserved pending community consent; relational-trust
+   governance is in progress. Use is expected to align with Indigenous data
+   sovereignty principles.
+
+2. NO BUNDLED DATA — FETCH, DON'T SCRAPE.
+   This package bundles NO dictionary, gloss, lexicon, or corpus data. Gloss
+   data is fetched live, per-lemma, from the public itwêwina API
+   (https://itwewina.altlab.app) under the operator's own access, and cached
+   locally for the operator's own use only. The underlying dictionary content
+   (Wolvengrey CW; Maskwacîs MD; AECD) is NOT openly licensed. Do NOT commit,
+   redistribute, publish, or bundle the local cache. Acknowledging these terms
+   is required before gloss data is fetched (see "Acknowledging IP terms" below).
+
+3. FST INVOKED AS A SEPARATE TOOL.
+   Morphological analysis uses a finite-state transducer (e.g. the GiellaLT /
+   ALTLab Plains Cree FST, AGPL-3.0). The FST is downloaded on demand and
+   invoked as a SEPARATE tool. It is never bundled into, or linked into, this
+   package.
+
+4. INLINE LINGUISTIC FACTS ARE CITED, NOT EXTRACTED.
+   The small hand-curated lists in this code (optional particles, lemma-synonym
+   pairs, structural/grammatical words, orthographic alternations) are
+   widely-published, cross-referenced common facts of Plains Cree grammar —
+   citable to multiple published grammars and lexica (e.g. Wolfart & Carroll,
+   _Meet Cree_; Okimāsis, _Cree: Language of the Plains_; Ahenakew, _Cree
+   Language Structures_; Wolvengrey, _nêhiyawêwin: itwêwina_). They are
+   references to published fact, not bulk-extracted dictionary data.
+
+Acknowledging IP terms (for automation):
+   Set CHAMPOLLION_LYSS_ACCEPT_IP=1 to acknowledge these terms in
+   non-interactive runs. CI / harness auto-setup environments auto-acknowledge,
+   and the warning is always printed. Interactive runs prompt once and remember
+   the acknowledgment locally. Without acknowledgment, gloss lookups are
+   disabled and gloss-dependent scores are reported as unavailable (never
+   fabricated).

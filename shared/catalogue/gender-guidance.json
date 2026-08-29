@@ -1,0 +1,1038 @@
+{
+  "_doc": "Gender-inclusive translation guidance for prompts. CONFIGURATION we authored, not a fact any source asserts, keyed by the set of languages a statement applies to.",
+  "_whyAList": "v1 keyed this as {iso-code: prose}, which is the exact shape of one side of a split translation corpus and was correctly flagged as such by scripts/corpus_content_scan.py. Reshaping is not a workaround: guidance is shared, not per-language — 11 family statements already reach 3,317 languages — so keying it by what it applies to is the accurate model and stops it resembling a corpus because it stops being one.",
+  "_precedence": "language beats genus beats family. A language with its own entry had someone look at it specifically.",
+  "_genusNotApplied": "Genus entries sit BELOW a family and need a subgroup match against the atlas ancestry chain rather than a family-name lookup. Carried with applied:false so an unwired entry is visible rather than a silent gap.",
+  "_provenanceWarning": "These texts came from the previous corpus and cite nothing. They make checkable claims (\"Albanian has two genders\") that Grambank and WALS actually answer, so the factual half is derivable and the instructional half is configuration. Scheduled for re-derivation; not evidence.",
+  "version": 2,
+  "entries": [
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Afro-Asiatic"
+      ],
+      "guidance": "Most Afro-Asiatic languages have a masculine/feminine gender distinction that triggers agreement on verbs, adjectives, pronouns, and (in Semitic) numerals. Some Cushitic and Omotic languages have more complex gender/class systems. Gender assignment is partly semantic, partly arbitrary."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Algic"
+      ],
+      "guidance": "Algic languages use an animacy distinction (animate vs. inanimate noun classes) rather than masculine/feminine grammatical gender. Verbs, demonstratives, quantifiers, and plural markers all agree with the animacy class of their head noun. Animacy assignment is partially arbitrary — some inanimate objects are grammatically animate."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Atlantic-Congo"
+      ],
+      "guidance": "Atlantic-Congo languages overwhelmingly use noun class systems (5–20+ classes) rather than masculine/feminine grammatical gender. Noun classes categorize by semantic properties (human, animal, plant, abstract, mass, diminutive, augmentative, etc.) and trigger agreement on verbs, adjectives, pronouns, and demonstratives. These are NOT equivalent to European grammatical gender."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Austroasiatic"
+      ],
+      "guidance": "Austroasiatic languages lack grammatical gender. Some have classifier systems that categorize nouns by semantic properties, but these are not gender systems."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Dravidian"
+      ],
+      "guidance": "Gender systems vary within Dravidian. Tamil and Malayalam distinguish rational (human) vs. irrational (non-human) rather than masculine/feminine. Telugu and Kannada have masculine/feminine/neuter systems. In most Dravidian languages, the gender distinction is primarily reflected in third-person pronouns and verb agreement, not on nouns themselves."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Eskimo-Aleut"
+      ],
+      "guidance": "Eskimo-Aleut languages have no grammatical gender. Pronouns do not distinguish gender. Third-person referents are tracked through demonstrative systems and switch-reference rather than gendered pronouns."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Indo-European"
+      ],
+      "guidance": "Most Indo-European languages have grammatical gender (2–3 genders: masculine/feminine, or masculine/feminine/neuter). Some branches (e.g., modern English, Bengali, Persian) have lost grammatical gender. Gender triggers agreement on articles, adjectives, pronouns, and sometimes verbs. Genus-level cards specify exact gender systems for each branch."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Sino-Tibetan"
+      ],
+      "guidance": "Sino-Tibetan languages overwhelmingly lack grammatical gender. Pronouns are typically gender-neutral in spoken forms (though some writing systems, like Chinese, have introduced gendered third-person pronouns under Western influence)."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Tai-Kadai"
+      ],
+      "guidance": "Tai-Kadai languages have no grammatical gender. Pronouns are generally gender-neutral, though some languages (e.g., Thai) have gendered politeness particles (ครับ/khrap for male speakers, ค่ะ/kha for female speakers) that are pragmatic rather than grammatical."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Turkic"
+      ],
+      "guidance": "Turkic languages have no grammatical gender whatsoever — no gendered pronouns, no gendered agreement, no gendered nouns. The third-person pronoun (o/ol/u) is gender-neutral. When translating from gendered source languages, gender information is simply lost unless explicitly stated."
+    },
+    {
+      "scope": "family",
+      "appliesTo": [
+        "Uralic"
+      ],
+      "guidance": "Uralic languages overwhelmingly lack grammatical gender. Third-person pronouns are gender-neutral (Finnish hän, Hungarian ő, Estonian tema). When translating from gendered source languages, gender must be expressed lexically or left unspecified."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "family-algonquian"
+      ],
+      "family": null,
+      "name": "Algonquian Family",
+      "applied": false,
+      "guidance": "Languages in this family utilize an animacy distinction (animate vs inanimate noun classes) rather than grammatical gender. Verbs, demonstratives, and quantifiers agree with the animacy class of their head noun. Animacy classification is partially arbitrary — some objects (e.g., raspberries, pants) are grammatically animate."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-bantu"
+      ],
+      "family": null,
+      "name": "Bantu Languages (Genus Template)",
+      "applied": false,
+      "guidance": "Bantu languages use noun class systems (not gender). Nouns are classified into classes (typically 10-18) affecting agreement on verbs, adjectives, and pronouns. These are NOT gendered — they categorize by semantic properties (human, animal, abstract, etc.)."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-celtic"
+      ],
+      "family": null,
+      "name": "Celtic Languages (Genus Template)",
+      "applied": false,
+      "guidance": "Celtic languages have masculine/feminine grammatical gender affecting nouns, adjectives, and initial mutations. No neuter gender. Gender-inclusive language conventions are still developing in Celtic languages."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-cree"
+      ],
+      "family": "Algic",
+      "name": "Cree-Montagnais-Naskapi Continuum",
+      "applied": false,
+      "guidance": "Cree languages use an animacy distinction (animate vs inanimate noun classes) rather than grammatical gender. Verb conjugation, demonstratives, and plural marking all depend on animacy class."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-eskimo-aleut"
+      ],
+      "family": null,
+      "name": "Eskimo-Aleut Languages (Genus Template)",
+      "applied": false,
+      "guidance": "Eskimo-Aleut languages have no grammatical gender. Pronouns do not distinguish gender."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-germanic"
+      ],
+      "family": "Indo-European",
+      "name": "Germanic Languages",
+      "applied": false,
+      "guidance": "Most Germanic languages have grammatical gender, but systems vary: German, Icelandic, and Norwegian Bokmål have masculine/feminine/neuter. Dutch and Swedish have common/neuter (two genders). Danish has common/neuter. English has lost grammatical gender almost entirely (retained only in pronouns). Gender triggers agreement on articles, adjectives, and pronouns."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-indic"
+      ],
+      "family": "Indo-European",
+      "name": "Indic (Indo-Aryan) Languages",
+      "applied": false,
+      "guidance": "Most Indic languages have a binary masculine/feminine gender system (Hindi, Punjabi, Marathi, Gujarati). Some have additionally neuter (Marathi). Bengali and Assamese have lost grammatical gender. Gender triggers agreement on verbs, adjectives, and postpositions. Assignment is partly semantic, partly morphological."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-iranian"
+      ],
+      "family": "Indo-European",
+      "name": "Iranian Languages",
+      "applied": false,
+      "guidance": "Most modern Iranian languages have lost grammatical gender. Persian, Tajik, and Kurdish (Sorani) have no grammatical gender — third-person pronouns are gender-neutral (Persian u/ān). Kurdish (Kurmanji) is an exception that retains masculine/feminine gender. Some Pamir languages also retain gender. When translating from gendered source languages, gender is typically expressed lexically."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-philippine"
+      ],
+      "family": null,
+      "name": "Philippine Languages (Genus Template)",
+      "applied": false,
+      "guidance": "Philippine languages have no grammatical gender. Pronouns (siya/niya) are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-polynesian"
+      ],
+      "family": null,
+      "name": "Polynesian Languages (Genus Template)",
+      "applied": false,
+      "guidance": "Polynesian languages have no grammatical gender. Pronouns are gender-neutral."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-romance"
+      ],
+      "family": "Indo-European",
+      "name": "Romance Languages",
+      "applied": false,
+      "guidance": "All Romance languages have a binary masculine/feminine gender system (Romanian also has neuter). Gender is assigned to all nouns and triggers agreement on articles, adjectives, past participles, and pronouns. When the gender of a referent is unknown, most Romance languages default to masculine, but inclusive language practices are evolving rapidly (e.g., Spanish -e endings, French écriture inclusive with ·)."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-semitic"
+      ],
+      "family": "Afro-Asiatic",
+      "name": "Semitic Languages",
+      "applied": false,
+      "guidance": "All Semitic languages have a binary masculine/feminine gender system. Gender triggers agreement on verbs, adjectives, pronouns, demonstratives, and (in Arabic) numerals. Second-person pronouns and verb forms distinguish gender of the addressee. Some nouns have both masculine and feminine plurals with different meanings. Gender agreement is pervasive and non-negotiable."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-sinitic"
+      ],
+      "family": "Sino-Tibetan",
+      "name": "Sinitic (Chinese) Languages",
+      "applied": false,
+      "guidance": "Sinitic languages have no grammatical gender. In spoken Mandarin, the third-person pronoun tā is gender-neutral. Written Mandarin introduced gendered characters in the 20th century (他 masculine, 她 feminine, 它 non-human), but these are orthographic conventions, not grammatical gender — they are pronounced identically. Other Sinitic varieties generally do not have even this orthographic distinction."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "genus-slavic"
+      ],
+      "family": "Indo-European",
+      "name": "Slavic Languages",
+      "applied": false,
+      "guidance": "All Slavic languages have a three-gender system: masculine, feminine, and neuter. Gender triggers agreement on adjectives, verbs (in past tense), pronouns, and numerals. Some Slavic languages further subdivide masculine into animate and inanimate (e.g., Polish, Czech, Russian in accusative). Gender assignment is partly morphological (word ending) and partly arbitrary."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-ara"
+      ],
+      "family": "Afro-Asiatic",
+      "name": "Arabic Macrolanguage",
+      "applied": false,
+      "guidance": "All Arabic varieties have a pervasive masculine/feminine gender system affecting nouns, verbs, adjectives, pronouns, demonstratives, and numerals. Second-person pronouns distinguish gender of the addressee. Numerals 3–10 show reverse gender agreement (feminine numeral with masculine noun). Default to masculine for unknown referents in all varieties."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-fas"
+      ],
+      "family": "Indo-European",
+      "name": "Persian Macrolanguage",
+      "applied": false,
+      "guidance": "Persian has no grammatical gender. The third-person pronoun u/ān (او/آن) is entirely gender-neutral. No agreement system is affected by gender. When translating from gendered source languages, gender must be expressed lexically if needed."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-kur"
+      ],
+      "family": "Indo-European",
+      "name": "Kurdish Macrolanguage",
+      "applied": false,
+      "guidance": "Gender varies WITHIN the macrolanguage: Kurmanji (Northern Kurdish) retains a full masculine/feminine gender system with agreement on articles, adjectives, and verbs. Sorani (Central Kurdish) has LOST grammatical gender — no gender agreement, gender-neutral pronouns. This is a fundamental structural difference between the two main varieties. Cards for individual varieties MUST override this field."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-lah"
+      ],
+      "family": "Indo-European",
+      "name": "Lahnda (Western Panjabi) Macrolanguage",
+      "applied": false,
+      "guidance": "Lahnda varieties have a binary masculine/feminine gender system inherited from Indo-Aryan. Gender triggers agreement on verbs, adjectives, and postpositions. Gender assignment is partly morphological (word ending) and partly arbitrary."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-msa"
+      ],
+      "family": "Austronesian",
+      "name": "Malay Macrolanguage",
+      "applied": false,
+      "guidance": "Malay varieties have no grammatical gender. Pronouns are gender-neutral (dia 'he/she'). Gender is expressed lexically when needed (lelaki 'male', perempuan 'female'). No agreement system is affected by gender."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-nor"
+      ],
+      "family": "Indo-European",
+      "name": "Norwegian Macrolanguage",
+      "applied": false,
+      "guidance": "Both Norwegian written standards have grammatical gender. Bokmål has three genders (masculine, feminine, neuter) though feminine is optional — two-gender (common/neuter) usage is also accepted. Nynorsk strictly maintains three genders. Gender triggers agreement on articles, adjectives, and pronouns. The optional feminine in Bokmål creates a sociolinguistic choice (using feminine is perceived as less conservative)."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-sqi"
+      ],
+      "family": "Indo-European",
+      "name": "Albanian Macrolanguage",
+      "applied": false,
+      "guidance": "Albanian has a three-gender system: masculine, feminine, and neuter (neuter merges with masculine in plural). Gender triggers agreement on articles, adjectives, and pronouns. Albanian uses both preposed and postposed (suffixed) definite articles, with the suffixed article being the primary form."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-swa"
+      ],
+      "family": "Atlantic-Congo",
+      "name": "Swahili Macrolanguage",
+      "applied": false,
+      "guidance": "Swahili uses a noun class system (18 classes, typically grouped into 9 singular/plural pairs) rather than grammatical gender. Noun classes categorize by semantic and morphological properties (human, non-human animate, plants, abstracts, augmentative, diminutive, locative, etc.). The human class (M/WA) is the closest to 'gender' but distinguishes human/non-human, not masculine/feminine."
+    },
+    {
+      "scope": "genus",
+      "appliesTo": [
+        "macrolanguage-zho"
+      ],
+      "family": "Sino-Tibetan",
+      "name": "Chinese Macrolanguage",
+      "applied": false,
+      "guidance": "Chinese has no grammatical gender. The spoken third-person pronoun tā is gender-neutral across all varieties. Written Mandarin introduced gendered characters (他/她/它) in the 20th century as an orthographic convention — they share pronunciation. Other varieties generally do not distinguish gender in writing either."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "als"
+      ],
+      "guidance": "Albanian has two genders: masculine and feminine. Gender affects definite article suffixation, adjective agreement, and noun declension."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "amh"
+      ],
+      "guidance": "Amharic has grammatical gender (masculine/feminine) affecting nouns, adjectives, pronouns, and verb conjugation. Second-person and third-person pronouns are gender-marked. Gender-neutral alternatives are limited."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "arb"
+      ],
+      "guidance": "Arabic has grammatical gender on nouns, verbs, and adjectives. When addressing users of unknown gender, use masculine plural as the conventional default, or restructure sentences to avoid gendered forms where natural."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "aym"
+      ],
+      "guidance": "Aymara does not have grammatical gender. Nouns and adjectives do not inflect for gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "aze"
+      ],
+      "guidance": "Azerbaijani has no grammatical gender. The third-person pronoun 'o' is gender-neutral, covering he/she/it. No special inclusive conventions are needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "bcl"
+      ],
+      "guidance": "Bikol Central has no grammatical gender. Third-person pronoun (siya) is gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "bel"
+      ],
+      "guidance": "Belarusian has three genders: masculine, feminine, and neuter."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ben"
+      ],
+      "guidance": "Bengali pronouns are gender-neutral. Third-person pronouns (সে/তিনি) do not distinguish gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "bos"
+      ],
+      "guidance": "Bosnian has three genders: masculine, feminine, and neuter. Gender affects noun declension, adjective agreement, and verb participles."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "bul"
+      ],
+      "guidance": "Bulgarian has grammatical gender. When gender is unknown, masculine is the conventional default."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "cat"
+      ],
+      "guidance": "Catalan has two grammatical genders (masculine, feminine). Gender-inclusive strategies include: the use of desdoblaments ('els i les alumnes'), the 'e' ending as a proposed neuter ('alumnes' → 'alumne/alumna' → 'alumnE'), and the collective feminine when referring to mixed groups in some progressive contexts. The IEC (Institut d'Estudis Catalans) recommends desdoblaments or collective nouns over neomorphemes."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ceb"
+      ],
+      "guidance": "Cebuano has no grammatical gender. Third-person pronouns (siya) are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ces"
+      ],
+      "guidance": "Czech has grammatical gender affecting nouns, adjectives, and past-tense verbs. When gender is unknown, masculine is the conventional default. Slash notation (e.g., 'přihlášen/a') can be used where space permits."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "chr"
+      ],
+      "guidance": "Cherokee does not have grammatical gender. Third-person pronouns are gender-neutral. Cherokee has a classifier system based on shape/consistency rather than gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "cmn-Hant"
+      ],
+      "guidance": "Same as Simplified Chinese — written forms distinguish 他/她/它 but spoken is gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "cmn"
+      ],
+      "guidance": "Spoken Chinese pronouns are gender-neutral (tā). Written Chinese distinguishes 他 (he), 她 (she), 它 (it), but gender-neutral 他 is conventionally used for unknown gender. In UI text, prefer restructuring to avoid third-person pronouns entirely."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "cym"
+      ],
+      "guidance": "Welsh has grammatical gender (masculine/feminine) with mutation-triggering articles and adjective agreement. No neuter gender. Gender-neutral language is an active area of community discussion."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "dan"
+      ],
+      "guidance": "Danish has common and neuter genders (en/et). For people, gender-neutral language is increasingly preferred."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "deu"
+      ],
+      "guidance": "German has three grammatical genders (masculine, feminine, neuter). For gender-inclusive language, use the Doppelpunkt (colon) notation: 'Benutzer:innen' (users), 'Mitarbeiter:innen' (employees). The colon is the most widely accepted form in corporate and public communication. Alternatives: Genderstern 'Benutzer*innen' (more progressive), slash 'Benutzer/innen' (older style)."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ell"
+      ],
+      "guidance": "Greek has three grammatical genders (masculine, feminine, neuter). When gender is unknown, masculine plural is the conventional default."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "eng"
+      ],
+      "guidance": "English has no grammatical gender on nouns or adjectives. Natural gender is expressed through pronouns (he/she/they). Use singular 'they' as the default when the user's gender is unknown. Avoid gendered role nouns: use 'firefighter' not 'fireman', 'chairperson' or 'chair' not 'chairman'."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "est"
+      ],
+      "guidance": "Estonian has no grammatical gender. The third-person pronoun 'tema/ta' is gender-neutral, covering he/she. No special inclusive conventions are needed as the language is inherently gender-neutral in pronouns."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "eus"
+      ],
+      "guidance": "Basque has no grammatical gender in its noun system. However, the allocutive familiar register ('hika') has gender-marked verb forms distinguishing male and female addressees. Standard/formal register ('zuka') is gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "fao"
+      ],
+      "guidance": "Faroese has three grammatical genders (masculine, feminine, neuter) and four cases. No widely established gender-neutral pronoun convention exists yet."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "fin"
+      ],
+      "guidance": "Finnish has no grammatical gender. The third-person pronoun 'hän' is gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "fra-CA"
+      ],
+      "guidance": "Quebec has been at the forefront of écriture inclusive in French. The Office québécois de la langue française promotes gender-inclusive writing. Doublet forms ('les utilisateurs et les utilisatrices') or truncated forms ('les utilisateur·rice·s') are both accepted."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "fra"
+      ],
+      "guidance": "French has grammatical gender on nouns, adjectives, and past participles. When the user's gender is unknown, prefer écriture inclusive with the interpunct/middle dot (e.g., \"Connecté·e\" not \"Connecté(e)\" or \"Connectée\"). For plurals, use the inclusive form (e.g., \"Utilisateur·rice·s\") where readability permits."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "fry"
+      ],
+      "guidance": "Western Frisian has a two-gender system (common and neuter), similar to Dutch. No established gender-inclusive conventions specific to Frisian exist; practices tend to follow Dutch conventions."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "gle"
+      ],
+      "guidance": "Irish has grammatical gender (masculine/feminine) affecting article forms, adjective agreement, and initial mutations. There is no neuter. Gender-neutral options are limited; use masculine as generic only when conventions require, and prefer rephrasing for inclusivity."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "glg"
+      ],
+      "guidance": "Galician has two grammatical genders (masculine, feminine). Gender-inclusive strategies are less developed than in Spanish or Catalan. The RAG (Real Academia Galega) has not endorsed neomorphemes. Desdoblamentos ('os e as alumnas') or collective nouns are the preferred inclusive strategies in formal writing."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "guj"
+      ],
+      "guidance": "Gujarati has three genders: masculine, feminine, and neuter. Gender affects noun endings, adjective agreement, and verb forms."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "hau"
+      ],
+      "guidance": "Hausa has grammatical gender (masculine/feminine) affecting nouns, pronouns, adjectives, and verb forms. Gender assignment is partly semantic, partly arbitrary. The masculine/feminine distinction extends to second and third person pronouns."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "heb"
+      ],
+      "guidance": "Hebrew has grammatical gender on verbs, adjectives, and pronouns — there is no gender-neutral second person. For UI text addressing unknown users, prefer infinitive or imperative constructions that avoid gendered verb forms. Some modern Hebrew uses slash notation (e.g., 'מחובר/ת'). The slash form is increasingly accepted in digital contexts."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "hil"
+      ],
+      "guidance": "Hiligaynon has no grammatical gender. Third-person pronouns (siya) are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "hin"
+      ],
+      "guidance": "Hindi verbs and adjectives agree in gender. When addressing users of unknown gender, prefer restructuring sentences to avoid gender agreement where possible (e.g., using infinitive or passive constructions). When agreement is unavoidable, use masculine as the socially conventional unmarked form, but note this is a pragmatic default, not an endorsement — style guides vary."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "hun"
+      ],
+      "guidance": "Hungarian has no grammatical gender. Third-person pronoun 'ő' is gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ibo"
+      ],
+      "guidance": "Igbo has no grammatical gender. Pronouns are gender-neutral (ọ = he/she)."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ifk"
+      ],
+      "guidance": "Tuwali Ifugao has no grammatical gender. Pronouns are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ilo"
+      ],
+      "guidance": "Ilocano has no grammatical gender. Third-person pronouns (isuna) are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ind"
+      ],
+      "guidance": "Indonesian has no grammatical gender. Pronouns are gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "isl"
+      ],
+      "guidance": "Icelandic has three grammatical genders (masculine, feminine, neuter) and four cases. The generic masculine is traditional, but the neuter pronoun 'hán' has been proposed as a gender-neutral alternative. Usage is not yet widespread in formal contexts."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ita"
+      ],
+      "guidance": "Italian has grammatical gender on nouns, adjectives, and past participles. The schwa (ə) for gender-neutral endings is used in progressive contexts but is not widely adopted in professional software. Prefer restructuring sentences to avoid gendered forms, or use both forms with slash (e.g., 'Connesso/a') when brevity is needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "jpn"
+      ],
+      "guidance": "Japanese has gendered first-person pronouns (僕 boku/俺 ore = masculine, あたし atashi = feminine). Use 私 (watashi) as the neutral default in UI text. Avoid gendered sentence-final particles (わ wa, ぞ zo) unless the product has a specific persona."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "kan"
+      ],
+      "guidance": "Kannada has three genders: masculine, feminine, and neuter."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "kat"
+      ],
+      "guidance": "Georgian has no grammatical gender. Third-person pronouns (ის/ისინი) are gender-neutral. No special inclusive conventions are needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "kaz"
+      ],
+      "guidance": "Kazakh has no grammatical gender. The pronoun ол (ol) is gender-neutral (he/she/it)."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "khm"
+      ],
+      "guidance": "Khmer has no grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "kin"
+      ],
+      "guidance": "Kinyarwanda uses a noun class system (16 classes), not grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "kne"
+      ],
+      "guidance": "Kankanaey has no grammatical gender. Pronouns are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "lao"
+      ],
+      "guidance": "Lao has no grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "lav"
+      ],
+      "guidance": "Latvian has two genders: masculine and feminine."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "lit"
+      ],
+      "guidance": "Lithuanian has two genders: masculine and feminine. Gender affects nouns, adjectives, pronouns, and verb participles."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "lkt"
+      ],
+      "guidance": "Lakota does not have grammatical gender on nouns, but has gender-differentiated speech patterns. Male and female speakers traditionally use different sentence-final particles (e.g., 'yeló' male vs 'yelé' female for declaratives). Modern usage is evolving."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ltz"
+      ],
+      "guidance": "Luxembourgish has three grammatical genders (masculine, feminine, neuter). Gender-inclusive conventions are emerging, influenced by German and French practices, but no standard has been established."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "lug"
+      ],
+      "guidance": "Luganda uses a noun class system (10 noun classes with singular/plural pairs), not grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mal"
+      ],
+      "guidance": "Modern Malayalam has largely lost grammatical gender distinctions in verb agreement, though natural gender is expressed through nouns and pronouns."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mar"
+      ],
+      "guidance": "Marathi has three genders: masculine, feminine, and neuter. Gender affects noun endings, adjective agreement, and verb conjugation."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mdh"
+      ],
+      "guidance": "Maguindanaon has no grammatical gender. Pronouns are gender-neutral. Gendered Arabic-derived titles are used (Datu/Bai, Hadji/Hadjah, Sultan/Sultana)."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mkd"
+      ],
+      "guidance": "Macedonian has three genders: masculine, feminine, and neuter."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mlt"
+      ],
+      "guidance": "Maltese has two genders: masculine and feminine. Inherited from Semitic root system."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mon"
+      ],
+      "guidance": "Mongolian has no grammatical gender. The third-person pronoun 'тэр' (ter) is gender-neutral. No special inclusive conventions are needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mrw"
+      ],
+      "guidance": "Maranao has no grammatical gender. Pronouns are gender-neutral. However, gendered Arabic-derived titles are used (Datu/Bai, Hadji/Hadjah, Sultan/Sultana)."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "mya"
+      ],
+      "guidance": "Burmese has no grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "nav"
+      ],
+      "guidance": "Navajo has no grammatical gender. Third-person pronouns are gender-neutral. Navajo has a complex classifier system based on object shape/consistency that is unrelated to gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "nep"
+      ],
+      "guidance": "Nepali has two genders: masculine and feminine. Gender affects noun endings and verb agreement."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "nld"
+      ],
+      "guidance": "Dutch has common and neuter grammatical genders (de/het). For referring to people, the gender-neutral pronoun 'die' or 'hen/hun' is increasingly used. For UI text, prefer gender-neutral role descriptions where possible."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "nob"
+      ],
+      "guidance": "Bokmål has three grammatical genders (masculine, feminine, neuter). For inclusive language referring to people, Norwegian increasingly uses gender-neutral constructions. The pronoun 'hen' is gaining acceptance as a gender-neutral third-person singular alternative to 'han/hun'."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "oji"
+      ],
+      "guidance": "Ojibwe uses an animacy-based noun classification system (animate vs inanimate) rather than masculine/feminine gender. This distinction affects verb agreement, pluralization, and demonstratives. Some items that are inanimate in English are animate in Ojibwe (e.g., 'stone', 'pipe')."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "pag"
+      ],
+      "guidance": "Pangasinan has no grammatical gender. Third-person pronoun (sikatoy) is gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "pam"
+      ],
+      "guidance": "Kapampangan has no grammatical gender. Third-person pronoun (ya/iya) is gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "pan"
+      ],
+      "guidance": "Punjabi has two genders: masculine and feminine. Gender affects noun endings, adjective agreement, and verb forms."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "pes"
+      ],
+      "guidance": "Persian has no grammatical gender. Third-person pronouns (او) are gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "pol"
+      ],
+      "guidance": "Polish has grammatical gender and the formal address (Pan/Pani) is inherently gendered. For gender-neutral UI, prefer impersonal constructions (e.g., 'Proszę wybrać...' — 'Please choose...') or infinitive forms that avoid the Pan/Pani choice. The slash form 'Pan/Pani' can be used when direct address is necessary."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "por-PT"
+      ],
+      "guidance": "Same rules as Brazilian Portuguese for gender-inclusive writing."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "por"
+      ],
+      "guidance": "Portuguese has grammatical gender. For inclusive language, prefer gender-neutral restructuring where possible. The 'x' or 'e' endings (e.g., 'conectade', 'usuárix') are used in progressive contexts but are not standard. Slash notation (e.g., 'Conectado/a') is the safest inclusive approach for professional software."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "que"
+      ],
+      "guidance": "Quechua has no grammatical gender. Third-person pronouns (pay) are gender-neutral. No special inclusive conventions are needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ron"
+      ],
+      "guidance": "Romanian has grammatical gender (masculine, feminine, neuter). When gender is unknown, masculine plural is the conventional default."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "rus"
+      ],
+      "guidance": "Russian has grammatical gender on nouns, adjectives, and past-tense verbs. There is no widely adopted gender-neutral writing convention. When gender is unknown, masculine is the conventional default. Where possible, restructure to avoid gendered forms."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "sin"
+      ],
+      "guidance": "Sinhala does not have grammatical gender in the strict sense, though natural gender is expressed through separate lexical items."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "slk"
+      ],
+      "guidance": "Slovak has grammatical gender. When gender is unknown, masculine is the conventional default."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "sna"
+      ],
+      "guidance": "Shona uses a noun class system, not grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "spa-MX"
+      ],
+      "guidance": "Same rules as base Spanish. The 'x' and 'e' inclusive endings are used in Mexican progressive contexts but not yet standard."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "spa"
+      ],
+      "guidance": "Spanish has grammatical gender. For inclusive language, avoid gendered defaults where possible: prefer role-neutral terms (e.g., 'persona usuaria' or 'quien usa' over 'usuario/a'). The 'x' and 'e' inclusive endings (e.g., 'usuarie', 'todxs') remain controversial — use them only if the product explicitly targets progressive audiences."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "srp"
+      ],
+      "guidance": "Serbian has grammatical gender. When gender is unknown, masculine is the conventional default."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "swe"
+      ],
+      "guidance": "Swedish has common and neuter genders (en/ett). The gender-neutral pronoun 'hen' is officially recognized and widely accepted."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "swh"
+      ],
+      "guidance": "Swahili uses a noun class system rather than grammatical gender. Pronouns do not distinguish gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tam"
+      ],
+      "guidance": "Tamil has three genders: masculine, feminine, and neuter (rational vs irrational distinction). Gender affects verb agreement."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tel"
+      ],
+      "guidance": "Telugu has three genders: masculine, feminine, and neuter. Gender affects verb agreement and pronoun selection."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tgl"
+      ],
+      "guidance": "Filipino has no grammatical gender. Pronouns (siya) are gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tha"
+      ],
+      "guidance": "Thai politeness particles ครับ (male) and ค่ะ/คะ (female) are gendered to the speaker. Software UI should omit particles entirely — this is standard practice and does not read as rude. Use เรา (we/neutral) rather than gendered first-person pronouns. Use คุณ (khun) for second person."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tir"
+      ],
+      "guidance": "Tigrinya has two genders: masculine and feminine. Gender affects nouns, pronouns, adjectives, and verb conjugation."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tsg"
+      ],
+      "guidance": "Tausug has no grammatical gender. Pronouns are gender-neutral. However, Islamic cultural contexts may use gendered Arabic-derived titles (e.g., Hadji/Hadjah)."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tuk"
+      ],
+      "guidance": "Turkmen has no grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "tur"
+      ],
+      "guidance": "Turkish has no grammatical gender. The third-person pronoun 'o' is gender-neutral."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "ukr"
+      ],
+      "guidance": "Ukrainian has grammatical gender. When gender is unknown, masculine is the conventional default. Where possible, restructure to use gender-neutral constructions."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "urd"
+      ],
+      "guidance": "Urdu verbs and adjectives agree in gender. When gender is unknown, masculine is the conventional default."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "uzb"
+      ],
+      "guidance": "Uzbek has no grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "vie"
+      ],
+      "guidance": "Vietnamese pronouns encode perceived age and gender relative to the speaker (anh = older male, chị = older female). Software UI should use bạn (gender-neutral peer) to avoid assumptions about user age and gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "war"
+      ],
+      "guidance": "Waray has no grammatical gender. Third-person pronouns (hiya) are gender-neutral. No special inclusive conventions needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "xho"
+      ],
+      "guidance": "Xhosa uses a noun class system, not grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "yor"
+      ],
+      "guidance": "Yoruba has no grammatical gender. Third-person pronouns (ó/oun) are gender-neutral. No special inclusive conventions are needed."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "zsm"
+      ],
+      "guidance": "Malay has no grammatical gender."
+    },
+    {
+      "scope": "language",
+      "appliesTo": [
+        "zul"
+      ],
+      "guidance": "Zulu uses a noun class system (15+ classes), not grammatical gender. Classes categorize by semantic properties."
+    }
+  ]
+}

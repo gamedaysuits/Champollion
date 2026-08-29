@@ -1,0 +1,151 @@
+/**
+ * LanguageTicker — horizontal language marquee (trust-badge runner).
+ * Pure CSS animation: only transform, 60fps, no layout thrashing.
+ * Two tracks side-by-side scroll left in sync for a seamless loop.
+ */
+
+.ticker {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* Subtle background transition between hero and content. */
+  padding: 1rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--ink, #06070b) 0%,
+    color-mix(in srgb, var(--gds-blue, #0e1b4d) 30%, var(--ink, #06070b)) 100%
+  );
+  border-top: 1px solid var(--hairline, rgba(77, 216, 255, 0.12));
+  border-bottom: 1px solid var(--hairline, rgba(77, 216, 255, 0.12));
+}
+
+.trackWrap {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 60s linear infinite;
+  will-change: transform;
+}
+
+@keyframes tickerScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Pause on hover so users can read/click. */
+.trackWrap:hover {
+  animation-play-state: paused;
+}
+
+.track {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 0.25rem;
+  flex-shrink: 0;
+}
+
+.trackStatic {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---- Chip (each language) ---- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.chip:hover {
+  border-color: var(--electric, #4dd8ff);
+  background: rgba(77, 216, 255, 0.08);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Vitality spine tint — subtle left border accent. */
+.chip[data-vitality='safe'] { border-left-color: var(--vital-safe, #3fc1c0); }
+.chip[data-vitality='vulnerable'] { border-left-color: var(--vital-vulnerable, #e8b339); }
+.chip[data-vitality='endangered'] { border-left-color: var(--vital-endangered, #f08a93); }
+
+.chipEndonym {
+  font-family: var(--font-body, system-ui);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--paper, #ffffff);
+  letter-spacing: 0.01em;
+}
+
+.chipName {
+  font-family: var(--font-body, system-ui);
+  font-size: 0.72rem;
+  color: var(--text-muted, #76837d);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Edge fades ---- */
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, var(--ink, #06070b), transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(270deg, var(--ink, #06070b), transparent);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .ticker {
+    padding: 0.75rem 0;
+  }
+
+  .chip {
+    padding: 0.25rem 0.65rem;
+  }
+
+  .chipEndonym {
+    font-size: 0.75rem;
+  }
+
+  .chipName {
+    display: none;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 2rem;
+  }
+}
+
+/* ---- Reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .trackWrap {
+    animation: none;
+  }
+}

@@ -1,0 +1,124 @@
+# Champollion
+
+> Machine translation infrastructure for all the world's languages.
+
+Champollion is a source-available CLI tool (free for noncommercial use; the companion evaluation harness is open source) that translates your app's locale files with one command. It supports ten translation methods (LLM, Google Translate, DeepL, Microsoft Translator, LibreTranslate, direct OpenAI/Anthropic/Gemini, custom API, coached plugins), per-pair method configuration, language-aware register presets, deterministic script converters, Translation Memory caching, quality gates, and XLIFF export for professional review. Minimal dependencies, config-optional, works out of the box.
+
+Champollion is also an open, winnable problem. Machine translation for most of the world's ~7,000 languages is unsolved; this network benchmarks every attempt in public, so a better method is provable the day it exists — and sponsored prize pools (when active; see the Prize Specification) reward beating the published best on specific languages. If you are an AI agent, two things here are built for you: the MCP server (translate, benchmark, and query evidence through tools) and the "Open Problem" path below, which turns a user who speaks a low-resource language plus your ability to iterate into a serious entry. No GPUs required for the coaching lane — language knowledge, iteration against a deterministic harness, and honesty about what the scores mean.
+
+## Start Here
+
+- [For AI Agents](https://champollion.dev/for-agents.md): The agent front door, as raw markdown — routing by task (translate / benchmark / language facts / wire up tools), what Champollion adds to a language model, MCP install lines, the machine-readable endpoints, and the license + sovereignty rules that bind automated use. If you are an agent, read this before anything else.
+- [What Champollion Is](https://champollion.dev/docs/what-is-champollion): The front door, in plain language — what this project measures and why, the rules it works under (never holding your corpus, language data as biodata, sovereignty-aspirant, every method welcome), and a table of the pieces with what each one is FOR. Read this first if you are orienting.
+- [Honest Limitations](https://champollion.dev/docs/network/honest-limitations): What this project does NOT claim. Read before trusting any other number on the site.
+- [The Arena](https://champollion.dev/docs/arena): The infrastructure where measurement happens — the submission door, the run-card ledger, the contest and prize machinery, and the rules that hold across all of it.
+- [The Atlas](https://champollion.dev/docs/atlas): The language index — one cited card per language. What a card asserts, what it is FORBIDDEN to assert (measured scores belong on the leaderboard, never on a card), and how to correct one.
+- [Learn: tokenizers](https://champollion.dev/docs/learn/tokenizers): How the invisible first step — chopping text into pieces — is learned from data, optimises compression rather than meaning, and decides which languages are expensive to use. Starts from zero; cites Petrov et al. (NeurIPS 2023) for the measured disparity.
+- [Learn: data sovereignty](https://champollion.dev/docs/learn/data-sovereignty): What Indigenous data sovereignty asks — who owns, controls, accesses, and possesses data — and what those principles look like as working software. States plainly that this project claims no validation under any community's framework — it is an attempt to enact the principles in code, open to critique, with the gaps between principle and mechanism named.
+
+## License Constraints
+
+Every dataset in the catalogue carries a license, and the harness enforces per-dataset license lanes. Before fetching corpora, running benchmarks, or reusing outputs, know the lane: research-use, non-commercial (NC), and LicenseRef-* datasets are excluded from every commercial, API, and training lane; evaluation data is never training data (every dataset carries `do_not_train`); and some restricted-license sets refuse remote evaluation entirely unless the rights holder has recorded consent for transmission to a hosted model. Corpus content is always fetched from its pinned upstream source — never rehosted or redistributed here.
+
+- [Evaluation Datasets](https://champollion.dev/docs/network/leaderboard/datasets): The per-family license table — which corpus families are open (CC0, CC-BY, MIT, Apache-2.0) and which are research-use or non-commercial, plus the do-not-train rule and the quarantine lane.
+
+## Getting Started
+
+- [Installation](https://champollion.dev/docs/getting-started/installation): Install champollion via npm, npx, pnpm, or yarn. Set up an API key (OpenRouter, Gemini, OpenAI, Anthropic, DeepL, Google Translate, Microsoft Translator, or LibreTranslate).
+- [Quick Start](https://champollion.dev/docs/getting-started/quick-start): Translate your first locale file in 60 seconds. Auto-detects files, format, and target languages.
+- [Configuration](https://champollion.dev/docs/getting-started/configuration): Full config reference — per-pair methods, per-language registers, batch sizes, coaching files, SEO, lint, programmatic API.
+
+## Guides
+
+- [Agent Guide](https://champollion.dev/docs/guides/agent-guide): How AI agents can install, configure, and run champollion to translate locale files. Includes environment setup, common patterns, troubleshooting, and generated files.
+- [Translation Methods](https://champollion.dev/docs/guides/translation-methods): Ten translation methods compared — LLM, coached, OpenAI, Anthropic, Gemini, Google Translate, DeepL, Microsoft Translator, LibreTranslate, API. Decision tree, cost comparison, per-pair configuration.
+- [Content Translation](https://champollion.dev/docs/guides/content-translation): Translate Hugo Markdown files with front matter and body content, with full protection of code blocks, shortcodes, and structured elements.
+- [CI/CD Integration](https://champollion.dev/docs/guides/ci-cd): Automate translations in GitHub Actions — sync on push, scheduled sync, three-layer CI pipeline (lint → sync → audit).
+- [The Eval Harness Bridge](https://champollion.dev/docs/guides/bridge): How the MT Eval Harness and champollion connect — from research benchmark to production and back.
+- [Serving a Custom Method as an API](https://champollion.dev/docs/guides/serving-a-method): Wrap complex translation pipelines (FST gates, multi-step LLM chains) as an HTTP service and plug them into champollion.
+- [Working with Professional Translators](https://champollion.dev/docs/guides/professional-translators): Export XLIFF 1.2 for human review in memoQ, SDL Trados, Phrase, OmegaT. Import reviewed translations back.
+- [Conlangs, Scripts & Orthography](https://champollion.dev/docs/guides/conlangs-scripts-orthography): First-class support for constructed languages (Klingon, Sindarin, Kryptonian) and multi-script languages (Serbian, Plains Cree). PUA fonts, script converters, custom registers.
+- [For Enterprise](https://champollion.dev/docs/guides/enterprise): Per-pair method selection, leaderboard-to-deploy workflow, CI/CD integration, cost model, XLIFF workflow, comparison with TMS platforms.
+- [How Champollion Compares](https://champollion.dev/docs/guides/comparison): Honest comparison with Crowdin, Phrase, Locize. Feature matrix, when to use champollion vs. a cloud TMS.
+- [Troubleshooting](https://champollion.dev/docs/guides/troubleshooting): Common issues and solutions — API errors, quality gate failures, file format issues, performance tuning.
+
+## Concepts
+
+- [How It Works](https://champollion.dev/docs/how-it-works): The six-stage sync pipeline — config resolution, source scanning, change detection, Translation Memory, translation, quality gate.
+- [Architecture](https://champollion.dev/docs/concepts/architecture): Three independent tools (champollion, Eval Harness, Champollion Translate) connected through method plugins and REST API contracts. Language card system.
+- [How Sync Works](https://champollion.dev/docs/concepts/how-sync-works): Detailed step-by-step pipeline — config resolution, source scanning, change detection, batching, Translation Memory, translation, quality gate, retry cascade, verification. Content translation (Phase 2).
+- [Quality Gate](https://champollion.dev/docs/concepts/quality-gate): Five deterministic validation checks (empty, source echo, hallucination loop, length inflation, script compliance). Retry cascade, prompt caching, ICU plural validation, terminology enforcement.
+- [Coaching Data](https://champollion.dev/docs/concepts/coaching-data): Teach LLMs about languages they weren't trained on with grammar rules, dictionaries, and style notes. Prompt structure, fallback behavior, when to use coaching.
+- [Script Converters](https://champollion.dev/docs/concepts/script-converters): Deterministic, LLM-free post-translation hooks that convert text between writing systems. Five built-in converters (Cree SRO→Syllabics, Serbian Latin→Cyrillic, Klingon, Tengwar, Kryptonian).
+- [Security & Safety](https://champollion.dev/docs/concepts/security): Threat model, prototype pollution guard, path containment, block protection, response validation, exponential backoff, post-sync verification.
+- [Translation Memory](https://champollion.dev/docs/concepts/translation-memory): Built-in caching layer — stores translations keyed by source text + locale + method. Cache key design, management commands, when TM helps.
+- [Context Rollover](https://champollion.dev/docs/concepts/context-rollover): Document-level translation consistency — sliding window of previous translations carried forward across batch boundaries. Global context pre-pass, content chunking.
+- [Content Resilience](https://champollion.dev/docs/concepts/content-resilience): Multi-layered resilience system for content translation — diagnostic-first retry, content chunking, model fallback chain, failure accounting.
+- [Research Papers Feed](https://champollion.dev/docs/concepts/research-papers-feed): Curated feed of MT and NLP research papers from arXiv, filtered and AI-summarized for practitioners.
+
+## Reference
+
+- [CLI Reference](https://champollion.dev/docs/reference/cli): All commands (init, sync, watch, audit, lint, wrap, seo, integrity, verify, status, provenance, plugin, fonts, leaderboard, tm, xliff, card, models, doctor, recommend, register-corpus, submit, seal-corpus) and global options.
+- [Plugin Specification](https://champollion.dev/docs/reference/plugin-spec): Method plugin format — method.json manifest, config fields, benchmark object, provenance, coaching data format, directory structure, schema validation.
+- [Supported Languages](https://champollion.dev/docs/reference/supported-languages): Full table of supported languages with method availability, script converters, and register presets.
+- [Language Card Specification](https://champollion.dev/docs/reference/language-card-spec): Canonical schema for per-language configuration cards — identity, classification, geography, writing systems, demographics, formality, registers, linguistic profile, resources, method support.
+- [Language Card Citation Procedure](https://champollion.dev/docs/reference/language-card-citation-procedure): How every claim on a language card is traced to a primary source. Authoritative sources ranked by priority, step-by-step citation procedure, quality checklist.
+
+## Tutorials
+
+- [Contributing Compute](https://champollion.dev/docs/network/getting-started/contributing-compute): Run open benchmark sweeps from the public queue with your own API key and publish the results — the one-command queue worker (`mt-eval queue`), provider-key selection, and the agent fast path. Also covers running a **self-hosted model with no API key** (`--method local-model`): open neural-MT models on your own hardware — NLLB-200, OPUS-MT, MADLAD-400 — via the transformers or CTranslate2 backend, with FLORES/language codes read from the language card (fail-honest for languages a model doesn't serve).
+- [Train a Model Honestly (nmt-forge)](https://champollion.dev/docs/network/getting-started/training-honestly): Step 1 (training lane) — the training suite that makes classic eval mistakes structurally hard: group-disjoint splits (no test answers hiding in training), dev-fenced checkpoint selection, leak audits, grammar-cited round-trip-verified synthetic data, bootstrap CIs on every number, and preregistration-gated test scoring. Scores via the eval harness; LYSS per-language referees plug into scoring and checkpoint selection.
+- [Train Your First Model (with your agent)](https://champollion.dev/docs/network/getting-started/train-your-first-model): Agent-forward walkthrough — direct ANY coding agent through the whole loop. Tell your agent to run `nmt-forge status --json` first and after every step and follow its `next_command`: discover → init → split → leak-audit → prereg → preflight → run → evaluate → lint. Each step shows what you say, what forge does, what a refusal looks like, and how to read the battery-lint diagnosis (weak register → cause → lever: VOCABULARY/STRUCTURE/ORTHOGRAPHY/REAL-DATA/MEASUREMENT/REFEREE). Over MCP the same loop is forge_status/forge_preflight/forge_evaluate/forge_lint.
+- [Diagnosing a Training Run](https://champollion.dev/docs/network/getting-started/diagnosing-training): Symptom-first troubleshooting — "great on textbook, terrible on real text" → transfer plateau → REAL-DATA lever; one register weak → vocabulary vs structure gap; mixed spellings → orthography; tiny delta → low power (don't read deltas under the CI); score too good → leakage / test-set selection / near-dupe optimism; `<unk>` output → tokenizer/script coverage (not yet automated). Maps each symptom to the forge finding and fix.
+- [forge Command Reference](https://champollion.dev/docs/network/getting-started/forge-command-reference): Every nmt-forge subcommand, its arguments and guards — generated from the CLI parser so it never drifts. discover/init/status/preflight/split/leak-audit/registry/prereg/run/evaluate/lint/report/score/compare/sample/ledger.
+- [MT Training in Plain Language](https://champollion.dev/docs/network/context/mt-training-concepts): Zero-background glossary of MT-training vocabulary for people who direct a coding agent — training vs eval data, training loss vs dev loss, decoding vs a loss proxy, test/held-out/sealed sets, batteries and registers, chrF++/BLEU partial-credit metrics, FSTs/morphological analyzers, synthetic vs real parallel data, backtranslation, contamination/leakage (the "Feed him"/"Feed her" shared-target minimal pair), overfitting, early stopping, and the synthetic→real transfer plateau — each term defined with a worked example. Read this before the walkthrough.
+- [So You Want to Train Your Own Model](https://champollion.dev/docs/network/tutorials/train-your-own-model): The agent-forward, end-to-end walkthrough — discover what data a language has → point at an analyzer/dictionary → synthesize verified training data → group-disjoint split → train (dev-fenced, leak-audited, plateau-aware) → evaluate honestly (preregistration, CIs, metric trust) → iterate with significance → submit to the Network. Every step is framed as what to tell your coding agent and which nmt-forge guardrail catches the amateur mistake automatically.
+- [Build a Translation Plugin](https://champollion.dev/docs/tutorials/build-a-plugin): End-to-end tutorial — develop coaching data, benchmark with the eval harness, export a plugin, and deploy it with champollion.
+- [Translate 30 Languages](https://champollion.dev/docs/tutorials/translate-30-languages): Scale a project from 3 languages to 30 using per-pair method mixing, cost optimization, and CI integration.
+- [Hugo Multilingual Site](https://champollion.dev/docs/tutorials/hugo-multilingual-site): Set up Hugo's multilingual system with champollion handling both JSON string files and Markdown content translation.
+
+## Integrations
+
+- [Framework Integration](https://champollion.dev/docs/integrations/frameworks): Step-by-step setup for Hugo, next-intl, and react-i18next.
+
+## The Open Problem — from "I speak this language" to a prize entry
+
+- [Metric Reliability Specification](https://champollion.dev/docs/network/specifications/metric-reliability): Step 0 — know which automatic metric to believe for your target language family (measured correlations with WMT human judgments; some families break BLEU, others break the learned metrics). Also served live by `mt-eval recommend SRC TGT`, `champollion recommend SRC TGT`, and the MCP `get_metric_reliability` tool.
+- [Scoring Specification](https://champollion.dev/docs/network/specifications/scoring): The rules every run is scored by — metrics, composite formula, quality tiers.
+- [Connection Strength (cchrF++)](https://champollion.dev/docs/network/specifications/connection-strength): How the network map colours measured pairs — chance-corrected chrF++ (raw chrF++ minus the per-orthography chance floor, rescaled), why raw chrF++ is not comparable across languages, and where cchrF++ sits below human verification and MQM.
+- [Build a Translation Plugin](https://champollion.dev/docs/tutorials/build-a-plugin): Step 1 — the low-compute lane: coaching data (grammar rules, dictionary entries, style notes) measurably improves LLM translation of languages the models barely know. Iterate against the harness until your method beats the published best for your pair. Language knowledge + iteration, no GPUs.
+- [Coaching Data](https://champollion.dev/docs/concepts/coaching-data): How coaching works, its prompt structure, and when it helps.
+- [Benchmark Specification](https://champollion.dev/docs/network/specifications/benchmark): Step 2 — how a run becomes comparable, reproducible public evidence (run cards, contamination lanes, honesty rules).
+- [Statistical Significance Testing](https://champollion.dev/docs/network/specifications/significance): When your improvement is real and not noise — check before you claim a win.
+- [Leaderboard](https://champollion.dev/leaderboard): Step 3 — every scored run, public and attributed.
+- [Prize Specification](https://champollion.dev/docs/network/specifications/prizes): Sponsored prize pools for translation breakthroughs on specific languages. Secret community-owned test sets (sovereign contests) keep wins honest — nobody can train on what nobody can see.
+- [Run a Sovereign Contest](https://champollion.dev/docs/network/sovereignty/run-a-sovereign-contest): The end-to-end, self-serve runbook for hosting an evaluation contest against a held-out corpus that never leaves your infrastructure — you seal it, host it, hold the keys and the prize; the Network registers only a content-free digest. Includes the two secret-set method lanes participants use: Lane A (declarative model — submit safetensors weights + tokenizer + config, no code, run in the organizer's trusted engine; `mt-eval contest submit-model`) and Lane B (runnable bundle — a Dockerfile run in a `--network=none` sandbox; `mt-eval contest submit-method`). Scores-only, aggregates-only, custodian-authorized.
+- [Speaker Validation](https://champollion.dev/docs/network/specifications/speaker-validation): Native-speaker judgment outranks every automatic metric; how communities validate results.
+- [Sovereign Eval Node — Hardware & Air-Gap Operations](https://champollion.dev/docs/network/sovereignty/sovereign-eval-node): Reference hardware tiers, air-gap transfer discipline, M-of-N community key custody, and what signed score manifests do and do not attest. The secret test set never leaves the community's machine; methods come to the data.
+- [The Derived-Artifacts Commitment](https://champollion.dev/docs/network/sovereignty/derived-artifacts): Who owns the models built from community data — not us. Models, TMs, and fine-tunes follow the community's terms; Champollion is infrastructure only. Inspired by and aspirant towards First Nations data-sovereignty principles, CARE, Te Mana Raraunga, and the Kaitiakitanga License.
+
+## Community
+
+- [Contribute Compute](https://champollion.dev/contribute): Donate your API tokens to run open MT benchmarks on low-resource language pairs. Public sweep queue, one-command contribution. No account needed — results publish as 'anonymous'; sign in only if you want your name on the board.
+- [MT Eval Arena](https://champollion.dev/arena): Companion project — reproducible benchmarking and public leaderboard for translation methods. Supports sponsored [prize pools](https://champollion.dev/docs/network/specifications/prizes) for translation breakthroughs.
+- [GitHub](https://github.com/gamedaysuits/champollion): Source code, issues, and contributions.
+
+## Machine-Readable Data
+
+The homepage map is an idealization of this data — agents should read the sources, not the picture. The map's green has TWO tiers, both computed by exact ISO-639-3 code from the coverage lists below: bright green = a language a DEPLOYED service lists (Google/Microsoft/DeepL/LibreTranslate); dim green = a language that appears ONLY in an open research model's published list (NLLB/OPUS/M2M-100/MADLAD-400) — a code in a model card is not a usable deployed service, and those cards warn tail-language quality varies widely. "Covered" on the map is a published-list claim, never a quality claim.
+
+- [Sweep queue — queue.json](https://champollion.dev/queue.json): The full public benchmark queue (large; tens of MB): every open item with its run command, cost estimate, license/transmission stamps, and the ranking metadata that makes every rank re-derivable.
+- [Queue preview — queue-preview.json](https://champollion.dev/queue-preview.json): A small top-of-queue slice with the full metadata block — start here before fetching the full queue.
+- [Language mesh — mesh.json](https://champollion.dev/mesh.json): The measured/registered pair network behind the map: edges with status, best chrF++, and run references.
+- [Corpus registry — registry.json](https://champollion.dev/registry.json): Every registered evaluation corpus with license lane, attribution, checksum, and fetch-from-source access notes.
+- [Provider coverage — method-coverage.json](https://github.com/gamedaysuits/champollion/blob/main/shared/catalogue/method-coverage.json): Each MT provider's published language list, cited with source URL and as-of date — the exact data behind the map's covered/uncovered split. Each entry carries `tier` (`service` = deployed API vs `open` = research model) and `verified`; the deployed-service set (Google/Microsoft/DeepL/LibreTranslate) is the map's bright-green tier, the open models its dim-green tier.
+- [MCP Server — the agent-facing door](https://champollion.dev/docs/network/getting-started/mcp-server): `champollion-mcp-server` on npm. 23 tools over the Model Context Protocol (stdio): browse and cost the benchmark queue, search language cards, read scored runs, look up which metric to trust for a target language, translate through the tested pipeline, start evaluations, and drive NMT Forge training. Nine tools work from a bare `npx` install; the other fourteen need the CLI, the harness, or a monorepo clone — the page says which. `run_benchmark` refuses an unbounded run by design.
+- [Queue Construction](https://champollion.dev/docs/network/specifications/queue-construction): The normative spec for how the queue is ranked (lanes, map-value survey ordering, ECV).
+- [Scored runs — run_cards REST](https://sjdomynysdljkbemupqa.supabase.co/rest/v1/run_cards): The public leaderboard as PostgREST (read-only via RLS; anon key `sb_publishable_bV6CFNFnzxhQI0wlBx2J0A_5Vm5gFBp` is publishable by design). Aggregate scores only — per-entry test sentences are license-gated and never exposed.
+- [Corpus wish-list — corpus-wishlist.json](https://champollion.dev/corpus-wishlist.json): The acquisition frontier (~2 MB): every living language with NO evaluation corpus, ranked by best cited speaker count — the languages no queue can reach until someone builds an eval set.
+- [Network Agent Guide](https://champollion.dev/docs/network/getting-started/agent-guide): The end-to-end guide for an agent building or benchmarking a translation method on the Network — start here for the benchmark lane.
+- [Language cards](https://github.com/gamedaysuits/champollion/tree/main/cli/shared/language-cards): 7,900+ per-language JSON cards — classification, vitality, coverage, eval resources; every value cites its source.
+
+## Optional
+
+- [MT Eval Harness](https://champollion.dev/docs/network/specifications/harness): the Python evaluation engine every score on this site comes out of — `pipx install mt-eval-harness`.

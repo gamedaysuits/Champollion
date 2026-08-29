@@ -1,0 +1,57 @@
+{
+  "id": "eval-hun-sqi-globalvoices-test-v1",
+  "type": "eval",
+  "name": "GlobalVoices hun→sqi (test)",
+  "version": "1.0",
+  "description": "Evaluation corpus derived from GlobalVoices v2018q4 citizen journalism parallel text. 340 test sentences from a total of 340 aligned pairs. News/blog domain. CC-BY-3.0 licensed.",
+  "pair": {
+    "source": "hun",
+    "target": "sqi"
+  },
+  "dev": {
+    "domain": "news",
+    "dataFile": "eval-hun-sqi-globalvoices-test-v1.json",
+    "size": 340
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "GlobalVoices text is freely available online and widely crawled. Likely present in frontier model training data."
+  },
+  "license": {
+    "spdx": "CC-BY-3.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": true,
+    "notes": "Global Voices publishes all content under CC-BY-3.0."
+  },
+  "source": {
+    "publisher": "Global Voices / OPUS",
+    "url": "https://opus.nlpl.eu/GlobalVoices/corpus/version/GlobalVoices",
+    "paper": null,
+    "citation": "Global Voices. https://globalvoices.org/. OPUS: Tiedemann, J. (2012). Parallel Data, Tools and Interfaces in OPUS. LREC 2012.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/OPUS-GlobalVoices/v2018q4/moses/",
+    "builder": "globalvoices-parallel",
+    "sha256": "61d56c94f2c98ba992b1b5db6a2d7d3c05ceb32e3c322e503b89e939ced2c84d",
+    "recipe": {
+      "split": "test",
+      "seed": 42,
+      "tail_n": 2000
+    },
+    "license": "CC-BY-3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "OPUS GlobalVoices v2018q4 via build_all_globalvoices.py"
+  },
+  "varietyResolution": {
+    "sqi": {
+      "resolvedCode": "als",
+      "basis": "Global Voices Albanian (sq.globalvoices.org) is written in Standard Albanian, the Tosk-based standard (als).",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    }
+  }
+}

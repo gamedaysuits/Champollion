@@ -1,0 +1,97 @@
+{
+  "id": "eval-eng-arb-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba eng→arb Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "eng",
+    "target": "arb",
+    "direction": "unidirectional"
+  },
+  "description": "Dev corpus rebuilt fetch-from-source from OPUS-Tatoeba v2023-04-12. 191 entries, stratified across 15 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2023-04-12/moses/ar-en.txt.zip",
+    "builder": "tatoeba-opus",
+    "sha256": "4ba5d16e0e03f847119c620767b091f3e6030f3aba85540fbef8a6bf5b8622a3",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "archive_sha256": "5fddf00ddec30717e221fdf33f5d2a3770db44277fe467c41e024e31d367009a",
+    "recipe": {
+      "release": "v2023-04-12",
+      "split": "all",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "words",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-22T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 191,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.079,
+      "ecommerce": 0.079,
+      "edu": 0.079,
+      "financial": 0.047,
+      "gov": 0.063,
+      "legal": 0.079,
+      "literary": 0.079,
+      "marketing": 0.073,
+      "medical": 0.063,
+      "news": 0.079,
+      "religious": 0.079,
+      "scientific": 0.058,
+      "support": 0.052,
+      "tech": 0.042,
+      "ui": 0.052
+    },
+    "dataFile": "curated/eng-arb-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Clean human-translated Tatoeba pair, CC-BY-2.0. A lower-resource pair unlikely to be specifically targeted by training pipelines, though individual sentences may appear in broad tatoeba.org crawls."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": "2026-06-22",
+    "populatedFrom": "Rebuilt fetch-from-source by restore_quarantined_bridges from OPUS-Tatoeba v2023-04-12 (was quarantined null-sha). Built-corpus sha256 + recipe pinned in the source block; corpus content not tracked."
+  },
+  "richness": {
+    "mean_source_chars": 74.6,
+    "mean_effective_words": 14.92,
+    "economy": 5.0,
+    "economy_basis": "measured",
+    "computed_from": "eng-arb-dev-v1.json",
+    "computed_at": "2026-06-22"
+  }
+}

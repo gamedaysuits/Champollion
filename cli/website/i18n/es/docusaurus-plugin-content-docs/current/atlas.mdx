@@ -1,0 +1,194 @@
+---
+title: "El Atlas"
+description: "El Atlas es el índice de idiomas de Champollion — una ficha citada por idioma. Lo que afirma una ficha, lo que tiene prohibido afirmar, dónde leerla y cómo corregirla."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Los recuentos se renderizan a través de SSOTCount (lecturas en tiempo de compilación de los SSOT de la máquina a través de customFields de docusaurus.config.js) — nunca se escriben a mano, según el estándar de visualización de SSOT. Las cifras sin un SSOT de customFields (límites inferiores de lenguas de señas y lenguas construidas, totales en riesgo) están ENLAZADAS a la página restringida a la que pertenecen, nunca se reafirman aquí. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# El Atlas
+
+**El Atlas es el índice de idiomas: <SSOTCount field="catalogLanguageCount" />
+tarjetas, una por idioma, donde cada valor nombra la fuente de la que proviene.**
+
+Es la capa de referencia sobre la que se apoya el resto de Champollion. La
+[CLI](/docs/intro) lo lee para saber cómo se comporta un idioma. La
+[Arena](/docs/arena) lo lee para saber *de qué* es un benchmark un determinado punto de referencia. La
+[Red](/docs/network/) se traza sobre él. Y es completamente útil por sí solo: para la mayoría de los idiomas que contiene, la tarjeta es el resumen citado más completo sobre la situación del idioma disponible en un solo lugar.
+
+Las tarjetas se generan a partir de sus fuentes, no se escriben a mano. Nadie se sienta a escribir lo que sabe sobre un idioma.
+
+---
+
+## Champollion es un índice, no un árbitro
+
+Esta es la regla que todo el Atlas fue construido para obedecer, y es más estricta de lo que parece.
+
+Cada valor en una tarjeta cita su fuente y reporta lo que esa fuente **realmente
+dice** — no lo que creemos que es verdad, no una versión corregida, no una cifra
+redondeada. Cuando las fuentes no están de acuerdo, la tarjeta las muestra
+**todas, con su respectiva atribución**. Los recuentos de hablantes discrepan constantemente: Wikidata dice un número, Ethnologue
+otro, un censo nacional un tercero, una encuesta regional un cuarto. Una tarjeta incluye
+cada uno de ellos con su fuente y su fecha. No los promediamos, no
+adjudicamos entre ellos y no elegimos discretamente el que se lee mejor.
+
+La razón no es modestia. Una tarjeta que fabricara un consenso sería una
+afirmación nueva y no citable sobre el idioma de alguien, inventada por nosotros. Preservar el
+desacuerdo mantiene la tarjeta verificable frente al mundo, y deja el
+juicio donde pertenece: en el lector y en la comunidad a la que pertenece el idioma.
+
+A continuación se presentan tres reglas de lectura, y vale la pena conocerlas antes de usar una tarjeta para cualquier propósito:
+
+- **`null` significa desconocido, no inaplicable.** Un campo vacío significa que aún no hemos
+  encontrado una fuente citada para él. Es una invitación, no un veredicto. Cuando un
+  campo genuinamente no aplica, la tarjeta lo dice con palabras.
+- **Los valores derivados indican que son derivados.** Cualquier cosa que Champollion calcule — una
+  mediana, un compuesto, un indicador recodificado, un recuento extraído de un conjunto de datos —
+  lleva el sello `champollion-derived` con una nota que nombra *de dónde* se derivó.
+  Nunca se archiva bajo el nombre del conjunto de datos de origen, porque eso pondría
+  nuestra aritmética en boca de otra persona.
+- **La citación supera a la cobertura.** Una tarjeta con menos campos, pero bien fundamentados, es más
+  saludable que una llena de relleno de fuentes terciarias. Wikipedia,
+  el texto generado por LLM y el conocimiento propio no son fuentes primarias aquí, y
+  no se aceptan como tales.
+
+El [Procedimiento de citación](/docs/reference/language-card-citation-procedure) establece
+qué fuente es autoritativa para qué tipo de afirmación, y en qué orden.
+
+---
+
+## Lo que afirma una tarjeta — y lo que nunca afirma
+
+Una tarjeta hace exactamente dos tipos de declaraciones.
+
+**1. Propiedades del idioma.** Clasificación y familia, inventario fonológico,
+tipología, escritura y ortografía, vitalidad y estado de peligro de extinción,
+estimaciones de hablantes. Cada una citada, cada una etiquetada como derivada o afirmada.
+
+**2. Existencia de un recurso.** Que un corpus, un modelo, un FST, un diccionario, un
+plugin de métricas o un método de traducción *existe* para este idioma, y en qué
+nivel de acceso. Esta es una afirmación de capacidad, no una afirmación de calidad.
+
+Y hay una línea estricta que no cruza:
+
+:::danger[Las puntuaciones medidas nunca están en una tarjeta de idioma]
+Cualquier **puntuación medida del resultado de un método** — chrF++, BLEU, COMET, TER, tasa de
+aceptación de FST, "porcentaje morfológicamente válido" — es un **resultado de ejecución**, vinculado a
+un método, conjunto de datos y métrica específicos. Pertenece a la
+[tabla de clasificación](/leaderboard), dentro de [la Arena](/docs/arena), adjunto a una
+tarjeta de ejecución con huella digital. Está **prohibido en una tarjeta de idioma**, y un linter
+rechaza cualquier tarjeta que contenga uno.
+:::
+
+La distinción es la diferencia entre "existe un FST para este idioma" — un
+hecho sobre el mundo, verdadero o falso independientemente de nosotros — y "este método obtiene
+una aceptación de FST de 0.82" — una medición, verdadera solo para una ejecución, una versión del conjunto de datos
+y una versión del método. Si se colapsan los dos, una tarjeta se convierte silenciosamente en una afirmación de calidad
+sobre un idioma, de forma permanente, sin una ejecución que la respalde y sin forma de
+retractarla. Por lo tanto, no se colapsan. El Atlas le dice **qué existe**; la
+Arena le dice **qué tan bien funciona**.
+
+Dos invariantes más se aplican de la misma manera: una afirmación de tono no debe contradecir
+el propio inventario fonológico de la tarjeta, y un recuento de hablantes mostrado debe ser igual a
+una de las estimaciones citadas en la tarjeta (o estar sellado como nuestra propia derivación).
+El esquema completo, con cada campo y sus reglas, es la [Especificación de la tarjeta de idioma](/docs/reference/language-card-spec).
+
+---
+
+## Qué contiene y de dónde proviene
+
+Se catalogan <SSOTCount field="catalogLanguageCount" /> idiomas, construidos a partir de
+<SSOTCount field="licensedSourceCount" /> fuentes de origen registradas cuyas
+licencias se rastrean individualmente — porque una tarjeta solo es redistribuible si
+todo en ella lo es, y las fuentes no comerciales quedan excluidas de las
+vías comerciales por diseño en lugar de por buenas intenciones.
+
+El catálogo incluye las lenguas de señas como las lenguas naturales que son,
+incluye las lenguas construidas que reconoce la norma ISO 639-3, excluye los lenguajes de programación,
+y evalúa idiomas individuales en lugar de macrolenguas generales — porque los recursos de traducción son específicos de cada variedad, y una puntuación
+adjunta a un código general sería una afirmación sobre variedades que nadie evaluó.
+Cuando las taxonomías no están de acuerdo, la tarjeta muestra el desacuerdo en lugar de elegir un
+ganador. Cada una de esas elecciones se argumenta, con sus consecuencias, en [¿Qué cuenta
+como un idioma aquí?](/docs/network/context/what-counts-as-a-language).
+
+**Cobertura no es calidad, y existencia no es cobertura.** Una tarjeta que enumera tres
+recursos para un idioma le está diciendo que existen tres cosas — no que alguna de
+ellas sea utilizable, y no que el idioma esté atendido. La forma en que el proyecto cuenta la
+cobertura, y lo que se niega a contar, se encuentra en [Contando la
+cobertura](/docs/network/context/coverage-counting).
+
+---
+
+## Dónde leerlo
+
+| Interfaz | Lo que le ofrece |
+|---|---|
+| [El Atlas de idiomas](/languages) | Las tarjetas en sí — busque, filtre por familia, región, vitalidad y complejidad, y abra cualquier tarjeta completa |
+| [El Índice](/catalogue) | Todo lo catalogado, por idioma: benchmarks, recursos, métodos, servicios de traducción humana y un nivel separado de solo cita para resultados publicados externamente |
+| [Glosario](/glossary) | Definiciones en lenguaje sencillo para cada término que usa una tarjeta |
+| [Idiomas soportados](/docs/reference/supported-languages) | Lo que la CLI puede traducir hoy, que es un conjunto mucho más pequeño que lo que cataloga el Atlas |
+
+Los puntos de entrada legibles por máquina son `/llms.txt` y `/llms-full.txt`; los agentes pueden
+buscar las tarjetas directamente a través del [servidor MCP](/docs/network/getting-started/mcp-server).
+
+---
+
+## Cuando una tarjeta es incorrecta
+
+Asuma que algunas de ellas lo son. Un índice de este tamaño, ensamblado a partir de fuentes que
+discrepan entre sí, contendrá errores — y los que más importan
+suelen ser invisibles para nosotros y obvios para un hablante.
+
+**Cada tarjeta incluye un enlace de "Sugerir una corrección o adición"**, que abre
+el formulario de corrección con el idioma precompletado. Aporte una fuente si tiene
+una; para una solicitud de eliminación o restricción por parte de la comunidad, no se requiere citación
+y se maneja con prioridad.
+
+Las correcciones se aplican **en el generador, no en la tarjeta**. Las tarjetas se
+regeneran a partir de sus fuentes, por lo que una edición manual se sobrescribiría silenciosamente
+en la siguiente compilación — corregir la fuente es lo que hace que una corrección sea permanente,
+y generalmente corrige el mismo defecto en cualquier otra tarjeta que comparta esa fuente. Esto
+es más lento que editar un archivo y es la única versión que perdura. La
+mecánica se encuentra en [Enviar al Índice](/docs/network/getting-started/submit-to-the-index).
+
+**Si usted es un miembro o autoridad de la comunidad** y desea que los datos sobre su idioma
+sean restringidos, modificados o eliminados, esa solicitud no necesita ser justificada ante nosotros
+y no entra en una cola pública si prefiere que no sea así. Los datos lingüísticos son biodatos:
+conllevan la identidad y las relaciones de las personas que los hablan,
+y no pueden ser anonimizados de manera significativa. Somos **aspirantes a la soberanía, no certificados en soberanía** — construimos los mecanismos y los describimos honestamente, y
+si honran la propiedad y el control comunitarios de los datos lingüísticos es una determinación que pertenece a las comunidades
+involucradas, no a nosotros. La postura completa se encuentra en [Administración de datos](/docs/network/sovereignty/data-sovereignty), y
+la puerta de acceso para la comunidad es [Para las comunidades lingüísticas](/docs/network/community/for-language-communities).
+
+---
+
+## Leer a continuación
+
+- **Desea buscar un idioma** → [explore el Atlas](/languages).
+- **Desea saber qué significa un campo** → [Especificación de la tarjeta de idioma](/docs/reference/language-card-spec).
+- **Desea saber por qué hay una afirmación en una tarjeta** → [Procedimiento de citación](/docs/reference/language-card-citation-procedure).
+- **Desea construir un método para un idioma desatendido** → [Apoyar a un idioma de bajos recursos](/docs/network/community/low-resource-languages).
+- **Desea saber qué tan bien se traduce realmente algo** → eso no está aquí.
+  Está en [la Arena](/docs/arena) y en la [tabla de clasificación](/leaderboard).

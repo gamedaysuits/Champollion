@@ -1,0 +1,154 @@
+{
+  "id": "eval-eng-crk-edtekla-prize-v1",
+  "type": "eval",
+  "name": "Synthetic schema fixture (NOT a real corpus)",
+  "version": "0.1.0-test",
+  "description": "Synthetic schema test fixture — NOT a real corpus and NOT a real EdTeKLA prize set. Every value below (consent, stewards, sovereignty, sha256, dates) is an EXAMPLE PLACEHOLDER for exercising the schema, not a real community arrangement. Quarantined: never ranks, never queued, never presented as real.",
+  "quarantine": true,
+  "quarantineReason": "synthetic schema fixture — not a real corpus; all sovereignty/consent/steward values are example placeholders, no real community involvement or consent exists",
+  "pair": {
+    "source": "eng",
+    "target": "crk"
+  },
+  "source": {
+    "publisher": "EdTeKLA Research Group (Educational Technology, Knowledge, Language, and Learning Analytics), University of Alberta",
+    "url": "https://example.com/edtekla",
+    "citation": "EdTeKLA Research Group, University of Alberta"
+  },
+  "license": {
+    "spdx": "LicenseRef-EdTeKLA-Modified-CC-BY-NC-SA-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "notes": "Non-commercial use only. Community governance applies additional restrictions. (Models the real EdTeKLA grant: a MODIFIED sovereignty-scoped CC BY-NC-SA — see the dev card's license.notes for the chain.)"
+  },
+  "dev": {
+    "size": 200,
+    "sizeUnit": "sentences",
+    "domain": "edu",
+    "domainDistribution": {
+      "educational": 0.7,
+      "conversational": 0.2,
+      "cultural": 0.1
+    },
+    "dataFile": "curated/eng-crk-edtekla-prize-dev-v1.json",
+    "format": "harness-json"
+  },
+  "test": {
+    "size": 300,
+    "sizeUnit": "sentences",
+    "domain": "edu",
+    "domainDistribution": {
+      "educational": 0.6,
+      "conversational": 0.25,
+      "cultural": 0.15
+    },
+    "dataFile": "curated/eng-crk-edtekla-prize-test-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": {
+    "status": "active",
+    "size": 500,
+    "sizeUnit": "sentences",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "createdBy": "EdTeKLA Project",
+    "createdAt": "2026-09-01",
+    "keyScheme": {
+      "type": "threshold-signature",
+      "threshold": "3-of-5",
+      "protocol": "FROST"
+    }
+  },
+  "stewardship": {
+    "governanceBody": "Plains Cree Language Trust (hypothetical)",
+    "stewards": [
+      {
+        "name": "Example Steward A",
+        "role": "example governance role (synthetic, not a real Elder)",
+        "publicKey": "pk_test_aaa111"
+      },
+      {
+        "name": "Steward B",
+        "role": "Community educator",
+        "publicKey": "pk_test_bbb222"
+      },
+      {
+        "name": "Steward C",
+        "role": "Language commissioner",
+        "publicKey": "pk_test_ccc333"
+      },
+      {
+        "name": "Steward D",
+        "role": "Youth representative",
+        "publicKey": "pk_test_ddd444"
+      },
+      {
+        "name": "Steward E",
+        "role": "Technical delegate",
+        "publicKey": "pk_test_eee555"
+      }
+    ],
+    "threshold": "3 of 5",
+    "authorizationModel": "per-submission"
+  },
+  "submission": {
+    "transfer": "full",
+    "retained": [
+      "publication",
+      "technique-reuse",
+      "attribution"
+    ],
+    "admissibility": {
+      "selfHostable": true,
+      "networkRequired": false,
+      "apiWrapperProhibited": true,
+      "acceptanceThreshold": 0.7
+    },
+    "agreementUrl": "https://champollion.dev/legal/method-submission-agreement"
+  },
+  "quality": {
+    "humanValidated": false,
+    "speakerCount": 0
+  },
+  "contamination": {
+    "risk": "NONE",
+    "notes": "Champollion-built corpus. Never published. Zero contamination risk."
+  },
+  "heldOutBenchmark": true,
+  "doNotTrain": true,
+  "sovereignty": {
+    "frameworks": [
+      "community-ownership-control",
+      "CARE"
+    ],
+    "governanceBody": {
+      "name": "Plains Cree Language Trust (hypothetical)",
+      "type": "community-trust",
+      "jurisdiction": "Treaty 6 Territory"
+    },
+    "tkLabels": [
+      {
+        "labelType": "TK-CI",
+        "projectId": "test-project-001",
+        "url": "https://localcontextshub.org/projects/test-project-001"
+      }
+    ],
+    "communityConsent": "example-only-no-real-consent",
+    "consentDate": "0000-00-00",
+    "consentNotes": "SYNTHETIC FIXTURE — no real consent exists. Example value exercising the sovereignty schema; not a representation that any community has consented."
+  },
+  "usageRestrictions": {
+    "training": "prohibited-by-community",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited-by-license",
+    "communityNotes": "SYNTHETIC FIXTURE — not a real corpus, and not created with any community, Elders, or governance body. Example text exercising the usageRestrictions schema; not a representation of any real partnership.",
+    "restrictionSource": "community"
+  },
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "addedBy": "e2e-test",
+    "lastUpdated": "2026-06-09",
+    "sources": [
+      "Test fixture — not a real corpus."
+    ]
+  }
+}

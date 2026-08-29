@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "hình vị",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "Đơn vị nhỏ nhất của từ mang ý nghĩa. Từ tiếng Anh “unhappiness” chứa ba hình vị: un-, happy, và -ness. Các ngôn ngữ khác nhau rất nhiều về số lượng hình vị mà chúng tích hợp vào trong một từ.",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "Các hệ thống dịch máy (MT) hoạt động dựa trên các token, và một token chứa nhiều hình vị sẽ che giấu đi cấu trúc ngữ pháp mà hệ thống cần để dịch chính xác.",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "hình thái học",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "Ngành nghiên cứu về cách các từ được cấu tạo từ những phần nhỏ hơn có nghĩa, và bản thân hệ thống cấu tạo từ của một ngôn ngữ. Một ngôn ngữ có hình thái phức tạp sẽ thể hiện bằng các đuôi từ những gì mà tiếng Anh biểu thị bằng các từ riêng biệt.",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "Hình thái học phức tạp làm tăng số lượng các dạng từ khác nhau mà hệ thống dịch máy phải học từ lượng dữ liệu hạn chế.",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "biến hình từ",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "Việc thay đổi dạng của từ để biểu thị ngữ pháp — như thì, số, cách, giống — mà không làm thay đổi ý nghĩa cốt lõi của nó, ví dụ như sing/sang hoặc cat/cats trong tiếng Anh. Các ngôn ngữ biến hình cao có thể đánh dấu từ sáu phạm trù ngữ pháp trở lên trên một từ duy nhất.",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "Mỗi dạng biến hình là một token riêng biệt đối với hệ thống dịch máy, vì vậy việc biến hình phức tạp đồng nghĩa với việc xuất hiện nhiều từ hiếm gặp hơn và dễ xảy ra lỗi hòa hợp ngữ pháp hơn.",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "cấu tạo từ phái sinh",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "Việc tạo ra các từ mới từ các từ đã có sẵn, ví dụ như teach → teacher hoặc happy → unhappy. Khác với biến hình từ, cấu tạo từ phái sinh tạo ra một từ mới hoàn toàn trong từ điển chứ không phải là một biến thể ngữ pháp của cùng một từ.",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "Khả năng cấu tạo từ phái sinh linh hoạt cho phép người bản xứ tự tạo ra các từ mới ngay khi nói/viết mà hệ thống dịch máy chưa từng gặp qua.",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "phụ tố",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "Một hình vị được gắn vào gốc từ để thay đổi ý nghĩa hoặc ngữ pháp của từ đó. Tiền tố được gắn vào trước gốc từ, hậu tố gắn vào sau, và một số ít ngôn ngữ sử dụng trung tố ở giữa gốc từ.",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "Vị trí gắn của phụ tố quyết định nơi mà các bộ tách token dưới cấp từ (subword tokenizer) nên chia tách từ cho mô hình dịch máy.",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "tiền tố",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "Một phụ tố được gắn vào phía trước của gốc từ, ví dụ như re- trong “rewrite”. Một số ngôn ngữ, bao gồm nhiều ngôn ngữ thuộc ngữ hệ Bantu và Athabaskan, mang hầu hết thông tin ngữ pháp của chúng trong các chuỗi tiền tố.",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "Các ngôn ngữ sử dụng nhiều tiền tố đặt thông tin ngữ pháp ở đầu từ, ngược lại với những gì các bộ tách token được huấn luyện dựa trên hậu tố mong đợi.",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "hậu tố",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "Một phụ tố được gắn vào phía cuối của gốc từ, ví dụ như -ness trong “kindness”. Sử dụng hậu tố là phương thức cấu tạo từ bằng phụ tố phổ biến nhất trong các ngôn ngữ trên thế giới.",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "Các hậu tố xếp chồng lên nhau tạo ra các dạng từ dài và hiếm gặp mà hệ thống dịch máy phải phân đoạn chính xác mới có thể dịch được.",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "trung tố",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "Một phụ tố được chèn vào bên trong gốc từ thay vì ở trước hoặc sau gốc từ đó. Ví dụ, tiếng Tagalog chuyển từ sulat “viết” thành sumulat “đã viết” bằng cách chèn -um- vào sau phụ âm đầu tiên.",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "Trung tố phá vỡ giả định rằng gốc từ là một chuỗi liên tục, điều này làm vô hiệu hóa các phương pháp phân đoạn dưới cấp từ đơn giản.",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "lâm từ",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "Một từ ngữ pháp nhỏ không thể đứng độc lập mà phải tựa vào một từ lân cận, giống như 's trong \"the queen of England's hat\". Clitic hoạt động một phần giống như từ và một phần giống như phụ tố.",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "Clitic làm mờ ranh giới từ, vì vậy các bộ tách từ (tokenizer) có thể gắn chúng vào sai từ gốc và làm xáo trộn ngữ pháp.",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "thân từ (stem)",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "Phần cốt lõi của một từ mà các phụ tố sẽ gắn vào. Trong 'unbelievable', thân từ của -able là 'believe'. Trong nhiều ngôn ngữ, thân từ không bao giờ xuất hiện đơn độc mà phải mang ít nhất một số biến hình.",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "Việc xác định các thân từ chung giữa các dạng từ là cách các hệ thống dịch máy (MT) khái quát hóa từ dữ liệu huấn luyện hạn chế.",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "căn tố (root)",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "Phần cốt lõi không thể giản lược thêm của một từ sau khi đã loại bỏ tất cả các phụ tố. Trong các ngôn ngữ Semit, căn tố thường chỉ gồm ba phụ âm (như k-t-b 'viết' trong tiếng Ả Rập) mà các mẫu nguyên âm sẽ biến chúng thành từ.",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "Các ngôn ngữ có căn tố không liên tục (khung phụ âm) cần phân đoạn chuyên biệt để hệ thống dịch máy nhận diện được mối quan hệ giữa các từ.",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "hệ hình (paradigm)",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "Tập hợp đầy đủ các dạng biến hình mà một từ có thể có — giống như bảng chia động từ. Hệ hình có thể chỉ gồm hai dạng (như 'must' trong tiếng Anh) cho đến hàng nghìn dạng trong các ngôn ngữ đa tổng hợp.",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "Hệ hình lớn đồng nghĩa với việc hầu hết các dạng từ sẽ hiếm gặp hoặc không xuất hiện trong dữ liệu huấn luyện.",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "chắp dính (agglutinative)",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "Một kiểu cấu tạo từ mà mỗi ý nghĩa ngữ pháp có một phụ tố riêng biệt rõ ràng, được xếp chồng nối tiếp nhau — như trong tiếng Thổ Nhĩ Kỳ hoặc tiếng Swahili. Các từ có thể rất dài, nhưng mỗi phần chỉ đảm nhận một nhiệm vụ.",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "Các từ chắp dính có thể phân đoạn sạch sẽ thành các từ con (subword), nhưng chỉ khi bộ tách từ học được trật tự phụ tố của ngôn ngữ đó.",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "hòa kết (fusional)",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "Một kiểu cấu tạo từ mà một phụ tố dung hợp nhiều ý nghĩa ngữ pháp cùng một lúc. Đuôi -ó trong từ habló của tiếng Tây Ban Nha vừa chỉ thì quá khứ, ngôi thứ ba, vừa chỉ số ít — không có phần nào của đuôi này có thể tách riêng cho một ý nghĩa duy nhất.",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "Các đuôi từ hòa kết không thể bị phân rã bởi bộ tách từ, vì vậy mỗi tổ hợp phải được học như một đơn vị riêng lẻ.",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "đơn lập (isolating)",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "Một kiểu cấu tạo từ mà các từ hầu hết là các hình vị đơn độc và ngữ pháp được thể hiện bằng trật tự từ và hư từ thay vì các đuôi từ — như trong tiếng Việt hoặc tiếng Quan Thoại. Đây là thái cực đối lập với đa tổng hợp.",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "Các ngôn ngữ đơn lập chuyển bài toán dịch máy từ phân đoạn từ sang trật tự từ và lựa chọn hư từ.",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "đa tổng hợp (polysynthesis)",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "Một kiểu cấu tạo từ mà một động từ duy nhất có thể chứa đựng những gì mà các ngôn ngữ khác phải diễn đạt bằng cả một câu — bao gồm chủ ngữ, tân ngữ, địa điểm, công cụ và nhiều hơn thế nữa, tất cả đều là các phần của một từ. Nhiều ngôn ngữ bản địa châu Mỹ hoạt động theo cách này.",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "Các từ đa tổng hợp hiếm khi lặp lại chính xác, vì vậy hệ thống dịch máy ở cấp độ từ sẽ liên tục gặp phải các token lạ lẫm.",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "Tiếng Plains Cree (crk): một động từ duy nhất có thể tích hợp các đại từ chủ ngữ/tân ngữ, công cụ, địa điểm và hành động (card field linguisticChallenges.polysynthesis).",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "tích hợp danh từ (noun incorporation)",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "Gộp một danh từ vào trong động từ để tạo thành một từ duy nhất, tương tự như việc chuyển cụm từ \"săn hải cẩu\" thành động từ \"săn-hải-cẩu\". Hiện tượng này phổ biến trong các ngôn ngữ đa tổng hợp (polysynthetic), làm thay đổi trọng tâm và ngữ pháp của câu.",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "Một danh từ khi đã được gộp sẽ không còn xuất hiện trong câu như một từ độc lập, khiến các mô hình dịch thuật dựa trên căn chỉnh từ (alignment-based) dễ bỏ sót.",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "Hiển thị trên các thẻ dưới dạng linguisticChallenges.nounIncorporation (dựa trên Grambank), ví dụ: tiếng Plains Cree (crk).",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "từ ghép (compounding)",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "Ghép hai hoặc nhiều từ độc lập thành một từ mới, ví dụ: \"tooth\" (răng) + \"brush\" (bàn chải) → \"toothbrush\" (bàn chải đánh răng). Kiểu ghép từ trong tiếng Đức có thể chuỗi nhiều từ lại thành một token duy nhất rất dài.",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "Các từ ghép mới tạo là những token chưa từng thấy, buộc hệ thống dịch máy (MT) phải tách chúng thành các phần đã biết để dịch.",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "từ láy (reduplication)",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "Lặp lại toàn bộ hoặc một phần của từ để thay đổi ý nghĩa — nhằm biểu thị số nhiều, mức độ nhấn mạnh hoặc hành động đang diễn ra. Ví dụ trong tiếng Indonesia, từ orang \"người\" trở thành orang-orang \"nhiều người\".",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "Hệ thống dịch máy (MT) phải nhận diện được từ lặp lại là một cấu trúc ngữ pháp, chứ không phải là lỗi lặp từ vô ý cần xóa bỏ.",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "biến âm lịch sử (ablaut)",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "Thay đổi một nguyên âm bên trong từ để biến đổi ngữ pháp, ví dụ như sing/sang/sung trong tiếng Anh. Khung phụ âm của từ giữ nguyên trong khi nguyên âm thay đổi để thực hiện chức năng ngữ pháp.",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "Hiện tượng ablaut ẩn giấu sự biến hình ngữ pháp bên trong thân từ, nơi các bộ tách token phụ từ (subword tokenizer) không thể cô lập được.",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "dị căn (suppletion)",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "Khi các dạng biến hình của một từ bắt nguồn từ những căn tố hoàn toàn khác nhau, ví dụ như go/went hoặc good/better. Ngữ pháp xử lý chúng như một từ duy nhất dù chúng không chia sẻ chung âm thanh nào.",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "Các dạng dị căn không thể được suy ra bằng quy tắc, vì vậy hệ thống dịch máy (MT) bắt buộc phải từng gặp qua từng dạng cụ thể trong dữ liệu huấn luyện.",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "hình thái học căn tố và khuôn mẫu (root-and-pattern morphology)",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "Một phương thức cấu tạo từ đặc trưng của tiếng Ả Rập và tiếng Do Thái, trong đó một căn tố phụ âm như k-t-b \"viết\" được lồng vào các khuôn mẫu nguyên âm: kitāb \"sách\", kātib \"người viết\", maktab \"văn phòng\". Cả căn tố và khuôn mẫu đều mang ý nghĩa riêng, nhưng không có phần nào tồn tại dưới dạng một khối liền mạch.",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "Phương pháp tách token phụ từ (subword tokenization) tiêu chuẩn không thể nhận diện được căn tố chung giữa các dạng từ này, làm giảm khả năng khái quát hóa trong dịch máy (MT) đối với các ngôn ngữ Semit.",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "Hiển thị trên các thẻ dưới dạng linguisticChallenges.rootPattern (ví dụ: tiếng Ả Rập, tiếng Do Thái, tiếng Malta).",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "hài hòa nguyên âm (vowel harmony)",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "Quy tắc yêu cầu tất cả các nguyên âm trong một từ phải đồng nhất về một đặc tính nào đó, chẳng hạn như nguyên âm dòng trước/dòng sau hoặc tròn môi/không tròn môi. Trong tiếng Thổ Nhĩ Kỳ, các nguyên âm hậu tố thay đổi hình thái để khớp với thân từ: ev-ler \"những ngôi nhà\" nhưng at-lar \"những con ngựa\".",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "Mỗi hậu tố có nhiều dạng biểu hiện bề mặt khác nhau, làm tăng số lượng biến thể token mà hệ thống dịch máy (MT) phải học cho cùng một đuôi ngữ pháp.",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "biến âm phụ âm (consonant mutation)",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "Sự thay đổi ngữ pháp đối với phụ âm đầu của một từ, được kích hoạt bởi từ đứng trước nó. Trong tiếng Wales, cath \"con mèo\" trở thành gath sau mạo từ: y gath \"con mèo đó\". Dạng từ điển và dạng văn nói có thể trông rất khác nhau.",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "Hiện tượng biến âm khiến cùng một từ xuất hiện dưới nhiều cách viết khác nhau, làm phân mảnh dữ liệu thống kê của từ đó trong quá trình huấn luyện dịch máy (MT).",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "nhược hóa phụ âm (lenition)",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "Sự làm mềm một phụ âm, thường xảy ra giữa các nguyên âm hoặc do các tác nhân ngữ pháp — ví dụ âm “k” yếu đi thành “g” hoặc “h”. Trong các ngôn ngữ Celtic, nhược hóa là một phần của ngữ pháp chứ không chỉ là cách phát âm.",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "Hiện tượng nhược hóa do ngữ pháp làm thay đổi cách viết của từ theo ngữ cảnh, khiến văn bản hiển thị khác với dạng từ điển.",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "gấp đôi phụ âm (gemination)",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "Việc giữ một phụ âm lâu hơn để tạo ra một từ khác — ví dụ trong tiếng Ý: “pala” (cái xẻng) so với “palla” (quả bóng). Một số hệ chữ viết thể hiện rõ sự gấp đôi này, số khác lại để người đọc tự nhận biết.",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "Khi chữ viết bỏ qua việc gấp đôi phụ âm, các từ khác biệt sẽ bị gộp chung một cách viết, khiến hệ thống dịch máy mất đi sự phân biệt này.",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "biến âm (sandhi)",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "Những thay đổi về âm thanh xảy ra tại ranh giới giữa các từ hoặc hình vị, giống như cách “don't you” biến thành “dontcha”. Trong các ngôn ngữ có thanh điệu, bản thân các thanh điệu cũng có thể thay đổi theo ngữ cảnh (biến điệu).",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "Hiện tượng biến âm làm cho các dạng viết hoặc phiên âm bị phụ thuộc vào ngữ cảnh, gây khó khăn cho việc tách từ nhất quán.",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "biến âm lịch sử (umlaut)",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "Sự thay đổi nguyên âm trong lịch sử do ảnh hưởng của một nguyên âm đi sau, nay tồn tại như một quy tắc ngữ pháp: ví dụ tiếng Đức “Apfel” (quả táo) → “Äpfel” (những quả táo). Hiện tượng này có liên quan đến ablaut nhưng có nguồn gốc lịch sử khác.",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "Hiện tượng umlaut đặt dấu mốc số nhiều hoặc thì của động từ ngay bên trong thân từ, khiến các thuật toán phân tách dựa trên phụ tố không thể nhận diện được.",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "tách từ (tokenization)",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "Quá trình chia nhỏ văn bản thành các đơn vị (token) mà mô hình dịch thuật thực sự xử lý. Các hệ thống hiện đại thường chia các từ hiếm gặp thành các mảnh phụ từ (subword); mức độ trùng khớp của các mảnh này với các hình vị thực tế có sự khác biệt rất lớn tùy theo từng ngôn ngữ.",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "Tách từ kém là nguyên nhân gốc rễ dẫn đến lỗi dịch máy đối với các ngôn ngữ giàu hình thái và ngôn ngữ nghèo tài nguyên.",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "cách ngữ pháp (grammatical case)",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "Việc đánh dấu danh từ và đại từ để thể hiện vai trò của chúng trong câu — ai là người hành động, ai bị tác động, ở đâu, bằng cái gì. Tiếng Anh chỉ giữ lại một vài dấu vết (I/me/my); tiếng Phần Lan có mười lăm cách; nhiều ngôn ngữ khác thì không có cách nào.",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "Các ngôn ngữ có hệ thống cách cho phép trật tự từ tự do, vì vậy dịch máy phải nhận diện vai trò từ các hậu tố thay vì vị trí — và ngược lại, phải tạo ra các hậu tố chính xác.",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "danh cách (nominative)",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "Trong hệ thống căn chỉnh phổ biến nhất, chủ ngữ của bất kỳ động từ nào cũng chia ở danh cách và tân ngữ trực tiếp chia ở đối cách. Hầu hết các ngôn ngữ châu Âu hoạt động theo cách này, vì vậy đây là cấu trúc chiếm ưu thế trong dữ liệu huấn luyện dịch máy.",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "Các hệ thống được huấn luyện chủ yếu trên các ngôn ngữ danh-đối cách thường xác định sai vai trò ngữ pháp khi dịch các ngôn ngữ có tính năng động (ergative).",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "tính năng động (ergativity)",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "Một hệ thống căn chỉnh ngữ pháp mà trong đó chủ ngữ của nội động từ (“cô ấy ngủ”) được đánh dấu giống như tân ngữ của ngoại động từ (“nhìn thấy cô ấy”), trong khi chủ ngữ của ngoại động từ được đánh dấu bằng một cách năng động (ergative) riêng biệt. Tiếng Basque, nhiều ngôn ngữ Maya, ngôn ngữ bản địa Úc và Kavkaz hoạt động theo cách này.",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "Cách đánh dấu năng động đảo ngược các dấu hiệu vai trò mà hệ thống dịch máy mong đợi, gây ra lỗi xác định sai chủ thể hành động.",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "vô cách (absolutive)",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "Cách không được đánh dấu trong hệ thống ergative (đối cách), bao gồm chủ ngữ của nội động từ và tân ngữ của ngoại động từ. Đây thường là dạng từ điển của danh từ.",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "Các danh từ ở cách absolutive trông giống hệt nhau trong hai vai trò khác nhau, vì vậy MT phải dựa vào động từ để phân biệt nghĩa.",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "sự căn chỉnh hình-cú pháp",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "Hệ thống mà một ngôn ngữ sử dụng để nhóm ba vai trò cốt lõi — chủ ngữ của nội động từ, chủ ngữ của ngoại động từ và tân ngữ — nhằm mục đích đánh dấu. Chủ cách–đối cách (nominative–accusative) và ergative–absolutive là hai mô hình lớn; một số ngôn ngữ phân tách giữa chúng hoặc sử dụng các hệ thống dựa trên tính hữu sinh.",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "Sự không tương thích về căn chỉnh giữa ngôn ngữ nguồn và ngôn ngữ đích là một vấn đề dịch thuật mang tính cấu trúc, không phải là vấn đề từ vựng.",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "thuộc cách",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "Cách đánh dấu sự sở hữu hoặc mối liên hệ chặt chẽ, giống như “'s” hoặc “of” trong tiếng Anh. Các ngôn ngữ khác nhau ở việc cụm từ thuộc cách đứng trước hay đứng sau danh từ mà nó bổ nghĩa.",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "Sự khác biệt về trật tự thuộc cách (ví dụ: “the king's horse” so với “horse of-king”) đòi hỏi phải sắp xếp lại trật tự một cách hệ thống bên trong các cụm danh từ.",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "tặng cách",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "Cách đánh dấu người nhận hoặc người thụ hưởng — đối tượng “cho ai” trong hành động cho và nói. Ví dụ như “wem” trong tiếng Đức, “cui” trong tiếng Latin; tiếng Anh thể hiện điều này bằng trật tự từ hoặc giới từ “to”.",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "MT phải quyết định giữa việc đánh dấu bằng tặng cách hoặc dùng cụm giới từ tùy thuộc vào ngôn ngữ đích.",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "vị trí cách",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "Một cách có nghĩa là “tại/trong/trên” một địa điểm, được thể hiện bằng hậu tố danh từ thay vì giới từ. Tiếng Phần Lan và tiếng Hungary chia vị trí thành nhiều cách vị trí chính xác khác nhau (bên trong, trên bề mặt, gần, chuyển động hướng đến, chuyển động từ đó đi ra).",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "Một giới từ tiếng Anh có thể tương ứng với nhiều cách vị trí khác nhau, buộc MT phải lựa chọn dựa vào ngữ cảnh.",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "công cụ cách",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "Một cách có nghĩa là “bằng cách sử dụng/bằng phương tiện” — tiếng Nga đánh dấu “bằng một chiếc búa” bằng một hậu tố thay vì giới từ. Các ngôn ngữ đa tổng hợp có thể tích hợp trực tiếp công cụ vào trong động từ.",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "Ý nghĩa công cụ chuyển đổi giữa hậu tố cách, giới từ và việc đánh dấu bên trong động từ tùy theo từng ngôn ngữ.",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "đồng hành cách",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "Một cách hoặc dấu mốc có nghĩa là “cùng với ai đó”. Một số ngôn ngữ sử dụng cùng một dấu mốc cho cả “với” (đồng hành) và “và” (liên kết), điều này có thể gây mơ hồ cho người ngoài.",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "Sự trùng lặp giữa đồng hành cách và liên kết có nghĩa là “X với Y” và “X và Y” có thể có cùng một cấu trúc trong ngôn ngữ nguồn.",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "gián tiếp cách",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "Bất kỳ cụm từ nào trong mệnh đề không phải là chủ ngữ hay tân ngữ trực tiếp — thường là địa điểm, công cụ, người nhận và các thành phần “bổ sung” khác, thường được đánh dấu bằng một cách hoặc giới từ/hậu giới từ. Trong WALS, chữ “X” trong các trật tự như VOX đại diện cho cụm từ gián tiếp cách.",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "Vị trí của các cụm từ gián tiếp cách trong câu thay đổi tùy theo ngôn ngữ và phải được sắp xếp lại một cách chính xác xung quanh động từ và tân ngữ.",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "đánh dấu tân ngữ khác biệt",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "Việc đánh dấu một số tân ngữ trực tiếp nhưng không đánh dấu những tân ngữ khác, thường phụ thuộc vào tính hữu sinh hoặc tính xác định. Tiếng Tây Ban Nha thêm “a” trước các tân ngữ chỉ người (veo a María) nhưng không thêm trước các tân ngữ chỉ vật (veo la casa).",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "Dịch máy phải quyết định xem có nên dùng dấu chỉ định cho từng tân ngữ hay không, dựa trên các dấu hiệu về tính tích cực/vô tri mà văn bản nguồn có thể không hiển thị.",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "giống ngữ pháp",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "Cách phân loại tất cả các danh từ thành các nhóm (thường gọi là giống đực/giống cái/giống trung) bắt buộc các mạo từ, tính từ và đôi khi cả động từ đi kèm phải biến đổi dạng thức cho phù hợp. Việc phân loại này mang tính ngữ pháp chứ không phải sinh học — ví dụ, cái bàn trong tiếng Đức mang giống đực, còn trong tiếng Tây Ban Nha lại mang giống cái.",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "Việc dịch sang một ngôn ngữ có phân biệt giống buộc hệ thống phải đưa ra lựa chọn về con người và sự vật mà văn bản nguồn không chỉ định rõ, đây là một nguyên nhân chính gây ra định kiến trong dịch máy.",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "lớp danh từ",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "Một hệ thống tương tự như giống ngữ pháp nhưng có nhiều lớp hơn — các ngôn ngữ Bantu thường có từ 10 đến 20 lớp, phân loại danh từ theo hình dáng, tính tích cực/vô tri, kích thước và nhiều yếu tố khác. Mỗi lớp sẽ kích hoạt các tiền tố hợp dạng riêng của nó trong toàn bộ câu.",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "Mỗi lựa chọn danh từ sẽ tạo ra phản ứng dây chuyền ảnh hưởng đến các dấu hiệu hợp dạng trong toàn bộ mệnh đề, vì vậy chỉ cần chọn sai một lớp danh từ sẽ dẫn đến nhiều lỗi hiển thị rõ ràng.",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "tính tích cực",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "Sự phân biệt trong ngữ pháp giữa thực thể sống (hoặc có đặc tính như thực thể sống) và thực thể vô tri. Trong các ngôn ngữ Algonquian, mọi danh từ đều mang tính ngữ pháp là tích cực (animate) hoặc vô tri (inanimate), và động từ sẽ thay đổi hoàn toàn dạng thức tùy thuộc vào việc chúng kết hợp với danh từ nào.",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "Tính tích cực quyết định việc lựa chọn động từ và sự hợp dạng trong nhiều ngôn ngữ bản địa, trong khi văn bản nguồn tiếng Anh không hề có dấu hiệu rõ ràng nào.",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "Trong tiếng Plains Cree (crk): cách chia động từ thay đổi hoàn toàn dựa trên việc danh từ làm chủ ngữ/tân ngữ là tích cực hay vô tri (thẻ card field linguisticChallenges.animacy).",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "sự phân biệt ngôi thứ ba phụ",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "Một hệ thống cốt lõi trong các ngôn ngữ Algonquian như tiếng Plains Cree, dùng để xếp hạng các ngôi thứ ba trong một đoạn hội thoại: một ngôi là \"proximate\" (đối tượng tiêu điểm) và các ngôi khác là \"obviative\" (đối tượng làm nền, đôi khi gọi là ngôi thứ tư). Hệ thống này giúp theo dõi ai là ai mà không cần dùng đến các đại từ như \"he₁ vs he₂\".",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "Tiếng Anh không có sự phân biệt ngôi thứ ba phụ, vì vậy dịch máy sang tiếng Cree phải tự xác định vai trò proximate/obviative và giữ cho chúng nhất quán giữa các câu.",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "Tiếng Plains Cree (crk) đánh dấu các đối tượng obviative trên danh từ và động từ; xem thẻ crk và tài liệu hướng dẫn của phương thức crk.",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "tính bao gộp/loại trừ",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "Sự phân biệt giữa hai kiểu \"chúng tôi/chúng ta\": bao gộp (tôi + bạn, có thể gồm cả người khác) và loại trừ (tôi + những người khác, nhưng không có bạn). Hàng trăm ngôn ngữ bắt buộc phải có sự phân biệt này.",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "Dịch từ \"we\" trong tiếng Anh đòi hỏi phải chọn giữa dạng bao gộp hoặc loại trừ mà không có manh mối nào từ văn bản nguồn — và việc chọn sai có thể dẫn đến những hiểu lầm nghiêm trọng về mặt giao tiếp xã hội.",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "số ngữ pháp",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "Cách một ngôn ngữ biểu thị số lượng — số ít, số nhiều, và đôi khi là số đôi (chính xác là hai) hoặc số lượng ít (một vài). Một số ngôn ngữ đánh dấu số lượng trên mọi danh từ; số khác lại hoàn toàn phụ thuộc vào ngữ cảnh.",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "Khi văn bản nguồn không đánh dấu số lượng, dịch máy phải tự đoán; khi ngôn ngữ đích yêu cầu dạng số đôi, dịch máy phải tự cung cấp dạng thức đó.",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "số đôi",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "Một dạng số ngữ pháp biểu thị chính xác là hai đối tượng, khác biệt với cả số ít và số nhiều. Tiếng Slovenia, tiếng Ả Rập và nhiều ngôn ngữ châu Đại Dương có dạng số này; một số ít ngôn ngữ còn có thêm số ba (chính xác là ba) trong đại từ.",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "Dịch máy sang các ngôn ngữ có số đôi phải tự phát hiện tính chất \"đôi\" mà văn bản nguồn chỉ thể hiện gián tiếp qua các từ chỉ số lượng.",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "từ loại chỉ định",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "Một từ bắt buộc phải có khi đếm hoặc đề cập đến danh từ, giúp phân loại chúng theo đặc điểm — giống như tiếng Anh dùng \"three head of cattle\" (ba đầu gia súc) hoặc \"two sheets of paper\" (hai tờ giấy), nhưng là bắt buộc đối với mọi thứ. Tiếng Trung, tiếng Nhật, tiếng Thái và nhiều ngôn ngữ khác không thể đếm nếu thiếu lượng từ phù hợp.",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "Dịch máy (MT) phải chọn đúng lượng từ cho từng danh từ; việc dùng sai lượng từ sẽ bị người bản xứ phát hiện ra ngay lập tức.",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "tính xác định",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "Việc một danh từ có đề cập đến một thực thể mà người nghe đã biết trước đó hay chưa (ví dụ: \"con chó đó\" so với \"một con chó\"). Nhiều ngôn ngữ không bao giờ biểu thị sự khác biệt này; số khác lại biểu thị bằng mạo từ, phụ tố hoặc trật tự từ.",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "Khi dịch từ một ngôn ngữ không có mạo từ, dịch máy buộc phải tự quyết định dùng \"the\" hay \"a\" cho mỗi cụm danh từ chỉ dựa vào ngữ cảnh.",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "mạo từ",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "Một từ ngắn dùng để đánh dấu một danh từ là xác định (\"the\") hoặc bất định (\"a\"). Khoảng một phần ba số ngôn ngữ trên thế giới hoàn toàn không có mạo từ, và một số ngôn ngữ sử dụng số từ \"một\" hoặc từ chỉ định để thay thế.",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "Việc thêm hoặc bớt mạo từ là một trong những lỗi chỉnh sửa phổ biến nhất trong dịch máy giữa ngôn ngữ có mạo từ và ngôn ngữ không có mạo từ.",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "từ chỉ định",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "Các từ dùng để chỉ trỏ như \"này\" và \"kia\". Các ngôn ngữ phân chia không gian chỉ định khác nhau — một số ngôn ngữ chia làm ba hướng: gần tôi / gần bạn / xa cả hai, số khác lại thêm yếu tố tầm nhìn hoặc độ cao.",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "Hệ thống từ chỉ định hiếm khi tương thích một-một giữa các ngôn ngữ, vì vậy dịch máy phải ước lượng sự khác biệt về khoảng cách và tầm nhìn.",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "sự sở hữu",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "Cách một ngôn ngữ diễn đạt \"X của tôi / X của bạn\". Nhiều ngôn ngữ phân biệt giữa sở hữu bất khả ly (bộ phận cơ thể, người thân — những thứ bạn không thể cho đi) và sở hữu khả ly, đồng thời biểu thị chúng bằng các cấu trúc khác nhau.",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "Sở hữu bất khả ly thường yêu cầu phải có dấu mốc sở hữu bắt buộc mà các văn bản nguồn tiếng Anh thường bỏ qua.",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "đánh dấu trung tâm",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "Việc đặt dấu mốc ngữ pháp vào thành tố trung tâm của cụm từ — động từ sẽ thể hiện chủ ngữ và tân ngữ của nó là ai, danh từ bị sở hữu sẽ thể hiện ai là chủ sở hữu của nó. Các thành tố phụ thuộc (bản thân các danh từ) có thể để trống.",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "Cấu trúc đánh dấu trung tâm tập trung ngữ pháp của mệnh đề vào động từ, trái ngược hoàn toàn với các ngôn ngữ đánh dấu phụ thuộc vốn chiếm phần lớn dữ liệu huấn luyện dịch máy.",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "đánh dấu phụ thuộc",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "Việc đặt dấu mốc ngữ pháp vào các thành tố phụ thuộc của cụm từ — như đuôi biến cách trên danh từ, đuôi sở hữu trên chủ thể sở hữu — trong khi thành tố trung tâm không được đánh dấu. Hầu hết các ngôn ngữ châu Âu đều theo xu hướng này.",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "Cấu trúc đánh dấu phụ thuộc đặt tín hiệu ngữ pháp ở phần đuôi của danh từ, điều này đòi hỏi các bộ phân tách từ (tokenizer) phải phân tách một cách chính xác.",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "nguồn chứng thực",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "Cấu trúc ngữ pháp buộc người nói phải cho biết làm thế nào họ biết được thông tin đó — do tận mắt chứng kiến, nghe kể lại, hay suy luận ra. Trong tiếng Quechua hoặc tiếng Thổ Nhĩ Kỳ, việc bỏ qua nguồn chứng thực cũng tương tự như việc bỏ qua thì (thời gian) trong tiếng Anh.",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "Dịch máy sang các ngôn ngữ có hệ thống nguồn chứng thực buộc phải chỉ ra nguồn thông tin mà văn bản gốc không hề đề cập cụ thể.",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "thì",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "Dấu mốc ngữ pháp dùng để xác định thời gian xảy ra của một sự việc — quá khứ, hiện tại, tương lai. Một số ngôn ngữ hoàn toàn không có thì ngữ pháp (như tiếng Trung), trong khi những ngôn ngữ khác lại phân biệt nhiều mức độ xa gần của quá khứ.",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "Văn bản nguồn không có thì buộc MT phải tự suy luận mốc thời gian; các hệ thống biểu thị độ xa của thời gian đòi hỏi những phân biệt chi tiết hơn những gì văn bản nguồn cung cấp.",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "thể",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "Đánh dấu ngữ pháp cho biết một sự việc diễn ra như thế nào trong thời gian — đã hoàn thành, đang diễn ra, thói quen, lặp đi lặp lại — độc lập với thời điểm xảy ra sự việc đó. Động từ tiếng Nga đi theo cặp hoàn thành/chưa hoàn thành; tiếng Anh sử dụng \"was doing\" so với \"did\".",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "Việc lựa chọn thể phải được thực hiện trên mọi động từ khi dịch sang các ngôn ngữ có đánh dấu thể, thường là không có manh mối từ văn bản nguồn.",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "thể hoàn thành",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "Thể thể hiện một sự việc như một chỉnh thể trọn vẹn — ví dụ \"she wrote the letter\" (cô ấy đã viết bức thư) được xem như một sự thật đã hoàn thành. Thường được ghép cặp với thể chưa hoàn thành trong đối lập ngữ pháp.",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "Chọn sai giữa thể hoàn thành và thể chưa hoàn thành là một trong những lỗi MT phổ biến nhất khi dịch sang các ngôn ngữ gốc Slav.",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "thể chưa hoàn thành",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "Thể thể hiện một sự việc từ bên trong — đang diễn ra, theo thói quen hoặc lặp đi lặp lại, như \"she was writing\" (cô ấy đang viết) hoặc \"she used to write\" (cô ấy từng viết). Đây là phần đối lập của thể hoàn thành.",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "Các cách hiểu của thể chưa hoàn thành (đang diễn ra so với thói quen) phải được làm rõ bằng ngữ cảnh để dịch chính xác.",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "thức",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "Đánh dấu ngữ pháp cho thái độ của người nói đối với một sự việc — sự thật, mong muốn, mệnh lệnh, khả năng. Thức trần thuật, giả định và mệnh lệnh là các thức quen thuộc trong tiếng châu Âu; các ngôn ngữ khác đánh dấu những sắc thái chi tiết hơn.",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "Việc lựa chọn thức (đặc biệt là thức giả định) tuân theo các quy tắc của ngôn ngữ đích mà không thể sao chép nguyên bản từ ngôn ngữ nguồn.",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "thức giả định",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "Một thức của động từ dành cho nội dung không khẳng định — mong muốn, nghi ngờ, giả thuyết và các mệnh đề sau một số động từ nhất định. Các ngôn ngữ Rô-man yêu cầu thức này trong nhiều mệnh đề phụ mà tiếng Anh chỉ dùng các dạng thông thường.",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "Các yếu tố kích hoạt thức giả định mang tính đặc thù của từng ngôn ngữ đích, vì vậy MT phải áp dụng các quy tắc ngữ pháp thay vì dịch nguyên dạng từ.",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "phủ định",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "Cách một ngôn ngữ nói \"không\". Các chiến lược bao gồm tiểu từ (tiếng Anh \"not\"), phụ tố trên động từ, động từ phủ định đặc biệt và cấu trúc hai phần như tiếng Pháp \"ne…pas\". Vị trí có thể thay đổi: trước động từ, sau động từ hoặc cả hai.",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "Lỗi phủ định làm đảo ngược hoàn toàn ý nghĩa, khiến việc đặt từ phủ định đúng vị trí trở thành một trong những yêu cầu quan trọng nhất của MT.",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "bị động",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "Một cấu trúc chuyển tân ngữ thành chủ ngữ và giảm nhẹ hoặc lược bỏ tác nhân thực hiện: \"the window was broken (by the boy)\" (cửa sổ đã bị vỡ (bởi cậu bé)). Nhiều ngôn ngữ hoàn toàn không có thể bị động hoặc sử dụng các chiến lược khác để ẩn đi tác nhân.",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "Các ngôn ngữ đích không có thể bị động buộc MT phải cấu trúc lại câu bị động thành câu chủ động, bằng cách tự tạo ra hoặc khôi phục lại tác nhân thực hiện.",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "chiều thể",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "Hệ thống ngữ pháp kiểm soát thành phần nào đóng vai trò là chủ ngữ — chủ động, bị động, trung động, và trong một số ngữ hệ là các hệ thống phong phú hơn nhiều. Chiều thể định hình lại toàn bộ mệnh đề xoay quanh một góc nhìn được chọn.",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "Sự bất tương thích về chiều thể đòi hỏi phải cấu trúc lại toàn bộ mệnh đề, chứ không chỉ đơn thuần là thay thế từ ngữ.",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "hóa trị",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "Số lượng tham tố mà một động từ yêu cầu và cách động từ đó mã hóa chúng — ví dụ: \"sleep\" (ngủ) cần một tham tố, \"give\" (cho) cần ba tham tố. Các ngôn ngữ có sự khác biệt về việc động từ cụ thể nào sẽ đi kèm với các tham tố nào và cách chúng được đánh dấu.",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "Sự bất tương thích về hóa trị khiến các bản dịch thô dịch sai vai trò của tham tố hoặc bỏ sót các tham tố bắt buộc.",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "ngoại động từ",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "Mô tả một động từ đi kèm với một tân ngữ trực tiếp — ví dụ: ‘cô ấy đọc sách’. Ngoại động từ đóng vai trò trung tâm trong ngữ pháp: nhiều ngôn ngữ đánh dấu chủ ngữ, tân ngữ và bản thân động từ theo những cách khác nhau tùy thuộc vào việc mệnh đề đó có chứa ngoại động từ hay không.",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "Tính ngoại động từ chi phối việc đánh dấu cách (case marking) và sự hòa hợp (agreement), do đó việc đánh giá sai một động từ có phải là ngoại động từ hay không sẽ làm xáo trộn ý nghĩa ai-làm-gì-với-ai trong kết quả dịch.",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "nội động từ",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "Mô tả một động từ không đi kèm tân ngữ trực tiếp — ví dụ: ‘cô ấy ngủ’, ‘mặt trời mọc’. Trong các ngôn ngữ tác cách (ergative languages), tham thể duy nhất của một nội động từ được đánh dấu giống như tân ngữ của một ngoại động từ, chứ không giống như chủ ngữ của nó.",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "Các mệnh đề nội động từ kích hoạt các mẫu đánh dấu cách và sự hòa hợp khác nhau, đặc biệt là trong các ngôn ngữ tác cách, vì vậy dịch máy (MT) phải theo dõi tính ngoại động từ để chọn đúng hình thái.",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "đối bị động",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "Một cấu trúc phổ biến trong các ngôn ngữ tác cách, giúp loại bỏ hoặc giáng cấp tân ngữ của một ngoại động từ, để lại một mệnh đề nội động từ — hình ảnh phản chiếu của thể bị động. Nếu thể bị động làm mờ đi chủ thể hành động, thì thể đối bị động làm mờ đi đối tượng chịu tác động.",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "Thể đối bị động tái cấu trúc mệnh đề và thay đổi việc đánh dấu cách, do đó khi dịch chúng sang một ngôn ngữ thiên về thể bị động, hệ thống cần phải xây dựng lại toàn bộ câu thay vì chỉ hoán đổi các từ.",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "cầu khiến",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "Một cấu trúc thêm tác nhân gây ra sự việc — biến ‘cái nồi vỡ’ thành ‘cô ấy làm vỡ cái nồi’ hoặc ‘cô ấy khiến nó vỡ’. Nhiều ngôn ngữ tạo ra thể cầu khiến bằng một phụ tố động từ chuyên biệt thay vì dùng một động từ riêng biệt như từ ‘make’ trong tiếng Anh.",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "Ý nghĩa cầu khiến có thể ẩn bên trong một dạng động từ duy nhất, vì vậy dịch máy (MT) phải nhận diện và giải nén nó thành một cấu trúc phân tích (periphrastic construction) — hoặc gộp lại — cho phù hợp với ngôn ngữ đích.",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "đại từ",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "Một từ thay thế cho một cụm danh từ — tôi, bạn, cô ấy, họ, cái này, ai. Các ngôn ngữ khác biệt rất lớn về số lượng đại từ mà chúng có và những sự phân biệt mà chúng bắt buộc: giới tính, mức độ trang trọng, hoặc đại từ ‘chúng tôi’ bao gộp/loại trừ (inclusive/exclusive), cùng nhiều yếu tố khác.",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "Hệ thống đại từ hiếm khi tương đồng giữa các ngôn ngữ, vì vậy dịch máy (MT) phải bổ sung các phân biệt mà ngôn ngữ nguồn không chỉ định (giới tính, mức độ trang trọng) hoặc gộp các phân biệt mà ngôn ngữ đích không thể diễn đạt.",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "số từ",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "Một từ biểu thị một con số — một, mười bảy, một nghìn. Các ngôn ngữ xây dựng các số từ lớn hơn dựa trên các hệ cơ số khác nhau (hệ thập phân, hệ nhị thập phân hoặc hỗn hợp) và có thể yêu cầu một lượng từ (classifier) hoặc một dạng đếm đặc biệt đi kèm với mỗi con số.",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "Các con số là nội dung có rủi ro cao và việc dịch các từ chỉ số qua các hệ cơ số đếm hoặc yêu cầu lượng từ khác nhau là một điểm dễ khiến dịch máy (MT) tạo ra lỗi.",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "từ tượng thanh/tượng hình",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "Một từ ngữ sống động gợi lên một cảm giác — âm thanh, chuyển động, kết cấu hoặc ánh sáng — thông qua chính hình thức của nó, giống như từ ‘zigzag’ trong tiếng Anh hoặc ‘kirakira’ (lấp lánh) trong tiếng Nhật. Nhiều ngôn ngữ ở Châu Phi và Châu Á có các lớp từ tượng thanh/tượng hình lớn và khác biệt về mặt ngữ pháp.",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "Các từ tượng thanh/tượng hình mang tính biểu cảm và đặc thù ngôn ngữ rất cao, vì vậy dịch máy (MT) có xu hướng bỏ qua hoặc làm phẳng chúng, làm mất đi ý nghĩa mà người bản xứ cảm nhận là chính xác và sống động.",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "cấu trúc chuỗi động từ",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "Việc chuỗi nhiều động từ lại với nhau trong cùng một mệnh đề mà không có từ nối như \"and\" (và) hoặc \"to\" (để) ở giữa — ví dụ: \"take knife cut bread\" (cầm dao cắt bánh mì) thay vì \"cut the bread with a knife\" (cắt bánh mì bằng dao). Cấu trúc này phổ biến trong các ngôn ngữ Tây Phi, Đông Nam Á và các ngôn ngữ bồi (creole).",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "Chuỗi động từ phải được phân tách thành các giới từ hoặc mệnh đề phụ khi dịch sang các ngôn ngữ châu Âu, và ngược lại phải được tái cấu trúc khi dịch theo chiều ngược lại.",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "phân từ",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "Một dạng của động từ đóng vai trò như một tính từ hoặc dùng để cấu tạo các thì phức — ví dụ: \"the running water\" (nước đang chảy), \"has eaten\" (đã ăn). Các ngôn ngữ khác nhau về số lượng phân từ sở hữu và mục đích sử dụng của chúng.",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "Các mệnh đề phân từ thường thay thế cho mệnh đề quan hệ trong các ngôn ngữ khác, đòi hỏi phải chuyển đổi cấu trúc khi dịch.",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "danh động từ",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "Một dạng của động từ được sử dụng như một danh từ, ví dụ như \"swimming\" trong câu \"swimming is fun\" (bơi lội rất vui). Các ngôn ngữ khác có thể sử dụng động từ nguyên mẫu, danh từ hóa động từ hoặc các dạng phó động từ (converb) đặc biệt ở những nơi tiếng Anh dùng danh động từ.",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "Danh động từ tiếng Anh có thể tương ứng với nhiều cấu trúc khác nhau tùy thuộc vào ngôn ngữ đích.",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "hệ từ",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "Động từ liên kết \"be\" trong các câu như \"she is a doctor\" (cô ấy là bác sĩ). Nhiều ngôn ngữ lược bỏ hệ từ này (hệ từ rỗng) ở thì hiện tại — ví dụ tiếng Nga và tiếng Ả Rập sẽ nói trực tiếp theo nghĩa đen là \"cô ấy bác sĩ\".",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "Hệ thống dịch máy phải tự động thêm hệ từ khi dịch từ các ngôn ngữ có hệ từ rỗng và xóa chúng đi khi dịch theo chiều ngược lại.",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "sự hợp dạng",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "Khi dạng của một từ phải khớp với các đặc điểm ngữ pháp của một từ khác — ví dụ: động từ hợp dạng với chủ ngữ, tính từ hợp dạng với danh từ về giống và số. Một số ngôn ngữ đánh dấu sự hợp dạng của động từ với cả chủ ngữ lẫn tân ngữ.",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "Văn bản được tạo ra phải thỏa mãn tất cả các chuỗi hợp dạng; chỉ một đặc điểm bị sai sẽ dẫn đến nhiều lỗi hiển thị liên đới.",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "sự hợp dạng đa nhân xưng",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "Sự hợp dạng của động từ với nhiều tham tố cùng một lúc — động từ mang các dấu chỉ cho cả chủ ngữ và tân ngữ (và đôi khi nhiều hơn thế). Tiếng Basque, tiếng Gruzia và các ngôn ngữ Algonquian áp dụng cơ chế này một cách hệ thống.",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "Dạng của động từ mã hóa rõ ai tác động lên ai, vì vậy hệ thống dịch máy phải xác định rõ cả hai vai trò này trước khi có thể tạo ra một dạng động từ chính xác duy nhất.",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "trật tự liên kết",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "Trong các ngôn ngữ Algonquian như tiếng Plains Cree, động từ được chia theo các \"hệ\" (order) biến hình riêng biệt: \"independent order\" dùng cho các câu khẳng định chính và \"conjunct order\" chủ yếu dùng cho các mệnh đề phụ, câu hỏi và một số ngữ cảnh hội thoại nhất định. Hai hệ này sử dụng các bộ hậu tố hoàn toàn khác nhau.",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "Việc lựa chọn giữa dạng independent hay conjunct là quyết định dựa trên loại mệnh đề mà tiếng Anh không cung cấp manh mối trực tiếp nào.",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Tiếng Plains Cree (crk): được mô tả trong phần lưu ý về mức độ trang trọng của thẻ và tài liệu hướng dẫn của phương thức crk.",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "chỉ hướng",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "Thành phần chỉ hướng được tích hợp trực tiếp vào động từ — hướng về phía người nói, hướng ra xa, ngược dòng, lên đồi. Phổ biến trong các ngữ hệ Maya, Tạng-Miến và nhiều ngôn ngữ Papua.",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "Ý nghĩa chỉ hướng nằm trong động từ phải được dịch thoát ý thành các phó từ hoặc giới từ trong ngôn ngữ đích.",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "hướng lợi",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "Thành phần biểu thị một hành động được thực hiện vì lợi ích của ai đó — “Tôi nướng bánh cho cô ấy”. Một số ngôn ngữ thể hiện điều này bằng một phụ tố động từ (ứng dụng tố) thay vì trật tự từ hoặc giới từ.",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "Đối tượng thụ hưởng có thể ẩn bên trong hình thái động từ, vì vậy dịch máy phải phát hiện và diễn đạt lại chúng thành các cụm từ riêng biệt.",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "nghi vấn",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "Ngữ pháp của việc đặt câu hỏi. Câu hỏi có/không có thể được đánh dấu bằng một tiểu từ, một dạng động từ, sự thay đổi trật tự từ hoặc chỉ bằng ngữ điệu; câu hỏi lấy thông tin khác nhau ở việc từ nghi vấn “ai/cái gì” có được đưa lên đầu câu hay không.",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "Nếu ngôn ngữ nguồn chỉ đánh dấu câu hỏi bằng ngữ điệu, văn bản nhập vào sẽ không cung cấp tín hiệu nào cho dịch máy biết đó là một câu hỏi.",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "trật tự từ",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "Sự sắp xếp điển hình của chủ ngữ (S), tân ngữ (O) và động từ (V) trong một câu trần thuật đơn giản. SOV (tiếng Nhật) và SVO (tiếng Anh) bao gồm hầu hết các ngôn ngữ; VSO (tiếng Wales, tiếng Tagalog) là loại phổ biến thứ ba, và một số ngôn ngữ không có trật tự cố định nào cả.",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "Sự khác biệt về trật tự từ là nguyên nhân lớn nhất gây ra lỗi sắp xếp lại từ giữa các cặp ngôn ngữ.",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "hư từ quan hệ",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "Thuật ngữ chung để chỉ giới từ (đứng trước danh từ: “trong nhà”) và hậu giới từ (đứng sau danh từ: tiếng Nhật uchi de “nhà trong”). Sự lựa chọn của một ngôn ngữ liên quan chặt chẽ đến trật tự động từ–tân ngữ của nó.",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "Việc chuyển đổi từ giới từ sang hậu giới từ sẽ đảo ngược cấu trúc của mọi cụm từ chỉ không gian và thời gian.",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "mệnh đề quan hệ",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "Một mệnh đề bổ nghĩa cho một danh từ: “cuốn sách mà tôi đã đọc”. Các ngôn ngữ đặt nó trước hoặc sau danh từ, và sử dụng các phương thức từ đại từ quan hệ, khoảng trống cho đến các dạng động từ đặc biệt.",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "Mệnh đề quan hệ đứng trước danh từ (tiếng Nhật, tiếng Thổ Nhĩ Kỳ) yêu cầu đảo ngược các đoạn văn bản dài so với trật tự tiếng Anh.",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "hệ thống tiêu điểm",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "Một hệ thống mệnh đề, được biết đến nhiều nhất trong các ngôn ngữ Philippines như tiếng Tagalog, nơi hình thái động từ quyết định thành phần tham gia nào — tác nhân, bệnh nhân, vị trí, công cụ — là trọng tâm ngữ pháp của câu. Thường được gọi là dạng đối xứng (symmetrical voice).",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "Việc lựa chọn tiêu điểm sẽ thay đổi đồng thời dạng động từ, vị trí từ đánh dấu và trật tự từ, vì vậy dịch máy không thể ánh xạ các mệnh đề theo từng từ một.",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "Xuất hiện trên các thẻ dưới dạng linguisticChallenges.voiceFocus đối với nhiều ngôn ngữ Nam Đảo.",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "tiểu từ",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "Một hư từ nhỏ, không biến hình, bổ sung ý nghĩa ngữ pháp hoặc thái độ — từ đánh dấu câu hỏi, từ đánh dấu chủ đề, từ giảm nhẹ lịch sự. Các ngôn ngữ Đông Á sử dụng rất nhiều tiểu từ cuối câu.",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "Các tiểu từ mang ý nghĩa (nghi vấn, thái độ, chủ đề) mà dịch máy phải diễn đạt lại bằng các phương thức hoàn toàn khác.",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "thanh điệu",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "Việc sử dụng cao độ của giọng nói để phân biệt các từ: ví dụ trong tiếng Quan Thoại, \"mā\" nghĩa là \"mẹ\" còn \"mǎ\" nghĩa là \"ngựa\". Các hệ thống đơn giản chỉ đối lập hai mức độ; các hệ thống phức tạp (nhiều ngôn ngữ Tây Phi và Đông Nam Á) sử dụng nhiều mức độ và đường nét cao độ khác nhau.",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "Thanh điệu thường không được thể hiện trong văn bản Latinh hóa hoặc văn bản không dấu, khiến các từ khác biệt bị gộp chung thành một cách viết duy nhất đối với hệ thống dịch máy.",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "trọng âm cao độ",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "Một hệ thống mà cao độ giúp phân biệt các từ, nhưng chỉ có một âm tiết trong mỗi từ mang cao độ đặc trưng — ví dụ trong tiếng Nhật, \"háshi\" nghĩa là \"đũa\" còn \"hashí\" nghĩa là \"cầu\". Hệ thống này nhẹ hơn thanh điệu hoàn chỉnh nhưng nặng hơn trọng âm thuần túy.",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "Tương tự như thanh điệu, trọng âm cao độ hiếm khi được viết ra, do đó các từ đồng âm dị nghĩa xuất hiện ngày càng nhiều trong văn bản.",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "mora",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "Một đơn vị thời lượng nhỏ hơn âm tiết: một âm tiết ngắn tính là một mora, một nguyên âm dài hoặc một phụ âm cuối sẽ cộng thêm một mora nữa. Nhịp điệu, thơ ca và ngay cả các từ viết tắt trong tiếng Nhật đều tính theo mora chứ không phải âm tiết.",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "Ngữ âm học dựa trên mora định hình cách các từ mượn và tên riêng được điều chỉnh, ảnh hưởng trực tiếp đến chất lượng chuyển tự.",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "âm tống ra",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "Một phụ âm được phát ra bằng một luồng khí bật mạnh từ thanh môn đóng thay vì từ phổi, tạo ra âm thanh sắc và giòn. Phổ biến trong các ngôn ngữ ở vùng Kavkaz, châu Mỹ và Đông Phi; thường được viết kèm dấu nháy đơn (k', t').",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "Các ký hiệu âm tống ra thường bị bỏ qua khi gõ phím thông thường, làm gộp các từ khác biệt lại với nhau trong văn bản đầu vào.",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "âm tắc thanh môn",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "Âm nghẹn ở cổ họng ở giữa cụm từ \"uh-oh\". Trong nhiều ngôn ngữ, đây là một phụ âm hoàn chỉnh dùng để phân biệt các từ — tiếng Hawaii viết âm này là ʻokina (ʻ), và việc bỏ ký tự này sẽ làm thay đổi nghĩa của từ.",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "Âm tắc thanh môn thường xuyên bị bỏ sót hoặc bị gõ sai bằng ký tự dấu nháy đơn khác, làm phân mảnh các từ thành nhiều cách viết.",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "Tiếng Hawaii (haw): ʻokina là một phụ âm âm vị; các ghi chú về quy chuẩn chính tả trên thẻ sẽ gắn cờ cảnh báo các vấn đề liên quan đến biến thể dấu nháy đơn.",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "âm lưỡi con",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "Các phụ âm được phát ra ở tận cùng phía sau khoang miệng bằng cách áp vào lưỡi con, giống như âm \"q\" trong tiếng Ả Rập hoặc âm \"r\" trong tiếng Pháp. Chúng ít phổ biến hơn các âm vòm mềm k/g và là đặc trưng của một số vùng ngôn ngữ nhất định.",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "Các âm lưỡi con thường được Latinh hóa không nhất quán (q/k/kh), làm chia tách một từ thành nhiều dạng văn bản khác nhau.",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "âm mút",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "Các phụ âm được tạo ra bằng cách hút không khí vào trong, giống như tiếng tặc lưỡi \"tsk-tsk\" trong tiếng Anh — nhưng được sử dụng như các âm lời nói thông thường. Nhóm ngôn ngữ Khoisan và một số ngôn ngữ Bantu phía nam (tiếng Zulu, tiếng Xhosa) có hệ thống âm mút hoàn chỉnh.",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "Các âm mút được viết bằng các ký tự bất thường (ǃ, ǂ, c, q, x) mà các bộ tách từ (tokenizer) và phông chữ thường xử lý sai.",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "âm hút vào",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "Các phụ âm được tạo ra bằng cách hút nhẹ không khí vào trong ở cổ họng, như âm \"ɓ\" và \"ɗ\" trong tiếng Hausa hoặc tiếng Việt. Chúng nghe giống như âm b/d nhấn mạnh đối với những người chưa qua đào tạo ngữ âm, nhưng lại là các âm vị riêng biệt.",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "Các chữ cái âm hút vào (ɓ, ɗ) thường bị gõ thành b/d thông thường, làm gộp các từ khác biệt lại với nhau trong các kho ngữ liệu văn bản.",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "âm mũi",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "Một phụ âm được tạo ra khi luồng không khí thoát ra qua mũi, như m, n, hoặc ng trong từ ‘sing’. Gần như mọi ngôn ngữ đều có phụ âm mũi và một số ngôn ngữ còn lan truyền tính mũi (nasality) sang các nguyên âm lân cận.",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "Là một phạm trù thuần túy về ngữ âm, các phụ âm mũi có ý nghĩa quan trọng đối với lời nói và chuyển tự hơn là dịch văn bản, vốn chỉ hoạt động trên các từ viết.",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "âm xát",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "Một phụ âm được tạo ra bằng cách ép luồng không khí qua một khe hẹp để tạo ra tiếng xì xào, như f, s, sh, hoặc th. Âm xát là một trong những loại phụ âm phổ biến nhất trong các ngôn ngữ trên thế giới.",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "Âm xát là một phạm trù ngữ âm ảnh hưởng đến cách phát âm và việc chuyển tự tên riêng, chứ không ảnh hưởng đến ngữ pháp của dịch máy (MT) dựa trên văn bản.",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "âm quặt lưỡi",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "Một phụ âm được tạo ra bằng cách uốn cong đầu lưỡi lên và hướng về phía vòm miệng, tạo ra một âm thanh rỗng đặc trưng. Phụ âm quặt lưỡi là đặc trưng của các ngôn ngữ Nam Á như tiếng Hindi và tiếng Tamil.",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "Hiện tượng quặt lưỡi chủ yếu là vấn đề của lời nói và chuyển tự; trong văn bản, nó chỉ xuất hiện dưới dạng các chữ cái hoặc dấu phụ riêng biệt mà dịch máy (MT) phải giữ nguyên.",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "âm thanh hầu hóa",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "Được tạo ra bằng sự thắt hẹp hoặc đóng kín của thanh hầu, thêm một điểm nghẹn hoặc âm sắc kẹt (creaky) vào một phụ âm hoặc nguyên âm. Âm tống ra (ejectives) và âm hút vào (implosives) là các phụ âm thanh hầu hóa, và một số ngôn ngữ cũng có các âm vang (sonorants) và nguyên âm thanh hầu hóa (giọng kẹt).",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "Thanh hầu hóa là một thuộc tính ngữ âm có ý nghĩa quan trọng đối với lời nói và chuyển tự; trong văn bản, nó chỉ tồn tại dưới dạng các chữ cái đặc biệt hoặc dấu nháy đơn mà dịch máy (MT) phải giữ nguyên vẹn.",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "âm hầu thanh",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "Các phụ âm được tạo ra bằng cách co thắt cổ họng (hầu), như âm ʿayn (ع) trong tiếng Ả Rập. Chúng rất hiếm trên thế giới và người không phải bản xứ rất khó nghe hoặc phát âm.",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "Các âm hầu thanh được Latinh hóa theo nhiều cách khác nhau (ʿ, ', 3, hoặc không viết gì), tạo ra sự hỗn loạn về chính tả trong các văn bản không chính thức.",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "nguyên âm mũi",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "Nguyên âm được phát âm với luồng hơi đi qua mũi, như trong từ \"bon\" của tiếng Pháp hoặc \"são\" của tiếng Bồ Đào Nha. Ở những ngôn ngữ có tính đối lập, nguyên âm thường và nguyên âm mũi giúp phân biệt các từ khác nhau.",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "Các dấu mũi hóa (ã, ę, ą) thường bị bỏ qua khi gõ phím không chính thức, làm gộp các cặp từ khác nhau thành một.",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "độ dài nguyên âm",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "Việc giữ nguyên âm lâu hơn để tạo ra một từ khác — ví dụ trong tiếng Phần Lan: \"tuli\" (lửa) so với \"tuuli\" (gió). Các hệ chữ viết có thể đánh dấu độ dài này bằng chữ kép, dấu gạch ngang trên đầu (ā), hoặc không đánh dấu.",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "Khi việc đánh dấu độ dài là tùy chọn (ví dụ: dấu kahakō trong tiếng Hawaii, các nguyên âm trong tiếng Ả Rập), cùng một từ sẽ xuất hiện dưới nhiều cách viết khác nhau.",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "Tiếng Hawaii (haw): dấu kahakō (dấu gạch ngang trên đầu) biểu thị nguyên âm dài và thường bị bỏ qua trong văn bản thông thường.",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "âm vị",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "Một âm thanh lời nói giúp phân biệt các từ trong một ngôn ngữ cụ thể — thay đổi một âm vị này bằng một âm vị khác sẽ tạo ra một từ khác (ví dụ: \"pat\" so với \"bat\"). Hệ thống âm vị của một ngôn ngữ có thể dao động từ khoảng một chục âm cho đến hơn một trăm âm.",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "Số lượng và thành phần của hệ thống âm vị quyết định cách các tên riêng nước ngoài và từ mượn được biến đổi khi đưa vào ngôn ngữ đó.",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "hạ tông",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "Trong nhiều ngôn ngữ có thanh điệu ở châu Phi, đây là hiện tượng giảm cao độ gây ảnh hưởng đến tất cả các thanh cao đi sau trong cụm từ. Đây là một mốc thanh điệu quan trọng và bản thân nó có thể phân biệt ý nghĩa của từ.",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "Hiện tượng hạ tông hầu như không bao giờ được thể hiện trên chữ viết, vì vậy thông tin về thanh điệu này hoàn toàn bị thiếu hụt trong dữ liệu văn bản.",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "đẩy gốc lưỡi về phía trước",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "Một đặc tính nguyên âm được tạo ra bằng cách đẩy gốc lưỡi về phía trước, làm rộng khoang hầu. Nhiều ngôn ngữ châu Phi chia các nguyên âm của họ thành hai nhóm +ATR và -ATR, đồng thời yêu cầu các từ phải tuân theo một nhóm nhất định (hài hòa ATR).",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "Sự khác biệt ATR được đánh dấu không nhất quán trong các hệ chữ viết, khiến một từ bị chia thành nhiều cách viết khác nhau.",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "hệ chữ viết",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "Tập hợp các ký tự dùng để viết một ngôn ngữ — như Latin, Cyrillic, Ả Rập, chữ Hán, và nhiều hệ chữ khác. Một ngôn ngữ có thể sử dụng nhiều hệ chữ viết (như tiếng Serbia), và một hệ chữ viết có thể phục vụ cho hàng trăm ngôn ngữ.",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "Hệ chữ viết quyết định mọi quy trình xử lý văn bản tiếp theo: mã hóa, tách từ (tokenization), và quyết định mô hình dịch máy nào có thể tiếp nhận đầu vào.",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "chính tả",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "Các quy tắc thống nhất để viết một ngôn ngữ bằng hệ chữ viết của nó — bao gồm chữ cái, dấu phụ và cách viết nào là đúng. Một số ngôn ngữ có nhiều hệ thống chính tả cạnh tranh nhau hoặc hoàn toàn không có hệ thống chuẩn hóa.",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "Các hệ thống chính tả cạnh tranh hoặc chưa được chuẩn hóa sẽ làm phân mảnh nguồn dữ liệu huấn luyện vốn đã khan hiếm thành các biến thể chính tả không tương thích.",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "abugida",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "Một hệ chữ viết mà mỗi ký tự đại diện cho một phụ âm đi kèm với một nguyên âm mặc định, và các nguyên âm khác được biểu thị bằng cách thay đổi ký tự gốc — như trong chữ Devanagari, chữ Ethiopia hoặc chữ Thái. Đây là hệ chữ viết trung gian giữa bảng chữ cái (alphabet) và chữ ghi âm tiết (syllabary).",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "Các dấu nguyên âm trong chữ abugida là các ký tự kết hợp (combining characters) mà các trình xử lý văn bản thô sơ có thể vô tình loại bỏ hoặc sắp xếp sai trật tự, làm sai lệch từ ngữ.",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "chữ ghi âm tiết",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "Một hệ chữ viết sử dụng một ký tự cho mỗi âm tiết thay vì cho từng âm vị riêng lẻ — ví dụ như chữ kana của tiếng Nhật hoặc chữ Cherokee. Hệ chữ này hoạt động hiệu quả nhất đối với các ngôn ngữ có cấu trúc âm tiết đơn giản.",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "Chữ ghi âm tiết làm thay đổi mức độ phân tách của văn bản: các bộ phân tách từ (tokenizer) sẽ nhận diện theo âm tiết chứ không phải theo phụ âm và nguyên âm.",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "chữ âm tiết",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "Hệ chữ viết được sử dụng cho tiếng Cree, tiếng Inuktitut, tiếng Ojibwe và các ngôn ngữ bản địa khác tại Canada, trong đó mỗi ký tự mã hóa một phụ âm và hướng xoay của ký tự đó sẽ mã hóa nguyên âm đi kèm. Hệ chữ này được phát minh vào những năm 1840 và hiện vẫn đang được cộng đồng sử dụng tích cực.",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "Nhiều văn bản tiếng Cree/Inuktitut tồn tại ở cả dạng chữ syllabics và chữ Latinh hóa, vì vậy các quy trình dịch máy (MT) cần có khả năng chuyển đổi chữ viết một cách đáng tin cậy.",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "Tiếng Plains Cree (crk): mã chữ viết là Cans (Canadian Aboriginal Syllabics) đi kèm với một bộ chuyển đổi sang chữ Latinh.",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "Latinh hóa",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "Việc viết một ngôn ngữ bằng các chữ cái Latinh thay vì chữ viết bản địa của nó, theo quy tắc (chuyển tự) hoặc theo ngữ âm. Một ngôn ngữ thường có nhiều tiêu chuẩn Latinh hóa cạnh tranh nhau.",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "Văn bản Latinh hóa và văn bản bằng chữ viết bản địa sẽ hoạt động như hai ngôn ngữ khác nhau đối với mô hình dịch máy (MT) trừ khi được chuyển đổi một cách rõ ràng.",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "dấu phụ",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "Các ký hiệu được thêm vào chữ cái — như dấu thanh, dấu ngã, dấu chấm, dấu macron — để biểu thị thanh điệu, độ dài, âm mũi hoặc các âm khác nhau. Một số hệ chữ viết phụ thuộc hoàn toàn vào chúng; tuy nhiên người dùng thường bỏ qua chúng khi gõ phím thông thường.",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "Văn bản bị mất dấu phụ là một vấn đề phổ biến về chất lượng dữ liệu: nó làm gộp các từ khác nhau thành một và không khớp với dữ liệu huấn luyện chuẩn.",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "hướng viết",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "Hướng đi của chữ viết: từ trái sang phải (chữ Latinh), từ phải sang trái (chữ Ả Rập, chữ Do Thái), hoặc theo lịch sử là từ trên xuống dưới (chữ Mông Cổ, chữ Hán cổ). Văn bản có hướng viết hỗn hợp cần được xử lý đặc biệt.",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "Văn bản viết từ phải sang trái (RTL) và văn bản hai chiều (bidirectional) có thể làm hỏng các trình xử lý chuỗi thông thường — khiến số, dấu câu và các từ Latinh nhúng kèm bị thay đổi trật tự một cách khó lường.",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "ngữ vực",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "Một biến thể ngôn ngữ gắn liền với bối cảnh xã hội — trang trọng, thân mật, nghi lễ, kỹ thuật. Một số ngôn ngữ ngữ pháp hóa các ngữ vực: tiếng Java có các bộ từ vựng riêng biệt cho các mức độ lịch sự khác nhau.",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "Dịch máy (MT) phải duy trì một ngữ vực nhất quán; việc trộn lẫn các hình thức trang trọng và thân mật trong cùng một bản dịch sẽ tạo cảm giác rời rạc hoặc thiếu lịch sự.",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "phân biệt T-V",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "Việc có hai (hoặc nhiều) từ để chỉ \"bạn\" tùy thuộc vào khoảng cách xã hội, như \"tu/vous\" trong tiếng Pháp hoặc \"du/Sie\" trong tiếng Đức. Lựa chọn này thể hiện sự tôn trọng, thân mật hoặc thứ bậc và rất khó để thay đổi một khi đã quyết định.",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "Từ \"you\" trong tiếng Anh không cung cấp manh mối nào, vì vậy dịch máy (MT) phải tự chọn mức độ trang trọng dựa trên ngữ cảnh — đây là một lỗi thường gặp và dễ bị người dùng nhận ra.",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "Tiếng Pháp (fra): dữ liệu về mức độ trang trọng của thẻ phân biệt các ngữ cảnh sử dụng tu/vous.",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "kính ngữ",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "Các hình thái ngữ pháp hoặc từ vựng thể hiện sự tôn kính đối với người nghe hoặc người được nhắc đến — ví dụ như keigo trong tiếng Nhật, các cấp độ kính ngữ trong tiếng Hàn, hoặc từ vựng tôn kính đặc biệt dành cho người thân. Thường là bắt buộc chứ không phải là sự lịch sự tùy chọn.",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "Việc lựa chọn kính ngữ đòi hỏi kiến thức xã hội (ai có địa vị cao hơn ai) mà văn bản gốc hiếm khi đề cập rõ ràng.",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "sự lịch sự",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "Cách thể hiện mối quan hệ xã hội thông qua ngôn ngữ — bằng cách chọn đại từ, hậu tố động từ, trợ từ hoặc từ vựng. Các ngôn ngữ có thể không có sự lịch sự về mặt ngữ pháp cho đến các hệ thống đa cấp độ phức tạp.",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "Một bản dịch có thể hoàn hảo về mặt từ vựng nhưng vẫn thất bại nếu chọn sai mức độ lịch sự cho ngữ cảnh đó.",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "song ngữ phân vị",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "Một trạng thái ổn định khi một cộng đồng sử dụng hai biến thể của cùng một ngôn ngữ cho các mục đích khác nhau — biến thể “cao” dùng cho văn viết và diễn ngôn trang trọng (như tiếng Ả Rập chuẩn hiện đại) và biến thể “thấp” dùng cho đời sống hàng ngày (các phương ngữ nói). Người nói chuyển đổi theo ngữ cảnh chứ không phải theo sở thích.",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "Dữ liệu huấn luyện thường thiên lệch về biến thể viết “cao”, khiến dịch máy thất bại đối với biến thể nói mà mọi người thực sự sử dụng.",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "chuyển mã",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "Việc luân phiên giữa hai hoặc nhiều ngôn ngữ trong cùng một cuộc hội thoại hoặc một câu, như cách người song ngữ thường làm một cách tự nhiên. Việc này tuân theo các quy luật ngữ pháp chứ không phải là sự pha trộn ngẫu nhiên.",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "Đầu vào trộn lẫn nhiều ngôn ngữ sẽ làm rối loạn hệ thống nhận diện ngôn ngữ và tạo ra kết quả dịch lộn xộn, trừ khi hệ thống xử lý được cả hai mã ngôn ngữ.",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "ngôn ngữ creole",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "Một ngôn ngữ tự nhiên hoàn chỉnh hình thành từ sự tiếp xúc ngôn ngữ mạnh mẽ, thường lấy hầu hết từ vựng từ một ngôn ngữ (ngôn ngữ gốc từ vựng) trong khi tự phát triển ngữ pháp riêng. Tiếng Creole Haiti, Tok Pisin và Papiamento là những ví dụ điển hình.",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "Các ngôn ngữ creole trông rất giống ngôn ngữ gốc từ vựng của chúng trên văn bản, khiến các hệ thống dịch máy được huấn luyện trên ngôn ngữ gốc từ vựng dễ dịch sai chúng một cách hệ thống.",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "ngôn ngữ bồi",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "Một ngôn ngữ tiếp xúc đơn giản hóa không có người bản xứ, được tạo ra để giao thương hoặc làm việc giữa các nhóm người không có chung ngôn ngữ. Khi trẻ em lớn lên nói ngôn ngữ này như tiếng mẹ đẻ, nó sẽ trở thành một ngôn ngữ creole.",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "Ngôn ngữ bồi có tính biến động cao và dữ liệu văn bản khan hiếm, khiến việc dịch máy nhất quán trở nên đặc biệt khó khăn.",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "ngôn ngữ gốc từ vựng",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "Ngôn ngữ cung cấp phần lớn từ vựng cho một ngôn ngữ creole hoặc ngôn ngữ bồi — ví dụ như tiếng Anh đối với tiếng Patois Jamaica, tiếng Pháp đối với tiếng Creole Haiti, tiếng Bồ Đào Nha đối với tiếng Papiamento. Tuy nhiên, ngữ pháp lại là của riêng ngôn ngữ creole đó.",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "Việc chia sẻ chung từ vựng với ngôn ngữ gốc từ vựng dễ che lấp đi những khác biệt sâu sắc về ngữ pháp mà dịch máy không được phép bỏ qua.",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "từ mượn",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "Một từ được lấy từ ngôn ngữ khác và điều chỉnh theo hệ thống âm thanh bản địa, như “sushi” trong tiếng Anh hoặc “le weekend” trong tiếng Pháp. Ngược lại, từ dịch sao phỏng (calque) mượn cấu trúc và dịch từng thành phần (ví dụ: “skyscraper” → tiếng Pháp “gratte-ciel”).",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "Quyết định giữ nguyên, điều chỉnh hay dịch một từ mượn là một lựa chọn lặp đi lặp lại trong bản địa hóa, đặc biệt là đối với các thuật ngữ kỹ thuật.",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "vĩ ngôn ngữ",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "Một danh mục quản lý của ISO 639-3: một mã duy nhất (như \"ara\" cho tiếng Ả Rập hoặc \"zho\" cho tiếng Trung) bao gồm nhiều ngôn ngữ thành viên riêng biệt được coi là một vì lý do lịch sử hoặc chính trị. Mỗi ngôn ngữ thành viên cũng có mã riêng của nó.",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "Dữ liệu được gắn nhãn bằng mã vĩ ngôn ngữ sẽ trộn lẫn các biến thể không thể hiểu lẫn nhau, làm ảnh hưởng xấu đến quá trình huấn luyện và đánh giá.",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "tự danh",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "Tên gọi của chính cộng đồng dành cho ngôn ngữ của họ (tự danh/tên tự gọi), trái ngược với tên mà người ngoài sử dụng (ngoại danh). \"Deutsch\" là tự danh của ngôn ngữ mà tiếng Anh gọi là \"German\"; nhiều cộng đồng bản địa ưu tiên sử dụng tự danh của họ.",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "Sự không khớp tên gọi giữa các cơ sở dữ liệu gây ra lỗi nhận dạng ngôn ngữ và lỗi hợp nhất dữ liệu trong các quy trình dịch máy.",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "ngôn ngữ biệt lập",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "Một ngôn ngữ không có mối quan hệ họ hàng được chứng minh với ngôn ngữ nào khác — một ngữ hệ chỉ có một thành viên. Tiếng Basque, tiếng Ainu và tiếng Burushaski là những ví dụ nổi tiếng; các ngôn ngữ biệt lập xuất hiện phổ biến một cách đáng ngạc nhiên trên toàn thế giới.",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "Các ngôn ngữ biệt lập không thể mượn tín hiệu huấn luyện từ các ngôn ngữ có họ hàng, làm mất đi một chiến lược dịch máy tài nguyên thấp quan trọng (học chuyển giao).",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "sức sống ngôn ngữ",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "Mức độ mạnh mẽ của một ngôn ngữ khi được truyền dạy cho trẻ em và được sử dụng trong các lĩnh vực của đời sống. Các thang đo như EGIDS và tình trạng nguy cấp của Glottolog trải dài từ \"mạnh mẽ\" qua \"bị đe dọa\" và \"sắp biến mất\" đến \"ngủ yên\" (không còn người nói trôi chảy, nhưng có tiềm năng phục hưng).",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "Sức sống ngôn ngữ giúp dự đoán mức độ sẵn có của dữ liệu và đối với dịch máy do cộng đồng thúc đẩy, nó xác định vai trò của công nghệ (ví dụ: hỗ trợ hồi sinh ngôn ngữ, chứ không phải thay thế).",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "sắp biến mất",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "Một trạng thái sức sống ngôn ngữ có nghĩa là ngôn ngữ đó không còn được trẻ em học nữa; những người nói trôi chảy còn lại đều là người lớn tuổi. Nếu không có sự can thiệp, một ngôn ngữ như vậy sẽ trở nên ngủ yên trong vòng một thế hệ.",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "Các ngôn ngữ sắp biến mất có số lượng người nói ngày càng thu hẹp để xác thực đầu ra của dịch máy, khiến mọi quyết định về dữ liệu đều trở nên quan trọng hơn.",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "Một mã định danh duy nhất từ cơ sở dữ liệu Glottolog (như stan1293 cho tiếng Anh) bao gồm các ngôn ngữ, phương ngữ và ngữ hệ. Mã này chi tiết hơn mã ISO và được các nhà ngôn ngữ học cập nhật liên tục.",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "Glottocode cho phép các quy trình liên kết chính xác với các cơ sở dữ liệu loại hình học, ngay cả đối với các biến thể không có mã ISO.",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "Tiêu chuẩn quốc tế về mã ba chữ cái cho các ngôn ngữ trên thế giới (eng, crk, haw), do SIL duy trì. Tiêu chuẩn này nhằm mục đích bao gồm mọi ngôn ngữ đã biết, còn tồn tại hay đã tuyệt chủng, với mỗi ngôn ngữ một mã.",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "Mã ISO 639-3 là các khóa liên kết của xử lý ngôn ngữ tự nhiên đa ngữ — mã sai hoặc mơ hồ sẽ âm thầm làm hỏng các tập dữ liệu.",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "hệ cơ số hai mươi",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "Hệ thống đếm dựa trên cơ số hai mươi thay vì mười. Tiếng Maya, tiếng Yoruba, tiếng Nahuatl và tiếng Đan Mạch (một phần) đếm theo cách này — \"tám mươi\" theo nghĩa đen là \"bốn lần hai mươi\" trong tiếng Pháp (quatre-vingts).",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "Việc dịch từ chỉ số giữa các hệ cơ số khác nhau rất dễ xảy ra sai sót, và các con số là nội dung có độ rủi ro cao.",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "Hiển thị trên các thẻ thông qua thuộc tính numeralSystem.baseType từ dữ liệu Numeralbank.",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "thuật ngữ thân tộc",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "Hệ thống từ vựng chỉ các mối quan hệ gia đình, vốn được phân chia rất khác nhau tùy theo từng ngôn ngữ — ví dụ như có các từ riêng biệt để chỉ anh/chị so với em, hoặc cậu/chú bên ngoại so với bác/chú bên nội. Một số hệ thống còn mã hóa cả vị thế của chính người nói.",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "Từ \"uncle\" hoặc \"cousin\" trong tiếng Anh có thể không có một từ tương đương duy nhất trong ngôn ngữ đích, buộc hệ thống dịch máy phải lựa chọn giữa các thuật ngữ thân tộc chính xác mà không có đủ thông tin thực tế về gia cảnh.",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "Một chỉ số đánh giá dịch máy tự động nhằm tính điểm mức độ trùng lặp ở cấp độ ký tự giữa bản dịch của hệ thống và các bản dịch tham chiếu. Vì hoạt động trên cấp độ ký tự thay vì cấp độ từ, chỉ số này công bằng hơn đối với các ngôn ngữ giàu hình thái so với các chỉ số dựa trên từ.",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "chrF là chỉ số bề mặt được ưu tiên cho các ngôn ngữ chắp dính và đa tổng hợp, nơi mà việc so khớp ở cấp độ từ không còn hiệu quả.",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "Một chỉ số đánh giá dịch máy bằng mạng thần kinh sử dụng mô hình đa ngôn ngữ đã qua đào tạo để dự đoán đánh giá chất lượng của con người, thay vì chỉ đếm mức độ trùng lặp bề mặt. Các biến thể như AfriCOMET giúp mở rộng phạm vi hỗ trợ sang các ngôn ngữ châu Phi.",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "COMET tương quan tốt hơn với đánh giá của con người so với các chỉ số bề mặt, nhưng chỉ áp dụng được cho các ngôn ngữ mà mô hình nền tảng của nó đã từng học qua.",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "Bộ chuyển đổi trạng thái hữu hạn (finite-state transducer): một mô hình tính toán dựa trên quy tắc giúp ánh xạ giữa các dạng từ và phân tích ngữ pháp của chúng. Đối với các ngôn ngữ có cấu trúc hình thái phức tạp, các FST được xây dựng thủ công có thể phân tích và tạo ra các dạng từ mà hệ thống thống kê chưa từng thấy.",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "Các FST cung cấp khả năng phân tích và xác thực hình thái đáng tin cậy cho các ngôn ngữ quá nghèo dữ liệu để có thể tự học hình thái chỉ từ văn bản.",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "Tiếng Plains Cree (crk): gói đánh giá sử dụng bộ xác thực ngữ nghĩa dựa trên FST (trường thẻ evalMetrics.lyss-sem).",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "treebank",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "Một ngữ liệu gồm các câu được chú thích thủ công với cấu trúc ngữ pháp (cây cú pháp). Dự án Universal Dependencies duy trì các treebank theo một định dạng chung cho hơn 150 ngôn ngữ.",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "Sự tồn tại của treebank là dấu hiệu cho thấy một ngôn ngữ có hạ tầng xử lý ngôn ngữ tự nhiên (NLP) nghiêm túc và cho phép thực hiện đánh giá có nhận thức về cú pháp.",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "ngữ liệu song song",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "Một tập hợp các văn bản được ghép cặp với bản dịch của chúng, được căn chỉnh theo từng câu. Ngữ liệu song song là nguồn nhiên liệu chính để huấn luyện và đánh giá các hệ thống dịch máy.",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "Kích thước và lĩnh vực của dữ liệu song song hiện có là yếu tố dự báo đơn lẻ mạnh mẽ nhất cho chất lượng dịch máy của một cặp ngôn ngữ.",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU (Bilingual Evaluation Understudy) chấm điểm một bản dịch dựa trên số lượng n-gram từ mà nó chia sẻ với một hoặc nhiều bản dịch tham chiếu. Đây là chỉ số dịch máy lâu đời và được trích dẫn nhiều nhất, nhưng vì so khớp toàn bộ từ nên nó rất khắt khe và không đáng tin cậy đối với các ngôn ngữ giàu hình thái và nghèo tài nguyên. Điểm càng cao càng tốt, trên thang điểm từ 0–100.",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "BLEU được báo cáo để so sánh với các bảng số liệu đã công bố, nhưng đối với các ngôn ngữ mà Champollion tập trung vào, nó tương quan rất kém với đánh giá của con người — hãy đọc chỉ số này bên cạnh chrF++ và COMET, tuyệt đối không xem xét đơn lẻ.",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU là điểm BLEU được tính toán sau khi phân tách văn bản bằng bộ phân tách từ con (tokenizer) SentencePiece của FLORES-200 — một mô hình từ con cố định duy nhất được chia sẻ trên tất cả 200 ngôn ngữ. Điều này giúp điểm số có thể so sánh được giữa các hệ chữ viết và hệ thống viết khác nhau, điều mà BLEU cấp độ từ thông thường không làm được.",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU là con số ngôn ngữ chung (lingua-franca) trong các tài liệu nghiên cứu về ngôn ngữ nghèo tài nguyên của NLLB / FLORES — tiện lợi cho việc so sánh giữa các ngôn ngữ, nhưng vẫn là một chỉ số bề mặt không thể hiểu được ngữ nghĩa.",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "Translation Edit Rate (Tỷ lệ chỉnh sửa bản dịch) tính toán số lượng chỉnh sửa — bao gồm thêm, xóa, thay thế và dịch chuyển khối — cần thiết để biến đầu ra của hệ thống thành bản dịch tham chiếu, được tính theo tỷ lệ phần trăm của độ dài bản dịch tham chiếu. Khác với hầu hết các chỉ số khác, chỉ số này càng THẤP thì càng tốt.",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "TER là một tín hiệu trực quan cho biết \"con người sẽ phải chỉnh sửa bao nhiêu?\", nhưng giống như các chỉ số bề mặt khác, nó sẽ phạt các cách diễn đạt tương đương hợp lệ và các hình thái từ phong phú.",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "rò rỉ dữ liệu",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "Một tập kiểm thử bị \"rò rỉ\" (nhiễm độc) khi các câu trong đó có khả năng đã được mô hình nhìn thấy trong quá trình huấn luyện — ví dụ như vì kho ngữ liệu đó là công khai và được thu thập rộng rãi trên mạng. Một bộ dữ liệu chuẩn (benchmark) bị rò rỉ dữ liệu không thể chứng minh mô hình đó tốt; nó có thể chỉ đang nhớ lại các câu trả lời đã học vẹt. Mức độ rò rỉ \"cao\" có nghĩa là dữ liệu có khả năng đã được nhìn thấy trước đó, vì vậy kết quả chỉ được coi là một so sánh tương đối giữa các hệ thống chứ không phải là một khẳng định về chất lượng tuyệt đối (\"chỉ mang tính tương đối\").",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "Hầu hết các bộ dữ liệu chuẩn công khai đều đã được sử dụng rộng rãi để huấn luyện, vì vậy Champollion xếp hạng chúng trên một phân làn chỉ mang tính tương đối và dành riêng các xếp hạng tuyệt đối cho các tập kiểm thử được niêm phong, chưa từng được công bố.",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "độ phức tạp dịch máy",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "Một ước tính từ 0–100 do Champollion tính toán về mức độ khó của một ngôn ngữ khi dịch máy, kết hợp bốn tín hiệu: mức độ hỗ trợ của các API dịch máy thương mại, tính sẵn có của ngữ liệu song ngữ, khoảng cách loại hình học so với các ngôn ngữ có tài nguyên phong phú, và chiều sâu của tài liệu ngôn ngữ học. Chỉ số càng cao nghĩa là càng khó. Đây là một hướng dẫn về độ khó, không phải là phép đo đầu ra của bất kỳ hệ thống nào.",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "Chỉ số này là một hướng dẫn phái sinh giúp ưu tiên các nỗ lực — nó KHÔNG phải là kết quả đánh giá hiệu năng. Chất lượng dịch thuật được đo lường thực tế sẽ nằm trên bảng xếp hạng, được xác định theo (phương pháp, tập dữ liệu, chỉ số).",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "tập kiểm thử độc lập",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "Một tập hợp các ví dụ dịch thuật được giữ kín khỏi hệ thống trong quá trình phát triển và chỉ được sử dụng để chấm điểm hệ thống đó. Nếu hệ thống chưa từng nhìn thấy những câu này, điểm số sẽ phản ánh năng lực thực sự thay vì khả năng học vẹt. Cấp độ mạnh nhất của Champollion là một tập kiểm thử \"niêm phong\" mà cộng đồng giữ riêng tư — một phương pháp được chấm điểm dựa trên tập này mà không ai, kể cả chúng tôi, được nhìn thấy dữ liệu.",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "Các tập kiểm thử độc lập (đặc biệt là các tập được niêm phong) là cách duy nhất để đưa ra khẳng định về chất lượng tuyệt đối; các tập dữ liệu công khai, bị rò rỉ dữ liệu chỉ hỗ trợ so sánh tương đối.",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

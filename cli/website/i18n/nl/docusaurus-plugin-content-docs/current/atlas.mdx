@@ -1,0 +1,125 @@
+---
+title: "De Atlas"
+description: "De Atlas is de taalindex van Champollion — één kaart met bronvermelding per taal. Wat een kaart stelt, wat deze niet mag stellen, waar u deze kunt lezen en hoe u deze kunt corrigeren."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Aantallen worden weergegeven via SSOTCount (build-time reads van de machine-SSOT's via docusaurus.config.js customFields) — nooit handmatig getypt, volgens de SSOT-weergavestandaard. Cijfers zonder een customFields SSOT (ondergrenzen voor gebarentalen en kunsttalen, totalen van bedreigde talen) zijn GELINKT aan de afgeschermde pagina die ze beheert, en worden hier nooit herhaald. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# De Atlas
+
+**De Atlas is de taalindex: <SSOTCount field="catalogLanguageCount" />
+kaarten, één per taal, waarbij elke waarde de bron vermeldt waaruit deze afkomstig is.**
+
+Het is de referentielaag waarop de rest van Champollion rust. De
+[CLI](/docs/intro) leest deze om te weten hoe een taal zich gedraagt. De
+[Arena](/docs/arena) leest deze om te weten *waarvan* een benchmark precies een benchmark is. Het
+[Network](/docs/network/) is eroverheen getekend. En het is ook op zichzelf uiterst nuttig: voor de meeste talen die erin staan, is de kaart de meest complete, van bronnen voorziene samenvatting van de taalsituatie die op één plek beschikbaar is.
+
+De kaarten worden gegenereerd vanuit hun bronnen, niet met de hand geschreven. Niemand gaat zitten om te typen wat hij of zij over een taal weet.
+
+---
+
+## Champollion is een index, geen scheidsrechter
+
+Dit is de regel waaraan de hele Atlas is gebouwd om te voldoen, en deze is strenger dan hij klinkt.
+
+Elke waarde op een kaart citeert de bron en rapporteert wat die bron **daadwerkelijk zegt** — niet wat wij denken dat waar is, geen gecorrigeerde versie, geen afgerond getal. Wanneer bronnen elkaar tegenspreken, toont de kaart **alle bronnen, met bronvermelding**. Aantallen sprekers spreken elkaar voortdurend tegen: Wikidata noemt het ene getal, Ethnologue een ander, een nationale volkstelling een derde, een regionaal onderzoek een vierde. Een kaart bevat elk van deze getallen met de bijbehorende bron en datum. We nemen er geen gemiddelde van, we doen geen uitspraak over welke de juiste is, en we kiezen niet stilletjes degene die het beste leest.
+
+De reden hiervoor is geen bescheidenheid. Een kaart die een consensus zou fabriceren, zou een nieuwe en niet-citeerbare bewering over iemands taal zijn, door ons bedacht. Het behouden van de onenigheid houdt de kaart controleerbaar aan de hand van de werkelijkheid, en het laat het oordeel waar het hoort — bij de lezer, en bij de gemeenschap wiens taal het is.
+
+Hieronder volgen drie leesregels, en het is de moeite waard deze te kennen voordat u een kaart ergens voor gebruikt:
+
+- **`null` betekent onbekend, niet niet-toepasselijk.** Een leeg veld betekent dat we er nog geen geciteerde bron voor hebben gevonden. Het is een uitnodiging, geen vonnis. Waar een veld daadwerkelijk niet van toepassing is, vermeldt de kaart dit in woorden.
+- **Afgeleide waarden geven aan dat ze zijn afgeleid.** Alles wat Champollion berekent — een mediaan, een samenstelling, een gehercodeerde vlag, een aantal geëxtraheerd uit een dataset — krijgt de stempel `champollion-derived` met een notitie die vermeldt *waaruit* het is afgeleid. Het wordt nooit onder de naam van de upstream-dataset geplaatst, omdat dat onze berekeningen in de mond van iemand anders zou leggen.
+- **Bronvermelding gaat boven dekking.** Een kaart met minder, goed onderbouwde velden is gezonder dan een volle kaart die is opgevuld met tertiaire bronnen. Wikipedia, door LLM's gegenereerde tekst en eigen kennis zijn hier geen primaire bronnen, en worden ook niet als zodanig geaccepteerd.
+
+De [Citation Procedure](/docs/reference/language-card-citation-procedure) zet uiteen welke bron gezaghebbend is voor welk soort bewering, en in welke volgorde.
+
+---
+
+## Wat een kaart beweert — en wat deze nooit beweert
+
+Een kaart doet precies twee soorten uitspraken.
+
+**1. Eigenschappen van de taal.** Classificatie en taalfamilie, fonologische inventaris, typologie, schrift en spelling, vitaliteit en mate van bedreiging, schattingen van het aantal sprekers. Elk voorzien van een bronvermelding, elk gelabeld als afgeleid of beweerd.
+
+**2. Bestaan van een hulpmiddel.** Dat een corpus, een model, een FST, een woordenboek, een metric-plug-in of een vertaalmethode *bestaat* voor deze taal, en op welk toegangsniveau. Dit is een bewering over capaciteit, geen bewering over kwaliteit.
+
+En er is een harde grens die niet wordt overschreden:
+
+:::danger[Gemeten scores staan nooit op een taalkaart]
+Elke **gemeten score van methode-uitvoer** — chrF++, BLEU, COMET, TER, FST-acceptatiegraad, "percentage morfologisch geldig" — is een **run-resultaat**, gekoppeld aan een specifieke methode, dataset en metric. Het hoort thuis op het [leaderboard](/leaderboard), binnen [de Arena](/docs/arena), gekoppeld aan een run-kaart met een vingerafdruk. Het is **verboden op een taalkaart**, en een linter weigert elke kaart die er een bevat.
+:::
+
+Het onderscheid is het verschil tussen "er bestaat een FST voor deze taal" — een feit over de wereld, waar of onwaar onafhankelijk van ons — en "deze methode scoort 0.82 FST-acceptatie" — een meting, alleen waar voor één run, één datasetversie en één methodeversie. Voeg de twee samen en een kaart wordt stilletjes een kwaliteitsbewering over een taal, permanent, zonder een run erachter en zonder mogelijkheid om deze in te trekken. Daarom worden ze niet samengevoegd. De Atlas vertelt u **wat er bestaat**; de Arena vertelt u **hoe goed het werkt**.
+
+Nog twee invarianten worden op dezelfde manier afgedwongen: een bewering over toonsoort mag niet in tegenspraak zijn met de eigen fonologische inventaris van de kaart, en een weergegeven aantal sprekers moet gelijk zijn aan een van de geciteerde schattingen op de kaart (of worden bestempeld als onze eigen afleiding). Het volledige schema, met elk veld en de bijbehorende regels, is de [Language Card Specification](/docs/reference/language-card-spec).
+
+---
+
+## Wat erin staat, en waar het vandaan komt
+
+Er zijn <SSOTCount field="catalogLanguageCount" /> talen gecatalogiseerd, opgebouwd uit
+<SSOTCount field="licensedSourceCount" /> geregistreerde upstream-bronnen waarvan de licenties individueel worden bijgehouden — omdat een kaart alleen herdistribueerbaar is als alles erop dat ook is, en niet-commerciële bronnen door constructie in plaats van door goede bedoelingen worden afgeschermd van commerciële trajecten.
+
+De catalogus omvat gebarentalen als de natuurlijke talen die ze zijn, omvat de kunsttalen die ISO 639-3 erkent, sluit programmeertalen uit, en benchmarkt individuele talen in plaats van overkoepelende macrotalen — omdat vertaalhulpmiddelen variëteitspecifiek zijn, en een score gekoppeld aan een overkoepelende code een bewering zou zijn over variëteiten die niemand heeft geëvalueerd. Waar taxonomieën het oneens zijn, toont de kaart de onenigheid in plaats van een winnaar te kiezen. Elk van deze keuzes wordt beargumenteerd, met de bijbehorende consequenties, in [What Counts as a Language Here?](/docs/network/context/what-counts-as-a-language).
+
+**Dekking is geen kwaliteit, en bestaan is geen dekking.** Een kaart die drie hulpmiddelen voor een taal vermeldt, vertelt u dat er drie dingen bestaan — niet dat een daarvan bruikbaar is, en niet dat de taal daarmee bediend is. Hoe het project dekking telt, en wat het weigert te tellen, staat in [Counting Coverage](/docs/network/context/coverage-counting).
+
+---
+
+## Waar u het kunt lezen
+
+| Oppervlak | Wat het u biedt |
+|---|---|
+| [The Language Atlas](/languages) | De kaarten zelf — zoek, filter op taalfamilie, regio, vitaliteit en complexiteit, en open elke kaart volledig |
+| [The Index](/catalogue) | Alles wat gecatalogiseerd is, per taal: benchmarks, hulpmiddelen, methoden, menselijke vertaaldiensten, en een afzonderlijk afgeschermde 'cite-only' laag van extern gepubliceerde resultaten |
+| [Glossary](/glossary) | Duidelijke definities voor elke term die een kaart gebruikt |
+| [Supported Languages](/docs/reference/supported-languages) | Wat de CLI vandaag de dag kan vertalen, wat een veel kleinere set is dan wat de Atlas catalogiseert |
+
+Machineleesbare toegangspunten zijn `/llms.txt` en `/llms-full.txt`; agents kunnen de kaarten rechtstreeks doorzoeken via de [MCP server](/docs/network/getting-started/mcp-server).
+
+---
+
+## Wanneer een kaart onjuist is
+
+Ga er maar vanuit dat sommige dat zijn. Een index van deze omvang, samengesteld uit bronnen die elkaar tegenspreken, zal fouten bevatten — en de fouten die er het meest toe doen, zijn meestal onzichtbaar voor ons en overduidelijk voor een spreker.
+
+**Elke kaart bevat een link "Suggest a correction or addition"**, die het correctieformulier opent met de taal vooraf ingevuld. Breng een bron mee als u er een heeft; voor een verzoek tot verwijdering of beperking vanuit de gemeenschap is geen bronvermelding vereist en dit wordt met prioriteit behandeld.
+
+Correcties worden toegepast **bij de generator, niet op de kaart**. Kaarten worden opnieuw gegenereerd vanuit hun bronnen, dus een handmatige bewerking zou bij de volgende build stilletjes worden overschreven — het corrigeren van de bron is wat een correctie permanent maakt, en het verhelpt meestal hetzelfde defect op elke andere kaart die die bron deelt. Dit is trager dan het bewerken van een bestand en het is de enige versie die blijvend is. De werking hiervan staat in [Submit to the Index](/docs/network/getting-started/submit-to-the-index).
+
+**Als u een lid van de gemeenschap of een autoriteit bent** en wilt dat gegevens over uw taal worden beperkt, gewijzigd of verwijderd, hoeft dat verzoek niet aan ons te worden gerechtvaardigd en komt het niet in een openbare wachtrij terecht als u dat liever niet heeft. Taalgegevens zijn biodata: ze dragen de identiteit en relaties in zich van de mensen die de taal spreken, en ze kunnen niet op een zinvolle manier worden geanonimiseerd. Wij zijn **soevereiniteits-aspirant, niet soevereiniteits-gecertificeerd** — we bouwen de mechanismen en beschrijven ze eerlijk, en of ze aan de standaard voldoen is een bepaling die toebehoort aan de betrokken gemeenschappen, niet aan ons. Het volledige standpunt is [Data Stewardship](/docs/network/sovereignty/data-sovereignty), en de ingang voor de gemeenschap is [For Language Communities](/docs/network/community/for-language-communities).
+
+---
+
+## Lees hierna
+
+- **U wilt een taal opzoeken** → [blader door de Atlas](/languages).
+- **U wilt weten wat een veld betekent** → [Language Card Specification](/docs/reference/language-card-spec).
+- **U wilt weten waarom een bewering op een kaart staat** → [Citation Procedure](/docs/reference/language-card-citation-procedure).
+- **U wilt een methode bouwen voor een onderbediende taal** → [Support a Low-Resource Language](/docs/network/community/low-resource-languages).
+- **U wilt weten hoe goed iets daadwerkelijk vertaalt** → dat vindt u hier niet. Dat is [de Arena](/docs/arena) en het [leaderboard](/leaderboard).

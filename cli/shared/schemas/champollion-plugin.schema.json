@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gamedaysuits/champollion/schemas/champollion-plugin.schema.json",
+  "title": "champollion Method Plugin",
+  "description": "JSON Schema for method.json plugin manifests consumed by champollion. Plugins are pre-packaged translation recipes with config, coaching data, benchmarks, and provenance metadata.",
+  "type": "object",
+
+  "required": ["name", "type", "version", "locales"],
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Unique method identifier in kebab-case (e.g., 'french-formal-v1')."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["llm", "llm-coached", "api", "google-translate", "deepl", "microsoft-translator", "libretranslate", "openai", "anthropic", "gemini"],
+      "description": "Champollion method type. Determines which translation engine handles this plugin."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+",
+      "description": "Semver version of this method export."
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the method."
+    },
+    "author": {
+      "type": "string",
+      "description": "Who developed and tested this method."
+    },
+    "locales": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Which locale codes this method targets (e.g., ['fr', 'de'])."
+    },
+    "endpoint": {
+      "type": "string",
+      "format": "uri",
+      "description": "Required for type 'api'. The server-side translation endpoint URL."
+    },
+    "config": {
+      "type": "object",
+      "description": "Method configuration — canonical MethodConfig shape.",
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "OpenRouter model identifier (e.g., 'google/gemini-3.5-flash')."
+        },
+        "register": {
+          "type": "string",
+          "description": "Target language register/tone instruction."
+        },
+        "batchSize": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200,
+          "default": 30,
+          "description": "Keys per API batch."
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.3,
+          "description": "LLM sampling temperature."
+        },
+        "coachingFile": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "Path to free-text coaching prompt file."
+        },
+        "coachingPrompt": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "Resolved coaching prompt text (read from coachingFile)."
+        },
+        "promptContext": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "Application context string injected into system prompt."
+        },
+        "qualityTier": {
+          "type": "string",
+          "enum": ["standard", "high", "research", "verified"],
+          "description": "Quality classification for champollion status display."
+        }
+      },
+      "additionalProperties": true
+    },
+    "benchmarks": {
+      "type": "object",
+      "description": "Per-locale benchmark results from the eval harness.",
+      "additionalProperties": {
+        "$ref": "#/$defs/benchmarkEntry"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenanceBlock",
+      "description": "Licensing and resource dependency metadata."
+    },
+    "coaching": {
+      "type": "object",
+      "description": "Coaching data configuration.",
+      "properties": {
+        "dir": {
+          "type": "string",
+          "default": "coaching",
+          "description": "Relative path (from plugin root) to the coaching data directory."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "if": {
+    "properties": { "type": { "const": "api" } }
+  },
+  "then": {
+    "required": ["endpoint"]
+  },
+
+  "additionalProperties": false,
+
+  "$defs": {
+    "benchmarkEntry": {
+      "type": "object",
+      "description": "Benchmark results for a single locale.",
+      "required": ["date", "corpus_size", "exact_match_rate", "model", "harness_version"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of the benchmark run."
+        },
+        "corpus_size": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of entries evaluated."
+        },
+        "exact_match_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Proportion of exact matches (0.0–1.0)."
+        },
+        "corpus_chrf": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "chrF++ score (0–100)."
+        },
+        "corpus_bleu": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "BLEU score (0–100)."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model used during evaluation."
+        },
+        "harness_version": {
+          "type": "string",
+          "description": "Version of the evaluation harness used."
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenanceBlock": {
+      "type": "object",
+      "description": "Licensing and resource dependency metadata. Defaults to non-commercial until explicitly cleared.",
+      "properties": {
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "license": { "type": "string" },
+              "type": { "type": "string" }
+            },
+            "required": ["name", "license"]
+          },
+          "default": [],
+          "description": "List of bundled resources with name and license."
+        },
+        "commercialReady": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the plugin is cleared for commercial distribution."
+        },
+        "flags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["license-unclear"],
+          "description": "Machine-readable status flags (e.g., 'license-unclear')."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

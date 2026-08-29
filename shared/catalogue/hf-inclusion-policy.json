@@ -1,0 +1,55 @@
+{
+  "_doc": "What Champollion does with the HuggingFace translation-model sweep, and why. DECISIONS, not facts: every rule here is a choice that could reasonably have gone another way, so each records its reason and the evidence it was made against. Consumed by cli/scripts/cldf/ingest-hf-models.mjs; the sweep itself is pinned at cli/data/hf-models/SNAPSHOT.json.",
+  "_founderDirection": "Index everything that resolves; do not gatekeep on downloads. A tiny community fine-tune for a low-resource language is exactly what no other index lists, and a popularity floor would cut precisely the models this project exists to surface.",
+  "version": 1,
+  "observedAt": "2026-08-06",
+  "observed": {
+    "models": 17730,
+    "declareLanguages": 10608,
+    "declareBaseModel": 5391,
+    "distinctDeclaredCodes": 1731,
+    "gated": 158,
+    "private": 0,
+    "_note": "1,731 distinct declared codes against the 608 languages that have any method coverage today. That gap is the reason for doing this at all."
+  },
+  "languageSource": {
+    "field": "cardData.language",
+    "reason": "NOT the tags array. Framework tags collide with ISO 639-3: `jax` is also Jambi Malay, `mms` is also Southern Mam, `pt` is also Portuguese. Scraping tags would announce coverage no author ever claimed, on thousands of models at once.",
+    "variantSpellings": [
+      "language",
+      "languages",
+      "language_bcp47"
+    ],
+    "variantReason": "Model-card frontmatter is user-authored YAML and the key is misspelled in the wild. Reading only the canonical spelling silently drops models whose authors did declare a language; reading all three is a decision, recorded here rather than buried in the reader."
+  },
+  "included": {
+    "rule": "every model whose card declares at least one language code that resolves through the tag index",
+    "reason": "Resolution is the only filter. A model that declares nothing cannot produce an edge — there is no language to attach it to — and that is a property of the model, not a judgement about it."
+  },
+  "excluded": [
+    {
+      "rule": "private repositories",
+      "count": 0,
+      "reason": "not readable, so nothing about them can be verified"
+    },
+    {
+      "rule": "gated repositories are INDEXED but flagged",
+      "count": 158,
+      "reason": "a gated model exists and its card is public; what is gated is the weights. Excluding it would hide a real resource, and treating it as freely usable would misinform someone planning a run."
+    }
+  ],
+  "derivation": {
+    "rule": "record cardData.base_model where declared; never infer it",
+    "declared": 5391,
+    "reason": "5,391 models cite a base model, which makes the derivation a fact with a source. Many more are plainly derivative and do not say so — WindstormLabs publishes 3,139 models named `origin-Helsinki-NLP-opus-mt-*` with no base_model field, and manancode publishes 1,361 ctranslate2 conversions tagged `opus-mt`. Inferring derivation from a repository NAME would be exactly the manufacturing this rebuild exists to end, so it is not done: the name is not a citation.",
+    "consequence": "A method count that treats every upload as an independent capability is inflated, and this is the same defect as counting omt1600's claimed 1,600 beside verified lists. So the atlas records `derivedFrom` where it is declared, and any count that matters must say whether it is counting uploads or independent methods."
+  },
+  "codesThatWillNotResolve": {
+    "examples": ["multilingual", "aav", "mul", "code"],
+    "reason": "`multilingual` is not a language. `aav` (Austro-Asiatic) and `mul` are COLLECTION codes covering many languages, and expanding a collection into its members would assert coverage of each — the same propagation error the macrolanguage rule exists to prevent. They are counted as unresolved and named, never expanded."
+  },
+  "verificationLevel": {
+    "value": "model-card-declared",
+    "reason": "The weakest tier in the register, below `publisher-count-only`. A vendor's documented language list is a considered statement about a deployed service; a self-applied tag on a fine-tune is one line of YAML nobody reviewed. A card showing both identically would flatten a real difference in how much anyone checked."
+  }
+}

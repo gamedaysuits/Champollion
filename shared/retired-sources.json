@@ -1,0 +1,47 @@
+{
+  "$comment": "Sources that will NOT ship, and exactly why. The rule is 'no fetcher, no source' — a source that cannot be re-obtained cannot be regenerated from, so facts derived from it can never be checked. Retiring one is a real decision with real cost, so each entry records the evidence, the date it was established, and what would reverse it. Deleting data quietly is how a corpus acquires claims nobody can account for; this file is the opposite of that.",
+  "version": 1,
+  "sources": {
+    "olac-aggregator": {
+      "retiredOn": "2026-08-03",
+      "servedCards": 7433,
+      "field": "archivePresence",
+      "reason": "unreachable-upstream + the claim was mostly false",
+      "evidence": {
+        "upstream": "http://www.language-archives.org/ — every endpoint timed out on 2026-08-03 (root over http and https, and the OAI-PMH verb=Identify). Not a transient 5xx: no TCP connection at all.",
+        "producer": "none. The script that wrote cli/data/olac-aggregator-harvest.json was deleted; only its output survives, with no commit recording its removal.",
+        "claimQuality": {
+          "languagesInHarvest": 7566,
+          "withRealArchive": 488,
+          "withRealArchivePct": 6.4,
+          "bibliographyOnly": 7078,
+          "bibliographyOnlyPct": 93.6,
+          "onlyTheEthnologueWebPage": 4680,
+          "topSources": [
+            ["ethnologue.com", 7462],
+            ["refdb.wals.info", 2302],
+            ["gial.edu", 1362],
+            ["www.mpi.nl", 362],
+            ["surrey.smg.surrey.ac.uk", 120],
+            ["anla.uaf.edu", 29]
+          ]
+        }
+      },
+      "why": "Two independent grounds, either sufficient. First, the upstream cannot be reached and no producer exists, so the field cannot be regenerated from source at all. Second, and worse, the claim it makes is largely untrue: 'archive presence' implies a language archive holding recordings or manuscripts, and for 93.6% of these languages what actually exists is an Ethnologue entry, a WALS bibliography record, or a library catalogue. Counting a web page as an archive tells a researcher that material exists where it does not — the single most damaging kind of error an index can make, because it is acted on.",
+      "whatWouldReverseThis": "A reachable OLAC endpoint, harvested by a real fetcher, extracted into TWO separate facts: bibliographicIndex (ethnologue, wals-refdb, gial) and archiveHoldings (MPI/TLA, PARADISEC, AILLA, ANLA, Kaipuleohone, Surrey). A card would then show archive presence only for the second. The 488 languages with a genuine archive are worth surfacing — they are simply not worth surfacing at the cost of 7,078 false ones.",
+      "note": "cli/data/olac-aggregator-harvest.json is left on disk. It is evidence for this decision and the basis for any future re-derivation; deleting it would remove the ability to check this record."
+    },
+    "panlex": {
+      "retiredOn": "2026-08-02",
+      "servedCards": 7434,
+      "field": "lexical coverage (panlexExpressionFileSize and kin)",
+      "reason": "unreachable-upstream",
+      "evidence": {
+        "upstream": "api.panlex.org and db.panlex.org are NXDOMAIN. panlex.org/api/* returns the marketing site rather than an API. PanLex's own documentation gives no base URL.",
+        "producer": "cli/scripts/enrich-panlex-lexical-coverage.mjs exists and is complete, but refuses to run: it cannot name the number it would report."
+      },
+      "why": "The enricher is correct and blocked, which is the right failure. English alone is 786,478,093 expressions; publishing a coverage figure we cannot re-derive, from an endpoint that does not resolve, would be a number with no way to check it.",
+      "whatWouldReverseThis": "A documented, reachable PanLex API base URL, or a versioned bulk export with a checksum. A CC0 snapshot already sits on disk unused; a fetcher that pins it would take dictionary coverage from 10.9% to roughly 85%, so this is worth revisiting."
+    }
+  }
+}

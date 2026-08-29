@@ -1,0 +1,110 @@
+name: "📚 Submit a resource (dictionary / archive / app / FST / tool)"
+description: "Point us at a language resource — a dictionary, archive, app, morphological analyzer (FST), or tool — to list in the index."
+title: "[Resource] "
+labels: ["submission", "submission:resource", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for pointing us at a resource. **This is an intake form, not an auto-add.**
+        A maintainer reviews every submission against IP / license / sovereignty rules before
+        it is listed — see the
+        [submission guide](https://champollion.dev/docs/network/getting-started/submit-to-the-index).
+
+        We list a **pointer and metadata**, never a copy of the resource's content. If access is
+        restricted or consent-gated, say so below — we will respect it.
+
+  - type: input
+    id: resource-name
+    attributes:
+      label: Resource name
+      placeholder: "e.g. Plains Cree morphological analyzer (FST)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: resource-type
+    attributes:
+      label: Resource type
+      options:
+        - Dictionary / lexicon
+        - Archive / corpus collection
+        - App / web service
+        - FST / morphological analyzer
+        - Tool / library
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: languages
+    attributes:
+      label: Language(s)
+      description: "ISO 639-3 codes, one per line."
+      placeholder: |
+        crk
+        nrb
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      options:
+        - CC-BY-4.0
+        - CC-BY-SA-4.0
+        - CC0-1.0
+        - CC-BY-NC-4.0
+        - "GPL / AGPL"
+        - "Apache-2.0 / MIT / permissive"
+        - Proprietary / all rights reserved
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: input
+    id: license-url
+    attributes:
+      label: License URL
+      placeholder: "https://…"
+
+  - type: input
+    id: source-url
+    attributes:
+      label: Source / homepage URL
+      placeholder: "https://…"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access-level
+    attributes:
+      label: Access level
+      description: "How a user obtains it. Restricted / consent-required resources are listed as such — we never bypass the gate."
+      options:
+        - "open — freely accessible"
+        - "restricted — login / request / paywall"
+        - "consent-required — community / custodian permission needed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "What it is and how it helps low-resource translation work."
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: "Maintainer, partnership context, sovereignty considerations, etc."
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Compliance attestation (required)
+      options:
+        - label: "I confirm this is publicly listable, contains NO corpus content or personal data, and respects the source's license and any community/sovereignty restrictions."
+          required: true

@@ -1,0 +1,69 @@
+{
+  "code": "genus-polynesian",
+  "extends": "family-austronesian",
+  "name": "Polynesian Languages (Genus Template)",
+  "dir": "ltr",
+  "script": "Latn",
+  "formality": {
+    "system": "register-levels",
+    "description": "Polynesian languages express formality through vocabulary choice, discourse particles, and speech style rather than pronominal T-V systems. Many have distinct ceremonial/oratorial registers for formal occasions.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Polynesian languages have no grammatical gender. Pronouns are gender-neutral."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "particleSystem": "Polynesian languages rely heavily on particles (tense/aspect markers, case markers, prepositions) rather than inflectional morphology. Word boundaries and particle placement are critical for meaning but difficult for MT to learn from limited data.",
+    "limitedConsonantInventory": "Most Polynesian languages have very small consonant inventories (8-15 consonants) and strict CV syllable structure. This creates many near-homophones distinguished only by vowel length (macrons/glottal stops), making diacritical accuracy critical.",
+    "diacriticalSensitivity": "Macrons (ā, ē, ī, ō, ū) and glottal stops (ʻ) are phonemic — they distinguish words with completely different meanings. Most MT systems strip or ignore these diacritics, producing ambiguous or incorrect output.",
+    "culturalEmbedding": "Many words carry deep cultural/spiritual meaning that cannot be directly translated. Neologisms for modern concepts must be carefully coined to avoid cultural inappropriateness."
+  },
+  "contactInfluences": [
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "government",
+        "technology",
+        "commerce"
+      ],
+      "depth": "structural",
+      "period": "18th century–present",
+      "notes": "Colonial and post-colonial English dominance across Polynesia. All Polynesian languages are in various stages of revitalization."
+    }
+  ],
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus template for Polynesian languages (Māori, Hawaiian, Samoan, Tongan, Tahitian, etc.). All share particle-heavy syntax, limited consonant inventories, and critical diacritical sensitivity.",
+  "regions": [
+    {
+      "country": null,
+      "countryCode": "XX",
+      "officialStatus": null,
+      "region": null,
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

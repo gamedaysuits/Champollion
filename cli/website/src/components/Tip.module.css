@@ -1,0 +1,136 @@
+/**
+ * Tip — CSS Module.
+ *
+ * Same token palette and bubble grammar as GlossaryMark / ProvenanceTip, so
+ * tips blend into card grids, detail panels, and page prose. Placement-aware:
+ * a tip on a top-of-card badge can drop DOWN so it isn't clipped above.
+ */
+
+.host {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: help;
+  outline: none;
+}
+
+/* Subtle focus affordance — the wrapped element keeps its own styling. */
+.host:focus-visible {
+  outline: 2px solid var(--accent, var(--ifm-color-primary));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.bubble {
+  /* Hidden by default; revealed on hover/focus of the host (or the bubble
+     itself, so the Glossary → link stays clickable). display:none (not just
+     visibility) — hidden bubbles anchored near the right edge otherwise
+     widen the page's scroll extent on phones. */
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-fast, 0.15s) ease;
+
+  position: absolute;
+  z-index: 1200; /* above the DetailPanel side sheet (z-index 1000) and cards */
+  flex-direction: column;
+  gap: 4px;
+  width: 260px;
+  max-width: 78vw;
+  padding: var(--space-sm, 8px) var(--space-md, 12px);
+  border-radius: 8px;
+  border: 1px solid var(--border-medium, var(--ifm-toc-border-color));
+  background: var(--surface-2, var(--ifm-background-surface-color));
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.35));
+
+  font-size: var(--text-xs, 0.78rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--text-secondary, var(--ifm-font-color-secondary));
+  text-align: left;
+  white-space: normal;
+  pointer-events: none;
+}
+
+.top {
+  bottom: calc(100% + 8px);
+}
+
+.bottom {
+  top: calc(100% + 8px);
+}
+
+/* Horizontal anchoring — keeps tips on-screen near grid/viewport edges. */
+.alignCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Host sits on the LEFT (e.g. top-left badge) → open rightward. */
+.alignLeft {
+  left: 0;
+  transform: none;
+}
+
+/* Host sits on the RIGHT (e.g. top-right vitality dot) → open leftward. */
+.alignRight {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.host:hover .bubble,
+.host:focus-within .bubble,
+.host:focus .bubble {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.term {
+  font-weight: 700;
+  color: var(--text-primary, var(--ifm-font-color-base));
+}
+
+.body {
+  display: block;
+}
+
+.more {
+  align-self: flex-end;
+  margin-top: 2px;
+  font-weight: 600;
+  color: var(--accent, var(--ifm-color-primary));
+  text-decoration: none;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble {
+    transition: none;
+  }
+}
+
+/* Keep tips on-screen on narrow viewports: clamp horizontal overflow. */
+@media (max-width: 600px) {
+  .alignCenter,
+  .alignLeft {
+    left: 0;
+    right: auto;
+    transform: none;
+    max-width: 80vw;
+  }
+  .alignRight {
+    right: 0;
+    left: auto;
+    transform: none;
+    max-width: 80vw;
+  }
+}

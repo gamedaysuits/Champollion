@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/human-services.schema.json",
+  "title": "Champollion Human Translation Services Registry (SSOT)",
+  "description": "Public, opt-in registry of human translation providers keyed by language pair — the in-git SSOT for both the CLI and the website (mirrors the model-aliases.json dual-runtime pattern). It is uploaded to public.translation_services (migration 034). PII (the provider `contact` address/endpoint) is NEVER carried here — it is supplied to the uploader out-of-band. See docs/HUMAN_SERVICES_HUB.md.",
+  "type": "array",
+  "items": { "$ref": "#/$defs/service" },
+  "$defs": {
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "service_id",
+        "display_name",
+        "source_lang",
+        "target_lang",
+        "consent_attested",
+        "status"
+      ],
+      "properties": {
+        "service_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "Stable public id (kebab-case). Globally unique; the upsert key."
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Provider's consented public name. Never name a nation/org as a custodian before confirmation — use 'community key custodians (in confirmation)'."
+        },
+        "provider_type": {
+          "type": "string",
+          "enum": ["community_org", "agency", "individual"],
+          "description": "Kind of provider."
+        },
+        "source_lang": {
+          "type": "string",
+          "pattern": "^[a-z]{3}$",
+          "description": "ISO 639-3 source language code."
+        },
+        "target_lang": {
+          "type": "string",
+          "pattern": "^[a-z]{3}$",
+          "description": "ISO 639-3 target language code."
+        },
+        "variety": {
+          "type": ["string", "null"],
+          "description": "Script/dialect qualifier (e.g. 'SRO', 'Latn'). Disambiguates crk Plains Cree from crm Moose Cree etc."
+        },
+        "dispatch_channel": {
+          "type": ["string", "null"],
+          "enum": ["email", "webhook", "api", null],
+          "description": "How a request reaches the provider (the async channel; the actual address lives in `contact`, which is PII and not stored here)."
+        },
+        "turnaround_days": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Typical turnaround in days."
+        },
+        "rate_per_word": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "description": "Rate per source word (provider currency; settled off-platform)."
+        },
+        "domains": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "Subject domains served (e.g. ['legal', 'health'])."
+        },
+        "sovereignty_flags": {
+          "type": ["object", "null"],
+          "description": "Data-handling constraints: off-community processing, attribution requirements, data-sovereignty notes. Free-form JSON."
+        },
+        "nc_terms": {
+          "type": ["string", "null"],
+          "description": "Non-commercial / community-set usage terms, if any (cf. EdTeKLA/NC carve-outs)."
+        },
+        "consent_attested": {
+          "type": "boolean",
+          "description": "Consent gate (community control of listing): the provider has explicitly consented to be listed. Public read requires this true."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "approved", "suspended"],
+          "description": "Admin moderation state. Public read requires 'approved'. v0 intake is admin-approval out-of-band."
+        }
+      }
+    }
+  }
+}

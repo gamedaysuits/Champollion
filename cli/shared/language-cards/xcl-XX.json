@@ -1,0 +1,497 @@
+{
+  "code": "xcl-XX",
+  "name": {
+    "agreement": "single",
+    "consensus": "Classical Armenian",
+    "values": [
+      {
+        "value": "Classical Armenian",
+        "source": "iso639-3-20260715"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "indo1319",
+      "clas1257",
+      "arme1241"
+    ],
+    "family": {
+      "agreement": "single",
+      "consensus": "Indo-European",
+      "values": [
+        {
+          "value": "Indo-European",
+          "source": "glottolog-v5.3"
+        }
+      ]
+    },
+    "familyGlottocode": "indo1319"
+  },
+  "bcp47FullTag": {
+    "agreement": "single",
+    "consensus": "xcl-Armn-XX",
+    "values": [
+      {
+        "value": "xcl-Armn-XX",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"xcl\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "xcl",
+    "values": [
+      {
+        "value": "xcl",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "lexicalResources": {
+    "clicsContributingDatasets": 1,
+    "clicsTotalEntries": 172,
+    "clicsUniqueForms": 169,
+    "colexificationConcepts": 134,
+    "colexificationDensity": 0.793,
+    "colexifyingForms": 3,
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 57,
+        "concepts": 36,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "datsemshift",
+        "forms": 109,
+        "concepts": 103,
+        "release": "datsemshift-v1.1rc"
+      },
+      {
+        "dataset": "diacl",
+        "forms": 172,
+        "concepts": 134,
+        "release": "diacl-v3.0"
+      },
+      {
+        "dataset": "iecor",
+        "forms": 170,
+        "concepts": 170,
+        "release": "iecor-v1.2"
+      }
+    ]
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Mozilla-I10n",
+        "corpusId": "corpus:opus:Mozilla-I10n",
+        "pairCount": 188,
+        "topPartners": [
+          {
+            "code": "zh_cn",
+            "alignmentPairs": 96
+          },
+          {
+            "code": "zh_tw",
+            "alignmentPairs": 83
+          },
+          {
+            "code": "xh",
+            "alignmentPairs": 75
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 69
+          },
+          {
+            "code": "be",
+            "alignmentPairs": 65
+          }
+        ],
+        "alignmentPairsTotal": 8166,
+        "pairsWithPublishedSize": 188,
+        "largestPairAlignments": 96
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Classical_Armenian-CAVaL",
+        "sentences": 4781,
+        "tokens": 99006,
+        "words": 99664,
+        "release": "2.18"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "audersetinterrog",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      },
+      {
+        "dataset": "wacl",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 1
+      }
+    ]
+  },
+  "countries": [
+    "AM"
+  ],
+  "dialectCount": 2,
+  "endangerment": {
+    "agreement": "single",
+    "consensus": "extinct",
+    "values": [
+      {
+        "value": "extinct",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Classical Armenian (xcl-xcl) = 10 (Extinct).",
+        "scale": "glottolog-cldf-v5.3"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "single",
+    "consensus": "գրաբար",
+    "values": [
+      {
+        "value": "գրաբար",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "hy",
+        "variantType": "language",
+        "note": "label language: hy"
+      }
+    ]
+  },
+  "documentation": {
+    "firstDocumented": 400,
+    "lastDocumented": 1100,
+    "medLevel": "long grammar",
+    "medSourceId": "575034"
+  },
+  "glottocode": "clas1249",
+  "typologicalProfile": {
+    "hasCoreCase": true,
+    "hasGenderInPronouns": false,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": true,
+    "hasSexBasedGender": false,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "0",
+      "values": [
+        {
+          "value": "0",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": false
+  },
+  "isIsolate": false,
+  "isoLanguageType": "Historical",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 38.592316,
+    "lng": 41.346422
+  },
+  "macroarea": "Eurasia",
+  "methodSupport": {
+    "total": 15,
+    "byTier": {
+      "model-card-declared": 15
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:vonjack/opus-mt-mul-en-big",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-ine-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_nld",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "coverage": {
+    "sourceCount": 10,
+    "componentsPresent": 41,
+    "componentsTotal": 83,
+    "notAttested": 1
+  },
+  "_fieldSources": {
+    "bcp47FullTag": [
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.firstDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.lastDocumented": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endonym": [
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.clicsContributingDatasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsTotalEntries": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsUniqueForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationConcepts": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationDensity": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexifyingForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "locale",
+    "id": "xcl-XX",
+    "revision": "fccb29073d39662f",
+    "correctableFields": [
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.firstDocumented",
+      "documentation.lastDocumented",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.clicsContributingDatasets",
+      "lexicalResources.clicsTotalEntries",
+      "lexicalResources.clicsUniqueForms",
+      "lexicalResources.colexificationConcepts",
+      "lexicalResources.colexificationDensity",
+      "lexicalResources.colexifyingForms",
+      "lexicalResources.datasets",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "resources.corpora",
+      "resources.treebanks",
+      "resources.typology",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense"
+    ]
+  },
+  "locale": {
+    "language": "xcl",
+    "region": "XX",
+    "script": "Armn",
+    "publishedTag": "xcl-XX",
+    "source": "sil-langtags",
+    "note": "This locale exists because SIL langtags publishes the tag. Its facts are its language's facts; only territory- and script-scoped values are resolved for this locale, and nothing is asserted here that is not true of the language."
+  },
+  "script": "Armn"
+}

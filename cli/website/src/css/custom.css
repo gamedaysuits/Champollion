@@ -1,0 +1,526 @@
+/* Design system tokens — loaded first, available everywhere */
+@import './design-tokens.css';
+
+/**
+ * Champollion site theme — "Field Notes"
+ *
+ * Palette: the vitality triad (teal · amber · coral) on a scholarly
+ * ink/paper neutral base. Brand accent is the triad's teal. Flat,
+ * editorial, dark-mode-first. Identity documented in DESIGN.md.
+ */
+
+/* ---------- Light mode (paper) ---------- */
+:root {
+  /* Primary — scholarly teal (4.8:1 on white) */
+  --ifm-color-primary: #0F766E;
+  --ifm-color-primary-dark: #0D685F;
+  --ifm-color-primary-darker: #0C6259;
+  --ifm-color-primary-darkest: #0A514A;
+  --ifm-color-primary-light: #12847B;
+  --ifm-color-primary-lighter: #138A81;
+  --ifm-color-primary-lightest: #2BA095;
+
+  --ifm-background-color: #FBFAF8;
+  --ifm-background-surface-color: #F3F1EC;
+  --ifm-toc-border-color: #E5E2D9;
+  --ifm-font-color-base: #1F2421;
+  --ifm-font-color-secondary: #5B6661;
+
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter Variable', 'Inter', 'Noto Sans', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Noto Serif', serif;
+  --ifm-heading-font-weight: 600;
+
+  --docusaurus-highlighted-code-line-bg: rgba(15, 118, 110, 0.08);
+
+  /* Brand mark (see src/components/BrandMark.js + DESIGN.md) —
+   * light theme: ink stone, bright registers, no carved edges */
+  --brand-stone: #1F2421;
+  --brand-stone-edge: transparent;
+  --brand-stone-break: transparent;
+  --brand-register-1: #3FC1C0;
+  --brand-register-2: #E8B339;
+  --brand-register-3: #F08A93;
+}
+
+/* ---------- Dark mode (ink) ---------- */
+[data-theme='dark'] {
+  --ifm-color-primary: #3FC1C0;
+  --ifm-color-primary-dark: #2EB5B4;
+  --ifm-color-primary-darker: #28ACAB;
+  --ifm-color-primary-darkest: #1F908F;
+  --ifm-color-primary-light: #58CAC9;
+  --ifm-color-primary-lighter: #6BD0CF;
+  --ifm-color-primary-lightest: #93DEDD;
+
+  --ifm-background-color: #101312;
+  --ifm-background-surface-color: #181C1A;
+  --ifm-toc-border-color: #2A322E;
+  --ifm-font-color-base: #E8EAE8;
+  --ifm-font-color-secondary: #9AA5A0;
+
+  --docusaurus-highlighted-code-line-bg: rgba(63, 193, 192, 0.1);
+
+  /* Brand mark — dark theme: carved granite (wave 3 — the white
+   * "paper squeeze" read as a paper document; the slab now stays
+   * stone in both themes). Lit top-left edge + brighter fracture
+   * facet sell the carved mass; registers stay the bright triad. */
+  --brand-stone: #414C46;
+  --brand-stone-edge: #67746D;
+  --brand-stone-break: #8C9A92;
+  --brand-register-1: #3FC1C0;
+  --brand-register-2: #E8B339;
+  --brand-register-3: #F08A93;
+}
+
+/* ---------- Typography ----------
+   Self-hosted variable fonts (no runtime font CDNs — see DESIGN.md §3 and
+   static/fonts/LICENSES.md). Latin subsets only (~220 KB woff2 total);
+   every other script falls through to high-quality system faces, which is
+   the honest path for a site that renders 7,927 languages' endonyms.
+
+   - Inter Variable   — UI + prose (opsz + wght axes)
+   - Fraunces Variable — the display serif: heroes, headings, the
+     "decipherment" strapline. Scholarly warmth, wonky-optional. */
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/inter-latin-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/fraunces-latin-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/fraunces-latin-opsz-italic.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Headings: Fraunces with optical sizing on; slight tracking handled
+   per-component. h4–h6 stay in the UI face — the serif register is for
+   display sizes, not metadata. */
+h1, h2, h3 {
+  font-optical-sizing: auto;
+}
+h4, h5, h6 {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* The navbar wordmark keeps the UI face (it sits at UI size) */
+.navbar__title {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* ---------- Navbar wordmark integrity (iteration-13 nit (a)) ----------
+   Root cause of the "cham…" truncation: theme-classic renders the title
+   with `text--truncate`, Infima gives .navbar__brand `min-width: 0` and
+   the title `flex: 1 1 auto` — so when the item set outgrows the row
+   (natural width ≈1310px with the search box), the brand is the ONLY
+   shrinkable flex child and the wordmark ellipsizes first.
+   The deliberate inversion, desktop only (Docusaurus collapses to the
+   hamburger below 997px, where the brand has the row to itself): the
+   brand never shrinks; the ITEM SET yields instead, in tiers —
+   tightened item padding, then a narrower search field (it re-expands
+   on focus), then the npm link bows out (the install path lives in the
+   homepage install tile and the footer; GitHub stays). */
+@media (min-width: 997px) {
+  .navbar__brand {
+    flex-shrink: 0;
+  }
+  .navbar__title {
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+  /* Items don't silently squeeze either (the Languages caret used to
+     wrap mid-tier) — the tiers below are sized from measured natural
+     widths so the row always fits instead. */
+  .navbar__items .navbar__item {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* Tier 1 — the row no longer fits at full padding (measured natural
+   width ≈1312px; this tier's own natural width is ≈1189px). */
+@media (min-width: 1189px) and (max-width: 1366px) {
+  .navbar {
+    --ifm-navbar-item-padding-horizontal: 0.5rem;
+  }
+  .navbar__search-input {
+    width: 9rem;
+  }
+  .navbar__search-input:focus {
+    width: 12.5rem;
+  }
+}
+
+/* Tier 2 — narrow desktop (997–1188px): tightest spacing, icon-scale
+   search (focus restores a usable field), npm link hidden (measured
+   natural width ≈979px — fits the 997px Docusaurus desktop floor). */
+@media (min-width: 997px) and (max-width: 1188px) {
+  .navbar {
+    --ifm-navbar-item-padding-horizontal: 0.3rem;
+    font-size: 0.92rem;
+  }
+  .navbar__search-input {
+    width: 6.5rem;
+  }
+  .navbar__search-input:focus {
+    width: 11rem;
+  }
+  /* At icon-scale width the ⌘K hint collides with the placeholder. */
+  .navbar__search [class*='searchHintContainer'] {
+    display: none;
+  }
+  .navbar__items--right a.navbar__link[href*='npmjs.com'] {
+    display: none;
+  }
+}
+
+/* ---------- PUA Conlang Fonts ---------- */
+/* These fonts render script-converted text for conlangs that use Unicode
+   Private Use Area (PUA) codepoints. unicode-range ensures they only
+   load when PUA characters are actually present on the page. */
+
+/* Klingon pIqaD — SIL OFL 1.1 — https://github.com/dadap/pIqaD-fonts */
+@font-face {
+  font-family: 'pIqaD';
+  src: url('/fonts/pIqaDqolqoS.ttf') format('truetype');
+  font-display: swap;
+  unicode-range: U+F8D0-F8FF;
+}
+
+/* Tengwar (Sindarin Elvish) — GPL v3 — Free Tengwar Font Project */
+@font-face {
+  font-family: 'Tengwar';
+  src: url('/fonts/FreeMonoTengwar.ttf') format('truetype');
+  font-display: swap;
+  unicode-range: U+E000-E07F;
+}
+
+/* Kryptonian — no open-source PUA font available.
+   Kryptonian text on this site falls back to Latin script.
+   End users can provide their own font via `champollion fonts install`. */
+
+/* Apply PUA fonts to elements marked with :lang() or data-script attribute.
+   The data-script approach works in the WordFlipper where text cycles
+   rapidly and :lang() context would be impractical. */
+:lang(tlh),
+[data-script="piqad"] {
+  font-family: 'pIqaD', sans-serif;
+}
+
+:lang(x-elvish-s),
+[data-script="tengwar"] {
+  font-family: 'Tengwar', serif;
+}
+
+/* ---------- Global refinements ---------- */
+
+/* Slightly tighter sidebar for cleaner hierarchy */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Code blocks — subtle rounded corners */
+.prism-code {
+  border-radius: 8px;
+}
+
+/* Navbar — glass chrome (wave 2, "de-Docusaurus the chrome").
+   Translucent surface + blur, with the triad hairline as the bottom
+   border. Applies site-wide: landing pages get the glass moment, docs
+   pages keep the same functional bar wearing the skin. */
+.navbar {
+  background: var(--navbar-glass);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--vital-safe),
+    var(--vital-vulnerable),
+    var(--vital-endangered)
+  );
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Landing v3 — chrome submission (docs/DESIGN_LOOP.md §"The Landing
+   v3" doctrine 1): on the homepage the navbar rides TRANSPARENT over
+   the Translation Field (blur 0, border 0, shadow 0) and solidifies
+   back to the glass bar once the user scrolls past the field. The
+   data-field-home / data-field-scrolled attributes are set on <html>
+   by the homepage (src/pages/index.js useFieldChrome) — attributes,
+   not classes, because react-helmet owns the <html> class attribute
+   and rewrites it wholesale. */
+html[data-field-home] .navbar {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background 0.35s ease;
+}
+
+html[data-field-home] .navbar::after {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+html[data-field-home][data-field-scrolled] .navbar {
+  background: var(--navbar-glass);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+}
+
+html[data-field-home][data-field-scrolled] .navbar::after {
+  opacity: 0.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-field-home] .navbar,
+  html[data-field-home] .navbar::after {
+    transition: none;
+  }
+}
+
+/* Map view (hero explore mode): the page chrome yields to the network.
+   data-map-exploring is set on <html> by GraphHero enterExplore() — same
+   attribute-not-class rule as data-field-home above. The chrome fades and
+   stops catching pointer events; the hero's own Back button is the exit. */
+html[data-map-exploring] .navbar,
+html[data-map-exploring] .theme-announcement-bar {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-map-exploring] .navbar,
+  html[data-map-exploring] .theme-announcement-bar {
+    transition: none;
+  }
+}
+
+/* /home-preview seam: pull the announcement bar out and float the navbar so
+   the pinned region starts at scrollY 0 — the scroll plays the animation
+   without first shifting the page down by the chrome height (founder R4).
+   data-seam-top is set on <html> by home-preview.js on mount. The navbar
+   is already a glass skin, so it reads fine floating over the hero map. */
+html[data-seam-top] .theme-announcement-bar {
+  display: none;
+}
+html[data-seam-top] .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+/* The mobile sidebar sheet keeps a solid surface (glass over glass at
+   full height reads as mud; the sheet is functional chrome). */
+.navbar-sidebar {
+  background: var(--ifm-background-color);
+}
+
+/* Hero section on landing page */
+.hero--primary {
+  background: var(--ifm-background-surface-color);
+}
+
+/* ---------- Code block copy button ---------- */
+.theme-code-block {
+  border-radius: 10px;
+  border: 1px solid var(--ifm-toc-border-color);
+}
+
+.clean-btn[class*="copyButton"] {
+  border-radius: 6px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.clean-btn[class*="copyButton"]:hover {
+  opacity: 1;
+  background: var(--accent-subtle);
+}
+
+/* ---------- Admonitions ---------- */
+.admonition {
+  border-radius: 10px;
+  border-left-width: 4px;
+}
+
+/* ---------- Tabs ---------- */
+.tabs__item--active {
+  border-bottom-color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* ---------- Sidebar active item ---------- */
+.menu__link--active:not(.menu__link--sublist) {
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 3px);
+}
+
+/* ---------- Smooth scrolling ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- The triad rule ----------
+   A hairline gradient through the vitality triad (teal → amber → coral).
+   Architectural accent only — section headers, hero baselines, the social
+   cards. Never a data encoding. */
+.triadRule {
+  display: block;
+  height: 3px;
+  border: 0;
+  border-radius: 999px;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    var(--vital-safe) 0%,
+    var(--vital-vulnerable) 50%,
+    var(--vital-endangered) 100%
+  );
+}
+
+/* ---------- Table styling ---------- */
+table {
+  font-size: 0.92rem;
+}
+
+table thead th {
+  background: var(--accent-subtle);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =====================================================================
+   Docs reading experience — page rhythm, callouts, code presentation
+   ===================================================================== */
+
+/* Measured line length and breathing room for article text */
+.theme-doc-markdown {
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.theme-doc-markdown > h2 {
+  margin-top: 2.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  letter-spacing: -0.01em;
+}
+
+.theme-doc-markdown > h3 {
+  margin-top: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.theme-doc-markdown h1 {
+  letter-spacing: -0.02em;
+}
+
+/* Lead paragraph after the H1 reads slightly larger */
+.theme-doc-markdown header + p,
+.theme-doc-markdown h1 + p {
+  font-size: 1.08rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* Inline code — quiet chip, no jarring background */
+.theme-doc-markdown code:not([class*="codeBlock"]) {
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-surface-color);
+  border-radius: 6px;
+  padding: 0.12rem 0.35rem;
+}
+
+/* Code block titles — file-tab look */
+.theme-code-block [class*="codeBlockTitle"] {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--ifm-font-color-secondary);
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Admonitions — flat editorial callouts, no heavy tint */
+.theme-doc-markdown .alert {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-left-width: 4px;
+  border-radius: 10px;
+  box-shadow: none;
+  background: var(--ifm-background-surface-color);
+}
+
+/* Blockquotes — scholarly sidenote register */
+.theme-doc-markdown blockquote {
+  border-left: 3px solid var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+  border-radius: 0 10px 10px 0;
+  padding: 0.8rem 1.1rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* Doc pagination cards */
+.pagination-nav__link {
+  border-radius: 12px;
+  transition: border-color 0.15s ease;
+}
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* ---------- Unified cross-property links ----------
+   Navbar/footer links to champollion.dev are absolute URLs (so the footer
+   object is identical across the CLI and Arena builds), which makes
+   Docusaurus tag them with its "external link" ↗ icon. But champollion.dev
+   and champollion.dev/arena are ONE site — those links should read as
+   internal. Suppress the ↗ for champollion.dev links only; genuinely
+   external links (github.com, npmjs.com) keep their icon. */
+.navbar a[href^="https://champollion.dev"] svg[class*="iconExternalLink"],
+.navbar a[href^="https://champollion.dev"] svg.iconExternalLink,
+footer a[href^="https://champollion.dev"] svg[class*="iconExternalLink"],
+footer a[href^="https://champollion.dev"] svg.iconExternalLink {
+  display: none;
+}

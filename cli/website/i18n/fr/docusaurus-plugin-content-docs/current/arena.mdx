@@ -1,0 +1,146 @@
+---
+title: "L'Arène"
+description: "L'Arène est le lieu où s'effectuent les mesures : la porte par laquelle vous soumettez un résultat, le registre qui le conserve, et la mécanique de compétition qui repose sur les deux. Ce qu'elle est, ce qui la régit, et où vous intervenez."
+related:
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "Run the harness, publish the run card — ten minutes with an API key"
+  - label: "MT Evaluation Rules"
+    to: /docs/network/leaderboard/rules
+    kind: doc
+    note: "What is accepted, what is disqualified, how a result gets retracted"
+  - label: "Benchmark Specification"
+    to: /docs/network/specifications/benchmark
+    kind: spec
+    note: "The protocol every valid run follows"
+  - label: "The Network — the measured map"
+    to: /docs/network/
+    kind: doc
+    note: "What all of this measurement adds up to"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: position
+    note: "What the Arena does not yet claim"
+---
+
+{/* Les décomptes sont rendus via SSOTCount (lectures au moment de la compilation des SSOT de la machine via les customFields de docusaurus.config.js) — jamais saisis manuellement, conformément au standard d'affichage SSOT. L'état en direct du tableau n'est délibérément PAS indiqué ici : il est lié. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# L'Arène
+
+**L'Arène est le lieu où s'effectue la mesure.** C'est la porte par laquelle vous soumettez un résultat, le registre qui conserve ce résultat, et la mécanique de concours construite par-dessus ces deux éléments.
+
+Il s'agit d'une infrastructure, et non d'un tableau de bord ou d'une carte. Trois éléments sont faciles à confondre, il convient donc de les distinguer clairement une bonne fois pour toutes :
+
+| | Ce que c'est | Où cela s'exécute |
+|---|---|---|
+| **Le [MT-Eval Harness](/docs/network/specifications/harness)** | L'évaluateur. À partir d'une méthode et d'un ensemble de test, il produit un score et une fiche d'exécution. | **Votre machine.** Nous n'exécutons pas votre méthode à votre place, et nous n'en avons pas besoin. |
+| **L'Arène** | La porte de soumission, le registre des fiches d'exécution, ainsi que la mécanique des concours et des prix. | Ici. |
+| **Le [Réseau](/docs/network/)** | La carte qui émerge une fois qu'il existe suffisamment de fiches d'exécution — qui peut traduire quoi, avec quelle efficacité, et où se trouvent les espaces vides. Le routage la traverse. | Une conséquence, non un composant. |
+
+Rien n'entre dans le Réseau si ce n'est par l'Arène, et rien n'entre dans l'Arène si ce n'est sous la forme d'une exécution évaluée et dotée d'une empreinte numérique. C'est là toute la conception : une mesure sans provenance ne peut pas faire partie de la carte.
+
+---
+
+## De quoi l'Arène est-elle constituée
+
+**Une porte.** N'importe qui peut soumettre — un modèle affiné (*fine-tuned*), un modèle de pointe (*frontier model*) guidé par des prompts, un pipeline contrôlé par FST, un système basé sur des règles, un traducteur humain professionnel. La méthode n'a pas d'importance pour le processus ; seule la procédure est fixe. Deux portes différentes s'offrent à vous, selon ce que vous possédez : [publier une fiche d'exécution](/docs/network/getting-started/submit-a-method) si vous avez déjà évalué quelque chose, ou [proposer une entrée](/docs/network/getting-started/submit-to-the-index) si vous avez un jeu de données, un dictionnaire, un moteur, un service de traduction, un résultat publié en externe, ou une correction à apporter à une fiche de langue. Les propositions sont lues par une personne, et non par un robot, et rien n'est approuvé automatiquement.
+
+**Un registre.** Chaque exécution publiée est une fiche d'exécution : les scores, le hachage du jeu de données, l'identifiant (*slug*) du modèle, la condition, et une empreinte numérique couvrant l'ensemble. Le fait que deux personnes exécutent la même configuration est inoffensif par conception — les exécutions identiques sont dédupliquées lors de la publication, et une réplication indépendante constitue une preuve plutôt qu'un gaspillage. La [Spécification de la fiche d'exécution](/docs/network/specifications/run-card) définit ce qu'une fiche doit divulguer ; la [Spécification du banc d'essai](/docs/network/specifications/benchmark) définit le protocole qui permet d'en produire une.
+
+**Un ensemble de cibles.** <SSOTCount field="registryDatasetCount" /> jeux de données d'évaluation sont enregistrés. Chacun d'eux est une fiche de métadonnées accompagnée d'un pointeur de récupération à la source — **le contenu du corpus n'est jamais hébergé ici**. Le *harness* récupère les références en amont au moment de l'exécution et évalue par rapport à ce qu'il vient de récupérer.
+
+Être enregistré ne signifie pas être exécutable partout, et cette différence est délibérée. Quelques centaines de ces entrées portent une licence modifiée, sur mesure ou non précisée, et celles-ci **refusent l'évaluation à distance** jusqu'à ce que le détenteur des droits ait enregistré un consentement de transmission explicite — aucun agent ne peut en ajouter un en leur nom. Elles restent exécutables localement, et sur des canaux sans entraînement (*no-train*) lorsque la licence le permet. Voir [Jeux de données d'évaluation](/docs/network/leaderboard/datasets) et [Gouvernance des données](/docs/network/sovereignty/data-sovereignty).
+
+**Mécanique de concours.** Au-dessus d'une simple exécution se trouve le reste : [les tâches partagées et les concours](/shared-tasks), la [file d'attente publique](/docs/network/getting-started/contributing-compute) des mesures qui amélioreraient le plus la carte, et la spécification de [ce qu'un prix exigerait](/docs/network/specifications/prizes) si l'un d'eux venait à s'ouvrir. Une communauté peut organiser son propre concours sur son propre corpus avec son propre argent — [Champollion ne détient ni l'un ni l'autre](/docs/network/sovereignty/run-a-sovereign-contest).
+
+---
+
+## Les règles qui s'appliquent partout ici
+
+Ce sont les invariants. Chacun d'eux possède une page qui en détaille le fonctionnement.
+
+**Ne pas s'entraîner sur les données d'évaluation.** Toute méthode exposée à un ensemble de référence (*benchmark*) — que ce soit comme données d'entraînement, exemples *few-shot*, entrées de dictionnaire ou matériel de prompt — est disqualifiée. Affinez (*fine-tune*) sur tout ce que vous voulez ; mais pas sur l'ensemble de test. C'est la seule règle dont la violation serait fatale à l'ensemble du système, car un score contaminé empoisonne toutes les comparaisons en aval.
+([Règles du classement](/docs/network/leaderboard/rules))
+
+**Chaque nombre porte sa provenance ou il ne compte pas.** Une fiche d'exécution indique la version du jeu de données, le modèle, la condition, le prompt système et le coût. Les scores ne sont comparables qu'au sein de la même version du jeu de données, et c'est l'empreinte numérique qui rend cela vérifiable plutôt que simplement affirmé.
+([Spécification du banc d'essai](/docs/network/specifications/benchmark))
+
+**Nous ne détenons jamais votre corpus.** L'enregistrement concerne les métadonnées. Un ensemble de test est évalué sans être transmis, et dans la voie souveraine, il ne quitte jamais l'infrastructure de la communauté — seul le score voyage.
+([Enregistrement de corpus](/docs/network/sovereignty/registering-corpora))
+
+**Les voies de licence sont structurelles, et non éditoriales.** Les corpus non commerciaux et réservés à la recherche sont exclus de tout prix, API et parcours commercial par construction. Les corpus sous licences modifiées, sur mesure ou non précisées sont en outre soumis à un consentement : le *harness* refuse de transmettre leur texte à l'API d'un modèle tiers tant que l'autorisation du détenteur des droits n'est pas enregistrée.
+([Gouvernance des données](/docs/network/sovereignty/data-sovereignty))
+
+**Un score est un signal machine, pas un verdict.** Les métriques automatisées sont des approximations du jugement humain, et le [Protocole de validation par les locuteurs](/docs/network/specifications/speaker-validation) définit le filtre humain *pour lequel* elles servent d'approximation. Une position dans le classement prouve qu'une méthode obtient de bonnes mesures. Elle ne prouve pas que la traduction est bonne, et elle n'accorde à personne la permission de la déployer sur la langue d'une communauté.
+
+**Gagner n'est pas l'état final.** Pour les langues autochtones, la conception prévoit qu'une méthode fonctionnelle soit transférée à l'organisation de gouvernance de la communauté et déployée sur une infrastructure contrôlée par la communauté, Champollion ne prenant aucune part de ce qu'elle y rapporte.
+([L'engagement sur les artefacts dérivés](/docs/network/sovereignty/derived-artifacts))
+
+---
+
+## Où vous intervenez
+
+Choisissez la ligne qui correspond à ce que vous possédez déjà.
+
+| Vous avez… | Faites ceci | Commencez par |
+|---|---|---|
+| Une méthode et une clé API | Exécutez le *harness* sur un corpus enregistré et publiez la fiche d'exécution | [Soumettre une méthode](/docs/network/getting-started/submit-a-method) |
+| Quelque chose qui manque à l'index — un jeu de données, un dictionnaire, un FST, un moteur, un service de traduction humaine, un résultat publié ou une correction de fiche | Déposez la proposition structurée ; un mainteneur l'examinera manuellement | [Soumettre à l'index](/docs/network/getting-started/submit-to-the-index) |
+| Du crédit API en réserve et aucune méthode propre | Exécutez les éléments ouverts de la file d'attente publique avec votre propre clé et publiez ce qui en ressort | [Contribuer à la puissance de calcul](/docs/network/getting-started/contributing-compute) |
+| Un corpus appartenant à votre communauté | Enregistrez-le en tant que métadonnées et choisissez sa voie d'exposition — ouverte, restreinte ou entièrement souveraine | [Enregistrement de corpus](/docs/network/sovereignty/registering-corpora) |
+| Un corpus et une raison d'y organiser une compétition | Organisez-la vous-même, selon vos conditions ; nous ne détenons ni les données ni l'argent | [Organiser un concours souverain](/docs/network/sovereignty/run-a-sovereign-contest) |
+| Une méthode qui obtient déjà de bons scores | Exportez-la sous forme de plugin et mettez-la en production | [Déployer en production](/docs/network/getting-started/deploy-to-production) |
+| Une question au préalable | Évaluation, disqualification, modèles, FST, souveraineté | [FAQ](/docs/network/getting-started/faq) |
+
+Si vous êtes un agent IA, la file d'attente, les résultats et les fiches d'exécution sont tous disponibles en tant qu'outils — voir le [Serveur MCP](/docs/network/getting-started/mcp-server).
+
+---
+
+## Ce qui est réellement en cours d'exécution aujourd'hui
+
+L'Arène est en phase de lancement, et sa description honnête est courte.
+
+- **Le tableau est en ligne, public et ouvert aux soumissions.** Son
+  contenu actuel est constitué de données en direct, cette page ne vous dira donc pas ce qui s'y trouve —
+  [consultez le classement](/leaderboard).
+- **« Auto-déclaré » (*Self-reported*) est le niveau de confiance par défaut.** La vérification côté serveur —
+  réévaluer une soumission par rapport au corpus canonique épinglé par SHA — existe et
+  se développe, mais n'est pas universelle. Lisez le badge sur chaque ligne.
+- **Aucun prix n'est ouvert, et aucun score sur ce site n'a franchi la barre d'un prix.** La
+  [Spécification des prix](/docs/network/specifications/prizes) est rédigée de manière à ce que
+  la barre soit sans ambiguïté *si et quand* un prix s'ouvre. Les prix sont financés et
+  détenus par des sponsors ; Champollion ne détient, ne place en séquestre ni n'achemine jamais les fonds des prix.
+- **Aucune révision par les locuteurs de la communauté n'a été menée.** Le filtre est spécifié et
+  l'outillage est en cours de construction. Les nombres composites et chrF++ sont des signaux
+  machine, et non un verdict de la communauté.
+- **Aucune méthode n'a encore été transférée à une communauté.** Le modèle de transfert de propriété
+  est une conception engagée, et non un programme en cours d'exécution. Il est décrit pour que vous puissiez nous
+  en tenir rigueur, et non pour suggérer qu'il est déjà en mouvement.
+- **La garde des clés est décidée ; les gardiens ne le sont pas.** Le mécanisme est un
+  schéma à seuil dans lequel Champollion ne détient aucune part de clé. Les gardiens sont
+  choisis par les communautés, et ces conversations sont en cours — nous parlons donc de
+  **gardiens de clés communautaires (en cours de confirmation)**.
+
+Le registre complet de ce que ce projet ne prétend *pas* faire se trouve dans [Limites honnêtes](/docs/network/honest-limitations). Si quoi que ce soit sur cette page implique plus que ce que cette autre page autorise, cette dernière l'emporte et celle-ci contient une erreur.
+
+---
+
+## À lire ensuite
+
+- **Vous souhaitez soumettre quelque chose aujourd'hui** → [Soumettre une
+  méthode](/docs/network/getting-started/submit-a-method), puis la [Spécification
+  d'évaluation](/docs/network/specifications/scoring).
+- **Vous voulez savoir comment un résultat est jugé** → [Règles d'évaluation
+  de la TA](/docs/network/leaderboard/rules) et [Significativité
+  statistique](/docs/network/specifications/significance).
+- **Vous voulez voir à quoi aboutissent les mesures** → [Le
+  Réseau](/docs/network/).
+- **Vous êtes le gardien d'une langue et souhaitez d'abord avoir une vue d'ensemble de la souveraineté** → [Pour
+  les communautés linguistiques](/docs/network/community/for-language-communities).
+- **Vous découvrez tout cela** → [Ce qu'est
+  Champollion](/docs/what-is-champollion).
+
+Chaque langue nommée sur le tableau renvoie à sa fiche dans [l'Atlas](/docs/atlas) — classification, vitalité, et quelles ressources d'évaluation existent pour elle.

@@ -1,0 +1,90 @@
+{
+  "code": "macrolanguage-fas",
+  "extends": "genus-iranian",
+  "name": "Persian Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "fas",
+  "script": "Arab",
+  "dir": "rtl",
+  "formality": {
+    "system": "register-levels",
+    "description": "Persian has an exceptionally elaborate formality system (taarof/تعارف) that pervades all communication. Three or more pronoun levels exist: to (تو, intimate), shomā (شما, standard formal), and additional honorific forms. Formal register uses distinct vocabulary for common verbs: tashrif āvardan instead of āmadan for 'to come'. Self-deprecating and other-elevating conventions are deeply embedded. All Persian varieties share this system, though the specific vocabulary differs between Farsi, Dari, and Tajik.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Persian has no grammatical gender. The third-person pronoun u/ān (او/آن) is entirely gender-neutral. No agreement system is affected by gender. When translating from gendered source languages, gender must be expressed lexically if needed."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      },
+      "mirrored": true
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "ezafeConstruction": "All Persian varieties use the ezāfe (اضافه) construction — a connecting particle (-e/-ye in Farsi/Dari, -i in Tajik) linking nouns to modifiers: ketāb-e bozorg 'big book' (lit. book-of big). Ezāfe chains extend to multiple modifiers and possessors. This is the fundamental modifier-linking mechanism and has no English equivalent.",
+    "lightVerbSystem": "Persian forms the vast majority of its predicates using light verb constructions: noun/adjective + light verb. There are only ~250 simple verbs in Persian, but thousands of compound verb expressions. kār kardan 'work do' = 'to work', dust dāshtan 'friend have' = 'to love'. These cannot be translated word-by-word.",
+    "scriptVariation": "While all standard Persian uses Arabic-derived script (RTL), the varieties differ: Farsi (Iran) and Dari (Afghanistan) use Perso-Arabic script with additional letters (پ چ ژ گ). Tajik historically used Perso-Arabic, then Latin, now primarily Cyrillic. Script-specific handling is needed per variety.",
+    "differentialObjectMarking": "The postposition -rā (را) marks specific/definite direct objects. Indefinite objects are unmarked: ketāb khāndam 'I read a book' vs. ketāb-rā khāndam 'I read the book'. This system has no exact English parallel.",
+    "complexPredicates": "Beyond light verbs, Persian uses preverbal elements that modify verb meaning extensively. Many expressions are idiomatic: dast-e kasi-rā gereftani 'to take someone's hand' = 'to help someone'. These must be translated as units.",
+    "varietalDifferences": "Farsi (Iran), Dari (Afghanistan), and Tajik (Tajikistan) share core grammar but differ in vocabulary, pronunciation, some syntax, and script. Dari retains some features lost in Farsi. Tajik has absorbed Russian vocabulary. Do NOT interchange variety-specific vocabulary."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Iranian",
+    "genusGlottocode": "iran1269",
+    "ancestry": [
+      "Indo-European",
+      "Indo-Iranian",
+      "Iranian",
+      "Western Iranian",
+      "Southwestern Iranian",
+      "Persian"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3",
+    "iso639-3-2024"
+  ],
+  "notes": "Macrolanguage card for Persian (fas). Covers Western Farsi (pes, Iran), Dari (prs, Afghanistan), and Tajik (tgk, Tajikistan). All share SOV order, ezāfe construction, light verb system, no grammatical gender, and the taarof formality system. Script is Arabic-derived for Farsi/Dari (RTL), but Tajik uses Cyrillic (LTR) — the primary script 'Arab' reflects the majority.",
+  "regions": [
+    {
+      "country": "Iran, Afghanistan, Tajikistan",
+      "countryCode": null,
+      "officialStatus": "official",
+      "region": "Iran (Farsi), Afghanistan (Dari), Tajikistan (Tajik)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null,
+  "iso639_3": "fas",
+  "_fieldSources": {
+    "iso639_3": "iso639-3-2024",
+    "isoType": "iso639-3-2024",
+    "modality": "derived:glottolog-sign-family+iso639-3-refname",
+    "members": "iso639-3-2024",
+    "supportTier": "derived:taxonomy-hub-policy (docs/LANGUAGE_TAXONOMY.md)"
+  },
+  "isoType": "L",
+  "modality": "spoken",
+  "taxonomyNotes": null,
+  "members": [
+    "pes",
+    "prs"
+  ],
+  "supportTier": "cataloged"
+}

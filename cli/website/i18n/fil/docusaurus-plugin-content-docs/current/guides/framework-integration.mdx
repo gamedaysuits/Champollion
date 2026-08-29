@@ -1,0 +1,167 @@
+---
+sidebar_position: 2
+title: "Integrasyon ng Framework"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Integrasyon ng Framework
+
+Hakbang-hakbang na pag-set up para sa champollion gamit ang mga popular na framework.
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### Estruktura ng Proyekto
+
+Gumagamit ang Hugo ng `i18n/` para sa mga pagsasalin ng string at `content/` para sa nilalaman ng pahina:
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### Pag-set up
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### Mga Detalye ng Pagsasalin ng Nilalaman
+
+**Front matter**: Sinusuportahan ang parehong YAML (`---`) at TOML (`+++`) na delimiter. Isinasalin ang `title`, `description`, `summary`, `subtitle`, `caption`, at `linkTitle` bilang default. Pinapanatili ang lahat ng iba pang field (date, draft, tags, weight, slug, atbp.). I-customize gamit ang `translatableFields` sa inyong config.
+
+**Proteksiyon ng block**: Ang mga code block, Hugo shortcode, inline code, at raw HTML ay awtomatikong pinoprotektahan gamit ang mga Unicode sentinel placeholder. Dumadaan ang mga ito nang hindi nababago.
+
+**Kombensiyon ng filename**: Sumusunod sa pattern ng Hugo na translation-by-filename:
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (inaalis ang source suffix)
+
+**Laktawan ang umiiral na**: Hindi kailanman nao-overwrite ang mga umiiral na naisaling file. Mag-delete ng target file upang piliting muling isalin.
+
+### Mga Anyong Pangmaramihan
+
+Sinusuportahan ng mga TOML at YAML locale ang CLDR plural forms:
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+Panloob na kinakatawan bilang `items.one` at `items.other` para sa diffing, pagkatapos ay muling sini-serialize sa tamang sectioned format kapag nagsusulat.
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### Estruktura ng Proyekto
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### Pag-set up
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh", "pt", "ar"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+Lumilikha ng `messages/fr.json`, `messages/ja.json`, atbp. — ganap na naisalin, habang pinapanatili ang inyong nested key structure. Awtomatikong kinukuha ang mga ito ng next-intl.
+
+### Daloy ng Trabaho sa Development
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### Estruktura ng Flat File (inirerekomenda)
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+```bash
+npx champollion sync
+```
+
+### Estruktura ng Nested Directory
+
+Kung ginagamit ninyo ang estrukturang `{locale}/{namespace}.json`, gumawa ng sync script upang i-flatten → isalin → i-unflatten. Tingnan ang [mga dokumento ng react-i18next](https://react.i18next.com/) para sa mga detalye.
+
+  </TabItem>
+</Tabs>

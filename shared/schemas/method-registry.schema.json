@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/method-registry.schema.json",
+  "title": "Champollion Method Registry (SSOT)",
+  "description": "Declarative registry of translation methods (MT engines) and LLM providers, shared by the Python arena harness and the JS CLI. See shared/method-registry.json.",
+  "type": "object",
+  "required": ["version", "entries"],
+  "additionalProperties": true,
+  "properties": {
+    "_comment": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "entries": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/entry" },
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9-]*$",
+        "description": "Canonical method/provider name (kebab-case). Must match the registry key in both runtimes."
+      }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": ["kind", "method_class", "paradigm"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["mt-api", "llm-provider", "local-model", "plugin"],
+          "description": "How the runtime dispatches it: mt-api (HttpMTMethod subclass), llm-provider (LLMProvider), local-model (local inference, optional deps), plugin (method_loader directory)."
+        },
+        "cli_name": {
+          "type": "string",
+          "description": "The CLI's METHOD_REGISTRY key when it differs from the canonical name (e.g. the 'openrouter' provider is 'llm' in the CLI). Absent means the CLI uses the same name."
+        },
+        "method_class": {
+          "type": "string",
+          "enum": ["raw-llm", "coached-llm", "pipeline", "custom-plugin", "api", "human"],
+          "description": "Must match config.VALID_METHOD_CLASSES (the harness enum that governs DB columns)."
+        },
+        "paradigm": {
+          "type": "string",
+          "enum": ["rule-based", "statistical", "neural-nmt", "llm", "hybrid", "human", "unknown"],
+          "description": "Must match config.VALID_PARADIGMS."
+        },
+        "env": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Environment variable name(s) the adapter reads, in resolution order. Empty for keyless engines."
+        },
+        "credential_env": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "The subset of `env` that are CREDENTIALS. Availability/readiness surfaces (recommend, doctor) judge these vars only — non-credential config vars (regions, endpoints) stay in `env` for the adapter but must never make a method read 'ready' (e.g. AWS_REGION alone is not AWS auth). Absent = every `env` var is a credential. Any one present suffices unless credential_env_all."
+        },
+        "credential_env_all": {
+          "type": "boolean",
+          "description": "When true, ALL credential_env vars must be set for 'ready' — key-pair auth (e.g. AWS access-key id + secret; Lara id + secret). Default false = any one suffices (alias lists). Only meaningful alongside credential_env."
+        },
+        "default_base_url": { "type": "string" },
+        "homepage": { "type": "string" },
+        "license": { "type": "string" },
+        "commercialReady": { "type": "boolean" },
+        "cost_note": { "type": "string" },
+        "max_batch": { "type": "integer", "minimum": 1 },
+        "locale_map": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "ISO/BCP-47 code -> provider-specific code (e.g. Google he->iw)."
+        },
+        "optional_extra": {
+          "type": "string",
+          "description": "For local-model/aws engines: the pip extra that must be installed (e.g. 'local-models', 'aws')."
+        },
+        "runtimes": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["harness", "cli"] },
+          "description": "Which runtimes implement this entry. Absent = both. Lets an engine land in one runtime first (e.g. Amazon is harness-only until the CLI SigV4 adapter exists). Parity tests only require an entry in a runtime it lists."
+        }
+      }
+    }
+  }
+}

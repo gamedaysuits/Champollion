@@ -1,0 +1,94 @@
+name: "📈 Submit an external published result"
+description: "Report a published translation-quality result from another system or paper so it can be cited (never re-hosted) in the index."
+title: "[External result] "
+labels: ["submission", "submission:external-result", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an external result. **This is an intake form, not an auto-add.**
+        A maintainer reviews it before it is cited — see the
+        [submission guide](https://champollion.dev/docs/network/getting-started/submit-to-the-index).
+
+        External results are **cited, never re-hosted or re-ranked as our own measurement**. Give us
+        enough to attribute and reproduce the claim: the metric, its variant/signature, the score,
+        and a citation.
+
+  - type: input
+    id: system-name
+    attributes:
+      label: System / method name
+      placeholder: "e.g. NLLB-200 3.3B"
+    validations:
+      required: true
+
+  - type: textarea
+    id: pairs
+    attributes:
+      label: Language pair(s)
+      description: "ISO 639-3 source→target, one per line."
+      placeholder: |
+        eng-crk
+    validations:
+      required: true
+
+  - type: input
+    id: dataset
+    attributes:
+      label: Dataset / benchmark
+      description: "What it was measured on."
+      placeholder: "e.g. FLORES-200 devtest"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: metric
+    attributes:
+      label: Metric
+      options:
+        - "chrF++"
+        - "chrF"
+        - "BLEU"
+        - "COMET"
+        - "TER"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: metric-variant
+    attributes:
+      label: Metric variant / signature
+      description: "Disambiguates the number (e.g. a sacreBLEU signature, COMET model name)."
+      placeholder: "e.g. nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.0"
+
+  - type: input
+    id: score
+    attributes:
+      label: Score
+      placeholder: "e.g. 28.4"
+    validations:
+      required: true
+
+  - type: input
+    id: citation
+    attributes:
+      label: Citation / paper URL
+      description: "DOI, arXiv, or publication URL that supports the claim."
+      placeholder: "https://…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: "Table/row reference, configuration caveats, etc."
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Compliance attestation (required)
+      options:
+        - label: "I confirm this is publicly listable, contains NO corpus content or personal data, and respects the source's license and any community/sovereignty restrictions."
+          required: true

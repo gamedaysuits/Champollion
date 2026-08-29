@@ -1,0 +1,134 @@
+---
+slug: /what-is-champollion
+title: "Wat Champollion is"
+description: "Champollion in duidelijke taal: wat het doet, voor wie het is, en hoe alles in elkaar past. Begin hier."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Wat Champollion is
+
+**Champollion meet automatische vertaling voor talen die niemand anders meet,
+en publiceert de bevindingen.**
+
+Dat is het hele idee. Alles op deze site is ofwel een tool die deze
+metingen uitvoert, de kaart die door deze metingen wordt opgebouwd, of de regels waaronder we dit doen.
+
+---
+
+## Het probleem
+
+Er zijn ongeveer 7.000 levende talen. Voor de meeste daarvan kunt u een
+basisvraag niet beantwoorden: *als ik dit vertaald moet hebben, wat is dan de best beschikbare manier, en
+is deze goed genoeg om te gebruiken?*
+
+Niet "welk bedrijf heeft een demo." Welke methode — menselijke vertaler, regelgebaseerd
+systeem, geprompt taalmodel, getraind model — werkt daadwerkelijk voor **dit
+talenpaar, op dit soort tekst**, en hoe weet u dat.
+
+Voor Engels↔Frans is die vraag al duizend keer beantwoord. Voor
+Engels↔Plains Cree, of Ayta Abellen, of duizenden andere talen, is deze vaak
+nog nooit gesteld. Dekking wordt aangekondigd; kwaliteit wordt zelden aangetoond.
+
+Niemand meet dit, dus niemand kan een echte verbetering onderscheiden van een
+persbericht — en gemeenschappen die deze technologie willen gebruiken, hebben geen manier om te controleren
+of het veilig is om hun taal eraan toe te vertrouwen.
+
+## Wat we eraan doen
+
+Wij bouwen geen vertaal-engine. Grote technologiebedrijven bouwen
+engines. Wij bouwen het instrument dat u vertelt of een engine werkt:
+
+1. **Voer een methode uit op een testset** en scoor deze, met dezelfde procedure
+   voor elke methode en elke taal.
+2. **Publiceer het resultaat** met de herkomst — welke data, welke versie van de methode,
+   welke metriek, wat het kostte.
+3. **Herhaal totdat de kaart vorm krijgt**: welke talen met welke verbinden, hoe
+   sterk, en waar de lege ruimte zich bevindt.
+
+Een eerlijk "er werkt nog geen enkele methode voor dit talenpaar" is een resultaat dat we publiceren. Het grootste deel van
+de kaart bestaat momenteel uit dat antwoord, en dat uitspreken is precies het doel — een leemte die u kunt
+zien, is een leemte die iemand kan financieren of opvullen.
+
+## De regels waaronder we werken
+
+Dit zijn beperkingen, geen marketing. Ze bepalen wat de software kan doen.
+
+**Wij bewaren uw corpus nooit.** Testsets worden geregistreerd door te verwijzen naar de locatie waar
+ze al staan, niet door ze naar ons te uploaden. Een methode wordt gescoord op een
+corpus dat wij nooit in ons bezit hebben. Voor verzegelde sets (sealed sets) worden de gegevens op uw machine versleuteld
+voordat er iets wordt verzonden, en alleen een drempelaantal van sleutelbeheerders uit de gemeenschap
+kan gezamenlijk een uitvoering autoriseren.
+
+**Taalgegevens worden behandeld als biometrische gegevens.** De mensen die een corpus leveren, beheren
+de sleutels ervan, en van alles wat daartegen wordt gemeten. Toestemming wordt gevraagd, niet
+verondersteld — en kan worden ingetrokken.
+
+**Wij streven naar soevereiniteit, maar claimen geen certificering.** Of een project
+recht doet aan eigenaarschap en zeggenschap van de gemeenschap over taaldata, is niet
+een claim die het project over zichzelf mag maken. Wij doen het werk en beschrijven de
+mechanismen eerlijk; de beoordeling ligt bij de betrokken gemeenschappen.
+
+**Elke methode is welkom, mens en machine.** Een professionele vertaler, een
+FST-gebaseerd regelsysteem, een geprompt frontier-model en een gefinetuned NMT-model worden
+op dezelfde manier vergeleken, op dezelfde testset. Wij hechten waarde aan het vertalen van talen,
+niet aan welke tool er wint.
+
+**We publiceren wat we niet kunnen.** Zie [Eerlijke
+beperkingen](/docs/network/honest-limitations) — de lijst met zaken die dit
+project *nog niet* claimt. Lees dit voordat u iets anders hier vertrouwt.
+
+---
+
+## De onderdelen, en waarvoor elk dient
+
+| Als u wilt… | Gebruik | Wat het is |
+|---|---|---|
+| Een app of site vertalen | **[Champollion CLI](/docs/intro)** | Eén commando vertaalt uw locale-bestanden; u kiest de methode per talenpaar. |
+| Een methode scoren, of een score reproduceren | **[MT-Eval Harness](/docs/network/specifications/harness)** | De Python-evaluatie-engine. Elk getal op deze site komt hieruit voort. |
+| Een resultaat indienen, of een wedstrijd organiseren | **[The Arena](/docs/network/getting-started/submit-a-method)** | De toegangspoort voor inzendingen, de database en het wedstrijdmechanisme — waar de meting plaatsvindt. |
+| Zien wat er bekend is over een talenpaar | **[The Network](/docs/network/)** | De kaart die door de metingen wordt opgebouwd: dekking, verbindingssterkte, routering, de wachtrij van wat er hierna gemeten moet worden. |
+| Een taal opzoeken | **[The Atlas](/languages)** | <SSOTCount field="catalogLanguageCount" /> taalkaarten — classificatie, fonologie, vitaliteit, en welke bronnen er bestaan. Elke waarde vermeldt de bron. |
+| Een model trainen zonder uzelf voor de gek te houden | **[NMT Forge](/docs/network/getting-started/training-honestly)** | Een trainingssuite waarvan de vangrails de standaard zelfbedrog (gelekte testdata, niet-representatieve splitsingen) structureel moeilijk maken. |
+| Hieraan werken als een AI-agent | **[Agent Guide](/docs/network/getting-started/agent-guide)** | Tools, de MCP-server, en wat de machineleesbare endpoints bevatten. |
+
+**Champollion is een index, geen scheidsrechter.** Elke waarde vermeldt de bron en
+rapporteert wat die bron daadwerkelijk zegt. Waar bronnen het oneens zijn — en bij sprekersaantallen
+is dat heel vaak het geval — toont de kaart ze allemaal, met bronvermelding. Wij kiezen
+geen winnaar en creëren geen consensus.
+
+---
+
+## De naam
+
+Jean-François Champollion ontcijferde Egyptische hiërogliefen met behulp van de Rosetta
+Stone — dezelfde tekst in drie schriften. Parallelle tekst is nog steeds de manier waarop vertalen
+wordt geleerd. De naam draagt ook een spanning in zich die het benoemen waard is: een Europese
+geleerde die andermans geschriften leest, in een tijdperk van extractie. Daar denken we
+over na. Dat is de reden waarom de bovenstaande soevereiniteitsregels beperkingen in de software zijn en
+niet een pagina in een brochure.
+
+## Volgende stappen
+
+- **U wilt iets vertalen** → [Snelstart](/docs/getting-started/quick-start).
+- **U spreekt, onderwijst of beheert een taal** → [Voor
+  taalgemeenschappen](/docs/network/community/for-language-communities), en vervolgens
+  [Corpora registreren](/docs/network/sovereignty/registering-corpora) voor hoe
+  een testset wordt gebruikt zonder deze te overhandigen.
+- **U bent een onderzoeker of methodebouwer** → het eval-first argument in
+  [Wie profiteert hiervan](/docs/network/who-benefits#researchers) — waarom duizend
+  gecureerde paren beter zijn dan zevenhonderdduizend ongecureerde paren — en vervolgens
+  [Corpus-partnerschap](/docs/network/specifications/corpus-partnership) om
+  een taal in te brengen, of [Een methode
+  indienen](/docs/network/getting-started/submit-a-method) en de
+  [Scoringsspecificatie](/docs/network/specifications/scoring) om te concurreren op de
+  talen die hier al aanwezig zijn.
+- **U bent een AI-agent** → [Agent-gids](/docs/network/getting-started/agent-guide);
+  machineleesbare toegangspunten zijn `/llms.txt` en `/llms-full.txt`.
+- **U financiert dit soort werk** → [Wie
+  profiteert hiervan](/docs/network/who-benefits#funders) en [Eerlijke
+  beperkingen](/docs/network/honest-limitations).
+- **U wilt de achtergrondinformatie** → [Hoe het vakgebied hier
+  kwam](/docs/network/context/mt-field-briefing), [wat telt als een
+  taal](/docs/network/context/what-counts-as-a-language), en [hoe dekking
+  wordt geteld](/docs/network/context/coverage-counting).

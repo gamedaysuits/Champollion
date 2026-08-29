@@ -1,0 +1,2051 @@
+{
+  "_doc": "What a correct ingestion looks like, per source, checked on every build. `coverage` is a recorded baseline with a tolerance — it catches a truncated download or a partial extract, the failure that otherwise looks like a smaller dataset. `golden` records are specific facts that must survive every build. A golden record is either VERIFIED (checked against the publisher by a human, with the date and method) or a BASELINE (captured from a verified build, and so evidence of stability only, never of truth). The distinction is enforced, not conventional: a regression test presented as a fact-check is the same move as stamping hand-written prose with an upstream's citation.",
+  "version": 1,
+  "tolerance": 0.05,
+  "sources": {
+    "aaleykusunda": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "abrahammonpa": {
+      "version": "v3.1",
+      "coverage": {
+        "values": 7,
+        "languages": 7,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "abvd": {
+      "version": "v0.1",
+      "coverage": {
+        "values": 884,
+        "languages": 884,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "abvdoceanic": {
+      "version": "v0.3",
+      "coverage": {
+        "values": 409,
+        "languages": 409,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "abvdphilippines": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 123,
+        "languages": 123,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "acd": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 729,
+        "languages": 729,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "afbo": {
+      "version": "v2.0.2",
+      "coverage": {
+        "values": 112,
+        "languages": 109,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "amazonianvoices": {
+      "version": "v0.1",
+      "coverage": {
+        "values": 20,
+        "languages": 20,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "apics": {
+      "version": "v2013.1",
+      "coverage": {
+        "values": 17728,
+        "languages": 64,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "asjp": {
+      "version": "v21",
+      "coverage": {
+        "values": 6099,
+        "languages": 6099,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "audersetinterrog": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 96,
+        "languages": 96,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "backstromnorthernpakistan": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 4,
+        "languages": 4,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "baf2": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 26,
+        "languages": 26,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "bantubvd": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "barlowhandandfive": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 2475,
+        "languages": 1269,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "barlowkilliantomoip": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "barlowlote": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "bdpa": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "beidasinitic": {
+      "version": "v5.1",
+      "coverage": {
+        "values": 2,
+        "languages": 1,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "beidazihui": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "bendermicropower": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 26,
+        "languages": 26,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "berrywestpapuan": {
+      "version": "v0.1",
+      "coverage": {
+        "values": 7,
+        "languages": 7,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "birchallchapacuran": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "bodtkhobwa": {
+      "version": "v3.3",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "bowernpny": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 148,
+        "languages": 148,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cals": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 6,
+        "languages": 6,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "carvalhopurus": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "castroyi": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "castrozhuang": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chacolanguages": {
+      "version": "v0.3",
+      "coverage": {
+        "values": 21,
+        "languages": 21,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chaconarawakan": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 8,
+        "languages": 8,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chaconbaniwa": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chaconcolumbian": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 65,
+        "languages": 65,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chaconnorthwestarawakan": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 13,
+        "languages": 13,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chacontukanoan": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 15,
+        "languages": 15,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "channumerals": {
+      "version": "v1.0.2",
+      "coverage": {
+        "values": 6224,
+        "languages": 4116,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "chechuroborrowing": {
+      "version": "v0.1",
+      "coverage": {
+        "values": 9,
+        "languages": 9,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chenhmongmien": {
+      "version": "v3.1",
+      "coverage": {
+        "values": 20,
+        "languages": 20,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "chindialectsurvey": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 12,
+        "languages": 12,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "clarkkimmun": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr": {
+      "version": "48.2.0",
+      "coverage": {
+        "values": 322,
+        "languages": 322,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-plurals-48.2.0; cldr-supplemental-48.2.0; giellalt-resources-2026-08-06; keyman-keyboards-2026-08-08; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-plurals-48.2.0; cldr-supplemental-48.2.0; giellalt-resources-2026-08-06; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-plurals-48.2.0; cldr-supplemental-48.2.0; keyman-keyboards-2026-08-08; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 58,
+        "languages": 58,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-plurals-48.2.0; cldr-supplemental-48.2.0; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 138,
+        "languages": 138,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-supplemental-48.2.0; giellalt-resources-2026-08-06; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 5,
+        "languages": 5,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-supplemental-48.2.0; keyman-keyboards-2026-08-08; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 15,
+        "languages": 15,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-48.2.0; cldr-supplemental-48.2.0; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 81,
+        "languages": 81,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-plurals": {
+      "version": "48.2.0",
+      "coverage": {
+        "values": 218,
+        "languages": 218,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-plurals-48.2.0; cldr-supplemental-48.2.0; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-plurals-48.2.0; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-supplemental": {
+      "version": "48.2.0",
+      "coverage": {
+        "values": 7261,
+        "languages": 7199,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "cldr-supplemental-48.2.0; giellalt-resources-2026-08-06; keyman-keyboards-2026-08-08; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-supplemental-48.2.0; giellalt-resources-2026-08-06; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 52,
+        "languages": 52,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-supplemental-48.2.0; keyman-keyboards-2026-08-08; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 416,
+        "languages": 416,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "cldr-supplemental-48.2.0; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 5494,
+        "languages": 5494,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "clics3": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 10935,
+        "languages": 1849,
+        "parameters": 6
+      },
+      "golden": []
+    },
+    "common-voice": {
+      "version": "cv-corpus-26.0-2026-06-12",
+      "coverage": {
+        "values": 294,
+        "languages": 291,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "constenlachibchan": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 25,
+        "languages": 25,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "crossandean": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 25,
+        "languages": 25,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "crossandean_morphology": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 16,
+        "languages": 16,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "curated:method-coverage-2a485dc249c6": {
+      "version": "2cbb79b1d6298687730a8ced10d9a17ac27e49e6",
+      "coverage": {
+        "values": 242,
+        "languages": 188,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "curated:metric-coverage-de695f0e725a": {
+      "version": "558e40f3869a89876683e5972570a08bdc4f0169",
+      "coverage": {
+        "values": 96,
+        "languages": 93,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "daakaka": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "daniellinguafrancas": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 22,
+        "languages": 22,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "datsemshift": {
+      "version": "v1.1rc",
+      "coverage": {
+        "values": 1349,
+        "languages": 1349,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "davletshinaztecan": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 8,
+        "languages": 8,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "deepadungpalaung": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 4,
+        "languages": 4,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "dhakalsouthwesttibetic": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 11,
+        "languages": 11,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "diacl": {
+      "version": "v3.0",
+      "coverage": {
+        "values": 336,
+        "languages": 336,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "diidxaza": {
+      "version": "v1.4",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "dravlex": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 20,
+        "languages": 20,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "dryerorder": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1070,
+        "languages": 1058,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "dunnaslian": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 19,
+        "languages": 19,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "duonglachi": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "elcat": {
+      "version": "v2024.1",
+      "coverage": {
+        "values": 10049,
+        "languages": 3179,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "felekesemitic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 11,
+        "languages": 11,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "galuciotupi": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 21,
+        "languages": 21,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "gerarditupi": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 35,
+        "languages": 35,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "giellalt-resources": {
+      "version": "2026-08-06",
+      "coverage": {
+        "values": 543,
+        "languages": 172,
+        "parameters": 5
+      },
+      "golden": []
+    },
+    "giellalt-resources-2026-08-06; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 5,
+        "languages": 5,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "glottolog": {
+      "version": "v5.3",
+      "coverage": {
+        "values": 120568,
+        "languages": 8188,
+        "parameters": 11
+      },
+      "golden": []
+    },
+    "glottolog-cldf": {
+      "version": "v5.3",
+      "coverage": {
+        "values": 35405,
+        "languages": 8565,
+        "parameters": 6
+      },
+      "golden": []
+    },
+    "gramadapt": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 56,
+        "languages": 56,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "grambank": {
+      "version": "v1.0.3",
+      "coverage": {
+        "values": 369363,
+        "languages": 2377,
+        "parameters": 10
+      },
+      "golden": [
+        {
+          "language": "crk",
+          "parameter": "hasGenderInPronouns",
+          "value": "0",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query.",
+          "note": "GB030 for plai1258. Value \"0\" means the feature is ABSENT -- a positive claim, not a null."
+        }
+      ]
+    },
+    "gravinachadic": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 43,
+        "languages": 43,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "grollemundbantu": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 329,
+        "languages": 329,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "guarayu": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "halenepal": {
+      "version": "v4.0",
+      "coverage": {
+        "values": 11,
+        "languages": 11,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "hantganbangime": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 19,
+        "languages": 19,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "hdi": {
+      "version": "v1.4",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "hf-models": {
+      "version": "bde04db4d07c@2026-08-10",
+      "coverage": {
+        "values": 126363,
+        "languages": 10659,
+        "parameters": 4
+      },
+      "golden": []
+    },
+    "hruschkaturkic": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 24,
+        "languages": 24,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "hsiuhmongmien": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 4,
+        "languages": 4,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "hubercolumbian": {
+      "version": "v4.0.2",
+      "coverage": {
+        "values": 65,
+        "languages": 65,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "hueblerstability": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 46,
+        "languages": 46,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "huntergatherer": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 296,
+        "languages": 296,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "iana-subtag-registry": {
+      "version": "2026-06-14",
+      "coverage": {
+        "values": 240,
+        "languages": 221,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "ideobank": {
+      "version": "v0.2",
+      "coverage": {
+        "values": 61,
+        "languages": 61,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "ids": {
+      "version": "v4.3",
+      "coverage": {
+        "values": 230,
+        "languages": 230,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "iecor": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 142,
+        "languages": 142,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "iquito": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "iso15924": {
+      "version": "2025-04-24",
+      "coverage": {
+        "values": 6943,
+        "languages": 6492,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "iso639-3": {
+      "version": "20260715",
+      "coverage": {
+        "values": 33590,
+        "languages": 7927,
+        "parameters": 10
+      },
+      "golden": [
+        {
+          "language": "ron",
+          "parameter": "supersededCode",
+          "value": "mol",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query.",
+          "note": "SIL retired mol in favour of ron on 2008-11-03. Recorded on the successor because a retired code has no card."
+        }
+      ]
+    },
+    "ivanisuansu": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "jipa": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 152,
+        "languages": 138,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "johanssonsoundsymbolic": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 244,
+        "languages": 244,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "joophonosemantic": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 64,
+        "languages": 64,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "kalamang": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "keyman-keyboards": {
+      "version": "2026-08-08",
+      "coverage": {
+        "values": 857,
+        "languages": 533,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "keyman-keyboards-2026-08-08; linguameta-452a21ad3dae": {
+      "version": null,
+      "coverage": {
+        "values": 14,
+        "languages": 14,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "kitchensemitic": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 21,
+        "languages": 21,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "kleinewillinghoeferbikwinjen": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 9,
+        "languages": 9,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "kochtukanoan": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 4,
+        "languages": 4,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "kraftchadic": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 59,
+        "languages": 59,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "lairgyalrong": {
+      "version": "v0.4",
+      "coverage": {
+        "values": 11,
+        "languages": 11,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "lamanisoic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 31,
+        "languages": 31,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "leeainu": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "leecaijia": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "leejaponic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 5,
+        "languages": 5,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "leekoreanic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "levshinadifferentialmarking": {
+      "version": "v1.0.0",
+      "coverage": {
+        "values": 27,
+        "languages": 27,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "lieberherrkhobwa": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "liljegrenhindukush": {
+      "version": "v1.1.0",
+      "coverage": {
+        "values": 88,
+        "languages": 44,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "linguameta-452a21ad3dae": {
+      "version": "452a21ad3dae5668c06ceeac21ff073e1e40f9be",
+      "coverage": {
+        "values": 36576,
+        "languages": 7495,
+        "parameters": 8
+      },
+      "golden": []
+    },
+    "lionnetyotonahua": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 8,
+        "languages": 8,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "liunewari": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "liusinitic": {
+      "version": "v1.4",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "logos": {
+      "version": "v4.0",
+      "coverage": {
+        "values": 5,
+        "languages": 5,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "lsi": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 284,
+        "languages": 284,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "lundgrenomagoa": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "magram": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 234,
+        "languages": 115,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "mannburmish": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 7,
+        "languages": 7,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "marrisonnaga": {
+      "version": "v3.1",
+      "coverage": {
+        "values": 33,
+        "languages": 33,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "mattercariban": {
+      "version": "v0.1",
+      "coverage": {
+        "values": 23,
+        "languages": 23,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "mcd": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 36,
+        "languages": 36,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "mcelhanonhuon": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 12,
+        "languages": 12,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "medialengua": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "mixezoqueanvoices": {
+      "version": "v2.0.1",
+      "coverage": {
+        "values": 9,
+        "languages": 9,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "mixtecansubgrouping": {
+      "version": "v0.4",
+      "coverage": {
+        "values": 48,
+        "languages": 48,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "naganorgyalrongic": {
+      "version": "v3.1",
+      "coverage": {
+        "values": 3,
+        "languages": 3,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "nagarajakhasian": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 5,
+        "languages": 5,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "nen": {
+      "version": "v1.4",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "normansinitic": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 16,
+        "languages": 10,
+        "parameters": 2
+      },
+      "golden": []
+    },
+    "northeuralex": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 106,
+        "languages": 106,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "northperulex": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 33,
+        "languages": 33,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "opus-corpora": {
+      "version": "2026-08-07",
+      "coverage": {
+        "values": 10757,
+        "languages": 1969,
+        "parameters": 4
+      },
+      "golden": []
+    },
+    "oskolskayatungusic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 13,
+        "languages": 13,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "othanieljen": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "pachechibchan": {
+      "version": "v0.1",
+      "coverage": {
+        "values": 18,
+        "languages": 18,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "palula": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "panobodyparts": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 20,
+        "languages": 20,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "papuanvoices": {
+      "version": "v1.3.1",
+      "coverage": {
+        "values": 11,
+        "languages": 11,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "peirosaustroasiatic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 79,
+        "languages": 79,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "pharaocoracholaztecan": {
+      "version": "v1.1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "phoible": {
+      "version": "v2.0.1",
+      "coverage": {
+        "values": 10550,
+        "languages": 2110,
+        "parameters": 5
+      },
+      "golden": [
+        {
+          "language": "fin",
+          "parameter": "consonantCount",
+          "value": "38",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query."
+        },
+        {
+          "language": "fin",
+          "parameter": "vowelCount",
+          "value": "21",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query."
+        },
+        {
+          "language": "hau",
+          "parameter": "toneCount",
+          "value": "6",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query.",
+          "note": "Hausa is tonal. PHOIBLE is the sole tone authority (lint R1); a build that reports 0 here has lost the tone segments."
+        },
+        {
+          "language": "swh",
+          "parameter": "consonantCount",
+          "value": "42",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query."
+        }
+      ]
+    },
+    "polyglottaafricana": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 151,
+        "languages": 151,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "powerma": {
+      "version": "v1.0.2",
+      "coverage": {
+        "values": 38,
+        "languages": 38,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "ratcliffearabic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 12,
+        "languages": 12,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "robbeetstriangulation": {
+      "version": "v0.3",
+      "coverage": {
+        "values": 58,
+        "languages": 58,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "robinsonap": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 12,
+        "languages": 12,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "ronataswestoldturkic": {
+      "version": "2.0",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "rutulbasiclexicon": {
+      "version": "v0.2",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sabor": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 8,
+        "languages": 8,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "saenkoromance": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 16,
+        "languages": 16,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sagartst": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 38,
+        "languages": 38,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sanzhi": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "satterthwaitetb": {
+      "version": "v4.0",
+      "coverage": {
+        "values": 13,
+        "languages": 13,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "savelyevturkic": {
+      "version": "v2.1",
+      "coverage": {
+        "values": 26,
+        "languages": 26,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sawkatokaleya": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 6,
+        "languages": 6,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "seabor": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 22,
+        "languages": 22,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "seifartecheverriboran": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "servamalagasy": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "serzantjanicantipassives": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 37,
+        "languages": 37,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sidaama": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sidwellbahnaric": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 20,
+        "languages": 20,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sidwellvietic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sil-langtags": {
+      "version": "1.4@2026-06-09",
+      "coverage": {
+        "values": 8061,
+        "languages": 7850,
+        "parameters": 3
+      },
+      "golden": []
+    },
+    "simsrma": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "sohartmannchin": {
+      "version": "v3.1",
+      "coverage": {
+        "values": 7,
+        "languages": 7,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "starostinkaren": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 10,
+        "languages": 10,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "starostintujia": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "streitberggothic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "suntb": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 30,
+        "languages": 30,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "syrjaenenuralic": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 7,
+        "languages": 7,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "szetosinitic": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tangclassifiers": {
+      "version": "v1",
+      "coverage": {
+        "values": 388,
+        "languages": 388,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "teanu": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "teop": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tls": {
+      "version": "v4.2",
+      "coverage": {
+        "values": 91,
+        "languages": 91,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tolmiebritishcolumbia": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 16,
+        "languages": 16,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tppsr": {
+      "version": "v1.1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "transnewguineaorg": {
+      "version": "v3.2",
+      "coverage": {
+        "values": 627,
+        "languages": 627,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tryonsolomon": {
+      "version": "v3.1",
+      "coverage": {
+        "values": 68,
+        "languages": 68,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tseltal": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "tuled": {
+      "version": "v0.12",
+      "coverage": {
+        "values": 64,
+        "languages": 64,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "ud-treebanks": {
+      "version": "2.18",
+      "coverage": {
+        "values": 347,
+        "languages": 187,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "uralex": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 22,
+        "languages": 22,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "uratyp": {
+      "version": "v2.0",
+      "coverage": {
+        "values": 37,
+        "languages": 36,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "utoaztecan": {
+      "version": "v1.4",
+      "coverage": {
+        "values": 36,
+        "languages": 36,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "valpal": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 34,
+        "languages": 34,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "vanuatuvoices": {
+      "version": "v1.4.1",
+      "coverage": {
+        "values": 54,
+        "languages": 54,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "vendor-languages": {
+      "version": "2026-08-06",
+      "coverage": {
+        "values": 231,
+        "languages": 147,
+        "parameters": 4
+      },
+      "golden": []
+    },
+    "wacl": {
+      "version": "v1.0.0",
+      "coverage": {
+        "values": 3304,
+        "languages": 3304,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "walkerarawakan": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 56,
+        "languages": 56,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wals": {
+      "version": "v2020.5",
+      "coverage": {
+        "values": 87198,
+        "languages": 2459,
+        "parameters": 15
+      },
+      "golden": [
+        {
+          "language": "crk",
+          "parameter": "wordOrder",
+          "value": "No dominant order",
+          "kind": "verified",
+          "checkedOn": "2026-08-05",
+          "checkedHow": "Recounted independently from the publisher's own CSV in this repository, not read back from our build. See the commit that added this record for the exact query.",
+          "note": "WALS stores 81A as Code_ID 81A-7. The ordinal is an index; the label is the fact. A build reporting \"7\" has stopped resolving code labels."
+        }
+      ]
+    },
+    "walworthpolynesian": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 28,
+        "languages": 28,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wangbcd": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 9,
+        "languages": 9,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wanukaka": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wersing": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 1,
+        "languages": 1,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wheelerutoaztecan": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 33,
+        "languages": 33,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wichmannmixezoquean": {
+      "version": "v1.1",
+      "coverage": {
+        "values": 9,
+        "languages": 9,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wikidata": {
+      "version": "q00d43aa54efc",
+      "coverage": {
+        "values": 1619,
+        "languages": 1168,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wikipedia": {
+      "version": "sitematrix-2026-08-05",
+      "coverage": {
+        "values": 339,
+        "languages": 339,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "wold": {
+      "version": "v4.2",
+      "coverage": {
+        "values": 40,
+        "languages": 40,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "yamfinder": {
+      "version": "v1.0",
+      "coverage": {
+        "values": 23,
+        "languages": 23,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "yanglalo": {
+      "version": "v4.0",
+      "coverage": {
+        "values": 7,
+        "languages": 7,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "yangyi": {
+      "version": "v1.3",
+      "coverage": {
+        "values": 33,
+        "languages": 33,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "zgraggenmadang": {
+      "version": "v4.1",
+      "coverage": {
+        "values": 97,
+        "languages": 97,
+        "parameters": 1
+      },
+      "golden": []
+    },
+    "zhoubizic": {
+      "version": "v1.2",
+      "coverage": {
+        "values": 2,
+        "languages": 2,
+        "parameters": 1
+      },
+      "golden": []
+    }
+  }
+}

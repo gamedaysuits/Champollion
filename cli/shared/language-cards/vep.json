@@ -1,0 +1,783 @@
+{
+  "code": "vep",
+  "name": {
+    "agreement": "unanimous",
+    "consensus": "Veps",
+    "values": [
+      {
+        "value": "Veps",
+        "source": "iso639-3-20260715"
+      },
+      {
+        "value": "Veps",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "classification": {
+    "ancestry": [
+      "ural1272",
+      "finn1317",
+      "coas1319",
+      "neva1234",
+      "nort3282",
+      "lado1234",
+      "east2796"
+    ],
+    "family": {
+      "agreement": "unanimous",
+      "consensus": "Uralic",
+      "values": [
+        {
+          "value": "Uralic",
+          "source": "glottolog-v5.3"
+        },
+        {
+          "value": "Uralic",
+          "source": "wals-v2020.5"
+        }
+      ]
+    },
+    "familyGlottocode": "ural1272",
+    "genus": "Finnic"
+  },
+  "bcp47": "vep",
+  "bcp47FullTag": {
+    "agreement": "unanimous",
+    "consensus": "vep-Latn-RU",
+    "values": [
+      {
+        "value": "vep-Latn-RU",
+        "source": "cldr-supplemental-48.2.0",
+        "note": "CLDR likelySubtags: the maximal form of this language tag"
+      },
+      {
+        "value": "vep-Latn-RU",
+        "source": "sil-langtags-1.4@2026-06-09",
+        "note": "the maximal language-script-region form of \"vep\", per SIL langtags"
+      }
+    ]
+  },
+  "bcp47Tag": {
+    "agreement": "single",
+    "consensus": "vep",
+    "values": [
+      {
+        "value": "vep",
+        "source": "champollion-derived-v1",
+        "note": "RFC 5646 takes the shortest ISO 639 code; this language has no ISO 639-1"
+      }
+    ]
+  },
+  "lexicalResources": {
+    "clicsContributingDatasets": 1,
+    "clicsTotalEntries": 1138,
+    "clicsUniqueForms": 1004,
+    "colexificationConcepts": 952,
+    "colexificationDensity": 1.012,
+    "colexifyingForms": 90,
+    "dictionaries": [
+      {
+        "name": "dict-rus-vep",
+        "url": "https://github.com/giellalt/dict-rus-vep",
+        "publisher": "giellalt",
+        "license": "CC-BY-4.0",
+        "licenceEstablished": true,
+        "archived": false,
+        "pairedWith": "rus",
+        "direction": "to"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset": "asjp",
+        "forms": 153,
+        "concepts": 99,
+        "doculects": 2,
+        "release": "asjp-v21"
+      },
+      {
+        "dataset": "channumerals",
+        "forms": 40,
+        "concepts": 40,
+        "release": "channumerals-v1.0.2"
+      },
+      {
+        "dataset": "datsemshift",
+        "forms": 195,
+        "concepts": 184,
+        "release": "datsemshift-v1.1rc"
+      },
+      {
+        "dataset": "magram",
+        "forms": 2,
+        "concepts": 2,
+        "release": "magram-v1.0"
+      },
+      {
+        "dataset": "northeuralex",
+        "forms": 1138,
+        "concepts": 1016,
+        "release": "northeuralex-v4.1"
+      },
+      {
+        "dataset": "uralex",
+        "forms": 351,
+        "concepts": 313,
+        "release": "uralex-v2.0"
+      }
+    ]
+  },
+  "phonologicalInventory": {
+    "consonants": 34,
+    "hasTone": false,
+    "tones": 0,
+    "totalPhonemes": 44,
+    "vowels": 10
+  },
+  "resources": {
+    "corpora": [
+      {
+        "corpus": "Tatoeba",
+        "corpusId": "corpus:opus:Tatoeba",
+        "pairCount": 23,
+        "topPartners": [
+          {
+            "code": "ru",
+            "alignmentPairs": 33
+          },
+          {
+            "code": "mhr",
+            "alignmentPairs": 28
+          },
+          {
+            "code": "en",
+            "alignmentPairs": 12
+          },
+          {
+            "code": "et",
+            "alignmentPairs": 5
+          },
+          {
+            "code": "fkv",
+            "alignmentPairs": 5
+          }
+        ],
+        "alignmentPairsTotal": 116,
+        "pairsWithPublishedSize": 23,
+        "largestPairAlignments": 33
+      },
+      {
+        "corpus": "translatewiki",
+        "corpusId": "corpus:opus:translatewiki",
+        "pairCount": 1,
+        "topPartners": [
+          {
+            "code": "en",
+            "alignmentPairs": 5584
+          }
+        ],
+        "alignmentPairsTotal": 5584,
+        "pairsWithPublishedSize": 1,
+        "largestPairAlignments": 5584
+      },
+      {
+        "corpus": "wikimedia",
+        "corpusId": "corpus:opus:wikimedia",
+        "pairCount": 5,
+        "topPartners": [
+          {
+            "code": "vro",
+            "alignmentPairs": 39
+          },
+          {
+            "code": "fi",
+            "alignmentPairs": 12
+          },
+          {
+            "code": "gl",
+            "alignmentPairs": 11
+          },
+          {
+            "code": "myv",
+            "alignmentPairs": 10
+          },
+          {
+            "code": "zh",
+            "alignmentPairs": 1
+          }
+        ],
+        "alignmentPairsTotal": 73,
+        "pairsWithPublishedSize": 5,
+        "largestPairAlignments": 39
+      }
+    ],
+    "fsts": [
+      {
+        "name": "lang-vep",
+        "url": "https://github.com/giellalt/lang-vep",
+        "publisher": "giellalt",
+        "license": "LGPL-3.0",
+        "licenceEstablished": true,
+        "archived": false
+      }
+    ],
+    "monolingualCorpora": [
+      {
+        "name": "corpus-vep",
+        "url": "https://github.com/giellalt/corpus-vep",
+        "publisher": "giellalt",
+        "license": null,
+        "licenceEstablished": false,
+        "archived": false
+      },
+      {
+        "name": "corpus-vep-orig",
+        "url": "https://github.com/giellalt/corpus-vep-orig",
+        "publisher": "giellalt",
+        "license": null,
+        "licenceEstablished": false,
+        "archived": false,
+        "originalUnconverted": true
+      }
+    ],
+    "treebanks": [
+      {
+        "treebank": "UD_Veps-VWT",
+        "sentences": 103,
+        "tokens": 1303,
+        "words": 1303,
+        "release": "2.18"
+      }
+    ],
+    "typology": [
+      {
+        "dataset": "magram",
+        "featuresCoded": 1,
+        "datasetFeatureTotal": 24
+      },
+      {
+        "dataset": "uratyp",
+        "featuresCoded": 353,
+        "datasetFeatureTotal": 353
+      }
+    ]
+  },
+  "countries": [
+    "RU"
+  ],
+  "dialectCount": 3,
+  "endangerment": {
+    "agreement": "incommensurable",
+    "values": [
+      {
+        "value": "endangered",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.6]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "severely endangered",
+        "source": "elcat-v2024.1",
+        "note": "In a couple of villages, some children learn the language, but many stop using it at school age. [Endangerment.Certainty: 1]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "threatened",
+        "source": "elcat-v2024.1",
+        "note": "[Endangerment.Certainty: 0.2]",
+        "scale": "elcat-v2024.1"
+      },
+      {
+        "value": "moribund",
+        "source": "glottolog-cldf-v5.3",
+        "note": "Veps (3002-vep) = Severely Endangered (100 percent certain, based on the evidence available) (The language has lost its foothold in the families and is no longer used cross-generationally or intra-generationally… The domains in which Veps is used are very few and are usually restricted to the private spheres of life. Furthermore, children are no longer encouraged by their parents to use Veps. Parents might not consider learning Veps important, especially since knowledge of the minority language does not entail benefits or advantages in, for example, the labour market.) [Puura et al. 2013](cldf:puura:karjalainen:etal:13)",
+        "scale": "glottolog-cldf-v5.3"
+      },
+      {
+        "value": "Severely endangered",
+        "source": "linguameta-452a21ad3dae",
+        "scale": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "endonym": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "Vepsän",
+        "source": "linguameta-452a21ad3dae"
+      },
+      {
+        "value": "vepsän kel'",
+        "source": "wikidata-q00d43aa54efc",
+        "variant": "vep",
+        "variantType": "language",
+        "note": "label language: vep"
+      }
+    ]
+  },
+  "glottocode": "veps1250",
+  "typologicalProfile": {
+    "hasCoreCase": true,
+    "hasGenderInPronouns": false,
+    "hasNumeralClassifiers": false,
+    "hasObliqueCase": true,
+    "hasSexBasedGender": false,
+    "inclusiveExclusive": {
+      "agreement": "single",
+      "consensus": "0",
+      "values": [
+        {
+          "value": "0",
+          "source": "grambank-v1.0.3",
+          "scale": "grambank-v1.0.3"
+        }
+      ]
+    },
+    "marksPastTense": true,
+    "marksPresentTense": false
+  },
+  "isIsolate": false,
+  "isoLanguageType": "Living",
+  "isoScope": "Individual",
+  "coordinates": {
+    "lat": 60.3353,
+    "lng": 34.7865
+  },
+  "macroarea": "Eurasia",
+  "documentation": {
+    "medLevel": "long grammar",
+    "medSourceId": "89635"
+  },
+  "methodSupport": {
+    "total": 22,
+    "byTier": {
+      "model-card-declared": 22
+    },
+    "named": [
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-fiu",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-urj",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-fiu-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-fiu-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-urj-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Helsinki-NLP/opus-mt-tc-bible-big-urj-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Lynxpda/ru_vep",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:Lynxpda/vep_ru",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:tartuNLP/nllb1.3-smugri4-v0.01",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-fiu",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-deu_eng_fra_por_spa-urj",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-fiu-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-fiu-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-mul-mul",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-urj-deu_eng_fra_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-tc-bible-big-urj-fra_ita_por_spa",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      },
+      {
+        "value": "open",
+        "variant": "hf:WindstormLabs/origin-Helsinki-NLP-opus-mt-zlw-fiu",
+        "source": "hf-models-bde04db4d07c@2026-08-10",
+        "confidence": "model-card-declared"
+      }
+    ],
+    "truncated": false
+  },
+  "modality": "spoken",
+  "numeralSystem": {
+    "base": "decimal"
+  },
+  "orthographicStatus": "has-orthography",
+  "politenessDistinction": {
+    "agreement": "single",
+    "consensus": "0",
+    "values": [
+      {
+        "value": "0",
+        "source": "grambank-v1.0.3",
+        "scale": "grambank-v1.0.3"
+      }
+    ]
+  },
+  "scripts": [
+    "Latn"
+  ],
+  "scriptNames": [
+    "Latin"
+  ],
+  "speakerEstimates": {
+    "agreement": "conflicting",
+    "values": [
+      {
+        "value": "1000-9999",
+        "source": "elcat-v2024.1"
+      },
+      {
+        "value": "3500",
+        "source": "linguameta-452a21ad3dae"
+      }
+    ]
+  },
+  "wikipediaEdition": {
+    "site": "vep",
+    "url": "https://vep.wikipedia.org",
+    "name": "Veps"
+  },
+  "coverage": {
+    "sourceCount": 17,
+    "componentsPresent": 56,
+    "componentsTotal": 83,
+    "notAttested": 0
+  },
+  "_fieldSources": {
+    "bcp47": [
+      "linguameta-452a21ad3dae"
+    ],
+    "bcp47FullTag": [
+      "cldr-supplemental-48.2.0",
+      "sil-langtags-1.4@2026-06-09"
+    ],
+    "bcp47Tag": [
+      "champollion-derived-v1"
+    ],
+    "classification.ancestry": [
+      "champollion-derived-v1"
+    ],
+    "classification.family": [
+      "glottolog-v5.3",
+      "wals-v2020.5"
+    ],
+    "classification.familyGlottocode": [
+      "glottolog-v5.3"
+    ],
+    "classification.genus": [
+      "wals-v2020.5"
+    ],
+    "coordinates.lat": [
+      "glottolog-v5.3"
+    ],
+    "coordinates.lng": [
+      "glottolog-v5.3"
+    ],
+    "countries": [
+      "glottolog-v5.3"
+    ],
+    "dialectCount": [
+      "glottolog-v5.3"
+    ],
+    "documentation.medLevel": [
+      "glottolog-cldf-v5.3"
+    ],
+    "documentation.medSourceId": [
+      "glottolog-cldf-v5.3"
+    ],
+    "endangerment": [
+      "elcat-v2024.1",
+      "glottolog-cldf-v5.3",
+      "linguameta-452a21ad3dae"
+    ],
+    "endonym": [
+      "linguameta-452a21ad3dae",
+      "wikidata-q00d43aa54efc"
+    ],
+    "glottocode": [
+      "glottolog-v5.3"
+    ],
+    "isIsolate": [
+      "glottolog-v5.3"
+    ],
+    "isoLanguageType": [
+      "iso639-3-20260715"
+    ],
+    "isoScope": [
+      "iso639-3-20260715"
+    ],
+    "lexicalResources.clicsContributingDatasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsTotalEntries": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.clicsUniqueForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationConcepts": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexificationDensity": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.colexifyingForms": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.datasets": [
+      "champollion-derived-v1"
+    ],
+    "lexicalResources.dictionaries": [
+      "giellalt-resources-2026-08-06"
+    ],
+    "macroarea": [
+      "glottolog-cldf-v5.3"
+    ],
+    "methodSupport": [
+      "hf-models-bde04db4d07c@2026-08-10"
+    ],
+    "modality": [
+      "champollion-derived-v1"
+    ],
+    "name": [
+      "iso639-3-20260715",
+      "linguameta-452a21ad3dae"
+    ],
+    "numeralSystem.base": [
+      "channumerals-v1.0.2"
+    ],
+    "orthographicStatus": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.consonants": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.hasTone": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.tones": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.totalPhonemes": [
+      "champollion-derived-v1"
+    ],
+    "phonologicalInventory.vowels": [
+      "champollion-derived-v1"
+    ],
+    "politenessDistinction": [
+      "grambank-v1.0.3"
+    ],
+    "resources.corpora": [
+      "opus-corpora-2026-08-07"
+    ],
+    "resources.fsts": [
+      "giellalt-resources-2026-08-06"
+    ],
+    "resources.monolingualCorpora": [
+      "giellalt-resources-2026-08-06"
+    ],
+    "resources.treebanks": [
+      "ud-treebanks-2.18"
+    ],
+    "resources.typology": [
+      "champollion-derived-v1"
+    ],
+    "scriptNames": [
+      "champollion-derived-v1"
+    ],
+    "scripts": [
+      "linguameta-452a21ad3dae"
+    ],
+    "speakerEstimates": [
+      "elcat-v2024.1",
+      "linguameta-452a21ad3dae"
+    ],
+    "typologicalProfile.hasCoreCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasGenderInPronouns": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasNumeralClassifiers": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasObliqueCase": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.hasSexBasedGender": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.inclusiveExclusive": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPastTense": [
+      "grambank-v1.0.3"
+    ],
+    "typologicalProfile.marksPresentTense": [
+      "grambank-v1.0.3"
+    ],
+    "wikipediaEdition": [
+      "wikipedia-sitematrix-2026-08-05"
+    ]
+  },
+  "_atlas": {
+    "version": "2026.9.0"
+  },
+  "_card": {
+    "type": "language",
+    "id": "vep",
+    "revision": "a784edce9e692c57",
+    "correctableFields": [
+      "bcp47",
+      "bcp47FullTag",
+      "bcp47Tag",
+      "classification.ancestry",
+      "classification.family",
+      "classification.familyGlottocode",
+      "classification.genus",
+      "coordinates.lat",
+      "coordinates.lng",
+      "countries",
+      "dialectCount",
+      "documentation.medLevel",
+      "documentation.medSourceId",
+      "endangerment",
+      "endonym",
+      "glottocode",
+      "isIsolate",
+      "isoLanguageType",
+      "isoScope",
+      "lexicalResources.clicsContributingDatasets",
+      "lexicalResources.clicsTotalEntries",
+      "lexicalResources.clicsUniqueForms",
+      "lexicalResources.colexificationConcepts",
+      "lexicalResources.colexificationDensity",
+      "lexicalResources.colexifyingForms",
+      "lexicalResources.datasets",
+      "lexicalResources.dictionaries",
+      "macroarea",
+      "methodSupport",
+      "modality",
+      "name",
+      "numeralSystem.base",
+      "orthographicStatus",
+      "phonologicalInventory.consonants",
+      "phonologicalInventory.hasTone",
+      "phonologicalInventory.tones",
+      "phonologicalInventory.totalPhonemes",
+      "phonologicalInventory.vowels",
+      "politenessDistinction",
+      "resources.corpora",
+      "resources.fsts",
+      "resources.monolingualCorpora",
+      "resources.treebanks",
+      "resources.typology",
+      "scriptNames",
+      "scripts",
+      "speakerEstimates",
+      "typologicalProfile.hasCoreCase",
+      "typologicalProfile.hasGenderInPronouns",
+      "typologicalProfile.hasNumeralClassifiers",
+      "typologicalProfile.hasObliqueCase",
+      "typologicalProfile.hasSexBasedGender",
+      "typologicalProfile.inclusiveExclusive",
+      "typologicalProfile.marksPastTense",
+      "typologicalProfile.marksPresentTense",
+      "wikipediaEdition"
+    ]
+  }
+}
