@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "语素",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "词语中最小的有意义单位。英文单词\"unhappiness\"包含三个语素：un-、happy 和 -ness。不同语言在单个词中包含的语素数量差异巨大。",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "机器翻译系统基于词元工作，包含多个语素的词元会隐藏系统正确翻译所需的语法信息。",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "形态学",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "研究词语如何由更小的有意义部分构成的学科，以及语言本身的构词系统。形态复杂的语言用词尾表达的内容，英语需要用单独的词来表达。",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "复杂的形态学会增加机器翻译系统需要从有限数据中学习的不同词形数量。",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "屈折",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "改变词的形式以表达语法——时态、数、格、性——而不改变其核心含义，如英文的 sing/sang 或 cat/cats。高度屈折的语言可以在单个词上标记六个或更多语法范畴。",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "每个屈折形式对机器翻译系统来说都是一个单独的词元，因此重度屈折意味着更多罕见词和更多一致性错误。",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "派生",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "从现有词语构建新词，如 teach → teacher 或 happy → unhappy。与屈折不同，派生创建的是新的词典词而非同一词的语法变体。",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "生产性派生允许使用者临时创造机器翻译系统从未见过的词。",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "词缀",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "附加到词干上以修改其含义或语法的语素。前缀附加在词干前，后缀附加在词干后，少数语言在词干内部使用中缀。",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "词缀的附加位置决定了子词分词器应该在何处分割词语以供机器翻译模型使用。",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "前缀",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "附加到词干前面的词缀，如\"rewrite\"中的 re-。许多班图语言和阿萨巴斯卡语言等在前缀串中承载大部分语法。",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "前缀密集的语言将语法信息放在词的开头，这与后缀训练的分词器的预期相反。",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "后缀",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "附加到词干末尾的词缀，如\"kindness\"中的 -ness。后缀是世界各语言中最常见的词缀策略。",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "堆叠的后缀创建了长的、罕见的词形，机器翻译系统必须正确分割这些词形才能翻译。",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "中缀",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "插入词干内部而非前面或后面的词缀。例如，他加禄语通过在第一个辅音后插入 -um- 将 sulat\"写\"变成 sumulat\"写了\"。",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "中缀打破了词干是连续字符串的假设，这会破坏简单的子词分割。",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "附着词",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "一种小的语法词，无法独立存在，必须依附在相邻的词上，如英文 \"the queen of England's hat\" 中的 's。Clitics 既表现得像词，也表现得像词缀。",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "Clitics 模糊了词边界，因此分词器可能会将其附加到错误的宿主词上，导致语法混乱。",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "词干",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "词的核心部分，词缀附加在其上。在 'unbelievable' 中，-able 的词干是 'believe'。在许多语言中，词干从不单独出现，必须至少携带某种屈折变化。",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "识别不同词形中的共同词干是机器翻译系统从有限训练数据中进行泛化的方式。",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "词根",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "一旦去除所有词缀后，词的不可约简的核心。在闪含语族中，词根通常只是三个辅音（如阿拉伯语中表示\"书写\"的 k-t-b），元音模式将其转变为词。",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "词根不连续的语言（辅音骨架）需要专门的分割方法，以便机器翻译能够识别词之间的关系。",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "范式",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "一个词可以采取的全套屈折形式——如动词变位表。范式的规模从两种形式（英文 'must'）到多综合语言中的数千种不等。",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "大型范式保证了大多数词形在训练数据中很少出现或未曾出现。",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "胶着型",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "一种词构方式，其中每个语法意义都有自己清晰可分的词缀，一个接一个地堆叠——如土耳其语或斯瓦希里语。词可能会很长，但每个部分都有一个功能。",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "胶着型词可以清晰地分割成子词，但前提是分词器学会了该语言的词缀顺序。",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "屈折型",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "一种词构方式，其中一个词缀融合了多个语法意义。西班牙语中 habló 的词尾 -ó 同时标记过去时、第三人称和单数——其中任何部分都不能仅分配给一个意义。",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "融合的词尾无法被分词器分解，因此每种组合都必须作为一个单元被学习。",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "孤立型",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "一种词构方式，其中词主要是单个语素，语法通过词序和辅助词而不是词尾来表达——如越南语或汉语。与多综合的极端相反。",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "孤立型语言将机器翻译问题从词分割转移到词序和功能词选择。",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "多综合",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "一种词构方式，其中单个动词可以包含其他语言表达为整个句子的内容——主语、宾语、位置、工具等，全部作为一个词的部分。许多美洲土著语言都采用这种方式。",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "多综合词很少完全重复，因此词级机器翻译会看到无尽的未知标记流。",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "平原克里语（crk）：单个动词可以包含主语/宾语代词、工具格、位置和动作（card field linguisticChallenges.polysynthesis）。",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "名词并入",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "将名词融入动词中形成一个词，大致相当于把\"hunt seals\"变成\"seal-hunt\"这样的动词。在多综合型语言中很常见，会改变句子的重点和语法。",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "融合的名词在句子中消失为独立词汇，所以基于对齐的翻译会丢失它。",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "在卡片上显示为 linguisticChallenges.nounIncorporation（基于 Grambank），例如 Plains Cree (crk)。",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "复合",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "将两个或多个独立词汇合并成一个新词，如\"tooth\"+\"brush\"→\"toothbrush\"。德语式的复合词可以将许多词链接成非常长的单个词元。",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "新创复合词是未见过的词元，机器翻译必须将其分解为已知部分才能翻译。",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "重叠",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "重复一个词的全部或部分来改变其含义——标记复数、强度或持续动作。印度尼西亚语 orang\"人\"变成 orang-orang\"人们\"。",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "机器翻译必须识别重复的词是语法现象，而不是应该删除的意外重复。",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "元音交替",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "改变词内的元音来改变其语法，如英语 sing/sang/sung。词的辅音框架保持不变，而元音承担语法功能。",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "Ablaut 将屈折隐藏在词干内部，子词分词器无法将其分离。",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "异根",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "当一个词的屈折形式来自完全不同的词根时，如 go/went 或 good/better。语法将它们视为一个词，尽管它们没有共同的音素。",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "补充形式无法通过规则推导，所以机器翻译必须在训练数据中见过每一种形式。",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "词根-模板形态学",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "一种词汇构建风格，典型见于阿拉伯语和希伯来语，其中辅音词根如 k-t-b\"写\"被穿过元音模板：kitāb\"书\"、kātib\"作者\"、maktab\"办公室\"。词根和模板各自承载意义，但都不是连续的块。",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "标准子词分词无法看到这些形式中的共享词根，削弱了闪含语言机器翻译的泛化能力。",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "在卡片上显示为 linguisticChallenges.rootPattern（例如阿拉伯语、希伯来语、马耳他语）。",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "元音和谐",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "一条规则，要求词中的所有元音在某个特性上保持一致，如前/后或圆/非圆。在土耳其语中，后缀元音改变形状以匹配词干：ev-ler\"房子\"但 at-lar\"马\"。",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "每个后缀有多种表面形式，增加了机器翻译必须为一个语法结尾学习的词元变体。",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "辅音交替",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "由前面的词触发的词首辅音的语法变化。威尔士语 cath\"猫\"在定冠词后变成 gath：y gath\"那只猫\"。字典形式和口语形式看起来可能相差很大。",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "变异使同一个词以多种拼写形式出现，在机器翻译训练数据中分散了其统计信息。",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "辅音弱化",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "辅音的软化，通常发生在元音之间或受语法触发——如「k」弱化为「g」或「h」。在凯尔特语中，lenition 是语法的一部分，而不仅仅是发音变化。",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "语法 lenition 会改变词在上下文中的拼写，导致表面文本与词典形式不同。",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "长辅音",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "延长辅音的发音时长以区分不同的词——如意大利语 pala「铲子」与 palla「球」。有些文字系统会标记这种双写，有些则留给读者推断。",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "当文字系统省略 gemination 标记时，不同的词会合并为同一拼写，机器翻译会丧失对比。",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "连音",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "词或语素相接处发生的音变，如「don't you」变为「dontcha」。在声调语言中，声调本身也会在上下文中发生变化（声调 sandhi）。",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "Sandhi 使书面或转录形式依赖于上下文，增加了一致分词的难度。",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "元音变音",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "由历史上后续元音引起的元音变化，在现代语法中保留下来：德语 Apfel「苹果」→ Äpfel「苹果（复数）」。与 ablaut 相关但历史来源不同。",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "Umlaut 将复数或时态标记隐藏在词干内部，基于词缀的分割方法无法识别。",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "词元化",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "将文本分割成翻译模型实际处理的单位（token）。现代系统会将罕见词分割成子词片段；这些片段与真实语素的对齐程度因语言而异。",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "不良的 tokenization 是形态丰富和低资源语言机器翻译失败的根本原因。",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "语法格",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "通过标记名词和代词来表示其在句子中的角色——谁是施事者、谁是受事者、在哪里、用什么。英语只保留了痕迹（I/me/my）；芬兰语有十五个格；许多语言没有格。",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "有格标系统允许自由的词序，因此机器翻译必须从词尾而非位置读取角色——并在生成时产生正确的词尾。",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "主格",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "在最常见的对齐系统中，任何动词的主语采用主格，直接宾语采用宾格。大多数欧洲语言都遵循这一方式，因此这是机器翻译训练数据中压倒性反映的模式。",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "主要在主格-宾格语言上训练的系统在翻译作格语言时会错误分配角色。",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "作格",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "一种对齐系统，其中不及物动词的主语（「她睡觉」）的标记方式与及物动词的宾语（「看到她」）相同，而及物动词的主语获得特殊的作格标记。巴斯克语、许多玛雅语、澳大利亚语和高加索语言都采用这种方式。",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "作格标记颠倒了机器翻译预期的角色线索，导致「谁对谁做了什么」的错误。",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "绝对格",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "在作格系统中的无标记格，涵盖不及物主语和及物宾语。通常是名词的引用形式。",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "绝对格名词在两种不同角色中形式相同，机器翻译必须依靠动词来消歧。",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "形态句法对齐",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "语言用来对不及物主语、及物主语和宾语这三个核心角色进行标记的系统。主宾格和作格-绝对格是两种主要模式；有些语言在两者之间分裂，或使用由生命性驱动的系统。",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "源语言和目标语言之间的对齐不匹配是结构性翻译问题，而非词汇问题。",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "属格",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "标记所有关系或紧密关联的格，如英语的 's 或 'of'。语言在属格短语是出现在所修饰名词之前还是之后方面存在差异。",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "属格顺序差异（\"国王的马\" vs \"马的国王\"）需要在名词短语内进行系统性重新排序。",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "与格",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "标记接收者或受益者的格——给予和告诉的\"给谁\"。德语 wem、拉丁语 cui；英语用词序或 'to' 来表达。",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "机器翻译必须根据目标语言在与格标记和介词短语之间做出选择。",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "位置格",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "表示\"在/在...里/在...上\"某个地方的格，由名词词尾而非介词表达。芬兰语和匈牙利语将位置分为多个精确的位置格（内部、顶部、附近、朝向运动、来自运动）。",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "一个英语介词可以映射到多个位置格，迫使机器翻译根据上下文进行选择。",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "工具格",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "表示\"使用/通过...手段\"的格——俄语用词尾而非介词标记\"用锤子\"。多综合型语言可能将工具直接构建到动词中。",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "工具格含义在格词尾、介词和动词内部标记之间跨语言转变。",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "共格",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "表示\"与某人一起\"的格或标记。有些语言对\"with\"（伴随）和\"and\"（并列）使用相同的标记，这对局外人可能造成歧义。",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "共格/并列重叠意味着源语言中\"X with Y\"和\"X and Y\"可能是相同的构式。",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "斜格",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "子句中既不是主语也不是直接宾语的任何短语——通常是位置、工具、接收者和其他\"附加成分\"，通常用格或介词标记。在 WALS 中，VOX 等顺序中的\"X\"代表斜格短语。",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "斜格在句子中的位置因语言而异，必须在动词和宾语周围正确重新排序。",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "差异宾语标记",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "标记某些直接宾语但不标记其他宾语，通常取决于生命性或确定性。西班牙语在人类宾语前添加 'a'（veo a María），但不在事物前添加（veo la casa）。",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "机器翻译必须根据动物性等线索逐个判断对象是否需要标记，而源语言可能不显示这些线索。",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "语法性",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "将所有名词分为若干类（通常称为阳性/阴性/中性），这些类别强制冠词、形容词乃至动词采用相应形式。这种分类是语法性的，而非生物学的——德语中的桌子是阳性，西班牙语中的则是阴性。",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "翻译到有性别系统的语言时，必须对源语言未指定的人物和事物做出性别选择，这是机器翻译偏见的主要来源。",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "名词类",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "一种类似语法性的系统，但类别众多——班图语族通常有10–20个类别，按形状、动物性、大小等对名词分类。每个类别在整个句子中触发相应的一致性前缀。",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "每个名词选择都会在整个分句中产生连锁的一致性标记，因此一个错误的类别会导致许多明显的错误。",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "动物性",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "一种语法区分，用于区别有生命（或类似有生命）的和无生命的指称对象。在阿尔贡昆语族中，每个名词在语法上都是有生命的或无生命的，动词根据与之结合的名词的动物性而完全改变形式。",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "动物性在许多土著语言中驱动动词选择和一致性，而英语源文本中没有明显的线索。",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "平原克里语（crk）：动词变位完全取决于主语/宾语名词是有生命还是无生命（见 card field linguisticChallenges.animacy）。",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "显著性标记",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "一种系统，在平原克里语等阿尔贡昆语族中至关重要，它对语篇中的第三人称进行排序：一个是\"近指\"（在焦点中），其他的是\"远指\"（标记为背景化，有时称为第四人称）。它无需使用\"他₁ vs 他₂\"这样的代词就能追踪谁是谁。",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "英语没有显著性标记系统，因此机器翻译到克里语时必须创造近指/远指分配并在句子间保持一致。",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "平原克里语（crk）在名词和动词上标记远指指称；见 crk card 和 crk 方法的文档。",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "包含性",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "对两种\"我们\"的区分：包含式（我+你，可能还有其他人）和排斥式（我+其他人，但不包括你）。数百种语言强制性地做出这种区分。",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "翻译英语\"we\"需要在没有源语言线索的情况下选择包含式或排斥式——选错可能会造成严重的社交后果。",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "语法数",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "语言标记数量的方式——单数、复数，有时还有双数（恰好两个）或少数数（几个）。有些语言在每个名词上标记数；其他语言则完全由上下文决定。",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "当源语言不标记数时，机器翻译必须猜测；当目标语言需要双数形式时，机器翻译必须提供。",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "双数",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "一种语法数，表示恰好两个，不同于单数和复数。斯洛文尼亚语、阿拉伯语和许多大洋洲语言都有双数；少数语言在代词中还加入三数（恰好三个）。",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "机器翻译到标记双数的语言时，必须检测源语言仅通过数词表达的\"两个\"的概念。",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "分类词",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "计数或指代名词时必需的词，按类型对名词进行分类——如英文中的\"three head of cattle\"或\"two sheets of paper\"，但在中文、日文、泰文等许多语言中对所有名词都是强制性的。这些语言没有正确的量词就无法计数。",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "机器翻译必须为每个名词选择正确的量词；错误的量词对母语使用者来说立即可见。",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "确定性",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "名词是指听者已能识别的事物（\"那只狗\"）还是不能识别的事物（\"一只狗\"）。许多语言从不标记这种区别；其他语言则通过冠词、词缀或词序来标记。",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "从无冠词语言翻译时，机器翻译必须仅从上下文推断每个名词短语是用\"the\"还是\"a\"。",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "冠词",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "标记名词为确定（\"the\"）或不确定（\"a\"）的小词。世界上约三分之一的语言根本没有冠词，有些语言用数词\"one\"或指示词代替。",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "冠词的插入和删除是有冠词语言和无冠词语言之间机器翻译中最频繁的编辑类别。",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "指示词",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "指向词如\"this\"和\"that\"。语言对指向空间的划分方式不同——有些采用三分法（靠近我/靠近你/远处），有些还加入可见性或高度区分。",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "指示词系统很少一一对应，因此机器翻译必须近似距离和可见性的区分。",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "所有格",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "语言表达\"我的X/你的X\"的方式。许多语言区分不可转让所有格（身体部位、亲属——无法赠予的事物）和可转让所有格，用不同的结构标记它们。",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "不可转让所有格通常需要强制性的所有者标记，而英文源文本中往往省略。",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "中心标记",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "将语法标记放在短语的中心——动词显示其主语和宾语是谁，被修饰名词显示谁拥有它。从属成分（名词本身）可以保持裸露。",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "中心标记将从句语法集中在动词上，是大多数机器翻译数据来源的从属标记语言的镜像。",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "从属标记",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "将语法标记放在短语的从属成分上——名词的格词尾、所有者的所有格词尾——而中心保持无标记。大多数欧洲语言倾向这种方式。",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "从属标记将语法信号放在名词词尾中，分词器必须正确分割。",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "证据性",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "强制说话者说明信息来源的语法——看到、听说、推断。在克丘亚语或土耳其语中，省略证据标记就像在英文中省略时态一样。",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "机器翻译到有证据性的语言必须说明原文本从未指定的信息来源。",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "时态",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "在时间上定位事件的语法标记——过去、现在、未来。有些语言根本没有语法时态（普通话），而其他语言则区分多个过去远近程度。",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "无时态的源文本迫使机器翻译推断时间参考；远距系统需要比源文本提供的更精细的区分。",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "体",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "语法标记，表示事件在时间中如何展开——完成、进行、习惯、重复——独立于事件发生的时间。俄语动词成对出现（完成体/未完成体）；英语使用\"was doing\"与\"did\"的对比。",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "翻译成标记体的语言时，每个动词都必须做出体的选择，通常缺乏源文本线索。",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "完成体",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "将事件呈现为一个完整整体的体——\"她写完了信\"被视为一个已完成的事实。通常与未完成体形成语法对立。",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "完成体与未完成体的选择错误是斯拉夫语言机器翻译中最常见的错误之一。",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "未完成体",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "从内部呈现事件的体——进行中、习惯性或重复性，如\"她在写\"或\"她过去常常写\"。完成体的对应形式。",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "未完成体的读法（进行中与习惯性）必须通过上下文消歧，以实现正确翻译。",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "语气",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "语法标记，表示说话者对事件的态度——事实、愿望、命令、可能性。陈述语气、虚拟语气和祈使语气是常见的欧洲语气；其他语言标记更精细的差异。",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "语气选择（尤其是虚拟语气）遵循目标语言的规则，不能从源文本复制。",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "虚拟语气",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "用于非断言内容的动词语气——愿望、疑虑、假设和某些动词后的从句。罗曼语族在许多英语使用普通形式的从句中需要虚拟语气。",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "虚拟语气的触发条件是特定于目标语言的，因此机器翻译必须应用语法规则而非翻译形式。",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "否定",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "语言表达\"不\"的方式。策略包括粒子（英语的not）、动词词缀、特殊否定动词和两部分构式（如法语的ne…pas）。位置可变：动词前、动词后或两者都有。",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "否定错误会完全反转意思，使正确的否定位置成为最高风险的机器翻译要求之一。",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "被动语态",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "将宾语提升为主语并降低或省略施事者的构式：\"窗户被（男孩）打破了\"。许多语言完全缺乏被动语态或使用其他策略来淡化施事者。",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "无被动语态的目标语言迫使机器翻译将被动语态重组为主动语态，需要推断或恢复施事者。",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "语态",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "控制哪个参与者作为主语的语法系统——主动、被动、中动，在某些语族中有更丰富的系统。语态围绕选定的视角重塑整个句子。",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "语态不匹配需要重组整个句子，而不仅仅是替换词汇。",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "配价",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "动词需要多少个参与者以及如何编码它们——「sleep」需要一个，「give」需要三个。不同语言对特定动词需要哪些参与者以及如何标记它们的看法不同。",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "Valency 不匹配会导致字面翻译为错误的角色分配或遗漏必需的参与者。",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "及物",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "描述带直接宾语的动词——例如“她读书”。及物性在语法中处于核心地位：许多语言会根据从句是否及物，对主语、宾语和动词本身进行不同的标记。",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "及物性决定了格标记和一致性，因此误判动词是否及物会使输出结果中的“谁对谁做了什么”变得混乱。",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "不及物",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "描述不带直接宾语的动词——例如“她睡觉”、“太阳升起”。在作格语言中，不及物动词的单一论元标记方式与及物动词的宾语相同，而不是与其主语相同。",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "不及物从句会触发不同的格和一致性模式，尤其是在作格语言中，因此机器翻译（MT）必须跟踪及物性以选择正确的形式。",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "反被动",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "一种在作格语言中常见的结构，它移除或降级及物动词的宾语，留下一个不及物从句——这是被动语态的镜像。被动语态淡化了动作的执行者，而反被动语态则淡化了动作的承受者。",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "反被动语态会重构从句并改变格标记，因此将其翻译成以被动语态为主导的语言意味着需要重建整个句子，而不是简单地替换单词。",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "使役",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "一种为事件添加致使者的结构——将“罐子碎了”变成“她打碎了罐子”或“她让它碎了”。许多语言使用专门的动词词缀来构建使役态，而不是像英语那样使用单独的动词“make”。",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "使役意义可能隐藏在单一的动词形式中，因此机器翻译（MT）必须识别它，并将其拆解为目标语言的迂回结构——或者将其重新折叠成单一形式。",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "代词",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "代替名词短语的词——我、你、她、他们、这个、谁。不同语言在代词的数量以及强制区分的特征（如性别、正式程度或包含/排除式“我们”等）上存在巨大差异。",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "不同语言的代词系统很少能完全对应，因此机器翻译（MT）必须补充源语言未指明的区分（如性别、正式程度），或者合并目标语言无法表达的区分。",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "数词",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "表示数字的词——一、十七、千。不同语言基于不同的进制（十进制、二十进制或混合进制）构建更大的数词，并且可能要求每个数字带有量词或特殊的计数形式。",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "数字是高风险内容，在不同的计数进制或量词要求之间翻译数字词汇，是机器翻译（MT）很容易引入错误的地方。",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "拟声拟态词",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "一种生动的词汇，通过其自身的形式唤起某种感觉（声音、运动、质地或光线），例如英语的“zigzag”或日语的“kirakira”（闪闪发光）。许多非洲和亚洲语言拥有大量在语法上截然不同的拟声拟态词类别。",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "拟声拟态词具有很强的表现力且高度依赖特定语言，因此机器翻译（MT）往往会丢弃或扁平化它们，从而丢失母语者听来精确而生动的含义。",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "连动结构",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "在一个子句中将多个动词串联在一起，中间没有「and」或「to」——如「take knife cut bread」表示「用刀切面包」。在西非、东南亚和克里奥尔语中很常见。",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "Serial verb 在翻译成欧洲语言时必须分解为介词或从句，反向翻译时则需要重新组合。",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "分词",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "充当形容词或构成复合时态的动词形式——如「the running water」中的「running」或「has eaten」中的「eaten」。不同语言的 participle 数量和用途不同。",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "Participle 子句在其他语言中通常替代关系子句，需要进行结构转换。",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "动名词",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "用作名词的动词形式，如「swimming is fun」中的「swimming」。其他语言在英语使用 gerund 的地方使用不定式、动词名词或特殊的转换形式。",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "英语 gerund 根据目标语言的不同映射到多种不同的构式。",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "系词",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "连系动词「be」，如「she is a doctor」中的「is」。许多语言在现在时中省略它（零 copula）——俄语和阿拉伯语字面上说「she doctor」。",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "MT 必须在从零 copula 语言翻译时插入 copula，在翻译成零 copula 语言时删除它。",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "一致关系",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "一个词的形式必须与另一个词的语法特征相匹配——动词与其主语相匹配，形容词与其名词在性和数上相匹配。某些语言在动词上同时标记与主语和宾语的一致性。",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "生成的文本必须满足所有一致性链；单个错误的特征会产生多个可见的错误。",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "多重人称一致关系",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "动词与多个参与者同时一致——动词携带主语和宾语（有时还有更多）的标记。巴斯克语、格鲁吉亚语和阿尔冈昆语系统地这样做。",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "动词形式编码谁作用于谁，因此 MT 必须在生成单个正确的动词形式之前解析两个角色。",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "连词式",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "在阿尔冈昆语（如 Plains Cree）中，动词有不同的屈折「order」：独立 order 用于主要陈述句，conjunct order 主要用于从句、疑问句和某些语篇语境。两者使用完全不同的词尾集。",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "选择独立 order 还是 conjunct order 是一个子句类型决定，英语没有直接的线索。",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Plains Cree (crk)：在卡片的正式性说明和 crk 方法的文档中有描述。",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "方向体",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "动词标记，将运动方向内置于动词本身——朝向说话者、远离、逆流、上坡。常见于玛雅语、藏缅语族和许多巴布亚语言。",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "打包在动词中的方向意义必须在目标语中解包为副词或介词。",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "受益体",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "标记某个行为是为了某人的利益而进行的——\"我为她烤了一个蛋糕\"。某些语言用动词词缀（应用体）而非词序或介词来标记这一点。",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "受益人可能隐藏在动词形态中，因此机器翻译必须检测并将其重新表达为独立短语。",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "疑问体",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "提问的语法。是/否疑问可能由语气词、动词形式、词序变化或仅通过语调标记；内容疑问在\"谁/什么\"是否移到句首方面有所不同。",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "如果源语言仅通过语调标记疑问，书面输入不会向机器翻译提供任何疑问正在被提出的信号。",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "词序",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "主语 (S)、宾语 (O) 和动词 (V) 在陈述句中的典型排列。SOV（日语）和 SVO（英语）涵盖大多数语言；VSO（威尔士语、他加禄语类型）是第三种常见类型，某些语言根本没有固定的词序。",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "词序不匹配是语言对之间重排错误的最大驱动因素。",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "方位词",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "前置词（在名词之前：\"在房子里\"）和后置词（在其后：日语 uchi de\"房子里\"）的总称。语言的选择与其动词–宾语顺序密切相关。",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "前置词到后置词的转换会翻转每个空间和时间短语的括号结构。",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "关系从句",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "修饰名词的从句：\"我读过的那本书\"。语言将其放在名词之前或之后，并使用从关系代词到空位再到特殊动词形式的各种策略。",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "前置关系从句（日语、土耳其语）需要相对于英语顺序反转长段文本。",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "焦点体系",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "一种从句体系，最著名于菲律宾语言（如他加禄语），其中动词形态选择哪个参与者——施事者、受事者、位置、工具——是句子的语法中心。通常称为对称体。",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "焦点选择同时改变动词形式、标记位置和词序，因此机器翻译无法逐词映射从句。",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "在许多南岛语族语言的卡片上显示为 linguisticChallenges.voiceFocus。",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "虚词",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "小的、不屈折的功能词，增加语法或态度意义——疑问标记、话题标记、礼貌缓和词。东亚语言大量使用句末虚词。",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "虚词承载意义（疑问性、态度、话题），机器翻译必须用完全不同的方式重新表达。",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "声调",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "用声音高低来区分词义：普通话妈 mā「母亲」vs 马 mǎ「马」。简单的系统对比两个音高级别；复杂系统（许多西非和东南亚语言）使用多个音高级别和音高轮廓。",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "声调在罗马字或无标记文本中通常不可见，导致不同的词在机器翻译系统中合并为同一拼写。",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "音高重音",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "一种用音高区分词义的系统，但每个词只有一个音节携带特征音高——日语 háshi「筷子」vs hashí「桥」。比完整声调系统轻，比纯重音系统重。",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "与声调类似，音高重音很少被标记，导致文本中出现大量同形异义词。",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "音拍",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "一个比音节更小的时间单位：短音节计为一个 mora，长元音或词尾辅音各增加一个。日语的节奏、诗歌甚至缩写都按 mora 计数，而非音节。",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "基于 mora 的音韵系统影响外来词和人名的适应方式，从而影响音译质量。",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "喷气音",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "一种辅音，由闭合的声门产生的气流爆发而非肺部气流产生，具有尖锐的爆破音质。常见于高加索、美洲和东非语言；用撇号标记（k'、t'）。",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "喷气音标记在随意输入中经常被省略，导致不同的词在输入文本中合并。",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "喉塞音",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "喉咙中的卡顿，如英语「uh-oh」中间的声音。在许多语言中它是一个完整的辅音，用来区分词义——夏威夷语用 ʻokina（ʻ）标记，省略它会改变意思。",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "喉塞音经常被省略或用错误的撇号字符输入，导致词在不同拼写中分裂。",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "夏威夷语（haw）：ʻokina 是音位辅音；卡片正字法注记标记撇号变体问题。",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "咽音",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "在口腔最后部靠近咽头发音的辅音，如阿拉伯语 q 或法语 r。比软腭音 k/g 更罕见，是某些语言区域的特征。",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "咽音的罗马字转写不一致（q/k/kh），导致一个词分裂成多种文本形式。",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "点击音",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "通过吸气产生的辅音，如英语「tsk-tsk」——但用作普通言语音。科依桑语和某些南班图语言（祖鲁语、科萨语）拥有完整的点击音辅音集。",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "点击音用不寻常的字符（ǃ、ǂ、c、q、x）标记，分词器和字体经常无法正确处理。",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "内爆音",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "通过在喉部短暂吸气产生的辅音，如豪萨语或越南语的 ɓ 和 ɗ。对未经训练的耳朵来说听起来像强调的 b/d，但实际上是不同的音位。",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "内爆音字母（ɓ、ɗ）经常被输入为普通的 b/d，导致不同的词在文本语料库中合并。",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "鼻音",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "气流从鼻腔流出而发出的辅音，如 m、n 或“sing”中的 ng。几乎每种语言都有鼻辅音，有些语言还会将鼻音化蔓延到相邻的元音上。",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "作为一个纯语音类别，鼻辅音对语音和音译很重要，而对处理书面词汇的文本翻译影响不大。",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "擦音",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "通过迫使气流穿过狭窄缝隙产生摩擦声而发出的辅音，如 f、s、sh 或 th。擦音是世界语言中最常见的辅音类型之一。",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "擦音是一个语音类别，它影响发音和名称的音译，而不影响基于文本的机器翻译（MT）的语法。",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "卷舌音",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "通过将舌尖向上并向后卷向口腔顶部而发出的辅音，产生独特的空洞声。卷舌辅音是印地语和泰米尔语等南亚语言的特征。",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "卷舌化主要涉及语音和音译；在文本中，它仅表现为机器翻译（MT）必须保留的独特字母或变音符号。",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "喉化音",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "通过声门的收缩或闭合产生，为辅音或元音增添停顿或嘎裂的音质。挤喉音和内爆音属于喉化辅音，有些语言也有喉化（嘎裂声）的响音和元音。",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "喉化是一种对语音和音译很重要的语音属性；在文本中，它仅以特殊字母或撇号的形式存在，机器翻译（MT）必须保持其完整。",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "咽音",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "通过挤压咽喉发出的辅音，如阿拉伯语的 ʿayn (ع)。这类音素在世界各语言中极为罕见，非母语使用者难以听辨或发音。",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "咽音的罗马字转写方式多样（ʿ、'、3 或省略），导致非正式文本中拼写混乱。",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "鼻化元音",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "气流通过鼻腔发出的元音，如法语 bon 或葡萄牙语 são。在具有对比功能的语言中，口腔元音和鼻化元音可以区分不同的词。",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "鼻化标记（ã、ę、ą）在非正式输入中常被省略，导致词对合并。",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "元音长度",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "通过延长元音发音来区分不同的词——芬兰语 tuli（火）vs tuuli（风）。文字系统用双字母、长音符（ā）或不标记等方式来表示长度。",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "当长度标记可选时（如夏威夷语 kahakō、阿拉伯语元音），同一个词会出现多种拼写形式。",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "夏威夷语（haw）：kahakō（长音符）标记长元音，在日常文本中常被省略。",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "音位",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "在特定语言中能够区分词义的语音单位——替换一个音位就会得到不同的词（pat vs bat）。一种语言的音位清单通常包含十几个到一百多个音素。",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "音位清单的大小和组成决定了外来词和借词在该语言中如何被改造。",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "下阶",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "在许多非洲声调语言中，音高的阶梯式下降，影响短语中随后的所有高声调。它是一个声调地标，本身也可以区分意义。",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "下阶基本上不被书写，因此声调信息在文本数据中系统性地缺失。",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "舌根前移",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "通过向前推动舌根、扩张咽腔而产生的元音特征。许多非洲语言将元音分为 +ATR 和 -ATR 两组，并要求词内保持一致（ATR 和谐）。",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "ATR 区分在正字法中标记不一致，导致词被分散到多种拼写形式。",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "文字系统",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "语言书写所用的符号集合——拉丁字母、西里尔字母、阿拉伯字母、汉字等。一种语言可以使用多个文字系统（如塞尔维亚语），一个文字系统也可以服务数百种语言。",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "文字系统身份驱动所有后续文本处理：编码、分词和 MT 模型能否接受输入。",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "正字法",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "语言在其文字系统中的约定书写规则——哪些字母、变音符号和拼写是正确的。某些语言拥有多个相互竞争的正字法，或根本没有标准化的正字法。",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "相互竞争或未标准化的正字法将稀缺的训练数据分散到不兼容的拼写变体中。",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "元音附标文字",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "一种文字系统，其中每个符号代表一个辅音及其内置的默认元音，其他元音通过修改基础符号来标记——如梵文字母、埃塞俄比亚文或泰文。介于字母表和音节文字之间。",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "Abugida 元音标记是组合字符，不当的文本处理可能会删除或重新排列它们，导致单词损坏。",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "音节文字",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "一种文字系统，每个符号代表一个音节而非单个音素——如日语假名或切罗基文。最适合音节结构简单的语言。",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "音节文字改变了文本的粒度：分词器识别的是音节，而非辅音和元音。",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "音节字母",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "用于克里语、因纽特语、奥吉布瓦语及其他加拿大原住民语言的文字系统，其中每个字符编码一个辅音，其旋转形式编码元音。该系统发明于 1840 年代，至今仍在社区中活跃使用。",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "许多克里语/因纽特语文本同时存在音节字母和罗马字正交两种形式，因此机器翻译管道需要可靠的文字转换。",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "平原克里语 (crk)：card 脚本使用 Cans（加拿大原住民音节字母）及罗马字正交转换器。",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "罗马字化",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "用拉丁字母而非语言的本地文字来书写语言，可通过规则（音位转写）或音素进行。一种语言通常有多个相互竞争的罗马字化标准。",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "罗马字化文本和本地文字文本对机器翻译模型来说表现为不同的语言，除非明确进行转换。",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "附加符号",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "添加到字母上的标记——重音符、波浪号、点、长音符——用于表示声调、长度、鼻音或不同的音素。某些正交系统完全依赖于它们；用户在日常输入中经常省略它们。",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "去除附加符号的文本是普遍存在的数据质量问题：它会合并不同的单词，并与干净的训练数据不匹配。",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "书写方向",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "文字的运行方向：从左到右（拉丁文）、从右到左（阿拉伯文、希伯来文）或历史上从上到下（蒙古文、古代汉语）。混合方向文本需要特殊处理。",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "从右到左和双向文本会破坏简单的字符串处理——数字、标点符号和嵌入的拉丁文字会以不可预测的方式重新排列。",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "语域",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "与社交语境相关的语言变体——正式、非正式、仪式、技术。某些语言将语域语法化：爪哇语对不同的礼貌程度有不同的词汇集。",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "机器翻译必须保持一致的语域；在一个输出中混合正式和非正式形式会显得破碎或无礼。",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "T-V 区分",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "根据社交距离有两个或多个「你」的词，如法语 tu/vous 或德语 du/Sie。这种选择表示尊重、亲密或等级关系，一旦做出就很难改变。",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "英语「you」不提供任何线索，因此机器翻译必须从上下文推断正式程度——这是一个频繁且社交上明显的错误。",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "法语 (fra)：卡片形式数据区分 tu/vous 使用场景。",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "敬语",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "通过语法或词汇形式表达对听者或所讨论人物的尊重——如日语敬语、韩语言语等级、特殊亲属尊敬词汇。通常是强制性的，而非可选的礼貌表达。",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "敬语的选择需要源文本很少明确说明的社会知识（谁的地位更高）。",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "礼貌",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "通过代词选择、动词变位、虚词或词汇来编码社会关系的语言现象。语言的范围从没有语法礼貌到复杂的多层级系统。",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "翻译在词汇上可能完全正确，但如果选择了错误的礼貌等级就会失败。",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "双言现象",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "一个社区稳定地使用同一语言的两种变体用于不同目的的情况——用「高」变体进行书写和正式演讲（现代标准阿拉伯语），用「低」变体进行日常交流（口语方言）。使用者根据语境切换，而非出于选择。",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "训练数据偏向书面「高」变体，导致机器翻译在人们实际使用的口语变体上失效。",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "代码转换",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "双语使用者在一次对话或一个句子内自然地在两种或多种语言之间交替使用。这遵循语法规律，而非随意混合。",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "混合语言输入会混淆语言检测，除非系统能处理两种代码，否则会产生乱码输出。",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "克里奥尔语",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "一种完整的自然语言，源于强烈的语言接触，通常从一种语言（词汇源语言）借用大部分词汇，同时发展出自己的语法。海地克里奥尔语、托克皮辛语和帕皮亚门托语是例子。",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "克里奥尔语在书面形式上与其词汇源语言相似，导致以词汇源语言训练的机器翻译系统产生系统性误译。",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "皮钦语",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "一种没有本族使用者的简化接触语言，由没有共同语言的群体为了贸易或工作而创造。当儿童以其为母语长大时，它就演变成克里奥尔语。",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "皮钦语具有高度变异性和稀少的文本数据，使得一致的机器翻译特别困难。",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "词汇源语言",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "为克里奥尔语或皮钦语提供大部分词汇的语言——牙买加帕图瓦语的英语、海地克里奥尔语的法语、帕皮亚门托语的葡萄牙语。但语法是克里奥尔语自己的。",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "与词汇源语言的共同词汇掩盖了机器翻译不能忽视的深层语法差异。",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "借词",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "从另一种语言借用并适应本地音系的词汇，如英语中的「sushi」或法语中的「le weekend」。借译则是借用结构而非词汇，逐字翻译（「skyscraper」→ 法语「gratte-ciel」）。",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "决定是保留、改编还是翻译借词是本地化中的反复出现的选择，特别是对于技术术语。",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "宏语言",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "ISO 639-3 的一个分类概念：单个代码（如「ara」阿拉伯语或「zho」汉语）涵盖多种互不相通的成员语言，出于历史或政治原因被视为一体。每种成员语言也有自己的代码。",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "用 macrolanguage 代码标记的数据混合了互不相通的语言变体，会污染训练和评估数据。",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "内名",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "社群对自己语言的自称（endonym/autonym），与外人对该语言的称呼（exonym）相对。「Deutsch」是德语的 endonym，而英语称之为「German」；许多土著社群更倾向使用自己的 endonym。",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "不同数据库中的名称不匹配会导致机器翻译流程中的语言识别和数据合并错误。",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "孤立语言",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "没有已证实的亲属语言的语言——独成一族。巴斯克语、阿伊努语和布鲁沙斯基语是著名例子；孤立语言在全球范围内出人意料地常见。",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "孤立语言无法从相关语言借用训练信号，这消除了低资源机器翻译的一个关键策略（迁移学习）。",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "语言活力",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "语言被传递给儿童并在生活各领域使用的强度。EGIDS 和 Glottolog 的濒危状态等量表从「活力充沛」到「受威胁」、「垂死」再到「休眠」（无流利使用者，但有复兴潜力）。",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "活力状态预示数据可用性，对于社群驱动的机器翻译，还预示技术应扮演的角色（如复兴支持而非替代）。",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "濒死",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "活力状态，表示该语言不再被儿童学习；仅存的流利使用者都是年长成人。如无干预，这样的语言会在一代人内变为休眠状态。",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "垂死语言的使用者群体在缩小，用于验证机器翻译输出的人力资源有限，这提高了每个数据决策的风险。",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "Glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "来自 Glottolog 数据库的唯一标识符（如英语的 stan1293），涵盖语言、方言和语族。比 ISO 代码更细粒度，由语言学家持续修订。",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "Glottocode 让流程能精确关联类型学数据库，即使对于没有 ISO 代码的语言变体也适用。",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "世界语言三字母代码的国际标准（eng、crk、haw），由 SIL 维护。旨在用单个代码覆盖每种已知语言，无论其是否仍在使用或已灭绝。",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "ISO 639-3 代码是多语言自然语言处理的关键字——错误或模糊的代码会无声地破坏数据集。",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "二十进制",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "以二十为基数而非十的计数系统。玛雅语、约鲁巴语、纳瓦特尔语和丹麦语（部分）采用这种计数方式——法语中「eighty」字面意思是「four twenties」（quatre-vingts）。",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "跨不同进制的数字词翻译容易出错，而数字是高风险内容。",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "通过 Numeralbank 数据中的 numeralSystem.baseType 在卡片上显示。",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "亲属术语",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "用于表示家族关系的词汇，不同语言的划分方式差异很大——有些语言区分哥哥和弟弟，或区分舅舅和叔叔。某些系统还编码说话者自身的位置。",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "英文的「uncle」或「cousin」可能没有单一对应词，迫使机器翻译在没有必要家族信息的情况下在精确亲属术语之间选择。",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "一种自动机器翻译评估指标，通过计算系统输出与参考翻译之间的字符级重叠来评分。因为它基于字符而非词语工作，对形态丰富的语言比基于词语的指标更公平。",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "chrF 是胶着语和多综合语言的首选表面指标，因为词级匹配在这些语言中会失效。",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "一种神经机器翻译评估指标，使用训练过的多语言模型来预测人工质量判断，而不是计算表面重叠。AfriCOMET 等变体扩展了对非洲语言的覆盖。",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "COMET 与人工判断的相关性比表面指标更好，但仅限于其底层模型见过的语言。",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "有限状态转换器：一种基于规则的计算模型，在词形及其语法分析之间进行映射。对于形态复杂的语言，手工构建的 FST 可以分析和生成统计系统从未见过的词形。",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "FST 为数据稀缺、无法从文本中学习形态的语言提供可靠的形态分析和验证。",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "平原克里语（crk）：评估包使用基于 FST 的语义验证器（card 字段 evalMetrics.lyss-sem）。",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "树库",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "一个语料库，其中的句子已手工标注语法结构（解析树）。通用依存关系项目以共享格式维护 150 多种语言的树库。",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "树库的存在表明一种语言拥有成熟的自然语言处理基础设施，并支持语法感知的评估。",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "平行语料库",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "一组文本与其翻译配对，按句子对齐。平行语料库是训练和评估机器翻译系统的主要资源。",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "可用平行数据的规模和领域是预测语言对机器翻译质量的最强单一因素。",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU（双语评估替补）通过计算翻译与一个或多个参考翻译共享的词 n-gram 数量来评分。它是最古老、最常被引用的机器翻译指标，但因为它匹配整个词语，对形态丰富和低资源语言来说过于严格且不可靠。分数越高越好，范围为 0–100。",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "BLEU 用于与已发表表格的比较，但对于 Champollion 关注的语言，它与人工判断的相关性很差——应与 chrF++ 和 COMET 一起阅读，不要单独使用。",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU 是使用 FLORES-200 SentencePiece 分词器分割文本后计算的 BLEU——一个在所有 200 种语言中共享的单一固定子词模型。这使得分数在不同文字和书写系统中可比较，而普通词级 BLEU 则不然。",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU 是 NLLB / FLORES 低资源文献中的通用数字——便于跨语言比较，但仍然是无法理解含义的表面指标。",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "翻译编辑率（Translation Edit Rate）统计将系统输出转换为参考译文所需的编辑次数——包括插入、删除、替换和块移位——表示为参考译文长度的百分比。与大多数指标不同，数值越低越好。",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "TER 提供了直观的「人工需要修复多少」信号，但与其他表面指标一样，它会对有效的释义和丰富的形态学变化进行惩罚。",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "数据污染",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "当测试集中的句子在模型训练期间很可能已经出现过时，该测试集被称为「被污染的」——例如因为语料库是公开的且被广泛爬取。被污染的基准无法证明模型的优劣；它可能只是在回忆模型记忆中的答案。「高」污染意味着很可能已被看过，因此结果被视为系统之间的相对比较，而非绝对质量声明（「仅相对」）。",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "大多数公开基准都被广泛用于训练，因此 Champollion 在相对比较通道上对其进行评分，并为未发布过的密封测试集保留绝对排名。",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "MT 复杂度",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "Champollion 计算的 0–100 估计值，表示某语言进行机器翻译的难度，综合四个信号：商业 MT API 覆盖范围、平行语料库的可用性、与资源丰富语言的类型学距离，以及语言文档的深度。数值越高表示难度越大。这是难度指南，不是任何系统输出的测量。",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "该指数是一个衍生指南，有助于优先分配工作——它不是基准测试结果。实际翻译质量存在于排行榜上，按（方法、数据集、指标）分类。",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "保留测试集",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "在系统开发期间保持隐藏、仅用于评分的一组翻译示例。如果系统从未见过这些句子，评分反映的是真实能力而非记忆。Champollion 的最强等级是社区保持私密的「密封」测试集——对方法进行评分时无需任何人（包括我们）查看数据。",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "保留测试集（尤其是密封测试集）是做出绝对质量声明的唯一方式；公开的、被污染的集合仅支持相对比较。",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

@@ -1,0 +1,131 @@
+---
+sidebar_position: 1
+title: "Cài đặt"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Cài đặt
+
+:::note[Giấy phép]
+CLI champollion được cung cấp mã nguồn theo
+[PolyForm Noncommercial License 1.0.0](https://github.com/gamedaysuits/Champollion/blob/main/cli/LICENSE): miễn phí sử dụng, sửa đổi và chia sẻ
+cho các mục đích phi thương mại — các dự án cá nhân, nghiên cứu, giảng dạy, và sử dụng bởi
+các tổ chức từ thiện, trường học, bệnh viện và phòng khám công lập, cũng như chính phủ. Việc sử dụng cho mục đích thương mại không
+thuộc phạm vi của giấy phép này: sản phẩm của một doanh nghiệp vì lợi nhuận, chẳng hạn như giao diện cửa hàng (storefront), được coi là mục đích thương mại.
+Khung đánh giá đằng sau [Mạng lưới](/docs/network/) là mã nguồn mở (AGPL-3.0-or-later).
+Giấy phép của từng gói được giải thích bằng ngôn ngữ dễ hiểu, kèm ví dụ: [Ai có thể sử dụng](/docs/getting-started/who-may-use-this).
+:::
+
+## Yêu cầu hệ thống
+
+- **Node.js 20.11+** (ESM gốc)
+- Một API key dịch thuật (xem bên dưới)
+
+## Cài đặt
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## Lấy API Key
+
+Champollion cần một backend dịch thuật. Hãy chọn một trong các nhà cung cấp sau:
+
+| Nhà cung cấp | Biến môi trường | Phù hợp nhất cho |
+|----------|---------------------|----------|
+| **OpenRouter** (khuyên dùng) | `OPENROUTER_API_KEY` | Dự án nhiều nội dung, Markdown, hơn 200 mô hình |
+| **Gemini** (gói miễn phí) | `GEMINI_API_KEY` | Bắt đầu không tốn chi phí, chất lượng tốt |
+| **OpenAI** | `OPENAI_API_KEY` | Truy cập trực tiếp GPT-4o |
+| **Anthropic** | `ANTHROPIC_API_KEY` | Truy cập trực tiếp Claude, văn bản giàu sắc thái |
+| **DeepL** | `DEEPL_API_KEY` | Các ngôn ngữ châu Âu, hỗ trợ sẵn mức độ trang trọng |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | Cặp khóa - giá trị khối lượng lớn, 194 ngôn ngữ |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure, 135 ngôn ngữ |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | Tự lưu trữ (self-hosted), ưu tiên quyền riêng tư |
+| **Tilde MT** | `TILDE_API_KEY` | Các ngôn ngữ vùng Baltic & châu Âu, lưu trữ tại EU |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | MT chuyên nghiệp, 200 ngôn ngữ |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+[OpenRouter](https://openrouter.ai) cung cấp một API hợp nhất cho hơn 200 mô hình LLM. Có sẵn gói miễn phí.
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+Hoặc thêm vào `.env.local`:
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+Phù hợp nhất cho: các dự án nhiều nội dung, dịch thuật Markdown, và các dự án cần bảo vệ nội dung theo ngữ cảnh (khối mã, shortcode, biến nội suy).
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+Phù hợp nhất cho: các cặp chuỗi khóa - giá trị khối lượng lớn (194 ngôn ngữ). **Không khuyến nghị** cho nội dung Markdown — Google Translate không nhận biết được các khối mã, shortcode hay biến nội suy.
+
+:::tip[Phát hiện thông minh]
+Nếu chỉ có `GOOGLE_TRANSLATE_API_KEY` được thiết lập (không có khóa OpenRouter), champollion sẽ tự động chuyển sang Google Translate. Không cần thay đổi cấu hình.
+:::
+
+  </TabItem>
+</Tabs>
+
+## Xác minh cài đặt
+
+```bash
+npx champollion --help
+```
+
+Bạn sẽ thấy danh sách các lệnh khả dụng. Bạn đã sẵn sàng cho phần [Bắt đầu nhanh](/docs/getting-started/quick-start).

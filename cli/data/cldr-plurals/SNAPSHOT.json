@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "cldr-plurals",
+  "upstream": "https://www.npmjs.com/package/cldr-core/v/48.2.0",
+  "license": "Unicode-3.0",
+  "licenseUrl": "https://www.unicode.org/license.txt",
+  "citation": "Unicode Consortium. CLDR 48.2.0. Supplemental plural rules (plurals-type-cardinal).",
+  "pin": {
+    "kind": "version",
+    "value": "48.2.0",
+    "doi": null,
+    "date": null
+  },
+  "files": [
+    {
+      "path": "plurals.json",
+      "bytes": 76105,
+      "sha256": "6c0a48e9bcfc25856f90202f703c2c7f89c105d6868f7712a943a6ed2dcbe8f4",
+      "url": "https://www.npmjs.com/package/cldr-core/v/48.2.0",
+      "upstreamChecksum": "sha512-zfmLothncSwfv2jlevoSrgI2VGgH8SDGHXst6jUEotHA8nq9Igeg9jzdJDFtBso9pgJuG89DK16TzrmZDdo2Bg==",
+      "upstreamVerified": true
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldr-plurals.mjs",
+  "notes": "Read from the installed npm package rather than downloaded: cli/package-lock.json pins the version AND an integrity hash npm verifies on install, which is a stronger attestation than a checksum we compute ourselves. 224 locales carry cardinal plural rules. This is a SEPARATE source from `cldr` — that one is cldr-misc-full (layout), this is cldr-core (supplemental).",
+  "fetchedAt": "2026-08-05T16:19:01.076Z"
+}

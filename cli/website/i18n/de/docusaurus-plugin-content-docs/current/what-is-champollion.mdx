@@ -1,0 +1,98 @@
+---
+slug: /what-is-champollion
+title: "Was Champollion ist"
+description: "Champollion verständlich erklärt: Ein offenes Toolkit, mit dem Sie maschinelle Übersetzung für Ihre Sprache aufbauen und deren Funktionsfähigkeit nachweisen können. Beginnen Sie hier."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Was Champollion ist
+
+**Champollion ist ein Open-Source-Toolkit zur Entwicklung maschineller Übersetzung für
+Ihre Sprache – und zum Nachweis ihrer Funktionsfähigkeit, bevor sich jemand darauf verlässt.**
+
+Es wurde für die Sprachen entwickelt, die große Technologiekonzerne übergehen: eine Schule, die ihren
+Newsletter auf Cree veröffentlichen möchte; ein Krankenhaus, das einen Sprachführer am Krankenbett für die von ihm
+versorgten Familien benötigt; eine Gemeinschaft, die wissen möchte, ob irgendein Werkzeug gut genug ist,
+um ihm die eigene Sprache anzuvertrauen. Sie – oder ein KI-Agent, den Sie auf diese Werkzeuge ansetzen – können den Weg
+von *„Wie fangen wir an?“* bis zu einem getesteten, produktiven Übersetzungsworkflow gehen.
+
+---
+
+## Der Weg und das Werkzeug für jeden Schritt
+
+| Schritt | Frage | Werkzeug |
+|---|---|---|
+| **1. Herausfinden, was existiert** | Was ist über diese Sprache bekannt – Wörterbücher, Grammatiken, Korpora, Modelle, veröffentlichte Ergebnisse, Dienste? | **[Der Atlas](/languages)** – <SSOTCount field="catalogLanguageCount" /> Sprachkarten; jeder Wert nennt seine Quelle |
+| **2. Eigene Daten schützen** | Wie testen wir mit unseren eigenen Sätzen, ohne sie aus der Hand zu geben? | **[Korpora registrieren](/docs/network/sovereignty/registering-corpora)** und der **[souveräne Knoten](/docs/network/sovereignty/sovereign-eval-node)** – behalten Sie ein Testset auf Ihrem Rechner oder per Air Gap isoliert |
+| **3. Die Optionen messen** | Welche Methode eignet sich am besten für *unseren* Text und um wie viel? | **[Das Test-Harness](/docs/network/specifications/harness)** (`mt-eval`) – bewertet jede Methode anhand jedes Korpus mit stets demselben Verfahren |
+| **4. Etwas Besseres bauen** | Können wir selbst ein Modell trainieren oder anpassen, ohne uns etwas vorzumachen? | **[NMT Forge](/docs/network/getting-started/training-honestly)** (`nmt-forge`) – Training mit Schutzvorkehrungen gegen Datenlecks bei Testsets, fehlerhafte Splits und das Schönlesen von Rauschen |
+| **5. Den Nachweis erbringen, auf Wunsch öffentlich** | Ist es wirklich besser? Können andere es überprüfen? | **[Die Bestenliste und Wettbewerbe](/docs/network/getting-started/submit-a-method)** – veröffentlichen Sie Ergebnisse oder veranstalten Sie einen Wettbewerb auf einem versiegelten Testset, das Ihren Knoten nie verlässt |
+| **6. Das Beste kombinieren** | Wer bietet was für dieses Sprachpaar an und was funktioniert zusammen? | **[Das Netzwerk](/docs/network/)** – die existierenden Methoden und Dienste sowie die jeweiligen Nachweise |
+| **7. Verwenden** | Übersetzen Sie die App, die Website, die Dokumente. | **[Champollion-CLI](/docs/intro)** – stellt für jedes Sprachpaar das bereit, was sich bewährt hat, inklusive Translation Memory, damit Sie für denselben Satz nie zweimal zahlen |
+
+Der **[MCP-Server](/docs/network/getting-started/mcp-server)** gibt einem KI-Agenten
+Werkzeuge für jeden der oben genannten Schritte an die Hand, und diese Dokumentation ist gleichermaßen
+für Menschen wie für Agenten verfasst (maschinenlesbar: `/llms.txt`, `/llms-full.txt`).
+
+**Messung ist das Rückgrat.** Abdeckung wird angekündigt; Qualität wird selten
+gezeigt. Jeder obige Schritt endet mit einer überprüfbaren Zahl samt ihrer Herkunft –
+welche Daten, welche Methodenversion, welche Metrik, welche Kosten. Ein ehrliches „Für dieses Paar
+funktioniert noch nichts“ ist ein Ergebnis, das wir veröffentlichen, denn eine sichtbare Lücke ist eine
+Lücke, die jemand schließen kann.
+
+## Die Regeln, nach denen wir arbeiten
+
+Dies sind Einschränkungen, kein Marketing. Sie bestimmen, was die Software leisten kann.
+
+**Wir verwahren Ihr Korpus zu keinem Zeitpunkt.** Testsets werden registriert, indem auf ihren
+bestehenden Speicherort verwiesen wird, nicht durch Hochladen zu uns. Eine Methode wird anhand eines
+Korpus bewertet, das sich niemals in unserem Besitz befindet. Bei versiegelten Sets werden die Daten auf Ihrem Rechner
+verschlüsselt und verbleiben dort; das Systemdesign erfordert einen Schwellenwert an gemeinschaftlichen
+Schlüsselverwaltern, um einen Durchlauf gemeinsam zu autorisieren (bisher wurden noch keine ernannt).
+
+**Sprachdaten werden wie Biodaten behandelt.** Die Personen, die einen Korpus bereitstellen, besitzen
+die Schlüssel dazu und zu allem, was dagegen gemessen wird. Zustimmung wird erfragt, nicht
+vorausgesetzt – und sie kann widerrufen werden.
+
+**Wir streben Datensouveränität an, sind aber nicht für Souveränität zertifiziert.** Ob ein Projekt
+die Eigenverantwortung und Kontrolle von Sprachdaten durch Gemeinschaften respektiert, ist kein Anspruch,
+den ein Projekt über sich selbst erheben kann. Wir leisten die Arbeit und beschreiben die Mechanismen
+ehrlich; das Urteil darüber obliegt den beteiligten Gemeinschaften.
+
+**Jede Methode ist willkommen, ob Mensch oder Maschine.** Ein professioneller Übersetzer, ein
+FST-basiertes Regelsystem, ein gepromptetes Frontier-Modell und ein feinabgestimmtes NMT-Modell
+werden auf die gleiche Weise und mit demselben Test-Set verglichen. Uns geht es darum, Sprachen
+zu übersetzen, nicht darum, welches Werkzeug gewinnt.
+
+**Wir veröffentlichen, was wir nicht können.** Siehe [Ehrliche
+Grenzen](/docs/network/honest-limitations) – die Liste der Dinge, die dieses
+Projekt *noch nicht* für sich beansprucht. Lesen Sie diese, bevor Sie irgendetwas anderem hier vertrauen.
+
+---
+
+**Champollion ist ein Index, kein Schiedsrichter.** Jeder Wert zitiert seine Quelle und
+gibt wieder, was diese Quelle tatsächlich aussagt. Wo Quellen widersprechen – und bei Sprecherzahlen
+tun sie das sehr oft –, zeigt die Karte alle an, mit entsprechender Zuordnung. Wir küren
+keinen Gewinner und stellen keinen künstlichen Konsens her.
+
+---
+
+## Der Name
+
+Jean-François Champollion entzifferte die ägyptischen Hieroglyphen mithilfe des Steins von Rosetta –
+demselben Text in drei Schriften. Paralleltexte sind noch immer die Art und Weise, wie Übersetzen
+erlernt wird. Der Name birgt auch eine Spannung, die es wert ist, laut ausgesprochen zu werden: ein europäischer
+Gelehrter, der in einer Ära der Ausbeutung die Schriften anderer liest. Darüber denken wir
+nach. Das ist der Grund, warum die oben genannten Souveränitätsregeln Einschränkungen in der Software sind
+und nicht nur eine Seite in einer Broschüre.
+
+## Nächste Schritte
+
+- **Sie möchten maschinelle Übersetzung für eine Sprache von Grund auf aufbauen** → [Maschinelle Übersetzung für Ihre Sprache aufbauen](/docs/build-mt-for-your-language): jeder obige Schritt mit den genauen Befehlen und dem MCP-Werkzeug, das ein Agent dafür aufruft.
+- **Sie möchten eine App oder Website übersetzen** → [Schnellstart](/docs/getting-started/quick-start).
+- **Sie sprechen, lehren oder pflegen eine Sprache** → [Für Sprachgemeinschaften](/docs/network/community/for-language-communities), danach [Korpora registrieren](/docs/network/sovereignty/registering-corpora) darüber, wie ein Testset verwendet wird, ohne es aus der Hand zu geben.
+- **Sie forschen oder entwickeln Methoden** → das Argument „Evaluation First“ in [Wer profitiert](/docs/network/who-benefits#researchers) – warum tausend kuratierte Paare siebenhunderttausend unkuratierte übertreffen – danach [Korpus-Partnerschaft](/docs/network/specifications/corpus-partnership), um eine Sprache einzubinden, oder [Methode einreichen](/docs/network/getting-started/submit-a-method) und die [Bewertungsspezifikation](/docs/network/specifications/scoring), um bei den bereits vorhandenen Sprachen anzutreten.
+- **Sie sind ein KI-Agent** → [Agenten-Leitfaden](/docs/network/getting-started/agent-guide); maschinenlesbare Einstiegspunkte sind `/llms.txt` und `/llms-full.txt`.
+- **Sie finanzieren diese Art von Arbeit** → [Wer profitiert](/docs/network/who-benefits#funders) und [Ehrliche Einschränkungen](/docs/network/honest-limitations).
+- **Sie möchten die Hintergründe kennenlernen** → [Wie das Fachgebiet hierher kam](/docs/network/context/mt-field-briefing), [Was als Sprache zählt](/docs/network/context/what-counts-as-a-language) und [Wie Abdeckung gezählt wird](/docs/network/context/coverage-counting).

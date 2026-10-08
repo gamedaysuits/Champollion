@@ -1,0 +1,128 @@
+---
+sidebar_position: 1
+title: "安装"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 安装
+
+:::note[许可证]
+champollion CLI 在
+[PolyForm Noncommercial License 1.0.0](https://github.com/gamedaysuits/Champollion/blob/main/cli/LICENSE) 协议下源码可用（source-available）：可免费用于非商业用途的使用、修改和共享——包括个人项目、研究、教学，以及慈善机构、学校、公立医院与诊所和政府的使用。将其用于商业目的不属于本许可证的许可范围：营利性企业的产品（例如商店的线上店面）属于商业用途。
+[Network](/docs/network/) 背后的评估框架是开源的（AGPL-3.0-or-later）。
+以通俗易懂的语言及示例介绍各个软件包的许可证：[谁可以使用本项目](/docs/getting-started/who-may-use-this)。
+:::
+
+## 系统要求
+
+- **Node.js 20.11+**（原生 ESM）
+- 翻译 API 密钥（见下文）
+
+## 安装
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## 获取 API 密钥
+
+Champollion 需要一个翻译后端。选择其中一个：
+
+| 提供商 | 环境变量 | 最适合 |
+|----------|---------------------|----------|
+| **OpenRouter**（推荐） | `OPENROUTER_API_KEY` | 内容密集型项目、Markdown、200+ 种模型 |
+| **Gemini**（免费层） | `GEMINI_API_KEY` | 零成本上手、质量优秀 |
+| **OpenAI** | `OPENAI_API_KEY` | 直接访问 GPT-4o |
+| **Anthropic** | `ANTHROPIC_API_KEY` | 直接访问 Claude、细腻文本 |
+| **DeepL** | `DEEPL_API_KEY` | 欧洲语言、内置语体控制（正式/非正式） |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | 海量键值对、194 种语言 |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure、135 种语言 |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | 自托管、隐私优先 |
+| **Tilde MT** | `TILDE_API_KEY` | 波罗的海及欧洲语言、欧盟托管 |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | 专业机器翻译、200 种语言 |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+[OpenRouter](https://openrouter.ai) 为 200+ 个 LLM 模型提供统一 API。提供免费层级。
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+或添加到 `.env.local`：
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+最适合：内容密集型项目、Markdown 翻译以及需要内容感知屏蔽的项目（代码块、短代码、插值变量）。
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+最适合：海量键值字符串对（194 种语言）。**不推荐**用于 Markdown 内容——Google Translate 无法识别代码块、短代码（shortcode）或插值变量。
+
+:::tip[智能检测]
+如果仅设置了 `GOOGLE_TRANSLATE_API_KEY`（没有 OpenRouter 密钥），champollion 会自动切换到 Google Translate。无需更改配置。
+:::
+
+  </TabItem>
+</Tabs>
+
+## 验证安装
+
+```bash
+npx champollion --help
+```
+
+你应该会看到可用命令的列表。现在你已准备好进行[快速开始](/docs/getting-started/quick-start)。

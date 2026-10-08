@@ -1,0 +1,66 @@
+{
+  "id": "eval-dan-fao-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba dan→fao Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "dan",
+    "target": "fao",
+    "direction": "unidirectional"
+  },
+  "description": "Auto-built via Tatoeba API by corpora-builder v0.1.0. 168 entries, stratified across 2 domain(s).",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 168,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.994,
+      "ui": 0.006
+    },
+    "dataFile": "curated/dan-fao-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "Tatoeba dan→fao corpus (168 entries) is publicly available under CC-BY-2.0. Moderate risk of inclusion in training data — the pair has enough volume to be picked up by broad web crawlers but is not a primary training target."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "lastUpdated": null,
+    "populatedFrom": "Migrated from arena/datasets/registry.json entry 'tatoeba-dan-fao-dev'. Size verified against curated data file. License from Tatoeba terms of use."
+  },
+  "richness": {
+    "mean_source_chars": 26.7,
+    "mean_effective_words": 4.94,
+    "economy": 5.4,
+    "economy_basis": "measured",
+    "computed_from": "dan-fao-dev-v1.json",
+    "computed_at": "2026-06-12"
+  },
+  "quarantine": true,
+  "quarantineReason": "Clean CC-BY-2.0 Tatoeba pair but not servable fetch-from-source: absent from the pinned Tatoeba Challenge test tar, and OPUS-Tatoeba v2023-04-12 carries only 1 usable pair(s), below the 30-entry floor. Kept catalogued, not runnable, until a sha-pinnable upstream carries it at the 30-entry floor."
+}

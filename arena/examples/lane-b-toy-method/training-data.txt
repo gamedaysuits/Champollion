@@ -1,0 +1,9 @@
+None. This method was not trained on anything.
+
+method/translate.py implements one hand-written rule for the synthetic qaa>qab
+fixture pair (w1 w2 w3 ... -> w2 w1vo). There is no corpus, no lookup table and
+no model behind it, which is why its declared parameter count is 1.
+
+This file exists so `--training-data-file` in the README's example command
+points at something real; it is what an honest constrained-track declaration
+looks like when the honest answer is "nothing".

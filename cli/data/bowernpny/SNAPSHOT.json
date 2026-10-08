@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "bowernpny",
+  "upstream": "https://zenodo.org/records/13143103",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Bowern and Atkinson's \"Internal Structure of Pama-Nyungan\" from 2012 — Claire Bowern",
+  "pin": {
+    "kind": "doi",
+    "value": "v4.1",
+    "doi": "10.5281/zenodo.13143103",
+    "date": "2024-07-31"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 1881993,
+      "sha256": "33684f43ca41a484d30ed09ccbcd38d50d2925438e4e44a5128b495cab13e01f",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13044,
+      "sha256": "555ebf6279826fea3547feead1c5aafda7c09ca91f93dc264919ce653996510b",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 4084535,
+      "sha256": "1d6b54cd0b40b8f31c96a26b1a91f820076cb6d3cfa2dfdeab4ccff2593bf352",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 5156781,
+      "sha256": "c8300dac939799aacb024f76f27b43e25799d534998a98d031b65295cf55d3f4",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 15142,
+      "sha256": "29b97acd38caa8cd87da1abf8e7de2548808ea9a5de0fc15c4de4c20700cc10b",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "7b406dc92dbc516195b311a3da2d766020a67832aacf60e7c18410782cac4db1",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 10924,
+      "sha256": "98158994d84352911d15911d7ea1604450f776975cafca508e6d5504e5b48c75",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 898,
+      "sha256": "92680ddeb5ab0ba6dc9f52cd90004016562bb181e89cf4f78a0579fc35eb6204",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 1332,
+      "sha256": "06c2544437871ba76c1892744b484da767133888f6903f4071ab9359da3c752d",
+      "url": "https://zenodo.org/api/records/13143103/files/lexibank/bowernpny-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/bowernpny-v4.1.zip:lexibank-bowernpny-0641c6a/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/bowernpny-v4.1.zip, whose md5 matched Zenodo's published checksum (md5:71fba6f1c8e8ae99a7eb5e84965932fc). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:48:54.204Z"
+}

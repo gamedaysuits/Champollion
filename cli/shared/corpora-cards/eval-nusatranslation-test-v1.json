@@ -1,0 +1,278 @@
+{
+  "id": "eval-nusatranslation-test-v1",
+  "type": "multiway",
+  "name": "NusaTranslation — Indonesian local languages (nusa_kalimat test)",
+  "version": "1.0",
+  "languages": [
+    "abs",
+    "bew",
+    "bhp",
+    "ind",
+    "jav",
+    "mad",
+    "mak",
+    "min",
+    "mui",
+    "rej",
+    "sun"
+  ],
+  "description": "NusaTranslation — the held-out test split of the nusa_kalimat MT track of the NusaWrites benchmark: Indonesian ↔ 10 local languages (Ambonese Malay, Betawi, Bima, Javanese, Madurese, Makasar, Minangkabau, Musi, Rejang, Sundanese), human-translated everyday/social-media sentences; both directions scored. Batak ('btk') is excluded — ambiguous ISO 639-5 collective code, never mislabelled. Fetched on demand from the IndoNLP nusa-writes repo at a pinned commit; Champollion never hosts the content. Domain: conv. Contamination HIGH — public since 2023 — so scores are relative-comparison-only. License: repo code is Apache-2.0 but NO data license is stated upstream → held by the license review of 2026-08-24: an unstated data license is never interpreted on the rights-holder's behalf — catalogued, excluded from queue/contests/ranking, until upstream states data terms.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "conv",
+    "explicitPairs": [
+      {
+        "source": "ind",
+        "target": "abs",
+        "srcCode": "ind",
+        "tgtCode": "abs",
+        "size": 400,
+        "sha256": "5618a3a89eefe64df2996c4725b0d59be07967b42d1e24d98d0fbbfc5bc718a4"
+      },
+      {
+        "source": "abs",
+        "target": "ind",
+        "srcCode": "abs",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "e33a94d094024806edc1fc0d536efdf8e2efe41911fb9fda1f9ea14821dafbc4",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "bew",
+        "srcCode": "ind",
+        "tgtCode": "bew",
+        "size": 2000,
+        "sha256": "267747fca5837bc9f19f05584d684e43ce786962eaf95c165a17a838e8a7531f"
+      },
+      {
+        "source": "bew",
+        "target": "ind",
+        "srcCode": "bew",
+        "tgtCode": "ind",
+        "size": 2000,
+        "sha256": "4d122232f14e5c551965f2210f2ae078c62c08078f1c9cf194803d8e5d85cad1",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "bhp",
+        "srcCode": "ind",
+        "tgtCode": "bhp",
+        "size": 400,
+        "sha256": "c83009cd10c48d64839ff29bddd8b003bdccab4614a5bcd0d6a7a64e28d5d0c1"
+      },
+      {
+        "source": "bhp",
+        "target": "ind",
+        "srcCode": "bhp",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "213df89dd037fc438878a70d66ccd330a92d0e9d325426041d351182253368f5",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "jav",
+        "srcCode": "ind",
+        "tgtCode": "jav",
+        "size": 2000,
+        "sha256": "da52596e6a325f2d37aa23857a118757d56d8c06eef2fdef924b7e922a373c40"
+      },
+      {
+        "source": "jav",
+        "target": "ind",
+        "srcCode": "jav",
+        "tgtCode": "ind",
+        "size": 2000,
+        "sha256": "59e230697448a20852904ce3c6962dfe656d94a865d71b9dddf21192d579ff69",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "mad",
+        "srcCode": "ind",
+        "tgtCode": "mad",
+        "size": 2000,
+        "sha256": "18e293de9ccdf4b8c482d01f84f58af6110c192066769055a35ff5e7145821ce"
+      },
+      {
+        "source": "mad",
+        "target": "ind",
+        "srcCode": "mad",
+        "tgtCode": "ind",
+        "size": 2000,
+        "sha256": "9ce24fd356af6ca3423bf06d0fdc6fd5e37c389b25854389cc27021aaccf16f6",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "mak",
+        "srcCode": "ind",
+        "tgtCode": "mak",
+        "size": 2000,
+        "sha256": "a546ef2ae730afdbed84d0faf0aa1bef324af89be24623a66f80de0c2916468b"
+      },
+      {
+        "source": "mak",
+        "target": "ind",
+        "srcCode": "mak",
+        "tgtCode": "ind",
+        "size": 2000,
+        "sha256": "4264aa3b1a430a22a72eacac47823d74d700c1ec2569ea6691265ce757eaa801",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "min",
+        "srcCode": "ind",
+        "tgtCode": "min",
+        "size": 2000,
+        "sha256": "d8d1a81aade4732734d8ecdb59c36f435dbbd1ff4464c2550e46efa6df0a5ee4"
+      },
+      {
+        "source": "min",
+        "target": "ind",
+        "srcCode": "min",
+        "tgtCode": "ind",
+        "size": 2000,
+        "sha256": "032bd90d42c4c1f379af9f1b3672eaccba1f50de6be37e78fb18adbfac39d42a",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "mui",
+        "srcCode": "ind",
+        "tgtCode": "mui",
+        "size": 400,
+        "sha256": "3bf78b06cb7f3fede8b8c7cd391b984b1eadee5337a9e1ee458ab6f9c9cafb8b"
+      },
+      {
+        "source": "mui",
+        "target": "ind",
+        "srcCode": "mui",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "6dc12a2357d96daab866fb701761536711d96566df880db402f2d5ff663f1ea8",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "rej",
+        "srcCode": "ind",
+        "tgtCode": "rej",
+        "size": 400,
+        "sha256": "6f4d4f9a3ac1b1ae55367c958e880beec9010357d8c2da45d2b4f95ea5e0dc9a"
+      },
+      {
+        "source": "rej",
+        "target": "ind",
+        "srcCode": "rej",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "8d1f96f1c43fd4b9711aa75e997ab69d1d4ab7e02b21ccdaf0bd586c1136198e",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      },
+      {
+        "source": "ind",
+        "target": "sun",
+        "srcCode": "ind",
+        "tgtCode": "sun",
+        "size": 2000,
+        "sha256": "d707ee4ddc146e9ccea72db08bce60754d4d7f8fe4118e0453ca323d96a0d7c1"
+      },
+      {
+        "source": "sun",
+        "target": "ind",
+        "srcCode": "sun",
+        "tgtCode": "ind",
+        "size": 2000,
+        "sha256": "ebd887db5625d1fd849840b2f4a0e2a0bdbf8cfe12a8066d6de68ed1f01f1a55",
+        "filePattern": "data/nusa_kalimat-mt-{src_code}-test.csv"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "NusaTranslation nusa_kalimat test",
+      "size": 27200,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out benchmark test split (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/IndoNLP/nusa-writes",
+    "instructions": "Per-language single file data/nusa_kalimat-mt-{lang}-test.csv fetched from the pinned commit (immutable); pairing.mode csv-columns pairs the ind_text and tgt_text columns of the same row. Both directions are scored.",
+    "sha256": null,
+    "revision": "b337f511185cd44c9c57ff906ecef1af6165adbc",
+    "filePattern": "data/nusa_kalimat-mt-{tgt_code}-test.csv",
+    "format": "parallel-text",
+    "pairing": {
+      "mode": "csv-columns",
+      "hasHeader": true,
+      "columns": {
+        "ind": "ind_text",
+        "abs": "tgt_text",
+        "bew": "tgt_text",
+        "bhp": "tgt_text",
+        "jav": "tgt_text",
+        "mad": "tgt_text",
+        "mak": "tgt_text",
+        "min": "tgt_text",
+        "mui": "tgt_text",
+        "rej": "tgt_text",
+        "sun": "tgt_text"
+      }
+    }
+  },
+  "source": {
+    "publisher": "IndoNLP",
+    "url": "https://github.com/IndoNLP/nusa-writes",
+    "paper": "https://aclanthology.org/2023.ijcnlp-main.60/",
+    "citation": "Cahyawijaya et al. (2023). NusaWrites: Constructing High-Quality Corpora for Underrepresented and Extremely Low-Resource Languages. AACL-IJCNLP 2023.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-NusaWrites-Unstated-Data-License",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out benchmark test split; not licensed for training. doNotTrain protects benchmark integrity.",
+    "notes": "Verified at the pinned commit: the repo LICENSE (Apache-2.0) covers the code; NO license is stated for the DATA (no data license file, no README license section). Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane until the founder review clarifies with upstream. Champollion never hosts the content — it is fetched from the pinned upstream commit on demand."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-pending-license-clarification",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out benchmark: training on it defeats its purpose. Upstream data license is UNSTATED (repo Apache-2.0 covers code only) — kept out of every commercial / prize / API lane and held (excluded from queue, contests, and ranking) until upstream states data terms. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "NusaTranslation (NusaWrites) test split — public since 2023 and in frontier-model training crawls. Scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "quarantine": true,
+  "quarantineReason": "License review 2026-08-24: HELD. No DATA license is stated at the pinned revision (repo Apache-2.0 covers code only), and an unstated grant is never interpreted on the rights-holder's behalf. Catalogued; excluded from the queue, contests, and ranking (DB trigger, migration 022); remote transmission refused (consent-required). A direct local run stays possible but its result can never rank. Clears when upstream states data terms or the rights-holder records a grant.",
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "held",
+    "lane": "catalogued-not-runnable",
+    "basis": "No DATA license is stated at the pinned revision (the repo Apache-2.0 covers code only), and an unstated grant is never interpreted on the rights-holder's behalf. Catalogued; excluded from the queue, contests, and ranking (DB trigger, migration 022); remote transmission refused (consent-required). A direct local run stays possible but its result can never rank. Clears when upstream states data terms or the rights-holder records a grant."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/IndoNLP/nusa-writes at commit b337f511185c; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/nusatranslation.json.",
+    "pinnedPairs": 20,
+    "excluded": {
+      "btk": "Upstream 'btk' is the ISO 639-5 COLLECTIVE code (Batak languages); which individual Batak variety the data represents (bbc Toba? btx Karo? ...) is not stated at the pinned revision, so no individual-language card can be honestly assigned (never mislabel). Excluded until upstream clarifies."
+    }
+  }
+}

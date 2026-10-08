@@ -1,0 +1,288 @@
+# ─────────────────────────────────────────────────────────────────────
+# Champollion — .gitignore
+# ─────────────────────────────────────────────────────────────────────
+# ONE REPO. This monorepo is the single source; distribution happens via
+# npm / PyPI / the website build, not repo mirrors.
+# ─────────────────────────────────────────────────────────────────────
+
+# ── Agent configuration (local to this machine) ───────────────────
+.gemini/
+
+# ── Secrets — NEVER commit ──────────────────────────────────────────
+.env
+.env.local
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# ── Research vault — internal, never published ──────────────────────
+# Early-stage research and landscape analysis. Local-only from the
+# public flip onward (untrack with: git rm -r --cached .vault).
+.vault/
+
+# ── OS & editor artifacts ───────────────────────────────────────────
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# ── Build artifacts ─────────────────────────────────────────────────
+node_modules/
+.docusaurus/
+build/
+dist/
+*.tgz
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# ── Local-only loose files (generated/downloaded, not checked in) ──
+*.pdf
+automata.svg
+dfa.svg
+ast.svg
+arxiv_results.xml
+
+# Harness run artifacts — cache batches + queue run/report logs (the reports
+# embed source/expected translation pairs). Generated per-run, never committed.
+/eval/
+
+# Downloaded third-party reference papers (ACL 2026 dossier reading set) —
+# bulk copyrighted content fetched on demand, never committed (see docs/ACL_2026_DOSSIER.md)
+references/Research Papers/Published paper/
+
+# Photographed ACL 2026 conference slides (IMG_*.JPG, ~81 MB) — third-party
+# copyrighted presentation content, local-only, never committed
+/ACL 2026 BPE slides/
+
+# ── Data infrastructure (large/generated, never commit) ──────────
+# SQLite databases — ingestion layer only, never enters any repo
+*.db
+*.db-shm
+*.db-wal
+*.db.pre-*
+
+# CLDF research data — 4.6 GB of linguistic datasets. Two files are
+# force-tracked THROUGH this ignore (tracked files override it):
+#   cli/data/cldr-supplemental/SNAPSHOT.json        (provenance pin)
+#   cli/data/cldr-supplemental/scriptMetadata.json  (61 KB, Unicode-licensed;
+#     the card adapters derive text direction from it — without it the
+#     public repo silently loses `dir` on every card. Found 2026-08-27.)
+cli/data/
+
+# Generated trading card data — now served from Supabase
+cli/website/data/tc-index.json
+cli/website/data/tc-lang/
+cli/website/data/languages.json
+# Split /languages browsing dataset (distilled from languages.json at build)
+cli/website/data/lang-index.json
+cli/website/data/lang-cards/
+# Homepage endonym datasets — distilled from languages.json by the shared-data
+# plugin at start/build time (from cards locally, from Supabase on cold builds).
+cli/website/data/channel.json
+cli/website/data/wall.json
+# Homepage viz — built from the Supabase scoreboard at start/build time
+# (field.json + graph.json from the DB; tc-index ensured by `ensure-tc-index`).
+# Build artifacts, not committed snapshots (founder directive 2026-06-16).
+cli/website/data/field.json
+cli/website/data/graph.json
+cli/website/src/data/graph-poster.json
+# Public Index ("the Catalogue") — distilled at build by the shared-data plugin
+# (generateCatalogueJson.js) from the in-repo SSOTs (corpora registry, resolved
+# language cards, method-registry, human-services, external-results). Generated,
+# never committed; the SSOTs are the source of truth.
+cli/website/data/catalogue.json
+cli/website/data/catalogue-langs.json
+# Localized glossary artifacts — merged at build by the shared-data plugin
+# (mergeGlossaryLocale.js) from i18n/<locale>/glossary.json over the English
+# SSOT. Generated, never committed; the SSOT + translated i18n files are the
+# sources of truth. (Pattern does NOT match the tracked English glossary.json.)
+cli/website/data/explainers/glossary.*.json
+
+# Network artifacts — produced at build by scripts/ensure-network-artifacts.mjs
+# (generate_sweep_queue.py / canonical registry copy / Supabase Storage), never
+# committed. Supabase is the SSOT; these are generated/served, not source. The
+# slim queue-preview.json (which the website pages fetch) STAYS committed as a
+# safe build-time fallback. See cli/website/scripts/ensure-network-artifacts.mjs
+# and mt-eval-arena/supabase/functions/regenerate-queue/README.md.
+cli/website/static/queue.json
+cli/website/static/mesh.json
+cli/website/static/registry.json
+
+# Generated Glottolog hierarchy — rebuilt on demand from cli/data/glottolog/
+# by cli/scripts/build-language-tree.mjs; consumed only by data-pipeline scripts.
+cli/shared/language-cards/language-tree.json
+
+# mt-eval-arena staging data — intermediate build output
+mt-eval-arena/data/
+
+
+# ── crk-translate: extracted to its own repository (2026-06-22) ──────
+# The Plains Cree (nêhiyawêwin) pipeline was moved OUT of this monorepo into
+# the standalone repo ../champollion-crk-translate. It is no longer tracked or
+# hosted here — local or remote. This blanket ignore is belt-and-suspenders so
+# a stray working-tree copy can never be re-added. (The more specific
+# crk-translate/eval/* content lines below are now subsumed by this rule.)
+/crk-translate/
+
+# ── EdTeKLA-derived corpora: fetch-from-source, never hosted ──────
+# Champollion does not host third-party corpora. The EdTeKLA Cree
+# Language Textbook data (CC BY-NC-SA 4.0, University of Alberta) is
+# rebuilt deterministically at run time from
+# https://github.com/EdTeKLA/IndigenousLanguages_Corpora by
+# corpora_builder.adapters.edtekla_adapter — config SSOT is the
+# corpora card (cli/shared/corpora-cards/eval-eng-crk-edtekla-*.json,
+# `source` block: repo_url/ref/builder/sha256). The harness fetches
+# missing corpora into arena/datasets/.cache/ on demand (mt-eval run
+# --yes accepts the license non-interactively). Working-tree copies
+# of these files may exist locally but must stay untracked.
+arena/datasets/.cache/
+arena/datasets/crk/*.json
+arena/datasets/curated/eng-crk-dev-v1.json
+crk-translate/eval/textbook_gold_standard.json
+# master_corpus.json additionally re-exposes sealed gold_standard and
+# phase1 segments — custody is local-only (see registry entry
+# 'crk-master-corpus' in arena/datasets/registry.json).
+crk-translate/eval/datasets/master_corpus.json
+crk-translate/eval/datasets/split_metadata.json
+crk-translate/eval/datasets/development/*.json
+crk-translate/eval/datasets/held_out/*.json
+crk-translate/eval/datasets/curated/*.json
+# Quarantined contaminated sets (see quarantine/README.md — tracked)
+crk-translate/eval/datasets/curated/quarantine/*.json
+
+# ── Wolvengrey-derived dictionary data: NO redistribution ─────────
+# arena/mt_eval_harness/eval_standards/crk/data/lemmas.json is a 5.2 MB
+# lemma dictionary harvested from the itwêwina API (CW = Arok
+# Wolvengrey's "nêhiyawêwin: itwêwina / Cree: Words", + MD).
+# Redistribution permission is PENDING (docs/LICENSING.md) — it must
+# never be tracked, subtree-pushed, or packaged. Found in the public
+# gds-mt-eval-harness mirror on 2026-06-12 (security review); untracked
+# here, and the mirror history must be purged before any re-push.
+# The semantic validator reads it from disk locally; re-harvest with
+# crk-translate tooling if missing.
+arena/mt_eval_harness/eval_standards/crk/data/lemmas.json
+.vercel
+
+# Generated per-source split registries. build_registry.py writes these from
+# the corpora cards (cli/shared/corpora-cards/). The merged registry.json IS
+# tracked as the runtime registry; the split files are rebuilt on demand —
+# and registry-flores.json alone is ~49 MB — so they must not be committed.
+# (load_registry / generate_sweep_queue regenerate or fall back to them.)
+arena/datasets/registry-*.json
+
+# Bundled-in-the-wheel registry copy. build_registry.py generates it from the
+# tracked arena/datasets/registry.json so `pip install` ships a registry; it is
+# included in the wheel via package-data at build time, never committed.
+arena/mt_eval_harness/data/registry.json
+
+# ── Fetched/built corpus CONTENT — NEVER tracked (dataset doctrine) ────────
+# The harness is fetch-from-source: every corpus is rebuilt at run time from
+# its third-party upstream via the corpora-card recipe
+# (cli/shared/corpora-cards/<card>.json -> source.repo_url + source.builder),
+# cached under arena/datasets/.cache/, and sha-verified. ONLY the metadata
+# cards and the merged registry.json are tracked — the actual parallel-text
+# corpus files are third-party content and must never enter git or be hosted
+# by us. (CLAUDE.md "Dataset doctrine". The quarantine gate enforces the
+# crk/EdTeKLA subset; these rules keep ALL corpora out of the tree.)
+#
+# De-hosting migration COMPLETE (2026-06-22): the previously-tracked curated
+# corpora were `git rm --cached`-ed and removed from git (kept on disk). The
+# runnable queue curls ZERO of them — all 44 were quarantined catalogue
+# entries — and the leaderboard's per-entry data lives in Supabase
+# (run_card_entries), written at publish time from freshly-fetched corpora, so
+# git never needs corpus content. These rules keep curated content out for good.
+arena/datasets/curated/
+# Loose corpus files dropped into a checkout by `curl -O` queue run_commands.
+/arena/*-dev-v1.json
+/arena/*-dev-v*.json
+/arena/*-test-v1.json
+/arena/*-test-v*.json
+
+# ── Eval run artifacts (RunLogs + TestReports) — regenerated, never tracked ─
+# `mt-eval run` writes run_<ts>.json + _report.json here; the leaderboard AND
+# the homepage viz build from Supabase (the system of record), not from these
+# files (founder directive 2026-06-16). Report JSONs are no longer tracked. The
+# finer-grained rules live in arena/.gitignore (`eval/logs/*`, with only
+# !sweep_manifest.json re-included) — NOT repeated here, because a root-level
+# dir ignore (`arena/eval/logs/`) would block that re-include (git can't
+# un-ignore a file whose parent directory is excluded).
+
+# ── BLANKET no-corpus-content (repo-wide de-hosting, 2026-06-22) ────────────
+# Champollion never hosts corpus CONTENT (translation pairs / parallel text /
+# reference answers / eval gold) in git — ANY license, ANYWHERE. Corpora are
+# fetch-from-source; only metadata cards + builders are tracked. The enforcing
+# gate is scripts/quarantine_gate.sh (which runs scripts/corpus_content_scan.py,
+# the license-agnostic content detector). These path rules de-host the specific
+# trees that were untracked in the 2026-06-22 purge and stop them re-entering;
+# the per-dir .gitignores (crk-translate/, cli/test/benchmark/) carry the same.
+#
+# Deprecated CLI translation benchmark — scraped third-party website text
+# (content-bench/) and Signal Desktop UI strings (ui-bench/). Regenerated by the
+# scrape/extract scripts; see cli/test/benchmark/DEPRECATED.md.
+cli/test/benchmark/content-bench/raw/
+cli/test/benchmark/content-bench/source/
+cli/test/benchmark/content-bench/reference/
+cli/test/benchmark/ui-bench/source/
+cli/test/benchmark/ui-bench/reference/
+#
+# crk-translate eval corpus content — English->Plains-Cree pairs, references,
+# and itwêwina/Wolvengrey-derived glossaries (redistribution not permitted).
+crk-translate/eval/baseline_evals/results/
+crk-translate/eval/baselines/raw_llm/
+crk-translate/eval/baseline_results.json
+crk-translate/eval/eval_results.json
+crk-translate/eval/exports/termbank_*.json
+crk-translate/eval/exports/termbank_*.csv
+crk-translate/eval/baseline_evals/prompt_iterations/v6_phrasebook.json
+crk-translate/eval/baseline_evals/prompt_iterations/v6_phrasebook.txt
+crk-translate/eval/baseline_evals/prompt_iterations/v6_dictionary.txt
+crk-translate/eval/baseline_evals/prompt_iterations/v7_lemma_list.txt
+crk-translate/crk_translate/grammar/examples.json
+
+# readme-i18n: docs/README.en.md is build input generated from cli/README.md by
+# cli/scripts/build-readme-i18n-source.mjs — only the translated outputs are tracked.
+cli/docs/README.en.md
+local-assets/
+
+# Champollion translation memory — LOCAL CACHE, never tracked (see
+# cli/website/docs/concepts/translation-memory.md §"Should You Commit
+# .champollion/tm.json?" and guides/agent-guide.md §Generated Files, which have
+# said so all along). Untracked 2026-08-17; `champollion sync` repopulates it.
+# The sibling lock files (.champollion.lock, .champollion-content.lock) STAY
+# tracked — this rule matches only the directory.
+.champollion/
+
+# Site-docent grounding artifacts — BUILD OUTPUT, never tracked. Both files are
+# emitted by cli/scripts/build-docent-corpus.mjs from the public docs tree
+# (cli/website/docs) plus the tracked SSOTs in cli/shared/docent/
+# (system-prompt.md, register-blocks.json, faq.en.json). They are ~1.8 MB each of
+# flattened doc prose, and the sovereignty gate blocks both on sight
+# (scripts/quarantine_gate.sh → "monolingual text records"): the corpus-content
+# rule is deliberately blunt and license-agnostic, and it is not weakened for our
+# own prose. Regenerate, don't commit — and note that the docent handler STATIC-
+# imports the bundle, so a missing bundle fails the deploy loudly (TS2307) rather
+# than shipping an ungrounded docent. Rebuild before deploying:
+#   node cli/scripts/build-docent-corpus.mjs
+cli/shared/docent/corpus.json
+mt-eval-arena/supabase/functions/docent-chat/_generated/
+
+# Audit findings — WORKING ARTIFACTS, never tracked. scripts/audit_runner.py
+# emits ~1.8 MB of JSON per run (one timestamped snapshot + latest.json); a
+# tracked copy would add that much history on every audit while being fully
+# regenerable in one command:
+#   python3 scripts/audit_runner.py --profile deep --report
+# The DURABLE records are tracked and small: the ratchet baseline
+# (cli/shared/card-lint-baseline.json, shrink-only) and the human report
+# docs/audit/DATA_ACCURACY_AUDIT_<date>.md.
+docs/audit/findings/
+
+# Microsoft Office lock files. Word/PowerPoint drop a "~$name.pptx" stub
+# beside any open document; it is a transient owner record, not content, and
+# it appears untracked every time a deck is edited.
+~$*

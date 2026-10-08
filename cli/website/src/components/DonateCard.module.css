@@ -1,0 +1,568 @@
+/**
+ * DonateCard.module.css — "Give your tokens" CTA card.
+ *
+ * Sits directly after ZipperSeam on the landing page. The design matches
+ * the labV4 ink surface: deep black with a subtle gradient wash, a
+ * glassmorphism code block for the curl command, and an electric-blue
+ * accent that ties into the ZipperSeam electric motif.
+ *
+ * Key decisions:
+ *   - No inline styles: dynamic values (slider thumb position) are the
+ *     only exception, applied via CSS custom properties from JS.
+ *   - Uses design-tokens.css variables for spacing, radius, shadows,
+ *     and typography so the card evolves with the system.
+ *   - The advanced panel uses max-height + overflow:hidden instead of
+ *     display:none so fields animate open smoothly.
+ *   - Reduced-motion users skip the transitions but still get the full
+ *     layout — nothing is display:none'd.
+ */
+
+/* ================================================================
+   SECTION CONTAINER
+   Full-bleed dark surface with subtle aurora at the top edge,
+   creating continuity with ZipperSeam above.
+   ================================================================ */
+
+.donateCard {
+  position: relative;
+  width: 100%;
+  padding: var(--space-3xl) var(--space-xl);
+  background:
+    /* Faint electric glow bleeding down from the Seam above */
+    radial-gradient(
+      100% 40% at 50% 0%,
+      rgba(77, 216, 255, 0.04),
+      transparent 70%
+    ),
+    var(--ink, #06070b);
+  overflow: hidden;
+}
+
+/* Subtle top hairline to separate from ZipperSeam without a hard edge */
+.donateCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--electric, #4dd8ff) 50%,
+    transparent
+  );
+  opacity: 0.25;
+}
+
+/* ================================================================
+   INNER CONTAINER
+   Centers content at 960px max, matching ZipperSeam's seamInner.
+   ================================================================ */
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ================================================================
+   TYPOGRAPHY
+   ================================================================ */
+
+.headline {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--paper, #ffffff);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 var(--space-md);
+}
+
+/* Subtle sub-copy: informational, not pushy. Uses the design system's
+   secondary text color for the dark surface. */
+.subCopy {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: var(--text-base, 0.9rem);
+  color: var(--text-secondary, #aeb8b3);
+  max-width: 480px;
+  line-height: 1.55;
+  margin: 0 0 var(--space-2xl);
+}
+
+/* ================================================================
+   CODE BLOCK — the curl command display
+   Glass surface with a blurred backdrop that picks up the ambient
+   aurora. The monospace text is large enough to feel "copy-pasteable"
+   without needing to squint.
+   ================================================================ */
+
+.codeBlock {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  border-radius: var(--radius-lg, 14px);
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.12));
+  background: rgba(10, 12, 18, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: var(--space-xl) var(--space-3xl) var(--space-xl) var(--space-xl);
+  overflow-x: auto;
+  margin-bottom: var(--space-xl);
+  /* Subtle inner glow at the top edge for depth */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* The dollar-sign prompt character — decorative, indicates a terminal. */
+.codePrompt {
+  color: var(--text-muted, #76837d);
+  user-select: none;
+  margin-right: var(--space-sm);
+}
+
+.codeText {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: var(--text-base, 0.9rem);
+  color: var(--paper, #ffffff);
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.6;
+  /* This <code> lives inside the dark .codeBlock terminal. Reset Docusaurus's
+     default inline-code styling (light --ifm-code-background + border + padding)
+     which otherwise paints a near-white box behind the white text → invisible
+     in light mode. The dark .codeBlock is the intended background. */
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* Syntax-highlight the flags for scanability */
+.codeFlag {
+  color: var(--electric, #4dd8ff);
+}
+
+.codeValue {
+  color: var(--vital-vulnerable, #e8b339);
+}
+
+/* ================================================================
+   COPY BUTTON
+   Sits inside the code block, top-right. Two states:
+   idle (clipboard icon) and copied (checkmark + text flash).
+   ================================================================ */
+
+.copyBtn {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  border-radius: var(--radius-sm, 6px);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary, #aeb8b3);
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: var(--text-xs, 0.7rem);
+  cursor: pointer;
+  transition:
+    background var(--duration-fast, 150ms) ease,
+    color var(--duration-fast, 150ms) ease,
+    border-color var(--duration-fast, 150ms) ease;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--paper, #ffffff);
+  border-color: var(--border-medium, rgba(255, 255, 255, 0.12));
+}
+
+.copyBtn:focus-visible {
+  outline: 2px solid var(--electric, #4dd8ff);
+  outline-offset: 2px;
+}
+
+/* Success state: brief green flash on copy */
+.copied {
+  color: var(--vitality-thriving, #4ade80);
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(74, 222, 128, 0.08);
+}
+
+/* The SVG icon inside the copy button */
+.copyIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   BUDGET SLIDER ROW
+   Horizontal flex with label, range input, and live value display.
+   The slider is fully reskinned to match the electric accent.
+   ================================================================ */
+
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: var(--space-2xl);
+}
+
+.sliderLabel {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: var(--text-sm, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #aeb8b3);
+  white-space: nowrap;
+}
+
+/* Range input — the browser default is ugly, so we rebuild the track
+   and thumb entirely via WebKit + Mozilla pseudo-elements. */
+.slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  /* Track gradient: filled portion uses electric, unfilled uses dark surface.
+     The --slider-pct variable is set from JS to color the "filled" side. */
+  background: linear-gradient(
+    to right,
+    var(--electric, #4dd8ff) 0%,
+    var(--electric, #4dd8ff) var(--slider-pct, 11%),
+    var(--border-medium, rgba(255, 255, 255, 0.12)) var(--slider-pct, 11%),
+    var(--border-medium, rgba(255, 255, 255, 0.12)) 100%
+  );
+  outline: none;
+  cursor: pointer;
+  transition: background var(--duration-fast, 150ms) ease;
+}
+
+/* Thumb — WebKit (Chrome, Safari, Edge) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--paper, #ffffff);
+  border: 2px solid var(--electric, #4dd8ff);
+  box-shadow: 0 0 8px rgba(77, 216, 255, 0.3);
+  cursor: pointer;
+  transition:
+    transform var(--duration-fast, 150ms) var(--ease-out),
+    box-shadow var(--duration-fast, 150ms) ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 14px rgba(77, 216, 255, 0.5);
+}
+
+/* Thumb — Mozilla (Firefox) */
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--paper, #ffffff);
+  border: 2px solid var(--electric, #4dd8ff);
+  box-shadow: 0 0 8px rgba(77, 216, 255, 0.3);
+  cursor: pointer;
+}
+
+/* Firefox track */
+.slider::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+/* The numeric value badge next to the slider */
+.sliderValue {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: var(--text-md, 1rem);
+  font-weight: 700;
+  color: var(--electric, #4dd8ff);
+  min-width: 2ch;
+  text-align: center;
+}
+
+/* ================================================================
+   ADVANCED TOGGLE — the expand/collapse trigger
+   Minimal, text-style button with a rotating chevron.
+   ================================================================ */
+
+.advancedToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  border-radius: var(--radius-md, 10px);
+  background: transparent;
+  color: var(--text-secondary, #aeb8b3);
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: var(--text-sm, 0.8rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    color var(--duration-fast, 150ms) ease,
+    border-color var(--duration-fast, 150ms) ease,
+    background var(--duration-fast, 150ms) ease;
+}
+
+.advancedToggle:hover {
+  color: var(--paper, #ffffff);
+  border-color: var(--border-medium, rgba(255, 255, 255, 0.12));
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.advancedToggle:focus-visible {
+  outline: 2px solid var(--electric, #4dd8ff);
+  outline-offset: 2px;
+}
+
+/* Chevron rotates 180° when expanded */
+.toggleChevron {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  transition: transform var(--duration-normal, 250ms) var(--ease-out);
+}
+
+.toggleChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ================================================================
+   ADVANCED PANEL — expandable configurator
+   Uses max-height for smooth CSS-only open/close animation.
+   The closed state is max-height:0 + overflow:hidden; the open
+   state has enough max-height to never clip the content.
+   ================================================================ */
+
+.advancedPanel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  width: 100%;
+  max-width: 600px;
+  transition:
+    max-height var(--duration-slow, 400ms) var(--ease-out),
+    opacity var(--duration-normal, 250ms) ease,
+    margin var(--duration-slow, 400ms) var(--ease-out);
+  margin-top: 0;
+}
+
+.advancedPanelOpen {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: var(--space-xl);
+}
+
+/* The glass surface behind the field groups — gives the configurator
+   a distinct visual layer from the section background. */
+.advancedInner {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg, 14px);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  background: rgba(10, 12, 18, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  text-align: left;
+}
+
+/* ================================================================
+   FIELD GROUP — label + input/select pair
+   ================================================================ */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Full-width field variant for elements that need the entire row */
+.fieldGroupFull {
+  grid-column: 1 / -1;
+}
+
+.fieldLabel {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: var(--text-xs, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted, #76837d);
+}
+
+/* Shared input/select styling — dark surface, electric focus ring */
+.fieldInput,
+.fieldSelect {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: var(--text-sm, 0.8rem);
+  color: var(--paper, #ffffff);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-sm, 6px);
+  padding: var(--space-sm) var(--space-md);
+  outline: none;
+  transition:
+    border-color var(--duration-fast, 150ms) ease,
+    box-shadow var(--duration-fast, 150ms) ease;
+}
+
+.fieldInput::placeholder {
+  color: var(--text-muted, #76837d);
+}
+
+.fieldInput:focus,
+.fieldSelect:focus {
+  border-color: var(--electric, #4dd8ff);
+  box-shadow: 0 0 0 2px rgba(77, 216, 255, 0.15);
+}
+
+/* Dropdown arrow — custom SVG so we control the color */
+.fieldSelect {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23aeb8b3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: var(--space-2xl);
+  cursor: pointer;
+}
+
+/* Select option styling — limited by browser, but at least dark bg */
+.fieldSelect option {
+  background: #0a0c12;
+  color: var(--paper, #ffffff);
+}
+
+/* ================================================================
+   MORE LINK — "Learn more about contributing →"
+   ================================================================ */
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xl);
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: var(--text-sm, 0.8rem);
+  font-weight: 500;
+  color: var(--electric, #4dd8ff);
+  text-decoration: none;
+  transition: color var(--duration-fast, 150ms) ease;
+}
+
+.moreLink:hover {
+  color: var(--electric-hot, #7be6ff);
+  text-decoration: none;
+}
+
+.moreLinkArrow {
+  transition: transform var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.moreLink:hover .moreLinkArrow {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   RESPONSIVE — TABLET (768px)
+   ================================================================ */
+
+@media (max-width: 768px) {
+  .donateCard {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .codeBlock {
+    /* Give enough room for the copy button on small screens */
+    padding: var(--space-lg) var(--space-lg) var(--space-lg) var(--space-lg);
+    padding-top: calc(var(--space-lg) + 32px);
+    border-radius: var(--radius-md, 10px);
+  }
+
+  .codeText {
+    font-size: var(--text-sm, 0.8rem);
+  }
+
+  .sliderRow {
+    max-width: 100%;
+  }
+
+  .advancedInner {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldGroupFull {
+    grid-column: 1;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — MOBILE (480px)
+   ================================================================ */
+
+@media (max-width: 480px) {
+  .donateCard {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .headline {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+
+  .sliderRow {
+    gap: var(--space-md);
+  }
+
+  .codeBlock {
+    border-radius: var(--radius-sm, 6px);
+  }
+
+  .codeText {
+    font-size: 0.72rem;
+  }
+
+  .advancedInner {
+    padding: var(--space-lg);
+    gap: var(--space-md);
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   Keep the layout and all content; just kill the transitions so
+   the advanced panel snaps open/shut and the slider doesn't animate.
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .advancedPanel {
+    transition: none;
+  }
+
+  .toggleChevron {
+    transition: none;
+  }
+
+  .slider::-webkit-slider-thumb {
+    transition: none;
+  }
+}

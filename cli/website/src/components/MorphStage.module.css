@@ -1,0 +1,583 @@
+/* ===================================================================
+   MorphStage — "the Morph" choreography.
+
+   Motion contract (DESIGN.md §5): transform / opacity / filter only,
+   ease tokens, every phase a finished composition. The phase machine
+   in MorphStage.js sets data-phase on .stage; everything below is
+   declarative response to that attribute. Under prefers-reduced-motion
+   the JS renders the static legend composition and none of the phase
+   states ever apply (data-phase stays "stamped").
+
+   Phases: english → decompose → fuse → stamped [→ vowelsOut → stamped2]
+           → melt
+   =================================================================== */
+
+.morph {
+  max-width: 640px;
+  margin: 0 auto 1.9rem;
+}
+
+/* ---------------------------------------------------------------
+   Typology switcher
+   --------------------------------------------------------------- */
+.morphHead {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.headChip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-medium);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.2s ease,
+    transform 0.22s var(--ease-out),
+    box-shadow 0.22s ease;
+}
+
+.headChip:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+}
+
+.headChip:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.headChipActive {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 1px var(--accent-subtle), inset 0 1px 0 var(--border-subtle);
+}
+
+.headChipTypology {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+}
+
+.headChipLang {
+  font-size: 0.72rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* ---------------------------------------------------------------
+   The stage — layered english / word planes
+   --------------------------------------------------------------- */
+.stage {
+  position: relative;
+}
+
+.stageInner {
+  display: grid;
+  place-items: center;
+  min-height: 9.2rem;
+}
+
+.stageInner > * {
+  grid-area: 1 / 1;
+}
+
+/* Layer 1: the English source phrase */
+.english {
+  display: flex;
+  gap: 0.55em;
+  margin: 0;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-size: clamp(1.45rem, 3.4vw, 1.9rem);
+  font-weight: 520;
+  color: var(--ifm-font-color-base);
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(4px);
+  transform: scale(0.97);
+  transition:
+    opacity 0.4s ease,
+    filter 0.4s ease,
+    transform 0.4s var(--ease-out);
+}
+
+.englishWord {
+  display: inline-block;
+}
+
+[data-phase='english'] .english {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+/* During decompose the phrase shatters upward as the tiles arrive */
+[data-phase='decompose'] .english {
+  opacity: 0;
+  filter: blur(5px);
+  transform: scale(1.04);
+}
+
+/* Layer 2: the word block (tiles + meaning + stamp) */
+.wordBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.word {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+/* ---------------------------------------------------------------
+   Morpheme tiles
+   --------------------------------------------------------------- */
+.tile {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 9px;
+  border: 1px solid var(--border-medium);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  /* Scattered ("decomposed") resting state — the fuse phase transitions
+     this back to identity. Transform/opacity only. */
+  opacity: 0;
+  transform: translate(var(--jx, 0), var(--jy, 0)) rotate(var(--jr, 0deg)) scale(1.05);
+  transition:
+    opacity 0.42s ease calc(var(--i, 0) * 55ms),
+    transform 0.62s var(--ease-spring) calc(var(--i, 0) * 70ms),
+    border-color 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.tileVowel {
+  color: var(--ifm-color-primary);
+  border-color: var(--accent-subtle);
+}
+
+/* english: tiles snap fully hidden (still scattered) — no reverse fade
+   artifact when arriving from the melt of the previous beat */
+[data-phase='english'] .tile {
+  opacity: 0;
+  transition: none;
+}
+
+/* decompose: tiles materialize, scattered */
+[data-phase='decompose'] .tile {
+  opacity: 1;
+}
+
+/* fuse / stamped / vowels*: tiles slide home */
+[data-phase='fuse'] .tile,
+[data-phase='stamped'] .tile,
+[data-phase='vowelsOut'] .tile,
+[data-phase='stamped2'] .tile,
+[data-phase='melt'] .tile {
+  opacity: 1;
+  transform: none;
+}
+
+/* Morpheme boundaries glow briefly as the word crystallizes */
+[data-phase='stamped'] .tile,
+[data-phase='stamped2'] .tile {
+  animation: boundaryGlow 1.15s ease-out calc(var(--i, 0) * 60ms) 1 both;
+}
+
+@keyframes boundaryGlow {
+  0% {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 0 12px 1px var(--accent-subtle);
+  }
+  100% {
+    border-color: var(--border-medium);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Arabic re-thread: vowel tiles lift out, swap, settle back in */
+[data-phase='vowelsOut'] .tileVowel {
+  opacity: 0;
+  transform: translateY(-12px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s var(--ease-out);
+}
+
+.tile:hover,
+.tile:focus-visible {
+  border-color: var(--ifm-color-primary);
+  z-index: 3;
+}
+
+.tile:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Gloss tooltip — pure transform/opacity, pointer-events none */
+.tileTip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  width: max-content;
+  max-width: 15rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 9px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-md, 0 6px 18px rgba(0, 0, 0, 0.16));
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+  text-align: center;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 5px) scale(0.96);
+  transition: opacity 0.18s ease, transform 0.22s var(--ease-out);
+  z-index: 5;
+}
+
+.tile:hover .tileTip,
+.tile:focus-visible .tileTip {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+/* ---------------------------------------------------------------
+   Meaning line, stamp, analysis
+   --------------------------------------------------------------- */
+.meaning {
+  margin: 0;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0;
+  transform: translateY(5px);
+  transition:
+    opacity 0.4s ease 0.25s,
+    transform 0.4s var(--ease-out) 0.25s;
+}
+
+/* The crystallized surface form — the one real word the tiles became */
+.meaningWord {
+  font-style: normal;
+  font-weight: 640;
+  font-size: 1.1rem;
+  color: var(--ifm-font-color-base);
+}
+
+.stampRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  min-height: 1.7rem;
+  opacity: 0;
+  transform: translateY(4px) scale(0.94);
+  transition:
+    opacity 0.35s ease 0.5s,
+    transform 0.45s var(--ease-spring) 0.5s;
+}
+
+[data-phase='stamped'] .meaning,
+[data-phase='stamped2'] .meaning,
+[data-phase='melt'] .meaning,
+[data-phase='stamped'] .stampRow,
+[data-phase='stamped2'] .stampRow,
+[data-phase='melt'] .stampRow {
+  opacity: 1;
+  transform: none;
+}
+
+/* The meaning line crossfades during the Arabic vowel re-thread */
+[data-phase='vowelsOut'] .meaning {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* New beat: the previous beat's meaning/stamp snap hidden instantly —
+   no reverse-fade of stale content under the incoming English phrase */
+[data-phase='english'] .meaning,
+[data-phase='english'] .stampRow,
+[data-phase='decompose'] .meaning,
+[data-phase='decompose'] .stampRow {
+  transition: none;
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-medium);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ifm-font-color-secondary);
+}
+
+.stampFst {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: var(--accent-subtle);
+}
+
+.analysis {
+  font-size: 0.68rem;
+  padding: 0.14rem 0.4rem;
+  background: transparent;
+  border: none;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------------
+   Morph v2 — the particle-dissolution layer (MorphParticles.js)
+   --------------------------------------------------------------- */
+/* Decorative canvas over the stage, with a little vertical bleed so
+   sand can settle and embers can rise without clipping. Sized to the
+   stage only; pointer-events none; aria-hidden in the JSX. */
+.particleCanvas {
+  position: absolute;
+  left: 0;
+  top: -36px;
+  width: 100%;
+  height: calc(100% + 72px);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* With the particle layer live (data-fx='on'), melt must NOT fade the
+   word — the canvas takes the glyphs over the instant melt begins, so
+   the DOM word snaps hidden and only the meaning/stamp lines do a fast
+   fade. The stageInner blur-melt below is suppressed entirely. */
+.stage[data-fx='on'][data-phase='melt'] .stageInner {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  transition: none;
+}
+
+.stage[data-fx='on'][data-phase='melt'] .tile {
+  opacity: 0;
+  transition: none;
+  animation: none;
+}
+
+.stage[data-fx='on'][data-phase='melt'] .meaning,
+.stage[data-fx='on'][data-phase='melt'] .stampRow {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.24s ease;
+}
+
+/* ---------------------------------------------------------------
+   Melt — the whole composition dissolves toward the next beat
+   --------------------------------------------------------------- */
+[data-phase='melt'] .stageInner {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(7px);
+  transition:
+    opacity 0.46s ease,
+    filter 0.46s ease,
+    transform 0.46s var(--ease-out);
+}
+
+/* english phase enters clean (no transition back from melt) */
+[data-phase='english'] .stageInner,
+[data-phase='decompose'] .stageInner {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  transition: none;
+}
+
+/* ---------------------------------------------------------------
+   Pinned gloss line + caption + controls
+   --------------------------------------------------------------- */
+.glossLine {
+  min-height: 1.5rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ifm-font-color-secondary);
+  text-align: center;
+}
+
+.glossMorpheme {
+  padding: 0.08rem 0.35rem;
+  border-radius: 6px;
+  background: var(--accent-subtle);
+  border: none;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.glossHint {
+  opacity: 0.65;
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.55rem 0 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-secondary);
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.55rem;
+}
+
+.again {
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-medium);
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.22s var(--ease-out);
+}
+
+.again:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+.again:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------
+   Reduced motion — a finished, static composition with the glosses
+   laid out as a legend. (JS also renders no timers/tooltips.)
+   --------------------------------------------------------------- */
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 26rem;
+  margin: 0.8rem auto 0;
+}
+
+.legendRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.legendMorpheme {
+  flex: none;
+  min-width: 4.6rem;
+  text-align: right;
+}
+
+.legendMorpheme code {
+  padding: 0.06rem 0.35rem;
+  border-radius: 6px;
+  background: var(--accent-subtle);
+  border: none;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.legendGloss {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-secondary);
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headChip,
+  .again {
+    transition: none;
+  }
+  .headChip:hover,
+  .again:hover {
+    transform: none;
+  }
+  /* The reduced composition is final: tiles visible, fused, no motion */
+  .tile {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+    cursor: default;
+  }
+  .english,
+  .meaning,
+  .stampRow {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .stageInner {
+    transition: none;
+  }
+  .tileTip {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Small screens
+   --------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .morph {
+    margin-bottom: 1.6rem;
+  }
+  .stageInner {
+    min-height: 8rem;
+  }
+  .headChipLang {
+    display: none;
+  }
+  .tileTip {
+    max-width: 11rem;
+  }
+}

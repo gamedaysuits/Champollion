@@ -1,0 +1,202 @@
+/**
+ * EndonymChannel — the v4 landing left-rail conveyor.
+ * Palette tokens (--ink, --electric, --gds-blue, --gds-cobalt, --paper) are
+ * provided by the page wrapper (src/css/landing-v4.css); this module only
+ * reads them so the rail themes with the rest of the v4 surface.
+ */
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  color: var(--paper, #fff);
+  font-family: var(--ifm-font-family-base);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.heading {
+  margin: 0 0 0.75rem;
+  padding: 0 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--electric, #4dd8ff) 75%, var(--paper, #fff));
+  opacity: 0.85;
+}
+
+.viewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+}
+
+.track {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.staticList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* A row — endonym + speaker count, links to the card. */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 64px;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+.staticList .row {
+  position: relative;
+}
+
+.row:hover,
+.row:focus-visible {
+  background: color-mix(in srgb, var(--electric, #4dd8ff) 12%, transparent);
+  outline: none;
+  transform: translateX(2px);
+}
+.row:hover .endonym,
+.row:focus-visible .endonym {
+  color: var(--electric, #4dd8ff);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--electric, #4dd8ff) 55%, transparent);
+}
+
+/* Vitality spine — the triad, used architecturally. */
+.spine {
+  flex: 0 0 auto;
+  width: 3px;
+  align-self: stretch;
+  margin: 0.45rem 0;
+  border-radius: 2px;
+  background: var(--vit, #6b7280);
+  opacity: 0.85;
+}
+.row[data-vitality='safe'] {
+  --vit: #34d399;
+}
+.row[data-vitality='vulnerable'] {
+  --vit: #fbbf24;
+}
+.row[data-vitality='endangered'] {
+  --vit: #fb7185;
+}
+.row[data-vitality='extinct'] {
+  --vit: #64748b;
+}
+.row[data-vitality='unknown'] {
+  --vit: #475569;
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.endonym {
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--paper, #fff);
+  transition: color 140ms ease, text-shadow 140ms ease;
+}
+
+.sub {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--paper, #fff) 58%, transparent);
+}
+
+.engName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 11rem;
+}
+
+.speakers {
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--gds-cobalt, #4770db) 40%, var(--paper, #fff));
+  font-variant-numeric: tabular-nums;
+}
+.speakersUnknown {
+  white-space: nowrap;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.fadeTop,
+.fadeBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12%;
+  pointer-events: none;
+  z-index: 2;
+}
+.fadeTop {
+  top: 0;
+}
+.fadeBottom {
+  bottom: 0;
+}
+
+.allLink {
+  margin-top: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--electric, #4dd8ff);
+  text-decoration: none;
+  border-top: 1px solid color-mix(in srgb, var(--electric, #4dd8ff) 22%, transparent);
+  transition: color 140ms ease, padding-left 140ms ease;
+}
+.allLink:hover {
+  color: var(--paper, #fff);
+  padding-left: 0.8rem;
+}
+
+@media (max-width: 996px) {
+  .endonym {
+    font-size: 1.05rem;
+  }
+  .row {
+    min-height: 58px;
+  }
+}

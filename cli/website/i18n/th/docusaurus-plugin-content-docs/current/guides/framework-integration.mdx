@@ -1,0 +1,212 @@
+---
+sidebar_position: 2
+title: "การผสานรวมกับ Framework"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# การผสานรวมกับ Framework
+
+การตั้งค่าทีละขั้นตอนสำหรับ champollion กับเฟรมเวิร์กยอดนิยม
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### โครงสร้างโปรเจกต์
+
+Hugo ใช้ `i18n/` สำหรับการแปล string และ `content/` สำหรับเนื้อหาหน้า:
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### การตั้งค่า
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### รายละเอียดการแปลเนื้อหา
+
+**Front matter**: รองรับทั้ง YAML (`---`) และ TOML (`+++`) delimiters แปล `title`, `description`, `summary`, `subtitle`, `caption` และ `linkTitle` ตามค่าเริ่มต้น ฟิลด์อื่นๆ ทั้งหมด (date, draft, tags, weight, slug ฯลฯ) จะถูกเก็บรักษาไว้ ปรับแต่งได้ด้วย `translatableFields` ในการกำหนดค่าของคุณ
+
+**การป้องกันบล็อก**: บล็อกโค้ด, Hugo shortcodes, inline code และ raw HTML จะถูกป้องกันโดยอัตโนมัติโดยใช้ Unicode sentinel placeholders โดยจะผ่านไปโดยไม่มีการเปลี่ยนแปลง
+
+**รูปแบบชื่อไฟล์**: ปฏิบัติตามรูปแบบ translation-by-filename ของ Hugo:
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (ตัด source suffix ออก)
+
+**ข้ามไฟล์ที่มีอยู่**: ไฟล์ที่แปลแล้วจะไม่ถูกเขียนทับ ลบไฟล์เป้าหมายเพื่อบังคับให้แปลใหม่
+
+### รูปแบบพหูพจน์
+
+TOML และ YAML locales รองรับรูปแบบพหูพจน์ CLDR:
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+แสดงภายในเป็น `items.one` และ `items.other` สำหรับการ diff จากนั้น re-serialize ไปยังรูปแบบ sectioned ที่ถูกต้องเมื่อเขียน
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### โครงสร้างโปรเจกต์
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### การตั้งค่า
+
+```bash
+npm install --save-dev champollion
+npx champollion init --yes --langs fr,de,ja,es,ko,zh,pt,ar
+```
+
+`init` จะค้นหา `messages/en.json` สร้างไฟล์เป้าหมายที่ว่างเปล่า และเขียนการกำหนดค่าดังนี้:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": {
+    "fr": "formal-vous", "de": "formal-Sie", "ja": "polite", "es": "neutral-latam",
+    "ko": "polite-haeyo", "zh": {}, "pt": "professional", "ar": {}
+  }
+}
+```
+
+ระดับภาษา (register) ของแต่ละเป้าหมาย (โทนเสียงและความเป็นทางการ) จะถูกเขียนลงใน `languages` เพื่อให้มองเห็นและแก้ไขได้: คุณสามารถเปลี่ยนค่าใดค่าหนึ่งเป็นพรีเซ็ตอื่นของภาษานั้น (`champollion status` จะแสดงรายการเหล่านี้) หรือเป็นคำที่คุณกำหนดเอง ภาษาที่ไม่มีพรีเซ็ตจะถูกเขียนเป็น `{}` นอกจากนี้ รายการธรรมดาอย่าง `"languages": ["fr", "de"]` ก็สามารถใช้งานได้เช่นกันและจะใช้ค่าเริ่มต้นของแต่ละภาษา
+
+```bash
+npx champollion sync
+```
+
+สร้าง `messages/fr.json`, `messages/ja.json` ฯลฯ — แปลครบถ้วน โดยรักษาโครงสร้าง nested key ของคุณไว้ next-intl จะรับรู้ไฟล์เหล่านี้โดยอัตโนมัติ
+
+### ขั้นตอนการพัฒนา
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### หนึ่งโฟลเดอร์ต่อหนึ่งภาษา (ค่าเริ่มต้นของ i18next)
+
+```
+public/locales/
+├── en/
+│   ├── common.json        ← source namespaces
+│   └── admin/users.json
+├── fr/
+└── ja/
+```
+
+```bash
+npx champollion init --yes --langs fr,de,ja
+```
+
+`init` จะค้นหา `public/locales/en/` (หรือ `locales/en/`) กำหนดให้การกำหนดค่าชี้ไปที่ไฟล์ดังกล่าว และสร้าง `fr/common.json`, `fr/admin/users.json` ตลอดจนไฟล์อื่นๆ เป็นไฟล์เปล่า ส่วนของการกำหนดค่าที่เกี่ยวข้องที่ถูกเขียนขึ้นคือ:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./public/locales",
+  "languages": { "fr": "formal-vous", "de": "formal-Sie", "ja": "polite" }
+}
+```
+
+```bash
+npx champollion sync
+```
+
+ไฟล์เนมสเปซแต่ละไฟล์จะได้รับการแปลและเขียนลงในเส้นทางเดียวกันในโฟลเดอร์ของทุกภาษา สตริงที่ปรากฏในหลายเนมสเปซจะได้รับการแปลเพียงครั้งเดียวต่อภาษา ส่วนไฟล์อื่นๆ จะดึงข้อความนั้นมาจาก Translation Memory คีย์รูปพหูพจน์ (`key_one`, `key_other`) จะได้รูปแบบเฉพาะของแต่ละภาษา: ภาษาฝรั่งเศสจะได้รับ `key_many` ส่วนภาษาญี่ปุ่นจะคงไว้เพียง `key_other` ดูเพิ่มเติมที่ [เลย์เอาต์ไฟล์โลแคล](/docs/getting-started/configuration#locale-layouts)
+
+### หนึ่งไฟล์ต่อหนึ่งภาษา
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+### เลย์เอาต์อื่นๆ
+
+หากไฟล์ของคุณมีรูปแบบอื่น ให้ระบุรูปแบบด้วย `localesPattern` (`{lang}` คือภาษา และ `{ns}` คือเนมสเปซ):
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesPattern": "src/i18n/{ns}/{lang}.json",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+  </TabItem>
+</Tabs>

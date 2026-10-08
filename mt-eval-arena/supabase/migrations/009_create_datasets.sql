@@ -1,0 +1,17 @@
+-- Migration 009: Datasets table — SUPERSEDED by 011_reconcile_datasets.sql
+--
+-- HISTORY: This migration originally attempted to CREATE TABLE datasets with
+-- a schema that differed from the CLI migration (20260528024953) which
+-- created the table first. Because of CREATE TABLE IF NOT EXISTS, this
+-- was always a no-op on the live DB.
+--
+-- STATUS: SUPERSEDED. Migration 011 properly reconciles the two schemas
+-- by adding arena-specific columns to the existing CLI-created table.
+--
+-- This file is kept for migration numbering continuity. It performs
+-- no operations. Apply migration 011 instead.
+--
+-- See DATABASE_SCHEMA.md for the canonical schema definition.
+
+-- No-op: the datasets table was created by CLI migration 20260528024953.
+-- Arena-specific columns are added by migration 011_reconcile_datasets.sql.

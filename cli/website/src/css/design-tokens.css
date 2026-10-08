@@ -1,0 +1,232 @@
+/**
+ * Champollion Design System — Global Tokens ("Field Notes")
+ *
+ * Palette rationale (see cli/website/DESIGN.md):
+ *   The palette derives from the vitality triad used across the site —
+ *   teal (thriving) · amber (vulnerable) · coral (endangered) — on a
+ *   scholarly neutral base (ink / paper, faintly green-tinted so the
+ *   neutrals and the teal brand accent share an undertone).
+ *
+ * RULE: Every color in the app references a token from this file.
+ * No raw hex values in component CSS. If you need a new color, add it here.
+ *
+ * Text readability contract:
+ *   --text-primary on --surface-0: WCAG AAA (>= 7:1)
+ *   --text-secondary on --surface-0: WCAG AA (>= 4.5:1)
+ *   --text-primary on --surface-card: WCAG AAA (>= 7:1)
+ */
+
+/* =========================================================================
+   DARK THEME (default)
+   Dark is the default palette. It is ALSO exposed under [data-theme='dark']
+   so a nested `data-theme="dark"` wrapper (the always-dark marketing homepage)
+   re-applies the dark tokens, overriding the [data-theme='light'] values that
+   html sets in light mode. Proximity wins for inherited custom properties, so
+   the homepage subtree stays dark while the docs follow the site theme toggle.
+   ========================================================================= */
+:root,
+[data-theme='dark'] {
+  /* ---- Surface hierarchy (ink) ---- */
+  --surface-0: #101312;            /* page background */
+  --surface-1: #181c1a;            /* card background */
+  --surface-2: #202623;            /* elevated panels, popovers */
+  --surface-3: #2a322e;            /* hover states, active items */
+  --surface-glass: rgba(24, 28, 26, 0.85);
+  --surface-overlay: rgba(0, 0, 0, 0.6);
+
+  /* ---- Text hierarchy ----
+   * Tested against --surface-0 (#101312) and --surface-1 (#181c1a)
+   * for WCAG AAA compliance. */
+  --text-primary: #eef1ef;         /* ~15:1 on surface-0 */
+  --text-secondary: #aeb8b3;       /* ~7:1 on surface-0 */
+  --text-muted: #76837d;           /* ~3.9:1 — decorative only, never body text */
+  --text-inverse: #101312;         /* for light-background badges */
+
+  /* ---- Accent (brand teal — vitality "thriving") ---- */
+  --accent: #3fc1c0;
+  --accent-hover: #58cac9;
+  --accent-subtle: rgba(63, 193, 192, 0.15);
+  --accent-glow: rgba(63, 193, 192, 0.35);
+
+  /* ---- Vitality triad (canonical — wall chips, contrast modules) ---- */
+  --vital-safe: #3fc1c0;
+  --vital-safe-bg: rgba(63, 193, 192, 0.10);
+  --vital-safe-border: rgba(63, 193, 192, 0.28);
+  --vital-vulnerable: #e8b339;
+  --vital-vulnerable-bg: rgba(232, 179, 57, 0.10);
+  --vital-vulnerable-border: rgba(232, 179, 57, 0.25);
+  --vital-endangered: #f08a93;
+  --vital-endangered-bg: rgba(240, 138, 147, 0.12);
+  --vital-endangered-border: rgba(240, 138, 147, 0.28);
+
+  /* ---- Borders ---- */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.20);
+
+  /* ---- MT Complexity Index tiers (replaces old "rarity") ----
+   * These indicate data scarcity / MT difficulty, not collectability.
+   * A categorical scale, deliberately distinct from the brand triad. */
+  --complexity-extreme: #e84393;      /* near-impossible to MT */
+  --complexity-extreme-glow: rgba(232, 67, 147, 0.4);
+  --complexity-severe: #a855f7;       /* major structural barriers */
+  --complexity-severe-glow: rgba(168, 85, 247, 0.4);
+  --complexity-high: #3b82f6;         /* significant gaps */
+  --complexity-high-glow: rgba(59, 130, 246, 0.4);
+  --complexity-moderate: #22c55e;     /* some resources exist */
+  --complexity-moderate-glow: rgba(34, 197, 94, 0.3);
+  --complexity-low: #94a3b8;          /* well-resourced */
+  --complexity-low-glow: rgba(148, 163, 184, 0.3);
+
+  /* ---- Vitality status (per-card detail badges) ---- */
+  --vitality-thriving: #4ade80;
+  --vitality-shifting: #fbbf24;
+  --vitality-endangered: #fb923c;
+  --vitality-critical: #f87171;
+  --vitality-dormant: #a1a1aa;
+
+  /* ---- Typography ---- */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype',
+    Palatino, Georgia, 'Noto Serif', serif;
+  --font-body: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: 0.7rem;      /* 11.2px — captions, source tags */
+  --text-sm: 0.8rem;      /* 12.8px — labels, metadata */
+  --text-base: 0.9rem;    /* 14.4px — body text */
+  --text-md: 1rem;        /* 16px — slightly emphasized */
+  --text-lg: 1.2rem;      /* 19.2px — section headers */
+  --text-xl: 1.6rem;      /* 25.6px — card names */
+  --text-2xl: 2rem;       /* 32px — page title */
+  --text-3xl: 2.4rem;     /* 38.4px — hero title */
+
+  /* ---- Spacing scale ---- */
+  --space-2xs: 0.125rem;  /* 2px */
+  --space-xs: 0.25rem;    /* 4px */
+  --space-sm: 0.5rem;     /* 8px */
+  --space-md: 0.75rem;    /* 12px */
+  --space-lg: 1rem;       /* 16px */
+  --space-xl: 1.5rem;     /* 24px */
+  --space-2xl: 2rem;      /* 32px */
+  --space-3xl: 3rem;      /* 48px */
+
+  /* ---- Radii scale ---- */
+  --radius-sm: 6px;       /* badges, inline code chips */
+  --radius-md: 10px;      /* buttons, inputs, small cards */
+  --radius-lg: 14px;      /* cards, panels */
+  --radius-xl: 18px;      /* feature cards, modals */
+
+  /* ---- Card dimensions ---- */
+  --card-radius: var(--radius-lg);
+  --card-min-w: 280px;
+  --card-max-w: 420px;
+  --card-pad: var(--space-lg);
+
+  /* ---- Panel dimensions ---- */
+  --panel-width: 620px;
+  --panel-max-width: 65vw;
+
+  /* ---- Transitions ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring: cubic-bezier(0.22, 1.2, 0.36, 1); /* presentation entrances */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-reveal: 650ms; /* scroll-triggered section reveals */
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 24px var(--accent-glow);
+
+  /* ---- Chrome: glass navbar + always-ink footer ----
+   * Footer tokens are intentionally NOT overridden by the light theme:
+   * the branded close stays ink in both modes ("field notes at night").
+   * Navbar glass IS theme-aware (overridden below). */
+  --navbar-glass: rgba(16, 19, 18, 0.72);
+  --footer-bg: #101312;
+  --footer-text: #aeb8b3;          /* ~7:1 on --footer-bg (AA+) */
+  --footer-text-strong: #eef1ef;   /* wordmark */
+  --footer-text-dim: #8b9893;      /* ≥4.5:1 on --footer-bg (AA small text) */
+  --footer-link-hover: #3fc1c0;
+  --footer-border: rgba(255, 255, 255, 0.12);
+  --footer-code-bg: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================================
+   LIGHT THEME (paper)
+   Text readability is NON-NEGOTIABLE here. Every text color is tested
+   against its expected background for WCAG AA minimum.
+   ========================================================================= */
+[data-theme='light'] {
+  /* ---- Surfaces: warm paper off-whites ---- */
+  --surface-0: #f7f6f2;
+  --surface-1: #ffffff;
+  --surface-2: #f0eee8;
+  --surface-3: #e7e4dc;
+  --surface-glass: rgba(255, 255, 255, 0.9);
+  --surface-overlay: rgba(0, 0, 0, 0.3);
+
+  /* ---- Text: DARK on LIGHT — high contrast, always ----
+   * #1f2421 on #ffffff = 15.6:1 (AAA)
+   * #3c4642 on #ffffff = 9.6:1 (AAA)
+   * #5f6b66 on #ffffff = 5.3:1 (AA) */
+  --text-primary: #1f2421;
+  --text-secondary: #3c4642;
+  --text-muted: #5f6b66;
+  --text-inverse: #f3f5f4;
+
+  /* ---- Accent: darker teal for light backgrounds (4.8:1 on white) ---- */
+  --accent: #0f766e;
+  --accent-hover: #0d685f;
+  --accent-subtle: rgba(15, 118, 110, 0.1);
+  --accent-glow: rgba(15, 118, 110, 0.25);
+
+  /* ---- Vitality triad (light variants) ---- */
+  --vital-safe: #0e9594;
+  --vital-safe-bg: rgba(14, 149, 148, 0.09);
+  --vital-safe-border: rgba(14, 149, 148, 0.25);
+  --vital-vulnerable: #c98a04;
+  --vital-vulnerable-bg: rgba(201, 138, 4, 0.10);
+  --vital-vulnerable-border: rgba(201, 138, 4, 0.25);
+  --vital-endangered: #e2606b;
+  --vital-endangered-bg: rgba(226, 96, 107, 0.10);
+  --vital-endangered-border: rgba(226, 96, 107, 0.28);
+
+  /* ---- Borders ---- */
+  --border-subtle: rgba(31, 36, 33, 0.06);
+  --border-medium: rgba(31, 36, 33, 0.12);
+  --border-strong: rgba(31, 36, 33, 0.20);
+
+  /* ---- Complexity tiers: slightly darker for light bg ---- */
+  --complexity-extreme: #c2185b;
+  --complexity-extreme-glow: rgba(194, 24, 91, 0.2);
+  --complexity-severe: #7c3aed;
+  --complexity-severe-glow: rgba(124, 58, 237, 0.2);
+  --complexity-high: #2563eb;
+  --complexity-high-glow: rgba(37, 99, 235, 0.2);
+  --complexity-moderate: #16a34a;
+  --complexity-moderate-glow: rgba(22, 163, 74, 0.15);
+  --complexity-low: #64748b;
+  --complexity-low-glow: rgba(100, 116, 139, 0.15);
+
+  /* ---- Vitality: slightly darker for light bg ---- */
+  --vitality-thriving: #16a34a;
+  --vitality-shifting: #d97706;
+  --vitality-endangered: #ea580c;
+  --vitality-critical: #dc2626;
+  --vitality-dormant: #71717a;
+
+  /* ---- Shadows: softer on light ---- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 24px var(--accent-glow);
+
+  /* ---- Chrome: glass navbar (paper translucency) ----
+   * Footer tokens deliberately not overridden — see dark theme block. */
+  --navbar-glass: rgba(251, 250, 248, 0.78);
+}

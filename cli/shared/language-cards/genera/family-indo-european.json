@@ -1,0 +1,54 @@
+{
+  "code": "family-indo-european",
+  "extends": null,
+  "name": "Indo-European Family",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Most Indo-European languages have grammatical gender (2–3 genders: masculine/feminine, or masculine/feminine/neuter). Some branches (e.g., modern English, Bengali, Persian) have lost grammatical gender. Gender triggers agreement on articles, adjectives, pronouns, and sometimes verbs. Genus-level cards specify exact gender systems for each branch."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "varies"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "inflectionalMorphology": "Indo-European languages are predominantly inflectional (fusional) — a single morpheme can encode multiple grammatical categories simultaneously (e.g., case + number + gender in a single suffix). The degree of inflection varies enormously, from minimal (English, Persian) to extensive (Sanskrit, Lithuanian, Russian).",
+    "agreementSystems": "Most members have agreement systems where adjectives, determiners, and/or verbs must agree with nouns in gender, number, and/or case. Failure to maintain agreement is a common MT error.",
+    "diverseWordOrders": "Word order varies significantly across branches: SVO (Romance, Germanic, Slavic), SOV (Indic, Iranian), VSO (Celtic, some archaic stages). Some branches have relatively free word order with pragmatic reordering (Slavic, Baltic).",
+    "scriptDiversity": "The family uses Latin, Cyrillic, Devanagari, Arabic, Armenian, Georgian, Greek, Bengali, Gujarati, Gurmukhi, and other scripts. Script-specific handling is critical — genus cards specify script requirements."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "ancestry": [
+      "Indo-European"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Indo-European (~648 members). This is deliberately broad — most specific translation-relevant properties are defined at the genus level (genus-romance.json, genus-slavic.json, genus-germanic.json, genus-indic.json, genus-iranian.json, genus-celtic.json, etc.). Properties set to null here vary too much within the family to generalize.",
+  "regions": [
+    {
+      "country": "Global (originally Eurasia, now worldwide)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Europe, South Asia, Central Asia, Americas, Oceania",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

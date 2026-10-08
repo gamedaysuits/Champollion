@@ -1,0 +1,314 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/external-results.schema.json",
+  "title": "Champollion External MT Results Catalogue (cite-only SSOT)",
+  "description": "Hand-curated, in-git registry of EXTERNALLY-PUBLISHED machine-translation results that Champollion CITES but has NOT independently reproduced. THREE axes are tracked PER RECORD and must NEVER be conflated: (1) `verified` — every record MUST be a single concrete datapoint (one model, one benchmark, one NAMED metric, one numeric value, an explicit lower_is_better direction, and a source_url) whose value has been checked against the cited source; a record may not be added unverified. (2) `badge` — the constant 'unverified — not reproduced by Champollion' disclaimer: the number is someone else's measurement, run by them on their data, not re-run in the Champollion harness. So `verified:true` means 'we confirmed the citation', NOT 'we reproduced the result'. (3) `signal_strength` — the OBJECTIVE strength of the corpus the number was measured on (size · example length · domain breadth · contamination). PROVENANCE (external/not-reproduced) and SIGNAL STRENGTH (grade) are SEPARATE: an external result is FLAGGED as not-reproduced but is NOT penalized on grade merely for being external; a number we run ourselves on a 12-single-word test pair is a WEAK edge, while OPUS-MT eng→fra on thousands of lengthy multi-domain examples is a STRONG edge. Metric VARIANTS (legacy-BLEU vs spBLEU vs chrF vs chrF++ vs MetricX-24 vs a specific COMET version) are NOT directly comparable; each record names its exact metric. Records may carry a `pair` (source/target ISO codes) so the datapoint surfaces as a flagged external EDGE on the /mesh map, and a `method_ref` into the top-level `methods` availability index (a catalogue of ALL methods seen in results — not just the runnable method-registry). NEVER store corpus content, gold references, or per-sentence outputs here — only the citation, the URL, the metric, and the published value. Consumed at build time by the public Index page (cli/website/src/pages/catalogue.js) and the /mesh external-edge overlay via the shared-data catalogue distiller. Mirrors the method-registry.json / human-services.json SSOT pattern.",
+  "type": "object",
+  "required": ["version", "results", "manifest"],
+  "additionalProperties": false,
+  "properties": {
+    "_comment": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "results": {
+      "type": "array",
+      "description": "Cite-only external result records.",
+      "items": { "$ref": "#/$defs/result" }
+    },
+    "methods": {
+      "type": "array",
+      "description": "The METHOD-AVAILABILITY INDEX: a catalogue of every translation method/system that appears in `results` (and notable peers), independent of whether Champollion can run it today. Each entry records availability, weight openness, and how the method is accessed, so users can be pointed to a method now and Champollion can implement-for-them later. This is a SUPERSET of shared/method-registry.json — entries flagged `runnable_in_champollion:true` are dispatchable today; the rest are cited-only.",
+      "items": { "$ref": "#/$defs/method" }
+    },
+    "manifest": {
+      "type": "object",
+      "description": "Field-literacy manifest: which benchmark families Champollion RUNS, which it only CITES, and which it deliberately EXCLUDES (with reasons).",
+      "required": ["run", "cite", "exclude"],
+      "additionalProperties": false,
+      "properties": {
+        "run": {
+          "type": "array",
+          "description": "Benchmark families Champollion runs in its own harness (the runnable registry). Names mirror arena/datasets/registry.json registry_source values; counts are derived live at build, not stored here.",
+          "items": { "$ref": "#/$defs/manifestRun" }
+        },
+        "cite": {
+          "type": "array",
+          "description": "External result sources Champollion cites but does not reproduce. Each references the cite-only `results` records by source id or describes a source.",
+          "items": { "$ref": "#/$defs/manifestCite" }
+        },
+        "exclude": {
+          "type": "array",
+          "description": "Benchmark families/datasets deliberately NOT indexed, each with a plain-English reason (field literacy, not omission).",
+          "items": { "$ref": "#/$defs/manifestExclude" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One externally-published, concretely-cited datapoint: a single (model, benchmark, metric, value) tuple with a source URL. NO aggregate/leaderboard pointers belong here — those live in manifest.cite. Every record is verified against its source and carries the not-reproduced-by-Champollion badge.",
+      "required": [
+        "id",
+        "model",
+        "source",
+        "benchmark",
+        "metric",
+        "value",
+        "lower_is_better",
+        "source_url",
+        "citation",
+        "verified",
+        "badge"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "Stable kebab-case id, unique within results (e.g. 'translategemma-27b-metricx')."
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The exact system/model the number was measured on (e.g. 'TranslateGemma 27B', 'Gemma 3 12B'). This is the thing being scored — NOT the publication."
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Short name of the publication the number comes from (e.g. 'TranslateGemma Technical Report'). Used for grouping/citation context; distinct from `model`."
+        },
+        "org": {
+          "type": ["string", "null"],
+          "description": "Publishing organization or team (e.g. 'Google', 'Meta AI', 'Cohere for AI')."
+        },
+        "year": {
+          "type": ["integer", "null"],
+          "description": "Publication year."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["paper", "model-report", "leaderboard", "aggregator"],
+          "description": "Kind of source. (Verified single-number records are typically 'model-report' or 'paper'.)"
+        },
+        "benchmark": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The exact evaluation set the number was measured on (e.g. 'WMT24++', 'FLORES-200 devtest'). Names the test suite so absolute scores are read on the right distribution."
+        },
+        "metric": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The exact NAMED metric and version (e.g. 'MetricX-24', 'COMET-22', 'chrF++', 'spBLEU'). Generic 'BLEU'/'COMET' without a variant is insufficient."
+        },
+        "value": {
+          "type": "number",
+          "description": "The published numeric score exactly as reported on `benchmark` with `metric` (e.g. 3.09, 84.4). No rounding/derivation; record the source's stated figure."
+        },
+        "lower_is_better": {
+          "type": "boolean",
+          "description": "Direction of the metric: true when a LOWER value is better (e.g. MetricX-24, error counts), false when HIGHER is better (e.g. COMET-22, chrF++, BLEU). Required so the value is never misread."
+        },
+        "metric_variant_flag": {
+          "type": ["string", "null"],
+          "description": "Optional cross-comparability caveat: the metric's scale and why it is NOT directly comparable to other variants (legacy-BLEU / spBLEU / chrF / chrF++ / a specific COMET or MetricX version)."
+        },
+        "headline": {
+          "type": ["string", "null"],
+          "description": "Optional one-line paraphrase of the source's own headline claim — NOT a Champollion measurement; read with the badge."
+        },
+        "langs_or_pairs": {
+          "type": ["string", "null"],
+          "description": "Optional language / pair coverage the number averages over (e.g. 'WMT24++ — 55 language pairs, averaged')."
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical link to the source the value was verified against (paper, report, or leaderboard page)."
+        },
+        "citation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Bibliographic citation (authors, title, venue/arXiv id)."
+        },
+        "verified": {
+          "const": true,
+          "description": "MUST be the boolean true. Asserts the (model, benchmark, metric, value) tuple was checked against the cited source. A record may not be added unverified. NOTE: this is citation-accuracy, NOT independent reproduction — see `badge`."
+        },
+        "badge": {
+          "type": "string",
+          "const": "unverified — not reproduced by Champollion",
+          "description": "Constant integrity disclaimer: the number is someone else's measurement, not re-run in the Champollion harness. Orthogonal to `verified` (which only asserts the citation is accurate)."
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Optional caveats (e.g. evaluation protocol detail, why the corpus itself is excluded even though the result is cited)."
+        },
+        "pair": {
+          "$ref": "#/$defs/pair",
+          "description": "Optional directed language pair (ISO 639-3 source → target). When present, this datapoint is mappable to a flagged EXTERNAL EDGE on the /mesh map. Absent for aggregate/averaged numbers (e.g. an average over 55 WMT24++ directions), which are not single edges."
+        },
+        "signal_strength": {
+          "$ref": "#/$defs/signalStrength",
+          "description": "Optional OBJECTIVE signal-strength grade of the corpus this number was measured on. SEPARATE from provenance: an external result is not penalized on grade for being external. Interim rubric pending the canonical mesh-routing rubric (see notes/rationale); the coordinator reconciles."
+        },
+        "method_ref": {
+          "type": ["string", "null"],
+          "description": "Optional id into the top-level `methods` availability index, linking this result to the method/system it was measured on."
+        }
+      }
+    },
+    "pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "target"],
+      "description": "A directed language pair by ISO 639-3 code (matches arena registry language_pair).",
+      "properties": {
+        "source": { "type": "string", "pattern": "^[a-z]{3}$", "description": "ISO 639-3 source code." },
+        "target": { "type": "string", "pattern": "^[a-z]{3}$", "description": "ISO 639-3 target code." }
+      }
+    },
+    "signalStrength": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grade", "contamination", "rationale"],
+      "description": "The OBJECTIVE strength of the measurement's corpus — what makes an edge weak or strong regardless of who ran it. Letter grade is derived from the four factors below; `rationale` states the derivation in plain English so it is auditable and re-gradeable.",
+      "properties": {
+        "grade": {
+          "type": "string",
+          "enum": ["A", "B", "C", "D", "F"],
+          "description": "Signal-strength letter grade (A strongest … F weakest), reflecting corpus size, example length, domain breadth, and contamination together. NOT a quality score of the model and NOT a provenance penalty."
+        },
+        "corpus_size": {
+          "type": ["integer", "null"],
+          "description": "Number of evaluation items the number was measured on (segments / sentence pairs), or null when the source does not state it."
+        },
+        "example_length": {
+          "type": ["string", "null"],
+          "enum": ["multi-sentence", "sentence", "short", "word-level", "mixed", "unknown", null],
+          "description": "Typical length of the evaluated examples. Longer, fuller examples carry more signal than single words."
+        },
+        "domain_breadth": {
+          "type": ["string", "null"],
+          "enum": ["multi-domain", "broad", "single-domain", "narrow", "unknown", null],
+          "description": "Breadth of domains the test set covers. Broad multi-domain sets generalize better than a single narrow domain."
+        },
+        "contamination": {
+          "type": "string",
+          "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"],
+          "description": "Contamination posture of the test set (how broadly it is trained on). HIGH = relative-only / illustration; LOW = absolute-eligible. UNKNOWN fails safe (treated as not absolute-eligible)."
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Plain-English justification for the grade from the four factors (auditable; lets the coordinator re-derive against the canonical rubric)."
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "availability", "weights", "access", "runnable_in_champollion"],
+      "description": "One entry in the method-availability index: a translation method/system seen in results, with how available it is and how it is accessed.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "Stable kebab-case id (e.g. 'opus-mt', 'nllb-200'), referenced by results[].method_ref."
+        },
+        "name": { "type": "string", "minLength": 1, "description": "Display name (e.g. 'OPUS-MT', 'NLLB-200')." },
+        "org": { "type": ["string", "null"], "description": "Publishing organization (e.g. 'Helsinki-NLP', 'Meta AI', 'Google')." },
+        "paradigm": {
+          "type": ["string", "null"],
+          "description": "Method paradigm (e.g. 'neural-mt', 'dedicated-mt', 'llm', 'rule-based')."
+        },
+        "availability": {
+          "type": "string",
+          "enum": ["open-weights", "open-source", "gated-weights", "api-only", "closed", "research-only", "unknown"],
+          "description": "Overall availability posture of the method/system."
+        },
+        "weights": {
+          "type": "string",
+          "enum": ["open", "gated", "closed", "none", "unknown"],
+          "description": "Are the model weights publicly obtainable? 'open' = freely downloadable; 'gated' = login/acceptance required; 'none' = no published weights (e.g. API-only)."
+        },
+        "access": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": ["huggingface", "download", "api", "pip", "github", "cli", "web", "unknown"]
+          },
+          "description": "How the method is accessed in practice (one or more channels)."
+        },
+        "license": { "type": ["string", "null"], "description": "Weights/use license (e.g. 'CC-BY-4.0', 'CC-BY-NC-4.0', 'Apache-2.0', 'Proprietary (ToS)')." },
+        "commercial_use": {
+          "type": ["boolean", "null"],
+          "description": "True when commercial use is permitted; false for non-commercial-only (NC); null when unclear."
+        },
+        "homepage": { "type": ["string", "null"], "format": "uri", "description": "Project homepage / docs." },
+        "weights_url": { "type": ["string", "null"], "format": "uri", "description": "Where the weights live (e.g. a Hugging Face org/model page)." },
+        "source_url": { "type": ["string", "null"], "format": "uri", "description": "Canonical citation/source (paper, repo, or card) for the availability facts." },
+        "runnable_in_champollion": {
+          "type": "boolean",
+          "description": "True when the method is dispatchable TODAY via shared/method-registry.json; false = cited-only (point users to it now, implement-for-them later)."
+        },
+        "notes": { "type": ["string", "null"], "description": "Optional caveats (e.g. 'NC license — excluded from commercial lane', 'one model per pair')." }
+      }
+    },
+    "manifestRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "name", "note"],
+      "properties": {
+        "family": {
+          "type": "string",
+          "description": "registry_source value in arena/datasets/registry.json (e.g. 'flores', 'tico19')."
+        },
+        "name": { "type": "string", "description": "Display name." },
+        "license": { "type": ["string", "null"], "description": "Predominant license of the family." },
+        "contamination_posture": {
+          "type": ["string", "null"],
+          "description": "How the family is treated by the scoring lane (e.g. 'HIGH — relative-only', 'LOW — absolute-eligible')."
+        },
+        "note": { "type": "string", "description": "Plain-English note on what the family is and how it is used." }
+      }
+    },
+    "manifestCite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "note"],
+      "properties": {
+        "source": { "type": "string", "description": "Source name (matches a results[].source or describes a citing source)." },
+        "result_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional ids in results[] this entry covers."
+        },
+        "note": { "type": "string", "description": "Why we cite (not reproduce) this source." }
+      }
+    },
+    "manifestExclude": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "reason"],
+      "properties": {
+        "name": { "type": "string", "description": "Excluded benchmark/dataset family." },
+        "reason_code": {
+          "type": ["string", "null"],
+          "enum": [
+            "contaminated-colonial",
+            "mixed-license",
+            "embedding-not-mt",
+            "monolingual-training",
+            "speech-out-of-scope",
+            "improper-subset",
+            "no-redistribute",
+            null
+          ],
+          "description": "Machine-readable exclusion reason."
+        },
+        "reason": { "type": "string", "description": "Plain-English exclusion reason (field literacy, not omission)." }
+      }
+    }
+  }
+}

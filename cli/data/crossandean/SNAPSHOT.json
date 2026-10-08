@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "crossandean",
+  "upstream": "https://zenodo.org/records/19184362",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Blum et al.'s \"A phylolinguistic classification of the Quechua language family\" from 2023 — Frederic Blum; Carlos B. Ugarte; Adriano Ingunza; Zoe Poirier",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.3",
+    "doi": "10.5281/zenodo.19184362",
+    "date": "2026-03-23"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 402648,
+      "sha256": "5c3e6e6062cd572f068c72ff90391d52c575de79571c7fc45cc7625f68687460",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13487,
+      "sha256": "363f9dbe611084763519ebf3c44f60c573d49ce5fd1eb0ee6e614ca100e34480",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 774106,
+      "sha256": "14ae7724847cdedc712514cbf3fd080da4cddfe79df93a5397bc4eafe737c5bd",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 958308,
+      "sha256": "60753d7d1a17a972b72d0fa53e0922abf7f7f208e0624e2dd08aab7ae8fdf626",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 4284,
+      "sha256": "d8a73a1689b04c4b61cf0415d5b616cf180a8df5eec3309a005d5feb8a621586",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "af393b23bb589d75130c238f6b10086421d88cfef450ea6ada77920ce33e074a",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 4594,
+      "sha256": "2929102d4dbfc457aacf1d9abe50c264e6c64bd4da0704a8ffa21ce4871ffd50",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 962,
+      "sha256": "b80c31cc54d6f429087c828f65147a9884c8151070186b196665b036db2cdf0a",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 7140,
+      "sha256": "8d7e69fcb2b332c644377210d911c7a9173624f00f516401fd0a3e190c0d1c40",
+      "url": "https://zenodo.org/api/records/19184362/files/lexibank/crossandean-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/crossandean-v1.3.zip:lexibank-crossandean-94ff25e/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/crossandean-v1.3.zip, whose md5 matched Zenodo's published checksum (md5:dbe71ae2617e6ab5c9a7849bf93feebd). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:49:05.456Z"
+}

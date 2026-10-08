@@ -1,0 +1,86 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/* HubColumn — the release-date-ordered omnimodel escalation (beat 5/6).
+   Neutral chrome: names/years slate + text tones; the COUNT is the loud cell
+   (the "bigger and bigger" axis). No quality colours here — coverage claims,
+   never scores. */
+
+.col {
+  position: absolute;
+  right: 3.2%;
+  top: 16%;
+  width: min(40vw, 330px);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: baseline;
+  column-gap: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(10, 16, 24, 0.78);
+  border: 1px solid rgba(139, 149, 167, 0.2);
+  will-change: opacity, transform;
+}
+
+.year {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  color: #8b95a7;
+}
+
+.name {
+  font-size: 13px;
+  color: #d7deea;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.count {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 15px;
+  font-weight: 700;
+  color: #eef2f8;
+}
+
+/* The Omnilingual shortfall, from their own §1 arithmetic — standard mono,
+   no italic footnote styles (R1 font-hierarchy cleanup). */
+.report {
+  grid-column: 1 / -1;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: #c98a8f; /* leans toward the quality-red story it tells */
+  padding-top: 2px;
+}
+
+.foot {
+  margin-top: 4px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.03em;
+  color: #6f7787;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .col {
+    width: 62vw;
+    right: 2%;
+  }
+  .row {
+    padding: 4px 9px;
+  }
+}
+
+/* rtl:end:ignore */

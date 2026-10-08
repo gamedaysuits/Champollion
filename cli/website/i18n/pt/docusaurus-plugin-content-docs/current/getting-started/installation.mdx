@@ -1,0 +1,131 @@
+---
+sidebar_position: 1
+title: "Instalação"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Instalação
+
+:::note[Licença]
+A CLI champollion tem código-fonte disponível sob a
+[PolyForm Noncommercial License 1.0.0](https://github.com/gamedaysuits/Champollion/blob/main/cli/LICENSE): gratuita para usar, modificar e compartilhar
+para fins não comerciais — projetos pessoais, pesquisa, ensino e uso por
+instituições de caridade, escolas, hospitais e clínicas públicas e governo. O uso para fins comerciais não é
+coberto por esta licença: o produto de uma empresa com fins lucrativos, como a vitrine de uma loja, é considerado uso comercial.
+A estrutura de avaliação por trás da [Rede](/docs/network/) é de código aberto (AGPL-3.0-or-later).
+A licença de cada pacote em termos simples, com exemplos: [Quem pode usar](/docs/getting-started/who-may-use-this).
+:::
+
+## Requisitos
+
+- **Node.js 20.11+** (ESM nativo)
+- Uma chave de API de tradução (veja abaixo)
+
+## Instalação
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## Obter uma Chave de API
+
+Champollion precisa de um backend de tradução. Escolha um:
+
+| Provedor | Variável de ambiente | Ideal para |
+|----------|---------------------|----------|
+| **OpenRouter** (recomendado) | `OPENROUTER_API_KEY` | Projetos com muito conteúdo, Markdown, mais de 200 modelos |
+| **Gemini** (nível gratuito) | `GEMINI_API_KEY` | Começar com custo zero, boa qualidade |
+| **OpenAI** | `OPENAI_API_KEY` | Acesso direto ao GPT-4o |
+| **Anthropic** | `ANTHROPIC_API_KEY` | Acesso direto ao Claude, textos com nuances |
+| **DeepL** | `DEEPL_API_KEY` | Idiomas europeus, formalidade integrada |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | Alto volume de pares chave-valor, 194 idiomas |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure, 135 idiomas |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | Auto-hospedado, foco em privacidade |
+| **Tilde MT** | `TILDE_API_KEY` | Idiomas bálticos e europeus, hospedado na UE |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | MT profissional, 200 idiomas |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+[OpenRouter](https://openrouter.ai) fornece uma API unificada para 200+ modelos LLM. Camada gratuita disponível.
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+Ou adicione a `.env.local`:
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+Melhor para: projetos com muito conteúdo, tradução de Markdown e projetos que precisam de proteção de conteúdo (blocos de código, shortcodes, variáveis de interpolação).
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+Ideal para: alto volume de pares de strings chave-valor (194 idiomas). **Não recomendado** para conteúdo em Markdown — o Google Translate não reconhece blocos de código, shortcodes ou variáveis de interpolação.
+
+:::tip[Detecção inteligente]
+Se apenas `GOOGLE_TRANSLATE_API_KEY` estiver configurado (sem chave OpenRouter), champollion muda automaticamente para Google Translate. Nenhuma alteração de configuração necessária.
+:::
+
+  </TabItem>
+</Tabs>
+
+## Verificar Instalação
+
+```bash
+npx champollion --help
+```
+
+Você deve ver a lista de comandos disponíveis. Você está pronto para o [Início Rápido](/docs/getting-started/quick-start).

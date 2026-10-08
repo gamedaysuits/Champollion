@@ -1,0 +1,71 @@
+{
+  "code": "macrolanguage-lah",
+  "extends": "genus-indic",
+  "name": "Lahnda (Western Panjabi) Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "lah",
+  "script": null,
+  "dir": null,
+  "formality": {
+    "system": "register-levels",
+    "description": "Lahnda varieties share the Indic multi-level honorific system inherited from the genus. Multiple pronoun levels distinguish intimate, familiar, and respectful address. Verb conjugation changes with each level. Western Panjabi varieties additionally encode religious and community identity through formality choices (Islamic honorifics, Sikh honorifics).",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Lahnda varieties have a binary masculine/feminine gender system inherited from Indo-Aryan. Gender triggers agreement on verbs, adjectives, and postpositions. Gender assignment is partly morphological (word ending) and partly arbitrary."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": null
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "scriptDiversity": "Lahnda varieties use multiple scripts: Shahmukhi (modified Arabic/Perso-Arabic script, RTL) is used by Muslim communities in Pakistan. Gurmukhi (Indic script, LTR) is used by Sikh communities. Latin (LTR) is used informally, especially in digital communication. The Shahmukhi/Gurmukhi split makes script and direction null at the macrolanguage level.",
+    "tonalVariation": "Some Lahnda varieties (including Saraiki and some Western Panjabi dialects) have developed lexical tone from the loss of aspiration and voicing contrasts. Tonal systems are not uniform across the macrolanguage — some varieties are tonal, others are not.",
+    "postpositionalSystem": "All varieties are strictly SOV with postpositions, shared with the broader Indic genus. Case relations are expressed through postpositions that follow the noun.",
+    "compoundVerbs": "Light verb and conjunct verb constructions are pervasive, inherited from the Indic genus. Predicates are formed by combining nouns/adjectives with light verbs (karnā, honā, etc.).",
+    "dialectContinuum": "Lahnda varieties form a dialect continuum with Eastern Panjabi (pan) and Sindhi. Boundaries between 'Lahnda varieties' and neighboring languages are linguistically gradient rather than sharp. The macrolanguage grouping is partly administrative.",
+    "lowResourceStatus": "Most Lahnda varieties have very limited digital presence and NLP resources. MT quality for these varieties is expected to be significantly lower than for major world languages. Community-validated resources are scarce."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Indic",
+    "genusGlottocode": "indo1321",
+    "ancestry": [
+      "Indo-European",
+      "Indo-Iranian",
+      "Indo-Aryan",
+      "Northwestern zone",
+      "Lahnda"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Macrolanguage card for Lahnda/Western Panjabi (lah). Covers Western Panjabi (pnb), Saraiki (skr), Hindko (hnd/hno), Pahari-Potwari (phr), and other varieties. Script and direction are null because of the Shahmukhi (RTL)/Gurmukhi (LTR) split. Individual variety cards must specify script and direction.",
+  "regions": [
+    {
+      "country": "Pakistan (primarily Punjab and surrounding regions)",
+      "countryCode": "PK",
+      "officialStatus": null,
+      "region": "Pakistan (Punjab, Khyber Pakhtunkhwa, Sindh border), India (Jammu)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

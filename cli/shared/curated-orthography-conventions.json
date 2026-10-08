@@ -1,0 +1,44 @@
+{
+  "_comment": [
+    "Curated orthographic-convention register — the decision-layer input to the",
+    "orthographies[] derivation (cli/scripts/derive-orthographies.mjs). NOT WIRED:",
+    "that deriver is a standalone pass, not imported by cli/scripts/cldf/project.mjs,",
+    "so nothing here reaches a card today. An earlier version of this comment claimed",
+    "the wiring existed; it did not. Do not restore that claim before the import does.",
+    "",
+    "ONE entry per language code, keyed by ISO 15924 script code. Each script entry may set",
+    "scheme / longVowelMarking / canonicalForMt and MUST set a source string that cites a",
+    "verifiable basis — a source the card already carries, a published convention, or a tool",
+    "in the repo's register. Only add entries whose convention is actually documented:",
+    "absence means unknown, and the deriver writes nothing it cannot cite (index, not",
+    "arbiter). Optional keys are OMITTED when unknown, never guessed. Do NOT record measured",
+    "scores here — a score of method output is a run result and belongs on the leaderboard.",
+    "",
+    "Data-over-code (docs/AGENTS.md §1): language-specific conventions live in this file,",
+    "never hardcoded in the deriver. Decision-layer inputs to the atlas build live under the",
+    "monorepo-root shared/ (parameters.csv, card-field-disposition.json, catalogue/…); this",
+    "file moved here from cli/shared/ on 2026-09-06 for that reason — cli/shared/ is the",
+    "npm-bundled RUNTIME tree, and nothing reads this register at runtime.",
+    "",
+    "STANDING VERDICT (shared/cldf/curated-file-verdicts.json, 2026-08-06):",
+    "'CITABLE BUT NOT MACHINE-FETCHABLE — keep, with a bibliographic citation added, and",
+    "record that it is asserted from the literature rather than fetched.' Every entry below",
+    "is asserted from the literature and from tools the card already lists. None is fetched,",
+    "so none carries a pin; that is the reason this is a curated register and not a source."
+  ],
+  "version": 2,
+  "conventions": {
+    "crk": {
+      "Latn": {
+        "scheme": "SRO",
+        "longVowelMarking": "circumflex",
+        "canonicalForMt": true,
+        "source": "manual-curation (asserted from the literature and from a tool the card already carries — not machine-fetched). SRO is Standard Roman Orthography for Plains Cree; it writes the seven long vowels with circumflexes (â ê î ô) against unmarked short vowels. AUTHORITY: the GiellaLT / UAlbertaALTLab lang-crk finite-state transducer, which the crk card lists under resources.fsts from the giellalt-resources source (https://github.com/giellalt/lang-crk, https://github.com/UAlbertaALTLab/lang-crk). Both analysers accept the hyphenated preverb spelling (ê-nipâyân, nikî-nipân, kâ-nipât) and return the SAME analysis plus the tag Err/Orth — the FST's own spelling-error tag — for the fused spelling, so 'correct SRO' here is the grammar machine's verdict rather than a house preference. CANONICAL-FOR-MT: crk is written in two scripts and the pipeline's working script is the Roman one (shared/catalogue/card-config.json scriptConverter.crk converts between them); the scripts[] `primary` display flag is NOT this signal. REFERENCE LEXICON, cited and never redistributed (founder ruling 2026-07-19, index-only permanently): Wolvengrey, Arok, ed. 2001. nehiyawewin: itwewina / Cree: Words. Regina: Canadian Plains Research Center."
+      },
+      "Cans": {
+        "canonicalForMt": false,
+        "source": "manual-curation (asserted, not fetched). Unified Canadian Aboriginal Syllabics is an attested writing system for Plains Cree and stays on the card as an alternative — the language is written both ways and an index says so. It is NOT the pipeline's working form: shared/catalogue/card-config.json registers scriptConverter.crk precisely because syllabics is converted to and from the Roman orthography, and the lang-crk analysers cited on the Latn entry above are SRO-facing. longVowelMarking is OMITTED rather than guessed: syllabics marks vowel length by a diacritic over the syllable, which none of the schema's vocabulary terms (circumflex / macron / double-vowel / none) describes."
+      }
+    }
+  }
+}

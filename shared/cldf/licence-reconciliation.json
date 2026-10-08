@@ -1,0 +1,62 @@
+{
+  "_doc": "Licence questions found by comparing each SNAPSHOT against the dataset's own CLDF descriptor. Where the two disagree the MOST RESTRICTIVE reading governs \u2014 a licence is the one place this atlas does not keep both answers and let the reader decide, because \"two parties disagree about whether we may redistribute this\" is a risk to avoid rather than a fact to display. Every entry here is UNRESOLVED and awaits a human: resolving one means reading the deposit, not choosing.",
+  "version": 1,
+  "entries": {
+    "doreco": {
+      "question": "The SNAPSHOT and the descriptor state different licences.",
+      "snapshot": "CC0-1.0",
+      "descriptor": "CC-BY",
+      "applied": "CC-BY",
+      "resolved": false,
+      "note": "The safe reading, not the true one. Resolving it means reading the deposit."
+    },
+    "normansinitic": {
+      "question": "The SNAPSHOT and the descriptor state different licences.",
+      "snapshot": "CC-BY-4.0",
+      "descriptor": "Apache-2.0",
+      "applied": "Apache-2.0",
+      "resolved": false,
+      "note": "The safe reading, not the true one. Resolving it means reading the deposit."
+    },
+    "nts": {
+      "question": "The SNAPSHOT and the descriptor state different licences.",
+      "snapshot": "CC-BY-NC-ND-2.0",
+      "descriptor": "CC-BY-NC-2.0",
+      "applied": "CC-BY-NC-ND-2.0",
+      "resolved": false,
+      "note": "The safe reading, not the true one. Resolving it means reading the deposit."
+    },
+    "petersonsouthasia": {
+      "question": "No licence stated anywhere we can see.",
+      "snapshot": null,
+      "descriptor": null,
+      "applied": "LicenseRef-Unestablished-petersonsouthasia",
+      "resolved": false,
+      "note": "Zenodo records it as 'other-open', which says the deposit is open without saying on what terms. Ingested as metadata only. Resolving this means reading the deposit or asking the depositor -- not picking something plausible."
+    },
+    "powerma": {
+      "question": "The SNAPSHOT had no licence; the descriptor did.",
+      "snapshot": null,
+      "descriptor": "GPL-3.0",
+      "applied": "GPL-3.0",
+      "resolved": true,
+      "note": "Not a conflict -- a gap the fetcher left, filled from the depositor's own statement."
+    },
+    "sails": {
+      "question": "The SNAPSHOT had no licence; the descriptor did.",
+      "snapshot": null,
+      "descriptor": "CC-BY-NC-ND-2.0",
+      "applied": "CC-BY-NC-ND-2.0",
+      "resolved": true,
+      "note": "NO-DERIVATIVES. A third ND source, found only because the descriptor was read. Its values must never enter the store -- metadata only."
+    },
+    "tangclassifiers": {
+      "question": "The SNAPSHOT had no licence; the descriptor did.",
+      "snapshot": null,
+      "descriptor": "CC-BY-4.0",
+      "applied": "CC-BY-4.0",
+      "resolved": true,
+      "note": "Not a conflict -- a gap the fetcher left, filled from the depositor's own statement."
+    }
+  }
+}

@@ -1,0 +1,120 @@
+name: "📊 Submit a benchmark / dataset"
+description: "Propose an evaluation corpus or benchmark for the Champollion index. Metadata + a fetch-from-source pointer only — never the corpus content itself."
+title: "[Dataset] "
+labels: ["submission", "submission:dataset", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a benchmark or dataset. **This is an intake form, not an auto-add.**
+        A maintainer reviews every submission against IP / license / sovereignty rules before
+        anything lands in the registry — see the
+        [submission guide](https://champollion.dev/docs/network/getting-started/submit-to-the-index).
+
+        **Never paste corpus content (source/reference sentences) into this issue.** We host
+        metadata and a pointer to where the data is fetched from — never the text itself.
+        Bible / liturgical and other colonial-imposition corpora are out of scope and will be declined.
+
+  - type: input
+    id: dataset-name
+    attributes:
+      label: Dataset name
+      placeholder: "e.g. GlobalVoices eng→amh test set"
+    validations:
+      required: true
+
+  - type: textarea
+    id: pairs
+    attributes:
+      label: Language pair(s)
+      description: "ISO 639-3 codes, source→target. One pair per line for multiple."
+      placeholder: |
+        eng-amh
+        eng-crk
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: "The terms the data is published under. Non-commercial / no-redistribute / unknown sets are catalogued but cannot enter the public fetch lane."
+      options:
+        - CC-BY-4.0
+        - CC-BY-SA-4.0
+        - CC0-1.0
+        - CC-BY-NC-4.0
+        - Proprietary / all rights reserved
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: input
+    id: license-url
+    attributes:
+      label: License URL
+      placeholder: "https://…"
+
+  - type: input
+    id: source-url
+    attributes:
+      label: Source / canonical URL
+      description: "The project or dataset homepage."
+      placeholder: "https://…"
+    validations:
+      required: true
+
+  - type: input
+    id: fetch-url
+    attributes:
+      label: Fetch-from-source pointer (archive / repo URL)
+      description: "Where the harness rebuilds the data from. We never host the content — only this pointer."
+      placeholder: "https://…/data.tar.gz"
+
+  - type: input
+    id: size
+    attributes:
+      label: Size (number of sentence pairs)
+      placeholder: "e.g. 500"
+
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      placeholder: "news, conversational, educational, mixed, …"
+
+  - type: dropdown
+    id: contamination
+    attributes:
+      label: Contamination risk (is this text in known LLM training sets?)
+      description: "NONE = private/unpublished · LOW = niche/recent · MEDIUM = public · HIGH = in major training sets."
+      options:
+        - "NONE"
+        - "LOW"
+        - "MEDIUM"
+        - "HIGH"
+        - "Unsure"
+
+  - type: dropdown
+    id: held-out
+    attributes:
+      label: Is this a held-out / test split?
+      description: "Held-out benchmarks are catalogued for relative ranking only, to protect their integrity."
+      options:
+        - "No — public / dev split"
+        - "Yes — held-out test split"
+        - "Unsure"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: "Provenance, build steps, partnership context, sovereignty considerations, etc."
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Compliance attestation (required)
+      options:
+        - label: "I confirm this is publicly listable, contains NO corpus content or personal data, and respects the source's license and any community/sovereignty restrictions."
+          required: true

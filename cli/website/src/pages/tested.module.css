@@ -1,0 +1,294 @@
+/**
+ * /tested — the measured map.
+ *
+ * Same instrument family as the seam: dark glass, mono kickers, teal hairline,
+ * slate metadata. The one difference in intent is that NOTHING here is
+ * ambient — no packets, no wash, no choreography. Motion on this screen is
+ * user-driven, because every mark is a real result and a result should not
+ * shimmer.
+ */
+
+.root {
+  position: relative;
+  min-height: calc(100vh - var(--ifm-navbar-height, 60px));
+  background: #06070b;
+  overflow: hidden;
+  /* Dark-only, scoped: GraphEngine resolves its palette against this element
+     (forceDark + tokenRoot), so the map and the copy agree without touching
+     <html data-theme> and desyncing the rest of the site. */
+  --ifm-font-color-base: #e8eae8;
+  --ifm-font-color-secondary: #9aa5a0;
+  --vital-safe: #3fc1c0;
+  --vital-vulnerable: #e8b339;
+  --vital-critical: #d64550;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+}
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── the count, and the named view ─────────────────────────────────────── */
+.kicker {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  text-align: center;
+  pointer-events: none;
+  max-width: 94vw;
+}
+.count {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9aa5a0;
+}
+.count b {
+  color: #4dd8ff;
+  font-weight: 600;
+}
+/* The reduction is a VIEW, not a verdict. This line is load-bearing, not
+   chrome: without it a default "best under filter" is silently picking a
+   winner, which an index does not do. */
+.view {
+  margin-top: 5px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #6f7787;
+}
+.notRanking {
+  color: #8b95a7;
+  border-bottom: 1px dotted #55606f;
+}
+.empty {
+  margin-top: 7px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: #8b95a7;
+  pointer-events: auto;
+}
+
+/* ── controls ──────────────────────────────────────────────────────────── */
+.controls {
+  position: absolute;
+  top: 84px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 94vw;
+}
+.group {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 10px;
+  background: rgba(10, 16, 24, 0.72);
+  border: 1px solid rgba(77, 216, 255, 0.14);
+  backdrop-filter: blur(6px);
+}
+.chip,
+.chipOn {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #8b95a7;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.chip:hover {
+  color: #cdd6e3;
+}
+.chipOn {
+  color: #06070b;
+  background: #4dd8ff;
+  font-weight: 600;
+}
+
+/* ── the honest-absence register ───────────────────────────────────────── */
+.register {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  margin: 0;
+  max-width: 94vw;
+  text-align: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6f7787;
+}
+.registerLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.registerLink:hover {
+  color: #7be6ff;
+}
+
+/* ── drawer: edge → runs ───────────────────────────────────────────────── */
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(94vw, 430px);
+  z-index: 6;
+  overflow-y: auto;
+  padding: 22px 20px 40px;
+  background: rgba(9, 13, 19, 0.94);
+  border-left: 1px solid rgba(77, 216, 255, 0.16);
+  backdrop-filter: blur(10px);
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: 0;
+  color: #8b95a7;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.close:hover {
+  color: #e8eae8;
+}
+.drawerHead {
+  margin-bottom: 18px;
+}
+.pair {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.4rem;
+  color: #f2f5fa;
+}
+.drawerMeta {
+  margin-top: 4px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6f7787;
+}
+
+/* One strip per run. House run-card chrome. */
+.strip {
+  margin-bottom: 12px;
+  padding: 12px 13px;
+  border-radius: 11px;
+  background: rgba(12, 16, 22, 0.88);
+  border: 1px solid rgba(77, 216, 255, 0.1);
+}
+.stripHead {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: #cdd6e3;
+  word-break: break-word;
+}
+.metrics {
+  margin: 9px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.metrics > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.metrics dt {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: #8b95a7;
+  margin: 0;
+}
+.metrics dd {
+  margin: 0;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  color: #f2f5fa;
+}
+.ci {
+  color: #6f7787;
+  font-size: 0.62rem;
+}
+/* The conditions are not optional garnish — a score without them is a rumour,
+   so they sit on every strip, always. */
+.conditions {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  color: #6f7787;
+}
+.conditions b {
+  color: #8b95a7;
+  font-weight: 600;
+}
+.stripFoot {
+  margin-top: 8px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+}
+.stripFoot a {
+  color: #4dd8ff;
+  text-decoration: none;
+}
+.stripFoot a:hover {
+  text-decoration: underline;
+}
+
+/* Where two intervals overlap we say so and stop — we do not name a winner. */
+.overlap {
+  margin: 4px 0 0;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8b95a7;
+  border-left: 2px solid #55606f;
+  padding-left: 9px;
+}
+
+@media (max-width: 700px) {
+  .controls {
+    top: 74px;
+    gap: 8px;
+  }
+  .drawer {
+    top: auto;
+    width: 100%;
+    max-height: 62vh;
+    border-left: 0;
+    border-top: 1px solid rgba(77, 216, 255, 0.16);
+  }
+}

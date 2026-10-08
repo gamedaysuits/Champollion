@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "sil-langtags",
+  "upstream": "https://ldml.api.sil.org/langtags.json",
+  "license": "MIT",
+  "licenseUrl": "https://github.com/silnrsi/langtags/blob/master/LICENSE",
+  "citation": "SIL International. langtags.json, API 1.4, 2026-06-09. https://github.com/silnrsi/langtags",
+  "pin": {
+    "kind": "version",
+    "value": "1.4@2026-06-09",
+    "doi": null,
+    "date": "2026-06-09"
+  },
+  "files": [
+    {
+      "path": "langtags.json",
+      "bytes": 5394635,
+      "sha256": "b4976f2cb0d000a4c1671e72c41c71d0530f9be36092831566330d76db52d57f",
+      "url": "https://ldml.api.sil.org/langtags.json",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/sil-langtags.mjs",
+  "notes": "9596 equivalence sets: 9298 carry an ISO 639-3 code, 185 carry macrolanguage membership (contains[]), and 250 name a predominant member (iso639_3extra). Pin is the publisher's own _version record, not a date we chose. LICENCE: MIT, © SIL International 2019-2025, verified against the LICENSE file in silnrsi/langtags — note this is a DIFFERENT and far more permissive grant than the same publisher's ISO 639-3 code tables, and the two must not be conflated. SIL publishes no checksum for this endpoint, so upstreamVerified is false: the sha256 is what we received, not something the publisher attests.",
+  "fetchedAt": "2026-08-05T19:11:46.568Z"
+}

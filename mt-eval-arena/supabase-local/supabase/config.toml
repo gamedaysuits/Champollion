@@ -1,0 +1,60 @@
+# Local Supabase stack for the rehearsal — a SIBLING workdir of
+# mt-eval-arena/supabase/ on purpose: that directory's .temp/ is linked to the
+# PRODUCTION project ref, so any `supabase db push`/`link` run there targets prod.
+# This workdir has no link and can only ever reach 127.0.0.1.
+#
+# migrations/ is a symlink to ../../supabase/migrations so `supabase db reset`
+# applies 001 → 071 in order from the one canonical directory.
+project_id = "champollion-local"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+# prod is Postgres 17.6 (mt-eval-arena/supabase/.temp/postgres-version)
+major_version = 17
+
+[db.pooler]
+enabled = false
+
+[db.seed]
+enabled = false
+
+[realtime]
+enabled = false
+
+[studio]
+enabled = false
+
+[inbucket]
+enabled = false
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["http://127.0.0.1:3000"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = false
+# No confirmations: POST /auth/v1/signup returns a session + refresh token that
+# the harness consumes via MT_EVAL_REFRESH_TOKEN (auth.py) — no browser OAuth.
+enable_confirmations = false
+
+[edge_runtime]
+enabled = false
+
+[analytics]
+enabled = false

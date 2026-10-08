@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/source-snapshot.schema.json",
+  "title": "Source snapshot",
+  "description": "The provenance record a fetcher writes into cli/data/<source>/SNAPSHOT.json. It is what makes 'regenerate the cards from source' a checkable claim rather than an aspiration: it names the upstream, pins ONE immutable release, and checksums the bytes taken from it. A source with no snapshot cannot be rebuilt, and facts derived from it carry no release.",
+  "type": "object",
+  "required": ["source", "upstream", "files", "verified", "fetchedBy", "fetchedAt"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "source": {
+      "type": "string",
+      "description": "The source name used in facts.source. Must match exactly, or the pin attaches to nothing.",
+      "minLength": 1
+    },
+    "upstream": {
+      "type": "string",
+      "description": "The URL the fetcher read. A landing page for a versioned deposit is fine; an undated 'latest' file URL is not a pin and must be reflected by pin:null."
+    },
+    "license": {
+      "type": ["string", "null"],
+      "description": "The licence the UPSTREAM declares, verbatim (SPDX id where the upstream gives one). Never our reading of it — that lives in the licence register, which this evidences."
+    },
+    "licenseUrl": { "type": ["string", "null"] },
+    "citation": {
+      "type": ["string", "null"],
+      "description": "How the upstream asks to be cited."
+    },
+    "pin": {
+      "type": ["object", "null"],
+      "description": "The immutable release identifier. NULL means this source could not be pinned — which is a real state and must not be faked. Downstream, no pin means no source_release row, which means every fact from it is flagged not-yet-regenerable.",
+      "required": ["kind", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": ["doi", "commit", "release", "version"],
+          "description": "doi = a versioned DOI (strongest). commit = a git SHA. release = a publisher's dated/named release. version = a declared version string with nothing stronger behind it."
+        },
+        "value": { "type": "string", "minLength": 1 },
+        "doi": { "type": ["string", "null"] },
+        "date": {
+          "type": ["string", "null"],
+          "description": "When the PUBLISHER released it. Not when we fetched it — that is fetchedAt, and conflating the two misdates our own provenance."
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every file this snapshot vouches for. Anything in the directory not listed here is unaccounted for.",
+      "items": {
+        "type": "object",
+        "required": ["path", "bytes", "sha256"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string", "description": "Relative to the source directory." },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "Computed by us on retrieval. Proves the file has not changed since; does NOT by itself prove it is what the publisher shipped."
+          },
+          "url": { "type": ["string", "null"] },
+          "upstreamChecksum": {
+            "type": ["string", "null"],
+            "description": "The publisher's own checksum, '<algo>:<hex>'. Null where the publisher provides none (SIL, for instance)."
+          },
+          "upstreamVerified": {
+            "type": "boolean",
+            "description": "True ONLY when upstreamChecksum was present AND matched the bytes on disk. This is the difference between provenance and assumption: a matching publisher checksum is proof the local file IS the named release; a plausible filename is not."
+          },
+          "derivedFrom": {
+            "type": ["string", "null"],
+            "description": "For a file extracted from a verified archive: the archive it came out of. This is how a CSV inherits a DOI's authority legibly — the CSV's own hash is ours, but it came from bytes the publisher vouched for. Without this the chain would have to be assumed."
+          }
+        }
+      }
+    },
+    "verified": {
+      "type": "boolean",
+      "description": "Whether this snapshot's pin is trustworthy. Must be false whenever pin is null — a snapshot cannot be verified against no particular release."
+    },
+    "fetchedBy": { "type": "string", "description": "Path of the fetcher that wrote this." },
+    "fetchedAt": { "type": "string", "description": "ISO 8601. When WE retrieved it." },
+    "notes": { "type": ["string", "null"] }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "verified": { "const": true } }, "required": ["verified"] },
+      "then": {
+        "properties": { "pin": { "type": "object" } },
+        "required": ["pin"]
+      }
+    }
+  ]
+}

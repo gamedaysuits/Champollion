@@ -1,0 +1,54 @@
+{
+  "name": "champollion-mcp-server",
+  "version": "0.3.2",
+  "description": "MCP server for Champollion — takes an agent from \"we want MT for our language\" to a measured model: cited language cards, benchmarks, local and hosted baselines, guarded nmt-forge training, contests, and the public benchmark queue.",
+  "type": "module",
+  "bin": {
+    "champollion-mcp": "bin/server.js"
+  },
+  "main": "src/index.js",
+  "files": [
+    "bin",
+    "src",
+    "instructions.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/server.js",
+    "test": "node --test test/*.test.js",
+    "test:contract": "node --test --test-timeout=900000 test/contract.e2e.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "champollion",
+    "machine-translation",
+    "benchmarking",
+    "low-resource-languages",
+    "language-cards"
+  ],
+  "author": "Curtis Forbes",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "champollion": "^0.5.3",
+    "zod": "^3.25 || ^4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamedaysuits/Champollion.git",
+    "directory": "mcp-server"
+  },
+  "homepage": "https://champollion.dev",
+  "bugs": {
+    "url": "https://github.com/gamedaysuits/Champollion/issues"
+  }
+}

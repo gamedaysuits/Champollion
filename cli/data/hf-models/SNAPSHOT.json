@@ -1,0 +1,32 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "hf-models",
+  "upstream": "https://huggingface.co/api/models?filter=translation&limit=1000&expand[]=cardData&expand[]=downloads&expand[]=likes&expand[]=library_name&expand[]=gated&expand[]=private&expand[]=lastModified&expand[]=pipeline_tag&expand[]=author",
+  "license": "LicenseRef-HuggingFace-Hub-Metadata",
+  "licenseUrl": "https://huggingface.co/terms-of-service",
+  "citation": "HuggingFace Hub model index, pipeline_tag=translation, retrieved 2026-08-10.",
+  "pin": {
+    "kind": "release",
+    "value": "bde04db4d07c@2026-08-10",
+    "doi": null,
+    "date": "2026-08-10"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "translation-models.json",
+      "bytes": 12550004,
+      "sha256": "eecfc5bb26ecf39b9d1a8e913b4c8b4a4a1b1a7219f66c301c43c6207a26e018",
+      "url": "https://huggingface.co/api/models?filter=translation&limit=1000&expand[]=cardData&expand[]=downloads&expand[]=likes&expand[]=library_name&expand[]=gated&expand[]=private&expand[]=lastModified&expand[]=pipeline_tag&expand[]=author",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/hf-models.mjs",
+  "notes": "17758 models over 18 page(s); 10631 declare languages on their model card. LANGUAGES COME FROM cardData.language, NOT from the tags array: framework tags collide with ISO 639-3 codes (jax is also Jambi Malay, mms is also Southern Mam, pt is also Portuguese), so scraping tags would announce coverage no author claimed. PAGINATION: the API publishes no total, so the Link header cursor is followed to exhaustion and the page count is recorded; a truncated sweep throws rather than pinning a smaller Hub. PIN QUALITY: the Hub has no release and mutates daily, so the snapshot is the pin — this query, these bytes, this date. Entries are sorted by id so an unchanged Hub yields identical bytes; the API returns trending order, which changes hourly.",
+  "modelCount": 17758,
+  "withDeclaredLanguages": 10631,
+  "pages": 18,
+  "fetchedAt": "2026-08-10T00:58:49.174Z"
+}

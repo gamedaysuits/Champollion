@@ -1,0 +1,279 @@
+/* ===================================================================
+   /glossary — CSS Module
+   House style follows the spoke pages (flat surfaces, ifm tokens,
+   "Field Notes" teal accents) with Atlas-style search affordances.
+   =================================================================== */
+
+/* ---------------------------------------------------------------
+   Search
+   --------------------------------------------------------------- */
+.searchWrap {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto 1.4rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.7rem 2.4rem 0.7rem 1.1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+.searchClear {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+/* ---------------------------------------------------------------
+   Alphabet index
+   --------------------------------------------------------------- */
+.alphabetIndex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 2.2rem;
+}
+
+.alphaLink,
+.alphaDisabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.alphaLink {
+  color: var(--ifm-color-primary);
+  background: rgba(15, 118, 110, 0.1);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.alphaLink:hover {
+  background: rgba(15, 118, 110, 0.22);
+  text-decoration: none;
+}
+
+.alphaDisabled {
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.35;
+}
+
+/* Thumb-sized letter targets on phones. */
+@media (max-width: 640px) {
+  .alphaLink,
+  .alphaDisabled {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Letter groups
+   --------------------------------------------------------------- */
+.letterGroup {
+  margin-bottom: 2.2rem;
+  /* keep anchored headings clear of the fixed navbar */
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.8rem);
+}
+
+.letterHeading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ifm-color-primary);
+  border-bottom: 2px solid var(--ifm-toc-border-color);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.termList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* ---------------------------------------------------------------
+   Term cards
+   --------------------------------------------------------------- */
+.termCard {
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.8rem);
+}
+
+/* Deep-link landing highlight */
+.termCard:target {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.18);
+}
+
+.termHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.termName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Canonical English term, shown muted next to a localized heading (the
+   anchors and cross-references stay keyed to the English term). */
+.termCanonical {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-secondary);
+}
+
+.termAnchorLink {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.termCard:hover .termAnchorLink,
+.termAnchorLink:focus {
+  opacity: 0.7;
+}
+
+.termAnchorLink:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.termAlso {
+  font-size: 0.82rem;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+  margin: 0.15rem 0 0.5rem;
+}
+
+.termPlain {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.termMt {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 0.6rem;
+  padding: 0.55rem 0.8rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0 8px 8px 0;
+  background: rgba(15, 118, 110, 0.06);
+}
+
+.termExample {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+  margin: 0 0 0.6rem;
+}
+
+.termExample strong {
+  font-style: normal;
+}
+
+/* ---------------------------------------------------------------
+   Citations + related terms
+   --------------------------------------------------------------- */
+.termFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.2rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.termCitations {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.termCitation {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.termCitation:hover {
+  text-decoration: underline;
+}
+
+.termRelated {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.termRelatedLabel {
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.termRelatedTag {
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-base);
+  background: rgba(15, 118, 110, 0.1);
+  border-radius: 8px;
+  padding: 0.05rem 0.5rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.termRelatedTag:hover {
+  background: rgba(15, 118, 110, 0.22);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+}
+
+/* ---------------------------------------------------------------
+   States
+   --------------------------------------------------------------- */
+.emptyState {
+  text-align: center;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+  padding: 2rem 0;
+}

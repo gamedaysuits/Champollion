@@ -1,0 +1,92 @@
+{
+  "id": "eval-deu-cmn-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba deu→cmn Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "deu",
+    "target": "cmn",
+    "direction": "unidirectional"
+  },
+  "description": "Mesh wave dev corpus built from Tatoeba Challenge v2023-09-26. 85 entries, stratified across 10 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream Tatoeba Challenge archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/Tatoeba-Challenge-devtest/test-v2023-09-26.tar",
+    "builder": "tatoeba-challenge",
+    "sha256": "037ee6b5ce00aa3ccd77e86fa60f17aeb89a2b9456de9340014409053b05903e",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "member": "data/test-v2023-09-26/deu-zho/test.txt",
+    "recipe": {
+      "release": "v2023-09-26",
+      "split": "test",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "words",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-12T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 85,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.471,
+      "ecommerce": 0.047,
+      "edu": 0.094,
+      "legal": 0.035,
+      "literary": 0.035,
+      "marketing": 0.024,
+      "scientific": 0.012,
+      "support": 0.012,
+      "tech": 0.129,
+      "ui": 0.141
+    },
+    "dataFile": "curated/deu-cmn-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Tatoeba deu→cmn corpus is small (85 entries). Unlikely to be specifically targeted by training pipelines, though individual sentences may appear in broad web crawls of tatoeba.org."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": null,
+    "populatedFrom": "Generated from arena/datasets/registry.json entry 'tatoeba-deu-cmn-dev' (mesh wave 1, 2026-06-12). Size and domain distribution verified against curated data file. License from Tatoeba Challenge terms (CC-BY-2.0). Fetch-from-source build recipe pinned in source block."
+  },
+  "richness": {
+    "mean_source_chars": 59.7,
+    "mean_effective_words": 9.94,
+    "economy": 6.0,
+    "economy_basis": "measured",
+    "computed_from": "deu-cmn-dev-v1.json",
+    "computed_at": "2026-06-12"
+  }
+}

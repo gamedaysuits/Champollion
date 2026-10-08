@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/domain-taxonomy.schema.json",
+  "title": "Champollion Domain Taxonomy",
+  "description": "Schema for shared/domain-taxonomy.json — the closed SSOT of translation-domain codes. Enforces exactly the 17 content codes plus the single composite marker 'mixed'. The classifier (domain_classifier.py) and the corpora-card schema both reference this list; this schema is what keeps the SSOT itself well-formed and closed.",
+  "type": "object",
+  "required": ["version", "description", "domains", "composite"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": {
+      "type": "string",
+      "description": "Semver of the taxonomy. Bump when a code is added or its meaning changes."
+    },
+    "description": {
+      "type": "string",
+      "description": "What this SSOT is and which consumers must stay in sync with it."
+    },
+    "domains": {
+      "type": "object",
+      "description": "The closed set of 17 content domain codes. Each maps to a one-line definition. Adding or removing a key here is a taxonomy change: update domain_classifier.py and corpora-card.schema.json in lockstep.",
+      "minProperties": 17,
+      "maxProperties": 17,
+      "additionalProperties": false,
+      "required": [
+        "ui", "legal", "medical", "financial", "edu", "ecommerce",
+        "marketing", "gov", "scientific", "religious", "support",
+        "subtitles", "news", "literary", "conv", "tech", "humanitarian"
+      ],
+      "propertyNames": {
+        "enum": [
+          "ui", "legal", "medical", "financial", "edu", "ecommerce",
+          "marketing", "gov", "scientific", "religious", "support",
+          "subtitles", "news", "literary", "conv", "tech", "humanitarian"
+        ]
+      },
+      "patternProperties": {
+        "^.+$": { "type": "string", "minLength": 1 }
+      }
+    },
+    "composite": {
+      "type": "object",
+      "description": "Non-content composition markers. The only member is 'mixed', which requires a domainDistribution wherever it is used as a domain.",
+      "additionalProperties": false,
+      "required": ["mixed"],
+      "properties": {
+        "mixed": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["definition", "requiresDistribution"],
+          "properties": {
+            "definition": { "type": "string", "minLength": 1 },
+            "requiresDistribution": { "type": "boolean", "const": true }
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "description": "Free-text caveats keyed by topic (e.g. 'religious', 'humanitarian').",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

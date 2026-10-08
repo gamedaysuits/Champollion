@@ -1,0 +1,86 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/* ZipperQueue — the pairwise measurement conveyor on the right edge.
+   The rail + label are brand teal (structure, non-semantic); pending teeth
+   are the neutral dot primitive; scored connectors take their spectrum
+   colour from the page (markScored). */
+
+.col {
+  position: absolute;
+  right: 2.2%;
+  top: 7%;
+  bottom: 9%;
+  width: clamp(130px, 14vw, 184px);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rail {
+  stroke: rgba(77, 216, 255, 0.3);
+  stroke-width: 1;
+}
+
+.queueLabel {
+  position: absolute;
+  top: -1.2em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: #7fd6f2;
+  white-space: nowrap;
+}
+
+.pairLabel {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 14px; /* viewBox units — renders ~13–16px at column width (legible, founder R1) */
+  letter-spacing: 0.04em;
+  fill: #9fb0c4;
+}
+
+/* the fixed scorer the belt runs through */
+.head {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  filter: drop-shadow(0 0 12px rgba(77, 216, 255, 0.8));
+  z-index: 2;
+}
+
+.submitHint {
+  position: absolute;
+  bottom: -1.8em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: #7fd6f2;
+  white-space: nowrap;
+  text-shadow: 0 1px 10px rgba(5, 9, 14, 0.9);
+}
+
+@media (max-width: 640px) {
+  .col {
+    width: 92px;
+    right: 1.6%;
+  }
+  .pairLabel {
+    font-size: 17px; /* svg scales down harder on mobile — keep legible */
+  }
+}
+
+/* rtl:end:ignore */

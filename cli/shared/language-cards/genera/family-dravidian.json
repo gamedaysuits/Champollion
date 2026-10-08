@@ -1,0 +1,63 @@
+{
+  "code": "family-dravidian",
+  "extends": null,
+  "name": "Dravidian Family",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Dravidian languages have elaborate honorific/formality systems encoded in pronouns, verb conjugation, and vocabulary. Most distinguish at least three levels: intimate, neutral, and respectful/honorific. Tamil and Kannada have particularly complex systems where verb endings change based on the social register.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Gender systems vary within Dravidian. Tamil and Malayalam distinguish rational (human) vs. irrational (non-human) rather than masculine/feminine. Telugu and Kannada have masculine/feminine/neuter systems. In most Dravidian languages, the gender distinction is primarily reflected in third-person pronouns and verb agreement, not on nouns themselves."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "agglutinativeMorphology": "Dravidian languages are highly agglutinative — suffixes are chained onto roots to encode case, number, tense, aspect, mood, negation, and more. A single verb form can carry 5–8 suffixes. Tamil verbal morphology alone has over 200 distinct finite forms per verb. MT must handle these affix chains without corrupting morpheme boundaries.",
+    "relativeParticiples": "Dravidian languages use relative participles (verbal adjectives) instead of relative clauses with pronouns. The equivalent of 'the man who came' is constructed as '[came] man' using a participial form. This is a fundamental structural difference from English that MT commonly mishandles.",
+    "retroflexConsonants": "All Dravidian languages distinguish retroflex consonants (ṭ, ḍ, ṇ, ḷ, ṛ) from dental consonants. These distinctions are phonemic and must be preserved in romanized output. Conflating retroflex and dental consonants changes word meaning.",
+    "clusivityDistinctions": "Some Dravidian languages (Tamil, Malayalam) distinguish inclusive 'we' (including addressee) from exclusive 'we' (excluding addressee). English 'we' is ambiguous and must be carefully resolved based on context.",
+    "complexPostpositionalSystem": "Dravidian languages are strictly postpositional (no prepositions). Spatial and temporal relations are expressed through case suffixes and postpositions. English prepositional phrases must be restructured as postpositional constructions.",
+    "echoWords": "Dravidian languages productively form echo words (e.g., Tamil: kaapi-giippi 'coffee and the like') to express generalization. These have no direct English equivalent and are easily broken by MT."
+  },
+  "classification": {
+    "family": "Dravidian",
+    "familyGlottocode": "drav1251",
+    "ancestry": [
+      "Dravidian"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Dravidian (~85 members). Covers South Dravidian (Tamil, Malayalam, Kannada), South-Central (Telugu), Central (Kolami, Parji), and North (Brahui, Kurukh). Script is null because major members use Tamil, Telugu, Kannada, Malayalam, and other scripts. Gender is marked true but the systems vary — see inclusiveGuidance.",
+  "regions": [
+    {
+      "country": "India (primarily South India)",
+      "countryCode": "IN",
+      "officialStatus": null,
+      "region": "South India (Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, Telangana), also Pakistan (Brahui)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

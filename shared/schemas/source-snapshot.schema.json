@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-snapshot.schema.json",
+  "title": "Champollion source snapshot (SNAPSHOT.json)",
+  "description": "The pin: what was fetched, from where, under what terms, and the checksums that make 'same pins in, same cards out' checkable by anyone. Every SNAPSHOT.json has pointed at this schema since the pin format existed; the schema itself was only written on 2026-08-09, which meant only the four invariants writeSnapshot() hand-checked were real and everything else — pin.kind, licence, upstream, citation — was unchecked convention.",
+  "type": "object",
+  "required": [
+    "source",
+    "upstream",
+    "license",
+    "pin",
+    "files",
+    "fetchedBy",
+    "fetchedAt"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The source name the build knows. Must match the registry."
+    },
+    "upstream": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Where the bytes came from. A snapshot that cannot say is not a pin, it is a note that somebody once downloaded something."
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(LicenseRef-|[A-Za-z0-9.+-]+)",
+      "description": "SPDX id, or a LicenseRef-* for modified/bespoke/unstated terms. Every value ingested from this source inherits it, so an absent licence here is an unlicensed claim on a card."
+    },
+    "licenseUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "citation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "How to cite the upstream. Nullable because some registries publish no citation form — but null must be a recorded absence, not a forgotten field."
+    },
+    "pin": {
+      "type": "object",
+      "required": [
+        "kind",
+        "value"
+      ],
+      "description": "What release these bytes ARE. kind says what the value means; a pin whose kind nobody declared cannot be compared with anything. `query` is the honest kind for a live endpoint with no releases at all (Wikidata SPARQL, the Wikipedia sitematrix): the pin is the query and the date it was asked, and pretending that is a `release` would claim an upstream attestation that does not exist.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "doi",
+            "commit",
+            "release",
+            "version",
+            "query"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "minLength": 1
+        },
+        "doi": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "pinQuality": {
+      "enum": [
+        "publisher-attested",
+        "self-attested",
+        null
+      ],
+      "description": "Whether the upstream itself attests this release (a DOI, a checksummed archive) or the snapshot is its own only witness (an API with no versioning). Self-attested is honest; unstated is not."
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "upstreamChecksum": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "upstreamVerified": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "derivedFrom": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "fetchedBy": {
+      "type": "string",
+      "pattern": "mjs$",
+      "description": "The fetcher module that wrote this — the thing that can do it again. A pin nothing can reproduce fails the law that a value may enter the atlas only if it can be re-fetched right now."
+    },
+    "fetchedAt": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "complete": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "False when the source is partial BY CONSTRUCTION (Keyman lists only web-compiled keyboards) or a sweep pinned with named gaps. Absent means complete; explicit false is the honest partial."
+    }
+  },
+  "additionalProperties": true,
+  "$comment": "additionalProperties stays true on purpose: fetchers record source-specific counts (corpora, pairs, analysers, unreachableCorpora...) that make the pin self-describing, and a closed schema would force them into `notes` prose where nothing can read them back."
+}

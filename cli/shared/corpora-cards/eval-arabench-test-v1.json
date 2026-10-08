@@ -1,0 +1,135 @@
+{
+  "id": "eval-arabench-test-v1",
+  "type": "multiway",
+  "name": "AraBench Test — Dialectal Arabic ↔ English",
+  "version": "1.0",
+  "languages": [
+    "afb",
+    "apc",
+    "arb",
+    "ary",
+    "arz",
+    "eng"
+  ],
+  "description": "Dialectal Arabic ↔ English MT evaluation from QCRI's AraBench. Adds an Arabic-dialect axis: Modern Standard Arabic (arb/msa), North Levantine (apc/lev), Gulf (afb/glf), Maghrebi (ary/mgr), and Egyptian/Nile (arz/nil), each paired with English in both directions. The Champollion adapter aggregates only the full-text public components (MADAR, Bible, QAraC) per dialect — it never ingests the LDC-restricted segments (AraBench ships those as ID-only sidecars). QUARANTINED: AraBench's license composition is not clearly commercial-safe (MADAR is research-use; some components are LDC-derived), so this set is catalogued and buildable on demand but held OUT of the open contribution queue pending a docs/LICENSING.md review. Domain 'mixed': the adapter aggregates MADAR (travel/everyday → conv), Bible (religious) and QAraC (Quran comprehension → religious/edu); domainDistribution is an approximate documented estimate. 'religious' is honest labelling only, never a coverage credit (and AraBench is quarantined regardless).",
+  "quarantine": true,
+  "quarantineReason": "License review 2026-08-24: HELD. No single upstream license: AraBench aggregates MADAR (research-use terms), Bible text, and QAraC as full text; LDC-derived components ship as IDs only. Mixed research-use terms are never interpreted on the rights-holders' behalf. Catalogued; excluded from the queue, contests, and ranking (DB trigger, migration 022); remote transmission refused (consent-required). Clears component-wise as terms are verified, or by a recorded grant.",
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "held",
+    "lane": "catalogued-not-runnable",
+    "basis": "License review 2026-08-24: HELD. No single upstream license: AraBench aggregates MADAR (research-use terms), Bible text, and QAraC as full text; LDC-derived components ship as IDs only. Mixed research-use terms are never interpreted on the rights-holders' behalf. Catalogued; excluded from the queue, contests, and ranking (DB trigger, migration 022); remote transmission refused (consent-required). Clears component-wise as terms are verified, or by a recorded grant."
+  },
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 1,
+    "domain": "mixed",
+    "domainDistribution": {
+      "conv": 0.45,
+      "religious": 0.45,
+      "edu": 0.1
+    },
+    "explicitPairs": [
+      {
+        "source": "arb",
+        "target": "eng",
+        "size": 7700
+      },
+      {
+        "source": "eng",
+        "target": "arb",
+        "size": 7700
+      },
+      {
+        "source": "apc",
+        "target": "eng",
+        "size": 16500
+      },
+      {
+        "source": "eng",
+        "target": "apc",
+        "size": 16500
+      },
+      {
+        "source": "afb",
+        "target": "eng",
+        "size": 27213
+      },
+      {
+        "source": "eng",
+        "target": "afb",
+        "size": 27213
+      },
+      {
+        "source": "ary",
+        "target": "eng",
+        "size": 24200
+      },
+      {
+        "source": "eng",
+        "target": "ary",
+        "size": 24200
+      },
+      {
+        "source": "arz",
+        "target": "eng",
+        "size": 12500
+      },
+      {
+        "source": "eng",
+        "target": "arz",
+        "size": 12500
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "AraBench Test",
+      "size": 88113,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — dialectal Arabic ↔ English test sentences aggregated per dialect"
+    }
+  ],
+  "download": {
+    "method": "url",
+    "url": "http://alt.qcri.org/resources/mt/arabench/releases/current/AraBench_dataset.tgz",
+    "instructions": "Download AraBench_dataset.tgz. Files are {source}.{split}.{dialect}.{n}.{region}.{ar|en}; each .ar has a sibling .en (line-aligned). The adapter aggregates all .test.{dialect}.*.ar/.en files per dialect (MADAR/Bible/QAraC), sorted by name. The LDC-restricted segments ship as *.ids sidecars (IDs only) and are deliberately NOT ingested.",
+    "sha256": "5dfffe6871458dbb92a301d5c6c678eabce6850fb2f7d31000d0d9970b09df18",
+    "filePattern": "AraBench_dataset/{source}.{segment}.{dialect}.{n}.{region}.ar",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "QCRI (Qatar Computing Research Institute) — Arabic Language Technologies",
+    "url": "https://alt.qcri.org/resources/mt/arabench/",
+    "paper": "https://aclanthology.org/2021.eacl-main.96/",
+    "citation": "Sajjad et al. (2020). AraBench: Benchmarking Dialectal Arabic-English Machine Translation. COLING 2020. Components: MADAR (Bouamor et al. 2018), Bible, QAraC (Elmahdy et al. 2014), APT/LDC2012T09 (Zbib et al. 2012, IDs only).",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-AraBench-mixed-research",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Prohibited — license unverified (treated as non-commercial-safe).",
+    "notes": "No single permissive SPDX license. AraBench aggregates MADAR (research-use), Bible, and QAraC as full text, plus LDC-derived data provided as IDs only. Commercial/redistribution status of the full-text components is unverified — treated as NON-commercial-safe and quarantined until reviewed."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "prohibited-by-license",
+    "commercialUse": "requires-agreement",
+    "communityNotes": "Quarantined pending license review. Builds on demand (research/eval) but is excluded from the open contribution queue and any commercial path."
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "AraBench components (MADAR travel-domain, Bible, QAraC) are publicly available and have circulated in the dialectal-Arabic NLP community since 2018-2020; portions may appear in web-crawled training data. Dialectal Arabic is less represented in frontier training sets than MSA, so contamination is moderate rather than high.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "AraBench_dataset.tgz from the QCRI AraBench page; per-dialect aggregated test sizes verified by direct extraction; archive sha pinned. License read from the bundled README.md."
+  }
+}

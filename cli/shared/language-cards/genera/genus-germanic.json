@@ -1,0 +1,66 @@
+{
+  "code": "genus-germanic",
+  "extends": "family-indo-european",
+  "name": "Germanic Languages",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "T-V",
+    "description": "Most Germanic languages have T-V pronominal distinctions: German du/Sie, Dutch je(jij)/u, Swedish du/ni (historically, now largely replaced by du-reform), Norwegian du/De (archaic). English is the major exception, having lost its T-V distinction (thou/you → universal you). Icelandic also lacks a formal pronoun. Default to formal (V) in professional contexts for languages that retain it.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Most Germanic languages have grammatical gender, but systems vary: German, Icelandic, and Norwegian Bokmål have masculine/feminine/neuter. Dutch and Swedish have common/neuter (two genders). Danish has common/neuter. English has lost grammatical gender almost entirely (retained only in pronouns). Gender triggers agreement on articles, adjectives, and pronouns."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "compoundWordFormation": "Germanic languages (especially German, Dutch, Swedish, Norwegian, Danish, Icelandic) form compound nouns by concatenation without spaces: German Donaudampfschifffahrtsgesellschaft. Compound splitting for translation and compound generation in the target are both error-prone. English uses spaces in compounds, while other Germanic languages do not.",
+    "separablePrefixVerbs": "German and Dutch have separable prefix verbs (German: anfangen → ich fange an; Dutch: opbellen → ik bel op) where the prefix detaches and moves to the end of the clause. This creates long-distance dependencies that MT systems must track across clause boundaries.",
+    "v2WordOrder": "Most Germanic languages (German, Dutch, Swedish, Norwegian, Danish) follow V2 (verb-second) word order in main clauses — the finite verb must be the second constituent regardless of what fills first position. Subordinate clauses have verb-final order (German, Dutch). This systematic word order alternation is a consistent source of MT errors.",
+    "articleSystem": "Germanic languages have both definite and indefinite articles, but their realization varies: Scandinavian languages suffix the definite article (Swedish hus-et 'the house'), while German/Dutch/English use freestanding articles. The double definiteness of Scandinavian (both suffix and freestanding article with adjectives) is a further complexity.",
+    "caseVestiges": "Full case systems survive in German (4 cases) and Icelandic (4 cases). Other Germanic languages have reduced case to pronouns only (English I/me, Swedish jag/mig) or lost it almost entirely (Dutch, Danish). German case interacts with gender and number to create complex declension tables.",
+    "modalParticles": "German and Dutch make extensive use of modal particles (doch, mal, ja, schon, eben; toch, maar, wel, even) that add nuance, emphasis, or pragmatic force to sentences. These particles have no direct equivalents in most other languages and are frequently dropped or mistranslated by MT."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Germanic",
+    "genusGlottocode": "germ1287",
+    "ancestry": [
+      "Indo-European",
+      "Germanic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Germanic languages (English, German, Dutch, Swedish, Norwegian, Danish, Icelandic, Afrikaans, Yiddish, etc.). All use Latin script. T-V formality applies to most members but not English or Icelandic. Gender system varies from 3-gender (German) to 2-gender (Dutch, Swedish) to none (English).",
+  "regions": [
+    {
+      "country": "Northern/Western Europe and global diaspora",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Britain, Germany, Netherlands, Scandinavia, Iceland, global (English diaspora), South Africa (Afrikaans)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

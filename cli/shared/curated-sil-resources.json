@@ -1,0 +1,374 @@
+{
+  "_comment": [
+    "Curated SIL / OLAC / eBible resource register for the Sambalic cluster (Aeta pilot),",
+    "consumed by scripts/derive-sil-resources.mjs. Keyed by language code, then by",
+    "resources bucket (corpora / dictionaries / grammars / tools / lexical). Every entry",
+    "MUST cite its basis in a source string or notes field naming the SIL REAP archive",
+    "item id, OLAC index, or eBible.org page it was verified from (enumerated 2026-07-19",
+    "from the OLAC per-code indexes; local working copies + full inventory:",
+    "local-assets/MANIFEST.md, gitignored). This is resource EXISTENCE only (language-card",
+    "boundary invariant kind 2): names, URLs, types. No content is copied, no measured",
+    "scores may appear here (lint R3/R4), licenses are recorded only where documented —",
+    "index, not arbiter. Scripture entries point at eBible.org (content © Wycliffe Inc.,",
+    "not openly licensed — pointer-only). Data-over-code (docs/AGENTS.md §1):",
+    "language-specific facts live in this file, never hardcoded in the deriver."
+  ],
+  "resources": {
+    "abc": {
+      "tools": [
+        {
+          "name": "Manyulat kitamu: Ha' kaparaanan manyulat ya Ayta Ambala (spelling guide)",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/74615",
+          "source": "sil-reap (DepEd Philippines + SIL Philippines 2017 Ayta Ambala spelling guide; SIL archive item 74615)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Ayta Ambala)",
+          "description": "6 archived survey wordlists — Cabalan (Olongapo), Alibang, Pili, Dinalupihan (Batsawan), Payangan/Camastilis, and an Ambala–Mag-indi comparative list",
+          "url": "http://www.language-archives.org/language/abc",
+          "source": "olac-sil-reap (SIL archive items 79917, 79918, 80062, 80285, 80287, 81024 via the OLAC abc index)"
+        }
+      ]
+    },
+    "abp": {
+      "corpora": [
+        {
+          "name": "Ayta Abellen Scripture — New Testament+ (eBible.org)",
+          "type": "parallel",
+          "url": "https://ebible.org/find/details.php?id=abp",
+          "size": "New Testament+",
+          "domain": "bible",
+          "exposure": "open-web",
+          "notes": "Verse-aligned scripture translation (mother-tongue committee with SIL/Wycliffe); HTML/readaloud/ePub packages on eBible.org. Content © Wycliffe Inc., not openly licensed — pointer-only (per-package terms at eBible.org)."
+        },
+        {
+          "name": "Pangihabet ha apat a habi (Speaking in Four Languages, 2004)",
+          "type": "parallel",
+          "url": "https://www.sil.org/resources/archives/24167",
+          "size": "booklet",
+          "domain": "edu",
+          "exposure": "open-web",
+          "notes": "Four-way parallel booklet: Ayta Abellen / Ilokano / Filipino / English (SIL archive item 24167)."
+        }
+      ],
+      "dictionaries": [
+        {
+          "name": "Ayta Abellen Dictionary (Webonary)",
+          "url": "https://www.webonary.org/aytaabellen/",
+          "machineReadable": false,
+          "source": "sil-webonary (Stone, SIL Philippines 2019; online-browse only — no public export; a FLEx backup exists as SIL archive item 94800, access-restricted)"
+        }
+      ],
+      "grammars": [
+        {
+          "author": "Nitsch, Wilhelm",
+          "year": 2009,
+          "title": "Some Ayta Abenlen grammar",
+          "url": "https://www.sil.org/resources/archives/9289",
+          "type": "grammar_sketch"
+        },
+        {
+          "author": "Stone, Roger; Nitsch, Wilhelm",
+          "year": null,
+          "title": "An introduction to Ayta Abellen morphology and syntax",
+          "url": "https://www.sil.org/resources/archives/52044",
+          "type": "grammar_sketch"
+        },
+        {
+          "author": "Stone, Roger",
+          "year": null,
+          "title": "An Automated Template Approach to Morphology and Syntax Description for Ayta Abellen",
+          "url": "https://www.sil.org/resources/archives/51902",
+          "type": "grammar_sketch"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Introduction to writing the Ayta Abellen Language",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/70736",
+          "source": "sil-reap (2017 spelling-guide extract, item 70736; see also Orthography Fact Sheet item 51911 and primer Manolat Kitawoyna item 72416)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Ayta Abellen)",
+          "description": "5 archived survey wordlists — Pilien, Tala/Talan (Tarlac), Dalayap (Mayantoc), San Pedro (Tarlac), and the Abenlen comparative list",
+          "url": "http://www.language-archives.org/language/abp",
+          "source": "olac-sil-reap (SIL archive items 77394, 79949, 80302, 80303, 80314 via the OLAC abp index)"
+        }
+      ]
+    },
+    "ayt": {
+      "tools": [
+        {
+          "name": "Mamaha kita muy na (Ayta Magbukun spelling guide)",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/74573",
+          "source": "sil-reap (DepEd Philippines + SIL Philippines Ayta Magbukun spelling guide; SIL archive item 74573)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Ayta Magbukun)",
+          "description": "Archived survey wordlists — Morong (Bataan), Bayan-Bayanan/Mariveles, and the Magbukun set",
+          "url": "http://www.language-archives.org/language/ayt",
+          "source": "olac-sil-reap (SIL archive items 79913, 80290, 80291 via the OLAC ayt index)"
+        }
+      ]
+    },
+    "blx": {
+      "corpora": [
+        {
+          "name": "Ayta Mag-Indi New Testament (2020, eBible.org)",
+          "type": "parallel",
+          "url": "https://ebible.org/find/details.php?id=blx",
+          "size": "New Testament",
+          "domain": "bible",
+          "exposure": "open-web",
+          "notes": "Verse-aligned scripture translation (mother-tongue committee with SIL/Wycliffe, published 2020); HTML/ePub/SWORD packages on eBible.org. Content © Wycliffe Inc., not openly licensed — pointer-only."
+        },
+        {
+          "name": "Paggamit sa Apat a Pagsabi (The Use of Four Languages)",
+          "type": "parallel",
+          "url": "https://www.sil.org/resources/archives/24233",
+          "size": "booklet",
+          "domain": "edu",
+          "exposure": "open-web",
+          "notes": "Four-way parallel booklet: Ayta Mag-indi / Kapampangan / Filipino / English; multiple editions (SIL archive items 24233, 24733)."
+        }
+      ],
+      "grammars": [
+        {
+          "author": null,
+          "year": null,
+          "title": "Phonological considerations in Ayta Mag-Indi",
+          "url": "https://www.sil.org/resources/archives/43451",
+          "type": "phonology"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Introduction to Ayta Mag-Indi Orthography",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/70737",
+          "source": "sil-reap (spelling-guide extract, item 70737; see also Orthography Factsheet item 52302)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Ayta Mag-indi)",
+          "description": "10 archived survey wordlists — Liplip, Lumibao, Ma-age-age, Baloga, Naboklot, Camatsili, Malan-ak/Patalapalit, Florida Blanca, and comparative lists",
+          "url": "http://www.language-archives.org/language/blx",
+          "source": "olac-sil-reap (SIL archive items 79915, 79920, 79924, 79933, 80292, 80294, 80299, 80304, 80305, 80317, 80318 via the OLAC blx index)"
+        }
+      ]
+    },
+    "sgb": {
+      "corpora": [
+        {
+          "name": "Ayta Mag-antsi New Testament — Ya Habi ni Apo Namalyari: Bayon Tsipan (2006, eBible.org)",
+          "type": "parallel",
+          "url": "https://ebible.org/find/details.php?id=sgb",
+          "size": "New Testament",
+          "domain": "bible",
+          "exposure": "open-web",
+          "notes": "Verse-aligned scripture translation (Wycliffe 2006); machine-readable USFM plus HTML/readaloud/ePub packages on eBible.org; also Bible.com version 1282. Content © Wycliffe Inc., not openly licensed — pointer-only."
+        },
+        {
+          "name": "Back translation of the Mag-anchi primer",
+          "type": "parallel",
+          "url": "https://www.sil.org/resources/archives/69925",
+          "size": "booklet",
+          "domain": "edu",
+          "exposure": "open-web",
+          "notes": "English back-translation of the Ayta Mag-antsi literacy primer (SIL archive item 69925) — parallel by construction."
+        },
+        {
+          "name": "Panhabiɨn kanan kapagkatupa mo (phrase book, 1988)",
+          "type": "monolingual",
+          "url": "https://www.sil.org/resources/archives/24547",
+          "size": "booklet",
+          "domain": "conversation",
+          "exposure": "open-web",
+          "notes": "Phrase book for Ayta Mag-antsi (SIL archive item 24547); pairing/glossing not verified from archive metadata, so typed monolingual."
+        },
+        {
+          "name": "SIL Mag-antsi literacy booklets (OLAC index)",
+          "type": "monolingual",
+          "url": "http://www.language-archives.org/language/sgb",
+          "size": "12+ booklets",
+          "domain": "edu",
+          "exposure": "open-web",
+          "notes": "Archived readers/primers/stories incl. Pinatubo Ayta stories (item 24020), Ya luta tamo (24798), Mamaha kitamina (24151), Mag-umpisa series (24113, 63855, 63859)."
+        }
+      ],
+      "dictionaries": [
+        {
+          "name": "Ayta Mag-antsi—English Dictionary (Storck & Storck 2005)",
+          "url": "https://www.sil.org/resources/archives/25858",
+          "machineReadable": false,
+          "source": "sil-reap (print dictionary, SIL Philippines 2005; archive metadata item 25858 — no digital file)"
+        }
+      ],
+      "grammars": [
+        {
+          "author": null,
+          "year": null,
+          "title": "Ayta Mag-anchi reduplication",
+          "url": "https://www.sil.org/resources/archives/25904",
+          "type": null
+        },
+        {
+          "author": null,
+          "year": null,
+          "title": "Morphophonemics of Ayta Mag-anchi",
+          "url": "https://www.sil.org/resources/archives/83913",
+          "type": "phonology"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Manulat Kitamina (Ayta Mag-antsi spelling guide)",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/72426",
+          "source": "sil-reap (DepEd Philippines + SIL Philippines 2017 spelling guide, item 72426)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Ayta Mag-antsi)",
+          "description": "15+ archived survey wordlists — Flora, Duwan, Doray, Yamot, Patal Anaw/Kato, Burog/Bamban, Inararo, Kakilingan, Nakulkul Maguisguis, San Martin, San Isidro, Marcohangko",
+          "url": "http://www.language-archives.org/language/sgb",
+          "source": "olac-sil-reap (SIL archive items 77395, 79914, 79915, 79921–79926, 80293–80299, 80319–80321 via the OLAC sgb index)"
+        }
+      ]
+    },
+    "sbl": {
+      "corpora": [
+        {
+          "name": "Panambal nin mawmasakit (health/treatment booklets, 1969 & 1973)",
+          "type": "monolingual",
+          "url": "https://www.sil.org/resources/archives/24364",
+          "size": "2 booklets",
+          "domain": "medical",
+          "exposure": "open-web",
+          "notes": "Community health booklets in Botolan Sambal (SIL archive items 24364, 24610) — a domain precedent for Sambalic-cluster health materials."
+        },
+        {
+          "name": "SIL Botolan Sambal literacy booklets (OLAC index)",
+          "type": "monolingual",
+          "url": "http://www.language-archives.org/language/sbl",
+          "size": "10+ booklets",
+          "domain": "edu",
+          "exposure": "open-web",
+          "notes": "Archived readers/primers/stories incl. ABKD (24160), Bahawen tamo 1–3 (24363, 24681), Kabayo (24118), Aw-istorya boy aw-oyap (24253), Mamaha tamo (24624)."
+        }
+      ],
+      "dictionaries": [
+        {
+          "name": "Dictionary of Botolan Sambal (1968)",
+          "url": "https://www.sil.org/resources/archives/66684",
+          "machineReadable": false,
+          "source": "sil-reap (scanned print dictionary, archive item 66684)"
+        }
+      ],
+      "grammars": [
+        {
+          "author": null,
+          "year": 1979,
+          "title": "A Grammatical Sketch of Botolan Sambal",
+          "url": "https://www.sil.org/resources/archives/26078",
+          "type": "grammar_sketch"
+        },
+        {
+          "author": "Minot, Harriet",
+          "year": null,
+          "title": "Phonemes of Aeta [Botolan Sambal]",
+          "url": "https://www.sil.org/resources/archives/80789",
+          "type": "phonology"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Manulat Tamoy Na (Sambal Botolan spelling guide)",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/74532",
+          "source": "sil-reap (DepEd Philippines + SIL Philippines spelling guide, item 74532; see also Sambal Botolan Orthography Fact Sheet in item 70773)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Botolan Sambal)",
+          "description": "8+ archived survey wordlists — Botolan (1966, 1982), Cabangan, Palis, plus a Sambal–Ilocano comparative list",
+          "url": "http://www.language-archives.org/language/sbl",
+          "source": "olac-sil-reap (SIL archive items 76972, 80789, 80792, 80795, 80796, 80813 via the OLAC sbl index)"
+        }
+      ]
+    },
+    "xsb": {
+      "corpora": [
+        {
+          "name": "Karamilan angkasalita (phrase book, 1977)",
+          "type": "monolingual",
+          "url": "https://www.sil.org/resources/archives/24291",
+          "size": "booklet",
+          "domain": "conversation",
+          "exposure": "open-web",
+          "notes": "\"The expressions that are often said\" — a phrase book for Tina Sambal (SIL archive item 24291); pairing/glossing not verified from archive metadata, so typed monolingual."
+        },
+        {
+          "name": "SIL Tina Sambal texts & literacy booklets (OLAC index)",
+          "type": "monolingual",
+          "url": "http://www.language-archives.org/language/xsb",
+          "size": "10+ items",
+          "domain": "mixed",
+          "exposure": "open-web",
+          "notes": "Archived texts, songs/poems, stories and primers incl. Tina Sambal texts (SIPL, item 25705), songs and poems (25834), Tawtola sin ona (24266), Mamasa tamo (24637)."
+        }
+      ],
+      "dictionaries": [
+        {
+          "name": "English–Tina Sambal–Pilipino Dictionary (1988)",
+          "url": "https://www.sil.org/resources/archives/25906",
+          "machineReadable": false,
+          "source": "sil-reap (scanned print dictionary, archive item 25906)"
+        }
+      ],
+      "grammars": [
+        {
+          "author": null,
+          "year": null,
+          "title": "Interclausal relationships in Tina Sambal",
+          "url": "https://www.sil.org/resources/archives/25991",
+          "type": null
+        }
+      ],
+      "tools": [
+        {
+          "name": "Tina Sambal Orthography Fact Sheet (2012)",
+          "type": "orthography-guide",
+          "url": "https://www.sil.org/resources/archives/70773",
+          "source": "sil-reap (Orthography Fact Sheets 2012 bundle, item 70773 — Tina Sambal sheet)"
+        }
+      ],
+      "lexical": [
+        {
+          "type": "wordlist-collection",
+          "name": "SIL Sambalic survey wordlists (Tina Sambal)",
+          "description": "Archived survey wordlists — Santa Cruz and Masinloc",
+          "url": "http://www.language-archives.org/language/xsb",
+          "source": "olac-sil-reap (SIL archive items 80790, 80793 via the OLAC xsb index)"
+        }
+      ]
+    }
+  }
+}

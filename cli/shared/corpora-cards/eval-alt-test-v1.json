@@ -1,0 +1,77 @@
+{
+  "id": "eval-alt-test-v1",
+  "type": "multiway",
+  "name": "ALT (Asian Language Treebank) Test — All Pairs",
+  "version": "1.0",
+  "description": "Multi-way parallel evaluation corpus from the Asian Language Treebank (NICT). 13 languages (Bengali, English, Filipino, Hindi, Indonesian, Japanese, Khmer, Lao, Malay, Myanmar/Burmese, Thai, Vietnamese, Chinese), built from Wikinews articles and sentence-aligned across all languages. Champollion uses the official ALT-Standard TEST split (the 1,018 English sentences whose article URLs are listed in URL-test.txt); a few cells are absent where ALT never translated a sentence into a given language, so per-pair sizes vary slightly (1016-1018). Only the BARE PARALLEL corpus (CC-BY-4.0) is used — the per-language treebank annotation layers (CC-BY-NC-SA) are deliberately NOT ingested. Adds the SEA gap: Lao, Khmer, Burmese, Filipino, Malay.",
+  "languages": [
+    "ben",
+    "eng",
+    "fil",
+    "hin",
+    "ind",
+    "jpn",
+    "khm",
+    "lao",
+    "zsm",
+    "mya",
+    "tha",
+    "vie",
+    "cmn"
+  ],
+  "pairGeneration": {
+    "mode": "all-pairs",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 1018,
+    "domain": "news"
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "ALT-Standard Test",
+      "size": 1018,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — the official ALT-Standard test split (URL-test.txt), news domain"
+    }
+  ],
+  "download": {
+    "method": "url",
+    "url": "https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/ALT-Parallel-Corpus-20191206.zip",
+    "instructions": "Download ALT-Parallel-Corpus-20191206.zip (the CC-BY-4.0 bare parallel corpus ONLY — not the CC-BY-NC-SA treebank layers) plus URL-test.txt from the same base URL. Members data_{code}.txt hold lines 'SNT.{urlid}.{sentid}\\t{text}'; all languages are line-aligned by the SNT id. The ALT-Standard test split is the sentences whose {urlid} is in URL-test.txt. Legacy codes: data_bg.txt is BENGALI (not Bulgarian); data_en_tok.txt (tokenized English) is never used.",
+    "sha256": "05f7b31b517d4c4e074bb7fb57277758c0e3e15d1ad9cfc5727e9bce79b07bbd",
+    "splitSha256": "6d67d6bf5c4e7574116355d71ef927c66aca2f7ab7267b14591ea250f24ec722",
+    "filePattern": "ALT-Parallel-Corpus-20191206/data_{lang_code}.txt",
+    "format": "tsv"
+  },
+  "source": {
+    "publisher": "NICT (National Institute of Information and Communications Technology) / ALT Project",
+    "url": "https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/",
+    "paper": "https://aclanthology.org/L16-1167/",
+    "citation": "Riza et al. (2016). Introduction of the Asian Language Treebank. O-COCOSDA 2016. Thu et al. (2016), LREC 2016 (Myanmar). Ding et al. (2018/2019) (Khmer/Lao).",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Permitted with attribution under CC-BY-4.0 (parallel corpus only).",
+    "notes": "Only the ALT parallel corpus is CC-BY-4.0. The per-language treebank annotation layers (English-ALT, Japanese-ALT, my-alt, km-nova) are CC-BY-NC-SA and are NOT used here."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "permitted",
+    "communityNotes": "Reserved as an evaluation benchmark within Champollion. doNotTrain protects benchmark integrity."
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "ALT is built from Wikinews and has been publicly distributed since ~2016; it is a well-known parallel corpus and portions may appear in large web-crawled MT/LLM training sets. Lower contamination than FLORES+/NTREX for the rarer SEA target languages, but not newly hand-crafted.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "ALT-Parallel-Corpus-20191206.zip + URL-test.txt from the NICT ALT page. Test-split size (1018) verified by direct line count; archive + split shas pinned."
+  }
+}

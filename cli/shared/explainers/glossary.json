@@ -1,0 +1,2975 @@
+{
+  "_meta": {
+    "description": "Plain-language glossary of technical terms that appear in rendered language-card text (linguisticChallenges, typology labels, formality/gender descriptions, scripts, numeral systems, eval metadata) and in tc-features.json feature names/values. Definitions are original prose written for Champollion; citations point to the standard reference for each concept.",
+    "curated": "hand-written 2026-06-11; harvest source: cli/shared/language-cards/*.json text fields + cli/shared/explainers/tc-features.json names/values",
+    "policy": "plain = 2-3 sentence original definition (no copied text); mt_relevance = 1 sentence; related entries must exist in this file; `also` lists surface variants used on cards (detection vocabulary for the linter)."
+  },
+  "terms": [
+    {
+      "term": "morpheme",
+      "also": [
+        "morphemes"
+      ],
+      "plain": "The smallest piece of a word that carries meaning. The English word 'unhappiness' contains three: un-, happy, and -ness. Languages differ enormously in how many morphemes they pack into one word.",
+      "mt_relevance": "MT systems work on tokens, and a token that contains many morphemes hides grammar the system needs to translate correctly.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/morpheme"
+        }
+      ],
+      "related": [
+        "affix",
+        "root",
+        "tokenization"
+      ]
+    },
+    {
+      "term": "morphology",
+      "also": [
+        "morphological complexity",
+        "morphologically complex",
+        "complex morphology"
+      ],
+      "plain": "The study of how words are built from smaller meaningful parts, and the word-building system of a language itself. A morphologically complex language expresses with word endings what English expresses with separate words.",
+      "mt_relevance": "Complex morphology multiplies the distinct word forms an MT system must learn from limited data.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/morphology"
+        }
+      ],
+      "related": [
+        "morpheme",
+        "inflection",
+        "agglutinative",
+        "polysynthesis"
+      ]
+    },
+    {
+      "term": "inflection",
+      "also": [
+        "inflectional",
+        "inflectional synthesis",
+        "inflected"
+      ],
+      "plain": "Changing a word's form to express grammar — tense, number, case, gender — without changing its core meaning, like English sing/sang or cat/cats. Highly inflected languages can mark six or more categories on a single word.",
+      "mt_relevance": "Every inflected form is a separate token for an MT system, so heavy inflection means more rare words and more agreement errors.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/inflection"
+        }
+      ],
+      "related": [
+        "morphology",
+        "paradigm",
+        "agreement"
+      ]
+    },
+    {
+      "term": "derivation",
+      "also": [
+        "derivational"
+      ],
+      "plain": "Building new words from existing ones, like teach → teacher or happy → unhappy. Unlike inflection, derivation creates a new dictionary word rather than a grammatical variant of the same word.",
+      "mt_relevance": "Productive derivation lets speakers coin words on the fly that an MT system has never seen.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/derivation"
+        }
+      ],
+      "related": [
+        "inflection",
+        "compounding",
+        "morpheme"
+      ]
+    },
+    {
+      "term": "affix",
+      "also": [
+        "affixes",
+        "affixation"
+      ],
+      "plain": "A morpheme attached to a word stem to modify its meaning or grammar. Prefixes attach before the stem, suffixes after, and a few languages use infixes inside the stem.",
+      "mt_relevance": "Where affixes attach determines where subword tokenizers should split words for the MT model.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/affix"
+        }
+      ],
+      "related": [
+        "prefix",
+        "suffix",
+        "infix",
+        "morpheme"
+      ]
+    },
+    {
+      "term": "prefix",
+      "also": [
+        "prefixes",
+        "prefixing"
+      ],
+      "plain": "An affix that attaches to the front of a word stem, like re- in 'rewrite'. Some languages, including many Bantu and Athabaskan languages, carry most of their grammar in strings of prefixes.",
+      "mt_relevance": "Prefix-heavy languages put grammatical information at the start of words, the opposite of what suffix-trained tokenizers expect.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 26 (Dryer)",
+          "url": "https://wals.info/chapter/26"
+        }
+      ],
+      "related": [
+        "suffix",
+        "affix"
+      ]
+    },
+    {
+      "term": "suffix",
+      "also": [
+        "suffixes",
+        "suffixing"
+      ],
+      "plain": "An affix that attaches to the end of a word stem, like -ness in 'kindness'. Suffixing is the most common affixation strategy across the world's languages.",
+      "mt_relevance": "Stacked suffixes create long, rare word forms that MT systems must segment correctly to translate.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 26 (Dryer)",
+          "url": "https://wals.info/chapter/26"
+        }
+      ],
+      "related": [
+        "prefix",
+        "affix"
+      ]
+    },
+    {
+      "term": "infix",
+      "also": [
+        "infixes",
+        "infixation"
+      ],
+      "plain": "An affix inserted inside a word stem rather than before or after it. Tagalog, for example, turns sulat 'write' into sumulat 'wrote' by inserting -um- after the first consonant.",
+      "mt_relevance": "Infixes break the assumption that a word's stem is a contiguous string, which defeats simple subword segmentation.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/infix"
+        }
+      ],
+      "related": [
+        "affix",
+        "root-and-pattern morphology"
+      ]
+    },
+    {
+      "term": "clitic",
+      "also": [
+        "clitics",
+        "proclitic",
+        "enclitic"
+      ],
+      "plain": "A small grammatical word that cannot stand on its own and leans on a neighboring word, like the 's in \"the queen of England's hat\". Clitics behave partly like words and partly like affixes.",
+      "mt_relevance": "Clitics blur word boundaries, so tokenizers may attach them to the wrong host and scramble the grammar.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/clitic"
+        }
+      ],
+      "related": [
+        "affix",
+        "particle",
+        "tokenization"
+      ]
+    },
+    {
+      "term": "stem",
+      "also": [
+        "stems",
+        "word stem"
+      ],
+      "plain": "The core part of a word that affixes attach to. In 'unbelievable', the stem of -able is 'believe'. In many languages a stem never appears alone and must carry at least some inflection.",
+      "mt_relevance": "Identifying shared stems across word forms is how MT systems generalize from limited training data.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/stem-1"
+        }
+      ],
+      "related": [
+        "root",
+        "affix",
+        "inflection"
+      ]
+    },
+    {
+      "term": "root",
+      "also": [
+        "roots",
+        "word root"
+      ],
+      "plain": "The irreducible core of a word once all affixes are stripped away. In Semitic languages a root is often just three consonants (like k-t-b 'write' in Arabic) that vowel patterns turn into words.",
+      "mt_relevance": "Languages whose roots are discontinuous (consonant skeletons) need specialized segmentation for MT to see word relationships.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/root-1"
+        }
+      ],
+      "related": [
+        "stem",
+        "root-and-pattern morphology",
+        "morpheme"
+      ]
+    },
+    {
+      "term": "paradigm",
+      "also": [
+        "inflectional paradigm",
+        "paradigms"
+      ],
+      "plain": "The full set of inflected forms a word can take — like a verb conjugation table. Paradigms range from two forms (English 'must') to thousands in polysynthetic languages.",
+      "mt_relevance": "Large paradigms guarantee that most word forms are rare or unseen in training data.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/paradigm"
+        }
+      ],
+      "related": [
+        "inflection",
+        "suppletion"
+      ]
+    },
+    {
+      "term": "agglutinative",
+      "also": [
+        "agglutination",
+        "agglutinating",
+        "agglutinative morphology"
+      ],
+      "plain": "A word-building style where each grammatical meaning gets its own clearly separable affix, stacked one after another — as in Turkish or Swahili. Words can get long, but each piece has one job.",
+      "mt_relevance": "Agglutinative words segment cleanly into subwords, but only if the tokenizer learns the language's affix order.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/agglutinative-language"
+        }
+      ],
+      "related": [
+        "fusional",
+        "isolating",
+        "polysynthesis",
+        "morphology"
+      ]
+    },
+    {
+      "term": "fusional",
+      "also": [
+        "fusional morphology",
+        "inflecting language"
+      ],
+      "plain": "A word-building style where one affix fuses several grammatical meanings at once. The Spanish ending -ó in habló marks past tense, third person, and singular simultaneously — no part of it can be assigned to just one meaning.",
+      "mt_relevance": "Fused endings cannot be decomposed by tokenizers, so each combination must be learned as a unit.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/fusional-language"
+        }
+      ],
+      "related": [
+        "agglutinative",
+        "isolating",
+        "inflection"
+      ]
+    },
+    {
+      "term": "isolating",
+      "also": [
+        "analytic language",
+        "isolating morphology"
+      ],
+      "plain": "A word-building style where words are mostly single morphemes and grammar is expressed by word order and helper words instead of endings — as in Vietnamese or Mandarin. The opposite extreme from polysynthesis.",
+      "mt_relevance": "Isolating languages shift the MT problem from word segmentation to word order and function-word choice.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/isolating-language"
+        }
+      ],
+      "related": [
+        "agglutinative",
+        "fusional",
+        "word order"
+      ]
+    },
+    {
+      "term": "polysynthesis",
+      "also": [
+        "polysynthetic",
+        "polysynthetic language"
+      ],
+      "plain": "A word-building style where a single verb can contain what other languages express as a whole sentence — subject, object, location, instrument and more, all as parts of one word. Many Indigenous American languages work this way.",
+      "mt_relevance": "Polysynthetic words rarely repeat exactly, so word-level MT sees an endless stream of unknown tokens.",
+      "example": "Plains Cree (crk): a single verb can incorporate subject/object pronouns, instrumentals, locations, and actions (card field linguisticChallenges.polysynthesis).",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/polysynthetic-language"
+        }
+      ],
+      "related": [
+        "noun incorporation",
+        "agglutinative",
+        "morphology"
+      ]
+    },
+    {
+      "term": "noun incorporation",
+      "also": [
+        "incorporation",
+        "incorporated noun"
+      ],
+      "plain": "Folding a noun into the verb to make one word, roughly like turning 'hunt seals' into 'seal-hunt' as a verb. Common in polysynthetic languages, where it changes the sentence's emphasis and grammar.",
+      "mt_relevance": "An incorporated noun disappears from the sentence as a separate word, so alignment-based translation loses it.",
+      "example": "Surfaced on cards as linguisticChallenges.nounIncorporation (Grambank-based), e.g. Plains Cree (crk).",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/incorporation"
+        }
+      ],
+      "related": [
+        "polysynthesis",
+        "compounding"
+      ]
+    },
+    {
+      "term": "compounding",
+      "also": [
+        "compound nouns",
+        "compounds",
+        "compound words"
+      ],
+      "plain": "Joining two or more independent words into one new word, like 'tooth' + 'brush' → 'toothbrush'. German-style compounding can chain many words into very long single tokens.",
+      "mt_relevance": "Novel compounds are unseen tokens that MT must split into known parts to translate.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/compound-word"
+        }
+      ],
+      "related": [
+        "derivation",
+        "noun incorporation",
+        "tokenization"
+      ]
+    },
+    {
+      "term": "reduplication",
+      "also": [
+        "reduplicated",
+        "reduplicative"
+      ],
+      "plain": "Repeating all or part of a word to change its meaning — to mark plurals, intensity, or ongoing action. Indonesian orang 'person' becomes orang-orang 'people'.",
+      "mt_relevance": "MT must recognize that a doubled word is grammar, not an accidental repetition to be deleted.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 27 (Rubino)",
+          "url": "https://wals.info/chapter/27"
+        }
+      ],
+      "related": [
+        "morphology",
+        "grammatical number"
+      ]
+    },
+    {
+      "term": "ablaut",
+      "also": [
+        "apophony",
+        "vowel gradation"
+      ],
+      "plain": "Changing a vowel inside a word to change its grammar, like English sing/sang/sung. The word's consonant frame stays put while the vowel does the grammatical work.",
+      "mt_relevance": "Ablaut hides inflection inside the stem where subword tokenizers cannot isolate it.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/ablaut"
+        }
+      ],
+      "related": [
+        "root-and-pattern morphology",
+        "umlaut",
+        "inflection"
+      ]
+    },
+    {
+      "term": "suppletion",
+      "also": [
+        "suppletive"
+      ],
+      "plain": "When a word's inflected forms come from completely different roots, like go/went or good/better. The grammar treats them as one word even though they share no sounds.",
+      "mt_relevance": "Suppletive forms cannot be derived by rule, so MT must have seen each one in training data.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 79 (Veselinova)",
+          "url": "https://wals.info/chapter/79"
+        }
+      ],
+      "related": [
+        "paradigm",
+        "inflection"
+      ]
+    },
+    {
+      "term": "root-and-pattern morphology",
+      "also": [
+        "root pattern",
+        "rootPattern",
+        "templatic morphology",
+        "nonconcatenative morphology",
+        "root-pattern morphology"
+      ],
+      "plain": "A word-building style, typical of Arabic and Hebrew, where a consonant root like k-t-b 'write' is threaded through vowel templates: kitāb 'book', kātib 'writer', maktab 'office'. The root and the pattern each carry meaning, but neither is a contiguous chunk.",
+      "mt_relevance": "Standard subword tokenization cannot see the shared root across these forms, weakening generalization in Semitic-language MT.",
+      "example": "Surfaced on cards as linguisticChallenges.rootPattern (e.g. Arabic, Hebrew, Maltese).",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/root-1"
+        }
+      ],
+      "related": [
+        "root",
+        "ablaut",
+        "tokenization"
+      ]
+    },
+    {
+      "term": "vowel harmony",
+      "also": [
+        "vowel-harmony"
+      ],
+      "plain": "A rule that all vowels in a word must agree in some property, such as front/back or rounded/unrounded. In Turkish, suffix vowels change shape to match the stem: ev-ler 'houses' but at-lar 'horses'.",
+      "mt_relevance": "Each suffix has several surface forms, multiplying the token variants MT must learn for one grammatical ending.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/vowel-harmony"
+        }
+      ],
+      "related": [
+        "advanced tongue root",
+        "suffix",
+        "agglutinative"
+      ]
+    },
+    {
+      "term": "consonant mutation",
+      "also": [
+        "initial mutation",
+        "consonant mutations"
+      ],
+      "plain": "A grammatical change to a word's first consonant triggered by the word before it. Welsh cath 'cat' becomes gath after the article: y gath 'the cat'. The dictionary form and the spoken form can look quite different.",
+      "mt_relevance": "Mutation makes the same word appear under several spellings, fragmenting its statistics in MT training data.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/consonant-mutation"
+        }
+      ],
+      "related": [
+        "lenition",
+        "sandhi"
+      ]
+    },
+    {
+      "term": "lenition",
+      "also": [
+        "lenited"
+      ],
+      "plain": "The softening of a consonant, often between vowels or under grammatical triggers — a 'k' weakening toward 'g' or 'h'. In Celtic languages lenition is part of the grammar, not just pronunciation.",
+      "mt_relevance": "Grammatical lenition changes word spellings in context, so surface text diverges from dictionary forms.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/lenition"
+        }
+      ],
+      "related": [
+        "consonant mutation",
+        "sandhi"
+      ]
+    },
+    {
+      "term": "gemination",
+      "also": [
+        "geminate",
+        "geminated",
+        "double consonant"
+      ],
+      "plain": "Holding a consonant longer to make a different word — Italian pala 'shovel' vs palla 'ball'. Some scripts write the doubling, others leave it to the reader.",
+      "mt_relevance": "When the script omits gemination, distinct words collapse into one spelling and MT loses the contrast.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/gemination"
+        }
+      ],
+      "related": [
+        "vowel length",
+        "orthography"
+      ]
+    },
+    {
+      "term": "sandhi",
+      "also": [
+        "tone sandhi",
+        "external sandhi"
+      ],
+      "plain": "Sound changes that happen where words or morphemes meet, like 'don't you' becoming 'dontcha'. In tone languages, tones themselves can change in context (tone sandhi).",
+      "mt_relevance": "Sandhi makes written or transcribed forms context-dependent, complicating consistent tokenization.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/sandhi"
+        }
+      ],
+      "related": [
+        "tone",
+        "lenition",
+        "consonant mutation"
+      ]
+    },
+    {
+      "term": "umlaut",
+      "also": [
+        "i-mutation"
+      ],
+      "plain": "A vowel change caused historically by a following vowel, surviving as grammar: German Apfel 'apple' → Äpfel 'apples'. Related to ablaut but with a different historical origin.",
+      "mt_relevance": "Umlaut puts plural or tense marking inside the stem, invisible to affix-based segmentation.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/umlaut"
+        }
+      ],
+      "related": [
+        "ablaut",
+        "inflection"
+      ]
+    },
+    {
+      "term": "tokenization",
+      "also": [
+        "tokenizer",
+        "subword",
+        "subword segmentation",
+        "tokenize",
+        "tokenization and alignment"
+      ],
+      "plain": "Splitting text into the units (tokens) a translation model actually processes. Modern systems split rare words into subword pieces; how well those pieces line up with real morphemes varies hugely by language.",
+      "mt_relevance": "Bad tokenization is a root cause of MT failure for morphologically rich and low-resource languages.",
+      "citations": [
+        {
+          "source": "Wikipedia: Byte pair encoding (standard reference)",
+          "url": "https://en.wikipedia.org/wiki/Byte_pair_encoding"
+        }
+      ],
+      "related": [
+        "morpheme",
+        "compounding",
+        "agglutinative"
+      ]
+    },
+    {
+      "term": "grammatical case",
+      "also": [
+        "case",
+        "case system",
+        "case marking",
+        "cases",
+        "case morphology",
+        "borderline case-marking"
+      ],
+      "plain": "Marking nouns and pronouns to show their role in the sentence — who acts, who is acted on, where, with what. English keeps only traces (I/me/my); Finnish has fifteen cases; many languages have none.",
+      "mt_relevance": "Case-marking languages allow free word order, so MT must read roles from endings rather than position — and generate the right endings in return.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 49 (Iggesen)",
+          "url": "https://wals.info/chapter/49"
+        }
+      ],
+      "related": [
+        "nominative",
+        "ergativity",
+        "oblique",
+        "morphosyntactic alignment"
+      ]
+    },
+    {
+      "term": "nominative",
+      "also": [
+        "accusative",
+        "nominative-accusative",
+        "nominative–accusative"
+      ],
+      "plain": "In the most familiar alignment system, the subject of any verb takes nominative case and the direct object takes accusative. Most European languages work this way, so it is what MT training data overwhelmingly reflects.",
+      "mt_relevance": "Systems trained mostly on nominative–accusative languages misassign roles when translating ergative languages.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 98 (Comrie)",
+          "url": "https://wals.info/chapter/98"
+        }
+      ],
+      "related": [
+        "ergativity",
+        "grammatical case",
+        "morphosyntactic alignment"
+      ]
+    },
+    {
+      "term": "ergativity",
+      "also": [
+        "ergative",
+        "ergative-absolutive",
+        "ergative–absolutive",
+        "ergative alignment",
+        "ergative case",
+        "split ergativity"
+      ],
+      "plain": "An alignment system where the subject of an intransitive verb ('she sleeps') is marked like the object of a transitive one ('saw her'), while transitive subjects get special ergative marking. Basque, many Mayan, Australian and Caucasian languages work this way.",
+      "mt_relevance": "Ergative marking reverses the role cues MT expects, causing who-did-what-to-whom errors.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 98 (Comrie)",
+          "url": "https://wals.info/chapter/98"
+        }
+      ],
+      "related": [
+        "absolutive",
+        "nominative",
+        "morphosyntactic alignment"
+      ]
+    },
+    {
+      "term": "absolutive",
+      "also": [
+        "absolutive case"
+      ],
+      "plain": "The unmarked case in an ergative system, covering intransitive subjects and transitive objects. It is usually the citation form of the noun.",
+      "mt_relevance": "Absolutive nouns look identical in two different roles, so MT must use the verb to disambiguate.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/absolutive-case"
+        }
+      ],
+      "related": [
+        "ergativity",
+        "grammatical case"
+      ]
+    },
+    {
+      "term": "morphosyntactic alignment",
+      "also": [
+        "alignment",
+        "alignment of verbal person marking"
+      ],
+      "plain": "The system a language uses to group the three core roles — intransitive subject, transitive subject, and object — for marking purposes. Nominative–accusative and ergative–absolutive are the two big patterns; some languages split between them or use animacy-driven systems.",
+      "mt_relevance": "Alignment mismatch between source and target is a structural translation problem, not a vocabulary one.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 100 (Siewierska)",
+          "url": "https://wals.info/chapter/100"
+        }
+      ],
+      "related": [
+        "ergativity",
+        "nominative",
+        "agreement"
+      ]
+    },
+    {
+      "term": "genitive",
+      "also": [
+        "genitive case",
+        "possessive case"
+      ],
+      "plain": "The case that marks possession or close association, like English 's or 'of'. Languages differ in whether the genitive phrase comes before or after the noun it modifies.",
+      "mt_relevance": "Genitive order differences ('the king's horse' vs 'horse of-king') require systematic reordering inside noun phrases.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 86 (Dryer)",
+          "url": "https://wals.info/chapter/86"
+        }
+      ],
+      "related": [
+        "grammatical case",
+        "possession",
+        "word order"
+      ]
+    },
+    {
+      "term": "dative",
+      "also": [
+        "dative case"
+      ],
+      "plain": "The case marking the recipient or beneficiary — the 'to whom' of giving and telling. German wem, Latin cui; English expresses it with word order or 'to'.",
+      "mt_relevance": "MT must decide between dative case marking and prepositional phrasing depending on the target language.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/dative-case"
+        }
+      ],
+      "related": [
+        "grammatical case",
+        "benefactive"
+      ]
+    },
+    {
+      "term": "locative",
+      "also": [
+        "locative case"
+      ],
+      "plain": "A case meaning 'at/in/on' a place, expressed by a noun ending rather than a preposition. Finnish and Hungarian split location into several precise locative cases (inside, on top, near, motion toward, motion from).",
+      "mt_relevance": "One English preposition can map to several locative cases, forcing MT to choose by context.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/locative-case"
+        }
+      ],
+      "related": [
+        "grammatical case",
+        "adposition"
+      ]
+    },
+    {
+      "term": "instrumental",
+      "also": [
+        "instrumental case",
+        "instrumentals"
+      ],
+      "plain": "A case meaning 'using/by means of' — Russian marks 'with a hammer' with an ending instead of a preposition. Polysynthetic languages may build the instrument right into the verb.",
+      "mt_relevance": "Instrumental meaning shifts between case endings, prepositions, and verb-internal marking across languages.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/instrumental-case"
+        }
+      ],
+      "related": [
+        "grammatical case",
+        "polysynthesis"
+      ]
+    },
+    {
+      "term": "comitative",
+      "also": [
+        "comitative case"
+      ],
+      "plain": "A case or marker meaning 'together with someone'. Some languages use the same marker for 'with' (accompaniment) and 'and' (coordination), which can be ambiguous to outsiders.",
+      "mt_relevance": "Comitative/coordination overlap means 'X with Y' and 'X and Y' can be the same construction in the source.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 63 (Stassen)",
+          "url": "https://wals.info/chapter/63"
+        }
+      ],
+      "related": [
+        "grammatical case",
+        "instrumental"
+      ]
+    },
+    {
+      "term": "oblique",
+      "also": [
+        "obliques",
+        "oblique argument",
+        "oblique phrase"
+      ],
+      "plain": "Any phrase in the clause that is neither subject nor direct object — typically locations, instruments, recipients and other 'extras', often marked with a case or adposition. In WALS, 'X' in orders like VOX stands for the oblique phrase.",
+      "mt_relevance": "Where obliques sit in the sentence varies by language and must be reordered correctly around verb and object.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 84 (Dryer & Gensler)",
+          "url": "https://wals.info/chapter/84"
+        }
+      ],
+      "related": [
+        "grammatical case",
+        "word order",
+        "adposition"
+      ]
+    },
+    {
+      "term": "differential object marking",
+      "also": [
+        "DOM",
+        "differential marking"
+      ],
+      "plain": "Marking some direct objects but not others, usually depending on animacy or definiteness. Spanish adds 'a' before human objects (veo a María) but not things (veo la casa).",
+      "mt_relevance": "MT must decide per-object whether the marker belongs, using animacy cues the source may not show.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/differential-object-marking"
+        }
+      ],
+      "related": [
+        "animacy",
+        "definiteness",
+        "grammatical case"
+      ]
+    },
+    {
+      "term": "grammatical gender",
+      "also": [
+        "gender",
+        "gender system",
+        "gender agreement",
+        "noun gender",
+        "gendered"
+      ],
+      "plain": "Sorting all nouns into classes (often called masculine/feminine/neuter) that force matching forms on articles, adjectives, and sometimes verbs. The assignment is grammatical, not biological — a German table is masculine, a Spanish one feminine.",
+      "mt_relevance": "Translating into a gendered language forces choices about people and things the source leaves unspecified, a major source of MT bias.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 30 (Corbett)",
+          "url": "https://wals.info/chapter/30"
+        }
+      ],
+      "related": [
+        "noun class",
+        "agreement",
+        "animacy"
+      ]
+    },
+    {
+      "term": "noun class",
+      "also": [
+        "noun classes",
+        "noun class agreement",
+        "noun-class"
+      ],
+      "plain": "A gender-like system with many classes — Bantu languages typically have 10–20, sorting nouns by shape, animacy, size and more. Each class triggers its own agreement prefixes across the sentence.",
+      "mt_relevance": "Every noun choice ripples agreement markers through the whole clause, so one wrong class produces many visible errors.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 30 (Corbett)",
+          "url": "https://wals.info/chapter/30"
+        }
+      ],
+      "related": [
+        "grammatical gender",
+        "agreement",
+        "classifier"
+      ]
+    },
+    {
+      "term": "animacy",
+      "also": [
+        "animate",
+        "inanimate",
+        "animacy hierarchy"
+      ],
+      "plain": "A grammatical distinction between living (or living-like) and non-living referents. In Algonquian languages every noun is grammatically animate or inanimate, and verbs change shape entirely depending on which they combine with.",
+      "mt_relevance": "Animacy drives verb choice and agreement in many Indigenous languages, with no overt cue in an English source.",
+      "example": "Plains Cree (crk): verb conjugation changes completely based on whether subject/object nouns are animate or inanimate (card field linguisticChallenges.animacy).",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/animacy"
+        }
+      ],
+      "related": [
+        "grammatical gender",
+        "obviation",
+        "differential object marking"
+      ]
+    },
+    {
+      "term": "obviation",
+      "also": [
+        "obviative",
+        "fourth person",
+        "proximate"
+      ],
+      "plain": "A system, central to Algonquian languages like Plains Cree, that ranks third persons in a stretch of discourse: one is 'proximate' (in focus) and any others are 'obviative' (marked as backgrounded, sometimes called fourth person). It tracks who is who without pronouns like 'he₁ vs he₂'.",
+      "mt_relevance": "English has no obviation, so MT into Cree must invent proximate/obviative assignments and keep them consistent across sentences.",
+      "example": "Plains Cree (crk) marks obviative referents on nouns and verbs; see the crk card and the crk method's documentation.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/obviative-person"
+        }
+      ],
+      "related": [
+        "animacy",
+        "agreement",
+        "conjunct order"
+      ]
+    },
+    {
+      "term": "clusivity",
+      "also": [
+        "inclusive",
+        "exclusive",
+        "inclusive/exclusive",
+        "inclusive-exclusive",
+        "inclusiveExclusive"
+      ],
+      "plain": "A distinction between two kinds of 'we': inclusive (me + you, maybe others) and exclusive (me + others, but not you). Hundreds of languages make this distinction obligatorily.",
+      "mt_relevance": "Translating English 'we' requires choosing inclusive or exclusive with no source-side cue — and the wrong choice can be socially serious.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 39 (Cysouw)",
+          "url": "https://wals.info/chapter/39"
+        }
+      ],
+      "related": [
+        "grammatical number",
+        "T-V distinction"
+      ]
+    },
+    {
+      "term": "grammatical number",
+      "also": [
+        "plural marking",
+        "plurality",
+        "plural",
+        "number marking",
+        "obligatory plural"
+      ],
+      "plain": "How a language marks how many — singular, plural, and sometimes dual (exactly two) or paucal (a few). Some languages mark number on every noun; others leave it to context entirely.",
+      "mt_relevance": "When the source does not mark number, MT must guess it; when the target requires dual forms, MT must supply them.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 33 (Dryer)",
+          "url": "https://wals.info/chapter/33"
+        }
+      ],
+      "related": [
+        "dual",
+        "clusivity",
+        "agreement"
+      ]
+    },
+    {
+      "term": "dual",
+      "also": [
+        "dual number",
+        "trial"
+      ],
+      "plain": "A grammatical number meaning exactly two, distinct from both singular and plural. Slovene, Arabic and many Oceanic languages have it; a few languages add trial (exactly three) in pronouns.",
+      "mt_relevance": "MT into dual-marking languages must detect two-ness that the source expresses only by counting words.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/dual-number"
+        }
+      ],
+      "related": [
+        "grammatical number",
+        "clusivity"
+      ]
+    },
+    {
+      "term": "classifier",
+      "also": [
+        "classifiers",
+        "numeral classifier",
+        "numeral classifiers",
+        "measure word",
+        "classifier system",
+        "counter system",
+        "counters",
+        "noun classifiers"
+      ],
+      "plain": "A word required when counting or referring to nouns, sorting them by type — like English 'three head of cattle' or 'two sheets of paper', but obligatory for everything. Chinese, Japanese, Thai and many other languages cannot count without the right classifier.",
+      "mt_relevance": "MT must select the correct classifier for each noun; the wrong one is instantly visible to native speakers.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 55 (Gil)",
+          "url": "https://wals.info/chapter/55"
+        }
+      ],
+      "related": [
+        "noun class",
+        "grammatical number"
+      ]
+    },
+    {
+      "term": "definiteness",
+      "also": [
+        "definite",
+        "indefinite",
+        "specific articles"
+      ],
+      "plain": "Whether a noun refers to something the listener can already identify ('the dog') or not ('a dog'). Many languages never mark this distinction; others mark it with articles, affixes, or word order.",
+      "mt_relevance": "Translating from an article-less language forces MT to decide 'the' vs 'a' for every noun phrase from context alone.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 37 (Dryer)",
+          "url": "https://wals.info/chapter/37"
+        }
+      ],
+      "related": [
+        "article",
+        "differential object marking"
+      ]
+    },
+    {
+      "term": "article",
+      "also": [
+        "articles",
+        "definite article",
+        "indefinite article",
+        "article system"
+      ],
+      "plain": "A small word that marks a noun as definite ('the') or indefinite ('a'). About a third of the world's languages have no articles at all, and some use the numeral 'one' or demonstratives instead.",
+      "mt_relevance": "Article insertion and deletion is one of the most frequent edit categories in MT between article and article-less languages.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 38 (Dryer)",
+          "url": "https://wals.info/chapter/38"
+        }
+      ],
+      "related": [
+        "definiteness",
+        "demonstrative"
+      ]
+    },
+    {
+      "term": "demonstrative",
+      "also": [
+        "demonstratives",
+        "deixis"
+      ],
+      "plain": "Pointing words like 'this' and 'that'. Languages divide pointing space differently — some have a three-way near-me / near-you / far split, others add visibility or elevation.",
+      "mt_relevance": "Demonstrative systems rarely map one-to-one, so MT must approximate distance and visibility distinctions.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 41 (Diessel)",
+          "url": "https://wals.info/chapter/41"
+        }
+      ],
+      "related": [
+        "article",
+        "definiteness"
+      ]
+    },
+    {
+      "term": "possession",
+      "also": [
+        "possessive",
+        "possessives",
+        "alienable",
+        "inalienable",
+        "possessive affixes"
+      ],
+      "plain": "How a language expresses 'my X / your X'. Many languages distinguish inalienable possession (body parts, kin — things you cannot give away) from alienable, marking them with different constructions.",
+      "mt_relevance": "Inalienable possession often requires obligatory possessor marking that English sources omit.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 58 (Nichols & Bickel)",
+          "url": "https://wals.info/chapter/58"
+        }
+      ],
+      "related": [
+        "genitive",
+        "head marking"
+      ]
+    },
+    {
+      "term": "head marking",
+      "also": [
+        "head-marking",
+        "headMarking"
+      ],
+      "plain": "Putting the grammatical marking on the head of a phrase — the verb shows who its subject and object are, the possessed noun shows who owns it. The dependents (the nouns themselves) can stay bare.",
+      "mt_relevance": "Head-marking concentrates clause grammar on the verb, the mirror image of the dependent-marking languages most MT data comes from.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 23 (Nichols & Bickel)",
+          "url": "https://wals.info/chapter/23"
+        }
+      ],
+      "related": [
+        "dependent marking",
+        "agreement",
+        "polysynthesis"
+      ]
+    },
+    {
+      "term": "dependent marking",
+      "also": [
+        "dependent-marking",
+        "dependentMarking"
+      ],
+      "plain": "Putting grammatical marking on the dependents of a phrase — case endings on nouns, possessive endings on the possessor — while the head stays unmarked. Most European languages lean this way.",
+      "mt_relevance": "Dependent marking puts the grammatical signal in noun endings, which tokenizers must segment correctly.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 23 (Nichols & Bickel)",
+          "url": "https://wals.info/chapter/23"
+        }
+      ],
+      "related": [
+        "head marking",
+        "grammatical case"
+      ]
+    },
+    {
+      "term": "evidentiality",
+      "also": [
+        "evidential",
+        "evidentials",
+        "evidential marking"
+      ],
+      "plain": "Grammar that forces speakers to say how they know something — saw it, heard about it, inferred it. In Quechua or Turkish, leaving out the evidential is like leaving out tense in English.",
+      "mt_relevance": "MT into evidential languages must state an information source the original text never specifies.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 77 (de Haan)",
+          "url": "https://wals.info/chapter/77"
+        }
+      ],
+      "related": [
+        "mood",
+        "tense"
+      ]
+    },
+    {
+      "term": "tense",
+      "also": [
+        "tenses",
+        "past tense",
+        "future tense",
+        "tense-aspect"
+      ],
+      "plain": "Grammatical marking that locates an event in time — past, present, future. Some languages have no grammatical tense at all (Mandarin), while others distinguish several degrees of past remoteness.",
+      "mt_relevance": "Tenseless source text forces MT to infer time reference; remoteness systems demand finer distinctions than the source provides.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 66 (Dahl & Velupillai)",
+          "url": "https://wals.info/chapter/66"
+        }
+      ],
+      "related": [
+        "aspect",
+        "mood",
+        "evidentiality"
+      ]
+    },
+    {
+      "term": "aspect",
+      "also": [
+        "aspectual",
+        "aspect marking"
+      ],
+      "plain": "Grammatical marking for how an event unfolds in time — completed, ongoing, habitual, repeated — independent of when it happened. Russian verbs come in perfective/imperfective pairs; English uses 'was doing' vs 'did'.",
+      "mt_relevance": "Aspect choices must be made on every verb when translating into aspect-marking languages, often without source cues.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 65 (Dahl & Velupillai)",
+          "url": "https://wals.info/chapter/65"
+        }
+      ],
+      "related": [
+        "perfective",
+        "imperfective",
+        "tense"
+      ]
+    },
+    {
+      "term": "perfective",
+      "also": [
+        "perfective aspect"
+      ],
+      "plain": "Aspect presenting an event as a complete whole — 'she wrote the letter' viewed as one finished fact. Often paired with imperfective in a grammatical opposition.",
+      "mt_relevance": "Choosing perfective vs imperfective wrongly is among the most common MT errors into Slavic languages.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/perfective-aspect"
+        }
+      ],
+      "related": [
+        "imperfective",
+        "aspect"
+      ]
+    },
+    {
+      "term": "imperfective",
+      "also": [
+        "imperfective aspect"
+      ],
+      "plain": "Aspect presenting an event from the inside — ongoing, habitual, or repeated, like 'she was writing' or 'she used to write'. The counterpart of perfective.",
+      "mt_relevance": "Imperfective readings (ongoing vs habitual) must be disambiguated by context for correct translation.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/imperfective-aspect"
+        }
+      ],
+      "related": [
+        "perfective",
+        "aspect"
+      ]
+    },
+    {
+      "term": "mood",
+      "also": [
+        "modality",
+        "grammatical mood"
+      ],
+      "plain": "Grammatical marking for the speaker's stance toward an event — fact, wish, command, possibility. Indicative, subjunctive and imperative are the familiar European moods; other languages mark finer shades.",
+      "mt_relevance": "Mood selection (especially subjunctive) follows target-language rules that cannot be copied from the source.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/mood-and-modality"
+        }
+      ],
+      "related": [
+        "subjunctive",
+        "evidentiality",
+        "tense"
+      ]
+    },
+    {
+      "term": "subjunctive",
+      "also": [
+        "subjunctive mood"
+      ],
+      "plain": "A verb mood for non-asserted content — wishes, doubts, hypotheticals, and clauses after certain verbs. Romance languages require it in many subordinate clauses where English uses plain forms.",
+      "mt_relevance": "Subjunctive triggers are target-language-specific, so MT must apply grammar rules rather than translate forms.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/subjunctive-mood"
+        }
+      ],
+      "related": [
+        "mood"
+      ]
+    },
+    {
+      "term": "negation",
+      "also": [
+        "negative morpheme",
+        "negator",
+        "negative marker",
+        "standard negation"
+      ],
+      "plain": "How a language says 'not'. Strategies include particles (English not), affixes on the verb, special negative verbs, and two-part constructions like French ne…pas. Position varies: before the verb, after it, or both.",
+      "mt_relevance": "Negation errors invert meaning entirely, making correct negative placement one of the highest-stakes MT requirements.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 112 (Dryer)",
+          "url": "https://wals.info/chapter/112"
+        }
+      ],
+      "related": [
+        "particle",
+        "word order"
+      ]
+    },
+    {
+      "term": "passive",
+      "also": [
+        "passive voice",
+        "passive constructions"
+      ],
+      "plain": "A construction that promotes the object to subject and demotes or drops the doer: 'the window was broken (by the boy)'. Many languages lack a passive entirely or use other strategies to background the agent.",
+      "mt_relevance": "Passive-less target languages force MT to restructure passives into actives, inventing or recovering the agent.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 107 (Siewierska)",
+          "url": "https://wals.info/chapter/107"
+        }
+      ],
+      "related": [
+        "grammatical voice",
+        "valency"
+      ]
+    },
+    {
+      "term": "grammatical voice",
+      "also": [
+        "voice",
+        "voice system"
+      ],
+      "plain": "The grammatical system controlling which participant is the subject — active, passive, middle, and in some language families much richer systems. Voice reshapes the whole clause around a chosen perspective.",
+      "mt_relevance": "Voice mismatches require restructuring whole clauses, not substituting words.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/voice-2"
+        }
+      ],
+      "related": [
+        "passive",
+        "focus system",
+        "valency"
+      ]
+    },
+    {
+      "term": "valency",
+      "also": [
+        "valence",
+        "valency patterns",
+        "valencyPatterns"
+      ],
+      "plain": "How many participants a verb requires and how it encodes them — 'sleep' takes one, 'give' takes three. Languages disagree about which participants particular verbs take and how they are marked.",
+      "mt_relevance": "Valency mismatches make literal translations assign the wrong roles or drop required participants.",
+      "citations": [
+        {
+          "source": "ValPaL (Valency Patterns Leipzig)",
+          "url": "https://valpal.info"
+        }
+      ],
+      "related": [
+        "grammatical voice",
+        "agreement",
+        "benefactive"
+      ]
+    },
+    {
+      "term": "transitive",
+      "also": [
+        "transitivity",
+        "transitive verb",
+        "transitive verbs"
+      ],
+      "plain": "Describes a verb that takes a direct object — 'she reads the book'. Transitivity is grammatically central: many languages mark the subject, the object, and the verb itself differently depending on whether the clause is transitive.",
+      "mt_relevance": "Transitivity governs case marking and agreement, so misjudging whether a verb is transitive scrambles who-did-what-to-whom in the output.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/transitive-verb"
+        }
+      ],
+      "related": [
+        "intransitive",
+        "valency",
+        "ergativity"
+      ]
+    },
+    {
+      "term": "intransitive",
+      "also": [
+        "intransitivity",
+        "intransitive verb",
+        "intransitive verbs"
+      ],
+      "plain": "Describes a verb that takes no direct object — 'she sleeps', 'the sun rose'. In ergative languages the single argument of an intransitive verb is marked like the object of a transitive one, not like its subject.",
+      "mt_relevance": "Intransitive clauses trigger different case and agreement patterns, especially in ergative languages, so MT must track transitivity to choose the right forms.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/intransitive-verb"
+        }
+      ],
+      "related": [
+        "transitive",
+        "valency",
+        "ergativity"
+      ]
+    },
+    {
+      "term": "antipassive",
+      "also": [
+        "antipassives",
+        "antipassive voice",
+        "antipassive construction"
+      ],
+      "plain": "A construction, common in ergative languages, that removes or demotes the object of a transitive verb, leaving an intransitive clause — the mirror image of the passive. Where the passive backgrounds the doer, the antipassive backgrounds the thing acted upon.",
+      "mt_relevance": "Antipassives restructure the clause and change case marking, so translating them into a passive-oriented language means rebuilding the whole sentence rather than swapping words.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/antipassive-voice"
+        }
+      ],
+      "related": [
+        "passive",
+        "ergativity",
+        "valency"
+      ]
+    },
+    {
+      "term": "causative",
+      "also": [
+        "causatives",
+        "causation",
+        "causative marker",
+        "causative construction"
+      ],
+      "plain": "A construction that adds a causer to an event — turning 'the pot broke' into 'she broke the pot' or 'she made it break'. Many languages build causatives with a dedicated verb affix rather than a separate verb like English 'make'.",
+      "mt_relevance": "Causative meaning can hide inside a single verb form, so MT must recognise it and unpack it into a periphrastic construction — or fold one back in — for the target language.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 111 (Song)",
+          "url": "https://wals.info/chapter/111"
+        }
+      ],
+      "related": [
+        "valency",
+        "affix",
+        "benefactive"
+      ]
+    },
+    {
+      "term": "pronoun",
+      "also": [
+        "pronouns",
+        "personal pronoun",
+        "personal pronouns",
+        "pronominal"
+      ],
+      "plain": "A word that stands in for a noun phrase — I, you, she, they, this, who. Languages differ sharply in how many pronouns they have and which distinctions they force: gender, formality, or the inclusive/exclusive 'we', among others.",
+      "mt_relevance": "Pronoun systems rarely line up between languages, so MT must supply distinctions the source leaves unspecified (gender, formality) or collapse ones the target cannot express.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/pronoun"
+        }
+      ],
+      "related": [
+        "clusivity",
+        "grammatical gender",
+        "T-V distinction"
+      ]
+    },
+    {
+      "term": "numeral",
+      "also": [
+        "numerals",
+        "numeral system",
+        "numeral systems",
+        "number word",
+        "number words"
+      ],
+      "plain": "A word expressing a number — one, seventeen, thousand. Languages build higher numerals on different bases (ten, twenty, or mixtures) and may require a classifier or a special counting form with each number.",
+      "mt_relevance": "Numbers are high-stakes content, and translating number words across different counting bases or classifier requirements is an easy place for MT to introduce errors.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 131 (Comrie)",
+          "url": "https://wals.info/chapter/131"
+        }
+      ],
+      "related": [
+        "vigesimal",
+        "classifier"
+      ]
+    },
+    {
+      "term": "ideophone",
+      "also": [
+        "ideophones",
+        "ideophonic",
+        "mimetic",
+        "mimetics"
+      ],
+      "plain": "A vivid word that evokes a sensation — a sound, movement, texture, or light — through its own shape, like English 'zigzag' or Japanese kirakira 'glitteringly'. Many African and Asian languages have large, grammatically distinct classes of ideophones.",
+      "mt_relevance": "Ideophones are expressive and highly language-specific, so MT tends to drop or flatten them, losing meaning that native speakers hear as precise and vivid.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/ideophone"
+        }
+      ],
+      "related": [
+        "reduplication",
+        "particle"
+      ]
+    },
+    {
+      "term": "serial verb construction",
+      "also": [
+        "serial verbs",
+        "serialVerbs",
+        "verb serialization",
+        "serial verb"
+      ],
+      "plain": "Stringing several verbs together in one clause with no 'and' or 'to' between them — 'take knife cut bread' for 'cut the bread with a knife'. Common in West African, Southeast Asian and creole languages.",
+      "mt_relevance": "Serial verbs must be decomposed into prepositions or subordinate clauses when translating into European languages, and rebuilt going the other way.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/serial-verb"
+        }
+      ],
+      "related": [
+        "grammatical voice",
+        "particle"
+      ]
+    },
+    {
+      "term": "participle",
+      "also": [
+        "participles",
+        "participial"
+      ],
+      "plain": "A verb form that acts like an adjective or builds compound tenses — 'the running water', 'has eaten'. Languages differ in how many participles they have and what they are used for.",
+      "mt_relevance": "Participial clauses often replace relative clauses in other languages, requiring structural conversion.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/participle"
+        }
+      ],
+      "related": [
+        "gerund",
+        "relative clause"
+      ]
+    },
+    {
+      "term": "gerund",
+      "also": [
+        "gerunds"
+      ],
+      "plain": "A verb form used as a noun, like 'swimming' in 'swimming is fun'. Other languages use infinitives, verbal nouns, or special converb forms where English uses gerunds.",
+      "mt_relevance": "English gerunds map to several different constructions depending on the target language.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/gerund"
+        }
+      ],
+      "related": [
+        "participle"
+      ]
+    },
+    {
+      "term": "copula",
+      "also": [
+        "zero copula",
+        "copular"
+      ],
+      "plain": "The linking verb 'be' in sentences like 'she is a doctor'. Many languages omit it (zero copula) in the present tense — Russian and Arabic say literally 'she doctor'.",
+      "mt_relevance": "MT must insert copulas translating out of zero-copula languages and delete them going in.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 120 (Stassen)",
+          "url": "https://wals.info/chapter/120"
+        }
+      ],
+      "related": [
+        "negation",
+        "word order"
+      ]
+    },
+    {
+      "term": "agreement",
+      "also": [
+        "concord",
+        "object agreement",
+        "verbal agreement",
+        "agreement patterns"
+      ],
+      "plain": "When one word's form must match another's grammatical features — verbs matching their subjects, adjectives matching their nouns in gender and number. Some languages mark agreement with both subject and object on the verb.",
+      "mt_relevance": "Generated text must satisfy all agreement chains; a single wrong feature produces multiple visible errors.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/agreement"
+        }
+      ],
+      "related": [
+        "grammatical gender",
+        "polypersonal agreement",
+        "inflection"
+      ]
+    },
+    {
+      "term": "polypersonal agreement",
+      "also": [
+        "polypersonalism",
+        "polypersonal"
+      ],
+      "plain": "Verb agreement with more than one participant at once — the verb carries markers for both subject and object (and sometimes more). Basque, Georgian, and Algonquian languages do this systematically.",
+      "mt_relevance": "The verb form encodes who acts on whom, so MT must resolve both roles before it can produce a single correct verb.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 102 (Siewierska)",
+          "url": "https://wals.info/chapter/102"
+        }
+      ],
+      "related": [
+        "agreement",
+        "polysynthesis",
+        "obviation"
+      ]
+    },
+    {
+      "term": "conjunct order",
+      "also": [
+        "conjunct",
+        "independent order",
+        "conjunct verb"
+      ],
+      "plain": "In Algonquian languages like Plains Cree, verbs come in distinct inflectional 'orders': the independent order for main statements and the conjunct order mainly for subordinate clauses, questions, and certain discourse contexts. The two use entirely different ending sets.",
+      "mt_relevance": "Choosing independent vs conjunct forms is a clause-type decision English gives no direct cue for.",
+      "example": "Plains Cree (crk): described in the card's formality notes and the crk method's documentation.",
+      "citations": [
+        {
+          "source": "Wikipedia: Plains Cree (standard reference; see also Wolvengrey 2011)",
+          "url": "https://en.wikipedia.org/wiki/Plains_Cree"
+        }
+      ],
+      "related": [
+        "obviation",
+        "mood",
+        "agreement"
+      ]
+    },
+    {
+      "term": "directional",
+      "also": [
+        "directionals",
+        "directional affixes",
+        "directional prefixes"
+      ],
+      "plain": "Verb marking that builds direction of motion into the verb itself — toward the speaker, away, upriver, uphill. Common in Mayan, Tibeto-Burman, and many Papuan languages.",
+      "mt_relevance": "Directional meaning packed into verbs must be unpacked into adverbs or prepositions in the target.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/directional"
+        }
+      ],
+      "related": [
+        "affix",
+        "valency"
+      ]
+    },
+    {
+      "term": "benefactive",
+      "also": [
+        "benefactives"
+      ],
+      "plain": "Marking that an action is done for someone's benefit — 'I baked her a cake'. Some languages mark this with a verb affix (an applicative) rather than word order or a preposition.",
+      "mt_relevance": "Beneficiaries can hide inside verb morphology, so MT must detect and re-express them as separate phrases.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/benefactive-case"
+        }
+      ],
+      "related": [
+        "dative",
+        "valency"
+      ]
+    },
+    {
+      "term": "interrogative",
+      "also": [
+        "interrogatives",
+        "question particle",
+        "polar question",
+        "question marker"
+      ],
+      "plain": "The grammar of asking questions. Yes/no questions may be marked by a particle, a verb form, word-order change, or intonation alone; content questions differ in whether 'who/what' moves to the front.",
+      "mt_relevance": "If the source marks questions only by intonation, written input gives MT no signal that a question is being asked.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 116 (Dryer)",
+          "url": "https://wals.info/chapter/116"
+        }
+      ],
+      "related": [
+        "particle",
+        "word order"
+      ]
+    },
+    {
+      "term": "word order",
+      "also": [
+        "basic word order",
+        "dominant word order",
+        "constituent order",
+        "SOV",
+        "SVO",
+        "VSO",
+        "VOS",
+        "OVS",
+        "wordOrder",
+        "free word order",
+        "flexible word order"
+      ],
+      "plain": "The typical arrangement of subject (S), object (O), and verb (V) in a plain statement. SOV (Japanese) and SVO (English) cover most languages; VSO (Welsh, Tagalog-type) is the third common type, and some languages have no fixed order at all.",
+      "mt_relevance": "Word-order mismatch is the single largest driver of reordering errors between language pairs.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 81 (Dryer)",
+          "url": "https://wals.info/chapter/81"
+        }
+      ],
+      "related": [
+        "oblique",
+        "adposition",
+        "isolating"
+      ]
+    },
+    {
+      "term": "adposition",
+      "also": [
+        "adpositions",
+        "preposition",
+        "prepositions",
+        "postposition",
+        "postpositions"
+      ],
+      "plain": "The cover term for prepositions (before their noun: 'in the house') and postpositions (after it: Japanese uchi de 'house in'). A language's choice correlates strongly with its verb–object order.",
+      "mt_relevance": "Preposition-to-postposition conversion flips the bracketing of every spatial and temporal phrase.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 85 (Dryer)",
+          "url": "https://wals.info/chapter/85"
+        }
+      ],
+      "related": [
+        "word order",
+        "locative",
+        "grammatical case"
+      ]
+    },
+    {
+      "term": "relative clause",
+      "also": [
+        "relative clauses",
+        "relativization"
+      ],
+      "plain": "A clause that modifies a noun: 'the book that I read'. Languages place it before or after the noun, and use strategies from relative pronouns to gaps to special verb forms.",
+      "mt_relevance": "Prenominal relative clauses (Japanese, Turkish) require inverting long stretches of text relative to English order.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 90 (Dryer)",
+          "url": "https://wals.info/chapter/90"
+        }
+      ],
+      "related": [
+        "word order",
+        "participle"
+      ]
+    },
+    {
+      "term": "focus system",
+      "also": [
+        "voice focus",
+        "voiceFocus",
+        "focus marker",
+        "symmetrical voice",
+        "Austronesian voice",
+        "focus construction"
+      ],
+      "plain": "A clause system, best known from Philippine languages like Tagalog, where verb morphology selects which participant — actor, patient, location, instrument — is the grammatical pivot of the sentence. Often called symmetrical voice.",
+      "mt_relevance": "Focus choice changes verb form, marker placement and word order at once, so MT cannot map clauses word-by-word.",
+      "example": "Surfaced on cards as linguisticChallenges.voiceFocus for many Austronesian languages.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/focus"
+        }
+      ],
+      "related": [
+        "grammatical voice",
+        "word order"
+      ]
+    },
+    {
+      "term": "particle",
+      "also": [
+        "particles",
+        "sentence-final particle",
+        "discourse particle",
+        "topic marker"
+      ],
+      "plain": "A small, uninflected function word that adds grammatical or attitudinal meaning — question markers, topic markers, politeness softeners. East Asian languages make heavy use of sentence-final particles.",
+      "mt_relevance": "Particles carry meaning (questionhood, attitude, topic) that MT must re-express by entirely different means.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/particle"
+        }
+      ],
+      "related": [
+        "clitic",
+        "interrogative",
+        "register"
+      ]
+    },
+    {
+      "term": "tone",
+      "also": [
+        "tonal",
+        "tone system",
+        "tonal language",
+        "tones",
+        "lexical tone",
+        "toneSystem",
+        "contour tone"
+      ],
+      "plain": "Using voice pitch to distinguish words: Mandarin mā 'mother' vs mǎ 'horse'. Simple systems contrast two levels; complex systems (many West African and Southeast Asian languages) use several levels and contours.",
+      "mt_relevance": "Tone is usually invisible in romanized or unmarked text, collapsing distinct words into one spelling for the MT system.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 13 (Maddieson)",
+          "url": "https://wals.info/chapter/13"
+        }
+      ],
+      "related": [
+        "pitch accent",
+        "diacritic",
+        "sandhi"
+      ]
+    },
+    {
+      "term": "pitch accent",
+      "also": [
+        "pitch-accent"
+      ],
+      "plain": "A system where pitch distinguishes words, but only one syllable per word carries the distinctive pitch — Japanese háshi 'chopsticks' vs hashí 'bridge'. Lighter than full tone, heavier than pure stress.",
+      "mt_relevance": "Like tone, pitch accent is rarely written, so homographs multiply in text.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/pitch-accent"
+        }
+      ],
+      "related": [
+        "tone",
+        "mora"
+      ]
+    },
+    {
+      "term": "mora",
+      "also": [
+        "moraic",
+        "morae"
+      ],
+      "plain": "A timing unit smaller than the syllable: a short syllable counts one mora, a long vowel or a final consonant adds another. Japanese rhythm, poetry, and even abbreviations count morae, not syllables.",
+      "mt_relevance": "Mora-based phonology shapes how loanwords and names are adapted, affecting transliteration quality.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/mora"
+        }
+      ],
+      "related": [
+        "vowel length",
+        "pitch accent"
+      ]
+    },
+    {
+      "term": "ejective",
+      "also": [
+        "ejectives",
+        "glottalized consonant",
+        "glottalized consonants"
+      ],
+      "plain": "A consonant produced with a burst of air from the closed glottis instead of the lungs, giving a sharp popping quality. Common in languages of the Caucasus, the Americas, and East Africa; written with an apostrophe (k', t').",
+      "mt_relevance": "Ejective marks are often dropped in casual typing, merging distinct words in the input text.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 7 (Maddieson)",
+          "url": "https://wals.info/chapter/7"
+        }
+      ],
+      "related": [
+        "glottal stop",
+        "phoneme",
+        "orthography"
+      ]
+    },
+    {
+      "term": "glottal stop",
+      "also": [
+        "glottal",
+        "ʔ",
+        "okina",
+        "ʻokina"
+      ],
+      "plain": "The catch in the throat in the middle of 'uh-oh'. In many languages it is a full consonant that distinguishes words — Hawaiian writes it as the ʻokina (ʻ), and dropping it changes meanings.",
+      "mt_relevance": "Glottal stops are frequently omitted or typed with the wrong apostrophe character, fragmenting words across spellings.",
+      "example": "Hawaiian (haw): the ʻokina is a phonemic consonant; card orthography notes flag apostrophe-variant issues.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/glottal-stop"
+        }
+      ],
+      "related": [
+        "ejective",
+        "diacritic",
+        "orthography"
+      ]
+    },
+    {
+      "term": "uvular",
+      "also": [
+        "uvulars",
+        "uvular consonants",
+        "uvular consonant"
+      ],
+      "plain": "Consonants made at the very back of the mouth against the uvula, like the Arabic q or French r. Rarer than velar k/g sounds and a signature of certain language areas.",
+      "mt_relevance": "Uvulars are often romanized inconsistently (q/k/kh), splitting one word into several text forms.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 6 (Maddieson)",
+          "url": "https://wals.info/chapter/6"
+        }
+      ],
+      "related": [
+        "pharyngeal",
+        "phoneme"
+      ]
+    },
+    {
+      "term": "click",
+      "also": [
+        "clicks",
+        "click consonants",
+        "click consonant"
+      ],
+      "plain": "Consonants made by sucking air in, like the English 'tsk-tsk' — but used as ordinary speech sounds. Khoisan and some southern Bantu languages (Zulu, Xhosa) have full sets of click consonants.",
+      "mt_relevance": "Clicks are written with unusual characters (ǃ, ǂ, c, q, x) that tokenizers and fonts often mishandle.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 19 (Maddieson)",
+          "url": "https://wals.info/chapter/19"
+        }
+      ],
+      "related": [
+        "phoneme",
+        "orthography"
+      ]
+    },
+    {
+      "term": "implosive",
+      "also": [
+        "implosives"
+      ],
+      "plain": "Consonants made with air briefly sucked inward at the throat, like the ɓ and ɗ of Hausa or Vietnamese. They sound like emphatic b/d to untrained ears but are distinct phonemes.",
+      "mt_relevance": "Implosive letters (ɓ, ɗ) are often typed as plain b/d, merging distinct words in text corpora.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 7 (Maddieson)",
+          "url": "https://wals.info/chapter/7"
+        }
+      ],
+      "related": [
+        "ejective",
+        "phoneme"
+      ]
+    },
+    {
+      "term": "nasal",
+      "also": [
+        "nasals",
+        "nasal consonant",
+        "nasal consonants",
+        "nasal stop"
+      ],
+      "plain": "A consonant made with air flowing out through the nose, like m, n, or the ng in 'sing'. Nearly every language has nasal consonants, and some also spread nasality onto neighbouring vowels.",
+      "mt_relevance": "As a purely phonetic category, nasal consonants matter for speech and transliteration rather than text translation, which works on written words.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/nasal"
+        }
+      ],
+      "related": [
+        "nasal vowel",
+        "phoneme"
+      ]
+    },
+    {
+      "term": "fricative",
+      "also": [
+        "fricatives",
+        "sibilant",
+        "sibilants"
+      ],
+      "plain": "A consonant made by forcing air through a narrow gap so it hisses, like f, s, sh, or th. Fricatives are among the most common consonant types in the world's languages.",
+      "mt_relevance": "Fricatives are a phonetic category that affects pronunciation and the transliteration of names, not the grammar of text-based MT.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/fricative"
+        }
+      ],
+      "related": [
+        "phoneme",
+        "romanization"
+      ]
+    },
+    {
+      "term": "retroflex",
+      "also": [
+        "retroflexes",
+        "retroflex consonant",
+        "retroflex consonants",
+        "retroflexion"
+      ],
+      "plain": "A consonant made by curling the tongue tip up and back toward the roof of the mouth, giving a distinctive hollow sound. Retroflex consonants are characteristic of South Asian languages such as Hindi and Tamil.",
+      "mt_relevance": "Retroflexion is mostly a matter of speech and transliteration; in text it appears only as distinct letters or diacritics that MT must preserve.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/retroflex"
+        }
+      ],
+      "related": [
+        "phoneme",
+        "diacritic"
+      ]
+    },
+    {
+      "term": "glottalized",
+      "also": [
+        "glottalization",
+        "glottalic",
+        "creaky voice",
+        "creaky-voiced"
+      ],
+      "plain": "Produced with a constriction or closure of the glottis, adding a catch or creaky quality to a consonant or vowel. Ejectives and implosives are glottalized consonants, and some languages also have glottalized (creaky-voiced) sonorants and vowels.",
+      "mt_relevance": "Glottalization is a phonetic property that matters for speech and transliteration; in text it survives only as special letters or apostrophes that MT must keep intact.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 7 (Maddieson)",
+          "url": "https://wals.info/chapter/7"
+        }
+      ],
+      "related": [
+        "ejective",
+        "glottal stop",
+        "phoneme"
+      ]
+    },
+    {
+      "term": "pharyngeal",
+      "also": [
+        "pharyngeals",
+        "pharyngeal consonants"
+      ],
+      "plain": "Consonants made by squeezing the throat (pharynx), like Arabic ʿayn (ع). They are rare worldwide and hard for non-native speakers to hear or produce.",
+      "mt_relevance": "Pharyngeals are romanized many ways (ʿ, ', 3, or nothing), creating spelling chaos in informal text.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/pharyngeal"
+        }
+      ],
+      "related": [
+        "uvular",
+        "glottal stop",
+        "romanization"
+      ]
+    },
+    {
+      "term": "nasal vowel",
+      "also": [
+        "nasal vowels",
+        "nasalization",
+        "nasalized",
+        "vowel nasalization"
+      ],
+      "plain": "A vowel pronounced with air flowing through the nose, as in French bon or Portuguese são. Where it is contrastive, oral and nasal vowels distinguish different words.",
+      "mt_relevance": "Nasalization marks (ã, ę, ą) are commonly dropped in informal typing, merging word pairs.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 10 (Hajek)",
+          "url": "https://wals.info/chapter/10"
+        }
+      ],
+      "related": [
+        "diacritic",
+        "phoneme"
+      ]
+    },
+    {
+      "term": "vowel length",
+      "also": [
+        "long vowel",
+        "long vowels",
+        "vowel-length"
+      ],
+      "plain": "Holding a vowel longer to make a different word — Finnish tuli 'fire' vs tuuli 'wind'. Scripts mark it with double letters, macrons (ā), or not at all.",
+      "mt_relevance": "When length marking is optional (e.g. Hawaiian kahakō, Arabic vowels), the same word appears in multiple spellings.",
+      "example": "Hawaiian (haw): the kahakō (macron) marks long vowels and is often omitted in casual text.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/vowel-length"
+        }
+      ],
+      "related": [
+        "mora",
+        "diacritic",
+        "gemination"
+      ]
+    },
+    {
+      "term": "phoneme",
+      "also": [
+        "phonemes",
+        "phonemic",
+        "phoneme inventory",
+        "consonant inventory",
+        "vowel inventory"
+      ],
+      "plain": "A speech sound that distinguishes words in a particular language — swap one phoneme for another and you get a different word (pat vs bat). A language's phoneme inventory ranges from about a dozen sounds to well over a hundred.",
+      "mt_relevance": "Inventory size and content determine how foreign names and loanwords get reshaped in the language.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 1 (Maddieson)",
+          "url": "https://wals.info/chapter/1"
+        }
+      ],
+      "related": [
+        "tone",
+        "orthography"
+      ]
+    },
+    {
+      "term": "downstep",
+      "also": [
+        "downdrift"
+      ],
+      "plain": "In many African tone languages, a step-down in pitch that affects all following high tones in the phrase. It is a tonal landmark that can itself distinguish meanings.",
+      "mt_relevance": "Downstep is essentially never written, so tonal information is systematically absent from text data.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/downstep"
+        }
+      ],
+      "related": [
+        "tone"
+      ]
+    },
+    {
+      "term": "advanced tongue root",
+      "also": [
+        "ATR",
+        "ATR harmony",
+        "[+ATR]"
+      ],
+      "plain": "A vowel quality made by pushing the tongue root forward, expanding the throat. Many African languages split their vowels into +ATR and -ATR sets and require words to stay within one set (ATR harmony).",
+      "mt_relevance": "ATR distinctions are inconsistently marked in orthographies, splitting words across spellings.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/advanced-tongue-root"
+        }
+      ],
+      "related": [
+        "vowel harmony",
+        "phoneme"
+      ]
+    },
+    {
+      "term": "script",
+      "also": [
+        "writing system",
+        "scripts"
+      ],
+      "plain": "The set of symbols a language is written in — Latin, Cyrillic, Arabic, Han characters, and many more. One language can use several scripts (Serbian), and one script can serve hundreds of languages.",
+      "mt_relevance": "Script identity drives every downstream text process: encoding, tokenization, and which MT models even accept the input.",
+      "citations": [
+        {
+          "source": "Wikipedia: Writing system (standard reference)",
+          "url": "https://en.wikipedia.org/wiki/Writing_system"
+        }
+      ],
+      "related": [
+        "orthography",
+        "abugida",
+        "syllabary",
+        "writing direction"
+      ]
+    },
+    {
+      "term": "orthography",
+      "also": [
+        "orthographic",
+        "spelling system",
+        "orthographies",
+        "orthographic status"
+      ],
+      "plain": "The agreed rules for writing a language in its script — which letters, diacritics, and spellings are correct. Some languages have multiple competing orthographies or none standardized at all.",
+      "mt_relevance": "Competing or unstandardized orthographies split scarce training data into incompatible spelling variants.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/orthography"
+        }
+      ],
+      "related": [
+        "script",
+        "diacritic",
+        "romanization"
+      ]
+    },
+    {
+      "term": "abugida",
+      "also": [
+        "alphasyllabary",
+        "abugidas"
+      ],
+      "plain": "A script where each symbol is a consonant with a built-in default vowel, and other vowels are marked by modifying the base sign — as in Devanagari, Ethiopic, or Thai. Between an alphabet and a syllabary.",
+      "mt_relevance": "Abugida vowel marks are combining characters that naïve text processing can strip or reorder, corrupting words.",
+      "citations": [
+        {
+          "source": "Wikipedia: Abugida (standard reference)",
+          "url": "https://en.wikipedia.org/wiki/Abugida"
+        }
+      ],
+      "related": [
+        "syllabary",
+        "script",
+        "diacritic"
+      ]
+    },
+    {
+      "term": "syllabary",
+      "also": [
+        "syllabic script",
+        "syllabaries"
+      ],
+      "plain": "A script with one symbol per syllable rather than per sound — Japanese kana or Cherokee. Works best for languages with simple syllable structures.",
+      "mt_relevance": "Syllabaries change the granularity of text: tokenizers see syllables, not consonants and vowels.",
+      "citations": [
+        {
+          "source": "Wikipedia: Syllabary (standard reference)",
+          "url": "https://en.wikipedia.org/wiki/Syllabary"
+        }
+      ],
+      "related": [
+        "abugida",
+        "syllabics",
+        "script"
+      ]
+    },
+    {
+      "term": "syllabics",
+      "also": [
+        "Canadian Aboriginal Syllabics",
+        "UCAS",
+        "Cans"
+      ],
+      "plain": "The script family used for Cree, Inuktitut, Ojibwe and other Indigenous Canadian languages, where each character encodes a consonant and its rotation encodes the vowel. Invented in the 1840s and still in active community use.",
+      "mt_relevance": "Many Cree/Inuktitut texts exist in both syllabics and roman orthography, so MT pipelines need reliable script conversion.",
+      "example": "Plains Cree (crk): card script is Cans (Canadian Aboriginal Syllabics) with a roman-orthography converter.",
+      "citations": [
+        {
+          "source": "Wikipedia: Canadian Aboriginal syllabics (standard reference)",
+          "url": "https://en.wikipedia.org/wiki/Canadian_Aboriginal_syllabics"
+        }
+      ],
+      "related": [
+        "syllabary",
+        "romanization",
+        "script"
+      ]
+    },
+    {
+      "term": "romanization",
+      "also": [
+        "transliteration",
+        "romanized",
+        "latinization",
+        "scriptConverter"
+      ],
+      "plain": "Writing a language in Latin letters instead of its native script, by rule (transliteration) or by sound. One language often has several competing romanization standards.",
+      "mt_relevance": "Romanized and native-script text behave as different languages to an MT model unless explicitly converted.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/transliteration"
+        }
+      ],
+      "related": [
+        "script",
+        "orthography",
+        "tone"
+      ]
+    },
+    {
+      "term": "diacritic",
+      "also": [
+        "diacritics",
+        "accent marks",
+        "tone marks",
+        "combining marks"
+      ],
+      "plain": "Marks added to letters — accents, tildes, dots, macrons — to indicate tone, length, nasality, or different sounds. Some orthographies depend on them completely; users often omit them in casual typing.",
+      "mt_relevance": "Diacritic-stripped text is a pervasive data-quality problem: it merges distinct words and mismatches clean training data.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/diacritic"
+        }
+      ],
+      "related": [
+        "orthography",
+        "tone",
+        "vowel length"
+      ]
+    },
+    {
+      "term": "writing direction",
+      "also": [
+        "right-to-left",
+        "RTL",
+        "left-to-right",
+        "LTR",
+        "writingDirection",
+        "bidirectional text"
+      ],
+      "plain": "Which way the script runs: left-to-right (Latin), right-to-left (Arabic, Hebrew), or historically top-to-bottom (Mongolian, classical Chinese). Mixed-direction text needs special handling.",
+      "mt_relevance": "RTL and bidirectional text break naive string handling — numbers, punctuation and embedded Latin words reorder unpredictably.",
+      "citations": [
+        {
+          "source": "Wikipedia: Bidirectional text (standard reference)",
+          "url": "https://en.wikipedia.org/wiki/Bidirectional_text"
+        }
+      ],
+      "related": [
+        "script",
+        "orthography"
+      ]
+    },
+    {
+      "term": "register",
+      "also": [
+        "registers",
+        "speech register",
+        "register-levels",
+        "speech levels"
+      ],
+      "plain": "A variety of a language tied to social context — formal, casual, ceremonial, technical. Some languages grammaticalize registers: Javanese has distinct vocabulary sets for different politeness levels.",
+      "mt_relevance": "MT must hold a consistent register; mixing formal and casual forms in one output reads as broken or rude.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/register"
+        }
+      ],
+      "related": [
+        "T-V distinction",
+        "honorific",
+        "diglossia"
+      ]
+    },
+    {
+      "term": "T-V distinction",
+      "also": [
+        "tu/vous distinction",
+        "T-V",
+        "formal/informal pronouns",
+        "tu-vous",
+        "formal you"
+      ],
+      "plain": "Having two (or more) words for 'you' depending on social distance, like French tu/vous or German du/Sie. The choice signals respect, intimacy, or hierarchy and is hard to undo once made.",
+      "mt_relevance": "English 'you' gives no cue, so MT must choose formality from context — a frequent and socially visible error.",
+      "example": "French (fra): card formality data distinguishes tu/vous usage contexts.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 45 (Helmbrecht)",
+          "url": "https://wals.info/chapter/45"
+        }
+      ],
+      "related": [
+        "register",
+        "honorific",
+        "politeness"
+      ]
+    },
+    {
+      "term": "honorific",
+      "also": [
+        "honorifics",
+        "respectful speech",
+        "respect forms",
+        "honorific system"
+      ],
+      "plain": "Grammatical or lexical forms that encode respect toward the listener or the person discussed — Japanese keigo, Korean speech levels, special kin-respect vocabularies. Often obligatory, not optional politeness.",
+      "mt_relevance": "Honorific selection requires social knowledge (who outranks whom) that the source text rarely states.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/honorifics"
+        }
+      ],
+      "related": [
+        "T-V distinction",
+        "register",
+        "politeness"
+      ]
+    },
+    {
+      "term": "politeness",
+      "also": [
+        "politeness distinctions",
+        "formality",
+        "formality system",
+        "politeness levels"
+      ],
+      "plain": "The linguistic encoding of social relationships — through pronoun choice, verb endings, particles, or vocabulary. Languages range from no grammatical politeness to elaborate multi-level systems.",
+      "mt_relevance": "A translation can be lexically perfect and still fail by choosing the wrong politeness level for the situation.",
+      "citations": [
+        {
+          "source": "WALS Online, chapter 45 (Helmbrecht)",
+          "url": "https://wals.info/chapter/45"
+        }
+      ],
+      "related": [
+        "T-V distinction",
+        "honorific",
+        "register"
+      ]
+    },
+    {
+      "term": "diglossia",
+      "also": [
+        "diglossic"
+      ],
+      "plain": "A stable situation where a community uses two varieties of a language for different purposes — a 'high' variety for writing and formal speech (Modern Standard Arabic) and a 'low' one for daily life (the spoken dialects). Speakers switch by context, not by choice.",
+      "mt_relevance": "Training data skews toward the written 'high' variety, so MT fails on the spoken variety people actually use.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/diglossia"
+        }
+      ],
+      "related": [
+        "register",
+        "code-switching",
+        "macrolanguage"
+      ]
+    },
+    {
+      "term": "code-switching",
+      "also": [
+        "code switching",
+        "codeswitching",
+        "codeSwitching",
+        "code-mixing"
+      ],
+      "plain": "Alternating between two or more languages within one conversation or sentence, as bilingual speakers naturally do. It follows grammatical patterns rather than being random mixing.",
+      "mt_relevance": "Mixed-language input confuses language detection and produces garbled output unless the system handles both codes.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/code-switching"
+        }
+      ],
+      "related": [
+        "diglossia",
+        "loanword"
+      ]
+    },
+    {
+      "term": "creole",
+      "also": [
+        "creoles",
+        "creole language",
+        "creolization"
+      ],
+      "plain": "A full natural language that grew out of intense language contact, typically drawing most vocabulary from one language (the lexifier) while developing its own grammar. Haitian Creole, Tok Pisin, and Papiamento are examples.",
+      "mt_relevance": "Creoles look deceptively like their lexifier in writing, so MT systems trained on the lexifier mistranslate them systematically.",
+      "citations": [
+        {
+          "source": "APiCS Online (Michaelis et al., eds.)",
+          "url": "https://apics-online.info"
+        }
+      ],
+      "related": [
+        "pidgin",
+        "lexifier",
+        "loanword"
+      ]
+    },
+    {
+      "term": "pidgin",
+      "also": [
+        "pidgins"
+      ],
+      "plain": "A simplified contact language with no native speakers, created for trade or work between groups with no common tongue. When children grow up speaking one natively, it becomes a creole.",
+      "mt_relevance": "Pidgins have high variability and thin text data, making consistent MT especially hard.",
+      "citations": [
+        {
+          "source": "APiCS Online (Michaelis et al., eds.)",
+          "url": "https://apics-online.info"
+        }
+      ],
+      "related": [
+        "creole",
+        "lexifier"
+      ]
+    },
+    {
+      "term": "lexifier",
+      "also": [
+        "lexifier language",
+        "lexified"
+      ],
+      "plain": "The language that supplied most of a creole's or pidgin's vocabulary — English for Jamaican Patois, French for Haitian Creole, Portuguese for Papiamento. The grammar, however, is the creole's own.",
+      "mt_relevance": "Shared vocabulary with the lexifier masks deep grammatical differences that MT must not gloss over.",
+      "citations": [
+        {
+          "source": "APiCS Online (Michaelis et al., eds.)",
+          "url": "https://apics-online.info"
+        }
+      ],
+      "related": [
+        "creole",
+        "pidgin",
+        "loanword"
+      ]
+    },
+    {
+      "term": "loanword",
+      "also": [
+        "loanwords",
+        "borrowing",
+        "borrowings",
+        "calque",
+        "English loanwords"
+      ],
+      "plain": "A word taken from another language and adapted to local sound patterns, like 'sushi' in English or 'le weekend' in French. A calque borrows the structure instead, translating piece by piece ('skyscraper' → French 'gratte-ciel').",
+      "mt_relevance": "Deciding whether to keep, adapt, or translate a loanword is a recurring choice in localization, especially for technical terms.",
+      "citations": [
+        {
+          "source": "WOLD (World Loanword Database)",
+          "url": "https://wold.clld.org"
+        }
+      ],
+      "related": [
+        "code-switching",
+        "lexifier"
+      ]
+    },
+    {
+      "term": "macrolanguage",
+      "also": [
+        "macrolanguages"
+      ],
+      "plain": "An ISO 639-3 bookkeeping category: a single code (like 'ara' Arabic or 'zho' Chinese) that covers several distinct member languages treated as one for historical or political reasons. Each member also has its own code.",
+      "mt_relevance": "Data labeled with a macrolanguage code mixes mutually unintelligible varieties, contaminating training and evaluation.",
+      "citations": [
+        {
+          "source": "SIL ISO 639-3: macrolanguage scope",
+          "url": "https://iso639-3.sil.org/about/scope#Macrolanguages"
+        }
+      ],
+      "related": [
+        "ISO 639-3",
+        "diglossia",
+        "language isolate"
+      ]
+    },
+    {
+      "term": "endonym",
+      "also": [
+        "autonym",
+        "native name",
+        "exonym",
+        "endonyms"
+      ],
+      "plain": "A community's own name for its language (endonym/autonym), as opposed to the name outsiders use (exonym). 'Deutsch' is the endonym for what English calls 'German'; many Indigenous communities prefer their endonyms.",
+      "mt_relevance": "Name mismatches across databases cause language-identification and data-merging errors in MT pipelines.",
+      "citations": [
+        {
+          "source": "Glottolog",
+          "url": "https://glottolog.org"
+        }
+      ],
+      "related": [
+        "ISO 639-3",
+        "glottocode"
+      ]
+    },
+    {
+      "term": "language isolate",
+      "also": [
+        "isolate",
+        "isolates",
+        "isIsolate"
+      ],
+      "plain": "A language with no demonstrated relatives — a family of one. Basque, Ainu, and Burushaski are famous examples; isolates are surprisingly common worldwide.",
+      "mt_relevance": "Isolates cannot borrow training signal from related languages, removing a key low-resource MT strategy (transfer learning).",
+      "citations": [
+        {
+          "source": "Glottolog: language families",
+          "url": "https://glottolog.org/glottolog/family"
+        }
+      ],
+      "related": [
+        "glottocode",
+        "macrolanguage"
+      ]
+    },
+    {
+      "term": "language vitality",
+      "also": [
+        "vitality",
+        "endangerment status",
+        "endangered",
+        "endangered language",
+        "dormant",
+        "sleeping language",
+        "vigorous",
+        "threatened"
+      ],
+      "plain": "How robustly a language is being passed to children and used across life domains. Scales like EGIDS and Glottolog's endangerment status run from 'vigorous' through 'threatened' and 'moribund' to 'dormant' (no fluent speakers, but potential for revival).",
+      "mt_relevance": "Vitality predicts data availability and, for community-driven MT, what role technology should play (e.g. revitalization support, not replacement).",
+      "citations": [
+        {
+          "source": "Glottolog: Agglomerated Endangerment Status",
+          "url": "https://glottolog.org/langdoc/status"
+        }
+      ],
+      "related": [
+        "moribund",
+        "language isolate"
+      ]
+    },
+    {
+      "term": "moribund",
+      "also": [],
+      "plain": "A vitality status meaning the language is no longer being learned by children; the remaining fluent speakers are all older adults. Without intervention, such a language becomes dormant within a generation.",
+      "mt_relevance": "Moribund languages have shrinking speaker pools to validate MT output, raising the stakes of every data decision.",
+      "citations": [
+        {
+          "source": "Glottolog: Agglomerated Endangerment Status",
+          "url": "https://glottolog.org/langdoc/status"
+        }
+      ],
+      "related": [
+        "language vitality"
+      ]
+    },
+    {
+      "term": "glottocode",
+      "also": [
+        "Glottolog code",
+        "glottocodes"
+      ],
+      "plain": "A unique identifier from the Glottolog database (like stan1293 for English) covering languages, dialects, and families. More fine-grained than ISO codes and revised continuously by linguists.",
+      "mt_relevance": "Glottocodes let pipelines join typological databases precisely, even for varieties without ISO codes.",
+      "citations": [
+        {
+          "source": "Glottolog",
+          "url": "https://glottolog.org"
+        }
+      ],
+      "related": [
+        "ISO 639-3",
+        "endonym"
+      ]
+    },
+    {
+      "term": "ISO 639-3",
+      "also": [
+        "ISO 639",
+        "iso639_3",
+        "language code",
+        "three-letter code"
+      ],
+      "plain": "The international standard of three-letter codes for the world's languages (eng, crk, haw), maintained by SIL. It aims to cover every known language, living or extinct, with one code each.",
+      "mt_relevance": "ISO 639-3 codes are the join keys of multilingual NLP — wrong or ambiguous codes silently corrupt datasets.",
+      "citations": [
+        {
+          "source": "SIL ISO 639-3 Registration Authority",
+          "url": "https://iso639-3.sil.org"
+        }
+      ],
+      "related": [
+        "glottocode",
+        "macrolanguage"
+      ]
+    },
+    {
+      "term": "vigesimal",
+      "also": [
+        "base-20",
+        "vigesimal system"
+      ],
+      "plain": "A counting system based on twenty rather than ten. Maya, Yoruba, Nahuatl, and Danish (partly) count this way — 'eighty' is literally 'four twenties' in French (quatre-vingts).",
+      "mt_relevance": "Number-word translation across different bases is error-prone, and numbers are high-stakes content.",
+      "example": "Surfaced on cards via numeralSystem.baseType from Numeralbank data.",
+      "citations": [
+        {
+          "source": "Numeralbank (channumerals)",
+          "url": "https://github.com/numeralbank/channumerals"
+        }
+      ],
+      "related": [
+        "classifier"
+      ]
+    },
+    {
+      "term": "kinship terms",
+      "also": [
+        "kin terms",
+        "kinship terminology",
+        "kinship system"
+      ],
+      "plain": "The vocabulary for family relations, which different languages slice very differently — separate words for older vs younger siblings, or for maternal vs paternal uncles. Some systems encode the speaker's own position too.",
+      "mt_relevance": "English 'uncle' or 'cousin' may have no single equivalent, forcing MT to choose among precise kin terms without the needed family facts.",
+      "citations": [
+        {
+          "source": "SIL Glossary of Linguistic Terms",
+          "url": "https://glossary.sil.org/term/kinship-terminology"
+        }
+      ],
+      "related": [
+        "honorific",
+        "clusivity"
+      ]
+    },
+    {
+      "term": "chrF",
+      "also": [
+        "chrF++",
+        "chrf"
+      ],
+      "plain": "An automatic MT evaluation metric that scores character-level overlap between a system's output and reference translations. Because it works on characters rather than words, it is fairer to morphologically rich languages than word-based metrics.",
+      "mt_relevance": "chrF is the preferred surface metric for agglutinative and polysynthetic languages where word-level matching breaks down.",
+      "citations": [
+        {
+          "source": "Popović 2015, chrF: character n-gram F-score (ACL Anthology)",
+          "url": "https://aclanthology.org/W15-3049/"
+        }
+      ],
+      "related": [
+        "COMET",
+        "tokenization"
+      ]
+    },
+    {
+      "term": "COMET",
+      "also": [
+        "AfriCOMET",
+        "comet score"
+      ],
+      "plain": "A neural MT evaluation metric that uses a trained multilingual model to predict human quality judgments, rather than counting surface overlap. Variants like AfriCOMET extend coverage to African languages.",
+      "mt_relevance": "COMET correlates better with human judgment than surface metrics, but only for languages its underlying model has seen.",
+      "citations": [
+        {
+          "source": "Rei et al. 2020, COMET (ACL Anthology)",
+          "url": "https://aclanthology.org/2020.emnlp-main.213/"
+        }
+      ],
+      "related": [
+        "chrF"
+      ]
+    },
+    {
+      "term": "FST",
+      "also": [
+        "finite-state transducer",
+        "finite state transducer",
+        "FST-based"
+      ],
+      "plain": "A finite-state transducer: a rule-based computational model that maps between word forms and their grammatical analyses. For morphologically complex languages, hand-built FSTs can analyze and generate word forms that statistical systems never saw.",
+      "mt_relevance": "FSTs provide reliable morphological analysis and validation for languages too data-poor to learn morphology from text alone.",
+      "example": "Plains Cree (crk): the eval pack uses an FST-based semantic validator (card field evalMetrics.lyss-sem).",
+      "citations": [
+        {
+          "source": "GiellaLT infrastructure (UiT)",
+          "url": "https://giellalt.github.io"
+        }
+      ],
+      "related": [
+        "morphology",
+        "paradigm"
+      ]
+    },
+    {
+      "term": "treebank",
+      "also": [
+        "treebanks",
+        "UD treebank",
+        "Universal Dependencies"
+      ],
+      "plain": "A corpus of sentences hand-annotated with grammatical structure (parse trees). The Universal Dependencies project maintains treebanks in a shared format for 150+ languages.",
+      "mt_relevance": "Treebank existence signals serious NLP infrastructure for a language and enables syntax-aware evaluation.",
+      "citations": [
+        {
+          "source": "Universal Dependencies",
+          "url": "https://universaldependencies.org"
+        }
+      ],
+      "related": [
+        "parallel corpus",
+        "tokenization"
+      ]
+    },
+    {
+      "term": "parallel corpus",
+      "also": [
+        "parallel text",
+        "bitext",
+        "parallel corpora",
+        "parallel data"
+      ],
+      "plain": "A collection of texts paired with their translations, aligned sentence by sentence. Parallel corpora are the primary fuel for training and evaluating MT systems.",
+      "mt_relevance": "The size and domain of available parallel data is the strongest single predictor of MT quality for a language pair.",
+      "citations": [
+        {
+          "source": "OPUS, the open parallel corpus collection",
+          "url": "https://opus.nlpl.eu"
+        }
+      ],
+      "related": [
+        "treebank",
+        "chrF"
+      ]
+    },
+    {
+      "term": "BLEU",
+      "also": [
+        "sacreBLEU",
+        "BLEU score",
+        "corpus BLEU",
+        "bleu"
+      ],
+      "plain": "BLEU (Bilingual Evaluation Understudy) scores a translation by how many word n-grams it shares with one or more reference translations. It is the oldest and most-cited MT metric, but because it matches whole words it is harsh and unreliable for morphologically rich and low-resource languages. Higher is better, on a 0–100 scale.",
+      "mt_relevance": "BLEU is reported for comparison with published tables, but for the languages Champollion focuses on it correlates poorly with human judgement — read it next to chrF++ and COMET, never alone.",
+      "citations": [
+        {
+          "source": "Papineni et al. 2002, BLEU (ACL Anthology)",
+          "url": "https://aclanthology.org/P02-1040/"
+        },
+        {
+          "source": "Post 2018, A Call for Clarity in Reporting BLEU Scores (sacreBLEU)",
+          "url": "https://aclanthology.org/W18-6319/"
+        }
+      ],
+      "related": [
+        "chrF",
+        "spBLEU",
+        "TER"
+      ]
+    },
+    {
+      "term": "spBLEU",
+      "also": [
+        "sentencepiece BLEU",
+        "FLORES BLEU",
+        "spbleu"
+      ],
+      "plain": "spBLEU is BLEU computed after splitting text with the FLORES-200 SentencePiece tokenizer — a single fixed subword model shared across all 200 languages. That makes scores comparable across scripts and writing systems where ordinary word-level BLEU is not.",
+      "mt_relevance": "spBLEU is the lingua-franca number in the NLLB / FLORES low-resource literature — handy for cross-language comparison, but still a surface metric that cannot see meaning.",
+      "citations": [
+        {
+          "source": "NLLB Team 2022, No Language Left Behind / FLORES-200",
+          "url": "https://arxiv.org/abs/2207.04672"
+        }
+      ],
+      "related": [
+        "BLEU",
+        "chrF"
+      ]
+    },
+    {
+      "term": "TER",
+      "also": [
+        "translation edit rate"
+      ],
+      "plain": "Translation Edit Rate counts the edits — insertions, deletions, substitutions, and block shifts — needed to turn a system's output into the reference, as a percentage of the reference length. Unlike most metrics, LOWER is better.",
+      "mt_relevance": "TER is an intuitive 'how much would a human have to fix this?' signal, but like other surface metrics it penalises valid paraphrase and rich morphology.",
+      "citations": [
+        {
+          "source": "Snover et al. 2006, A Study of Translation Edit Rate (AMTA)",
+          "url": "https://aclanthology.org/2006.amta-papers.25/"
+        }
+      ],
+      "related": [
+        "BLEU",
+        "chrF"
+      ]
+    },
+    {
+      "term": "data contamination",
+      "also": [
+        "contamination",
+        "contamination posture",
+        "contamination grade",
+        "contaminated",
+        "relative-only",
+        "relative only"
+      ],
+      "plain": "A test set is 'contaminated' when its sentences have likely already been seen during a model's training — for example because the corpus is public and widely scraped. A contaminated benchmark cannot prove a model is good; it may just be recalling answers it memorised. 'High' contamination means likely-seen, so the result is treated as a relative comparison between systems rather than an absolute quality claim ('relative-only').",
+      "mt_relevance": "Most public benchmarks are broadly trained on, so Champollion scores them on a relative-only lane and reserves absolute rankings for sealed, never-published test sets.",
+      "citations": [
+        {
+          "source": "Sainz et al. 2023, NLP Evaluation in Trouble: data contamination (EMNLP Findings)",
+          "url": "https://aclanthology.org/2023.findings-emnlp.722/"
+        }
+      ],
+      "related": [
+        "held-out test set",
+        "parallel corpus"
+      ]
+    },
+    {
+      "term": "MT complexity",
+      "also": [
+        "MT complexity index",
+        "complexity index",
+        "complexity score",
+        "MT difficulty",
+        "translation difficulty"
+      ],
+      "plain": "A Champollion-computed 0–100 estimate of how hard a language is to machine-translate, combining four signals: commercial MT API coverage, availability of parallel corpora, typological distance from well-resourced languages, and depth of linguistic documentation. Higher means harder. It is a guide to difficulty, not a measurement of any system's output.",
+      "mt_relevance": "The index is a derived guide that helps prioritise effort — it is NOT a benchmark result. Measured translation quality lives on the leaderboard, keyed by (method, dataset, metric).",
+      "citations": [
+        {
+          "source": "Joshi et al. 2020, The State and Fate of Linguistic Diversity (ACL)",
+          "url": "https://aclanthology.org/2020.acl-main.560/"
+        }
+      ],
+      "related": [
+        "parallel corpus",
+        "language vitality"
+      ]
+    },
+    {
+      "term": "held-out test set",
+      "also": [
+        "held-out",
+        "held out",
+        "blind test set",
+        "secret test set",
+        "sealed test set",
+        "hidden test set"
+      ],
+      "plain": "A set of translation examples kept hidden from a system during development and used only to score it. If the system never saw these sentences, the score reflects genuine ability rather than memorisation. Champollion's strongest tier is a 'sealed' test set a community keeps private — a method is scored against it without anyone, including us, seeing the data.",
+      "mt_relevance": "Held-out (especially sealed) test sets are the only way to make an absolute quality claim; public, contaminated sets support relative comparison only.",
+      "citations": [
+        {
+          "source": "WMT shared tasks — blind test sets (Conference on Machine Translation)",
+          "url": "https://www2.statmt.org/wmt24/"
+        }
+      ],
+      "related": [
+        "data contamination",
+        "parallel corpus"
+      ]
+    }
+  ]
+}

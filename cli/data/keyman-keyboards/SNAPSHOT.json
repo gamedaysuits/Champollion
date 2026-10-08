@@ -1,0 +1,32 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "keyman-keyboards",
+  "upstream": "https://api.keyman.com/cloud/4.0/languages",
+  "license": "LicenseRef-Keyman-Catalogue-Metadata",
+  "licenseUrl": "https://keyman.com/",
+  "citation": "Keyman keyboard catalogue (SIL International), retrieved 2026-08-08.",
+  "pin": {
+    "kind": "release",
+    "value": "2026-08-08",
+    "doi": null,
+    "date": "2026-08-08"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "keyman-languages.json",
+      "bytes": 187646,
+      "sha256": "9ee15bf60c2514ea3ba9f5ef50140b59755a7c313744319fc759249451a3acd4",
+      "url": "https://api.keyman.com/cloud/4.0/languages",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/keyman-keyboards.mjs",
+  "complete": false,
+  "notes": "534 languages with at least one keyboard; 116 distinct keyboards. REPLACES nothing — it ADDS to giellalt-resources, which indexed 78 layouts that were reported as the keyboard coverage when the real catalogue is over a thousand. PARTIAL BY CONSTRUCTION: this endpoint lists only keyboards COMPILED FOR KEYMANWEB. Desktop-only packages are absent — Plains Cree has FirstVoices layouts for Windows, Android and iOS that never appear here, so an absence in this file is NOT evidence that a language has no keyboard. The complete catalogue is in the keymanapp/keyboards repository with language tags inside per-keyboard .kps XML; that repository is 1.2 GB, which is not a proportionate download for metadata, and the search API caps at ten results with no total so it cannot enumerate. The remainder is recorded as a known gap in shared/cldf/resource-landscape.json rather than left to read as a total. EXISTENCE ONLY: that a layout exists, who publishes it and where to get it — never that it is good, current, or covers the orthography.",
+  "languages": 534,
+  "keyboards": 116,
+  "fetchedAt": "2026-08-08T19:06:02.272Z"
+}

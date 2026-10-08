@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "linguameta",
+  "upstream": "https://github.com/google-research/url-nlp/blob/452a21ad3dae5668c06ceeac21ff073e1e40f9be/linguameta/linguameta.tsv",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://github.com/google-research/url-nlp/blob/main/LICENSE",
+  "citation": "Ritchie, Sandy et al. LinguaMeta: Unified Metadata for Thousands of Languages. Google Research.",
+  "pin": {
+    "kind": "commit",
+    "value": "452a21ad3dae5668c06ceeac21ff073e1e40f9be",
+    "doi": null,
+    "date": "2025-08-01"
+  },
+  "files": [
+    {
+      "path": "linguameta.tsv",
+      "bytes": 687926,
+      "sha256": "dfd9e3c05be012ecdb42852fa9fd198649a8f61e4dde3927c3d78c770c57ad07",
+      "url": "https://raw.githubusercontent.com/google-research/url-nlp/452a21ad3dae5668c06ceeac21ff073e1e40f9be/linguameta/linguameta.tsv",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/linguameta.mjs",
+  "notes": "GitHub serves this URL by commit SHA, so the bytes are immutable for that commit — `upstreamVerified` is false only because GitHub publishes no separate checksum to compare against, not because the pin is weak. Bytes on disk confirmed identical to 452a21ad on fetch.",
+  "fetchedAt": "2026-08-02T23:26:03.651Z"
+}

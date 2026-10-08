@@ -1,0 +1,594 @@
+{
+  "3A": {
+    "question": "Whether the language has many more consonants than vowels, or a more balanced mix.",
+    "mt_relevance": "A phonology-level trait that mostly matters for romanization and speech; consonant-heavy words also tend to fragment more under subword tokenizers."
+  },
+  "4A": {
+    "question": "Whether the language distinguishes voiced from voiceless sounds, like 'b' versus 'p'.",
+    "mt_relevance": "Mainly a speech and transliteration issue; when a script under-marks voicing, distinct words can collapse into a single romanized spelling."
+  },
+  "5A": {
+    "question": "Which basic stop consonants (like p, t, k, b, d, g) the language's sound system lacks.",
+    "mt_relevance": "Mostly shapes how loanwords are respelled: a missing /p/ or /g/ forces borrowed names into substitute letters, tripping up transliteration."
+  },
+  "6A": {
+    "question": "Whether the language has uvular consonants — 'throaty' sounds far back in the mouth.",
+    "mt_relevance": "Chiefly a transliteration concern: uvular sounds map unevenly to Latin letters (q, gh, kh), scattering one name across several spellings."
+  },
+  "7A": {
+    "question": "Whether the language has glottalized consonants like ejectives or implosives.",
+    "mt_relevance": "These sounds are often written with apostrophes or special marks that noisy text drops, so MT must treat the marked and stripped spellings as one word."
+  },
+  "8A": {
+    "question": "Which 'l'-like (lateral) consonants the language has, if any.",
+    "mt_relevance": "Unusual lateral sounds (like Welsh 'll') get romanized as digraphs a tokenizer may split, and their rare letters raise the unknown-token rate."
+  },
+  "9A": {
+    "question": "Whether the language has the 'ng' sound, and whether a word can begin with it.",
+    "mt_relevance": "Written as a digraph in many scripts, so MT can't always tell a word-initial 'ng' from a separate n-plus-g sequence."
+  },
+  "10A": {
+    "question": "Whether the language uses nasal vowels — spoken through the nose — to tell words apart.",
+    "mt_relevance": "Nasal vowels ride on diacritics like 'ã' that casual text strips, collapsing a nasal word and its oral twin into one spelling."
+  },
+  "10B": {
+    "question": "How many nasal-versus-oral vowel contrasts a language has, and whether nasality spreads.",
+    "mt_relevance": "Where nasal contrasts are dense and spread across a word, dropped nasal marks erase several distinctions at once — a recurring West African text issue."
+  },
+  "11A": {
+    "question": "Whether the language has front rounded vowels, like German 'ü' or French 'eu'.",
+    "mt_relevance": "These vowels need umlaut letters (ü, ö) that ASCII-only text flattens to u or o, merging words the language keeps distinct."
+  },
+  "12A": {
+    "question": "How complex a language's syllables can be, from simple ones to heavy consonant clusters.",
+    "mt_relevance": "Complex syllables pile up consonant clusters, so subword tokenizers split such words into many short pieces, lengthening sequences and straining alignment."
+  },
+  "14A": {
+    "question": "Whether word stress always falls on a fixed syllable, like always the first or last.",
+    "mt_relevance": "Stress is almost never written, so this barely touches text MT; it matters mainly for speech translation and text-to-speech pronunciation."
+  },
+  "15A": {
+    "question": "Whether stress depends on syllable weight, like vowel length or a closing consonant.",
+    "mt_relevance": "Syllable-weight stress leaves no mark in ordinary writing, so it bears on speech synthesis and pronunciation rather than translating text."
+  },
+  "16A": {
+    "question": "What makes a syllable count as 'heavy' for stress — vowel length or a closing consonant.",
+    "mt_relevance": "This fine stress detail leaves no trace in spelling, informing pronunciation and speech models rather than text translation."
+  },
+  "17A": {
+    "question": "Whether the language's rhythm puts stress at the start (trochaic) or end (iambic) of feet.",
+    "mt_relevance": "Purely a spoken-rhythm trait — it shapes speech synthesis and prosody, but has almost no effect on written text translation."
+  },
+  "18A": {
+    "question": "Whether the language lacks consonants most languages have, like nasals or fricatives.",
+    "mt_relevance": "A phonological gap: it mostly changes how names and loanwords get spelled and transliterated, with little direct impact on text translation."
+  },
+  "19A": {
+    "question": "Whether the language has rare consonants like clicks, pharyngeals or 'th' sounds.",
+    "mt_relevance": "Rare sounds often need special letters or digraphs, complicating transliteration and name handling more than sentence-level text translation."
+  },
+  "21A": {
+    "question": "Whether one case ending marks only case, or fuses it with number, tense or other meanings.",
+    "mt_relevance": "Fused endings pack several grammatical meanings into one form, so MT must unpack them to align with languages that mark each separately."
+  },
+  "21B": {
+    "question": "Whether a tense-aspect-mood ending also bundles in agreement, voice or polarity.",
+    "mt_relevance": "When one tense marker also encodes who acted or whether it's negated, MT must recover meanings the source packs into a single verb ending."
+  },
+  "23A": {
+    "question": "Whether clause relations are marked on the verb (head) or on the nouns (dependents).",
+    "mt_relevance": "Head- vs dependent-marking changes where affixes attach, so MT must map object marking from a verb to a noun (or vice versa) across the pair."
+  },
+  "24A": {
+    "question": "Whether possession is marked on the possessed noun (head) or the possessor (dependent).",
+    "mt_relevance": "In some languages the possessed thing takes the mark, in others the owner does — MT must relocate that mark to build a correct possessive."
+  },
+  "25A": {
+    "question": "Whether a language marks grammar mostly on heads, on dependents, both, or neither overall.",
+    "mt_relevance": "A whole-language summary of where morphology lands — a broad signal of how much affix-shuffling a pair needs, not just one construction."
+  },
+  "25B": {
+    "question": "Whether the subject and object of a verb carry no grammatical marking at all.",
+    "mt_relevance": "With neither argument marked, word order alone shows who did what, so MT leans on position and can misassign subject and object."
+  },
+  "27A": {
+    "question": "Whether the language productively repeats whole or partial words to change meaning.",
+    "mt_relevance": "Doubling like 'buku-buku' for plurals maps one word to a phrase, and repeated tokens can trip up MT that treats repetition as an error."
+  },
+  "28A": {
+    "question": "Whether different cases collapse into one shared form (case syncretism) or stay distinct.",
+    "mt_relevance": "When one ending covers several cases, the form is ambiguous and MT must use context to tell, say, subject from object apart."
+  },
+  "29A": {
+    "question": "Whether a verb's agreement endings reuse one form across different persons or numbers.",
+    "mt_relevance": "Shared agreement endings blur which person or number is the subject, so MT may pick the wrong pronoun when translating outward."
+  },
+  "32A": {
+    "question": "Whether nouns get their gender by meaning, by form, or the language has no gender.",
+    "mt_relevance": "How predictably gender is assigned tells MT whether it can infer a noun's gender from meaning or must memorize it word by word."
+  },
+  "34A": {
+    "question": "Whether nouns mark plural, and if so whether it's optional or limited to humans.",
+    "mt_relevance": "When plural is optional or unmarked, MT must guess number from context to render languages like English that force singular vs plural."
+  },
+  "35A": {
+    "question": "Whether plural pronouns like 'we' and 'they' use separate stems or added endings.",
+    "mt_relevance": "Number-indifferent pronouns leave 'we' vs 'I' unmarked, forcing MT to infer plurality from context to pick the right target pronoun."
+  },
+  "36A": {
+    "question": "Whether the language has an 'and associates' plural, so 'John' can mean 'John's group'.",
+    "mt_relevance": "Associative plurals ('the Johns' = John's family) have no English word, so MT must unpack them into phrases like 'John and his people'."
+  },
+  "39A": {
+    "question": "Whether 'we' has separate forms for 'we including you' versus 'we but not you'.",
+    "mt_relevance": "Translating into an inclusive/exclusive 'we' forces a choice English never marks: is the listener part of 'we' or not?"
+  },
+  "39B": {
+    "question": "Whether this Pama-Nyungan (Australian) language separates inclusive and exclusive 'we'.",
+    "mt_relevance": "The inclusive/exclusive 'we' split as found in Australian languages: MT into them must decide whether the addressee is inside 'we'."
+  },
+  "40A": {
+    "question": "Whether the verb's 'we' agreement distinguishes 'including you' from 'excluding you'.",
+    "mt_relevance": "Here the inclusive/exclusive choice is baked into verb endings, so MT must resolve who is included even when no pronoun appears."
+  },
+  "42A": {
+    "question": "Whether 'this' alone ('I want this') differs from 'this' before a noun ('this book').",
+    "mt_relevance": "If standalone and noun-modifying demonstratives use different forms, MT must pick the right one based on whether a noun follows."
+  },
+  "43A": {
+    "question": "Whether third-person pronouns like 'he' or 'they' derive from demonstratives like 'that'.",
+    "mt_relevance": "Where 'he/she/it' come from 'this/that', pronouns can carry a near/far distance sense that nudges MT's choice of referring word."
+  },
+  "44A": {
+    "question": "Whether pronouns mark gender (he vs she), and in which persons they do so.",
+    "mt_relevance": "Translating into gendered pronouns forces MT to guess he/she/it that a genderless-pronoun source like Turkish never specified."
+  },
+  "46A": {
+    "question": "How 'someone' and 'something' are formed: from question words, generic nouns, or stems.",
+    "mt_relevance": "Interrogative-based indefinites reuse 'who/what' for 'someone/anyone', so MT must tell a question reading from an indefinite one."
+  },
+  "47A": {
+    "question": "Whether emphatic 'himself' (the king himself) matches reflexive 'himself' (cut himself).",
+    "mt_relevance": "When emphasis and reflexive share one word (English 'himself'), MT must distinguish 'the king himself' from 'cut himself' to translate right."
+  },
+  "48A": {
+    "question": "Whether prepositions carry person endings, like a single word for 'to-me' or 'with-us'.",
+    "mt_relevance": "Person-inflected adpositions fuse 'to me' into one word, so MT must build or split these forms with no separate pronoun to align."
+  },
+  "50A": {
+    "question": "Whether case endings mark singular and plural evenly, or one number more than the other.",
+    "mt_relevance": "Uneven case-marking across number means MT can't reuse one ending pattern; it must track which number gets the extra or missing marker."
+  },
+  "52A": {
+    "question": "Whether 'with a friend' (company) and 'with a knife' (tool) use the same marker.",
+    "mt_relevance": "English 'with' covers both company and instrument; MT into a language that splits them must decide which sense each phrase carries."
+  },
+  "53A": {
+    "question": "How ordinals like 'first' and 'second' are formed, or if the language has them at all.",
+    "mt_relevance": "Irregular 'first/second' beside regular 'third, fourth' means MT can't just add an ending; suppletive ordinals must be learned per language."
+  },
+  "54A": {
+    "question": "Whether the language marks distributive numerals like 'one each' or 'two apiece'.",
+    "mt_relevance": "A distributive form like 'two apiece' rarely has a one-word match, so MT must unpack it into a phrase or drop the 'each' entirely."
+  },
+  "56A": {
+    "question": "Whether the word for 'and' looks like the word for 'all' or 'every'.",
+    "mt_relevance": "When 'and' and 'every' share a form, a system can misread coordination as quantification, confusing which nouns are listed versus totalled."
+  },
+  "58A": {
+    "question": "Whether some nouns (like body parts or kin) must always be marked as possessed.",
+    "mt_relevance": "Into such a language, MT must invent a possessor — bare 'hand' has to become 'someone's hand', since unpossessed forms are ungrammatical."
+  },
+  "58B": {
+    "question": "How many nouns the language requires to always appear possessed (none, one, a few, many).",
+    "mt_relevance": "The more such nouns, the more often MT into the language must supply a possessor the source left implicit."
+  },
+  "59A": {
+    "question": "Whether the language sorts nouns into possession classes like alienable vs. inalienable.",
+    "mt_relevance": "Each class uses a different 'my/your' construction, so MT must know a noun's class before it can build the possessive phrase."
+  },
+  "60A": {
+    "question": "Whether possessors, adjectives and relative clauses are marked alike or kept distinct.",
+    "mt_relevance": "When one marker covers possession, adjectives and relatives alike, MT must guess which modifier relation is meant before reordering it."
+  },
+  "61A": {
+    "question": "Whether an adjective can stand alone without a noun, as in 'the poor'.",
+    "mt_relevance": "Into languages that require extra marking here, MT must nominalize a bare adjective — turning 'poor' into a proper 'the poor one' form."
+  },
+  "62A": {
+    "question": "How the language turns a clause into a noun phrase, like 'the destruction of the city'.",
+    "mt_relevance": "Nominalizations often recode subject and object as possessors, so MT must recover who acted on whom before rendering it in the target."
+  },
+  "63A": {
+    "question": "Whether the language uses the same word for 'and' and 'with'.",
+    "mt_relevance": "In 'with'-languages 'John and Mary' looks like 'John with Mary', so MT must decide whether it is coordination or an accompaniment phrase."
+  },
+  "64A": {
+    "question": "Whether joining two nouns uses the same 'and' as joining two verbs or clauses.",
+    "mt_relevance": "If nouns and verbs take different connectives, MT must pick the right 'and' based on what it is joining, not reuse one word."
+  },
+  "68A": {
+    "question": "Whether the language has a perfect form like 'has eaten', and where that form came from.",
+    "mt_relevance": "The perfect-vs-past line falls in different places across languages, so MT often picks the wrong one — 'I ate' vs 'I have eaten'."
+  },
+  "71A": {
+    "question": "How the language forms a negative command like 'don't go!'.",
+    "mt_relevance": "A prohibitive may need a special verb form or negator, not just the imperative plus 'not', so MT must build the exact forbidding shape."
+  },
+  "72A": {
+    "question": "How many persons the language can give commands to, from 'go!' to 'let's go'.",
+    "mt_relevance": "Systems differ in which persons take a command form, so MT must map English 'let's'/'let him' phrases onto (or out of) dedicated hortative inflections."
+  },
+  "73A": {
+    "question": "Whether the language has a special verb form for wishes, like 'may you live long'.",
+    "mt_relevance": "A dedicated wish form has no single English match, so MT must render it with 'may...' or 'if only...' — and detect those when going the other way."
+  },
+  "74A": {
+    "question": "How the language expresses situational possibility — being able to do something.",
+    "mt_relevance": "Whether ability is an affix or a separate word changes how many tokens carry 'can', complicating alignment and modal choice."
+  },
+  "75A": {
+    "question": "How the language marks epistemic possibility — that something may or might be true.",
+    "mt_relevance": "Epistemic 'might/may' can be an affix or an auxiliary, and the target may force a certainty level the source left unstated."
+  },
+  "76A": {
+    "question": "Whether a single marker covers both ability (situational) and likelihood (epistemic).",
+    "mt_relevance": "One marker for both readings is ambiguous — MT must decide if it means 'is able to' or 'is likely to' and can pick the wrong one."
+  },
+  "79A": {
+    "question": "Whether verbs switch to a whole different stem across tenses or aspects (like go/went).",
+    "mt_relevance": "Suppletive stems like go→went share no letters, so a system must memorize them as whole forms rather than derive them by rule."
+  },
+  "79B": {
+    "question": "Whether commands and 'let's' (hortative) forms use a completely different verb stem.",
+    "mt_relevance": "Irregular command and 'let's' stems can't be built from the base verb, so MT must learn each suppletive imperative on its own."
+  },
+  "80A": {
+    "question": "Whether the verb changes form for how many participants or events (verbal number).",
+    "mt_relevance": "Some languages pick a different verb for one vs many participants — a distinction most source languages mark on the noun, not the verb."
+  },
+  "81B": {
+    "question": "Which two basic subject-object-verb orders the language uses about equally.",
+    "mt_relevance": "With two competing basic orders, reordering into the target isn't fixed — MT must choose per sentence, raising the odds of a scrambled clause."
+  },
+  "90B": {
+    "question": "Whether a relative clause ('that I bought') comes before the noun it describes.",
+    "mt_relevance": "A pre-noun relative clause must move to after the noun for English — a long reordering that easily drops or misattaches the clause."
+  },
+  "90C": {
+    "question": "Whether a relative clause comes after the noun it describes, as in English.",
+    "mt_relevance": "Post-noun relative clauses match English order, so reordering is minimal — but relativizer choice and clause boundaries can still slip."
+  },
+  "90D": {
+    "question": "Whether the modified noun sits inside its relative clause rather than outside it.",
+    "mt_relevance": "In internally-headed clauses the head noun is buried inside the clause, so MT must find it and lift it out for an external-head target."
+  },
+  "90E": {
+    "question": "Whether the language uses correlative clauses — a paired 'which… that…' structure.",
+    "mt_relevance": "Correlative clauses pair a marker in one clause with a pronoun in the next — a structure English lacks and must fully recast."
+  },
+  "90F": {
+    "question": "Whether relative clauses attach loosely at the sentence edge rather than being embedded.",
+    "mt_relevance": "Loosely adjoined clauses sit at the sentence margin with vague attachment, so MT must decide which noun each one modifies."
+  },
+  "90G": {
+    "question": "Whether the modified noun appears twice — both inside and outside the relative clause.",
+    "mt_relevance": "A head noun repeated inside and outside the clause must collapse to one mention in English, or the output names the noun twice."
+  },
+  "91A": {
+    "question": "Whether a degree word like 'very' comes before or after the adjective it modifies.",
+    "mt_relevance": "If 'very'-type words follow the adjective, MT must flip them to English's before-adjective order or produce phrases like 'tall very'."
+  },
+  "94A": {
+    "question": "Where a word like 'because' or 'if' sits: before, after, or attached to its clause.",
+    "mt_relevance": "A clause-final or suffixed subordinator must be moved to the front as a word like 'because' when translating into English."
+  },
+  "95A": {
+    "question": "Whether it uses prepositions or postpositions, and how that tracks object–verb order.",
+    "mt_relevance": "Postpositions put the 'to/from' after the noun, so both the adposition and often the verb must be repositioned for a prepositional VO language."
+  },
+  "96A": {
+    "question": "Whether a describing clause (like 'that I saw') comes before or after its noun.",
+    "mt_relevance": "Prenominal relative clauses ('the I-saw book') must be unwound into a postnominal 'the book that I saw' — a heavy reordering for MT."
+  },
+  "98A": {
+    "question": "How nouns get endings marking who acts and who is acted upon (case alignment).",
+    "mt_relevance": "Ergative systems mark a transitive subject like an object, so MT must re-map grammatical roles into English's subject/object frame."
+  },
+  "99A": {
+    "question": "How pronouns change form to show who acts and who is acted upon (case alignment).",
+    "mt_relevance": "Pronoun case can follow a different alignment than nouns, so 'I/me' choices may not line up with how the source marks full nouns."
+  },
+  "100A": {
+    "question": "How the verb's agreement endings treat the subject versus the object (alignment).",
+    "mt_relevance": "The verb can encode subject and object agreement on an ergative or hierarchical pattern English verbs lack, complicating agreement generation."
+  },
+  "101A": {
+    "question": "Whether subject pronouns are separate words, verb endings, or often left unsaid.",
+    "mt_relevance": "Pro-drop or affix-only subjects mean the source may omit 'I/you/he', which MT must recover and insert as an explicit pronoun in English."
+  },
+  "102A": {
+    "question": "Whether the verb agrees with its subject, its object, both, or neither.",
+    "mt_relevance": "Verbs that agree with both subject and object pack role information English spreads across separate words, so that alignment can be lost."
+  },
+  "103A": {
+    "question": "Whether 'he/she/it' subject agreement on the verb is shown by no marking at all.",
+    "mt_relevance": "A bare, unmarked third-person form can look like an uninflected stem, making it harder for MT to tell 'he goes' from a citation form."
+  },
+  "104A": {
+    "question": "When a verb carries both subject and object markers, which one comes first.",
+    "mt_relevance": "Affix order matters mainly when generating verb forms for agreement-rich targets; it rarely changes word order in the output sentence."
+  },
+  "105A": {
+    "question": "How the language frames 'give X to Y' — the recipient versus the thing given.",
+    "mt_relevance": "Double-object vs. to-dative framing ('give her it' vs. 'give it to her') forces MT to pick a construction the source may not signal."
+  },
+  "106A": {
+    "question": "Whether 'each other' is expressed differently from 'themselves' (reflexive).",
+    "mt_relevance": "When one form covers both 'each other' and 'themselves', MT must disambiguate a reciprocal from a reflexive reading the source leaves merged."
+  },
+  "107A": {
+    "question": "Whether the language has a passive voice (like 'the door was opened').",
+    "mt_relevance": "A language with no passive must recast 'was opened' as an active clause, adding or reordering an agent MT has to supply."
+  },
+  "108A": {
+    "question": "Whether the object can be demoted or dropped with a special 'antipassive' form.",
+    "mt_relevance": "Antipassives sideline or drop the object in ergative languages — a voice English lacks — so MT must map them onto objectless or generic-object clauses."
+  },
+  "108B": {
+    "question": "How productively the language forms antipassives that drop the verb's object.",
+    "mt_relevance": "A productive antipassive drops objects across many verbs, so MT often meets objectless clauses whose suppressed object must be recovered in a language that states it."
+  },
+  "109A": {
+    "question": "Whether the language can promote an extra role, like a beneficiary, to direct object.",
+    "mt_relevance": "Applicatives fold a 'for/with/at' phrase into the verb, so MT must add or remove a preposition when translating either way."
+  },
+  "109B": {
+    "question": "Which extra roles — beneficiary, instrument, location — the language can make an object.",
+    "mt_relevance": "The role an applied object carries — instrument vs location — tells MT which hidden preposition, 'with' or 'at', to spell out."
+  },
+  "110A": {
+    "question": "Whether the language uses a separate verb to say 'make someone do something'.",
+    "mt_relevance": "A causative built from a helper verb may map to one causative-marked word in the target, forcing MT to fuse two verbs into one."
+  },
+  "111A": {
+    "question": "Whether the language marks causing with an affix or compound rather than a helper verb.",
+    "mt_relevance": "A one-word causative verb often lacks a single-word target equivalent, so MT must unpack it into a 'make someone do…' phrase."
+  },
+  "113A": {
+    "question": "Whether making a sentence negative just adds a word or also reshapes the verb.",
+    "mt_relevance": "If negation reshapes the verb instead of just adding 'not', MT must rebuild the verb form, not merely insert a negator."
+  },
+  "114A": {
+    "question": "Which verb category negation alters — its finiteness (full vs. reduced form) or another.",
+    "mt_relevance": "Knowing which category flips under negation tells MT which verb morphology — mood or finiteness — to change to produce a negative."
+  },
+  "115A": {
+    "question": "Whether 'nobody/nothing' still needs a negative verb (double negation) or stands alone.",
+    "mt_relevance": "Some languages require a second negative on the verb with 'nobody'; MT into single-negation languages must not emit a wrong double negative."
+  },
+  "117A": {
+    "question": "How the language says someone owns something — with a 'have' verb or another way.",
+    "mt_relevance": "Languages without a 'have' verb say 'to-me is a book', so MT must restructure the clause rather than translate 'have' directly."
+  },
+  "118A": {
+    "question": "Whether an adjective in 'it is big' acts like a verb or needs a linking 'to be'.",
+    "mt_relevance": "Verb-like adjectives carry tense and need no 'to be', so MT must insert or delete a copula when translating them."
+  },
+  "119A": {
+    "question": "Whether 'she is a teacher' and 'she is at home' use the same linking construction.",
+    "mt_relevance": "Some languages use different copulas for identity vs location, like Spanish ser/estar, so MT must pick the correct one."
+  },
+  "120A": {
+    "question": "Whether the language can drop the linking verb in 'she (is) a doctor'.",
+    "mt_relevance": "From a copula-dropping language MT must supply 'is/are'; into one it should delete the copula to sound natural."
+  },
+  "121A": {
+    "question": "How the language says one thing exceeds another, as in 'taller than X'.",
+    "mt_relevance": "'Than' has no counterpart in exceed-type ('tall surpasses X') or conjoined ('this tall, that short') comparisons, so MT must recast them."
+  },
+  "122A": {
+    "question": "How the language builds relative clauses like 'the man who left', on the subject.",
+    "mt_relevance": "Some languages leave a gap in the subject slot while others keep a resumptive pronoun ('the man that he left'), so MT must insert or delete it."
+  },
+  "123A": {
+    "question": "How the language forms relative clauses on oblique roles (e.g. 'the man I gave it to').",
+    "mt_relevance": "Relativizing an oblique like 'the house I live in' may need a resumptive pronoun in one language but a gap in another — MT must insert or delete it."
+  },
+  "124A": {
+    "question": "Whether 'want' phrases leave the subject implicit ('want to go') or state it overtly.",
+    "mt_relevance": "Translating into a language that restates the subject, MT must supply a pronoun the source's 'want to go' construction left unspoken."
+  },
+  "125A": {
+    "question": "Whether purpose clauses ('in order to…') use a full finite verb or a reduced verb form.",
+    "mt_relevance": "Deranked purpose verbs (infinitives or special forms) must be expanded into or collapsed from full 'so that' clauses across languages."
+  },
+  "126A": {
+    "question": "Whether 'when' time clauses use a full finite verb or a reduced (non-finite) verb form.",
+    "mt_relevance": "A deranked 'when' verb often drops tense and subject marking, which MT must reconstruct when the target language wants a full clause."
+  },
+  "127A": {
+    "question": "Whether reason clauses ('because…') use a full finite verb or a reduced verb form.",
+    "mt_relevance": "Reduced reason clauses can blur cause and purpose, so MT risks translating 'because' as 'in order to' or vice versa."
+  },
+  "128A": {
+    "question": "Whether 'say/tell' complement clauses use a full finite verb or a reduced verb form.",
+    "mt_relevance": "Reported speech shifts: a finite 'that…' complement needs a complementizer plus tense and pronoun changes a deranked source verb doesn't carry."
+  },
+  "130A": {
+    "question": "Whether one word means both 'hand' and 'finger' or the two have separate words.",
+    "mt_relevance": "A single word for both 'hand' and 'finger' forces MT to pick the right one from context; mostly a word-choice, not structural, issue."
+  },
+  "130B": {
+    "question": "Whether speakers who merge 'hand' and 'finger' are foragers, mixed, or full farmers.",
+    "mt_relevance": "This is ethnographic metadata about subsistence economy, not a grammatical trait — effectively no impact on text translation."
+  },
+  "131A": {
+    "question": "What base the counting system uses — decimal (10), vigesimal (20), or body-part.",
+    "mt_relevance": "Non-decimal or restricted number systems may lack words for large or exact numbers, forcing MT to paraphrase or fall back on digits."
+  },
+  "132A": {
+    "question": "How many basic, non-derived colour words the language has, from 3 up to 5.5.",
+    "mt_relevance": "With only a few basic colour words, one term spans several hues, so MT must guess the exact shade a target language names on its own."
+  },
+  "133A": {
+    "question": "How many basic colour categories the language names in total, from 3-4 up to 9-10.",
+    "mt_relevance": "Colour vocabularies split unevenly, so a hue named in the source may have no single word in the target, forcing a descriptive paraphrase."
+  },
+  "134A": {
+    "question": "Whether the language separates 'green' and 'blue' or merges them into one 'grue' term.",
+    "mt_relevance": "A single 'grue' word can't be cleanly split into 'green' or 'blue' when translating out, so MT must guess which the writer meant."
+  },
+  "135A": {
+    "question": "Whether the language separates 'red' and 'yellow' or covers both with one word.",
+    "mt_relevance": "When one term covers both red and yellow, MT into a colour-splitting language must choose one and can pick the wrong shade."
+  },
+  "136B": {
+    "question": "Whether the word for 'I/me' contains an 'm' sound, as in English 'me' and 'my'.",
+    "mt_relevance": "This is a historical sound pattern in the pronoun, not a grammar rule — essentially no effect on text translation quality."
+  },
+  "137A": {
+    "question": "Whether first-person pronouns use an 'n' sound and second-person an 'm' sound.",
+    "mt_relevance": "A historical sound pattern in pronoun forms; essentially no effect on how a text-translation system handles pronouns as whole words."
+  },
+  "137B": {
+    "question": "Whether the word for singular 'you' contains an 'm' sound.",
+    "mt_relevance": "A lexical sound trait of a single pronoun; negligible impact on text translation, which treats each pronoun as one token."
+  },
+  "139A": {
+    "question": "How many negation signs are irregular rather than regularly formed, in a sign language.",
+    "mt_relevance": "Sign languages lack a standard written form, so this concerns sign-language (video) translation, not text MT."
+  },
+  "140A": {
+    "question": "How many separate question particles (question-marking signs) a sign language has.",
+    "mt_relevance": "Concerns manual question-marking signs; relevant to sign-language translation, not written text MT."
+  },
+  "141A": {
+    "question": "What kind of writing system the language uses (alphabet, syllabary, logographic, etc.).",
+    "mt_relevance": "Script type drives tokenization: logographic scripts run words together with no spaces, while consonantal scripts omit vowels — both strain MT tokenizers."
+  },
+  "142A": {
+    "question": "Whether click sounds are used to signal meanings like 'yes', 'no', or disapproval.",
+    "mt_relevance": "Paralinguistic clicks (like English 'tsk') are seldom written down, so this has little effect on text translation."
+  },
+  "143B": {
+    "question": "Whether negating a clause requires two negative words (like French ne…pas).",
+    "mt_relevance": "Obligatory double negation forces MT to insert both negators; dropping either yields ungrammatical or wrongly-affirmative output."
+  },
+  "143C": {
+    "question": "Whether a clause can optionally take a second negative word alongside the main negator.",
+    "mt_relevance": "Optional second negators vary by register and dialect; MT must decide whether to add one, risking over- or under-marked negation."
+  },
+  "143D": {
+    "question": "Whether negation can optionally be marked with three negative elements in one clause.",
+    "mt_relevance": "A rare three-way negation option MT seldom needs to produce, but it must not read stacked negators as cancelling each other out."
+  },
+  "143E": {
+    "question": "Whether negation is marked before the verb, as a separate word or a prefix.",
+    "mt_relevance": "Preverbal negators sit where many languages place none; MT must put the negator on the correct side of the verb to keep the clause negative."
+  },
+  "143F": {
+    "question": "Whether negation is marked after the verb, as a separate word or a suffix.",
+    "mt_relevance": "Postverbal negation (like a negative suffix) trails the verb; MT must attach it correctly or the negation lands on the wrong word."
+  },
+  "143G": {
+    "question": "Whether negation is shown by tone change, an infix, or a change in the verb stem.",
+    "mt_relevance": "Negation carried by tone or a stem change leaves little visible trace in plain text, so MT can miss the negation entirely."
+  },
+  "144B": {
+    "question": "Where the negative word sits in the clause — near the verb, or at its start or end.",
+    "mt_relevance": "Free-standing negators can drift far from the verb; MT must place them where the target grammar expects, not mirror the source position."
+  },
+  "144C": {
+    "question": "Whether the basic word order changes when a clause is made negative.",
+    "mt_relevance": "Some languages reorder subject, object and verb only in negatives; MT must apply that shift instead of copying the affirmative order."
+  },
+  "144D": {
+    "question": "Where the negative marker goes in a subject-verb-object (SVO) sentence.",
+    "mt_relevance": "MT must drop 'not' into the exact slot the target uses — before or after the verb — or the negation reads as ungrammatical or shifts scope."
+  },
+  "144E": {
+    "question": "Whether an SVO (subject-verb-object) language has more than one way to say 'not'.",
+    "mt_relevance": "Several competing negation patterns mean MT must pick the one that fits the tense, clause type or register, not just any grammatical option."
+  },
+  "144F": {
+    "question": "Whether an SVO (subject-verb-object) language needs two negative words, not one.",
+    "mt_relevance": "Two negators must both be produced and placed (as with French 'ne…pas'); emitting only one leaves the clause half-negated or wrong."
+  },
+  "144G": {
+    "question": "Whether an SVO (subject-verb-object) language can add an optional second negative word.",
+    "mt_relevance": "When translating INTO this language, MT may add or omit the optional second negator, but must never leave the one required marker out."
+  },
+  "144H": {
+    "question": "Whether a sentence-initial negative word (in SVO order) also needs a second negative.",
+    "mt_relevance": "A clause-opening negator sits far from the verb it negates; MT must carry that long-distance scope and add any required paired negative."
+  },
+  "144I": {
+    "question": "Whether a negative just before the verb is a separate word or a prefix on it.",
+    "mt_relevance": "A prefix negator fuses into one verb token; a separate word doesn't — MT must attach or detach 'not' to match the target's word-building."
+  },
+  "144J": {
+    "question": "Whether a negative right after the verb is a separate word or a suffix on it.",
+    "mt_relevance": "A suffixed negator glues onto the verb's end; MT generating this language must inflect the verb rather than insert a free-standing 'not'."
+  },
+  "144K": {
+    "question": "Whether a sentence-final negative word can stand alone or needs a second negative.",
+    "mt_relevance": "A sentence-final negator surfaces only at the very end, so MT must hold negation back to the last position instead of marking it early."
+  },
+  "144L": {
+    "question": "Where the negative marker goes in a subject-object-verb (SOV) sentence.",
+    "mt_relevance": "Verb-final languages usually park the negator at the clause end near the verb; MT must move 'not' there from a verb-medial source sentence."
+  },
+  "144M": {
+    "question": "Whether an SOV (subject-object-verb) language has more than one way to say 'not'.",
+    "mt_relevance": "Choosing among a verb-final language's several negation frames is an extra decision MT resolves from context, not by defaulting to the commonest one."
+  },
+  "144N": {
+    "question": "Whether an SOV (subject-object-verb) language needs two negative words, not one.",
+    "mt_relevance": "Both mandatory negators must be generated and slotted around the clause-final verb; producing just one yields incomplete, ungrammatical negation."
+  },
+  "144O": {
+    "question": "Whether an SOV (subject-object-verb) language can add an optional second negative word.",
+    "mt_relevance": "Reading FROM such a language, a lone negator can still be a full negation — MT must not mistake a missing optional second marker for affirmation."
+  },
+  "144P": {
+    "question": "Whether a sentence-initial negative word (in SOV order) also needs a second negative.",
+    "mt_relevance": "In verb-final order the negator leads but the verb trails, so MT keeps negation scoped across the whole clause and adds any paired negative."
+  },
+  "144Q": {
+    "question": "Whether a negative between the subject and object needs a second negative word.",
+    "mt_relevance": "This negator lands early, ahead of object and verb; MT must slot it right after the subject and add a partner negative where the language needs one."
+  },
+  "144R": {
+    "question": "In verb-final (SOV) languages, whether the pre-verb negative is a word or a prefix.",
+    "mt_relevance": "MT must get this preverbal negator's slot and word-vs-prefix form right; misplacing or dropping it can flip the clause to its opposite meaning."
+  },
+  "144S": {
+    "question": "In verb-final (SOV) languages, whether the negative follows the verb as a word or suffix.",
+    "mt_relevance": "A post-verb or suffixed negative sits apart from what it denies, so MT must carry negation scope across the whole clause or lose the 'not'."
+  },
+  "144T": {
+    "question": "In verb-first languages, where the negative sits relative to verb, subject and object.",
+    "mt_relevance": "Verb-initial languages park the negative before, inside, or after the verb complex, so MT must learn which slot each one uses to avoid mis-scoping."
+  },
+  "144U": {
+    "question": "In verb-first languages, whether negation uses two markers (double negation) per clause.",
+    "mt_relevance": "Languages that require two negative markers per clause tempt MT to emit only one, leaving a half-negated, ungrammatical sentence."
+  },
+  "144V": {
+    "question": "In verb-first languages, whether a negative appears before the verb as a word or prefix.",
+    "mt_relevance": "A preverbal negative in a verb-first clause must land ahead of the verb; misplacing it makes MT deny the wrong part of the sentence."
+  },
+  "144W": {
+    "question": "In verb-first languages, whether the negative comes just after the verb or mid-clause.",
+    "mt_relevance": "A negative wedged just after the verb or between subject and object is easy for MT to drop or shift, silently reversing the meaning."
+  },
+  "144X": {
+    "question": "In verb-first languages, whether the negative word comes at the very end of the clause.",
+    "mt_relevance": "A clause-final negative can sit many words from the verb, so MT must hold the negation open to the sentence's end or it never appears."
+  },
+  "144Y": {
+    "question": "In object-first languages, where the negative sits relative to verb and subject.",
+    "mt_relevance": "Object-first order is rare in training data, so MT frequently mishandles where these languages place the negative and flips polarity."
+  }
+}

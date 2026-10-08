@@ -1,0 +1,83 @@
+---
+slug: /what-is-champollion
+title: "Ano ang Champollion"
+description: "Champollion sa payak na pananalita: isang bukas na toolkit para sa pagbuo ng machine translation para sa inyong wika at pagpapatunay na gumagana ito. Magsimula rito."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Kung Ano ang Champollion
+
+**Ang Champollion ay isang open-source na toolkit para sa pagbuo ng machine translation para sa
+inyong wika — at pagpapatunay na gumagana ito bago ito pagkatiwalaan ninuman.**
+
+Binuo ito para sa mga wikang madalas laktawan ng malalaking kumpanya ng teknolohiya: isang paaralang nais magkaroon ng
+newsletter sa wikang Cree, isang ospital na nangangailangan ng bedside phrasebook para sa mga pamilyang
+pinaglilingkuran nito, isang komunidad na nais malaman kung mayroon bang tool na may sapat na husay upang
+pagkatiwalaan para sa kanilang wika. Kayo — o isang AI agent na ituturo ninyo sa mga tool na ito — ay maaaring magsimula
+mula sa *"paano ba kami magsisimula?"* patungo sa isang nasubok at na-deploy na workflow ng pagsasalin.
+
+---
+
+## Ang paglalakbay, at ang tool para sa bawat hakbang
+
+| Hakbang | Tanong | Tool |
+|---|---|---|
+| **1. Alamin kung ano ang umiiral** | Ano ang nalalaman tungkol sa wikang ito — mga diksiyonaryo, gramatika, corpora, modelo, nailathalang resulta, serbisyo? | **[Ang Atlas](/languages)** — <SSOTCount field="catalogLanguageCount" /> language card; binabanggit ng bawat halaga ang pinagmulan nito |
+| **2. Protektahan ang sarili ninyong data** | Paano kami susubok gamit ang sarili naming mga pangungusap nang hindi ito ipinapasa sa iba? | **[Pagpaparehistro ng corpora](/docs/network/sovereignty/registering-corpora)** at ang **[sovereign node](/docs/network/sovereignty/sovereign-eval-node)** — magpanatili ng test set sa inyong makina, o air-gapped |
+| **3. Sukatin ang mga opsyon** | Aling paraan ang pinakamahusay para sa *aming* teksto, at gaano kahusay? | **[Ang harness](/docs/network/specifications/harness)** (`mt-eval`) — nagmamarka sa anumang pamamaraan laban sa anumang corpus, gamit ang parehong proseso sa bawat pagkakataon |
+| **4. Bumuo ng mas mahusay** | Maaari ba tayong magsanay o mag-angkop ng modelo nang sarili natin nang hindi niloloko ang ating sarili? | **[NMT Forge](/docs/network/getting-started/training-honestly)** (`nmt-forge`) — pagsasanay na may mga guardrail laban sa mga na-leak na test, maling split, at mapagpalagay na pagpapakahulugan sa ingay |
+| **5. Patunayan ito, nang hayagan kung nais ninyo** | Mas mahusay ba talaga ito? Maaari ba itong suriin ng iba? | **[Ang leaderboard at mga paligsahan](/docs/network/getting-started/submit-a-method)** — maglathala ng mga resulta, o mag-host ng paligsahan gamit ang isang selyadong test set na hindi kailanman aalis sa inyong node |
+| **6. Pagsamahin ang pinakamahusay** | Sino ang nag-aalok ng ano para sa pares na ito, at ano ang magkakasamang gumagana? | **[Ang Network](/docs/network/)** — ang mga umiiral na pamamaraan at serbisyo, at ang ebidensya para sa bawat isa |
+| **7. Gamitin ito** | Isalin ang app, ang site, ang mga dokumento. | **[Champollion CLI](/docs/intro)** — nagde-deploy ng anumang napatunayan, bawat pares ng wika, na may translation memory upang hindi na kayo kailanman magbayad nang dalawang beses para sa parehong pangungusap |
+
+Nagbibigay ang **[MCP server](/docs/network/getting-started/mcp-server)** sa isang AI agent
+ng kakayahang isagawa ang bawat hakbang sa itaas, at ang dokumentasyong ito ay isinulat para sa kapwa tao at mga agent
+(machine-readable: `/llms.txt`, `/llms-full.txt`).
+
+**Pagsukat ang gulugod ng lahat.** Madalas ianunsyo ang saklaw; bihirang ipakita
+ang kalidad. Bawat hakbang sa itaas ay nagtatapos sa isang bilang na maaari ninyong suriin, kasama ang pinagmulan nito —
+anong data, anong bersyon ng pamamaraan, anong sukatan, ano ang naging gastos nito. Ang tapat na "wala pang
+gumagana para sa pares na ito sa ngayon" ay isang resultang inilalathala namin, dahil ang puwang na inyong nakikita ay
+puwang na maaaring punan ng iba.
+
+## Ang mga panuntunang sinusunod namin
+
+Ang mga ito ay mga limitasyon, hindi marketing. Hinuhubog ng mga ito kung ano ang kayang gawin ng software.
+
+**Hindi namin kailanman hawak ang inyong corpus.** Nirerehistro ang mga test set sa pamamagitan ng pagturo kung saan
+talaga nakalagak ang mga ito, hindi sa pamamagitan ng pag-upload sa amin. Minamarkahan ang isang pamamaraan laban sa
+isang corpus na hindi namin kailanman pag-aari o hawak. Para sa mga selyadong set, naka-encrypt ang data sa inyong makina
+at mananatili roon, at kinakailangan sa disenyo ang isang takdang bilang ng mga community key custodian
+upang sama-samang pahintulutan ang pagsasagawa (wala pa sa mga ito ang naitalaga sa ngayon).
+
+**Ang data ng wika ay tinatrato tulad ng biodata.** Ang mga taong nagbibigay ng corpus ang may hawak ng mga susi para rito, at sa anumang sinusukat laban dito. Ang pahintulot ay hinihingi, hindi ipinagpapalagay — at maaari itong bawiin.
+
+**Kami ay naghahangad ng soberanya, hindi sertipikado sa soberanya.** Kung iginagalang man ng isang proyekto
+ang pagmamay-ari at kontrol ng komunidad sa data ng wika ay hindi isang pag-aangking maaaring gawin
+ng proyekto para sa sarili nito. Ginagawa namin ang trabaho at tapat na inilalarawan ang mga mekanismo;
+ang pagpapasiya ay nakasalalay sa mga sangkot na komunidad.
+
+**Lahat ng pamamaraan ay tinatanggap, tao man o makina.** Ang isang propesyonal na tagasalin, isang FST-based rule system, isang prompted frontier model at isang fine-tuned NMT model ay inihahambing sa parehong paraan, sa parehong test set. Pinapahalagahan namin ang pagsasalin ng mga wika, hindi kung aling tool ang mananalo.
+
+**Inilalathala namin kung ano ang hindi namin kayang gawin.** Tingnan ang [Honest Limitations](/docs/network/honest-limitations) — ang listahan ng mga bagay na *hindi* pa inaangkin ng proyektong ito. Basahin po ito bago kayo magtiwala sa anumang iba pang naririto.
+
+---
+
+**Ang Champollion ay isang index, hindi isang tagapamagitan.** Bawat halaga ay binabanggit ang pinagmulan nito at inuulat kung ano ang talagang sinasabi ng pinagmulang iyon. Kung saan hindi sumasang-ayon ang mga pinagmulan — at sa bilang ng mga nagsasalita ay madalas itong mangyari — ipinapakita ng card ang lahat ng ito, na may kaukulang pagkilala. Hindi po kami pumipili ng mananalo o gumagawa ng isang consensus.
+
+---
+
+## Ang pangalan
+
+Na-decipher ni Jean-François Champollion ang mga Egyptian hieroglyph gamit ang Rosetta Stone — ang parehong teksto sa tatlong script. Parallel text pa rin ang paraan kung paano natututunan ang pagsasalin. Ang pangalan ay nagdadala rin ng isang tensyon na nararapat banggitin nang malakas: isang iskolar na Europeo na nagbabasa ng isinulat ng iba, sa isang panahon ng pagkuha (extraction). Pinag-iisipan po namin iyan. Ito ang dahilan kung bakit ang mga panuntunan sa soberanya sa itaas ay mga limitasyon sa software at hindi isang pahina sa isang brochure.
+
+## Saan susunod na pupunta
+
+- **Nais ninyong bumuo ng MT para sa isang wika, mula simula hanggang wakas** → [Bumuo ng MT para sa Inyong Wika](/docs/build-mt-for-your-language): bawat hakbang sa itaas na may eksaktong mga command, at ang MCP tool na tinatawagan ng agent para sa bawat isa.
+- **Nais ninyong magsalin ng isang app o site** → [Mabilis na Pagsisimula](/docs/getting-started/quick-start).
+- **Kayo ay nagsasalita, nagtuturo, o nangangalaga ng isang wika** → [Para sa mga Komunidad ng Wika](/docs/network/community/for-language-communities), pagkatapos ay [Pagpaparehistro ng Corpora](/docs/network/sovereignty/registering-corpora) para sa kung paano ginagamit ang isang test set nang hindi ito ipinapasa sa iba.
+- **Kayo ay isang mananaliksik o tagabuo ng pamamaraan** → ang eval-first na argumento sa [Sino ang Nakikinabang](/docs/network/who-benefits#researchers) — kung bakit mas mahusay ang isang libong maingat na piniling pares kaysa pitong daang libong hindi napiling pares — pagkatapos ay [Pakikipagtulungan sa Corpus](/docs/network/specifications/corpus-partnership) upang magpasok ng wika, o [Magsumite ng Pamamaraan](/docs/network/getting-started/submit-a-method) at ang [Espesipikasyon ng Pagmamarka](/docs/network/specifications/scoring) upang makipagkumpetensya sa mga wikang naririto na.
+- **Kayo ay isang AI agent** → [Gabay para sa Agent](/docs/network/getting-started/agent-guide); ang machine-readable na mga entry point ay `/llms.txt` at `/llms-full.txt`.
+- **Pinopondohan ninyo ang ganitong uri ng gawain** → [Sino ang Nakikinabang](/docs/network/who-benefits#funders) at [Tapat na mga Limitasyon](/docs/network/honest-limitations).
+- **Nais ninyong malaman ang background** → [Paano narating ng larangan ang kasalukuyang kalagayan](/docs/network/context/mt-field-briefing), [ano ang itinuturing na wika](/docs/network/context/what-counts-as-a-language), at [paano binibilang ang saklaw](/docs/network/context/coverage-counting).

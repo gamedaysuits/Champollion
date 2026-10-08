@@ -1,0 +1,126 @@
+{
+  "code": "genus-cree",
+  "extends": "family-algonquian",
+  "name": "Cree-Montagnais-Naskapi Continuum",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Cree languages do not have a European-style T-V distinction. Formality is expressed through respectful particles, verb forms, and lexical choices. The register system is shared across the continuum but specific vocabulary and orthography differ by variety."
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Cree languages use an animacy distinction (animate vs inanimate noun classes) rather than grammatical gender. Verb conjugation, demonstratives, and plural marking all depend on animacy class."
+  },
+  "methodSupport": {
+    "googleTranslate": {
+      "supported": false
+    },
+    "deepl": {
+      "supported": false
+    },
+    "microsoftTranslator": {
+      "supported": false
+    },
+    "libreTranslate": {
+      "supported": false
+    },
+    "nllb": {
+      "supported": false
+    },
+    "llm": {
+      "supported": true
+    }
+  },
+  "rules": {
+    "typography": {
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      },
+      "usesSpaces": true
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {},
+    "variables": {
+      "syntax": "SRO-style attachment",
+      "guidance": "Variables are marked with braces `{count}`. Since Cree relies heavily on affixation, suffixes must attach directly to placeholders. Use a hyphen to separate the variable from grammatical affixes (e.g., `{count}-ak` or `{count}-a` for plurals)."
+    }
+  },
+  "linguisticChallenges": {
+    "polysynthesis": "All Cree varieties are highly polysynthetic. A single verb can incorporate subject/object pronouns, instrumentals, locations, and actions. Translate phrases conceptually rather than word-for-word.",
+    "animacy": "Verb conjugation changes completely based on whether the subject/object nouns are animate or inanimate. Ensure grammatical agreement. Animacy class is not always intuitive — e.g., 'rock' (asiniy) is animate.",
+    "obviation": "Cree uses a proximate/obviative system to track third-person referents. In discourse with multiple third persons, one is proximate (main) and others are obviative (secondary). MT systems frequently mishandle this.",
+    "neologisms": "Avoid literal translations of modern software concepts. Maintain English loanwords for modern UI elements when no community-accepted term exists. Each variety may coin different neologisms.",
+    "dialectContinuum": "The Cree-Montagnais-Naskapi varieties form a dialect continuum. Adjacent varieties are mutually intelligible; distant ones are not. Do NOT mix vocabulary from different varieties."
+  },
+  "classification": {
+    "family": "Algic",
+    "familyGlottocode": "algi1248",
+    "genus": "Cree-Montagnais-Naskapi",
+    "genusGlottocode": "cree1271",
+    "ancestry": [
+      "Algic",
+      "Algonquian-Blackfoot",
+      "Algonquian",
+      "Cree-Montagnais-Naskapi"
+    ]
+  },
+  "contactInfluences": [
+    {
+      "source": "French",
+      "sourceIso639_3": "fra",
+      "type": "adstrate",
+      "domains": [
+        "trade",
+        "religion",
+        "administration"
+      ],
+      "depth": "heavy",
+      "period": "fur trade era and missionary contact (17th–19th century)",
+      "notes": "French missionaries developed early Cree writing systems. French loanwords in eastern varieties (Innu, Atikamekw) are more numerous than in western varieties."
+    },
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "administration",
+        "technology"
+      ],
+      "depth": "structural",
+      "period": "post-confederation, accelerating post-residential schools",
+      "notes": "English is the dominant language of administration across all Cree territories. Code-switching is pervasive in younger speakers."
+    },
+    {
+      "source": "Ojibwe",
+      "sourceIso639_3": "oji",
+      "type": "adstrate",
+      "domains": [
+        "everyday",
+        "trade"
+      ],
+      "depth": "moderate",
+      "period": "centuries of contact",
+      "notes": "Southwestern Cree varieties (Plains, Swampy) share significant vocabulary with Ojibwe. The languages are closely related within Algonquian."
+    }
+  ],
+  "macrolanguage": null,
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for the Cree-Montagnais-Naskapi continuum. Individual variety cards (crk, csw, cwd, crm, crl, crj, atj, moe, nsk) extend this card and override with variety-specific data. macrolanguage is intentionally null here: only crj/crk/crl/crm/csw/cwd are ISO 639-3 members of the 'cre' macrolanguage (see cre.json members[]), and atj/moe/nsk/crg must not inherit a membership ISO does not assert. Members carry their own explicit macrolanguage field.",
+  "regions": [
+    {
+      "country": null,
+      "countryCode": "XX",
+      "officialStatus": null,
+      "region": null,
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

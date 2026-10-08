@@ -1,0 +1,55 @@
+{
+  "_doc": "Fetch-or-drop verdicts for the six cli/shared/curated-*.json files, with the evidence each was decided on. Founder direction 2026-08-06: each becomes a real source with a fetcher and a pin, or it does not ship — where no fetchable upstream exists the entry is archived and the card says nothing rather than asserting something unverifiable.",
+  "_whyARecordAndNotJustDeletions": "Two of these are consumed by cli/lib/card-source-resolution.mjs, which is CLI RUNTIME, and the rest by derive-*.mjs scripts in the old pipeline. Deleting the files before those consumers are retargeted would break the CLI, so the verdicts are recorded here and the deletions happen with the pipeline retirement. A verdict nobody wrote down is a decision that gets re-litigated.",
+  "_theyAreSmall": "Twelve entries across six files. The instinct on hearing 'hand-curated files' is a large curation effort being discarded; it is a handful of Cree and Philippine specifics, and the interesting question is not their volume but whether any of them can be cited.",
+  "version": 1,
+  "decidedOn": "2026-08-06",
+  "verdicts": {
+    "curated-dictionary-flags.json": {
+      "entries": 1,
+      "verdict": "NO UPSTREAM — and deliberately so",
+      "evidence": "One entry, crk/itwêwina, whose own `source` field reads 'manual-curation'. It records that the dictionary is machine-readable and NOT redistributable. That flag exists because of the standing founder ruling that Wolvengrey's dictionary data is indexed pointer-only, permanently, and redistribution consent will not be sought. SEPARATELY: the dictionary EXISTENCE half of this file is now fetched — giellalt-resources indexes 109 bilingual dictionaries including dict-crk-eng (CC-BY-4.0), which the hand file did not record. Only the non-redistribution flag remains a decision.",
+      "action": "keep as a DECISION in the decision layer, not as a fact on a card. It is a sovereignty constraint we impose, not something a source told us, and it must survive the rebuild intact."
+    },
+    "curated-endonyms.json": {
+      "entries": 4,
+      "verdict": "NO UPSTREAM — a contributable gap, not merely a drop",
+      "evidence": "Native names for Moose Cree (crm), Northern East Cree (crl), Southern East Cree (crj) and Woods Cree (cwd), in roman orthography and syllabics. Checked against every fetched source: the atlas has NO endonym for any of the four. Checked against Wikidata directly, which is the upstream that would carry one — the ITEMS exist (crm Q3446671, crl Q12642195, crj Q12953464, cwd Q56305) and property P1705 (native label) is EMPTY on all four. Only Plains Cree has one (crk Q56699, ᓀᐦᐃᔭᐍᐏᐣ), and that one the atlas already ingests.",
+      "why_this_matters": "So it is genuinely 'nobody publishes it', not 'we never asked'. Dropping them leaves four Cree languages with no native name on their card, which is a real loss of true information — and keeping them uncited is exactly the practice this rebuild ends.",
+      "action": "archive the values; the right fix is upstream, not private. Wikidata has the items and lacks the property, so contributing P1705 there would make all four citable for everyone, not only for us. That is a founder/community action, not an agent one — an agent must not author a claim about how a community names itself."
+    },
+    "curated-fsts.json": {
+      "entries": 4,
+      "verdict": "FETCHED — superseded",
+      "replacedBy": "giellalt-resources",
+      "evidence": "GiellaLT and UAlbertaALTLab publish their resources as public repositories under five naming conventions. The sweep returns 452 across both organisations — 158 analysers, 109 dictionaries, 103 corpora, 78 keyboard layouts, 4 speech resources. The hand-written file listed four analysers and carried no licence field at all, while the catalogue runs LGPL-3.0, GPL-3.0, GPL-2.0, Apache-2.0, MIT, CC-BY-4.0 and 184 GitHub cannot identify — a distribution that matters, because this project forbids bundling GPL/AGPL code into proprietary CLI paths.",
+      "action": "delete with the old pipeline; cli/scripts/derive-fsts.mjs goes with it"
+    },
+    "curated-orthography-conventions.json": {
+      "entries": 1,
+      "verdict": "CITABLE BUT NOT MACHINE-FETCHABLE",
+      "evidence": "One entry, crk/Latn, declaring Standard Roman Orthography with circumflex long-vowel marking as canonical for MT. Its own `source` field reads 'manual-curation'. SRO is a real, documented convention with a literature — so unlike the endonyms this CAN be cited, just not fetched from an API.",
+      "action": "keep, with a bibliographic citation added, and record that it is asserted from the literature rather than fetched. A claim with a reference someone can follow is not the same as an uncited one."
+    },
+    "curated-search-exonyms.json": {
+      "entries": 1,
+      "verdict": "DROP — orphaned",
+      "evidence": "Zero code consumers. It groups spelling variants of an exonym (Aeta / Ita / Ati) across 20 Philippine language codes as a SEARCH AID, not as a claim about any language. Nothing reads it, and it asserts nothing the atlas needs.",
+      "action": "delete now; nothing depends on it"
+    },
+    "curated-sil-resources.json": {
+      "entries": "~20 language codes, Sambalic cluster (Aeta pilot)",
+      "verdict": "FETCHABLE IN PRINCIPLE — upstream unreachable, so no fetcher ships",
+      "evidence": "This is the one curated file whose entries are already cited: every one names the SIL REAP archive item, OLAC index or eBible.org page it was verified from, enumerated 2026-07-19 from the OLAC per-code indexes. OLAC is therefore the right upstream and it is genuinely machine-readable — it aggregates ~50 archives and serves per-language indexes over OAI-PMH, which would cover far more than the Sambalic cluster. But on 2026-08-07 every OLAC endpoint timed out: www.language-archives.org (128.91.252.143) and olac.ldc.upenn.edu both hang on connect while opus.nlpl.eu, ebible.org and api.github.com answer normally from the same machine, and DNS resolves. That is an upstream outage or a network-level block on the UPenn host, not a fetcher problem.",
+      "why_no_fetcher_yet": "A fetcher written against an endpoint nobody could reach is a guess about a response shape. It would pin on first success with no golden record to check it against, which is the opposite of the standard this rebuild is held to. Specified, not shipped.",
+      "action": "Archive with the old pipeline, as curated-endonyms is: until OLAC answers, the card says nothing rather than asserting resources we cannot re-derive. When it answers, write fetchers/olac-resources.mjs on the giellalt-resources pattern — per-language indexes into resource EXISTENCE, pointer-only. eBible entries stay pointer-only permanently regardless: the content is Wycliffe's and not openly licensed."
+    },
+    "curated-tools.json": {
+      "entries": 1,
+      "verdict": "DROP — no fetchable language linkage",
+      "evidence": "Checked the whole UAlbertaALTLab organisation: 48 of its repositories are not language-keyed, and morphodict — the one entry in this file — describes ITSELF as 'The Language Independent Intelligent Dictionary'. Asserting it as a resource for crk would be inventing a linkage its own publisher does not make. The repositories that ARE language-keyed follow the five conventions giellalt-resources now sweeps; the rest (korp*, hfst-*, kivy-ios, Recorderjs) are general-purpose infrastructure. Deriving language from names like 'nehiyawewin-syllabics' or 'Lacombe' would need a hand-map, which is the thing being deleted.",
+      "action": "delete with the old pipeline; no fetcher is written, because a hand-map by another name is still a hand-map"
+    }
+  },
+  "_updated": "2026-08-07 — curated-sil-resources verdict added; it had none. curated-tools resolved to DROP on evidence; curated-fsts superseded by the five-convention sweep, not the lang-* one."
+}

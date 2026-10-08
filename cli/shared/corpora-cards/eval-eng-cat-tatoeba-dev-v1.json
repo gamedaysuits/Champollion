@@ -1,0 +1,96 @@
+{
+  "id": "eval-eng-cat-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba eng→cat Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "eng",
+    "target": "cat",
+    "direction": "unidirectional"
+  },
+  "description": "Mesh wave dev corpus built from Tatoeba Challenge v2023-09-26. 108 entries, stratified across 14 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream Tatoeba Challenge archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/Tatoeba-Challenge-devtest/test-v2023-09-26.tar",
+    "builder": "tatoeba-challenge",
+    "sha256": "3e310a6fb43dfd64668ff9b4161afab95436632e7142d56728ffc588e7f429d5",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "member": "data/test-v2023-09-26/cat-eng/test.txt",
+    "recipe": {
+      "release": "v2023-09-26",
+      "split": "test",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "words",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-12T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 108,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.278,
+      "ecommerce": 0.074,
+      "edu": 0.12,
+      "financial": 0.028,
+      "legal": 0.037,
+      "literary": 0.037,
+      "marketing": 0.046,
+      "medical": 0.019,
+      "news": 0.009,
+      "religious": 0.009,
+      "scientific": 0.019,
+      "support": 0.139,
+      "tech": 0.046,
+      "ui": 0.139
+    },
+    "dataFile": "curated/eng-cat-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Tatoeba eng→cat corpus has 108 entries. The target language is lower-resource, making specific targeting by training pipelines unlikely, though individual sentences may appear in broad web crawls of tatoeba.org."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": null,
+    "populatedFrom": "Generated from arena/datasets/registry.json entry 'tatoeba-eng-cat-dev' (mesh wave 1, 2026-06-12). Size and domain distribution verified against curated data file. License from Tatoeba Challenge terms (CC-BY-2.0). Fetch-from-source build recipe pinned in source block."
+  },
+  "richness": {
+    "mean_source_chars": 49.6,
+    "mean_effective_words": 9.92,
+    "economy": 5.0,
+    "economy_basis": "measured",
+    "computed_from": "eng-cat-dev-v1.json",
+    "computed_at": "2026-06-12"
+  }
+}

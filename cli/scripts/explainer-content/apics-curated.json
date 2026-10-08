@@ -1,0 +1,1346 @@
+{
+  "0": {
+    "question": "Which language supplied most of this contact language's vocabulary (its lexifier).",
+    "mt_relevance": "A creole's words resemble its lexifier (English, French…) but its grammar differs, so MT that treats it as the lexifier garbles meaning."
+  },
+  "1": {
+    "question": "The dominant order of subject, object and verb in a plain sentence.",
+    "mt_relevance": "Basic word order is the single biggest driver of reordering between language pairs (e.g. SOV vs SVO)."
+  },
+  "2": {
+    "question": "Whether the owner or the owned thing comes first, as in 'the dog's tail'.",
+    "mt_relevance": "Possessor order drives noun-phrase reordering, and a creole may not follow its lexifier (e.g. 'John book' vs 'book of John')."
+  },
+  "3": {
+    "question": "Whether descriptive adjectives come before the noun (like 'red house') or after it.",
+    "mt_relevance": "If the source and target put adjectives on opposite sides of the noun, MT must reorder inside every noun phrase (e.g. English pre-noun vs French post-noun)."
+  },
+  "4": {
+    "question": "Whether the language uses prepositions (before the noun) or postpositions (after).",
+    "mt_relevance": "Preposition-vs-postposition order drives systematic reordering of phrases like 'in the house' when translating between the two types."
+  },
+  "5": {
+    "question": "Whether words like 'this' and 'that' come before or after the noun.",
+    "mt_relevance": "Reordering this/that around the noun is a small but systematic swap MT must make between languages that place demonstratives on opposite sides."
+  },
+  "6": {
+    "question": "Whether a number word comes before the noun ('five houses') or after it ('houses five').",
+    "mt_relevance": "Numeral-noun order is a small, reliable reordering — 'five houses' vs 'houses five' — that MT must flip between languages that place them differently."
+  },
+  "7": {
+    "question": "Whether a relative clause ('the book that I read') comes before or after its noun.",
+    "mt_relevance": "Relative-clause order flips between language pairs, forcing MT to move a whole modifying clause from after the noun to before it, or vice versa."
+  },
+  "8": {
+    "question": "Whether a degree word like 'very' comes before or after the adjective.",
+    "mt_relevance": "Placing 'very' or 'more' on the wrong side of the adjective yields ungrammatical output, so MT must reorder the modifier per language."
+  },
+  "9": {
+    "question": "Where the word for 'the' sits relative to its noun — before, after, or around it.",
+    "mt_relevance": "Placement drives noun-phrase order; MT must position 'the' correctly, since the source may put it on the other side or split it around the noun."
+  },
+  "10": {
+    "question": "Whether the language has an 'a/an'-type indefinite article, and if so where it sits.",
+    "mt_relevance": "If the target has an indefinite article, MT must both supply it and place it correctly, a choice the source may leave unmarked."
+  },
+  "11": {
+    "question": "Where a frequency adverb like 'often' sits relative to the verb and its object.",
+    "mt_relevance": "Adverb placement varies by language, so MT must move 'often/always' to the target's natural slot rather than keep the source position."
+  },
+  "12": {
+    "question": "Whether question words like 'who' or 'what' must come first in a question.",
+    "mt_relevance": "Whether wh-words front or stay in place drives clause reordering when translating questions between the two systems."
+  },
+  "13": {
+    "question": "Whether pronouns like 'he' and 'she' mark gender, and in which persons.",
+    "mt_relevance": "When pronouns don't split into 'he' vs 'she', translating into a gender-marking language forces a choice the source text never made."
+  },
+  "14": {
+    "question": "Whether pronouns have a special 'dual' form meaning exactly two, distinct from plural.",
+    "mt_relevance": "A dual ('we two' vs 'we all') is a distinction most languages lack, so MT must infer it from context or lose the two-versus-many meaning."
+  },
+  "15": {
+    "question": "Whether the language has separate words for 'we including you' and 'we excluding you'.",
+    "mt_relevance": "Into a language with this split, MT must decide whether each 'we' includes the listener — information the English 'we' never carries."
+  },
+  "16": {
+    "question": "Whether a single pronoun stands for two different persons, like 'we' and 'you'.",
+    "mt_relevance": "When one pronoun covers two persons, MT must infer from context whether it means, say, 'we' or 'you' to choose the right target form."
+  },
+  "17": {
+    "question": "Whether subject and object are marked by bound forms (clitics/affixes) tied to the verb.",
+    "mt_relevance": "Bound subject/object markers let the verb carry person that a free-pronoun language must spell out as separate words, shifting alignment."
+  },
+  "18": {
+    "question": "Whether the language has separate 'you' pronouns for polite versus familiar address.",
+    "mt_relevance": "Translating from a one-'you' language like English forces MT to guess a formality level the source never marked (e.g. tu vs vous)."
+  },
+  "19": {
+    "question": "Whether question words like 'who' and 'where' are single words or two-word compounds.",
+    "mt_relevance": "Compound question words ('which person' for 'who') break one-to-one alignment with a lexifier's single word, so MT must fuse or split tokens."
+  },
+  "20": {
+    "question": "How the language joins a pronoun and noun in phrases like 'Mary and I'.",
+    "mt_relevance": "An inclusory form like 'we-Mary' means 'Mary and I'; MT can misread it as a plain plural and invent an extra person."
+  },
+  "21": {
+    "question": "How the language forms words for 'something' and 'somebody'.",
+    "mt_relevance": "Interrogative-based indefinites reuse question words, so 'what' and 'something' share a form MT must disambiguate from context."
+  },
+  "22": {
+    "question": "Whether the language marks noun plurals always, only optionally, or not at all.",
+    "mt_relevance": "Creoles often mark plural optionally while their European lexifier requires it, so number must be inferred when translating between the two."
+  },
+  "23": {
+    "question": "How the language marks a noun as plural (suffix, prefix, a separate word, and so on).",
+    "mt_relevance": "Plural-marking strategy shapes MT: zero or separate-word plurals give few surface cues, while prefixes, suffixes, or reduplication force correct morphological generation."
+  },
+  "24": {
+    "question": "Whether the language has a plural like 'N and company' meaning a person plus their group.",
+    "mt_relevance": "An associative plural packs 'X and their group' into one word; English has no single-word match, forcing paraphrase and risking literal errors."
+  },
+  "25": {
+    "question": "Whether the word marking noun plurals is the same as the pronoun 'they'.",
+    "mt_relevance": "A single word doing both 'they' and noun-plural duty forces MT to pick the right sense from context, since the target likely uses two separate words."
+  },
+  "26": {
+    "question": "What meanings word-doubling (reduplication) carries — plurality, intensity, or degree.",
+    "mt_relevance": "MT can misread a doubled word as an accidental repeat and delete it, erasing the plural, intensity, or reduced-degree meaning it encodes."
+  },
+  "27": {
+    "question": "Whether naming one of a paired body part (a single eye or leg) uses a special marker.",
+    "mt_relevance": "Here the bare noun already means the pair, so 'one leg' needs an extra singular marker MT must insert, while plain 'legs' takes none."
+  },
+  "28": {
+    "question": "Whether the language has a 'the'-type article, and whether it doubles as 'this/that'.",
+    "mt_relevance": "Creoles often lack 'the', or reuse a demonstrative for it, so MT into English/French must invent definiteness the creole leaves unmarked."
+  },
+  "29": {
+    "question": "Whether the language has an indefinite article, and if so whether it matches 'one'.",
+    "mt_relevance": "If the target has an indefinite article, MT must insert 'a/an' the source lacks; where that article equals 'one', it must also decide article vs numeral."
+  },
+  "30": {
+    "question": "How the language marks a noun standing for a whole class, as 'dogs' in 'dogs bark.'",
+    "mt_relevance": "Generic statements ('dogs bark') may need an added article the source omits, so MT must guess whether to insert 'the' or leave the noun bare."
+  },
+  "31": {
+    "question": "Whether a 'this/that' noun phrase also carries a definite article like 'the.'",
+    "mt_relevance": "Some creoles say 'this the book'; MT into or out of them must add or drop the extra article English never uses with a demonstrative."
+  },
+  "32": {
+    "question": "Whether 'this one' (standing alone) and 'this' (before a noun) share one form.",
+    "mt_relevance": "If both uses share a form, MT must guess which from context; if they differ, the source already signals whether a noun follows."
+  },
+  "33": {
+    "question": "How many distance levels the words for 'this' and 'that' distinguish.",
+    "mt_relevance": "Translating a two-way this/that system into a three-way one forces MT to pick a middle-distance form the source never marked."
+  },
+  "34": {
+    "question": "Whether the language has special 'X-each' numerals, often formed by repeating the number.",
+    "mt_relevance": "A reduplicated numeral can mean 'X each', so MT must add or drop an 'each' to match a language that spreads the meaning across words."
+  },
+  "35": {
+    "question": "Whether ordinals like 'first' and 'second' are regular or irregular words.",
+    "mt_relevance": "Irregular ordinals like 'first' can't be built from 'one', so MT must memorize them and may misform ordinals in a differently-patterned language."
+  },
+  "36": {
+    "question": "Whether counting nouns needs a classifier word (like 'two sheets of paper').",
+    "mt_relevance": "Translating into a classifier language forces MT to insert the right classifier for each noun, a distinction the source rarely marks."
+  },
+  "37": {
+    "question": "How the language expresses pronoun possessors like 'my' or 'her'.",
+    "mt_relevance": "Whether 'my' is a separate word or an affix changes tokenization and where MT must place the possessor relative to the noun."
+  },
+  "38": {
+    "question": "How the language marks a noun possessor, like the 's in 'the man's house'.",
+    "mt_relevance": "MT must add or drop possessor marking — case, an adposition, or none — that the source encodes differently, e.g. English 's vs. 'of'."
+  },
+  "39": {
+    "question": "How the language forms standalone possessives like 'mine' when the noun is dropped.",
+    "mt_relevance": "MT must generate the right standalone form ('mine' vs. 'my') when the possessed noun is elided, which many languages build differently."
+  },
+  "40": {
+    "question": "Whether adjectives change form to match the noun's gender, and how many do so.",
+    "mt_relevance": "MT must inflect adjectives to agree in gender when the target requires it, choosing forms the source may leave unmarked."
+  },
+  "41": {
+    "question": "Whether the adjective takes a special form in comparisons, like the '-er' in 'taller'.",
+    "mt_relevance": "MT must add or drop comparative marking on the adjective ('-er' or 'more') that the source builds differently in 'X is taller than Y'."
+  },
+  "42": {
+    "question": "How the language marks the thing compared against, like 'than' in 'taller than Peter'.",
+    "mt_relevance": "MT must render the standard marker — 'than', a 'surpass' verb, or a location word — correctly, since comparison strategies differ across languages."
+  },
+  "43": {
+    "question": "Where tense, aspect, and mood markers sit relative to the verb (before or after).",
+    "mt_relevance": "MT must place tense, aspect, and mood markers on the correct side of the verb, sometimes moving intervening words to match."
+  },
+  "44": {
+    "question": "The order tense, aspect, and mood markers appear in when they stack together.",
+    "mt_relevance": "When several tense, aspect, and mood markers stack, MT must emit them in the target's fixed order, not the source's."
+  },
+  "45": {
+    "question": "How tightly the past-tense marker attaches to the verb, and what can slip between them.",
+    "mt_relevance": "Whether the past marker is glued to the verb or a separable particle affects tokenization and where MT can insert other words."
+  },
+  "46": {
+    "question": "How tightly the progressive ('-ing') marker attaches to the verb, and what can intervene.",
+    "mt_relevance": "MT must know if the progressive marker is an affix or a movable particle to segment the verb and place intervening words right."
+  },
+  "47": {
+    "question": "Whether the ongoing-action ('-ing') marker also covers habits, states, or the future.",
+    "mt_relevance": "One progressive marker may map to several tenses; MT must decide whether it means ongoing, habitual, or future action."
+  },
+  "48": {
+    "question": "Whether the habitual ('usually does') marker also covers ongoing action or the future.",
+    "mt_relevance": "A single habitual marker can span habit, ongoing action, or future; MT must pick the reading the target tense system forces."
+  },
+  "49": {
+    "question": "Whether verbs mark time (past/present), aspect (completed vs ongoing), or a mix of both.",
+    "mt_relevance": "When a language marks completed-vs-ongoing aspect instead of past/present tense, MT must invent the time cues the source never spelled out."
+  },
+  "50": {
+    "question": "Whether negating a sentence changes, drops, or replaces its tense-aspect-mood markers.",
+    "mt_relevance": "If negation swaps or deletes tense-aspect markers, MT can't simply add 'not' and must reshape the verb, or it emits an ungrammatical negative."
+  },
+  "51": {
+    "question": "Whether an unmarked verb reads as present with state verbs but as past with action verbs.",
+    "mt_relevance": "A bare verb can mean 'knows' but also 'ran' depending on verb type, so MT must infer tense from whether the verb names a state or an action."
+  },
+  "52": {
+    "question": "Whether an aspect marker on a state word like 'ripe' shifts it to 'becoming ripe'.",
+    "mt_relevance": "'Is ripening' versus 'is ripe' can hinge on one aspect marker, so MT may render a change-of-state the source only meant as ongoing or completed."
+  },
+  "53": {
+    "question": "Whether a second chained verb can take ongoing aspect while the first stays completed.",
+    "mt_relevance": "Chained verbs may background one action as ongoing against a completed one, a foreground/background contrast MT must keep or the event sequence blurs."
+  },
+  "54": {
+    "question": "Whether verbs use a different stem for different tenses or aspects, like 'go' vs 'went'.",
+    "mt_relevance": "Irregular stem swaps like go/went must be memorized, not derived, so rare or newly coined verbs are where MT most often emits a wrong or invented form."
+  },
+  "55": {
+    "question": "Whether one verb covers both 'can' (ability) and 'maybe' (possibility).",
+    "mt_relevance": "If 'can' also means 'maybe', MT must use context to choose between ability and likelihood, and choosing wrong flips what the sentence claims."
+  },
+  "56": {
+    "question": "How the language forms a negative command like 'Don't go!'.",
+    "mt_relevance": "Negative commands may need a special 'don't' word or verb form unlike ordinary negation, so a literal 'not' plus command can come out ungrammatical."
+  },
+  "57": {
+    "question": "Whether the object takes special marking, sometimes only when definite or animate.",
+    "mt_relevance": "Object marking that shows up only for definite or animate nouns forces MT to track animacy and definiteness the source may leave implicit."
+  },
+  "58": {
+    "question": "How the language marks who does an action versus who receives it (accusative vs ergative).",
+    "mt_relevance": "Ergative systems mark a transitive subject unlike an intransitive one, so mapping onto a subject/object language can misassign who acted on whom."
+  },
+  "59": {
+    "question": "Whether pronouns change form for subject vs object (like I/me), or stay the same.",
+    "mt_relevance": "Pronoun case like 'I' vs 'me' must match each pronoun's role; a language that doesn't distinguish them gives MT no surface cue to the target form."
+  },
+  "60": {
+    "question": "How the language builds 'give' sentences with both a recipient and a thing given.",
+    "mt_relevance": "Whether it's 'give John a book' or 'give a book to John' depends on this pattern, so MT must restructure the two objects, not map them word for word."
+  },
+  "61": {
+    "question": "Whether 'give'-type verbs put the recipient (who gets it) or the thing given first.",
+    "mt_relevance": "Recipient/theme order signals who gets what, so getting it wrong makes MT confuse the person receiving with the thing given ('give John a book' vs 'give a book John')."
+  },
+  "62": {
+    "question": "How subjects like 'I' or 'she' appear — required words, affixes, or optional.",
+    "mt_relevance": "Pro-drop languages omit subject pronouns, so MT must recover 'I' vs 'she' from context when the target language demands one."
+  },
+  "63": {
+    "question": "Whether 'seem' sentences use a dummy subject like the 'it' in 'it seems that…'.",
+    "mt_relevance": "Languages without a dummy subject drop the 'it', so MT must insert or delete this meaningless placeholder when translating 'it seems'."
+  },
+  "64": {
+    "question": "Whether 'there is' clauses use a dummy subject like English 'there' or French 'il'.",
+    "mt_relevance": "MT must add or drop the empty 'there'/'it' placeholder that existential clauses require in some languages but not others."
+  },
+  "65": {
+    "question": "How the language says 'it is raining' — e.g. 'rain falls', 'it rains', or just 'rains'.",
+    "mt_relevance": "Weather expressions rarely translate word-for-word, so MT must map 'it rains' onto forms like 'rain falls' that carry no dummy subject."
+  },
+  "66": {
+    "question": "Whether a headache is framed as the person having it, the body-part, or the pain itself.",
+    "mt_relevance": "MT must recast which noun is grammatical subject — 'she has a headache' vs 'the head hurts her' — a shift the source may not signal."
+  },
+  "67": {
+    "question": "Whether 'I like X' puts the liker as subject, object, or dative ('X pleases me').",
+    "mt_relevance": "MT must decide if the liker is subject ('I like it') or object ('it pleases me'), rearranging roles the source encodes differently."
+  },
+  "68": {
+    "question": "Whether 'being afraid' is a verb, an adjective, or has fear itself as the subject.",
+    "mt_relevance": "MT must choose between verbal ('she fears') and non-verbal ('she is afraid') framings, and whether fear or the person is subject."
+  },
+  "69": {
+    "question": "How instruments like 'with a knife' are marked — preposition, verb, case, or nothing.",
+    "mt_relevance": "Serial-verb languages express 'cut with a knife' as 'take knife cut', so MT cannot just map a preposition onto the instrument."
+  },
+  "70": {
+    "question": "Whether 'with a friend' and 'with a knife' use the same word or different ones.",
+    "mt_relevance": "If the source uses one 'with' for both company and tools, MT into a language that splits them must decide which meaning is intended."
+  },
+  "71": {
+    "question": "Whether joining nouns ('John and Mary') uses the same word as 'with' ('John with Mary').",
+    "mt_relevance": "When one word means both 'and' and 'with', MT must pick 'and' vs 'with' for the target language from context alone."
+  },
+  "72": {
+    "question": "Whether 'and' joining nouns is the same word as 'and' joining whole clauses.",
+    "mt_relevance": "Some languages use different words for noun-'and' vs clause-'and', so MT must pick the right connective for what is being joined."
+  },
+  "73": {
+    "question": "Whether 'Mary is a singer' needs a linking verb ('is') or joins the words directly.",
+    "mt_relevance": "Copula-less languages say 'Mary singer', so MT must insert or delete the linking 'is' when translating class-membership clauses."
+  },
+  "74": {
+    "question": "Whether 'Mary is old' needs a linking verb (copula) or just joins adjective to subject.",
+    "mt_relevance": "In no-copula creoles adjectives act like verbs, so translating into English forces inserting an 'is/are' the source never wrote."
+  },
+  "75": {
+    "question": "Whether 'Mary is in town' uses a linking verb (copula) or none.",
+    "mt_relevance": "Some creoles drop the copula before a place phrase, so MT into a copula language must supply the missing 'is/are'."
+  },
+  "76": {
+    "question": "Whether 'I am a teacher' and 'I am in town' use the same construction or different ones.",
+    "mt_relevance": "If one predicate takes a copula and the other doesn't, MT must choose the right pattern per clause instead of applying one blanket rule."
+  },
+  "77": {
+    "question": "How the language says someone 'has' something (e.g. 'John has a horse').",
+    "mt_relevance": "Possession may be built with 'have', 'with', or 'to-me-is', so MT must remap the whole clause rather than swap in one verb."
+  },
+  "78": {
+    "question": "Whether the word for 'there is' is the same as the word for 'have'.",
+    "mt_relevance": "When one verb covers both 'there is' and 'have', MT must decide from context which English verb the same source word should become."
+  },
+  "79": {
+    "question": "How the language marks going to a named place (e.g. 'to Leipzig').",
+    "mt_relevance": "Direction 'to a place' may be shown by a preposition, a case ending, or a serial verb, so MT can't just map it onto English 'to'."
+  },
+  "80": {
+    "question": "How the language marks coming from a named place (e.g. 'from Belair').",
+    "mt_relevance": "Source 'from a place' may be marked by a preposition, a case ending, or a serial verb, so MT can't assume one 'from' word maps across."
+  },
+  "81": {
+    "question": "Whether going to and coming from a place use the same marker or different ones.",
+    "mt_relevance": "European lexifiers split to/from, but a creole may use one marker for both, so MT must add the direction English keeps separate."
+  },
+  "82": {
+    "question": "How the language marks pushing something to a place (motion toward a goal).",
+    "mt_relevance": "'Push X into Y' may reuse a static 'at' marker or a serial verb, so MT must infer the motion English shows with 'into' or 'to'."
+  },
+  "83": {
+    "question": "How the language marks pulling something from a place (motion away from a source).",
+    "mt_relevance": "'Pull X out of Y' may reuse a static 'in' marker, so MT must recover the 'out of' direction the source clause leaves implicit."
+  },
+  "84": {
+    "question": "Whether the language uses 'come'/'go' as a second verb to show an action's direction.",
+    "mt_relevance": "Direction carried by a serial 'come/go' has no one-word English match, so MT must fold it into a preposition or a verb like 'bring/take'."
+  },
+  "85": {
+    "question": "Whether the language uses a serial verb 'take' to introduce an instrument or object.",
+    "mt_relevance": "A serial 'take' marks the tool or object other languages show with 'with' or case, so MT must reinterpret it, not translate 'take' literally."
+  },
+  "86": {
+    "question": "Whether the language uses a serial verb 'give' to mark a recipient or beneficiary.",
+    "mt_relevance": "A serial 'give' marks who benefits, matching English 'to/for', so MT must render it as a preposition rather than a second 'give' verb."
+  },
+  "87": {
+    "question": "How the language says a subject acts on itself, as in 'he hurt himself'.",
+    "mt_relevance": "Reflexive strategies vary (self-pronoun, verb marking, 'body' word); MT must map the source's method onto the target's, adding words like 'himself' where none appear."
+  },
+  "88": {
+    "question": "Whether the emphatic 'himself' and the reflexive 'himself' are the same word.",
+    "mt_relevance": "When one form covers both emphasis and reflexivity, MT can misread which is meant, e.g. rendering 'the king himself came' as if the king acted on himself."
+  },
+  "89": {
+    "question": "How the language expresses 'each other,' and whether it reuses the reflexive form.",
+    "mt_relevance": "If reciprocal and reflexive share a form, MT may confuse 'they saw themselves' with 'they saw each other,' flipping who did what to whom."
+  },
+  "90": {
+    "question": "Whether and how the language forms passives like 'the door was opened'.",
+    "mt_relevance": "Passives here may lack verb marking or use odd auxiliaries, so MT must spot a passive with no 'was …-ed' cue and place the agent right."
+  },
+  "91": {
+    "question": "Whether the verb can take an extra marked object, such as a beneficiary.",
+    "mt_relevance": "An added verb-marked object like a beneficiary must become a preposition phrase ('for her') when translating into languages without applicatives."
+  },
+  "92": {
+    "question": "How the language forms 'the man who came,' where the noun is the clause's subject.",
+    "mt_relevance": "Relativizer choice (pronoun, particle, gap, or resumptive pronoun) differs by target, so MT must add, drop, or reshape 'who/that' and any extra pronoun."
+  },
+  "93": {
+    "question": "How the language forms 'the book that I read,' where the noun is the object.",
+    "mt_relevance": "Object relatives may keep a resumptive pronoun ('the book that I read it') or drop the marker, so MT must insert or delete elements the target demands."
+  },
+  "94": {
+    "question": "How the language says 'the knife with which he cut it,' where the noun is the tool.",
+    "mt_relevance": "Strategies range from pied-piping 'with which' to stranding or leaving the instrument implicit, forcing MT to rebuild the preposition-plus-relative structure."
+  },
+  "95": {
+    "question": "Whether 'say/tell' clauses use a linker like 'that,' and if it comes from 'say'.",
+    "mt_relevance": "Many creoles use a 'say'-derived complementizer, so MT must map it to 'that' and not mistranslate it as a literal second 'say'."
+  },
+  "96": {
+    "question": "Whether 'know/learn' clauses use a linker like 'that,' and where it comes from.",
+    "mt_relevance": "The complementizer here may match or differ from the 'say' one; MT must supply 'that' for factual clauses and not read a 'say'-linker literally."
+  },
+  "97": {
+    "question": "In 'she wants to go,' whether the second clause repeats the subject or leaves it out.",
+    "mt_relevance": "Some languages drop the shared subject, others mark 'want' with an affix; MT must add or drop 'to' and subject pronouns to fit the target's pattern."
+  },
+  "98": {
+    "question": "Whether 'think' and 'want' clauses use the same linking word or different ones.",
+    "mt_relevance": "If 'think' and 'want' clauses take different (or no) complementizers, MT must pick the right linker for each, unlike English's split of 'that' vs 'to'."
+  },
+  "99": {
+    "question": "Whether repeating the verb can mark 'as soon as,' as in 'arrive John arrive, Mary left.'",
+    "mt_relevance": "This doubling has no English parallel; MT must read the repeated verb as one 'as soon as' clause rather than translating it as two literal verbs."
+  },
+  "100": {
+    "question": "How negation is built — with an affix, a separate particle, or an auxiliary verb.",
+    "mt_relevance": "The negator's category decides whether MT attaches it to the verb, inserts a word, or conjugates an auxiliary — different pipelines for the same meaning."
+  },
+  "101": {
+    "question": "Where the negation marker sits relative to the verb (before, after, or split in two).",
+    "mt_relevance": "MT must place 'not' on the correct side of the verb; a split (two-part) negator forces it to emit two coordinated pieces."
+  },
+  "102": {
+    "question": "Whether words like 'anything' pair with a separate 'not', or already carry the negation.",
+    "mt_relevance": "Double vs single negation differs by language, so MT must add or drop the verb's 'not' to avoid 'didn't see nothing' style errors."
+  },
+  "103": {
+    "question": "How yes/no questions are marked — by intonation, word order, a particle, or an affix.",
+    "mt_relevance": "If the source marks a question only by intonation, written MT can miss it entirely and must recover the question form the target requires."
+  },
+  "104": {
+    "question": "How the language highlights (focuses) a noun for contrast — e.g. clefts or fronting.",
+    "mt_relevance": "Focus constructions (like 'It's Mary who came') reorder and add words; MT must map them to the target's own focusing device or lose the emphasis."
+  },
+  "105": {
+    "question": "Whether the language can repeat the verb to emphasize the action itself.",
+    "mt_relevance": "A doubled verb — the verb fronted with a copy, or reduplicated — emphasizes one action, not two; MT copying it literally can mistake it for a second event."
+  },
+  "106": {
+    "question": "Where the word for 'also/too' goes relative to the element it adds emphasis to.",
+    "mt_relevance": "Placement of 'also/too' changes what it scopes over; misplacing it in the target can attach the 'in addition' meaning to the wrong word."
+  },
+  "107": {
+    "question": "Whether the language uses a word to mark direct address, and where it goes.",
+    "mt_relevance": "A minor, pragmatic feature: some languages make the address marker optional, others obligatory, so MT must supply it where required rather than drop it at will."
+  },
+  "108": {
+    "question": "Whether clicks are used as meaningful gestures (like 'tsk') for 'no' or disapproval.",
+    "mt_relevance": "Clicks are spoken gestures rarely written down, so this barely affects text translation and matters mainly for speech."
+  },
+  "109": {
+    "question": "Whether the language has a 'pikin/pickney'-type word for 'child' or 'small'.",
+    "mt_relevance": "A single lexical item with only indirect MT impact via word choice; mainly a clue to the creole's Portuguese-tinged history."
+  },
+  "110": {
+    "question": "Whether the language has a 'savvy'-type word (save/sabi) meaning 'to know'.",
+    "mt_relevance": "A lexical trait: MT must map this shared creole form to 'know', but it matters little beyond word choice in text translation."
+  },
+  "111": {
+    "question": "Whether 'tears' is one word, a compound like 'eye-water', or a phrase.",
+    "mt_relevance": "A compound or phrase for 'tears' aligns many-to-one with a single target word, a common word-alignment slip."
+  },
+  "112": {
+    "question": "Whether one word covers both 'hand' and 'arm', or they are separate words.",
+    "mt_relevance": "If a single word covers both, MT must guess 'hand' vs 'arm' from context when the target language keeps them apart."
+  },
+  "113": {
+    "question": "Whether 'finger' and 'toe' are the same word or two distinct words.",
+    "mt_relevance": "One word for both forces MT to infer 'finger' vs 'toe' from context; distinct words carry the choice on the surface."
+  },
+  "114": {
+    "question": "Whether 'body hair' and 'feather' share one word or use distinct words.",
+    "mt_relevance": "A shared word for both makes MT pick the right sense per context when translating into a language that separates them."
+  },
+  "115": {
+    "question": "Whether 'to hear' and 'to smell' are the same verb or two distinct verbs.",
+    "mt_relevance": "A single verb for both senses forces MT to disambiguate hearing from smelling using context alone."
+  },
+  "116": {
+    "question": "Whether one basic colour word covers both green and blue, or they are separate.",
+    "mt_relevance": "One 'grue' word for green and blue forces MT to choose 'green' or 'blue' from context when the target splits them."
+  },
+  "117": {
+    "question": "How the language marks an animal as female or male — separate word, prefix or suffix.",
+    "mt_relevance": "Whether sex is a separate word or an affix changes tokenization and how MT attaches the male/female cue to animal names."
+  },
+  "118": {
+    "question": "How complex a syllable's opening consonants (its onset) can be.",
+    "mt_relevance": "Onset limits shape how loanwords get respelled (e.g. extra vowels); mostly a transliteration issue, not text translation."
+  },
+  "119": {
+    "question": "How complex a syllable's closing consonants (its coda) can be.",
+    "mt_relevance": "Coda limits drive vowel insertion when adapting borrowings; matters for transliteration, barely for text MT."
+  },
+  "120": {
+    "question": "Whether and how far the language uses pitch (tone) to distinguish words or grammar.",
+    "mt_relevance": "When tone also marks grammar like tense or plural and the spelling omits it, MT loses those distinctions with no surface clue."
+  },
+  "121": {
+    "question": "How many vowel-height levels (like i vs e vs a) the language distinguishes.",
+    "mt_relevance": "A phonological trait: affects transliteration and rhyme, with little direct effect on text translation."
+  },
+  "122": {
+    "question": "Whether the language has nasal vowels, as in French 'bon'.",
+    "mt_relevance": "Nasal vowels are usually written with a following n or m, so they mainly affect spelling and transliteration, not text MT."
+  },
+  "123": {
+    "question": "Whether the language has the neutral 'uh' vowel (schwa), like the 'e' in 'asleep'.",
+    "mt_relevance": "Schwa is usually written as a plain 'e' or dropped entirely, so it affects pronunciation and transliteration far more than text translation."
+  },
+  "124": {
+    "question": "Whether the language has the 'f' and 'v' sounds, as in 'fan' and 'van'.",
+    "mt_relevance": "A missing 'f' or 'v' mainly surfaces when adapting foreign names and loanwords — a language lacking 'v' may respell it 'b' or 'w' — not in ordinary text MT."
+  },
+  "125": {
+    "question": "Whether the language has the 'sh' and 'zh' sounds, as in 'shoe' and 'measure'.",
+    "mt_relevance": "Whether these hushing sounds exist mostly governs how borrowed names get spelled; text MT feels it only through orthography, not meaning."
+  },
+  "126": {
+    "question": "Whether the language has the 'z' sound, the voiced version of 's'.",
+    "mt_relevance": "Where 'z' is absent, imported words with a 'z' get respelled with 's', so this touches transliteration rather than sentence translation."
+  },
+  "127": {
+    "question": "Whether the language has the two 'th' sounds, as in 'thumb' and 'that'.",
+    "mt_relevance": "The 'th' sounds are rare worldwide, so their absence shows up mainly when transliterating English names, with little effect on text translation."
+  },
+  "128": {
+    "question": "Whether the language has the 'ny' sound, like Spanish 'ñ' in 'señor'.",
+    "mt_relevance": "This sound is spelled many ways (ñ, ny, gn, nh), so it mainly drives orthographic normalization of names and loanwords, not translation itself."
+  },
+  "129": {
+    "question": "Whether the language has consonants that start with a built-in nasal, like 'mb' or 'nd'.",
+    "mt_relevance": "Prenasalized segments are a pronunciation feature; they matter for how words are romanized, with little direct bearing on translating text."
+  },
+  "130": {
+    "question": "Whether the language has the 'h' sound, as in 'hat'.",
+    "mt_relevance": "The 'h' sound is easily dropped or added when borrowing words, so its presence mainly affects spelling and transliteration, not text MT."
+  },
+  "131": {
+    "question": "Whether the language has the 'p' sound, as in 'pat'.",
+    "mt_relevance": "'p' is nearly universal; where it's missing, loanwords get respelled (often as 'b' or 'f'), which affects transliteration, not text translation."
+  },
+  "132": {
+    "question": "Whether the language has the 'b' sound, as in 'bat'.",
+    "mt_relevance": "A gap in 'b' usually pushes borrowed words toward 'p' or 'v' in spelling, so the effect lands on transliteration rather than running text."
+  },
+  "133": {
+    "question": "Whether the language has the 't' sound, as in 'top'.",
+    "mt_relevance": "'t' is one of the most universal sounds; its inventory status mainly shapes how names and loanwords are spelled, not text translation quality."
+  },
+  "134": {
+    "question": "Whether the language has the 'd' sound, as in 'dog'.",
+    "mt_relevance": "Where 'd' is absent, borrowings often surface with 't' instead, so this is a transliteration detail rather than a text-translation issue."
+  },
+  "135": {
+    "question": "Whether the language has a 't' made with the tongue between the teeth (interdental).",
+    "mt_relevance": "This fine articulatory contrast isn't shown in ordinary spelling, so it has essentially no effect on text translation, only on pronunciation."
+  },
+  "136": {
+    "question": "Whether the language has a 'd' sound made with the tongue between the teeth.",
+    "mt_relevance": "A tongue-between-teeth 'd' is a pronunciation and transliteration detail; it rarely changes how running text gets translated."
+  },
+  "137": {
+    "question": "Whether the language has the 'ts' sound, as in 'cats'.",
+    "mt_relevance": "Whether 'ts' is native or a foreign import mostly affects how borrowed names and words are spelled, not core text translation."
+  },
+  "138": {
+    "question": "Whether the language has the 'dz' sound, as in 'adze'.",
+    "mt_relevance": "The 'dz' sound surfaces mainly in loanword and name spelling choices, so its effect on text MT is indirect."
+  },
+  "139": {
+    "question": "Whether the language has the 'ch' sound, as in 'church'.",
+    "mt_relevance": "Whether 'ch' is native shapes how names get romanized (ch vs c vs tx vs č) — a transliteration concern more than a translation one."
+  },
+  "140": {
+    "question": "Whether the language has the 'j' sound, as in 'judge'.",
+    "mt_relevance": "Presence of the 'j' sound affects loanword and name spelling conventions; its direct impact on text translation is small."
+  },
+  "141": {
+    "question": "Whether the language has a soft 'ch'-like sound made toward the front of the palate.",
+    "mt_relevance": "This fine 'ch'-like distinction mainly matters for romanizing names and words, with little effect on translating running text."
+  },
+  "142": {
+    "question": "Whether the language has a soft 'j'-like sound made toward the front of the palate.",
+    "mt_relevance": "This soft 'j'-like sound is a phonetic nicety relevant to transliteration systems, not to translating text."
+  },
+  "143": {
+    "question": "Whether the language has a 't' made by curling the tongue back (retroflex).",
+    "mt_relevance": "A curled-tongue 't' separates words in some languages but is often unmarked in Latin script, complicating transliteration more than translation."
+  },
+  "144": {
+    "question": "Whether the language has a 'd' made by curling the tongue back (retroflex).",
+    "mt_relevance": "A curled-tongue 'd' is frequently flattened when romanized, an issue for faithful name transliteration rather than for text MT."
+  },
+  "145": {
+    "question": "Whether the language has a 'ky'-like stop made against the hard palate.",
+    "mt_relevance": "This palatal stop is a pronunciation detail usually absorbed into ordinary spelling; text-translation output is barely affected."
+  },
+  "146": {
+    "question": "Whether the language has a 'gy'-like stop made against the hard palate.",
+    "mt_relevance": "This voiced palatal stop mostly concerns pronunciation and transliteration; it seldom changes text-translation results."
+  },
+  "147": {
+    "question": "Whether the language has the plain 'k' sound, as in 'kite'.",
+    "mt_relevance": "The plain 'k' is nearly universal, so this feature rarely distinguishes languages or affects translation at all."
+  },
+  "148": {
+    "question": "Whether the language has a 'kw' sound made with rounded lips, as in 'quick'.",
+    "mt_relevance": "A lip-rounded 'kw' shows up mainly in spelling conventions and pronunciation, with negligible effect on text MT."
+  },
+  "149": {
+    "question": "Whether the language has the hard 'g' sound, as in 'go', in its consonant inventory.",
+    "mt_relevance": "A very common consonant with little direct text-MT effect; it mainly shapes how names and loanwords are spelled when the language is romanized."
+  },
+  "150": {
+    "question": "Whether the language has a labialized 'gw' — a 'g' pronounced with rounded lips.",
+    "mt_relevance": "Rare enough to barely touch text MT; it mostly affects keeping 'gw' spellings consistent when transliterating names and borrowings."
+  },
+  "151": {
+    "question": "Whether the language has the 'kp' sound, a 'k' and 'p' pronounced simultaneously.",
+    "mt_relevance": "Common in West African substrates; in a creole it mainly complicates romanizing names, since 'kp' gets spelled inconsistently — little direct text effect."
+  },
+  "152": {
+    "question": "Whether the language has the 'gb' sound, a 'g' and 'b' pronounced simultaneously.",
+    "mt_relevance": "A substrate sound heard in names like Igbo 'Gb-'; its text-MT impact is indirect, felt when transliterating personal and place names."
+  },
+  "153": {
+    "question": "Whether the language has a deep 'q' made far back in the throat, as in Arabic qāf.",
+    "mt_relevance": "Chiefly matters for transliterating Arabic-origin names and loans, where 'q' and 'k' spellings compete; text translation is largely unaffected."
+  },
+  "154": {
+    "question": "Whether the language has a labialized uvular 'q' — a deep back 'q' with rounded lips.",
+    "mt_relevance": "So rare its text-MT footprint is tiny, surfacing only in how a handful of names and loanwords get romanized."
+  },
+  "155": {
+    "question": "Whether the language uses a glottal stop — the catch in the middle of 'uh-oh'.",
+    "mt_relevance": "Often written with an apostrophe or dropped entirely, so inconsistent spelling can split one word into two tokens — or merge two — for MT."
+  },
+  "156": {
+    "question": "Whether the language has an aspirated 'p', released with a puff of air as in 'pin'.",
+    "mt_relevance": "Aspiration is rarely written in Latin-script creoles, so it seldom affects text MT; the impact is on speech and phonetic transliteration."
+  },
+  "157": {
+    "question": "Whether the language has a breathy-voiced 'bh', a 'b' with breathy release as in Hindi.",
+    "mt_relevance": "Flags Indic-origin vocabulary; the text-MT effect is indirect, seen when transliterating loanwords where 'bh' and 'b' spellings differ."
+  },
+  "158": {
+    "question": "Whether the language has an aspirated 't', released with a puff of air.",
+    "mt_relevance": "Usually unmarked in creole spelling, so it barely touches text MT; the effect is confined to speech and careful transliteration."
+  },
+  "159": {
+    "question": "Whether the language has a breathy-voiced 'dh', a 'd' with breathy release as in Hindi.",
+    "mt_relevance": "Points to an Indic substrate or loans; matters when transliterating names like 'Dhan-', where the 'h' is easily dropped — little direct text effect."
+  },
+  "160": {
+    "question": "Whether the language has an aspirated 'ts' affricate, released with a puff of air.",
+    "mt_relevance": "A rare sound with minimal text-MT effect; it mostly governs how borrowed words with 'tsh'-type spellings get transliterated."
+  },
+  "161": {
+    "question": "Whether the language has an aspirated 'ch' sound (t͡ʃʰ), a 'ch' with a puff of breath.",
+    "mt_relevance": "Aspiration on 'ch' almost never shows in romanized spelling, so it mostly affects pronunciation and speech models, not text translation."
+  },
+  "162": {
+    "question": "Whether the language has an aspirated retroflex 't' (ʈʰ), a curled-tongue 't'.",
+    "mt_relevance": "Retroflex-plus-aspiration contrasts often signal a South Asian substrate and surface in transliteration choices far more than in text MT."
+  },
+  "163": {
+    "question": "Whether the language has an aspirated 'k' (kʰ), a 'k' released with a puff of air.",
+    "mt_relevance": "Whether 'k' is aspirated seldom alters spelling; its main MT footprint is on speech systems and how loanwords get transliterated."
+  },
+  "164": {
+    "question": "Whether the language has a lip-rounded aspirated 'k' (kʰʷ), like 'kw' with a puff of air.",
+    "mt_relevance": "This rare cluster-like sound mainly shapes how names and loanwords are romanized, with little bearing on written translation."
+  },
+  "165": {
+    "question": "Whether the language has a breathy-voiced 'g' (gʰ), a 'g' with a murmured release.",
+    "mt_relevance": "Breathy-voiced stops point to South Asian substrate influence; they steer transliteration but rarely change the written translation."
+  },
+  "166": {
+    "question": "Whether the language has an aspirated uvular 'k' (qʰ), a 'k' made far back in the throat.",
+    "mt_relevance": "Uvular stops usually collapse to plain 'k' or 'q' in romanized text, so the contrast is often lost before MT ever sees it."
+  },
+  "167": {
+    "question": "Whether the language has a lip-rounded, aspirated uvular 'k' (qʰʷ) made far back.",
+    "mt_relevance": "This very rare sound leaves almost no trace in standard spelling; its MT impact is confined to phonetic and transliteration tasks."
+  },
+  "168": {
+    "question": "Whether the language has an ejective 'p' (pʼ), a 'p' made with a sharp popping burst.",
+    "mt_relevance": "Ejectives typically write as a plain 'p', so this contrast mostly affects speech and phonetic transcription rather than text MT."
+  },
+  "169": {
+    "question": "Whether the language has an ejective 't' (tʼ), a 't' released with a sharp glottal pop.",
+    "mt_relevance": "Ejective 't' rarely gets its own letter in romanized systems, giving it little direct effect on written machine translation."
+  },
+  "170": {
+    "question": "Whether the language has an ejective 'ts' (t͡sʼ), a 'ts' made with a popping glottal burst.",
+    "mt_relevance": "Such ejective affricates signal a substrate's sound system but usually merge with plain 'ts' in spelling, blunting any text-MT effect."
+  },
+  "171": {
+    "question": "Whether the language has an ejective 'ch' (t͡ʃʼ), a 'ch' made with a sharp glottal pop.",
+    "mt_relevance": "Whether 'ch' is ejective seldom shows in writing, so it matters chiefly for pronunciation and speech recognition, not text MT."
+  },
+  "172": {
+    "question": "Whether the language has an ejective 'k' (kʼ), a 'k' made with a sharp popping burst.",
+    "mt_relevance": "Ejective 'k' generally shares a spelling with plain 'k', so its influence lands on transliteration and speech, not text translation."
+  },
+  "173": {
+    "question": "Whether the language has a lip-rounded ejective 'k' (kʼʷ), like 'kw' with a glottal pop.",
+    "mt_relevance": "This uncommon labialized ejective barely surfaces in romanized text; its practical MT role is limited to phonetic transcription."
+  },
+  "174": {
+    "question": "Whether the language has qʼ, an ejective uvular 'k' made with a sharp glottal pop.",
+    "mt_relevance": "Ejectives rarely occur in European lexifiers, so in text they get romanized ad hoc; the main MT impact is inconsistent spelling, not meaning."
+  },
+  "175": {
+    "question": "Whether the language has qʼʷ, the same throat-burst q sound but with rounded lips.",
+    "mt_relevance": "This rare, complex sound has no settled Latin spelling, so it surfaces in text mainly as competing romanizations of the same word."
+  },
+  "176": {
+    "question": "Whether the language has ɓ, a 'b' pronounced by pulling air inward (an implosive).",
+    "mt_relevance": "Implosives are usually written as plain 'b' in creole orthographies, so the contrast lives in speech and barely surfaces in text translation."
+  },
+  "177": {
+    "question": "Whether the language has ɗ, a 'd' pronounced by pulling air inward (an implosive).",
+    "mt_relevance": "Often collapsed to 'd' in spelling, so text MT rarely sees it, though transliteration and speech systems still have to handle it."
+  },
+  "178": {
+    "question": "Whether the language has the m sound (as in 'man').",
+    "mt_relevance": "The m sound is near-universal, so it carries essentially no distinguishing weight for translation and matters mainly to speech systems."
+  },
+  "179": {
+    "question": "Whether the language has the n sound (as in 'no').",
+    "mt_relevance": "Like m, n appears in almost every language, so its presence is a phonetic baseline with negligible bearing on text-translation choices."
+  },
+  "180": {
+    "question": "Whether the language has ɳ, an n sound made with the tongue curled back (retroflex).",
+    "mt_relevance": "Retroflex and plain n are often spelled the same, so this distinction affects pronunciation and transliteration far more than text MT."
+  },
+  "181": {
+    "question": "Whether the language has ɲ, the 'ny' sound as in 'canyon'.",
+    "mt_relevance": "Spelled variously ny, ñ or gn depending on the lexifier, so it feeds cross-source spelling inconsistency more than it changes meaning."
+  },
+  "182": {
+    "question": "Whether the language has ŋ, the 'ng' sound as in 'sing'.",
+    "mt_relevance": "Usually written 'ng', which a tokenizer cannot distinguish from n followed by g — an ambiguity that can misalign subword units."
+  },
+  "183": {
+    "question": "Whether the language has a rolled r (a trilled r, as in Spanish 'perro').",
+    "mt_relevance": "R-variants almost always share the letter 'r' in writing, so this is a pronunciation trait with little direct effect on text translation."
+  },
+  "184": {
+    "question": "Whether the language has a tapped r (a quick single flap, as in Spanish 'pero').",
+    "mt_relevance": "Tap and trill are typically both written 'r', collapsing in text; the distinction matters for speech synthesis, not word choice."
+  },
+  "185": {
+    "question": "Whether the language has the English-style r (a smooth, untrilled r).",
+    "mt_relevance": "This r is normally spelled 'r' like every other rhotic, so it shapes accent and TTS output rather than the translated text itself."
+  },
+  "186": {
+    "question": "Whether the language has ɻ, an English r made with the tongue curled back (retroflex).",
+    "mt_relevance": "A rare rhotic usually written as plain 'r'; its effect is on pronunciation and transliteration, with essentially none on text MT."
+  },
+  "187": {
+    "question": "Whether the language has ɸ, an 'f'-like sound made with both lips (bilabial fricative).",
+    "mt_relevance": "Mostly a speech and transliteration trait; in text it shows up only as spelling wobble between p and f in borrowed words."
+  },
+  "188": {
+    "question": "Whether the language has β, a 'v'-like sound made with both lips (bilabial fricative).",
+    "mt_relevance": "Mainly affects pronunciation; its text footprint is b-vs-v spelling variation in loans from Spanish or Portuguese lexifiers."
+  },
+  "189": {
+    "question": "Whether the language has f, the sound in English 'fan' (labio-dental fricative).",
+    "mt_relevance": "Where f only appears in loanwords, borrowed words get respelled with p, so the same source word surfaces under two spellings in text."
+  },
+  "190": {
+    "question": "Whether the language has v, the buzzing sound in English 'van' (labio-dental fricative).",
+    "mt_relevance": "When v is missing it usually merges with b or w, so lexifier words like 'very' appear respelled, splitting a word across spellings."
+  },
+  "191": {
+    "question": "Whether the language has θ, the 'th' sound in English 'thin' (dental fricative).",
+    "mt_relevance": "English 'th' words have no θ in most creoles, so 'thing' is respelled t/f/s — a systematic spelling gap MT must map back to the lexifier."
+  },
+  "192": {
+    "question": "Whether the language has ð, the 'th' sound in English 'this' (dental fricative).",
+    "mt_relevance": "Absent ð turns lexifier 'the/this/that' into d-forms (de, dis, dat), a regular respelling MT needs to align with the English source."
+  },
+  "193": {
+    "question": "Whether the language has s, the hissing sound in English 'sun' (sibilant fricative).",
+    "mt_relevance": "Near-universal, so it rarely blocks anything; its main text effect is whether s and sh stay distinct in a creole's spelling."
+  },
+  "194": {
+    "question": "Whether the language has z, the buzzing sound in English 'zoo' (sibilant fricative).",
+    "mt_relevance": "When z lives only in loanwords it collapses into s, so voiced/voiceless pairs like 'zeal/seal' can share one spelling."
+  },
+  "195": {
+    "question": "Whether the language has ʃ, the 'sh' sound in English 'ship' (sibilant fricative).",
+    "mt_relevance": "Where 'sh' is absent it falls together with s, so lexifier 'ship' and 'sip' may be written alike, losing a distinction in text."
+  },
+  "196": {
+    "question": "Whether the language has ʒ, the 's' sound in English 'measure' (sibilant fricative).",
+    "mt_relevance": "This rare sound usually enters only via loans; in text it mostly means 'measure/genre'-type words get approximate, unstable spellings."
+  },
+  "197": {
+    "question": "Whether the language has ɕ, a soft 'sh'-like sound (alveolo-palatal fricative).",
+    "mt_relevance": "A rare substrate-driven sibilant; its text impact is minor, mainly inconsistent spelling of a few borrowed or substrate words."
+  },
+  "198": {
+    "question": "Whether the language has ç, the breathy sound in German 'ich' (palatal fricative).",
+    "mt_relevance": "A marginal sound with little text-MT effect; it mostly matters for pronunciation and how a handful of loanwords are spelled."
+  },
+  "199": {
+    "question": "Whether the language has x, the raspy sound in Scottish 'loch' or Spanish 'j'.",
+    "mt_relevance": "Where x is loanword-only, Spanish 'j' words (jota, caja) get respelled with h or k, so one source word appears under rival spellings."
+  },
+  "200": {
+    "question": "Whether the language has xʷ, a lip-rounded 'kh' sound made at the back of the mouth.",
+    "mt_relevance": "A sound feature: romanization may drop the lip-rounding, so it mainly affects transliteration, not text translation."
+  },
+  "201": {
+    "question": "Whether the language has ɣ, a voiced 'g' softened into a continuous back-of-mouth buzz.",
+    "mt_relevance": "Often spelled 'gh' or merged with plain g in writing, so its text-MT effect is limited to spelling and transliteration."
+  },
+  "202": {
+    "question": "Whether the language has χ, a raspy 'kh' made further back than English, at the uvula.",
+    "mt_relevance": "Frequently romanized as 'kh', 'x', or 'h', so inconsistent spelling of it can fragment word forms for MT rather than change meaning."
+  },
+  "203": {
+    "question": "Whether the language has χʷ, the raspy uvular 'kh' produced with rounded lips.",
+    "mt_relevance": "A rare rounded fricative; its main MT footprint is unstable romanization, mostly a transliteration concern, not a text-translation one."
+  },
+  "204": {
+    "question": "Whether the language has ʁ, the guttural 'r' heard in French and German.",
+    "mt_relevance": "This is the French-style guttural r; written simply as 'r', so it rarely affects text translation beyond transliterating names."
+  },
+  "205": {
+    "question": "Whether the language has the plain 'h' sound, a breath of air from the throat.",
+    "mt_relevance": "Where 'h' is dropped or added inconsistently in spelling, MT sees the same word two ways, mostly a normalization issue."
+  },
+  "206": {
+    "question": "Whether the language has hʷ, an 'h' made with rounded lips, like the start of 'who'.",
+    "mt_relevance": "Rarely distinguished from plain 'h' in spelling, so it affects pronunciation and transliteration far more than text translation."
+  },
+  "207": {
+    "question": "Whether the language has ħ, a tight, breathy 'h' squeezed from deep in the throat.",
+    "mt_relevance": "Common in Arabic-influenced varieties and romanized many ways (h, ḥ, 7), so unstable spelling of it can split a word across forms."
+  },
+  "208": {
+    "question": "Whether the language has ʕ, a voiced throat sound (Arabic 'ayn') from the pharynx.",
+    "mt_relevance": "Often left unwritten or transliterated as an apostrophe, so MT may lose it entirely, mostly a transliteration gap rather than meaning loss."
+  },
+  "209": {
+    "question": "Whether the language has the ordinary 'l' sound made with the tongue tip.",
+    "mt_relevance": "The everyday 'l' is near-universal and reliably written, so it has essentially no distinct effect on text translation."
+  },
+  "210": {
+    "question": "Whether the language has a long, held 'l' (a doubled 'll') that contrasts with a short one.",
+    "mt_relevance": "If a long 'l' is meaningful but writing doesn't double the letter, MT can merge distinct words that differ only in that length."
+  },
+  "211": {
+    "question": "Whether the language has a palatalized ('soft') l sound [lʲ].",
+    "mt_relevance": "A palatalization contrast rarely shows in Latin spelling, so it mostly affects transliteration of names and loanwords, not text translation."
+  },
+  "212": {
+    "question": "Whether the language has a voiceless 'l' fricative like Welsh 'll' [ɬ].",
+    "mt_relevance": "This sound has no single Latin letter, so it gets spelled 'll', 'hl' or 'lh' inconsistently, scattering one word across variant forms in text."
+  },
+  "213": {
+    "question": "Whether the language has a voiceless lateral 'tl' affricate [tɬ].",
+    "mt_relevance": "Usually romanized as the digraph 'tl', which a tokenizer can wrongly split, but the effect on text translation stays minor beyond spelling."
+  },
+  "214": {
+    "question": "Whether the language has an ejective (popping) lateral 'tl' affricate [tɬʼ].",
+    "mt_relevance": "The ejective apostrophe is often dropped in casual typing, merging this with the plain affricate and losing a word distinction in text."
+  },
+  "215": {
+    "question": "Whether the language has a palatal 'ly' l sound like Italian 'gli' [ʎ].",
+    "mt_relevance": "Many varieties merge this with plain 'y', so spellings like 'll' and 'y' compete for the same word, mainly a transliteration issue."
+  },
+  "216": {
+    "question": "Whether the language has a voiced (buzzing) lateral 'l' fricative [ɮ].",
+    "mt_relevance": "A rare sound with no standard Latin letter, so romanizations diverge; the impact is on spelling consistency, not sentence translation."
+  },
+  "217": {
+    "question": "Whether the language has a retroflex l sound, tongue curled back [ɭ].",
+    "mt_relevance": "Retroflex and plain l often collapse to a single 'l' in ASCII text, erasing a contrast that separates distinct words in some scripts."
+  },
+  "218": {
+    "question": "Whether the language has the 'y' glide sound as in 'yes' [j].",
+    "mt_relevance": "Common and usually written 'y', but 'j' spells this glide in some languages and a 'j'-as-in-jam sound in others, risking misreads."
+  },
+  "219": {
+    "question": "Whether the language has a nasalized 'y' glide, said through the nose [ȷ̃].",
+    "mt_relevance": "Nasalization is almost never written, so this looks identical to a plain 'y' in text and any distinction it carries is invisible to MT."
+  },
+  "220": {
+    "question": "Whether the language has a rounded 'y' glide like the French 'huit' sound [ɥ].",
+    "mt_relevance": "This glide rarely has its own letter and is usually written 'u' or 'w', so it mostly affects pronunciation and transliteration, not text."
+  },
+  "221": {
+    "question": "Whether the language has the 'w' glide sound as in 'wet' [w].",
+    "mt_relevance": "Almost always written plainly as 'w', so it poses little text-translation risk; its presence mainly shapes how loanwords are adapted."
+  },
+  "222": {
+    "question": "Whether the language has a soft approximant between 'v' and 'w' [ʋ].",
+    "mt_relevance": "Sitting between 'v' and 'w', it makes those two letters swap in spelling and transliteration, producing variant forms of the same word."
+  },
+  "223": {
+    "question": "Whether the language has a long (geminate) 'pp' sound held twice as long [pː].",
+    "mt_relevance": "Consonant length is inconsistently written as a doubled 'pp'; left single, long and short p collapse and can merge otherwise distinct words."
+  },
+  "224": {
+    "question": "Whether the language has a long (geminate) 'b' — a b sound held twice as long.",
+    "mt_relevance": "Consonant length is mostly a spoken-and-transliteration matter; in text it mainly surfaces as whether a doubled 'bb' is meaningful or just a typo."
+  },
+  "225": {
+    "question": "Whether the language has a long (geminate) 't' — a t sound held twice as long.",
+    "mt_relevance": "If romanization drops the double 't', two different words can end up spelled the same; otherwise this is largely a pronunciation detail."
+  },
+  "226": {
+    "question": "Whether the language has a long (geminate) 'd' — a d sound held twice as long.",
+    "mt_relevance": "Mostly a pronunciation trait; its main text footprint is inconsistent 'd' vs 'dd' spelling when speakers adapt loanwords or transcribe informally."
+  },
+  "227": {
+    "question": "Whether the language has a long (geminate) 'k' — a k sound held twice as long.",
+    "mt_relevance": "Chiefly affects speech and transliteration; in written MT the only stake is treating a doubled 'kk' as intentional rather than normalizing it away."
+  },
+  "228": {
+    "question": "Whether the language has a long (geminate) 'g' — a g sound held twice as long.",
+    "mt_relevance": "Mostly a speech-level trait; it matters for text only when transliterating from scripts that mark gemination, where 'g' vs 'gg' must be preserved."
+  },
+  "229": {
+    "question": "Whether the language has a long (geminate) 'm' — an m sound held twice as long.",
+    "mt_relevance": "Long nasals are largely a pronunciation feature; in text they surface only as 'mm' spellings that MT must not silently collapse into a single 'm'."
+  },
+  "230": {
+    "question": "Whether the language has a long (geminate) 'n' — an n sound held twice as long.",
+    "mt_relevance": "Doubled nasals rarely change written MT; the edge case is a spelling contrast like 'n' vs 'nn' that transliteration or normalization could wrongly flatten."
+  },
+  "231": {
+    "question": "Whether the language has a prenasalized 'b' — an 'mb' said as one single sound.",
+    "mt_relevance": "Written as the digraph 'mb', a prenasalized stop can be misread as two sounds; the text-MT impact is mostly transliteration and word-boundary guesses."
+  },
+  "232": {
+    "question": "Whether the language has a prenasalized 'd' — an 'nd' said as one single sound.",
+    "mt_relevance": "In text 'nd' looks identical whether it's one prenasalized sound or a real 'n'+'d' sequence — an ambiguity that mostly bites transliteration, not typical MT."
+  },
+  "233": {
+    "question": "Whether the language has a prenasalized 'j' — an 'nj/ndj' said as one sound.",
+    "mt_relevance": "Romanizations spell this sound many ways (nj, ndj, ndy), so its main text-MT cost is spelling inconsistency across sources rather than any change in meaning."
+  },
+  "234": {
+    "question": "Whether the language has a prenasalized palatal stop — a nasal plus a 'gy'-like sound.",
+    "mt_relevance": "A rare palatal sound with little written-MT impact; it mostly matters for consistent romanization and for speech systems, not for text meaning."
+  },
+  "235": {
+    "question": "Whether the language has a prenasalized 'g' — an 'ng-g' said as one single sound.",
+    "mt_relevance": "The 'ng' spelling can stand for this one prenasalized sound or a plain nasal, an ambiguity that complicates transliteration and tokenization more than text meaning."
+  },
+  "236": {
+    "question": "Whether the language has a prenasalized 'p' — an 'mp' said as one single sound.",
+    "mt_relevance": "Like other prenasalized stops it hides behind an 'mp' digraph; the only real text-MT stake is not splitting 'mp' into two sounds during transliteration or ASR."
+  },
+  "237": {
+    "question": "Whether the language has a prenasalized 't' — a short nasal fused onto the 't' sound.",
+    "mt_relevance": "A speech detail: whether 't' carries a nasal onset rarely shows in text, so its main MT footprint is transcribing names and loanwords."
+  },
+  "238": {
+    "question": "Whether the language has a prenasalized palatal stop — a nasal fused onto a 'ky' sound.",
+    "mt_relevance": "Palatal stops lack a fixed Latin spelling, so a prenasalized one complicates romanizing names, while text translation is barely touched."
+  },
+  "239": {
+    "question": "Whether the language has a prenasalized 'k' — a short 'ng' fused onto the 'k' sound.",
+    "mt_relevance": "Whether 'nk' is written as one unit or two letters affects tokenization and transcribing speech, not the meaning being translated."
+  },
+  "240": {
+    "question": "Whether the language has a prenasalized 'f' — a short nasal fused onto the 'f' sound.",
+    "mt_relevance": "A rare fused nasal-'f' mostly affects how spoken forms are spelled; it seldom changes the words a text translator must choose."
+  },
+  "241": {
+    "question": "Whether the language has a prenasalized 'v' — a short 'm' fused onto the 'v' sound.",
+    "mt_relevance": "Some orthographies write this 'mv', others just 'v', so one word can appear two ways — a spelling-normalization issue, not a meaning one."
+  },
+  "242": {
+    "question": "Whether the language has a prenasalized 's' — a short nasal fused onto the 's' sound.",
+    "mt_relevance": "This 'ns' cluster is a pronunciation detail; its only real MT trace is keeping names and borrowed words transliterated consistently."
+  },
+  "243": {
+    "question": "Whether the language has a prenasalized 'z' — a short nasal fused onto the 'z' sound.",
+    "mt_relevance": "Voiced fused-nasal sounds like 'nz' often ride in from substrate words, so they surface in text mainly through name and loanword spelling."
+  },
+  "244": {
+    "question": "Whether the language has a prenasalized 'zh' — a nasal fused onto the 's' in 'measure'.",
+    "mt_relevance": "The 'zh' sound already lacks a stable English spelling; adding a nasal onset makes romanizing such words even less predictable for MT."
+  },
+  "245": {
+    "question": "Whether the language has a prenasalized 'kh' — a nasal onset on a raspy throat sound.",
+    "mt_relevance": "A back-of-throat fricative with a nasal onset has no English counterpart, so it mainly challenges transliteration rather than text translation."
+  },
+  "246": {
+    "question": "Whether the language has a prenasalized 'w' — a short 'm' fused onto a 'w' glide.",
+    "mt_relevance": "Whether this is written 'mw' or plain 'w' can split one word into two spellings, a normalization headache more than a translation one."
+  },
+  "247": {
+    "question": "Whether the language has a preaspirated 'p' — a puff of breath just before the 'p'.",
+    "mt_relevance": "Preaspiration is almost never written, so it barely touches text MT; its real relevance is speech recognition and pronunciation modeling."
+  },
+  "248": {
+    "question": "Whether the language has a preaspirated 't' — a puff of breath just before the 't'.",
+    "mt_relevance": "Since the breath before 't' rarely appears in spelling, distinct-sounding words can share one written form — a speech-side, not text, issue."
+  },
+  "249": {
+    "question": "Whether the language has a preaspirated 'ch' — a puff of breath just before the 'ch'.",
+    "mt_relevance": "Preaspirated 'ch' is a spoken nuance lost in ordinary spelling, so it matters for transcription and text-to-speech, not for translating text."
+  },
+  "250": {
+    "question": "Whether the language has a puff-of-breath 'k' sound (preaspirated [ʰk]).",
+    "mt_relevance": "A rare, often substrate-derived consonant that lives in pronunciation; it has essentially no effect on written translation, only on speech systems."
+  },
+  "251": {
+    "question": "Whether the language has a breathy-onset 'r' sound in its inventory.",
+    "mt_relevance": "An unusual breathy rhotic from substrate phonology; it matters for speech synthesis and phonetic transcription, not for translating text."
+  },
+  "252": {
+    "question": "Whether the language has the 'ee' vowel (as in 'see') in its sound inventory.",
+    "mt_relevance": "One of the most common vowels worldwide; it barely moves written translation and matters mainly for speech synthesis and name transliteration."
+  },
+  "253": {
+    "question": "Whether the language has a close 'e' vowel (like the é in 'café') among its sounds.",
+    "mt_relevance": "Close and open 'e' often share one letter in creole spelling, so this distinction lives in pronunciation, not in the translated text."
+  },
+  "254": {
+    "question": "Whether the language has the open 'eh' vowel (as in 'bed') in its inventory.",
+    "mt_relevance": "When 'e' and 'eh' both map to the letter e, the contrast vanishes on the page and only surfaces in speech or phonetic transcription."
+  },
+  "255": {
+    "question": "Whether the language has the flat 'a' vowel (as in 'cat') among its sounds.",
+    "mt_relevance": "This vowel often enters only through English loanwords, so its presence hints at heavy lexifier borrowing more than it affects text output."
+  },
+  "256": {
+    "question": "Whether the language has the open 'ah' vowel (as in 'spa') in its inventory.",
+    "mt_relevance": "Nearly every language has this vowel, so it carries almost no contrastive information for either text or speech translation."
+  },
+  "257": {
+    "question": "Whether the language has the 'oo' vowel (as in 'boot') in its sound inventory.",
+    "mt_relevance": "A near-universal back vowel; it shapes speech synthesis and the romanized spelling of names rather than the words a translator picks."
+  },
+  "258": {
+    "question": "Whether the language has a close 'o' vowel (like the o in 'go') among its sounds.",
+    "mt_relevance": "Close vs open 'o' is usually collapsed to one letter in creole orthography, so it affects pronunciation, not the written translation."
+  },
+  "259": {
+    "question": "Whether the language has the open 'aw' vowel (as in 'paw') in its inventory.",
+    "mt_relevance": "The open 'aw' vowel mainly matters for speech and for how spelling or rhyme is handled, not for choosing translated words."
+  },
+  "260": {
+    "question": "Whether the language has a low back 'ah' vowel (as in British 'palm').",
+    "mt_relevance": "A low back vowel that most orthographies fold into a single 'a', so its effect is on accent and transliteration, not text MT."
+  },
+  "261": {
+    "question": "Whether the language has the rounded front 'ü' vowel (as in French 'tu').",
+    "mt_relevance": "This rounded front vowel usually signals French-lexifier influence; it affects transliteration of names far more than text translation."
+  },
+  "262": {
+    "question": "Whether the language uses the low back rounded vowel (the rounded 'o' in British 'lot').",
+    "mt_relevance": "Almost purely a pronunciation trait; text MT is unaffected, though it can shape how English 'o'-vowel loanwords get respelled here."
+  },
+  "263": {
+    "question": "Whether the language has the lax high front vowel (the short 'i' in 'kit').",
+    "mt_relevance": "A speech-level contrast; in writing this short 'i' is often spelled like tense 'ee', so text MT gains little from knowing it exists."
+  },
+  "264": {
+    "question": "Whether the language has the lax high front rounded vowel (a lax German 'ü').",
+    "mt_relevance": "A rounded front vowel usually carried in from a European lexifier; it affects pronunciation and transliteration, not how text is worded."
+  },
+  "265": {
+    "question": "Whether the language has the mid front rounded vowel (like French 'eu' or German 'ö').",
+    "mt_relevance": "Typically a French-style 'eu' sound; its MT footprint is in pronunciation and respelling loanwords, not in translating text."
+  },
+  "266": {
+    "question": "Whether the language has the open-mid front rounded vowel (the 'eu' in French 'œuf').",
+    "mt_relevance": "Another French-style rounded front vowel; text translation ignores it, but it matters for transliteration and loanword spelling."
+  },
+  "267": {
+    "question": "Whether the language has the high central unrounded vowel, a so-called 'barred i'.",
+    "mt_relevance": "A central 'barred-i' vowel that can complicate romanization schemes, yet plain text translation rarely depends on it."
+  },
+  "268": {
+    "question": "Whether the language uses schwa, the neutral 'uh' vowel (the 'a' in 'about').",
+    "mt_relevance": "Schwa is often left unwritten or spelled many different ways, so it drives spelling variation MT must tolerate rather than meaning it must render."
+  },
+  "269": {
+    "question": "Whether the language has the open-mid central vowel (the vowel in British 'nurse').",
+    "mt_relevance": "A central 'nurse'-type vowel; largely a pronunciation matter, touching text MT only through inconsistent spelling of such words."
+  },
+  "270": {
+    "question": "Whether the language has the lower central unrounded vowel (the 'u' in 'cup').",
+    "mt_relevance": "The central 'cup' vowel; it shapes how words sound and rhyme, but written translation seldom turns on whether it exists."
+  },
+  "271": {
+    "question": "Whether the language has the near-open central vowel (a short, relaxed 'a').",
+    "mt_relevance": "A near-open central vowel, often a reduced variant of 'a'; its MT relevance stays minimal beyond speech and narrow transcription."
+  },
+  "272": {
+    "question": "Whether the language has the high back unrounded vowel (an unrounded 'oo').",
+    "mt_relevance": "An unrounded back 'oo' vowel; it shapes pronunciation and narrow transcription, but plain text and word choice rarely turn on whether it exists."
+  },
+  "273": {
+    "question": "Whether the language has the lax high back rounded vowel (the 'oo' in 'foot').",
+    "mt_relevance": "The lax 'foot' vowel; in spelling it often shares 'oo' with the long vowel, so text MT is largely indifferent to the distinction."
+  },
+  "274": {
+    "question": "Whether the language has a long 'ee' vowel, held clearly longer than a short 'i'.",
+    "mt_relevance": "Vowel length matters to MT only where writing marks it (e.g. doubled letters); otherwise long 'ee' stays a pronunciation detail text ignores."
+  },
+  "275": {
+    "question": "Whether the language has a long 'ay'-type front vowel (an 'e' sound held extra long).",
+    "mt_relevance": "Vowel length is often unwritten in creole spelling, so text can't distinguish this long 'ay' from a short one — mainly a speech and transliteration concern."
+  },
+  "276": {
+    "question": "Whether the language has a long open 'eh' vowel (the 'e' in 'bed', held extra long).",
+    "mt_relevance": "Writing both the open-vs-close 'e' quality and its length needs accent marks a system must normalize; the distinction rarely surfaces in plain text."
+  },
+  "277": {
+    "question": "Whether the language has a long 'a'-as-in-'cat' vowel, held for extra length.",
+    "mt_relevance": "A long 'cat' vowel; where it occurs only in loanwords its effect is on how those loanwords are transliterated, not on everyday text translation."
+  },
+  "278": {
+    "question": "Whether the language has a long 'ah' vowel (the 'a' in 'spa', held extra long).",
+    "mt_relevance": "Long 'ah' is common and sometimes spelled with a doubled 'aa' or macron, so it shows up as spelling variants to normalize — otherwise a speech-level trait."
+  },
+  "279": {
+    "question": "Whether the language has a long 'oo' vowel (the vowel in 'food', held extra long).",
+    "mt_relevance": "If the spelling doesn't mark length, a long 'oo' looks identical to a short 'u' in text, so this bites transliteration and speech far more than text MT."
+  },
+  "280": {
+    "question": "Whether the language has a long 'oh' vowel (an 'o' sound held for extra length).",
+    "mt_relevance": "Whether a creole keeps a long 'o' distinct from its lexifier's vowel is a pronunciation fact, touching text only through spelling choices and transliteration."
+  },
+  "281": {
+    "question": "Whether the language has a long open 'aw' vowel (the vowel in 'thought'), held long.",
+    "mt_relevance": "Telling the open 'aw' apart from a closer 'o' in writing needs a diacritic many creole orthographies omit, so the contrast is mostly lost in plain text."
+  },
+  "282": {
+    "question": "Whether the language has a long back 'ah' vowel (a deep 'a' held for extra length).",
+    "mt_relevance": "Few writing systems separate this back 'ah' from a central one, so the distinction almost never reaches text — it's a speech and transliteration matter."
+  },
+  "283": {
+    "question": "Whether the language has a long 'schwa' — the neutral 'uh' vowel (as in 'sofa').",
+    "mt_relevance": "A long schwa seldom has its own letter, so it hides among other vowels in spelling; its effect is on pronunciation and transliteration, not text translation."
+  },
+  "284": {
+    "question": "Whether the language has a long front rounded 'ü' vowel (like French 'tu'), held long.",
+    "mt_relevance": "This French-style long 'ü' can be respelled many ways in creole text (u, i, ou), creating spelling variants to normalize; otherwise a pronunciation detail."
+  },
+  "285": {
+    "question": "Whether the language has a nasalized 'ee' vowel — an 'ee' sound made through the nose.",
+    "mt_relevance": "Nasal vowels get written with a tilde or a following 'n', so a system must treat 'ĩ', 'in', and 'i' as possibly the same word — a spelling-normalization issue."
+  },
+  "286": {
+    "question": "Whether the language has a nasalized 'ay' vowel — an 'e' sound made through the nose.",
+    "mt_relevance": "A nasal 'ay' is often spelled 'en' or with a tilde, which can look identical to a vowel-plus-'n' sequence — an ambiguity text systems must learn to resolve."
+  },
+  "287": {
+    "question": "Whether the language has a nasalized open 'eh' vowel (like the French 'in' in 'vin').",
+    "mt_relevance": "This French-type nasal vowel is often written 'in' or 'en', so text can't tell the nasal vowel from a real 'n' — a tokenization ambiguity in French-lexifier creoles."
+  },
+  "288": {
+    "question": "Whether the language has a nasal 'ah' vowel, made by letting air through the nose.",
+    "mt_relevance": "Nasal vowels are written with a tilde or a trailing n/m, so one word can appear several ways — a text-MT normalization issue more than a meaning one."
+  },
+  "289": {
+    "question": "Whether the language has a nasal 'oo' vowel (an 'oo' sound made through the nose).",
+    "mt_relevance": "If the writing system drops the nasal mark, a pair like ũ vs u collapses to one spelling — but the effect is largely phonetic, minor for text MT."
+  },
+  "290": {
+    "question": "Whether the language has a nasal 'o' vowel (an 'o' sound made through the nose).",
+    "mt_relevance": "A missing tilde merges nasal õ with plain o, folding two distinct words into one form the model can't tell apart."
+  },
+  "291": {
+    "question": "Whether the language has a nasal open 'aw' vowel, like the sound in French 'bon'.",
+    "mt_relevance": "In French-lexifier creoles this echoes French 'on'; orthographies spell it several ways, so MT must normalize variants before aligning."
+  },
+  "292": {
+    "question": "Whether the language has a nasal back 'ah' vowel, like the sound in French 'blanc'.",
+    "mt_relevance": "This parallels the French 'an/en' nasal; whether it stays distinct in spelling is a transliteration detail, not a text-translation pivot."
+  },
+  "293": {
+    "question": "Whether the language has a nasal 'uh' vowel (a schwa, or 'uh', made through the nose).",
+    "mt_relevance": "A nasal schwa is rare and often left unwritten, so it barely surfaces in text and has almost no direct effect on text translation."
+  },
+  "294": {
+    "question": "Whether the language has a nasal rounded 'uh' vowel, like the sound in French 'brun'.",
+    "mt_relevance": "This mirrors the French 'un' vowel, a marginal sound usually merged with others in writing — very low stakes for text MT."
+  },
+  "295": {
+    "question": "Whether the language has the diphthong 'ai' (two vowels glided together, as in 'eye').",
+    "mt_relevance": "A vowel cluster like this may be one gliding syllable or two separate vowels; that ambiguity hits transliteration and syllable-splitting, not meaning."
+  },
+  "296": {
+    "question": "Whether the language has the diphthong 'ei' (a glide like the vowel in 'day').",
+    "mt_relevance": "Whether 'ei' is one diphthong or an e-then-i sequence shifts how names and loanwords get romanized — a minor text-MT concern."
+  },
+  "297": {
+    "question": "Whether the language has the diphthong 'oi' (a glide like the vowel in 'boy').",
+    "mt_relevance": "Diphthong inventories mainly matter for transliterating names and loanwords; for ordinary text translation the impact stays indirect."
+  },
+  "298": {
+    "question": "Whether the language has an open 'oi' diphthong (a broader glide than in 'boy').",
+    "mt_relevance": "The fine 'oi' vs 'ɔi' distinction is rarely written down, so it seldom surfaces in text and barely touches MT output."
+  },
+  "299": {
+    "question": "Whether the language has the diphthong 'ui' (a glide from 'oo' to 'ee').",
+    "mt_relevance": "A 'ui' glide can be spelled several ways (ui/wi/uy), so MT mostly needs to normalize spellings rather than reorder meaning."
+  },
+  "300": {
+    "question": "Whether the language has the gliding vowel (a diphthong) that slides from 'uh' to 'ee.'",
+    "mt_relevance": "A vowel-inventory detail; it shapes pronunciation and how names are transliterated, but has little effect on written translation."
+  },
+  "301": {
+    "question": "Whether the language has the gliding vowel (a diphthong) that slides from 'ah' to 'oo.'",
+    "mt_relevance": "This is a sound-system trait; it mainly matters for speech and spelling out loanwords, not for text-to-text MT."
+  },
+  "302": {
+    "question": "Whether the language has the diphthong (gliding vowel) that slides from 'aw' to 'oo.'",
+    "mt_relevance": "Purely a pronunciation feature; it can affect how foreign words are respelled, but barely touches written translation."
+  },
+  "303": {
+    "question": "Whether the language has the diphthong (gliding vowel) that slides from 'oh' to 'oo.'",
+    "mt_relevance": "A phonetic detail of the vowel system; relevant to speech synthesis and transliteration far more than to text MT."
+  },
+  "304": {
+    "question": "Whether the language has a rounded gliding vowel like French 'eu' gliding to 'u.'",
+    "mt_relevance": "A rounded-vowel glide found in few languages; it affects accent and the spelling of borrowings, not sentence-level translation."
+  },
+  "305": {
+    "question": "Whether the language has the gliding vowel (a diphthong) that slides from 'eh' to 'uh.'",
+    "mt_relevance": "An off-glide vowel detail; it shows up in pronunciation and loanword spelling, with minimal impact on written MT."
+  },
+  "306": {
+    "question": "Whether the language has the gliding vowel (a diphthong) that slides from 'ee' to 'uh.'",
+    "mt_relevance": "A vowel-quality feature; it drives how the language sounds and transliterates names, not how its text is translated."
+  },
+  "307": {
+    "question": "Whether the language has the gliding vowel (a diphthong) that slides from 'oo' to 'uh.'",
+    "mt_relevance": "A pronunciation trait; its MT footprint is limited to speech and the respelling of imported words."
+  },
+  "308": {
+    "question": "Which language supplied most of this contact language's vocabulary (its 'lexifier').",
+    "mt_relevance": "The lexifier (English, French, etc.) supplies most words, so MT leans on its cognates — but creole grammar diverges, breeding false-friend errors."
+  },
+  "309": {
+    "question": "What share of the language's speakers learned it as their first (native) language.",
+    "mt_relevance": "A high native-speaker share means a stable creole with consistent grammar; near-zero means a pidgin whose variable usage yields scarce MT data."
+  },
+  "310": {
+    "question": "Whether the language is a pidgin now gaining native speakers and turning into a creole.",
+    "mt_relevance": "Active creolization means the grammar is still stabilizing, so data from different years or speakers can conflict, making a moving target for MT."
+  },
+  "311": {
+    "question": "Whether the language is being used more widely over time, and how fast.",
+    "mt_relevance": "Growing use predicts more text and speakers ahead, so MT resources for a fast-expanding language are likelier to improve than for a shrinking one."
+  },
+  "312": {
+    "question": "Whether speakers are abandoning the language in favor of another.",
+    "mt_relevance": "Language shift shrinks the pool of new speakers and fresh writing, so MT training data stays scarce and ages faster than the living language."
+  },
+  "313": {
+    "question": "How large the community of speakers is.",
+    "mt_relevance": "Community size roughly predicts how much text exists to train on; very small communities leave MT starved for parallel data."
+  },
+  "314": {
+    "question": "Whether the language is used mainly by one gender rather than both.",
+    "mt_relevance": "Gender-skewed usage can bias the available text toward one group's speech, leaving MT under-exposed to the other's vocabulary and style."
+  },
+  "315": {
+    "question": "Whether the language is used for broadcast radio and TV news.",
+    "mt_relevance": "Broadcast news is a rich source of formal, transcribable text; its absence removes a major channel of MT training material."
+  },
+  "316": {
+    "question": "Whether the language is used in radio or TV call-in shows and discussions.",
+    "mt_relevance": "Live call-in speech, once transcribed, teaches MT the casual conversational register that formal written text misses entirely."
+  },
+  "317": {
+    "question": "Whether the language is used in songs and music.",
+    "mt_relevance": "Lyrics circulate widely but use figurative, rhythm-bound wording that rarely helps and can even mislead literal MT training."
+  },
+  "318": {
+    "question": "Whether the language is used in written literature.",
+    "mt_relevance": "A literary tradition means edited prose exists to mine for parallel text; without it MT loses its highest-quality written source."
+  },
+  "319": {
+    "question": "Whether the language is used for newspaper editorials.",
+    "mt_relevance": "Editorials add argumentative, opinion-heavy prose, a formal register MT often needs but that plain factual news reporting lacks."
+  },
+  "320": {
+    "question": "Whether the language appears in general newspaper articles and items.",
+    "mt_relevance": "Everyday news copy is the workhorse of MT corpora; reaching print gives a language its most reliable stream of training text."
+  },
+  "321": {
+    "question": "Whether the language is used in government and administrative offices.",
+    "mt_relevance": "Official use generates forms and records — structured, often bilingual text that is prime material for building MT alignments."
+  },
+  "322": {
+    "question": "Whether the language is used in court proceedings.",
+    "mt_relevance": "Courtroom use produces transcripts and rulings — precise, frequently translated legal text valuable for training MT."
+  },
+  "323": {
+    "question": "Whether the language is used in parliament or a legislative body.",
+    "mt_relevance": "Parliamentary debate is often transcribed and translated (like Hansard), making it a classic goldmine for parallel MT corpora."
+  },
+  "324": {
+    "question": "Whether the language is used as a medium of instruction in schools.",
+    "mt_relevance": "Schooling yields textbooks and graded materials and builds literacy, both expanding the written text MT can learn from."
+  },
+  "325": {
+    "question": "Whether the language is used in electronic media like radio, TV, texting and the web.",
+    "mt_relevance": "More electronic-media use means more digital text to mine for MT training; little use leaves corpora thin and evaluation data scarce."
+  },
+  "326": {
+    "question": "Which language most influences this one today — its main word source or another.",
+    "mt_relevance": "Heavy contact brings loanwords and code-switching from that language, so MT input mixes vocabularies the model must disentangle."
+  },
+  "327": {
+    "question": "Whether pronunciation varies noticeably from one region to another.",
+    "mt_relevance": "Regional accent differences mostly affect speech; in text they surface only as spelling variants, a minor concern for text MT."
+  },
+  "328": {
+    "question": "Whether grammar and sentence structure differ from one region to another.",
+    "mt_relevance": "Regional grammar differences fragment training data by dialect, so a model tuned to one region can mangle another's sentence patterns."
+  },
+  "329": {
+    "question": "Whether everyday word choices differ from one region to another.",
+    "mt_relevance": "Region-specific vocabulary gives one meaning several words, so MT may output a term that's unfamiliar or wrong in the reader's own area."
+  },
+  "330": {
+    "question": "Whether city and countryside speakers pronounce the language differently.",
+    "mt_relevance": "Urban-rural pronunciation gaps mainly affect speech; in text they show up only as occasional spelling differences."
+  },
+  "331": {
+    "question": "Whether city and countryside speakers use different grammar.",
+    "mt_relevance": "Divergent urban and rural grammar blends two systems in training data, so MT output can read as out-of-place to one of the groups."
+  },
+  "332": {
+    "question": "Whether city and countryside speakers use different everyday words.",
+    "mt_relevance": "Town-versus-country word choices give one concept rival terms, so MT can pick vocabulary that sounds off to its intended audience."
+  },
+  "333": {
+    "question": "Whether pronunciation differs between social groups or classes.",
+    "mt_relevance": "Class-linked pronunciation is a spoken cue, barely visible in writing, so it has little direct effect on text translation."
+  },
+  "334": {
+    "question": "Whether different social groups use noticeably different grammar.",
+    "mt_relevance": "Socially marked grammar signals register, so MT that ignores it can render a casual sentence in stiff forms, or the reverse."
+  },
+  "335": {
+    "question": "Whether different social groups use noticeably different vocabulary.",
+    "mt_relevance": "Socially marked vocabulary encodes formality and prestige, so the wrong pick makes MT output read as rude or stiff to the reader."
+  }
+}

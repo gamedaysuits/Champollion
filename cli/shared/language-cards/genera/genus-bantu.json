@@ -1,0 +1,82 @@
+{
+  "code": "genus-bantu",
+  "name": "Bantu Languages (Genus Template)",
+  "dir": "ltr",
+  "script": "Latn",
+  "formality": {
+    "system": "register-levels",
+    "description": "Bantu languages express formality through pronoun choice, honorific vocabulary, and discourse style rather than strict T-V pronominal systems. Many use plural forms for singular formal address.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Bantu languages use noun class systems (not gender). Nouns are classified into classes (typically 10-18) affecting agreement on verbs, adjectives, and pronouns. These are NOT gendered — they categorize by semantic properties (human, animal, abstract, etc.)."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "nounClassSystem": "Bantu languages have extensive noun class systems (10-18 classes) that trigger agreement chains across entire sentences. Verbs, adjectives, possessives, and demonstratives must all agree with the noun class of their head noun. This cascading agreement is extremely difficult for MT.",
+    "agglutination": "Bantu languages are highly agglutinative — verbs can carry subject markers, object markers, tense, aspect, mood, negation, and derivational morphemes as prefixes and suffixes. A single verb form can encode a complete sentence.",
+    "toneSystem": "Most Bantu languages are tonal (high/low tone, sometimes contrastive). Tone distinguishes lexical items and grammatical categories but is rarely written in standard orthography, creating systematic ambiguity for MT.",
+    "conjunctDisjunctMorphology": "Many Bantu languages distinguish conjunct (focused) and disjunct (non-focused) verb forms, a pragmatic distinction that affects verb morphology but has no parallel in most other language families."
+  },
+  "contactInfluences": [
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "government",
+        "technology",
+        "commerce"
+      ],
+      "depth": "heavy",
+      "period": "19th century–present",
+      "notes": "British colonial influence across eastern and southern Africa."
+    },
+    {
+      "source": "Arabic",
+      "sourceIso639_3": "ara",
+      "type": "lexical_borrowing",
+      "domains": [
+        "trade",
+        "religion",
+        "maritime"
+      ],
+      "depth": "moderate",
+      "period": "8th century–present",
+      "notes": "Swahili coast trade influence. Particularly strong in Swahili vocabulary."
+    }
+  ],
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus template for Bantu languages (Swahili, Zulu, Xhosa, Shona, Kinyarwanda, Luganda, etc.). All share noun class systems, agglutinative morphology, and tonal features.",
+  "regions": [
+    {
+      "country": null,
+      "countryCode": "XX",
+      "officialStatus": null,
+      "region": null,
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

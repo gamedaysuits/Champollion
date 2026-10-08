@@ -1,0 +1,45 @@
+{
+  "_comment": "Starter config for the machine that SCORES contest entries (air-gapped or connected). Written by `mt-eval node init`. Replace every <...> value, and delete the keys this node does not use (a relay holds no secret_artifact or signing_key; a contest without a sealed holdout has no holdout_* keys). `mt-eval node ledger verify` loads it, names the first value still wrong (a leftover <...>, a declared file that is not on this machine), prints what it checked, then replays the ledger chain. Values from `mt-eval contest prepare` are in its organizer-local manifest (<out>/local/manifest.json). Keys starting with '_' are notes and are ignored. Reference: champollion.dev/docs/network/sovereignty/sovereign-eval-node",
+  "_comment_relay": "A CONNECTED relay for a true air gap (one that only moves files and rows) needs node_id, cards_dir and, per contest, dev_corpus + secret_set_id, plus a top-level \"relay\": {\"verify_key\": \"<the air-gapped node's public signing key>\", \"airgap_node_id\": \"<its node_id>\"}. It holds no secret_artifact and no signing_key.",
+  "node_id": "<a name for this node, e.g. org-node-1 — bound into every request fingerprint>",
+  "cards_dir": "<absolute path to a directory holding one <code>.json language card per language this node scores — write each on a connected machine with `champollion network card <code> --json > <dir>/<code>.json` (or set MT_EVAL_CARDS_DIR); the node never looks one up online>",
+  "contests": {
+    "<contest-id>": {
+      "_comment": "One entry per contest this node serves. The public qualifier gate: before a sealed set is opened, the node re-runs every submitted method on the PUBLIC dev set and checks it clears the threshold. A relay's exchange carries these facts when there is one; `qualifier` + `dev_corpus` here are what the node uses otherwise (`node stage-request`, `contest submit-method --offline`). Declare both — half a gate is refused at startup. custody 'threshold-quorum' opens the sealed set only when M-of-N custodian shares are presented (`node run-method --share …`); 'single-key' instead names the private key file as secret_privkey. The qualifier threshold is on the chrF++ 0-100 qualifier scale, exactly as manifest.json records it: corpus chrF++ (sacreBLEU chrF, word_order=2) of the method's dev outputs — the scoring standard's headline, the same number an `mt-eval run` card headlines for the same outputs. The weighted composite is retired (scoring standard/1) and never gates; a qualifier still naming metric 'composite' is gated on chrF++ with its threshold read on the chrF++ scale.",
+      "secret_set_id": "<sealed set id — manifest.json: secret.sealed_set_id>",
+      "secret_artifact": "<path to the sealed secret set — manifest.json: secret.corpus_sealed_artifact>",
+      "_comment_holdout": "Only for a contest prepared with --sealed-holdout-size: the SECOND sealed split, scored in the same authorized run as the secret set and opened by the same custodian ceremony. Fill both from manifest.json (holdout.sealed_set_id, holdout.corpus_sealed_artifact). A contest with no holdout: delete holdout_set_id and holdout_corpus. A declared holdout this node does not hold is refused at startup.",
+      "holdout_set_id": "<sealed holdout id — manifest.json: holdout.sealed_set_id (delete if the contest has no holdout)>",
+      "holdout_corpus": "<path to the sealed holdout — manifest.json: holdout.corpus_sealed_artifact (delete if none)>",
+      "custody": "threshold-quorum",
+      "corpus_version": "v1",
+      "language_pair": "<source>><target>, e.g. eng>crk",
+      "dev_corpus": "<path to the public dev set — manifest.json: qualifier.corpus_file>",
+      "qualifier": {
+        "qualifier_id": "<manifest.json: qualifier.qualifier_id>",
+        "corpus_card_id": "<manifest.json: qualifier.corpus_card_id>",
+        "threshold": null,
+        "metric": "chrf_plus_plus",
+        "year": null
+      },
+      "_comment_sandbox": "This node's policy for Lane B (code) entries. runtime null tries docker, then podman; name one to insist on it. An entry that declares more RAM, scratch disk or runtime than these caps is refused BEFORE anything runs, with every mismatch named, and the request is left as it was: raise a cap here and re-run `mt-eval node run-method <id>`, or ask the entrant to repackage. `contest submit-method` declares exactly these values by default, so publish your caps with the contest if you change them.",
+      "sandbox": {
+        "runtime": null,
+        "gpus": false,
+        "cpus": 2,
+        "max_ram_gb": 4,
+        "max_tmp_gb": 4,
+        "max_runtime_minutes": 30
+      },
+      "declarative": {
+        "architecture_policy": "permissive"
+      }
+    }
+  },
+  "signing_key": "<path to this node's score-signing private key — `mt-eval node keygen`>",
+  "_comment_airgap": "assert_airgap makes every sealed run first prove there is no route out (`mt-eval node egress-check`). Leave it true on an air-gapped node; a connected scoring machine must set it false.",
+  "airgap": {
+    "state_dir": "~/.mt-eval/airgap",
+    "assert_airgap": true
+  }
+}

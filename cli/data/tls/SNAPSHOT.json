@@ -1,0 +1,92 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "tls",
+  "upstream": "https://zenodo.org/records/13163463",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Nurse and Philippson's \"Tanzania Language Survey\" from 1975 — Derek Nurse; Gerard Philippson",
+  "pin": {
+    "kind": "doi",
+    "value": "v4.2",
+    "doi": "10.5281/zenodo.13163463",
+    "date": "2024-08-02"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 1400571,
+      "sha256": "7400220bb337785f90eddc7cd3e3bfb8080661db08cc34d105cbfcc74581dee9",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 10488,
+      "sha256": "8239f64db4e613fccb52c532bf081350f48197f9c014f674bf20fadce25cf150",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 16567038,
+      "sha256": "4fdd7f1dd6a6336dc91ca6fe00bee2587f33bf7ba0934395b924f59fca8dccd4",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 8376,
+      "sha256": "5fccb213e3017b69228d3f5d8182d860b6b8b708b06ce3ce032cee8adf905e22",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "3f28ddf456ae05285903758141577716b35095772cbe2230a4ed4dad8e668123",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 51843,
+      "sha256": "8f71eacde447361dea32b4deff63c5730ab0a49d00ebe6a3fc40bf2c3bfaa201",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 898,
+      "sha256": "a33db989b2ce460996d1e61fd5e4c0cc50ad99a41f638ff57db161d4c2ff1579",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 1135,
+      "sha256": "afd1ea8238c288d8261f01bbcf8cfb914ab9fc63496ee2a4613bc8a50b548d3f",
+      "url": "https://zenodo.org/api/records/13163463/files/lexibank/tls-v4.2.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/tls-v4.2.zip:lexibank-tls-dbfc360/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/tls-v4.2.zip, whose md5 matched Zenodo's published checksum (md5:edf61b0053052e812695e09f9c921422). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:59:45.940Z"
+}

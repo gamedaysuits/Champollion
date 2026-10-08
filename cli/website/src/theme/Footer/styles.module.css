@@ -1,0 +1,163 @@
+/* Footer — the branded close. Always ink, both themes (tokens defined in
+   src/css/design-tokens.css). Compact link rows instead of stock columns. */
+
+.footer {
+  position: relative;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 3rem 0 2.2rem;
+  margin-top: auto;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  font-weight: 620;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--footer-text-strong);
+}
+
+.tagline {
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--footer-text);
+  margin: 0.5rem 0 1.4rem;
+}
+
+.triad {
+  display: block;
+  width: 180px;
+  height: 3px;
+  border: 0;
+  border-radius: 999px;
+  margin: 0 auto 1.8rem;
+  background: linear-gradient(
+    90deg,
+    var(--vital-safe),
+    var(--vital-vulnerable),
+    var(--vital-endangered)
+  );
+  opacity: 0.9;
+}
+
+/* Compact link rows: title + inline items */
+.linkRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-width: 860px;
+  margin: 0 auto 1.7rem;
+}
+
+.linkRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+}
+
+.linkRowTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--footer-text-dim);
+  min-width: 8.5rem;
+  text-align: right;
+}
+
+.linkRowItems {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linkRowItem {
+  margin: 0;
+}
+
+.linkRowItem a {
+  font-size: 0.88rem;
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.linkRowItem a:hover {
+  color: var(--footer-link-hover);
+  text-decoration: none;
+}
+
+.linkRowItem a:focus-visible {
+  outline: 2px solid var(--footer-link-hover);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Install one-liners */
+.installRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem 2rem;
+  margin-bottom: 1.6rem;
+}
+
+.installPair {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.installLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--footer-text-dim);
+}
+
+.installCode {
+  font-size: 0.82rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  color: var(--footer-text);
+  background: var(--footer-code-bg);
+  border: 1px solid var(--footer-border);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--footer-text-dim);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.4rem 0 1.8rem;
+  }
+  .linkRow {
+    justify-content: flex-start;
+  }
+  .linkRowTitle {
+    min-width: 100%;
+    text-align: left;
+  }
+}

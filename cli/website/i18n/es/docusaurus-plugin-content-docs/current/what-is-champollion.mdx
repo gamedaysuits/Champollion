@@ -1,0 +1,118 @@
+---
+slug: /what-is-champollion
+title: "Qué es Champollion"
+description: "Champollion en lenguaje sencillo: un conjunto de herramientas abierto para desarrollar traducción automática para su idioma y demostrar que funciona. Comience aquí."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Qué es Champollion
+
+**Champollion es un conjunto de herramientas de código abierto para crear traducción automática para
+su idioma, y demostrar que funciona antes de que alguien dependa de ella.**
+
+Está diseñado para los idiomas que la gran tecnología pasa por alto: una escuela que desea su
+boletín en cree, un hospital que necesita una guía de frases de cabecera para las familias
+a las que atiende, una comunidad que desea saber si alguna herramienta es lo suficientemente buena
+como para confiarle su idioma. Usted —o un agente de IA que oriente hacia estas herramientas— puede pasar
+de *«¿cómo empezamos?»* a un flujo de trabajo de traducción probado e implementado.
+
+---
+
+## El recorrido y la herramienta para cada paso
+
+| Paso | Pregunta | Herramienta |
+|---|---|---|
+| **1. Descubra lo que existe** | ¿Qué se sabe sobre este idioma: diccionarios, gramáticas, corpus, modelos, resultados publicados, servicios? | **[El Atlas](/languages)** — <SSOTCount field="catalogLanguageCount" /> fichas de idiomas; cada valor cita su fuente |
+| **2. Proteja sus propios datos** | ¿Cómo realizamos pruebas con nuestras propias oraciones sin entregarlas? | **[Registro de corpus](/docs/network/sovereignty/registering-corpora)** y el **[nodo soberano](/docs/network/sovereignty/sovereign-eval-node)** — mantenga un conjunto de prueba en su computadora, o aislado de la red |
+| **3. Mida las opciones** | ¿Qué método es mejor para *nuestro* texto y por cuánto? | **[El arnés](/docs/network/specifications/harness)** (`mt-eval`) — evalúa cualquier método frente a cualquier corpus, con el mismo procedimiento cada vez |
+| **4. Cree algo mejor** | ¿Podemos entrenar o adaptar un modelo nosotros mismos sin engañarnos? | **[NMT Forge](/docs/network/getting-started/training-honestly)** (`nmt-forge`) — entrenamiento con barreras de protección contra filtraciones de pruebas, divisiones incorrectas e interpretaciones ilusorias del ruido |
+| **5. Demuéstrelo, en público si así lo decide** | ¿Es realmente mejor? ¿Otros pueden verificarlo? | **[La tabla de clasificación y concursos](/docs/network/getting-started/submit-a-method)** — publique resultados u organice un concurso sobre un conjunto de prueba sellado que nunca salga de su nodo |
+| **6. Combine lo mejor** | ¿Quién ofrece qué para este par y qué funciona en conjunto? | **[La Red](/docs/network/)** — los métodos y servicios que existen, y la evidencia para cada uno |
+| **7. Úselo** | Traduzca la aplicación, el sitio, los documentos. | **[Champollion CLI](/docs/intro)** — implementa lo que haya sido comprobado, por par de idiomas, con memoria de traducción para que nunca pague dos veces por la misma oración |
+
+El **[servidor MCP](/docs/network/getting-started/mcp-server)** le proporciona manos a un agente de IA
+para cada uno de los pasos anteriores, y esta documentación está escrita tanto para humanos
+como para agentes (legible por máquina: `/llms.txt`, `/llms-full.txt`).
+
+**La medición es la columna vertebral.** La cobertura se anuncia; la calidad rara vez se
+muestra. Cada paso anterior termina en un número que usted puede verificar, con su procedencia:
+qué datos, qué versión del método, qué métrica, cuánto costó. Un honesto «todavía nada
+funciona para este par» es un resultado que publicamos, porque una brecha que se puede ver es una
+brecha que alguien puede llenar.
+
+## Las reglas bajo las que trabajamos
+
+Estas son restricciones, no marketing. Dan forma a lo que el software puede hacer.
+
+**Nunca almacenamos su corpus.** Los conjuntos de prueba se registran indicando dónde
+se encuentran actualmente, no subiéndolos a nosotros. Un método se evalúa contra un
+corpus que nunca poseemos. En el caso de los conjuntos sellados, los datos se cifran en su computadora
+y permanecen allí, y el diseño requiere un umbral de custodios de claves de la comunidad
+para autorizar una ejecución en conjunto (aún no se ha designado a ninguno).
+
+**Los datos lingüísticos se tratan como biodatos.** Las personas que proporcionan un corpus tienen
+las claves del mismo, y de cualquier cosa medida contra él. El consentimiento se solicita, no
+se asume — y puede ser retirado.
+
+**Aspiramos a la soberanía, no tenemos certificación de soberanía.** Determinar si un proyecto
+respeta la propiedad y el control comunitario de los datos lingüísticos no es una afirmación que ese
+proyecto pueda hacer sobre sí mismo. Hacemos el trabajo y describimos los mecanismos
+con honestidad; la determinación corresponde a las comunidades involucradas.
+
+**Todo método es bienvenido, humano y automático.** Un traductor profesional, un
+sistema de reglas basado en FST, un modelo de frontera con prompts y un modelo NMT ajustado
+se comparan de la misma manera, en el mismo conjunto de pruebas. Nos importa lograr que los idiomas
+se traduzcan, no qué herramienta gana.
+
+**Publicamos lo que no podemos hacer.** Consulte las [Limitaciones
+honestas](/docs/network/honest-limitations) — la lista de cosas que este
+proyecto *aún no* afirma hacer. Léala antes de confiar en cualquier otra cosa aquí.
+
+---
+
+**Champollion es un índice, no un árbitro.** Cada valor cita su fuente e
+informa lo que esa fuente realmente dice. Cuando las fuentes no están de acuerdo —y en el
+recuento de hablantes muy a menudo lo están— la tarjeta las muestra todas, con su respectiva atribución. No
+elegimos un ganador ni fabricamos un consenso.
+
+---
+
+## El nombre
+
+Jean-François Champollion descifró los jeroglíficos egipcios usando la Piedra de
+Rosetta — el mismo texto en tres escrituras. El texto paralelo sigue siendo cómo
+se aprende la traducción. El nombre también conlleva una tensión que vale la pena mencionar en voz
+alta: un erudito europeo leyendo la escritura de otra persona, en una era de extracción. Pensamos
+en eso. Es por eso que las reglas de soberanía anteriores son restricciones en el software y
+no una página en un folleto.
+
+## A dónde ir a continuación
+
+- **Desea crear traducción automática para un idioma, de principio a fin** → [Crear traducción automática para
+  su idioma](/docs/build-mt-for-your-language): cada paso anterior con los
+  comandos exactos y la herramienta MCP que invoca un agente para cada uno.
+- **Desea traducir una aplicación o sitio** → [Inicio
+  rápido](/docs/getting-started/quick-start).
+- **Usted habla, enseña o custodia un idioma** → [Para comunidades
+  lingüísticas](/docs/network/community/for-language-communities), luego
+  [Registro de corpus](/docs/network/sovereignty/registering-corpora) para ver cómo
+  se utiliza un conjunto de prueba sin tener que entregarlo.
+- **Usted es investigador o creador de métodos** → el argumento de priorizar la evaluación en
+  [A quién beneficia](/docs/network/who-benefits#researchers) —por qué mil
+  pares curados superan a setecientos mil sin curar—, luego
+  [Colaboración de corpus](/docs/network/specifications/corpus-partnership) para
+  incorporar un idioma, o [Enviar un
+  método](/docs/network/getting-started/submit-a-method) y la
+  [Especificación de puntuación](/docs/network/specifications/scoring) para competir en los
+  idiomas que ya están disponibles.
+- **Usted es un agente de IA** → [Guía para
+  agentes](/docs/network/getting-started/agent-guide); los puntos de entrada
+  legibles por máquina son `/llms.txt` y `/llms-full.txt`.
+- **Usted financia este tipo de trabajo** → [A quién
+  beneficia](/docs/network/who-benefits#funders) y [Limitaciones
+  honestas](/docs/network/honest-limitations).
+- **Desea conocer el contexto** → [Cómo llegó este campo hasta
+  aquí](/docs/network/context/mt-field-briefing), [qué cuenta como un
+  idioma](/docs/network/context/what-counts-as-a-language) y [cómo se contabiliza
+  la cobertura](/docs/network/context/coverage-counting).

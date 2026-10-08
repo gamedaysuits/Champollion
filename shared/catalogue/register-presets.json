@@ -1,0 +1,3180 @@
+{
+  "_doc": "Register presets — the prompt text Champollion uses to ask for a particular register, which register is the default, and the name we give the politeness system. All of it is CONFIGURATION we authored. No source asserts any of it.",
+  "_theFactIsElsewhere": "Whether a language grammaticalises politeness is a FACT, on cards as politenessDistinction, attributed across Grambank GB415 and WALS 45A.  here is OUR label for that fact (T-V, keigo, speech-levels) and the prompts are what we SAY about it. The previous corpus stored the fact, a prose rendering, and these prompts on every card -- one thing three times.",
+  "_whatWasFolded": " was a separate field and is gone: it matched the presets own isDefault flag on all 1,669 cards that carried both, with ZERO mismatches.  was 93.7% generated from the Grambank/WALS parameter and is not carried at all.",
+  "_howThisWasBuilt": "Deduplicated from the previous corpus. Provenance stamps naming grambank-GB415 were STRIPPED -- they cited Grambank for prompt text we wrote, and that mislabelling is why config and fact became indistinguishable.",
+  "version": 2,
+  "systems": {
+    "none": 1475,
+    "politeness-present": 176,
+    "T-V": 85,
+    "register-levels": 30,
+    "speech-levels": 4,
+    "register": 1,
+    "keigo": 1,
+    "register-and-code-switching": 1,
+    "particles-and-pronouns": 1,
+    "pronoun-system": 1
+  },
+  "shared": {
+    "p001": {
+      "registers": {
+        "standard": {
+          "label": "Standard",
+          "description": "No grammaticalized politeness distinctions. A single register serves all social contexts, though lexical choices may vary by formality.",
+          "prompt": "Use standard register. This language does not grammaticalize politeness distinctions. Write clearly and naturally.",
+          "isDefault": true
+        }
+      },
+      "default": "standard",
+      "system": "none",
+      "appliesTo": 1462
+    },
+    "p002": {
+      "registers": {
+        "formal": {
+          "label": "Formal/Polite",
+          "description": "Polite register using politeness-marked pronoun forms. Default for software UI and formal contexts.",
+          "prompt": "Use polite/formal pronoun forms and politeness markers. Professional tone appropriate for software UI and formal contexts.",
+          "isDefault": true
+        },
+        "informal": {
+          "label": "Informal/Familiar",
+          "description": "Informal register using unmarked/familiar pronoun forms. Used with close relations.",
+          "prompt": "Use unmarked/familiar pronoun forms. Casual tone appropriate for friends and family.",
+          "isDefault": false
+        }
+      },
+      "default": "formal",
+      "system": "politeness-present",
+      "appliesTo": 176
+    },
+    "p003": {
+      "registers": {
+        "formal": {
+          "label": "Formal (V-form)",
+          "description": "Polite/formal address using V-form pronouns (e.g., vous, Sie, usted, вы). Default for software UI, official communication, and addressing strangers.",
+          "prompt": "Use formal/polite address forms (V-form pronouns). Write in a professional, respectful tone appropriate for software UI and official communication.",
+          "isDefault": true
+        },
+        "informal": {
+          "label": "Informal (T-form)",
+          "description": "Familiar/informal address using T-form pronouns (e.g., tu, du, tú, ты). Used with close friends, family, children, and peers of similar age.",
+          "prompt": "Use informal/familiar address forms (T-form pronouns). Write in a casual, friendly tone appropriate for peer-to-peer communication.",
+          "isDefault": false
+        }
+      },
+      "default": "formal",
+      "system": "T-V",
+      "appliesTo": 28
+    },
+    "p072": {
+      "registers": {
+        "formal": {
+          "label": "Formal/Honorific",
+          "description": "Highest politeness level with dedicated verb morphology and honorific vocabulary. Used in formal contexts, with elders, officials, and strangers.",
+          "prompt": "Use the highest politeness level with honorific verb forms and respectful vocabulary. Address the reader with maximum deference.",
+          "isDefault": false
+        },
+        "polite": {
+          "label": "Polite/Standard",
+          "description": "Standard polite register. Appropriate for most software UI, everyday formal interactions, and default translation output.",
+          "prompt": "Use standard polite register. Professional and respectful without excessive formality. Appropriate for software UI and general communication.",
+          "isDefault": true
+        },
+        "informal": {
+          "label": "Informal/Casual",
+          "description": "Casual register used among close friends, peers, and in informal settings. Not appropriate for software UI or official content.",
+          "prompt": "Use casual/informal register. Relaxed tone appropriate for friends and peers. Avoid honorifics and formal verb endings.",
+          "isDefault": false
+        }
+      },
+      "default": "polite",
+      "system": "speech-levels",
+      "appliesTo": 3
+    }
+  },
+  "byLanguage": {
+    "amh": {
+      "registers": {
+        "professional": {
+          "label": "የስራ አማርኛ",
+          "description": "Standard professional Amharic for software UI and institutional communication.",
+          "prompt": "Translate into standard Amharic using Ge'ez (Ethiopic) script (ፍዴል). Use formal address ('ərswo') for second-person. Apply correct Ge'ez script fidel selection — each character represents a consonant-vowel combination. Handle the root-pattern morphology correctly (triliteral roots with vowel patterns). Maintain gender agreement in verbs, adjectives, and pronouns. Use Amharic terms from the Academy of Ethiopian Languages where they exist."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "arb": {
+      "registers": {
+        "msa-professional": {
+          "label": "فصحى Professional (MSA)",
+          "description": "Standard for software UI, websites, and business. Modern Standard Arabic with clear, professional vocabulary.",
+          "prompt": "Modern Standard Arabic (فصحى). Professional register suitable for software interfaces, websites, and business communication. Use clear, accessible vocabulary — avoid overly literary or archaic phrasing."
+        },
+        "msa-formal": {
+          "label": "فصحى Formal (MSA)",
+          "description": "For government, legal, academic, or official contexts requiring elevated register.",
+          "prompt": "Formal Modern Standard Arabic (فصحى). Elevated register for government, legal, and academic contexts. Use precise terminology and complex sentence structures appropriate for official documentation."
+        }
+      },
+      "default": "msa-professional",
+      "system": "register-levels"
+    },
+    "aym": {
+      "registers": {
+        "professional": {
+          "label": "Aymar aru (phuqhata)",
+          "description": "Standard Aymara for educational and institutional communication.",
+          "prompt": "Translate into standard Aymara. Follow the official orthography established by the Bolivian and Peruvian education ministries. Handle the evidentiality system correctly — Aymara grammatically marks whether information is firsthand (-wa), reported (-tayna), or inferred (-pacha). Use SOV word order. Apply agglutinative suffixation correctly. Prefer established Aymara terms over Spanish loanwords where possible."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "aze": {
+      "registers": {
+        "professional": {
+          "label": "Rəsmi (Formal)",
+          "description": "Standard for professional software, government, and business communication in Azerbaijani.",
+          "prompt": "Professional Azerbaijani. Use siz-form consistently. Write in standard Azerbaijani Latin orthography (Republic of Azerbaijan standard). Use clear, formal vocabulary. Avoid Russian loanwords where established Azerbaijani/Turkic equivalents exist. Follow Azerbaijani word order (SOV). Maintain correct vowel harmony."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "bcl": {
+      "registers": {
+        "professional": {
+          "label": "Bikol (Pormal)",
+          "description": "Standard Central Bikol for government, education, and media in the Bicol Region.",
+          "prompt": "Professional Central Bikol. Use formal pronouns (kamo for 'you'), the respect particle po. English code-switching is acceptable for technical terms. Maintain Bikol identity — avoid defaulting to Tagalog equivalents for common words."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "bel": {
+      "registers": {
+        "professional": {
+          "label": "Стандартная беларуская",
+          "description": "Standard written Belarusian.",
+          "prompt": "Translate into standard written Belarusian (беларуская мова). Use Cyrillic script. Maintain formal register with вы address. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "ben": {
+      "registers": {
+        "professional": {
+          "label": "চলিত (Professional)",
+          "description": "Standard for software UI. Colloquial standard (চলিত ভাষা) with আপনি address.",
+          "prompt": "Professional Bengali (চলিত ভাষা/cholito bhasha). Use আপনি (apni) for respectful second-person address. Modern colloquial standard — not literary/sadhu bhasha. Clear, accessible vocabulary appropriate for software interfaces."
+        },
+        "formal-shuddho": {
+          "label": "শুদ্ধ (Formal/Literary)",
+          "description": "For government, academic, or literary contexts using standard literary Bengali.",
+          "prompt": "Formal literary Bengali (শুদ্ধ ভাষা/shuddho bhasha). Elevated register with literary verb forms. For government, academic, and formal institutional contexts."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "bos": {
+      "registers": {
+        "professional": {
+          "label": "Standardni bosanski",
+          "description": "Standard written Bosnian.",
+          "prompt": "Translate into standard written Bosnian (bosanski). Use Latin script (primary). Maintain formal register with Vi address. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "bul": {
+      "registers": {
+        "formal-vie": {
+          "label": "Вие (Formal)",
+          "description": "Standard for professional software and business communication.",
+          "prompt": "Formal Bulgarian. Use Вие-form for second-person address. Professional register for software interfaces."
+        },
+        "informal-ti": {
+          "label": "Ти (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Bulgarian. Use ти-form. Conversational tone for consumer products."
+        }
+      },
+      "default": "formal-vie",
+      "system": "T-V"
+    },
+    "cat": {
+      "registers": {
+        "professional": {
+          "label": "Formal (Estàndard)",
+          "description": "Standard register for software UI, institutional, and business communication in Catalan.",
+          "prompt": "Professional Catalan. Use vostè-form for formal address. Follow IEC (Institut d'Estudis Catalans) normative standards. Use Central Catalan as the default standard unless specifically targeting Valencian (use AVL norms) or Balearic audiences. Prefer native Catalan vocabulary over Castilian calques. Maintain correct use of the personal 'a' (absent in Catalan, unlike Spanish). Use el/la articles correctly, including the salat article (es/sa) only for Balearic variants."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "ceb": {
+      "registers": {
+        "professional": {
+          "label": "Bisaya (Propesyonal)",
+          "description": "Standard Cebuano for business, government, and education. Moderate Bislish code-switching is expected in professional digital contexts.",
+          "prompt": "Professional Cebuano. Use formal pronouns (kamo for 'you'), respectful address (Sir/Ma'am or Manoy/Manang). Bislish (Bisaya-English) code-switching is standard for professional digital communication — keep technical terms in English. Avoid overly pure Cebuano which reads as artificial in modern business contexts."
+        },
+        "casual": {
+          "label": "Bisaya (Casual)",
+          "description": "Casual Bisaya with natural Bislish code-switching for social media, messaging, and informal contexts.",
+          "prompt": "Casual Cebuano with natural Bislish code-switching. Relaxed grammar, more English mixing. For social media, messaging apps, and youth-oriented content. Drop formal address conventions."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "ces": {
+      "registers": {
+        "formal-vy": {
+          "label": "Vykání (Formal)",
+          "description": "Standard for professional software and business communication.",
+          "prompt": "Formal Czech. Use vykání (vy-form) consistently. Professional register for software interfaces."
+        },
+        "informal-ty": {
+          "label": "Tykání (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Czech. Use tykání (ty-form). Conversational tone for consumer products."
+        }
+      },
+      "default": "formal-vy",
+      "system": "T-V"
+    },
+    "chr": {
+      "registers": {
+        "professional": {
+          "label": "ᏣᎳᎩ ᎦᏬᏂᎯᏍᏗ (ᎤᏙᏓᎵᎢ)",
+          "description": "Standard Cherokee for educational materials, government documents, and software UI.",
+          "prompt": "Translate into standard Cherokee using the Cherokee syllabary (ᎠᎡᎢ...). Handle polysynthetic verb forms correctly. Cherokee verbs encode subject, object, tense, aspect, and mood in complex prefix/suffix chains. Use Cherokee Nation standard orthography. Respect the pronominal prefix system (distinguishing singular, dual, and plural persons). Avoid English calques — use Cherokee conceptual frameworks."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "cmn-Hant": {
+      "registers": {
+        "professional": {
+          "label": "專業 (Professional)",
+          "description": "Standard for software UI targeting Taiwan audience.",
+          "prompt": "Professional Traditional Chinese (繁體中文). Taiwan Mandarin vocabulary — use Taiwan-specific terms (e.g., 軟體 not 軟件, 網路 not 網絡, 資料 not 數據). Use 你 for second person. Clear, modern language."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "cym": {
+      "registers": {
+        "professional": {
+          "label": "Cymraeg Ffurfiol",
+          "description": "Standard professional Welsh for software UI and official communication.",
+          "prompt": "Translate into standard professional Welsh (Cymraeg Safonol). Use 'chi' for second-person address. Apply treigladau (mutations: treiglad meddal, treiglad trwynol, treiglad llaes) correctly. Follow Welsh Language Commissioner terminology standards. Maintain grammatical gender agreement. Prefer established Welsh terms over English borrowings."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "dan": {
+      "registers": {
+        "professional": {
+          "label": "Professionel (Professional)",
+          "description": "Standard for software UI and business communication.",
+          "prompt": "Professional Danish. Use du-form (De-form is archaic). Clear, modern language appropriate for software interfaces."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "deu": {
+      "registers": {
+        "formal-Sie": {
+          "label": "Siezen (Formal)",
+          "description": "Standard for professional software, enterprise, B2B, corporate, and institutional contexts.",
+          "prompt": "Formal German. Use Sie-form (Siezen) consistently — always capitalized. Professional register. Avoid anglicisms where good German equivalents exist.",
+          "deeplFormality": "prefer_more"
+        },
+        "casual-du": {
+          "label": "Duzen (Casual)",
+          "description": "For consumer apps, startups, gaming, social media, and products with a casual brand voice.",
+          "prompt": "Casual German. Use du-form (Duzen). Warm, approachable tone for consumer products. Anglicisms acceptable when they're part of standard tech vocabulary (e.g., 'App', 'Download').",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "formal-Sie",
+      "system": "T-V"
+    },
+    "ell": {
+      "registers": {
+        "formal": {
+          "label": "Εσείς (Formal)",
+          "description": "Standard for professional software and business communication.",
+          "prompt": "Formal Modern Greek (Δημοτική). Use εσείς for second-person address. Professional register. Modern standard Greek — not Καθαρεύουσα."
+        },
+        "informal": {
+          "label": "Εσύ (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Modern Greek. Use εσύ-form. Conversational tone for consumer products."
+        }
+      },
+      "default": "formal",
+      "system": "T-V"
+    },
+    "eng": {
+      "registers": {
+        "neutral": {
+          "label": "Neutral (Standard)",
+          "description": "Standard for most software UI. Clear, professional, approachable without being overly formal or casual.",
+          "prompt": "Standard English. Clear, professional, and approachable. Use active voice. Avoid jargon unless the audience is technical. Use contractions naturally (it's, you'll, don't). Use singular 'they' for unknown gender.",
+          "deeplFormality": "default"
+        },
+        "formal": {
+          "label": "Formal",
+          "description": "For legal, financial, government, medical, and enterprise contexts requiring precision and authority.",
+          "prompt": "Formal English. No contractions. Precise vocabulary. Passive voice acceptable where it serves objectivity. Appropriate for legal agreements, compliance, financial disclosures, and government communication.",
+          "deeplFormality": "prefer_more"
+        },
+        "casual": {
+          "label": "Casual",
+          "description": "For consumer apps, gaming, social media, and products with a warm, conversational brand voice.",
+          "prompt": "Casual English. Conversational and friendly. Contractions encouraged. Short sentences. Sentence fragments acceptable for UI elements. Light humor is fine.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "neutral",
+      "system": "register"
+    },
+    "est": {
+      "registers": {
+        "professional": {
+          "label": "Ametlik (Formal)",
+          "description": "Standard register for software UI, official communication, and business contexts in Estonian.",
+          "prompt": "Professional Estonian. Use teie-form for formal address. Follow Eesti Keele Instituut (Institute of the Estonian Language) norms. Use standard literary Estonian (kirjakeel). Prefer Estonian-origin vocabulary over German or Russian loanwords where equivalents exist. Maintain correct case governance — Estonian has 14 grammatical cases and incorrect case usage is immediately noticeable."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "eus": {
+      "registers": {
+        "professional": {
+          "label": "Euskara batua (formala)",
+          "description": "Standard unified Basque (Euskara Batua) for professional contexts.",
+          "prompt": "Translate into standard Euskara Batua as codified by Euskaltzaindia. Use 'zu' (formal) for second-person address. Do NOT use allocutive hika forms. Follow Euskaltzaindia's official terminology (UZEI technical dictionaries). Maintain correct ergative-absolutive case marking. Use standard word order (SOV) and postpositions."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "fao": {
+      "registers": {
+        "professional": {
+          "label": "Vanligt (Standard)",
+          "description": "Standard register for software UI and official communication in Faroese.",
+          "prompt": "Professional Faroese. Use tú-form (modern standard). Write in standard Faroese orthography. Prefer Faroese vocabulary over Danish borrowings where native equivalents exist. Use correct case inflections (nominative, accusative, dative, genitive). Avoid Danish syntax calques."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "fin": {
+      "registers": {
+        "professional": {
+          "label": "Ammattimainen (Professional)",
+          "description": "Standard for software UI and business communication.",
+          "prompt": "Professional Finnish. Clear, modern language appropriate for software interfaces. Finnish has no formal/informal pronoun distinction — sinä is universal. Avoid overly colloquial expressions."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "fra-CA": {
+      "registers": {
+        "professional-vous": {
+          "label": "Vouvoiement (Professional)",
+          "description": "Standard for software targeting Quebec and Canadian French speakers.",
+          "prompt": "Professional Canadian French (Québécois). Use vous-form. Québécois vocabulary — use 'courriel' not 'e-mail', 'télécharger' not 'downloader'."
+        },
+        "casual-tu": {
+          "label": "Tutoiement (Casual)",
+          "description": "For consumer apps and casual Québécois contexts.",
+          "prompt": "Casual Canadian French. Use tu-form. Québécois vocabulary and tone. Natural conversational style."
+        }
+      },
+      "default": "professional-vous",
+      "system": "T-V"
+    },
+    "fra": {
+      "registers": {
+        "formal-vous": {
+          "label": "Vouvoiement (Formal)",
+          "description": "Standard for professional software, B2B, corporate, and institutional contexts.",
+          "prompt": "Formal French. Use vous-form (vouvoiement) consistently. Professional, academic register. Avoid colloquialisms.",
+          "deeplFormality": "prefer_more"
+        },
+        "casual-tu": {
+          "label": "Tutoiement (Casual)",
+          "description": "For consumer apps, social media, gaming, and startups targeting a casual audience.",
+          "prompt": "Casual French. Use tu-form (tutoiement). Warm, conversational tone appropriate for consumer apps and social platforms. Contractions and informal expressions are acceptable.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "formal-vous",
+      "system": "T-V"
+    },
+    "fry": {
+      "registers": {
+        "professional": {
+          "label": "Formeel (Formal)",
+          "description": "Standard register for software UI and official communication in Western Frisian.",
+          "prompt": "Professional Western Frisian. Use jo-form for formal address. Write in standard Western Frisian (Standertfrysk) following Fryske Akademy norms. Prefer native Frisian vocabulary over Dutch borrowings where established equivalents exist. Maintain correct Frisian word order and verb placement, which differs from Dutch in several constructions."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "gle": {
+      "registers": {
+        "professional": {
+          "label": "Gnáthchaint Ghairmiúil",
+          "description": "Standard professional Irish for software UI, official documents, and business communication. Uses An Caighdeán Oifigiúil (Official Standard).",
+          "prompt": "Translate into standard professional Irish (An Caighdeán Oifigiúil). Use the official standard orthography. Apply séimhiú (lenition) and urú (eclipsis) correctly. Use the singular 'tú' for direct address. Prefer established Irish terminology over English loanwords where Foras na Gaeilge terms exist. Maintain correct grammatical gender agreement. Use the vocative case with 'a' for names and titles."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "glg": {
+      "registers": {
+        "professional": {
+          "label": "Formal (Estándar)",
+          "description": "Standard register for software UI, institutional, and business communication in Galician.",
+          "prompt": "Professional Galician. Use vostede-form for formal address. Follow RAG (Real Academia Galega) and ILG normative standards. Use standard Galician vocabulary; avoid castelanismos (Spanish calques) where Galician-origin equivalents exist. Maintain correct use of contractions (de+o=do, en+a=na, a+o=ao, etc.). Use the Galician definite article (o/a/os/as, not el/la). Prefer Galician-native verb forms over Spanish-influenced alternatives."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "guj": {
+      "registers": {
+        "professional": {
+          "label": "પ્રમાણભૂત ગુજરાતી",
+          "description": "Standard written Gujarati.",
+          "prompt": "Translate into standard written Gujarati. Use Gujarati script. Maintain formal register with તમે/આપ address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "hau": {
+      "registers": {
+        "professional": {
+          "label": "Hausa na Hukuma",
+          "description": "Standard Hausa for media, government, and professional communication.",
+          "prompt": "Translate into standard Hausa (Hausa na Hukuma) using Boko (Latin) script. Apply correct grammatical gender agreement. Use appropriate honorifics and titles. Handle the three-tone system (high, low, falling) awareness — while tones are typically unmarked in standard writing, be aware that homographs exist. Prefer established Hausa terms over English or Arabic loanwords where standard equivalents exist. Follow the orthographic conventions of the Hausa Language Board."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "haw": {
+      "registers": {
+        "professional": {
+          "label": "ʻōlelo Hawaiʻi maʻa mau",
+          "description": "Standard Hawaiian for educational materials and institutional communication.",
+          "prompt": "Translate into standard Hawaiian (ʻōlelo Hawaiʻi). Use correct ʻokina (glottal stop, ʻ) and kahakō (macron) diacritics — these are MANDATORY and change meaning. Respect the VOS word order. Use the particle system correctly (ke/ka for definite articles, he for indefinite, nā for plural). Prefer Hawaiian vocabulary over English loanwords where established by ʻAha Pūnana Leo or Ka Haka ʻUla o Keʻelikōlani terminology committees."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "heb": {
+      "registers": {
+        "professional": {
+          "label": "מקצועי (Professional)",
+          "description": "Standard for software UI and business communication.",
+          "prompt": "Professional Modern Hebrew. RTL layout. Clear, modern vocabulary."
+        },
+        "formal": {
+          "label": "רשמי (Formal)",
+          "description": "For government, legal, and official contexts.",
+          "prompt": "Formal Hebrew. Elevated register for government, legal, and official communications. Precise vocabulary, complex sentence structures."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "hil": {
+      "registers": {
+        "professional": {
+          "label": "Ilonggo (Propesyonal)",
+          "description": "Standard Hiligaynon for government, education, and business communication in Western Visayas.",
+          "prompt": "Professional Hiligaynon. Use formal pronouns (kamo for 'you'), respectful address conventions. Moderate English code-switching (Ilonggo-English) is acceptable for technical terms. Avoid overly casual contractions."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "hin": {
+      "registers": {
+        "professional-hinglish": {
+          "label": "प्रोफेशनल (Professional Hinglish)",
+          "description": "Standard for software UI and tech products in India. Hindi structure with English for technical and UI terms.",
+          "prompt": "Professional Hindi with natural Hindi-English code-mixing (Hinglish). Use Hindi sentence structure but keep technical terms, UI labels, and industry-standard vocabulary in English — this matches how Indian professionals actually use digital products. Use आप (āp) for second person. Devanagari script for Hindi words, Latin for English terms."
+        },
+        "shuddh-formal": {
+          "label": "शुद्ध हिन्दी (Pure Hindi, Formal)",
+          "description": "For government, academic, or cultural contexts where pure Hindi without English loanwords is preferred.",
+          "prompt": "Formal शुद्ध हिन्दी (pure Hindi). Minimize English loanwords — use Hindi equivalents where they exist (e.g., 'संगणक' for computer, 'जालस्थल' for website). Formal आप-form. Appropriate for government, educational, and cultural institutions."
+        },
+        "casual-hinglish": {
+          "label": "कैज़ुअल (Casual Hinglish)",
+          "description": "For social media, gaming, and youth-oriented products. Heavy code-mixing.",
+          "prompt": "Casual Hinglish. Heavy Hindi-English code-mixing with conversational tone. Use तुम (tum) for second person. Colloquial expressions and internet-influenced language acceptable. For social media, gaming, and youth-oriented apps."
+        }
+      },
+      "default": "professional-hinglish",
+      "system": "T-V"
+    },
+    "hun": {
+      "registers": {
+        "formal-on": {
+          "label": "Ön (Formal)",
+          "description": "Standard for professional software and business communication.",
+          "prompt": "Formal Hungarian. Use Ön-form (Önözés) for second-person address. Professional register for software interfaces."
+        },
+        "informal-te": {
+          "label": "Te (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Hungarian. Use te-form (Tegezés). Conversational tone for consumer products."
+        }
+      },
+      "default": "formal-on",
+      "system": "T-V"
+    },
+    "ibo": {
+      "registers": {
+        "professional": {
+          "label": "Igbo Izugbe",
+          "description": "Standard Igbo (based on central dialects).",
+          "prompt": "Translate into standard written Igbo (Igbo Izugbe). Use correct tone diacritics where possible. Maintain formal register. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "ifk": {
+      "registers": {
+        "professional": {
+          "label": "Tuwali (Pormal)",
+          "description": "Standard Tuwali Ifugao for education, community governance, and cultural contexts.",
+          "prompt": "Professional Tuwali Ifugao. Maintain respectful address for elders and traditional leaders. English and Ilocano code-switching are natural in modern contexts. Preserve Ifugao cultural vocabulary (rice terracing, hudhud, ritual terms) rather than substituting with Ilocano or Filipino equivalents."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "ikt": {
+      "registers": {
+        "professional": {
+          "label": "Inuinnaqtun (havakvikmi)",
+          "description": "Standard Inuinnaqtun for government and institutional communication.",
+          "prompt": "Translate into Inuinnaqtun (Western Canadian Inuit). Use Latin script (NOT syllabics — Inuinnaqtun is written exclusively in Latin script, unlike Inuktitut). Handle polysynthetic word formation correctly. Follow Nunavut government terminology where available. Be aware that Inuinnaqtun is distinct from Inuktitut and Inuvialuktun — do not mix dialects."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "iku": {
+      "registers": {
+        "professional": {
+          "label": "ᐃᓄᒃᑎᑐᑦ ᐅᖃᐅᓯᖅ / Inuktitut formal",
+          "description": "Standard Inuktitut for government, education, and software UI.",
+          "prompt": "Translate into standard Inuktitut. Support BOTH Canadian Aboriginal Syllabics (ᐃᓄᒃᑎᑐᑦ) and Latin romanization. For syllabics output, use the standard Inuktitut syllabary. Handle polysynthetic word formation correctly — do not break morphemes incorrectly. Use terminology from Pirurvik Centre and Government of Nunavut resources. Be aware of dialectal differences between South Baffin, North Baffin, Aivilingmiut, and other dialects — default to South Baffin (Iqaluit standard) unless specified."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "ilo": {
+      "registers": {
+        "professional": {
+          "label": "Napormal nga Iloko",
+          "description": "Standard Ilocano for government, education, and business communication in the Ilocos Region and Northern Luzon.",
+          "prompt": "Professional Ilocano. Use formal pronouns (dakayo for 'you'), the honorific apo when appropriate. Keep English terms for technology and technical concepts. This matches how Ilocano is used in regional government offices, schools, and media. Avoid heavy English code-switching but allow established English technical terms."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "ind": {
+      "registers": {
+        "professional": {
+          "label": "Profesional (Professional)",
+          "description": "Standard for software UI and business communication.",
+          "prompt": "Professional Indonesian (Bahasa Indonesia). Use Anda (capitalized) for second-person address, or prefer passive/impersonal constructions to avoid direct address. Clear, modern language appropriate for software interfaces."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "isl": {
+      "registers": {
+        "professional": {
+          "label": "Almenn (Standard)",
+          "description": "Standard register for software UI, official communication, and business contexts in Icelandic.",
+          "prompt": "Professional Icelandic. Use þú-form (modern standard). Prefer native Icelandic neologisms over English or Danish loanwords where established equivalents exist (e.g., 'tölva' for computer, 'sími' for telephone). Use clear, standard Icelandic grammar with correct case inflections. Avoid colloquialisms."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "ita": {
+      "registers": {
+        "formal-Lei": {
+          "label": "Lei (Formal)",
+          "description": "Standard for professional software, enterprise, B2B, and institutional contexts.",
+          "prompt": "Formal Italian. Use Lei-form consistently (always capitalized). Professional register. Avoid colloquialisms and regional expressions.",
+          "deeplFormality": "prefer_more"
+        },
+        "informal-tu": {
+          "label": "Tu (Informal)",
+          "description": "For consumer apps, social media, gaming, and casual brand voices.",
+          "prompt": "Informal Italian. Use tu-form. Warm, conversational tone appropriate for consumer products. Colloquial expressions acceptable when natural.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "formal-Lei",
+      "system": "T-V"
+    },
+    "jpn": {
+      "registers": {
+        "polite": {
+          "label": "です/ます (Polite)",
+          "description": "Standard for software UI. Polite and natural. Button labels and short elements can use plain form.",
+          "prompt": "Polite Japanese (です/ます form) for body text and descriptions. For short UI elements like button labels, menu items, and navigation, plain form (する) is natural and preferred. Use appropriate kanji density — avoid overly literary kanji compounds that would require furigana. Use 私 (watashi) for first-person if needed. Neutral, professional tone.",
+          "deeplFormality": "prefer_more"
+        },
+        "formal-keigo": {
+          "label": "敬語 (Honorific Keigo)",
+          "description": "For customer service, formal business, government, or luxury brand interfaces.",
+          "prompt": "Formal Japanese with full keigo (敬語). Use 丁寧語 (polite language) as baseline, 尊敬語 (respectful) when referencing user actions, 謙譲語 (humble) when the system refers to its own actions. Appropriate for customer service portals, banking, government, and luxury brands.",
+          "deeplFormality": "prefer_more"
+        },
+        "casual": {
+          "label": "タメ口 (Casual)",
+          "description": "For gaming, social media, youth-oriented apps. Plain form throughout.",
+          "prompt": "Casual Japanese (タメ口). Plain form (だ/する) throughout. Natural conversational tone appropriate for gaming, social media, and apps targeting younger demographics. Light use of カタカナ for emphasis is acceptable.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "polite",
+      "system": "keigo"
+    },
+    "kan": {
+      "registers": {
+        "professional": {
+          "label": "ಪ್ರಮಾಣಿತ ಕನ್ನಡ",
+          "description": "Standard written Kannada.",
+          "prompt": "Translate into standard written Kannada. Use Kannada script. Maintain formal register with ನೀವು address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "kat": {
+      "registers": {
+        "professional": {
+          "label": "პროფესიონალური (Professional)",
+          "description": "Standard for software UI, websites, and business communication.",
+          "prompt": "Professional Georgian. Use თქვენ (tkven) for second-person address. Clear, modern language appropriate for software interfaces. Avoid overly literary or archaic phrasing. Georgian verbs are polypersonal — ensure subject and object agreement is correct."
+        },
+        "informal": {
+          "label": "არაფორმალური (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Georgian. Use შენ (shen) for second-person address. Conversational, friendly tone for consumer apps. Modern vocabulary acceptable."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "kaz": {
+      "registers": {
+        "professional": {
+          "label": "Стандартты қазақ тілі",
+          "description": "Standard written Kazakh.",
+          "prompt": "Translate into standard written Kazakh (қазақ тілі). Use Cyrillic script (current standard). Maintain formal register with сіз address. Follow SOV word order. Respect vowel harmony."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "khm": {
+      "registers": {
+        "professional": {
+          "label": "ភាសាខ្មែរផ្លូវការ",
+          "description": "Standard written Khmer.",
+          "prompt": "Translate into standard written Khmer (ភាសាខ្មែរ). Use Khmer script. Maintain formal register. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "kin": {
+      "registers": {
+        "professional": {
+          "label": "Ikinyarwanda gisanzwe",
+          "description": "Standard written Kinyarwanda.",
+          "prompt": "Translate into standard written Kinyarwanda (Ikinyarwanda). Maintain correct noun class agreement. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "kne": {
+      "registers": {
+        "professional": {
+          "label": "Kankanaey (Pormal)",
+          "description": "Standard Kankanaey for government, education, and community contexts in the Cordillera.",
+          "prompt": "Professional Kankanaey. Maintain respectful address conventions, especially for elders (use 'apo' for elders/respected persons). English and Ilocano code-switching are natural but prefer Kankanaey vocabulary where it exists."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "kor": {
+      "registers": {
+        "polite-haeyo": {
+          "label": "해요체 (Polite)",
+          "description": "Standard for software UI, websites, and professional communication. Natural and respectful without being stiff.",
+          "prompt": "Polite Korean (해요체). Standard register for software UI and professional communication. Natural and respectful without being stiff or overly deferential. Sentence endings use -요 forms. This is what users expect from apps, websites, and most digital products."
+        },
+        "formal-hapsyo": {
+          "label": "합쇼체 (Formal)",
+          "description": "For government, legal, corporate reports, or official announcements. Very formal.",
+          "prompt": "Formal Korean (합쇼체). Highest politeness level with -ㅂ니다/-습니다 endings. For government portals, legal text, corporate reports, and official announcements. This register is intentionally stiff and authoritative."
+        },
+        "casual-hae": {
+          "label": "해체 (Casual)",
+          "description": "For social media, chat apps, gaming, and youth-oriented products.",
+          "prompt": "Casual Korean (해체/반말). Plain form without politeness markers. For social media, messaging apps, gaming, and products targeting younger demographics. Natural conversational tone."
+        }
+      },
+      "default": "polite-haeyo",
+      "system": "speech-levels"
+    },
+    "lao": {
+      "registers": {
+        "professional": {
+          "label": "ພາສາລາວມາດຕະຖານ",
+          "description": "Standard written Lao.",
+          "prompt": "Translate into standard written Lao (ພາສາລາວ). Use Lao script. Maintain formal register. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "lav": {
+      "registers": {
+        "professional": {
+          "label": "Literārā latviešu valoda",
+          "description": "Standard written Latvian.",
+          "prompt": "Translate into standard written Latvian (latviešu valoda). Maintain formal register with jūs address. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "lit": {
+      "registers": {
+        "professional": {
+          "label": "Bendrinė lietuvių kalba",
+          "description": "Standard Lithuanian.",
+          "prompt": "Translate into standard written Lithuanian (lietuvių kalba). Maintain formal register with jūs address. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "lkt": {
+      "registers": {
+        "professional": {
+          "label": "Lakȟótiyapi owápi",
+          "description": "Standard written Lakota for educational and institutional contexts.",
+          "prompt": "Translate into standard Lakota (Lakȟótiyapi). Use the Lakota Language Consortium (LLC) standard orthography with correct diacritics: aspirated consonants (ph, th, kh, čh), ejective/glottalized consonants (p', t', k', č'), fricatives (š, ž, ǧ, ȟ), and nasal vowels (ą, į, ų). Handle polysynthetic verb morphology correctly. Respect SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "ltz": {
+      "registers": {
+        "professional": {
+          "label": "Formell (Formal)",
+          "description": "Standard register for software UI and official communication in Luxembourgish.",
+          "prompt": "Professional Luxembourgish. Use Dir/Sidd-form for formal address. Write in standard Luxembourgish orthography per LOD (Lëtzebuerger Online Dictionnaire). Use established Luxembourgish vocabulary; for technical terms where no Luxembourgish equivalent exists, prefer the German cognate over French. Maintain correct N-rule (Eifeler Regel) for word-final -n deletion."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "lug": {
+      "registers": {
+        "professional": {
+          "label": "Oluganda olwesimbyewo",
+          "description": "Standard written Luganda.",
+          "prompt": "Translate into standard written Luganda (Oluganda). Maintain correct noun class agreement. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "mal": {
+      "registers": {
+        "professional": {
+          "label": "പ്രാമാണിക മലയാളം",
+          "description": "Standard written Malayalam.",
+          "prompt": "Translate into standard written Malayalam. Use Malayalam script. Maintain formal register with നിങ്ങൾ/താങ്കൾ address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "mar": {
+      "registers": {
+        "professional": {
+          "label": "प्रमाण मराठी",
+          "description": "Standard written Marathi.",
+          "prompt": "Translate into standard written Marathi (प्रमाण मराठी). Use Devanagari script. Maintain formal register with तुम्ही/आपण address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "mdh": {
+      "registers": {
+        "professional": {
+          "label": "Maguindanaw (Pormal)",
+          "description": "Standard Maguindanaon for government, education, and formal community contexts in Bangsamoro.",
+          "prompt": "Professional Maguindanaon. Use appropriate honorifics (Datu, Bai, Hadji/Hadjah) and formal pronouns. Respect Islamic cultural conventions. Allow established Arabic religious and governance terms. English code-switching is acceptable for technical and government terms."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "mkd": {
+      "registers": {
+        "professional": {
+          "label": "Стандарден македонски",
+          "description": "Standard written Macedonian.",
+          "prompt": "Translate into standard written Macedonian (македонски). Use Cyrillic script. Maintain formal register with вие address. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "mlt": {
+      "registers": {
+        "professional": {
+          "label": "Malti standard",
+          "description": "Standard written Maltese.",
+          "prompt": "Translate into standard written Maltese (Malti). Use Maltese Latin alphabet (including ċ, ġ, ħ, ż, għ). Maintain formal register. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "mon": {
+      "registers": {
+        "professional": {
+          "label": "Албан ёсны (Official)",
+          "description": "Standard register for software UI, government, and business communication in Mongolian.",
+          "prompt": "Professional Mongolian. Use та/ta-form consistently. Write in Mongolian Cyrillic (current standard). Use standard Khalkha Mongolian. Avoid unnecessary Russian loanwords where Mongolian equivalents exist. Maintain correct vowel harmony. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "mri": {
+      "registers": {
+        "professional": {
+          "label": "Te Reo Māori Ngāwari",
+          "description": "Clear, accessible Māori for software UI and institutional communication.",
+          "prompt": "Translate into standard Te Reo Māori. Use correct macrons (tohutō) on long vowels — this is mandatory, not optional. Follow Te Taura Whiri i te Reo Māori (Māori Language Commission) guidelines. Respect the VOS/VSO word order. Use established Māori neologisms for technology terms where they exist (e.g., 'rorohiko' for computer). Maintain the particle system correctly (ko, he, te, ngā, etc.)."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "mrw": {
+      "registers": {
+        "professional": {
+          "label": "Mëranaw (Pormal)",
+          "description": "Standard Maranao for government, education, and formal community contexts in Lanao and Bangsamoro.",
+          "prompt": "Professional Maranao. Use appropriate honorifics (Datu, Bai, Hadji/Hadjah) and formal pronouns. Respect Islamic cultural conventions. Allow established Arabic religious terms. English code-switching is acceptable for technical and government terms."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "mya": {
+      "registers": {
+        "professional": {
+          "label": "စာပေမြန်မာ",
+          "description": "Standard written Burmese.",
+          "prompt": "Translate into standard written Burmese (မြန်မာဘာသာ). Use Myanmar script. Maintain formal literary register. Follow SOV word order. Use appropriate sentence-final particles for written style."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "nav": {
+      "registers": {
+        "professional": {
+          "label": "Diné bizaad (ádáhályánígíí)",
+          "description": "Standard Navajo for educational and institutional contexts.",
+          "prompt": "Translate into standard Navajo (Diné bizaad). Handle the complex verb morphology correctly — Navajo verbs have a template with up to 11 prefix positions. Apply the four tones (high, low, rising, falling) and nasalization correctly where diacritics are used. Respect the classifier system (ł, łł, d, l) that categorizes objects by shape. Use SOV word order. Avoid English calques. Use Young & Morgan dictionary conventions for spelling."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "nep": {
+      "registers": {
+        "professional": {
+          "label": "मानक नेपाली",
+          "description": "Standard written Nepali.",
+          "prompt": "Translate into standard written Nepali (मानक नेपाली). Use Devanagari script. Maintain formal register with तपाईं address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "nld": {
+      "registers": {
+        "formal-u": {
+          "label": "U (Formal)",
+          "description": "Standard for professional software, enterprise, government, and institutional contexts.",
+          "prompt": "Formal Dutch. Use u-form consistently. Professional register for software interfaces, enterprise, and business communication.",
+          "deeplFormality": "prefer_more"
+        },
+        "informal-je": {
+          "label": "Je (Informal)",
+          "description": "For consumer apps, social media, startups, and casual contexts. Increasingly common in modern Dutch software.",
+          "prompt": "Informal Dutch. Use je-form. Warm, approachable tone for consumer products. This is the modern default for most Dutch consumer-facing software.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "formal-u",
+      "system": "T-V"
+    },
+    "nob": {
+      "registers": {
+        "professional": {
+          "label": "Profesjonell (Professional)",
+          "description": "Standard for software UI and business communication. Modern, clear Bokmål.",
+          "prompt": "Professional Norwegian Bokmål. Use du-form (De-form is archaic). Modern, clear language appropriate for software interfaces. Bokmål orthography — not Nynorsk."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "oji": {
+      "registers": {
+        "professional": {
+          "label": "Anishinaabemowin (ogimaawiwin)",
+          "description": "Standard Ojibwe for educational and institutional communication.",
+          "prompt": "Translate into standard Ojibwe (Anishinaabemowin). Respect the animate/inanimate noun classification — this affects verb agreement and pluralization. Handle obviation (proximate/obviative third-person distinction) correctly. Use double-vowel orthography (Fiero system) unless specifically asked for syllabics. Be aware of dialectal variation (Northwestern, Southwestern, Eastern, etc.) — default to a widely understood form."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "pag": {
+      "registers": {
+        "professional": {
+          "label": "Pangasinan (Pormal)",
+          "description": "Standard Pangasinan for government, education, and media in Pangasinan province.",
+          "prompt": "Professional Pangasinan. Use formal pronouns (sikayo for 'you'), respectful particles. English code-switching is acceptable for technical terms. Avoid Ilocano interference — maintain Pangasinan lexical identity."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "pam": {
+      "registers": {
+        "professional": {
+          "label": "Kapampangan (Pormal)",
+          "description": "Standard Kapampangan for government, education, and business in Central Luzon.",
+          "prompt": "Professional Kapampangan. Use formal pronouns (kayu for 'you'), the respect particle pu. English code-switching is acceptable for technical terms. Avoid heavy Tagalog mixing — maintain Kapampangan lexical identity."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "pan": {
+      "registers": {
+        "professional": {
+          "label": "ਮਿਆਰੀ ਪੰਜਾਬੀ",
+          "description": "Standard written Punjabi (Gurmukhi).",
+          "prompt": "Translate into standard written Punjabi in Gurmukhi script (ਗੁਰਮੁਖੀ). Maintain formal register with ਤੁਸੀਂ address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "pol": {
+      "registers": {
+        "formal-pan": {
+          "label": "Pan/Pani (Formal)",
+          "description": "Standard for professional software, enterprise, and institutional contexts.",
+          "prompt": "Formal Polish. Use Pan/Pani form for direct address. Professional register appropriate for software interfaces.",
+          "deeplFormality": "prefer_more"
+        },
+        "informal-ty": {
+          "label": "Ty (Informal)",
+          "description": "For consumer apps, social media, gaming, and youth-oriented products.",
+          "prompt": "Informal Polish. Use ty-form. Conversational, friendly tone for consumer products and social platforms. Colloquial expressions acceptable.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "formal-pan",
+      "system": "T-V"
+    },
+    "por-PT": {
+      "registers": {
+        "professional": {
+          "label": "Profissional (Professional)",
+          "description": "Standard for software UI targeting Portugal and European Portuguese speakers.",
+          "prompt": "Professional European Portuguese. Use tu-form or impersonal constructions (both are standard in Portuguese software for Portugal). European vocabulary — use 'ecrã' not 'tela', 'telemóvel' not 'celular'. Clear, modern language.",
+          "deeplFormality": "default"
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "por": {
+      "registers": {
+        "professional": {
+          "label": "Profissional (Você)",
+          "description": "Standard for software UI, websites, and business communication in Brazil.",
+          "prompt": "Professional Brazilian Portuguese. Use você-form for second person. Clear, modern language appropriate for software interfaces and business communication. Avoid overly formal constructions.",
+          "deeplFormality": "default"
+        },
+        "formal": {
+          "label": "Formal (O senhor/A senhora)",
+          "description": "For banking, legal, government, or contexts addressing older demographics.",
+          "prompt": "Formal Brazilian Portuguese. Use 'o senhor' / 'a senhora' for respectful address. Elevated register for banking, legal, and government contexts. Precise vocabulary.",
+          "deeplFormality": "prefer_more"
+        },
+        "casual": {
+          "label": "Casual (Coloquial)",
+          "description": "For consumer apps, social media, and youth-oriented products.",
+          "prompt": "Casual Brazilian Portuguese. Conversational você-form. Warm, friendly tone with colloquial expressions where natural. For consumer apps, social media, and casual brand voices.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "que": {
+      "registers": {
+        "professional": {
+          "label": "Allin Runasimi (Professional)",
+          "description": "Standard for software UI and institutional communication. Based on Southern Quechua (Cusco-Collao variety).",
+          "prompt": "Professional Quechua (Runasimi), Southern/Cusco-Collao variety. Clear, accessible language suitable for software interfaces. Use the standardized orthography with the five-vowel system (a, e, i, o, u). Include appropriate evidential suffixes — use -mi/-n for direct knowledge, -si/-s for reported information. Prefer pan-Quechua vocabulary where possible over highly local dialectal terms."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "ron": {
+      "registers": {
+        "formal-dvs": {
+          "label": "Dumneavoastră (Formal)",
+          "description": "Standard for professional software, enterprise, and institutional contexts.",
+          "prompt": "Formal Romanian. Use dumneavoastră for second-person address. Professional register for software interfaces."
+        },
+        "informal-tu": {
+          "label": "Tu (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Romanian. Use tu-form. Conversational tone for consumer products."
+        }
+      },
+      "default": "formal-dvs",
+      "system": "T-V"
+    },
+    "rus": {
+      "registers": {
+        "formal-vy": {
+          "label": "Вы (Formal)",
+          "description": "Standard for professional software, enterprise, and institutional contexts.",
+          "prompt": "Formal Russian. Use Вы-form (capitalized for single addressee). Professional register appropriate for software interfaces, enterprise, and business communication. Avoid colloquialisms and informal expressions.",
+          "deeplFormality": "prefer_more"
+        },
+        "informal-ty": {
+          "label": "Ты (Informal)",
+          "description": "For consumer apps, social media, gaming, and casual brand voices.",
+          "prompt": "Informal Russian. Use ты-form. Conversational, friendly tone for consumer products, social media, and gaming. Colloquial expressions acceptable when natural.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "formal-vy",
+      "system": "T-V"
+    },
+    "sin": {
+      "registers": {
+        "professional": {
+          "label": "සම්මත සිංහල",
+          "description": "Standard written Sinhala.",
+          "prompt": "Translate into standard written Sinhala. Use Sinhala script (සිංහල). Maintain formal register. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "slk": {
+      "registers": {
+        "formal-vy": {
+          "label": "Vykanie (Formal)",
+          "description": "Standard for professional software and business communication.",
+          "prompt": "Formal Slovak. Use vykanie (vy-form) consistently. Professional register for software interfaces."
+        },
+        "informal-ty": {
+          "label": "Tykanie (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Slovak. Use tykanie (ty-form). Conversational tone for consumer products."
+        }
+      },
+      "default": "formal-vy",
+      "system": "T-V"
+    },
+    "sna": {
+      "registers": {
+        "professional": {
+          "label": "chiShona chisanzwe",
+          "description": "Standard written Shona.",
+          "prompt": "Translate into standard written Shona (chiShona). Maintain correct noun class agreement. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "spa-MX": {
+      "registers": {
+        "professional-tu": {
+          "label": "Tú (Professional, warm)",
+          "description": "Standard for Mexican software and apps. Tú-form with professional vocabulary but warm, approachable tone.",
+          "prompt": "Mexican Spanish. Use tú-form — warm, direct tone that is standard for Mexican apps and websites. Mexico-specific vocabulary where it differs from other Latin American varieties. Professional but approachable.",
+          "deeplFormality": "prefer_less"
+        },
+        "formal-usted": {
+          "label": "Usted (Formal)",
+          "description": "For government, banking, legal, and enterprise contexts in Mexico.",
+          "prompt": "Formal Mexican Spanish. Use usted-form. Elevated register for institutional contexts. Mexico-specific vocabulary.",
+          "deeplFormality": "prefer_more"
+        }
+      },
+      "default": "professional-tu",
+      "system": "T-V"
+    },
+    "spa": {
+      "registers": {
+        "neutral-latam": {
+          "label": "Neutro (Latin American)",
+          "description": "Standard for international Spanish-language products. Neutral Latin American vocabulary, avoids region-specific slang.",
+          "prompt": "Neutral Latin American Spanish. Professional register using usted-form for direct address. Avoid Peninsular-specific vocabulary (use 'computadora' not 'ordenador', 'celular' not 'móvil').",
+          "deeplFormality": "default"
+        },
+        "formal-usted": {
+          "label": "Formal (Usted)",
+          "description": "For government, legal, banking, and enterprise software across all regions.",
+          "prompt": "Formal Spanish. Strict usted-form. Elevated register appropriate for legal, government, financial, and enterprise contexts. Precise vocabulary, no colloquialisms.",
+          "deeplFormality": "prefer_more"
+        },
+        "informal-tu": {
+          "label": "Informal (Tú)",
+          "description": "For consumer apps, gaming, social media with a warm, direct tone.",
+          "prompt": "Informal Spanish. Use tú-form. Warm, conversational tone for consumer products. Neutral Latin American vocabulary. Colloquial expressions acceptable when natural.",
+          "deeplFormality": "prefer_less"
+        }
+      },
+      "default": "neutral-latam",
+      "system": "T-V"
+    },
+    "srp": {
+      "registers": {
+        "formal-vi": {
+          "label": "Ви (Formal)",
+          "description": "Standard for professional software. Output in Latin script, optionally converted to Cyrillic.",
+          "prompt": "Formal Serbian. Use Ви-form for second-person address. Professional register. Translate in Latin script — Cyrillic conversion is handled automatically by the script converter if enabled."
+        },
+        "informal-ti": {
+          "label": "Ти (Informal)",
+          "description": "For consumer apps and casual contexts.",
+          "prompt": "Informal Serbian. Use ти-form. Conversational tone. Translate in Latin script."
+        }
+      },
+      "default": "formal-vi",
+      "system": "T-V"
+    },
+    "swe": {
+      "registers": {
+        "professional": {
+          "label": "Professionell (Professional)",
+          "description": "Standard for software UI and business communication.",
+          "prompt": "Professional Swedish. Use du-form (universal in modern Swedish). Clear, modern language."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "swh": {
+      "registers": {
+        "professional": {
+          "label": "Rasmi (Professional)",
+          "description": "Standard for software UI and business communication.",
+          "prompt": "Professional Swahili (Kiswahili sanifu). Modern standard Swahili appropriate for software interfaces and business communication. Clear, accessible vocabulary."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "tam": {
+      "registers": {
+        "professional": {
+          "label": "நிலையான தமிழ்",
+          "description": "Standard written Tamil for professional contexts.",
+          "prompt": "Translate into standard written Tamil (செந்தமிழ்). Use Tamil script (தமிழ் எழுத்து). Maintain formal register with நீங்கள் address. Follow SOV word order. Use pure Tamil vocabulary where possible, avoiding unnecessary English borrowings."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "tel": {
+      "registers": {
+        "professional": {
+          "label": "ప్రామాణిక తెలుగు",
+          "description": "Standard written Telugu.",
+          "prompt": "Translate into standard written Telugu. Use Telugu script. Maintain formal register with మీరు address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "tgl": {
+      "registers": {
+        "taglish-professional": {
+          "label": "Taglish (Professional)",
+          "description": "Standard for apps, websites, and tech products in the Philippines. Filipino sentence structure with English for technical and UI terms.",
+          "prompt": "Filipino with natural Taglish code-switching. Use Filipino sentence structure but keep technical terms, UI labels, and industry-standard vocabulary in English. This matches how Filipino professionals actually read and write digital content. Use po/ho particles for polite address when contextually appropriate."
+        },
+        "taglish-casual": {
+          "label": "Taglish (Casual)",
+          "description": "For social media, chat apps, and youth-oriented products.",
+          "prompt": "Casual Taglish. More English mixing, conversational tone, relaxed grammar. For social media, messaging, and apps targeting younger demographics. Drop po/ho formality particles."
+        },
+        "formal-filipino": {
+          "label": "Pormal na Filipino",
+          "description": "Pure Filipino with minimal English. For government, educational, or cultural contexts.",
+          "prompt": "Formal Filipino (Pormal na Filipino). Minimize English loanwords — use Filipino equivalents where they exist. Appropriate for government, educational, and cultural institutions. Use po/ho consistently for respectful address."
+        }
+      },
+      "default": "taglish-professional",
+      "system": "register-and-code-switching"
+    },
+    "tha": {
+      "registers": {
+        "neutral-professional": {
+          "label": "เป็นทางการ (Professional, no particles)",
+          "description": "Standard for software UI. Omits gendered particles. Clean and neutral.",
+          "prompt": "Professional Thai. Use คุณ (khun) for second person, เรา (rao) for first person when needed. Clear, concise phrasing appropriate for digital interfaces."
+        },
+        "polite-male": {
+          "label": "สุภาพ ครับ (Polite, male voice)",
+          "description": "For chatbots, virtual assistants, or personas with a male-presenting voice.",
+          "prompt": "Polite Thai with ครับ (khrap) particle. For contexts where a male-presenting voice is appropriate — chatbots, customer service with male persona, conversational UI. Use ผม (phom) for first person."
+        },
+        "polite-female": {
+          "label": "สุภาพ ค่ะ (Polite, female voice)",
+          "description": "For chatbots, virtual assistants, or personas with a female-presenting voice.",
+          "prompt": "Polite Thai with ค่ะ/คะ (kha) particles. For contexts where a female-presenting voice is appropriate — chatbots, customer service with female persona, conversational UI. Use ดิฉัน (dichan) for first person."
+        }
+      },
+      "default": "neutral-professional",
+      "system": "particles-and-pronouns"
+    },
+    "tir": {
+      "registers": {
+        "professional": {
+          "label": "ትግርኛ ጽሑፍ",
+          "description": "Standard written Tigrinya.",
+          "prompt": "Translate into standard written Tigrinya (ትግርኛ). Use Ge'ez (Ethiopic) script. Maintain formal register."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "tlh": {
+      "registers": {
+        "standard": {
+          "label": "Standard Klingon",
+          "description": "Direct, imperative Klingon following Marc Okrand's canon vocabulary.",
+          "prompt": "Standard Klingon (tlhIngan Hol). Use only vocabulary from Marc Okrand's canonical sources (The Klingon Dictionary, Klingon for the Galactic Traveler, etc.). Case-sensitive romanization is critical: D (retroflex), Q (uvular), S (retroflex), I (vowel) are distinct phonemes. OVS word order. Direct, imperative tone — Klingon does not have a polite register."
+        },
+        "warrior": {
+          "label": "Warrior Register",
+          "description": "Aggressive, commanding tone with military vocabulary. For gaming and themed applications.",
+          "prompt": "Warrior-register Klingon. Aggressive, commanding tone. Prefer military and battle metaphors. Short, imperative sentences. batlh (honor) and may' (battle) vocabulary."
+        }
+      },
+      "default": "standard",
+      "system": "register-levels"
+    },
+    "tsg": {
+      "registers": {
+        "professional": {
+          "label": "Bahasa Sūg (Pormal)",
+          "description": "Standard Tausug for government, education, and formal community contexts in Sulu and Bangsamoro.",
+          "prompt": "Professional Tausug. Use formal pronouns (kamu for 'you'). Respect Islamic cultural conventions — use appropriate honorifics (Datu, Hadji, etc.). Allow established Arabic religious terms and Malay trade vocabulary. English code-switching is acceptable for technical/government terms."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "tuk": {
+      "registers": {
+        "professional": {
+          "label": "Standart türkmen dili",
+          "description": "Standard written Turkmen.",
+          "prompt": "Translate into standard written Turkmen (türkmen dili). Use Latin script (current standard). Maintain formal register with siz address. Follow SOV word order."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "tur": {
+      "registers": {
+        "formal-siz": {
+          "label": "Siz (Formal)",
+          "description": "Standard for professional software, enterprise, and institutional contexts.",
+          "prompt": "Formal Turkish. Use siz-form consistently. Professional register appropriate for software interfaces and business communication. Clear, precise vocabulary. Avoid colloquialisms."
+        },
+        "informal-sen": {
+          "label": "Sen (Informal)",
+          "description": "For consumer apps, social media, gaming, and youth-oriented products.",
+          "prompt": "Informal Turkish. Use sen-form. Warm, conversational tone for consumer products and social platforms. Colloquial expressions acceptable."
+        }
+      },
+      "default": "formal-siz",
+      "system": "T-V"
+    },
+    "ukr": {
+      "registers": {
+        "formal-vy": {
+          "label": "Ви (Formal)",
+          "description": "Standard for professional software, enterprise, and institutional contexts.",
+          "prompt": "Formal Ukrainian. Use Ви-form (capitalized for single addressee). Professional register appropriate for software interfaces and business communication. Avoid Russian loanwords — use Ukrainian equivalents."
+        },
+        "informal-ty": {
+          "label": "Ти (Informal)",
+          "description": "For consumer apps, social media, gaming, and casual brand voices.",
+          "prompt": "Informal Ukrainian. Use ти-form. Conversational tone for consumer products. Avoid Russian loanwords — use Ukrainian equivalents."
+        }
+      },
+      "default": "formal-vy",
+      "system": "T-V"
+    },
+    "urd": {
+      "registers": {
+        "formal-aap": {
+          "label": "آپ (Formal)",
+          "description": "Standard for professional software and business communication.",
+          "prompt": "Formal Urdu. Use آپ (āp) for second-person address. Professional register. RTL layout. Modern standard Urdu appropriate for software interfaces."
+        },
+        "informal-tum": {
+          "label": "تم (Informal)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Informal Urdu. Use تم (tum) form. Conversational tone for consumer products. RTL layout."
+        }
+      },
+      "default": "formal-aap",
+      "system": "T-V"
+    },
+    "uzb": {
+      "registers": {
+        "professional": {
+          "label": "Standart oʻzbek tili",
+          "description": "Standard written Uzbek.",
+          "prompt": "Translate into standard written Uzbek (oʻzbek tili). Use Latin script (current standard). Maintain formal register with siz address. Follow SOV word order. Respect vowel harmony."
+        }
+      },
+      "default": "professional",
+      "system": "T-V"
+    },
+    "vie": {
+      "registers": {
+        "neutral-ban": {
+          "label": "Bạn (Neutral)",
+          "description": "Standard for software UI. Uses bạn (neutral peer) for second person. Friendly and appropriate for most digital products.",
+          "prompt": "Professional Vietnamese. Use bạn for second person (neutral, peer-level — appropriate for software UI). Use tôi for first person when needed. Clear, modern Vietnamese appropriate for digital interfaces. Avoid overly formal constructions.",
+          "deeplFormality": "default"
+        },
+        "formal-quyvi": {
+          "label": "Quý vị (Formal)",
+          "description": "For government, banking, legal, or contexts addressing a general public audience with respect.",
+          "prompt": "Formal Vietnamese. Use quý vị for second-person plural/respectful address, quý khách for customer-facing contexts. Elevated register appropriate for government, banking, and official communications.",
+          "deeplFormality": "prefer_more"
+        }
+      },
+      "default": "neutral-ban",
+      "system": "pronoun-system"
+    },
+    "war": {
+      "registers": {
+        "professional": {
+          "label": "Winaray (Propesyonal)",
+          "description": "Standard Waray for government, education, and media in Eastern Visayas.",
+          "prompt": "Professional Waray. Use formal pronouns (kamo for 'you'). English code-switching is acceptable for technical terms. Maintain Waray sentence structure and focus/voice system."
+        }
+      },
+      "default": "professional",
+      "system": "none"
+    },
+    "x-pirate": {
+      "registers": {
+        "standard": {
+          "label": "Standard Pirate",
+          "description": "Classic pirate English with nautical metaphors and Arr vocabulary.",
+          "prompt": "Pirate English. Translate into stereotypical pirate dialect with nautical vocabulary, 'ye' for 'you', 'me' for 'my', 'Arr' interjections, and seafaring metaphors. Keep UI meaning clear — the joke should enhance, not obscure, the interface. Error messages should still be understandable."
+        },
+        "full-send": {
+          "label": "Full Send Pirate",
+          "description": "Maximum pirate. Every sentence gets the full treatment. For themed apps and Talk Like a Pirate Day.",
+          "prompt": "Maximum pirate English. Every response gets the full treatment — nautical slang, sea shanty rhythm, treasure metaphors, weather references. 'Loading' becomes 'Haulin' anchor', 'Error' becomes 'Blimey!'. Fun trumps clarity."
+        }
+      },
+      "default": "standard",
+      "system": "none"
+    },
+    "xho": {
+      "registers": {
+        "professional": {
+          "label": "isiXhosa esisemthethweni",
+          "description": "Standard written Xhosa.",
+          "prompt": "Translate into standard written Xhosa (isiXhosa). Maintain correct noun class agreement. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "yor": {
+      "registers": {
+        "professional": {
+          "label": "Ọ̀rọ̀ ìṣòwò (Professional)",
+          "description": "Standard for software UI, websites, and business communication.",
+          "prompt": "Professional Yoruba. Use ẹ-form for second-person address (respectful/plural). Standard Yoruba with proper tonal diacritics on all vowels. Avoid dialectal forms — use the standard literary Yoruba based on Ọ̀yọ́ dialect. All tonal marks must be present for clarity."
+        },
+        "casual": {
+          "label": "Èdè àìṣòtítọ́ (Casual)",
+          "description": "For consumer apps, social media, and casual contexts.",
+          "prompt": "Casual Yoruba. Use ìwọ/o for second-person address. Conversational tone, modern vocabulary. Tonal diacritics should still be present for disambiguation. Natural conversational Yoruba for digital contexts."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    },
+    "zul": {
+      "registers": {
+        "professional": {
+          "label": "isiZulu esijwayelekile",
+          "description": "Standard written Zulu.",
+          "prompt": "Translate into standard written Zulu (isiZulu). Maintain correct noun class agreement throughout. Follow SVO word order."
+        }
+      },
+      "default": "professional",
+      "system": "register-levels"
+    }
+  },
+  "assignment": {
+    "aah": "p001",
+    "aar": "p001",
+    "aba": "p001",
+    "abb": "p001",
+    "abj": "p001",
+    "abk": "p001",
+    "abp": "p001",
+    "abs": "p001",
+    "aca": "p001",
+    "ace": "p002",
+    "ach": "p001",
+    "acn": "p001",
+    "acr": "p002",
+    "acu": "p001",
+    "acz": "p001",
+    "adi": "p001",
+    "adl": "p001",
+    "adn": "p001",
+    "adr": "p001",
+    "adt": "p001",
+    "adx": "p001",
+    "adz": "p001",
+    "aer": "p001",
+    "aes": "p001",
+    "aey": "p001",
+    "afn": "p001",
+    "afz": "p001",
+    "agj": "p001",
+    "agm": "p001",
+    "agn": "p001",
+    "agq": "p001",
+    "agr": "p001",
+    "ags": "p001",
+    "agt": "p001",
+    "agv": "p001",
+    "ahb": "p002",
+    "ahg": "p002",
+    "ahh": "p001",
+    "ahk": "p001",
+    "aho": "p001",
+    "aia": "p001",
+    "aij": "p001",
+    "ail": "p001",
+    "ain": "p003",
+    "ajg": "p001",
+    "aji": "p001",
+    "ajz": "p002",
+    "akc": "p001",
+    "akk": "p001",
+    "akr": "p001",
+    "akz": "p001",
+    "alc": "p001",
+    "ale": "p001",
+    "aln": "p001",
+    "als": "p003",
+    "alu": "p001",
+    "alw": "p002",
+    "aly": "p001",
+    "amc": "p001",
+    "ame": "p001",
+    "ami": "p001",
+    "aml": "p002",
+    "amm": "p001",
+    "amp": "p001",
+    "amr": "p001",
+    "ams": "p002",
+    "amu": "p001",
+    "amw": "p001",
+    "amy": "p001",
+    "anc": "p001",
+    "ane": "p001",
+    "ang": "p001",
+    "anh": "p001",
+    "anl": "p001",
+    "aoa": "p003",
+    "aoc": "p001",
+    "aol": "p001",
+    "aom": "p001",
+    "aot": "p001",
+    "aou": "p001",
+    "apb": "p002",
+    "ape": "p001",
+    "aph": "p001",
+    "apm": "p001",
+    "apn": "p001",
+    "app": "p001",
+    "apr": "p001",
+    "aps": "p001",
+    "apt": "p001",
+    "apu": "p001",
+    "apw": "p001",
+    "aqg": "p001",
+    "aqp": "p001",
+    "aqz": "p001",
+    "ard": "p001",
+    "are": "p001",
+    "ark": "p001",
+    "arn": "p001",
+    "aro": "p001",
+    "arp": "p001",
+    "arv": "p001",
+    "arz": "p001",
+    "asa": "p001",
+    "asb": "p001",
+    "asr": "p001",
+    "atb": "p001",
+    "atd": "p001",
+    "atk": "p001",
+    "atr": "p001",
+    "aty": "p001",
+    "atz": "p001",
+    "aud": "p001",
+    "aul": "p001",
+    "auu": "p001",
+    "avl": "p001",
+    "avt": "p001",
+    "avv": "p001",
+    "awa": "p001",
+    "awb": "p001",
+    "awc": "p001",
+    "awe": "p001",
+    "awi": "p001",
+    "awk": "p001",
+    "awt": "p001",
+    "axb": "p001",
+    "aya": "p001",
+    "ayc": "p001",
+    "ayr": "p001",
+    "ayz": "p001",
+    "aza": "p001",
+    "azj": "p001",
+    "azn": "p001",
+    "azz": "p002",
+    "baa": "p001",
+    "bae": "p001",
+    "bag": "p001",
+    "bak": "p001",
+    "bam": "p001",
+    "ban": "p001",
+    "bap": "p001",
+    "bav": "p001",
+    "bax": "p001",
+    "bbb": "p001",
+    "bbc": "p003",
+    "bbh": "p001",
+    "bbk": "p001",
+    "bbr": "p001",
+    "bbv": "p001",
+    "bbw": "p001",
+    "bca": "p002",
+    "bci": "p001",
+    "bcr": "p001",
+    "bcu": "p001",
+    "bdg": "p001",
+    "bdm": "p001",
+    "bdq": "p002",
+    "bdr": "p001",
+    "bds": "p001",
+    "bdu": "p001",
+    "beb": "p001",
+    "bee": "p001",
+    "bei": "p002",
+    "bem": "p002",
+    "beq": "p001",
+    "bfc": "p002",
+    "bfd": "p001",
+    "bfq": "p001",
+    "bfs": "p002",
+    "bfu": "p002",
+    "bgb": "p001",
+    "bgg": "p001",
+    "bgk": "p001",
+    "bgo": "p001",
+    "bgr": "p001",
+    "bgs": "p001",
+    "bhg": "p001",
+    "bhj": "p002",
+    "bhl": "p001",
+    "bhn": "p001",
+    "bho": "p002",
+    "bhr": "p001",
+    "bhs": "p001",
+    "bif": "p001",
+    "bin": "p001",
+    "bip": "p001",
+    "bis": "p002",
+    "biw": "p001",
+    "biz": "p001",
+    "bja": "p001",
+    "bje": "p001",
+    "bji": "p001",
+    "bjk": "p002",
+    "bkd": "p001",
+    "bki": "p001",
+    "bkm": "p001",
+    "bkv": "p001",
+    "bkw": "p001",
+    "bkx": "p002",
+    "bla": "p001",
+    "blc": "p001",
+    "blf": "p001",
+    "bln": "p002",
+    "blp": "p001",
+    "blq": "p001",
+    "blr": "p001",
+    "blz": "p002",
+    "bmf": "p001",
+    "bmi": "p001",
+    "bmt": "p001",
+    "bng": "p001",
+    "bnk": "p001",
+    "bnm": "p001",
+    "bno": "p001",
+    "bnp": "p001",
+    "bns": "p002",
+    "boa": "p001",
+    "bod": "p003",
+    "boe": "p001",
+    "bor": "p001",
+    "bou": "p001",
+    "bov": "p001",
+    "boy": "p001",
+    "bpa": "p001",
+    "bpk": "p001",
+    "bpn": "p001",
+    "bpp": "p001",
+    "bqh": "p001",
+    "brb": "p002",
+    "brd": "p001",
+    "bre": "p003",
+    "brh": "p001",
+    "bri": "p001",
+    "bru": "p001",
+    "brv": "p002",
+    "brx": "p002",
+    "brz": "p001",
+    "bsk": "p001",
+    "bsn": "p001",
+    "bsp": "p001",
+    "bss": "p001",
+    "bsy": "p001",
+    "bth": "p002",
+    "buf": "p001",
+    "bug": "p002",
+    "buh": "p001",
+    "buk": "p001",
+    "bum": "p001",
+    "buw": "p001",
+    "bvb": "p001",
+    "bve": "p002",
+    "bvy": "p001",
+    "bwa": "p001",
+    "bwd": "p002",
+    "bwm": "p001",
+    "bwo": "p001",
+    "bwr": "p001",
+    "bws": "p001",
+    "bwt": "p001",
+    "bxd": "p001",
+    "bxe": "p001",
+    "bxh": "p001",
+    "bxl": "p001",
+    "bxq": "p001",
+    "bxr": "p002",
+    "byh": "p001",
+    "byk": "p001",
+    "byn": "p001",
+    "byq": "p001",
+    "byw": "p001",
+    "bzd": "p001",
+    "bzh": "p001",
+    "bzi": "p001",
+    "bzw": "p001",
+    "cac": "p001",
+    "cag": "p001",
+    "cak": "p001",
+    "cal": "p001",
+    "cam": "p001",
+    "cao": "p001",
+    "caq": "p001",
+    "car": "p001",
+    "cas": "p001",
+    "cax": "p001",
+    "cbn": "p001",
+    "cbv": "p001",
+    "ccg": "p001",
+    "cde": "p001",
+    "cdf": "p001",
+    "cdm": "p001",
+    "cea": "p001",
+    "ceg": "p001",
+    "cfm": "p001",
+    "cgc": "p001",
+    "cgk": "p002",
+    "cha": "p001",
+    "chc": "p001",
+    "chh": "p001",
+    "chk": "p002",
+    "chl": "p001",
+    "cho": "p001",
+    "chp": "p001",
+    "chq": "p001",
+    "cht": "p001",
+    "chv": "p002",
+    "chw": "p001",
+    "chy": "p001",
+    "cic": "p001",
+    "cid": "p001",
+    "cir": "p002",
+    "ciw": "p001",
+    "cjh": "p001",
+    "cjp": "p001",
+    "cjs": "p001",
+    "ckh": "p002",
+    "cko": "p001",
+    "cks": "p003",
+    "ckt": "p001",
+    "cku": "p001",
+    "ckv": "p001",
+    "cky": "p001",
+    "cla": "p001",
+    "clc": "p001",
+    "cld": "p001",
+    "cli": "p001",
+    "clk": "p001",
+    "clo": "p001",
+    "cmo": "p001",
+    "cng": "p001",
+    "cnh": "p001",
+    "cnk": "p001",
+    "cns": "p001",
+    "coa": "p001",
+    "cod": "p001",
+    "coe": "p001",
+    "cog": "p002",
+    "coj": "p001",
+    "col": "p001",
+    "com": "p001",
+    "con": "p001",
+    "coo": "p001",
+    "cop": "p001",
+    "cor": "p003",
+    "cos": "p002",
+    "cov": "p001",
+    "cow": "p001",
+    "cox": "p001",
+    "cpc": "p001",
+    "cpu": "p001",
+    "cra": "p001",
+    "crc": "p001",
+    "crd": "p001",
+    "crh": "p001",
+    "crn": "p001",
+    "cro": "p001",
+    "crw": "p001",
+    "cry": "p001",
+    "csm": "p001",
+    "cso": "p002",
+    "csy": "p001",
+    "csz": "p001",
+    "cta": "p001",
+    "ctd": "p001",
+    "ctm": "p001",
+    "ctp": "p002",
+    "ctz": "p001",
+    "cub": "p001",
+    "cul": "p001",
+    "cup": "p001",
+    "cvg": "p001",
+    "cwd": "p001",
+    "cya": "p002",
+    "cyb": "p001",
+    "dad": "p001",
+    "dag": "p001",
+    "dao": "p001",
+    "daq": "p001",
+    "dbl": "p001",
+    "ddj": "p001",
+    "deg": "p001",
+    "den": "p001",
+    "des": "p001",
+    "dgc": "p001",
+    "dgl": "p001",
+    "dgz": "p001",
+    "dhi": "p001",
+    "dhr": "p001",
+    "dhv": "p001",
+    "dif": "p001",
+    "dig": "p001",
+    "dis": "p002",
+    "diu": "p001",
+    "djc": "p001",
+    "djd": "p001",
+    "dje": "p001",
+    "dji": "p001",
+    "djj": "p001",
+    "dkx": "p001",
+    "dmk": "p001",
+    "dmo": "p001",
+    "dms": "p002",
+    "dni": "p001",
+    "dnu": "p001",
+    "dnw": "p001",
+    "doa": "p001",
+    "dob": "p001",
+    "drd": "p001",
+    "drg": "p001",
+    "drl": "p001",
+    "drn": "p001",
+    "drq": "p001",
+    "dru": "p001",
+    "dry": "p002",
+    "dsh": "p001",
+    "dtp": "p001",
+    "dtr": "p001",
+    "dua": "p001",
+    "duf": "p001",
+    "dus": "p001",
+    "duu": "p001",
+    "dwr": "p002",
+    "dyn": "p001",
+    "dyu": "p001",
+    "dzg": "p001",
+    "dzo": "p002",
+    "eip": "p001",
+    "ekg": "p001",
+    "ekm": "p001",
+    "eko": "p001",
+    "eky": "p001",
+    "elo": "p001",
+    "enf": "p001",
+    "enu": "p001",
+    "enx": "p001",
+    "erk": "p001",
+    "ers": "p001",
+    "ese": "p002",
+    "esq": "p001",
+    "esu": "p001",
+    "ett": "p001",
+    "eud": "p001",
+    "evn": "p001",
+    "ewe": "p001",
+    "eya": "p001",
+    "faj": "p001",
+    "fal": "p001",
+    "fij": "p003",
+    "fil": "p002",
+    "fip": "p001",
+    "fla": "p001",
+    "fmp": "p001",
+    "foi": "p001",
+    "fon": "p001",
+    "fos": "p001",
+    "fqs": "p001",
+    "fud": "p001",
+    "fun": "p001",
+    "fut": "p001",
+    "fuu": "p001",
+    "fuy": "p001",
+    "fvr": "p001",
+    "gag": "p002",
+    "gao": "p001",
+    "gay": "p002",
+    "gbd": "p001",
+    "gbi": "p001",
+    "gbu": "p001",
+    "gdc": "p001",
+    "gde": "p001",
+    "gdm": "p001",
+    "gea": "p001",
+    "ged": "p001",
+    "gei": "p001",
+    "ges": "p001",
+    "gfk": "p001",
+    "ggw": "p001",
+    "ghe": "p001",
+    "ghn": "p001",
+    "ghs": "p001",
+    "gil": "p001",
+    "gis": "p001",
+    "gla": "p003",
+    "gld": "p001",
+    "glo": "p001",
+    "glv": "p003",
+    "glw": "p001",
+    "gmv": "p002",
+    "gnb": "p001",
+    "gnd": "p001",
+    "gni": "p001",
+    "gnr": "p001",
+    "gof": "p002",
+    "gol": "p001",
+    "gpn": "p001",
+    "gqa": "p001",
+    "gqi": "p001",
+    "gqn": "p001",
+    "grc": "p001",
+    "grd": "p001",
+    "grj": "p001",
+    "grt": "p001",
+    "gta": "p001",
+    "guc": "p001",
+    "gug": "p001",
+    "guh": "p001",
+    "gui": "p001",
+    "gum": "p001",
+    "gun": "p001",
+    "gup": "p001",
+    "guq": "p001",
+    "gut": "p001",
+    "guu": "p002",
+    "guz": "p001",
+    "gvc": "p001",
+    "gvn": "p001",
+    "gvr": "p001",
+    "gvs": "p001",
+    "gww": "p001",
+    "gyd": "p001",
+    "gyf": "p001",
+    "gyi": "p001",
+    "gyy": "p001",
+    "had": "p001",
+    "hae": "p001",
+    "hak": "p001",
+    "haq": "p001",
+    "hat": "p001",
+    "hax": "p001",
+    "hbb": "p001",
+    "hbo": "p001",
+    "hbs": "p002",
+    "hch": "p001",
+    "hdn": "p001",
+    "hdy": "p002",
+    "hea": "p001",
+    "heh": "p001",
+    "hei": "p001",
+    "her": "p001",
+    "hid": "p001",
+    "hix": "p001",
+    "hla": "p001",
+    "hlu": "p001",
+    "hna": "p001",
+    "hni": "p001",
+    "hnj": "p001",
+    "hnu": "p002",
+    "hoa": "p001",
+    "hom": "p001",
+    "hot": "p001",
+    "how": "p001",
+    "hoz": "p001",
+    "hrt": "p001",
+    "hru": "p001",
+    "hto": "p001",
+    "hts": "p001",
+    "hub": "p001",
+    "huc": "p001",
+    "hul": "p001",
+    "huo": "p001",
+    "huq": "p001",
+    "hur": "p001",
+    "hus": "p001",
+    "huu": "p001",
+    "huy": "p001",
+    "huz": "p001",
+    "hve": "p001",
+    "hvn": "p001",
+    "hye": "p003",
+    "iai": "p002",
+    "ian": "p001",
+    "iar": "p001",
+    "iba": "p001",
+    "ibb": "p001",
+    "ibg": "p001",
+    "ibh": "p002",
+    "ibl": "p001",
+    "idi": "p001",
+    "idu": "p001",
+    "ify": "p001",
+    "iii": "p001",
+    "ilb": "p001",
+    "ilk": "p001",
+    "ilu": "p001",
+    "imn": "p001",
+    "inb": "p001",
+    "inn": "p001",
+    "inz": "p001",
+    "irh": "p001",
+    "irk": "p001",
+    "iry": "p001",
+    "isc": "p001",
+    "isd": "p001",
+    "ito": "p001",
+    "itz": "p001",
+    "ium": "p001",
+    "ivb": "p001",
+    "ivv": "p001",
+    "iwm": "p001",
+    "izh": "p002",
+    "jaa": "p001",
+    "jab": "p001",
+    "jac": "p001",
+    "jah": "p002",
+    "jal": "p001",
+    "jax": "p001",
+    "jbt": "p001",
+    "jbu": "p001",
+    "jee": "p001",
+    "jhi": "p002",
+    "jia": "p001",
+    "jig": "p001",
+    "jiq": "p001",
+    "jiu": "p001",
+    "jiv": "p001",
+    "jnj": "p002",
+    "jqr": "p001",
+    "jra": "p001",
+    "juh": "p001",
+    "juo": "p001",
+    "jvn": "p001",
+    "kac": "p001",
+    "kaf": "p001",
+    "kak": "p001",
+    "kal": "p001",
+    "kam": "p001",
+    "kaq": "p001",
+    "kas": "p003",
+    "kaw": "p002",
+    "kbd": "p001",
+    "kbh": "p001",
+    "kbj": "p001",
+    "kbm": "p001",
+    "kbn": "p001",
+    "kbr": "p001",
+    "kbt": "p001",
+    "kbx": "p001",
+    "kck": "p001",
+    "kcx": "p001",
+    "kdd": "p001",
+    "kde": "p001",
+    "kdt": "p001",
+    "kdx": "p001",
+    "kec": "p001",
+    "kej": "p002",
+    "ker": "p001",
+    "ket": "p001",
+    "kew": "p001",
+    "kfa": "p001",
+    "kfd": "p001",
+    "kfe": "p001",
+    "kff": "p001",
+    "kfk": "p002",
+    "kfw": "p001",
+    "kfz": "p003",
+    "kgg": "p001",
+    "kgo": "p001",
+    "kgr": "p001",
+    "kgs": "p001",
+    "kgv": "p001",
+    "kgy": "p002",
+    "kha": "p003",
+    "khc": "p002",
+    "khg": "p001",
+    "khk": "p003",
+    "khr": "p002",
+    "khz": "p001",
+    "kig": "p001",
+    "kij": "p001",
+    "kio": "p001",
+    "kit": "p001",
+    "kiw": "p001",
+    "kjb": "p001",
+    "kjg": "p001",
+    "kjh": "p001",
+    "kji": "p001",
+    "kjm": "p001",
+    "kjn": "p001",
+    "kjq": "p001",
+    "kjs": "p001",
+    "kki": "p001",
+    "kkk": "p002",
+    "kkl": "p001",
+    "kks": "p001",
+    "kky": "p001",
+    "klc": "p002",
+    "kle": "p001",
+    "klj": "p001",
+    "klr": "p001",
+    "klt": "p001",
+    "klv": "p001",
+    "klx": "p001",
+    "kmk": "p001",
+    "kml": "p001",
+    "kmm": "p001",
+    "kmo": "p001",
+    "kmq": "p001",
+    "kmr": "p001",
+    "kmu": "p001",
+    "kmw": "p001",
+    "kna": "p001",
+    "knb": "p001",
+    "knc": "p001",
+    "kng": "p001",
+    "knj": "p001",
+    "knn": "p001",
+    "kns": "p001",
+    "knt": "p001",
+    "koi": "p002",
+    "kos": "p003",
+    "kot": "p001",
+    "kpj": "p001",
+    "kpm": "p002",
+    "kpw": "p001",
+    "kpx": "p001",
+    "kqc": "p001",
+    "kqd": "p001",
+    "kqe": "p001",
+    "kqi": "p001",
+    "kqq": "p001",
+    "kqy": "p001",
+    "kre": "p001",
+    "krj": "p001",
+    "ksf": "p001",
+    "ksg": "p001",
+    "kss": "p001",
+    "ksw": "p001",
+    "ksx": "p001",
+    "ktd": "p001",
+    "ktg": "p001",
+    "ktn": "p001",
+    "ktv": "p001",
+    "ktz": "p001",
+    "kua": "p001",
+    "kue": "p001",
+    "kui": "p001",
+    "kun": "p001",
+    "kup": "p001",
+    "kut": "p001",
+    "kuz": "p001",
+    "kvj": "p001",
+    "kvo": "p001",
+    "kvq": "p001",
+    "kvv": "p001",
+    "kwa": "p001",
+    "kwd": "p001",
+    "kwe": "p001",
+    "kwf": "p001",
+    "kwi": "p001",
+    "kwo": "p001",
+    "kxk": "p001",
+    "kxm": "p002",
+    "kxv": "p001",
+    "kxw": "p001",
+    "kyh": "p001",
+    "kyj": "p001",
+    "kyl": "p001",
+    "kys": "p001",
+    "kza": "p001",
+    "kzf": "p001",
+    "kzq": "p001",
+    "lae": "p001",
+    "laf": "p001",
+    "lag": "p001",
+    "lai": "p001",
+    "laj": "p001",
+    "lat": "p002",
+    "laz": "p001",
+    "lbb": "p001",
+    "lbk": "p001",
+    "lbo": "p001",
+    "lbt": "p001",
+    "lbu": "p001",
+    "lcp": "p002",
+    "ldm": "p001",
+    "lea": "p001",
+    "leb": "p001",
+    "lec": "p001",
+    "led": "p001",
+    "lem": "p001",
+    "lep": "p001",
+    "leq": "p001",
+    "les": "p001",
+    "leu": "p001",
+    "lex": "p001",
+    "lez": "p001",
+    "lgg": "p001",
+    "lgm": "p001",
+    "lgr": "p001",
+    "lgu": "p001",
+    "lhi": "p001",
+    "lhs": "p001",
+    "lhu": "p001",
+    "lif": "p001",
+    "lih": "p001",
+    "lil": "p001",
+    "liv": "p002",
+    "liy": "p001",
+    "lji": "p002",
+    "lle": "p001",
+    "llp": "p001",
+    "lmb": "p001",
+    "lmc": "p001",
+    "lmd": "p001",
+    "lmf": "p001",
+    "lmk": "p001",
+    "lml": "p001",
+    "lmo": "p002",
+    "lmu": "p001",
+    "lmy": "p001",
+    "lnd": "p001",
+    "log": "p001",
+    "los": "p001",
+    "loz": "p001",
+    "lpo": "p001",
+    "lrt": "p001",
+    "lsi": "p001",
+    "lti": "p001",
+    "lud": "p002",
+    "lue": "p003",
+    "lui": "p001",
+    "luo": "p001",
+    "lus": "p001",
+    "lut": "p001",
+    "lvk": "p001",
+    "lwl": "p002",
+    "lwt": "p001",
+    "lww": "p002",
+    "lyn": "p001",
+    "lzl": "p001",
+    "mag": "p002",
+    "mai": "p002",
+    "mam": "p001",
+    "max": "p001",
+    "mbb": "p001",
+    "mbc": "p001",
+    "mbe": "p001",
+    "mbf": "p001",
+    "mbj": "p001",
+    "mbl": "p001",
+    "mbm": "p001",
+    "mbn": "p001",
+    "mbo": "p001",
+    "mbq": "p001",
+    "mbs": "p001",
+    "mcf": "p001",
+    "mch": "p001",
+    "mcn": "p001",
+    "mcp": "p001",
+    "mcs": "p001",
+    "mdf": "p002",
+    "mdj": "p001",
+    "mdm": "p001",
+    "mdy": "p001",
+    "mdz": "p001",
+    "med": "p001",
+    "mek": "p001",
+    "mep": "p001",
+    "mer": "p001",
+    "met": "p001",
+    "meu": "p001",
+    "mfc": "p001",
+    "mfi": "p001",
+    "mfn": "p001",
+    "mfq": "p001",
+    "mfr": "p001",
+    "mfx": "p001",
+    "mfy": "p001",
+    "mgi": "p001",
+    "mgm": "p001",
+    "mgo": "p001",
+    "mgr": "p001",
+    "mgu": "p001",
+    "mhc": "p001",
+    "mhi": "p001",
+    "mhu": "p001",
+    "mhx": "p001",
+    "mhy": "p001",
+    "mhz": "p001",
+    "mia": "p001",
+    "mic": "p001",
+    "mig": "p003",
+    "mij": "p001",
+    "mik": "p001",
+    "mim": "p001",
+    "mjd": "p001",
+    "mji": "p001",
+    "mjk": "p001",
+    "mjr": "p001",
+    "mjt": "p001",
+    "mjw": "p001",
+    "mkf": "p001",
+    "mkg": "p001",
+    "mkm": "p002",
+    "mkv": "p001",
+    "mky": "p003",
+    "mla": "p002",
+    "mle": "p001",
+    "mll": "p001",
+    "mlp": "p002",
+    "mls": "p001",
+    "mlu": "p001",
+    "mlv": "p002",
+    "mlw": "p001",
+    "mme": "p001",
+    "mmg": "p001",
+    "mml": "p001",
+    "mmn": "p001",
+    "mmo": "p001",
+    "mmq": "p001",
+    "mmr": "p001",
+    "mmw": "p001",
+    "mmy": "p001",
+    "mna": "p001",
+    "mnh": "p001",
+    "mni": "p001",
+    "mnr": "p001",
+    "mnv": "p001",
+    "moc": "p001",
+    "moh": "p001",
+    "mok": "p001",
+    "mom": "p001",
+    "mop": "p001",
+    "mpa": "p001",
+    "mpb": "p001",
+    "mpc": "p001",
+    "mpe": "p001",
+    "mph": "p001",
+    "mpi": "p001",
+    "mpk": "p001",
+    "mpl": "p001",
+    "mps": "p001",
+    "mpx": "p001",
+    "mpz": "p001",
+    "mqn": "p001",
+    "mqy": "p001",
+    "mra": "p001",
+    "mrb": "p001",
+    "mrc": "p001",
+    "mrd": "p002",
+    "mrh": "p001",
+    "mrj": "p001",
+    "mrn": "p001",
+    "mrq": "p001",
+    "mrr": "p001",
+    "mrs": "p001",
+    "mrt": "p001",
+    "mrv": "p001",
+    "mrz": "p001",
+    "msb": "p001",
+    "msi": "p001",
+    "msk": "p001",
+    "msm": "p001",
+    "msn": "p001",
+    "msq": "p001",
+    "msu": "p001",
+    "mta": "p001",
+    "mtd": "p002",
+    "mts": "p001",
+    "mtt": "p001",
+    "mua": "p001",
+    "mug": "p001",
+    "muh": "p001",
+    "mur": "p001",
+    "mus": "p001",
+    "muu": "p001",
+    "muv": "p001",
+    "mux": "p001",
+    "mvo": "p001",
+    "mwc": "p001",
+    "mwe": "p001",
+    "mwo": "p001",
+    "mwq": "p001",
+    "mwt": "p001",
+    "mxb": "p002",
+    "mxe": "p001",
+    "mxj": "p001",
+    "mxk": "p001",
+    "mxn": "p001",
+    "myh": "p001",
+    "mym": "p001",
+    "myo": "p001",
+    "myp": "p001",
+    "myu": "p001",
+    "myv": "p001",
+    "myy": "p001",
+    "mza": "p001",
+    "mzh": "p001",
+    "mzm": "p001",
+    "mzp": "p001",
+    "mzq": "p002",
+    "mzr": "p001",
+    "nab": "p001",
+    "nal": "p001",
+    "naq": "p003",
+    "nau": "p001",
+    "naw": "p001",
+    "nbc": "p001",
+    "nbe": "p001",
+    "nbm": "p001",
+    "nbu": "p001",
+    "nca": "p001",
+    "ncb": "p001",
+    "nce": "p001",
+    "ncf": "p001",
+    "nci": "p002",
+    "ncj": "p003",
+    "ncm": "p001",
+    "nct": "p001",
+    "ndi": "p001",
+    "ndj": "p001",
+    "ndm": "p001",
+    "ndt": "p001",
+    "ndz": "p001",
+    "nee": "p002",
+    "neg": "p001",
+    "nen": "p002",
+    "new": "p002",
+    "nez": "p001",
+    "nfa": "p001",
+    "nga": "p001",
+    "ngk": "p002",
+    "ngt": "p002",
+    "ngu": "p002",
+    "ngy": "p001",
+    "nha": "p001",
+    "nhg": "p072",
+    "nhi": "p002",
+    "nhk": "p001",
+    "nhm": "p001",
+    "nhp": "p001",
+    "nhu": "p001",
+    "nhv": "p001",
+    "nhw": "p002",
+    "nhx": "p001",
+    "nim": "p001",
+    "nio": "p001",
+    "nir": "p001",
+    "niu": "p001",
+    "niv": "p001",
+    "niy": "p001",
+    "njb": "p001",
+    "njh": "p001",
+    "nji": "p001",
+    "njm": "p001",
+    "njn": "p001",
+    "njo": "p001",
+    "njz": "p001",
+    "nkd": "p001",
+    "nkh": "p001",
+    "nkk": "p001",
+    "nko": "p001",
+    "nkr": "p001",
+    "nku": "p001",
+    "nlc": "p001",
+    "nlg": "p001",
+    "nlj": "p001",
+    "nma": "p001",
+    "nmb": "p001",
+    "nmf": "p001",
+    "nmk": "p001",
+    "nmm": "p001",
+    "nmn": "p001",
+    "nmo": "p001",
+    "nmu": "p001",
+    "nmy": "p001",
+    "nna": "p001",
+    "nng": "p001",
+    "nnr": "p001",
+    "noj": "p001",
+    "nph": "p001",
+    "npi": "p072",
+    "nqm": "p001",
+    "nqn": "p001",
+    "nrm": "p001",
+    "nrz": "p001",
+    "nsa": "p001",
+    "nse": "p002",
+    "nsm": "p001",
+    "nsn": "p001",
+    "nsu": "p002",
+    "ntj": "p001",
+    "ntp": "p001",
+    "nuf": "p001",
+    "num": "p001",
+    "nun": "p001",
+    "nup": "p001",
+    "nus": "p001",
+    "nux": "p001",
+    "nuy": "p001",
+    "nwi": "p001",
+    "nxa": "p002",
+    "nxl": "p001",
+    "nxq": "p001",
+    "nyf": "p002",
+    "nyi": "p001",
+    "nyn": "p001",
+    "nyo": "p001",
+    "nys": "p001",
+    "nyt": "p001",
+    "nyv": "p001",
+    "nyy": "p001",
+    "nzm": "p001",
+    "oaa": "p001",
+    "oac": "p001",
+    "ogo": "p001",
+    "ojb": "p001",
+    "ojs": "p001",
+    "ojv": "p001",
+    "oka": "p001",
+    "okn": "p002",
+    "okv": "p001",
+    "olo": "p002",
+    "omb": "p001",
+    "omc": "p001",
+    "omx": "p001",
+    "ona": "p001",
+    "one": "p001",
+    "ong": "p001",
+    "ono": "p001",
+    "onu": "p001",
+    "ood": "p001",
+    "opm": "p001",
+    "opt": "p001",
+    "opy": "p001",
+    "oro": "p001",
+    "ory": "p002",
+    "oss": "p001",
+    "ote": "p001",
+    "otm": "p002",
+    "otq": "p001",
+    "ott": "p001",
+    "otw": "p001",
+    "ozm": "p001",
+    "pab": "p001",
+    "pac": "p001",
+    "pae": "p001",
+    "pao": "p001",
+    "par": "p001",
+    "pau": "p001",
+    "pav": "p001",
+    "pbe": "p002",
+    "pbg": "p001",
+    "pbh": "p001",
+    "pbr": "p002",
+    "pbt": "p002",
+    "pbv": "p002",
+    "pce": "p002",
+    "pci": "p001",
+    "pck": "p001",
+    "pdt": "p002",
+    "pdu": "p001",
+    "peb": "p001",
+    "peg": "p001",
+    "peh": "p001",
+    "pes": "p003",
+    "pez": "p001",
+    "pgk": "p001",
+    "pgu": "p001",
+    "pha": "p001",
+    "phn": "p001",
+    "pia": "p001",
+    "pif": "p001",
+    "pio": "p001",
+    "pip": "p001",
+    "pit": "p001",
+    "piu": "p001",
+    "piv": "p001",
+    "pjt": "p001",
+    "pkp": "p002",
+    "plc": "p001",
+    "plg": "p001",
+    "plh": "p001",
+    "pll": "p001",
+    "plo": "p001",
+    "pls": "p002",
+    "plt": "p001",
+    "plu": "p001",
+    "ply": "p001",
+    "pma": "p001",
+    "pmf": "p002",
+    "pmi": "p001",
+    "pmj": "p001",
+    "pmr": "p001",
+    "pmy": "p001",
+    "pnb": "p001",
+    "pnn": "p001",
+    "pno": "p001",
+    "pnw": "p001",
+    "poi": "p001",
+    "pom": "p001",
+    "pon": "p072",
+    "ppk": "p001",
+    "ppl": "p001",
+    "pqa": "p001",
+    "prk": "p001",
+    "prq": "p001",
+    "prt": "p001",
+    "prx": "p002",
+    "pst": "p003",
+    "psw": "p001",
+    "ptu": "p001",
+    "pue": "p001",
+    "pum": "p001",
+    "puo": "p001",
+    "puq": "p001",
+    "pwa": "p001",
+    "pwn": "p001",
+    "pyn": "p001",
+    "pzh": "p001",
+    "pzn": "p001",
+    "qua": "p001",
+    "qub": "p001",
+    "quc": "p002",
+    "qud": "p002",
+    "qug": "p001",
+    "qui": "p002",
+    "quy": "p001",
+    "quz": "p001",
+    "qvi": "p003",
+    "qvn": "p001",
+    "qvs": "p001",
+    "qxs": "p001",
+    "rab": "p001",
+    "rad": "p001",
+    "rah": "p001",
+    "ram": "p001",
+    "ran": "p001",
+    "rap": "p001",
+    "rar": "p001",
+    "ras": "p001",
+    "rau": "p002",
+    "ray": "p001",
+    "rbb": "p001",
+    "reb": "p001",
+    "ree": "p001",
+    "ren": "p002",
+    "rey": "p001",
+    "rif": "p001",
+    "rim": "p001",
+    "rji": "p002",
+    "rkb": "p001",
+    "rma": "p001",
+    "rnp": "p001",
+    "roh": "p002",
+    "rol": "p001",
+    "roo": "p001",
+    "rou": "p001",
+    "rro": "p001",
+    "rth": "p001",
+    "rtm": "p001",
+    "ruf": "p001",
+    "rys": "p001",
+    "ryu": "p002",
+    "sae": "p001",
+    "sag": "p003",
+    "sah": "p001",
+    "sax": "p001",
+    "say": "p001",
+    "sbc": "p001",
+    "sbf": "p002",
+    "sbk": "p001",
+    "sbl": "p001",
+    "sbq": "p001",
+    "sci": "p002",
+    "scs": "p001",
+    "sdg": "p001",
+    "sdo": "p002",
+    "sdp": "p001",
+    "sea": "p002",
+    "sed": "p002",
+    "see": "p001",
+    "sei": "p001",
+    "sep": "p001",
+    "ser": "p001",
+    "ses": "p001",
+    "set": "p001",
+    "sfe": "p001",
+    "sgb": "p002",
+    "shb": "p001",
+    "shh": "p001",
+    "shk": "p001",
+    "shp": "p001",
+    "sht": "p001",
+    "shx": "p001",
+    "sig": "p001",
+    "sis": "p001",
+    "sje": "p001",
+    "sju": "p001",
+    "sjw": "p001",
+    "skc": "p001",
+    "skd": "p001",
+    "ske": "p001",
+    "skf": "p001",
+    "skg": "p001",
+    "skh": "p001",
+    "sku": "p001",
+    "sle": "p001",
+    "slm": "p001",
+    "sln": "p001",
+    "slp": "p001",
+    "slu": "p001",
+    "slv": "p002",
+    "sly": "p001",
+    "sma": "p001",
+    "smj": "p001",
+    "smk": "p001",
+    "smo": "p001",
+    "sms": "p001",
+    "snc": "p001",
+    "snf": "p001",
+    "sng": "p001",
+    "snn": "p001",
+    "sns": "p001",
+    "sob": "p001",
+    "som": "p001",
+    "sot": "p001",
+    "sov": "p001",
+    "spp": "p001",
+    "spu": "p001",
+    "sri": "p001",
+    "srl": "p001",
+    "srm": "p001",
+    "sro": "p002",
+    "srq": "p001",
+    "srs": "p001",
+    "ssb": "p001",
+    "sse": "p001",
+    "ssf": "p001",
+    "ssg": "p001",
+    "sss": "p002",
+    "ssz": "p001",
+    "stb": "p001",
+    "sti": "p001",
+    "stn": "p001",
+    "stp": "p001",
+    "sub": "p001",
+    "suc": "p001",
+    "sue": "p003",
+    "suk": "p001",
+    "sur": "p001",
+    "sux": "p001",
+    "suz": "p002",
+    "swo": "p001",
+    "sxg": "p001",
+    "sxr": "p001",
+    "syx": "p001",
+    "sza": "p002",
+    "szc": "p002",
+    "szy": "p001",
+    "tac": "p001",
+    "tag": "p001",
+    "tao": "p001",
+    "tar": "p001",
+    "tat": "p001",
+    "tay": "p001",
+    "tbf": "p001",
+    "tbl": "p001",
+    "tbo": "p001",
+    "tbw": "p002",
+    "tby": "p001",
+    "tca": "p001",
+    "tcf": "p001",
+    "tci": "p001",
+    "tcs": "p001",
+    "tcy": "p002",
+    "tcz": "p001",
+    "tdg": "p001",
+    "tdh": "p002",
+    "tdj": "p001",
+    "tdt": "p002",
+    "tea": "p001",
+    "teg": "p001",
+    "teh": "p001",
+    "tem": "p001",
+    "tep": "p001",
+    "tes": "p002",
+    "tet": "p003",
+    "tft": "p002",
+    "tga": "p001",
+    "tgc": "p002",
+    "tgj": "p001",
+    "tgp": "p001",
+    "tgt": "p001",
+    "thf": "p001",
+    "thk": "p001",
+    "thm": "p002",
+    "ths": "p001",
+    "tih": "p001",
+    "tii": "p001",
+    "tij": "p001",
+    "tik": "p001",
+    "tiq": "p001",
+    "tiw": "p001",
+    "tiy": "p001",
+    "tji": "p001",
+    "tkl": "p001",
+    "tkm": "p001",
+    "tkp": "p002",
+    "tku": "p001",
+    "tkw": "p001",
+    "tlb": "p001",
+    "tlc": "p001",
+    "tli": "p001",
+    "tlm": "p001",
+    "tlp": "p001",
+    "tma": "p001",
+    "tmb": "p001",
+    "tmd": "p001",
+    "tmf": "p001",
+    "tmi": "p001",
+    "tmq": "p002",
+    "tmy": "p001",
+    "tnc": "p001",
+    "tnd": "p001",
+    "tnk": "p001",
+    "tnl": "p001",
+    "tnp": "p001",
+    "tnx": "p001",
+    "toi": "p001",
+    "toj": "p001",
+    "ton": "p001",
+    "top": "p001",
+    "tos": "p001",
+    "tpi": "p001",
+    "tpn": "p001",
+    "tpy": "p001",
+    "tqo": "p001",
+    "tqq": "p001",
+    "tqw": "p001",
+    "tri": "p001",
+    "trn": "p001",
+    "tro": "p001",
+    "trr": "p001",
+    "tsb": "p001",
+    "tsc": "p001",
+    "tsj": "p001",
+    "tsn": "p001",
+    "tso": "p001",
+    "tsr": "p001",
+    "tsv": "p001",
+    "tsw": "p001",
+    "tsz": "p001",
+    "ttb": "p001",
+    "ttc": "p001",
+    "ttj": "p001",
+    "ttl": "p002",
+    "ttr": "p001",
+    "ttv": "p001",
+    "tub": "p001",
+    "tul": "p001",
+    "tun": "p001",
+    "tuo": "p001",
+    "tus": "p001",
+    "tve": "p001",
+    "tvk": "p001",
+    "tvl": "p002",
+    "twa": "p001",
+    "twu": "p001",
+    "txa": "p001",
+    "txg": "p002",
+    "txo": "p001",
+    "txx": "p001",
+    "tyn": "p001",
+    "tyv": "p001",
+    "tzm": "p001",
+    "tzn": "p001",
+    "ubr": "p001",
+    "ubu": "p001",
+    "uby": "p002",
+    "ude": "p001",
+    "udg": "p001",
+    "uga": "p002",
+    "uge": "p001",
+    "ugo": "p001",
+    "ulc": "p002",
+    "ule": "p001",
+    "umb": "p001",
+    "umo": "p001",
+    "umr": "p001",
+    "ums": "p001",
+    "ung": "p001",
+    "upv": "p001",
+    "ura": "p002",
+    "urc": "p001",
+    "ure": "p001",
+    "uri": "p001",
+    "urk": "p001",
+    "urv": "p001",
+    "ute": "p001",
+    "uur": "p001",
+    "uuu": "p001",
+    "uve": "p002",
+    "uzn": "p002",
+    "var": "p001",
+    "vay": "p001",
+    "vep": "p001",
+    "vig": "p001",
+    "viv": "p001",
+    "vku": "p001",
+    "vma": "p001",
+    "vmw": "p002",
+    "vnk": "p001",
+    "vra": "p001",
+    "vun": "p001",
+    "wad": "p001",
+    "wal": "p001",
+    "wao": "p001",
+    "waq": "p001",
+    "was": "p001",
+    "waw": "p001",
+    "way": "p001",
+    "wba": "p001",
+    "wbf": "p001",
+    "wbj": "p001",
+    "wbt": "p001",
+    "wbv": "p001",
+    "wbw": "p001",
+    "wca": "p001",
+    "wdj": "p001",
+    "wed": "p001",
+    "weo": "p001",
+    "wer": "p001",
+    "wgo": "p001",
+    "wgy": "p001",
+    "wha": "p001",
+    "wic": "p001",
+    "wiu": "p001",
+    "wiv": "p001",
+    "wja": "p001",
+    "wlo": "p001",
+    "wls": "p001",
+    "wmb": "p001",
+    "wme": "p001",
+    "wmh": "p002",
+    "wmt": "p001",
+    "wmw": "p001",
+    "wos": "p001",
+    "wrg": "p001",
+    "wrm": "p001",
+    "wrp": "p001",
+    "wrr": "p001",
+    "wsa": "p001",
+    "wth": "p001",
+    "wti": "p001",
+    "wtw": "p002",
+    "wuh": "p001",
+    "wuu": "p001",
+    "wuv": "p001",
+    "www": "p001",
+    "wyb": "p001",
+    "wyi": "p001",
+    "x-kryptonian": "p001",
+    "x-shakespeare": "p001",
+    "x-yoda": "p001",
+    "xal": "p002",
+    "xan": "p001",
+    "xav": "p002",
+    "xaw": "p001",
+    "xbr": "p001",
+    "xcw": "p001",
+    "xem": "p002",
+    "xes": "p001",
+    "xgf": "p001",
+    "xhu": "p001",
+    "xkv": "p001",
+    "xla": "p001",
+    "xlo": "p001",
+    "xmm": "p001",
+    "xmt": "p001",
+    "xnj": "p001",
+    "xnn": "p001",
+    "xog": "p001",
+    "xok": "p001",
+    "xpu": "p001",
+    "xsb": "p001",
+    "xsl": "p001",
+    "xsq": "p002",
+    "xsu": "p001",
+    "xsy": "p001",
+    "xtm": "p001",
+    "xua": "p001",
+    "xuj": "p002",
+    "xuu": "p002",
+    "xwg": "p001",
+    "xxk": "p002",
+    "xya": "p001",
+    "xyy": "p001",
+    "yaa": "p001",
+    "yad": "p001",
+    "yae": "p001",
+    "yaf": "p001",
+    "yag": "p001",
+    "yak": "p001",
+    "yao": "p002",
+    "yap": "p001",
+    "yaq": "p001",
+    "yaw": "p001",
+    "yaz": "p001",
+    "ybi": "p001",
+    "ycl": "p001",
+    "ycn": "p001",
+    "yee": "p001",
+    "yev": "p001",
+    "yia": "p001",
+    "yij": "p001",
+    "yix": "p001",
+    "yka": "p001",
+    "ykg": "p001",
+    "yko": "p001",
+    "yky": "p001",
+    "yla": "p001",
+    "yle": "p001",
+    "ylr": "p001",
+    "yly": "p001",
+    "ynd": "p001",
+    "ynn": "p001",
+    "yog": "p001",
+    "yoi": "p001",
+    "yok": "p001",
+    "yon": "p001",
+    "yrb": "p001",
+    "yrk": "p001",
+    "yrl": "p001",
+    "ysn": "p001",
+    "yua": "p001",
+    "yuc": "p001",
+    "yue": "p001",
+    "yuf": "p001",
+    "yuj": "p001",
+    "yuk": "p001",
+    "yup": "p001",
+    "yuq": "p001",
+    "yur": "p001",
+    "yuw": "p001",
+    "yux": "p001",
+    "yuz": "p001",
+    "yva": "p001",
+    "yvt": "p001",
+    "ywn": "p001",
+    "ywq": "p001",
+    "ywr": "p001",
+    "ywt": "p001",
+    "zaa": "p002",
+    "zab": "p002",
+    "zag": "p001",
+    "zav": "p001",
+    "zay": "p001",
+    "zbw": "p001",
+    "zhb": "p001",
+    "zin": "p001",
+    "zkr": "p001",
+    "zku": "p001",
+    "zlm": "p002",
+    "zmc": "p001",
+    "zmi": "p001",
+    "zml": "p001",
+    "zmr": "p001",
+    "zmu": "p001",
+    "zmz": "p001",
+    "zng": "p001",
+    "zoc": "p001",
+    "zos": "p001",
+    "zpi": "p001",
+    "zpm": "p001",
+    "zpq": "p001",
+    "zps": "p002",
+    "zpw": "p001",
+    "zpx": "p002",
+    "zro": "p001",
+    "zun": "p001"
+  }
+}

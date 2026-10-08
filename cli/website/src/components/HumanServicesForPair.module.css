@@ -1,0 +1,141 @@
+/* HumanServicesForPair — the per-pair "human method" affordance.
+   Sits beside the per-pair confidence display on the leaderboard. */
+
+.panel {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+}
+
+.checking {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.floorBadge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-contrast-background);
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--ifm-heading-color);
+}
+
+.lede {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-color);
+}
+
+.cardTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.name {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  text-transform: lowercase;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.badge_community {
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-darker);
+  border: 1px solid var(--ifm-color-success);
+}
+
+.variety {
+  font-size: 0.72rem;
+  color: var(--ifm-font-color-secondary);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.02rem 0.35rem;
+}
+
+.meta {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.metaItem {
+  white-space: nowrap;
+}
+
+.ncTerms {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--ifm-font-color-secondary);
+}
+
+.consentNote {
+  margin: 0.85rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+}

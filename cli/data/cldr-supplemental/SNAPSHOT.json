@@ -1,0 +1,47 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "cldr-supplemental",
+  "upstream": "https://www.npmjs.com/package/cldr-core/v/48.2.0",
+  "license": "Unicode-3.0",
+  "licenseUrl": "https://www.unicode.org/license.txt",
+  "citation": "Unicode Common Locale Data Repository, cldr-core 48.2.0 (supplemental/aliases.json, supplemental/likelySubtags.json).",
+  "pin": {
+    "kind": "version",
+    "value": "48.2.0",
+    "doi": null,
+    "date": null
+  },
+  "files": [
+    {
+      "path": "aliases.json",
+      "bytes": 137469,
+      "sha256": "b7011c866f27502ed6f160ca83f2a83fa42bce9fdc2176e60e2c6630961d877c",
+      "url": "https://github.com/unicode-org/cldr-json",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldr-core@48.2.0 (supplemental/aliases.json)"
+    },
+    {
+      "path": "likelySubtags.json",
+      "bytes": 220093,
+      "sha256": "38345946ad457213fb39e9645ab50f36b61681bf674b2eef2979a3b58d04afc8",
+      "url": "https://github.com/unicode-org/cldr-json",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldr-core@48.2.0 (supplemental/likelySubtags.json)"
+    },
+    {
+      "path": "scriptMetadata.json",
+      "bytes": 62446,
+      "sha256": "9160c07c87f58495f57076c88231f63c1c062672991822671c9e99697b5e5cda",
+      "url": "https://github.com/unicode-org/cldr-json",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldr-core@48.2.0 (supplemental/scriptMetadata.json)"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldr-supplemental.mjs",
+  "notes": "Version read from cli/package-lock.json, which pins cldr-core with npm integrity sha512-zfmLothncSwfv2jlevoSrgI2VGgH8SDGHXst6jUEotHA8nq9Igeg9jzdJDFtBso9pgJuG89DK16TzrmZDdo2Bg== — npm verifies that on install, so the release is attested upstream even though the copied files are hashed by us. 64 languageAlias entries carry _reason=\"macrolanguage\" and likelySubtags has 7788 entries. CLDR is a localisation standard, not a language survey: its alias table covers 500 languages against a spine of 8,837, and its silence is ingested AS silence — a macrolanguage CLDR does not alias has no predominant member and resolves as ambiguous rather than to a guess.",
+  "fetchedAt": "2026-08-12T01:34:54.584Z"
+}

@@ -1,0 +1,830 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "clts",
+  "upstream": "https://zenodo.org/records/2633838",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "cldf/clts: Cross-Linguistic Transcription Systems — Johann-Mattis List; Cormac Anderson; Tiago Tresoldi; Christoph Rzymski; Simon J Greenhill; Robert Forkel",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.2.0",
+    "doi": "10.5281/zenodo.2633838",
+    "date": "2019-04-09"
+  },
+  "files": [
+    {
+      "path": "data/features.tsv",
+      "bytes": 4048,
+      "sha256": "15af95fac9fe0528f070a24a770ad97c607e93ef9ff0873358b4819f76526c13",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/data/features.tsv"
+    },
+    {
+      "path": "data/graphemes.tsv",
+      "bytes": 7079834,
+      "sha256": "0617699138d25272a9e3c516cc56bb7d223c1fea42572c0a8151f2d79907d029",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/data/graphemes.tsv"
+    },
+    {
+      "path": "data/metadata.json",
+      "bytes": 3090,
+      "sha256": "70fccd2e4d8e2505973856c5597a6344b5a0acda5eae4cc09dd2cc927f51e228",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/data/metadata.json"
+    },
+    {
+      "path": "data/references.bib",
+      "bytes": 13231,
+      "sha256": "dd33547566f4761804a3bc4b38c1e9bd8616c57de91908b4c4efaa225c182e0b",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/data/references.bib"
+    },
+    {
+      "path": "data/sounds.tsv",
+      "bytes": 1397588,
+      "sha256": "c0047274f3494d8082efa7aa2b6ed79cd49f0de86aec5c82913e39b747264a79",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/data/sounds.tsv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 70,
+      "sha256": "994594a83deb7b0891329d97173f4dd05dadaf5e69518535ba5d84ad8f593f1b",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/requirements.txt"
+    },
+    {
+      "path": "sources/apics/graphemes.tsv",
+      "bytes": 14815,
+      "sha256": "157aae0666f7c7d05b0e4211bb5a4fa2e28418e6585e029c52a707aa2171cb3d",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/apics/graphemes.tsv"
+    },
+    {
+      "path": "sources/bdpa/graphemes.tsv",
+      "bytes": 13098,
+      "sha256": "83b7c2ed469f4156c9c7a4cbee03697a6b62653a2763793684082d8227ac2678",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/bdpa/graphemes.tsv"
+    },
+    {
+      "path": "sources/beijingdaxue/graphemes.tsv",
+      "bytes": 1021,
+      "sha256": "449ad93aa7b54d9d61d3830bf432e14d661a2033a83eb29ea0081fff84b9d607",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/beijingdaxue/graphemes.tsv"
+    },
+    {
+      "path": "sources/chomsky/graphemes.tsv",
+      "bytes": 3865,
+      "sha256": "4ff64d8a8e7b3eb9d3e8964ab484f751837131a58912e281a3dd47758f1aa64f",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/chomsky/graphemes.tsv"
+    },
+    {
+      "path": "sources/diachronica/graphemes.tsv",
+      "bytes": 41663,
+      "sha256": "dd63f38643ed7cf8987e9f1e0dc9b018fa9442f83502398faffea0a7c5d811b1",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/diachronica/graphemes.tsv"
+    },
+    {
+      "path": "sources/eurasian/graphemes.tsv",
+      "bytes": 13424,
+      "sha256": "fb0f2751a119ef8155a68c22b66412d6a262a3278e1a3312851e9f41c43f0447",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/eurasian/graphemes.tsv"
+    },
+    {
+      "path": "sources/index.tsv",
+      "bytes": 4670,
+      "sha256": "64e0e94cce8883e5fabe2fec3126ff0648cad3c9b2e8a6fb7083457b3acf59eb",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/index.tsv"
+    },
+    {
+      "path": "sources/lapsyd/graphemes.tsv",
+      "bytes": 45508,
+      "sha256": "455d3104e331f0ff0b7753db8e019fa98e17525ceb3da0c8ee4294dea363b9ce",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/lapsyd/graphemes.tsv"
+    },
+    {
+      "path": "sources/multimedia/graphemes.tsv",
+      "bytes": 13094,
+      "sha256": "38461160be990c3438c6b297524e3dc59da57e2ff34303ed473a5f5fa8d337b7",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/multimedia/graphemes.tsv"
+    },
+    {
+      "path": "sources/nidaba/graphemes.tsv",
+      "bytes": 178901,
+      "sha256": "2c50bcb1ac8b5c3c1d8ae17a044063986900804a351751f632302f4109eba014",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/nidaba/graphemes.tsv"
+    },
+    {
+      "path": "sources/panphon/graphemes.tsv",
+      "bytes": 731655,
+      "sha256": "57b36315d908b86fc6f6db130dbbb9898eb43c4736d4c59cd42711900d1f5100",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/panphon/graphemes.tsv"
+    },
+    {
+      "path": "sources/pbase/graphemes.tsv",
+      "bytes": 72018,
+      "sha256": "a7956c3267463c9349708fe950afc7e99596d6d1ae961e7dd92626392e25cb0d",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/pbase/graphemes.tsv"
+    },
+    {
+      "path": "sources/phoible/graphemes.tsv",
+      "bytes": 220985,
+      "sha256": "f765fe4650a8b065d4b8e749508fe61f9d3686590f18a0ebba0b652d31942cfb",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/phoible/graphemes.tsv"
+    },
+    {
+      "path": "sources/powoco/graphemes.tsv",
+      "bytes": 2921,
+      "sha256": "0d3f1d1c9851f1023d4948502a4aad17e9bddbd372ef6c019cab519ced197532",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/powoco/graphemes.tsv"
+    },
+    {
+      "path": "sources/ruhlen/graphemes.tsv",
+      "bytes": 10331,
+      "sha256": "719347a120ced39481a8ada36e583da9c0b46068e90bb2f4cd378a3396e463ce",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/ruhlen/graphemes.tsv"
+    },
+    {
+      "path": "sources/wiki/graphemes.tsv",
+      "bytes": 17270,
+      "sha256": "23bc01e137cde3e10dead88cd5e4c466063e1e59aece763ddf7d4b9e4213cb39",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/sources/wiki/graphemes.tsv"
+    },
+    {
+      "path": "src/pyclts/soundclasses/lingpy.tsv",
+      "bytes": 52852,
+      "sha256": "8cd988e812bf32a7a1650b77354c255a5c6a3b08040814031e3db31afa8095f8",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/soundclasses/lingpy.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/apics.tsv",
+      "bytes": 24261,
+      "sha256": "b7d3f068c2574369de6393bce25734f90a807af99704a5c5f22c8933b83ccfad",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/apics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/bdpa.tsv",
+      "bytes": 107169,
+      "sha256": "b95b9bb5d5c0983eb3413295ae7c75ead233317302d250871491a20d56e70627",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/bdpa.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/beijingdaxue.tsv",
+      "bytes": 7207,
+      "sha256": "a2c07edf54bf24e7a301b3e2f3a1f7a3347a7bf784d1c26711dc6bcb973a4174",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/beijingdaxue.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/chomsky.tsv",
+      "bytes": 5949,
+      "sha256": "7a8ffd523e977d853f56ef37466f49b6b3b84381eb701a0df854fdd4c81c24aa",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/chomsky.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/diachronica.tsv",
+      "bytes": 76215,
+      "sha256": "a087041e3c7b30fd08884e3ab9e19595d93d2a8b02b908a4bb07d38735fc21e6",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/diachronica.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/eurasian.tsv",
+      "bytes": 225760,
+      "sha256": "d041c24104e6cbf5fcbc2bdd1fc7d4c8ed56bf2acbc19b81462db255ac229c5d",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/eurasian.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/lapsyd.tsv",
+      "bytes": 87959,
+      "sha256": "b631d47d0d3df99cfb840df2ddf21cbef42fa2e39b5063efe2035e895f7c0ff7",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/lapsyd.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/multimedia.tsv",
+      "bytes": 19290,
+      "sha256": "a4072fdc7b685da739f17ac10304540028934ad9d82250d4763725e1318a25e5",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/multimedia.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/nidaba.tsv",
+      "bytes": 306079,
+      "sha256": "1e05c4546c70941a61986bdcb2ffbf30a3641d61c18f556ce8a990494b02958a",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/nidaba.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/panphon.tsv",
+      "bytes": 1155536,
+      "sha256": "4d4b04d61acd5c34b010bc6a54644fd1bae11773dd9243f09652f11a56936b9f",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/panphon.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/pbase.tsv",
+      "bytes": 213720,
+      "sha256": "f5f96f7c2a89b32fd4500eea6a79032c8e0ff9844a7d014520682c8e84fadb60",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/pbase.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/phoible.tsv",
+      "bytes": 381608,
+      "sha256": "2180946c8b43ec756627acc429164e8ed3da431d8116dd8ffda6dc1ed5133e2a",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/phoible.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/powoco.tsv",
+      "bytes": 23214,
+      "sha256": "e03f82b22184e6d59464e4c30b044e7ada628a6295050215df76bc7ce5209203",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/powoco.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/ruhlen.tsv",
+      "bytes": 37740,
+      "sha256": "7b2d236d79a03743c193436845a34d01f3b19d0bbb9ca5a63de864d88818ebbb",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/ruhlen.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptiondata/wiki.tsv",
+      "bytes": 25926,
+      "sha256": "e6b7bf82e4b8e2f73b201e0ddf79d6602f9050496484b524730b5f200f8a5a21",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptiondata/wiki.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f1/consonants.tsv",
+      "bytes": 203,
+      "sha256": "023f647510a4a080a726338294b78b9d007ca39e5f66979198072a20b35abe9d",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f1/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f1/diacritics.tsv",
+      "bytes": 78,
+      "sha256": "0c98801be94e58626eb1b6fab62478479d61916ba176ca0165121cfae1c1ec53",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f1/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f1/markers.tsv",
+      "bytes": 71,
+      "sha256": "eed9bf1f2146febed867b383de707e023d2840280b8bf1c21e806409e99c6eff",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f1/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f1/normalize.tsv",
+      "bytes": 14,
+      "sha256": "9e6752f1a8586de5672bd54ee07219d8f7d3c797af6674d4cb62ec54099aace9",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f1/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f1/tones.tsv",
+      "bytes": 45,
+      "sha256": "fa42311d917286b46b9da7b7d80991c52909b29b9c1d8cf100d10fd451e9a411",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f1/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f1/vowels.tsv",
+      "bytes": 303,
+      "sha256": "e4762dca5758339cb58547543d91c2f52860ab0933ddce2074bdf081c335b9de",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f1/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f2/consonants.tsv",
+      "bytes": 169,
+      "sha256": "db15ca429aa4e94c76d1c52a3043b56895cdfff490658a473b1ea1fde7d611d6",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f2/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f2/diacritics.tsv",
+      "bytes": 78,
+      "sha256": "0c98801be94e58626eb1b6fab62478479d61916ba176ca0165121cfae1c1ec53",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f2/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f2/markers.tsv",
+      "bytes": 71,
+      "sha256": "eed9bf1f2146febed867b383de707e023d2840280b8bf1c21e806409e99c6eff",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f2/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f2/normalize.tsv",
+      "bytes": 14,
+      "sha256": "9e6752f1a8586de5672bd54ee07219d8f7d3c797af6674d4cb62ec54099aace9",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f2/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f2/tones.tsv",
+      "bytes": 45,
+      "sha256": "fa42311d917286b46b9da7b7d80991c52909b29b9c1d8cf100d10fd451e9a411",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f2/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f2/vowels.tsv",
+      "bytes": 303,
+      "sha256": "e4762dca5758339cb58547543d91c2f52860ab0933ddce2074bdf081c335b9de",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f2/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f3/consonants.tsv",
+      "bytes": 173,
+      "sha256": "b89e894b82aca7026429911b5f54846f3afcb0512d6d04840c30aac7789c2587",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f3/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f3/diacritics.tsv",
+      "bytes": 78,
+      "sha256": "0c98801be94e58626eb1b6fab62478479d61916ba176ca0165121cfae1c1ec53",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f3/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f3/markers.tsv",
+      "bytes": 71,
+      "sha256": "eed9bf1f2146febed867b383de707e023d2840280b8bf1c21e806409e99c6eff",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f3/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f3/normalize.tsv",
+      "bytes": 14,
+      "sha256": "9e6752f1a8586de5672bd54ee07219d8f7d3c797af6674d4cb62ec54099aace9",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f3/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f3/tones.tsv",
+      "bytes": 45,
+      "sha256": "fa42311d917286b46b9da7b7d80991c52909b29b9c1d8cf100d10fd451e9a411",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f3/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/_f3/vowels.tsv",
+      "bytes": 303,
+      "sha256": "e4762dca5758339cb58547543d91c2f52860ab0933ddce2074bdf081c335b9de",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/_f3/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/asjpcode/consonants.tsv",
+      "bytes": 8157,
+      "sha256": "f42d034722cf81c8d50e758195bb9dec195181a7bc98d6b70260bbe941d0f06f",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/asjpcode/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/asjpcode/diacritics.tsv",
+      "bytes": 78,
+      "sha256": "0c98801be94e58626eb1b6fab62478479d61916ba176ca0165121cfae1c1ec53",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/asjpcode/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/asjpcode/markers.tsv",
+      "bytes": 71,
+      "sha256": "eed9bf1f2146febed867b383de707e023d2840280b8bf1c21e806409e99c6eff",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/asjpcode/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/asjpcode/normalize.tsv",
+      "bytes": 14,
+      "sha256": "9e6752f1a8586de5672bd54ee07219d8f7d3c797af6674d4cb62ec54099aace9",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/asjpcode/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/asjpcode/tones.tsv",
+      "bytes": 45,
+      "sha256": "fa42311d917286b46b9da7b7d80991c52909b29b9c1d8cf100d10fd451e9a411",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/asjpcode/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/asjpcode/vowels.tsv",
+      "bytes": 302,
+      "sha256": "a00fa858ff3ba06fa1a669808bca7c7e181cee664afdba78f5988c81a8528436",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/asjpcode/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/bipa/consonants.tsv",
+      "bytes": 33514,
+      "sha256": "4834bdaa6aa0b16d18b7a876390fa32096330e3ac4a01512e408eebbd24519c1",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/bipa/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/bipa/diacritics.tsv",
+      "bytes": 5099,
+      "sha256": "d1b158851addd62360ec0ded73bcc9c0b2b19b62503813a622176717a0fc9d51",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/bipa/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/bipa/markers.tsv",
+      "bytes": 308,
+      "sha256": "c4cb93c429e40552d2c566fc597b6809355f1da41a8bae158ab0ccb81edc65ab",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/bipa/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/bipa/normalize.tsv",
+      "bytes": 353,
+      "sha256": "4d9832f576d24ee11af5b5f237caf603f421bf91f5e309cfe3e105c155bbb10b",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/bipa/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/bipa/tones.tsv",
+      "bytes": 5931,
+      "sha256": "e7e6d7c7b389a53252c2903711f091d7f3e0b72fd98eaa2b0326351305a44330",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/bipa/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/bipa/vowels.tsv",
+      "bytes": 15730,
+      "sha256": "39e9d104fda09f7329c736b332729ac5b105c8e10759b029e6c890c0fb19ef3f",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/bipa/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/features.json",
+      "bytes": 4174,
+      "sha256": "45a2a90fd8774a42bb07b62d5970c9c2ad6b560c3a1529f830c0f87832511d25",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/features.json"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/gld/consonants.tsv",
+      "bytes": 5121,
+      "sha256": "aa55bce71168f962dd8ffaeedc6efcb788666fa1b9542a6b1b9bee44924fbbe2",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/gld/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/gld/diacritics.tsv",
+      "bytes": 1938,
+      "sha256": "7deb119c37dc0661ab8009463b460df0aa7c9a06a96836f2ede48c7fb98243a7",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/gld/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/gld/markers.tsv",
+      "bytes": 283,
+      "sha256": "1a84ecd8b25aeec2ea1151505264fd36b5f9732b8af133bb8430c63aa0c5783c",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/gld/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/gld/normalize.tsv",
+      "bytes": 279,
+      "sha256": "1bcfef48972919969681bbd837e74d6696f659a3b14ea049f708f546aa0520a7",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/gld/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/gld/tones.tsv",
+      "bytes": 5931,
+      "sha256": "e7e6d7c7b389a53252c2903711f091d7f3e0b72fd98eaa2b0326351305a44330",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/gld/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/gld/vowels.tsv",
+      "bytes": 3446,
+      "sha256": "0a872c98e767509f61fba9674ef7b8cf6c016db1fea401266e207dc9c1dae836",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/gld/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/napa/consonants.tsv",
+      "bytes": 6959,
+      "sha256": "b0504e050fdcdce203db542341ddb8a51dfd452495d95d9a5eab91e26abf37f3",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/napa/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/napa/diacritics.tsv",
+      "bytes": 624,
+      "sha256": "b3faf9384c69d9ab8a25e4b617de43cc193e93468b0a0063c27f8e7540fec029",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/napa/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/napa/markers.tsv",
+      "bytes": 308,
+      "sha256": "c4cb93c429e40552d2c566fc597b6809355f1da41a8bae158ab0ccb81edc65ab",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/napa/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/napa/normalize.tsv",
+      "bytes": 339,
+      "sha256": "46e73e397e2f4bd5cf5caad8e6bd7126bed32cd5e5ed127a76a2622881cd988b",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/napa/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/napa/tones.tsv",
+      "bytes": 45,
+      "sha256": "fa42311d917286b46b9da7b7d80991c52909b29b9c1d8cf100d10fd451e9a411",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/napa/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/napa/vowels.tsv",
+      "bytes": 778,
+      "sha256": "a5adc71eb5d36fd7fafbecb964317842076bd85c9280cd8c6fcaddbe54c12a9d",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/napa/vowels.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/transcription-system-metadata.json",
+      "bytes": 6280,
+      "sha256": "b9fd25ae151e63c0717daa91addc53de052e4b6b2de19a88ee761efdd5a3e1f9",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/transcription-system-metadata.json"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/upa/consonants.tsv",
+      "bytes": 3373,
+      "sha256": "0a71a936f61fae19956c2b037da009b767f47dd881bcc3ade3cbf73f7364083b",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/upa/consonants.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/upa/diacritics.tsv",
+      "bytes": 213,
+      "sha256": "4a5e34c66f86d81832d8d4f7b8166e59b3b24e49d47a9c32bfebb59698fd29ad",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/upa/diacritics.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/upa/markers.tsv",
+      "bytes": 34,
+      "sha256": "27dce321f868374f38235272db7ccd981e57160007c000c8ac46eb7f7416293f",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/upa/markers.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/upa/normalize.tsv",
+      "bytes": 14,
+      "sha256": "9e6752f1a8586de5672bd54ee07219d8f7d3c797af6674d4cb62ec54099aace9",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/upa/normalize.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/upa/tones.tsv",
+      "bytes": 45,
+      "sha256": "fa42311d917286b46b9da7b7d80991c52909b29b9c1d8cf100d10fd451e9a411",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/upa/tones.tsv"
+    },
+    {
+      "path": "src/pyclts/transcriptionsystems/upa/vowels.tsv",
+      "bytes": 1496,
+      "sha256": "1fd5d12324fd59acf096b20f9339c906d7f7472df7e72275ec00f10647594ff2",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/src/pyclts/transcriptionsystems/upa/vowels.tsv"
+    },
+    {
+      "path": "tests/data/clicks.tsv",
+      "bytes": 7941,
+      "sha256": "5af96b07cfd730172931187f71b811e8a73a13faaf7d4b5e59a95536263a2f6e",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/tests/data/clicks.tsv"
+    },
+    {
+      "path": "tests/data/test_data.tsv",
+      "bytes": 57539,
+      "sha256": "4805345c5c94dd3dd09843ea8746d0b86608ee248ec39a3443bd30ced8c29c05",
+      "url": "https://zenodo.org/api/records/2633838/files/cldf/clts-v1.2.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "cldf/clts-v1.2.0.zip:cldf-clts-408af85/tests/data/test_data.tsv"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from cldf/clts-v1.2.0.zip, whose md5 matched Zenodo's published checksum (md5:0fd108c5b6b93e9d614546241b5dea10). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T19:02:56.518Z"
+}

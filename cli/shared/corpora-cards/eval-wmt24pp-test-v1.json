@@ -1,0 +1,579 @@
+{
+  "id": "eval-wmt24pp-test-v1",
+  "type": "multiway",
+  "name": "WMT24++ Test — English → 55 targets",
+  "version": "1.0",
+  "languages": [
+    "arb",
+    "ben",
+    "bul",
+    "cat",
+    "ces",
+    "cmn-Hans",
+    "cmn-Hant",
+    "dan",
+    "deu",
+    "ell",
+    "eng",
+    "est",
+    "fil",
+    "fin",
+    "fra",
+    "guj",
+    "heb",
+    "hin",
+    "hrv",
+    "hun",
+    "ind",
+    "isl",
+    "ita",
+    "jpn",
+    "kan",
+    "kor",
+    "lav",
+    "lit",
+    "mal",
+    "mar",
+    "nld",
+    "nob",
+    "pan",
+    "pes",
+    "pol",
+    "por",
+    "ron",
+    "rus",
+    "slk",
+    "slv",
+    "spa",
+    "srp",
+    "swe",
+    "swh",
+    "tam",
+    "tel",
+    "tha",
+    "tur",
+    "ukr",
+    "urd",
+    "vie",
+    "zul"
+  ],
+  "description": "WMT24++ (Google/Unbabel) English→target MT evaluation, 55 language pairs / 47 languages including regional variants (fr-CA/fr-FR, pt-BR/pt-PT, es-MX, ar-EG/ar-SA, sw-KE/sw-TZ, zh-CN/zh-TW) plus EU and Indic languages. Uses the human POST-EDIT 'target' field (not the raw 'original_target' MT) and drops every is_bad_source row (including the canary). English-source only; regional variants that share a base language are kept as distinct corpora on the shared mesh edge. Apache-2.0. Domain 'mixed': WMT24++ extends WMT24's four-domain general test set — news, social (→conv), speech (→subtitles), literary; the canary/QC rows are dropped. domainDistribution is an approximate equal-quarters split.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 1,
+    "domain": "mixed",
+    "domainDistribution": {
+      "news": 0.25,
+      "conv": 0.25,
+      "subtitles": 0.25,
+      "literary": 0.25
+    },
+    "explicitPairs": [
+      {
+        "source": "eng",
+        "target": "arb",
+        "srcCode": "en",
+        "tgtCode": "ar_EG",
+        "size": 960,
+        "sha256": "706d048933f6b44b90c41f87fef159c594f492fff7560c4303a8d56009b9f19d"
+      },
+      {
+        "source": "eng",
+        "target": "arb",
+        "srcCode": "en",
+        "tgtCode": "ar_SA",
+        "size": 960,
+        "sha256": "7d71fe69dd2b26947094840d4942213766038a355dc6462c4b5258da6bfb491f"
+      },
+      {
+        "source": "eng",
+        "target": "bul",
+        "srcCode": "en",
+        "tgtCode": "bg_BG",
+        "size": 960,
+        "sha256": "a04da61c621eb488bc4f237a60587e3ece5a08d50dc02e4727fe5a392905737d"
+      },
+      {
+        "source": "eng",
+        "target": "ben",
+        "srcCode": "en",
+        "tgtCode": "bn_IN",
+        "size": 960,
+        "sha256": "b5f808f3435ec7dc12c09d45d42ccb9d42661f9b790b54f519528e144369c376"
+      },
+      {
+        "source": "eng",
+        "target": "cat",
+        "srcCode": "en",
+        "tgtCode": "ca_ES",
+        "size": 960,
+        "sha256": "a5980d3647ccfa75a00ba2348fc14930885687144b852d30a5f176c5022275c6"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs_CZ",
+        "size": 960,
+        "sha256": "5938de8103d420c114fe934cfe2e24e6eaace3e305e69d2011e186fa7a1bc534"
+      },
+      {
+        "source": "eng",
+        "target": "dan",
+        "srcCode": "en",
+        "tgtCode": "da_DK",
+        "size": 960,
+        "sha256": "412ea4c253f77391792da2ade531d401039b5dea9236acd60afe72a697472d48"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de_DE",
+        "size": 960,
+        "sha256": "e86eb1012338048769e62f20050f817eb1c921f02109d4644aef99359d90b381"
+      },
+      {
+        "source": "eng",
+        "target": "ell",
+        "srcCode": "en",
+        "tgtCode": "el_GR",
+        "size": 960,
+        "sha256": "0f8f07425ea41b455bc47083415adc784795ce0266de388067e3ecfbc348685e"
+      },
+      {
+        "source": "eng",
+        "target": "spa",
+        "srcCode": "en",
+        "tgtCode": "es_MX",
+        "size": 960,
+        "sha256": "16f8e1c07928a5ddb3d398697a3cb4330577a744cf09bebdf4aff7729787ca78"
+      },
+      {
+        "source": "eng",
+        "target": "est",
+        "srcCode": "en",
+        "tgtCode": "et_EE",
+        "size": 960,
+        "sha256": "dc1e5d59edebfff2d3621a1152a305686e490dd5053026bd52aea7b4b79ea4fa"
+      },
+      {
+        "source": "eng",
+        "target": "pes",
+        "srcCode": "en",
+        "tgtCode": "fa_IR",
+        "size": 960,
+        "sha256": "0c610de7ecc4b841974e64419ea434578571984d6d5e2f2d2e650e84bd66468a"
+      },
+      {
+        "source": "eng",
+        "target": "fin",
+        "srcCode": "en",
+        "tgtCode": "fi_FI",
+        "size": 960,
+        "sha256": "c1f582d6c326808afd33985fc15c9c9cb311e53e9699ba60d91a3ca4134db79f"
+      },
+      {
+        "source": "eng",
+        "target": "fil",
+        "srcCode": "en",
+        "tgtCode": "fil_PH",
+        "size": 960,
+        "sha256": "56ca722f542ddddfe1398b9352b12903b744db792b74d60b52afea370fd236c3"
+      },
+      {
+        "source": "eng",
+        "target": "fra",
+        "srcCode": "en",
+        "tgtCode": "fr_CA",
+        "size": 960,
+        "sha256": "4f857655dcb61b02c0865ab0aa4829fd13e0ae373e962f4e7dcdec3442b9af76"
+      },
+      {
+        "source": "eng",
+        "target": "fra",
+        "srcCode": "en",
+        "tgtCode": "fr_FR",
+        "size": 960,
+        "sha256": "f88a25865bb28d4fa40782193a51865b68c2a3c3b809736c516432e62ce75bae"
+      },
+      {
+        "source": "eng",
+        "target": "guj",
+        "srcCode": "en",
+        "tgtCode": "gu_IN",
+        "size": 960,
+        "sha256": "e35b4a71bdaf989e0d0ac6a2ae7be3be4fb733027431751cdb5e253d3d87a285"
+      },
+      {
+        "source": "eng",
+        "target": "heb",
+        "srcCode": "en",
+        "tgtCode": "he_IL",
+        "size": 960,
+        "sha256": "58e9dc713306d03d5b91441369eda6cadddf97ecb239e82c5b193bdb055c5559"
+      },
+      {
+        "source": "eng",
+        "target": "hin",
+        "srcCode": "en",
+        "tgtCode": "hi_IN",
+        "size": 960,
+        "sha256": "b87ea1958e8c46f8d7e41b048ae5829ef220d761412b46cca177162ef8d55847"
+      },
+      {
+        "source": "eng",
+        "target": "hrv",
+        "srcCode": "en",
+        "tgtCode": "hr_HR",
+        "size": 960,
+        "sha256": "00d4d9d81c17cb247d8868089927c97ee02127a01d93d8acd329146dffee8ef3"
+      },
+      {
+        "source": "eng",
+        "target": "hun",
+        "srcCode": "en",
+        "tgtCode": "hu_HU",
+        "size": 960,
+        "sha256": "58b8a9a440f8d96d497aa99e094819aa859f550b69da2f57b08bf24408ac179e"
+      },
+      {
+        "source": "eng",
+        "target": "ind",
+        "srcCode": "en",
+        "tgtCode": "id_ID",
+        "size": 960,
+        "sha256": "0c65764b7c528e43626b3fb2170f4b6456d08969865bc3f5eb4bd673360ea424"
+      },
+      {
+        "source": "eng",
+        "target": "isl",
+        "srcCode": "en",
+        "tgtCode": "is_IS",
+        "size": 960,
+        "sha256": "3b855a742de14a9e583e2392482bdb157a16447c702a07253c3877e37dbc7bfa"
+      },
+      {
+        "source": "eng",
+        "target": "ita",
+        "srcCode": "en",
+        "tgtCode": "it_IT",
+        "size": 960,
+        "sha256": "496ec97f7adf7e7ed61a05342161dfd213560af4a28a9e3f5e392a4cb4fd1219"
+      },
+      {
+        "source": "eng",
+        "target": "jpn",
+        "srcCode": "en",
+        "tgtCode": "ja_JP",
+        "size": 960,
+        "sha256": "8c2f79dcda4a26522be5fec31dd62165975be7c9533af95ad867edb0f481f966"
+      },
+      {
+        "source": "eng",
+        "target": "kan",
+        "srcCode": "en",
+        "tgtCode": "kn_IN",
+        "size": 960,
+        "sha256": "ee8d5619c8e3d22588ce718cf900b41be1ad6dccef55eaac8a61fb81369d4f1b"
+      },
+      {
+        "source": "eng",
+        "target": "kor",
+        "srcCode": "en",
+        "tgtCode": "ko_KR",
+        "size": 960,
+        "sha256": "e8b1ff1bbf43f5cebff1712fcab9cb9cb9c6fa1f34f233aa19ec0f77bf053638"
+      },
+      {
+        "source": "eng",
+        "target": "lit",
+        "srcCode": "en",
+        "tgtCode": "lt_LT",
+        "size": 960,
+        "sha256": "d078a1213e3be6022c6f3d1b1f418b243c7c7aec83a71d16bffcf08c7abba428"
+      },
+      {
+        "source": "eng",
+        "target": "lav",
+        "srcCode": "en",
+        "tgtCode": "lv_LV",
+        "size": 960,
+        "sha256": "70084839b2a7a17e5d3cdb97b20393e4ddb554e22e86fcef3568b35d3904c109"
+      },
+      {
+        "source": "eng",
+        "target": "mal",
+        "srcCode": "en",
+        "tgtCode": "ml_IN",
+        "size": 960,
+        "sha256": "39dd29551caf931f64a40b40350850796bd19a28bc6b22a5c6426cda6ab07c5c"
+      },
+      {
+        "source": "eng",
+        "target": "mar",
+        "srcCode": "en",
+        "tgtCode": "mr_IN",
+        "size": 960,
+        "sha256": "ae73d6886f318eb24355fbe60250a80b29721d473866083360e231b1ed531534"
+      },
+      {
+        "source": "eng",
+        "target": "nld",
+        "srcCode": "en",
+        "tgtCode": "nl_NL",
+        "size": 960,
+        "sha256": "c64c1f536d1a4715808ce3a70af3ddc0f87f34696cf70bd5a44ea664170255b2"
+      },
+      {
+        "source": "eng",
+        "target": "nob",
+        "srcCode": "en",
+        "tgtCode": "no_NO",
+        "size": 960,
+        "sha256": "6584872b44d7b0333b17089dc9120b76e2e5bae5d4de4dc5db93040b98eba0c3"
+      },
+      {
+        "source": "eng",
+        "target": "pan",
+        "srcCode": "en",
+        "tgtCode": "pa_IN",
+        "size": 960,
+        "sha256": "ad6156fbfba9fbb124687101f61011cd620a18c1df99ec15360212b791a73920"
+      },
+      {
+        "source": "eng",
+        "target": "pol",
+        "srcCode": "en",
+        "tgtCode": "pl_PL",
+        "size": 960,
+        "sha256": "b7111a61046e62d783ab7722ec98813391701f9f7660bb714962871acfd5173c"
+      },
+      {
+        "source": "eng",
+        "target": "por",
+        "srcCode": "en",
+        "tgtCode": "pt_BR",
+        "size": 960,
+        "sha256": "8d65b5b258bf177622aba523c5c46693bff4acb4d75f78f1a7ca062865395fd4"
+      },
+      {
+        "source": "eng",
+        "target": "por",
+        "srcCode": "en",
+        "tgtCode": "pt_PT",
+        "size": 960,
+        "sha256": "c2cd8887671038b4591e68b14feec340140000f53337c74b61c0f061b6005f89"
+      },
+      {
+        "source": "eng",
+        "target": "ron",
+        "srcCode": "en",
+        "tgtCode": "ro_RO",
+        "size": 960,
+        "sha256": "94c90a3be191eaae87375d05654c699beaab5ff5cc3cb1ab62c5321de1f348b5"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru_RU",
+        "size": 960,
+        "sha256": "0c808c2a455ea92d38c3a9e19648c80f03ca89cbe4df563ae8631dbad5b58fd5"
+      },
+      {
+        "source": "eng",
+        "target": "slk",
+        "srcCode": "en",
+        "tgtCode": "sk_SK",
+        "size": 960,
+        "sha256": "c66785b990ed57579a8836d034bbe1b840d3b0aef57524dacdc99f2dd2c8cbe0"
+      },
+      {
+        "source": "eng",
+        "target": "slv",
+        "srcCode": "en",
+        "tgtCode": "sl_SI",
+        "size": 960,
+        "sha256": "71a585969d985bc4123e0a601733c3a70faf695be10d1809c81c642350acb756"
+      },
+      {
+        "source": "eng",
+        "target": "srp",
+        "srcCode": "en",
+        "tgtCode": "sr_RS",
+        "size": 960,
+        "sha256": "5b627b6471253d8dc5584b21b0fc26b55faf5af55c74a6e3ba1083c8eee8c7f3"
+      },
+      {
+        "source": "eng",
+        "target": "swe",
+        "srcCode": "en",
+        "tgtCode": "sv_SE",
+        "size": 960,
+        "sha256": "4518919fe7143ac574cc3a2c18e207e37c6e31430df004cb6a1708e847411ad4"
+      },
+      {
+        "source": "eng",
+        "target": "swh",
+        "srcCode": "en",
+        "tgtCode": "sw_KE",
+        "size": 960,
+        "sha256": "42be085d4448f359514720cb52fa20c9adb36c284dac8177943da3c109837655"
+      },
+      {
+        "source": "eng",
+        "target": "swh",
+        "srcCode": "en",
+        "tgtCode": "sw_TZ",
+        "size": 960,
+        "sha256": "a7048a5cb1d0f66ed5705ecef57de3132278a065b0e4fd25ee640fb5a87d9cb4"
+      },
+      {
+        "source": "eng",
+        "target": "tam",
+        "srcCode": "en",
+        "tgtCode": "ta_IN",
+        "size": 960,
+        "sha256": "d433407e27dd76219168fde0b45880deb39ebd7fe179988e8f84eee550a7a185"
+      },
+      {
+        "source": "eng",
+        "target": "tel",
+        "srcCode": "en",
+        "tgtCode": "te_IN",
+        "size": 960,
+        "sha256": "ebd293235bfca7d13c5377fda64ae17bd1614da37da2b69bf5e6de553d360847"
+      },
+      {
+        "source": "eng",
+        "target": "tha",
+        "srcCode": "en",
+        "tgtCode": "th_TH",
+        "size": 960,
+        "sha256": "74963866aaf6e3ae3c45049a37cd99eb3e3114c886dda29d24e33b5f37ecddf5"
+      },
+      {
+        "source": "eng",
+        "target": "tur",
+        "srcCode": "en",
+        "tgtCode": "tr_TR",
+        "size": 960,
+        "sha256": "94684a0a6e2c2b39a6b1a26387807c32e793bcf0c295457d63b6e01b46197c31"
+      },
+      {
+        "source": "eng",
+        "target": "ukr",
+        "srcCode": "en",
+        "tgtCode": "uk_UA",
+        "size": 960,
+        "sha256": "c6a07e6c04f8666ab82bd99f5411ad58500bcac124f0dc854e31a38026029dda"
+      },
+      {
+        "source": "eng",
+        "target": "urd",
+        "srcCode": "en",
+        "tgtCode": "ur_PK",
+        "size": 960,
+        "sha256": "ba48d298db87c636252fb32fcd8e364149f2d14560a5214c32fdab88af77b296"
+      },
+      {
+        "source": "eng",
+        "target": "vie",
+        "srcCode": "en",
+        "tgtCode": "vi_VN",
+        "size": 960,
+        "sha256": "2ff3a4f357a2d001c2c00506fd4da7475b0c1a9aa25ee9570d8d4f9559e35d2e"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hans",
+        "srcCode": "en",
+        "tgtCode": "zh_CN",
+        "size": 960,
+        "sha256": "b86cb53269b96a71a3c0d90b19fb91322af86f427b22c5cac543e74af1a1fa48"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hant",
+        "srcCode": "en",
+        "tgtCode": "zh_TW",
+        "size": 960,
+        "sha256": "d7f7cf42bc8576925c08f543260e70356f8e0bc8ff34b38482fe316f018a6412"
+      },
+      {
+        "source": "eng",
+        "target": "zul",
+        "srcCode": "en",
+        "tgtCode": "zu_ZA",
+        "size": 960,
+        "sha256": "739303ecc56ec821009711d4340afb7ea829afda86db950048d00c602f0f25cf"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT24++ Test",
+      "size": 52800,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — post-edited references, news/social/speech/literary"
+    }
+  ],
+  "download": {
+    "method": "huggingface",
+    "url": "https://huggingface.co/datasets/google/wmt24pp",
+    "instructions": "Per-target en-{code}.jsonl fetched from the pinned commit revision (immutable). Use the 'target' post-edit field; drop is_bad_source rows. English source only.",
+    "sha256": null,
+    "revision": "e65f5856b1de3319c748c15e5aec0bc2336ec3b0",
+    "filePattern": "en-{lang_code}.jsonl",
+    "format": "jsonl"
+  },
+  "source": {
+    "publisher": "Google / Unbabel",
+    "url": "https://huggingface.co/datasets/google/wmt24pp",
+    "paper": "https://arxiv.org/abs/2502.12404",
+    "citation": "Deutsch et al. (2025). WMT24++: Expanding the Language Coverage of WMT24 to 55 Languages & Dialects.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Permitted under Apache-2.0.",
+    "notes": null
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "permitted",
+    "communityNotes": "Reserved as an evaluation benchmark. doNotTrain protects benchmark integrity."
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "Released 2024-2025 on HuggingFace; public and likely to enter future training crawls, though the human post-edits are newer than the underlying WMT24 sources. Regional variants are less represented than the base languages.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "google/wmt24pp HF dataset; per-pair sizes are exact post-edit-filtered row counts; HF commit revision pinned.",
+    "pinnedPairs": 55
+  },
+  "varietyResolution": {
+    "est": {
+      "resolvedCode": "ekk",
+      "basis": "WMT news/general 'Estonian' is Standard Estonian (ekk); the macrolanguage's only other member, Voro (vro), is a separately coded regional language never labeled plain 'Estonian'.",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    },
+    "lav": {
+      "resolvedCode": "lvs",
+      "basis": "WMT news/general 'Latvian' is Standard Latvian (lvs); the macrolanguage's only other member, Latgalian (ltg), is separately coded and never labeled plain 'Latvian'.",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    }
+  }
+}

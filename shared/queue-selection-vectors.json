@@ -1,0 +1,174 @@
+{
+  "_comment": [
+    "Shared test vectors for queue item selection logic.",
+    "",
+    "Both implementations of select_items / filterQueue MUST produce",
+    "identical results for these scenarios. If you change behavior in",
+    "the Python queue_runner or the JS MCP queue tool, update this file",
+    "and run both test suites.",
+    "",
+    "Consumed by:",
+    "  - arena/tests/test_run_queue.py     (Python, pytest)",
+    "  - mcp-server/test/tools.test.js     (JS, node --test)",
+    "",
+    "Canonical implementation: arena/mt_eval_harness/queue_runner.py",
+    "Port: mcp-server/src/tools/queue.js"
+  ],
+
+  "items": [
+    {
+      "id": "a",
+      "condition": "naive",
+      "est_cost_usd": 0.01,
+      "language_pair": "eng>fao",
+      "target_language": "Faroese",
+      "model": "anthropic/claude-haiku-4.5",
+      "run_command": "true"
+    },
+    {
+      "id": "b",
+      "condition": "coached",
+      "est_cost_usd": 0.01,
+      "language_pair": "eng>fao",
+      "target_language": "Faroese",
+      "model": "anthropic/claude-haiku-4.5",
+      "run_command": "true"
+    },
+    {
+      "id": "c",
+      "condition": "naive",
+      "est_cost_usd": 0.50,
+      "language_pair": "nld>dan",
+      "target_language": "Danish",
+      "model": "openai/gpt-5.5",
+      "run_command": "true"
+    },
+    {
+      "id": "d",
+      "condition": "naive",
+      "est_cost_usd": null,
+      "language_pair": "spa>cat",
+      "target_language": "Catalan",
+      "model": "google/gemini-3.5-flash",
+      "run_command": "true"
+    },
+    {
+      "id": "e",
+      "condition": "naive",
+      "est_cost_usd": 0.02,
+      "language_pair": "deu>dan",
+      "target_language": "Danish",
+      "model": "anthropic/claude-haiku-4.5",
+      "run_command": "true"
+    }
+  ],
+
+  "scenarios": [
+    {
+      "name": "top_n_skips_coached_by_default",
+      "params": { "top": 3, "include_coached": false },
+      "expected_ids": ["a", "c", "d"],
+      "expected_skipped_ids": ["b"]
+    },
+    {
+      "name": "top_n_includes_coached_when_asked",
+      "params": { "top": 2, "include_coached": true },
+      "expected_ids": ["a", "b"]
+    },
+    {
+      "name": "budget_takes_from_top_within_budget",
+      "comment": "$0.10: a (0.01) fits, b (coached) skipped, c (0.50) exceeds, d (null) no estimate, e (0.02) still fits",
+      "params": { "budget": 0.10, "include_coached": false },
+      "expected_ids": ["a", "e"]
+    },
+    {
+      "name": "budget_exact_fit",
+      "comment": "$0.51 budget: a (0.01) + c (0.50) = 0.51, fits exactly",
+      "params": { "budget": 0.51, "include_coached": false },
+      "expected_ids": ["a", "c"]
+    },
+    {
+      "name": "empty_queue",
+      "override_items": [],
+      "params": { "top": 5 },
+      "expected_ids": []
+    },
+    {
+      "name": "single_item_exceeds_budget",
+      "override_items": [
+        { "id": "x", "condition": "naive", "est_cost_usd": 5.00,
+          "language_pair": "eng>fao", "target_language": "Faroese",
+          "model": "m1", "run_command": "true" }
+      ],
+      "params": { "budget": 2.00 },
+      "expected_ids": []
+    },
+    {
+      "name": "no_partial_selection",
+      "comment": "Items selected only if they fit ENTIRELY within budget",
+      "override_items": [
+        { "id": "a", "condition": "naive", "est_cost_usd": 1.50,
+          "language_pair": "eng>fao", "target_language": "Faroese",
+          "model": "m1", "run_command": "true" },
+        { "id": "b", "condition": "naive", "est_cost_usd": 1.50,
+          "language_pair": "eng>crk", "target_language": "Plains Cree",
+          "model": "m1", "run_command": "true" }
+      ],
+      "params": { "budget": 2.00 },
+      "expected_ids": ["a"]
+    },
+    {
+      "name": "cheaper_item_after_expensive_one",
+      "comment": "Skip-and-continue: a cheap item after an unaffordable one is still selected",
+      "override_items": [
+        { "id": "a", "condition": "naive", "est_cost_usd": 0.10,
+          "language_pair": "eng>fao", "target_language": "Faroese",
+          "model": "m1", "run_command": "true" },
+        { "id": "b", "condition": "naive", "est_cost_usd": 5.00,
+          "language_pair": "eng>crk", "target_language": "Plains Cree",
+          "model": "m1", "run_command": "true" },
+        { "id": "c", "condition": "naive", "est_cost_usd": 0.05,
+          "language_pair": "deu>dan", "target_language": "Danish",
+          "model": "m1", "run_command": "true" }
+      ],
+      "params": { "budget": 0.20 },
+      "expected_ids": ["a", "c"]
+    },
+    {
+      "name": "engine_items_selected_by_default",
+      "comment": "MT-engine items (condition 'engine') are not gated like coached: top-N picks them without any flag",
+      "override_items": [
+        { "id": "a", "condition": "naive", "est_cost_usd": 0.01,
+          "language_pair": "eng>fao", "target_language": "Faroese",
+          "model": "anthropic/claude-haiku-4.5", "run_command": "true" },
+        { "id": "f", "condition": "engine", "est_cost_usd": 0.03,
+          "language_pair": "eng>zul", "target_language": "Zulu",
+          "model": "google-translate", "run_command": "true" },
+        { "id": "b", "condition": "coached", "est_cost_usd": 0.01,
+          "language_pair": "eng>fao", "target_language": "Faroese",
+          "model": "anthropic/claude-haiku-4.5", "run_command": "true" }
+      ],
+      "params": { "top": 3, "include_coached": false },
+      "expected_ids": ["a", "f"],
+      "expected_skipped_ids": ["b"]
+    },
+    {
+      "name": "engine_unpublished_cost_skipped_in_budget_mode",
+      "comment": "Engines with unpublished pricing carry est_cost_usd null — unknown is never free, so budget mode skips them; priced engine items spend like any other",
+      "override_items": [
+        { "id": "f", "condition": "engine", "est_cost_usd": 0.03,
+          "language_pair": "eng>zul", "target_language": "Zulu",
+          "model": "google-translate", "run_command": "true" },
+        { "id": "g", "condition": "engine", "est_cost_usd": null,
+          "language_pair": "eng>lav", "target_language": "Latvian",
+          "model": "tilde", "run_command": "true" },
+        { "id": "h", "condition": "engine", "est_cost_usd": 0.05,
+          "language_pair": "eng>swh", "target_language": "Swahili",
+          "model": "deepl", "run_command": "true" }
+      ],
+      "params": { "budget": 0.08 },
+      "expected_ids": ["f", "h"],
+      "expected_skipped_ids": ["g"]
+    }
+  ]
+}

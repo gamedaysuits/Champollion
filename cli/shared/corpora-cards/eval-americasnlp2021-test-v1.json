@@ -1,0 +1,162 @@
+{
+  "id": "eval-americasnlp2021-test-v1",
+  "type": "multiway",
+  "name": "AmericasNLP 2021 — Open MT shared task (test)",
+  "version": "1.0",
+  "languages": [
+    "aym",
+    "bzd",
+    "cni",
+    "grn",
+    "hch",
+    "ote",
+    "quy",
+    "shp",
+    "spa",
+    "tar"
+  ],
+  "description": "AmericasNLP 2021 Shared Task on Open Machine Translation — the held-out test set for Spanish → Indigenous languages of the Americas (Aymara, Bribri, Asháninka, Guaraní, Wixarika, Hñähñu/Otomi, Quechua, Shipibo-Konibo, Rarámuri). Multi-parallel: one Spanish source (test_data/test.es) translated into each target (test_data/test.{lang}); each direction is scored es→xx (the shared-task direction). Nahuatl is excluded (mixed-variety macro code, no honest single-variety card). Fetched on demand from the task's GitHub repo at a pinned commit; Champollion never hosts the content. Domain 'conv' (general elicited sentences). Contamination HIGH — public since 2021, memorized — so scores are relative-comparison-only. License is UNSTATED upstream and aggregates heterogeneous per-language sources (incl. religious JW300 for Quechua), so the set is tagged non-commercial and is held by the license review of 2026-08-24 — mixed, partly unstated terms are never interpreted on the rights-holders' behalf; a direct local run by corpus id stays possible but can never rank.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "conv",
+    "explicitPairs": [
+      {
+        "source": "spa",
+        "target": "aym",
+        "srcCode": "es",
+        "tgtCode": "aym",
+        "size": 1003,
+        "sha256": "a6e6e2beea0ee62bb6f1590023eba275ce04f98d59e2d0b1e360d36ce4618000"
+      },
+      {
+        "source": "spa",
+        "target": "bzd",
+        "srcCode": "es",
+        "tgtCode": "bzd",
+        "size": 1003,
+        "sha256": "43f7b40da71b18813241bf74bf66e864c1e6d70c7282e360c5d2733198b205bf"
+      },
+      {
+        "source": "spa",
+        "target": "cni",
+        "srcCode": "es",
+        "tgtCode": "cni",
+        "size": 1003,
+        "sha256": "446f79acee26206863b161c8d40ecea6213ba22b69b3fc82a3e978846200c4bf"
+      },
+      {
+        "source": "spa",
+        "target": "grn",
+        "srcCode": "es",
+        "tgtCode": "gn",
+        "size": 1003,
+        "sha256": "66d64b27ccdb1ac5100f57165c6310c30fc69921d67ce998892a63d592c8da38"
+      },
+      {
+        "source": "spa",
+        "target": "hch",
+        "srcCode": "es",
+        "tgtCode": "hch",
+        "size": 1003,
+        "sha256": "8270f29a15027d150d679f6be38c461dbbca37396ac1b111ff3976bd01be15b2"
+      },
+      {
+        "source": "spa",
+        "target": "ote",
+        "srcCode": "es",
+        "tgtCode": "oto",
+        "size": 1001,
+        "sha256": "988703354d1606cc3fadba50681d61988454320f31fb768ed4af6c56fdcda31e"
+      },
+      {
+        "source": "spa",
+        "target": "quy",
+        "srcCode": "es",
+        "tgtCode": "quy",
+        "size": 1003,
+        "sha256": "08e5ed3f1e26ecd5a26cd4a3143943eed67a9873a905deb69cbf7810f049985b"
+      },
+      {
+        "source": "spa",
+        "target": "shp",
+        "srcCode": "es",
+        "tgtCode": "shp",
+        "size": 1003,
+        "sha256": "86a4041b1dead6db2e42d4e1f34c9c1d674663255605c6d6ced60a52c4dfc0cf"
+      },
+      {
+        "source": "spa",
+        "target": "tar",
+        "srcCode": "es",
+        "tgtCode": "tar",
+        "size": 1003,
+        "sha256": "6553e68502b7acbbd28b490a7521e71dbf636fd6bc546d37531e9e365e2b43af"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "AmericasNLP 2021 test",
+      "size": 9025,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out shared-task test set (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/AmericasNLP/americasnlp2021",
+    "instructions": "Per-target test_data/test.{lang} fetched from the pinned commit (immutable), paired line-for-line with the shared Spanish source test_data/test.es. Scored es→xx (the shared-task direction).",
+    "sha256": null,
+    "revision": "d3f519c6b38299d8149311e65a369047350e6849",
+    "filePattern": "test_data/test.{lang_code}",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "AmericasNLP Shared Task (organizers)",
+    "url": "http://turing.iimas.unam.mx/americasnlp/st.html",
+    "paper": "https://aclanthology.org/2021.americasnlp-1.23/",
+    "citation": "Mager et al. (2021). Findings of the AmericasNLP 2021 Shared Task on Open Machine Translation for Indigenous Languages of the Americas. AmericasNLP 2021.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-AmericasNLP-Mixed-ResearchUse",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out shared-task test set; not licensed for training. doNotTrain protects benchmark integrity.",
+    "notes": "The AmericasNLP 2021 repo states NO single license and aggregates heterogeneous per-language corpora with distinct (and in the Quechua/JW300 case, religious) provenance. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py), and quarantined pending a docs/LICENSING.md review. Champollion never hosts the content — it is fetched from the pinned upstream commit on demand."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out shared-task benchmark: training on it defeats its purpose. Upstream license is UNSTATED and mixes heterogeneous sources (incl. religious JW300 for Quechua) — kept out of every commercial / prize / API lane and held (excluded from queue, contests, and ranking) until per-language terms are stated or a grant is recorded. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "AmericasNLP 2021 test set — public since 2021 and in essentially every frontier model's training crawl. Maximally memorized, so its scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute translation quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "quarantine": true,
+  "quarantineReason": "License review 2026-08-24: HELD. No single upstream license; the set aggregates heterogeneous per-language corpora with distinct provenance (incl. religious-source JW300 for Quechua), and mixed or unstated terms are never interpreted on the rights-holders' behalf. Catalogued; excluded from the queue, contests, and ranking (DB trigger, migration 022); remote transmission refused (consent-required). A direct local run stays possible but its result can never rank. Clears per language as terms are stated, or by a recorded grant.",
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "held",
+    "lane": "catalogued-not-runnable",
+    "basis": "No single upstream license; the set aggregates heterogeneous per-language corpora with distinct provenance (incl. religious-source JW300 for Quechua), and mixed or unstated terms are never interpreted on the rights-holders' behalf. Catalogued; excluded from the queue, contests, and ranking (DB trigger, migration 022); remote transmission refused (consent-required). A direct local run stays possible but its result can never rank. Clears per language as terms are stated, or by a recorded grant."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/AmericasNLP/americasnlp2021 at commit d3f519c6b382; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/americasnlp2021.json.",
+    "pinnedPairs": 9,
+    "excluded": {
+      "nah": "Axolotl corpus mixes Nahuatl varieties under the macro code 'nah'; the project has no 'nah' macro card and mapping it to a specific variety (nci/nhi/…) would misrepresent the data."
+    }
+  }
+}

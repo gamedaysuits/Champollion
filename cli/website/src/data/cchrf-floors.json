@@ -1,0 +1,807 @@
+{
+ "_meta": {
+  "source": "champollion-derived",
+  "derivedFrom": "champollion-cchrf floor atlas (Monte-Carlo N1-unigram chance floors for chrF2++, estimated from FLORES-200 dev monolingual text only)",
+  "chrfSignature": "chrF2++ (nchar=6, nword=2, beta=2, eps_smoothing=False; sacrebleu)",
+  "estimator": "floors.N1_unigram.mean",
+  "multiScriptRule": "max floor across scripts (conservative — correction never inflates strength)",
+  "languages": 196,
+  "generatedBy": "cli/website/scripts/build-cchrf-floors.mjs"
+ },
+ "floors": {
+  "ace": 11.941,
+  "acm": 10.782,
+  "acq": 10.752,
+  "aeb": 10.805,
+  "afr": 12.607,
+  "ajp": 10.698,
+  "aka": 11.362,
+  "als": 12.047,
+  "amh": 5.202,
+  "apc": 10.672,
+  "arb": 13.084,
+  "ars": 10.726,
+  "ary": 11.105,
+  "arz": 11.004,
+  "asm": 9.341,
+  "ast": 11.88,
+  "awa": 9.339,
+  "ayr": 12.824,
+  "azb": 12.167,
+  "azj": 11.286,
+  "bak": 10.259,
+  "bam": 11.035,
+  "ban": 13.075,
+  "bel": 11.194,
+  "bem": 12.805,
+  "ben": 9.753,
+  "bho": 9.512,
+  "bjn": 13.485,
+  "bod": 13.399,
+  "bos": 11.776,
+  "bug": 12.248,
+  "bul": 11.955,
+  "cat": 12.325,
+  "ceb": 13.913,
+  "ces": 10.181,
+  "cjk": 12.323,
+  "ckb": 12.111,
+  "crh": 11.321,
+  "cym": 12.231,
+  "dan": 12.31,
+  "deu": 12.214,
+  "dik": 9.576,
+  "dyu": 11.298,
+  "dzo": 12.858,
+  "ell": 11.132,
+  "eng": 11.964,
+  "epo": 11.99,
+  "est": 12.245,
+  "eus": 13.444,
+  "ewe": 10.272,
+  "fao": 11.384,
+  "fij": 13.932,
+  "fin": 13.152,
+  "fon": 9.093,
+  "fra": 12.587,
+  "fur": 12.392,
+  "fuv": 11.022,
+  "gaz": 13.184,
+  "gla": 13.392,
+  "gle": 12.692,
+  "glg": 12.729,
+  "grn": 11.001,
+  "guj": 9.57,
+  "hat": 11.32,
+  "hau": 13.189,
+  "heb": 10.862,
+  "hin": 9.389,
+  "hne": 9.308,
+  "hrv": 11.585,
+  "hun": 11.108,
+  "hye": 11.237,
+  "ibo": 10.83,
+  "ilo": 14.379,
+  "ind": 12.792,
+  "isl": 10.93,
+  "ita": 13.158,
+  "jav": 12.475,
+  "jpn": 3.703,
+  "kab": 11.626,
+  "kac": 13.988,
+  "kam": 11.801,
+  "kan": 10.243,
+  "kas": 9.527,
+  "kat": 12.389,
+  "kaz": 10.687,
+  "kbp": 10.633,
+  "kea": 11.855,
+  "khk": 11.011,
+  "khm": 9.229,
+  "kik": 12.756,
+  "kin": 12.202,
+  "kir": 10.843,
+  "kmb": 12.356,
+  "kmr": 10.779,
+  "knc": 11.438,
+  "kon": 12.895,
+  "kor": 3.097,
+  "lao": 8.929,
+  "lij": 11.841,
+  "lim": 12.129,
+  "lin": 13.116,
+  "lit": 11.709,
+  "lmo": 11.476,
+  "ltg": 11.249,
+  "ltz": 11.644,
+  "lua": 12.439,
+  "lug": 12.186,
+  "luo": 12.209,
+  "lus": 13.514,
+  "lvs": 11.384,
+  "mag": 9.208,
+  "mai": 9.113,
+  "mal": 10.411,
+  "mar": 9.79,
+  "min": 13.225,
+  "mkd": 12.28,
+  "mlt": 11.402,
+  "mni": 10.07,
+  "mos": 10.909,
+  "mri": 13.534,
+  "mya": 10.439,
+  "nld": 12.777,
+  "nno": 12.133,
+  "nob": 12.272,
+  "npi": 9.647,
+  "nso": 12.68,
+  "nus": 10.755,
+  "nya": 12.244,
+  "oci": 12.552,
+  "ory": 9.778,
+  "pag": 12.918,
+  "pan": 8.986,
+  "pap": 12.496,
+  "pbt": 10.333,
+  "pes": 11.584,
+  "plt": 14.032,
+  "pol": 11.072,
+  "por": 12.507,
+  "prs": 11.717,
+  "quy": 13.209,
+  "ron": 12.472,
+  "run": 12.167,
+  "rus": 11.378,
+  "sag": 12.113,
+  "san": 9.911,
+  "sat": 11.127,
+  "scn": 12.175,
+  "shn": 10.665,
+  "sin": 9.962,
+  "slk": 10.569,
+  "slv": 11.839,
+  "smo": 14.821,
+  "sna": 12.252,
+  "snd": 10.273,
+  "som": 13.454,
+  "sot": 13.163,
+  "spa": 12.927,
+  "srd": 13.079,
+  "srp": 11.549,
+  "ssw": 12.228,
+  "sun": 12.679,
+  "swe": 11.689,
+  "swh": 12.544,
+  "szl": 10.927,
+  "tam": 11.703,
+  "taq": 12.669,
+  "tat": 10.678,
+  "tel": 9.95,
+  "tgk": 11.905,
+  "tgl": 14.411,
+  "tha": 9.186,
+  "tir": 5.309,
+  "tpi": 13.229,
+  "tsn": 13.308,
+  "tso": 12.314,
+  "tuk": 11.199,
+  "tum": 12.354,
+  "tur": 11.34,
+  "twi": 11.777,
+  "tzm": 12.538,
+  "uig": 11.334,
+  "ukr": 10.73,
+  "umb": 11.992,
+  "urd": 10.754,
+  "uzn": 12.311,
+  "vec": 12.143,
+  "vie": 8.757,
+  "war": 13.953,
+  "wol": 10.701,
+  "xho": 11.958,
+  "ydd": 12.905,
+  "yor": 8.628,
+  "yue": 1.594,
+  "zho": 1.648,
+  "zsm": 12.993,
+  "zul": 12.175
+ },
+ "scripts": {
+  "ace": [
+   "Arab",
+   "Latn"
+  ],
+  "acm": [
+   "Arab"
+  ],
+  "acq": [
+   "Arab"
+  ],
+  "aeb": [
+   "Arab"
+  ],
+  "afr": [
+   "Latn"
+  ],
+  "ajp": [
+   "Arab"
+  ],
+  "aka": [
+   "Latn"
+  ],
+  "als": [
+   "Latn"
+  ],
+  "amh": [
+   "Ethi"
+  ],
+  "apc": [
+   "Arab"
+  ],
+  "arb": [
+   "Arab",
+   "Latn"
+  ],
+  "ars": [
+   "Arab"
+  ],
+  "ary": [
+   "Arab"
+  ],
+  "arz": [
+   "Arab"
+  ],
+  "asm": [
+   "Beng"
+  ],
+  "ast": [
+   "Latn"
+  ],
+  "awa": [
+   "Deva"
+  ],
+  "ayr": [
+   "Latn"
+  ],
+  "azb": [
+   "Arab"
+  ],
+  "azj": [
+   "Latn"
+  ],
+  "bak": [
+   "Cyrl"
+  ],
+  "bam": [
+   "Latn"
+  ],
+  "ban": [
+   "Latn"
+  ],
+  "bel": [
+   "Cyrl"
+  ],
+  "bem": [
+   "Latn"
+  ],
+  "ben": [
+   "Beng"
+  ],
+  "bho": [
+   "Deva"
+  ],
+  "bjn": [
+   "Arab",
+   "Latn"
+  ],
+  "bod": [
+   "Tibt"
+  ],
+  "bos": [
+   "Latn"
+  ],
+  "bug": [
+   "Latn"
+  ],
+  "bul": [
+   "Cyrl"
+  ],
+  "cat": [
+   "Latn"
+  ],
+  "ceb": [
+   "Latn"
+  ],
+  "ces": [
+   "Latn"
+  ],
+  "cjk": [
+   "Latn"
+  ],
+  "ckb": [
+   "Arab"
+  ],
+  "crh": [
+   "Latn"
+  ],
+  "cym": [
+   "Latn"
+  ],
+  "dan": [
+   "Latn"
+  ],
+  "deu": [
+   "Latn"
+  ],
+  "dik": [
+   "Latn"
+  ],
+  "dyu": [
+   "Latn"
+  ],
+  "dzo": [
+   "Tibt"
+  ],
+  "ell": [
+   "Grek"
+  ],
+  "eng": [
+   "Latn"
+  ],
+  "epo": [
+   "Latn"
+  ],
+  "est": [
+   "Latn"
+  ],
+  "eus": [
+   "Latn"
+  ],
+  "ewe": [
+   "Latn"
+  ],
+  "fao": [
+   "Latn"
+  ],
+  "fij": [
+   "Latn"
+  ],
+  "fin": [
+   "Latn"
+  ],
+  "fon": [
+   "Latn"
+  ],
+  "fra": [
+   "Latn"
+  ],
+  "fur": [
+   "Latn"
+  ],
+  "fuv": [
+   "Latn"
+  ],
+  "gaz": [
+   "Latn"
+  ],
+  "gla": [
+   "Latn"
+  ],
+  "gle": [
+   "Latn"
+  ],
+  "glg": [
+   "Latn"
+  ],
+  "grn": [
+   "Latn"
+  ],
+  "guj": [
+   "Gujr"
+  ],
+  "hat": [
+   "Latn"
+  ],
+  "hau": [
+   "Latn"
+  ],
+  "heb": [
+   "Hebr"
+  ],
+  "hin": [
+   "Deva"
+  ],
+  "hne": [
+   "Deva"
+  ],
+  "hrv": [
+   "Latn"
+  ],
+  "hun": [
+   "Latn"
+  ],
+  "hye": [
+   "Armn"
+  ],
+  "ibo": [
+   "Latn"
+  ],
+  "ilo": [
+   "Latn"
+  ],
+  "ind": [
+   "Latn"
+  ],
+  "isl": [
+   "Latn"
+  ],
+  "ita": [
+   "Latn"
+  ],
+  "jav": [
+   "Latn"
+  ],
+  "jpn": [
+   "Jpan"
+  ],
+  "kab": [
+   "Latn"
+  ],
+  "kac": [
+   "Latn"
+  ],
+  "kam": [
+   "Latn"
+  ],
+  "kan": [
+   "Knda"
+  ],
+  "kas": [
+   "Arab",
+   "Deva"
+  ],
+  "kat": [
+   "Geor"
+  ],
+  "kaz": [
+   "Cyrl"
+  ],
+  "kbp": [
+   "Latn"
+  ],
+  "kea": [
+   "Latn"
+  ],
+  "khk": [
+   "Cyrl"
+  ],
+  "khm": [
+   "Khmr"
+  ],
+  "kik": [
+   "Latn"
+  ],
+  "kin": [
+   "Latn"
+  ],
+  "kir": [
+   "Cyrl"
+  ],
+  "kmb": [
+   "Latn"
+  ],
+  "kmr": [
+   "Latn"
+  ],
+  "knc": [
+   "Arab",
+   "Latn"
+  ],
+  "kon": [
+   "Latn"
+  ],
+  "kor": [
+   "Hang"
+  ],
+  "lao": [
+   "Laoo"
+  ],
+  "lij": [
+   "Latn"
+  ],
+  "lim": [
+   "Latn"
+  ],
+  "lin": [
+   "Latn"
+  ],
+  "lit": [
+   "Latn"
+  ],
+  "lmo": [
+   "Latn"
+  ],
+  "ltg": [
+   "Latn"
+  ],
+  "ltz": [
+   "Latn"
+  ],
+  "lua": [
+   "Latn"
+  ],
+  "lug": [
+   "Latn"
+  ],
+  "luo": [
+   "Latn"
+  ],
+  "lus": [
+   "Latn"
+  ],
+  "lvs": [
+   "Latn"
+  ],
+  "mag": [
+   "Deva"
+  ],
+  "mai": [
+   "Deva"
+  ],
+  "mal": [
+   "Mlym"
+  ],
+  "mar": [
+   "Deva"
+  ],
+  "min": [
+   "Arab",
+   "Latn"
+  ],
+  "mkd": [
+   "Cyrl"
+  ],
+  "mlt": [
+   "Latn"
+  ],
+  "mni": [
+   "Beng"
+  ],
+  "mos": [
+   "Latn"
+  ],
+  "mri": [
+   "Latn"
+  ],
+  "mya": [
+   "Mymr"
+  ],
+  "nld": [
+   "Latn"
+  ],
+  "nno": [
+   "Latn"
+  ],
+  "nob": [
+   "Latn"
+  ],
+  "npi": [
+   "Deva"
+  ],
+  "nso": [
+   "Latn"
+  ],
+  "nus": [
+   "Latn"
+  ],
+  "nya": [
+   "Latn"
+  ],
+  "oci": [
+   "Latn"
+  ],
+  "ory": [
+   "Orya"
+  ],
+  "pag": [
+   "Latn"
+  ],
+  "pan": [
+   "Guru"
+  ],
+  "pap": [
+   "Latn"
+  ],
+  "pbt": [
+   "Arab"
+  ],
+  "pes": [
+   "Arab"
+  ],
+  "plt": [
+   "Latn"
+  ],
+  "pol": [
+   "Latn"
+  ],
+  "por": [
+   "Latn"
+  ],
+  "prs": [
+   "Arab"
+  ],
+  "quy": [
+   "Latn"
+  ],
+  "ron": [
+   "Latn"
+  ],
+  "run": [
+   "Latn"
+  ],
+  "rus": [
+   "Cyrl"
+  ],
+  "sag": [
+   "Latn"
+  ],
+  "san": [
+   "Deva"
+  ],
+  "sat": [
+   "Olck"
+  ],
+  "scn": [
+   "Latn"
+  ],
+  "shn": [
+   "Mymr"
+  ],
+  "sin": [
+   "Sinh"
+  ],
+  "slk": [
+   "Latn"
+  ],
+  "slv": [
+   "Latn"
+  ],
+  "smo": [
+   "Latn"
+  ],
+  "sna": [
+   "Latn"
+  ],
+  "snd": [
+   "Arab"
+  ],
+  "som": [
+   "Latn"
+  ],
+  "sot": [
+   "Latn"
+  ],
+  "spa": [
+   "Latn"
+  ],
+  "srd": [
+   "Latn"
+  ],
+  "srp": [
+   "Cyrl"
+  ],
+  "ssw": [
+   "Latn"
+  ],
+  "sun": [
+   "Latn"
+  ],
+  "swe": [
+   "Latn"
+  ],
+  "swh": [
+   "Latn"
+  ],
+  "szl": [
+   "Latn"
+  ],
+  "tam": [
+   "Taml"
+  ],
+  "taq": [
+   "Latn",
+   "Tfng"
+  ],
+  "tat": [
+   "Cyrl"
+  ],
+  "tel": [
+   "Telu"
+  ],
+  "tgk": [
+   "Cyrl"
+  ],
+  "tgl": [
+   "Latn"
+  ],
+  "tha": [
+   "Thai"
+  ],
+  "tir": [
+   "Ethi"
+  ],
+  "tpi": [
+   "Latn"
+  ],
+  "tsn": [
+   "Latn"
+  ],
+  "tso": [
+   "Latn"
+  ],
+  "tuk": [
+   "Latn"
+  ],
+  "tum": [
+   "Latn"
+  ],
+  "tur": [
+   "Latn"
+  ],
+  "twi": [
+   "Latn"
+  ],
+  "tzm": [
+   "Tfng"
+  ],
+  "uig": [
+   "Arab"
+  ],
+  "ukr": [
+   "Cyrl"
+  ],
+  "umb": [
+   "Latn"
+  ],
+  "urd": [
+   "Arab"
+  ],
+  "uzn": [
+   "Latn"
+  ],
+  "vec": [
+   "Latn"
+  ],
+  "vie": [
+   "Latn"
+  ],
+  "war": [
+   "Latn"
+  ],
+  "wol": [
+   "Latn"
+  ],
+  "xho": [
+   "Latn"
+  ],
+  "ydd": [
+   "Hebr"
+  ],
+  "yor": [
+   "Latn"
+  ],
+  "yue": [
+   "Hant"
+  ],
+  "zho": [
+   "Hans",
+   "Hant"
+  ],
+  "zsm": [
+   "Latn"
+  ],
+  "zul": [
+   "Latn"
+  ]
+ }
+}

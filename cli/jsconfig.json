@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "node16",
+    "moduleResolution": "node16",
+    "target": "es2022",
+    "checkJs": true,
+    "strict": false,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": ["lib/**/*.js", "bin/**/*.js"],
+  "exclude": ["node_modules", "test", "website", ".vault"]
+}

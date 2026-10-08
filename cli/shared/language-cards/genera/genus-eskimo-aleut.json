@@ -1,0 +1,82 @@
+{
+  "code": "genus-eskimo-aleut",
+  "name": "Eskimo-Aleut Languages (Genus Template)",
+  "dir": "ltr",
+  "script": "Latn",
+  "formality": {
+    "system": "register-levels",
+    "description": "Eskimo-Aleut languages express formality through kinship-based address and discourse style rather than pronominal T-V distinctions. Respectful language for elders and ceremonial contexts uses specific discourse markers and vocabulary.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Eskimo-Aleut languages have no grammatical gender. Pronouns do not distinguish gender."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "two",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "polysynthesis": "Eskimo-Aleut languages are extremely polysynthetic — a single word can encode what would be an entire sentence in English. Verbs carry subject, object, tense, aspect, mood, and multiple derivational morphemes. Word-level MT is fundamentally inadequate.",
+    "ergativity": "Most Eskimo-Aleut languages are ergative-absolutive in case alignment, meaning the subject of a transitive verb and the subject of an intransitive verb receive different case markings. This is the opposite of English/European patterns.",
+    "incorporatedMorphology": "Noun incorporation is productive — nouns can be incorporated into verb stems to create complex predicates. This creates 'words' that have no single-word equivalent in target languages.",
+    "dialectalVariation": "Significant dialectal variation across communities, even within the same language. Written standardization is often contested or incomplete."
+  },
+  "contactInfluences": [
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "government",
+        "technology",
+        "commerce"
+      ],
+      "depth": "structural",
+      "period": "19th century–present",
+      "notes": "Colonial and administrative dominance. English-only schooling policies severely impacted intergenerational transmission."
+    },
+    {
+      "source": "French",
+      "sourceIso639_3": "fra",
+      "type": "adstrate",
+      "domains": [
+        "government",
+        "education"
+      ],
+      "depth": "light",
+      "period": "18th century–present",
+      "notes": "French administrative influence in northern Quebec (Nunavik) and some Labrador communities."
+    }
+  ],
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus template for Eskimo-Aleut languages (Inuktitut, Inuinnaqtun, Kalaallisut, Yupik varieties, etc.). All share extreme polysynthesis, ergative alignment, and noun incorporation.",
+  "regions": [
+    {
+      "country": null,
+      "countryCode": "XX",
+      "officialStatus": null,
+      "region": null,
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

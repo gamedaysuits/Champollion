@@ -1,0 +1,124 @@
+{
+  "id": "eval-in22-gen-v1",
+  "type": "multiway",
+  "name": "IN22-Gen — All Pairs",
+  "version": "1.0",
+  "description": "N-way parallel evaluation benchmark from AI4Bharat IndicTrans2. 22 scheduled Indian languages + English, 1024 sentences each, covering 13 domains (news, entertainment, culture, legal, sports, health). CC-BY-4.0 licensed. Domain 'mixed': domainDistribution is an approximate, news-leaning estimate over the documented 13 general domains (sports/entertainment/culture folded into conv/edu).",
+  "languages": [
+    "eng",
+    "asm",
+    "ben",
+    "brx",
+    "doi",
+    "guj",
+    "hin",
+    "kan",
+    "kas",
+    "kok",
+    "mai",
+    "mal",
+    "mni",
+    "mar",
+    "npi",
+    "ori",
+    "pan",
+    "san",
+    "sat",
+    "snd",
+    "tam",
+    "tel",
+    "urd"
+  ],
+  "pairGeneration": {
+    "mode": "all-pairs",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 1024,
+    "domain": "mixed",
+    "domainDistribution": {
+      "news": 0.4,
+      "conv": 0.25,
+      "edu": 0.15,
+      "legal": 0.1,
+      "medical": 0.1
+    }
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "Test",
+      "size": 1024,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — general-domain benchmark across 22 Indian languages + English"
+    }
+  ],
+  "download": {
+    "method": "huggingface",
+    "url": "https://huggingface.co/datasets/ai4bharat/IN22-Gen",
+    "instructions": "GATED on HuggingFace (gated: auto). Accept the CC-BY-4.0 terms on the dataset page once, then set HF_TOKEN. The harness fetches IN22_benchmark.tar.gz and reads the line-aligned files at IN22_benchmark/gen/test.{flores_code} (eng_Latn, tel_Telu, tam_Taml, …). The N-way set is line-index aligned — no pivot needed.",
+    "sha256": "739a2819858ad615d14700f43fde0b23550fd7a690f024b5253111c233b46995",
+    "filePattern": "IN22_benchmark/gen/test.{lang_code}",
+    "format": "parallel-text",
+    "gated": true,
+    "termsUrl": "https://huggingface.co/datasets/ai4bharat/IN22-Gen",
+    "tokenEnv": "HF_TOKEN"
+  },
+  "source": {
+    "publisher": "AI4Bharat, IIT Madras",
+    "url": "https://ai4bharat.iitm.ac.in/",
+    "paper": "https://arxiv.org/abs/2305.16307",
+    "citation": "Gala et al. (2023). IndicTrans2: Towards High-Quality and Accessible Machine Translation Models for all 22 Scheduled Indian Languages.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Permitted with attribution under CC-BY-4.0 terms.",
+    "notes": null
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "restricted",
+    "commercialUse": "permitted",
+    "communityNotes": null
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Specialized Indian language benchmark released alongside IndicTrans2 (2023). Not widely crawled compared to FLORES+ or WMT datasets. Primarily used within the Indic NLP research community. However, it is publicly available on HuggingFace, so contamination in future models is possible.",
+    "knownInTrainingOf": [
+      "IndicTrans2"
+    ]
+  },
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "populatedFrom": "AI4Bharat IN22-Gen HuggingFace dataset card, IndicTrans2 paper (arXiv:2305.16307)"
+  },
+  "varietyResolution": {
+    "doi": {
+      "resolvedCode": "dgo",
+      "basis": "IN22 Dogri is the Dogri-proper written standard (dgo); the macrolanguage's only other member, Kangri (xnr), is a distinct language never labeled plain 'Dogri'.",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    },
+    "kok": {
+      "resolvedCode": "gom",
+      "basis": "AI4Bharat IndicTrans2/IN22 documents Konkani as gom_Deva — Goan Konkani (IndicTrans2 language list).",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    },
+    "ori": {
+      "resolvedCode": "ory",
+      "basis": "AI4Bharat IndicTrans2/IN22 documents Odia as ory_Orya (IndicTrans2 language list).",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    },
+    "san": {
+      "resolvedCode": "cls",
+      "basis": "Modern composed Sanskrit test text is Classical Sanskrit (cls); the macrolanguage's only other member, Vedic Sanskrit (vsn), is a closed historical corpus.",
+      "recordedBy": "agent — upstream-documented-basis rule (LANGUAGE_TAXONOMY.md Position 4 v2)",
+      "recordedAt": "2026-07-19"
+    }
+  }
+}

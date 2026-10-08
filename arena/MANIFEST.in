@@ -1,0 +1,5 @@
+# The bundled dataset registry must travel in the sdist: `python -m build`
+# builds the wheel FROM the sdist, and datasets/registry.json (the SSOT) is
+# not shipped there. setup.py's sdist hook materializes this copy before the
+# manifest is assembled; this include makes its pickup explicit.
+include mt_eval_harness/data/registry.json

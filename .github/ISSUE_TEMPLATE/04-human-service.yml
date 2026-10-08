@@ -1,0 +1,108 @@
+name: "🧑‍🤝‍🧑 Submit a human translation service"
+description: "List an opt-in human translation provider (community language office, agency, or individual translator) keyed by language pair."
+title: "[Human service] "
+labels: ["submission", "submission:human-service", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for listing a human translation service. **This is an intake form, not an auto-add.**
+        A maintainer reviews it before listing — see the
+        [submission guide](https://champollion.dev/docs/network/getting-started/submit-to-the-index).
+
+        **Consent first:** a provider is listed only with its explicit consent. Never name a
+        nation or organization as a custodian before they have confirmed — use "community key
+        custodians (in confirmation)".
+
+        **Do NOT put contact details (email/phone/endpoint) in this public issue.** Contact info is
+        PII and is supplied to the maintainer out-of-band, never stored in the public index.
+
+  - type: input
+    id: display-name
+    attributes:
+      label: Provider display name (consented public name)
+      placeholder: "e.g. Example LRL Translation Collective"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider-type
+    attributes:
+      label: Provider type
+      options:
+        - "community_org"
+        - "agency"
+        - "individual"
+    validations:
+      required: true
+
+  - type: textarea
+    id: pairs
+    attributes:
+      label: Language pair(s)
+      description: "ISO 639-3 source→target, one per line."
+      placeholder: |
+        eng-crk
+    validations:
+      required: true
+
+  - type: input
+    id: variety
+    attributes:
+      label: Variety / script
+      description: "Dialect or script qualifier when it matters (e.g. SRO, Latn)."
+
+  - type: dropdown
+    id: dispatch-channel
+    attributes:
+      label: Dispatch channel
+      description: "How a request reaches them (the address itself is PII — do not include it here)."
+      options:
+        - "email"
+        - "webhook"
+        - "api"
+
+  - type: input
+    id: turnaround-days
+    attributes:
+      label: Typical turnaround (days)
+      placeholder: "e.g. 5"
+
+  - type: input
+    id: rate-per-word
+    attributes:
+      label: Rate per source word
+      description: "Provider currency, settled off-platform. Leave blank if not applicable."
+
+  - type: input
+    id: domains
+    attributes:
+      label: Domains served
+      placeholder: "education, legal, health, general, …"
+
+  - type: input
+    id: nc-terms
+    attributes:
+      label: Non-commercial / community-set terms (if any)
+
+  - type: textarea
+    id: sovereignty-notes
+    attributes:
+      label: Sovereignty / data-handling notes
+      description: "Off-community processing, attribution requirements, data-sovereignty notes."
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Provider consent (required)
+      options:
+        - label: "The provider has explicitly consented to be listed publicly."
+          required: true
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Compliance attestation (required)
+      options:
+        - label: "I confirm this is publicly listable, contains NO corpus content or personal data, and respects the source's license and any community/sovereignty restrictions."
+          required: true

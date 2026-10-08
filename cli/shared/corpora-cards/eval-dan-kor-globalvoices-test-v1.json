@@ -1,0 +1,49 @@
+{
+  "id": "eval-dan-kor-globalvoices-test-v1",
+  "type": "eval",
+  "name": "GlobalVoices dan→kor (test)",
+  "version": "1.0",
+  "description": "Evaluation corpus derived from GlobalVoices v2018q4 citizen journalism parallel text. 205 test sentences from a total of 205 aligned pairs. News/blog domain. CC-BY-3.0 licensed.",
+  "pair": {
+    "source": "dan",
+    "target": "kor"
+  },
+  "dev": {
+    "domain": "news",
+    "dataFile": "eval-dan-kor-globalvoices-test-v1.json",
+    "size": 205
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "GlobalVoices text is freely available online and widely crawled. Likely present in frontier model training data."
+  },
+  "license": {
+    "spdx": "CC-BY-3.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": true,
+    "notes": "Global Voices publishes all content under CC-BY-3.0."
+  },
+  "source": {
+    "publisher": "Global Voices / OPUS",
+    "url": "https://opus.nlpl.eu/GlobalVoices/corpus/version/GlobalVoices",
+    "paper": null,
+    "citation": "Global Voices. https://globalvoices.org/. OPUS: Tiedemann, J. (2012). Parallel Data, Tools and Interfaces in OPUS. LREC 2012.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/OPUS-GlobalVoices/v2018q4/moses/",
+    "builder": "globalvoices-parallel",
+    "sha256": "af79c095254b853b8ca994fa00a7715e2b609d0a8bc702b932ee4c4ed0529cc9",
+    "recipe": {
+      "split": "test",
+      "seed": 42,
+      "tail_n": 2000
+    },
+    "license": "CC-BY-3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "OPUS GlobalVoices v2018q4 via build_all_globalvoices.py"
+  }
+}

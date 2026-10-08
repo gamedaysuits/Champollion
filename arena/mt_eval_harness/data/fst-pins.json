@@ -1,0 +1,135 @@
+{
+  "_comment": "Which FST build the harness installs and evaluates with, per language. An evaluation PIN (tool configuration, sha256-verified where the channel allows), not a language fact: the language card says an FST EXISTS (resources.fsts[]); this file says which build the harness measures with, so a harness version pins its FST version. Shipped inside the wheel so it works from a pip install and on an air-gapped node. Recovered 2026-10-03 from the pre-atlas cards (git 1b8cccc5f^), where these blocks lived as resources.fsts[0].install until the 2026-08-12 cutover dropped them and silently turned the FST metrics off. Override with MT_EVAL_FST_PINS=<path to a file of this shape>. Re-pinning crk requires a regression run (see the note on its entry).",
+  "version": 1,
+  "pins": {
+    "amh": {
+      "name": "GiellaLT Amharic FST (lang-amh, Divvun-packaged)",
+      "url": "https://github.com/giellalt/lang-amh",
+      "install": {
+        "repo": "giellalt/lang-amh",
+        "releaseTag": "speller-amh/dev-latest",
+        "assetPattern": "_noarch-macos.pkg",
+        "bundlePattern": "no.divvun.MacDivvun.am.bundle",
+        "format": "divvun-macos-pkg",
+        "kind": "acceptor",
+        "maturity": "stub"
+      }
+    },
+    "crk": {
+      "name": "GiellaLT Plains Cree FST (lang-crk)",
+      "url": "https://github.com/giellalt/lang-crk",
+      "install": {
+        "repo": "giellalt/lang-crk",
+        "format": "giellalt-nightly-apt",
+        "aptPool": "https://apertium.projectjj.com/apt/nightly/pool/main/g/giella-crk/",
+        "debFile": "giella-crk_0.2.0+g4349~bec054ef-1~sid1_all.deb",
+        "debSha256": "d09ec35798e2de9cec3fca14a34269e417852f3b2dc3b5b82b986af69a4f8e3d",
+        "langCommit": "bec054ef6db5a9813f5f987e48a7253438027101",
+        "stripSuffix": "-giellaltbuild",
+        "include": [
+          "crk-strict-analyzer-giellaltbuild.hfstol",
+          "crk-strict-analyzer-for-dictionary-giellaltbuild.hfstol",
+          "crk-relaxed-analyzer-giellaltbuild.hfstol",
+          "crk-relaxed-analyzer-for-dictionary-giellaltbuild.hfstol",
+          "crk-strict-generator-giellaltbuild.hfstol",
+          "crk-strict-generator-with-morpheme-boundaries-giellaltbuild.hfstol",
+          "analyser-gt-desc.hfstol"
+        ],
+        "maturity": "production"
+      },
+      "note": "Pinned to the GiellaLT NIGHTLY build of lang-crk @ bec054ef (2026-09-29), not to a GitHub release: upstream's newest release tag (fst-v2021.7.8) is five years stale and uses 'y' where current lang-crk uses 'ý', so generation silently failed for 17.6% of lemmas. Re-pinned 2026-10-03 from e1f96fea (2026-06-03), which the nightly pool had pruned, after a regression run: the six analyzer/generator files are byte-identical to e1f96fea's, analyser-gt-desc differs only by two unused tags (+Use/TTS, +Use/-TTS), and 8,039 surfaces from lang-crk's own test yamls analyse identically on both builds (0 regressions). Upstream gaps unchanged on both: namôya, mwêstas, nisis, okîsikâw, êwako, kotak. Newer is not automatically better: re-pin only after the same check."
+    },
+    "eus": {
+      "name": "GiellaLT Basque FST (lang-eus, Divvun-packaged)",
+      "url": "https://github.com/giellalt/lang-eus",
+      "install": {
+        "repo": "giellalt/lang-eus",
+        "releaseTag": "speller-eus/dev-latest",
+        "assetPattern": "_noarch-macos.pkg",
+        "bundlePattern": "no.divvun.MacDivvun.eu.bundle",
+        "format": "divvun-macos-pkg",
+        "kind": "acceptor",
+        "maturity": "stub"
+      }
+    },
+    "fin": {
+      "name": "GiellaLT Finnish FST (lang-fin)",
+      "url": "https://github.com/giellalt/lang-fin",
+      "install": {
+        "repo": "giellalt/lang-fin",
+        "format": "divvun"
+      }
+    },
+    "iku": {
+      "name": "GiellaLT Inuktitut FST (lang-iku)",
+      "url": "https://github.com/giellalt/lang-iku",
+      "install": {
+        "repo": "giellalt/lang-iku",
+        "format": "divvun",
+        "maturity": "production"
+      }
+    },
+    "nob": {
+      "name": "GiellaLT Norwegian Bokmål FST (lang-nob)",
+      "url": "https://github.com/giellalt/lang-nob",
+      "install": {
+        "repo": "giellalt/lang-nob",
+        "format": "divvun"
+      }
+    },
+    "que": {
+      "name": "SQUOIA (Rule-based MT system for Spanish-Quechua)",
+      "url": "https://github.com/a-rios/squoia",
+      "install": {
+        "repo": "a-rios/squoia",
+        "format": "manual",
+        "maturity": "production"
+      }
+    },
+    "sma": {
+      "name": "GiellaLT Southern Sámi FST (lang-sma)",
+      "url": "https://github.com/giellalt/lang-sma",
+      "install": {
+        "repo": "giellalt/lang-sma",
+        "format": "divvun"
+      }
+    },
+    "sme": {
+      "name": "GiellaLT Northern Sámi FST (lang-sme)",
+      "url": "https://github.com/giellalt/lang-sme/releases",
+      "install": {
+        "repo": "giellalt/lang-sme",
+        "releaseTag": "speller-sme/v4.5.2",
+        "assetPattern": "_noarch-macos.pkg",
+        "bundlePattern": "no.divvun.MacDivvun.se.bundle",
+        "format": "divvun-macos-pkg",
+        "kind": "acceptor",
+        "maturity": "production"
+      }
+    },
+    "smj": {
+      "name": "GiellaLT Lule Sámi FST (lang-smj)",
+      "url": "https://github.com/giellalt/lang-smj",
+      "install": {
+        "repo": "giellalt/lang-smj",
+        "format": "divvun"
+      }
+    },
+    "smn": {
+      "name": "GiellaLT Inari Sámi FST (lang-smn)",
+      "url": "https://github.com/giellalt/lang-smn",
+      "install": {
+        "repo": "giellalt/lang-smn",
+        "format": "divvun"
+      }
+    },
+    "sms": {
+      "name": "GiellaLT Skolt Sámi FST (lang-sms)",
+      "url": "https://github.com/giellalt/lang-sms",
+      "install": {
+        "repo": "giellalt/lang-sms",
+        "format": "divvun"
+      }
+    }
+  }
+}

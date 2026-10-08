@@ -1,0 +1,131 @@
+---
+sidebar_position: 1
+title: "Pag-install"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Pag-install
+
+:::note[Lisensya]
+Ang champollion CLI ay source-available sa ilalim ng
+[PolyForm Noncommercial License 1.0.0](https://github.com/gamedaysuits/Champollion/blob/main/cli/LICENSE): libreng gamitin, baguhin, at ibahagi
+para sa mga di-komersyal na layunin — mga personal na proyekto, pananaliksik, pagtuturo, at paggamit ng mga
+kawanggawa, paaralan, pampublikong ospital at klinika, at pamahalaan. Ang paggamit nito para sa komersyal na layunin ay hindi
+sakop ng lisensyang ito: ang produkto ng isang negosyong kumikita (for-profit), tulad ng storefront ng isang tindahan, ay itinuturing na komersyal na paggamit.
+Ang evaluation harness sa likod ng [Network](/docs/network/) ay open source (AGPL-3.0-or-later).
+Ang lisensya ng bawat package sa payak na pananalita, kasama ang mga halimbawa: [Sino ang maaaring gumamit nito](/docs/getting-started/who-may-use-this).
+:::
+
+## Mga Kinakailangan
+
+- **Node.js 20.11+** (native ESM)
+- Isang translation API key (tingnan sa ibaba)
+
+## I-install
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## Kumuha ng API Key
+
+Kailangan ng Champollion ng translation backend. Pumili po ng isa:
+
+| Provider | Environment Variable | Pinakamainam Para sa |
+|----------|---------------------|----------------------|
+| **OpenRouter** (inirerekomenda) | `OPENROUTER_API_KEY` | Mga proyektong maraming nilalaman, Markdown, 200+ na modelo |
+| **Gemini** (libreng tier) | `GEMINI_API_KEY` | Pagsisimula nang walang bayad, magandang kalidad |
+| **OpenAI** | `OPENAI_API_KEY` | Direktang access sa GPT-4o |
+| **Anthropic** | `ANTHROPIC_API_KEY` | Direktang access sa Claude, nuanced na teksto |
+| **DeepL** | `DEEPL_API_KEY` | Mga wikang Europeo, built-in na pormalidad |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | Malalaking bulto ng mga key-value pair, 194 na wika |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure, 135 na wika |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | Self-hosted, inuuna ang privacy |
+| **Tilde MT** | `TILDE_API_KEY` | Mga wikang Baltic at Europeo, naka-host sa EU |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | Propesyonal na MT, 200 na wika |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+Nagbibigay ang [OpenRouter](https://openrouter.ai) ng unified API para sa 200+ LLM models. May available na free tier.
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+O idagdag sa `.env.local`:
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+Pinakamainam para sa: mga proyektong content-heavy, Markdown translation, at mga proyektong nangangailangan ng content-aware shielding (code blocks, shortcodes, interpolation variables).
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+Pinakamainam para sa: malalaking bulto ng mga key-value string pair (194 na wika). **Hindi inirerekomenda** para sa nilalamang Markdown — walang kakayahan ang Google Translate na kumilala ng mga code block, shortcode, o interpolation variable.
+
+:::tip[Matalinong pag-detect]
+Kung ang `GOOGLE_TRANSLATE_API_KEY` lamang ang naka-set (walang OpenRouter key), awtomatikong lilipat ang champollion sa Google Translate. Hindi na kinakailangan ang pagbabago sa config.
+:::
+
+  </TabItem>
+</Tabs>
+
+## I-verify ang Pag-install
+
+```bash
+npx champollion --help
+```
+
+Dapat ninyong makita ang listahan ng mga available na command. Handa na po kayo para sa [Mabilisang Pagsisimula](/docs/getting-started/quick-start).
