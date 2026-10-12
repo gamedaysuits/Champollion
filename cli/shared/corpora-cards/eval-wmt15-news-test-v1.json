@@ -1,0 +1,153 @@
+{
+  "id": "eval-wmt15-news-test-v1",
+  "type": "multiway",
+  "name": "WMT2015 News Translation — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ces",
+    "deu",
+    "eng",
+    "fin",
+    "fra",
+    "rus"
+  ],
+  "description": "WMT2015 News Translation blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt15 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers news journalism. Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'news' (the WMT News Translation task).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "news",
+    "explicitPairs": [
+      {
+        "source": "ces",
+        "target": "eng",
+        "srcCode": "cs",
+        "tgtCode": "en",
+        "size": 2656,
+        "sha256": "7f2e58ccf5a7dd097d028b16d980b77baca6548340473b242a5b949e9ef20ad2"
+      },
+      {
+        "source": "deu",
+        "target": "eng",
+        "srcCode": "de",
+        "tgtCode": "en",
+        "size": 2169,
+        "sha256": "297fa6ef201445749d3c0bee432b849db6bedb03a7931e64407f5393f8299574"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs",
+        "size": 2656,
+        "sha256": "78bbb0c5a1bd4fd758efe41050d70fbe3e67b61dbfe3ed495c178799115b029c"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de",
+        "size": 2169,
+        "sha256": "e2f41b0d523e874c801cc7436c71153b3bdbc71398128756390620745c4e2164"
+      },
+      {
+        "source": "eng",
+        "target": "fin",
+        "srcCode": "en",
+        "tgtCode": "fi",
+        "size": 1370,
+        "sha256": "513a8169444cb9aecb5794f43946e9ccea2a20586322a1ad68573a029f3d9153"
+      },
+      {
+        "source": "eng",
+        "target": "fra",
+        "srcCode": "en",
+        "tgtCode": "fr",
+        "size": 1500,
+        "sha256": "c51a276a67b59e2863bca3fa5b1894c63322f1732f0f9a7794d4255a93b65f6a"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 2818,
+        "sha256": "9dbc847c7d63b32615b376f65c9f57c735c31f6b75b3c8219bd6373d682fc03c"
+      },
+      {
+        "source": "fin",
+        "target": "eng",
+        "srcCode": "fi",
+        "tgtCode": "en",
+        "size": 1370,
+        "sha256": "82c9c7de8ec8e7ec2dfc94682e51266d1ae358cdf23ef9a9305529094a0cdfc5"
+      },
+      {
+        "source": "fra",
+        "target": "eng",
+        "srcCode": "fr",
+        "tgtCode": "en",
+        "size": 1500,
+        "sha256": "9ae5fb8fd91a35357cbbf19d17b4c4afcc55350681602eedbdb347e59a5098d2"
+      },
+      {
+        "source": "rus",
+        "target": "eng",
+        "srcCode": "ru",
+        "tgtCode": "en",
+        "size": 2818,
+        "sha256": "22be26bf8fd0cfb0fcafd0c7a7daf096a1494b6bf1895f5ba3b4458474c8e637"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2015 News Translation test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (relative-comparison-only)",
+      "size": 21026
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt15/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt15 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt15/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2015 Conference on Machine Translation (WMT15). statmt.org/wmt15.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "WMT2015 News Translation test set — public since 2015 and in essentially every frontier model's training crawl. Maximally memorized, so its scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute translation quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt15']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 10
+  }
+}

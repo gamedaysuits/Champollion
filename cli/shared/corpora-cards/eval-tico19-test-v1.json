@@ -1,0 +1,69 @@
+{
+  "id": "eval-tico19-test-v1",
+  "type": "multiway",
+  "name": "TICO-19 Test — All Pairs",
+  "version": "1.0",
+  "description": "Multi-way parallel evaluation corpus from the Translation Initiative for COVID-19. 36 languages (including English source), 2100 test sentences each, all sentence-aligned via English pivot. Medical/crisis domain — the ONLY medical domain corpus in the project. CC0 licensed. Source data covers 37 target-language files but Tigrinya has three variants (ti, ti_ER, ti_ET) that all map to ISO 639-3 tir, yielding 35 unique target languages.",
+  "languages": ["amh", "arb", "ben", "ckb", "cmn-Hans", "dip", "eng", "fra", "fuv", "gaz", "hau", "hin", "ind", "khm", "kin", "kmr", "knc", "lin", "lug", "mar", "mya", "npi", "nus", "pbt", "pes", "por", "prs", "rus", "som", "spa", "swh", "tam", "tgl", "tir", "urd", "zul"],
+  "pairGeneration": {
+    "mode": "all-pairs",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 2100,
+    "domain": "medical"
+  },
+  "segments": [
+    {
+      "id": "dev",
+      "name": "Development",
+      "size": 971,
+      "sizeUnit": "sentences",
+      "purpose": "Hyperparameter tuning, prompt development — medical/crisis domain"
+    },
+    {
+      "id": "test",
+      "name": "Test",
+      "size": 2100,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — medical/crisis domain test split"
+    }
+  ],
+  "download": {
+    "method": "url",
+    "url": "https://tico-19.github.io/data/tico19-testset.zip",
+    "instructions": "Download and unzip. TSV files at tico19-testset/test/test.en-{lang_code}.tsv and tico19-testset/dev/dev.en-{lang_code}.tsv. Format: sourceLang\\ttargetLang\\tsourceString\\ttargetString\\tstringID\\turl\\tlicense\\ttranslator_id. English is the pivot; non-English pairs are aligned on the shared stringID. Tigrinya has three file variants: ti (original), ti_ER (Eritrean), ti_ET (Ethiopian).",
+    "sha256": "0e82fc7ceaa877606c8934f32ead185716c9d2c54b3818f2a7ae655f5e7a08d8",
+    "filePattern": "tico19-testset/{segment}/{segment}.en-{lang_code}.tsv",
+    "format": "tsv"
+  },
+  "source": {
+    "publisher": "TICO-19 Consortium (CMU, JHU, GMU, Amazon, Appen, Facebook, Google, Microsoft, Translated, TWB)",
+    "url": "https://tico-19.github.io/",
+    "paper": "https://aclanthology.org/2020.nlpcovid19-acl.1/",
+    "citation": "Anastasopoulos et al. (2020). TICO-19: the Translation Initiative for COvid-19.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Unrestricted — CC0 public domain dedication.",
+    "notes": null
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "permitted",
+    "communityNotes": "Although CC0-licensed, this corpus is reserved as an evaluation benchmark within Champollion. doNotTrain is set to protect benchmark integrity, not due to license restrictions."
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Specialized medical/crisis domain content created specifically for COVID-19 translation evaluation. Not a standard MT training corpus. Some sentences originate from CMU medical domain sentences and WHO/CDC public health materials. Less likely to appear in general-purpose LLM training than news-domain benchmarks like FLORES+ or NTREX.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "populatedFrom": "TICO-19 testset zip (tico19-testset.zip), README.md within zip, ACL paper (2020.nlpcovid19-acl.1), TICO-19 website (tico-19.github.io). Sentence counts verified by direct line count of extracted TSV files."
+  }
+}

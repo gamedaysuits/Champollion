@@ -1,0 +1,36 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "glottolog",
+  "upstream": "https://zenodo.org/records/21681980",
+  "license": "cc-by-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2026. Glottolog 5.3. Leipzig: Max Planck Institute for Evolutionary Anthropology.",
+  "pin": {
+    "kind": "doi",
+    "value": "v5.3",
+    "doi": "10.5281/zenodo.21681980",
+    "date": "2026-03-02"
+  },
+  "files": [
+    {
+      "path": "glottolog_languoid.csv.zip",
+      "bytes": 589571,
+      "sha256": "47fcc04c18f3f6bff43198b5be14f1f6954600c90573373df9ecf6fc12622bfb",
+      "url": "https://zenodo.org/api/records/21681980/files/glottolog_languoid.csv.zip/content",
+      "upstreamChecksum": "md5:565d5cecb0d387bd8816f8ce6a12e465",
+      "upstreamVerified": true
+    },
+    {
+      "path": "languages_and_dialects_geo.csv",
+      "bytes": 1072964,
+      "sha256": "e1b68f09acadda3610ecb6704ffe573fcf5b73411ad1ad1f6396a3ff9754e702",
+      "url": "https://zenodo.org/api/records/21681980/files/languages_and_dialects_geo.csv/content",
+      "upstreamChecksum": "md5:77fa69ecea0b0e9cd2b8526f0822289c",
+      "upstreamVerified": true
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/glottolog.mjs",
+  "notes": "Every file bit-identical to the Zenodo deposit (md5 compared against the publisher's own checksum). The README.txt in this directory cites DOI 10.5281/zenodo.15525265, which is Glottolog 5.2 — a stale citation shipped upstream. This SNAPSHOT is the authority; the README is not.",
+  "fetchedAt": "2026-08-02T19:41:04.356Z"
+}

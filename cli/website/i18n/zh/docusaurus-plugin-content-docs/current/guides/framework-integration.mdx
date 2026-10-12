@@ -1,0 +1,212 @@
+---
+sidebar_position: 2
+title: "框架集成"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 框架集成
+
+与流行框架集成 Champollion 的分步设置。
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo（TOML / YAML / Markdown）
+
+### 项目结构
+
+Hugo 使用 `i18n/` 进行字符串翻译，使用 `content/` 进行页面内容：
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### 设置
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### 内容翻译详情
+
+**前置元数据**：支持 YAML（`---`）和 TOML（`+++`）分隔符。默认翻译 `title`、`description`、`summary`、`subtitle`、`caption` 和 `linkTitle`。所有其他字段（日期、草稿、标签、权重、slug 等）被保留。使用配置中的 `translatableFields` 自定义。
+
+**块保护**：代码块、Hugo shortcodes、内联代码和原始 HTML 会自动使用 Unicode 哨兵占位符进行屏蔽。它们会原封不动地通过。
+
+**文件名约定**：遵循 Hugo 的按文件名翻译模式：
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md`（去除源后缀）
+
+**跳过现有**：现有翻译文件永远不会被覆盖。删除目标文件以强制重新翻译。
+
+### 复数形式
+
+TOML 和 YAML 区域设置支持 CLDR 复数形式：
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+在内部表示为 `items.one` 和 `items.other` 用于差异比较，然后在写入时重新序列化为正确的分段格式。
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl（JSON）
+
+### 项目结构
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### 设置
+
+```bash
+npm install --save-dev champollion
+npx champollion init --yes --langs fr,de,ja,es,ko,zh,pt,ar
+```
+
+`init` 会找到 `messages/en.json`，创建空的目标文件，并写入如下所示的配置：
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": {
+    "fr": "formal-vous", "de": "formal-Sie", "ja": "polite", "es": "neutral-latam",
+    "ko": "polite-haeyo", "zh": {}, "pt": "professional", "ar": {}
+  }
+}
+```
+
+每个目标语言的语域（语气与正式度）都会写入 `languages` 中，以便清晰查看与编辑：可以将其更改为该语言的另一个预设（`champollion status` 列出了这些预设），或者更改为你自定义的描述。没有预设的语言会记录为 `{}`。普通列表格式 `"languages": ["fr", "de"]` 同样支持，并将使用每种语言的默认值。
+
+```bash
+npx champollion sync
+```
+
+创建 `messages/fr.json`、`messages/ja.json` 等 — 完全翻译，保留您的嵌套键结构。next-intl 会自动识别它们。
+
+### 开发工作流
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next（JSON）
+
+### 每种语言一个文件夹（i18next 默认）
+
+```
+public/locales/
+├── en/
+│   ├── common.json        ← source namespaces
+│   └── admin/users.json
+├── fr/
+└── ja/
+```
+
+```bash
+npx champollion init --yes --langs fr,de,ja
+```
+
+`init` 会找到 `public/locales/en/`（或 `locales/en/`），将配置指向该目录，并将 `fr/common.json`、`fr/admin/users.json` 以及其他文件创建为空文件。其写入的配置相关部分如下：
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./public/locales",
+  "languages": { "fr": "formal-vous", "de": "formal-Sie", "ja": "polite" }
+}
+```
+
+```bash
+npx champollion sync
+```
+
+每个命名空间文件都会被翻译并写入到每种语言文件夹下的相同路径中。在多个命名空间中出现的字符串针对每种语言仅翻译一次；其他文件将从翻译记忆库（Translation Memory）中直接获取。复数形式键（`key_one`、`key_other`）会获得每种语言对应的形式：法语会新增 `key_many`，而日语仅保留 `key_other`。请参阅 [Locale 文件布局](/docs/getting-started/configuration#locale-layouts)。
+
+### 每种语言一个文件
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+### 其他布局
+
+如果你的文件遵循其他模式，可以使用 `localesPattern` 进行描述（`{lang}` 表示语言，`{ns}` 表示命名空间）：
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesPattern": "src/i18n/{ns}/{lang}.json",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+  </TabItem>
+</Tabs>

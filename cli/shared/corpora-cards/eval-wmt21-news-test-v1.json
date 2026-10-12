@@ -1,0 +1,240 @@
+{
+  "id": "eval-wmt21-news-test-v1",
+  "type": "multiway",
+  "name": "WMT2021 News Translation — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ben",
+    "ces",
+    "cmn-Hans",
+    "deu",
+    "eng",
+    "fra",
+    "hau",
+    "hin",
+    "isl",
+    "jpn",
+    "rus",
+    "xho",
+    "zul"
+  ],
+  "description": "WMT2021 News Translation blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt21 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers news journalism. Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'news' (the WMT News Translation task).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "news",
+    "explicitPairs": [
+      {
+        "source": "ben",
+        "target": "hin",
+        "srcCode": "bn",
+        "tgtCode": "hi",
+        "size": 503,
+        "sha256": "5d3c3968b36a602f1203fbe5da1582d740702803b58421804929d958f0d681fd"
+      },
+      {
+        "source": "ces",
+        "target": "eng",
+        "srcCode": "cs",
+        "tgtCode": "en",
+        "size": 1000,
+        "sha256": "06bf2c7b48185d0fd466447cd7821f72df43b08bebd3ba9616497fb76a62679e"
+      },
+      {
+        "source": "deu",
+        "target": "eng",
+        "srcCode": "de",
+        "tgtCode": "en",
+        "size": 1000,
+        "sha256": "8477d7448ff29b0c2e76ba366cab587318feefb96eca3b6f2051ccd5386b3c0c"
+      },
+      {
+        "source": "deu",
+        "target": "fra",
+        "srcCode": "de",
+        "tgtCode": "fr",
+        "size": 1000,
+        "sha256": "523c5ad5627b7df1f401a546f3909e8cfa6b87a348afba9fbae6cd0a10b6939d"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs",
+        "size": 1002,
+        "sha256": "58ba061a4a9a8bb9187340e1bfd492c020d5abd9d8f4003f62dfc104d6b73845"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de",
+        "size": 1002,
+        "sha256": "e50efe7c911f8d809dfa08a5ebffea34b1ca6485ee72a5f3f6b1affb924543b9"
+      },
+      {
+        "source": "eng",
+        "target": "hau",
+        "srcCode": "en",
+        "tgtCode": "ha",
+        "size": 1000,
+        "sha256": "4e38bde93808de9dad6cf9688c128fa490f69f8a4488b878bcb53ac8fde8ab79"
+      },
+      {
+        "source": "eng",
+        "target": "isl",
+        "srcCode": "en",
+        "tgtCode": "is",
+        "size": 1000,
+        "sha256": "6f3fbe0ac024832166fa8e7293ce22bb8b163857e2baf986cfe5a1c30ebf5fc3"
+      },
+      {
+        "source": "eng",
+        "target": "jpn",
+        "srcCode": "en",
+        "tgtCode": "ja",
+        "size": 1000,
+        "sha256": "dec71bb90b84a5fa86f34702a20cba2268098de1bb7fd74e95458bff889c066a"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 1002,
+        "sha256": "c326ac71509bee1bf9f58a3f07bd0bf44381ca2e13fbb683518941bd09f69930"
+      },
+      {
+        "source": "eng",
+        "target": "cmn-Hans",
+        "srcCode": "en",
+        "tgtCode": "zh",
+        "size": 1002,
+        "sha256": "5d6facc0a6821b7a61057c0afe2e8a3d0eea78c197543ab2b3972f56492cde2d"
+      },
+      {
+        "source": "fra",
+        "target": "deu",
+        "srcCode": "fr",
+        "tgtCode": "de",
+        "size": 1026,
+        "sha256": "3c55c711f837e04c3278722d834e2d6f8e5c8af9d48edde4e473d50d067513c2"
+      },
+      {
+        "source": "hau",
+        "target": "eng",
+        "srcCode": "ha",
+        "tgtCode": "en",
+        "size": 997,
+        "sha256": "0173be762b52d9435de04c4a0c455c1699ade4dedd9fce91e8ec93e637d346a6"
+      },
+      {
+        "source": "hin",
+        "target": "ben",
+        "srcCode": "hi",
+        "tgtCode": "bn",
+        "size": 509,
+        "sha256": "4bba11b087fb2f35e2d59712ff5de94b408023b82827b4833b14e359ac0f359e"
+      },
+      {
+        "source": "isl",
+        "target": "eng",
+        "srcCode": "is",
+        "tgtCode": "en",
+        "size": 1000,
+        "sha256": "41e480fccb0c69347345207132a6cc5309df72442908a815746ac58d1c2f8cc1"
+      },
+      {
+        "source": "jpn",
+        "target": "eng",
+        "srcCode": "ja",
+        "tgtCode": "en",
+        "size": 1005,
+        "sha256": "d90381e7d08be2cc2014876db543f203bad6571165ec168b659339e8d386ac51"
+      },
+      {
+        "source": "rus",
+        "target": "eng",
+        "srcCode": "ru",
+        "tgtCode": "en",
+        "size": 1000,
+        "sha256": "e6e2a287e1860b998019f52b1ba0a366c3479e8046c6c34e88197e6fecc66aa2"
+      },
+      {
+        "source": "xho",
+        "target": "zul",
+        "srcCode": "xh",
+        "tgtCode": "zu",
+        "size": 503,
+        "sha256": "5dd96ec123fd93f2d131d13105e7653e54b883276359c9fde9d7e5de7ea58570"
+      },
+      {
+        "source": "cmn-Hans",
+        "target": "eng",
+        "srcCode": "zh",
+        "tgtCode": "en",
+        "size": 1948,
+        "sha256": "4d7b46a682be6190a9f3ce2e2c99530eb5bece4491616f6ea5c38e13cc278299"
+      },
+      {
+        "source": "zul",
+        "target": "xho",
+        "srcCode": "zu",
+        "tgtCode": "xh",
+        "size": 509,
+        "sha256": "e0dfe8203e5767ad7a7fe87897753945165d7c604cb4e4985aa7bf64b6e456f9"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2021 News Translation test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (relative-comparison-only)",
+      "size": 19008
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt21/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt21 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt21/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2021 Conference on Machine Translation (WMT21). statmt.org/wmt21.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "WMT2021 News Translation test set — public since 2021 and in essentially every frontier model's training crawl. Maximally memorized, so its scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute translation quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt21']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 20
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "id": "eval-bouquet-dev-v1",
+  "type": "multiway",
+  "name": "BOUQuET Dev — Multicentric (curated pairs)",
+  "version": "1.0",
+  "languages": [
+    "aar",
+    "abl",
+    "afr",
+    "agr",
+    "aiq",
+    "amh",
+    "eng",
+    "ind",
+    "nso",
+    "pes",
+    "spa",
+    "xho",
+    "zul"
+  ],
+  "description": "BOUQuET (Meta FAIR) is a newly hand-crafted, multicentric translation benchmark — NOT FLORES-derived — making it the project's top low-contamination pick (dev = 504 sentences, test = 854). The official curated evaluation pairs live in benchmark_data/sentence_level/{dev,test}/{src}-{tgt}.parquet (~1000 pairs across 259 languages). QUARANTINED: facebook/bouquet is GATED on HuggingFace (accept-terms + token) AND ships parquet-only (the adapter needs the optional pyarrow dependency), so it cannot be accessed or sha-verified in this environment. The fetch adapter, builder wiring, and card shape are all in place; this card carries a representative stub of curated pairs. MAINTAINER FOLLOW-UP: grant HF access + accept terms, then expand explicitPairs to the full curated set (the public file listing enumerates them) and confirm the parquet column schema in bouquet_adapter._resolve_columns(). Domain 'mixed': hand-crafted multicentric set spanning many domains; domainDistribution is an approximate documented estimate (quarantined, so it never ranks).",
+  "quarantine": true,
+  "quarantineReason": "Gated on HuggingFace (facebook/bouquet requires accepting terms + an HF token) and parquet-only (needs optional pyarrow). Cannot be accessed or sha/schema-verified here. Catalogue-only until project grants access and the parquet column schema is confirmed.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "dev",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "sizePerPair": 504,
+    "domain": "mixed",
+    "domainDistribution": {
+      "news": 0.25,
+      "conv": 0.25,
+      "literary": 0.2,
+      "edu": 0.15,
+      "gov": 0.15
+    },
+    "explicitPairs": [
+      {
+        "source": "afr",
+        "target": "eng",
+        "srcCode": "afr_Latn",
+        "tgtCode": "eng_Latn",
+        "size": 504
+      },
+      {
+        "source": "aar",
+        "target": "eng",
+        "srcCode": "aar_Latn",
+        "tgtCode": "eng_Latn",
+        "size": 504
+      },
+      {
+        "source": "agr",
+        "target": "eng",
+        "srcCode": "agr_Latn",
+        "tgtCode": "eng_Latn",
+        "size": 504
+      },
+      {
+        "source": "agr",
+        "target": "spa",
+        "srcCode": "agr_Latn",
+        "tgtCode": "spa_Latn",
+        "size": 504
+      },
+      {
+        "source": "aiq",
+        "target": "eng",
+        "srcCode": "aiq_Arab",
+        "tgtCode": "eng_Latn",
+        "size": 504
+      },
+      {
+        "source": "aiq",
+        "target": "pes",
+        "srcCode": "aiq_Arab",
+        "tgtCode": "pes_Arab",
+        "size": 504
+      },
+      {
+        "source": "abl",
+        "target": "eng",
+        "srcCode": "abl_Latn",
+        "tgtCode": "eng_Latn",
+        "size": 504
+      },
+      {
+        "source": "abl",
+        "target": "ind",
+        "srcCode": "abl_Latn",
+        "tgtCode": "ind_Latn",
+        "size": 504
+      },
+      {
+        "source": "aar",
+        "target": "amh",
+        "srcCode": "aar_Latn",
+        "tgtCode": "amh_Ethi",
+        "size": 504
+      },
+      {
+        "source": "afr",
+        "target": "zul",
+        "srcCode": "afr_Latn",
+        "tgtCode": "zul_Latn",
+        "size": 504
+      },
+      {
+        "source": "afr",
+        "target": "xho",
+        "srcCode": "afr_Latn",
+        "tgtCode": "xho_Latn",
+        "size": 504
+      },
+      {
+        "source": "afr",
+        "target": "nso",
+        "srcCode": "afr_Latn",
+        "tgtCode": "nso_Latn",
+        "size": 504
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "dev",
+      "name": "Dev",
+      "size": 504,
+      "sizeUnit": "sentences",
+      "purpose": "MT development/evaluation — hand-crafted multicentric dev split"
+    },
+    {
+      "id": "test",
+      "name": "Test",
+      "size": 854,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — hand-crafted multicentric test split"
+    }
+  ],
+  "download": {
+    "method": "huggingface",
+    "url": "https://huggingface.co/datasets/facebook/bouquet",
+    "instructions": "GATED — accept the CC-BY-4.0 terms at the dataset page and set HF_TOKEN. Curated pairwise parquet at benchmark_data/sentence_level/{split}/{src}-{tgt}.parquet, fetched from the pinned commit revision. Requires `pip install pyarrow`. Confirm the parquet column names in bouquet_adapter._resolve_columns() on first access.",
+    "sha256": null,
+    "revision": "9a6070a9652e350dda1d353c4fd198533199a911",
+    "gated": true,
+    "termsUrl": "https://huggingface.co/datasets/facebook/bouquet",
+    "tokenEnv": "HF_TOKEN",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "Meta AI (FAIR)",
+    "url": "https://huggingface.co/datasets/facebook/bouquet",
+    "paper": "https://arxiv.org/abs/2502.04314",
+    "citation": "Meta FAIR (2025). BOUQuET: a multicentric and multi-register open translation benchmark.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Permitted with attribution under CC-BY-4.0 (gated access).",
+    "notes": "CC-BY-4.0 but GATED on HuggingFace — accepting the terms + a token is required before download."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "permitted",
+    "communityNotes": "Reserved as an evaluation benchmark. doNotTrain protects benchmark integrity. Quarantined until gated access + parquet schema are verified."
+  },
+  "contamination": {
+    "risk": "LOW",
+    "reasoning": "Newly hand-crafted, multicentric, and explicitly NOT derived from FLORES — designed to be a fresh, low-contamination benchmark. Gated distribution further limits exposure. This is the project's top low-contamination pick.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-19",
+    "populatedFrom": "facebook/bouquet HuggingFace dataset (gated). Curated pair file names + nominal sizes (dev 504 / test 854) read from the public file listing + dataset card; DATA not accessed (gated). HF commit revision pinned. Representative stub pairs only — full curated list pending project access."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_comment": "Connected organizer node config template (Phase A hypotheses lane + air-gap relay). The rehearsal fills __ paths. T1 refs: the rehearsal prepares the contest with --plaintext-refs (blanket authorization, full audit trail), so refs_plaintext is set and refs_artifact/refs_privkey are absent — swap them for a sealed single-keypair deployment. The T2 secret set is sealed to the AIR-GAP node's custodian-group key (--threshold-pubkey = its ceremony.json); this organizer holds NO T2 secret material and only moves files and rows.",
+  "_comment_exchange_v2": "REQUIRED for the air-gap relay: `dev_corpus` is the PUBLIC qualifier set (references included, as published when the contest opened). Since exchange version 2 the relay COPIES it into every requests/<id>/ directory alongside the qualifiers row, so the air-gapped node can re-EXECUTE the public gate itself instead of trusting the participant's self-reported receipt. A contest whose entry here has no dev_corpus exports NOTHING (fail-safe, with the reason printed) — and an air-gapped node refuses to run a request that arrived without those facts.",
+  "_comment_cards": "The node scores WITH a language-card index and never fetches one: publish.assemble_run_card names the run's language pair through the language-card SSOT, and an outbound lookup would tell the index host that a sealed run is happening. Carry a directory holding a card per language this node evaluates and name it here as top-level `cards_dir` (MT_EVAL_CARDS_DIR does the same job for every invocation on the machine, which is how the rehearsal sets it; a monorepo checkout is discovered automatically). load_node_config REFUSES at startup when no local index resolves, or when the one it is given holds no cards — a node that cannot name a language must say so, not score under a fabricated one.",
+  "_comment_extra_sets": "OPTIONAL, per contest: `holdout_set_id` + `holdout_corpus` (+ `holdout_corpus_sha256`) name the SECOND sealed split, and `test_suites` is a list of {suite_id, corpus_path, corpus_sha256} third-party PUBLIC diagnostic sets. A RELAY that only moves files and rows holds neither — declare them on the machine that SCORES (the air-gap node's config). Declaring them here means this node must hold the files: load_node_config refuses at startup on a missing file or a sha mismatch, and — being connected — it also checks the suite ids against the contest's frozen metadata.test_suites.",
+  "node_id": "lima-organizer-1",
+  "poll_seconds": 5,
+  "scratch_dir": "__HOME__/.mt-eval/node-scratch",
+  "output_dir": "__HOME__/.mt-eval/node-runs",
+  "grant_ttl_seconds": 3600,
+  "contests": {
+    "__CONTEST_ID__": {
+      "dev_corpus": "__DEV_CORPUS__",
+      "refs_plaintext": "__REFS_PLAINTEXT__",
+      "corpus_version": "v1",
+      "secret_set_id": "__SEALED_SET_ID__"
+    }
+  },
+  "relay": { "verify_key": "__AIRGAP_VERIFY_KEY__", "airgap_node_id": "lima-airgap-1" }
+}

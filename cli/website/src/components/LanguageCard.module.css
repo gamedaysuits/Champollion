@@ -1,0 +1,468 @@
+/**
+ * LanguageCard — CSS Module
+ *
+ * Uses design-tokens.css for ALL colors. If you need a new color, add it
+ * to design-tokens.css first. No raw hex values here.
+ */
+
+/* =========================================================================
+   CARD CONTAINER
+   ========================================================================= */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  padding: var(--space-lg);
+  border-radius: var(--card-radius);
+  background: var(--card-gradient, var(--surface-1));
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+
+  /* Subtle left accent strip — colored by complexity tier */
+  border-left: 3px solid var(--tier-color, var(--accent));
+
+  transition:
+    transform var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+
+  /* Prevent text selection on click */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-lg), 0 0 20px var(--card-glow, var(--accent-glow));
+  border-color: var(--border-medium);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cardSelected {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg), 0 0 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================================
+   COMPLEXITY TIER — left border + badge colors
+   ========================================================================= */
+
+.complexityExtreme  { --tier-color: var(--complexity-extreme); }
+.complexitySevere   { --tier-color: var(--complexity-severe); }
+.complexityHigh     { --tier-color: var(--complexity-high); }
+.complexityModerate { --tier-color: var(--complexity-moderate); }
+.complexityLow      { --tier-color: var(--complexity-low); }
+.complexityMinimal  { --tier-color: var(--complexity-low); }
+
+
+/* =========================================================================
+   TOP ROW — complexity badge + vitality dot
+   ========================================================================= */
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 1.4rem;
+}
+
+.complexityBadge {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--tier-color);
+}
+
+
+/* =========================================================================
+   TAXONOMY BADGING (docs/LANGUAGE_TAXONOMY.md R4)
+   "Ink stamp" style: scholarly neutrals only — information, not deficiency.
+   No triad / complexity colors here, so the badges never collide with
+   vitality or complexity encodings on the same tile.
+   ========================================================================= */
+
+.taxonChip,
+.taxonChipSigned {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 3px;
+  line-height: 1.4;
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+/* Signed-language badge gets slightly more presence than the type chip */
+.taxonChipSigned {
+  color: var(--text-primary);
+  background: var(--surface-2);
+}
+
+/* ---- Macrolanguage hub ("language group") tile variant ----
+   Dashed border = container/group semantics; hubs are navigation, not
+   benchmark targets, so they drop the complexity strip entirely. */
+
+.cardHub {
+  border-style: dashed;
+  border-left: 1px dashed var(--border-strong);
+  border-color: var(--border-strong);
+  background: var(--surface-1);
+}
+
+.hubBadge {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  border: 1px dashed var(--border-strong);
+}
+
+.hubNote {
+  margin: 0;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
+/* =========================================================================
+   VITALITY DOT
+   ========================================================================= */
+
+.vitalityDot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.vitalityDotInner {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  /* Subtle pulse for critical/endangered */
+}
+
+.vitalityLabel {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: currentColor;
+}
+
+/* Vitality color assignments */
+.vitalityThriving   { color: var(--vitality-thriving); }
+.vitalityShifting   { color: var(--vitality-shifting); }
+.vitalityEndangered { color: var(--vitality-endangered); }
+.vitalityCritical   { color: var(--vitality-critical); }
+.vitalityDormant    { color: var(--vitality-dormant); }
+
+/* Critical and endangered get a subtle pulse */
+.vitalityCritical .vitalityDotInner,
+.vitalityEndangered .vitalityDotInner {
+  animation: vitalityPulse 2s ease-in-out infinite;
+}
+
+@keyframes vitalityPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+
+/* =========================================================================
+   LANGUAGE IDENTITY
+   ========================================================================= */
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-height: 3rem; /* Consistent height even without native name */
+}
+
+.langName {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+
+  /* Ensure readability on any family gradient */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nativeName {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.3;
+  /* Allow native script to render naturally */
+  font-feature-settings: normal;
+}
+
+
+/* =========================================================================
+   METADATA CHIPS ROW
+   ========================================================================= */
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.chip,
+.chipFamily,
+.chipMuted {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.chip {
+  /* ISO code — always visible, accented */
+  font-family: var(--font-mono);
+  color: var(--accent);
+  background: var(--accent-subtle);
+  letter-spacing: 0.02em;
+}
+
+.chipFamily {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.chipMuted {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  background: transparent;
+  font-weight: 400;
+  font-size: 0.65rem;
+}
+
+
+/* =========================================================================
+   STATS ROW — gauge + pips + data density
+   ========================================================================= */
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ---- SVG Gauge ---- */
+
+.gauge {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.gaugeArc {
+  transition: stroke-dashoffset 0.6s var(--ease-out);
+}
+
+.gaugeText {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+/* ---- Toolkit Pips ---- */
+
+.statsRight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.pips {
+  display: flex;
+  gap: 5px;
+}
+
+.pip {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: background var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.pipFilled {
+  background: var(--accent);
+  box-shadow: 0 0 4px var(--accent-glow);
+}
+
+.pipEmpty {
+  background: var(--border-subtle);
+  border: 1px solid var(--border-medium);
+}
+
+/* ---- Data density ---- */
+
+.dataDensity {
+  font-size: var(--text-xs);
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.dataDensityNumber {
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.dataDensityLabel {
+  font-weight: 400;
+}
+
+.dataDensitySep {
+  margin: 0 3px;
+  opacity: 0.5;
+}
+
+
+/* =========================================================================
+   FOOTER — speakers + region
+   ========================================================================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border-subtle);
+  min-height: 1.2rem;
+}
+
+.footerItem {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================================
+   LIGHT THEME OVERRIDES
+   Readability is non-negotiable. Every text element must be clearly
+   visible against its background.
+   ========================================================================= */
+
+:global([data-theme='light']) .card {
+  /* Override the dark family gradient — in light mode we use clean white
+   * surfaces with just the left border and a very subtle tint for identity.
+   * This prevents the unreadable dark-text-on-dark-gradient problem. */
+  --card-gradient: none !important;
+  background: var(--surface-1) !important;
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+:global([data-theme='light']) .card:hover {
+  box-shadow: var(--shadow-md), 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Light mode: card names MUST be dark for readability.
+ * Family gradients in light mode are light-colored, so text stays dark. */
+:global([data-theme='light']) .langName {
+  color: var(--text-primary);
+  text-shadow: none;
+}
+
+:global([data-theme='light']) .nativeName {
+  color: var(--text-secondary);
+}
+
+:global([data-theme='light']) .gaugeText {
+  fill: var(--text-primary);
+}
+
+:global([data-theme='light']) .complexityBadge {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:global([data-theme='light']) .chipFamily {
+  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:global([data-theme='light']) .chipMuted {
+  color: var(--text-muted);
+}
+
+/* Keep the hub's dashed "group" border legible on paper surfaces */
+:global([data-theme='light']) .cardHub {
+  border-color: var(--border-strong);
+  border-style: dashed;
+}
+
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-md);
+  }
+
+  .identity {
+    min-height: 2.5rem;
+  }
+
+  .langName {
+    font-size: 1.1rem;
+  }
+
+  .gauge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gaugeText {
+    font-size: 11px;
+  }
+}

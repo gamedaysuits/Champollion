@@ -1,0 +1,1501 @@
+/**
+ * ZipperSeam v6 — styles for 6-beat cinematic scroll.
+ *
+ * Key design principle:
+ *   GSAP controls ALL visibility via gsap.set(beats, {autoAlpha: 0})
+ *   at timeline start. CSS only provides LAYOUT and AESTHETICS —
+ *   never initial opacity. This prevents the flash-of-all-beats
+ *   issue from v3.
+ *
+ * v6 legibility contract (founder directive — bifocals-and-cataracts):
+ *   - every piece of text ≥ ~12px EFFECTIVE size, including SVG text after
+ *     viewBox scaling (SVG labels are sized in viewBox units: divide by the
+ *     rendered-width/viewBox-width ratio before judging them);
+ *   - all text ≥ WCAG AA against the dark seam (AAA where cheap);
+ *   - score chips and language labels readable at a glance.
+ */
+
+/* ── Design tokens (scoped) ──
+   COLOUR SEMANTICS (do not blur on future passes):
+   - amber   #e8b339 — the Champollion frontier/queue lane (reserved);
+   - coral   #f08a93 — a WRONG translation (Beat 4's strike-through state);
+   - ember   #e0503a — a language NO model covers (Beat 1's uncovered field;
+                       matches the hero map's at-risk/uncovered ember family);
+   - nllb    #2dd4bf — NLLB-200's service hue (SERVICE_COLORS.nllb). */
+.seam {
+  --seam-electric: #4dd8ff;
+  --seam-cobalt: #4770db;
+  --seam-amber: #e8b339;
+  --seam-coral: #f08a93;
+  --seam-ember: #e0503a;
+  --seam-nllb: #2dd4bf;
+  --seam-green: #4caf50;
+  --seam-ink: #06070b;
+  /* The seam is ALWAYS a dark cinematic section, so its text must be a fixed
+     light colour. Do NOT use --ifm-font-color-base here: that follows the site
+     theme and turns near-black in light mode, rendering invisible on this dark
+     background (the "dark text on mobile" bug — mobile defaulted to light). */
+  --seam-text: #e4e8e6;
+  --seam-text-dim: #a4aca8;
+}
+
+/* ===================================================================
+   SECTION CONTAINER
+   =================================================================== */
+.seam {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--seam-ink) 0%,
+    #080c14 50%,
+    var(--seam-ink) 100%
+  );
+  color: var(--seam-text);
+}
+
+.seamInner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================================================================
+   BEAT LAYERS
+   Stacked absolutely, fill the viewport. GSAP toggles opacity.
+   NOTE: No CSS opacity set — GSAP handles it entirely.
+   =================================================================== */
+.beatLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ===================================================================
+   NARRATIVE PANELS
+   =================================================================== */
+.narrative {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 680px;
+  text-align: center;
+  z-index: 10;
+}
+
+.narrativeLeft {
+  left: 8%;
+  transform: none;
+  text-align: left;
+  max-width: 480px;
+}
+
+/* Beat 2 — one cohesive statement, centered beneath the zipper. Wide enough
+   that the headline stays on ONE line at desktop sizes — a second line would
+   climb into the last zipper rows. */
+.narrativeStitch {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 780px;
+  width: 92%;
+  bottom: 13%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.stitchLine1 {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.7vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--seam-text);
+}
+
+.stitchLine2 {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(1.02rem, 1.7vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+  color: var(--seam-text-dim);
+}
+
+.narrTitle {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 2.9vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: var(--seam-text);
+}
+
+.narrSub {
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--seam-text-dim);
+}
+
+.narrEmphasis {
+  color: var(--seam-amber);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ===================================================================
+   BEAT 1: THE MONOLITH
+   =================================================================== */
+.monolithSvg {
+  width: 70%;
+  max-width: 550px;
+  height: auto;
+}
+
+.monolith {
+  fill: rgba(200, 210, 220, 0.10);
+  stroke: rgba(200, 210, 220, 0.42);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 22px rgba(200, 210, 220, 0.18));
+}
+
+/* SVG label sizes are viewBox units: the 600-wide viewBox renders at up to
+   550px (×0.92), so 14px here ≈ 12.8px effective — at the legibility floor. */
+.monolithLabel {
+  fill: rgba(228, 232, 230, 0.92);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.spoke {
+  stroke: rgba(200, 210, 220, 0.35);
+  stroke-width: 1;
+}
+
+.spokeDim {
+  stroke: rgba(200, 210, 220, 0.12);
+  stroke-dasharray: 4 3;
+}
+
+.spokeLabel {
+  fill: rgba(228, 232, 230, 0.9);
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Dim spokes tell the "left behind" story — kept visibly dimmer than the
+   majors but no longer below-AA ghosts. (LEGACY scene only.) */
+.spokeLabelDim {
+  fill: rgba(200, 210, 220, 0.5);
+  font-style: italic;
+}
+
+/* ── The TRUE omnimodel field (v7): real sampled positions ── */
+.monolithSubLabel {
+  fill: rgba(228, 232, 230, 0.72);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* Uncovered living languages — the ember mass. GSAP owns cohort opacity.
+   NOTE: hook classes MUST carry a real declaration — an empty rule gets
+   minified away in prod and the CSS-module mapping (styles.X) vanishes,
+   silently killing the GSAP selector that targets it. */
+.fieldCohort {
+  opacity: 1;
+}
+
+.fieldDot {
+  fill: var(--seam-ember);
+  opacity: 0.8;
+}
+
+.fieldDotCovered {
+  fill: var(--seam-nllb);
+}
+
+/* First ~40 covered dots get an individual entrance stagger. */
+.fieldSparkle {
+  opacity: 1;
+}
+
+.kickerProblem {
+  color: var(--seam-ember);
+  border-color: color-mix(in srgb, var(--seam-ember) 45%, transparent);
+}
+
+.fieldStat {
+  margin: 0.7rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--seam-text);
+}
+
+.fieldStat strong {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--seam-nllb);
+}
+
+.fieldLegend {
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--seam-text-dim);
+}
+
+.fieldLegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fieldSwatchCovered,
+.fieldSwatchEmber {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.fieldSwatchCovered {
+  background: var(--seam-nllb);
+}
+
+.fieldSwatchEmber {
+  background: var(--seam-ember);
+}
+
+/* SplitText units — inline-block so transforms apply; GSAP owns motion. */
+.splitWord,
+.splitChar {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ── SLIDE 0: the project statement (moved out of the hero subline) ── */
+.openerLayer {
+  justify-content: center;
+}
+
+.opener {
+  max-width: 880px;
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.openerTitle {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+  color: var(--seam-text);
+}
+
+.openerSub {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--seam-text-dim);
+  margin: 0;
+}
+
+/* ── Beat-2 chain rows (connect-the-dots) ── */
+/* Hook class for the amber tail highlight — GSAP owns the colour change;
+   a real declaration keeps the CSS-module mapping alive in prod. */
+.zipperRowChain {
+  border-radius: 6px;
+}
+
+.chainCue {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--seam-amber);
+  margin: 0.15rem 0 0;
+}
+
+/* ===================================================================
+   BEAT 2: THE STITCH (zipper)
+   =================================================================== */
+.zipperStage {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 560px;
+  width: 85%;
+  /* Positioned in upper-center of the viewport, clear of the narrative. */
+  margin-top: -9vh;
+}
+
+.zipperRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  height: 36px;
+}
+
+.toothLeft,
+.toothRight {
+  flex: 1;
+  padding: 4px 12px;
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(0.9rem, 1.5vw, 1.08rem);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--seam-text);
+}
+
+.toothLeft {
+  text-align: right;
+  padding-right: 14px;
+  border-right: 1px solid rgba(77, 216, 255, 0.15);
+}
+
+.toothRight {
+  text-align: left;
+  padding-left: 14px;
+  border-left: 1px solid rgba(77, 216, 255, 0.15);
+}
+
+.connector {
+  width: 3px;
+  height: 100%;
+  min-height: 32px;
+  background: var(--seam-electric);
+  box-shadow: 0 0 8px var(--seam-electric);
+  transform-origin: center;
+  flex-shrink: 0;
+}
+
+/* Logo slider — positioned absolutely at center of the zipper. */
+.slider {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 5;
+  filter: drop-shadow(0 0 12px var(--seam-electric));
+}
+
+/* ===================================================================
+   NETWORK SVG (Beats 3–4)
+   =================================================================== */
+.networkSvg {
+  position: absolute;
+  /* Centered with margin auto — avoids GSAP transform conflict. */
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 88%;
+  max-width: 700px;
+  height: auto;
+  z-index: 1;
+}
+
+.netEdge {
+  stroke: var(--seam-electric);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  opacity: 0;
+}
+
+.netEdgeChain {
+  stroke: var(--seam-amber);
+  stroke-width: 1.5;
+}
+
+/* Morph flight lines — the chain connectors' flight from the zipper into the
+   network. Hidden at rest; the timeline sets their coords, colour, and reveal
+   (they land AS the route edges). 3px matches the zipper connector width. */
+.morphLine {
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.netNode {
+  opacity: 0;
+}
+
+.netNode circle {
+  fill: var(--seam-electric);
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+}
+
+.netNodeHub circle {
+  fill: var(--seam-electric);
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 4px rgba(77, 216, 255, 0.5));
+}
+
+.netNodeChain circle {
+  fill: var(--seam-amber);
+  stroke: var(--seam-amber);
+  filter: drop-shadow(0 0 4px rgba(232, 179, 57, 0.5));
+}
+
+/* 13px in a 700-wide viewBox rendered at ≤700px = ≥12.9px effective. */
+.netLabel {
+  fill: var(--seam-text-dim);
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.netNodeHub .netLabel {
+  font-weight: 600;
+  fill: var(--seam-text);
+}
+
+/* Chain labels pick up the amber of the teaser path. */
+.netNodeChain .netLabel {
+  font-weight: 600;
+  fill: var(--seam-amber);
+}
+
+/* ===================================================================
+   BEAT 5: THE CHAIN RESOLVES
+   =================================================================== */
+.chainOverlay {
+  z-index: 4;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* In-flow narrative — sits directly under the beat's visual (chain proof,
+   seal) instead of being pinned to the section bottom. Overrides the
+   absolute positioning of .narrative. */
+.narrativeInline {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  transform: none;
+  margin: 0 auto;
+}
+
+/* Tier kicker — a small uppercase label above a beat's title. */
+.kicker {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  padding: 4px 13px;
+  border-radius: 999px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kickerOpen {
+  color: var(--seam-electric);
+  background: rgba(77, 216, 255, 0.08);
+  border: 1px solid rgba(77, 216, 255, 0.25);
+}
+
+.kickerSeal {
+  color: var(--seam-amber);
+  background: rgba(232, 179, 57, 0.08);
+  border: 1px solid rgba(232, 179, 57, 0.3);
+}
+
+.chainFlow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1080px;
+}
+
+.hopBubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 14px 12px;
+  border-radius: 12px;
+  background: rgba(16, 19, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 130px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.hopLang {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--seam-electric);
+}
+
+.hopLangEn {
+  font-size: 0.8rem;
+  color: var(--seam-text-dim);
+  margin-top: -2px;
+}
+
+.hopTextRough {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--seam-text);
+  line-height: 1.45;
+}
+
+/* Fixed text and improved score start collapsed — GSAP animates
+   height:auto + opacity:1 to reveal them. Using height:0 instead
+   of display:none because GSAP can't transition display. */
+.hopTextFixed {
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--seam-green);
+  line-height: 1.45;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Bridge wrap — arrow + corpus label between bubbles. The label gets a REAL
+   column (fixed min-width, wrapping text) so it can never overlap the
+   neighbouring bubbles the way the old 30px squeeze did. */
+.bridgeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+  justify-content: center;
+  min-width: 116px;
+  flex-shrink: 0;
+}
+
+.hopArrow {
+  color: var(--seam-electric);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bridgeLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(77, 216, 255, 0.06);
+  border: 1px solid rgba(77, 216, 255, 0.12);
+  text-align: center;
+}
+
+.bridgeCorpus {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--seam-electric);
+}
+
+.bridgeMeta {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--seam-text-dim);
+}
+
+.bridgeQuality {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #66bb6a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Score chips — the load-bearing numbers of the whole seam: big, bold,
+   readable at a glance. */
+.scoreChip {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background: rgba(240, 138, 147, 0.2);
+  color: var(--seam-coral);
+  border: 1px solid rgba(240, 138, 147, 0.3);
+}
+
+.scoreImproved {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background: rgba(76, 175, 80, 0.2);
+  color: #66bb6a;
+  border: 1px solid rgba(76, 175, 80, 0.35);
+  box-shadow: 0 0 14px rgba(76, 175, 80, 0.22);
+  /* Starts collapsed — GSAP reveals. */
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.scoreDelta {
+  color: #66bb6a;
+  font-weight: 700;
+}
+
+/* Tip host around a score chip — beat layers are pointer-events:none, so the
+   chip re-enables interaction for its hover/focus tooltip. */
+.chipTip {
+  pointer-events: auto;
+}
+
+/* Mid-width laptops/tablets: keep the 4-hops-plus-3-bridges row from
+   overflowing before the ≤768px stack kicks in. */
+@media (max-width: 1020px) {
+  .hopBubble {
+    min-width: 105px;
+    padding: 12px 10px 10px;
+  }
+
+  .bridgeWrap {
+    min-width: 96px;
+  }
+}
+
+/* ===================================================================
+   BEAT 5: THE SEAL — Tier 2 (sovereign, sealed test set)
+   The method travels IN, the data stays sealed, only a score returns.
+   =================================================================== */
+.sealOverlay {
+  z-index: 4;
+  justify-content: center;
+  gap: 2.4rem;
+  padding: 0 1rem;
+}
+
+.sealStage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 940px;
+}
+
+/* End-cap cards: the method (in) and the score (out). */
+.sealMethod,
+.sealScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(16, 19, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-width: 116px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sealMethod {
+  border: 1px solid rgba(77, 216, 255, 0.3);
+}
+
+.sealMethodIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--seam-electric);
+  margin-bottom: 2px;
+}
+
+.sealMethodTitle {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--seam-text);
+}
+
+.sealMethodSub {
+  font-size: 0.8rem;
+  color: var(--seam-text-dim);
+}
+
+.sealScore {
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 22px rgba(76, 175, 80, 0.12);
+}
+
+.sealScoreVal {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #66bb6a;
+  text-shadow: 0 0 18px rgba(76, 175, 80, 0.35);
+}
+
+.sealScoreLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--seam-text-dim);
+  margin-top: 3px;
+}
+
+/* Arrows: a drawn shaft + head, with a caption beneath. */
+.sealArrowIn,
+.sealArrowOut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 118px;
+  flex-shrink: 0;
+}
+
+.sealArrowTrack {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.sealArrowLine {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(77, 216, 255, 0.12), var(--seam-electric));
+}
+
+.sealArrowOut .sealArrowLine {
+  background: linear-gradient(90deg, var(--seam-green), rgba(76, 175, 80, 0.12));
+}
+
+.sealArrowHead {
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-left: -1px;
+  color: var(--seam-electric);
+}
+
+.sealArrowOut .sealArrowHead {
+  color: var(--seam-green);
+}
+
+/* The arrow captions carry the mechanism story ("comes to the data",
+   "only a score returns") — full-brightness, well above the 12px floor. */
+.sealArrowCap {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--seam-text);
+  text-align: center;
+}
+
+/* The vault: the community's sealed test set — focal element. */
+.sealVault {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(232, 179, 57, 0.06), transparent 60%),
+    rgba(12, 14, 13, 0.82);
+  border: 1px solid rgba(232, 179, 57, 0.32);
+  box-shadow:
+    0 0 28px rgba(232, 179, 57, 0.1),
+    inset 0 0 24px rgba(0, 0, 0, 0.35);
+  min-width: 248px;
+  max-width: 280px;
+  flex-shrink: 0;
+}
+
+.sealVaultHead {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.sealLock {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 3px rgba(232, 179, 57, 0.35));
+}
+
+.sealVaultHeadText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: left;
+}
+
+.sealVaultTitle {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--seam-amber);
+}
+
+.sealVaultOwner {
+  font-size: 0.78rem;
+  color: var(--seam-text-dim);
+}
+
+/* Redacted data — present but never readable. A perpetual shimmer
+   conveys "live but sealed"; the bars never resolve into text. */
+.sealRedacted {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 8px 2px 6px;
+}
+
+.sealBar {
+  display: block;
+  height: 9px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(120, 132, 144, 0.28), rgba(120, 132, 144, 0.12));
+}
+
+.sealBar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(190, 200, 210, 0.16), transparent);
+  transform: translateX(-100%);
+  animation: sealShimmer 2.8s ease-in-out infinite;
+}
+
+.sealBar:nth-child(2)::after { animation-delay: 0.5s; }
+.sealBar:nth-child(3)::after { animation-delay: 0.9s; }
+.sealBar:nth-child(4)::after { animation-delay: 1.3s; }
+
+@keyframes sealShimmer {
+  0% { transform: translateX(-100%); }
+  55%, 100% { transform: translateX(130%); }
+}
+
+.sealKeys {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-top: 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sealKeyDots {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.sealKeyDots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--seam-amber);
+  opacity: 0.4;
+}
+
+/* 3-of-5 threshold hint — the first three keyholders read as "authorized". */
+.sealKeyDots i:nth-child(-n + 3) {
+  opacity: 1;
+}
+
+.sealKeysLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--seam-text-dim);
+}
+
+/* ===================================================================
+   BEAT 6: THE MISSION (help us build)
+   A single centered column with a controlled gap, sized to fit 100vh
+   at desktop AND mobile (child margins are zeroed — gap owns spacing).
+   =================================================================== */
+.missionLayer {
+  gap: clamp(0.7rem, 1.7vh, 1.3rem);
+  padding: 2vh 1rem;
+}
+
+.missionLayer > * {
+  margin: 0;
+}
+
+.logoReveal {
+  filter: drop-shadow(0 0 24px var(--seam-electric));
+  z-index: 3;
+}
+
+.missionTitle {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.18;
+  text-align: center;
+  color: var(--seam-text);
+  z-index: 3;
+}
+
+.missionTitleAccent {
+  color: var(--seam-amber);
+}
+
+.missionSub {
+  max-width: 560px;
+  text-align: center;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.5;
+  color: var(--seam-text-dim);
+  z-index: 3;
+}
+
+/* Stats wrapper (aim kicker + the live counter row). */
+.statsWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  z-index: 3;
+}
+
+.statsAim {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--seam-amber);
+}
+
+.statsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  z-index: 3;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.statNumber {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  color: var(--seam-electric);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--seam-text-dim);
+}
+
+.statDivider {
+  width: 1px;
+  height: 34px;
+  background: rgba(77, 216, 255, 0.2);
+}
+
+/* CTA button. */
+.ctaButton {
+  display: inline-block;
+  padding: 13px 34px;
+  border-radius: 999px;
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--seam-ink, #06070b);
+  background: linear-gradient(135deg, var(--seam-electric) 0%, #7be0ff 100%);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 3;
+  pointer-events: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:
+    0 0 20px rgba(77, 216, 255, 0.3),
+    0 0 60px rgba(77, 216, 255, 0.1);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 30px rgba(77, 216, 255, 0.5),
+    0 0 80px rgba(77, 216, 255, 0.2);
+  color: var(--seam-ink, #06070b);
+  text-decoration: none;
+}
+
+/* Values badges row. */
+.valuesRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.valueBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: rgba(77, 216, 255, 0.04);
+  border: 1px solid rgba(77, 216, 255, 0.15);
+  min-width: 124px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.valueBadge:hover {
+  border-color: rgba(77, 216, 255, 0.3);
+  background: rgba(77, 216, 255, 0.08);
+}
+
+.valueIcon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+.valueText {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--seam-text);
+  letter-spacing: 0.01em;
+}
+
+.valueSub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--seam-text-dim);
+  text-align: center;
+}
+
+/* ===================================================================
+   REDUCED MOTION FALLBACK
+   =================================================================== */
+.reducedWrap {
+  min-height: auto;
+  padding: 4rem 1rem;
+}
+
+.reducedPanel {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(16, 19, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reducedTitle {
+  font-family: var(--font-display, 'Outfit', system-ui, sans-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: var(--seam-text);
+}
+
+.reducedSub {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0.6rem 0 0;
+  color: var(--seam-text-dim);
+}
+
+.reducedPairs {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.reducedPair {
+  padding: 0.3rem 0;
+  font-size: 0.95rem;
+  color: var(--seam-text);
+}
+
+.reducedArrow {
+  color: var(--seam-electric);
+  padding: 0 0.3rem;
+}
+
+/* ===================================================================
+   RESPONSIVE
+   =================================================================== */
+@media (max-width: 768px) {
+  .narrativeLeft {
+    left: 5%;
+    max-width: 340px;
+  }
+
+  .narrativeStitch {
+    width: 92%;
+    max-width: 440px;
+    bottom: 14%;
+  }
+
+  .narrTitle {
+    font-size: clamp(1.25rem, 4.2vw, 1.8rem);
+  }
+
+  .narrSub {
+    font-size: 0.95rem;
+  }
+
+  .monolithSvg {
+    width: 90%;
+  }
+
+  /* The 600-wide viewBox renders at ~340px on a phone (×0.56), so SVG text
+     needs ~22px viewBox units to clear the 12px effective floor. The dim
+     "left behind" labels can't earn that size — hide them and let the dashed
+     spokes alone tell that part. */
+  .monolithLabel {
+    font-size: 22px;
+    letter-spacing: 0.05em;
+  }
+
+  /* The true-field scene halves its ember dots on phones (same trick as
+     .spokeLabelDim) and keeps the stat/legend at the legibility floor. */
+  .fieldDotSlim {
+    display: none;
+  }
+
+  .monolithSubLabel {
+    font-size: 20px;
+  }
+
+  .fieldStat {
+    font-size: 0.88rem;
+  }
+
+  .fieldLegend {
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem;
+    font-size: 0.74rem;
+  }
+
+  .monolith {
+    r: 68px;
+  }
+
+  .spokeLabel {
+    font-size: 22px;
+  }
+
+  .spokeLabelDim {
+    display: none;
+  }
+
+  .networkSvg {
+    width: 96%;
+  }
+
+  /* Same math for the 700-wide network viewBox (~360px rendered, ×0.51):
+     only the amber chain labels — the ones the story needs — stay, at a size
+     that actually reads. The full labelled map is a desktop luxury. */
+  .netLabel {
+    display: none;
+  }
+
+  .netNodeChain .netLabel {
+    display: block;
+    font-size: 24px;
+    transform: translateY(6px);
+  }
+
+  .chainFlow {
+    gap: 3px;
+    padding: 0 0.5rem;
+  }
+
+  .hopBubble {
+    min-width: 88px;
+    padding: 10px 8px 8px;
+  }
+
+  .hopLang {
+    font-size: 0.8rem;
+  }
+
+  .hopTextRough,
+  .hopTextFixed {
+    font-size: 0.88rem;
+  }
+
+  .bridgeWrap {
+    min-width: 88px;
+  }
+
+  .toothLeft,
+  .toothRight {
+    font-size: 0.82rem;
+    padding: 3px 8px;
+  }
+
+  .zipperRow {
+    height: 32px;
+  }
+
+  /* Keep the aspirational stats readable + on-screen on phones. */
+  .statsRow {
+    gap: 0.75rem 1rem;
+  }
+
+  .statNumber {
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+  }
+
+  .statLabel {
+    font-size: 0.76rem;
+  }
+
+  /* ── Seal beat: stack vertically (the horizontal flow can't fit) ── */
+  .sealOverlay {
+    gap: 1.4rem;
+  }
+
+  .sealStage {
+    flex-direction: column;
+    gap: 9px;
+    max-width: 320px;
+  }
+
+  .sealMethod,
+  .sealScore {
+    min-width: 0;
+    width: 86%;
+    max-width: 280px;
+  }
+
+  .sealVault {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
+  }
+
+  /* Arrows become short downward connectors with the caption beside. */
+  .sealArrowIn,
+  .sealArrowOut {
+    flex-direction: row;
+    gap: 9px;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .sealArrowTrack {
+    flex-direction: column;
+    width: auto;
+    height: 22px;
+  }
+
+  .sealArrowLine {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(77, 216, 255, 0.12), var(--seam-electric));
+  }
+
+  .sealArrowOut .sealArrowLine {
+    background: linear-gradient(180deg, var(--seam-green), rgba(76, 175, 80, 0.12));
+  }
+
+  .sealArrowHead {
+    transform: rotate(90deg);
+    margin: -1px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .narrativeStitch {
+    max-width: 340px;
+    bottom: 11%;
+  }
+
+  /* Chain flow goes vertical on small phones. Everything stays ≥ ~12px, but
+     paddings/line-heights tighten hard so all four hops + three bridges + the
+     caption fit ONE pinned 100vh viewport (they clip otherwise). */
+  .chainOverlay {
+    gap: 0.6rem;
+    padding: 0 0.75rem;
+  }
+
+  .chainFlow {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .bridgeWrap {
+    flex-direction: row;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .hopArrow {
+    display: none; /* the vertical stack already reads top-to-bottom */
+  }
+
+  .hopBubble {
+    min-width: 230px;
+    max-width: 310px;
+    padding: 6px 12px 6px;
+    gap: 3px;
+  }
+
+  .hopTextRough,
+  .hopTextFixed {
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .bridgeLabel {
+    padding: 3px 8px;
+    gap: 0;
+  }
+
+  /* Pairs + license stay (the auditable-license claim); the quality tag is
+     the one row the smallest screens can spare. */
+  .bridgeQuality {
+    display: none;
+  }
+
+  .scoreChip,
+  .scoreImproved {
+    margin-top: 4px;
+  }
+
+  .bridgeCorpus {
+    font-size: 0.78rem;
+  }
+
+  .bridgeMeta {
+    font-size: 0.75rem;
+  }
+
+  .narrSub {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* Seal: trim the vault + narrative so the apex reads on small phones. */
+  .sealVault {
+    padding: 12px 13px;
+  }
+
+  .sealRedacted {
+    gap: 6px;
+    padding: 6px 2px 4px;
+  }
+
+  /* Mission beat: tighten the stack so logo → CTA fits one phone viewport. */
+  .missionLayer {
+    gap: clamp(0.5rem, 1.3vh, 0.9rem);
+  }
+
+  .logoReveal svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .missionSub {
+    font-size: 0.95rem;
+  }
+
+  .valueBadge {
+    padding: 8px 12px;
+    min-width: 118px;
+  }
+
+  .valueIcon {
+    font-size: 1.2rem;
+  }
+
+  .statsAim {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .ctaButton {
+    padding: 11px 30px;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .seam {
+    min-height: auto;
+  }
+}

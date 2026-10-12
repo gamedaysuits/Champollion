@@ -1,0 +1,116 @@
+{
+  "code": "macrolanguage-msa",
+  "extends": null,
+  "name": "Malay Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "msa",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Malay varieties express formality through pronoun choice (aku/saya informal/formal in Malaysian, aku/saya in Indonesian), vocabulary register (colloquial vs. standard), and discourse particles. Indonesian and Malaysian Malay share the aku/saya distinction but have divergent formal vocabulary. Honorific titles (Tuan, Puan, Encik, Bapak/Ibu) are widely used.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Malay varieties have no grammatical gender. Pronouns are gender-neutral (dia 'he/she'). Gender is expressed lexically when needed (lelaki 'male', perempuan 'female'). No agreement system is affected by gender."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "affixationSystem": "Malay has a productive affixation system using prefixes (meN-, peN-, ber-, di-, ter-), suffixes (-kan, -i, -an), and circumfixes (meN-...-kan, peN-...-an, ke-...-an). These affixes derive nouns, verbs, adjectives, and adverbs from roots. The nasal prefix meN- undergoes complex assimilation: menulis (tulis→menulis), membaca (baca→membaca), menyapu (sapu→menyapu). MT frequently produces incorrect affix forms.",
+    "reduplication": "Full and partial reduplication is highly productive: rumah→rumah-rumah 'houses', sayur-mayur 'various vegetables', lauk-pauk 'various dishes'. Reduplication expresses plurality, variety, intensity, and approximation. MT systems often fail to generate or interpret reduplicated forms.",
+    "regionalDivergence": "Malaysian Malay (Bahasa Melayu) and Indonesian (Bahasa Indonesia) have diverged significantly in vocabulary, spelling conventions, and some grammar despite shared roots. saya (ID: formal 'I') vs. saya (MY: standard 'I'); kereta (MY: 'car') vs. mobil (ID: 'car'); pejabat (MY: 'office') vs. kantor (ID: 'office'). Never mix Malaysian and Indonesian vocabulary.",
+    "activePassiveVoice": "Malay has a prominent passive voice using the prefix di- that is used far more frequently than English passive. Active meN- and passive di- form a core voice alternation. There is also an informal passive using the bare root with a fronted agent.",
+    "noInflection": "Malay is an analytic language with no verb conjugation, no noun declension, and no grammatical agreement of any kind. Tense is expressed through temporal adverbs (sudah 'already', akan 'will', sedang 'currently') or context. This can lead to ambiguity when translating from tense-marked source languages.",
+    "classificationNote": "Malay is Austronesian (Malayo-Polynesian), but this macrolanguage card sets extends: null to avoid dependency on a genus card that does not yet exist. Future update should set extends to the appropriate Malayo-Polynesian genus when created."
+  },
+  "classification": {
+    "family": "Austronesian",
+    "familyGlottocode": "aust1307",
+    "genus": "Malayo-Polynesian",
+    "genusGlottocode": "mala1545",
+    "ancestry": [
+      "Austronesian",
+      "Malayo-Polynesian",
+      "Malayo-Chamic",
+      "Malayic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3",
+    "iso639-3-2024"
+  ],
+  "notes": "Macrolanguage card for Malay (msa). Covers Indonesian (ind), Malaysian Malay (zsm), and other varieties. All share Latin script, SVO order, agglutinative affixation, reduplication, and lack of grammatical gender. Extends is null because the appropriate Malayo-Polynesian genus card does not yet exist — should be updated when one is created.",
+  "regions": [
+    {
+      "country": "Malaysia and Indonesia",
+      "countryCode": null,
+      "officialStatus": "official",
+      "region": "Malaysia, Indonesia, Singapore, Brunei, East Timor",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null,
+  "iso639_3": "msa",
+  "_fieldSources": {
+    "iso639_3": "iso639-3-2024",
+    "isoType": "iso639-3-2024",
+    "modality": "derived:glottolog-sign-family+iso639-3-refname",
+    "members": "iso639-3-2024",
+    "supportTier": "derived:taxonomy-hub-policy (docs/LANGUAGE_TAXONOMY.md)"
+  },
+  "isoType": "L",
+  "modality": "spoken",
+  "taxonomyNotes": null,
+  "members": [
+    "bjn",
+    "btj",
+    "bve",
+    "bvu",
+    "coa",
+    "dup",
+    "hji",
+    "ind",
+    "jak",
+    "jax",
+    "kvb",
+    "kvr",
+    "kxd",
+    "lce",
+    "lcf",
+    "liw",
+    "max",
+    "meo",
+    "mfa",
+    "mfb",
+    "min",
+    "mqg",
+    "msi",
+    "mui",
+    "orn",
+    "ors",
+    "pel",
+    "pse",
+    "tmw",
+    "urk",
+    "vkk",
+    "vkt",
+    "xmm",
+    "zlm",
+    "zmi",
+    "zsm"
+  ],
+  "supportTier": "cataloged"
+}

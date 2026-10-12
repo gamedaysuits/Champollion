@@ -1,0 +1,38 @@
+/* WordFlipper — decipherment morph.
+   Transform/opacity/filter only (compositor-friendly). The word doesn't
+   "flip" mechanically anymore — it resolves out of ink-blur, the way a
+   reading resolves out of an unfamiliar script. */
+
+.flipperContainer {
+  display: inline-block;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+.flipperWrapper {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.18em) scale(0.985);
+  filter: blur(6px);
+  transition:
+    opacity 0.32s ease-out,
+    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.38s ease-out;
+  will-change: opacity, transform, filter;
+}
+
+.flipperWrapperVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flipperWrapper {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+    will-change: auto;
+  }
+}

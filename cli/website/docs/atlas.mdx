@@ -1,0 +1,214 @@
+---
+title: The Atlas
+description: "The Atlas is Champollion's language index — one cited card per language. What a card asserts, what it is forbidden to assert, where to read it, and how to correct it."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Counts render through SSOTCount (build-time reads of the machine SSOTs via
+    docusaurus.config.js customFields) — never hand-typed, per the SSOT display
+    standard. Figures without a customFields SSOT (sign-language and conlang
+    floors, at-risk totals) are LINKED to the gated page that owns them, never
+    restated here. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Atlas
+
+**The Atlas is the language index: <SSOTCount field="catalogLanguageCount" />
+cards, one per language, where every value names the source it came from.**
+
+It is the reference layer the rest of Champollion stands on. The
+[CLI](/docs/intro) reads it to know how a language behaves. The
+[Arena](/docs/arena) reads it to know what a benchmark is a benchmark *of*. The
+[Network](/docs/network/) is drawn over it. And it is useful entirely on its
+own: for most of the languages in it, the card is the most complete cited
+summary of the language's situation available in one place.
+
+The cards are generated from their sources, not written by hand. Nobody sits
+down and types what they know about a language.
+
+---
+
+## Champollion is an index, not an arbiter
+
+This is the rule the whole Atlas is built to obey, and it is stricter than it
+sounds.
+
+Every value on a card cites its source and reports what that source **actually
+says** — not what we think is true, not a corrected version, not a rounded
+figure. When sources disagree, the card shows **all of them, attributed**.
+Speaker counts disagree constantly: Wikidata says one number, Ethnologue
+another, a national census a third, a regional survey a fourth. A card carries
+each of them with its source and its date. We do not average them, we do not
+adjudicate between them, and we do not quietly pick the one that reads best.
+
+The reason is not modesty. A card that manufactured a consensus would be a new
+and unciteable claim about somebody's language, invented by us. Preserving the
+disagreement keeps the card checkable against the world, and it leaves the
+judgement where it belongs — with the reader, and with the community whose
+language it is.
+
+Three reading rules follow, and they are worth knowing before you use a card
+for anything:
+
+- **`null` means unknown, not inapplicable.** An empty field means we have not
+  found a cited source for it yet. It is an invitation, not a verdict. Where a
+  field genuinely does not apply, the card says so in words.
+- **Derived values say they are derived.** Anything Champollion computes — a
+  median, a composite, a recoded flag, a count extracted from a dataset — is
+  stamped `champollion-derived` with a note naming what it was derived *from*.
+  It is never filed under the upstream dataset's name, because that would put
+  our arithmetic in someone else's mouth.
+- **Citation beats coverage.** A card with fewer, well-sourced fields is
+  healthier than a full one padded from tertiary sources. Wikipedia,
+  LLM-generated text and self-knowledge are not primary sources here, and are
+  not accepted as ones.
+
+The [Citation Procedure](/docs/reference/language-card-citation-procedure) sets
+out which source is authoritative for which kind of claim, and in what order.
+
+---
+
+## What a card asserts — and what it never asserts
+
+A card makes exactly two kinds of statement.
+
+**1. Properties of the language.** Classification and family, phonological
+inventory, typology, script and orthography, vitality and endangerment status,
+speaker estimates. Each cited, each labelled derived or asserted.
+
+**2. Existence of a resource.** That a corpus, a model, an FST, a dictionary, a
+metric plugin or a translation method *exists* for this language, and at what
+access level. This is a capability claim, not a quality claim.
+
+And there is a hard line it does not cross:
+
+:::danger[Measured scores are never on a language card]
+Any **measured score of method output** — chrF++, BLEU, COMET, TER, FST
+acceptance rate, "percent morphologically valid" — is a **run result**, keyed to
+a specific method, dataset and metric. It belongs on the
+[leaderboard](/leaderboard), inside [the Arena](/docs/arena), attached to a
+fingerprinted run card. It is **forbidden on a language card**, and a linter
+rejects any card that carries one.
+:::
+
+The distinction is the difference between "an FST exists for this language" — a
+fact about the world, true or false independent of us — and "this method scores
+0.82 FST acceptance" — a measurement, true only of one run, one dataset version
+and one method version. Collapse the two and a card silently becomes a quality
+claim about a language, permanently, with no run behind it and no way to
+retract it. So they do not collapse. The Atlas tells you **what exists**; the
+Arena tells you **how well it works**.
+
+Two more invariants are enforced the same way: a tone claim must not contradict
+the card's own phonological inventory, and a displayed speaker count must equal
+one of the cited estimates on the card (or be stamped as our own derivation).
+The full schema, with every field and its rules, is the [Language Card
+Specification](/docs/reference/language-card-spec).
+
+---
+
+## What is in it, and where it comes from
+
+<SSOTCount field="catalogLanguageCount" /> languages are catalogued, built from
+<SSOTCount field="licensedSourceCount" /> registered upstream sources whose
+licences are tracked individually — because a card is only redistributable if
+everything on it is, and non-commercial sources are walled out of commercial
+lanes by construction rather than by good intentions.
+
+The catalogue includes sign languages as the natural languages they are,
+includes the constructed languages ISO 639-3 recognizes, excludes programming
+languages, and benchmarks individual languages rather than macrolanguage
+umbrellas — because translation resources are variety-specific, and a score
+attached to an umbrella code would be a claim about varieties nobody evaluated.
+Where taxonomies disagree, the card shows the disagreement rather than picking a
+winner. Each of those choices is argued, with its consequences, in [What Counts
+as a Language Here?](/docs/network/context/what-counts-as-a-language).
+
+**Coverage is not quality, and existence is not coverage.** A card listing three
+resources for a language is telling you three things exist — not that any of
+them is usable, and not that the language is served. How the project counts
+coverage, and what it refuses to count, is [Counting
+Coverage](/docs/network/context/coverage-counting).
+
+---
+
+## Where to read it
+
+| Surface | What it gives you |
+|---|---|
+| [The Language Atlas](/languages) | The cards themselves — search, filter by family, region, vitality and complexity, and open any card in full |
+| [The Index](/catalogue) | Everything catalogued, by language: benchmarks, resources, methods, human translation services, and a separately-walled cite-only tier of externally published results |
+| [Glossary](/glossary) | Plain-language definitions for every term a card uses |
+| [Supported Languages](/docs/reference/supported-languages) | What the CLI can translate today, which is a much smaller set than what the Atlas catalogues |
+
+Machine-readable entry points are `/llms.txt` and `/llms-full.txt`; agents can
+search the cards directly through the [MCP
+server](/docs/network/getting-started/mcp-server).
+
+---
+
+## When a card is wrong
+
+Assume some of them are. An index this size, assembled from sources that
+disagree with each other, will contain errors — and the ones that matter most
+are usually invisible to us and obvious to a speaker.
+
+**Every card carries a "Suggest a correction or addition" link**, which opens
+the correction form with the language pre-filled. Bring a source if you have
+one; for a community removal or restriction request, no citation is required and
+it is handled with priority.
+
+Corrections are applied **at the generator, not to the card**. Cards are
+regenerated from their sources, so a hand-edit would be silently overwritten at
+the next build — fixing the source is what makes a correction permanent, and it
+usually fixes the same defect on every other card that shares that source. This
+is slower than editing a file and it is the only version that lasts. The
+mechanics are in [Submit to the
+Index](/docs/network/getting-started/submit-to-the-index).
+
+**If you are a community member or authority** and want data about your language
+restricted, changed or removed, that request does not need to be justified to us
+and does not go into a public queue if you would rather it did not. Language data
+is biodata: it carries the identity and relationships of the people who speak it,
+and it cannot meaningfully be anonymized. We are **sovereignty-aspirant, not sovereignty-certified** — we build the mechanisms and describe them honestly, and
+whether they honour community ownership and control of language data is a
+determination that belongs to the communities
+involved, not to us. The full
+position is [Data Stewardship](/docs/network/sovereignty/data-sovereignty), and
+the community door is [For Language
+Communities](/docs/network/community/for-language-communities).
+
+---
+
+## Read next
+
+- **You want to look up a language** → [browse the Atlas](/languages).
+- **You want to know what a field means** → [Language Card
+  Specification](/docs/reference/language-card-spec).
+- **You want to know why a claim is on a card** → [Citation
+  Procedure](/docs/reference/language-card-citation-procedure).
+- **You want to build a method for an under-served language** → [Support a
+  Low-Resource Language](/docs/network/community/low-resource-languages).
+- **You want to know how well anything actually translates** → that is not here.
+  It is [the Arena](/docs/arena) and the [leaderboard](/leaderboard).

@@ -1,0 +1,85 @@
+{
+  "code": "genus-celtic",
+  "name": "Celtic Languages (Genus Template)",
+  "dir": "ltr",
+  "script": "Latn",
+  "formality": {
+    "system": "register-levels",
+    "description": "Celtic languages generally use register-based formality rather than strict T-V pronominal systems. Welsh has ti/chi (informal/formal 'you'), Irish uses universal 'tú', and Scottish Gaelic uses 'thu/sibh'. Formality is primarily expressed through vocabulary choice and discourse markers rather than extensive verb conjugation.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "Celtic languages have masculine/feminine grammatical gender affecting nouns, adjectives, and initial mutations. No neuter gender. Gender-inclusive language conventions are still developing in Celtic languages."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "two",
+        "few",
+        "many",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "initialMutations": "All Celtic languages have systems of initial consonant mutations (lenition, nasalization, aspiration) triggered by grammatical context. A word's first consonant changes based on what precedes it. This is the #1 source of MT errors in Celtic languages.",
+    "vsoWordOrder": "Celtic languages are Verb-Subject-Object (VSO), one of the rarest word orders globally. Most MT models default to SVO assumptions, producing unnatural Celtic output.",
+    "prepositionConjugation": "Celtic languages conjugate prepositions — prepositions inflect for person and number (e.g., Irish: agam 'at-me', agat 'at-you', aige 'at-him'). This is typologically unusual and not handled by most MT architectures."
+  },
+  "contactInfluences": [
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "government",
+        "technology",
+        "commerce",
+        "media"
+      ],
+      "depth": "structural",
+      "period": "12th century–present",
+      "notes": "Progressive replacement of Celtic languages in public domains. All Celtic languages are in various stages of revitalization against English dominance."
+    },
+    {
+      "source": "Latin",
+      "sourceIso639_3": "lat",
+      "type": "lexical_borrowing",
+      "domains": [
+        "religion",
+        "scholarship",
+        "law"
+      ],
+      "depth": "moderate",
+      "period": "5th–16th centuries",
+      "notes": "Religious and scholarly borrowings from Latin via early Christianity."
+    }
+  ],
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus template for Insular Celtic languages (Goidelic: Irish, Scottish Gaelic, Manx; Brythonic: Welsh, Breton, Cornish). All share VSO word order, initial mutations, and preposition conjugation.",
+  "regions": [
+    {
+      "country": null,
+      "countryCode": "XX",
+      "officialStatus": null,
+      "region": null,
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

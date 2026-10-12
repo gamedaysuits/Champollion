@@ -1,0 +1,80 @@
+{
+  "code": "genus-romance",
+  "extends": "family-indo-european",
+  "name": "Romance Languages",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "T-V",
+    "description": "All major Romance languages have a T-V pronominal distinction: French tu/vous, Spanish tú/usted (and vos in Rioplatense), Portuguese tu/você/o senhor, Italian tu/Lei, Romanian tu/dumneavoastră, Catalan tu/vostè. The formal pronoun varies in grammatical person (2nd plural in French, 3rd singular in Italian/Spanish). Translation must select the correct register — defaulting to formal (V) for UI/professional contexts.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "All Romance languages have a binary masculine/feminine gender system (Romanian also has neuter). Gender is assigned to all nouns and triggers agreement on articles, adjectives, past participles, and pronouns. When the gender of a referent is unknown, most Romance languages default to masculine, but inclusive language practices are evolving rapidly (e.g., Spanish -e endings, French écriture inclusive with ·)."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "varies"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "cliticPlacement": "Romance languages make extensive use of clitic pronouns (me, te, le, lo, la, etc.) that attach to verbs in specific positions. Clitic placement rules differ by language — proclitic (before verb) in most finite forms, enclitic (after verb) in infinitives, imperatives, and gerunds. Clitic climbing, clustering, and doubling add further complexity. Wrong clitic placement is immediately noticeable.",
+    "subjunctiveMood": "All Romance languages retain a productive subjunctive mood triggered by specific matrix predicates (desire, doubt, emotion, necessity), conjunctions (aunque, pour que), and negation contexts. The choice of indicative vs. subjunctive carries semantic weight — using the wrong mood changes meaning or sounds ungrammatical.",
+    "genderedAgreement": "Adjectives, articles, past participles, and some pronouns must agree with their head noun in gender and number. Agreement chains can span long distances in complex sentences. MT commonly produces agreement mismatches, especially in relative clauses and coordinated structures.",
+    "proDropBehavior": "Romance languages are pro-drop (except French, which requires overt subject pronouns in most contexts). Subject pronouns are only used for emphasis or disambiguation. Over-generating subject pronouns sounds unnatural in Spanish, Italian, Portuguese, and Romanian.",
+    "serialObjectPronouns": "Multiple object clitics can co-occur (e.g., Spanish se lo digo, French je le lui donne), with strict ordering rules that differ between languages. Clitic combinations sometimes trigger morphological changes (Spanish le + lo → se lo).",
+    "copulaDistinctions": "Spanish and Portuguese distinguish ser/estar (permanent/temporary), Catalan distinguishes ser/estar/fer, and Italian distinguishes essere/stare. English 'to be' must be split based on context — misselection is a hallmark of poor translation."
+  },
+  "contactInfluences": [
+    {
+      "source": "Latin",
+      "sourceIso639_3": "lat",
+      "type": "substrate",
+      "domains": [
+        "all"
+      ],
+      "depth": "foundational",
+      "period": "parent language (divergence ~6th–9th century CE)",
+      "notes": "Vulgar Latin is the direct ancestor of all Romance languages. Classical Latin continues to influence formal and technical vocabulary."
+    }
+  ],
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Romance",
+    "genusGlottocode": "roma1334",
+    "ancestry": [
+      "Indo-European",
+      "Italic",
+      "Romance"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Romance languages (French, Spanish, Portuguese, Italian, Romanian, Catalan, Galician, Occitan, etc.). All descend from Vulgar Latin and share T-V formality, M/F gender, SVO word order, subjunctive mood, and clitic pronoun systems. Individual language cards override with language-specific rules.",
+  "regions": [
+    {
+      "country": "Global (originally Southern Europe, now worldwide)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Southern/Western Europe, Latin America, parts of Africa and Southeast Asia",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "morphème",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "La plus petite unité d'une parole qui porte un sens. Le mot anglais « unhappiness » contient trois morphèmes : un-, happy et -ness. Les langues diffèrent énormément dans le nombre de morphèmes qu'elles concentrent dans une seule parole.",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "Les systèmes de traduction automatique fonctionnent sur des tokens, et un token contenant plusieurs morphèmes masque la grammaire que le système doit traduire correctement.",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "morphologie",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "L'étude de la façon dont les paroles sont construites à partir de parties plus petites porteuses de sens, et le système de construction des paroles d'une langue. Une langue morphologiquement complexe exprime par des terminaisons de paroles ce que l'anglais exprime par des paroles séparées.",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "La morphologie complexe multiplie les formes de paroles distinctes qu'un système de traduction automatique doit apprendre à partir de données limitées.",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "flexion",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "Modifier la forme d'une parole pour exprimer la grammaire — le temps, le nombre, le cas, le genre — sans changer son sens fondamental, comme l'anglais sing/sang ou cat/cats. Les langues fortement fléchies peuvent marquer six catégories ou plus sur une seule parole.",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "Chaque forme fléchie est un token séparé pour un système de traduction automatique, donc une flexion importante signifie plus de paroles rares et plus d'erreurs d'accord.",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "dérivation",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "Construire de nouvelles paroles à partir de paroles existantes, comme teach → teacher ou happy → unhappy. Contrairement à la flexion, la dérivation crée une nouvelle parole de dictionnaire plutôt qu'une variante grammaticale de la même parole.",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "La dérivation productive permet aux locuteur·rice·s de créer des paroles à la volée que le système de traduction automatique n'a jamais vues.",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "affixe",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "Un morphème attaché à une racine de parole pour modifier son sens ou sa grammaire. Les préfixes s'attachent avant la racine, les suffixes après, et quelques langues utilisent des infixes à l'intérieur de la racine.",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "L'endroit où les affixes s'attachent détermine où les tokeniseurs de sous-paroles doivent diviser les paroles pour le modèle de traduction automatique.",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "préfixe",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "Un affixe qui s'attache à l'avant d'une racine de parole, comme re- dans « rewrite ». Certaines langues, notamment de nombreuses langues bantoues et athapaskanes, portent la plupart de leur grammaire dans des chaînes de préfixes.",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "Les langues riches en préfixes placent l'information grammaticale au début des paroles, l'inverse de ce que les tokeniseurs entraînés sur les suffixes attendent.",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "suffixe",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "Un affixe qui s'attache à la fin d'une racine de parole, comme -ness dans « kindness ». La suffixation est la stratégie d'affixation la plus courante dans les langues du monde.",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "Les suffixes empilés créent des formes de paroles longues et rares que les systèmes de traduction automatique doivent segmenter correctement pour traduire.",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "infixe",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "Un affixe inséré à l'intérieur d'une racine de parole plutôt qu'avant ou après. Le tagalog, par exemple, transforme sulat « écrire » en sumulat « a écrit » en insérant -um- après la première consonne.",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "Les infixes brisent l'hypothèse selon laquelle la racine d'une parole est une chaîne contiguë, ce qui rend inefficace la segmentation simple des sous-paroles.",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "clitique",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "Un petit mot grammatical qui ne peut pas se tenir seul et s'appuie sur un mot voisin, comme le 's dans « le chapeau de la reine d'Angleterre ». Les clitiques se comportent en partie comme des mots et en partie comme des affixes.",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "Les clitiques brouillent les frontières des mots, de sorte que les tokeniseurs peuvent les attacher au mauvais hôte et brouiller la grammaire.",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "radical",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "La partie centrale d'un mot à laquelle s'attachent les affixes. Dans « incroyable », le radical de -able est « croire ». Dans de nombreuses langues, un radical n'apparaît jamais seul et doit porter au moins une inflexion.",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "Identifier les radicaux partagés entre les formes de mots est la façon dont les systèmes de TA généralisent à partir de données d'entraînement limitées.",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "racine",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "Le noyau irréductible d'un mot une fois tous les affixes supprimés. Dans les langues sémitiques, une racine n'est souvent que trois consonnes (comme k-t-b « écrire » en arabe) que les schémas vocaliques transforment en mots.",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "Les langues dont les racines sont discontinues (squelettes consonantiques) nécessitent une segmentation spécialisée pour que la TA voie les relations entre les mots.",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "paradigme",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "L'ensemble complet des formes fléchies qu'un mot peut prendre — comme un tableau de conjugaison verbale. Les paradigmes vont de deux formes (l'anglais « must ») à des milliers dans les langues polysynthétiques.",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "Les grands paradigmes garantissent que la plupart des formes de mots sont rares ou jamais vues dans les données d'entraînement.",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "agglutinant",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "Un style de construction de mots où chaque sens grammatical reçoit son propre affixe clairement séparable, empilés les uns après les autres — comme en turc ou en swahili. Les mots peuvent devenir longs, mais chaque élément a une seule fonction.",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "Les mots agglutinants se segmentent proprement en sous-mots, mais seulement si le tokeniseur apprend l'ordre des affixes de la langue.",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "fusionnel",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "Un style de construction de mots où un affixe fusionne plusieurs sens grammaticaux à la fois. La terminaison espagnole -ó dans habló marque le passé, la troisième personne et le singulier simultanément — aucune partie ne peut être attribuée à un seul sens.",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "Les terminaisons fusionnées ne peuvent pas être décomposées par les tokeniseurs, de sorte que chaque combinaison doit être apprise comme une unité.",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "isolant",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "Un style de construction de mots où les mots sont principalement des morphèmes simples et la grammaire est exprimée par l'ordre des mots et les mots auxiliaires au lieu de terminaisons — comme en vietnamien ou en mandarin. L'extrême opposé de la polysynthèse.",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "Les langues isolantes déplacent le problème de la TA de la segmentation des mots au choix de l'ordre des mots et des mots fonctionnels.",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "polysynthèse",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "Un style de construction de mots où un seul verbe peut contenir ce que d'autres langues expriment comme une phrase entière — sujet, objet, lieu, instrument et plus encore, tous comme parties d'un seul mot. De nombreuses langues autochtones d'Amérique fonctionnent de cette façon.",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "Les mots polysynthétiques se répètent rarement exactement, de sorte que la TA au niveau des mots voit un flux sans fin de tokens inconnus.",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "Cri des Plaines (crk) : un seul verbe peut incorporer des pronoms sujet/objet, des instrumentaux, des localisations et des actions (card field linguisticChallenges.polysynthesis).",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "incorporation nominale",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "Intégration d'un nom dans le verbe pour former un seul mot, un peu comme transformer « chasser des phoques » en « phoque-chasser » comme verbe. Courant dans les langues polysynthétiques, où cela modifie l'emphase et la grammaire de la phrase.",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "Un nom incorporé disparaît de la phrase en tant que mot distinct, de sorte que la traduction basée sur l'alignement le perd.",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "Surfacé sur les cartes sous linguisticChallenges.nounIncorporation (basé sur Grambank), par exemple le cri des Plaines (crk).",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "composition",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "Fusion de deux ou plusieurs mots indépendants en un seul mot nouveau, comme « dent » + « brosse » → « brosse à dents ». La composition de style allemand peut enchaîner de nombreux mots en tokens très longs.",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "Les composés nouveaux sont des tokens non vus que la TA doit décomposer en parties connues pour traduire.",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "redoublement",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "Répétition de tout ou partie d'un mot pour modifier son sens — pour marquer les pluriels, l'intensité ou l'action en cours. L'indonésien orang « personne » devient orang-orang « personnes ».",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "La TA doit reconnaître qu'un mot doublé est une grammaire, non une répétition accidentelle à supprimer.",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "apophonie",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "Modification d'une voyelle à l'intérieur d'un mot pour changer sa grammaire, comme l'anglais sing/sang/sung. La structure consonantique du mot reste stable tandis que la voyelle effectue le travail grammatical.",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "L'apophonie cache l'inflexion à l'intérieur du radical où les tokeniseurs de sous-mots ne peuvent pas l'isoler.",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "supplétisme",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "Quand les formes fléchies d'un mot proviennent de racines complètement différentes, comme go/went ou good/better. La grammaire les traite comme un seul mot même s'ils ne partagent aucun son.",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "Les formes supplétives ne peuvent pas être dérivées par règle, de sorte que la TA doit avoir vu chacune dans les données d'entraînement.",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "morphologie racine-et-schème",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "Un style de construction de mots, typique de l'arabe et de l'hébreu, où une racine consonantique comme k-t-b « écrire » est tissée à travers des schèmes vocaliques : kitāb « livre », kātib « écrivain », maktab « bureau ». La racine et le schème portent chacun du sens, mais aucun n'est un segment contigu.",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "La tokenisation standard en sous-mots ne peut pas voir la racine partagée à travers ces formes, affaiblissant la généralisation dans la TA des langues sémitiques.",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "Surfacé sur les cartes sous linguisticChallenges.rootPattern (par exemple l'arabe, l'hébreu, le maltais).",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "harmonie vocalique",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "Une règle selon laquelle toutes les voyelles d'un mot doivent s'accorder sur une propriété, comme antérieur/postérieur ou arrondi/non-arrondi. En turc, les voyelles des suffixes changent de forme pour correspondre au radical : ev-ler « maisons » mais at-lar « chevaux ».",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "Chaque suffixe a plusieurs formes de surface, multipliant les variantes de tokens que la TA doit apprendre pour une terminaison grammaticale.",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "mutation consonantique",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "Un changement grammatical de la première consonne d'un mot déclenché par le mot qui le précède. Le gallois cath « chat » devient gath après l'article : y gath « le chat ». La forme du dictionnaire et la forme parlée peuvent être très différentes.",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "La mutation fait que le même mot apparaît sous plusieurs orthographes, fragmentant ses statistiques dans les données d'entraînement de la TA.",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "lénition",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "L'affaiblissement d'une consonne, souvent entre voyelles ou sous l'effet de déclencheurs grammaticaux — un « k » s'affaiblissant vers « g » ou « h ». Dans les langues celtiques, la lenition fait partie de la grammaire, non seulement de la prononciation.",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "La lenition grammaticale modifie l'orthographe des mots en contexte, ce qui crée une divergence entre le texte de surface et les formes du dictionnaire.",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "gémination",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "L'allongement d'une consonne pour former un mot différent — l'italien pala « pelle » par rapport à palla « ballon ». Certains systèmes d'écriture notent le doublement, d'autres le laissent à l'interprétation du lecteur.",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "Quand l'écriture omet la gemination, des mots distincts se confondent en une seule orthographe et la traduction automatique perd le contraste.",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "sandhi",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "Les changements sonores qui se produisent à la jonction de mots ou de morphèmes, comme « don't you » devenant « dontcha ». Dans les langues tonales, les tons eux-mêmes peuvent changer en contexte (sandhi tonal).",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "Le sandhi rend les formes écrites ou transcrites dépendantes du contexte, ce qui complique la segmentation cohérente.",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "umlaut",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "Un changement vocalique causé historiquement par une voyelle suivante, subsistant comme marqueur grammatical : l'allemand Apfel « pomme » → Äpfel « pommes ». Apparenté à l'ablaut mais avec une origine historique différente.",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "L'umlaut place le marquage du pluriel ou du temps à l'intérieur du radical, invisible pour la segmentation basée sur les affixes.",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "tokenisation",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "La division du texte en unités (tokens) que le modèle de traduction traite réellement. Les systèmes modernes divisent les mots rares en sous-mots ; l'alignement de ces sous-mots avec les vrais morphèmes varie énormément selon la langue.",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "Une mauvaise tokenization est une cause fondamentale d'échec de la traduction automatique pour les langues morphologiquement riches et peu dotées en ressources.",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "cas grammatical",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "Le marquage des noms et pronoms pour indiquer leur rôle dans la phrase — qui agit, qui subit l'action, où, avec quoi. L'anglais ne conserve que des traces (I/me/my) ; le finnois en compte quinze ; de nombreuses langues n'en ont aucun.",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "Les langues à marquage casuel permettent l'ordre des mots libre, donc la traduction automatique doit lire les rôles à partir des terminaisons plutôt que de la position — et générer les bonnes terminaisons en retour.",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "nominatif",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "Dans le système d'alignement le plus familier, le sujet de tout verbe prend le cas nominatif et l'objet direct prend l'accusatif. La plupart des langues européennes fonctionnent ainsi, ce qui explique que les données d'entraînement de la traduction automatique reflètent massivement ce système.",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "Les systèmes entraînés principalement sur des langues nominatif-accusatif attribuent mal les rôles lors de la traduction de langues ergatives.",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "ergativité",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "Un système d'alignement où le sujet d'un verbe intransitif (« elle dort ») est marqué comme l'objet d'un verbe transitif (« l'a vue »), tandis que les sujets transitifs reçoivent un marquage ergatif spécial. Le basque, de nombreuses langues mayas, australiennes et caucasiennes fonctionnent ainsi.",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "Le marquage ergatif inverse les indices de rôle que la traduction automatique attend, causant des erreurs sur qui-a-fait-quoi-à-qui.",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "absolutif",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "Le cas non marqué dans un système ergatif, couvrant les sujets intransitifs et les objets transitifs. Il s'agit généralement de la forme de citation du nom.",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "Les noms à l'absolutif sont identiques dans deux rôles différents, de sorte que la traduction automatique doit utiliser le verbe pour désambiguïser.",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "alignement morphosyntaxique",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "Le système qu'une langue utilise pour regrouper les trois rôles fondamentaux — sujet intransitif, sujet transitif et objet — à des fins de marquage. L'alignement nominatif–accusatif et ergatif–absolutif sont les deux grands modèles ; certaines langues se divisent entre eux ou utilisent des systèmes fondés sur l'animacité.",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "L'inadéquation d'alignement entre la langue source et la langue cible est un problème de traduction structurel, non lexical.",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "génitif",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "Le cas qui marque la possession ou l'association étroite, comme le 's anglais ou 'of'. Les langues diffèrent selon que le syntagme génitival précède ou suit le nom qu'il modifie.",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "Les différences d'ordre génitival (« le cheval du roi » vs « the king's horse ») exigent une réorganisation systématique à l'intérieur des syntagmes nominaux.",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "datif",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "Le cas marquant le destinataire ou le bénéficiaire — le « à qui » du don et de la parole. Allemand wem, latin cui ; l'anglais l'exprime par l'ordre des mots ou « to ».",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "La traduction automatique doit choisir entre le marquage du cas datif et la formulation prépositionnelle selon la langue cible.",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "locatif",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "Un cas signifiant « à/dans/sur » un lieu, exprimé par une terminaison nominale plutôt qu'une préposition. Le finnois et le hongrois divisent la localisation en plusieurs cas locatifs précis (intérieur, surface, proximité, mouvement vers, mouvement depuis).",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "Une préposition anglaise peut correspondre à plusieurs cas locatifs, forçant la traduction automatique à choisir selon le contexte.",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "instrumental",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "Un cas signifiant « en utilisant/au moyen de » — le russe marque « avec un marteau » par une terminaison plutôt qu'une préposition. Les langues polysynthétiques peuvent intégrer l'instrument directement dans le verbe.",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "Le sens instrumental varie entre les terminaisons casuelles, les prépositions et le marquage interne au verbe selon les langues.",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "comitatif",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "Un cas ou un marqueur signifiant « ensemble avec quelqu'un ». Certaines langues utilisent le même marqueur pour « avec » (accompagnement) et « et » (coordination), ce qui peut être ambigu pour les locuteurs externes.",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "Le chevauchement comitatif/coordination signifie que « X avec Y » et « X et Y » peuvent être la même construction dans la langue source.",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "oblique",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "Tout syntagme dans la clause qui n'est ni sujet ni objet direct — généralement des lieux, des instruments, des destinataires et autres « éléments supplémentaires », souvent marqués par un cas ou une adposition. Dans WALS, « X » dans les ordres comme VOX représente le syntagme oblique.",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "La position des obliques dans la phrase varie selon la langue et doit être réorganisée correctement autour du verbe et de l'objet.",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "marquage différentiel de l'objet",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "Marquage de certains objets directs mais pas d'autres, généralement selon l'animacité ou la définitude. L'espagnol ajoute « a » avant les objets humains (veo a María) mais pas les choses (veo la casa).",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "La traduction automatique doit décider pour chaque objet si le marqueur s'applique, en utilisant des indices d'animacité que la source peut ne pas expliciter.",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "genre grammatical",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "Classement de tous les noms en catégories (souvent appelées masculin/féminin/neutre) qui imposent des formes concordantes sur les articles, adjectifs et parfois verbes. L'assignation est grammaticale, non biologique — une table allemande est masculine, une table espagnole est féminine.",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "La traduction vers une langue à genre force des choix sur les personnes et les choses que la source laisse non spécifiés, source majeure de biais en traduction automatique.",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "classe nominale",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "Un système semblable au genre mais avec de nombreuses classes — les langues bantoues en ont généralement 10 à 20, classant les noms selon la forme, l'animacité, la taille et d'autres critères. Chaque classe déclenche ses propres préfixes d'accord dans toute la phrase.",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "Chaque choix de nom produit des marqueurs d'accord dans toute la proposition, de sorte qu'une classe incorrecte génère de nombreuses erreurs visibles.",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "animacité",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "Une distinction grammaticale entre les référents vivants (ou assimilés à vivants) et non vivants. Dans les langues algonquiennes, chaque nom est grammaticalement animé ou inanimé, et les verbes changent complètement de forme selon lequel ils combinent.",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "L'animacité détermine le choix du verbe et l'accord dans de nombreuses langues autochtones, sans indice explicite dans une source anglaise.",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "Cri des Plaines (crk) : la conjugaison verbale change complètement selon que les noms du sujet/objet sont animés ou inanimés (voir la fiche card sur les défis linguistiques de l'animacité).",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "obviation",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "Un système, central aux langues algonquiennes comme le cri des Plaines, qui classe les troisièmes personnes dans un segment de discours : l'une est « proximale » (au centre de l'attention) et les autres sont « obviatives » (marquées comme en arrière-plan, parfois appelées quatrième personne). Il permet de distinguer qui est qui sans pronoms comme « il₁ vs il₂ ».",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "L'anglais n'a pas d'obviation, donc la traduction automatique vers le cri doit inventer les assignations proximale/obviative et les maintenir cohérentes entre les phrases.",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "Le cri des Plaines (crk) marque les référents obviatifs sur les noms et verbes ; voir la fiche crk et la documentation de la méthode crk.",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "clusivité",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "Une distinction entre deux sortes de « nous » : inclusif (moi + toi, peut-être d'autres) et exclusif (moi + d'autres, mais pas toi). Des centaines de langues font cette distinction de manière obligatoire.",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "La traduction du « we » anglais exige de choisir entre inclusif ou exclusif sans indice dans la source — et le mauvais choix peut avoir des conséquences sociales graves.",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "nombre grammatical",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "La façon dont une langue marque la quantité — singulier, pluriel, et parfois duel (exactement deux) ou paucal (quelques-uns). Certaines langues marquent le nombre sur chaque nom ; d'autres le laissent entièrement au contexte.",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "Lorsque la langue source n'indique pas le nombre, la traduction automatique doit l'inférer ; lorsque la langue cible exige des formes duelles, elle doit les générer.",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "duel",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "Un nombre grammatical signifiant exactement deux, distinct du singulier et du pluriel. Le slovène, l'arabe et de nombreuses langues océaniennes l'ont ; quelques langues ajoutent le triel (exactement trois) dans les pronoms.",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "La traduction automatique vers des langues marquant le duel doit détecter la « deux-ité » que la source n'exprime qu'en comptant les mots.",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "classificateur",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "Un mot requis lors du comptage ou de la référence à des noms, les classant par type — comme l'anglais « three head of cattle » ou « two sheets of paper », mais obligatoire pour tout. Le chinois, le japonais, le thaï et de nombreuses autres langues ne peuvent pas compter sans le bon classificateur.",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "La traduction automatique doit sélectionner le bon classificateur pour chaque nom ; le mauvais est immédiatement visible pour les locuteur·rice·s natif·ve·s.",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "défini",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "Le fait qu'un nom se réfère à quelque chose que l'interlocuteur·rice peut déjà identifier (« le chien ») ou non (« un chien »). De nombreuses langues ne marquent jamais cette distinction ; d'autres la marquent par des articles, des affixes ou l'ordre des mots.",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "La traduction depuis une langue sans articles force la traduction automatique à décider entre « le » et « un » pour chaque groupe nominal uniquement à partir du contexte.",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "article",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "Un petit mot qui marque un nom comme défini (« le ») ou indéfini (« un »). Environ un tiers des langues du monde n'ont pas d'articles du tout, et certaines utilisent le numéral « un » ou des démonstratifs à la place.",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "L'insertion et la suppression d'articles constituent l'une des catégories d'édition les plus fréquentes en traduction automatique entre les langues avec et sans articles.",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "démonstratif",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "Des mots de pointage comme « ceci » et « cela ». Les langues divisent l'espace de pointage différemment — certaines ont une division tripartite près-de-moi / près-de-toi / loin, d'autres ajoutent la visibilité ou l'élévation.",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "Les systèmes démonstratifs ne correspondent rarement un à un, donc la traduction automatique doit approximer les distinctions de distance et de visibilité.",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "possession",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "La façon dont une langue exprime « mon X / ton X ». De nombreuses langues distinguent la possession inaliénable (parties du corps, liens de parenté — choses qu'on ne peut pas donner) de la possession aliénable, les marquant avec des constructions différentes.",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "La possession inaliénable nécessite souvent un marquage obligatoire du possesseur que les sources anglaises omettent.",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "marquage sur la tête",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "Placer le marquage grammatical sur la tête d'un groupe — le verbe indique qui en sont le sujet et l'objet, le nom possédé indique qui le possède. Les dépendants (les noms eux-mêmes) peuvent rester nus.",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "Le head marking concentre la grammaire de la clause sur le verbe, l'image miroir des langues à dependent marking dont provient la plupart des données de traduction automatique.",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "marquage sur le dépendant",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "Placer le marquage grammatical sur les dépendants d'un groupe — les désinences de cas sur les noms, les désinences possessives sur le possesseur — tandis que la tête reste non marquée. La plupart des langues européennes penchent de ce côté.",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "Le dependent marking place le signal grammatical dans les désinences nominales, que les tokeniseurs doivent segmenter correctement.",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "évidentialité",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "Une grammaire qui force les locuteur·rice·s à dire comment ils·elles savent quelque chose — l'ont vu, en ont entendu parler, l'ont déduit. En quechua ou en turc, omettre l'évidential revient à omettre le temps en anglais.",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "La traduction automatique vers les langues à évidentialité doit énoncer une source d'information que le texte original ne spécifie jamais.",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "temps",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "Un marquage grammatical qui situe un événement dans le temps — passé, présent, futur. Certaines langues n'ont pas de temps grammatical du tout (mandarin), tandis que d'autres distinguent plusieurs degrés d'éloignement du passé.",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "Un texte source sans marquage de temps force la traduction automatique à inférer la référence temporelle ; les systèmes de distance temporelle exigent des distinctions plus fines que celles fournies par la source.",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "aspect",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "Marquage grammatical de la façon dont un événement se déploie dans le temps — accompli, en cours, habituel, répété — indépendamment du moment où il s'est produit. Les verbes russes se présentent en paires perfectif/imperfectif ; l'anglais utilise « was doing » par rapport à « did ».",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "Les choix d'aspect doivent être effectués sur chaque verbe lors de la traduction vers des langues marquant l'aspect, souvent sans indices dans la source.",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "perfectif",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "Aspect présentant un événement comme un tout complet — « elle a écrit la lettre » envisagé comme un fait achevé. Souvent associé à l'imperfectif dans une opposition grammaticale.",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "Le choix erroné entre perfectif et imperfectif figure parmi les erreurs les plus courantes de la traduction automatique vers les langues slaves.",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "imperfectif",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "Aspect présentant un événement de l'intérieur — en cours, habituel ou répété, comme « elle écrivait » ou « elle avait l'habitude d'écrire ». Le pendant du perfectif.",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "Les lectures imperfectives (en cours par rapport à habituel) doivent être désambiguïsées par le contexte pour une traduction correcte.",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "mode",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "Marquage grammatical de la position du locuteur face à un événement — fait, souhait, ordre, possibilité. L'indicatif, le subjonctif et l'impératif sont les modes européens familiers ; d'autres langues marquent des nuances plus fines.",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "La sélection du mode (en particulier le subjonctif) suit des règles propres à la langue cible qui ne peuvent pas être copiées de la source.",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "subjonctif",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "Un mode verbal pour le contenu non asserré — souhaits, doutes, hypothétiques et propositions subordonnées après certains verbes. Les langues romanes l'exigent dans de nombreuses propositions subordonnées où l'anglais utilise des formes simples.",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "Les déclencheurs du subjonctif sont spécifiques à la langue cible, de sorte que la traduction automatique doit appliquer des règles grammaticales plutôt que de traduire des formes.",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "négation",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "La façon dont une langue dit « non ». Les stratégies incluent les particules (not en anglais), les affixes sur le verbe, les verbes négatifs spéciaux et les constructions en deux parties comme le français ne…pas. La position varie : avant le verbe, après lui, ou les deux.",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "Les erreurs de négation inversent complètement le sens, ce qui rend le placement correct de la négation l'une des exigences les plus critiques de la traduction automatique.",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "passif",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "Une construction qui promeut l'objet en sujet et rétrograde ou supprime l'agent : « la fenêtre a été cassée (par le garçon) ». De nombreuses langues n'ont pas de passif du tout ou utilisent d'autres stratégies pour mettre l'agent en arrière-plan.",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "Les langues cibles sans passif forcent la traduction automatique à restructurer les passifs en actifs, en inventant ou en récupérant l'agent.",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "voix grammaticale",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "Le système grammatical contrôlant quel participant est le sujet — actif, passif, moyen, et dans certaines familles linguistiques des systèmes beaucoup plus riches. La voix restructure toute la proposition autour d'une perspective choisie.",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "Les décalages de voix exigent une restructuration de propositions entières, non une simple substitution de mots.",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "valence",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "Le nombre de participants qu'un verbe exige et la manière dont il les encode — « dormir » en exige un, « donner » en exige trois. Les langues divergent quant aux participants que les verbes particuliers prennent et à la façon dont ils sont marqués.",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "Les incompatibilités de valence font que les traductions littérales assignent les mauvais rôles ou omettent des participants obligatoires.",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "transitif",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "Décrit un verbe qui prend un objet direct — « elle lit le livre ». La transitivité est grammaticalement centrale : de nombreuses langues marquent le sujet, l'objet et le verbe lui-même différemment selon que la proposition est transitive.",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "La transitivité régit le marquage des cas et l'accord, de sorte qu'une mauvaise évaluation de la transitivité d'un verbe brouille le sens de « qui a fait quoi à qui » dans le résultat.",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "intransitif",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "Décrit un verbe qui ne prend pas d'objet direct — « elle dort », « le soleil s'est levé ». Dans les langues ergatives, l'argument unique d'un verbe intransitif est marqué comme l'objet d'un verbe transitif, et non comme son sujet.",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "Les propositions intransitives déclenchent des modèles de cas et d'accord différents, en particulier dans les langues ergatives, la traduction automatique doit donc suivre la transitivité pour choisir les bonnes formes.",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "antipassif",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "Une construction, courante dans les langues ergatives, qui supprime ou rétrograde l'objet d'un verbe transitif, laissant une proposition intransitive — l'image miroir du passif. Là où le passif met en retrait l'auteur de l'action, l'antipassif met en retrait l'objet de l'action.",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "Les antipassifs restructurent la proposition et modifient le marquage des cas, de sorte que les traduire dans une langue orientée vers le passif implique de reconstruire la phrase entière plutôt que d'échanger des mots.",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "causatif",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "Une construction qui ajoute un instigateur à un événement — transformant « le pot s'est cassé » en « elle a cassé le pot » ou « elle l'a fait casser ». De nombreuses langues construisent des causatifs avec un affixe verbal dédié plutôt qu'avec un verbe séparé comme « make » en anglais.",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "Le sens causatif peut se cacher à l'intérieur d'une seule forme verbale, la traduction automatique doit donc le reconnaître et le décomposer en une construction périphrastique — ou l'y réintégrer — pour la langue cible.",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "pronom",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "Un mot qui remplace un syntagme nominal — je, tu, elle, ils, ceci, qui. Les langues diffèrent fortement quant au nombre de pronoms qu'elles possèdent et aux distinctions qu'elles imposent : le genre, la formalité, ou le « nous » inclusif/exclusif, entre autres.",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "Les systèmes pronominaux correspondent rarement d'une langue à l'autre, la traduction automatique doit donc fournir des distinctions que la source laisse non spécifiées (genre, formalité) ou fusionner celles que la cible ne peut pas exprimer.",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "numéral",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "Un mot exprimant un nombre — un, dix-sept, mille. Les langues construisent les numéraux supérieurs sur des bases différentes (dix, vingt, ou des mélanges) et peuvent exiger un classificateur ou une forme de comptage spéciale avec chaque nombre.",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "Les nombres sont des contenus à fort enjeu, et la traduction de mots désignant des nombres à travers différentes bases de comptage ou exigences de classificateurs est un point où la traduction automatique introduit facilement des erreurs.",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "idéophone",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "Un mot expressif qui évoque une sensation — un son, un mouvement, une texture ou une lumière — par sa propre forme, comme « zigzag » en anglais ou kirakira (« de manière étincelante ») en japonais. De nombreuses langues africaines et asiatiques possèdent de vastes classes d'idéophones grammaticalement distinctes.",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "Les idéophones sont expressifs et très spécifiques à chaque langue, la traduction automatique a donc tendance à les omettre ou à les lisser, perdant ainsi un sens que les locuteur·rice·s natif·ve·s perçoivent comme précis et vivant.",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "construction à verbes sériels",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "Enchaînement de plusieurs verbes dans une même proposition sans « et » ni « à » entre eux — « prendre couteau couper pain » pour « couper le pain avec un couteau ». Courant dans les langues d'Afrique de l'Ouest, d'Asie du Sud-Est et les créoles.",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "Les verbes sériels doivent être décomposés en prépositions ou propositions subordonnées lors de la traduction vers les langues européennes, et reconstruits dans l'autre sens.",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "participe",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "Une forme verbale qui fonctionne comme un adjectif ou qui construit les temps composés — « l'eau courante », « a mangé ». Les langues diffèrent quant au nombre de participes qu'elles possèdent et à leurs usages.",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "Les propositions participiales remplacent souvent les propositions relatives dans d'autres langues, nécessitant une conversion structurelle.",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "gérondif",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "Une forme verbale utilisée comme nom, comme « nager » dans « nager est amusant ». D'autres langues utilisent l'infinitif, des noms verbaux ou des formes converbes spéciales là où l'anglais utilise le gérondif.",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "Les gérondifs anglais correspondent à plusieurs constructions différentes selon la langue cible.",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "copule",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "Le verbe de liaison « être » dans des phrases comme « elle est médecin ». De nombreuses langues l'omettent (copule zéro) au présent — le russe et l'arabe disent littéralement « elle médecin ».",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "La traduction automatique doit ajouter les copules lors de la conversion depuis des langues sans copule et les supprimer lors de la conversion vers ces mêmes langues.",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "accord",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "Quand la forme d'un mot doit correspondre aux traits grammaticaux d'un autre — les verbes s'accordant avec leurs sujets, les adjectifs s'accordant avec leurs noms en genre et en nombre. Certaines langues marquent l'accord avec le sujet et l'objet sur le verbe.",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "Le texte généré doit satisfaire toutes les chaînes d'accord ; un seul trait erroné produit plusieurs erreurs visibles.",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "accord polypersonnel",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "L'accord du verbe avec plus d'un participant à la fois — le verbe porte des marqueurs pour le sujet et l'objet (et parfois davantage). Le basque, le géorgien et les langues algonquiennes le font systématiquement.",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "La forme verbale encode qui agit sur qui, de sorte que la TA doit résoudre les deux rôles avant de pouvoir produire un seul verbe correct.",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "ordre conjoint",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "Dans les langues algonquiennes comme le cri des Plaines, les verbes se présentent en « ordres » flexionnels distincts : l'ordre indépendant pour les énoncés principaux et l'ordre conjoint principalement pour les propositions subordonnées, les questions et certains contextes discursifs. Les deux utilisent des ensembles de terminaisons entièrement différents.",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "Le choix entre les formes indépendantes et conjointes est une décision de type de proposition que l'anglais ne fournit pas directement.",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Cri des Plaines (crk) : décrit dans les notes de registre de la fiche et dans la documentation de la méthode crk.",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "directionnel",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "Marquage verbal qui intègre la direction du mouvement dans le verbe lui-même — vers le locuteur, loin, en amont, en montée. Courant dans les langues mayas, tibéto-birmanes et de nombreuses langues papoues.",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "Le sens directionnel intégré aux verbes doit être déplié en adverbes ou prépositions dans la langue cible.",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "bénéfactif",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "Marquage indiquant qu'une action est effectuée au bénéfice de quelqu'un — « je lui ai cuit un gâteau ». Certaines langues marquent cela par un affixe verbal (un applicatif) plutôt que par l'ordre des mots ou une préposition.",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "Les bénéficiaires peuvent se cacher dans la morphologie verbale, de sorte que la TA doit les détecter et les réexprimer sous forme de syntagmes distincts.",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "interrogatif",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "La grammaire de la formulation de questions. Les questions oui/non peuvent être marquées par une particule, une forme verbale, un changement d'ordre des mots ou l'intonation seule ; les questions de contenu diffèrent selon que « qui/quoi » se déplace vers l'avant.",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "Si la source ne marque les questions que par l'intonation, l'entrée écrite ne donne aucun signal à la TA qu'une question est posée.",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "ordre des mots",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "L'arrangement typique du sujet (S), de l'objet (O) et du verbe (V) dans une phrase simple. SOV (japonais) et SVO (anglais) couvrent la plupart des langues ; VSO (gallois, type tagalog) est le troisième type courant, et certaines langues n'ont pas d'ordre fixe du tout.",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "L'inadéquation de l'ordre des mots est le plus grand facteur d'erreurs de réordonnancement entre paires de langues.",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "adposition",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "Le terme générique pour les prépositions (avant leur nom : « dans la maison ») et les postpositions (après : japonais uchi de « maison dans »). Le choix d'une langue corrèle fortement avec son ordre verbe–objet.",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "La conversion préposition-postposition inverse le bracketing de chaque syntagme spatial et temporel.",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "proposition relative",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "Une proposition qui modifie un nom : « le livre que j'ai lu ». Les langues la placent avant ou après le nom, et utilisent des stratégies allant des pronoms relatifs aux lacunes aux formes verbales spéciales.",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "Les propositions relatives prénominales (japonais, turc) exigent d'inverser de longs passages de texte par rapport à l'ordre anglais.",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "système de focus",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "Un système de proposition, mieux connu des langues philippines comme le tagalog, où la morphologie verbale sélectionne quel participant — acteur, patient, lieu, instrument — est le pivot grammatical de la phrase. Souvent appelé voix symétrique.",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "Le choix du focus change la forme verbale, le placement du marqueur et l'ordre des mots à la fois, de sorte que la TA ne peut pas mapper les propositions mot à mot.",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "Affiché sur les cartes comme linguisticChallenges.voiceFocus pour de nombreuses langues austronésiennes.",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "particule",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "Un petit mot fonctionnel non fléchi qui ajoute un sens grammatical ou attitudinal — marqueurs de question, marqueurs de thème, adoucisseurs de politesse. Les langues d'Asie de l'Est font un usage intensif des particules finales de phrase.",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "Les particules portent un sens (interrogation, attitude, thème) que la TA doit réexprimer par des moyens entièrement différents.",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "ton",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "Utilisation de la hauteur de la voix pour distinguer les mots : mandarin mā « mère » vs mǎ « cheval ». Les systèmes simples opposent deux niveaux ; les systèmes complexes (nombreuses langues d'Afrique de l'Ouest et d'Asie du Sud-Est) utilisent plusieurs niveaux et contours.",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "Le ton est généralement invisible dans le texte romanisé ou non marqué, ce qui fait s'effondrer des mots distincts en une seule orthographe pour le système de traduction automatique.",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "accent de hauteur",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "Un système où la hauteur distingue les mots, mais une seule syllabe par mot porte la hauteur distinctive — japonais háshi « baguettes » vs hashí « pont ». Plus léger que le ton complet, plus lourd que le simple accent d'intensité.",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "Comme le ton, l'accent de hauteur est rarement écrit, ce qui multiplie les homophones dans le texte.",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "more",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "Une unité de timing plus petite que la syllabe : une syllabe brève compte une mora, une voyelle longue ou une consonne finale en ajoute une autre. Le rythme japonais, la poésie et même les abréviations comptent les morae, non les syllabes.",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "La phonologie basée sur les morae façonne la manière dont les emprunts et les noms sont adaptés, ce qui affecte la qualité de la translittération.",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "éjective",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "Une consonne produite par une rafale d'air provenant du larynx fermé plutôt que des poumons, donnant une qualité de claquement sec. Courante dans les langues du Caucase, des Amériques et d'Afrique de l'Est ; écrite avec une apostrophe (k', t').",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "Les marques d'éjectives sont souvent omises lors de la saisie informelle, fusionnant des mots distincts dans le texte d'entrée.",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "coup de glotte",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "Le bruit sec dans la gorge au milieu de « euh-oh ». Dans de nombreuses langues, c'est une consonne à part entière qui distingue les mots — l'hawaïen l'écrit comme l'ʻokina (ʻ), et son omission change les sens.",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "Les coups de glotte sont fréquemment omis ou saisis avec le mauvais caractère d'apostrophe, fragmentant les mots selon plusieurs orthographes.",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "Hawaïen (haw) : l'ʻokina est une consonne phonémique ; la documentation orthographique signale les problèmes de variantes d'apostrophes.",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "uvulaire",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "Consonnes produites à l'arrière de la bouche contre la luette, comme le q arabe ou le r français. Plus rares que les sons vélaires k/g et caractéristiques de certaines zones linguistiques.",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "Les uvulaires sont souvent romanisées de manière incohérente (q/k/kh), fragmentant un mot en plusieurs formes textuelles.",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "clic",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "Consonnes produites en aspirant l'air, comme le « tsk-tsk » anglais — mais utilisées comme sons de parole ordinaires. Les langues khoisan et certaines langues bantoues du sud (zoulou, xhosa) possèdent des séries complètes de consonnes click.",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "Les clicks sont écrits avec des caractères inhabituels (ǃ, ǂ, c, q, x) que les tokeniseurs et les polices gèrent souvent mal.",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "implosive",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "Consonnes produites avec de l'air brièvement aspiré à la gorge, comme le ɓ et le ɗ du haoussa ou du vietnamien. Elles sonnent comme des b/d emphatiques aux oreilles non entraînées, mais ce sont des phonèmes distincts.",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "Les lettres implosives (ɓ, ɗ) sont souvent saisies comme de simples b/d, fusionnant des mots distincts dans les corpus textuels.",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "nasal",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "Une consonne produite avec l'air s'écoulant par le nez, comme m, n, ou le ng dans « sing ». Presque toutes les langues ont des consonnes nasales, et certaines étendent également la nasalité aux voyelles voisines.",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "En tant que catégorie purement phonétique, les consonnes nasales sont importantes pour la parole et la translittération plutôt que pour la traduction de texte, qui travaille sur des mots écrits.",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "fricative",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "Une consonne produite en forçant l'air à travers un passage étroit de sorte qu'il siffle, comme f, s, sh, ou th. Les fricatives comptent parmi les types de consonnes les plus courants dans les langues du monde.",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "Les fricatives constituent une catégorie phonétique qui affecte la prononciation et la translittération des noms, et non la grammaire de la traduction automatique basée sur le texte.",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "rétroflexe",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "Une consonne produite en recourbant la pointe de la langue vers le haut et l'arrière en direction du palais, produisant un son creux distinctif. Les consonnes rétroflexes sont caractéristiques des langues d'Asie du Sud telles que le hindi et le tamoul.",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "La rétroflexion est principalement une question de parole et de translittération ; dans le texte, elle n'apparaît que sous forme de lettres distinctes ou de signes diacritiques que la traduction automatique doit préserver.",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "glottalisé",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "Produit avec une constriction ou une fermeture de la glotte, ajoutant un coup de glotte ou une qualité craquée à une consonne ou une voyelle. Les éjectives et les implosives sont des consonnes glottalisées, et certaines langues possèdent également des sonantes et des voyelles glottalisées (à voix craquée).",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "La glottalisation est une propriété phonétique qui est importante pour la parole et la translittération ; dans le texte, elle ne survit que sous forme de lettres spéciales ou d'apostrophes que la traduction automatique doit garder intactes.",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "pharyngale",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "Consonnes produites en resserrant la gorge (pharynx), comme le ʿayn arabe (ع). Elles sont rares dans le monde et difficiles à percevoir ou à produire pour les locuteur·rice·s non natif·ve·s.",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "Les pharyngales sont romanisées de nombreuses façons (ʿ, ', 3, ou rien), créant un chaos orthographique dans les textes informels.",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "voyelle nasale",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "Une voyelle prononcée avec l'air s'échappant par le nez, comme en français « bon » ou en portugais « são ». Lorsqu'elle est contrastive, les voyelles orales et nasales distinguent différents mots.",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "Les marques de nasalisation (ã, ę, ą) sont couramment omises dans la dactylographie informelle, fusionnant des paires de mots.",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "longueur vocalique",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "Tenir une voyelle plus longtemps pour former un mot différent — le finnois tuli « feu » par rapport à tuuli « vent ». Les systèmes d'écriture la marquent par des lettres doubles, des macrons (ā), ou pas du tout.",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "Lorsque le marquage de la longueur est facultatif (par exemple le kahakō hawaïen, les voyelles arabes), le même mot apparaît dans plusieurs orthographes.",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "Hawaïen (haw) : le kahakō (macron) marque les voyelles longues et est souvent omis dans les textes informels.",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "phonème",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "Un son de la parole qui distingue les mots dans une langue particulière — remplacer un phonème par un autre et vous obtenez un mot différent (pat vs bat). L'inventaire phonémique d'une langue varie d'environ une douzaine de sons à bien plus d'une centaine.",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "La taille et le contenu de l'inventaire déterminent comment les noms étrangers et les emprunts sont remodelés dans la langue.",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "downstep",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "Dans de nombreuses langues tonales africaines, une baisse de la hauteur qui affecte tous les tons hauts suivants dans la phrase. C'est un repère tonal qui peut lui-même distinguer les sens.",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "Le downstep n'est essentiellement jamais écrit, de sorte que l'information tonale est systématiquement absente des données textuelles.",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "avancement de la racine de la langue",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "Une qualité vocalique produite en poussant la racine de la langue vers l'avant, élargissant la gorge. De nombreuses langues africaines divisent leurs voyelles en ensembles +ATR et -ATR et exigent que les mots restent dans un seul ensemble (harmonie ATR).",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "Les distinctions ATR sont marquées de manière incohérente dans les orthographes, divisant les mots entre plusieurs orthographes.",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "système d'écriture",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "L'ensemble des symboles dans lesquels une langue est écrite — Latin, Cyrillique, Arabe, caractères Han, et bien d'autres. Une langue peut utiliser plusieurs scripts (serbe), et un script peut servir des centaines de langues.",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "L'identité du script détermine chaque processus textuel en aval : l'encodage, la tokenisation, et quels modèles de TA acceptent même l'entrée.",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "orthographe",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "Les règles convenues pour écrire une langue dans son script — quelles lettres, diacritiques et orthographes sont corrects. Certaines langues ont plusieurs orthographes concurrentes ou aucune standardisée.",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "Les orthographes concurrentes ou non standardisées divisent les données d'entraînement rares en variantes orthographiques incompatibles.",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "abugida",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "Un système d'écriture où chaque symbole représente une consonne avec une voyelle par défaut intégrée, et les autres voyelles sont marquées en modifiant le signe de base — comme en dévanagari, en guèze ou en thaï. Entre un alphabet et un syllabaire.",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "Les marques de voyelles des abugidas sont des caractères combinants que le traitement naïf du texte peut supprimer ou réordonner, corrompant les mots.",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "syllabaire",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "Un système d'écriture avec un symbole par syllabe plutôt que par son — comme le kana japonais ou le cherokee. Fonctionne mieux pour les langues ayant des structures syllabiques simples.",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "Les syllabaires modifient la granularité du texte : les tokeniseurs voient des syllabes, non des consonnes et des voyelles.",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "syllabiques",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "La famille de systèmes d'écriture utilisée pour le cri, l'inuktitut, l'ojibwé et d'autres langues autochtones canadiennes, où chaque caractère encode une consonne et sa rotation encode la voyelle. Inventée dans les années 1840 et toujours utilisée activement par les communautés.",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "De nombreux textes en cri et en inuktitut existent à la fois en syllabiques et en orthographe romane, de sorte que les pipelines de traduction automatique ont besoin d'une conversion de script fiable.",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "Cri des Plaines (crk) : le script de la carte est Cans (Syllabiques autochtones canadiennes) avec un convertisseur d'orthographe romane.",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "romanisation",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "Écrire une langue en lettres latines au lieu de son système d'écriture natif, selon une règle (translittération) ou selon le son. Une même langue possède souvent plusieurs normes de romanisation concurrentes.",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "Le texte romanisé et le texte en script natif se comportent comme des langues différentes pour un modèle de traduction automatique à moins d'être explicitement convertis.",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "diacritique",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "Marques ajoutées aux lettres — accents, tildes, points, macrons — pour indiquer le ton, la longueur, la nasalité ou des sons différents. Certains systèmes d'écriture en dépendent complètement ; les utilisateur·rice·s les omettent souvent dans la saisie informelle.",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "Le texte dépourvu de diacritiques est un problème de qualité des données omniprésent : il fusionne des mots distincts et crée des décalages avec les données d'entraînement propres.",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "direction d'écriture",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "Le sens dans lequel le script s'écoule : de gauche à droite (latin), de droite à gauche (arabe, hébreu), ou historiquement de haut en bas (mongol, chinois classique). Le texte à direction mixte nécessite un traitement spécial.",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "Le texte RTL et bidirectionnel casse la gestion naïve des chaînes — les nombres, la ponctuation et les mots latins intégrés se réordonnent de manière imprévisible.",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "registre",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "Une variété d'une langue liée au contexte social — formel, informel, cérémoniel, technique. Certaines langues grammaticalisent les registres : le javanais possède des ensembles de vocabulaire distincts pour différents niveaux de politesse.",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "La traduction automatique doit maintenir un registre cohérent ; mélanger les formes formelles et informelles dans une même sortie semble cassé ou impoli.",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "distinction tu/vous",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "Avoir deux (ou plusieurs) mots pour « vous » selon la distance sociale, comme le français tu/vous ou l'allemand du/Sie. Le choix signale le respect, l'intimité ou la hiérarchie et est difficile à annuler une fois fait.",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "L'anglais « you » ne donne aucun indice, de sorte que la traduction automatique doit choisir la formalité à partir du contexte — une erreur fréquente et socialement visible.",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "Français (fra) : les données de formalité de la carte distinguent les contextes d'utilisation de tu/vous.",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "honorifique",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "Formes grammaticales ou lexicales qui encodent le respect envers l'interlocuteur ou la personne dont on parle — keigo japonais, niveaux de langage coréens, vocabulaires spécialisés de respect envers les proches. Souvent obligatoires, non optionnels.",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "La sélection d'une forme honorifique exige une connaissance sociale (qui prime sur qui) que le texte source énonce rarement.",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "politesse",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "L'encodage linguistique des relations sociales — par le choix de pronoms, les terminaisons verbales, les particules ou le vocabulaire. Les langues vont de l'absence de politesse grammaticale à des systèmes élaborés à plusieurs niveaux.",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "Une traduction peut être lexicalement parfaite et échouer en choisissant le mauvais niveau de politesse pour la situation.",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "diglossie",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "Une situation stable où une communauté utilise deux variétés d'une langue à des fins différentes — une variété « haute » pour l'écrit et la parole formelle (arabe standard moderne) et une variété « basse » pour la vie quotidienne (les dialectes parlés). Les locuteurs alternent selon le contexte, non par choix.",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "Les données d'entraînement penchent vers la variété écrite « haute », de sorte que la TA échoue sur la variété parlée que les gens utilisent réellement.",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "alternance codique",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "Alternance entre deux ou plusieurs langues au sein d'une même conversation ou phrase, comme le font naturellement les locuteurs bilingues. Elle suit des schémas grammaticaux plutôt que d'être un mélange aléatoire.",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "L'entrée multilingue confond la détection de langue et produit une sortie brouillée, sauf si le système gère les deux codes.",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "créole",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "Une langue naturelle complète née d'un contact linguistique intense, tirant généralement la plupart de son vocabulaire d'une langue (la langue lexificatrice) tout en développant sa propre grammaire. Le créole haïtien, le Tok Pisin et le papiamento en sont des exemples.",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "Les créoles ressemblent trompeusement à leur langue lexificatrice à l'écrit, de sorte que les systèmes de TA entraînés sur la langue lexificatrice les mistraduit systématiquement.",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "pidgin",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "Une langue de contact simplifiée sans locuteurs natifs, créée pour le commerce ou le travail entre des groupes sans langue commune. Quand des enfants grandissent en la parlant nativement, elle devient un créole.",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "Les pidgins présentent une grande variabilité et peu de données textuelles, rendant la TA cohérente particulièrement difficile.",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "langue lexificatrice",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "La langue qui a fourni la plupart du vocabulaire d'un créole ou d'un pidgin — l'anglais pour le patois jamaïcain, le français pour le créole haïtien, le portugais pour le papiamento. La grammaire, cependant, est celle du créole lui-même.",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "Le vocabulaire partagé avec la langue lexificatrice masque des différences grammaticales profondes que la TA ne doit pas négliger.",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "emprunt linguistique",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "Un mot emprunté à une autre langue et adapté aux schémas sonores locaux, comme « sushi » en anglais ou « le weekend » en français. Un calque emprunte la structure à la place, traduisant élément par élément (« skyscraper » → français « gratte-ciel »).",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "Décider de conserver, adapter ou traduire un emprunt linguistique est un choix récurrent en localisation, particulièrement pour les termes techniques.",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "macrolangue",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "Une catégorie de classement ISO 639-3 : un code unique (comme « ara » pour l'arabe ou « zho » pour le chinois) qui couvre plusieurs langues membres distinctes traitées comme une seule pour des raisons historiques ou politiques. Chaque langue membre possède également son propre code.",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "Les données étiquetées avec un code macrolangue mélangent des variétés mutuellement inintelligibles, contaminant l'entraînement et l'évaluation.",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "endonyme",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "Le nom qu'une communauté donne à sa propre langue (endonym/autonym), par opposition au nom utilisé par les tiers (exonym). « Deutsch » est l'endonym pour ce que l'anglais appelle « German » ; de nombreuses communautés autochtones préfèrent leurs endonyms.",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "Les divergences de noms entre les bases de données causent des erreurs d'identification de langue et de fusion de données dans les pipelines de traduction automatique.",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "isolat linguistique",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "Une langue sans parents démontrés — une famille à elle seule. Le basque, l'aïnou et le burushaski en sont des exemples célèbres ; les isolats sont étonnamment courants dans le monde.",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "Les isolats ne peuvent pas emprunter de signal d'entraînement aux langues apparentées, supprimant une stratégie clé de traduction automatique pour les ressources limitées (apprentissage par transfert).",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "vitalité linguistique",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "La robustesse avec laquelle une langue est transmise aux enfants et utilisée dans différents domaines de la vie. Des échelles comme EGIDS et le statut d'endangerment de Glottolog vont de « vigoureux » à « menacé » et « moribond » jusqu'à « dormant » (aucun locuteur courant, mais potentiel de revitalisation).",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "La vitalité prédit la disponibilité des données et, pour la traduction automatique menée par la communauté, le rôle que la technologie devrait jouer (p. ex. soutien à la revitalisation, non remplacement).",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "moribond",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "Un statut de vitalité signifiant que la langue n'est plus apprise par les enfants ; les locuteurs courants restants sont tous des adultes plus âgés. Sans intervention, une telle langue devient dormante en une génération.",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "Les langues moribondes ont des bassins de locuteur·rice·s rétrécissant·e·s pour valider la sortie de traduction automatique, augmentant les enjeux de chaque décision concernant les données.",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "Un identifiant unique de la base de données Glottolog (comme stan1293 pour l'anglais) couvrant les langues, dialectes et familles. Plus granulaire que les codes ISO et révisé continuellement par les linguistes.",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "Les glottocodes permettent aux pipelines de joindre précisément les bases de données typologiques, même pour les variétés sans codes ISO.",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "La norme internationale des codes à trois lettres pour les langues du monde (eng, crk, haw), maintenue par SIL. Elle vise à couvrir chaque langue connue, vivante ou éteinte, avec un code unique.",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "Les codes ISO 639-3 sont les clés de jointure du traitement automatique des langues multilingues — des codes erronés ou ambigus corrompent silencieusement les ensembles de données.",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "vigésimal",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "Un système de numération basé sur vingt plutôt que dix. Le maya, le yoruba, le nahuatl et le danois (partiellement) comptent de cette façon — « quatre-vingts » signifie littéralement « quatre vingtaines » en français.",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "La traduction des mots numéraux entre différentes bases est sujette aux erreurs, et les nombres sont un contenu à enjeux élevés.",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "Affiché sur les cartes via numeralSystem.baseType à partir des données de Numeralbank.",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "termes de parenté",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "Le vocabulaire des relations familiales, que les différentes langues divisent de manière très variable — mots distincts pour les frères et sœurs aîné·e·s ou cadet·te·s, ou pour les oncles maternels ou paternels. Certains systèmes codent également la position du locuteur ou de la locutrice.",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "L'anglais « uncle » ou « cousin » peut ne pas avoir d'équivalent unique, forçant la TA à choisir parmi des termes de parenté précis sans les faits familiaux nécessaires.",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "Une métrique d'évaluation automatique de la TA qui évalue le chevauchement au niveau des caractères entre la sortie d'un système et les traductions de référence. Parce qu'elle fonctionne sur les caractères plutôt que sur les mots, elle est plus équitable pour les langues morphologiquement riches que les métriques basées sur les mots.",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "chrF est la métrique de surface préférée pour les langues agglutinantes et polysynthétiques où l'appariement au niveau des mots s'effondre.",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "Une métrique d'évaluation de la TA neuronale qui utilise un modèle multilingue entraîné pour prédire les jugements de qualité humains, plutôt que de compter le chevauchement de surface. Des variantes comme AfriCOMET étendent la couverture aux langues africaines.",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "COMET corrèle mieux avec le jugement humain que les métriques de surface, mais seulement pour les langues que son modèle sous-jacent a vues.",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "Un transducteur à états finis : un modèle informatique basé sur des règles qui établit une correspondance entre les formes de mots et leurs analyses grammaticales. Pour les langues morphologiquement complexes, les FST construits manuellement peuvent analyser et générer des formes de mots que les systèmes statistiques n'ont jamais vus.",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "Les FST fournissent une analyse morphologique fiable et une validation pour les langues trop pauvres en données pour apprendre la morphologie à partir du texte seul.",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "Cri des Plaines (crk) : le pack d'évaluation utilise un validateur sémantique basé sur FST (champ card evalMetrics.lyss-sem).",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "treebank",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "Un corpus de phrases annotées manuellement avec leur structure grammaticale (arbres syntaxiques). Le projet Universal Dependencies maintient des treebanks dans un format partagé pour plus de 150 langues.",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "L'existence d'un treebank signale une infrastructure TAL sérieuse pour une langue et permet une évaluation consciente de la syntaxe.",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "corpus parallèle",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "Une collection de textes appariés avec leurs traductions, alignés phrase par phrase. Les corpus parallèles sont le carburant principal pour l'entraînement et l'évaluation des systèmes de TA.",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "La taille et le domaine des données parallèles disponibles constituent le prédicteur unique le plus fort de la qualité de la TA pour une paire de langues.",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU (Bilingual Evaluation Understudy) évalue une traduction en comptant combien de n-grammes de mots elle partage avec une ou plusieurs traductions de référence. C'est la métrique de TA la plus ancienne et la plus citée, mais parce qu'elle apparie des mots entiers, elle est sévère et peu fiable pour les langues morphologiquement riches et peu dotées en ressources. Plus élevé est mieux, sur une échelle de 0 à 100.",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "BLEU est rapporté pour comparaison avec les tableaux publiés, mais pour les langues sur lesquelles Champollion se concentre, il corrèle mal avec le jugement humain — lisez-le à côté de chrF++ et COMET, jamais seul.",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU est BLEU calculé après segmentation du texte avec le tokeniseur SentencePiece FLORES-200 — un modèle de sous-mots unique et fixe partagé par les 200 langues. Cela rend les scores comparables entre les systèmes d'écriture et les écritures où le BLEU ordinaire au niveau des mots ne l'est pas.",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU est le chiffre lingua-franca dans la littérature NLLB / FLORES peu dotée en ressources — utile pour la comparaison entre langues, mais toujours une métrique de surface qui ne peut pas voir le sens.",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "Le Taux d'édition de traduction (Translation Edit Rate) compte les modifications — insertions, suppressions, substitutions et décalages de blocs — nécessaires pour transformer la sortie d'un système en référence, exprimé en pourcentage de la longueur de la référence. Contrairement à la plupart des métriques, PLUS BAS est mieux.",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "TER fournit un signal intuitif « combien un humain devrait-il corriger ceci ? », mais comme les autres métriques de surface, elle pénalise les paraphrases valides et la morphologie riche.",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "contamination des données",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "Un ensemble de test est « contaminé » lorsque ses phrases ont probablement déjà été vues lors de l'entraînement d'un modèle — par exemple parce que le corpus est public et largement moissonné. Un benchmark contaminé ne peut pas prouver qu'un modèle est bon ; il peut simplement récupérer des réponses qu'il a mémorisées. Une contamination « élevée » signifie probablement vu, de sorte que le résultat est traité comme une comparaison relative entre systèmes plutôt qu'une affirmation de qualité absolue (« relative uniquement »).",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "La plupart des benchmarks publics sont largement utilisés lors de l'entraînement, de sorte que Champollion les évalue dans une voie relative uniquement et réserve les classements absolus aux ensembles de test scellés et jamais publiés.",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "complexité de la traduction automatique",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "Une estimation calculée par Champollion de 0 à 100 de la difficulté de la traduction automatique d'une langue, combinant quatre signaux : couverture des API de traduction automatique commerciales, disponibilité des corpus parallèles, distance typologique des langues bien dotées en ressources, et profondeur de la documentation linguistique. Plus élevé signifie plus difficile. C'est un guide de difficulté, non une mesure de la sortie d'un système.",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "L'indice est un guide dérivé qui aide à prioriser les efforts — ce n'est PAS un résultat de benchmark. La qualité de traduction mesurée se trouve sur le classement, indexée par (méthode, ensemble de données, métrique).",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "ensemble de test retenu",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "Un ensemble d'exemples de traduction gardé caché d'un système pendant son développement et utilisé uniquement pour le noter. Si le système n'a jamais vu ces phrases, le score reflète une capacité réelle plutôt qu'une mémorisation. L'échelon le plus fort de Champollion est un ensemble de test « scellé » qu'une communauté garde privé — une méthode est notée par rapport à celui-ci sans que quiconque, y compris nous, ne voie les données.",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "Les ensembles de test retenus (en particulier scellés) sont le seul moyen de faire une affirmation de qualité absolue ; les ensembles publics et contaminés ne soutiennent que la comparaison relative.",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

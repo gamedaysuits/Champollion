@@ -1,0 +1,118 @@
+---
+slug: /what-is-champollion
+title: "Champollion là gì"
+description: "Champollion bằng ngôn từ dễ hiểu: bộ công cụ mở giúp xây dựng hệ thống dịch máy cho ngôn ngữ của bạn và chứng minh hiệu quả hoạt động. Bắt đầu tại đây."
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Champollion là gì
+
+**Champollion là một bộ công cụ mã nguồn mở giúp xây dựng hệ thống dịch máy cho
+ngôn ngữ của bạn — và chứng minh tính hiệu quả của nó trước khi bất kỳ ai phải phụ thuộc vào nó.**
+
+Nó được xây dựng dành cho các ngôn ngữ mà các công ty công nghệ lớn bỏ qua: một trường học
+muốn có bản tin bằng tiếng Cree, một bệnh viện cần sổ tay giao tiếp tại giường bệnh cho các gia đình
+mà họ phục vụ, một cộng đồng muốn biết liệu có công cụ nào đủ tốt để tin cậy giao phó
+ngôn ngữ của mình hay không. Bạn — hoặc một AI agent mà bạn giao việc sử dụng các công cụ này — có thể đi
+từ câu hỏi *"chúng ta bắt đầu từ đâu?"* đến một quy trình dịch thuật đã qua kiểm thử và sẵn sàng triển khai.
+
+---
+
+## Hành trình và công cụ cho từng bước
+
+| Bước | Câu hỏi | Công cụ |
+|---|---|---|
+| **1. Tìm hiểu những gì hiện có** | Đã biết được những gì về ngôn ngữ này — từ điển, ngữ pháp, ngữ liệu (corpora), mô hình, kết quả đã công bố, dịch vụ? | **[The Atlas](/languages)** — <SSOTCount field="catalogLanguageCount" /> thẻ ngôn ngữ; mỗi giá trị đều trích dẫn nguồn |
+| **2. Bảo vệ dữ liệu của bạn** | Làm thế nào để kiểm thử với các câu văn của chính chúng ta mà không phải bàn giao chúng? | **[Đăng ký ngữ liệu](/docs/network/sovereignty/registering-corpora)** và **[nút tự chủ](/docs/network/sovereignty/sovereign-eval-node)** — lưu trữ tập kiểm thử trên máy của bạn, hoặc ngắt kết nối mạng (air-gapped) |
+| **3. Đánh giá các lựa chọn** | Phương pháp nào là tốt nhất cho văn bản của *chúng ta*, và tốt hơn bao nhiêu? | **[Harness đánh giá](/docs/network/specifications/harness)** (`mt-eval`) — chấm điểm bất kỳ phương pháp nào với bất kỳ ngữ liệu nào, theo cùng một quy trình nhất quán mọi lần |
+| **4. Xây dựng giải pháp tốt hơn** | Liệu chúng ta có thể tự huấn luyện hoặc tinh chỉnh một mô hình mà không tự đánh lừa mình? | **[NMT Forge](/docs/network/getting-started/training-honestly)** (`nmt-forge`) — huấn luyện với các rào chắn ngăn rò rỉ tập kiểm thử, chia tách dữ liệu sai lệch và suy diễn lạc quan từ nhiễu dữ liệu |
+| **5. Chứng minh điều đó, công khai nếu bạn chọn** | Liệu nó có thực sự tốt hơn không? Những người khác có thể kiểm tra không? | **[Bảng xếp hạng và các cuộc thi](/docs/network/getting-started/submit-a-method)** — công bố kết quả, hoặc tổ chức một cuộc thi trên tập kiểm thử niêm phong không bao giờ rời khỏi nút của bạn |
+| **6. Kết hợp những gì tốt nhất** | Ai cung cấp giải pháp gì cho cặp ngôn ngữ này, và những thành phần nào hoạt động tốt cùng nhau? | **[The Network](/docs/network/)** — các phương pháp và dịch vụ hiện có, kèm theo bằng chứng cho từng giải pháp |
+| **7. Sử dụng** | Dịch ứng dụng, trang web, tài liệu. | **[Champollion CLI](/docs/intro)** — triển khai bất kỳ phương pháp nào đã được chứng minh hiệu quả cho từng cặp ngôn ngữ, kết hợp bộ nhớ dịch (translation memory) để bạn không bao giờ phải trả phí hai lần cho cùng một câu |
+
+**[Máy chủ MCP](/docs/network/getting-started/mcp-server)** trao công cụ hành động cho AI agent
+trong mọi bước kể trên, và bộ tài liệu này được viết cho cả con người lẫn agent
+(ở định dạng máy có thể đọc được: `/llms.txt`, `/llms-full.txt`).
+
+**Đo lường là xương sống.** Độ bao phủ thường được công bố; nhưng chất lượng hiếm khi được
+minh chứng. Mọi bước trên đều kết thúc bằng một con số mà bạn có thể kiểm chứng, kèm theo nguồn gốc rõ ràng —
+dữ liệu nào, phiên bản phương pháp nào, chỉ số đánh giá nào, chi phí bao nhiêu. Một kết luận trung thực
+rằng "chưa có giải pháp nào hoạt động hiệu quả cho cặp ngôn ngữ này" cũng là một kết quả mà chúng tôi công bố,
+bởi vì một khoảng trống mà bạn nhìn thấy được là khoảng trống mà ai đó có thể lấp đầy.
+
+## Các quy tắc chúng tôi tuân thủ
+
+Đây là những ràng buộc, không phải là tiếp thị. Chúng định hình những gì phần mềm có thể làm.
+
+**Chúng tôi không bao giờ lưu giữ ngữ liệu của bạn.** Các tập kiểm thử được đăng ký bằng cách trỏ tới
+nơi chúng đang được lưu trữ, chứ không phải tải lên hệ thống của chúng tôi. Một phương pháp được chấm điểm
+dựa trên một ngữ liệu mà chúng tôi không hề sở hữu. Đối với các tập kiểm thử niêm phong, dữ liệu được mã hóa
+trên máy của bạn và giữ nguyên ở đó, đồng thời thiết kế yêu cầu đạt một ngưỡng số lượng người giám sát
+khóa cộng đồng để cùng cấp quyền cho một lượt chạy (hiện chưa có ai được chỉ định).
+
+**Dữ liệu ngôn ngữ được đối xử như dữ liệu sinh học (biodata).** Những người cung cấp một ngữ liệu nắm giữ
+các khóa của nó, và của bất kỳ thứ gì được đo lường dựa trên nó. Sự đồng thuận phải được yêu cầu, không phải
+được mặc định — và nó có thể bị rút lại.
+
+**Chúng tôi hướng tới quyền tự chủ, chứ không tự chứng nhận quyền tự chủ.** Liệu một dự án
+có tôn trọng quyền sở hữu và kiểm soát của cộng đồng đối với dữ liệu ngôn ngữ hay không không phải
+là điều mà chính dự án đó có quyền tự tuyên bố. Chúng tôi thực hiện công việc và mô tả các cơ chế
+một cách trung thực; quyền phán quyết thuộc về các cộng đồng liên quan.
+
+**Mọi phương pháp đều được chào đón, cả con người và máy móc.** Một dịch giả chuyên nghiệp, một
+hệ thống quy tắc dựa trên FST, một mô hình tiên phong (frontier model) được prompt và một mô hình NMT được tinh chỉnh (fine-tuned) đều
+được so sánh theo cùng một cách, trên cùng một tập kiểm thử. Chúng tôi quan tâm đến việc các ngôn ngữ
+được dịch, chứ không phải công cụ nào giành chiến thắng.
+
+**Chúng tôi công bố những gì chúng tôi không thể làm.** Xem [Những hạn chế
+trung thực](/docs/network/honest-limitations) — danh sách những điều mà dự án này *chưa*
+tuyên bố. Hãy đọc nó trước khi bạn tin tưởng bất kỳ điều gì khác ở đây.
+
+---
+
+**Champollion là một chỉ mục, không phải là một trọng tài.** Mọi giá trị đều trích dẫn nguồn của nó
+và báo cáo những gì nguồn đó thực sự nói. Khi các nguồn không đồng nhất — và về số lượng
+người nói thì điều này rất thường xuyên xảy ra — thẻ sẽ hiển thị tất cả các nguồn đó, có ghi rõ nguồn gốc. Chúng tôi không
+chọn ra người chiến thắng hay tạo ra một sự đồng thuận giả tạo.
+
+---
+
+## Tên gọi
+
+Jean-François Champollion đã giải mã chữ tượng hình Ai Cập bằng cách sử dụng Rosetta
+Stone — cùng một văn bản được viết bằng ba loại chữ viết. Văn bản song song (parallel text) vẫn là cách mà dịch thuật
+được học. Cái tên này cũng mang theo một sự căng thẳng đáng để nói ra: một học giả
+châu Âu đọc chữ viết của người khác, trong một kỷ nguyên của sự khai thác. Chúng tôi suy nghĩ về
+điều đó. Đó là lý do tại sao các quy tắc về chủ quyền ở trên là những ràng buộc trong phần mềm
+chứ không phải là một trang trong một cuốn tài liệu quảng cáo.
+
+## Bước tiếp theo
+
+- **Bạn muốn xây dựng MT cho một ngôn ngữ, từ đầu đến cuối** → [Xây dựng MT cho
+  ngôn ngữ của bạn](/docs/build-mt-for-your-language): mọi bước ở trên với
+  các lệnh chính xác, và công cụ MCP mà một agent gọi cho từng bước.
+- **Bạn muốn dịch một ứng dụng hoặc trang web** → [Bắt đầu
+  nhanh](/docs/getting-started/quick-start).
+- **Bạn là người nói, giảng dạy hoặc gìn giữ một ngôn ngữ** → [Dành cho cộng đồng
+  ngôn ngữ](/docs/network/community/for-language-communities), sau đó xem
+  [Đăng ký ngữ liệu](/docs/network/sovereignty/registering-corpora) để biết
+  cách một tập kiểm thử được sử dụng mà không cần phải bàn giao.
+- **Bạn là nhà nghiên cứu hoặc người xây dựng phương pháp** → luận điểm ưu tiên đánh giá trong
+  [Ai hưởng lợi](/docs/network/who-benefits#researchers) — vì sao một nghìn
+  cặp ngôn ngữ được tuyển chọn kỹ lưỡng lại tốt hơn bảy trăm nghìn cặp không qua chọn lọc — sau đó xem
+  [Hợp tác ngữ liệu](/docs/network/specifications/corpus-partnership) để
+  đưa một ngôn ngữ vào hệ thống, hoặc [Gửi
+  phương pháp](/docs/network/getting-started/submit-a-method) và
+  [Đặc tả chấm điểm](/docs/network/specifications/scoring) để cạnh tranh trên
+  các ngôn ngữ đã có tại đây.
+- **Bạn là một AI agent** → [Hướng dẫn
+  dành cho Agent](/docs/network/getting-started/agent-guide); các điểm truy cập dạng
+  máy đọc được là `/llms.txt` và `/llms-full.txt`.
+- **Bạn là bên tài trợ cho công việc này** → [Ai
+  hưởng lợi](/docs/network/who-benefits#funders) và [Những hạn chế
+  trung thực](/docs/network/honest-limitations).
+- **Bạn muốn tìm hiểu bối cảnh** → [Lĩnh vực này đã phát triển đến
+  đây như thế nào](/docs/network/context/mt-field-briefing), [điều gì được tính là một
+  ngôn ngữ](/docs/network/context/what-counts-as-a-language), và [độ bao phủ
+  được tính như thế nào](/docs/network/context/coverage-counting).

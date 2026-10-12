@@ -1,0 +1,232 @@
+/* rtl:begin:ignore */
+/* This file styles a POSITIONAL COMPOSITION (canvas + absolute overlays,
+   LTR coordinate math shared with JS). rtlcss must not flip it — an RTL
+   locale flipping left/right here while the JS transforms stayed LTR shoved
+   the hero copy off-screen (ar, launch night 2026-08-28). Direction-
+   sensitive TEXT inside still shapes correctly via bidi. */
+/* CommandCard — the one command, on a terminal card (R8, 2026-08-07).
+   Held to the RunCard/AnswerCard instrument conventions exactly: mono chrome at
+   the house px scale (kicker 9.5px/.22em · runline 10.5px · value 15px/700 ·
+   footer 9px), radius 11px, neutral resting shadow, slate for unmeasured, teal
+   only for identity/aim, spectrum ONLY on a locked score. */
+
+.wrap {
+  position: absolute;
+  left: 50%;
+  /* LOW-CENTRE, deliberately. The run-card no longer bows out during this beat
+     (founder: "make sure the zipper card persists throughout"), and it owns
+     x 65–83% at 1440px / 57–82% at 1024px in the y 20–39% band. The chain strip
+     is gone by `expanse`, so the lower half of the stage is free and this card
+     can stay centred and full width without ever colliding with it. */
+  top: 58%;
+  transform: translate(-50%, -50%);
+  /* the curl line is 62 mono chars at 11.5px ≈ 430px, plus padding */
+  width: min(92vw, 520px);
+  padding: 10px 14px 9px;
+  border-radius: 11px;
+  background: rgba(10, 16, 24, 0.9);
+  border: 1px solid rgba(77, 216, 255, 0.24);
+  box-shadow: 0 8px 34px rgba(0, 0, 0, 0.5);
+  z-index: 7;
+  pointer-events: none; /* the card is scenery… */
+  will-change: opacity, transform;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+.kicker {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  color: #7fd6f2;
+}
+
+/* …and the copy button is the ONE live control on the whole seam. The overlay
+   is pointer-events:none (home-preview.module.css .overlay), so it takes them
+   back the same way .capNote a and the close chips do. */
+.copy {
+  position: relative;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 7px;
+  border: 1px solid rgba(77, 216, 255, 0.26);
+  background: rgba(77, 216, 255, 0.07);
+  color: #9fe6ff;
+  cursor: pointer;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.copy:hover {
+  border-color: rgba(77, 216, 255, 0.62);
+  background: rgba(77, 216, 255, 0.12);
+}
+.copy:focus-visible {
+  outline: 2px solid #4dd8ff;
+  outline-offset: 2px;
+}
+.copyGlyph {
+  font-size: 11px;
+  line-height: 1;
+}
+.copyTip {
+  line-height: 1;
+}
+/* green is this codebase's "a good thing happened" colour — the same one a
+   locked score earns. Confirmation, not chrome. */
+.copy[data-state='copied'] {
+  border-color: rgba(111, 181, 111, 0.62);
+  color: #8fd48f;
+  background: rgba(111, 181, 111, 0.1);
+}
+/* the clipboard was refused (insecure origin / permissions policy) — the
+   command has been SELECTED instead, and we say so. Amber is spoken for by the
+   sovereign lane, so this uses the neutral instrument slate: it is not a
+   failure the user caused, just a different instruction. */
+.copy[data-state='select'] {
+  border-color: rgba(139, 149, 167, 0.5);
+  color: #c3ccda;
+  background: rgba(139, 149, 167, 0.12);
+}
+/* make the selection legible when we fall through to it */
+.term::selection,
+.term ::selection {
+  background: rgba(77, 216, 255, 0.3);
+  color: #ffffff;
+}
+
+/* ── the terminal ── */
+.term {
+  margin: 0;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: rgba(4, 8, 13, 0.82);
+  border: 1px solid rgba(139, 149, 167, 0.16);
+  overflow-x: auto; /* never wrap a command mid-flag */
+  /* the command must always be selectable by hand, whatever the clipboard API
+     is doing — this is the floor the copy button's fallbacks stand on */
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.term code {
+  display: block;
+}
+.line {
+  display: block;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 11.5px;
+  line-height: 1.75;
+  color: #9aa6b8; /* the export line is chrome… */
+  white-space: pre;
+}
+.lineMain {
+  position: relative;
+  color: #e9eef6; /* …the curl line is the point */
+}
+.prompt {
+  color: #4dd8ff;
+  user-select: none;
+  margin-right: 6px;
+}
+.comment {
+  color: #6f7787;
+}
+
+/* the sweep — the command FIRING, once per queue run. It never grows: one
+   command, always the same one, however many times it is run. */
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(77, 216, 255, 0.1), #4dd8ff);
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.does {
+  margin-top: 7px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: #8b95a7;
+}
+
+/* ── the runs landing ── */
+.runs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  min-height: 54px; /* reserved, so rows arriving never reflow the card */
+}
+.run {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  will-change: opacity, transform;
+}
+.runPair {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #eef2f8;
+}
+.runMethod {
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 10px;
+  color: #8b95a7;
+}
+.runScore {
+  margin-left: auto;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 15px;
+  font-weight: 700;
+  color: #dfe6f0;
+  will-change: transform, filter;
+}
+
+/* where a completed run leaves for the map (an anchor the page reads) */
+.exit {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+}
+
+.foot {
+  margin-top: 6px;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  color: #6f7787;
+}
+
+@media (max-width: 700px) {
+  .wrap {
+    width: 94vw;
+    top: 60%;
+  }
+  .line {
+    font-size: 10px;
+  }
+  .copy {
+    min-height: 34px; /* a real touch target */
+  }
+}
+
+/* rtl:end:ignore */

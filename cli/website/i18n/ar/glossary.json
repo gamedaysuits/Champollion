@@ -1,0 +1,1782 @@
+{
+  "glossary.morpheme.term": {
+    "message": "مورفيم",
+    "description": "Glossary heading: the linguistic term \"morpheme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morpheme.plain": {
+    "message": "أصغر وحدة في الكلمة تحمل معنىً. فكلمة 'unhappiness' في الإنجليزية تتكوّن من ثلاثة مورفيمات: un-، وhappy، و-ness. وتتباين اللغات تباينًا كبيرًا في عدد المورفيمات التي تضمّها الكلمة الواحدة.",
+    "description": "Plain-language definition of the linguistic term \"morpheme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morpheme.mt_relevance": {
+    "message": "تعمل أنظمة الترجمة الآلية على الوحدات النصية (tokens)، والوحدة التي تحتوي على مورفيمات متعددة تُخفي معلومات نحوية يحتاجها النظام لإنتاج ترجمة صحيحة.",
+    "description": "One-sentence note on why \"morpheme\" matters for machine-translation quality."
+  },
+  "glossary.morphology.term": {
+    "message": "صرف",
+    "description": "Glossary heading: the linguistic term \"morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphology.plain": {
+    "message": "دراسة كيفية بناء الكلمات من وحدات دلالية أصغر، ومنظومة بناء الكلمات في اللغة ذاتها. فاللغة الغنية صرفيًا تُعبّر بالنهايات والزوائد عمّا تُعبّر عنه الإنجليزية بكلمات منفصلة.",
+    "description": "Plain-language definition of the linguistic term \"morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphology.mt_relevance": {
+    "message": "يُضاعف التعقيد الصرفي عدد صيغ الكلمات المتمايزة التي يجب على نظام الترجمة الآلية تعلّمها من بيانات محدودة.",
+    "description": "One-sentence note on why \"morphology\" matters for machine-translation quality."
+  },
+  "glossary.inflection.term": {
+    "message": "تصريف",
+    "description": "Glossary heading: the linguistic term \"inflection\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.inflection.plain": {
+    "message": "تغيير صيغة الكلمة للتعبير عن وظائف نحوية — كالزمن والعدد والحالة الإعرابية والجنس — دون تغيير معناها الأساسي، كما في sing/sang وcat/cats في الإنجليزية. وقد تُشير اللغات الغنية بالتصريف إلى ست فئات أو أكثر في كلمة واحدة.",
+    "description": "Plain-language definition of the linguistic term \"inflection\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.inflection.mt_relevance": {
+    "message": "كل صيغة مُصرَّفة تمثّل وحدة نصية مستقلة لنظام الترجمة الآلية، مما يعني أن كثرة التصريف تُفضي إلى مزيد من الكلمات النادرة وأخطاء المطابقة.",
+    "description": "One-sentence note on why \"inflection\" matters for machine-translation quality."
+  },
+  "glossary.derivation.term": {
+    "message": "اشتقاق",
+    "description": "Glossary heading: the linguistic term \"derivation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.derivation.plain": {
+    "message": "بناء كلمات جديدة من كلمات قائمة، كاشتقاق teacher من teach، أو unhappy من happy. وخلافًا للتصريف، يُنتج الاشتقاق كلمة معجمية جديدة لا مجرد صيغة نحوية للكلمة ذاتها.",
+    "description": "Plain-language definition of the linguistic term \"derivation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.derivation.mt_relevance": {
+    "message": "يُتيح الاشتقاق المنتج للمتحدثين صياغة كلمات جديدة في اللحظة لم يسبق لنظام الترجمة الآلية رؤيتها.",
+    "description": "One-sentence note on why \"derivation\" matters for machine-translation quality."
+  },
+  "glossary.affix.term": {
+    "message": "زائدة",
+    "description": "Glossary heading: the linguistic term \"affix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.affix.plain": {
+    "message": "مورفيم يُلحق بجذر الكلمة لتعديل معناها أو وظيفتها النحوية. فالسوابق تُلحق قبل الجذر، واللواحق بعده، وتستخدم بعض اللغات حشوات داخل الجذر.",
+    "description": "Plain-language definition of the linguistic term \"affix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.affix.mt_relevance": {
+    "message": "يُحدّد موضع إلحاق الزائدة المكانَ الأمثل الذي ينبغي لمُجزّئات الوحدات الفرعية (subword tokenizers) أن تقسّم عنده الكلمات لصالح نموذج الترجمة الآلية.",
+    "description": "One-sentence note on why \"affix\" matters for machine-translation quality."
+  },
+  "glossary.prefix.term": {
+    "message": "سابقة",
+    "description": "Glossary heading: the linguistic term \"prefix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.prefix.plain": {
+    "message": "زائدة تُلحق في بداية جذر الكلمة، كـ re- في 'rewrite'. وتعتمد بعض اللغات، ومنها كثير من لغات البانتو والأثاباسكان، على سلاسل من السوابق لأداء معظم وظائفها النحوية.",
+    "description": "Plain-language definition of the linguistic term \"prefix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.prefix.mt_relevance": {
+    "message": "تضع اللغات الغنية بالسوابق المعلومات النحوية في مستهل الكلمات، وهو عكس ما تفترضه المُجزّئات المُدرَّبة على اللواحق.",
+    "description": "One-sentence note on why \"prefix\" matters for machine-translation quality."
+  },
+  "glossary.suffix.term": {
+    "message": "لاحقة",
+    "description": "Glossary heading: the linguistic term \"suffix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suffix.plain": {
+    "message": "زائدة تُلحق في نهاية جذر الكلمة، كـ -ness في 'kindness'. وتُعدّ اللواحق الاستراتيجيةَ الأكثر شيوعًا في الإلحاق عبر لغات العالم.",
+    "description": "Plain-language definition of the linguistic term \"suffix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suffix.mt_relevance": {
+    "message": "تُنتج اللواحق المتراكمة صيغ كلمات طويلة ونادرة يجب على أنظمة الترجمة الآلية تجزئتها بدقة لترجمتها صحيحًا.",
+    "description": "One-sentence note on why \"suffix\" matters for machine-translation quality."
+  },
+  "glossary.infix.term": {
+    "message": "حشوة",
+    "description": "Glossary heading: the linguistic term \"infix\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.infix.plain": {
+    "message": "زائدة تُدرج داخل جذر الكلمة لا قبله ولا بعده. فالتغالوغية مثلًا تحوّل sulat بمعنى 'يكتب' إلى sumulat بمعنى 'كتب' بإدراج -um- بعد الصامت الأول.",
+    "description": "Plain-language definition of the linguistic term \"infix\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.infix.mt_relevance": {
+    "message": "تكسر الحشوات الافتراضَ القائل بأن جذر الكلمة سلسلة نصية متصلة، مما يُعطّل التجزئة الفرعية البسيطة.",
+    "description": "One-sentence note on why \"infix\" matters for machine-translation quality."
+  },
+  "glossary.clitic.term": {
+    "message": "كليتيك",
+    "description": "Glossary heading: the linguistic term \"clitic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clitic.plain": {
+    "message": "كلمة نحوية صغيرة لا تستطيع الوقوف مستقلةً وتستند إلى كلمة مجاورة، كما في 's في عبارة \"the queen of England's hat\". تتصرف الكليتيكات جزئيًا كالكلمات المستقلة وجزئيًا كالسوابق أو اللواحق.",
+    "description": "Plain-language definition of the linguistic term \"clitic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clitic.mt_relevance": {
+    "message": "تُعيّم الكليتيكات حدود الكلمات، مما قد يجعل أدوات التقطيع تُلصقها بالمضيف الخطأ فتختل البنية النحوية.",
+    "description": "One-sentence note on why \"clitic\" matters for machine-translation quality."
+  },
+  "glossary.stem.term": {
+    "message": "الجذع",
+    "description": "Glossary heading: the linguistic term \"stem\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.stem.plain": {
+    "message": "الجزء الأساسي من الكلمة الذي تُضاف إليه اللواحق والسوابق. في كلمة 'unbelievable'، جذع اللاحقة -able هو 'believe'. وفي كثير من اللغات لا يظهر الجذع منفردًا بل يلزمه على الأقل بعض الصرف.",
+    "description": "Plain-language definition of the linguistic term \"stem\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.stem.mt_relevance": {
+    "message": "يعتمد نظام الترجمة الآلية على التعرف إلى الجذوع المشتركة بين صيغ الكلمة المختلفة للتعميم من بيانات تدريب محدودة.",
+    "description": "One-sentence note on why \"stem\" matters for machine-translation quality."
+  },
+  "glossary.root.term": {
+    "message": "الجذر",
+    "description": "Glossary heading: the linguistic term \"root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root.plain": {
+    "message": "النواة غير القابلة للاختزال في الكلمة بعد تجريدها من جميع الزوائد. وفي اللغات السامية كثيرًا ما يتكون الجذر من ثلاثة أحرف صامتة فقط (كجذر ك-ت-ب في العربية) تتحول إلى كلمات بفضل أنماط الحركات.",
+    "description": "Plain-language definition of the linguistic term \"root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root.mt_relevance": {
+    "message": "تحتاج اللغات ذات الجذور المتقطعة (الهياكل الصامتة) إلى تقطيع متخصص حتى تتمكن أنظمة الترجمة الآلية من استيعاب العلاقات بين الكلمات.",
+    "description": "One-sentence note on why \"root\" matters for machine-translation quality."
+  },
+  "glossary.paradigm.term": {
+    "message": "النموذج الصرفي",
+    "description": "Glossary heading: the linguistic term \"paradigm\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.paradigm.plain": {
+    "message": "المجموعة الكاملة من الصيغ المتصرفة التي يمكن أن تأخذها الكلمة، كجدول تصريف الفعل. تتراوح النماذج الصرفية بين صيغتين (كـ 'must' في الإنجليزية) وآلاف الصيغ في اللغات متعددة التركيب.",
+    "description": "Plain-language definition of the linguistic term \"paradigm\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.paradigm.mt_relevance": {
+    "message": "تضمن النماذج الصرفية الكبيرة أن تكون معظم صيغ الكلمات نادرة أو غائبة كليًا في بيانات التدريب.",
+    "description": "One-sentence note on why \"paradigm\" matters for machine-translation quality."
+  },
+  "glossary.agglutinative.term": {
+    "message": "إلصاقي",
+    "description": "Glossary heading: the linguistic term \"agglutinative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agglutinative.plain": {
+    "message": "أسلوب في بناء الكلمات يحصل فيه كل معنى نحوي على زائدة منفصلة وواضحة تُضاف تباعًا، كما في التركية والسواحيلية. قد تطول الكلمات، لكن كل جزء منها يؤدي وظيفة واحدة.",
+    "description": "Plain-language definition of the linguistic term \"agglutinative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agglutinative.mt_relevance": {
+    "message": "تنقسم الكلمات الإلصاقية إلى وحدات فرعية بسهولة، لكن ذلك يستلزم أن يتعلم أداة التقطيع ترتيب الزوائد في تلك اللغة.",
+    "description": "One-sentence note on why \"agglutinative\" matters for machine-translation quality."
+  },
+  "glossary.fusional.term": {
+    "message": "اندماجي",
+    "description": "Glossary heading: the linguistic term \"fusional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fusional.plain": {
+    "message": "أسلوب في بناء الكلمات تدمج فيه زائدة واحدة عدة معانٍ نحوية في آنٍ واحد. فاللاحقة -ó في habló الإسبانية تدل على الماضي والغائب والمفرد معًا، ولا يمكن عزل أي جزء منها لمعنى بعينه.",
+    "description": "Plain-language definition of the linguistic term \"fusional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fusional.mt_relevance": {
+    "message": "لا يمكن تحليل النهايات الاندماجية بواسطة أدوات التقطيع، لذا يجب تعلّم كل تركيبة منها كوحدة مستقلة.",
+    "description": "One-sentence note on why \"fusional\" matters for machine-translation quality."
+  },
+  "glossary.isolating.term": {
+    "message": "عازل",
+    "description": "Glossary heading: the linguistic term \"isolating\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.isolating.plain": {
+    "message": "أسلوب في بناء الكلمات تكون فيه الكلمات في معظمها مورفيمات مفردة، ويُعبَّر عن المعنى النحوي بترتيب الكلمات وكلمات وظيفية مساعدة بدلًا من النهايات الصرفية، كما في الفيتنامية والماندرين. وهو النقيض التام للتركيب المتعدد.",
+    "description": "Plain-language definition of the linguistic term \"isolating\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.isolating.mt_relevance": {
+    "message": "تنقل اللغات العازلة مشكلة الترجمة الآلية من تقطيع الكلمات إلى ترتيبها واختيار الكلمات الوظيفية المناسبة.",
+    "description": "One-sentence note on why \"isolating\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.term": {
+    "message": "تعدد التركيب",
+    "description": "Glossary heading: the linguistic term \"polysynthesis\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polysynthesis.plain": {
+    "message": "أسلوب في بناء الكلمات يمكن فيه لفعل واحد أن يحمل ما تعبّر عنه لغات أخرى بجملة كاملة، من فاعل ومفعول وموقع وأداة وغير ذلك، كلها أجزاء من كلمة واحدة. وكثير من لغات السكان الأصليين في الأمريكتين تعمل بهذه الطريقة.",
+    "description": "Plain-language definition of the linguistic term \"polysynthesis\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polysynthesis.mt_relevance": {
+    "message": "نادرًا ما تتكرر الكلمات متعددة التركيب بصورة مطابقة، لذا تواجه الترجمة الآلية على مستوى الكلمة تدفقًا لا ينتهي من الرموز المجهولة.",
+    "description": "One-sentence note on why \"polysynthesis\" matters for machine-translation quality."
+  },
+  "glossary.polysynthesis.example": {
+    "message": "في لغة Plains Cree (crk): يمكن لفعل واحد أن يدمج ضمائر الفاعل والمفعول والأدوات والمواقع والأفعال (card field linguisticChallenges.polysynthesis).",
+    "description": "Concrete example illustrating \"polysynthesis\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.noun-incorporation.term": {
+    "message": "إدماج الاسم",
+    "description": "Glossary heading: the linguistic term \"noun incorporation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-incorporation.plain": {
+    "message": "دمج الاسم في الفعل لتكوين كلمة واحدة، يشبه تحويل «صيد الفقمات» إلى فعل مركّب «فقمة-صيد». شائع في اللغات التركيبية المعقدة، حيث يغيّر التركيز النحوي للجملة.",
+    "description": "Plain-language definition of the linguistic term \"noun incorporation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-incorporation.mt_relevance": {
+    "message": "يختفي الاسم المدمج من الجملة بوصفه كلمة مستقلة، فتفقده أنظمة الترجمة القائمة على المحاذاة.",
+    "description": "One-sentence note on why \"noun incorporation\" matters for machine-translation quality."
+  },
+  "glossary.noun-incorporation.example": {
+    "message": "يظهر في البطاقات تحت linguisticChallenges.nounIncorporation (مستند إلى Grambank)، مثلاً في لغة Plains Cree (crk).",
+    "description": "Concrete example illustrating \"noun incorporation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.compounding.term": {
+    "message": "التركيب المزجي",
+    "description": "Glossary heading: the linguistic term \"compounding\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.compounding.plain": {
+    "message": "ضمّ كلمتين مستقلتين أو أكثر في كلمة واحدة جديدة، كـ 'tooth' + 'brush' ← 'toothbrush'. يمكن في اللغة الألمانية تسلسل كلمات عديدة في وحدة واحدة طويلة جداً.",
+    "description": "Plain-language definition of the linguistic term \"compounding\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.compounding.mt_relevance": {
+    "message": "المركّبات الجديدة وحدات غير مألوفة يجب على الترجمة الآلية تقسيمها إلى أجزاء معروفة لترجمتها.",
+    "description": "One-sentence note on why \"compounding\" matters for machine-translation quality."
+  },
+  "glossary.reduplication.term": {
+    "message": "التضعيف",
+    "description": "Glossary heading: the linguistic term \"reduplication\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.reduplication.plain": {
+    "message": "تكرار الكلمة كلها أو جزء منها لتغيير معناها، للدلالة على الجمع أو الشدة أو الاستمرارية. كلمة orang بمعنى «شخص» في الإندونيسية تصبح orang-orang بمعنى «أشخاص».",
+    "description": "Plain-language definition of the linguistic term \"reduplication\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.reduplication.mt_relevance": {
+    "message": "يجب على الترجمة الآلية أن تُدرك أن الكلمة المكررة ظاهرة نحوية وليست تكراراً عرضياً ينبغي حذفه.",
+    "description": "One-sentence note on why \"reduplication\" matters for machine-translation quality."
+  },
+  "glossary.ablaut.term": {
+    "message": "التبادل الصوتي",
+    "description": "Glossary heading: the linguistic term \"ablaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ablaut.plain": {
+    "message": "تغيير حرف العلة داخل الكلمة لأداء وظيفة نحوية، كما في الإنجليزية sing/sang/sung. يبقى إطار الأصوات الساكنة ثابتاً بينما يتولى حرف العلة الدور النحوي.",
+    "description": "Plain-language definition of the linguistic term \"ablaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ablaut.mt_relevance": {
+    "message": "يُخفي التبادل الصوتي الصرف داخل الجذر حيث لا تستطيع أدوات التقطيع الجزئي للكلمات عزله.",
+    "description": "One-sentence note on why \"ablaut\" matters for machine-translation quality."
+  },
+  "glossary.suppletion.term": {
+    "message": "الاستيفاء الجذري",
+    "description": "Glossary heading: the linguistic term \"suppletion\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.suppletion.plain": {
+    "message": "حين تأتي الصيغ الصرفية لكلمة ما من جذور مختلفة تماماً، كـ go/went أو good/better. تعاملها القواعد على أنها كلمة واحدة رغم عدم اشتراكها في أي أصوات.",
+    "description": "Plain-language definition of the linguistic term \"suppletion\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.suppletion.mt_relevance": {
+    "message": "لا يمكن اشتقاق الصيغ الاستيفائية بقاعدة، لذا يجب أن تكون الترجمة الآلية قد رأت كل صيغة منها في بيانات التدريب.",
+    "description": "One-sentence note on why \"suppletion\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.term": {
+    "message": "الصرف بالجذر والوزن",
+    "description": "Glossary heading: the linguistic term \"root-and-pattern morphology\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.root-and-pattern-morphology.plain": {
+    "message": "أسلوب في بناء الكلمات، سائد في العربية والعبرية، يُنسج فيه جذر ساكن كـ k-t-b بمعنى «كتابة» عبر قوالب حركية: kitāb «كتاب»، kātib «كاتب»، maktab «مكتب». يحمل الجذر والوزن كلٌّ منهما معنىً، لكن لا أحدهما يشكّل قطعة متصلة.",
+    "description": "Plain-language definition of the linguistic term \"root-and-pattern morphology\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.root-and-pattern-morphology.mt_relevance": {
+    "message": "لا تستطيع أدوات التقطيع الجزئي القياسية رؤية الجذر المشترك عبر هذه الصيغ، مما يُضعف التعميم في الترجمة الآلية للغات السامية.",
+    "description": "One-sentence note on why \"root-and-pattern morphology\" matters for machine-translation quality."
+  },
+  "glossary.root-and-pattern-morphology.example": {
+    "message": "يظهر في البطاقات تحت linguisticChallenges.rootPattern (مثلاً العربية والعبرية والمالطية).",
+    "description": "Concrete example illustrating \"root-and-pattern morphology\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.vowel-harmony.term": {
+    "message": "التناسق الصوتي",
+    "description": "Glossary heading: the linguistic term \"vowel harmony\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-harmony.plain": {
+    "message": "قاعدة تقتضي أن تتوافق جميع حركات الكلمة في خاصية معينة، كالأمامية/الخلفية أو المستديرة/غير المستديرة. في التركية تتغير حركات اللواحق لتتوافق مع الجذر: ev-ler «بيوت» لكن at-lar «خيول».",
+    "description": "Plain-language definition of the linguistic term \"vowel harmony\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-harmony.mt_relevance": {
+    "message": "لكل لاحقة صيغ سطحية متعددة، مما يُضاعف متغيرات الوحدات التي يجب على الترجمة الآلية تعلّمها لنهاية نحوية واحدة.",
+    "description": "One-sentence note on why \"vowel harmony\" matters for machine-translation quality."
+  },
+  "glossary.consonant-mutation.term": {
+    "message": "التحوّل الصوتي للساكن",
+    "description": "Glossary heading: the linguistic term \"consonant mutation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.consonant-mutation.plain": {
+    "message": "تغيير نحوي يطرأ على الحرف الساكن الأول في الكلمة بسبب الكلمة التي تسبقها. كلمة cath بمعنى «قطة» في الويلزية تصبح gath بعد أداة التعريف: y gath «القطة». قد تبدو الصيغة المعجمية والصيغة المنطوقة مختلفتين تماماً.",
+    "description": "Plain-language definition of the linguistic term \"consonant mutation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.consonant-mutation.mt_relevance": {
+    "message": "يجعل التحوّل الصوتي الكلمة الواحدة تظهر بعدة تهجئات، مما يُشتّت إحصاءاتها في بيانات تدريب الترجمة الآلية.",
+    "description": "One-sentence note on why \"consonant mutation\" matters for machine-translation quality."
+  },
+  "glossary.lenition.term": {
+    "message": "التلطيف الصوتي",
+    "description": "Glossary heading: the linguistic term \"lenition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lenition.plain": {
+    "message": "تحوّل الصوت الصامت إلى صوت أخفّ، غالبًا بين حركتين أو بفعل عوامل نحوية — كتحوّل 'k' نحو 'g' أو 'h'. في اللغات السلتية، يُعدّ التلطيف الصوتي جزءًا من النحو لا مجرد نطق.",
+    "description": "Plain-language definition of the linguistic term \"lenition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lenition.mt_relevance": {
+    "message": "يُغيّر التلطيف الصوتي النحوي هجاء الكلمات في سياقها، فتبتعد الصورة المكتوبة عن الأشكال الواردة في المعجم.",
+    "description": "One-sentence note on why \"lenition\" matters for machine-translation quality."
+  },
+  "glossary.gemination.term": {
+    "message": "التضعيف",
+    "description": "Glossary heading: the linguistic term \"gemination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gemination.plain": {
+    "message": "إطالة نطق الصامت لتمييز كلمة عن أخرى — كالفرق بين pala 'مجرفة' وpalla 'كرة' في الإيطالية. تكتب بعض الأنظمة الكتابية التضعيف صراحةً، بينما تتركه أنظمة أخرى للقارئ.",
+    "description": "Plain-language definition of the linguistic term \"gemination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gemination.mt_relevance": {
+    "message": "حين لا يُكتب التضعيف في النص، تتطابق كلمات مختلفة في الرسم الواحد فيضيع الفارق على نظام الترجمة الآلية.",
+    "description": "One-sentence note on why \"gemination\" matters for machine-translation quality."
+  },
+  "glossary.sandhi.term": {
+    "message": "الصندهي",
+    "description": "Glossary heading: the linguistic term \"sandhi\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.sandhi.plain": {
+    "message": "تغيّرات صوتية تحدث عند التقاء الكلمات أو المورفيمات، كتحوّل 'don't you' إلى 'dontcha' في الإنجليزية. وفي اللغات النبرية، قد تتغيّر النبرات ذاتها في السياق (صندهي النبر).",
+    "description": "Plain-language definition of the linguistic term \"sandhi\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.sandhi.mt_relevance": {
+    "message": "يجعل الصندهي الأشكال المكتوبة أو المنقولة رهينةَ السياق، مما يُعقّد عملية التقطيع المتسق للنص.",
+    "description": "One-sentence note on why \"sandhi\" matters for machine-translation quality."
+  },
+  "glossary.umlaut.term": {
+    "message": "الأوملاوت",
+    "description": "Glossary heading: the linguistic term \"umlaut\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.umlaut.plain": {
+    "message": "تغيّر في الحركة نشأ تاريخيًا بتأثير حركة تالية، وبقي علامةً نحوية: كـ Apfel 'تفاحة' → Äpfel 'تفاح' في الألمانية. يرتبط بظاهرة الأبلاوت لكنه يختلف عنها في أصله التاريخي.",
+    "description": "Plain-language definition of the linguistic term \"umlaut\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.umlaut.mt_relevance": {
+    "message": "يضع الأوملاوت دلالة الجمع أو الزمن داخل جذر الكلمة، مما يجعلها غير مرئية لأنظمة التقطيع القائمة على اللواحق.",
+    "description": "One-sentence note on why \"umlaut\" matters for machine-translation quality."
+  },
+  "glossary.tokenization.term": {
+    "message": "التقطيع",
+    "description": "Glossary heading: the linguistic term \"tokenization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tokenization.plain": {
+    "message": "تجزئة النص إلى وحدات (رموز) تعالجها نماذج الترجمة فعليًا. تُقسّم الأنظمة الحديثة الكلمات النادرة إلى أجزاء دون الكلمة؛ ومدى توافق هذه الأجزاء مع المورفيمات الحقيقية يتفاوت تفاوتًا كبيرًا بين اللغات.",
+    "description": "Plain-language definition of the linguistic term \"tokenization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tokenization.mt_relevance": {
+    "message": "يُعدّ التقطيع السيئ سببًا جذريًا لإخفاق الترجمة الآلية في اللغات الغنية صرفيًا واللغات محدودة الموارد.",
+    "description": "One-sentence note on why \"tokenization\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-case.term": {
+    "message": "الإعراب",
+    "description": "Glossary heading: the linguistic term \"grammatical case\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-case.plain": {
+    "message": "تمييز الأسماء والضمائر بعلامات تُبيّن وظيفتها في الجملة — من يفعل، ومن يقع عليه الفعل، وأين، وبماذا. تحتفظ الإنجليزية بآثار منه فحسب (I/me/my)؛ أما الفنلندية فلها خمسة عشر حالة إعرابية، وكثير من اللغات لا تعرفه أصلًا.",
+    "description": "Plain-language definition of the linguistic term \"grammatical case\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-case.mt_relevance": {
+    "message": "تتيح اللغات ذات الإعراب حرية ترتيب الكلمات، لذا يجب على الترجمة الآلية استنتاج الوظائف النحوية من اللواحق لا من الموضع، وتوليد اللواحق الصحيحة في المقابل.",
+    "description": "One-sentence note on why \"grammatical case\" matters for machine-translation quality."
+  },
+  "glossary.nominative.term": {
+    "message": "حالة الرفع",
+    "description": "Glossary heading: the linguistic term \"nominative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nominative.plain": {
+    "message": "في نظام التوافق الأكثر شيوعًا، يأخذ فاعل أي فعل حالة الرفع، ويأخذ المفعول به المباشر حالة النصب. تعمل معظم اللغات الأوروبية بهذا النظام، وهو ما تعكسه بيانات تدريب الترجمة الآلية في معظمها.",
+    "description": "Plain-language definition of the linguistic term \"nominative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nominative.mt_relevance": {
+    "message": "تُخطئ الأنظمة المدرَّبة أساسًا على لغات الرفع والنصب في تحديد الأدوار النحوية عند ترجمة اللغات الإسنادية.",
+    "description": "One-sentence note on why \"nominative\" matters for machine-translation quality."
+  },
+  "glossary.ergativity.term": {
+    "message": "الإسناد الفاعلي",
+    "description": "Glossary heading: the linguistic term \"ergativity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ergativity.plain": {
+    "message": "نظام توافق يُعامَل فيه فاعل الفعل اللازم ('هي نائمة') معاملةَ مفعول الفعل المتعدي ('رآها')، بينما يحمل فاعل الفعل المتعدي علامة إسنادية خاصة. تعمل بهذا النظام لغة الباسك وكثير من اللغات المايا والأسترالية والقوقازية.",
+    "description": "Plain-language definition of the linguistic term \"ergativity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ergativity.mt_relevance": {
+    "message": "تعكس العلامة الإسنادية مؤشرات الأدوار التي تتوقعها الترجمة الآلية، مما يُفضي إلى أخطاء في تحديد من فعل ماذا لمن.",
+    "description": "One-sentence note on why \"ergativity\" matters for machine-translation quality."
+  },
+  "glossary.absolutive.term": {
+    "message": "حالة المطلق",
+    "description": "Glossary heading: the linguistic term \"absolutive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.absolutive.plain": {
+    "message": "الحالة الإعرابية غير المميَّزة في النظام الإرغاتيفي، وتشمل فاعل الجملة اللازمة ومفعول الجملة المتعدية. وهي عادةً الصيغة المرجعية للاسم.",
+    "description": "Plain-language definition of the linguistic term \"absolutive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.absolutive.mt_relevance": {
+    "message": "تبدو الأسماء في حالة المطلق متطابقة في دورَين مختلفَين، لذا يجب على الترجمة الآلية الاستعانة بالفعل لإزالة الغموض.",
+    "description": "One-sentence note on why \"absolutive\" matters for machine-translation quality."
+  },
+  "glossary.morphosyntactic-alignment.term": {
+    "message": "التوافق الصرفي-النحوي",
+    "description": "Glossary heading: the linguistic term \"morphosyntactic alignment\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.morphosyntactic-alignment.plain": {
+    "message": "النظام الذي تعتمده اللغة لتجميع الأدوار الثلاثة الأساسية — فاعل الجملة اللازمة، وفاعل الجملة المتعدية، والمفعول به — لأغراض التعليم الإعرابي. يُعدّ نظاما الفاعلية-المفعولية والإرغاتيفية-المطلقية أبرز النمطين؛ وبعض اللغات تمزج بينهما أو تعتمد أنظمة قائمة على درجة الحيوية.",
+    "description": "Plain-language definition of the linguistic term \"morphosyntactic alignment\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.morphosyntactic-alignment.mt_relevance": {
+    "message": "التباين في التوافق بين اللغة المصدر واللغة الهدف مشكلة بنيوية في الترجمة، لا مشكلة مفردات.",
+    "description": "One-sentence note on why \"morphosyntactic alignment\" matters for machine-translation quality."
+  },
+  "glossary.genitive.term": {
+    "message": "حالة الإضافة (الجنيتيف)",
+    "description": "Glossary heading: the linguistic term \"genitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.genitive.plain": {
+    "message": "الحالة الإعرابية التي تدل على الملكية أو الارتباط الوثيق، كما في الإضافة العربية أو «of» في الإنجليزية. تتفاوت اللغات في ترتيب المضاف والمضاف إليه.",
+    "description": "Plain-language definition of the linguistic term \"genitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.genitive.mt_relevance": {
+    "message": "تستلزم الفوارق في ترتيب الإضافة — مثل «حصان الملك» مقابل «horse of the king» — إعادة ترتيب منهجية داخل المجموعات الاسمية.",
+    "description": "One-sentence note on why \"genitive\" matters for machine-translation quality."
+  },
+  "glossary.dative.term": {
+    "message": "المضاف إليه",
+    "description": "Glossary heading: the linguistic term \"dative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dative.plain": {
+    "message": "الحالة الإعرابية التي تدل على المتلقي أو المستفيد — أي «لمن» يُعطى الشيء أو يُقال. تُعبّر عنها الألمانية واللاتينية بصيغ خاصة، بينما تلجأ الإنجليزية إلى ترتيب الكلمات أو حرف الجر «to».",
+    "description": "Plain-language definition of the linguistic term \"dative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dative.mt_relevance": {
+    "message": "يجب على الترجمة الآلية الاختيار بين علامة الحالة الإعرابية للداتيف والتعبير بحرف الجر وفقاً للغة الهدف.",
+    "description": "One-sentence note on why \"dative\" matters for machine-translation quality."
+  },
+  "glossary.locative.term": {
+    "message": "حالة المكان (اللوكاتيف)",
+    "description": "Glossary heading: the linguistic term \"locative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.locative.plain": {
+    "message": "حالة إعرابية تعني «في/على/عند» مكان ما، وتُعبَّر عنها بلاحقة اسمية بدلاً من حرف جر. تُفرّق الفنلندية والهنغارية بين عدة حالات مكانية دقيقة تشمل الداخل، والأعلى، والقرب، والاتجاه نحو المكان، والابتعاد عنه.",
+    "description": "Plain-language definition of the linguistic term \"locative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.locative.mt_relevance": {
+    "message": "قد يقابل حرف الجر الواحد في الإنجليزية عدة حالات مكانية مختلفة، مما يُلزم الترجمة الآلية باختيار الحالة المناسبة بحسب السياق.",
+    "description": "One-sentence note on why \"locative\" matters for machine-translation quality."
+  },
+  "glossary.instrumental.term": {
+    "message": "حالة الأداة (الإنسترومنتال)",
+    "description": "Glossary heading: the linguistic term \"instrumental\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.instrumental.plain": {
+    "message": "حالة إعرابية تعني «باستخدام / بواسطة» — تُعبّر الروسية عن «بالمطرقة» بلاحقة اسمية بدلاً من حرف جر. وفي اللغات التركيبية المعقدة، قد تُدمج الأداة مباشرةً في بنية الفعل.",
+    "description": "Plain-language definition of the linguistic term \"instrumental\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.instrumental.mt_relevance": {
+    "message": "تتوزع دلالة الأداة بين لواحق الحالة الإعرابية وحروف الجر والتعليم الداخلي للفعل عبر اللغات المختلفة.",
+    "description": "One-sentence note on why \"instrumental\" matters for machine-translation quality."
+  },
+  "glossary.comitative.term": {
+    "message": "حالة المصاحبة (الكوميتاتيف)",
+    "description": "Glossary heading: the linguistic term \"comitative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comitative.plain": {
+    "message": "حالة إعرابية أو علامة تعني «بصحبة شخص ما». تستخدم بعض اللغات العلامة ذاتها للمصاحبة «مع» والعطف «و»، مما قد يُوقع غير المتخصصين في لبس.",
+    "description": "Plain-language definition of the linguistic term \"comitative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comitative.mt_relevance": {
+    "message": "يعني التداخل بين المصاحبة والعطف أن «X مع Y» و«X وY» قد يكونان تركيباً واحداً في اللغة المصدر.",
+    "description": "One-sentence note on why \"comitative\" matters for machine-translation quality."
+  },
+  "glossary.oblique.term": {
+    "message": "شبه الجملة الفضلة (الأوبليك)",
+    "description": "Glossary heading: the linguistic term \"oblique\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.oblique.plain": {
+    "message": "أي عبارة في الجملة ليست فاعلاً ولا مفعولاً به مباشراً — كالمكان والأداة والمتلقي وغيرها من العناصر الإضافية، وغالباً ما تُعلَّم بحالة إعرابية أو أداة ربط. في قاعدة WALS، يرمز «X» في ترتيبات مثل VOX إلى هذه العبارة الفضلة.",
+    "description": "Plain-language definition of the linguistic term \"oblique\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.oblique.mt_relevance": {
+    "message": "يتفاوت موضع العبارات الفضلة في الجملة من لغة إلى أخرى، وتستلزم الترجمة الآلية إعادة ترتيبها بصورة صحيحة بالنسبة للفعل والمفعول به.",
+    "description": "One-sentence note on why \"oblique\" matters for machine-translation quality."
+  },
+  "glossary.differential-object-marking.term": {
+    "message": "التعليم التفاضلي للمفعول به",
+    "description": "Glossary heading: the linguistic term \"differential object marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.differential-object-marking.plain": {
+    "message": "تعليم بعض المفاعيل المباشرة دون غيرها، وذلك عادةً بحسب درجة الحيوية أو التعريف. فالإسبانية تضيف «a» قبل المفاعيل الدالة على البشر (veo a María) دون تلك الدالة على الأشياء (veo la casa).",
+    "description": "Plain-language definition of the linguistic term \"differential object marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.differential-object-marking.mt_relevance": {
+    "message": "يجب على الترجمة الآلية أن تقرر لكل مفعول به على حدة ما إذا كان العلامة الإعرابية مطلوبة، مستعينةً بدلالات الحيوية التي قد لا يُظهرها النص المصدر.",
+    "description": "One-sentence note on why \"differential object marking\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-gender.term": {
+    "message": "الجنس النحوي",
+    "description": "Glossary heading: the linguistic term \"grammatical gender\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-gender.plain": {
+    "message": "تصنيف جميع الأسماء في فئات (تُسمى عادةً مذكراً ومؤنثاً ومحايداً) تفرض تطابق الصيغ في المقالات والصفات وأحياناً الأفعال. هذا التصنيف نحوي لا بيولوجي — فكلمة «طاولة» في الألمانية مذكر، وفي الإسبانية مؤنث.",
+    "description": "Plain-language definition of the linguistic term \"grammatical gender\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-gender.mt_relevance": {
+    "message": "تستلزم الترجمة إلى لغة ذات جنس نحوي اتخاذ خيارات بشأن الأشخاص والأشياء التي يتركها النص المصدر غير محددة، وهو مصدر رئيسي للتحيز في الترجمة الآلية.",
+    "description": "One-sentence note on why \"grammatical gender\" matters for machine-translation quality."
+  },
+  "glossary.noun-class.term": {
+    "message": "فئة الاسم",
+    "description": "Glossary heading: the linguistic term \"noun class\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.noun-class.plain": {
+    "message": "نظام مشابه للجنس النحوي لكنه يضم فئات أكثر — تمتلك لغات Bantu عادةً من 10 إلى 20 فئة تصنّف الأسماء وفق الشكل والحيوية والحجم وغيرها. وتستدعي كل فئة بادئات مطابقة خاصة بها تمتد عبر الجملة.",
+    "description": "Plain-language definition of the linguistic term \"noun class\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.noun-class.mt_relevance": {
+    "message": "يُحدث كل اختيار للاسم تموجات في علامات المطابقة عبر الجملة بأكملها، لذا فإن فئة واحدة خاطئة تُنتج أخطاء ظاهرة متعددة.",
+    "description": "One-sentence note on why \"noun class\" matters for machine-translation quality."
+  },
+  "glossary.animacy.term": {
+    "message": "الحيوية النحوية",
+    "description": "Glossary heading: the linguistic term \"animacy\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.animacy.plain": {
+    "message": "تمييز نحوي بين المحالات الحية (أو شبه الحية) وغير الحية. في لغات Algonquian، كل اسم إما حيّ أو غير حيّ نحوياً، وتتغير صيغة الأفعال كلياً بحسب أيهما تقترن به.",
+    "description": "Plain-language definition of the linguistic term \"animacy\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.animacy.mt_relevance": {
+    "message": "تتحكم الحيوية في اختيار الفعل والمطابقة في كثير من اللغات الأصلية، دون وجود أي مؤشر صريح في النص المصدر الإنجليزي.",
+    "description": "One-sentence note on why \"animacy\" matters for machine-translation quality."
+  },
+  "glossary.animacy.example": {
+    "message": "في لغة Plains Cree (crk): يتغير تصريف الفعل كلياً بحسب ما إذا كانت أسماء الفاعل/المفعول به حيّة أو غير حيّة (حقل البطاقة linguisticChallenges.animacy).",
+    "description": "Concrete example illustrating \"animacy\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.obviation.term": {
+    "message": "الإبعاد النحوي",
+    "description": "Glossary heading: the linguistic term \"obviation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.obviation.plain": {
+    "message": "نظام محوري في لغات Algonquian كلغة Plains Cree، يُرتّب الغائبين في سياق الخطاب: أحدهم «قريب» (في بؤرة الاهتمام) وسائرهم «مُبعَدون» (مُعلَّمون بوصفهم في الخلفية، ويُسمّى أحياناً الشخص الرابع). يتيح هذا النظام تتبع الأشخاص دون الحاجة إلى ضمائر من قبيل «هو₁ مقابل هو₂».",
+    "description": "Plain-language definition of the linguistic term \"obviation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.obviation.mt_relevance": {
+    "message": "لا يوجد إبعاد نحوي في الإنجليزية، لذا يجب على الترجمة الآلية إلى لغة Cree ابتكار تعيينات القرب والإبعاد والحفاظ على اتساقها عبر الجمل.",
+    "description": "One-sentence note on why \"obviation\" matters for machine-translation quality."
+  },
+  "glossary.obviation.example": {
+    "message": "تُعلّم لغة Plains Cree (crk) المحالات المُبعَدة على الأسماء والأفعال؛ راجع بطاقة crk وتوثيق طريقة crk.",
+    "description": "Concrete example illustrating \"obviation\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.clusivity.term": {
+    "message": "الشمولية والإقصائية",
+    "description": "Glossary heading: the linguistic term \"clusivity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.clusivity.plain": {
+    "message": "تمييز بين نوعين من «نحن»: الشاملة (أنا + أنت، وربما آخرون) والإقصائية (أنا + آخرون، لكن ليس أنت). تُلزم مئات اللغات بهذا التمييز.",
+    "description": "Plain-language definition of the linguistic term \"clusivity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.clusivity.mt_relevance": {
+    "message": "تستلزم ترجمة «we» الإنجليزية الاختيار بين الشاملة والإقصائية دون أي مؤشر في النص المصدر — والاختيار الخاطئ قد تكون له تبعات اجتماعية خطيرة.",
+    "description": "One-sentence note on why \"clusivity\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-number.term": {
+    "message": "العدد النحوي",
+    "description": "Glossary heading: the linguistic term \"grammatical number\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-number.plain": {
+    "message": "الطريقة التي تُعبّر بها اللغة عن الكمية — المفرد والجمع، وأحياناً المثنى (اثنان بالضبط) أو القليل (عدد قليل). بعض اللغات تُعلّم العدد على كل اسم؛ وبعضها يتركه للسياق كلياً.",
+    "description": "Plain-language definition of the linguistic term \"grammatical number\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-number.mt_relevance": {
+    "message": "حين لا يُحدد النص المصدر العدد، يتعين على الترجمة الآلية تخمينه؛ وحين تستلزم اللغة الهدف صيغ المثنى، يجب عليها توفيرها.",
+    "description": "One-sentence note on why \"grammatical number\" matters for machine-translation quality."
+  },
+  "glossary.dual.term": {
+    "message": "المثنى",
+    "description": "Glossary heading: the linguistic term \"dual\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dual.plain": {
+    "message": "عدد نحوي يدل على اثنين بالضبط، مختلف عن المفرد والجمع معاً. توجد هذه الصيغة في السلوفينية والعربية وكثير من لغات أوقيانوسيا؛ وتُضيف بعض اللغات صيغة المثلث (ثلاثة بالضبط) في الضمائر.",
+    "description": "Plain-language definition of the linguistic term \"dual\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dual.mt_relevance": {
+    "message": "يجب على الترجمة الآلية إلى اللغات التي تستخدم المثنى اكتشاف دلالة الاثنينية التي لا يُعبّر عنها النص المصدر إلا بعدّ الكلمات.",
+    "description": "One-sentence note on why \"dual\" matters for machine-translation quality."
+  },
+  "glossary.classifier.term": {
+    "message": "المصنِّف",
+    "description": "Glossary heading: the linguistic term \"classifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.classifier.plain": {
+    "message": "كلمة مطلوبة عند عدّ الأسماء أو الإشارة إليها، تُصنّفها حسب نوعها — كقولنا بالإنجليزية 'three head of cattle' أو 'two sheets of paper'، غير أنها إلزامية لكل شيء. لا يمكن العدّ في الصينية واليابانية والتايلاندية وكثير من اللغات الأخرى دون استخدام المصنِّف الصحيح.",
+    "description": "Plain-language definition of the linguistic term \"classifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.classifier.mt_relevance": {
+    "message": "يجب على الترجمة الآلية اختيار المصنِّف الصحيح لكل اسم، إذ يلاحظ الناطقون الأصليون على الفور أي خطأ في ذلك.",
+    "description": "One-sentence note on why \"classifier\" matters for machine-translation quality."
+  },
+  "glossary.definiteness.term": {
+    "message": "التعريف",
+    "description": "Glossary heading: the linguistic term \"definiteness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.definiteness.plain": {
+    "message": "مدى إشارة الاسم إلى شيء يستطيع المستمع تحديده مسبقاً ('الكلب') أو لا ('كلب'). كثير من اللغات لا تُعبّر عن هذا التمييز، بينما تُعبّر عنه لغات أخرى بأدوات التعريف أو اللواحق أو ترتيب الكلمات.",
+    "description": "Plain-language definition of the linguistic term \"definiteness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.definiteness.mt_relevance": {
+    "message": "تُلزم الترجمة من لغة خالية من أدوات التعريف الترجمةَ الآليةَ باتخاذ قرار بين 'the' و'a' لكل مجموعة اسمية اعتماداً على السياق وحده.",
+    "description": "One-sentence note on why \"definiteness\" matters for machine-translation quality."
+  },
+  "glossary.article.term": {
+    "message": "أداة التعريف",
+    "description": "Glossary heading: the linguistic term \"article\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.article.plain": {
+    "message": "كلمة صغيرة تُحدّد الاسم بوصفه معرفة ('the') أو نكرة ('a'). نحو ثلث لغات العالم لا تحتوي على أدوات تعريف على الإطلاق، وتستخدم بعضها العدد 'واحد' أو أسماء الإشارة بدلاً منها.",
+    "description": "Plain-language definition of the linguistic term \"article\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.article.mt_relevance": {
+    "message": "يُعدّ إدراج أدوات التعريف وحذفها من أكثر فئات التحرير شيوعاً في الترجمة الآلية بين اللغات التي تحتوي على أدوات تعريف وتلك التي تخلو منها.",
+    "description": "One-sentence note on why \"article\" matters for machine-translation quality."
+  },
+  "glossary.demonstrative.term": {
+    "message": "اسم الإشارة",
+    "description": "Glossary heading: the linguistic term \"demonstrative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.demonstrative.plain": {
+    "message": "كلمات الإشارة كـ'هذا' و'ذلك'. تُقسّم اللغات فضاء الإشارة بطرق مختلفة — فبعضها يُميّز ثلاثة مستويات: قريب من المتكلم / قريب من المخاطب / بعيد، وبعضها يُضيف معايير الرؤية أو الارتفاع.",
+    "description": "Plain-language definition of the linguistic term \"demonstrative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.demonstrative.mt_relevance": {
+    "message": "نادراً ما تتطابق أنظمة أسماء الإشارة تطابقاً تاماً بين اللغات، لذا تضطر الترجمة الآلية إلى تقريب تمييزات المسافة والرؤية.",
+    "description": "One-sentence note on why \"demonstrative\" matters for machine-translation quality."
+  },
+  "glossary.possession.term": {
+    "message": "الإضافة (الملكية)",
+    "description": "Glossary heading: the linguistic term \"possession\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.possession.plain": {
+    "message": "الطريقة التي تُعبّر بها اللغة عن 'X الخاص بي / X الخاص بك'. تُميّز كثير من اللغات بين الملكية غير القابلة للتنازل (أجزاء الجسم والأقارب — الأشياء التي لا يمكن التخلي عنها) والملكية القابلة للتنازل، مستخدمةً تراكيب مختلفة لكل منهما.",
+    "description": "Plain-language definition of the linguistic term \"possession\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.possession.mt_relevance": {
+    "message": "كثيراً ما تستلزم الملكية غير القابلة للتنازل تحديداً إلزامياً للمالك تغفله النصوص الإنجليزية المصدر.",
+    "description": "One-sentence note on why \"possession\" matters for machine-translation quality."
+  },
+  "glossary.head-marking.term": {
+    "message": "التعليم على الرأس",
+    "description": "Glossary heading: the linguistic term \"head marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.head-marking.plain": {
+    "message": "وضع العلامة النحوية على رأس المجموعة — يُظهر الفعل من هو فاعله ومفعوله، ويُظهر الاسم المضاف إليه من يملكه. أما التوابع (الأسماء ذاتها) فيمكن أن تبقى خالية من العلامات.",
+    "description": "Plain-language definition of the linguistic term \"head marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.head-marking.mt_relevance": {
+    "message": "يُركّز التعليم على الرأس قواعد الجملة في الفعل، وهو عكس لغات التعليم على التابع التي تُشكّل الجزء الأكبر من بيانات تدريب الترجمة الآلية.",
+    "description": "One-sentence note on why \"head marking\" matters for machine-translation quality."
+  },
+  "glossary.dependent-marking.term": {
+    "message": "التعليم على التابع",
+    "description": "Glossary heading: the linguistic term \"dependent marking\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.dependent-marking.plain": {
+    "message": "وضع العلامة النحوية على توابع المجموعة — لواحق الإعراب على الأسماء، ولواحق الملكية على المضاف — مع بقاء الرأس خالياً من العلامات. تميل معظم اللغات الأوروبية إلى هذا النمط.",
+    "description": "Plain-language definition of the linguistic term \"dependent marking\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.dependent-marking.mt_relevance": {
+    "message": "يضع التعليم على التابع الإشارة النحوية في نهايات الأسماء، وهو ما يجب على أدوات التقطيع تجزئته بشكل صحيح.",
+    "description": "One-sentence note on why \"dependent marking\" matters for machine-translation quality."
+  },
+  "glossary.evidentiality.term": {
+    "message": "الدليلية",
+    "description": "Glossary heading: the linguistic term \"evidentiality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.evidentiality.plain": {
+    "message": "نظام نحوي يُلزم المتكلمين بتحديد مصدر معرفتهم بالمعلومة — هل رأوها بأعينهم، أم سمعوا عنها، أم استنتجوها. في الكيتشوا والتركية، حذف أداة الدليلية يشبه حذف الزمن النحوي في الإنجليزية.",
+    "description": "Plain-language definition of the linguistic term \"evidentiality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.evidentiality.mt_relevance": {
+    "message": "يجب على الترجمة الآلية إلى اللغات الدليلية تحديد مصدر المعلومة الذي لا يُذكر أصلاً في النص المصدر.",
+    "description": "One-sentence note on why \"evidentiality\" matters for machine-translation quality."
+  },
+  "glossary.tense.term": {
+    "message": "الزمن النحوي",
+    "description": "Glossary heading: the linguistic term \"tense\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tense.plain": {
+    "message": "علامة نحوية تُحدّد موقع الحدث في الزمن — ماضٍ أو حاضر أو مستقبل. بعض اللغات لا تحتوي على زمن نحوي أصلاً (كالصينية الماندرينية)، بينما تُميّز لغات أخرى بين درجات متعددة من البُعد الزمني في الماضي.",
+    "description": "Plain-language definition of the linguistic term \"tense\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tense.mt_relevance": {
+    "message": "النص المصدر الخالي من الزمن النحوي يُجبر الترجمة الآلية على استنتاج الإطار الزمني؛ كما تتطلب أنظمة البُعد الزمني تمييزات أدق مما يوفره المصدر.",
+    "description": "One-sentence note on why \"tense\" matters for machine-translation quality."
+  },
+  "glossary.aspect.term": {
+    "message": "الجهة",
+    "description": "Glossary heading: the linguistic term \"aspect\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.aspect.plain": {
+    "message": "علامة نحوية تصف كيفية تطور الحدث في الزمن — مكتمل، أو جارٍ، أو معتاد، أو متكرر — بصرف النظر عن وقت وقوعه. تأتي الأفعال الروسية في أزواج من الجهة التامة والجهة غير التامة؛ وتستخدم الإنجليزية «was doing» مقابل «did».",
+    "description": "Plain-language definition of the linguistic term \"aspect\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.aspect.mt_relevance": {
+    "message": "يجب تحديد الجهة لكل فعل عند الترجمة إلى اللغات التي تُعرب عن الجهة نحوياً، وغالباً دون وجود مؤشرات في النص المصدر.",
+    "description": "One-sentence note on why \"aspect\" matters for machine-translation quality."
+  },
+  "glossary.perfective.term": {
+    "message": "الجهة التامة",
+    "description": "Glossary heading: the linguistic term \"perfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.perfective.plain": {
+    "message": "جهة تُقدِّم الحدث باعتباره كلاً مكتملاً — «كتبت الرسالة» بوصفها حقيقة منجزة. وكثيراً ما تقابلها الجهة غير التامة في تقابل نحوي.",
+    "description": "Plain-language definition of the linguistic term \"perfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.perfective.mt_relevance": {
+    "message": "يُعدّ الخلط بين الجهة التامة وغير التامة من أكثر أخطاء الترجمة الآلية شيوعاً عند الترجمة إلى اللغات السلافية.",
+    "description": "One-sentence note on why \"perfective\" matters for machine-translation quality."
+  },
+  "glossary.imperfective.term": {
+    "message": "الجهة غير التامة",
+    "description": "Glossary heading: the linguistic term \"imperfective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.imperfective.plain": {
+    "message": "جهة تُقدِّم الحدث من الداخل — جارياً، أو معتاداً، أو متكرراً، كـ«كانت تكتب» أو «كانت تكتب عادةً». وهي نقيض الجهة التامة.",
+    "description": "Plain-language definition of the linguistic term \"imperfective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.imperfective.mt_relevance": {
+    "message": "يجب توضيح دلالة الجهة غير التامة — استمرارية أم اعتيادية — من السياق للحصول على ترجمة صحيحة.",
+    "description": "One-sentence note on why \"imperfective\" matters for machine-translation quality."
+  },
+  "glossary.mood.term": {
+    "message": "الأسلوب النحوي",
+    "description": "Glossary heading: the linguistic term \"mood\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mood.plain": {
+    "message": "علامة نحوية تعبّر عن موقف المتكلم من الحدث — حقيقة، أو رغبة، أو أمر، أو احتمال. الأساليب الأوروبية المعروفة هي الخبري والشرطي والأمري؛ وتُعبّر لغات أخرى عن فروق دقيقة أكثر.",
+    "description": "Plain-language definition of the linguistic term \"mood\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mood.mt_relevance": {
+    "message": "يخضع اختيار الأسلوب النحوي — ولا سيما الشرطي — لقواعد اللغة الهدف التي لا يمكن نقلها مباشرة من المصدر.",
+    "description": "One-sentence note on why \"mood\" matters for machine-translation quality."
+  },
+  "glossary.subjunctive.term": {
+    "message": "المضارع المنصوب / الأسلوب الشرطي",
+    "description": "Glossary heading: the linguistic term \"subjunctive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.subjunctive.plain": {
+    "message": "أسلوب فعلي يُستخدم للمحتوى غير المؤكد — الأمنيات، والشكوك، والافتراضات، والجمل التابعة لأفعال بعينها. تشترط اللغات الرومانسية استخدامه في كثير من الجمل الفرعية التي تكتفي الإنجليزية فيها بالصيغة الأساسية.",
+    "description": "Plain-language definition of the linguistic term \"subjunctive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.subjunctive.mt_relevance": {
+    "message": "تُحدَّد مواضع الأسلوب الشرطي وفق قواعد اللغة الهدف، لذا يجب على الترجمة الآلية تطبيق القواعد النحوية لا مجرد ترجمة الصيغ.",
+    "description": "One-sentence note on why \"subjunctive\" matters for machine-translation quality."
+  },
+  "glossary.negation.term": {
+    "message": "النفي",
+    "description": "Glossary heading: the linguistic term \"negation\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.negation.plain": {
+    "message": "الطريقة التي تُعبّر بها اللغة عن «لا» أو «ليس». تشمل الأساليب: الأدوات (كـ«not» في الإنجليزية)، واللواحق على الفعل، وأفعال النفي المستقلة، والتراكيب المزدوجة كـ«ne…pas» في الفرنسية. ويتفاوت موضع النفي: قبل الفعل، أو بعده، أو في الموضعين معاً.",
+    "description": "Plain-language definition of the linguistic term \"negation\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.negation.mt_relevance": {
+    "message": "تُقلب أخطاء النفي المعنى كلياً، مما يجعل الصياغة الصحيحة للنفي من أعلى متطلبات الترجمة الآلية خطورةً.",
+    "description": "One-sentence note on why \"negation\" matters for machine-translation quality."
+  },
+  "glossary.passive.term": {
+    "message": "المبني للمجهول",
+    "description": "Glossary heading: the linguistic term \"passive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.passive.plain": {
+    "message": "تركيب يُرقّي المفعول به إلى مرتبة الفاعل ويُهمّش الفاعل الأصلي أو يحذفه: «كُسر الزجاج (على يد الولد)». كثير من اللغات تفتقر إلى المبني للمجهول كلياً أو تلجأ إلى أساليب أخرى لإخفاء الفاعل.",
+    "description": "Plain-language definition of the linguistic term \"passive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.passive.mt_relevance": {
+    "message": "تُجبر اللغات الهدف الخالية من المبني للمجهول الترجمةَ الآلية على إعادة صياغة الجمل المبنية للمجهول إلى المبني للمعلوم، مع استحضار الفاعل أو استنتاجه.",
+    "description": "One-sentence note on why \"passive\" matters for machine-translation quality."
+  },
+  "glossary.grammatical-voice.term": {
+    "message": "البنية الفعلية",
+    "description": "Glossary heading: the linguistic term \"grammatical voice\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.grammatical-voice.plain": {
+    "message": "النظام النحوي الذي يتحكم في تحديد المشارك الذي يشغل موقع الفاعل — المبني للمعلوم، والمبني للمجهول، والصيغة الوسطى، وأنظمة أكثر ثراءً في بعض الأسر اللغوية. تُعيد البنية الفعلية تشكيل الجملة بأكملها حول منظور مختار.",
+    "description": "Plain-language definition of the linguistic term \"grammatical voice\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.grammatical-voice.mt_relevance": {
+    "message": "يستلزم عدم التطابق في البنية الفعلية إعادة هيكلة الجمل بأكملها، لا مجرد استبدال الكلمات.",
+    "description": "One-sentence note on why \"grammatical voice\" matters for machine-translation quality."
+  },
+  "glossary.valency.term": {
+    "message": "التكافؤ الفعلي",
+    "description": "Glossary heading: the linguistic term \"valency\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.valency.plain": {
+    "message": "عدد المشاركين الذين يستلزمهم الفعل وطريقة ترميزهم — «ينام» يستلزم مشاركاً واحداً، و«يُعطي» يستلزم ثلاثة. تختلف اللغات في تحديد المشاركين الذين تتطلبهم أفعال بعينها وفي طريقة تمييزهم.",
+    "description": "Plain-language definition of the linguistic term \"valency\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.valency.mt_relevance": {
+    "message": "تؤدي التباينات في التكافؤ الفعلي إلى إسناد أدوار خاطئة أو إسقاط مشاركين مطلوبين في الترجمة الحرفية.",
+    "description": "One-sentence note on why \"valency\" matters for machine-translation quality."
+  },
+  "glossary.transitive.term": {
+    "message": "متعدٍ",
+    "description": "Glossary heading: the linguistic term \"transitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.transitive.plain": {
+    "message": "يصف الفعل الذي يأخذ مفعولاً به مباشراً — «هي تقرأ الكتاب». التعدي أمر مركزي في القواعد: تميز العديد من اللغات الفاعل والمفعول به والفعل نفسه بشكل مختلف اعتماداً على ما إذا كانت الجملة متعدية.",
+    "description": "Plain-language definition of the linguistic term \"transitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.transitive.mt_relevance": {
+    "message": "يتحكم التعدي في علامات الإعراب والمطابقة، لذا فإن الخطأ في تقدير ما إذا كان الفعل متعدياً يؤدي إلى خلط من-فعل-ماذا-بمن في المخرجات.",
+    "description": "One-sentence note on why \"transitive\" matters for machine-translation quality."
+  },
+  "glossary.intransitive.term": {
+    "message": "لازم",
+    "description": "Glossary heading: the linguistic term \"intransitive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.intransitive.plain": {
+    "message": "يصف الفعل الذي لا يأخذ مفعولاً به مباشراً — «هي تنام»، «أشرقت الشمس». في اللغات الأرغاتيفية (ergative)، يتم تمييز الوسيط الوحيد للفعل اللازم مثل المفعول به للفعل المتعدي، وليس مثل فاعله.",
+    "description": "Plain-language definition of the linguistic term \"intransitive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.intransitive.mt_relevance": {
+    "message": "تطلق الجمل اللازمة أنماطاً مختلفة من الإعراب والمطابقة، خاصة في اللغات الأرغاتيفية، لذا يجب على الترجمة الآلية (MT) تتبع التعدي لاختيار الصيغ الصحيحة.",
+    "description": "One-sentence note on why \"intransitive\" matters for machine-translation quality."
+  },
+  "glossary.antipassive.term": {
+    "message": "مضاد المبني للمجهول",
+    "description": "Glossary heading: the linguistic term \"antipassive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.antipassive.plain": {
+    "message": "بنية شائعة في اللغات الأرغاتيفية، تقوم بإزالة أو خفض رتبة المفعول به للفعل المتعدي، تاركة جملة لازمة — وهي الصورة المعكوسة للمبني للمجهول. حيث يقوم المبني للمجهول بتهميش الفاعل، يقوم مضاد المبني للمجهول بتهميش المفعول به.",
+    "description": "Plain-language definition of the linguistic term \"antipassive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.antipassive.mt_relevance": {
+    "message": "تعيد صيغ مضاد المبني للمجهول هيكلة الجملة وتغير علامات الإعراب، لذا فإن ترجمتها إلى لغة تعتمد على المبني للمجهول تعني إعادة بناء الجملة بأكملها بدلاً من مجرد تبديل الكلمات.",
+    "description": "One-sentence note on why \"antipassive\" matters for machine-translation quality."
+  },
+  "glossary.causative.term": {
+    "message": "سببي",
+    "description": "Glossary heading: the linguistic term \"causative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.causative.plain": {
+    "message": "بنية تضيف مسبباً للحدث — تحويل «انكسر الوعاء» إلى «هي كسرت الوعاء» أو «جعلته ينكسر». تبني العديد من اللغات الصيغ السببية باستخدام لاحقة فعل مخصصة بدلاً من فعل منفصل مثل 'make' في الإنجليزية.",
+    "description": "Plain-language definition of the linguistic term \"causative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.causative.mt_relevance": {
+    "message": "يمكن أن يختبئ المعنى السببي داخل صيغة فعل واحدة، لذا يجب على الترجمة الآلية التعرف عليه وتفكيكه إلى بنية تحليلية — أو دمجه مرة أخرى — للغة الهدف.",
+    "description": "One-sentence note on why \"causative\" matters for machine-translation quality."
+  },
+  "glossary.pronoun.term": {
+    "message": "ضمير",
+    "description": "Glossary heading: the linguistic term \"pronoun\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pronoun.plain": {
+    "message": "كلمة تحل محل عبارة اسمية — أنا، أنت، هي، هم، هذا، مَن. تختلف اللغات بشكل حاد في عدد الضمائر التي تمتلكها والتمييزات التي تفرضها: الجنس، أو الرسمية، أو «نحن» الشاملة/الحصرية، من بين أمور أخرى.",
+    "description": "Plain-language definition of the linguistic term \"pronoun\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pronoun.mt_relevance": {
+    "message": "نادراً ما تتطابق أنظمة الضمائر بين اللغات، لذا يجب على الترجمة الآلية توفير التمييزات التي يتركها المصدر غير محددة (الجنس، الرسمية) أو دمج التمييزات التي لا يمكن للغة الهدف التعبير عنها.",
+    "description": "One-sentence note on why \"pronoun\" matters for machine-translation quality."
+  },
+  "glossary.numeral.term": {
+    "message": "عدد",
+    "description": "Glossary heading: the linguistic term \"numeral\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.numeral.plain": {
+    "message": "كلمة تعبر عن رقم — واحد، سبعة عشر، ألف. تبني اللغات الأعداد الأكبر على أسس مختلفة (عشرة، عشرين، أو مزيج منها) وقد تتطلب مصنفاً أو صيغة عد خاصة مع كل رقم.",
+    "description": "Plain-language definition of the linguistic term \"numeral\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.numeral.mt_relevance": {
+    "message": "الأرقام هي محتوى عالي الأهمية، وترجمة كلمات الأعداد عبر أسس عد مختلفة أو متطلبات مصنفات هي نقطة يسهل على الترجمة الآلية إدخال أخطاء فيها.",
+    "description": "One-sentence note on why \"numeral\" matters for machine-translation quality."
+  },
+  "glossary.ideophone.term": {
+    "message": "إيديوفون",
+    "description": "Glossary heading: the linguistic term \"ideophone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ideophone.plain": {
+    "message": "كلمة حية تثير إحساساً — صوتاً أو حركة أو ملمساً أو ضوءاً — من خلال شكلها الخاص، مثل 'zigzag' في الإنجليزية أو kirakira «ببريق» في اليابانية. تمتلك العديد من اللغات الأفريقية والآسيوية فئات كبيرة ومتميزة نحوياً من الإيديوفونات.",
+    "description": "Plain-language definition of the linguistic term \"ideophone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ideophone.mt_relevance": {
+    "message": "الإيديوفونات تعبيرية وخاصة جداً باللغة، لذا تميل الترجمة الآلية إلى إسقاطها أو تسطيحها، مما يفقد المعنى الذي يسمعه المتحدثون الأصليون كمعنى دقيق وحي.",
+    "description": "One-sentence note on why \"ideophone\" matters for machine-translation quality."
+  },
+  "glossary.serial-verb-construction.term": {
+    "message": "تركيب الأفعال المتسلسلة",
+    "description": "Glossary heading: the linguistic term \"serial verb construction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.serial-verb-construction.plain": {
+    "message": "تسلسل عدة أفعال في جملة واحدة دون «و» أو «أن» بينها — مثل «خذ سكيناً اقطع الخبز» بدلاً من «اقطع الخبز بسكين». شائع في لغات غرب أفريقيا وجنوب شرق آسيا واللغات الكريولية.",
+    "description": "Plain-language definition of the linguistic term \"serial verb construction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.serial-verb-construction.mt_relevance": {
+    "message": "يستلزم ترجمة الأفعال المتسلسلة إلى اللغات الأوروبية تحليلها إلى حروف جر أو جمل تابعة، وإعادة بنائها عند الترجمة في الاتجاه المعاكس.",
+    "description": "One-sentence note on why \"serial verb construction\" matters for machine-translation quality."
+  },
+  "glossary.participle.term": {
+    "message": "اسم المفعول / اسم الفاعل (الوصف الفعلي)",
+    "description": "Glossary heading: the linguistic term \"participle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.participle.plain": {
+    "message": "صيغة فعلية تؤدي وظيفة الصفة أو تدخل في بناء الأزمنة المركبة — كـ«الماء الجاري» و«قد أكل». تتفاوت اللغات في عدد الأوصاف الفعلية التي تمتلكها واستخداماتها.",
+    "description": "Plain-language definition of the linguistic term \"participle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.participle.mt_relevance": {
+    "message": "كثيراً ما تحلّ الجمل الوصفية الفعلية محل الجمل الموصولة في لغات أخرى، مما يستلزم تحويلاً بنيوياً.",
+    "description": "One-sentence note on why \"participle\" matters for machine-translation quality."
+  },
+  "glossary.gerund.term": {
+    "message": "المصدر الفعلي (الجيروند)",
+    "description": "Glossary heading: the linguistic term \"gerund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.gerund.plain": {
+    "message": "صيغة فعلية تُستخدم اسماً، كـ«السباحة» في «السباحة ممتعة». تلجأ لغات أخرى إلى المصدر الصريح أو الأسماء الفعلية أو صيغ الفعل الحالي حيث يستخدم الإنجليزية الجيروند.",
+    "description": "Plain-language definition of the linguistic term \"gerund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.gerund.mt_relevance": {
+    "message": "يقابل الجيروند الإنجليزي تراكيب متعددة تختلف باختلاف اللغة المستهدفة.",
+    "description": "One-sentence note on why \"gerund\" matters for machine-translation quality."
+  },
+  "glossary.copula.term": {
+    "message": "الفعل الرابط (الكوبولا)",
+    "description": "Glossary heading: the linguistic term \"copula\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.copula.plain": {
+    "message": "الفعل الرابط «كان/يكون» في جمل من قبيل «هي طبيبة». تحذف كثير من اللغات هذا الفعل (الكوبولا الصفرية) في المضارع — إذ تقول الروسية والعربية حرفياً «هي طبيبة» دون فعل رابط.",
+    "description": "Plain-language definition of the linguistic term \"copula\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.copula.mt_relevance": {
+    "message": "يجب على الترجمة الآلية إدراج الفعل الرابط عند الترجمة من لغات الكوبولا الصفرية، وحذفه عند الترجمة إليها.",
+    "description": "One-sentence note on why \"copula\" matters for machine-translation quality."
+  },
+  "glossary.agreement.term": {
+    "message": "المطابقة النحوية",
+    "description": "Glossary heading: the linguistic term \"agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.agreement.plain": {
+    "message": "اشتراط أن تتوافق صيغة كلمة مع السمات النحوية لكلمة أخرى — كمطابقة الفعل لفاعله، والصفة لموصوفها في الجنس والعدد. تُضمّن بعض اللغات الفعلَ علامات مطابقة للفاعل والمفعول معاً.",
+    "description": "Plain-language definition of the linguistic term \"agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.agreement.mt_relevance": {
+    "message": "يجب أن يستوفي النص المُولَّد جميع سلاسل المطابقة؛ إذ تُفضي سمة واحدة خاطئة إلى أخطاء ظاهرة متعددة.",
+    "description": "One-sentence note on why \"agreement\" matters for machine-translation quality."
+  },
+  "glossary.polypersonal-agreement.term": {
+    "message": "المطابقة متعددة الأشخاص",
+    "description": "Glossary heading: the linguistic term \"polypersonal agreement\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.polypersonal-agreement.plain": {
+    "message": "مطابقة الفعل لأكثر من مشارك في آنٍ واحد — إذ يحمل الفعل علامات للفاعل والمفعول معاً، وأحياناً لمشاركين آخرين. تعتمد هذا النظام بصورة منهجية لغات الباسك والجورجية والألغونكوية.",
+    "description": "Plain-language definition of the linguistic term \"polypersonal agreement\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.polypersonal-agreement.mt_relevance": {
+    "message": "تُشفّر صيغة الفعل العلاقة بين الفاعل والمفعول، لذا يجب على الترجمة الآلية تحديد كلا الدورين قبل توليد صيغة الفعل الصحيحة.",
+    "description": "One-sentence note on why \"polypersonal agreement\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.term": {
+    "message": "الصيغة الاقترانية (conjunct order)",
+    "description": "Glossary heading: the linguistic term \"conjunct order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.conjunct-order.plain": {
+    "message": "في اللغات الألغونكوية كـPlains Cree، تأتي الأفعال في «أنماط» تصريفية متمايزة: النمط المستقل للجمل الرئيسية، والنمط الاقتراني أساساً للجمل التابعة والأسئلة وسياقات خطابية بعينها. ويستخدم كل نمط مجموعة مختلفة كلياً من اللواحق.",
+    "description": "Plain-language definition of the linguistic term \"conjunct order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.conjunct-order.mt_relevance": {
+    "message": "يُعدّ اختيار الصيغة المستقلة أو الاقترانية قراراً مرتبطاً بنوع الجملة، وهو ما لا تُقدّم الإنجليزية عليه دليلاً مباشراً.",
+    "description": "One-sentence note on why \"conjunct order\" matters for machine-translation quality."
+  },
+  "glossary.conjunct-order.example": {
+    "message": "Plains Cree (crk): موصوف في ملاحظات الأسلوبية الخاصة بالبطاقة وفي توثيق طريقة crk.",
+    "description": "Concrete example illustrating \"conjunct order\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.directional.term": {
+    "message": "الاتجاهية",
+    "description": "Glossary heading: the linguistic term \"directional\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.directional.plain": {
+    "message": "تعليم فعلي يُدمج اتجاه الحركة في الفعل ذاته — نحو المتكلم، أو بعيداً عنه، أو صعوداً نهر، أو صعوداً تلة. شائع في اللغات المايا والتبتية-البورمية وكثير من لغات بابوا غينيا الجديدة.",
+    "description": "Plain-language definition of the linguistic term \"directional\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.directional.mt_relevance": {
+    "message": "يجب تفكيك المعنى الاتجاهي المُدمج في الأفعال وإعادة التعبير عنه بظروف أو حروف جر في اللغة الهدف.",
+    "description": "One-sentence note on why \"directional\" matters for machine-translation quality."
+  },
+  "glossary.benefactive.term": {
+    "message": "المستفيد",
+    "description": "Glossary heading: the linguistic term \"benefactive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.benefactive.plain": {
+    "message": "تعليم يدل على أن الفعل يُؤدَّى لصالح شخص ما — «خبزتُ لها كعكة». تُعبّر بعض اللغات عن هذا بلاحقة فعلية (تطبيقية) بدلاً من ترتيب الكلمات أو حرف الجر.",
+    "description": "Plain-language definition of the linguistic term \"benefactive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.benefactive.mt_relevance": {
+    "message": "قد يكون المستفيد مخفياً داخل الصرف الفعلي، لذا يجب على الترجمة الآلية اكتشافه وإعادة التعبير عنه كعبارة مستقلة.",
+    "description": "One-sentence note on why \"benefactive\" matters for machine-translation quality."
+  },
+  "glossary.interrogative.term": {
+    "message": "الاستفهام",
+    "description": "Glossary heading: the linguistic term \"interrogative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.interrogative.plain": {
+    "message": "قواعد صياغة الأسئلة. قد تُعلَّم أسئلة نعم/لا بأداة، أو صيغة فعلية، أو تغيير في ترتيب الكلمات، أو بالتنغيم وحده؛ وتختلف أسئلة المحتوى في ما إذا كانت «من/ماذا» تتقدم إلى صدر الجملة.",
+    "description": "Plain-language definition of the linguistic term \"interrogative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.interrogative.mt_relevance": {
+    "message": "إذا كانت اللغة المصدر تُعلّم الأسئلة بالتنغيم فحسب، فلن يجد نظام الترجمة الآلية في النص المكتوب أي إشارة تدل على أن الجملة سؤال.",
+    "description": "One-sentence note on why \"interrogative\" matters for machine-translation quality."
+  },
+  "glossary.word-order.term": {
+    "message": "ترتيب الكلمات",
+    "description": "Glossary heading: the linguistic term \"word order\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.word-order.plain": {
+    "message": "الترتيب المعتاد للفاعل (S) والمفعول (O) والفعل (V) في الجملة الخبرية البسيطة. يغطي نمطا SOV (اليابانية) وSVO (الإنجليزية) معظم اللغات؛ أما VSO (الويلزية والتاغالوغية) فهو النمط الثالث الشائع، وبعض اللغات لا تمتلك ترتيباً ثابتاً على الإطلاق.",
+    "description": "Plain-language definition of the linguistic term \"word order\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.word-order.mt_relevance": {
+    "message": "يُعدّ التباين في ترتيب الكلمات المحرّك الأكبر لأخطاء إعادة الترتيب بين أزواج اللغات.",
+    "description": "One-sentence note on why \"word order\" matters for machine-translation quality."
+  },
+  "glossary.adposition.term": {
+    "message": "الأداة الظرفية",
+    "description": "Glossary heading: the linguistic term \"adposition\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.adposition.plain": {
+    "message": "المصطلح الجامع لحروف الجر (قبل الاسم: «in the house») وحروف الجر اللاحقة (بعده: اليابانية uchi de بمعنى «house in»). يرتبط اختيار اللغة لأحدهما ارتباطاً وثيقاً بترتيب الفعل والمفعول فيها.",
+    "description": "Plain-language definition of the linguistic term \"adposition\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.adposition.mt_relevance": {
+    "message": "يستلزم التحويل من حروف الجر السابقة إلى اللاحقة قلب بنية كل عبارة مكانية وزمانية.",
+    "description": "One-sentence note on why \"adposition\" matters for machine-translation quality."
+  },
+  "glossary.relative-clause.term": {
+    "message": "الجملة الوصفية",
+    "description": "Glossary heading: the linguistic term \"relative clause\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.relative-clause.plain": {
+    "message": "جملة تُقيّد اسماً أو تصفه: «الكتاب الذي قرأتُه». تضعها اللغات قبل الاسم أو بعده، وتستخدم استراتيجيات تتراوح بين الضمائر الموصولة والفجوات النحوية وصيغ فعلية خاصة.",
+    "description": "Plain-language definition of the linguistic term \"relative clause\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.relative-clause.mt_relevance": {
+    "message": "تستلزم الجمل الوصفية السابقة للاسم (كما في اليابانية والتركية) عكس ترتيب مقاطع نصية طويلة مقارنةً بالترتيب الإنجليزي.",
+    "description": "One-sentence note on why \"relative clause\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.term": {
+    "message": "نظام البؤرة",
+    "description": "Glossary heading: the linguistic term \"focus system\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.focus-system.plain": {
+    "message": "نظام جملي معروف بصفة خاصة في لغات الفلبين كالتاغالوغية، تختار فيه الصرافة الفعلية المشارك الذي يكون المحور النحوي للجملة — الفاعل أو المفعول أو المكان أو الأداة. يُعرف أحياناً بـ«الصوت المتماثل».",
+    "description": "Plain-language definition of the linguistic term \"focus system\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.focus-system.mt_relevance": {
+    "message": "يُغيّر اختيار البؤرة صيغة الفعل وموضع العلامات الإعرابية وترتيب الكلمات في آنٍ واحد، مما يجعل الترجمة الآلية الكلمة بكلمة مستحيلة.",
+    "description": "One-sentence note on why \"focus system\" matters for machine-translation quality."
+  },
+  "glossary.focus-system.example": {
+    "message": "يظهر هذا المصطلح في البطاقات تحت linguisticChallenges.voiceFocus للغات الأسترونيزية الكثيرة.",
+    "description": "Concrete example illustrating \"focus system\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.particle.term": {
+    "message": "الأداة",
+    "description": "Glossary heading: the linguistic term \"particle\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.particle.plain": {
+    "message": "كلمة وظيفية صغيرة غير متصرفة تُضيف معنىً نحوياً أو تعبيرياً — كأدوات الاستفهام وأدوات المحور وأدوات التلطيف. تستخدم لغات شرق آسيا هذه الأدوات استخداماً مكثفاً في نهاية الجمل.",
+    "description": "Plain-language definition of the linguistic term \"particle\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.particle.mt_relevance": {
+    "message": "تحمل الأدوات معاني دلالية (الاستفهام والموقف والمحور) يجب على الترجمة الآلية إعادة التعبير عنها بوسائل مختلفة كلياً.",
+    "description": "One-sentence note on why \"particle\" matters for machine-translation quality."
+  },
+  "glossary.tone.term": {
+    "message": "النبرة اللحنية",
+    "description": "Glossary heading: the linguistic term \"tone\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.tone.plain": {
+    "message": "استخدام طبقة الصوت للتمييز بين الكلمات: مثل mā بمعنى 'أم' و mǎ بمعنى 'حصان' في الماندرين. تعتمد الأنظمة البسيطة على مستويين، بينما تستخدم الأنظمة المعقدة (كما في كثير من لغات غرب أفريقيا وجنوب شرق آسيا) مستويات وتقطيعات متعددة.",
+    "description": "Plain-language definition of the linguistic term \"tone\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.tone.mt_relevance": {
+    "message": "عادةً لا تُكتب النبرة اللحنية في النصوص المكتوبة بالحروف اللاتينية أو غير المُشكَّلة، مما يُدمج كلمات متمايزة في هيئة إملائية واحدة أمام نظام الترجمة الآلية.",
+    "description": "One-sentence note on why \"tone\" matters for machine-translation quality."
+  },
+  "glossary.pitch-accent.term": {
+    "message": "النبر التنغيمي",
+    "description": "Glossary heading: the linguistic term \"pitch accent\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pitch-accent.plain": {
+    "message": "نظام تُميَّز فيه الكلمات بطبقة الصوت، غير أن مقطعاً واحداً فقط في كل كلمة يحمل هذه الطبقة المميِّزة — كما في اليابانية: háshi بمعنى 'عيدان الطعام' مقابل hashí بمعنى 'جسر'. أخف من النبرة اللحنية الكاملة، وأثقل من النبر الصوتي المحض.",
+    "description": "Plain-language definition of the linguistic term \"pitch accent\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pitch-accent.mt_relevance": {
+    "message": "كالنبرة اللحنية، نادراً ما يُكتب النبر التنغيمي، فتتكاثر المتشابهات الإملائية في النص.",
+    "description": "One-sentence note on why \"pitch accent\" matters for machine-translation quality."
+  },
+  "glossary.mora.term": {
+    "message": "المورا",
+    "description": "Glossary heading: the linguistic term \"mora\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mora.plain": {
+    "message": "وحدة إيقاعية أصغر من المقطع الصوتي: يُحسب المقطع القصير بمورا واحدة، فيما تُضيف الحركة الطويلة أو الصامت الختامي مورا إضافية. يعتمد الإيقاع الياباني والشعر وحتى الاختصارات على المورا لا على المقاطع.",
+    "description": "Plain-language definition of the linguistic term \"mora\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mora.mt_relevance": {
+    "message": "تُحدد الفونولوجيا القائمة على المورا طريقة تكييف الكلمات الدخيلة والأسماء الأجنبية، مما يؤثر في جودة النقل الصوتي.",
+    "description": "One-sentence note on why \"mora\" matters for machine-translation quality."
+  },
+  "glossary.ejective.term": {
+    "message": "الصوت الانفجاري الحنجري",
+    "description": "Glossary heading: the linguistic term \"ejective\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ejective.plain": {
+    "message": "صامت يُنتَج بانفجار هوائي من الحنجرة المغلقة بدلاً من الرئتين، مما يمنحه طابعاً نقراً حاداً. شائع في لغات القوقاز والأمريكتين وشرق أفريقيا، ويُكتب بعلامة الفاصلة العليا (k'، t').",
+    "description": "Plain-language definition of the linguistic term \"ejective\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ejective.mt_relevance": {
+    "message": "كثيراً ما تُحذف علامات الصوت الانفجاري الحنجري عند الكتابة غير الرسمية، فتتداخل كلمات متمايزة في النص المُدخَل.",
+    "description": "One-sentence note on why \"ejective\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.term": {
+    "message": "الوقفة الحنجرية",
+    "description": "Glossary heading: the linguistic term \"glottal stop\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottal-stop.plain": {
+    "message": "الانقطاع الصوتي في الحلق الذي يُسمع في منتصف كلمة 'uh-oh' الإنجليزية. في كثير من اللغات تُعدّ صامتاً كاملاً يُميِّز بين الكلمات — تكتبها الهاوايية بحرف ʻokina (ʻ)، وحذفه يُغيِّر المعنى.",
+    "description": "Plain-language definition of the linguistic term \"glottal stop\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottal-stop.mt_relevance": {
+    "message": "كثيراً ما تُحذف الوقفة الحنجرية أو تُكتب بحرف الفاصلة العليا الخاطئ، مما يُشتِّت الكلمة الواحدة بين هيئات إملائية متعددة.",
+    "description": "One-sentence note on why \"glottal stop\" matters for machine-translation quality."
+  },
+  "glossary.glottal-stop.example": {
+    "message": "في الهاوايية (haw): يُعدّ ʻokina صامتاً فونيمياً؛ وتُشير ملاحظات البطاقات الإملائية إلى مشكلات التباين في أحرف الفاصلة العليا.",
+    "description": "Concrete example illustrating \"glottal stop\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.uvular.term": {
+    "message": "اللهوي",
+    "description": "Glossary heading: the linguistic term \"uvular\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.uvular.plain": {
+    "message": "صوامت تُنتَج في أقصى الحلق عند اللهاة، كحرف القاف في العربية أو الراء الفرنسية. أندر من أصوات الحنك الرخو k/g، وسمة مميِّزة لمناطق لغوية بعينها.",
+    "description": "Plain-language definition of the linguistic term \"uvular\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.uvular.mt_relevance": {
+    "message": "كثيراً ما تتباين طرق كتابة الأصوات اللهوية بالحروف اللاتينية (q/k/kh)، فتتشعب الكلمة الواحدة إلى صور نصية متعددة.",
+    "description": "One-sentence note on why \"uvular\" matters for machine-translation quality."
+  },
+  "glossary.click.term": {
+    "message": "الصوت النقري",
+    "description": "Glossary heading: the linguistic term \"click\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.click.plain": {
+    "message": "صوامت تُنتَج بشفط الهواء إلى الداخل، شبيهة بصوت 'tsk-tsk' الإنجليزي، غير أنها تُستخدم أصواتاً كلامية اعتيادية. تمتلك لغات الخويسان وبعض لغات البانتو الجنوبية (كالزولو والخوسا) منظومات كاملة من هذه الأصوات.",
+    "description": "Plain-language definition of the linguistic term \"click\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.click.mt_relevance": {
+    "message": "تُكتب الأصوات النقرية بحروف غير مألوفة (ǃ، ǂ، c، q، x) كثيراً ما تُعالجها برامج التقطيع والخطوط بصورة خاطئة.",
+    "description": "One-sentence note on why \"click\" matters for machine-translation quality."
+  },
+  "glossary.implosive.term": {
+    "message": "الصوت الاندفاعي الداخلي",
+    "description": "Glossary heading: the linguistic term \"implosive\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.implosive.plain": {
+    "message": "صوامت تُنتَج بشفط هوائي خفيف إلى الداخل عند الحنجرة، كـ ɓ و ɗ في الهوسا والفيتنامية. تبدو لغير المتخصصين كأصوات b/d مُشدَّدة، لكنها فونيمات مستقلة.",
+    "description": "Plain-language definition of the linguistic term \"implosive\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.implosive.mt_relevance": {
+    "message": "كثيراً ما تُكتب حروف الصوت الاندفاعي الداخلي (ɓ، ɗ) بوصفها b/d عادية، فتتداخل كلمات متمايزة في مدونات النصوص.",
+    "description": "One-sentence note on why \"implosive\" matters for machine-translation quality."
+  },
+  "glossary.nasal.term": {
+    "message": "أنفي",
+    "description": "Glossary heading: the linguistic term \"nasal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal.plain": {
+    "message": "حرف ساكن يُنطق بتدفق الهواء عبر الأنف، مثل الميم (m) أو النون (n) أو ng في كلمة 'sing'. تحتوي كل لغة تقريباً على حروف ساكنة أنفية، وبعضها ينشر الأنفية أيضاً إلى الحروف المتحركة المجاورة.",
+    "description": "Plain-language definition of the linguistic term \"nasal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal.mt_relevance": {
+    "message": "كفئة صوتية بحتة، تهم الحروف الساكنة الأنفية في الكلام والنقل الحرفي أكثر من ترجمة النصوص، والتي تعمل على الكلمات المكتوبة.",
+    "description": "One-sentence note on why \"nasal\" matters for machine-translation quality."
+  },
+  "glossary.fricative.term": {
+    "message": "احتكاكي",
+    "description": "Glossary heading: the linguistic term \"fricative\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fricative.plain": {
+    "message": "حرف ساكن يُنطق بإجبار الهواء على المرور عبر فجوة ضيقة ليُحدث هسيساً، مثل الفاء (f) أو السين (s) أو الشين (sh) أو الثاء (th). الحروف الاحتكاكية هي من بين أكثر أنواع الحروف الساكنة شيوعاً في لغات العالم.",
+    "description": "Plain-language definition of the linguistic term \"fricative\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fricative.mt_relevance": {
+    "message": "الحروف الاحتكاكية هي فئة صوتية تؤثر على النطق والنقل الحرفي للأسماء، وليس على قواعد الترجمة الآلية القائمة على النصوص.",
+    "description": "One-sentence note on why \"fricative\" matters for machine-translation quality."
+  },
+  "glossary.retroflex.term": {
+    "message": "ارتدادي",
+    "description": "Glossary heading: the linguistic term \"retroflex\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.retroflex.plain": {
+    "message": "حرف ساكن يُنطق بلف طرف اللسان لأعلى وللخلف باتجاه سقف الفم، مما يعطي صوتاً أجوفاً مميزاً. الحروف الساكنة الارتدادية هي سمة مميزة للغات جنوب آسيا مثل الهندية والتاميلية.",
+    "description": "Plain-language definition of the linguistic term \"retroflex\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.retroflex.mt_relevance": {
+    "message": "الارتداد هو في الغالب مسألة تتعلق بالكلام والنقل الحرفي؛ وفي النصوص يظهر فقط كأحرف مميزة أو علامات تشكيل يجب على الترجمة الآلية الحفاظ عليها.",
+    "description": "One-sentence note on why \"retroflex\" matters for machine-translation quality."
+  },
+  "glossary.glottalized.term": {
+    "message": "مزماري",
+    "description": "Glossary heading: the linguistic term \"glottalized\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottalized.plain": {
+    "message": "يُنتج بتضييق أو إغلاق المزمار، مما يضيف حبسة أو جشّة إلى الحرف الساكن أو المتحرك. الحروف المقذوفة والمستنشقة هي حروف ساكنة مزمارية، وبعض اللغات تحتوي أيضاً على حروف رنانة ومتحركة مزمارية (ذات صوت صريري).",
+    "description": "Plain-language definition of the linguistic term \"glottalized\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottalized.mt_relevance": {
+    "message": "المزمارية هي خاصية صوتية تهم في الكلام والنقل الحرفي؛ وفي النصوص تبقى فقط كأحرف خاصة أو فواصل عليا يجب على الترجمة الآلية إبقاؤها سليمة.",
+    "description": "One-sentence note on why \"glottalized\" matters for machine-translation quality."
+  },
+  "glossary.pharyngeal.term": {
+    "message": "حلقي",
+    "description": "Glossary heading: the linguistic term \"pharyngeal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pharyngeal.plain": {
+    "message": "أصوات ساكنة تُنتَج بتضييق الحلق (البلعوم)، كالعين العربية (ع). وهي نادرة على مستوى لغات العالم، ويصعب على غير الناطقين بها أصلاً سماعها أو نطقها.",
+    "description": "Plain-language definition of the linguistic term \"pharyngeal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pharyngeal.mt_relevance": {
+    "message": "تُكتب الأصوات الحلقية بأساليب رومنة متعددة (ʿ أو ' أو 3 أو لا شيء)، مما يُفضي إلى فوضى إملائية في النصوص غير الرسمية.",
+    "description": "One-sentence note on why \"pharyngeal\" matters for machine-translation quality."
+  },
+  "glossary.nasal-vowel.term": {
+    "message": "حركة أنفية",
+    "description": "Glossary heading: the linguistic term \"nasal vowel\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.nasal-vowel.plain": {
+    "message": "حركة تُنطق مع تدفق الهواء عبر الأنف، كما في الفرنسية bon أو البرتغالية são. وحيث تكون مميِّزة، تُفرِّق الحركاتُ الأنفية والفموية بين كلمات مختلفة.",
+    "description": "Plain-language definition of the linguistic term \"nasal vowel\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.nasal-vowel.mt_relevance": {
+    "message": "كثيراً ما تُحذف علامات التأنيف (ã وę وą) عند الكتابة غير الرسمية، مما يُدمج أزواجاً من الكلمات المتمايزة.",
+    "description": "One-sentence note on why \"nasal vowel\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.term": {
+    "message": "مدّ الحركة",
+    "description": "Glossary heading: the linguistic term \"vowel length\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vowel-length.plain": {
+    "message": "إطالة الحركة زمنياً للتمييز بين كلمتين مختلفتين — كالفنلندية tuli بمعنى «نار» مقابل tuuli بمعنى «ريح». وتُشير إليه الكتابة بتكرار الحرف أو بالمدّة (ā) أو لا تُشير إليه أصلاً.",
+    "description": "Plain-language definition of the linguistic term \"vowel length\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vowel-length.mt_relevance": {
+    "message": "حين يكون تمييز المدّ اختيارياً (كالكاهاكو في الهاوايية أو الحركات في العربية)، تظهر الكلمة الواحدة بتهجئات متعددة.",
+    "description": "One-sentence note on why \"vowel length\" matters for machine-translation quality."
+  },
+  "glossary.vowel-length.example": {
+    "message": "في الهاوايية (haw): تُشير الكاهاكو (المدّة) إلى الحركات الطويلة، وكثيراً ما تُحذف في النصوص غير الرسمية.",
+    "description": "Concrete example illustrating \"vowel length\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.phoneme.term": {
+    "message": "فونيم",
+    "description": "Glossary heading: the linguistic term \"phoneme\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.phoneme.plain": {
+    "message": "وحدة صوتية تُميِّز الكلمات في لغة بعينها — استبدل فونيماً بآخر تحصل على كلمة مختلفة (pat مقابل bat). ويتراوح مخزون الفونيمات في اللغة بين نحو اثني عشر صوتاً وما يزيد على مئة.",
+    "description": "Plain-language definition of the linguistic term \"phoneme\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.phoneme.mt_relevance": {
+    "message": "يُحدِّد حجم مخزون الفونيمات ومحتواه الطريقةَ التي تُعاد بها صياغة الأسماء الأجنبية والكلمات الدخيلة في اللغة.",
+    "description": "One-sentence note on why \"phoneme\" matters for machine-translation quality."
+  },
+  "glossary.downstep.term": {
+    "message": "الهبوط النغمي",
+    "description": "Glossary heading: the linguistic term \"downstep\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.downstep.plain": {
+    "message": "في كثير من لغات أفريقيا ذات النبر النغمي، هو انخفاض مفاجئ في درجة الصوت يؤثر في جميع النغمات المرتفعة التالية في العبارة. وهو معلَم نغمي يمكنه بذاته التمييز بين المعاني.",
+    "description": "Plain-language definition of the linguistic term \"downstep\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.downstep.mt_relevance": {
+    "message": "لا يُكتب الهبوط النغمي في الغالب قط، مما يعني غياباً منهجياً للمعلومات النغمية من بيانات النصوص.",
+    "description": "One-sentence note on why \"downstep\" matters for machine-translation quality."
+  },
+  "glossary.advanced-tongue-root.term": {
+    "message": "تقدُّم جذر اللسان",
+    "description": "Glossary heading: the linguistic term \"advanced tongue root\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.advanced-tongue-root.plain": {
+    "message": "صفة حركية تُنتَج بدفع جذر اللسان إلى الأمام مما يُوسِّع الحلق. وتُقسِّم كثير من اللغات الأفريقية حركاتها إلى مجموعتين (+ATR) و(-ATR)، وتشترط أن تلتزم الكلمات بمجموعة واحدة (انسجام ATR).",
+    "description": "Plain-language definition of the linguistic term \"advanced tongue root\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.advanced-tongue-root.mt_relevance": {
+    "message": "تُمثَّل تمييزات ATR بصورة غير منتظمة في الأنظمة الإملائية، مما يُشتِّت الكلمة الواحدة بين تهجئات متعددة.",
+    "description": "One-sentence note on why \"advanced tongue root\" matters for machine-translation quality."
+  },
+  "glossary.script.term": {
+    "message": "نظام الكتابة",
+    "description": "Glossary heading: the linguistic term \"script\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.script.plain": {
+    "message": "مجموعة الرموز التي تُكتب بها اللغة — كاللاتينية والسيريلية والعربية والحروف الصينية وغيرها الكثير. وقد تستخدم اللغة الواحدة أنظمة كتابة متعددة (كالصربية)، كما قد يخدم النظام الواحد مئات اللغات.",
+    "description": "Plain-language definition of the linguistic term \"script\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.script.mt_relevance": {
+    "message": "يُحدِّد نظام الكتابة كل عملية لاحقة في معالجة النص: الترميز، والتقطيع، وتحديد نماذج الترجمة الآلية التي تقبل المدخلات أصلاً.",
+    "description": "One-sentence note on why \"script\" matters for machine-translation quality."
+  },
+  "glossary.orthography.term": {
+    "message": "نظام إملائي",
+    "description": "Glossary heading: the linguistic term \"orthography\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.orthography.plain": {
+    "message": "القواعد المتفق عليها لكتابة لغة ما بنظام كتابتها — أي الحروف والتشكيل والتهجئات الصحيحة. وبعض اللغات لها أنظمة إملائية متعددة متنافسة، أو لا يوجد لها نظام موحَّد على الإطلاق.",
+    "description": "Plain-language definition of the linguistic term \"orthography\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.orthography.mt_relevance": {
+    "message": "تُجزِّئ الأنظمة الإملائية المتنافسة أو غير الموحَّدة بيانات التدريب الشحيحة إلى متغيرات تهجئة غير متوافقة.",
+    "description": "One-sentence note on why \"orthography\" matters for machine-translation quality."
+  },
+  "glossary.abugida.term": {
+    "message": "أبوجيدا",
+    "description": "Glossary heading: the linguistic term \"abugida\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.abugida.plain": {
+    "message": "نظام كتابة تمثّل فيه كل رمز حرفًا ساكنًا يحمل حركةً افتراضية مدمجة، وتُشار الحركات الأخرى بتعديل الرمز الأساسي — كما في الديفاناغاري والإثيوبية والتايلاندية. يقع بين الأبجدية والمقطعية.",
+    "description": "Plain-language definition of the linguistic term \"abugida\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.abugida.mt_relevance": {
+    "message": "علامات الحركات في الأبوجيدا هي أحرف مركّبة يمكن لمعالجة النصوص البسيطة أن تحذفها أو تعيد ترتيبها، مما يُفسد الكلمات.",
+    "description": "One-sentence note on why \"abugida\" matters for machine-translation quality."
+  },
+  "glossary.syllabary.term": {
+    "message": "نظام مقطعي",
+    "description": "Glossary heading: the linguistic term \"syllabary\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabary.plain": {
+    "message": "نظام كتابة يخصص رمزًا واحدًا لكل مقطع صوتي بدلًا من كل صوت منفرد — كالكانا اليابانية والشيروكي. يناسب اللغات ذات البنى المقطعية البسيطة.",
+    "description": "Plain-language definition of the linguistic term \"syllabary\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabary.mt_relevance": {
+    "message": "تُغيّر الأنظمة المقطعية دقة تقسيم النص: إذ يرى المحلل اللغوي مقاطع صوتية لا أحرفًا ساكنة وحركات منفصلة.",
+    "description": "One-sentence note on why \"syllabary\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.term": {
+    "message": "الكتابة المقطعية",
+    "description": "Glossary heading: the linguistic term \"syllabics\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.syllabics.plain": {
+    "message": "عائلة الخطوط المستخدمة للغات الكري والإينوكتيتوت والأوجيبوي وغيرها من لغات السكان الأصليين في كندا، حيث يُشفّر كل حرف صوتًا ساكنًا وتُشفّر الحركةَ طريقةُ دوران الحرف. اخترعت في أربعينيات القرن التاسع عشر ولا تزال في استخدام مجتمعي فعّال.",
+    "description": "Plain-language definition of the linguistic term \"syllabics\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.syllabics.mt_relevance": {
+    "message": "توجد كثير من نصوص الكري والإينوكتيتوت بكلا الخطين: syllabics والكتابة الرومانية، لذا تحتاج مسارات الترجمة الآلية إلى تحويل موثوق بين الخطين.",
+    "description": "One-sentence note on why \"syllabics\" matters for machine-translation quality."
+  },
+  "glossary.syllabics.example": {
+    "message": "Plains Cree (crk): رمز الكتابة هو Cans (Canadian Aboriginal Syllabics) مع محوّل للكتابة الرومانية.",
+    "description": "Concrete example illustrating \"syllabics\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.romanization.term": {
+    "message": "ترومنة",
+    "description": "Glossary heading: the linguistic term \"romanization\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.romanization.plain": {
+    "message": "كتابة لغة ما بالحروف اللاتينية بدلًا من خطها الأصلي، سواء بالنقل الحرفي أو بالنقل الصوتي. وكثيرًا ما تتعدد معايير الترومنة المتنافسة للغة الواحدة.",
+    "description": "Plain-language definition of the linguistic term \"romanization\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.romanization.mt_relevance": {
+    "message": "يتعامل نموذج الترجمة الآلية مع النص المرومن والنص بالخط الأصلي كلغتين مختلفتين ما لم يُجرَ تحويل صريح بينهما.",
+    "description": "One-sentence note on why \"romanization\" matters for machine-translation quality."
+  },
+  "glossary.diacritic.term": {
+    "message": "علامة تشكيل",
+    "description": "Glossary heading: the linguistic term \"diacritic\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diacritic.plain": {
+    "message": "علامات تُضاف إلى الحروف — كالتشكيل والتيلدة والنقاط والمدّة — للدلالة على النبر أو الطول أو الغنّة أو أصوات مختلفة. تعتمد بعض الأنظمة الإملائية عليها اعتمادًا كليًا، غير أن المستخدمين كثيرًا ما يحذفونها عند الكتابة غير الرسمية.",
+    "description": "Plain-language definition of the linguistic term \"diacritic\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diacritic.mt_relevance": {
+    "message": "حذف علامات التشكيل مشكلة جودة بيانات شائعة: إذ يدمج بين كلمات متمايزة ويُحدث تعارضًا مع بيانات التدريب النظيفة.",
+    "description": "One-sentence note on why \"diacritic\" matters for machine-translation quality."
+  },
+  "glossary.writing-direction.term": {
+    "message": "اتجاه الكتابة",
+    "description": "Glossary heading: the linguistic term \"writing direction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.writing-direction.plain": {
+    "message": "الاتجاه الذي يسير فيه الخط: من اليسار إلى اليمين (اللاتيني)، أو من اليمين إلى اليسار (العربي والعبري)، أو من الأعلى إلى الأسفل تاريخيًا (المنغولي والصيني الكلاسيكي). يستلزم النص متعدد الاتجاهات معالجة خاصة.",
+    "description": "Plain-language definition of the linguistic term \"writing direction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.writing-direction.mt_relevance": {
+    "message": "يُعطّل النص ثنائي الاتجاه (RTL/Bidi) معالجة السلاسل النصية البسيطة، إذ تتغير مواضع الأرقام وعلامات الترقيم والكلمات اللاتينية المضمّنة بصورة غير متوقعة.",
+    "description": "One-sentence note on why \"writing direction\" matters for machine-translation quality."
+  },
+  "glossary.register.term": {
+    "message": "مستوى اللغة",
+    "description": "Glossary heading: the linguistic term \"register\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.register.plain": {
+    "message": "نمط لغوي مرتبط بالسياق الاجتماعي — رسمي أو غير رسمي أو احتفالي أو تقني. تُقنّن بعض اللغات مستوياتها نحويًا؛ فالجاوية مثلًا تمتلك مفردات متمايزة لدرجات مختلفة من التأدب.",
+    "description": "Plain-language definition of the linguistic term \"register\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.register.mt_relevance": {
+    "message": "يجب أن تحافظ الترجمة الآلية على مستوى لغوي متسق؛ إذ يبدو الخلط بين الأسلوب الرسمي والعامي في النص الواحد ركيكًا أو مسيئًا.",
+    "description": "One-sentence note on why \"register\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.term": {
+    "message": "التمييز T-V",
+    "description": "Glossary heading: the linguistic term \"T-V distinction\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.t-v-distinction.plain": {
+    "message": "وجود كلمتين أو أكثر لضمير المخاطب تبعًا للمسافة الاجتماعية، كـ tu/vous في الفرنسية أو du/Sie في الألمانية. يعكس الاختيار الاحترامَ أو الألفة أو التراتبية، ويصعب التراجع عنه بعد اتخاذه.",
+    "description": "Plain-language definition of the linguistic term \"T-V distinction\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.t-v-distinction.mt_relevance": {
+    "message": "لا يوفر ضمير المخاطب \"you\" في الإنجليزية أي دلالة على درجة الرسمية، لذا يتعين على الترجمة الآلية استنتاج المستوى المناسب من السياق — وهو مصدر شائع للأخطاء ذات الأثر الاجتماعي الواضح.",
+    "description": "One-sentence note on why \"T-V distinction\" matters for machine-translation quality."
+  },
+  "glossary.t-v-distinction.example": {
+    "message": "الفرنسية (fra): تُميّز بيانات رسمية البطاقة بين سياقات استخدام tu/vous.",
+    "description": "Concrete example illustrating \"T-V distinction\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.honorific.term": {
+    "message": "صيغة التبجيل",
+    "description": "Glossary heading: the linguistic term \"honorific\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.honorific.plain": {
+    "message": "أشكال نحوية أو معجمية تُعبّر عن الاحترام تجاه المخاطَب أو الشخص المتحدَّث عنه — كـ keigo في اليابانية، ومستويات الخطاب في الكورية، ومفردات احترام الأقارب الخاصة. وهي في الغالب إلزامية لا اختيارية.",
+    "description": "Plain-language definition of the linguistic term \"honorific\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.honorific.mt_relevance": {
+    "message": "يستلزم اختيار صيغة التبجيل معرفةً اجتماعية — كمن يعلو مرتبةً على من — نادراً ما يُصرَّح بها في النص المصدر.",
+    "description": "One-sentence note on why \"honorific\" matters for machine-translation quality."
+  },
+  "glossary.politeness.term": {
+    "message": "التأدب اللغوي",
+    "description": "Glossary heading: the linguistic term \"politeness\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.politeness.plain": {
+    "message": "التعبير اللغوي عن العلاقات الاجتماعية من خلال اختيار الضمائر، ونهايات الأفعال، والأدوات، أو المفردات. تتفاوت اللغات بين غياب التأدب النحوي وأنظمة متعددة المستويات بالغة التعقيد.",
+    "description": "Plain-language definition of the linguistic term \"politeness\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.politeness.mt_relevance": {
+    "message": "قد تكون الترجمة دقيقةً معجمياً وتفشل مع ذلك باختيار مستوى تأدب خاطئ لا يناسب السياق.",
+    "description": "One-sentence note on why \"politeness\" matters for machine-translation quality."
+  },
+  "glossary.diglossia.term": {
+    "message": "الازدواجية اللغوية",
+    "description": "Glossary heading: the linguistic term \"diglossia\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.diglossia.plain": {
+    "message": "وضع مستقر تستخدم فيه مجموعة لغوية نوعَين من اللغة لأغراض مختلفة — نوع «رفيع» للكتابة والخطاب الرسمي (كالعربية الفصحى المعاصرة)، ونوع «دارج» للحياة اليومية (كاللهجات المحكية). يتنقل المتحدثون بينهما بحسب السياق لا بحسب الاختيار الحر.",
+    "description": "Plain-language definition of the linguistic term \"diglossia\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.diglossia.mt_relevance": {
+    "message": "تنحاز بيانات التدريب نحو النوع الرفيع المكتوب، فيُخفق الترجمة الآلية في التعامل مع النوع المحكي الذي يستخدمه الناس فعلياً.",
+    "description": "One-sentence note on why \"diglossia\" matters for machine-translation quality."
+  },
+  "glossary.code-switching.term": {
+    "message": "التحويل الرمزي",
+    "description": "Glossary heading: the linguistic term \"code-switching\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.code-switching.plain": {
+    "message": "التنقل بين لغتين أو أكثر داخل محادثة واحدة أو جملة واحدة، كما يفعل المتحدثون ثنائيو اللغة بصورة طبيعية. وهو يتبع أنماطاً نحوية محددة لا يجري عشوائياً.",
+    "description": "Plain-language definition of the linguistic term \"code-switching\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.code-switching.mt_relevance": {
+    "message": "يُربك الإدخال المختلط بين لغتين عملية التعرف على اللغة وينتج مخرجات مشوهة ما لم يتعامل النظام مع كلا الرمزين.",
+    "description": "One-sentence note on why \"code-switching\" matters for machine-translation quality."
+  },
+  "glossary.creole.term": {
+    "message": "اللغة الكريولية",
+    "description": "Glossary heading: the linguistic term \"creole\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.creole.plain": {
+    "message": "لغة طبيعية كاملة نشأت من احتكاك لغوي مكثف، تستمد معظم مفرداتها عادةً من لغة واحدة (المُعطية المعجمية) بينما تطوّر قواعدها النحوية الخاصة. ومن أمثلتها: الكريولية الهايتية، وTok Pisin، وPapiamento.",
+    "description": "Plain-language definition of the linguistic term \"creole\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.creole.mt_relevance": {
+    "message": "تبدو اللغات الكريولية في الكتابة مشابهةً للغتها المُعطية المعجمية بصورة مضللة، فتُترجمها أنظمة الترجمة الآلية المدرَّبة على تلك اللغة ترجمةً خاطئة بشكل منهجي.",
+    "description": "One-sentence note on why \"creole\" matters for machine-translation quality."
+  },
+  "glossary.pidgin.term": {
+    "message": "البيدجين",
+    "description": "Glossary heading: the linguistic term \"pidgin\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.pidgin.plain": {
+    "message": "لغة تواصل مبسّطة لا متحدثين أصليين لها، نشأت لأغراض التجارة أو العمل بين مجموعات لا تجمعها لغة مشتركة. وحين ينشأ أطفال يتحدثونها لغةً أولى، تتحول إلى لغة كريولية.",
+    "description": "Plain-language definition of the linguistic term \"pidgin\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.pidgin.mt_relevance": {
+    "message": "تتسم لغات البيدجين بتباين عالٍ وشُح في البيانات النصية، مما يجعل الترجمة الآلية المتسقة أمراً عسيراً بشكل خاص.",
+    "description": "One-sentence note on why \"pidgin\" matters for machine-translation quality."
+  },
+  "glossary.lexifier.term": {
+    "message": "اللغة المُعطية المعجمية",
+    "description": "Glossary heading: the linguistic term \"lexifier\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.lexifier.plain": {
+    "message": "اللغة التي أمدّت الكريولية أو البيدجين بمعظم مفرداتها — كالإنجليزية لـ Jamaican Patois، والفرنسية للكريولية الهايتية، والبرتغالية لـ Papiamento. غير أن القواعد النحوية تظل خاصة باللغة الكريولية ذاتها.",
+    "description": "Plain-language definition of the linguistic term \"lexifier\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.lexifier.mt_relevance": {
+    "message": "يُخفي التشابه المعجمي مع اللغة المُعطية فوارق نحوية عميقة لا ينبغي للترجمة الآلية أن تتجاهلها.",
+    "description": "One-sentence note on why \"lexifier\" matters for machine-translation quality."
+  },
+  "glossary.loanword.term": {
+    "message": "الكلمة الدخيلة",
+    "description": "Glossary heading: the linguistic term \"loanword\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.loanword.plain": {
+    "message": "كلمة مأخوذة من لغة أخرى ومُكيَّفة وفق الأنماط الصوتية المحلية، كـ «sushi» في الإنجليزية أو «le weekend» في الفرنسية. أما الترجمة الحرفية (calque) فتستعير البنية بدلاً من ذلك بترجمة الأجزاء قطعةً قطعة، كـ «skyscraper» ← «gratte-ciel» بالفرنسية.",
+    "description": "Plain-language definition of the linguistic term \"loanword\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.loanword.mt_relevance": {
+    "message": "يُعدّ البتّ في الإبقاء على الكلمة الدخيلة أو تكييفها أو ترجمتها خياراً متكرراً في التعريب، لا سيما في المصطلحات التقنية.",
+    "description": "One-sentence note on why \"loanword\" matters for machine-translation quality."
+  },
+  "glossary.macrolanguage.term": {
+    "message": "لغة كبرى (Macrolanguage)",
+    "description": "Glossary heading: the linguistic term \"macrolanguage\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.macrolanguage.plain": {
+    "message": "فئة تصنيفية في ISO 639-3: رمز واحد (مثل 'ara' للعربية أو 'zho' للصينية) يغطي عدة لغات متمايزة تُعامَل كوحدة واحدة لأسباب تاريخية أو سياسية. ولكل لغة عضو رمزها الخاص أيضاً.",
+    "description": "Plain-language definition of the linguistic term \"macrolanguage\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.macrolanguage.mt_relevance": {
+    "message": "البيانات المُصنَّفة برمز لغة كبرى تخلط بين أصناف غير مفهومة بعضها لبعض، مما يُلوِّث بيانات التدريب والتقييم.",
+    "description": "One-sentence note on why \"macrolanguage\" matters for machine-translation quality."
+  },
+  "glossary.endonym.term": {
+    "message": "الاسم الذاتي (Endonym)",
+    "description": "Glossary heading: the linguistic term \"endonym\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.endonym.plain": {
+    "message": "الاسم الذي تُطلقه مجموعة لغوية على لغتها بنفسها (الاسم الذاتي أو الداخلي)، في مقابل الاسم الذي يستخدمه الآخرون (الاسم الخارجي). فـ'Deutsch' هو الاسم الذاتي لما يُسمى 'German' بالإنجليزية؛ وكثير من المجتمعات الأصلية تُفضِّل أسماءها الذاتية.",
+    "description": "Plain-language definition of the linguistic term \"endonym\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.endonym.mt_relevance": {
+    "message": "التباين في التسميات بين قواعد البيانات يُسبِّب أخطاء في التعرف على اللغة ودمج البيانات في مسارات الترجمة الآلية.",
+    "description": "One-sentence note on why \"endonym\" matters for machine-translation quality."
+  },
+  "glossary.language-isolate.term": {
+    "message": "لغة معزولة (Language Isolate)",
+    "description": "Glossary heading: the linguistic term \"language isolate\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-isolate.plain": {
+    "message": "لغة لا تنتمي إلى أي أسرة لغوية معروفة — فهي أسرة قائمة بذاتها. ومن أبرز الأمثلة: الباسكية، والأينوية، والبروشسكية؛ واللغات المعزولة أكثر شيوعاً في العالم مما يُتصوَّر.",
+    "description": "Plain-language definition of the linguistic term \"language isolate\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-isolate.mt_relevance": {
+    "message": "لا يمكن للغات المعزولة الاستفادة من إشارات التدريب المستمدة من لغات قريبة، مما يُلغي استراتيجية التعلم بالنقل الشائعة في الترجمة الآلية للغات قليلة الموارد.",
+    "description": "One-sentence note on why \"language isolate\" matters for machine-translation quality."
+  },
+  "glossary.language-vitality.term": {
+    "message": "حيوية اللغة (Language Vitality)",
+    "description": "Glossary heading: the linguistic term \"language vitality\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.language-vitality.plain": {
+    "message": "مدى انتقال اللغة إلى الأجيال الجديدة واستخدامها في مختلف مجالات الحياة. تتدرج مقاييس مثل EGIDS وتصنيف Glottolog للتهديد من 'نشطة' مروراً بـ'مهددة' و'محتضرة' وصولاً إلى 'خامدة' (لا متحدثون طلاقة، لكن يمكن إحياؤها).",
+    "description": "Plain-language definition of the linguistic term \"language vitality\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.language-vitality.mt_relevance": {
+    "message": "تُنبئ حيوية اللغة بمدى توافر البيانات، وفي سياق الترجمة الآلية المجتمعية، بالدور الذي ينبغي أن تؤديه التقنية (مثل دعم الإحياء اللغوي لا الإحلال).",
+    "description": "One-sentence note on why \"language vitality\" matters for machine-translation quality."
+  },
+  "glossary.moribund.term": {
+    "message": "محتضرة (Moribund)",
+    "description": "Glossary heading: the linguistic term \"moribund\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.moribund.plain": {
+    "message": "وضع حيوي يعني أن اللغة لم تعد تُكتسَب من قِبَل الأطفال؛ إذ يقتصر المتحدثون الطلاقة على كبار السن. وبدون تدخل، تصبح اللغة خامدة في غضون جيل واحد.",
+    "description": "Plain-language definition of the linguistic term \"moribund\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.moribund.mt_relevance": {
+    "message": "اللغات المحتضرة لديها قاعدة متحدثين متقلصة للتحقق من مخرجات الترجمة الآلية، مما يرفع من حجم المخاطرة في كل قرار يتعلق بالبيانات.",
+    "description": "One-sentence note on why \"moribund\" matters for machine-translation quality."
+  },
+  "glossary.glottocode.term": {
+    "message": "Glottocode",
+    "description": "Glossary heading: the linguistic term \"glottocode\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.glottocode.plain": {
+    "message": "معرِّف فريد من قاعدة بيانات Glottolog (مثل stan1293 للإنجليزية) يشمل اللغات واللهجات والأسر اللغوية. وهو أكثر دقةً من رموز ISO ويُحدَّث باستمرار من قِبَل اللغويين.",
+    "description": "Plain-language definition of the linguistic term \"glottocode\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.glottocode.mt_relevance": {
+    "message": "تتيح رموز Glottocode ربط قواعد البيانات الطباعية بدقة في مسارات المعالجة، حتى للأصناف اللغوية التي لا تملك رموز ISO.",
+    "description": "One-sentence note on why \"glottocode\" matters for machine-translation quality."
+  },
+  "glossary.iso-639-3.term": {
+    "message": "ISO 639-3",
+    "description": "Glossary heading: the linguistic term \"ISO 639-3\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.iso-639-3.plain": {
+    "message": "المعيار الدولي للرموز الثلاثية الأحرف الخاصة بلغات العالم (eng، crk، haw)، تُشرف عليه SIL. يهدف إلى تغطية كل لغة معروفة، حية كانت أم منقرضة، برمز واحد لكل منها.",
+    "description": "Plain-language definition of the linguistic term \"ISO 639-3\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.iso-639-3.mt_relevance": {
+    "message": "رموز ISO 639-3 هي مفاتيح الربط في معالجة اللغات الطبيعية متعددة اللغات — فالرموز الخاطئة أو الغامضة تُفسد مجموعات البيانات بصمت.",
+    "description": "One-sentence note on why \"ISO 639-3\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.term": {
+    "message": "عشريني قاعدته عشرون (Vigesimal)",
+    "description": "Glossary heading: the linguistic term \"vigesimal\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.vigesimal.plain": {
+    "message": "نظام عدّ قاعدته عشرون لا عشرة. تعتمد هذا النظام لغات مثل المايا، واليوروبا، والناهواتل، والدنماركية (جزئياً) — إذ تعني 'ثمانون' حرفياً 'أربعة عشرينات' في الفرنسية (quatre-vingts).",
+    "description": "Plain-language definition of the linguistic term \"vigesimal\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.vigesimal.mt_relevance": {
+    "message": "ترجمة الأعداد بين أنظمة قواعد مختلفة عرضة للأخطاء، والأعداد محتوى بالغ الأهمية.",
+    "description": "One-sentence note on why \"vigesimal\" matters for machine-translation quality."
+  },
+  "glossary.vigesimal.example": {
+    "message": "يظهر هذا المصطلح في البطاقات عبر numeralSystem.baseType من بيانات Numeralbank.",
+    "description": "Concrete example illustrating \"vigesimal\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.kinship-terms.term": {
+    "message": "مصطلحات القرابة",
+    "description": "Glossary heading: the linguistic term \"kinship terms\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.kinship-terms.plain": {
+    "message": "المفردات الخاصة بعلاقات الأسرة، التي تُقسّمها اللغات المختلفة بطرق متباينة جداً — كوجود كلمات منفصلة للأخ الأكبر والأصغر، أو للعم والخال. وتُضمِّن بعض الأنظمة موقع المتكلم نفسه أيضاً.",
+    "description": "Plain-language definition of the linguistic term \"kinship terms\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.kinship-terms.mt_relevance": {
+    "message": "قد لا يكون لكلمة «uncle» أو «cousin» في الإنجليزية مقابل واحد محدد، مما يُجبر أنظمة الترجمة الآلية على الاختيار بين مصطلحات قرابة دقيقة دون توفر المعلومات العائلية اللازمة.",
+    "description": "One-sentence note on why \"kinship terms\" matters for machine-translation quality."
+  },
+  "glossary.chrf.term": {
+    "message": "chrF",
+    "description": "Glossary heading: the linguistic term \"chrF\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.chrf.plain": {
+    "message": "مقياس تلقائي لتقييم الترجمة الآلية يقيس مدى التطابق على مستوى الأحرف بين مخرجات النظام والترجمات المرجعية. ولأنه يعمل على مستوى الأحرف لا الكلمات، فهو أكثر إنصافاً للغات ذات الصرف الغني مقارنةً بالمقاييس القائمة على الكلمات.",
+    "description": "Plain-language definition of the linguistic term \"chrF\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.chrf.mt_relevance": {
+    "message": "يُعدّ chrF المقياس السطحي المفضل للغات الإلصاقية والتركيبية المعقدة التي يتعذر فيها التطابق على مستوى الكلمات.",
+    "description": "One-sentence note on why \"chrF\" matters for machine-translation quality."
+  },
+  "glossary.comet.term": {
+    "message": "COMET",
+    "description": "Glossary heading: the linguistic term \"COMET\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.comet.plain": {
+    "message": "مقياس عصبي لتقييم الترجمة الآلية يستخدم نموذجاً متعدد اللغات مُدرَّباً للتنبؤ بأحكام الجودة البشرية، بدلاً من حساب التطابق السطحي. وتُوسّع متغيرات مثل AfriCOMET نطاق التغطية لتشمل اللغات الأفريقية.",
+    "description": "Plain-language definition of the linguistic term \"COMET\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.comet.mt_relevance": {
+    "message": "يرتبط COMET بأحكام الإنسان ارتباطاً أوثق من المقاييس السطحية، غير أن ذلك يقتصر على اللغات التي تعرّض لها النموذج الأساسي أثناء التدريب.",
+    "description": "One-sentence note on why \"COMET\" matters for machine-translation quality."
+  },
+  "glossary.fst.term": {
+    "message": "FST",
+    "description": "Glossary heading: the linguistic term \"FST\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.fst.plain": {
+    "message": "محوّل ذو حالات منتهية (Finite-State Transducer): نموذج حسابي قائم على القواعد يُعيّن العلاقة بين صيغ الكلمات وتحليلاتها النحوية. وبالنسبة للغات ذات الصرف المعقد، يمكن لأنظمة FST المبنية يدوياً تحليل صيغ الكلمات وتوليدها حتى تلك التي لم تُشاهدها الأنظمة الإحصائية قط.",
+    "description": "Plain-language definition of the linguistic term \"FST\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.fst.mt_relevance": {
+    "message": "توفر أنظمة FST تحليلاً صرفياً موثوقاً والتحقق من الصحة للغات التي تفتقر إلى البيانات الكافية لاستنباط الصرف من النصوص وحدها.",
+    "description": "One-sentence note on why \"FST\" matters for machine-translation quality."
+  },
+  "glossary.fst.example": {
+    "message": "لغة كري السهلية (crk): تستخدم حزمة التقييم مُحققاً دلالياً مبنياً على FST (حقل evalMetrics.lyss-sem في البطاقة).",
+    "description": "Concrete example illustrating \"FST\". Keep the linguistic material under discussion (quoted words, morphemes, endings — in English, Cree, or any other language) exactly as-is; translate only the surrounding prose."
+  },
+  "glossary.treebank.term": {
+    "message": "المدونة الشجرية",
+    "description": "Glossary heading: the linguistic term \"treebank\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.treebank.plain": {
+    "message": "مجموعة من الجمل المُوسَّمة يدوياً بالبنية النحوية (أشجار التحليل). ويُشرف مشروع Universal Dependencies على صيانة treebanks بتنسيق موحد لأكثر من 150 لغة.",
+    "description": "Plain-language definition of the linguistic term \"treebank\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.treebank.mt_relevance": {
+    "message": "يُشير وجود treebank إلى بنية تحتية جادة لمعالجة اللغة الطبيعية ويُتيح التقييم المدرك للبنية النحوية.",
+    "description": "One-sentence note on why \"treebank\" matters for machine-translation quality."
+  },
+  "glossary.parallel-corpus.term": {
+    "message": "المدونة الموازية",
+    "description": "Glossary heading: the linguistic term \"parallel corpus\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.parallel-corpus.plain": {
+    "message": "مجموعة من النصوص مقرونة بترجماتها، مُحاذاةً جملةً بجملة. وتُمثّل المدونات الموازية المادة الخام الأساسية لتدريب أنظمة الترجمة الآلية وتقييمها.",
+    "description": "Plain-language definition of the linguistic term \"parallel corpus\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.parallel-corpus.mt_relevance": {
+    "message": "يُعدّ حجم البيانات الموازية المتاحة ومجالها أقوى مؤشر منفرد على جودة الترجمة الآلية لزوج لغوي معين.",
+    "description": "One-sentence note on why \"parallel corpus\" matters for machine-translation quality."
+  },
+  "glossary.bleu.term": {
+    "message": "BLEU",
+    "description": "Glossary heading: the linguistic term \"BLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.bleu.plain": {
+    "message": "BLEU (Bilingual Evaluation Understudy) يُقيّم الترجمة بحساب عدد n-grams الكلمية المشتركة بينها وبين ترجمة مرجعية واحدة أو أكثر. وهو أقدم مقاييس الترجمة الآلية وأكثرها استشهاداً، غير أنه لمطابقته الكلمات كاملةً يكون قاسياً وغير موثوق للغات ذات الصرف الغني وشحيحة الموارد. كلما ارتفعت القيمة كان أفضل، على مقياس من 0 إلى 100.",
+    "description": "Plain-language definition of the linguistic term \"BLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.bleu.mt_relevance": {
+    "message": "يُورَد BLEU للمقارنة مع الجداول المنشورة، لكنه في اللغات التي يُركّز عليها Champollion يرتبط ارتباطاً ضعيفاً بأحكام الإنسان — اقرأه دائماً إلى جانب chrF++ وCOMET، ولا تعتمد عليه وحده.",
+    "description": "One-sentence note on why \"BLEU\" matters for machine-translation quality."
+  },
+  "glossary.spbleu.term": {
+    "message": "spBLEU",
+    "description": "Glossary heading: the linguistic term \"spBLEU\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.spbleu.plain": {
+    "message": "spBLEU هو BLEU يُحسب بعد تقسيم النص باستخدام مُجزّئ SentencePiece الخاص بـ FLORES-200 — نموذج وحدات فرعية موحد ومشترك عبر 200 لغة. مما يجعل النتائج قابلة للمقارنة عبر الخطوط والأنظمة الكتابية المختلفة حيث لا يصلح BLEU القائم على الكلمات العادية.",
+    "description": "Plain-language definition of the linguistic term \"spBLEU\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.spbleu.mt_relevance": {
+    "message": "spBLEU هو الرقم المرجعي في أدبيات NLLB / FLORES للغات شحيحة الموارد — مفيد للمقارنة بين اللغات، لكنه لا يزال مقياساً سطحياً عاجزاً عن استيعاب المعنى.",
+    "description": "One-sentence note on why \"spBLEU\" matters for machine-translation quality."
+  },
+  "glossary.ter.term": {
+    "message": "TER",
+    "description": "Glossary heading: the linguistic term \"TER\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.ter.plain": {
+    "message": "معدل تحرير الترجمة (TER) يحسب عدد التعديلات — إدراجات وحذف واستبدالات وإزاحات كتل — اللازمة لتحويل مخرجات النظام إلى النص المرجعي، كنسبة مئوية من طول النص المرجعي. على عكس معظم المقاييس، القيمة الأدنى هي الأفضل.",
+    "description": "Plain-language definition of the linguistic term \"TER\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.ter.mt_relevance": {
+    "message": "يُعدّ TER مؤشراً بديهياً على «مقدار ما يحتاج الإنسان إلى تصحيحه»، غير أنه كغيره من المقاييس السطحية يُعاقب الصياغات البديلة الصحيحة والصرف الغني.",
+    "description": "One-sentence note on why \"TER\" matters for machine-translation quality."
+  },
+  "glossary.data-contamination.term": {
+    "message": "تلوث البيانات",
+    "description": "Glossary heading: the linguistic term \"data contamination\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.data-contamination.plain": {
+    "message": "يُقال إن مجموعة اختبار «ملوثة» حين يكون النموذج قد اطّلع على جملها على الأرجح أثناء التدريب — مثلاً لأن المجموعة متاحة للعموم وجرى جمعها على نطاق واسع. لا يمكن لمعيار ملوث أن يُثبت جودة النموذج؛ فقد يكون النموذج يستحضر إجابات حفظها. تعني درجة التلوث «العالية» أن الجمل شُوهدت على الأرجح، فتُعامَل النتيجة حينئذٍ مقارنةً نسبية بين الأنظمة لا ادعاءً مطلقاً بالجودة («نسبي فقط»).",
+    "description": "Plain-language definition of the linguistic term \"data contamination\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.data-contamination.mt_relevance": {
+    "message": "تُدرَّب معظم المعايير العامة على نطاق واسع، لذا يُقيّمها Champollion في مسار «نسبي فقط»، ويحتفظ بالتصنيفات المطلقة لمجموعات الاختبار المغلقة غير المنشورة.",
+    "description": "One-sentence note on why \"data contamination\" matters for machine-translation quality."
+  },
+  "glossary.mt-complexity.term": {
+    "message": "تعقيد الترجمة الآلية",
+    "description": "Glossary heading: the linguistic term \"MT complexity\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.mt-complexity.plain": {
+    "message": "تقدير محسوب بواسطة Champollion على مقياس من 0 إلى 100 لمدى صعوبة ترجمة لغة ما آلياً، يجمع أربعة مؤشرات: تغطية واجهات برمجة الترجمة الآلية التجارية، وتوافر المجموعات الموازية، والمسافة التصنيفية عن اللغات الوفيرة الموارد، وعمق التوثيق اللغوي. القيمة الأعلى تعني صعوبة أكبر. وهو دليل على مستوى الصعوبة لا قياس لمخرجات أي نظام.",
+    "description": "Plain-language definition of the linguistic term \"MT complexity\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.mt-complexity.mt_relevance": {
+    "message": "المؤشر دليل اشتقاقي يساعد على تحديد الأولويات — وليس نتيجة معيارية. جودة الترجمة المقاسة موجودة في لوحة المتصدرين، مفهرسةً حسب (الطريقة، ومجموعة البيانات، والمقياس).",
+    "description": "One-sentence note on why \"MT complexity\" matters for machine-translation quality."
+  },
+  "glossary.held-out-test-set.term": {
+    "message": "مجموعة الاختبار المحجوبة",
+    "description": "Glossary heading: the linguistic term \"held-out test set\". Use the standard equivalent a linguist would write in the target language; keep it short. Keep the English term when it IS the established usage in the target language."
+  },
+  "glossary.held-out-test-set.plain": {
+    "message": "مجموعة من أمثلة الترجمة تُبقى مخفية عن النظام أثناء التطوير ولا تُستخدم إلا لتقييمه. إذا لم يسبق للنظام رؤية هذه الجمل، فإن الدرجة تعكس قدرة حقيقية لا مجرد استحضار محفوظ. أقوى مستوى في Champollion هو مجموعة اختبار «مغلقة» تحتفظ بها مجتمع ما سراً — إذ تُقيَّم الطريقة في مواجهتها دون أن يطّلع أحد على البيانات، بما فيهم نحن.",
+    "description": "Plain-language definition of the linguistic term \"held-out test set\" (shown in glossary tooltips and on the /glossary page)."
+  },
+  "glossary.held-out-test-set.mt_relevance": {
+    "message": "مجموعات الاختبار المحجوبة (ولا سيما المغلقة) هي السبيل الوحيد لتقديم ادعاء مطلق بالجودة؛ أما المجموعات العامة الملوثة فلا تدعم سوى المقارنة النسبية.",
+    "description": "One-sentence note on why \"held-out test set\" matters for machine-translation quality."
+  }
+}

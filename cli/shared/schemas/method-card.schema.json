@@ -1,0 +1,412 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gamedaysuits/champollion/schemas/method-card.schema.json",
+  "title": "Champollion Method Card",
+  "description": "Describes a translation method's architecture, components, and provenance. Embedded in run_cards at publish time and displayed on the leaderboard. Independent of the plugin manifest — a method card describes HOW a method works; a plugin manifest describes HOW TO INSTALL it.",
+  "type": "object",
+
+  "required": ["name", "class", "version"],
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Human-readable method name (e.g., 'FST-Gated Coached Pipeline v7')."
+    },
+    "class": {
+      "type": "string",
+      "enum": [
+        "direct-llm",
+        "coached-llm",
+        "api-translation",
+        "rule-based",
+        "hybrid-pipeline",
+        "human-in-the-loop",
+        "ensemble",
+        "fine-tuned",
+        "dictionary-augmented",
+        "community-reviewed"
+      ],
+      "description": "Primary method class. Determines how the method is categorized on the leaderboard.\n\n- direct-llm: Single LLM call with a system prompt\n- coached-llm: LLM with language-specific coaching data injected into context\n- api-translation: Commercial translation API (Google, DeepL, Microsoft, etc.)\n- rule-based: Finite-state transducers, grammar rules, morphological analyzers\n- hybrid-pipeline: Multi-stage combining 2+ method classes (e.g., LLM + FST validation)\n- human-in-the-loop: Human post-editing or validation in the pipeline\n- ensemble: Multiple models/methods with voting or selection\n- fine-tuned: Fine-tuned or adapted model (LoRA, QLoRA, full fine-tune)\n- dictionary-augmented: Translation augmented with bilingual dictionary lookup\n- community-reviewed: Translation produced by any method then reviewed by community speakers"
+    },
+    "paradigm": {
+      "type": "string",
+      "enum": [
+        "rule-based",
+        "statistical",
+        "neural-nmt",
+        "llm",
+        "hybrid",
+        "human",
+        "unknown"
+      ],
+      "description": "MT paradigm — the algorithmic approach, ORTHOGONAL to `class` and to the dependency class. Makes rule-based vs statistical vs neural vs LLM comparable on the leaderboard regardless of class (e.g. Apertium = rule-based, Google/OPUS-MT = neural-nmt, a raw GPT call = llm, an FST-gated LLM = hybrid). Optional; absent is treated as 'unknown'. Enforced by the harness (config.VALID_PARADIGMS) and recorded as the run_cards.paradigm column on publish."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+",
+      "description": "Semver or major.minor version of this method (e.g., '7.2', '1.0.0')."
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the method's approach, key innovations, and design rationale. This is displayed on the leaderboard detail panel."
+    },
+    "author": {
+      "type": "string",
+      "description": "Who developed and tested this method. May be a person, team, or organization."
+    },
+    "contact": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email for questions about this method."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for the method's documentation, paper, or repository."
+    },
+
+    "target_languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "CLDR locale codes this method was designed and validated for. A method might generalize beyond these, but these are the languages with explicit testing."
+    },
+    "language_agnostic": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, the method makes no language-specific assumptions. Most LLM-based and API methods are language-agnostic. FST-based and coached methods are typically language-specific."
+    },
+
+    "pipeline": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pipelineStage" },
+      "description": "Ordered list of processing stages. For single-stage methods, this is a one-element array. For hybrid pipelines, each stage describes one component."
+    },
+
+    "model": {
+      "$ref": "#/$defs/modelSpec",
+      "description": "Primary model used. For ensemble methods, use the 'models' array instead."
+    },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/modelSpec" },
+      "description": "All models used in ensemble or multi-stage methods."
+    },
+
+    "tools_used": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of tools, libraries, APIs, or resources used (e.g., 'GiellaLT FST', 'sacrebleu', 'itwêwina dictionary', 'Google Translate API'). Displayed as tags on the leaderboard."
+    },
+    "tools_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the LLM was given access to tool-calling (function calling) during translation."
+    },
+
+    "coaching": {
+      "$ref": "#/$defs/coachingSpec",
+      "description": "Coaching data configuration. Only applicable for coached-llm and hybrid-pipeline methods."
+    },
+
+    "fst": {
+      "$ref": "#/$defs/fstSpec",
+      "description": "Finite-state transducer configuration. Only applicable for rule-based and hybrid-pipeline methods."
+    },
+
+    "post_processing": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/postProcessingStep" },
+      "description": "Post-processing steps applied after translation (e.g., script conversion, morphological repair, formatting normalization)."
+    },
+
+    "quality_control": {
+      "$ref": "#/$defs/qualityControlSpec",
+      "description": "Quality control mechanisms used in the method."
+    },
+
+    "data_sovereignty": {
+      "$ref": "#/$defs/dataSovereigntySpec",
+      "description": "Data sovereignty and ethical considerations. Especially important for Indigenous and endangered language methods."
+    },
+
+    "dependency_class": {
+      "type": "string",
+      "enum": ["S", "O", "A1", "A2", "X"],
+      "description": "Effective dependency class — the most restrictive class among the method's declared dependencies (order S < O < A1 < A2 < X).\n\n- S: self-contained — all code/data/weights ship in the method directory under licenses permitting redistribution and community transfer\n- O: open external — externally hosted open-licensed artifacts (incl. copyleft), pinned and mirrored into the submission\n- A1: substitutable LLM inference at runtime, via the sandbox LLM gateway; the model is interchangeable configuration\n- A2: non-substitutable external data/service API (e.g., an API serving unlicensed proprietary content); flagged 'external dependency' on the leaderboard, not prize-eligible until rights holder permissions exist\n- X: bundles content the submitter has no right to include; inadmissible\n\nDrives sandbox runnability and prize eligibility. Canonical definitions: arena Method Interface spec, 'Method Validity and Dependency Classes'."
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/dependencySpec" },
+      "description": "Dependency manifest: every external artifact or service the method requires at install or runtime, with license and access mode. The harness derives the effective dependency_class from this list; a mismatch with the declared dependency_class is a validation error. An empty array is an affirmative declaration of Class S."
+    },
+    "open_source": {
+      "type": "boolean",
+      "description": "Whether the method's code, prompts, and coaching data are publicly available."
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier or license description (e.g., 'MIT', 'CC-BY-NC-4.0', 'community-controlled')."
+    },
+    "reproducibility": {
+      "type": "string",
+      "enum": ["full", "partial", "non-reproducible"],
+      "description": "How reproducible this method is.\n\n- full: Deterministic with fixed random seed, same code produces same output\n- partial: Same approach but LLM non-determinism means outputs vary\n- non-reproducible: Requires specific hardware, proprietary data, or human intervention"
+    },
+
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Known limitations, failure modes, or caveats (e.g., 'Struggles with long-distance morphological agreement', 'No support for mixed-script input')."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-form notes from the method author."
+    }
+  },
+
+  "additionalProperties": false,
+
+  "$defs": {
+    "pipelineStage": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Stage name (e.g., 'initial-translation', 'fst-validation', 'coached-repair')."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["llm", "api", "fst", "dictionary", "post-processor", "validator", "human-review", "ensemble-selector"],
+          "description": "Component type for this stage."
+        },
+        "description": {
+          "type": "string",
+          "description": "What this stage does."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model used in this stage (if applicable)."
+        },
+        "fallback": {
+          "type": "string",
+          "description": "What happens if this stage fails (e.g., 'pass-through', 'retry-with-different-model', 'reject')."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "modelSpec": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "OpenRouter model slug or equivalent identifier (e.g., 'google/gemini-2.5-flash', 'anthropic/claude-sonnet-4')."
+        },
+        "provider": {
+          "type": "string",
+          "description": "Model provider (e.g., 'openrouter', 'openai', 'anthropic', 'google', 'local')."
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Sampling temperature used."
+        },
+        "context_window": {
+          "type": "integer",
+          "description": "Effective context window size used (may be smaller than model max)."
+        },
+        "fine_tuned": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether this is a fine-tuned variant."
+        },
+        "fine_tune_details": {
+          "type": "string",
+          "description": "Details about fine-tuning: base model, dataset size, technique (LoRA, QLoRA, full)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "coachingSpec": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["in-context", "few-shot", "system-prompt", "rag", "fine-tune-data"],
+          "description": "How coaching data is injected into the translation process."
+        },
+        "sources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Where coaching data comes from (e.g., 'community elders', 'published grammars', 'morphological paradigms')."
+        },
+        "example_count": {
+          "type": "integer",
+          "description": "Number of translation examples in the coaching data."
+        },
+        "includes_grammar": {
+          "type": "boolean",
+          "description": "Whether coaching data includes explicit grammar rules or paradigm tables."
+        },
+        "includes_glossary": {
+          "type": "boolean",
+          "description": "Whether coaching data includes a bilingual glossary."
+        },
+        "community_approved": {
+          "type": "boolean",
+          "description": "Whether the coaching data has been reviewed and approved by community language authorities."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "fstSpec": {
+      "type": "object",
+      "properties": {
+        "analyzer": {
+          "type": "string",
+          "description": "FST analyzer identifier (e.g., 'giellalt/lang-crk', 'apertium-crk')."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version or commit of the FST analyzer."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["validator", "generator", "gate", "post-processor"],
+          "description": "How the FST is used in the pipeline.\n\n- validator: Checks morphological validity of output (accept/reject)\n- generator: Generates morphologically correct forms\n- gate: Blocks invalid output and triggers retry\n- post-processor: Repairs morphological errors in output"
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Estimated lexical coverage of the FST analyzer (e.g., '~85% of everyday vocabulary')."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "postProcessingStep": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Step name (e.g., 'syllabics-conversion', 'placeholder-restoration', 'whitespace-normalization')."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["script-conversion", "morphological-repair", "format-normalization", "variable-restoration", "custom"],
+          "description": "Step category."
+        },
+        "description": {
+          "type": "string",
+          "description": "What this step does."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "qualityControlSpec": {
+      "type": "object",
+      "properties": {
+        "retries_on_failure": {
+          "type": "boolean",
+          "description": "Whether the method retries failed translations with different parameters."
+        },
+        "max_retries": {
+          "type": "integer",
+          "description": "Maximum number of retries per entry."
+        },
+        "validation_layers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Validation checks applied (e.g., 'script-check', 'length-ratio', 'placeholder-integrity', 'fst-morphology', 'source-echo-detection')."
+        },
+        "fallback_strategy": {
+          "type": "string",
+          "description": "What happens when all retries fail (e.g., 'return-best-attempt', 'return-empty', 'flag-for-review')."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "dependencySpec": {
+      "type": "object",
+      "required": ["id", "kind", "license", "access", "redistributable", "transferable"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable identifier for the dependency (e.g., 'giellalt-lang-crk-fst', 'llm-inference')."
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["data", "model", "software", "service"],
+          "description": "What the dependency is: a dataset/dictionary (data), model weights or hosted inference (model), a library/tool (software), or a remote API (service)."
+        },
+        "license": {
+          "type": "string",
+          "description": "SPDX license identifier, 'proprietary', or 'none'. 'none' means no public license exists — treated as all-rights-reserved."
+        },
+        "access": {
+          "type": "string",
+          "enum": ["bundled", "mirrored", "gateway", "external-api"],
+          "description": "How the method obtains the dependency.\n\n- bundled: ships inside the method directory\n- mirrored: fetched at install time from an external host, pinned, and vendored into the submission\n- gateway: runtime LLM inference routed through the sandbox evaluation gateway\n- external-api: any other runtime network call"
+        },
+        "source": {
+          "type": "string",
+          "description": "Canonical URL or 'provider:slug' identifier for the artifact or endpoint."
+        },
+        "pin": {
+          "type": "string",
+          "description": "Version, commit, or content hash pinning the exact artifact. Required for access mode 'mirrored'."
+        },
+        "substitutable": {
+          "type": "boolean",
+          "description": "For 'gateway'/'external-api' access: whether any compatible endpoint can serve this dependency (true distinguishes Class A1 from A2). A method depending on provider-side state (provider-hosted fine-tunes, file stores) is not substitutable."
+        },
+        "redistributable": {
+          "type": "boolean",
+          "description": "Whether the license permits redistributing the artifact (e.g., mirroring it into a sandbox submission)."
+        },
+        "transferable": {
+          "type": "boolean",
+          "description": "Whether the artifact, or rights sufficient for community use/modification/redeployment, can convey to a language community's governance organization under prize transfer terms."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-form context (e.g., rights-holder status, pending permission asks)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "dataSovereigntySpec": {
+      "type": "object",
+      "properties": {
+        "principles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["community-ownership-control", "CARE", "maori-data-sovereignty", "UNDRIP", "other"]
+          },
+          "description": "Data sovereignty frameworks this method respects."
+        },
+        "community_consent": {
+          "type": "boolean",
+          "description": "Whether the relevant language community has consented to this method's use of their language data."
+        },
+        "data_stays_local": {
+          "type": "boolean",
+          "description": "Whether all language-specific data remains on-premise (not sent to cloud APIs)."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional sovereignty context."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

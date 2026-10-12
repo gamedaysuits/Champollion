@@ -1,0 +1,69 @@
+{
+  "code": "genus-slavic",
+  "extends": "family-indo-european",
+  "name": "Slavic Languages",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "T-V",
+    "description": "All major Slavic languages have a T-V pronominal distinction: Russian ты/вы, Polish ty/pan/pani, Czech ty/vy, Serbian ti/vi, etc. Polish is particularly complex, using third-person pan/pani forms alongside second-person vy. Formality also interacts with verb forms and, in languages with case, the vocative case for address.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "All Slavic languages have a three-gender system: masculine, feminine, and neuter. Gender triggers agreement on adjectives, verbs (in past tense), pronouns, and numerals. Some Slavic languages further subdivide masculine into animate and inanimate (e.g., Polish, Czech, Russian in accusative). Gender assignment is partly morphological (word ending) and partly arbitrary."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "few",
+        "many",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "aspectualPairs": "Slavic verbal aspect (perfective vs. imperfective) is the single most challenging feature for MT. Nearly every verb exists as an aspectual pair — the imperfective form denotes ongoing/habitual/repeated action, the perfective form denotes completed/bounded action. English does not grammaticalize this distinction the same way. Choosing the wrong aspect changes meaning fundamentally.",
+    "complexCaseSystems": "Most Slavic languages have 6–7 cases (nominative, accusative, genitive, dative, instrumental, locative, and vocative in some). Case endings interact with gender, number, and animacy. Nouns, adjectives, pronouns, and numerals all decline. Getting case wrong is the most visible translation error.",
+    "motionVerbs": "Slavic languages distinguish determinate (one-directional, in-progress) from indeterminate (habitual, multidirectional) motion verbs — e.g., Russian идти/ходить ('go on foot' determinate/indeterminate). Prefixed perfective motion verbs add further complexity. English 'go' maps to multiple distinct Slavic verbs.",
+    "wordOrderFlexibility": "While basic word order is SVO, Slavic languages have highly flexible pragmatic word order. Topic/focus structure determines word position — new information typically appears sentence-finally. Translation must respect information structure, not just syntactic slots.",
+    "verbsOfMotion": "The system of motion verbs with prefixes creates a vast network of spatial/aspectual meanings. Each directional prefix (в-, вы-, при-, у-, пере-, etc.) modifies both direction and aspect. This system has no equivalent in non-Slavic languages.",
+    "numericAgreement": "Slavic numeral agreement is notoriously complex. In Russian: 1 + nominative singular, 2–4 + genitive singular, 5–20 + genitive plural, 21 + nominative singular again. Polish and Czech have different but equally complex patterns. CLDR plural categories (one/few/many/other) capture this partially."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Slavic",
+    "genusGlottocode": "slav1255",
+    "ancestry": [
+      "Indo-European",
+      "Balto-Slavic",
+      "Slavic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Slavic languages (Russian, Ukrainian, Polish, Czech, Serbian, Croatian, Bulgarian, etc.). Script is null because the genus splits between Cyrillic (Russian, Ukrainian, Bulgarian, Serbian, Macedonian) and Latin (Polish, Czech, Slovak, Croatian, Slovenian). Serbian uses both. All share the aspectual system, case system, and three-gender agreement.",
+  "regions": [
+    {
+      "country": "Eastern and Central Europe (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Russia, Ukraine, Poland, Czech Republic, Slovakia, Balkans (Serbia, Croatia, Bulgaria, etc.), Belarus",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

@@ -1,0 +1,1369 @@
+{
+  "$schema": "./schemas/card-field-spec.schema.json",
+  "version": 1,
+  "_doc": {
+    "what": "The declarative definition of what a language card IS. One entry per card field: what it means, which facts feed it, how those facts become a value, and what to do when they disagree or are absent.",
+    "why": "This knowledge used to be scattered across 93 scripts that read cards and wrote them back, each free to encode its own idea of a field. Nothing could answer 'what is supposed to be on a card' except by reading all of them, and ~52 skipped any field already populated, so a wrong value could never be corrected by re-running. Putting it in one file is what lets ONE program build every card, and lets a reviewer check the definition without reading the builder.",
+    "rules": [
+      "A field with no entry here is not projected. Silence is a decision to be made, not a default to inherit.",
+      "`sources` is a PRIORITY ORDER, not a set. The first source that asserts wins for `direct` fields; the rest are still recorded in provenance so a disagreement stays visible.",
+      "`absence` says what a card shows when every source was consulted and none asserted. `omit` leaves the field off entirely — which is the honest representation of 'we do not know', and the opposite of what `orthographicStatus: \"unwritten\"` did to 1,318 languages.",
+      "Nothing here may name a MEASURED SCORE of method output. chrF, BLEU, COMET, FST acceptance rate are run results keyed by (method, dataset, metric) and belong on the leaderboard. That is the card-boundary invariant, enforced by lint rule R3."
+    ],
+    "projectionRules": {
+      "direct": "one value from the highest-priority source that asserts it",
+      "list": "every variant, ordered by the variant key, de-duplicated",
+      "object": "compose named sub-fields, each resolved independently; the object is omitted if every sub-field is absent",
+      "attributed": "every source's value, each carrying its own attribution — for claims that legitimately disagree"
+    }
+  },
+  "fields": {
+    "code": {
+      "meaning": "The primary key of the card: an ISO 639-3 code where one exists, otherwise a Glottolog glottocode.",
+      "rule": "identity",
+      "required": true
+    },
+    "name": {
+      "meaning": "The language's English name, as each registry gives it.",
+      "rule": "attributed",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "name"
+        },
+        {
+          "domain": "identity",
+          "property": "glottologName"
+        },
+        {
+          "domain": "identity",
+          "property": "linguametaName"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3",
+        "glottolog",
+        "linguameta"
+      ],
+      "absence": "omit",
+      "note": "Was a `direct` field with a source PRIORITY, which silently picked ISO's name and discarded Glottolog's and LinguaMeta's — the losing value never appeared anywhere. The registries disagree more often than one would hope, and a name disagreement is worth seeing. `consensus` carries the name when they agree, which is the common case."
+    },
+    "alternateNames": {
+      "meaning": "Other names ISO 639-3 records for this code, excluding the reference name.",
+      "rule": "list",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "alternateName"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit"
+    },
+    "iso639_3": {
+      "meaning": "ISO 639-3 code.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "iso639_3"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit"
+    },
+    "iso639_1": {
+      "meaning": "ISO 639-1 two-letter code, where the registry assigns one.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "iso639_1"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit"
+    },
+    "isoScope": {
+      "meaning": "ISO 639-3's own scope letter: I (individual) or M (macrolanguage). The registry's value verbatim.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "isoScope"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit",
+      "note": "Absent for any languoid ISO has not coded. It was previously asserted as \"I\" on 751 such languoids, which stated a registry classification the registry has never made."
+    },
+    "isoLanguageType": {
+      "meaning": "ISO 639-3's type classification: living, extinct, ancient, historical or constructed.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "isoLanguageType"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit",
+      "note": "A registry classification, NOT a vitality assessment. `vitality` is a separate field with separate, frequently disagreeing sources."
+    },
+    "isoRetired": {
+      "meaning": "True when ISO 639-3 has withdrawn this code.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "isoRetired"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit",
+      "note": "mrd (merged into mgp) and shl (duplicate of mrh) were both withdrawn on 2026-07-15 and both still had cards. Projecting this is what makes that visible instead of silent."
+    },
+    "isoRetiredTo": {
+      "meaning": "The code that replaced a retired one.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "isoRetiredTo"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit"
+    },
+    "macrolanguage": {
+      "meaning": "The macrolanguage code that subsumes this individual language, per ISO 639-3's mapping.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "macrolanguage"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit"
+    },
+    "glottocode": {
+      "meaning": "Glottolog languoid identifier.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "glottocode"
+        }
+      ],
+      "sources": [
+        "glottolog"
+      ],
+      "absence": "omit"
+    },
+    "classification": {
+      "meaning": "Genealogical position, from Glottolog's tree.",
+      "rule": "object",
+      "absence": "omit",
+      "properties": {
+        "family": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "family"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit"
+        },
+        "familyGlottocode": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "familyGlottocode"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit"
+        },
+        "genus": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "genus"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS, not Glottolog's. Glottolog publishes no genus rank. Defined as the smallest subgroup containing the language (its immediate parent in the tree), matching the existing corpus; omitted when that parent is the family itself. Must never be attributed to Glottolog."
+        },
+        "genusGlottocode": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "genusGlottocode"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        },
+        "ancestry": {
+          "rule": "list",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "ancestor"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit",
+          "note": "Root-first path. Ordered by variant key, which is why it needed the multi-value fact key."
+        },
+        "glottologBucket": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "glottologBucket"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit",
+          "note": "Set when Glottolog files the entry under one of its seven non-genealogical buckets (Unattested, Unclassifiable, Bookkeeping, Pidgin, Mixed Language, Artificial Language, Speech Register). These are statements about an entry's STATUS, not its ancestry, and must never be projected as `family`."
+        },
+        "glottologBucketName": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "glottologBucketName"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit"
+        },
+        "glottologLevel": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "glottologLevel"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit",
+          "note": "Glottolog's own rank for the entry: language or dialect. 262 codes ISO registers as languages are ranked dialects by Glottolog 5.3. Recorded so the disagreement is visible instead of silently resolved in one direction."
+        },
+        "glottologCategory": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "classification",
+              "property": "glottologCategory"
+            }
+          ],
+          "sources": [
+            "glottolog-cldf"
+          ],
+          "absence": "omit",
+          "note": "Glottolog's category for the languoid — Spoken L1 Language, Sign Language, Artificial Language, Pseudo Family member, and so on. Direct evidence for the scope question rather than something inferred downstream."
+        }
+      }
+    },
+    "isIsolate": {
+      "meaning": "True when Glottolog classifies the languoid as a language isolate.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "classification",
+          "property": "isIsolate"
+        }
+      ],
+      "sources": [
+        "glottolog"
+      ],
+      "absence": "omit"
+    },
+    "dialectCount": {
+      "meaning": "How many dialect languoids sit under this language in Glottolog's tree.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "classification",
+          "property": "dialectCount"
+        }
+      ],
+      "sources": [
+        "champollion-derived"
+      ],
+      "absence": "omit",
+      "note": "OURS. Counts the whole subtree; Glottolog's own child_dialect_count counts direct children only, so the two legitimately differ and this one must not wear their name."
+    },
+    "coordinates": {
+      "meaning": "A single representative point, as Glottolog gives it. Not a range or a territory.",
+      "rule": "object",
+      "absence": "omit",
+      "properties": {
+        "lat": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "geography",
+              "property": "lat"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit"
+        },
+        "lng": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "geography",
+              "property": "lng"
+            }
+          ],
+          "sources": [
+            "glottolog"
+          ],
+          "absence": "omit"
+        }
+      }
+    },
+    "countries": {
+      "meaning": "ISO 3166-1 alpha-2 codes of countries Glottolog associates with the language.",
+      "rule": "list",
+      "facts": [
+        {
+          "domain": "geography",
+          "property": "country"
+        }
+      ],
+      "sources": [
+        "glottolog"
+      ],
+      "absence": "omit"
+    },
+    "speakerEstimates": {
+      "meaning": "Every speaker figure on record, each attributed to the body that published it.",
+      "rule": "attributed",
+      "facts": [
+        {
+          "domain": "vitality",
+          "property": "speakerCount"
+        },
+        {
+          "domain": "vitality",
+          "property": "speakerNumberRaw"
+        }
+      ],
+      "sources": [
+        "elcat",
+        "linguameta"
+      ],
+      "absence": "omit",
+      "note": "Exact counts and the source's own ranges ('1-9', 'Awakening') in ONE field rather than two, because they answer the same question. A range is never coerced to a number — that would invent precision the source never claimed — so a value may be a string. No `scale` is declared here because speaker counts ARE commensurable across bodies: when they differ, that is a real conflict, not two vocabularies. Plains Cree is a good example — ELCat carries both '10-99' (its preferred source, which its own note says counts British Columbia only) and '10000-99999', while LinguaMeta gives 4,100. Three irreconcilable figures, all shown."
+    },
+    "phonologicalInventory": {
+      "meaning": "Segment counts and tone, from PHOIBLE.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "PHOIBLE is the SOLE authority for a tone claim (lint R1). WALS chapter 13A is also called 'Tone' and IS extracted as a WALS feature, but it must never feed this field — a card's tone claim has one source.",
+      "properties": {
+        "consonants": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "phonology",
+              "property": "consonantCountMedian"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the median across PHOIBLE's inventories for the language, which frequently disagree. 553 languages have more than one."
+        },
+        "vowels": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "phonology",
+              "property": "vowelCountMedian"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        },
+        "tones": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "phonology",
+              "property": "toneCountMedian"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        },
+        "hasTone": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "phonology",
+              "property": "hasTone"
+            }
+          ],
+          "sources": [
+            "phoible"
+          ],
+          "absence": "omit",
+          "note": "Present only where PHOIBLE surveyed the language. Where it did not, the field is ABSENT rather than false — 6,784 spine languages carry an explicit not_surveyed row, because 'PHOIBLE has no inventory' is not evidence of no tone."
+        },
+        "totalPhonemes": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "phonology",
+              "property": "totalPhonemes"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: consonants + vowels, both medians across PHOIBLE's disagreeing inventories. Tone segments are EXCLUDED — they are not phonemes in the same sense, and including them would inflate the count for exactly the tonal languages a reader is most likely to be checking."
+        }
+      }
+    },
+    "typologicalProfile": {
+      "meaning": "The structural features that most change how a translation pipeline behaves: constituent order, morphological synthesis, case, gender and negation placement.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "A CURATED selection. All 195 Grambank and 192 WALS features are in the fact store; the card shows the ones an MT practitioner acts on. WALS features keep their multistate value verbatim (word order, fusion, alignment) because collapsing them would lose information. Grambank's binary features are projected as READABLE booleans (hasCoreCase, not GB070) — the code and the boolean are the same fact, so only one appears. Each sub-field names exactly ONE source, so a card never blends a WALS coding and a Grambank coding into one claim.",
+      "properties": {
+        "wordOrder": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "81A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "subjectVerbOrder": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "82A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "fusion": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "20A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "verbSynthesis": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "22A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "affixPreference": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "26A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "reduplication": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "27A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "genderCount": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "30A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "caseCount": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "49A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "verbalAlignment": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "100A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "negationOrder": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "143A"
+            }
+          ],
+          "sources": [
+            "wals"
+          ],
+          "absence": "omit"
+        },
+        "hasNumeralClassifiers": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "hasNumeralClassifiers"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the readable form of Grambank GB057 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        },
+        "hasGenderInPronouns": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "hasGenderInPronouns"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the GB030 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        },
+        "hasCoreCase": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "hasCoreCase"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the GB070 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        },
+        "hasObliqueCase": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "hasObliqueCase"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the GB072 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        },
+        "marksPastTense": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "marksPastTense"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the GB083 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        },
+        "marksPresentTense": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "marksPresentTense"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the GB082 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        },
+        "hasSexBasedGender": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "typology",
+              "property": "hasSexBasedGender"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "OURS: the GB051 code rendered readable. Grambank publishes the code, not this name — a card saying GB030:\"yes\" is useless to a reader, and attributing the English name to Grambank would credit them with a reading they did not make."
+        }
+      }
+    },
+    "documentation": {
+      "meaning": "What actually exists to read about this language, and when it was described.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "The most useful thing an MT practitioner can learn early, and the honest answer to the question a sparse card raises: a language graded 'wordlist or less' is not badly served by us, it is badly served by the literature. This replaces `documentationDepth`, which the old pipeline populated with no fetchable source at all.",
+      "properties": {
+        "mostExtensiveDescription": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "documentation",
+              "property": "mostExtensiveDescription"
+            }
+          ],
+          "sources": [
+            "glottolog-cldf"
+          ],
+          "absence": "omit",
+          "note": "Glottolog's MED grade: long grammar / grammar / grammar sketch / phonology-text / wordlist or less."
+        },
+        "medLevel": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "documentation",
+              "property": "medLevel"
+            }
+          ],
+          "sources": [
+            "glottolog-cldf"
+          ],
+          "absence": "omit",
+          "note": "0 long grammar … 4 wordlist or less."
+        },
+        "medSourceId": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "documentation",
+              "property": "medSourceId"
+            }
+          ],
+          "sources": [
+            "glottolog-cldf"
+          ],
+          "absence": "omit",
+          "note": "Glottolog bibliography id for that description. Kept so the claim points AT something — a grade with no resolvable citation is an assertion, not evidence."
+        },
+        "firstDocumented": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "documentation",
+              "property": "firstDocumented"
+            }
+          ],
+          "sources": [
+            "glottolog-cldf"
+          ],
+          "absence": "omit"
+        },
+        "lastDocumented": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "documentation",
+              "property": "lastDocumented"
+            }
+          ],
+          "sources": [
+            "glottolog-cldf"
+          ],
+          "absence": "omit"
+        }
+      }
+    },
+    "endonym": {
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "endonym"
+        }
+      ],
+      "sources": [
+        "linguameta"
+      ],
+      "absence": "omit",
+      "note": "What speakers call the language themselves. Present on only 1,137 of LinguaMeta's 7,511 rows — about 15%. That skew is disclosed rather than filled: an endonym invented or transliterated by us would be worse than none, and the gap is itself the case for a community contribution path."
+    },
+    "bcp47": {
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "bcp47"
+        }
+      ],
+      "sources": [
+        "linguameta"
+      ],
+      "absence": "omit"
+    },
+    "cldrOfficialStatus": {
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "cldrOfficialStatus"
+        }
+      ],
+      "sources": [
+        "linguameta"
+      ],
+      "absence": "omit",
+      "note": "Whether CLDR records the language as official somewhere. A statement about administrative status, not about vitality or corpus availability."
+    },
+    "scripts": {
+      "meaning": "ISO 15924 writing-system codes, in the order LinguaMeta lists them.",
+      "rule": "list",
+      "facts": [
+        {
+          "domain": "orthography",
+          "property": "script"
+        }
+      ],
+      "sources": [
+        "linguameta"
+      ],
+      "absence": "omit",
+      "note": "ABSENT is not 'unwritten'. 1,318 languages were published as orthographicStatus:\"unwritten\" because WE had failed to harvest a script — 1,059 of them living, with real speaker counts. Where LinguaMeta covers a language and lists no writing system, that is recorded as an absence of record and the field is omitted. No field here infers unwritten-ness from a gap in our own data. Each entry is an object so the primary script is flagged; LinguaMeta's own ordering is what `primary` means, and it is preserved in the fact's variant key rather than re-derived. Each entry also carries the ISO 15924 NAME, derived from the code — a lookup over Unicode's table, so it is champollion-derived rather than attributed to a registry that published only one side of the join.",
+      "itemKey": "code",
+      "firstIsPrimary": true
+    },
+    "numeralSystem": {
+      "meaning": "How the language counts, as Chan's Numeral Systems of the World's Languages records it.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "REBUILT, not restored. The deleted generator INVENTED a base for 2,005 languages whose Base column is empty, and contradicted the source on a further 212 by flattening Chan's vocabulary into 'decimal'. Chan uses 94 distinct descriptions including binary, body tally and quinary-vigesimal — and a restricted numeral system is one of the few typological facts that genuinely changes what an MT pipeline can do. Empty now means absent, and absent means the field is omitted.",
+      "properties": {
+        "base": {
+          "rule": "attributed",
+          "facts": [
+            {
+              "domain": "numerals",
+              "property": "base"
+            }
+          ],
+          "sources": [
+            "channumerals"
+          ],
+          "absence": "omit",
+          "note": "Chan's own string, verbatim. Attributed rather than reduced because Chan catalogues per DOCULECT: one ISO code can carry several entries describing different varieties, and collapsing them would pick a winner among descriptions Chan kept apart."
+        },
+        "highestElicited": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "numerals",
+              "property": "highestElicited"
+            }
+          ],
+          "sources": [
+            "channumerals"
+          ],
+          "absence": "omit",
+          "note": "RENAMED from highestDocumented. Chan's questionnaire tops out at 2000, so the old name invited reading a fact about the SURVEY as a fact about the language — and it reported 2000 on about 65% of cards."
+        },
+        "formsRecorded": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "numerals",
+              "property": "numeralFormsRecorded"
+            }
+          ],
+          "sources": [
+            "channumerals"
+          ],
+          "absence": "omit"
+        }
+      }
+    },
+    "endangerment": {
+      "meaning": "How endangered the language is, according to every body that has assessed it.",
+      "rule": "attributed",
+      "facts": [
+        {
+          "domain": "vitality",
+          "property": "elcatEndangerment"
+        },
+        {
+          "domain": "vitality",
+          "property": "aesStatus"
+        },
+        {
+          "domain": "vitality",
+          "property": "linguametaEndangerment"
+        }
+      ],
+      "sources": [
+        "elcat",
+        "glottolog-cldf",
+        "linguameta"
+      ],
+      "scaleBySource": {
+        "elcat": "ELCat",
+        "glottolog-cldf": "Glottolog AES",
+        "linguameta": "LinguaMeta"
+      },
+      "absence": "omit",
+      "note": "ONE field, not one per source. It previously existed as elcatEndangerment, aesStatus, aesLevel and linguametaEndangerment — four names for the same question, leaving every consumer to rediscover they were the same and invent its own rule for which wins. The three bodies use DIFFERENT SCALES, so `agreement` reports 'incommensurable' rather than pretending 'severely endangered' and 'moribund' are a dispute; each entry names its scale. `consensus` appears only when there is genuinely one answer."
+    },
+    "lexicalResources": {
+      "meaning": "What lexical data actually exists to start from.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "The honest floor of the resource picture. A 100-word Swadesh list will not train anything, but for thousands of languages where nothing else exists it answers whether ANY lexical data does — and for a language whose Glottolog MED is 'wordlist or less', this often IS the wordlist. Counts are OURS: ASJP publishes forms, not per-language totals.",
+      "properties": {
+        "swadeshConceptsCovered": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "lexical",
+              "property": "swadeshConceptsCovered"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "Out of ASJP's 100 concepts, from the language's BEST-ATTESTED doculect. Not summed across varieties — a sum would report a coverage no single variety has."
+        },
+        "asjpVarieties": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "lexical",
+              "property": "asjpVarieties"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "How many distinct doculects ASJP records under this code, shown only when more than one. It is a signal that 'the language' may not be a single translation target — the wordlists differ between varieties."
+        },
+        "colexificationConcepts": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "lexical",
+              "property": "conceptsDocumented"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        },
+        "colexifyingForms": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "lexical",
+              "property": "colexifyingForms"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        }
+      }
+    },
+    "textDirection": {
+      "meaning": "Which way the script runs: ltr or rtl.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "orthography",
+          "property": "textDirection"
+        }
+      ],
+      "sources": [
+        "unicode-cldr"
+      ],
+      "absence": "omit",
+      "note": "Absent for the 8,562 languages CLDR does not cover, and deliberately NOT defaulted to ltr. Defaulting would break exactly the Arabic- or Hebrew-script languages CLDR happens to omit — the ones nobody would be checking — and it is the same reasoning that put orthographicStatus:\"unwritten\" on 1,318 languages: a majority pattern substituted for a fact about a specific language."
+    },
+    "macroarea": {
+      "meaning": "Glottolog's coarse world region.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "geography",
+          "property": "macroarea"
+        }
+      ],
+      "sources": [
+        "glottolog-cldf"
+      ],
+      "absence": "omit"
+    },
+    "macrolanguageMembers": {
+      "meaning": "The individual languages ISO 639-3 places under this macrolanguage.",
+      "rule": "list",
+      "facts": [
+        {
+          "domain": "identity",
+          "property": "macrolanguageMember"
+        }
+      ],
+      "sources": [
+        "sil-iso639-3"
+      ],
+      "absence": "omit",
+      "note": "The inverse of `macrolanguage`, read from the same ISO rows so the two cannot disagree. The live corpus carried them as separate fields sourced independently."
+    },
+    "coverage": {
+      "meaning": "Which sources actually describe this language, and how much of a translation pipeline they establish.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "Replaces `databaseCoverage`, which was a hand-kept object on 8,669 cards. This is computed FROM THE FACT STORE — it is which sources produced a fact for the code — so it cannot drift from reality: add an extractor and coverage updates itself; retire a source and it disappears.",
+      "properties": {
+        "coveredBy": {
+          "rule": "list",
+          "facts": [
+            {
+              "domain": "coverage",
+              "property": "coveredBy"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        },
+        "sourceCount": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "coverage",
+              "property": "sourceCount"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        },
+        "componentsPresent": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "coverage",
+              "property": "componentsPresent"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit",
+          "note": "How many of the 10 pipeline components any pinned source establishes. UNWEIGHTED on purpose — a weighting is an opinion about what matters and must not be hidden inside a number. `supportTier` was exactly that: an editorial grade on 8,623 cards with no _fieldSources entry at all."
+        },
+        "componentsTotal": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "coverage",
+              "property": "componentsTotal"
+            }
+          ],
+          "sources": [
+            "champollion-derived"
+          ],
+          "absence": "omit"
+        }
+      }
+    },
+    "methodSupport": {
+      "meaning": "Which translation methods list this language as supported.",
+      "rule": "object",
+      "absence": "omit",
+      "note": "A CAPABILITY, never a score. The card-boundary invariant permits resource existence — that a method is AVAILABLE for a language — and forbids any measured score of its output, which is keyed by (method, dataset, metric) and belongs on the leaderboard. 'Google Translate supports Amharic' is a capability; 'Google Translate scores 41.2 chrF on Amharic' is a run result. Unsupported is asserted FALSE rather than omitted: for a low-resource atlas the negative is the more useful fact, and it is known rather than unknown. `omt1600` is Omnilingual MT — one of these methods, not a separate field.",
+      "properties": {
+        "google": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:google"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether Google Translate lists this language"
+        },
+        "microsoft": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:microsoft"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether Microsoft Translator lists this language"
+        },
+        "deepl": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:deepl"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether DeepL lists this language"
+        },
+        "libre": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:libre"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether LibreTranslate lists this language"
+        },
+        "nllb": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:nllb"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether NLLB-200 lists this language"
+        },
+        "opus": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:opus"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether OPUS-MT lists this language"
+        },
+        "tilde": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:tilde"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether Tilde MT lists this language"
+        },
+        "translated": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:translated"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether Translated (Lara) lists this language"
+        },
+        "m2m100": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:m2m100"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether M2M-100 lists this language"
+        },
+        "madlad": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:madlad"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether MADLAD-400 lists this language"
+        },
+        "omt1600": {
+          "rule": "direct",
+          "facts": [
+            {
+              "domain": "capability",
+              "property": "methodSupport:omt1600"
+            }
+          ],
+          "sources": [
+            "curated:method-coverage"
+          ],
+          "absence": "omit",
+          "note": "whether Omnilingual MT lists this language"
+        }
+      }
+    },
+    "scriptNames": {
+      "meaning": "ISO 15924 names for the language's script codes, in the same order.",
+      "rule": "list",
+      "facts": [
+        {
+          "domain": "orthography",
+          "property": "scriptName"
+        }
+      ],
+      "sources": [
+        "champollion-derived"
+      ],
+      "absence": "omit",
+      "note": "OURS: turning 'Cans' into 'Unified Canadian Aboriginal Syllabics' is a join over Unicode's table, with lineage back to the script fact it names. Replaces `scriptUnicodeName`, which asserted the same lookup with no provenance."
+    },
+    "culturalAphorism": {
+      "meaning": "A proverb or saying speakers use, with transliteration and translation.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "curated",
+          "property": "culturalAphorism"
+        }
+      ],
+      "sources": [
+        "curated:language-facts"
+      ],
+      "absence": "omit",
+      "note": "Curated, editorial, and flagged for CONSENT: a proverb is cultural expression, not a data point, and community consent is a precondition for publishing it — not a nicety."
+    },
+    "codeSwitching": {
+      "meaning": "How and when speakers switch to another language.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "curated",
+          "property": "codeSwitching"
+        }
+      ],
+      "sources": [
+        "curated:language-facts"
+      ],
+      "absence": "omit"
+    },
+    "notes": {
+      "meaning": "Editorial notes that do not fit another field.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "curated",
+          "property": "notes"
+        }
+      ],
+      "sources": [
+        "curated:language-facts"
+      ],
+      "absence": "omit"
+    },
+    "history": {
+      "meaning": "Historical context relevant to translation.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "curated",
+          "property": "history"
+        }
+      ],
+      "sources": [
+        "curated:language-facts"
+      ],
+      "absence": "omit"
+    },
+    "nativeNameVerdict": {
+      "meaning": "An adjudication of which endonym is correct where sources disagree.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "curated",
+          "property": "nativeNameVerdict"
+        }
+      ],
+      "sources": [
+        "curated:language-facts"
+      ],
+      "absence": "omit"
+    },
+    "experts": {
+      "meaning": "People with documented expertise in the language.",
+      "rule": "direct",
+      "facts": [
+        {
+          "domain": "curated",
+          "property": "experts"
+        }
+      ],
+      "sources": [
+        "curated:language-facts"
+      ],
+      "absence": "omit",
+      "note": "Flagged for CONSENT: these are real named individuals, and being listed in a public atlas is something they get to agree to."
+    }
+  },
+  "_removedFields": {
+    "notableColexifications": {
+      "removedOn": "2026-08-04",
+      "wasOn": 1578,
+      "why": "15% of its entries were TAUTOLOGIES — [\"SEE\",\"SEE\"], [\"BITE\",\"BITE\"] — a concept colexified with itself, which is not a fact about any language. 95 cards contained nothing else. And 'notable' was never defined: the field was an unranked truncation of whatever the query returned first, implying a judgement of salience that nothing behind it had made. A field that cannot say why THESE entries and not others does not belong on a card.",
+      "replacedBy": "colexification.colexifyingForms, which counts and does not pretend to rank."
+    }
+  }
+}

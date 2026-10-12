@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "gravinachadic",
+  "upstream": "https://zenodo.org/records/13254095",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Gravinas's \"Proto-Central Chadic\" from 2014 — Richard Gravina",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.0",
+    "doi": "10.5281/zenodo.13254095",
+    "date": "2024-08-07"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 533493,
+      "sha256": "a8ceb13f23f8f9410f45edf1444761ec3afe68b0a4c482e7ebdbb4c153dcab36",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13338,
+      "sha256": "1c946a603d336f7e200b42001071b4ad0c1ab1c371d3ea60ddfc40afb54e0d93",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 1399324,
+      "sha256": "ce01119c3275bd0eb710c67ba19bfc56beb1a94b6f8417986cf2666aaea90bf6",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 2740243,
+      "sha256": "3731fbaaeab72d01784bee7c264be73a5939fd0f679a86b25f9601418935e4dc",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 4336,
+      "sha256": "b739abf863e116a26045e267e863d192393a9c893bda3180c6759477201a2879",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "be8db3ae171ffa32ae07e32865894284cbf8017211ac7e56a6cbf452a5ac625a",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 22579,
+      "sha256": "f7a156fd4118376fb35d83bea4ab7c41ececf555afd5f54317601f6ff6517cc7",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 906,
+      "sha256": "335f33eebcf15b84069d762c2b5a9579c6e38587abaf921e3597fda89eb21ebb",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 7343,
+      "sha256": "4e9bc75b943471190707e08d2096b8c1fd3e46f636716ea984686f66a4772596",
+      "url": "https://zenodo.org/api/records/13254095/files/lexibank/gravinachadic-v1.0.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/gravinachadic-v1.0.zip:lexibank-gravinachadic-8e720e3/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/gravinachadic-v1.0.zip, whose md5 matched Zenodo's published checksum (md5:b9f1790ef10ecc2c8ce55959b116238a). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:53:28.636Z"
+}

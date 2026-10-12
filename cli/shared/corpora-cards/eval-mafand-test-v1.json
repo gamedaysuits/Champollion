@@ -1,0 +1,440 @@
+{
+  "id": "eval-mafand-test-v1",
+  "type": "multiway",
+  "name": "MAFAND-MT — African news translation (test)",
+  "version": "1.0",
+  "languages": [
+    "amh",
+    "bam",
+    "bbj",
+    "eng",
+    "ewe",
+    "fon",
+    "fra",
+    "hau",
+    "ibo",
+    "kin",
+    "lug",
+    "mos",
+    "nya",
+    "pcm",
+    "sna",
+    "swh",
+    "tsn",
+    "twi",
+    "wol",
+    "xho",
+    "yor",
+    "zul"
+  ],
+  "description": "MAFAND-MT (Masakhane Anglo & Franco African News Dataset) — the held-out test split of the African news-translation benchmark: English ↔ 14 African languages (Amharic, Hausa, Igbo, Kinyarwanda, Luganda, Chichewa, Nigerian Pidgin, Shona, Swahili, Setswana, Twi, Xhosa, Yoruba, Zulu) and French ↔ 6 (Bambara, Ghomálá', Éwé, Fon, Mossi, Wolof); both directions scored, matching the paper. Luo is excluded (upstream copyright contradiction). Fetched on demand from the Masakhane repo at a pinned commit; Champollion never hosts the content. Domain: news. Contamination HIGH — public since 2022, in frontier-model crawls — so scores are relative-comparison-only. License CC BY-NC 4.0 (dataset; news source texts carry per-site terms) → non-commercial lanes only; cleared by the license review of 2026-08-24 into the NC research lane: benchmarkable; never in a commercial, prize, or API lane; remote evaluation only over no-train channels.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "news",
+    "explicitPairs": [
+      {
+        "source": "eng",
+        "target": "amh",
+        "srcCode": "en",
+        "tgtCode": "amh",
+        "size": 1037,
+        "sha256": "66461c3056e482ef19e59a92792f6f8dd5f6e111a8ff3f4090b86b6d08421737"
+      },
+      {
+        "source": "amh",
+        "target": "eng",
+        "srcCode": "amh",
+        "tgtCode": "en",
+        "size": 1037,
+        "sha256": "1e342cef0e7b82529db486d0c856d9d7b0e19ea8b7452bdc707bdce30bc46b9a",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "hau",
+        "srcCode": "en",
+        "tgtCode": "hau",
+        "size": 1500,
+        "sha256": "cd480806e2860027507dfc252dc76715521c6e973c57878c9fd6a59b21c35ce1"
+      },
+      {
+        "source": "hau",
+        "target": "eng",
+        "srcCode": "hau",
+        "tgtCode": "en",
+        "size": 1500,
+        "sha256": "10f334320fbd277176dcb872854db81e436171ede097d033401bd7ad5949d375",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "ibo",
+        "srcCode": "en",
+        "tgtCode": "ibo",
+        "size": 1500,
+        "sha256": "6c5a13647a0bc5e3ea25b7cc5380681260aa6724c83b2da09be632c6f503b4cc"
+      },
+      {
+        "source": "ibo",
+        "target": "eng",
+        "srcCode": "ibo",
+        "tgtCode": "en",
+        "size": 1500,
+        "sha256": "ecb69699d4e79f310de0f989be6ef5939e94f148af6ec0a4310e0aec45be34de",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "kin",
+        "srcCode": "en",
+        "tgtCode": "kin",
+        "size": 1006,
+        "sha256": "2ff010aa796738733a6c2fbd41389423e1a0210247c569e110d6246fc3f8f5d4"
+      },
+      {
+        "source": "kin",
+        "target": "eng",
+        "srcCode": "kin",
+        "tgtCode": "en",
+        "size": 1006,
+        "sha256": "208fdfb5c56f468a56e49da6853c8272c4eeefec3d95850b8179bd7999f8925f",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "lug",
+        "srcCode": "en",
+        "tgtCode": "lug",
+        "size": 1500,
+        "sha256": "e7100fbac9f3123cec49f9d4371f4bdfe42f4b712c26afda49e506e1fcea05e0"
+      },
+      {
+        "source": "lug",
+        "target": "eng",
+        "srcCode": "lug",
+        "tgtCode": "en",
+        "size": 1500,
+        "sha256": "240f0c1657b416fb5cffc377aa8c5aab2a35d7de073dcedf0a93087cdfc9ddd8",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "nya",
+        "srcCode": "en",
+        "tgtCode": "nya",
+        "size": 1004,
+        "sha256": "7ba66215e8629e1f05911344f94911fac50e9dc964411914f4c428fabb7952cd"
+      },
+      {
+        "source": "nya",
+        "target": "eng",
+        "srcCode": "nya",
+        "tgtCode": "en",
+        "size": 1004,
+        "sha256": "da86381d5e1635992602eda1decd8c11bea1962f5d18836afd85aea6c0f2f296",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "pcm",
+        "srcCode": "en",
+        "tgtCode": "pcm",
+        "size": 1564,
+        "sha256": "52a4e55f985ffba292adb34c12e7bc2df1987f1fb08ae3f0e9b1421aee3d3260"
+      },
+      {
+        "source": "pcm",
+        "target": "eng",
+        "srcCode": "pcm",
+        "tgtCode": "en",
+        "size": 1564,
+        "sha256": "c7166e31436e21860dad63292ab465eb44de8db8708dec5f613818f5c0f67015",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "sna",
+        "srcCode": "en",
+        "tgtCode": "sna",
+        "size": 1005,
+        "sha256": "c007fa436da7e97819c06f32141eb2a8b3ada2c94774e3f8c61eca903019824d"
+      },
+      {
+        "source": "sna",
+        "target": "eng",
+        "srcCode": "sna",
+        "tgtCode": "en",
+        "size": 1005,
+        "sha256": "48b509a3a76f2ec654f72736b5e34f878c9e9284b972aa258441477d5949fde5",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "swh",
+        "srcCode": "en",
+        "tgtCode": "swa",
+        "size": 1835,
+        "sha256": "6deb709fc1d3c4aee855782a1b08c00e8b3e6a00e705dbdc791723ab9c1d431c"
+      },
+      {
+        "source": "swh",
+        "target": "eng",
+        "srcCode": "swa",
+        "tgtCode": "en",
+        "size": 1835,
+        "sha256": "3e536320cd44a6091d764f0136eb61809cb84bdfb7dd95fa08df6dcce6937bd0",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "tsn",
+        "srcCode": "en",
+        "tgtCode": "tsn",
+        "size": 1500,
+        "sha256": "77c9dcb336de43a2a4575c61289d0812e049691f2adba8c8755514ea635f594e"
+      },
+      {
+        "source": "tsn",
+        "target": "eng",
+        "srcCode": "tsn",
+        "tgtCode": "en",
+        "size": 1500,
+        "sha256": "d27bc338962e1842bf7f25e6822999089bb6ee45d5402d67055e6b1f96b28948",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "twi",
+        "srcCode": "en",
+        "tgtCode": "twi",
+        "size": 1500,
+        "sha256": "5a07a07c6d762d2b6b593a856a15bfd8292812b69acc187f1ea938780229befc"
+      },
+      {
+        "source": "twi",
+        "target": "eng",
+        "srcCode": "twi",
+        "tgtCode": "en",
+        "size": 1500,
+        "sha256": "f4839b5f9664e712fbc41714c679cb441c9b37a945990292515cfb62c6ee311f",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "xho",
+        "srcCode": "en",
+        "tgtCode": "xho",
+        "size": 1002,
+        "sha256": "716fe8131899a09b6b7571e01e46f2172ba152f41c0cc5aa2b42b16893761012"
+      },
+      {
+        "source": "xho",
+        "target": "eng",
+        "srcCode": "xho",
+        "tgtCode": "en",
+        "size": 1002,
+        "sha256": "2487a2bb532558acab71706890ff5f016ad27d5f267c9b22acfbe6ad936aa25c",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "yor",
+        "srcCode": "en",
+        "tgtCode": "yor",
+        "size": 1558,
+        "sha256": "16f1b3367bd499d7af4cf51992ed98b4c8180d561b339ce177f511e0c851b672"
+      },
+      {
+        "source": "yor",
+        "target": "eng",
+        "srcCode": "yor",
+        "tgtCode": "en",
+        "size": 1558,
+        "sha256": "6697c86e00125be808a5faa2a92901278886fdbf5f83c51035faa6beda681eb7",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "zul",
+        "srcCode": "en",
+        "tgtCode": "zul",
+        "size": 998,
+        "sha256": "d4d0c0473177b9750c59346857428cb37ef6a6ef14dbc80f63c4fe2793e98e52"
+      },
+      {
+        "source": "zul",
+        "target": "eng",
+        "srcCode": "zul",
+        "tgtCode": "en",
+        "size": 998,
+        "sha256": "0cbf48733b03dcde39a959bf336bcd5cd3434d116c572fd97b93fd32a766445e",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "fra",
+        "target": "bam",
+        "srcCode": "fr",
+        "tgtCode": "bam",
+        "size": 1500,
+        "sha256": "23cdc2646be5a5cd63a4ecd4f30d2df6971816f6df7cea2bc2b5deb2ca23b31c"
+      },
+      {
+        "source": "bam",
+        "target": "fra",
+        "srcCode": "bam",
+        "tgtCode": "fr",
+        "size": 1500,
+        "sha256": "3d34a92436710a5a89b78f6a5d01ffffb055e744a1228f9e2c799f0497c0f1a4",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "fra",
+        "target": "bbj",
+        "srcCode": "fr",
+        "tgtCode": "bbj",
+        "size": 1430,
+        "sha256": "7c4142745c55e8e5b685c98d347e8b7d597b5df8988575813ab1ee7b31b0446e"
+      },
+      {
+        "source": "bbj",
+        "target": "fra",
+        "srcCode": "bbj",
+        "tgtCode": "fr",
+        "size": 1430,
+        "sha256": "02d81dc9ec960929ece5b50868092652e8857fac183b9bba26db401a19efef7b",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "fra",
+        "target": "ewe",
+        "srcCode": "fr",
+        "tgtCode": "ewe",
+        "size": 1563,
+        "sha256": "52168d0c1791aa465e00fd6ce27fb089aadbee1a1ed8bfcc86db3344e902e304"
+      },
+      {
+        "source": "ewe",
+        "target": "fra",
+        "srcCode": "ewe",
+        "tgtCode": "fr",
+        "size": 1563,
+        "sha256": "854710386c0630fd8d5468fed2df2a88e5cff94e7b16da1666ef5592810206af",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "fra",
+        "target": "fon",
+        "srcCode": "fr",
+        "tgtCode": "fon",
+        "size": 1579,
+        "sha256": "18458f266a2a56cf0f21a4c94fd0fc4014a53de2837cc677bfcbff0ebfc9b9ce"
+      },
+      {
+        "source": "fon",
+        "target": "fra",
+        "srcCode": "fon",
+        "tgtCode": "fr",
+        "size": 1579,
+        "sha256": "b17dd14f999f2ced00af39179bdecac40942f269fc81dd07a3b46429172d42fc",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "fra",
+        "target": "mos",
+        "srcCode": "fr",
+        "tgtCode": "mos",
+        "size": 1574,
+        "sha256": "fd0ff6418665fcd707136cba4f5c5fe50c33cc883832f5d21abb919baa4f4a57"
+      },
+      {
+        "source": "mos",
+        "target": "fra",
+        "srcCode": "mos",
+        "tgtCode": "fr",
+        "size": 1574,
+        "sha256": "66fe9b6c9509e0c9938d1dbd459e9e84aa890dc878d98711c6543fcf0dfc3cc6",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      },
+      {
+        "source": "fra",
+        "target": "wol",
+        "srcCode": "fr",
+        "tgtCode": "wol",
+        "size": 1500,
+        "sha256": "04009acb8f4184c430e2c8783db253233f087c851fe24c18af38226a78b58fdb"
+      },
+      {
+        "source": "wol",
+        "target": "fra",
+        "srcCode": "wol",
+        "tgtCode": "fr",
+        "size": 1500,
+        "sha256": "660d1de845ff5b107b79b8d94c2be6aa459aca45a3e81c27707798a211e3aea5",
+        "filePattern": "data/text_files/{tgt_code}-{src_code}/test.{lang_code}"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "MAFAND-MT test",
+      "size": 55310,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out shared-task test set (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/masakhane-io/lafand-mt",
+    "instructions": "Per-pair data/text_files/{pair}/test.{code} fetched from the pinned commit (immutable), line-parallel two-file pairing. Both shared-task directions are scored.",
+    "sha256": null,
+    "revision": "c1a423500753a28b2fae8f5d5e1634de768cd89b",
+    "filePattern": "data/text_files/{src_code}-{tgt_code}/test.{lang_code}",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "Masakhane NLP",
+    "url": "https://github.com/masakhane-io/lafand-mt",
+    "paper": null,
+    "citation": "Adelani et al. (2022). A Few Thousand Translations Go a Long Way! Leveraging Pre-trained Models for African News Translation. NAACL 2022. (Per-language test sets additionally derive from MENYO-20k, IGBONLP and Umsuka — cite those papers per the repo README.)",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-NC-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out shared-task test set; not licensed for training. doNotTrain protects benchmark integrity.",
+    "notes": "README at the pinned commit states the MT dataset is CC BY-NC 4.0 and that the English/French news source texts carry per-site licenses; the repo LICENSE file (GPL-3.0) covers the code, not the data. NC → non-commercial lanes only (license_use.py commercial lane is STRICT). Champollion never hosts the content."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out shared-task benchmark: training on it defeats its purpose. CC BY-NC 4.0 → kept out of every commercial / prize / API lane. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "MAFAND-MT test set — public since 2022 and in frontier-model training crawls. Scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "cleared",
+    "lane": "nc-research",
+    "basis": "CC BY-NC 4.0, stated and verified at the pinned revision. Plain standard SPDX non-commercial license: benchmarkable; excluded from every commercial, prize, and API lane; remote evaluation only over channels that do not train on inputs (transmission_policy no-train lane). en-luo stays excluded (upstream copyright contradiction)."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/masakhane-io/lafand-mt at commit c1a423500753; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/mafand.json.",
+    "pinnedPairs": 40,
+    "excluded": {
+      "luo": "README at the pinned commit states Luo is 'currently not available due to copyright issues' while data/*/en-luo/ nonetheless exists — contradiction unresolved upstream; excluded until clarified (license-suspect)."
+    }
+  }
+}

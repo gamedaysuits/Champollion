@@ -1,0 +1,67 @@
+{
+  "code": "genus-iranian",
+  "extends": "family-indo-european",
+  "name": "Iranian Languages",
+  "script": null,
+  "dir": null,
+  "formality": {
+    "system": "register-levels",
+    "description": "Iranian languages typically have elaborate politeness systems. Persian (Farsi) has an extremely rich taarof system with multiple levels of formality affecting pronouns (to/shomā), verb conjugation, vocabulary (separate 'eat' verbs for formal/informal), and elaborate self-deprecating/other-elevating conventions. Kurdish and other Iranian languages have simpler but still significant T-V systems.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Most modern Iranian languages have lost grammatical gender. Persian, Tajik, and Kurdish (Sorani) have no grammatical gender — third-person pronouns are gender-neutral (Persian u/ān). Kurdish (Kurmanji) is an exception that retains masculine/feminine gender. Some Pamir languages also retain gender. When translating from gendered source languages, gender is typically expressed lexically."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": null
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "ezafeConstruction": "Iranian languages use the ezāfe (ezafe) construction to link nouns to their modifiers — a connecting particle (Persian -e/-ye, Kurdish -î/-y) between the head noun and its adjective, possessor, or complement. The chain can extend to multiple modifiers: ketāb-e bozorg-e sabz-e man 'my big green book'. This left-branching modifier structure is the reverse of English word order.",
+    "lightVerbSystem": "Persian and other Iranian languages form the vast majority of their predicates using light verb constructions — a noun, adjective, or preverb combined with a small set of light verbs (kardan 'do', shodan 'become', zadan 'hit', dādan 'give', etc.). There are hundreds of these combinations, and they cannot be predicted from their components: gush dādan 'ear give' = 'to listen'.",
+    "complexPredicates": "Beyond light verbs, Iranian languages use complex predicates with preverbs that modify verb meaning. The preverb system creates extensive polysemy and idiomatic expressions that require memorization rather than compositional analysis.",
+    "splitErgativity": "Some Iranian languages (Kurdish Kurmanji, Pashto, and some others) show split ergativity — ergative-absolutive alignment in past tenses but nominative-accusative in present tenses. This means the same verb has different argument-marking patterns in different tenses.",
+    "scriptVariation": "Iranian languages are split between Arabic-derived scripts (Persian, Pashto, Kurdish Sorani — written RTL) and Latin script (Kurdish Kurmanji, Tajik historically). Tajik uses Cyrillic. This script split within a single genus requires handling multiple directionalities.",
+    "differentialObjectMarking": "Persian uses the postposition -rā to mark specific/definite direct objects, while indefinite objects are unmarked. This differential object marking has no exact English equivalent — translating 'a book' vs. 'the book' requires choosing whether to use -rā."
+  },
+  "classification": {
+    "family": "Indo-European",
+    "familyGlottocode": "indo1319",
+    "genus": "Iranian",
+    "genusGlottocode": "iran1269",
+    "ancestry": [
+      "Indo-European",
+      "Indo-Iranian",
+      "Iranian"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Iranian languages (Persian/Farsi, Dari, Tajik, Kurdish, Pashto, Balochi, Ossetian, etc.). Script is null because members use Arabic-derived scripts (RTL), Latin, and Cyrillic. Direction is null because of the RTL/LTR split. Gender is marked false since most major members have lost it (Kurmanji being a notable exception).",
+  "regions": [
+    {
+      "country": "Iran and surrounding regions",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Iran, Afghanistan, Tajikistan, Kurdistan (Iraq/Turkey/Syria), Pakistan (Pashto/Balochi), Caucasus (Ossetian)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

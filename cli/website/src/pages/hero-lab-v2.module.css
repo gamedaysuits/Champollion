@@ -1,0 +1,170 @@
+/* /hero-lab-v2 — The Living Index & The Seam (lab composition). */
+
+.main {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ───────────────────────── S0 — hero ───────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* The live Translation Network fills the hero as the background layer. */
+.heroGraph {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.heroGraph > section {
+  height: 100%;
+}
+
+/* Left rail: the endonym channel floats over the network. */
+.rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: clamp(248px, 27vw, 372px);
+  z-index: 3;
+  pointer-events: none; /* let the graph receive pan/zoom except on the rail body */
+}
+
+.railScrim {
+  position: absolute;
+  inset: 0;
+  /* "A vertical channel that matches the background" — a soft ink veil so the
+     endonyms stay legible over the busy network without hiding it. */
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--ink) 92%, transparent) 0%,
+    color-mix(in srgb, var(--ink) 78%, transparent) 62%,
+    transparent 100%
+  );
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.railInner {
+  position: absolute;
+  inset: 0; /* definite height — the flex viewport inside needs a real height */
+  z-index: 1;
+  padding: clamp(4.5rem, 9vh, 7rem) 0.75rem 1.5rem 1.1rem;
+  pointer-events: auto; /* the rail itself is interactive (hover-pause, links) */
+  display: flex;
+  flex-direction: column;
+}
+.railInner > * {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* ───────────────────── S1 — seam stub (Phase B) ───────────────── */
+.seamStub {
+  position: relative;
+  z-index: 1;
+  padding: clamp(3rem, 10vh, 7rem) 1.5rem;
+  text-align: center;
+  max-width: 64ch;
+  margin: 0 auto;
+}
+.stubKicker {
+  margin: 1.25rem 0 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--electric);
+  opacity: 0.85;
+}
+.stubTitle {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+}
+.stubBody {
+  margin: 0 auto 1.5rem;
+  color: color-mix(in srgb, var(--paper) 80%, transparent);
+  line-height: 1.6;
+}
+.stubBody strong {
+  color: var(--electric);
+}
+
+/* ─────────────────────── lab-only chrome ─────────────────────── */
+.labBar {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(6, 7, 11, 0.82);
+  border: 1px solid var(--hairline);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+.labBarLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--electric);
+  padding: 0 0.25rem;
+}
+.labSep {
+  width: 1px;
+  height: 18px;
+  background: var(--hairline);
+}
+.labBtn,
+.labBtnActive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: color-mix(in srgb, var(--paper) 75%, transparent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.labBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--paper);
+}
+.labBtnActive {
+  background: color-mix(in srgb, var(--electric) 18%, transparent);
+  border-color: var(--electric);
+  color: var(--paper);
+}
+.swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px currentColor;
+}
+
+@media (max-width: 996px) {
+  /* On mobile the rail narrows and the scrim deepens (graph still visible). */
+  .rail {
+    width: min(78vw, 320px);
+  }
+  .labBar {
+    flex-wrap: wrap;
+    max-width: 92vw;
+    justify-content: center;
+  }
+}

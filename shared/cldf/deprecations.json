@@ -1,0 +1,150 @@
+{
+  "_doc": "THE one deprecation ledger. Six files used to record retirement (retired-pipeline.json, retired-sources.json, retired-parameters.csv, field-verdicts.json, curated-file-verdicts.json, card-field-spec._removedFields) and six ledgers is how a deleted thing comes back: the next agent finds it in the one file that still lists it as live. New retirements land HERE; the older files keep their reasoning but stop being lists of what is dead. Consumed by scripts/check_docs_integrity.py: a repo path named in CLAUDE.md, docs/AGENTS.md or docs/INDEX.md must exist on disk or appear here with its replacement, so the standard future agents read first cannot quietly describe a system that no longer exists.",
+  "version": 1,
+  "entries": [
+    {
+      "what": "cli/scripts/harvest-zenodo-cldf.mjs",
+      "kind": "script",
+      "why": "Was a hand-run script invisible to --fetch, --verify and audit-sources while being the index every CLDF pin resolves through; its output carried no date.",
+      "replacedBy": "cli/scripts/fetchers/zenodo-harvest.mjs",
+      "decidedOn": "2026-08-09",
+      "decidedBy": "plan v15 A1"
+    },
+    {
+      "what": "cli/data/zenodo-cldf-records.json",
+      "kind": "file",
+      "why": "Moved into a source directory so verify() re-hashes it like every other pin.",
+      "replacedBy": "cli/data/zenodo-harvest/records.json",
+      "decidedOn": "2026-08-09",
+      "decidedBy": "plan v15 A1"
+    },
+    {
+      "what": "cli/scripts/fetchers/giellalt-fsts.mjs",
+      "kind": "script",
+      "why": "Read one of five naming conventions and reported a third of the catalogue as all of it.",
+      "replacedBy": "cli/scripts/fetchers/giellalt-resources.mjs",
+      "decidedOn": "2026-08-06",
+      "decidedBy": "resource-landscape work"
+    },
+    {
+      "what": "cli/scripts/build-cards.mjs",
+      "kind": "script",
+      "why": "The pre-atlas card projector. Zero importers remain; its output directory (build/cards-projected) is a stale Aug-4 artifact the disposition audit was once caught grading against.",
+      "replacedBy": "cli/scripts/cldf/build-atlas.mjs",
+      "decidedOn": "2026-08-16",
+      "decidedBy": "plan v16 phase 5"
+    },
+    {
+      "what": "cli/scripts/project-cards.mjs",
+      "kind": "script",
+      "why": "Only invoker was build-cards.mjs. The atlas projector (project.mjs + project-locales.mjs) replaced it.",
+      "replacedBy": "cli/scripts/cldf/project.mjs",
+      "decidedOn": "2026-08-16",
+      "decidedBy": "plan v16 phase 5"
+    },
+    {
+      "what": "cli/scripts/ingest-cldf.mjs",
+      "kind": "script",
+      "why": "The universal CLDF ingester for the LEGACY champollion.db lane, which no card is built from. Extending it puts facts where nothing reads them.",
+      "replacedBy": "cli/scripts/cldf/build-atlas.mjs (module dispatch: ingest-structure.mjs / ingest-structure-attestation.mjs / ingest-lexical.mjs)",
+      "decidedOn": "2026-08-16",
+      "decidedBy": "plan v16 phase 5"
+    },
+    {
+      "what": "cli/scripts/extractors/",
+      "kind": "script",
+      "why": "Extractors for the legacy lane; two open champollion.db directly. Still walked by cli/test/extractors.test.js — delete the directory and that test in the same commit.",
+      "replacedBy": "cli/scripts/cldf/ingest-*.mjs handlers",
+      "decidedOn": "2026-08-16",
+      "decidedBy": "plan v16 phase 5"
+    },
+    {
+      "what": "build/cards-projected/",
+      "kind": "file",
+      "why": "The retired projector's output, frozen at 2026-08-04. cutover-cards.mjs and the disposition audit once pointed here and graded the new corpus against a week-stale artifact of the old one.",
+      "replacedBy": "build/atlas/cards-language/ (+ cards-locale/, cards-corpus/, cards-method/)",
+      "decidedOn": "2026-08-16",
+      "decidedBy": "plan v16 phase 5"
+    },
+    {
+      "what": "cli/scripts/decontaminate-grambank-prose.mjs",
+      "kind": "script",
+      "why": "Named in CLAUDE.md as a repair generator but no longer exists — the per-field mutator class it belonged to was archived at the cutover (see cli/scripts/cldf/archive-legacy.mjs).",
+      "replacedBy": "fix at the ingest handler and rebuild (docs/ATLAS_PIPELINE.md)",
+      "decidedOn": "2026-08-16",
+      "decidedBy": "docs truth pass"
+    },
+    {
+      "what": "cli/scripts/export-cldf.mjs",
+      "kind": "script",
+      "why": "Exported CLDF from the retired legacy facts store; the atlas IS CLDF and build-atlas emits a validated StructureDataset (with license gating at emit). The file remains as a refusal stub so `npm run export:cldf` prints guidance.",
+      "replacedBy": "cli/scripts/cldf/build-atlas.mjs (emits build/atlas/cldf/champollion-atlas/)",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/scripts/ingest-clics3.mjs",
+      "kind": "script",
+      "why": "CLICS3 ingester for the legacy champollion.db lane; the atlas lane has its own handler.",
+      "replacedBy": "cli/scripts/cldf/ingest-clics3.mjs (via build-atlas.mjs)",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/scripts/build-trading-card-data.mjs",
+      "kind": "script",
+      "why": "The superseded CLI-side twin of the trading-card enrichment build; the live build reads the atlas via mt-eval-arena/scripts/lib/atlas.mjs.",
+      "replacedBy": "mt-eval-arena/scripts/build-trading-card-data.mjs",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/scripts/migrate-fact-store-v3.mjs",
+      "kind": "script",
+      "why": "Migrated an existing champollion.db to the v3 schema; the store it migrates is retired. The v3 schema guarantees stay covered by cli/test/fact-store-v3.test.js against a temp database via scripts/db.mjs applySchema.",
+      "replacedBy": "cli/scripts/cldf/build-atlas.mjs (the atlas store)",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/scripts/derive-vitality-statuses.mjs",
+      "kind": "script",
+      "why": "Wrote vitalityStatuses[] onto cards from champollion.db facts; post-atlas the endangerment envelope is projected at build time and the vitality tier is derived at read time by the ONE adapter.",
+      "replacedBy": "cli/scripts/cldf/build-atlas.mjs (endangerment projection) + normalizeCard/shared/catalogue/vitality-scales.json (vitality tier)",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/scripts/generate-all-cards.mjs",
+      "kind": "script",
+      "why": "The pre-atlas mass card generator (merge-don't-overwrite mutator); regeneration now means projecting from the atlas and cutting over deliberately, never mutating cards in place.",
+      "replacedBy": "cli/scripts/cldf/build-atlas.mjs + cli/scripts/cutover-cards.mjs --apply",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/scripts/db.mjs",
+      "kind": "script",
+      "why": "Accessor for the retired champollion.db fact store. Kept importable ONLY for cli/test/fact-store-v3.test.js (v3 schema guarantees against a temp DB); every CLI entry that wrote through it now refuses to run. Do not wire new consumers.",
+      "replacedBy": "cli/data/atlas.db via cli/scripts/cldf/ (writers) and cli/lib/cards/reader.js normalizeCard (readers)",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "mt-eval-arena/scripts/db.mjs",
+      "kind": "script",
+      "why": "DELETED: unimported copy of the legacy accessor whose openDatabase() silently CREATED an empty database on a missing path — the failure mode mt-eval-arena/scripts/lib/atlas.mjs exists to refuse.",
+      "replacedBy": "mt-eval-arena/scripts/lib/atlas.mjs",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "champollion.db retirement B7"
+    },
+    {
+      "what": "cli/data/champollion.db",
+      "kind": "data-store",
+      "why": "RETIRED 2026-08-18 (Gate 2 of the SSOT cutover). The legacy fact store: 5.66M facts, 70% unpinned sediment from merge-only writers deleted in 96fa5bb1f — not reproducible, so it was frozen, carried over, and deleted rather than migrated. Everything carryable lives in the atlas (3,456,281 pinned forms, the feature catalog, the license floor); everything else is refused by name in docs/FORMS_ORPHAN_TRIAGE_2026-08-18.md + docs/FORMS_PARITY_FINAL_2026-08-18.json. Archive copy (sha256 2d1c2d939a26dab1b77cc20fa23894ffe3d59ea0ead006750471768a5a5df323) retained outside the repo.",
+      "replacedBy": "cli/data/atlas.db + cli/shared/language-cards/ (build-atlas.mjs)",
+      "decidedOn": "2026-08-18",
+      "decidedBy": "founder Gate 2 go-ahead, SSOT cutover program"
+    }
+  ]
+}

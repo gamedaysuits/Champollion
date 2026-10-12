@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nmt-forge"
+version = "0.2.3"
+description = "NMT training suite that makes catalogued training/eval mistakes structurally hard — group-disjoint splits, dev fencing, leak audits, CIs by default, preregistration — from a CPU-sized first model to an exported, servable one."
+readme = "README.md"
+# PolyForm Noncommercial since 2026-08-17 (pre-publication relicense; see
+# LICENSE). Declared as a PEP 639 license expression only — a license
+# classifier alongside it makes modern setuptools refuse to build the wheel.
+# Public-squash inclusion approved 2026-07-20 (founder).
+license = "PolyForm-Noncommercial-1.0.0"
+requires-python = ">=3.11"
+authors = [
+    { name = "Curtis Forbes" },
+]
+keywords = ["machine-translation", "nmt", "training", "low-resource-languages", "data-synthesis", "evaluation-hygiene"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+dependencies = [
+    # The eval harness is the ONLY scoring engine forge uses (mistake #10 in
+    # the requirements ledger: never re-implement scoring). It is also the
+    # language-card resolver (env dir → checkout/node_modules → public index
+    # + cache) and the writer of the mt-eval RunLog/TestReport that
+    # `nmt-forge export` produces. PyPI dist: mt-eval-harness (import
+    # package mt_eval_harness). 0.1.1 already carries every API forge calls,
+    # but 0.2.0 is the scoring release (it changes numbers) and the one that
+    # pins FST builds in the wheel; forge exports scores, so it requires the
+    # harness whose scores it means. The two release together.
+    # In-monorepo development needs no install at all — nmt_forge._harness
+    # loads the sibling arena/ checkout by location.
+    "mt-eval-harness>=0.3.1",
+]
+
+[project.optional-dependencies]
+# Training, exporting and serving models (`nmt-forge run` with an hf-*
+# backend, `export`, `serve`). Core forge never imports torch.
+#   pip install 'nmt-forge[hf]'
+# accelerate is REQUIRED by the transformers Trainer (it refuses to start
+# without it); sentencepiece is what Marian/opus-mt tokenizers load with.
+# CPU wheels are enough for the cpu-tiny and cpu-finetune presets.
+hf = [
+    "torch>=2.0",
+    "transformers>=4.46",
+    "accelerate>=1.1.0",
+    "tokenizers>=0.19",
+    "sentencepiece>=0.1.99",
+    "peft>=0.10",
+]
+# HFST lookup for FST-backed language packs (the FST model files themselves
+# are AGPL upstream artifacts the USER fetches; forge never bundles them).
+fst = [
+    "pyhfst>=1.4",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+nmt-forge = "nmt_forge.cli:main"
+
+[project.urls]
+Homepage = "https://champollion.dev"
+Repository = "https://github.com/gamedaysuits/Champollion"
+Issues = "https://github.com/gamedaysuits/Champollion/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nmt_forge*"]

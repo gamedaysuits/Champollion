@@ -1,0 +1,99 @@
+name: "🪪 Suggest a language-card correction"
+description: "A language card shows something wrong, outdated, or missing? Tell us what, and point at a source."
+title: "[Card] "
+labels: ["submission", "submission:card-correction", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the index honest. **This is an intake form, not an auto-edit.**
+        A maintainer reviews every correction against the card's cited sources and the
+        IP / license / sovereignty rules before anything changes — see the
+        [submission guide](https://champollion.dev/docs/network/getting-started/submit-to-the-index).
+
+        Two things about how this index works:
+        - **Champollion is an index, not a truth-arbiter.** Every value cites its source, and
+          when sources disagree the card shows **all of them, attributed** — a correction
+          usually means *adding or fixing a cited value*, not crowning a winner.
+        - **Cards are generated.** Accepted corrections are applied at the data source or
+          generator, then the card is regenerated — so the fix sticks.
+
+        **If you are a community member or authority and want data about your language
+        restricted or removed**, say so under "Anything else" (or email the maintainer if
+        you prefer it not be public) — removal and restriction requests go through the
+        sovereignty review with priority, no citation required.
+
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Name and code as shown on the card.
+      placeholder: "e.g. Plains Cree (crk)"
+    validations:
+      required: true
+
+  - type: input
+    id: card-field
+    attributes:
+      label: Which part of the card?
+      description: The field or section the correction is about.
+      placeholder: "e.g. speaker estimates / vitality / script / dialects / classification / resources"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-value
+    attributes:
+      label: What the card shows now
+      placeholder: "Copy the value or statement as displayed."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-value
+    attributes:
+      label: What it should show
+      description: The corrected or missing value — or the resource/corpus/asset link the card should list.
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction
+      description: |
+        Where can a reviewer verify this? A URL, a published reference, or — for community
+        knowledge — who holds this knowledge (e.g. "our language authority", named only if
+        you have their consent to name them). Every value on a card carries a citation, so a
+        correction needs one too.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your relationship to this language (optional)
+      options:
+        - Speaker / community member
+        - Community organization / language authority
+        - Researcher / linguist
+        - Resource maintainer / publisher
+        - Other / prefer not to say
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Context, restrictions we should know about, or a removal/restriction request.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Attestation
+      options:
+        - label: "I confirm this is publicly listable, contains NO corpus content or personal data, and respects the source's license and any community/sovereignty restrictions."
+          required: true

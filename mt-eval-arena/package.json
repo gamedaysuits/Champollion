@@ -1,0 +1,17 @@
+{
+  "name": "mt-eval-arena-data",
+  "version": "1.0.0",
+  "description": "Database infrastructure for the MT Eval Arena — Supabase migrations, data build/upload scripts",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-trading-card-data.mjs",
+    "diff:catalogue": "node scripts/diff-catalogue.mjs",
+    "test:diff-catalogue": "node --test scripts/diff-catalogue.test.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

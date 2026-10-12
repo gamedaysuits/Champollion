@@ -1,0 +1,401 @@
+/* ===================================================================
+   Spoke pages — shared CSS Module
+   Used by /arena, /my-language, /translate, /research (the hub's
+   spokes). Flat surfaces, generous whitespace, "Field Notes" teal.
+   =================================================================== */
+
+.pageHeader {
+  position: relative;
+  background: radial-gradient(
+    ellipse 70% 80% at 50% -20%,
+    var(--accent-subtle) 0%,
+    transparent 75%
+  );
+  padding: 3.7rem 0 2.7rem;
+  text-align: center;
+}
+
+/* Triad baseline — architectural accent shared with the hub hero */
+.pageHeader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--vital-safe),
+    var(--vital-vulnerable),
+    var(--vital-endangered)
+  );
+  opacity: 0.8;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 4.5vw, 2.7rem);
+  font-weight: 620;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.6rem;
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.contentWrapper {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.8rem 1rem 4rem;
+  /* Docusaurus's .main-wrapper is a flex container; without this, wide
+     children (command <pre>s, copy buttons) stretch the page past the
+     viewport on phones instead of scrolling inside their own boxes. */
+  min-width: 0;
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.sectionBody {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-secondary);
+}
+
+.note {
+  font-size: 0.88rem;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.85;
+}
+
+/* Numbered "how it works" steps — light, scannable. */
+.stepsList {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ifm-font-color-secondary);
+}
+
+.stepsList strong {
+  color: var(--ifm-font-color-base);
+}
+
+/* Inline jargon term that carries a tooltip (paired with <Tip>). */
+.jargon {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--ifm-color-primary);
+  cursor: help;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+/* ---------------------------------------------------------------
+   Contrast module (/arena) — what chrF++ can't see
+   --------------------------------------------------------------- */
+.contrastGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.4rem 0 0.8rem;
+}
+
+.contrastPanel {
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius-lg, 14px);
+  border: 1px solid var(--border-medium);
+  background: var(--surface-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 var(--border-subtle);
+}
+
+.contrastPanelAccent {
+  border-color: var(--ifm-color-primary);
+  box-shadow:
+    inset 0 1px 0 var(--border-subtle),
+    0 0 0 1px var(--accent-subtle),
+    0 6px 22px rgba(0, 0, 0, 0.07);
+}
+
+.contrastLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.7rem;
+}
+
+.contrastBig {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.contrastSub {
+  font-size: 0.92rem;
+  color: var(--ifm-font-color-secondary);
+  margin-top: 0.4rem;
+}
+
+.contrastWarn {
+  color: var(--vital-endangered);
+  font-weight: 600;
+}
+
+.contrastGood {
+  color: var(--vital-safe);
+  font-weight: 600;
+}
+
+.contrastCaption {
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+  text-align: center;
+  margin: 0.6rem auto 0;
+  max-width: 620px;
+}
+
+/* ---------------------------------------------------------------
+   Mini leaderboard table (/arena)
+   --------------------------------------------------------------- */
+/* Scroll container: without it the table's min-content width propagates
+   up through the flex-item content wrapper (min-width: auto) and pushes
+   the whole page wider than narrow viewports (seen at 375px). */
+.miniTableWrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.miniTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.miniTable th {
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-font-color-secondary);
+  border-bottom: 2px solid var(--ifm-toc-border-color);
+  padding: 0.45rem 0.6rem;
+}
+
+.miniTable td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.mono {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.84rem;
+}
+
+.scoreCell {
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+/* ---------------------------------------------------------------
+   Link cards (spec indexes, doc links)
+   --------------------------------------------------------------- */
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.linkCard {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-medium);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  transition:
+    border-color 0.18s ease,
+    transform 0.22s var(--ease-out, ease-out),
+    box-shadow 0.22s ease;
+}
+
+.linkCard:hover {
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.linkCard:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linkCard:hover {
+    transform: none;
+  }
+}
+
+.linkCardTitle {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.linkCardDesc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-secondary);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   Steps (/translate quickstart, /my-language how-to-start)
+   --------------------------------------------------------------- */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 1.4rem 0 0;
+}
+
+.step {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.stepNumber {
+  counter-increment: step;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.stepBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.stepTitle {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.stepText {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.6rem;
+}
+
+/* ---------------------------------------------------------------
+   Install / command strip
+   --------------------------------------------------------------- */
+.commandRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.commandCode {
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+}
+
+/* ---------------------------------------------------------------
+   Principle cards (/my-language)
+   --------------------------------------------------------------- */
+.principleList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.principle {
+  padding: 1.2rem 1.4rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0 10px 10px 0;
+  background: var(--ifm-background-surface-color);
+}
+
+.principleTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.principleText {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--ifm-font-color-secondary);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   Responsive
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .contrastGrid,
+  .linkGrid {
+    grid-template-columns: 1fr;
+  }
+  .pageTitle {
+    font-size: 1.9rem;
+  }
+}

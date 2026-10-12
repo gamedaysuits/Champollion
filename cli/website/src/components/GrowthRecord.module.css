@@ -1,0 +1,424 @@
+/**
+ * GrowthRecord — the /growth build record. Dark labV4 surface; recessive
+ * hairline chart chrome (solid 1px, one step off the ink), thin marks,
+ * text in text tokens (never the series color).
+ */
+
+.record {
+  background: var(--ink, #06070b);
+  color: var(--paper, #fff);
+  padding: 72px 0 96px;
+  min-height: 60vh;
+}
+
+.inner {
+  max-width: 1040px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+
+.head {
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--electric, #4dd8ff);
+  margin: 0 0 10px;
+}
+
+.title {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.sub {
+  max-width: 62ch;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.sub a {
+  color: var(--electric, #4dd8ff);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.loading {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.9rem;
+  padding: 48px 0;
+}
+
+/* ── Stat row ───────────────────────────────────────────────────────── */
+
+.statRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 44px;
+  margin: 0 0 34px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 2px;
+}
+
+.stat dd {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ── Chart scaffolding ──────────────────────────────────────────────── */
+
+.chartBlock {
+  margin: 0 0 34px;
+}
+
+.chartTitle {
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 10px;
+}
+
+.chartTitleLink {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 400;
+}
+
+.chartWrap {
+  position: relative;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+}
+
+.chart:focus-visible {
+  outline: 2px solid var(--electric, #4dd8ff);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.gridline {
+  stroke: rgba(255, 255, 255, 0.07);
+  stroke-width: 1;
+}
+
+.axisText {
+  fill: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.crosshair {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.stepLine {
+  fill: none;
+  stroke: var(--electric, #4dd8ff);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.endDot {
+  fill: var(--electric, #4dd8ff);
+  stroke: var(--ink, #06070b);
+  stroke-width: 2;
+}
+
+.endLabel {
+  fill: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── Tooltip (enhances; the table view carries the full record) ─────── */
+
+.tooltip {
+  position: absolute;
+  top: 8px;
+  transform: translateX(-50%);
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: rgba(10, 14, 24, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.tooltipDate {
+  font-weight: 700;
+  color: #fff;
+}
+
+.tooltipRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tooltipNote {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.7rem;
+}
+
+/* ── Legend ─────────────────────────────────────────────────────────── */
+
+.legendRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  margin-top: 12px;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.legendNote {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.72rem;
+}
+
+.legendNote a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Table view (the WCAG-clean twin of each chart) ─────────────────── */
+
+.tableView {
+  margin-top: 14px;
+  font-size: 0.8rem;
+}
+
+.tableView summary {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  width: fit-content;
+}
+
+.tableScroll {
+  margin-top: 10px;
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.tableScroll table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tableScroll th,
+.tableScroll td {
+  padding: 6px 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  text-align: right;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.tableScroll th:first-child,
+.tableScroll td:first-child {
+  text-align: left;
+}
+
+.tableScroll thead th {
+  position: sticky;
+  top: 0;
+  background: #0a0e18;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+}
+
+/* ── Contributor panel ──────────────────────────────────────────────── */
+
+.contribGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .contribGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.topList {
+  min-width: 0;
+}
+
+.contribRows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contribRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(60px, 120px) auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+
+.contribName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contribBarTrack {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(77, 216, 255, 0.12);
+  overflow: hidden;
+}
+
+.contribBar {
+  display: block;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  background: var(--electric, #4dd8ff);
+  opacity: 0.85;
+}
+
+.contribCount {
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.7);
+  min-width: 3ch;
+  text-align: right;
+}
+
+/* ── Honest source notes + the empty state ──────────────────────────── */
+
+.sourceNote {
+  margin: 0 0 26px;
+  padding: 12px 16px;
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.88rem;
+  max-width: 62ch;
+}
+
+.empty {
+  padding: 64px 0 40px;
+  max-width: 60ch;
+}
+
+.emptyLead {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  background: linear-gradient(90deg, #fff, var(--electric, #4dd8ff));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.emptyBody {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.emptyCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.emptyCta {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--electric, #4dd8ff);
+  color: #06202b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.emptyCta:hover {
+  background: var(--electric-hot, #7be6ff);
+  color: #06202b;
+  text-decoration: none;
+}
+
+.emptyCtaGhost {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.emptyCtaGhost:hover {
+  border-color: var(--electric, #4dd8ff);
+  color: #fff;
+  text-decoration: none;
+}

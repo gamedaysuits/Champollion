@@ -1,0 +1,63 @@
+{
+  "code": "family-uralic",
+  "extends": null,
+  "name": "Uralic Family",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "T-V",
+    "description": "Most major Uralic languages have T-V pronominal distinctions: Finnish sinä/te, Hungarian te/ön (or maga), Estonian sina/teie. The degree of formality encoding varies — Hungarian also has a definite/indefinite verb conjugation distinction that interacts with object reference.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Uralic languages overwhelmingly lack grammatical gender. Third-person pronouns are gender-neutral (Finnish hän, Hungarian ő, Estonian tema). When translating from gendered source languages, gender must be expressed lexically or left unspecified."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "extensiveCaseSystems": "Uralic languages are famous for their extensive case systems — Finnish has 15 cases, Hungarian 18, Estonian 14. Each case has specific semantic and syntactic functions. MT systems trained primarily on languages with few cases (English, French) consistently produce case errors.",
+    "agglutinativeMorphology": "Uralic languages are agglutinative, building complex word forms by chaining suffixes. A single Finnish word form can encode case, number, possessive suffix, and clitic particles. Hungarian verbal morphology distinguishes definite and indefinite conjugations.",
+    "possessiveSuffixes": "Most Uralic languages express possession through suffixes on the possessed noun rather than separate possessive pronouns. Finnish talo-ni 'my house', talo-si 'your house'. This is a fundamental structural difference from most European languages.",
+    "vowelHarmony": "Finnish, Hungarian, and several other Uralic languages have vowel harmony systems where suffix vowels must harmonize with root vowels (front/back, and sometimes rounded/unrounded). Rules and exceptions differ by language.",
+    "definitenessExpression": "Most Uralic languages lack definite articles (Hungarian is a notable exception with a/az). Definiteness is expressed through word order, case marking, or context. Hungarian uniquely has a definite verb conjugation that marks object definiteness on the verb.",
+    "negationVerb": "Several Uralic languages (Finnish, Estonian, Sami) conjugate the negative auxiliary rather than the main verb — e.g., Finnish en puhu, et puhu, ei puhu ('I/you/s/he don't speak'). This is typologically unusual and MT systems often mishandle it."
+  },
+  "classification": {
+    "family": "Uralic",
+    "familyGlottocode": "ural1272",
+    "ancestry": [
+      "Uralic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Uralic (~48 members). Covers Finnic (Finnish, Estonian, Karelian), Ugric (Hungarian, Mansi, Khanty), Sami, Samoyedic (Nenets, Selkup), and others. Script is Latin for the vast majority — only some historical/minority members use Cyrillic alongside Latin.",
+  "regions": [
+    {
+      "country": "Northern Eurasia (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Finland, Estonia, Hungary, northern Scandinavia (Sami), Russia (Komi, Udmurt, Mari, Mordvin, Nenets)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

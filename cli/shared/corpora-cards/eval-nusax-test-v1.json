@@ -1,0 +1,281 @@
+{
+  "id": "eval-nusax-test-v1",
+  "type": "multiway",
+  "name": "NusaX-MT — Indonesian local languages multi-parallel (test)",
+  "version": "1.0",
+  "languages": [
+    "ace",
+    "ban",
+    "bbc",
+    "bjn",
+    "bug",
+    "eng",
+    "ind",
+    "jav",
+    "mad",
+    "min",
+    "nij",
+    "sun"
+  ],
+  "description": "NusaX-MT — the held-out test split (400 rows) of the 12-way multi-parallel Indonesian benchmark: Indonesian ↔ 10 local languages (Acehnese, Balinese, Banjar, Buginese, Javanese, Madurese, Minangkabau, Ngaju, Sundanese, Batak Toba) + English, expert-translated from the NusaX sentiment corpus (social-media/review register). Ind-hub scope here (22 directed pairs); the CSV is genuinely 12-way parallel so more pairs are a recipe extension. Fetched on demand from the IndoNLP repo at a pinned commit; Champollion never hosts the content. Domain: conv. Contamination HIGH — public since 2022, in frontier-model crawls — so scores are relative-comparison-only. DATA license CC BY-SA 4.0 (verified at the pin: datasets/LICENSE; code is Apache-2.0) — commercial-compatible with share-alike; cleared by the license review of 2026-08-24: benchmarkable, commercial-compatible (attribution + share-alike).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "conv",
+    "explicitPairs": [
+      {
+        "source": "ind",
+        "target": "ace",
+        "srcCode": "ind",
+        "tgtCode": "ace",
+        "size": 400,
+        "sha256": "d560c17aacbdbfe4e21e4a54a5214a87afa92bcc790c643dca25495117c08e99"
+      },
+      {
+        "source": "ace",
+        "target": "ind",
+        "srcCode": "ace",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "e974f304d325dbb23debeb8014cee2b6b43613ec393050b9c6a8e8aa4eb61708"
+      },
+      {
+        "source": "ind",
+        "target": "ban",
+        "srcCode": "ind",
+        "tgtCode": "ban",
+        "size": 400,
+        "sha256": "77fcf9e0bbd18dfb267aba9819026086317fd6b7cb34dd237d43239aad04b220"
+      },
+      {
+        "source": "ban",
+        "target": "ind",
+        "srcCode": "ban",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "e1f7929d95850f9f6637e0930d13d0fe70efce1a86e9ded5788719dae4a7cbe5"
+      },
+      {
+        "source": "ind",
+        "target": "bjn",
+        "srcCode": "ind",
+        "tgtCode": "bjn",
+        "size": 400,
+        "sha256": "b2970e26f61a7ed09a14fbebc463e82cc5d0c98b00dafe4a580a3266c4ed6995"
+      },
+      {
+        "source": "bjn",
+        "target": "ind",
+        "srcCode": "bjn",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "b21d39e919febd77e1940725e7f524489e54aa4725d14f47eb1e45f5ae8dfb9d"
+      },
+      {
+        "source": "ind",
+        "target": "bug",
+        "srcCode": "ind",
+        "tgtCode": "bug",
+        "size": 400,
+        "sha256": "e29c305addfffad0c169326ab1fa3ea707b63334afba9b2879296294ef3e12f6"
+      },
+      {
+        "source": "bug",
+        "target": "ind",
+        "srcCode": "bug",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "cd69efad9ba20bfd1ee1f5294b804cbd2fc9f070f1f749c1a212b27330231310"
+      },
+      {
+        "source": "ind",
+        "target": "jav",
+        "srcCode": "ind",
+        "tgtCode": "jav",
+        "size": 400,
+        "sha256": "c67db9d309cf0afcbce85ebb0ab69ac072e1914b54bb68aa8207821c7024394b"
+      },
+      {
+        "source": "jav",
+        "target": "ind",
+        "srcCode": "jav",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "4fc61129903528fb9b5b6a0783f2320b0afd1855d4603e3d0317da365b498d4d"
+      },
+      {
+        "source": "ind",
+        "target": "mad",
+        "srcCode": "ind",
+        "tgtCode": "mad",
+        "size": 400,
+        "sha256": "101d00d5c37b920f7b71386d18b126b956b0adbcafd3b06abb525c22e980f55a"
+      },
+      {
+        "source": "mad",
+        "target": "ind",
+        "srcCode": "mad",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "822e6f9ea89cb569924d1a649eaf6c953be314c47d5514c158ad52d51a16ed1c"
+      },
+      {
+        "source": "ind",
+        "target": "min",
+        "srcCode": "ind",
+        "tgtCode": "min",
+        "size": 400,
+        "sha256": "483b571626db7185ec563dfa641f4d810a6ad9d69aaacf196a456f2984ceb0be"
+      },
+      {
+        "source": "min",
+        "target": "ind",
+        "srcCode": "min",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "5d83dacbd5694fbfb4841ed7f828e3d88b4f89245b5c0c64c856ff5ec3b1785a"
+      },
+      {
+        "source": "ind",
+        "target": "nij",
+        "srcCode": "ind",
+        "tgtCode": "nij",
+        "size": 400,
+        "sha256": "40af9a30e2354e0a6cf6f741b6c66f9a2bdb666da722a168f7358fab246da888"
+      },
+      {
+        "source": "nij",
+        "target": "ind",
+        "srcCode": "nij",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "dd55b26dd7a2ede1cb2b2686ee59aa7cce1c5ed25bde0ef9fa6b2e1a9306ed8c"
+      },
+      {
+        "source": "ind",
+        "target": "sun",
+        "srcCode": "ind",
+        "tgtCode": "sun",
+        "size": 400,
+        "sha256": "fb63647d3e832f6efbe21b95f1b317867e0d2b8736f390ba7b2be977c017dd8b"
+      },
+      {
+        "source": "sun",
+        "target": "ind",
+        "srcCode": "sun",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "37129f17b9ad0a4ff164e5cf869e5445cf83f5e5bc4cb2a13a0a04fb6c3cebcf"
+      },
+      {
+        "source": "ind",
+        "target": "bbc",
+        "srcCode": "ind",
+        "tgtCode": "bbc",
+        "size": 400,
+        "sha256": "c8e0405a384f1195fa111e023e71ce86f5527dd56f01faee9aed0e25ca4465c7"
+      },
+      {
+        "source": "bbc",
+        "target": "ind",
+        "srcCode": "bbc",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "e9c9e3846eb349cdec9fc3e8551ee35cf58987427ecd9a52da57be6f4a3d664e"
+      },
+      {
+        "source": "ind",
+        "target": "eng",
+        "srcCode": "ind",
+        "tgtCode": "eng",
+        "size": 400,
+        "sha256": "5c05f92ce984db5622b19bc1401885430e2d06b8e71f6b7e8bda2a65821643e7"
+      },
+      {
+        "source": "eng",
+        "target": "ind",
+        "srcCode": "eng",
+        "tgtCode": "ind",
+        "size": 400,
+        "sha256": "a3e1fddf8edc72b8e5491b29319ee74d1132805249570bd1010ddf36335dda5f"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "NusaX-MT test",
+      "size": 8800,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out benchmark test split (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/IndoNLP/nusax",
+    "instructions": "Single multi-parallel file datasets/mt/test.csv fetched from the pinned commit (immutable); pairing.mode csv-columns selects each side's column by header name. Both directions scored per pair.",
+    "sha256": null,
+    "revision": "75b0be5d982348332509f296e10d9bf9cb66d60f",
+    "filePattern": "datasets/mt/test.csv",
+    "format": "parallel-text",
+    "pairing": {
+      "mode": "csv-columns",
+      "hasHeader": true,
+      "columns": {
+        "ind": "indonesian",
+        "ace": "acehnese",
+        "ban": "balinese",
+        "bjn": "banjarese",
+        "bug": "buginese",
+        "eng": "english",
+        "jav": "javanese",
+        "mad": "madurese",
+        "min": "minangkabau",
+        "nij": "ngaju",
+        "sun": "sundanese",
+        "bbc": "toba_batak"
+      }
+    }
+  },
+  "source": {
+    "publisher": "IndoNLP",
+    "url": "https://github.com/IndoNLP/nusax",
+    "paper": "https://aclanthology.org/2023.eacl-main.57/",
+    "citation": "Winata et al. (2023). NusaX: Multilingual Parallel Sentiment Dataset for 10 Indonesian Local Languages. EACL 2023.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-SA-4.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": "Held-out benchmark test split; not intended for training. doNotTrain protects benchmark integrity.",
+    "notes": "Verified at the pinned commit: datasets/LICENSE is CC BY-SA 4.0 (covers the data); the root and code/ LICENSE files are Apache-2.0 (cover the code). CC BY-SA permits commercial use with attribution + share-alike — flagged commercial=true, and the license review of 2026-08-24 confirms the lane. Champollion never hosts the content (fetch-from-source)."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "allowed-with-attribution-sharealike",
+    "redistribution": "allowed-by-license-but-not-practiced",
+    "communityNotes": "Held-out benchmark: training on it defeats its purpose. CC BY-SA 4.0 data license is commercial-compatible (attribution + share-alike) — cleared by the license review of 2026-08-24 beyond the NC lane. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "NusaX test split — public since 2022 and in frontier-model training crawls. Scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "cleared",
+    "lane": "commercial-compatible",
+    "basis": "DATA license CC BY-SA 4.0, stated and verified at the pinned revision (datasets/LICENSE; root + code/ LICENSE are Apache-2.0 and cover the code). Attribution + share-alike; benchmarkable in all lanes. doNotTrain stands for benchmark integrity, not license."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/IndoNLP/nusax at commit 75b0be5d9823; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/nusax.json.",
+    "pinnedPairs": 22
+  }
+}

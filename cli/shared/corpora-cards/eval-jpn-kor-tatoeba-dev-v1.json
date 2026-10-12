@@ -1,0 +1,84 @@
+{
+  "id": "eval-jpn-kor-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba jpn→kor Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "jpn",
+    "target": "kor",
+    "direction": "unidirectional"
+  },
+  "description": "Mesh wave dev corpus built from Tatoeba Challenge v2023-09-26. 101 entries, stratified across 2 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream Tatoeba Challenge archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/Tatoeba-Challenge-devtest/test-v2023-09-26.tar",
+    "builder": "tatoeba-challenge",
+    "sha256": "6178373607cbe337644be65e60d1bf84ceee3f78c423de0ccb91e332da8b2b8f",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "member": "data/test-v2023-09-26/jpn-kor/test.txt",
+    "recipe": {
+      "release": "v2023-09-26",
+      "split": "test",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "chars",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-12T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 101,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.99,
+      "ui": 0.01
+    },
+    "dataFile": "curated/jpn-kor-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "Tatoeba jpn→kor is a high-resource pair with 101 entries. Both languages are well-represented in web crawl data. Individual sentences may appear in frontier LLM training data via broad tatoeba.org crawls."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": null,
+    "populatedFrom": "Generated from arena/datasets/registry.json entry 'tatoeba-jpn-kor-dev' (mesh wave 1, 2026-06-12). Size and domain distribution verified against curated data file. License from Tatoeba Challenge terms (CC-BY-2.0). Fetch-from-source build recipe pinned in source block."
+  },
+  "richness": {
+    "mean_source_chars": 15.0,
+    "mean_effective_words": 6.55,
+    "economy": 2.29,
+    "economy_basis": "measured",
+    "computed_from": "jpn-kor-dev-v1.json",
+    "computed_at": "2026-06-12"
+  }
+}

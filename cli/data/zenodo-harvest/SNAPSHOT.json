@@ -1,0 +1,33 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "zenodo-harvest",
+  "upstream": "https://zenodo.org/api/records?communities=crossgram",
+  "license": "LicenseRef-Zenodo-Record-Metadata",
+  "licenseUrl": "https://about.zenodo.org/terms/",
+  "citation": "Zenodo community record metadata for crossgram, retrieved 2026-08-18.",
+  "pin": {
+    "kind": "release",
+    "value": "2026-08-18",
+    "doi": null,
+    "date": "2026-08-18"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "records.json",
+      "bytes": 235439,
+      "sha256": "a39e75579cade4b5582179c096bf3e9f3efba97c9471d3b940a75d23a2a89693",
+      "url": "https://zenodo.org/api/records",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/zenodo-harvest.mjs",
+  "notes": "275 distinct CLDF sources across crossgram. THE INDEX, NOT A DATASET: nothing is ingested from it. It resolves which release of each CLDF dataset is CURRENT upstream, which is the only way staleness is detectable at all — a CLDF pin is a DOI and therefore immutable, so the question is never \"have the bytes changed\" but \"is there a newer version\". 8 licence id(s) are not in the SPDX map and are recorded as needing review rather than guessed.",
+  "distinctSources": 275,
+  "communities": [
+    "crossgram"
+  ],
+  "fetchedAt": "2026-08-18T20:25:13.579Z"
+}

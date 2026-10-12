@@ -1,0 +1,65 @@
+---
+slug: /what-is-champollion
+title: "什么是 Champollion"
+description: "Champollion 通俗解读：用于为你的语言构建机器翻译并验证其有效性的开源工具包。从这里开始。"
+---
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Champollion 是什么
+
+**Champollion 是一个开源工具包，用于为你的语言构建机器翻译——并在任何人依赖它之前证明其有效性。**
+
+它专为大型科技公司所忽略的语言而构建：希望将其简报翻译成克里语（Cree）的学校、需要为其服务的家庭提供床边常用语手册的医院、想要了解是否有任何工具足够可靠以托付其语言的社区。你——或者你指派给这些工具的 AI agent——可以从*“我们该如何开始？”*走向经过测试、已部署的翻译工作流。
+
+---
+
+## 整个流程及每一步的对应工具
+
+| 步骤 | 问题 | 工具 |
+|---|---|---|
+| **1. 了解现有资源** | 关于这种语言已知的一切是什么——词典、语法、语料库、模型、已发表的结果、服务？ | **[Atlas 图谱](/languages)** — <SSOTCount field="catalogLanguageCount" /> 张语言卡片；每个数值均注明来源 |
+| **2. 保护你自己的数据** | 我们如何在不交出句子的情况下使用自己的句子进行测试？ | **[注册语料库](/docs/network/sovereignty/registering-corpora)**与**[主权节点](/docs/network/sovereignty/sovereign-eval-node)** — 将测试集保存在本地机器或物理隔离环境中 |
+| **3. 评估各项方案** | 哪种方法最适合*我们*的文本，优势有多大？ | **[评测框架（Harness）](/docs/network/specifications/harness)**（`mt-eval`）— 针对任何语料库评估任何方法，每次均采用相同流程 |
+| **4. 构建更出色的方案** | 我们能否在不自欺欺人的前提下自行训练或适配模型？ | **[NMT Forge](/docs/network/getting-started/training-honestly)**（`nmt-forge`）— 配备防范机制的训练体系，防止测试集泄漏、不合理的切分以及对噪声数据的一厢情愿 |
+| **5. 证明成效，可自由选择是否公开** | 它真的更好吗？其他人能否验证？ | **[排行榜与竞赛](/docs/network/getting-started/submit-a-method)** — 发布评测结果，或基于永不离开你节点的密封测试集举办竞赛 |
+| **6. 结合最佳实践** | 针对该语言对，各方提供了什么，哪些能够协同运作？ | **[The Network 网络](/docs/network/)** — 现存的方法与服务，以及各自的实证依据 |
+| **7. 投入实际使用** | 翻译应用、网站和文档。 | **[Champollion CLI](/docs/intro)** — 按语言对部署经过验证的最佳方案，配备翻译记忆库，无需为相同的句子重复付费 |
+
+**[MCP 服务器](/docs/network/getting-started/mcp-server)**为 AI agent 提供了执行上述每个步骤的能力，且本篇文档同时面向人类与 agent 编写（机器可读格式：`/llms.txt`、`/llms-full.txt`）。
+
+**度量是核心骨架。** 覆盖率常常被大肆宣扬；质量却鲜少公开展示。上述每一步都以一个你可以查验的数值及其溯源信息告终——使用了什么数据、哪个方法版本、什么指标、花费了多少成本。一句坦诚的“该语言对目前尚无有效方案”也是我们会公布的结果，因为看得见的差距，才能有人来填补。
+
+## 我们遵循的规则
+
+这些是约束条件，而不是营销话术。它们决定了软件能做什么。
+
+**我们绝不持有你的语料库。** 注册测试集的方式是直接指向其现存位置，而不是将其上传给我们。评估方法所对照的语料库，我们从未拥有过。对于密封数据集，数据在你的本地机器上加密且保留在本地；设计上需要达到预设门槛数量的社区密钥保管人共同授权方可运行（目前尚未指定保管人）。
+
+**语言数据被视为生物数据。** 提供语料库的人掌握着该语料库的密钥，以及任何基于该语料库进行评估的密钥。我们必须征求同意，而不是想当然地认为已经获得同意——并且这种同意是可以撤回的。
+
+**我们追求数据主权，但并非拥有主权认证。** 一个项目是否尊重社区对语言数据的所有权与控制权，绝非该项目自吹自擂就能成立的。我们踏实做事并诚实描述各项机制；最终的评判权属于相关的语言社区。
+
+**欢迎任何方法，无论是人工还是机器。** 专业的翻译人员、基于 FST 的规则系统、提示词驱动的前沿模型以及微调的 NMT 模型，都会在同一个测试集上以相同的方式进行比较。我们关心的是如何将语言翻译出来，而不是哪个工具获胜。
+
+**我们公开我们做不到的事情。** 请参阅[诚实的局限性](/docs/network/honest-limitations)——这是本项目目前*尚未*声称能做到的事情列表。在信任这里的任何其他内容之前，请先阅读它。
+
+---
+
+**Champollion 是一个索引，而不是仲裁者。** 每个数值都标明了出处，并如实报告该出处的实际内容。当不同来源存在分歧时——在母语人数上这种情况非常普遍——卡片会展示所有来源并注明出处。我们不会挑选一个获胜者，也不会人为制造共识。
+
+---
+
+## 名称由来
+
+Jean-François Champollion 利用罗塞塔石碑（Rosetta Stone）破译了埃及象形文字——同一段文本使用了三种文字。平行文本至今仍是学习翻译的方式。这个名字也带有一种值得大声说出来的张力：在一个掠夺的时代，一位欧洲学者阅读着别人的文字。我们一直在思考这个问题。这就是为什么上述主权规则是软件中的硬性约束，而不仅仅是宣传册上的一页纸。
+
+## 下一步
+
+- **如果你想从头到尾为某种语言构建机器翻译** → [为你的语言构建机器翻译](/docs/build-mt-for-your-language)：包含上述每一步的完整命令，以及 agent 在各环节调用的 MCP 工具。
+- **如果你想翻译应用或网站** → [快速上手](/docs/getting-started/quick-start)。
+- **如果你掌握、讲授或守护某种语言** → 请参阅[面向语言社区](/docs/network/community/for-language-communities)，以及关于如何在无需交出测试集的前提下使用它的[注册语料库](/docs/network/sovereignty/registering-corpora)。
+- **如果你是研究人员或翻译方法构建者** → 请参阅[谁将受益](/docs/network/who-benefits#researchers)中“评测优先”的论据——为什么一千个精选语言对比七十万个未经筛选的语言对更有价值——然后参阅[语料库合作](/docs/network/specifications/corpus-partnership)以引入新语言，或者参阅[提交方法](/docs/network/getting-started/submit-a-method)与[评分规范](/docs/network/specifications/scoring)在已有语言上展开角逐。
+- **如果你是 AI agent** → 参见 [Agent 指南](/docs/network/getting-started/agent-guide)；机器可读入口点为 `/llms.txt` 与 `/llms-full.txt`。
+- **如果你为此类工作提供资助** → 参见[谁将受益](/docs/network/who-benefits#funders)与[局限说明](/docs/network/honest-limitations)。
+- **如果你想了解背景信息** → 参见[该领域的发展历程](/docs/network/context/mt-field-briefing)、[什么算作一种语言](/docs/network/context/what-counts-as-a-language)以及[覆盖范围如何统计](/docs/network/context/coverage-counting)。

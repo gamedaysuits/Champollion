@@ -1,0 +1,212 @@
+---
+sidebar_position: 2
+title: "Tích hợp Framework"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Tích hợp Framework
+
+Hướng dẫn thiết lập từng bước cho Champollion với các framework phổ biến.
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### Cấu trúc dự án
+
+Hugo sử dụng `i18n/` cho các bản dịch chuỗi và `content/` cho nội dung trang:
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### Thiết lập
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### Chi tiết dịch thuật nội dung
+
+**Front matter**: Hỗ trợ cả dấu phân cách YAML (`---`) và TOML (`+++`). Dịch các trường `title`, `description`, `summary`, `subtitle`, `caption`, và `linkTitle` theo mặc định. Tất cả các trường khác (date, draft, tags, weight, slug, v.v.) đều được giữ nguyên. Tùy chỉnh bằng `translatableFields` trong cấu hình của bạn.
+
+**Bảo vệ khối (Block protection)**: Các khối mã (code block), Hugo shortcode, mã nội dòng (inline code) và HTML thô được tự động bảo vệ bằng các trình giữ chỗ sentinel Unicode. Chúng được giữ nguyên vẹn.
+
+**Quy ước đặt tên tệp**: Tuân theo mô hình dịch-theo-tên-tệp của Hugo:
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (loại bỏ hậu tố nguồn)
+
+**Bỏ qua tệp đã có**: Các tệp đã dịch hiện có sẽ không bao giờ bị ghi đè. Hãy xóa tệp đích để bắt buộc dịch lại.
+
+### Dạng số nhiều
+
+Các tệp ngôn ngữ TOML và YAML hỗ trợ các dạng số nhiều CLDR:
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+Được biểu diễn nội bộ dưới dạng `items.one` and `items.other` để so sánh sự khác biệt (diffing), sau đó được tuần tự hóa lại thành định dạng phân đoạn chính xác khi ghi.
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### Cấu trúc dự án
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### Thiết lập
+
+```bash
+npm install --save-dev champollion
+npx champollion init --yes --langs fr,de,ja,es,ko,zh,pt,ar
+```
+
+`init` tìm thấy `messages/en.json`, tạo các tệp đích trống và ghi cấu hình như sau:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": {
+    "fr": "formal-vous", "de": "formal-Sie", "ja": "polite", "es": "neutral-latam",
+    "ko": "polite-haeyo", "zh": {}, "pt": "professional", "ar": {}
+  }
+}
+```
+
+Văn phong (sắc thái và độ trang trọng) của từng ngôn ngữ đích được ghi vào `languages`, giúp bạn có thể xem và chỉnh sửa: chuyển sang một preset khác của ngôn ngữ đó (`champollion status` sẽ liệt kê danh sách) hoặc tự viết theo ý bạn. Ngôn ngữ không có preset sẽ được ghi dưới dạng `{}`. Một danh sách đơn giản, `"languages": ["fr", "de"]`, cũng hoạt động và sẽ sử dụng mặc định của từng ngôn ngữ.
+
+```bash
+npx champollion sync
+```
+
+Tạo ra `messages/fr.json`, `messages/ja.json`, v.v. — được dịch hoàn toàn, giữ nguyên cấu trúc key lồng nhau của bạn. next-intl sẽ tự động nhận diện chúng.
+
+### Quy trình phát triển
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### Mỗi ngôn ngữ một thư mục (mặc định của i18next)
+
+```
+public/locales/
+├── en/
+│   ├── common.json        ← source namespaces
+│   └── admin/users.json
+├── fr/
+└── ja/
+```
+
+```bash
+npx champollion init --yes --langs fr,de,ja
+```
+
+`init` tìm thấy `public/locales/en/` (hoặc `locales/en/`), trỏ cấu hình vào đó và tạo `fr/common.json`, `fr/admin/users.json` cùng các tệp khác dưới dạng tệp trống. Phần cấu hình liên quan được ghi ra:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./public/locales",
+  "languages": { "fr": "formal-vous", "de": "formal-Sie", "ja": "polite" }
+}
+```
+
+```bash
+npx champollion sync
+```
+
+Mỗi tệp namespace được dịch và ghi vào cùng một đường dẫn trong thư mục của từng ngôn ngữ. Một chuỗi xuất hiện trong nhiều namespace chỉ được dịch một lần cho mỗi ngôn ngữ; các tệp khác sẽ lấy chuỗi đó từ Translation Memory. Các khóa số nhiều (`key_one`, `key_other`) sẽ nhận các dạng tương ứng của từng ngôn ngữ: tiếng Pháp có thêm `key_many`, tiếng Nhật chỉ giữ lại `key_other`. Xem [Bố cục tệp Locale](/docs/getting-started/configuration#locale-layouts).
+
+### Mỗi ngôn ngữ một tệp
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+### Các bố cục khác
+
+Nếu các tệp của bạn tuân theo một mẫu khác, hãy mô tả mẫu đó bằng `localesPattern` (`{lang}` là ngôn ngữ, `{ns}` là namespace):
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesPattern": "src/i18n/{ns}/{lang}.json",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+  </TabItem>
+</Tabs>

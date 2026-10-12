@@ -1,0 +1,212 @@
+---
+sidebar_position: 2
+title: Framework Integration
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Framework Integration
+
+Step-by-step setup for champollion with popular frameworks.
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### Project Structure
+
+Hugo uses `i18n/` for string translations and `content/` for page content:
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### Setup
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### Content Translation Details
+
+**Front matter**: Supports both YAML (`---`) and TOML (`+++`) delimiters. Translates `title`, `description`, `summary`, `subtitle`, `caption`, and `linkTitle` by default. All other fields (date, draft, tags, weight, slug, etc.) are preserved. Customize with `translatableFields` in your config.
+
+**Block protection**: Code blocks, Hugo shortcodes, inline code, and raw HTML are automatically shielded using Unicode sentinel placeholders. They pass through untouched.
+
+**Filename convention**: Follows Hugo's translation-by-filename pattern:
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (strips source suffix)
+
+**Skip existing**: Existing translated files are never overwritten. Delete a target file to force re-translation.
+
+### Plural Forms
+
+TOML and YAML locales support CLDR plural forms:
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+Internally represented as `items.one` and `items.other` for diffing, then re-serialized to the correct sectioned format on write.
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### Project Structure
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### Setup
+
+```bash
+npm install --save-dev champollion
+npx champollion init --yes --langs fr,de,ja,es,ko,zh,pt,ar
+```
+
+`init` finds `messages/en.json`, creates the empty target files and writes a config like this:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": {
+    "fr": "formal-vous", "de": "formal-Sie", "ja": "polite", "es": "neutral-latam",
+    "ko": "polite-haeyo", "zh": {}, "pt": "professional", "ar": {}
+  }
+}
+```
+
+Each target's register (its tone and formality) is written into `languages`, so it is visible and editable: change one to another of the language's presets (`champollion status` lists them) or to your own words. A language with no presets is written as `{}`. A plain list, `"languages": ["fr", "de"]`, works too and uses each language's default.
+
+```bash
+npx champollion sync
+```
+
+Creates `messages/fr.json`, `messages/ja.json`, etc. — fully translated, preserving your nested key structure. next-intl picks them up automatically.
+
+### Development Workflow
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### One Folder per Language (i18next default)
+
+```
+public/locales/
+├── en/
+│   ├── common.json        ← source namespaces
+│   └── admin/users.json
+├── fr/
+└── ja/
+```
+
+```bash
+npx champollion init --yes --langs fr,de,ja
+```
+
+`init` finds `public/locales/en/` (or `locales/en/`), points the config at it, and creates `fr/common.json`, `fr/admin/users.json` and the others as empty files. The relevant part of the config it writes:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./public/locales",
+  "languages": { "fr": "formal-vous", "de": "formal-Sie", "ja": "polite" }
+}
+```
+
+```bash
+npx champollion sync
+```
+
+Each namespace file is translated and written to the same path in every language's folder. A string that appears in several namespaces is translated once per language; the other files get it from the Translation Memory. Plural keys (`key_one`, `key_other`) get each language's own forms: French gains `key_many`, Japanese keeps only `key_other`. See [Locale File Layouts](/docs/getting-started/configuration#locale-layouts).
+
+### One File per Language
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+### Other Layouts
+
+If your files follow another pattern, describe it with `localesPattern` (`{lang}` is the language, `{ns}` the namespace):
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesPattern": "src/i18n/{ns}/{lang}.json",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+  </TabItem>
+</Tabs>

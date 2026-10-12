@@ -1,0 +1,55 @@
+{
+  "_comment": "Air-gapped node config template. The rehearsal fills __ paths and __CPUS__ (from nproc). NO secret_privkey anywhere: custody is threshold-quorum, so the sealed set opens ONLY by presenting M-of-N custodian shares to `mt-eval node run-method --share ...`.",
+  "_comment_qualifier_gate": "The node re-executes the PUBLIC qualifier on every submitted method before it opens anything sealed. It normally gets the qualifiers row and the dev corpus from the exchange itself (version 2, written by `mt-eval node relay`), and REFUSES to run a relay request that arrived without them. For the DB-less lanes (`node stage-request`, a participant's `submit-method --offline`) there is no relay to carry them: declare them here instead, per contest, as `qualifier` ({qualifier_id, corpus_card_id, threshold, metric, year}) plus `dev_corpus` (the public dev set file). Declare both or neither — half a gate is never treated as one; with neither, the run is scored with the gate loudly recorded as NOT measured.",
+  "_comment_cards": "The node scores WITH a language-card index and never fetches one: publish.assemble_run_card names the run's language pair through the language-card SSOT, and an outbound lookup would tell the index host that a sealed run is happening. Carry a directory holding a card per language this node evaluates and name it here as top-level `cards_dir` (MT_EVAL_CARDS_DIR does the same job for every invocation on the machine, which is how the rehearsal sets it; a monorepo checkout is discovered automatically). load_node_config REFUSES at startup when no local index resolves, or when the one it is given holds no cards — a node that cannot name a language must say so, not score under a fabricated one.",
+  "_comment_prize_terms": "OPTIONAL, per contest: `prize_terms_sha256` is the contest's FROZEN prize-terms digest (contest_prize_terms.terms_sha256 — the same hash entrants pass to --accept-terms). An air-gapped node cannot read contests.metadata, so the organizer carries the hash here. Declared: a bundle that accepted different terms, or none, is BLOCKED at import and again at run time, exactly as the connected node blocks it. Absent: the acceptance is reported as a labelled WARN and is never treated as verified. Omit the key on a contest with no prize.",
+  "_comment_extra_sets": "OPTIONAL, per contest: `holdout_set_id` + `holdout_corpus` (+ `holdout_corpus_sha256`) declare the SECOND sealed split — executed inside the SAME authorized run as the secret set, scores withheld until the contest closes; the id must equal the contest's metadata.sealed_holdout_set_id. `test_suites` is a list of {suite_id, corpus_path, corpus_sha256} third-party PUBLIC diagnostic sets the method is also run on — reported, never ranked; the ids must match the contest's frozen metadata.test_suites, which the node checks whenever it can reach the database (an air-gapped node says out loud that it could not). load_node_config REFUSES at startup if any declared file is missing or its sha256 does not match. The `_example_...` key below is inert: copy its contents up one level, next to secret_set_id, and delete the underscore-prefixed name.",
+  "node_id": "lima-airgap-1",
+  "poll_seconds": 30,
+  "scratch_dir": "__HOME__/.mt-eval/node-scratch",
+  "output_dir": "__HOME__/.mt-eval/node-runs",
+  "grant_ttl_seconds": 3600,
+  "contests": {
+    "__CONTEST_ID__": {
+      "secret_set_id": "__SEALED_SET_ID__",
+      "secret_artifact": "__SECRET_ARTIFACT__",
+      "_example_qualifier": {
+        "qualifier": {
+          "qualifier_id": "eval-qaa-qab-synth-qualifier-v2026",
+          "corpus_card_id": "eval-qaa-qab-synth-dev-v1",
+          "threshold": 50.0,
+          "metric": "composite",
+          "year": 2026
+        },
+        "dev_corpus": "__HOME__/.mt-eval/sets/eval-qaa-qab-synth-dev-v1.json"
+      },
+      "_example_prize_terms_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "_example_extra_sets": {
+        "holdout_set_id": "eval-qaa-qab-synth-holdout-v1",
+        "holdout_corpus": "__HOME__/.mt-eval/sets/eval-qaa-qab-synth-holdout-v1.corpus.sealed.json",
+        "holdout_corpus_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "test_suites": [
+          {
+            "suite_id": "eval-example-diagnostic-v1",
+            "corpus_path": "__HOME__/.mt-eval/sets/eval-example-diagnostic-v1.json",
+            "corpus_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        ]
+      },
+      "custody": "threshold-quorum",
+      "corpus_version": "v1",
+      "language_pair": "qaa>qab",
+      "sandbox": {
+        "runtime": "docker",
+        "gpus": false,
+        "cpus": "__CPUS__",
+        "max_ram_gb": 4,
+        "max_tmp_gb": 4,
+        "max_runtime_minutes": 30
+      },
+      "declarative": { "architecture_policy": "permissive" }
+    }
+  },
+  "signing_key": "__SIGNING_KEY__",
+  "airgap": { "state_dir": "__HOME__/.mt-eval/airgap", "assert_airgap": true }
+}

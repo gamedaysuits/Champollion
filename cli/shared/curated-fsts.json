@@ -1,0 +1,51 @@
+{
+  "_comment": [
+    "Curated per-language FST registrations consumed by scripts/derive-fsts.mjs",
+    "(merged into resources.fsts[] — resource EXISTENCE only, boundary invariant kind 2).",
+    "Seeded 2026-07-19 with the GiellaLT PRODUCTION-maturity languages missing from the",
+    "cards (the live-check lane in generate-language-card.mjs only ran for ~20 launch",
+    "languages). Maturity is GiellaLT's own published tier (map-maturity-prod.html), not",
+    "our judgment. NOTE the repo slug is not always the ISO code (Kalaallisut = lang-kl).",
+    "Per the fst_installer.py doctrine, entries carry NO install pins: GitHub releases",
+    "are vestigial for GiellaLT; distribution is their nightly channel.",
+    "Every entry MUST carry a source string citing its basis (index, not arbiter)."
+  ],
+  "perLanguage": {
+    "fao": [
+      {
+        "name": "GiellaLT Faroese FST (lang-fao)",
+        "url": "https://github.com/giellalt/lang-fao",
+        "type": "morphological-analyzer",
+        "maturity": "production",
+        "source": "GiellaLT maturity map (giellalt.github.io/map-maturity-prod.html), production tier — verified 2026-07-19"
+      }
+    ],
+    "fkv": [
+      {
+        "name": "GiellaLT Kven FST (lang-fkv)",
+        "url": "https://github.com/giellalt/lang-fkv",
+        "type": "morphological-analyzer",
+        "maturity": "production",
+        "source": "GiellaLT maturity map (giellalt.github.io/map-maturity-prod.html), production tier — verified 2026-07-19"
+      }
+    ],
+    "kal": [
+      {
+        "name": "GiellaLT Kalaallisut FST (lang-kal)",
+        "url": "https://github.com/giellalt/lang-kal",
+        "type": "morphological-analyzer",
+        "maturity": "production",
+        "source": "GiellaLT maturity map (giellalt.github.io/map-maturity-prod.html), production tier; repo verified live (github.com/giellalt/lang-kal HTTP 200) 2026-07-19"
+      }
+    ],
+    "nno": [
+      {
+        "name": "GiellaLT Norwegian Nynorsk FST (lang-nno)",
+        "url": "https://github.com/giellalt/lang-nno",
+        "type": "morphological-analyzer",
+        "maturity": "production",
+        "source": "GiellaLT maturity map (giellalt.github.io/map-maturity-prod.html), production tier — verified 2026-07-19"
+      }
+    ]
+  }
+}

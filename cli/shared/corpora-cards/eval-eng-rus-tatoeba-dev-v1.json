@@ -1,0 +1,98 @@
+{
+  "id": "eval-eng-rus-tatoeba-dev-v1",
+  "type": "eval",
+  "name": "Tatoeba eng→rus Development Corpus",
+  "version": "0.1.0",
+  "pair": {
+    "source": "eng",
+    "target": "rus",
+    "direction": "unidirectional"
+  },
+  "description": "Mesh wave dev corpus built from Tatoeba Challenge v2023-09-26. 186 entries, stratified across 16 domain(s). NOT hosted in git — rebuilt deterministically on demand from the pinned upstream Tatoeba Challenge archive.",
+  "source": {
+    "publisher": "Tatoeba community (https://tatoeba.org)",
+    "url": "https://tatoeba.org",
+    "paper": "https://arxiv.org/abs/2010.06354",
+    "citation": "Tiedemann (2020). The Tatoeba Translation Challenge — Realistic Data Sets for Low Resource and Multilingual MT.",
+    "fundedBy": null,
+    "repo_url": "https://object.pouta.csc.fi/Tatoeba-Challenge-devtest/test-v2023-09-26.tar",
+    "builder": "tatoeba-challenge",
+    "sha256": "b2261e058637afbf3b0c5c9ef56d323a5796175aa03109a8cc2183e4368eec83",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "member": "data/test-v2023-09-26/eng-rus/test.txt",
+    "recipe": {
+      "release": "v2023-09-26",
+      "split": "test",
+      "seed": 42,
+      "max_entries": 200,
+      "length_unit": "words",
+      "min_words": 3,
+      "max_words": 50,
+      "min_chars": 8,
+      "max_chars": 250,
+      "variety_filter": null,
+      "created": "2026-06-12T00:00:00+00:00",
+      "builder_version": "0.1.0"
+    }
+  },
+  "license": {
+    "spdx": "CC-BY-2.0",
+    "commercial": true,
+    "redistribution": true,
+    "aiTraining": null,
+    "notes": null
+  },
+  "dev": {
+    "size": 186,
+    "sizeUnit": "entries",
+    "domain": "conv",
+    "domainDistribution": {
+      "conv": 0.081,
+      "ecommerce": 0.081,
+      "edu": 0.081,
+      "financial": 0.059,
+      "gov": 0.048,
+      "legal": 0.081,
+      "literary": 0.075,
+      "marketing": 0.075,
+      "medical": 0.065,
+      "news": 0.075,
+      "religious": 0.038,
+      "scientific": 0.048,
+      "subtitles": 0.032,
+      "support": 0.054,
+      "tech": 0.054,
+      "ui": 0.054
+    },
+    "dataFile": "curated/eng-rus-dev-v1.json",
+    "format": "harness-json"
+  },
+  "secretTest": null,
+  "stewardship": null,
+  "submission": null,
+  "quality": {
+    "humanTranslated": true,
+    "translatorQualifications": null,
+    "reviewProcess": null,
+    "orthography": null
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "Tatoeba eng→rus is a high-resource pair with 186 entries. Both languages are well-represented in web crawl data. Individual sentences may appear in frontier LLM training data via broad tatoeba.org crawls."
+  },
+  "doNotTrain": true,
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": null,
+    "populatedFrom": "Generated from arena/datasets/registry.json entry 'tatoeba-eng-rus-dev' (mesh wave 1, 2026-06-12). Size and domain distribution verified against curated data file. License from Tatoeba Challenge terms (CC-BY-2.0). Fetch-from-source build recipe pinned in source block."
+  },
+  "richness": {
+    "mean_source_chars": 74.1,
+    "mean_effective_words": 14.82,
+    "economy": 5.0,
+    "economy_basis": "measured",
+    "computed_from": "eng-rus-dev-v1.json",
+    "computed_at": "2026-06-12"
+  }
+}

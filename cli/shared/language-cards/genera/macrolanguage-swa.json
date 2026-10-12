@@ -1,0 +1,120 @@
+{
+  "code": "macrolanguage-swa",
+  "extends": "genus-bantu",
+  "name": "Swahili Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "swa",
+  "script": "Latn",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Swahili expresses formality through pronoun choice (wewe/ninyi for singular familiar/plural-as-formal), honorific titles (Bwana, Bibi, Mzee), and vocabulary register. Formal Swahili draws on Arabic-origin vocabulary and standard Kiswahili sanifu. Informal registers use more local dialect features and English/local language borrowings.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Swahili uses a noun class system (18 classes, typically grouped into 9 singular/plural pairs) rather than grammatical gender. Noun classes categorize by semantic and morphological properties (human, non-human animate, plants, abstracts, augmentative, diminutive, locative, etc.). The human class (M/WA) is the closest to 'gender' but distinguishes human/non-human, not masculine/feminine."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "nounClassAgreement": "Swahili noun classes trigger agreement chains across entire sentences. Subject prefix, object infix, adjective prefix, demonstrative, possessive, and relative marker all agree with the noun class: ki-tabu ki-zuri ki-le ki-moja 'that one beautiful book' (all ki- class 7). Getting class agreement wrong is immediately noticeable.",
+    "agglutinativeVerbMorphology": "Swahili verbs carry subject prefix + tense marker + (object infix) + root + (derivational suffixes) + final vowel: a-na-ki-soma 'he/she-PRESENT-it(cl7)-reads'. A single verb form can be 5–7 morphemes long. Morpheme boundary errors are common in MT.",
+    "arabicVocabularyInfluence": "Swahili has extensive Arabic borrowings (estimated 20–40% of core vocabulary) from centuries of Indian Ocean trade. These loanwords are fully integrated into Swahili noun class and morphology systems. Some Arabic plurals coexist with Swahili class plurals for the same noun.",
+    "standardVsDialect": "Standard Swahili (Kiswahili sanifu) is based on the Zanzibar/Unguja dialect but differs from other Swahili varieties (Congo Swahili, Kimvita/Mombasa, Kiamu, etc.). Congo Swahili in particular has simplified noun class agreement. Do NOT mix dialect features with standard Swahili.",
+    "tenseAspectSystem": "Swahili has a rich tense/aspect system expressed through verbal prefixes: -na- (present/progressive), -li- (past), -ta- (future), -me- (perfect/completive), -ki- (conditional/temporal), -nge- (hypothetical), -ngali- (counterfactual). These are not simple equivalents to English tenses.",
+    "derivationalSuffixes": "Productive derivational suffixes modify verb meaning: -isha (causative), -iwa (passive), -ana (reciprocal), -ia (applicative), -ika (stative). These can stack: pend-esh-an-a 'love-CAUS-RECIP-FV' = 'cause each other to love'. MT must handle these combinations."
+  },
+  "contactInfluences": [
+    {
+      "source": "Arabic",
+      "sourceIso639_3": "ara",
+      "type": "adstrate",
+      "domains": [
+        "trade",
+        "religion",
+        "maritime",
+        "culture"
+      ],
+      "depth": "heavy",
+      "period": "8th century–present",
+      "notes": "Centuries of Indian Ocean trade brought extensive Arabic vocabulary. Swahili was historically written in Arabic script (Ajami). Arabic influence is strongest in coastal dialects and formal register."
+    },
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "government",
+        "technology",
+        "commerce"
+      ],
+      "depth": "heavy",
+      "period": "19th century–present",
+      "notes": "British colonial influence in East Africa. English loanwords dominate technology, education, and modern commerce domains."
+    }
+  ],
+  "classification": {
+    "family": "Atlantic-Congo",
+    "familyGlottocode": "atla1278",
+    "genus": "Bantu",
+    "genusGlottocode": "bant1294",
+    "ancestry": [
+      "Atlantic-Congo",
+      "Volta-Congo",
+      "Benue-Congo",
+      "Bantoid",
+      "Bantu",
+      "Sabaki",
+      "Swahili"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3",
+    "iso639-3-2024"
+  ],
+  "notes": "Macrolanguage card for Swahili (swa). Covers Swahili proper (swh, Tanzania/Kenya) and Congo Swahili (swc, DRC). Both share Latin script, SVO word order, noun class system, and agglutinative Bantu morphology. Arabic vocabulary influence is a distinctive shared feature.",
+  "regions": [
+    {
+      "country": "East Africa",
+      "countryCode": null,
+      "officialStatus": "official",
+      "region": "Tanzania (national), Kenya (official), DRC (national), Uganda, Comoros, Mozambique",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null,
+  "iso639_3": "swa",
+  "_fieldSources": {
+    "iso639_3": "iso639-3-2024",
+    "isoType": "iso639-3-2024",
+    "modality": "derived:glottolog-sign-family+iso639-3-refname",
+    "members": "iso639-3-2024",
+    "supportTier": "derived:taxonomy-hub-policy (docs/LANGUAGE_TAXONOMY.md)"
+  },
+  "isoType": "L",
+  "modality": "spoken",
+  "taxonomyNotes": null,
+  "members": [
+    "swc",
+    "swh"
+  ],
+  "supportTier": "cataloged"
+}

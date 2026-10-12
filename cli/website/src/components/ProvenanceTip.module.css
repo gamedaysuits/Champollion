@@ -1,0 +1,104 @@
+/* ProvenanceTip — shared "source + date" affordance.
+   Same visual grammar as the leaderboard InfoTip; tooltip surfaces use
+   design tokens so dark/light both work. */
+
+.tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.6;
+  cursor: help;
+  position: relative;
+  vertical-align: super;
+  margin-left: 2px;
+  transition: opacity 0.15s ease;
+}
+
+.tip:hover,
+.tip:focus-visible {
+  opacity: 1;
+  color: var(--ifm-color-primary);
+  outline: none;
+}
+
+.tip::after {
+  content: attr(data-tooltip);
+  /* display:none while hidden — an opacity-0 bubble anchored near the
+     viewport edge still widens the page's scroll extent on phones. */
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-2, #202623);
+  color: var(--text-primary, #eef1ef);
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.12));
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.45;
+  white-space: normal;
+  width: max-content;
+  max-width: 300px;
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.4));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.tip:hover::after,
+.tip:focus-visible::after {
+  display: block;
+  opacity: 1;
+}
+
+/* First-view pulse — one soft ring so visitors notice the receipts.
+   Added by JS (IntersectionObserver) the first time the tip is seen;
+   the observer itself is skipped under prefers-reduced-motion. */
+.tipSeen {
+  animation: tipPulse 1.1s ease-out 1;
+  border-radius: 50%;
+}
+
+@keyframes tipPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent-glow, rgba(63, 193, 192, 0.35));
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(63, 193, 192, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(63, 193, 192, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip,
+  .tip::after {
+    transition: none;
+  }
+  .tipSeen {
+    animation: none;
+  }
+}
+
+/* On narrow screens, pin tooltips inside the viewport */
+@media (max-width: 600px) {
+  .tip::after {
+    left: auto;
+    right: -8px;
+    transform: none;
+    max-width: 78vw;
+  }
+}

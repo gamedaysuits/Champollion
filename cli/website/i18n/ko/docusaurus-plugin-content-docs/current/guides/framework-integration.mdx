@@ -1,0 +1,212 @@
+---
+sidebar_position: 2
+title: "프레임워크 통합"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 프레임워크 통합
+
+인기 프레임워크와 champollion을 연동하기 위한 단계별 설정 안내입니다.
+
+<Tabs>
+  <TabItem value="hugo" label="Hugo" default>
+
+## Hugo (TOML / YAML / Markdown)
+
+### 프로젝트 구조
+
+Hugo는 문자열 번역에 `i18n/`을, 페이지 콘텐츠에 `content/`을 사용해요:
+
+```
+my-hugo-site/
+├── i18n/
+│   ├── en.toml             ← source of truth
+│   ├── fr.toml
+│   └── ja.toml
+├── content/
+│   ├── posts/
+│   │   ├── hello.md        ← source (English)
+│   │   ├── hello.fr.md
+│   │   └── hello.ja.md
+│   └── about.md
+└── .env.local
+```
+
+### 설정
+
+```bash
+npm install --save-dev champollion
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./i18n",
+  "contentDir": "./content",
+  "format": "auto",
+  "languages": ["fr", "de", "ja", "es", "ko", "zh"]
+}
+```
+
+```bash
+champollion sync           # sync i18n string files + content files
+champollion sync --dry     # preview changes without writing
+```
+
+### 콘텐츠 번역 세부 사항
+
+**Front matter**: YAML(`---`)과 TOML(`+++`) 구분자를 모두 지원해요. 기본적으로 `title`, `description`, `summary`, `subtitle`, `caption`, `linkTitle`를 번역해요. 그 외 모든 필드(date, draft, tags, weight, slug 등)는 그대로 유지돼요. 설정에서 `translatableFields`으로 커스터마이징할 수 있어요.
+
+**블록 보호**: 코드 블록, Hugo 단축 코드, 인라인 코드, 원시 HTML은 유니코드 센티넬 플레이스홀더를 사용해 자동으로 보호돼요. 이들은 변경 없이 그대로 전달돼요.
+
+**파일명 규칙**: Hugo의 파일명 기반 번역 패턴을 따라요:
+- `my-post.md` → `my-post.fr.md`
+- `my-post.en.md` → `my-post.fr.md` (소스 접미사 제거)
+
+**기존 파일 건너뛰기**: 이미 번역된 파일은 절대 덮어쓰지 않아요. 재번역을 강제하려면 대상 파일을 삭제하세요.
+
+### 복수형
+
+TOML과 YAML 로케일은 CLDR 복수형을 지원해요:
+
+```toml
+[items]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+```
+
+내부적으로는 diff를 위해 `items.one`과 `items.other`로 표현되며, 작성 시 올바른 섹션 형식으로 다시 직렬화돼요.
+
+  </TabItem>
+  <TabItem value="nextintl" label="Next.js (next-intl)">
+
+## next-intl (JSON)
+
+### 프로젝트 구조
+
+```
+my-app/
+├── messages/
+│   └── en.json        ← source of truth
+├── src/
+│   ├── i18n/
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── middleware.ts
+└── .env.local
+```
+
+### 설정
+
+```bash
+npm install --save-dev champollion
+npx champollion init --yes --langs fr,de,ja,es,ko,zh,pt,ar
+```
+
+`init`은 `messages/en.json`을 찾아 빈 타깃 파일을 생성하고 다음과 같이 설정을 작성해요:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./messages",
+  "languages": {
+    "fr": "formal-vous", "de": "formal-Sie", "ja": "polite", "es": "neutral-latam",
+    "ko": "polite-haeyo", "zh": {}, "pt": "professional", "ar": {}
+  }
+}
+```
+
+각 타깃의 어조(톤과 격식 수준)는 `languages`에 기록되므로 직접 확인하고 수정할 수 있어요. 해당 언어의 다른 프리셋(`champollion status`에서 목록 확인 가능)으로 변경하거나 직접 원하는 표현으로 수정해 보세요. 프리셋이 없는 언어는 `{}`(으)로 기록돼요. 일반 목록 형태인 `"languages": ["fr", "de"]`도 사용할 수 있으며, 이 경우 각 언어의 기본값이 적용돼요.
+
+```bash
+npx champollion sync
+```
+
+`messages/fr.json`, `messages/ja.json` 등을 생성해요 — 중첩된 키 구조를 유지하며 완전히 번역돼요. next-intl이 자동으로 인식해요.
+
+### 개발 워크플로
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "champollion watch & next dev",
+    "i18n:sync": "champollion sync",
+    "i18n:audit": "champollion audit"
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="react" label="React (react-i18next)">
+
+## react-i18next (JSON)
+
+### 언어별 폴더 (i18next 기본값)
+
+```
+public/locales/
+├── en/
+│   ├── common.json        ← source namespaces
+│   └── admin/users.json
+├── fr/
+└── ja/
+```
+
+```bash
+npx champollion init --yes --langs fr,de,ja
+```
+
+`init`은 `public/locales/en/`(또는 `locales/en/`)을 찾아 설정이 해당 경로를 가리키도록 지정하고, `fr/common.json`, `fr/admin/users.json` 및 기타 파일들을 빈 파일로 생성해요. 이때 작성되는 설정의 관련 부분은 다음과 같아요:
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./public/locales",
+  "languages": { "fr": "formal-vous", "de": "formal-Sie", "ja": "polite" }
+}
+```
+
+```bash
+npx champollion sync
+```
+
+각 네임스페이스 파일은 번역되어 모든 언어 폴더의 동일한 경로에 작성돼요. 여러 네임스페이스에 등장하는 문자열은 언어당 한 번만 번역되며, 다른 파일은 번역 메모리(Translation Memory)에서 이를 가져와요. 복수형 키(`key_one`, `key_other`)는 각 언어에 맞는 고유한 형태를 갖춰요. 예를 들어 프랑스어에는 `key_many`이 추가되고, 일본어는 `key_other`만 유지돼요. [로캘 파일 레이아웃](/docs/getting-started/configuration#locale-layouts)을 참고해 보세요.
+
+### 언어별 파일
+
+```
+locales/
+├── en.json
+├── fr.json
+└── ja.json
+```
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesDir": "./locales",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+### 기타 레이아웃
+
+파일이 다른 패턴을 따르고 있다면 `localesPattern`으로 지정할 수 있어요(`{lang}`은 언어, `{ns}`은 네임스페이스예요):
+
+```json title="champollion.config.json"
+{
+  "version": 3,
+  "inputLocale": "en",
+  "localesPattern": "src/i18n/{ns}/{lang}.json",
+  "languages": ["fr", "de", "ja"]
+}
+```
+
+  </TabItem>
+</Tabs>

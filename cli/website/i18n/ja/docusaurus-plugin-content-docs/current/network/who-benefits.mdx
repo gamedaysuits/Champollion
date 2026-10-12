@@ -1,0 +1,160 @@
+---
+sidebar_position: 3
+title: "恩恵を受けるのは誰か"
+slug: '/network/who-benefits'
+description: "普遍的でコミュニティが所有する翻訳レイヤーであるChampollionが成功した場合、誰が何を得るのか。話者、言語コミュニティ、翻訳ベンダー、研究者、資金提供者、報道機関のそれぞれについて、具体的な最初のアクションとともに説明します。"
+related:
+  - label: "For Language Communities"
+    to: /docs/network/community/for-language-communities
+    kind: doc
+    note: "The full community door — sovereignty, ownership, and how to start"
+  - label: "How the Work Is Funded"
+    to: /docs/network/sovereignty/economic-model
+    kind: doc
+    note: "The economic model in full"
+  - label: "Submit a Method"
+    to: /docs/network/getting-started/submit-a-method
+    kind: guide
+    note: "The end-to-end run-and-publish walkthrough"
+  - label: "Honest Limitations"
+    to: /docs/network/honest-limitations
+    kind: doc
+    note: "What we do not (yet) claim"
+---
+
+{/* このページのカウントはSSOTCount（docusaurus.config.jsのcustomFieldsを介した機械的SSOTのビルド時読み取り）を通じてレンダリングされます。SSOT表示標準に従い、手入力されることはありません。cli/scripts/check-prose-counts-parity.mjsが、削減不可能な少数の散文の数値を制御します。 */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# 誰の利益になるのか
+
+> **エグゼクティブサマリー:** 世界に存在する約7,000の生きた言語のうち、何らかの機械翻訳が存在する言語は600未満にとどまり、それらの言語の半数以上が消滅の危機に瀕しています（GlottologのAgglomerated Endangerment Statusに基づく、Champollionによる集計）。コミュニティが所有する普遍的な翻訳レイヤーであるChampollionが成功すれば、もたらされる成果は2つあります。業界が見過ごしてきた話者に対する現在のコミュニケーション手段の提供と、危機言語の保存および活性化に資する実用的なツールの提供です。その戦略は意図的かつ明確です。オープンなルールによって評価されるクラウドソーシングによる手法開発、資金が確保された際に（現在は未保有）公表された報酬率で行われるコーパス構築のスポンサーシップ、そしてコミュニティが自身のデータ、テストセット、それらに対して検証されたあらゆる手法の管理権を保持することです。このページでは、各グループが得られる利益と、最初に取り組むべきことについて説明します。
+
+## 話者とそのコミュニティ \{#speakers}
+
+もしあなたが、十分なサービスが提供されていない言語と英語を話すのであれば、あなたの判断はこのプロジェクト全体において最も価値のあるものです。それは、いかなるモデルや指標よりも重要です。コンピュータは2つの文がどれだけ似ているかを数えることはできますが、その文が実際の話者が言うようなものかどうかを判断することはできません。その判断はあなたのものであり、ここにある他のすべてが照合されるグラウンドトゥルース（正解データ）となります。
+
+**話者による検証は、資金が確保され次第（現在は未保有）、公表された専門職水準の報酬率（時給50〜65カナダドル）で支払われる有償の業務となります。ご自身のスケジュールで作業でき、技術的な専門知識は不要です**。両方の言語を読み、文章を判定できる方であれば誰でも資格を満たします。[話者検証プロトコル](/docs/network/specifications/speaker-validation)では、以下の3種類のタスクを公開しています。
+
+| タスク | 作業内容 | 時間 | 公開報酬 |
+|------|-------------|------|---------------|
+| 翻訳の評価 | 機械翻訳を読み、それぞれについて「自然か？」「意味が正しいか？」を評価する | 約8時間（数週間に分けて実施） | 400〜520カナダドル |
+| 「同等」なペアのレビュー | 2つの言い回しが本当に同じ意味を持つかどうかを判断する | 約2時間 | 100〜130カナダドル |
+| 拒否された単語のレビュー | 文法ツールが無効としてフラグを立てた単語をチェックし、それが正しかったかを確認する | 約1.5時間 | 75〜100カナダドル |
+
+また、日常的な文章のリファレンス翻訳を作成するコーパス構築業務もあり、同じ時給率で支払われます（[詳細](/docs/network/perspectives/how-speakers-get-paid)）。条件をまとめると次のとおりです。**ボランティアではなく有償**（各タスクブロックから2週間以内に支払い、結果の内容にかかわらず支給）。**ご希望に応じたクレジット表記**（実名または匿名、共同執筆権の選択可能）。**いつでも貢献を取り下げ可能**（問題があると判断した結果の公開に対する拒否権付き）。
+
+:::note[現在の状況について]
+誠実さを最優先にお伝えします。上記の報酬率と条件は公表されたコミットメントですが、話者による業務への資金提供はまだ行われておらず、[コミュニティによる検証ラウンドもまだ実施されていません](/docs/network/honest-limitations)。今お問い合わせいただくことは対話の始まりであって、雇用の開始ではありません。また、無償での作業開始をお願いすることはありません。
+:::
+
+**最初のアクション:** もしコミュニティが日常的な文章をオープンに公開することに問題がなければ、今すぐ[Tatoeba](https://tatoeba.org)に追加することができます。Champollion自体はコーパスを収集またはホストすることは決してありません（テストデータは常に[そのソースから取得](/docs/network/sovereignty/registering-corpora)されます）が、本プロジェクトのベンチマークのいくつかはTatoebaの文章や[OPUS](https://opus.nlpl.eu/)のようなオープンなコレクションから構築されています。ただしトレードオフを理解しておく必要があります。Tatoebaの文章はオープンライセンスであり、誰でも（AIモデルのトレーニングを含め）複製でき、その複製を取り消すことはできません。コミュニティが管理したいデータは含めないようにしてください。その後、[話者への報酬の支払い方法](/docs/network/perspectives/how-speakers-get-paid)（5分で読め、すべての数値が記載されています）をお読みになり、ご自身が話す言語と判定可能な方言・変種を添えて、[info@champollion.dev](mailto:info@champollion.dev)または[公開リポジトリ](https://github.com/gamedaysuits/Champollion/issues)のIssueからご連絡ください。
+
+## コーパスを構築する言語コミュニティ \{#communities}
+
+このシステムにおいてコミュニティが保持できる最も強力な立場は、**ベンチマーク自体を所有すること**です。テストセットは解答集です。それを保持する者が、その言語にとって「良い翻訳」とは何かを決定し、私たちのもの、企業のもの、誰のものであろうと、すべての手法が*あなたの*基準に対して測定されます。
+
+まず基本原則として、**あなたの言語データはあなたのものです。** コーパスの登録とは、[選択した公開レーン](/docs/network/sovereignty/registering-corpora)（オープン、ゲート付き、または完全主権型〈Champollion側は閲覧せず、コミュニティ側のインフラ上でスコアリングされるテストセット〉）で記述的メタデータカードを公開することを意味し、コーパスをアップロードすることではありません。コーパス構築と翻訳レビューは専門職としての業務であり、資金が確保され次第（現在は未保有）[公表された報酬率で支払われます](/docs/network/perspectives/how-speakers-get-paid)。また、支払いはデータ購入を意味するものではありません。あなたの言語のために構築された翻訳手法がここで検証された場合、コード、重み、デプロイ制御などの[所有権がコミュニティの統括組織へ移転](/docs/network/sovereignty/ownership-transfer)されます。厳選された50組の翻訳ペアがあるだけでも、新しいリーダーボードトラックを開設するのに十分です。
+
+コミュニティ向けの完全な入り口（主権の保証、ネットワークが求めるものと還元するもの、そしてステップバイステップの開始方法）は、**[言語コミュニティ向け（For Language Communities）](/docs/network/community/for-language-communities)**にあります。また、コミュニティ主導の評価のためのランブックとして、[主権型コンテストの実施（Run a Sovereign Contest）](/docs/network/sovereignty/run-a-sovereign-contest)が用意されています。
+
+## 翻訳サービスおよびMTベンダー \{#vendors}
+
+MTエンジン、LLMパイプライン、ルールベースのシステム、または人間による翻訳サービスなど、翻訳を構築または販売している場合、公開されたテストセットでここでベンチマークを行い、公開リーダーボードやマップに掲載され、他のすべての人と同じルールで評価されることができます。**手数料なし、パートナーシップ契約なし、特定の技術への優遇なし:** ハーネスは設計上、手法に依存しません。支払うのはご自身のコンピューティングコストまたはAPIコストのみです（[活動の資金源について](/docs/network/sovereignty/economic-model)）。
+
+公開されているMTベンチマークのほとんどは、同じ数百の高リソース言語を対象としており、その多くは汚染（コンタミネーション）されています。Champollionのカタログには、<SSOTCount field="registryDatasetCount" />の評価データセットが、SHAで固定されたソースから取得するメタデータカードとして登録されており、[データセットごとに汚染状況が開示され](/docs/network/leaderboard/datasets)、未公開の新しいテストセット用のレーンも用意されています。スコアは、公開された[スコアリングルール](/docs/network/specifications/scoring)の下で、オープンで再現可能な指標（sacreBLEUを介したchrF++/BLEU/TER、および別のニューラルレーンで報告されるCOMET/AfriCOMET）を使用します。手法の依存関係は隠されずに宣言され、独自のエンジンは独自のままです。ハーネスはあなたのシステムを呼び出すだけで、重みやコードにアクセスすることはありません。2つの正直な注意点があります。**ボードはまだ新しい**（[正直な制限事項（Honest Limitations）](/docs/network/honest-limitations)に、現在検証されている内容が正確に記載されています）こと、そして**スコアはデプロイメントの権利を付与するものではない**ことです。コミュニティが管理する言語については、コミュニティがデプロイメントを決定します（[データスチュワードシップ](/docs/network/sovereignty/data-sovereignty)）。
+
+**最初のアクション（MTエンジンまたはパイプライン）:** [評価データセット](/docs/network/leaderboard/datasets)と[リーダーボード](/leaderboard)からペアを選択します。`pipx install mt-eval-harness`、[手法の提出（Submit a Method）](/docs/network/getting-started/submit-a-method)に従ってください。エンジンがOpenRouter経由でアクセスできない場合は、[TranslationMethodプロトコル](/docs/network/specifications/methods#eval-harness-translationmethod-protocol)を実装するか、小規模なAPIサービスとして公開します（[ガイド](/docs/guides/serving-a-method)）。その後、実行して公開します。コミュニティからの提出は、[リーダーボードのルール](/docs/network/leaderboard/rules)に基づき、明確にラベル付けされた自己ベンチマークの信頼層（trust tier）で公開されます。
+
+**人間による翻訳を販売している場合:** あるペアにおいて信頼できる機械翻訳がない場合、サイトではその旨を明確に伝え、代わりに同意を得た人間のプロバイダーを表示します。[ヒューマンサービスレーン](/human-services)を読み、対応するペアと変種、条件、および同意の確認を記載したメール（[info@champollion.dev](mailto:info@champollion.dev)）で掲載をリクエストしてください。あなたの連絡先情報が同意なしに公開されることはありません。人間による翻訳も、ここでは他の手法と同様の1つの手法です。一部のチームは、生のMTに対する差分をバイヤーに示すために、ポストエディットのパイプラインをベンチマークしています。
+
+## 研究者 \{#researchers}
+
+低リソース言語に機械翻訳をもたらす最もコストのかかる方法は、この分野で通常試みられている方法、つまりトレーニングコーパスを構築することです。それは数十万の文ペアを意味し、誰もチェックできないほど膨大な量であるため、誰も気づかない形で品質にばらつきが生じます。そして、そのペアでトレーニングされたモデルが、データが間違っていた箇所を正確に間違えたときに初めて、最後に失敗が表面化します。数ヶ月にわたる収集作業によって、完全に信頼できないコーパスと、出荷できないモデルが生み出される可能性があります。
+
+評価セットは、その経済性を逆転させます。同じ言語の開発用およびホールドアウト（検証用）テストセットは、**1,000**ペア程度の規模です。これは、専門家によるキュレーションが実際に可能であり、すべてのペアをその言語を知っている人がチェックできるほど十分に小さい規模です。検証できない70万ペアか、検証できる1,000ペアか。評価セットは、研究者の判断がすべての文に行き届く唯一の成果物です。そして、トレーニングコーパスとは異なり、古くなることはありません。新しく登場するすべてのモデル、エンジン、または手法を、無期限にそれに対して測定することができます。
+
+これが、プロジェクト全体が基づいている賭け、すなわち**世代別ペアのテーゼ（generational-pair thesis）**です。評価基準とインセンティブを構築すれば、コミュニティが機能するソリューションを構築するというものです。あなたが1,000のペアをキュレーションします。あなたのホールドアウトセットに対して賞金が提示されることで、その言語はあらゆる手法の開発者が目指すターゲットになります。リーダーボードは、すべての試みを公開の場で測定します。1世代の慎重なキュレーションが、他のすべてにおけるオープンエンドな競争を切り開きます。[コーパスパートナーシップ（Corpus Partnership）](/docs/network/specifications/corpus-partnership)は、まさにこのための作業文書（コーパスのサイズ、ワークフロー、話者への支払い）であり、[賞金仕様（Prize Specification）](/docs/network/specifications/prizes)はインセンティブの半分を担うものです。
+
+評価ツールは現在すでに利用可能です。`pipx install mt-eval-harness` により、決定論的スコアリング、フィンガープリント付き[実行カード](/docs/network/specifications/run-card)、対応のある[有意差検定](/docs/network/specifications/significance)、そしてリーダーボードへの公開パスを備えた[評価ハーネス](/docs/network/specifications/harness)を利用できます。[スコアリング仕様](/docs/network/specifications/scoring)には、各メトリクスとその検証ステータス（外部検証済み、プロキシ検証済み、またはエンジニアリング・ヒューリスティック）が文書化されています。すべての実行結果のメインには、業界標準である信頼区間とsacreBLEUシグネチャ付きのコーパスchrF++が表示され、BLEU、spBLEU、TER、COMETが混ざることなく並列して表示されます。構造チェック（FST妥当性）は、抱合語において文字重複ベースのメトリクスが見落とす問題を浮き彫りにする診断として報告されます。評価ハーネスはオープンソースのAGPL-3.0であり、CLIはPolyForm Noncommercial 1.0.0（ソース利用可能、非商用利用は無料）です。
+
+ツールの背後にはレジストリが存在します。
+**<SSOTCount field="registryDatasetCount" />の評価データセット**は、それぞれがSHAで固定されたソースから取得するメタデータカードであり、[評価データセット（Evaluation Datasets）](/docs/network/leaderboard/datasets)にカタログ化されています。
+**<SSOTCount field="catalogLanguageCount" />の言語カード**では、[すべてのフィールドがそのソースを明記し](/docs/reference/language-card-spec)、意見の分かれるソースはすべて表示されます（[修正手順](/docs/reference/language-card-citation-procedure)）。
+**<SSOTCount field="licensedSourceCount" />の登録済みアップストリームソース**のライセンスロールアップでは、非営利コーパスが構造上、商用、賞金、またはAPIレーンから切り離されています。汚染（コンタミネーション）は第一級のプロパティです。フロンティアモデルによって見られたと推定される公開ベンチマークは**相対評価のみのレーン（relative-only lane）**で実行され、新しいコミュニティコーパスはハッシュマニフェストで封印およびセグメント化され（[コーパスパートナーシップ §4](/docs/network/specifications/corpus-partnership#4-cryptographic-sealing-and-sandbox-testing)）、コミュニティは私たちが決して見ることのない主権型ベンチマークを保持できます。脅威モデルは[コーパス設計フレームワーク（corpus design framework）](/docs/network/specifications/corpus-design)に記載されています。
+
+構築したい対象に応じて、参加方法は3つあります。**コーパス**: 上記の評価先行パスから始め、初日から話者の有償稼働時間を予算に組み込んで[コーパスパートナーシップ](/docs/network/specifications/corpus-partnership)をエンドツーエンドで進めます。**手法（メソッド）**: [TranslationMethodプロトコル](/docs/network/specifications/methods)を実装し、[手法の提出](/docs/network/getting-started/submit-a-method)の手順に従います。OpenRouterキーがあれば約15分で完了します。**メトリクス**: ハーネスのプラグインインターフェースを通じて提案します（[リポジトリ](https://github.com/gamedaysuits/Champollion)でのIssueまたはPR。スコアリング仕様で説明されているとおり、新しいメトリクスは診断として追加されます）。どのアプローチを選択する場合でも、設計を始める前にまず、メトリクスに対するコミュニティ話者による検証がまだ行われていない点を含む[率直な制限事項](/docs/network/honest-limitations)、そして[microeval方法論](/docs/network/context/microeval-methodology)と[機械翻訳評価の全体像](/docs/network/context/mt-evaluation-landscape)をお読みください。
+
+**Champollionの引用:** Champollionの論文はまだありませんので、論文を引用しないでください。リポジトリと、使用した特定のバージョンの仕様書、またはSHAで固定されたデータセットカードを引用してください。
+
+```bibtex
+@software{champollion,
+  author  = {Forbes, Curtis},
+  title   = {Champollion: open evaluation infrastructure for machine
+             translation in low-resource languages},
+  url     = {https://github.com/gamedaysuits/Champollion},
+  year    = {2026},
+  note    = {Specifications at https://champollion.dev/docs/network}
+}
+```
+
+当社のレジストリを通じてアップストリームのコーパスを使用する場合は、**コーパス自体の作成者を引用してください**。データセットカードには、アップストリームの帰属とライセンスが記載されています。
+
+## 資金提供者およびスポンサー \{#funders}
+
+**Champollionは非営利です。** スポンサーシップは、コーパス構築、ツール、およびコミュニティの活動に資金を提供します。**100%がパススルーされ、公に会計報告され、Champollionには一切入りません。** 間接費の割合、収益分配、コミュニティ資産に対する請求権はありません。入ってきた資金は、有償の言語作業として支出され、話者、コーパス構築者、および賞金獲得者に支払われます。インフラストラクチャのコストは現在、創設者が負担しています（[活動の資金源について](/docs/network/sovereignty/economic-model)）。
+
+正直な出発点として、ここで説明されているすべてのものは、**仕様が定められ準備ができているメカニズムであり、すでに大規模に実行されているプログラムではありません。** まだ助成金やスポンサーはなく、リーダーボードは公開されていますがまだ初期段階であり、賞金メカニズムは[提案された仕様](/docs/network/specifications/prizes)です。現在、公開されている賞金はありません。この正直さから資金提供者が得られるものは、公開された単価、請求台帳、そして私たちに責任を問うことができる仕様です。
+
+**レーン1 — コーパスのスポンサーシップ。** 低リソースMTにおいて最も希少な資産は信頼できるテストセットであり、そのコストは公開されています。
+
+| 資金の使途 | 公開コスト | 支払い先 |
+|--------------------|---------------|----------------|
+| 1つの言語のベンチマークコーパス（50〜150の厳選されたエントリ） | 2,500〜6,000カナダドル | バイリンガル話者の時間（時給50〜65ドル） — 意図的に最大の項目としています |
+| 指標検証ラウンド（3人の話者が自動指標を人間の判断と照らし合わせてチェック） | 1,475〜1,920カナダドル | 有償の話者レビュータスク |
+| 手法出力のレビュー | 500〜1,500カナダドル | 同じ公開時給 |
+| 完全な言語オンボーディング（すべて込み） | 3,350〜8,500カナダドル | [ベンチマーク仕様 §10](/docs/network/specifications/benchmark)を参照 |
+
+資産は助成金の期間を超えて存続します。コーパスはChampollionではなく、その構築者/スチュワードに属します。メタデータとして登録され、[コンテンツがホストされることはなく](/docs/network/sovereignty/registering-corpora)、スチュワードのライセンスとレーンの選択の下に置かれます。学術的な資金提供者にとって、[コーパスパートナーシップ戦略（Corpus Partnership Strategy）](/docs/network/specifications/corpus-partnership)は、このレーンの部門向けバージョンです。
+
+**レーン2 — 賞金のスポンサーシップ。** 達成賞金は、**試みではなく結果**に資金を提供します。資金は、手法が定義された手法中立の基準を明確にクリアした場合にのみ支払われ、すべての請求には有償のコミュニティ話者によるレビューが含まれます。[賞金仕様（Prize Specification）](/docs/network/specifications/prizes)に従い、資金は**スポンサーが保持**します。つまり、スポンサー組織、またはスポンサーが指定するコミュニティトラストやサードパーティのエスクローに留まり、測定を調整し資金に触れない**Champollionが保持することは決してありません**。**現在、賞金はどこにも保持されていません。** 誰も基準をクリアしなければ、誰にも支払われません。期限切れの賞金はスポンサーに留まり、スポンサーの裁量で方向転換または撤回されます。
+受賞した手法は、賞金の条件の下でコミュニティの所有権に譲渡されます。
+
+資金提供者が測定できるもの: スチュワードの管理下で構築および登録されたコーパス、言語コミュニティに提供された有償の話者時間、信頼できる公開ベンチマークによってカバーされた言語ペア、測定された手法、および賞金の条件に記載されている場合はコミュニティの所有権に譲渡された手法。
+
+**最初のアクション:** [活動の資金源について（How the Work Is Funded）](/docs/network/sovereignty/economic-model)（10分で読める完全なモデル）を読んでください。[参加する — スポンサー（Get Involved — sponsors）](/get-involved#sponsors)でレーン（コーパス作業、賞金、または[公開ベンチマークキュー](/contribute)のためのコンピューティング/APIクレジット）を選択し、[info@champollion.dev](mailto:info@champollion.dev)または[公開リポジトリ](https://github.com/gamedaysuits/Champollion/issues)からご相談ください。まだ構築されていない部分を含め、具体的な内容でお答えします。
+
+## プレスおよびメディア \{#press}
+
+Champollionは、すべての言語に対して信頼できる機械翻訳の評価を構築する非営利の研究プロジェクトです。ソースが利用可能で非営利目的では無料であり、オープンソースの評価ハーネスとレジストリを備えています。これは、「*この言語の機械翻訳は、実際どのくらい優れているのか？*」という1つの質問に正直に答えるためのインフラストラクチャです。テストセットのレジストリ、スコアリングルール、それらを実行するハーネス、そして誰が何をどれだけうまく翻訳できるかを示す公開リーダーボードとマップを公開しています。人間であれ機械であれ、あらゆる手法が歓迎され、同じオープンなルールによって評価されます。コミュニティが言語データを保持する場合、彼らが鍵を握ります。
+
+Champollionが**そうではない**もの: 営利目的ではありません（製品なし、有料APIなし、従量課金なし、収益分配なし、ベンチャー資金なし — [創設者による自己資金](/docs/network/sovereignty/economic-model)）。データ収集者ではありません（コーパスのコンテンツは**決してホストされません**。レジストリはSHAで固定されたメタデータカードを保持し、コミュニティコーパスは完全にスチュワードの財産のままです）。AI翻訳製品ではありません（Champollionは翻訳品質を測定します。付属のCLIは開発者ツールです）。そして、完成していません。リーダーボードは公開されていますがまだ新しく、コミュニティプログラムは現在設立中であり、進んでいると寛大に引用されるよりも、初期段階であると正確に引用されることを望んでいます。
+
+重要な事実（それぞれがリポジトリ内のソースに追跡可能です。プロジェクトは公開の請求台帳を保持しています）:
+
+| 事実 | 出典 |
+|------|--------|
+| 出典明記インデックスに <SSOTCount field="catalogLanguageCount" /> 言語カードを収録 | `cli/shared/language-cards/`（言語ごとに1カード、ビルド時に集計）、[/languages](/languages) に掲載 |
+| <SSOTCount field="registryDatasetCount" /> の評価データセットを登録 — メタデータカードのみ、コーパス本文はホストせず | `arena/datasets/registry.json`（ビルド時に集計）。[評価データセット](/docs/network/leaderboard/datasets)を参照 |
+| 言語インデックス用のライセンス供与されたアップストリームソース <SSOTCount field="licensedSourceCount" /> 件 | `shared/licenses.json`（ビルド時に集計） |
+| 160以上の手話言語をカタログ化 — 「未対応」と表記し、「言語ではない」とは決して扱わない | [ここで言語とみなされるもの](/docs/network/context/what-counts-as-a-language) |
+| 標準メトリクスは sacreBLEU（chrF++、BLEU、TER）および COMET/AfriCOMET に加え、構造的FSTチェックを採用。ニューラルメトリクスは別レーンで報告 | [スコアリング仕様](/docs/network/specifications/scoring) |
+| 公表された話者報酬率（資金未確保）: 時給50〜65カナダドル、無条件、2週間以内に支払い | [話者への報酬の支払い方法](/docs/network/perspectives/how-speakers-get-paid) |
+| コードライセンス: CLIはPolyForm Noncommercial 1.0.0（ソース利用可能、非商用利用は無料）、評価ハーネスはAGPL-3.0（オープンソース） | プロジェクトリポジトリ |
+| Curtis Forbes が設立・自己資金で運営。助成金やスポンサーは現時点でなし | [活動資金の調達方法](/docs/network/sovereignty/economic-model) |
+
+ボイラープレート:
+
+> Champollionは、すべての言語に対して信頼性の高い機械翻訳評価を構築する非商用研究プロジェクトです。ソース利用可能で非商用利用は無料であり、オープンソースの評価ハーネスと共有レジストリを備えています。<SSOTCount field="catalogLanguageCount" /> 言語の出典明記インデックス、<SSOTCount field="registryDatasetCount" /> の評価データセットのレジストリ（コーパス本文は一切ホストされません）、そして機械翻訳か人手翻訳かを問わず、あらゆる翻訳手法が同じ公表ルールに基づいてスコアリングされるオープンなハーネスとリーダーボードを維持管理しています。言語コミュニティと協働するように設計されており、コーパスをホストすることは決してありません。コミュニティが自身のデータ、テストセット、および移転されたあらゆる手法を所有します。ChampollionはCurtis Forbesによって設立され、champollion.devで公開されています。
+
+**連絡先:** Curtis Forbes（創設者） —
+[info@champollion.dev](mailto:info@champollion.dev) —
+[github.com/gamedaysuits/Champollion](https://github.com/gamedaysuits/Champollion)。
+私たちは、友好的な質問に答えるのと同じように、批判的な質問にも答えます。このサイトの主張をファクトチェックしている場合、[正直な制限事項（Honest Limitations）](/docs/network/honest-limitations)が適切な出発点です。これは、誰も私たちの言葉を鵜呑みにしなくて済むように存在しています。
+
+## 関連項目
+
+- [ネットワークの仕組み](/docs/network/how-it-works) — システム全体の概要を1ページで解説
+- [データスチュワードシップ](/docs/network/sovereignty/data-sovereignty) — データ主権に関する立場（先住民族データ主権原則、CARE原則）
+- [所有権と条件](/docs/network/sovereignty/ownership-transfer) — 契約上における「コミュニティ所有」の意味
+- [名前の由来](/docs/the-name) — なぜ「Champollion」なのか

@@ -1,0 +1,47 @@
+{
+  "_comment": "THE default model for every role in the toolset — one exact id each, read by the CLI (cli/lib/model-defaults.js), the harness (mt_eval_harness/model_defaults.py), forge, the MCP server (through the CLI) and the docent edge function. Never hand-edit a default anywhere else. A default is an exact id, never an alias or a floating '-latest' name: a run must say which model translated, and the translation cache is keyed by model, so a default that moved by itself would re-bill everything. `rule` is how `champollion models check` reads the provider's live list: the newest id matching `match` (named group `v` = version, compared numerically; `date` = a dated snapshot, newest wins) is the candidate. check fails when a pinned id is no longer listed, and names the rule's current candidate when it differs; `node cli/scripts/check-model-defaults.mjs --update` writes the candidates here, as a reviewed change. `checked` is the date the id was last confirmed live.",
+  "roles": {
+    "translate": {
+      "describe": "The CLI's default translation model (method llm, through OpenRouter).",
+      "provider": "openrouter",
+      "model": "google/gemini-3.8-flash",
+      "rule": { "match": "^google/gemini-(?<v>\\d+(?:\\.\\d+)?)-flash$" },
+      "checked": "2026-10-07"
+    },
+    "openai": {
+      "describe": "The openai method's default (OpenAI's own API name: a dated snapshot).",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "rule": { "match": "^gpt-(?<v>\\d+(?:\\.\\d+)?)-mini-(?<date>\\d{4}-\\d{2}-\\d{2})$" },
+      "checked": "2026-10-07"
+    },
+    "gemini": {
+      "describe": "The gemini method's default (Google's own API name).",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "rule": { "match": "^gemini-(?<v>\\d+(?:\\.\\d+)?)-flash$" },
+      "checked": "2026-10-07"
+    },
+    "anthropic": {
+      "describe": "The anthropic method's default (Anthropic's own API name).",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "rule": { "match": "^claude-sonnet-(?<v>\\d+(?:-\\d+)?)(?:-(?<date>\\d{8}))?$" },
+      "checked": "2026-10-07"
+    },
+    "harness": {
+      "describe": "mt-eval's default model for a run with no -m.",
+      "provider": "openrouter",
+      "model": "google/gemini-3.1-pro-preview",
+      "rule": { "match": "^google/gemini-(?<v>\\d+(?:\\.\\d+)?)-pro(?:-preview)?$" },
+      "checked": "2026-10-07"
+    },
+    "docent": {
+      "describe": "champollion.dev's site docent (the docent-chat edge function), through OpenRouter with data collection denied (founder, 2026-10-07: run it on Luna).",
+      "provider": "openrouter",
+      "model": "openai/gpt-6-luna",
+      "rule": { "match": "^openai/gpt-(?<v>\\d+(?:\\.\\d+)?)-luna$" },
+      "checked": "2026-10-07"
+    }
+  }
+}

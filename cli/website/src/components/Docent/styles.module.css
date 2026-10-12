@@ -1,0 +1,232 @@
+/* Docent widget — theme-aware (Infima vars), mobile-safe, RTL-safe. */
+
+.docent {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 500;
+  font-size: 0.9rem;
+}
+.docent[data-rtl='true'] {
+  right: auto;
+  left: 1rem;
+}
+
+/* launcher button */
+.launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.95rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white, #fff);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  font-weight: 600;
+}
+.launcher:hover { filter: brightness(1.05); }
+.launcherIcon { font-size: 1.1rem; line-height: 1; }
+.launcherText { white-space: nowrap; }
+
+/* panel */
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: min(380px, calc(100vw - 2rem));
+  height: min(560px, calc(100vh - 5rem));
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.7rem 0.85rem;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+.headerTitles { display: flex; flex-direction: column; min-width: 0; }
+.title { font-size: 0.95rem; }
+.experimental {
+  font-size: 0.68rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.15rem;
+}
+.headerControls { display: flex; align-items: center; gap: 0.35rem; flex-shrink: 0; }
+.registerToggle select {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+.close {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-700);
+  padding: 0 0.2rem;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+.tab, .tabActive {
+  flex: 1;
+  padding: 0.55rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-700);
+  border-bottom: 2px solid transparent;
+}
+.tabActive {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.intro { color: var(--ifm-color-emphasis-800); }
+.intro p { margin: 0; }
+
+.userMsg, .botMsg {
+  max-width: 88%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+.userMsg {
+  align-self: flex-end;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white, #fff);
+  border-bottom-right-radius: 4px;
+}
+.docent[data-rtl='true'] .userMsg { border-bottom-right-radius: 12px; border-bottom-left-radius: 4px; }
+.botMsg {
+  align-self: flex-start;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom-left-radius: 4px;
+}
+.docent[data-rtl='true'] .botMsg { border-bottom-left-radius: 12px; border-bottom-right-radius: 4px; }
+.botMsg[data-note='error'] {
+  background: var(--ifm-color-danger-contrast-background, #fbeaea);
+  color: var(--ifm-color-danger-dark, #a12622);
+}
+.msgText { line-height: 1.45; }
+.modeNote {
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+.sources {
+  margin: 0.45rem 0 0;
+  padding-inline-start: 1.1rem;
+  font-size: 0.78rem;
+}
+.sources a { color: var(--ifm-link-color); }
+.typing { font-size: 1.2rem; letter-spacing: 0.1em; color: var(--ifm-color-emphasis-500); }
+
+.composer {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+.input {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: inherit;
+  font-size: 0.86rem;
+}
+.sendBtn {
+  border: none;
+  border-radius: 8px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white, #fff);
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: stretch;
+}
+.sendBtn:disabled { opacity: 0.55; cursor: default; }
+
+/* ticket form */
+.ticketForm {
+  padding: 0.85rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.ticketIntro { margin: 0; font-size: 0.82rem; color: var(--ifm-color-emphasis-800); }
+.field { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8rem; }
+.field select, .field input, .field textarea {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: inherit;
+  font-size: 0.86rem;
+}
+.field textarea { resize: vertical; }
+.ticketOk {
+  font-size: 0.82rem;
+  color: var(--ifm-color-success-dark, #1a7f37);
+  background: var(--ifm-color-success-contrast-background, #e9f6ec);
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+}
+.ticketErr {
+  font-size: 0.82rem;
+  color: var(--ifm-color-danger-dark, #a12622);
+  background: var(--ifm-color-danger-contrast-background, #fbeaea);
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+}
+/* The always-available escape hatch when the backend can't take the ticket.
+   Inherits the error block's colour so it reads as part of the same message. */
+.mailtoFallback {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .docent { bottom: 0.6rem; right: 0.6rem; }
+  .docent[data-rtl='true'] { left: 0.6rem; right: auto; }
+  .panel { width: calc(100vw - 1.2rem); height: calc(100vh - 4rem); }
+  .launcherText { display: none; }
+  .launcher { padding: 0.7rem; }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "vendor-languages",
+  "upstream": "per-vendor public language-list endpoints (see files[].url)",
+  "license": "LicenseRef-Vendor-Published-Coverage",
+  "licenseUrl": null,
+  "citation": "MT vendor published language lists, retrieved 2026-08-06.",
+  "pin": {
+    "kind": "release",
+    "value": "2026-08-06",
+    "doi": null,
+    "date": "2026-08-06"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "microsoft.json",
+      "bytes": 9262,
+      "sha256": "426dec094e7668e267f285606066d399dfca075cc21f20c57a86c9612607ef56",
+      "url": "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    },
+    {
+      "path": "libretranslate.json",
+      "bytes": 15908,
+      "sha256": "89c2f8eaeccb8d52da13f03001795ac4bffbd7e3036f3e0a8738c3e52c9e4ff1",
+      "url": "https://libretranslate.com/languages",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    },
+    {
+      "path": "apertium.json",
+      "bytes": 7257,
+      "sha256": "7638c61987075c385ac538dd497b24b94cd5a458b47eba270b41071c3faa63f4",
+      "url": "https://www.apertium.org/apy/listPairs",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/vendor-languages.mjs",
+  "notes": "3 vendor(s) fetched: microsoft-translator=138, libretranslate=51, apertium=60. SKIPPED: google-translate (GOOGLE_TRANSLATE_API_KEY is not set); deepl (DEEPL_API_KEY is not set). PIN QUALITY: a vendor endpoint carries no version, no release date and no publisher checksum, so the snapshot IS the pin — what we received, when, hashed by us. That is weaker than a DOI and is labelled so the two are not confused. LICENCE: these are published capability statements about the vendor's own service, not a dataset; recorded as a LicenseRef so the bespoke-licence rule keeps them out of any redistributed release until a human decides otherwise.",
+  "vendors": {
+    "microsoft-translator": {
+      "label": "Microsoft Translator",
+      "languages": 138,
+      "pairs": null,
+      "note": "BCP 47 tags including script-qualified forms (zh-Hans, sr-Cyrl)"
+    },
+    "libretranslate": {
+      "label": "LibreTranslate",
+      "languages": 51,
+      "pairs": 2601,
+      "note": "per-language `targets` published, so pairs are observed not assumed"
+    },
+    "apertium": {
+      "label": "Apertium",
+      "languages": 60,
+      "pairs": 133,
+      "note": "rule-based and inherently per-pair — it has no notion of covering a language in the abstract"
+    }
+  },
+  "skipped": [
+    {
+      "vendor": "google-translate",
+      "why": "GOOGLE_TRANSLATE_API_KEY is not set"
+    },
+    {
+      "vendor": "deepl",
+      "why": "DEEPL_API_KEY is not set"
+    }
+  ],
+  "fetchedAt": "2026-08-06T22:30:12.655Z"
+}
