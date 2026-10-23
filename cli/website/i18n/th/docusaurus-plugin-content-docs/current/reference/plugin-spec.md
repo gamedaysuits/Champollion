@@ -1,0 +1,268 @@
+---
+sidebar_position: 2
+title: "ข้อกำหนดของ Plugin"
+---
+
+# ข้อกำหนด Method Plugin
+
+> **เวอร์ชัน**: 1.1
+> **กลุ่มเป้าหมาย**: นักพัฒนา Plugin
+> **Canonical Schema**: [`shared/schemas/champollion-plugin.schema.json`](https://github.com/gamedaysuits/Champollion/blob/main/cli/shared/schemas/champollion-plugin.schema.json)
+
+:::note[ไฟล์กำกับรุ่นเดิม (Legacy manifest)]
+หน้านี้ระบุรายละเอียดไฟล์กำกับ (manifest) ของปลั๊กอินรุ่นดั้งเดิมใน CLI (มี `type`)
+**method/1** (`https://champollion.dev/schemas/method/1.json`, ดูที่
+[รูปแบบไฟล์](/docs/reference/formats)) เข้ามาแทนที่รูปแบบนี้แล้ว: `mt-eval export`,
+`nmt-forge export` และ `champollion serve --emit-manifest` จะเขียนเป็น method/1 และ
+CLI, ชุดทดสอบประเมินผล (harness) รวมถึงเซิร์ฟเวอร์ MCP สามารถอ่านได้โดยตรง ทั้งนี้ระบบยังคงรองรับไฟล์กำกับในรูปแบบด้านล่างนี้อยู่
+โดยจะอ่านเป็น method/0 พร้อมแสดงคำเตือน โปรดเขียนเมธอดใหม่เป็น
+method/1
+:::
+
+## ภาพรวม
+
+champollion ใช้ **ระบบ method แบบ pluggable** คู่ภาษาแต่ละคู่สามารถใช้ method การแปลที่แตกต่างกันได้ (LLM, coached, script-converter ฯลฯ) Method ต่างๆ ถูกลงทะเบียนใน `lib/translate.js` และถูก resolve ต่อคู่ผ่าน `lib/pairs.js`
+
+หน้าที่ของ eval harness คือ **พัฒนา ทดสอบ และ export** method การแปล ส่วนหน้าที่ของ champollion คือ **นำไปใช้และประมวลผล** Plugin เป็น **ข้อมูลเท่านั้น** — ได้แก่ การกำหนดค่า เนื้อหา coaching และผลลัพธ์ benchmark ไม่มีโค้ด Python และไม่มี dependency ของ harness
+
+### Data Flow
+
+```mermaid
+flowchart LR
+    A["Evaluation Harness\n(Python / standalone)"] -->|"method.json\n+ coaching data"| B["champollion\n(Node.js / npm)"]
+```
+
+harness พัฒนาและทดสอบ method ใน Python เมื่อ method พร้อมสำหรับการ deploy แล้ว harness จะ export manifest `method.json` และไฟล์ข้อมูล coaching ที่เป็น optional Champollion จะติดตั้งและประมวลผล method โดยใช้การ implement method ในตัวของตัวเอง
+
+---
+
+## รูปแบบ Method Plugin
+
+Method plugin คือไฟล์ JSON ไฟล์เดียว (`method.json`) พร้อมไฟล์ข้อมูล coaching ที่เป็น optional
+
+### `method.json` — จำเป็น
+
+```json
+{
+  "name": "french-formal-v1",
+  "type": "llm-coached",
+  "version": "1.0.0",
+  "description": "Formally-tuned French with terminology enforcement and grammar coaching",
+  "author": "Plugin Author",
+
+  "config": {
+    "model": "google/gemini-3.8-flash",
+    "temperature": 0.2,
+    "batchSize": 80,
+    "register": "formal",
+    "coachingFile": null,
+    "coachingPrompt": null,
+    "promptContext": null,
+    "qualityTier": null
+  },
+
+  "locales": ["fr"],
+
+  "benchmarks": {
+    "fr": {
+      "date": "2026-05-11T00:00:00Z",
+      "corpus_size": 500,
+      "exact_match_rate": 0.42,
+      "corpus_chrf": 72.3,
+      "corpus_bleu": 45.1,
+      "model": "google/gemini-3.8-flash",
+      "harness_version": "1.0.0"
+    }
+  },
+
+  "provenance": {
+    "resources": [],
+    "commercialReady": false,
+    "flags": ["license-unclear"]
+  },
+
+  "coaching": {
+    "dir": "coaching"
+  }
+}
+```
+
+### อ้างอิง Field
+
+| ฟิลด์ | ชนิดข้อมูล | จำเป็นต้องมี | คำอธิบาย |
+|-------|------|----------|-------------|
+| `name` | string | ✅ | ตัวระบุเฉพาะของเมธอด (kebab-case) |
+| `type` | string | ✅ | ชนิดเมธอดของ Champollion: `llm`, `llm-coached`, `api`, `google-translate`, `deepl`, `microsoft-translator`, `libretranslate`, `openai`, `anthropic`, `gemini` |
+| `version` | string | ✅ | เวอร์ชันตามระบบ Semver (เช่น `1.0.0`) |
+| `locales` | string[] | ✅ | รหัสภาษาและภูมิภาค (locale) ที่เมธอดนี้รองรับ (อย่างน้อย 1 รายการ) |
+| `description` | string | — | คำอธิบายที่มนุษย์อ่านเข้าใจได้ |
+| `author` | string | — | ผู้พัฒนา/ทดสอบเมธอดนี้ |
+| `config.model` | string | — | ตัวระบุโมเดลของ OpenRouter |
+| `config.temperature` | number | — | ค่า Temperature ของ LLM (0.0–2.0; ค่าเริ่มต้นคือ `0` จาก `shared/model-defaults.json`) |
+| `config.batchSize` | number | — | จำนวนคีย์ต่อการเรียก API หนึ่งชุด (1–200, ค่าเริ่มต้น: 80) |
+| `config.register` | string \| null | — | ระดับภาษา/น้ำเสียงของภาษาปลายทาง (คีย์ค่าที่ตั้งไว้ล่วงหน้า หรือข้อความอิสระ) |
+| `config.coachingFile` | string \| null | — | เส้นทางไปยังไฟล์พรอมต์แนะนำ (coaching prompt) แบบข้อความอิสระ (เทียบกับรูทของโปรเจกต์) |
+| `config.coachingPrompt` | string \| null | — | ข้อความพรอมต์แนะนำที่แปลงค่าแล้ว (อ่านจาก `coachingFile` ขณะทำงาน) |
+| `config.promptContext` | string \| null | — | บริบทของแอปพลิเคชันที่แทรกเข้าไปใน System Prompt (เช่น "คำอธิบายสินค้าอีคอมเมิร์ซ") |
+| `config.qualityTier` | string \| null | — | ป้ายกำกับที่ผู้เขียนประกาศเกี่ยวกับผลลัพธ์ (`standard`, `high`, `research`, `verified`) ไม่ได้มาจากการวัดผลและไม่ได้อิงตามคะแนนเบঞ্চมาร์ก โดยคำสั่ง sync จะแปลแบบเดียวกันไม่ว่าระบุว่าอะไร และ `serve` จะใช้เพื่อการแสดงผลเท่านั้น |
+| `benchmarks` | object | — | ผลการทดสอบประสิทธิภาพแยกตามภาษาและภูมิภาค (locale) จากชุดทดสอบประเมินผล |
+| `provenance` | object | — | สัญญาอนุญาตและการพึ่งพาแพ็กเกจทรัพยากร |
+| `coaching.dir` | string | — | เส้นทางแบบสัมพัทธ์ไปยังไดเรกทอรีข้อมูลแนะนำ (coaching data) |
+
+:::info[รูปแบบ MethodConfig แบบ Canonical]
+บล็อก `config` ใช้ **canonical MethodConfig schema** — 8 field เดียวกันที่ใช้ใน `champollion.config.json`, harness run cards, `mt-eval export-config` และการ publish/install บน leaderboard ทุก field จะมีอยู่เสมอ ค่าที่ไม่ได้ใช้จะเป็น `null` ซึ่งช่วยให้การ round-trip ระหว่างการประเมินและ production เป็นไปอย่างราบรื่น
+:::
+
+### Benchmark Object (ต่อ locale)
+
+| Field | ประเภท | จำเป็น | คำอธิบาย |
+|-------|--------|---------|-----------|
+| `date` | string | ✅ | timestamp รูปแบบ ISO 8601 ของการรัน benchmark |
+| `corpus_size` | number | ✅ | จำนวน entry ที่ประเมิน |
+| `exact_match_rate` | number | ✅ | 0.0–1.0 สัดส่วนของการจับคู่แบบตรงทั้งหมด |
+| `corpus_chrf` | number | — | คะแนน chrF++ (0–100) |
+| `corpus_bleu` | number | — | คะแนน BLEU (0–100) |
+| `model` | string | ✅ | Model ที่ใช้ระหว่างการประเมิน |
+| `harness_version` | string | ✅ | เวอร์ชันของ evaluation harness ที่ใช้ |
+
+:::info[metric ใดที่แสดงผล?]
+คำสั่ง `champollion status` แสดง **chrF++** และ **exact match rate** จากบล็อก benchmark `corpus_bleu` ถูกรับในไฟล์ manifest แต่ปัจจุบันยังไม่ถูกแสดงหรือใช้งานโดยคำสั่ง champollion ใดๆ [Method Leaderboard](/leaderboard) ติดตาม chrF++, exact match และ FST acceptance rate
+:::
+
+---
+
+### Provenance Object
+
+บล็อก provenance สื่อสารสถานะ licensing ของ resource ที่รวมอยู่ใน plugin
+
+| Field | ประเภท | ค่าเริ่มต้น | คำอธิบาย |
+|-------|--------|------------|-----------|
+| `resources` | object[] | `[]` | รายการ resource ที่รวมอยู่พร้อม `name`, `license` และ `type` |
+| `commercialReady` | boolean | `false` | plugin ได้รับการอนุมัติสำหรับการเผยแพร่เชิงพาณิชย์หรือไม่ |
+| `flags` | string[] | `["license-unclear"]` | flag สถานะที่เครื่องอ่านได้ |
+
+**สถานะเริ่มต้น** — plugin ที่ export ออกมาจะมาพร้อมกับ `commercialReady: false` และ `flags: ["license-unclear"]`
+
+**สถานะที่ผ่านการตรวจสอบ** — เมื่อยืนยัน licensing แล้ว: ตั้งค่า `commercialReady: true` และล้าง flag ออก
+
+---
+
+## รูปแบบข้อมูล Coaching
+
+หาก `type` เป็น `llm-coached` plugin ควรรวมไฟล์ข้อมูล coaching ไว้ในไดเรกทอรีย่อย `coaching/`
+
+### `coaching/<locale>.json`
+
+```json
+{
+  "grammar_rules": [
+    "French adjectives agree in gender and number with the noun they modify",
+    "Use 'vous' for formal contexts, 'tu' for informal"
+  ],
+  "dictionary": {
+    "dashboard": "tableau de bord",
+    "deployment": "déploiement",
+    "settings": "paramètres"
+  },
+  "style_notes": "Prefer active voice. Avoid anglicisms where a native French term exists."
+}
+```
+
+| Field | ประเภท | จำเป็น | คำอธิบาย |
+|-------|--------|---------|-----------|
+| `grammar_rules` | string[] | — | กฎที่ inject เข้า LLM prompt ทุกรายการสำหรับ locale นี้ |
+| `dictionary` | object | — | แผนที่ term → การแปล term ที่ตรงกันจะถูก inject เป็น terminology ที่กำหนด |
+| `style_notes` | string | — | คำแนะนำด้านสไตล์แบบอิสระที่ต่อท้าย prompt |
+
+---
+
+## โครงสร้างไดเรกทอรี
+
+```
+french-formal-v1/
+  method.json                 # Method manifest with benchmarks
+  coaching/
+    fr.json                   # Coaching data for French
+```
+
+สำหรับ method ที่รองรับหลาย locale:
+
+```
+european-formal-v2/
+  method.json                 # locales: ["fr", "de", "es", "it"]
+  coaching/
+    fr.json
+    de.json
+    es.json
+    it.json
+```
+
+---
+
+## วิธีที่ Champollion ใช้งาน Plugin
+
+### การติดตั้ง
+
+```bash
+champollion plugin install ./french-formal-v1/
+```
+
+บันทึกไปยัง `.champollion/methods/french-formal-v1/`
+
+### การกำหนดค่า
+
+```json title="champollion.config.json"
+{
+  "pairs": {
+    "en:fr": {
+      "methodPlugin": "french-formal-v1"
+    }
+  }
+}
+```
+
+:::info[Merge semantics]
+Plugin กำหนด *method* ที่จะใช้ (`type`) ส่วน pair config ปรับแต่ง *วิธีการ* รัน (`model`, `register`, `batchSize`) หาก pair ตั้งค่า `model` จะ override ค่าเริ่มต้นของ plugin
+:::
+
+### Runtime
+
+1. Champollion อ่าน `method.json` จาก `.champollion/methods/french-formal-v1/`
+2. field `type` ของ plugin กำหนด method การแปล (เช่น `llm-coached`)
+3. โหลดข้อมูล coaching จากไดเรกทอรี `coaching/` ของ plugin
+4. ใช้บล็อก `config` เพื่อเติมช่องว่างใน model/register/temperature
+5. บล็อก `benchmarks` จะแสดงในผลลัพธ์ `champollion status`
+6. บล็อก `provenance` จะถูกตรวจสอบโดย `champollion provenance` สำหรับ licensing flag
+
+---
+
+## Schema Validation
+
+Plugin manifest จะถูกตรวจสอบความถูกต้องตอนติดตั้งโดยเทียบกับ [`shared/schemas/champollion-plugin.schema.json`](https://github.com/gamedaysuits/Champollion/blob/main/cli/shared/schemas/champollion-plugin.schema.json)
+
+สกีมานี้ไม่อนุญาตให้ใช้คีย์อื่นใดนอกเหนือจากที่กำหนดไว้ ดังนั้นอย่าเพิ่มคีย์ `$schema` ลงใน
+`method.json` เพราะคำสั่ง install จะปฏิเสธ หากต้องการใช้งานฟีเจอร์เติมโค้ดอัตโนมัติ (autocomplete) ให้ชี้การตั้งค่า JSON-schema
+ในโปรแกรมแก้ไขข้อความของคุณไปยังไฟล์สกีมาแทน
+
+---
+
+## สิ่งที่ไม่ควรรวมไว้
+
+- ❌ ไม่มีโค้ด Python หรือ dependency ของ harness
+- ❌ ไม่มีข้อมูล corpus ดิบหรือ run log
+- ❌ ไม่มี API key หรือ credential
+- ❌ ไม่มีการกำหนดค่า harness
+- ❌ ไม่มี prompt template ภายใน (สิ่งเหล่านั้นอยู่ใน method implementation ของ champollion)
+
+Plugin เป็น **ข้อมูลเท่านั้น**: การกำหนดค่า เนื้อหา coaching และผลลัพธ์ benchmark
+
+---
+
+## ดูเพิ่มเติม
+
+- [เมธอดการแปล](/docs/guides/translation-methods) — การทำงานของแต่ละเมธอดในตัว
+- [การกำหนดค่า](/docs/getting-started/configuration) — การกำหนดค่าแยกตามคู่ภาษาและตามภาษา
+- [นำไปใช้งานจริง](/docs/put-it-to-work) — การโฮสต์เมธอดเป็นบริการ HTTP
+- [เมธอดและเกต](/docs/agents/methods) — การสร้างและแพ็กไพป์ไลน์
+- [การประเมินผล MT](/docs/network/leaderboard/rules) — การทดสอบประสิทธิภาพเมธอดเพื่อส่งคะแนนเข้าสู่ตารางผู้นำ (leaderboard)
+- [โปรเจกต์นี้คืออะไร](/docs/what-is-champollion) — กรณีการใช้งานสำหรับปลั๊กอินชุมชน

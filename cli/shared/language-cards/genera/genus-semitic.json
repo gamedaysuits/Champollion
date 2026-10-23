@@ -1,0 +1,70 @@
+{
+  "code": "genus-semitic",
+  "extends": "family-afro-asiatic",
+  "name": "Semitic Languages",
+  "script": null,
+  "dir": null,
+  "formality": {
+    "system": "T-V",
+    "description": "Most Semitic languages have formality distinctions in address. Arabic uses anta/antum (singular/plural 2nd person, with plural doubling as formal). Hebrew uses ata/atem similarly. Amharic and Tigrinya have elaborate politeness systems with multiple address levels. Formality also affects vocabulary and discourse style.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "All Semitic languages have a binary masculine/feminine gender system. Gender triggers agreement on verbs, adjectives, pronouns, demonstratives, and (in Arabic) numerals. Second-person pronouns and verb forms distinguish gender of the addressee. Some nouns have both masculine and feminine plurals with different meanings. Gender agreement is pervasive and non-negotiable."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {
+      "categories": [
+        "zero",
+        "one",
+        "two",
+        "few",
+        "many",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "rootPatternMorphology": "Semitic languages use a non-concatenative (root-and-pattern) morphological system where consonantal roots (typically 3 consonants, sometimes 4) are interleaved with vowel patterns and affixes to derive meaning. Arabic root k-t-b + patterns yields: kataba 'he wrote', kitāb 'book', kātib 'writer', maktaba 'library', maktūb 'written'. This templatic system has no parallel in most target languages and cannot be handled by simple stemming.",
+    "brokenPlurals": "Semitic languages (especially Arabic) extensively use 'broken plurals' — internal vowel changes that form plurals rather than suffixation. Arabic kitāb → kutub, rajul → rijāl, bayt → buyūt. There are dozens of broken plural patterns with no reliable prediction rule. This is one of the most error-prone areas for MT.",
+    "constructState": "Semitic languages use the construct state (Arabic iḍāfa, Hebrew smikhut) to express genitive/possessive relationships by directly juxtaposing nouns. The first noun takes a special shortened form. Construct state chains can extend multiple nouns deep and have specific definiteness rules.",
+    "shortVowelOmission": "Arabic and Hebrew standard orthography largely omits short vowels (written in consonantal abjad scripts). This creates massive ambiguity — the same consonantal skeleton can represent multiple words. MT systems must disambiguate from context. Fully vowelized text (with diacritics) is used only in religious texts, children's books, and dictionaries.",
+    "diglossiaAndRegister": "Arabic exhibits extreme diglossia — Modern Standard Arabic (MSA) differs dramatically from spoken dialects (Egyptian, Levantine, Gulf, Maghreb, etc.) in phonology, morphology, syntax, and vocabulary. Written Arabic is almost exclusively MSA, while spoken communication uses dialect. MT must handle both registers.",
+    "verbInitialWordOrder": "Classical and formal Semitic languages favor VSO word order (Arabic, Classical Hebrew), while modern colloquial varieties tend toward SVO. The verb-initial position interacts with subject agreement — VS order in Arabic triggers different agreement patterns than SV order."
+  },
+  "classification": {
+    "family": "Afro-Asiatic",
+    "familyGlottocode": "afro1255",
+    "genus": "Semitic",
+    "genusGlottocode": "semi1276",
+    "ancestry": [
+      "Afro-Asiatic",
+      "Semitic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Semitic languages (Arabic, Hebrew, Amharic, Tigrinya, Aramaic, Maltese, etc.). Script is null because members use Arabic script (RTL), Hebrew script (RTL), Ge'ez/Ethiopic script (LTR), and Latin (Maltese, LTR). Direction is null due to this RTL/LTR split. Plural categories include all six CLDR categories as Arabic uses all of them.",
+  "regions": [
+    {
+      "country": "Middle East and Horn of Africa",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Arab world (Middle East and North Africa), Israel, Ethiopia, Eritrea, Malta",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

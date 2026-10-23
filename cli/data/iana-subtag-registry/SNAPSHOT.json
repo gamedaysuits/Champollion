@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "iana-subtag-registry",
+  "upstream": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+  "license": "LicenseRef-IANA-Protocol-Registry",
+  "licenseUrl": "https://www.rfc-editor.org/rfc/rfc5646.txt",
+  "citation": "IANA Language Subtag Registry, File-Date 2026-06-14. Maintained by IANA under BCP 47 (RFC 5646).",
+  "pin": {
+    "kind": "release",
+    "value": "2026-06-14",
+    "doi": null,
+    "date": "2026-06-14"
+  },
+  "files": [
+    {
+      "path": "language-subtag-registry.txt",
+      "bytes": 731605,
+      "sha256": "be1fad86a99e3a932d07b80c9b3c271ec2381a5909ce22420144e5077ab0a43a",
+      "url": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/iana-subtag-registry.mjs",
+  "notes": "9297 records; 545 carry a Macrolanguage: relation and 421 a Preferred-Value:. LICENCE (checked 2026-06-14, not assumed): IANA publishes NO licence or terms-of-use statement on or about this file. RFC 5646's IETF Trust boilerplate restricts derivative works of the RFC DOCUMENT; it does not speak to the registry data the RFC defines. The registry is a public protocol registry whose machine-readable form exists so implementations can parse and embed it, which is the use made here. Recorded as redistributable and commercial-safe on that basis — a reading, stated so it can be argued with, not a grant anyone issued. IANA publishes no checksum, so upstreamVerified is false by necessity: the sha256 is what we received, not something the publisher attests.",
+  "fetchedAt": "2026-08-05T19:11:38.893Z"
+}

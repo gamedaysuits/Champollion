@@ -1,0 +1,94 @@
+---
+title: "Votre premier traducteur"
+slug: /your-first-translator
+description: "Former votre premier traducteur, pas à pas : les vérifications avant qu'il ne commence, la prédiction que vous écrivez en premier, le dictionnaire qu'il doit surpasser et comment lire son premier résultat."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Votre premier traducteur
+
+C'est le moment le plus passionnant : la première fois qu'un traducteur apprend à partir de vos
+phrases, et que vous l'essayez. C'est également là que les rails sont les plus prudents, car
+le premier résultat est celui dont on se souvient.
+
+## Avant le début de l'apprentissage
+
+Votre assistant parcourt ces étapes dans l'ordre. Il effectue la plupart d'entre elles de manière autonome ; il s'arrête
+et vous sollicite lorsqu'une étape vous revient.
+
+1. **Installez les outils d'entraînement** — une seule fois, et uniquement avec votre accord. Ils sont
+   téléchargés sur votre ordinateur.
+2. **Rassemblez les phrases dans un seul fichier** — les outils combinent vos fichiers,
+   conservent la plus stricte de leurs règles et écartent les répétitions exactes. Les fichiers à partir
+   desquels aucun traducteur ne peut apprendre sont mis de côté, et non supprimés.
+3. **Vérifiez par rapport aux phrases de test** — les copies et quasi-copies de vos phrases de
+   test sont mises de côté.
+4. **Notez ce que vous attendez** — avant qu'aucun résultat n'existe, avec vos propres
+   mots. *« Au mieux un guide de conversation »* est une prédiction tout à fait valable. Les rails
+   n'iront pas plus loin tant que cela n'est pas écrit.
+5. **Mettez de côté des phrases d'exercice** — un quart de vos phrases lorsque vous
+   en avez moins de 200, puis 50, puis une sur dix dès que ce chiffre est dépassé, réservées afin que le traducteur puisse être vérifié pendant son apprentissage sans toucher
+   aux phrases de test.
+6. **Mesurez le dictionnaire** — si vous avez fourni une liste de mots, les outils vérifient
+   d'abord jusqu'où une simple recherche mot à mot peut vous mener. Votre traducteur ne vaut la peine
+   d'être utilisé que là où il fait mieux que cela.
+
+## L'apprentissage
+
+Ensuite, le traducteur apprend. Il s'exécute sur votre ordinateur et rien n'est envoyé
+nulle part. Les outils examinent la mémoire de votre ordinateur et choisissent ce qu'il peut
+prendre en charge : sur un Mac récent, ou avec une carte graphique NVIDIA, le modèle le plus
+robuste de traducteur (ou une version plus légère de celui-ci, utilisant moins de mémoire) ; sur les autres
+ordinateurs, un modèle beaucoup plus petit. Un seul traducteur à la fois apprend sur un même
+ordinateur.
+
+Cela peut prendre un certain temps — quelques minutes pour un petit modèle, quelques heures pour le modèle
+plus robuste. Il se surveille lui-même : s'il ne montre aucun signe de vie au début, cesse
+de progresser ou fonctionne depuis plus d'une journée, il s'arrête et en explique la raison. Rien ne tourne
+indéfiniment.
+
+## Le premier résultat
+
+Une fois terminé, le traducteur est évalué sur vos phrases de test, et vous voyez
+apparaître un **score** : une note sur 100 indiquant à quel point ses traductions se rapprochent de la
+façon dont votre locuteur les a dites. À côté, les outils affichent une fourchette — leur degré
+de certitude — ainsi que chaque avertissement applicable, mot pour mot.
+
+Vous pouvez ensuite l'essayer vous-même, dans votre navigateur web, avec vos propres phrases.
+
+## Ce que vous verrez
+
+Dans notre test pratique des outils — avec des phrases fictives et un traducteur
+simulé pour que l'essai ne prenne que quelques secondes —, la famille avait prédit *« au mieux un guide
+de conversation »*. Ensuite :
+
+- La recherche des mots dans leur liste de mots a obtenu environ <WalkFact of="floor.score" round />
+  sur 100 sur <WalkFact of="floor.devSentences" /> phrases d'exercice.
+- Le premier traducteur a obtenu environ <WalkFact of="devModel.score" round /> sur
+  les mêmes phrases d'exercice — **en dessous de la liste de mots.**
+- Les outils l'ont dit clairement, et ont averti que <WalkFact of="smallSample.n" />
+  phrases d'exercice ne suffisent pas à montrer autre chose que de grands écarts.
+- La prédiction s'est vérifiée, et le grand-père l'a consignée.
+
+C'est un véritable enseignement, pas un échec. Avec quelques dizaines de phrases, une liste de mots
+l'emporte souvent au début. Les rails veillent à ce que vous le *sachiez*, au lieu de vous
+entendre dire que c'est prêt — et les cycles qui suivent vous permettront de la dépasser.
+
+## Quand il ne s'agit que d'un guide de conversation
+
+C'est presque toujours le cas au début : bon avec des phrases semblables à celles dont il a
+appris, et hésitant avec toute nouveauté. Il peut tout de même être utile — pour des brouillons qu'un
+locuteur corrige, ou pour des expressions que vous réutilisez encore et encore. Et c'est le point de départ
+des cycles qui le rendent meilleur.
+
+**Suivant :** [Lire les chiffres →](/docs/reading-the-numbers)
+
+## Approfondir
+
+- [L'entraînement avec nmt-forge](/docs/agents/training) — préréglages, tâches
+  en arrière-plan, le conseiller et ce que signifie chaque avertissement.
+- [Règles de mesure](/docs/agents/measurement) — chrF++, fourchettes, plancher
+  du dictionnaire et prédictions, dans le détail.
+- [Lire les chiffres](/docs/reading-the-numbers) — chaque chiffre, en mots
+  simples.

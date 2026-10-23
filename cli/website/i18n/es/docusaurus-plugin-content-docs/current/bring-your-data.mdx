@@ -1,0 +1,103 @@
+---
+title: "Traiga lo que tenga"
+slug: /bring-your-data
+description: "Traiga sus oraciones, listas de palabras y notas tal como las tiene — y decida, para cada archivo, a quién pertenece y cómo puede usarse."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Traiga lo que tenga
+
+Un traductor aprende de **pares**: una oración en un idioma y la misma
+oración en el otro. Esta página trata sobre cómo incorporar los suyos — y
+sobre las preguntas que se le harán sobre cada archivo, las cuales importan
+más que cualquier otra cosa en las vías.
+
+## Qué pueden leer las herramientas
+
+Traiga sus archivos tal como los guarda. No necesita convertir nada.
+
+| Lo que usted tiene | Lo que leen las herramientas |
+|---|---|
+| Una hoja de cálculo con oraciones y traducciones | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` o texto sin formato |
+| Una tabla en un documento de Word | Las filas de la tabla |
+| Un diccionario hecho en Toolbox o FieldWorks (programas que usan muchos lingüistas) | Las palabras — y sus oraciones de ejemplo, como pares |
+| Grabaciones transcritas en ELAN (un programa para transcribir grabaciones) | Las líneas transcritas y sus traducciones, como pares |
+| Una lista de palabras | Cada palabra y su traducción |
+| Notas sobre la gramática | Se guardan en su propio lugar, para que las personas y las herramientas puedan consultarlas |
+| Textos sagrados | Solo si usted lo pide, y ningún traductor aprende de ellos hasta que las personas que los custodian lo autoricen |
+
+Sus archivos se leen donde están. Si las columnas de una hoja de cálculo no
+indican qué idioma es cuál, las herramientas le preguntan a usted — nunca
+adivinan a partir del contenido.
+
+Las herramientas también buscan filas que parezcan incorrectas — una traducción
+que se desplazó una línea hacia abajo, dos columnas invertidas, una traducción
+copiada del otro lado, el mismo par dos veces, una traducción mucho más larga o
+más corta de lo habitual — y le indican cuáles filas, por su número. Nunca cambian
+ni eliminan nada; alguien que conozca los datos decide.
+
+## Las herramientas cuentan. No le leen sus palabras a nadie.
+
+Cuando entra un archivo, las herramientas le dicen cuántos pares encontraron y
+qué columnas usaron. Eso es todo lo que se le muestra a su asistente de IA:
+recuentos y nombres de columnas, nunca las oraciones en sí.
+
+## Las preguntas para cada archivo
+
+Antes de que cualquier cosa aprenda de un archivo, las vías les preguntan a las
+personas que lo custodian:
+
+- **¿A quién pertenece?** En sus propias palabras: una familia, un maestro,
+  una oficina comunitaria.
+- **¿De quién son las palabras que contiene?** Las personas que dijeron o
+  escribieron las oraciones. Los cuadernos de una abuela contienen sus palabras,
+  incluso si su nieto las escribió en la computadora.
+- **¿Han aceptado su uso?** *Sí*, *todavía no* o *algunos dijeron que no*.
+  Las vías siguen preguntando hasta que se responda esto. Las palabras de
+  personas que aún no han aceptado, o que dijeron que no, nunca se usan para
+  enseñarle a un traductor.
+- **¿Puede un traductor aprender de él?**
+- **¿Podrá salir alguna vez de esta computadora?** Los archivos comienzan
+  siendo privados —guardados en esta computadora— hasta que usted responda.
+
+Las respuestas se escriben en una pequeña nota junto al archivo, y cada
+herramienta la respeta. Después de su primera respuesta, las herramientas solo
+pueden hacer las reglas más estrictas, nunca más flexibles. La única excepción:
+un hablante a quien aún no se le había preguntado todavía puede decir que sí.
+
+Su asistente hace estas preguntas; nunca debe responderlas por usted. Si aún
+no lo sabe —por ejemplo, si todavía necesita preguntarle a una tía— diga
+*todavía no*. Las vías dejan ese archivo a un lado y continúan, y volverán a
+preguntar más adelante, con amabilidad.
+
+## Lo que verá
+
+En nuestra prueba práctica de las herramientas —una demostración con oraciones
+inventadas—, una familia trajo cuatro archivos: <WalkFact of="trainingFiles.0.pairs" />
+pares de oraciones de la hoja de cálculo de un abuelo, <WalkFact of="trainingFiles.1.pairs" />
+de la de una tía, una lista de palabras con <WalkFact of="lexicon.pairs" /> palabras y
+<WalkFact of="test.pairs" /> oraciones que un hablante había revisado, para pruebas. Cada
+vez, el asistente informó la cantidad y luego preguntó a quién pertenecía el
+archivo y si un traductor podía aprender de él.
+
+## Oraciones de otros lugares
+
+Si utiliza oraciones que no escribió —de un libro, un sitio web, una colección
+publicada—, estas vienen con sus propias reglas. Algunas se pueden leer pero no
+compartir; otras no se pueden usar para enseñar nada. Tráigalas de la misma
+manera y responda a las preguntas con sinceridad para ellas también: las
+herramientas respetarán su respuesta. Cuando la licencia de una colección sea
+inusual o poco clara, las herramientas no la enviarán a un servicio externo de
+IA hasta que sus propietarios hayan dicho que sí.
+
+**Siguiente:** [Reserve sus oraciones de prueba →](/docs/your-test-sentences)
+
+## Para profundizar
+
+- [Reglas de datos y transmisión](/docs/agents/data-rules) — cada campo de la
+  nota junto a cada archivo y lo que cada herramienta hace con él.
+- [Manejo de las vías desde la terminal](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, con todas las opciones.
+- [Registrar un conjunto de prueba](/docs/network/sovereignty/registering-corpora) —
+  los cuatro niveles de exposición, para conjuntos que pueda compartir más adelante.

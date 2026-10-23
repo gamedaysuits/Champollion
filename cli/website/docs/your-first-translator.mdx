@@ -1,0 +1,94 @@
+---
+title: Your first translator
+slug: /your-first-translator
+description: "Teaching your first translator, step by step: the checks before it starts, the prediction you write first, the dictionary it has to beat, and how to read its first result."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Your first translator
+
+This is the exciting part: the first time a translator learns from your
+sentences, and you try it. It's also where the rails are most careful, because
+the first result is the one people remember.
+
+## Before teaching starts
+
+Your assistant walks through these in order. Most it simply does; it stops
+and asks you where a step is yours.
+
+1. **Install the training tools** — once, and only with your yes. They're
+   downloaded to your computer.
+2. **Gather the sentences into one file** — the tools combine your files,
+   keep the strictest of their rules, and leave out exact repeats. Files that
+   no translator may learn from are moved aside, not deleted.
+3. **Check against the test sentences** — copies and near-copies of your test
+   sentences are set aside.
+4. **Write down what you expect** — before any result exists, in your own
+   words. *"A phrasebook at best"* is a perfectly good prediction. The rails
+   won't move on until it's written.
+5. **Set aside practice sentences** — a quarter of your sentences while you
+   have fewer than 200, then 50, then one in ten once that's more, held back so the translator can be checked as it learns without touching
+   the test sentences.
+6. **Measure the dictionary** — if you brought a word list, the tools first
+   see how far simply looking each word up gets you. Your translator is worth
+   using only where it beats that.
+
+## Teaching
+
+Then the translator learns. It runs on your computer and nothing is sent
+anywhere. The tools look at your computer's memory and pick what it can
+handle: on a newer Mac, or with an NVIDIA graphics card, the stronger kind of
+translator (or a lighter version of it, with less memory); on other
+computers, a much smaller one. Only one translator learns at a time on a
+computer.
+
+It can take a while — minutes for a small one, a few hours for the stronger
+kind. It watches itself: if it shows no sign of life at the start, stops
+making progress, or runs past a day, it stops and says why. Nothing runs
+forever.
+
+## The first result
+
+When it's done, the translator is tested on your test sentences, and you see
+a **score**: a number out of 100 for how close its translations come to the
+way your speaker said them. Beside it, the tools show a range — how sure they
+are — and every warning that applies, word for word.
+
+Then you can try it yourself, in your web browser, with your own sentences.
+
+## What you'll see
+
+In our practice run of the tools — made-up sentences, and a pretend
+translator so the run takes seconds — the family predicted *"a phrasebook at
+best"*. Then:
+
+- Looking words up in their word list scored about <WalkFact of="floor.score" round />
+  out of 100 on <WalkFact of="floor.devSentences" /> practice sentences.
+- The first translator scored about <WalkFact of="devModel.score" round /> on
+  the same practice sentences — **below the word list.**
+- The tools said so plainly, and warned that <WalkFact of="smallSample.n" />
+  practice sentences is too few to show anything but big differences.
+- The prediction held, and the grandfather recorded it.
+
+That's a real lesson, not a failure. With a few dozen sentences, a word list
+often wins at first. The rails make sure you *know* that, instead of being
+told it's ready — and the rounds that follow are how you pass it.
+
+## When it's a phrasebook
+
+It almost always is, at first: good with sentences like the ones it learned
+from, and shaky with anything new. It can still be useful — for drafts that a
+speaker corrects, or for phrases you use again and again. And it's the start
+of the rounds that make it better.
+
+**Next:** [Reading the numbers →](/docs/reading-the-numbers)
+
+## Go deeper
+
+- [Training with nmt-forge](/docs/agents/training) — presets, background
+  jobs, the advisor, and what each warning means.
+- [Measurement rules](/docs/agents/measurement) — chrF++, ranges, the
+  dictionary floor and predictions, exactly.
+- [Reading the numbers](/docs/reading-the-numbers) — every number, in plain
+  words.

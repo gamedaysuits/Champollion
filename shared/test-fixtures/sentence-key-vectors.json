@@ -1,0 +1,30 @@
+{
+  "about": "The sentence identity key: the ONE answer to 'are these two sentences the same?' wherever a leak could hide — the harness's text_compare.sentence_key, which forge's canonical_key (split guard, leak audit, dev fence) and the contest split both use. Each case: the text and its key. 'same' lists texts that must share a key (one twin); 'different' lists texts that must not. Invented or generic text only.",
+  "cases": [
+    { "text": "Thank  you, fine!", "key": "thank you fine" },
+    { "text": "ﬁne", "key": "fine", "why": "a ligature is its letters (NFKC)" },
+    { "text": "ＡＢＣ", "key": "abc", "why": "fullwidth letters are their ASCII (NFKC)" },
+    { "text": "a‍b", "key": "ab", "why": "a zero-width joiner is invisible: dropped" },
+    { "text": "soft­hyphen", "key": "softhyphen", "why": "a soft hyphen is invisible: dropped" },
+    { "text": "snake_case", "key": "snake case", "why": "an underscore is punctuation" },
+    { "text": "€5 ok", "key": "5 ok", "why": "a symbol is not a word" },
+    { "text": "123!", "key": "123" },
+    { "text": "Straße", "key": "strasse", "why": "casefold" },
+    { "text": "kîwê", "key": "kîwê", "why": "diacritics tell words apart: kept" },
+    { "text": "tsʼmsyen", "key": "tsʼmsyen", "why": "a modifier-letter glottal stop is a letter: kept" },
+    { "text": "ts’msyen", "key": "ts msyen", "why": "a curly apostrophe is punctuation (a language pack's canonicalizer decides if it is the glottal stop)" },
+    { "text": "ᐊᐱᐦᑕ.", "key": "ᐊᐱᐦᑕ", "why": "syllabics are letters" },
+    { "text": "   ", "key": "" },
+    { "text": "", "key": "" }
+  ],
+  "same": [
+    ["Good morning.", "good  morning", "GOOD MORNING!", "good morning"],
+    ["fine", "ﬁne"],
+    ["ab", "a‍b"],
+    ["été", "été"]
+  ],
+  "different": [
+    ["ma", "mà"],
+    ["kîwê", "kiwe"]
+  ]
+}

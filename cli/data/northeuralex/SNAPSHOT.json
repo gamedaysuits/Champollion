@@ -1,0 +1,92 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "northeuralex",
+  "upstream": "https://zenodo.org/records/13269523",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Dellert et al.'s \"NorthEuraLex (Version 0.9)\" from 2020 — Johannes Dellert",
+  "pin": {
+    "kind": "doi",
+    "value": "v4.1",
+    "doi": "10.5281/zenodo.13269523",
+    "date": "2024-08-08"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 6261314,
+      "sha256": "7c4185019f22864040712e0a47e60c6cb0a374679fe828b8c53d937562e4f9bd",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 10336,
+      "sha256": "3b9991a52fc29fda5341f47b7f6ebb7e0580562a3067e90d60d6b31f9d464c20",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 13495324,
+      "sha256": "dc21c46e2c8c0691847bf3b3e5b4a8562756fa4d08e16751b607073b62edf4cb",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 8631,
+      "sha256": "905f22006e6f06d7bd91948802bd598ec0e95ac39f3d66468906527524cc9f4a",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "51004322c4b5e5817f0027f842c8dae82209f630ddc967d27d3a170d3258d309",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 40660,
+      "sha256": "2d4d30a8685d197076533fe538dffbd760ea4d3aad7ca5f4a1ab75265828e965",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 906,
+      "sha256": "335f33eebcf15b84069d762c2b5a9579c6e38587abaf921e3597fda89eb21ebb",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 48636,
+      "sha256": "f44833de2bd44c5a59cc4cb373756932176552a9dda839c3bc8f0a41b2f89144",
+      "url": "https://zenodo.org/api/records/13269523/files/lexibank/northeuralex-v4.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/northeuralex-v4.1.zip:lexibank-northeuralex-e9a8119/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/northeuralex-v4.1.zip, whose md5 matched Zenodo's published checksum (md5:9039ea85fd703a6c0f3238bc98956aec). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:58:36.247Z"
+}

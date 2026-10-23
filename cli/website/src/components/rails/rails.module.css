@@ -1,0 +1,260 @@
+/*
+ * The rails brand, "Parallel Lines" (2026-10) — shared by the landing page,
+ * /start, /your-data and the recorded-walk figure.
+ *
+ * A section sits on a REGISTER: two 1px hairlines with a mono kicker
+ * ("§02 · YOUR DATA"). A translation pair is two aligned lines; the
+ * guardrails are the margins — a gold rule beside anything protected.
+ * Colours: --rail (cyan, the path), --guard (gold, custody / the people's
+ * choice), --slate (illustrative). Logical properties throughout, so an RTL
+ * locale mirrors without per-rule overrides.
+ */
+
+.page {
+  background: var(--surface-0);
+  color: var(--text-primary);
+}
+
+.wrap {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+/* ── the register ─────────────────────────────────────────────────────── */
+.register {
+  padding-block: 72px 80px;
+}
+.registerHead {
+  border-block: 1px solid var(--hairline);
+  padding-block: 7px;
+  margin-block-end: 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.kicker {
+  font-family: var(--font-rails-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rail);
+}
+.registerTitle {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: clamp(1.7rem, 3.2vw, 2.45rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  max-width: 26ch;
+}
+.lede {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 68ch;
+  margin: 0 0 26px;
+}
+.body {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 70ch;
+}
+.body p { margin: 0 0 14px; }
+.body strong { color: var(--text-primary); }
+
+/* ── the guard: a gold margin rule beside anything protected ─────────── */
+.guarded {
+  border-inline-start: 3px solid var(--guard);
+  padding-inline-start: 16px;
+}
+.guardLabel {
+  font-family: var(--font-rails-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--guard);
+}
+
+/* ── the caveat: a card with a broken corner — "the break is where we
+ *    write what we don't know". Never smaller than the score it qualifies. */
+.caveat {
+  position: relative;
+  background: var(--surface-1);
+  border: 1px solid var(--border-medium);
+  border-radius: 4px;
+  padding: 18px 20px 18px 22px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+}
+.caveat::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 31px;
+  height: 1px;
+  background: var(--slate);
+  transform-origin: right top;
+  transform: translateX(-0.5px) rotate(45deg) scaleX(1);
+}
+.caveatLabel {
+  display: block;
+  font-family: var(--font-rails-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-block-end: 6px;
+}
+
+/* ── buttons and links ────────────────────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--rail);
+  color: var(--surface-0);
+  font-weight: 650;
+  padding: 11px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--rail);
+}
+.primary:hover { color: var(--surface-0); text-decoration: none; filter: brightness(1.08); }
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--guard-line);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.secondary:hover { color: var(--text-primary); border-color: var(--guard); text-decoration: none; }
+.agentLink {
+  font-family: var(--font-rails-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+.agentLink:hover { color: var(--rail); }
+
+/* commands are always LTR and never machine-translated */
+.cmd {
+  font-family: var(--font-rails-mono);
+  font-size: 0.86rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--text-primary);
+  /* a long command wraps inside its box rather than pushing past the page */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.cmdBlock {
+  font-family: var(--font-rails-mono);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  background: var(--surface-1);
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}
+.prompt { color: var(--rail); user-select: none; }
+
+/* ── grids ────────────────────────────────────────────────────────────── */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 18px 18px 16px;
+}
+.card h3 {
+  font-family: var(--font-body);
+  font-size: 1.04rem;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+.card p { margin: 0 0 10px; color: var(--text-secondary); line-height: 1.55; font-size: 0.95rem; }
+.card p:last-child { margin-bottom: 0; }
+
+.status {
+  display: inline-block;
+  font-family: var(--font-rails-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 2px 9px;
+  color: var(--text-secondary);
+  margin-block-end: 10px;
+}
+.statusOpen { border-color: var(--slate); color: var(--slate); }
+
+@media (max-width: 996px) {
+  .grid3, .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .register { padding-block: 52px 56px; }
+}
+@media (max-width: 480px) {
+  .wrap { padding-inline: 16px; }
+}
+
+/* "Not released yet" — the guard colour: it protects the reader from running
+   a command the published packages do not have */
+.preRelease {
+  border: 1px solid var(--guard-line);
+  border-inline-start: 4px solid var(--guard);
+  background: var(--guard-subtle);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 0 0 22px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  max-width: 860px;
+}
+.preReleaseShort {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  border-inline-start: 3px solid var(--guard);
+  padding-inline-start: 10px;
+  margin: 16px 0 0;
+  max-width: 52ch;
+}
+
+/* Each block takes its direction from its own text. Until a locale is synced,
+   its rails pages show English inside an RTL page (Arabic); without this, the
+   bidi algorithm moves a sentence's closing punctuation to the wrong end. A
+   translated block picks up RTL from its first strong character. */
+.page :is(p, h1, h2, h3, li, dt, dd, figcaption, q, td, th, summary) {
+  unicode-bidi: plaintext;
+}

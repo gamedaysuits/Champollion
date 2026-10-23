@@ -1,0 +1,103 @@
+# Champollion
+
+> Machine translation development and deployment on rails with guardrails. Built with low-resource and Indigenous language communities in mind.
+
+Champollion takes a person from the files their community keeps to a measured machine-translation model on their own computer, one step at a time — and then into their own translation service, their app, or their website. An AI agent drives it through the MCP server, whose default profile (the rails) has six tools: `start_project`, `project_status`, `run_next_step`, `add_data`, `try_translation` and `explain`. Each step names the exact tool call; every question only the people can answer — who holds a file, whether a model may learn from it, whether its text may leave the computer, what they expect, whether the result is good enough — goes back to them. The guardrails: files the tools bring in start local-only; the test set is never trained on, near-copies of it are screened out, and every scoring read is logged; a prediction is written before the first score; a dictionary floor shows whether a model beats looking words up; a new model replaces the one in use only when it is measurably better on the dev set; a fallback is never blended into a measurement. The rails promise process, not quality: a first small community model is usually a measured phrasebook. Having trouble, or want help? Let's talk: info@champollion.dev.
+
+**AI agents: read [the operating contract](https://champollion.dev/docs/agents/contract) first.** You are an outside AI service unless your model runs on the person's computer: what you read goes to your model provider. Never open, print or summarize the person's data files, test sentences, word lists or review sheets — bring files in with `add_data` (or `champollion data add`), which reports counts and columns only. Never answer a question that is the people's to answer, and never record a consent or loosen a file's terms.
+
+## Start here
+
+- First command, from the shell: `npx champollion new <folder> --from English --to <language>`. A language with no standard code: `--to qaa --target-name "<its name>"` (over MCP: `start_project` with `target_name`).
+- [The operating contract](https://champollion.dev/docs/agents/contract): Read this first. What you may read, what you must ask, what you must never decide for the people, and which rules the tools enforce (locks) versus which only you can keep (notes). Also written into every new project as AGENTS.md.
+- [For AI agents](https://champollion.dev/docs/agents): The agents' manual — how it is organised, how to connect, and the machine-readable entry points.
+- [For AI agents (front door, raw markdown)](https://champollion.dev/for-agents.md): The agent front door as raw markdown, served even before launch.
+- [Start a project](https://champollion.dev/docs/start): The people's version of starting — the assistant path with per-assistant setup, or four commands — and what to expect.
+- [Where your data goes](https://champollion.dev/your-data): What could leave the person's computer, when, and who decides — including what an outside AI agent sees and the gaps the tools cannot close.
+- [Who may use this](https://champollion.dev/docs/getting-started/who-may-use-this): The licence of each package in plain words — free for noncommercial use; commercial licences free for speaker communities on request; the harness is AGPL-3.0-or-later.
+
+## The agents' manual
+
+- [The rails model](https://champollion.dev/docs/agents/rails-model): The project tree, every format (project/1, set/1, method/1, gate-chain/1, deployment/1, service-api/1), the one pipeline, journey-as-data and the step modes, and the shape of a refusal.
+- [Driving the rails over MCP](https://champollion.dev/docs/agents/mcp): Per-client setup, the six rails tools with their arguments and returns, the loop, and the full profile.
+- [Driving the rails from the shell](https://champollion.dev/docs/agents/shell): Every rails step as a command (`champollion`, `nmt-forge`, `mt-eval`), offline mode and environment variables.
+- [Data and transmission rules](https://champollion.dev/docs/agents/data-rules): The sidecar beside every file, local-only and training terms, speakers' agreement, what each tool prints, and when text may be sent to a model API.
+- [Measurement rules](https://champollion.dev/docs/agents/measurement): chrF++ with its 95% interval, gated and raw scores, dev and test sets, predictions, near-twins, the dictionary floor, the paired comparison, and how to report a number.
+- [Training with nmt-forge](https://champollion.dev/docs/agents/training): Presets, the advisor, background jobs, comparing and promoting models, and a symptom → cause → fix table.
+- [Methods and gates](https://champollion.dev/docs/agents/methods): method/1, gate chains (an FST gate worked through), and the methods beyond the default — each with what it sends where.
+- [Serving and deployment](https://champollion.dev/docs/agents/serving): The deployment file, `mt-eval translate` and `serve`, the try page, `champollion connect`, and `champollion sync` for app and site files.
+- [Hosting and joining](https://champollion.dev/docs/agents/hosting-and-joining): Sealed tests (not on the rails yet) and Join a project (`mt-eval project`).
+- [Coaching the people](https://champollion.dev/docs/agents/coaching): How to relay a round report honestly — progress first, every number with its unit and set, never more than was measured.
+
+## For the people you are helping
+
+Plain-words pages, written for speakers with no technical background — the register to match when you explain something.
+
+- [What this is](https://champollion.dev/docs/what-is-champollion): What a family or community can build, and who it is for.
+- [How it works](https://champollion.dev/docs/how-it-works): On rails with guardrails — every step laid out, and who decides what.
+- [The guardrails](https://champollion.dev/docs/guardrails): The mistakes that quietly ruin translation projects, and what the rails do about each.
+- [What it can't do yet](https://champollion.dev/docs/what-it-cant-do-yet): The honest limits — a first model is a phrasebook; a working one takes many sentences.
+- [Bring what you have](https://champollion.dev/docs/bring-your-data): The formats read as kept, and the questions asked for each file.
+- [Set aside your test sentences](https://champollion.dev/docs/your-test-sentences): Why, how to choose them, and how they are protected.
+- [Your first translator](https://champollion.dev/docs/your-first-translator): The checks before training, the dictionary floor, and reading the first result.
+- [Make it better, round by round](https://champollion.dev/docs/make-it-better): The improve rounds and the round report.
+- [How many sentences does it take?](https://champollion.dev/docs/how-many-sentences): What is known (a floor), what is not, and how a family's own rounds estimate it.
+- [Put it to work](https://champollion.dev/docs/put-it-to-work): Try page, translating files, serving, connecting an app — and private output.
+- [Your words, your rules](https://champollion.dev/docs/your-words-your-rules): Who decides, what is built from the words, other people's collections, objections and takedowns.
+- [Working with speakers](https://champollion.dev/docs/working-with-speakers): Consent per person, time, credit and payment, sacred words, spelling.
+- [Reading the numbers](https://champollion.dev/docs/reading-the-numbers): Every number in plain words.
+- [Getting help](https://champollion.dev/docs/getting-help): Let's talk — what help can look like; never required.
+- [Join a project](https://champollion.dev/docs/join-a-project): Help a project, or list yours.
+- [Host a sealed test](https://champollion.dev/docs/host-a-sealed-test): Let others measure on your sentences without seeing them.
+- [Translate an app or website](https://champollion.dev/docs/translate-an-app-or-website): `champollion sync`, in plain words.
+
+## Reference
+
+- [Reference](https://champollion.dev/docs/reference): The map of the reference.
+- [champollion command reference](https://champollion.dev/docs/reference/cli): Every `champollion` command and option.
+- [mt-eval command reference](https://champollion.dev/docs/reference/mt-eval): Every `mt-eval` subcommand and option, generated from the parser.
+- [nmt-forge command reference](https://champollion.dev/docs/network/getting-started/forge-command-reference): Every `nmt-forge` subcommand and option, generated from the parser.
+- [MCP server](https://champollion.dev/docs/network/getting-started/mcp-server): Both profiles and every tool, argument, resource and prompt.
+- [Formats](https://champollion.dev/docs/reference/formats): The framework schemas, field by field, generated from the schemas.
+- [Technical limits](https://champollion.dev/docs/network/honest-limitations): What the measurements cover and do not — read before trusting any number.
+- [Scoring specification](https://champollion.dev/docs/network/specifications/scoring): How every published score is computed (scoring standard/1: chrF++ with its interval; the composite is retired).
+- [Significance](https://champollion.dev/docs/network/specifications/significance): Paired tests and intervals — when "better" is better.
+- [Run card](https://champollion.dev/docs/network/specifications/run-card): What a published run carries.
+- [Methods specification](https://champollion.dev/docs/network/specifications/methods): The method contract.
+- [Metric reliability](https://champollion.dev/docs/network/specifications/metric-reliability): Which score to believe for which language family.
+- [Harness](https://champollion.dev/docs/network/specifications/harness): The evaluation engine every score comes out of.
+- [Leaderboard and publishing](https://champollion.dev/docs/reference/leaderboard): What the leaderboard is, public and sealed benchmarks, and what a published run carries.
+- [Leaderboard rules](https://champollion.dev/docs/network/leaderboard/rules): The rules every published run follows.
+- [Run a sovereign contest](https://champollion.dev/docs/network/sovereignty/run-a-sovereign-contest): The sealed-test manual.
+- [Registering corpora](https://champollion.dev/docs/network/sovereignty/registering-corpora): The four exposure tiers and what leaves the machine under each.
+- [App and site translation](https://champollion.dev/docs/intro): The `champollion sync` reference — quick start, configuration, frameworks, CI.
+- [The Atlas](https://champollion.dev/docs/atlas): The language index — one cited card per language, and what a card may and may not assert.
+
+## License Constraints
+
+Every dataset in the catalogue carries a license, and the harness enforces per-dataset license lanes. Before fetching corpora, running benchmarks, or reusing outputs, know the lane: research-use, non-commercial (NC), and LicenseRef-* datasets are excluded from every commercial, API, and training lane; evaluation data is never training data (every dataset carries `do_not_train`); and some restricted-license sets refuse remote evaluation entirely unless the rights holder has recorded consent for transmission to a hosted model. Corpus content is always fetched from its pinned upstream source — never rehosted or redistributed here.
+
+- [Evaluation Datasets](https://champollion.dev/docs/network/leaderboard/datasets): The per-family license table — which corpus families are open (CC0, CC-BY, MIT, Apache-2.0) and which are research-use or non-commercial, plus the do-not-train rule and the quarantine lane.
+
+## Machine-Readable Data
+
+The map on the long-vision page (/vision) is an idealization of this data — agents should read the sources, not the picture. The map's green has TWO tiers, both computed by exact ISO-639-3 code from the coverage lists below: bright green = a language a DEPLOYED service lists (Google/Microsoft/DeepL/LibreTranslate); dim green = a language that appears ONLY in an open research model's published list (NLLB/OPUS/M2M-100/MADLAD-400) — a code in a model card is not a usable deployed service, and those cards warn tail-language quality varies widely. "Covered" on the map is a published-list claim, never a quality claim.
+
+- [Sweep queue — queue.json](https://champollion.dev/queue.json): The full public benchmark queue (large; tens of MB): every open item with its run command, cost estimate, license/transmission stamps, and the ranking metadata that makes every rank re-derivable.
+- [Queue preview — queue-preview.json](https://champollion.dev/queue-preview.json): A small top-of-queue slice with the full metadata block — start here before fetching the full queue.
+- [Language mesh — mesh.json](https://champollion.dev/mesh.json): The measured/registered pair network behind the map: edges with status, best chrF++, and run references.
+- [Corpus registry — registry.json](https://champollion.dev/registry.json): Every registered evaluation corpus with license lane, attribution, checksum, and fetch-from-source access notes.
+- [Provider coverage — method-coverage.json](https://github.com/gamedaysuits/champollion/blob/main/shared/catalogue/method-coverage.json): Each MT provider's published language list, cited with source URL and as-of date — the exact data behind the map's covered/uncovered split. Each entry carries `tier` (`service` = deployed API vs `open` = research model) and `verified`; the deployed-service set (Google/Microsoft/DeepL/LibreTranslate) is the map's bright-green tier, the open models its dim-green tier.
+- [MCP Server — the agent-facing door](https://champollion.dev/docs/network/getting-started/mcp-server): `champollion-mcp-server` on npm. Tools over the Model Context Protocol (stdio): browse and cost the benchmark queue, search language cards, read scored runs, look up which metric to trust for a target language, translate through the tested pipeline, start evaluations, and drive NMT Forge training (including an A/B compare that carries each model's near-twin caveat). The read-only tools work from a bare `npx` install; the rest need the eval harness or NMT Forge (`pip install`) — the page lists exactly which, with the count. `run_benchmark` refuses an unbounded run by design. `preview_publish` shows what a publish would send and can never publish (annotated read-only, safe for a cautious host to allow alone); `publish_report` is the real publish. Relay every `score_caveats` entry (mt-eval's, passed on verbatim by NMT Forge) with the score it qualifies; never quote a score without it.
+- [Queue Construction](https://champollion.dev/docs/network/specifications/queue-construction): The normative spec for how the queue is ranked (lanes, map-value survey ordering, ECV).
+- [Scored runs — run_cards REST](https://sjdomynysdljkbemupqa.supabase.co/rest/v1/run_cards): The public leaderboard as PostgREST (read-only via RLS; anon key `sb_publishable_bV6CFNFnzxhQI0wlBx2J0A_5Vm5gFBp` is publishable by design). Aggregate scores only — per-entry test sentences are license-gated and never exposed.
+- [Corpus wish-list — corpus-wishlist.json](https://champollion.dev/corpus-wishlist.json): The acquisition frontier (~2 MB): every living language with NO evaluation corpus, ranked by best cited speaker count — the languages no queue can reach until someone builds an eval set.
+- [Language cards](https://github.com/gamedaysuits/champollion/tree/main/cli/shared/language-cards): per-language JSON cards (one per catalogued language) — classification, vitality, coverage, eval resources; every value cites its source.
+
+## Optional
+
+- [MT in plain words](https://champollion.dev/docs/network/context/mt-training-concepts): A zero-background glossary of training a translation model.
+- [Tokenizers](https://champollion.dev/docs/learn/tokenizers): How text is cut into pieces, and why it makes some languages expensive.
+- [Data sovereignty](https://champollion.dev/docs/learn/data-sovereignty): The ideas behind community ownership and control of language data.
+- [Translation is not revitalization](https://champollion.dev/docs/network/perspectives/translation-is-not-revitalization): What machine translation can and cannot do for a language.
+- [The name](https://champollion.dev/docs/the-name): Why "Champollion".

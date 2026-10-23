@@ -1,0 +1,233 @@
+{
+  "_comment": "Characterization vectors for the CLI output gates (cli/lib/validate.js validateTranslations), captured 2026-10-09 BEFORE any gate refactor, so the framework gate chain (and its Python engine port) can be held to what ships today. Invented sentences and deliberately broken outputs — no corpus content. A gate change that moves a verdict must change this file in the same commit, with the reason. Never regenerate blindly.",
+  "gate_version": 3,
+  "cases": [
+    {
+      "name": "good Latin-script translation",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Open the settings page.",
+      "output": "Ouvrez la page des réglages.",
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "empty",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Save",
+      "output": "   ",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "empty translation"
+      }
+    },
+    {
+      "name": "invisible characters only",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Save",
+      "output": "​‎",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "empty translation (only invisible formatting characters)"
+      }
+    },
+    {
+      "name": "long echo of the source",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Your changes were saved to the shared folder.",
+      "output": "Your changes were saved to the shared folder.",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "source echo (identical to English)"
+      }
+    },
+    {
+      "name": "short ASCII echo, Latin target (accepted as a name)",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "GitHub",
+      "output": "GitHub",
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "short ASCII echo, non-Latin target (name-or-label retry)",
+      "pair": {
+        "target": "ja"
+      },
+      "source": "Translation CLI",
+      "output": "Translation CLI",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "kept in Latin script — a name, or a label left untranslated?"
+      }
+    },
+    {
+      "name": "short ASCII echo, non-Latin target, second pass accepts",
+      "pair": {
+        "target": "ja"
+      },
+      "source": "Translation CLI",
+      "output": "Translation CLI",
+      "options": {
+        "acceptLatinNames": true
+      },
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "Latin output for a non-Latin target",
+      "pair": {
+        "target": "ja"
+      },
+      "source": "Your changes were saved to the shared folder.",
+      "output": "Vos modifications ont été enregistrées dans le dossier partagé.",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "wrong script (ASCII-only for ja, expected non-Latin characters)"
+      }
+    },
+    {
+      "name": "good non-Latin translation",
+      "pair": {
+        "target": "ja"
+      },
+      "source": "Open the settings page.",
+      "output": "設定ページを開きます。",
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "far too long",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Save",
+      "output": "Enregistrez maintenant tous les documents ouverts dans le dossier partagé de votre équipe avant de continuer.",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "length inflation (27.3x source, max 4x)"
+      }
+    },
+    {
+      "name": "repetition loop",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Thank you for your patience while we finish.",
+      "output": "merci merci merci merci merci merci merci merci merci merci merci merci",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "repetition hallucination (100% repeated trigrams, 100% repeated 8-grams)"
+      }
+    },
+    {
+      "name": "placeholder dropped",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Hello {name}, you have {count} messages.",
+      "output": "Bonjour, vous avez des messages.",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "ICU/placeholder structure damaged: placeholder {name} is missing; placeholder {count} is missing"
+      }
+    },
+    {
+      "name": "placeholder kept",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Hello {name}, you have {count} messages.",
+      "output": "Bonjour {name}, vous avez {count} messages.",
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "ICU plural skeleton broken",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "{count, plural, one {# file} other {# files}}",
+      "output": "{count} fichiers",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "ICU/placeholder structure damaged: ICU plural argument 'count' is missing; placeholder {count} is not in the source"
+      }
+    },
+    {
+      "name": "HTML tag dropped",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Read the <b>terms</b> first.",
+      "output": "Lisez d'abord les conditions.",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "markup damaged: <b> is missing"
+      }
+    },
+    {
+      "name": "fullwidth Latin in Japanese",
+      "pair": {
+        "target": "ja"
+      },
+      "source": "Open the settings page.",
+      "output": "設定ページをＯｐｅｎします。",
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "hollowed content",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Your changes were saved to the shared folder on the server.",
+      "output": "Vos",
+      "expect": {
+        "verdict": "refuse",
+        "reason": "suspiciously short (5% of source length)"
+      }
+    },
+    {
+      "name": "protected term kept as written",
+      "pair": {
+        "target": "ja",
+        "protectedTerms": [
+          "Champollion"
+        ]
+      },
+      "source": "Champollion",
+      "output": "Champollion",
+      "expect": {
+        "verdict": "accept"
+      }
+    },
+    {
+      "name": "non-string value",
+      "pair": {
+        "target": "fr"
+      },
+      "source": "Save",
+      "output": 42,
+      "expect": {
+        "verdict": "refuse",
+        "reason": "non-string value"
+      }
+    }
+  ]
+}

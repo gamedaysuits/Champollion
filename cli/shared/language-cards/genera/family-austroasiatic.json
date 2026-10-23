@@ -1,0 +1,56 @@
+{
+  "code": "family-austroasiatic",
+  "extends": null,
+  "name": "Austroasiatic Family",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Austroasiatic languages lack grammatical gender. Some have classifier systems that categorize nouns by semantic properties, but these are not gender systems."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "varies"
+      }
+    },
+    "capitalization": {
+      "hasCase": null
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "registerSystems": "Mon-Khmer languages frequently have phonation register systems — breathy vs. clear voice, or tense vs. lax register — that distinguish lexical items. These interact with vowel quality and tone in complex ways that are poorly represented in standard orthography.",
+    "sesquisyllabicPhonology": "Many Austroasiatic languages exhibit sesquisyllabic word structure — words consist of a main stressed syllable preceded by a reduced presyllable (a 'minor syllable'). This phonological pattern affects morphological analysis and word boundary detection.",
+    "richVowelSystems": "Austroasiatic languages are famous for exceptionally large vowel inventories. Some Mon-Khmer languages have 20+ distinct vowels. Romanized transcriptions often use unfamiliar diacritics or digraphs that MT systems may corrupt.",
+    "infixingMorphology": "Unlike most language families, Austroasiatic languages make productive use of infixes — morphemes inserted into the middle of a root. This prefixing and infixing morphology differs from the suffixation-dominant patterns familiar to most MT systems.",
+    "morphologicalDiversity": "The family spans from highly analytic/isolating (Vietnamese, Khmer) to agglutinative (Munda languages of India). This range is comparable to Indo-European's morphological diversity.",
+    "toneVsRegister": "Some members (like Vietnamese) have developed full tone systems, while others use voice register contrasts. In some languages, historical registers have split into tonal distinctions. This creates inconsistency in how phonological contrasts are orthographically marked."
+  },
+  "classification": {
+    "family": "Austroasiatic",
+    "familyGlottocode": "aust1305",
+    "ancestry": [
+      "Austroasiatic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Austroasiatic (~159 members). Covers Mon-Khmer branch (Vietnamese, Khmer, Mon) and Munda branch (Santali, Mundari). Properties vary significantly between branches — Mon-Khmer is mostly analytic/SVO while Munda is agglutinative/SOV. Script is null because members use Latin (Vietnamese), Khmer, Thai-derived, and Indic scripts.",
+  "regions": [
+    {
+      "country": "Southeast and South Asia (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Vietnam, Cambodia, Myanmar, Laos, Thailand, Malaysia, India (Jharkhand/Odisha)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

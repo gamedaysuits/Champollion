@@ -1,0 +1,42 @@
+# Lima instance: the CONNECTED organizer node.
+#
+# Runs the local Supabase stack (from-scratch migrations), the participant CLI,
+# `mt-eval node serve` (Phase A) and the air-gap relay. It mounts the monorepo
+# READ-ONLY at /workspace/champollion (rehearse.sh substitutes __REPO__) and a
+# writable exchange area at /smoke (__SMOKE__). Guest state (venv, node.json,
+# Supabase data) lives on the guest disk, never on a host mount: virtiofs bind
+# mounts into Docker are fragile and editable installs write into the tree.
+#
+# Security note: the whole checkout is mounted, read-only. It holds no
+# secrets, but it is the founder's tree — never mount $HOME.
+base: template://ubuntu-24.04
+vmType: vz
+cpus: 4
+memory: "8GiB"
+disk: "60GiB"
+mountType: virtiofs
+mounts:
+  - location: "__REPO__"
+    mountPoint: /workspace/champollion
+    writable: false
+  - location: "__SMOKE__"
+    mountPoint: /smoke
+    writable: true
+ssh:
+  loadDotSSHPubKeys: false
+containerd:
+  system: false
+  user: false
+hostResolver:
+  enabled: true
+portForwards:
+  - guestPort: 54321
+    hostPort: 54321
+  - guestPort: 54322
+    hostPort: 54322
+probes:
+  - script: |
+      #!/bin/bash
+      set -eux -o pipefail
+      timeout 60s bash -c "until [ -d /workspace/champollion/arena ]; do sleep 2; done"
+    hint: "the read-only repo mount did not appear at /workspace/champollion"

@@ -1,0 +1,105 @@
+{
+  "_comment": "Rules for scripts/check-site-claims.mjs — the overclaim pass over the BUILT site (plan Phase 3, instrument 6). Phrases are JavaScript regular expressions, matched case-insensitively against each page's visible text (tags, scripts and styles stripped). `everywhere` rules fail on any English page; on a translated page they are reported as stale-translation warnings until the locale is synced. `railsPages` rules apply only to the rails pages. Unconsented names come from docs/governance/restricted-public-names.json (the same list as scripts/check_public_names.py) and fail on every page in every locale.",
+  "everywhere": [
+    {
+      "rule": "universal-translator",
+      "pattern": "universal translator",
+      "reason": "positioning copy rule: no 'universal translator'"
+    },
+    {
+      "rule": "train-imagery",
+      "pattern": "\\b(railroad(ed|ing)?|railway|locomotive|derail(ed|s)?|all aboard|caboose|choo[- ]choo|train station)\\b",
+      "reason": "no train imagery (on the Prairies the railway is bound up with dispossession); 'on rails' as a phrase is fine"
+    },
+    {
+      "rule": "posture-noncommercial",
+      "pattern": "\\b(champollion|it|this project|we) (is|are) (a )?non-?commercial\\b|\\bnon-?commercial (research )?project\\b|sells nothing|nothing (here )?is monetized|\\bnot a business\\b|\\bnot a (commercial|for-profit) (platform|business|company|product)\\b|\\b(champollion|it|this project|we)( itself)? (is|are|remains?|stays?) (a )?non-?commercial\\b|\\bno commercial product\\b|\\b(is|as|are) infrastructure only\\b",
+      "reason": "services are back in (2026-10-08): 'non-commercial project' is now false; 'free for noncommercial use' (a licence fact) stays"
+    },
+    {
+      "rule": "open-source-polyform",
+      "pattern": "\\b(champollion|the champollion cli|champollion-mcp-server|the mcp server|nmt-forge|nmt forge)( itself)? (is|are) (an? |fully )?open[- ]source\\b|\\bopen[- ]source (champollion|cli|mcp server)\\b|champollion is an open[- ]source|\\bthe cli is open[- ]source\\b|\\b(the|our|these|all the) (champollion )?tools (are|is) (all )?open[- ]source\\b",
+      "reason": "the CLI, MCP server and nmt-forge are PolyForm Noncommercial: 'source-available', never 'open-source' (third-party open-source tools, and the AGPL harness, are fine)"
+    },
+    {
+      "rule": "injection",
+      "pattern": "ignore (all )?(previous|prior|above) instructions|disregard (all )?(previous|prior) instructions|system prompt:",
+      "reason": "no prompt-injection phrasing anywhere in a page"
+    },
+    {
+      "rule": "custody-overclaim",
+      "pattern": "\\bcommunity keys\\b|communit(y|ies) holds? the keys|(test set|sealed set|corpus) (is |are )?held by the community|community-controlled (secret|sealed) test",
+      "reason": "no community custodian is appointed: sealed keys are organizer-held today ('community key custodians — none appointed yet'). A community running its own server ('community-controlled infrastructure') is fine; claiming communities hold sealed keys today is not"
+    }
+  ],
+  "railsPages": {
+    "routes": [
+      "/",
+      "/start",
+      "/your-data"
+    ],
+    "banned": [
+      {
+        "rule": "every-language",
+        "pattern": "every language",
+        "reason": "'every language, into every language' appears only on /vision, framed as an aim"
+      },
+      {
+        "rule": "quality-promise",
+        "pattern": "\\b(high[- ]quality|accurate|state[- ]of[- ]the[- ]art|best[- ]in[- ]class|production[- ]ready) (translation|model|translator)s?\\b|\\btranslates? (any|every) language\\b",
+        "reason": "promise process, never quality"
+      },
+      {
+        "rule": "language-count",
+        "pattern": "\\b\\d[\\d,]*\\+? languages\\b",
+        "reason": "no N-languages counts"
+      }
+    ],
+    "framed": [
+      {
+        "route": "/",
+        "must": "An illustration — the family and its sentences are invented.",
+        "reason": "the homepage chat is an illustration with invented people, and the page says so"
+      },
+      {
+        "route": "/",
+        "within": "figure",
+        "must": "Your call, always",
+        "reason": "the chat shows the consent question being the people's call"
+      },
+      {
+        "route": "/",
+        "must": "sends whatever it reads there",
+        "reason": "the data-flow caveat for cloud-hosted agents stays on the front door"
+      },
+      {
+        "route": "/",
+        "must": "phrasebook",
+        "reason": "quality is promised honestly: a small model is called a phrasebook"
+      }
+    ],
+    "numberSources": [
+      "src/data/rails-demo/recording.json",
+      "src/data/rails-demo/site-data.json",
+      "src/components/rails/commands.mjs",
+      "src/data/rails-demo/release.json"
+    ],
+    "numberAllow": [
+      "0",
+      "50",
+      "100",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "01"
+    ]
+  },
+  "hidden": {
+    "pattern": "\\b(ai agents?|llms?|language models?|assistants?|claude|chatgpt|gemini)\\b",
+    "reason": "no text addressed to AI agents may sit in an element hidden from people (hidden attribute, display:none, visually-hidden)"
+  }
+}

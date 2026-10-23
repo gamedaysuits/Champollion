@@ -1,0 +1,56 @@
+{
+  "_doc": "What happens to each live card field that the rebuilt pipeline does not produce. The shadow diff found 54; carrying a field forward by default is how uncited prose survives a rebuild meant to eliminate it, so each one gets a decision in writing.",
+  "_whyAFileAndNotACommitMessage": "These are founder decisions about what the atlas stops claiming. A decision nobody wrote down gets re-litigated by the next person who notices the field missing and assumes it was an oversight.",
+  "version": 1,
+  "decidedOn": "2026-08-07",
+  "verdicts": {
+    "_remaining": {
+      "verdict": "UNDECIDED — awaiting classification",
+      "note": "47 further fields from the shadow diff still need a verdict each: fetchable (digitalPresence via Tatoeba + Wikimedia Incubator, keyboardSupport via FirstVoices), already produced under a new name (nativeName, script, regions, corpusAvailability, keyboardSupport, documentationDepth), configuration rather than fact (rules, scriptConverter — see the open question on where Champollion config lives), or uncited prose to drop (formality, notes, taxonomyNotes). Listed so the count is visible rather than implied."
+    },
+    "arealContext": {
+      "verdict": "THE FIELD stays dropped. THE SOURCE verdict is REOPENED — my reasoning was wrong",
+      "decidedBy": "founder 2026-08-07 (field); source verdict reopened 2026-08-07 on the founder's challenge",
+      "whatIGotWrong": "I recommended dropping D-PLACE as 'mid-century ethnographic coding OF A PEOPLE, in the present tense, on a language card', and that framing was accepted. Checked against the pinned dataset, two thirds of it does not survive. D-PLACE v3.3.0 is DOI-pinned (10.5281/zenodo.18229037) and was RELEASED 2026-01-13 — it is actively maintained, not a period piece. And societies.csv carries `main_focal_year` (1950 for the !Kung), so the vintage is documented BY THE SOURCE. The present tense was OUR rendering: the card field threw away the year D-PLACE had given us. Rejecting a source for being honest about its own vintage is the truth-arbiter behaviour the card-boundary rule forbids.",
+      "whatSurvives": "One thing, and it is a real modelling constraint rather than a judgement: D-PLACE's unit of observation is a SOCIETY, not a language. societies.csv keys on a society id (B72 = !Kung) and LINKS to a glottocode; several societies can share one. So `settlementPattern: Nomadic` on a language card is a subject error in the same class as putting a run result there — the value is about a people, and the card describes a language. Separately, CC-BY-NC-4.0 is a real licence constraint that carves it out of commercial lanes.",
+      "evidence": "cli/data/dplace-cldf: license CC-BY-NC-4.0, pin doi 10.5281/zenodo.18229037 v3.3.0 dated 2026-01-13, files include societies.csv (ID, Name, Glottocode, main_focal_year), data.csv, variables.csv, codes.csv.",
+      "action": "The FIELD stays dropped: `arealContext` rendered society attributes on a language card with no focal year, and that was wrong however it was sourced. The SOURCE is a founder decision to re-take, and the honest options are: (a) leave it out until the atlas has a `society` subject to hang it on — the subjects system already supports language, method and corpus, so a fourth is a known shape of work; (b) include it against societies with the focal year carried and the glottocode link stated as D-PLACE states it, never as identity. What must NOT happen again is excluding a cited, maintained, correctly licensed source because of how its contents read to us."
+    },
+    "culturalAphorism": {
+      "verdict": "DELETE THE FIELD",
+      "decidedBy": "founder, 2026-08-07",
+      "scope": "the field itself, not merely its contents",
+      "evidence": "Present on all 8,678 live cards. An aphorism in the language with no source: crk carries 'ê-wîcêhtonaniwahk kâ-kî-isi-wâpahtamâhk ôma pimâtisiwin' with no attribution to a speaker, a text, or a community. There is no upstream that publishes these, and there could not be one that publishes them for 8,678 languages.",
+      "why_the_whole_field": "Emptying it would leave a slot the next contributor fills back in. The atlas indexes what sources say; it has no lane for an unattributed saying, and a language's own aphorisms belong to its speakers to publish, not to us to assert on their behalf.",
+      "action": "never defined as a parameter; banned by test so a cutover cannot resurrect it"
+    },
+    "experts": {
+      "verdict": "RENAME AND NARROW — becomes resourcePublishers, derived",
+      "decidedBy": "founder, 2026-08-07",
+      "evidence": "Plains Cree's card listed ALTLab (University of Alberta) and the Tatoeba Project as 'experts'. Neither told us that. The field was auto-derived from 'they published something' and then labelled expertise, which is us appointing people to a role on someone else's language.",
+      "why_the_rename_and_not_a_drop": "The underlying facts are true and useful — these organisations DID publish the resources we index. What was wrong was the word. 'Expert' is a claim about standing that only the community and the person can make; 'published this resource' is a fact with a URL behind it.",
+      "action": "no `experts` parameter. The information already exists inside fstResource / dictionaryResource / keyboardResource / corpusResource, each of which carries its own publisher, licence and URL. If a roll-up is wanted it is a DERIVATION over those, named resourcePublishers, asserting only authorship of an indexed resource."
+    },
+    "linguisticChallenges": {
+      "verdict": "OUT OF SCOPE HERE — real work, later, and procedural",
+      "decidedBy": "founder, 2026-08-07",
+      "evidence": "Present on all 8,678 live cards as unsourced prose (crk: 'Cree is highly polysynthetic. A single verb can incorporate...'). The CONTENT is not wrong and is genuinely useful; it is simply uncited, and true-but-uncited is what this rebuild ends.",
+      "why_not_a_fetcher": "Nobody publishes 'the challenges of translating language X' as a dataset. Founder direction: this gets rebuilt procedurally from individualised research and typological fact analysis — derived from the typology we already ingest (WALS/Grambank features, script and orthography facts), not fetched from an upstream and not hand-written.",
+      "action": "drop from the pipeline now; reopen as a derivation with its own inputs and derivation id. NOT a fetcher."
+    },
+    "pipelineReadiness": {
+      "verdict": "DELETE THE FIELD",
+      "decidedBy": "founder, 2026-08-07",
+      "evidence": "A Champollion-computed composite: crk scored 25/100, tier 'low', over ten booleans (commonVoice, wikipedia, opus, keyboard, googleTranslate …). Every input is honest and already on the card as resource existence.",
+      "why": "Founder: 'get our judgement out of it, the other values should speak for themselves.' The components ARE the facts; the score is our opinion about them, expressed as a number that grades somebody's language. A reader can see there is no Common Voice set and no Wikipedia and draw their own conclusion.",
+      "action": "never defined as a parameter; banned by test. If routing needs a composite it computes one at routing time from the card's own resource facts, where it is a ranking input and not a published claim about a language."
+    },
+    "supportTier": {
+      "verdict": "DELETE THE FIELD",
+      "decidedBy": "founder, 2026-08-07",
+      "evidence": "A single word on the card — crk read 'developing' — with no source and no stated rubric.",
+      "why": "Same as pipelineReadiness, and worse: a bare adjective carries the judgement with none of the inputs visible, so a reader cannot even disagree with it.",
+      "action": "never defined as a parameter; banned by test"
+    }
+  }
+}

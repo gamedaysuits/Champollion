@@ -1,0 +1,95 @@
+{
+  "_comment": "WRITTEN, not recorded: what the person and the agent say in the homepage figure, chapter by chapter. Every command, tool call, question the tools ask, answer the person gave and number shown comes from recording.json by the `refs` matchers ({tool,path} | {ask} | {status} | {ran} | {person}, resolved in src/utils/railsDemo.mjs, which throws if one matches nothing). `who` is person | agent. The page labels these lines as written. Translatable: each line has an id for translate().",
+  "chapters": [
+    {
+      "id": "ask",
+      "title": "Ask",
+      "refs": [{"tool": "start_project"}],
+      "lines": [
+        {"id": "rails.demo.ask.1", "who": "person", "text": "My grandpa and I want to build a translator from English into our language. Use champollion."},
+        {"id": "rails.demo.ask.2", "who": "agent", "text": "I'll start a project on this computer. The tools will stop and ask you the questions only your family can answer."}
+      ]
+    },
+    {
+      "id": "gather",
+      "title": "Gather",
+      "refs": [{"tool": "add_data", "path": "inbox/grandpa.tsv"}, {"tool": "add_data", "path": "inbox/aunt.tsv"}, {"tool": "add_data", "path": "inbox/words.tsv"}],
+      "lines": [
+        {"id": "rails.demo.gather.1", "who": "person", "text": "Here are Grandpa's sentences, my aunt's, and our word list."},
+        {"id": "rails.demo.gather.2", "who": "agent", "text": "Bringing them in from where they are. The tools tell me how many pairs each file holds — never the sentences."}
+      ]
+    },
+    {
+      "id": "protect",
+      "title": "Decide",
+      "refs": [{"ask": "terms"}, {"ran": "champollion data mark data/parallel/aunt.tsv"}, {"ran": "champollion data mark data/parallel/grandpa.tsv"}, {"ran": "champollion data mark data/lexicon/words.tsv"}],
+      "answersFrom": {"ran": "champollion data mark data/parallel/aunt.tsv"},
+      "lines": [
+        {"id": "rails.demo.protect.1", "who": "agent", "text": "The tools ask something only you can answer, for each file: who holds it, may a model learn from it, and may its text ever leave this computer?"},
+        {"id": "rails.demo.protect.2", "who": "person", "text": "The family holds them. A model may learn from them. They stay on this computer."},
+        {"id": "rails.demo.protect.3", "who": "agent", "text": "Written beside each file. Every tool obeys it, and no tool will ever loosen it."}
+      ]
+    },
+    {
+      "id": "test",
+      "title": "Keep a test set",
+      "refs": [{"tool": "add_data", "path": "inbox/checked.tsv"}, {"ran": "nmt-forge registry add"}],
+      "lines": [
+        {"id": "rails.demo.test.1", "who": "person", "text": "These are sentences a fluent speaker checked."},
+        {"id": "rails.demo.test.2", "who": "agent", "text": "They become your test set. No model learns from them, and every time the tools score them, it is counted."}
+      ]
+    },
+    {
+      "id": "screen",
+      "title": "Screen for copies",
+      "refs": [{"ran": "nmt-forge leak-audit"}],
+      "lines": [
+        {"id": "rails.demo.screen.1", "who": "agent", "text": "Before training, the tools look for test sentences that nearly repeat a training sentence — those would make a model look better than it is."}
+      ]
+    },
+    {
+      "id": "predict",
+      "title": "Predict first",
+      "refs": [{"ask": "predict"}, {"ran": "nmt-forge prereg new"}],
+      "answersFrom": {"ran": "nmt-forge prereg new"},
+      "lines": [
+        {"id": "rails.demo.predict.1", "who": "agent", "text": "Before any score exists: what do you and your grandpa expect, and why? Your words go on the record."},
+        {"id": "rails.demo.predict.2", "who": "agent", "text": "Written down. The score will be checked against it — not the other way round."}
+      ]
+    },
+    {
+      "id": "floor",
+      "title": "Set the floor",
+      "refs": [{"ran": "nmt-forge floor"}],
+      "lines": [
+        {"id": "rails.demo.floor.1", "who": "agent", "text": "First, a yardstick: how far does looking each word up in your word list get? A model is worth using only where it beats that."}
+      ]
+    },
+    {
+      "id": "train",
+      "title": "Train — on your yes",
+      "refs": [{"person": "backend = dummy"}, {"ask": "forge-ready-to-train"}, {"ran": "nmt-forge preflight"}, {"ran": "nmt-forge run"}],
+      "lines": [
+        {"id": "rails.demo.train.1", "who": "agent", "text": "Ready to train. It runs on this computer, nothing is sent or billed, and it stops on its own if it stalls. Go ahead?"},
+        {"id": "rails.demo.train.2", "who": "person", "text": "Yes, go ahead."}
+      ]
+    },
+    {
+      "id": "measure",
+      "title": "Measure",
+      "refs": [{"status": "forge-ready-to-score"}, {"ran": "nmt-forge export"}],
+      "lines": [
+        {"id": "rails.demo.measure.1", "who": "agent", "text": "Scored. Straight answer: on the dev sentences, it is not shown to do better than looking words up."}
+      ]
+    },
+    {
+      "id": "judge",
+      "title": "You judge",
+      "refs": [{"ask": "judge"}, {"ran": "nmt-forge prereg verdict"}, {"status": "forge-evaluated-no-model"}],
+      "answersFrom": {"ran": "nmt-forge prereg verdict"},
+      "lines": [
+        {"id": "rails.demo.judge.1", "who": "agent", "text": "You predicted this. Did it hold? That is your family's call, and it is written beside the score."}
+      ]
+    }
+  ]
+}

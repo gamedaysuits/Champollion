@@ -1,0 +1,56 @@
+{
+  "code": "family-tai-kadai",
+  "extends": null,
+  "name": "Tai-Kadai Family",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Tai-Kadai languages generally express formality through particles, pronouns of politeness, and register-specific vocabulary rather than inflectional changes. Thai and Lao have elaborate pronoun systems encoding social hierarchy, gender of speaker, and formality level."
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Tai-Kadai languages have no grammatical gender. Pronouns are generally gender-neutral, though some languages (e.g., Thai) have gendered politeness particles (ครับ/khrap for male speakers, ค่ะ/kha for female speakers) that are pragmatic rather than grammatical."
+  },
+  "rules": {
+    "typography": {
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "tonalAccuracy": "All major Tai-Kadai languages are tonal (typically 4–8 tones). Tone is lexically contrastive — the same syllable with different tones has completely different meanings. Romanized transcriptions require accurate tone diacritics. MT systems frequently produce tone errors.",
+    "classifierSelection": "Extensive classifier (measure word/numeral classifier) systems are universal in the family. Every noun has one or more associated classifiers used in counting, quantification, and reference. Using the wrong classifier is a clear non-native error.",
+    "serialVerbConstructions": "Serial verb constructions are the primary means of expressing complex events — multiple verbs are strung together without conjunctions or subordination. These sequences have specific ordering constraints and cannot be decomposed into separate clauses without losing meaning.",
+    "noInflection": "Tai-Kadai languages have virtually no inflectional morphology — no conjugation, declension, or agreement. Tense, aspect, and mood are expressed through particles and word order. MT systems may incorrectly generate inflected forms.",
+    "wordBoundaries": "Thai and Lao scripts do not use spaces between words, only between clauses or sentences. Word segmentation is a critical preprocessing challenge for MT. Even with Latin-script languages, compound words and collocations create boundary ambiguity.",
+    "topicComment": "Topic-comment structures are common, where the topic of a sentence is fronted regardless of its grammatical role. This pragmatic word order cannot be handled by rigid syntactic transformations."
+  },
+  "classification": {
+    "family": "Tai-Kadai",
+    "familyGlottocode": "taik1256",
+    "ancestry": [
+      "Tai-Kadai"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Tai-Kadai (~88 members). Covers Tai branch (Thai, Lao, Shan, Zhuang), Kam-Sui, Hlai, and other branches. Script is null because members use Thai, Lao, Tai Tham, New Tai Lue, Zhuang Latin, and other scripts.",
+  "regions": [
+    {
+      "country": "Southeast Asia and southern China",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Thailand, Laos, Vietnam, Myanmar, southern China (Guangxi, Yunnan, Guizhou)",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

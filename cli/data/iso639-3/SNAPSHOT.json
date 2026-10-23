@@ -1,0 +1,52 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "sil-iso639-3",
+  "upstream": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3_Code_Tables_20260715.zip",
+  "license": "LicenseRef-SIL-ISO639-3-Terms",
+  "licenseUrl": "https://iso639-3.sil.org/code_tables/download_tables",
+  "citation": "SIL International (Registration Authority for ISO 639-3). 2026-07-15. ISO 639-3 Code Tables.",
+  "pin": {
+    "kind": "release",
+    "value": "20260715",
+    "doi": null,
+    "date": "2026-07-15"
+  },
+  "files": [
+    {
+      "path": "iso-639-3-macrolanguages.tab",
+      "bytes": 4609,
+      "sha256": "fb01a86376d9c1abfc96d16be1b6dcffb4776a1f52fa22338d4979e9ffe1822f",
+      "url": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3_Code_Tables_20260715.zip",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    },
+    {
+      "path": "iso-639-3.tab",
+      "bytes": 178280,
+      "sha256": "7a5ac370703ea0897356a8c383f2147865caf479e41c1c7bd96cc4c5f65e6907",
+      "url": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3_Code_Tables_20260715.zip",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    },
+    {
+      "path": "iso-639-3_Name_Index.tab",
+      "bytes": 204602,
+      "sha256": "3a1bb6c4df06cfb3677fee89564e0cf9d957a8e3d91feb61cd8eb7d352369450",
+      "url": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3_Code_Tables_20260715.zip",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    },
+    {
+      "path": "iso-639-3_Retirements.tab",
+      "bytes": 19046,
+      "sha256": "c4c5105798541859ce6f0125572132dfcfaf6ab8485ed6a77ca9592404386cb8",
+      "url": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3_Code_Tables_20260715.zip",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/iso639-3.mjs",
+  "notes": "SIL publishes no checksums, so `upstreamVerified` is false by necessity: the sha256 here is what we received, not something the publisher independently attests. The dated release name is the pin. Downloaded zip was 154,025 bytes, sha256 7c6d4d2250d6432d\u2026. LICENCE (verified 2026-08-05 against the SIL terms page): a bespoke grant, NOT standard SPDX. Use and incorporation are permitted, commercially or not, with attribution to iso639-3.sil.org; but the terms forbid a product that \"provide[s] a means to redistribute the code set\", so this release is recorded as NOT redistributable and must be excluded from any published dataset until SIL grants otherwise.",
+  "fetchedAt": "2026-08-02T18:10:52.555Z"
+}

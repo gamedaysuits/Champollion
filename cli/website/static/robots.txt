@@ -1,0 +1,46 @@
+# champollion.dev — robots.txt (launch policy)
+#
+# The human-readable site — pages, docs, the Network section — is open to
+# crawlers and welcome in search indexes. The bulk machine artifacts below are
+# not: they exist for installed tooling (the champollion CLI, the mt-eval
+# harness, the MCP server), and bulk-crawling them would redistribute indexed
+# data wholesale rather than as the cited, per-page views the site presents.
+# Full policy: https://champollion.dev/docs/network/sovereignty/data-sovereignty
+#
+# /llms.txt (the agent-facing docs index) and /for-agents.md (the agent front
+# door as raw markdown) stay crawlable on purpose — both are small curated
+# pointers, the same class of surface as the pages themselves, not bulk dumps.
+
+User-agent: *
+Allow: /
+Allow: /for-agents.md
+
+# Bulk data artifacts — atlas / language-card dataset
+Disallow: /data/
+
+# Bulk data artifacts — queue, registry, network map (run records)
+Disallow: /queue.json
+Disallow: /queue-preview.json
+Disallow: /registry.json
+Disallow: /mesh.json
+Disallow: /corpus-wishlist.json
+
+# Full-docs dump (fetch it with tooling, not a crawler) and the queue runner
+# shell script — neither is a web page
+Disallow: /llms-full.txt
+Disallow: /run_queue
+
+# Hub sitemap (en, the build root) + one per locale build
+Sitemap: https://champollion.dev/sitemap.xml
+Sitemap: https://champollion.dev/fr/sitemap.xml
+Sitemap: https://champollion.dev/de/sitemap.xml
+Sitemap: https://champollion.dev/nl/sitemap.xml
+Sitemap: https://champollion.dev/fil/sitemap.xml
+Sitemap: https://champollion.dev/es/sitemap.xml
+Sitemap: https://champollion.dev/zh/sitemap.xml
+Sitemap: https://champollion.dev/ja/sitemap.xml
+Sitemap: https://champollion.dev/ko/sitemap.xml
+Sitemap: https://champollion.dev/pt/sitemap.xml
+Sitemap: https://champollion.dev/th/sitemap.xml
+Sitemap: https://champollion.dev/vi/sitemap.xml
+Sitemap: https://champollion.dev/ar/sitemap.xml

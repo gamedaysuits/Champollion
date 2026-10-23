@@ -1,0 +1,130 @@
+/* Footer — the approved draft's close (v7, 2026-10-12). Always ink, both
+   themes (tokens in src/css/design-tokens.css): the triad hairline, a brand
+   column, four link columns, one legal line. */
+
+.footer {
+  position: relative;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 0 0 48px;
+  margin-top: auto;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* the triad rule (DESIGN.md §5): teal → amber → coral, architectural only.
+   The footer carries data-theme="dark" (always ink), so these tokens resolve
+   to their dark values in both themes. */
+.triad {
+  display: block;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 56px;
+  background: linear-gradient(90deg, var(--vital-safe), var(--vital-vulnerable), var(--vital-endangered));
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--footer-text-strong);
+}
+.brand:hover {
+  color: var(--footer-text-strong);
+  text-decoration: none;
+}
+
+.tagline {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: var(--footer-text);
+}
+
+.colTitle {
+  margin: 0 0 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--footer-text-strong);
+}
+
+.colItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.colItems a {
+  display: block;
+  padding: 4px 0;
+  font-size: 14px;
+  color: var(--footer-text);
+  transition: color 0.2s var(--ease-out);
+}
+.colItems a:hover {
+  color: var(--footer-link-hover);
+  text-decoration: none;
+}
+/* Docusaurus marks external links with an icon; keep it small and quiet */
+.colItems svg {
+  width: 10px;
+  height: 10px;
+  margin-inline-start: 4px;
+  opacity: 0.6;
+}
+
+.legal {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--footer-border);
+  font-size: 13px;
+  color: var(--footer-text-dim);
+}
+.legal p {
+  margin: 0 0 6px;
+}
+.legal a {
+  color: var(--footer-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal a:hover {
+  color: var(--footer-link-hover);
+}
+
+.copyright {
+  font-size: 12px;
+  color: var(--footer-text-dim);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 720px) {
+  .colItems a {
+    padding: 11px 0; /* ≥44px targets on phones */
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .colItems a {
+    transition: none;
+  }
+}

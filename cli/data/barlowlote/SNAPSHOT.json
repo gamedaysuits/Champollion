@@ -1,0 +1,83 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "barlowlote",
+  "upstream": "https://zenodo.org/records/14591604",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Barlow's \"Lote Wordlist\" from 2025 — Russell Barlow",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.1",
+    "doi": "10.5281/zenodo.14591604",
+    "date": "2025-01-03"
+  },
+  "files": [
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 9920,
+      "sha256": "c458c5f6e0792dee71657015d48c963c1dd9a8f5f1cdc4608bc8e17712817ba8",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 102851,
+      "sha256": "0ea35e015b88d96da9ae7ced5b8c32056db1c1cf0c04dab2721ea6a3cd6015dc",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 155,
+      "sha256": "c54fa47e77d2c7b12a675dcc0aed40607aac9bd8c9dfee1e19100f0df65d0dff",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "39fc0c70f80139e95e567e1fd17c9ca63f7500cc3078b7b2650f0bfede4c9b97",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 28611,
+      "sha256": "2699f2e0cd6ac5dc7f4b63ba82a8171aab100b4034e44a598f4561c93f3b96e3",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 903,
+      "sha256": "3be801db232e89937bc0bff3dff68092275c490de2a1532147feba7a2d9778e2",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 255,
+      "sha256": "ce8f5ff70847c058368cdfa4f9d2b1720048e4a56b34707c91eca416bf3bd80c",
+      "url": "https://zenodo.org/api/records/14591604/files/lexibank/barlowlote-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/barlowlote-v1.1.zip:lexibank-barlowlote-4916b2a/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/barlowlote-v1.1.zip, whose md5 matched Zenodo's published checksum (md5:b4efd6870fad8ea6f7dcef105da24039). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:48:48.064Z"
+}

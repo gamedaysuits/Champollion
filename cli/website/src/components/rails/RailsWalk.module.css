@@ -1,0 +1,214 @@
+/* RailsWalk — the recorded-walk workspace. Fixed pane heights (no layout
+ * shift between chapters); content scrolls inside its pane. Motion only marks
+ * a state change (lines inscribe once per chapter) and is off with reduced
+ * motion. Chat-first at phone width. */
+
+.figure { margin: 0; }
+
+.window {
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  background: var(--surface-1);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--surface-2);
+}
+.dots { display: inline-flex; gap: 6px; }
+.dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); display: block; }
+.title { font-family: var(--font-rails-mono); font-size: 0.8rem; color: var(--text-secondary); }
+.chip {
+  margin-inline-start: auto;
+  font-family: var(--font-rails-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--slate);
+  border: 1px dashed var(--slate);
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+.chapters {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--hairline);
+  scrollbar-width: thin;
+}
+.chapterBtn, .chapterOn {
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 4px 9px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.chapterBtn:hover { color: var(--text-primary); background: var(--surface-2); }
+.chapterOn { color: var(--text-primary); border-color: var(--rail-line); background: var(--rail-subtle); }
+.chapterN { font-family: var(--font-rails-mono); color: var(--rail); }
+
+.panes {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) minmax(0, 1.25fr);
+  height: 430px;
+}
+.files, .chat, .term { overflow-y: auto; padding: 10px 12px; min-width: 0; }
+.files { border-inline-end: 1px solid var(--hairline); }
+.chat { border-inline-end: 1px solid var(--hairline); }
+.term { background: var(--surface-0); }
+
+.paneLabel {
+  font-family: var(--font-rails-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+.writtenTag, .recordedTag {
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  border-radius: 999px;
+  padding: 0 7px;
+}
+.writtenTag { color: var(--slate); border: 1px dashed var(--slate); }
+.recordedTag { color: var(--rail); border: 1px solid var(--rail-line); }
+
+/* files */
+.tree { list-style: none; margin: 0; padding: 0; font-family: var(--font-rails-mono); font-size: 0.78rem; line-height: 1.75; }
+.dir { color: var(--text-primary); }
+.dirSub { padding-inline-start: 10px; color: var(--text-secondary); }
+.empty { padding-inline-start: 10px; color: var(--text-muted); }
+.file { padding-inline-start: 22px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.fileName { color: var(--text-primary); }
+.lockDefault, .lockDecided { display: inline-flex; }
+.lockDefault svg { fill: none; stroke: var(--guard); stroke-width: 1.3; }
+.lockDecided svg { fill: var(--guard); stroke: var(--guard); stroke-width: 1.3; }
+.lockDecided svg path { fill: none; }
+.counted { font-size: 0.64rem; color: var(--guard); border: 1px solid var(--guard-line); border-radius: 3px; padding: 0 4px; line-height: 1.4; }
+
+/* conversation */
+.bubbles { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.person, .agent {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 8px 11px;
+  border-radius: 8px;
+  max-width: 92%;
+}
+.person { align-self: flex-end; background: var(--surface-3); color: var(--text-primary); }
+.agent { align-self: flex-start; background: var(--surface-0); border-inline-start: 2px solid var(--rail); color: var(--text-primary); }
+.who { display: block; font-size: 0.68rem; font-family: var(--font-rails-mono); color: var(--text-muted); margin-bottom: 2px; }
+.answers { margin-top: 12px; border-inline-start: 3px solid var(--guard); padding-inline-start: 10px; }
+.answerList { margin: 4px 0 0; font-family: var(--font-rails-mono); font-size: 0.78rem; }
+.answer { display: flex; gap: 8px; }
+.answer dt { color: var(--text-muted); min-width: 9ch; }
+.answer dd { margin: 0; color: var(--guard); }
+
+/* terminal */
+.termBody { font-family: var(--font-rails-mono); font-size: 0.77rem; line-height: 1.55; }
+.line { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text-secondary); }
+.cmd { color: var(--text-primary); margin-top: 6px; }
+.tool { color: var(--text-primary); margin-top: 6px; }
+.out { padding-inline-start: 2px; }
+.more { color: var(--text-muted); font-style: italic; }
+.ask { color: var(--text-primary); border-inline-start: 2px solid var(--guard); padding-inline-start: 7px; margin: 5px 0; }
+.note { color: var(--text-primary); border-inline-start: 2px solid var(--slate); padding-inline-start: 7px; margin: 5px 0; }
+.did { color: var(--text-primary); border-inline-start: 2px solid var(--slate); padding-inline-start: 7px; margin: 5px 0; }
+.warn { color: var(--text-primary); border-inline-start: 2px solid var(--slate); padding-inline-start: 7px; margin: 5px 0; }
+.prompt { color: var(--rail); }
+.arrow { color: var(--slate); }
+.askTag { color: var(--guard); }
+
+.inscribe { animation: inscribe 360ms var(--ease-out) both; }
+@keyframes inscribe { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .inscribe { animation: none; } }
+
+/* status bar */
+.statusBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 6px 12px;
+  border-top: 1px solid var(--hairline);
+  background: var(--surface-2);
+  font-family: var(--font-rails-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+.guardStat { display: inline-flex; gap: 5px; align-items: center; color: var(--guard); }
+.controls { margin-inline-start: auto; display: inline-flex; gap: 6px; }
+.controls button {
+  font: inherit;
+  font-size: 0.74rem;
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 28px;
+}
+.controls button:disabled { opacity: 0.4; cursor: default; }
+.controls button:focus-visible, .chapterBtn:focus-visible, .chapterOn:focus-visible { outline: 2px solid var(--rail); outline-offset: 1px; }
+
+.caption {
+  margin-top: 12px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.caption strong { color: var(--text-primary); }
+
+.transcript { margin-top: 10px; font-size: 0.86rem; }
+.transcript summary { cursor: pointer; color: var(--rail); }
+.transcript ol { margin: 10px 0 0; padding-inline-start: 22px; max-height: 420px; overflow-y: auto; }
+.transcript li { margin-bottom: 8px; }
+.transcript pre {
+  margin: 2px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--font-rails-mono);
+  font-size: 0.74rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 8px;
+}
+.tWho { font-family: var(--font-rails-mono); font-size: 0.72rem; color: var(--text-muted); }
+
+/* tablet: files fold into a strip above the conversation */
+@media (max-width: 996px) {
+  .panes { grid-template-columns: minmax(0, 1fr); height: auto; }
+  .files { border-inline-end: none; border-bottom: 1px solid var(--hairline); max-height: 140px; }
+  .chat { border-inline-end: none; border-bottom: 1px solid var(--hairline); height: 250px; }
+  .term { height: 260px; }
+}
+/* phone: chat first, then what was recorded, then the files */
+@media (max-width: 480px) {
+  .chat { order: 1; }
+  .term { order: 2; border-bottom: 1px solid var(--hairline); }
+  .files { order: 3; border-bottom: none; }
+  .title { display: none; }
+  .chip { margin-inline-start: 0; white-space: normal; }
+  .files { max-height: 118px; }
+  .chat { height: 270px; }
+  .controls { margin-inline-start: 0; }
+}

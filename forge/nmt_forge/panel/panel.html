@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>nmt-forge · training panel</title>
+<!-- One document, no network: styles and script are inlined by nmt_forge/monitor.py.
+     Every value is a labelled element (data-field = its name in /hud.json, data-value = the raw
+     value, data-unit = its unit); every explanation is a tooltip (data-help = its key in
+     /hud.json?help=1). The panel never shows a sentence of the corpus.
+     Reading order = the three questions: is it going well (health) → is it getting better
+     (score) → when does it end (progress) → why (charts) → what protects it (guardrails). -->
+<style>/*__PANEL_CSS__*/</style>
+</head>
+<body>
+<a class="skip" href="#view-run">Skip to the run</a>
+<div class="triad" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand" aria-label="nmt-forge training panel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path class="stone" d="M4 3h11l2.2 2.4L20 5l-1 16H5z"/><path class="r1" d="M7 9h9"/><path class="r2" d="M7 12.5h7.5"/><path class="r3" d="M7 16h8.5"/></svg>
+    <span class="wordmark">nmt-forge</span><span class="slash">/</span><span class="muted">training panel</span>
+  </div>
+  <div class="runid">
+    <h1 id="title" data-help="status">Connecting…</h1>
+    <div class="runmeta">
+      <span data-field="run_name"></span>
+      <span class="sep" aria-hidden="true">·</span><span class="k">config</span> <code data-field="config_hash" data-unknown="not recorded">—</code>
+      <span data-only="started_at" hidden><span class="sep" aria-hidden="true">·</span><span class="k">started</span> <span data-field="started_at">—</span>
+      <span class="sep" aria-hidden="true">·</span><span data-field="elapsed_s">—</span></span>
+    </div>
+  </div>
+  <div class="pills">
+    <span class="pill status" data-help="status" data-state="starting"><i class="dot"></i><b data-field="run_status">starting</b></span>
+    <span class="pill where" data-help="where" data-state="sovereign">
+      <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3" width="11" height="7.5" rx="1"/><path d="M6 13.5h4M8 10.5v3"/></svg>
+      <b data-field="sovereignty">sovereign</b></span>
+    <span class="pill" data-help="data_age"><span class="k">new data</span> <b data-field="data_age_s">—</b> <span data-only="process_alive" hidden><span class="k">· process</span> <b data-field="process_alive">—</b></span></span>
+  </div>
+  <div class="actions">
+    <div class="seg" role="tablist" aria-label="View">
+      <button role="tab" id="tab-run" data-view="run" aria-selected="true" aria-controls="view-run">This run</button>
+      <button role="tab" id="tab-runs" data-view="runs" aria-selected="false" aria-controls="view-runs" tabindex="-1">All runs</button>
+    </div>
+    <button class="iconbtn" id="themebtn" type="button" aria-label="Colour theme: automatic" title="Theme: automatic">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v11a5.5 5.5 0 0 0 0-11z" class="fill"/></svg>
+    </button>
+    <button class="stop" id="stopbtn" type="button" data-help="stop">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg>
+      Stop training</button>
+  </div>
+</header>
+
+<div id="confirm" class="confirm" role="alertdialog" aria-labelledby="confirm-title" hidden>
+  <p id="confirm-title" class="warn">THIS KILLS THE TRAINING RUN.</p>
+  <ul>
+    <li>Hours of computing are lost; there is no resume.</li>
+    <li>The stop is recorded in the run's ledger and manifest.</li>
+    <li>Anything gentler — score the current checkpoint, change a setting — ask the agent.</li>
+  </ul>
+  <p class="nopid" hidden>This panel was attached without the training process's id: the button records the request in the run folder but signals no process.</p>
+  <div class="btns"><button class="kill" id="killbtn" type="button">Yes — kill the run</button><button id="cancelbtn" type="button">Cancel</button></div>
+</div>
+
+<!-- what screen readers hear when something changes: a new best, a health alert, the end -->
+<div id="announce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<main id="view-run" role="tabpanel" aria-labelledby="tab-run" tabindex="-1">
+  <!-- what is training: one labelled strip -->
+  <section class="strip panel" aria-label="What is training">
+    <div class="cell" data-help="source_language"><span class="k">Source</span><b data-field="source_language">—</b></div>
+    <div class="cell arrow" aria-hidden="true">→</div>
+    <div class="cell" data-help="target_language"><span class="k">Target</span><b data-field="target_language">—</b></div>
+    <div class="cell" data-help="model"><span class="k">Model</span><b data-field="model_name">—</b><small><span class="k">preset</span> <span data-field="model_preset">—</span></small></div>
+    <div class="cell" data-help="parameters_trained"><span class="k">Parameters trained</span><b data-field="parameters_trained">—</b><small data-field="parameters_trained_kind">—</small></div>
+    <div class="cell" data-help="training_pairs"><span class="k">Training pairs</span><b data-field="training_pairs">—</b><small><span data-field="training_corpus">—</span> · <span data-field="training_licence">—</span></small></div>
+    <div class="cell" data-help="pair_length"><span class="k">Pair length · words</span><b><span data-field="source_words_mean">—</span> → <span data-field="target_words_mean">—</span></b><small><span class="k">median</span> <span data-field="source_words_median">—</span> → <span data-field="target_words_median">—</span></small></div>
+    <div class="cell" data-help="dev_pairs"><span class="k">Dev pairs</span><b data-field="dev_pairs">—</b><small data-only="check_rows" hidden><span class="k">per check</span> <span data-field="check_rows">—</span></small><small data-field="dev_set">—</small></div>
+    <div class="cell" data-help="where"><span class="k">Where it runs</span><b data-field="where_detail">—</b><small data-field="sovereignty">—</small></div>
+  </section>
+
+  <!-- is it going well? one lamp per question, each with its trend -->
+  <section class="health panel" aria-label="Run health">
+    <div class="hsum" data-help="health"><span class="k">Run health</span><b data-field="health_overall">—</b>
+      <span class="hkey" aria-hidden="true"><i class="shape ok"></i>ok <i class="shape watch"></i>watch <i class="shape alert"></i>alert</span></div>
+    <div class="lamp" data-help="health_score" data-lamp="score"><span class="k" data-label="health_score">Dev score</span><span class="ls"><i class="shape"></i><b data-field="health_score">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="dev_score_latest">—</small></span></div>
+    <div class="lamp" data-help="health_learning" data-lamp="learning"><span class="k" data-label="health_learning">Training loss</span><span class="ls"><i class="shape"></i><b data-field="health_learning">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="train_loss_latest">—</small></span></div>
+    <div class="lamp" data-help="health_overfit" data-lamp="overfit"><span class="k" data-label="health_overfit">Overfit check</span><span class="ls"><i class="shape"></i><b data-field="health_overfit">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="dev_loss_latest">—</small></span></div>
+    <div class="lamp" data-help="health_stability" data-lamp="stability"><span class="k" data-label="health_stability">Gradients</span><span class="ls"><i class="shape"></i><b data-field="health_stability">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="grad_norm_latest">—</small></span></div>
+    <div class="lamp" data-help="health_memory" data-lamp="memory"><span class="k" data-label="health_memory">Memory</span><span class="ls"><i class="shape"></i><b data-field="health_memory">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="memory_used_gb" data-unknown="">—</small></span></div>
+    <div class="lamp" data-help="health_freshness" data-lamp="freshness"><span class="k" data-label="health_freshness">Heartbeat</span><span class="ls"><i class="shape"></i><b data-field="health_freshness">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="heartbeat_expected_s" data-unknown="">—</small></span></div>
+    <div class="lamp" data-help="health_cost" data-lamp="cost" data-only="cost_usd" hidden><span class="k" data-label="health_cost">Cost</span><span class="ls"><i class="shape"></i><b data-field="health_cost">—</b></span><span class="sr"><svg class="spark" aria-hidden="true"></svg><small data-field="cost_projected_usd" data-unknown="">—</small></span></div>
+  </section>
+
+  <!-- the instrument cluster: the score, its curve, the clock -->
+  <section class="cluster">
+    <div class="panel gauge" aria-label="Dev score">
+      <div class="ph" data-help="dev_score_best" tabindex="-1"><span class="k">Best dev score</span><span class="unit">chrF++ · 0–100</span></div>
+      <div class="ring">
+        <svg id="g-score" viewBox="0 0 200 170" aria-hidden="true"></svg>
+        <div class="ringtext" id="ring-best" data-help="dev_score_best"><b class="hero" data-field="dev_score_best">—</b><span data-field="dev_score_best_step">—</span></div>
+        <div class="ringtext" id="ring-final" data-help="final_dev_score" hidden><b class="hero" data-field="final_dev_score">—</b><span>final · <span data-field="final_dev_score_ci">—</span></span></div>
+      </div>
+      <div class="verdict" data-help="verdict"><i></i><b data-field="verdict">—</b></div>
+      <div class="minis">
+        <div class="mini" data-help="dev_score_latest"><span class="k">Latest check</span><b data-field="dev_score_latest">—</b><small data-field="dev_score_latest_step">—</small></div>
+        <div class="mini" data-help="recent_gain"><span class="k">Change</span><b class="delta" data-field="dev_score_change">—</b><small><span class="k">avg</span> <span data-field="dev_score_recent_gain">—</span></small></div>
+        <div class="mini" data-help="dictionary_floor"><span class="k">Floor</span><b data-field="dictionary_floor" data-unknown="—">—</b><small data-field="dictionary_floor_ci" data-unknown="not measured">—</small></div>
+        <div class="mini" data-help="final_dev_score"><span class="k">Final</span><b data-field="final_dev_score">—</b><small data-field="final_dev_score_ci" data-unknown="after training">—</small></div>
+      </div>
+    </div>
+
+    <div class="panel chart big" data-chart="score">
+      <div class="ph"><h2 data-help="score_chart">Is it getting better?</h2><span class="unit">dev score · chrF++ · by step</span>
+        <span class="legend">
+          <span><i class="lk dev"></i>dev score</span>
+          <span data-help="dev_score_best"><i class="lk dot"></i>new best</span>
+          <span data-help="patience"><i class="lk dot hollow"></i>no new best</span>
+          <span data-help="checkpoints"><i class="lk sq"></i>saved</span>
+          <span data-only="stop_by_patience_in_s" data-help="patience_stop" hidden><i class="lk zone"></i>patience window</span>
+          <span data-help="dev_score_best"><i class="lk bar"></i>best to beat</span>
+          <span data-only="dictionary_floor" hidden><i class="lk floor"></i>dictionary floor</span>
+          <span data-only="final_dev_score" hidden><i class="lk final"></i>final, all dev pairs (95%)</span></span></div>
+      <div class="plot" id="c-score" data-help-chart="score_chart"></div>
+    </div>
+
+    <div class="panel progress" aria-label="Progress">
+      <div class="ringrow" data-help="steps">
+        <svg id="g-steps" viewBox="0 0 64 64" aria-hidden="true"></svg>
+        <div><span class="k">Steps</span><b class="big" data-field="steps_done">—</b><small><span class="k">of</span> <span data-field="steps_planned">—</span> · <span data-field="progress_pct">—</span></small></div>
+      </div>
+      <div class="row2">
+        <div class="mini" data-help="passes"><span class="k">Passes</span><b><span data-field="epochs_done">—</span> <small>/ <span data-field="epochs_planned">—</span></small></b></div>
+        <div class="mini" data-help="effective_batch"><span class="k">Pairs per step</span><b data-field="effective_batch">—</b></div>
+      </div>
+      <div class="meter" data-help="checks">
+        <div class="mh"><span class="k">Checks</span><b><span data-field="checks_done">—</span> <small>/ <span data-field="checks_planned">—</span></small></b><small><span class="k">every</span> <span data-field="check_every_steps">—</span> <span class="k">steps</span></small></div>
+        <div class="cells" id="checkcells" aria-hidden="true"></div>
+      </div>
+      <div class="meter" data-help="patience">
+        <div class="mh"><span class="k">Patience used</span><b data-field="patience_used">—</b><div class="pips" id="pips" aria-hidden="true"></div></div>
+      </div>
+      <div class="row2">
+        <div class="mini" data-help="eta"><span class="k">Time left</span><b data-field="eta_s">—</b><small><span class="k">ends</span> <span data-field="finish_at">—</span></small></div>
+        <div class="mini" data-help="next_check"><span class="k">Next check</span><b data-field="next_check_in_s">—</b><small data-field="next_check_step">—</small></div>
+      </div>
+      <div class="row2">
+        <div class="mini" data-help="speed"><span class="k">Speed</span><b data-field="sec_per_step">—</b><small><span class="k">recent</span></small></div>
+        <div class="mini" data-help="patience_stop" data-only="stop_by_patience_step" hidden><span class="k">Patience stop</span><b data-field="stop_by_patience_step">—</b><small><span data-field="stop_by_patience_in_s" data-unknown="if no new best">—</span><span data-only="earliest_stop_step" hidden> · <span class="k">earliest</span> <span data-field="earliest_stop_step">—</span></span></small></div>
+        <div class="mini" data-help="stop_reason" data-only="stop_reason" hidden><span class="k">Ended at</span><b><span class="k">step</span> <span data-field="steps_done">—</span></b><small data-field="stop_reason">—</small></div>
+        <div class="mini" data-help="earliest_stop" data-only="earliest_stop_step" data-unless="stop_by_patience_step stop_reason" hidden><span class="k">Earliest stop</span><b data-field="earliest_stop_step">—</b></div>
+      </div>
+      <div class="meter" data-help="memory" data-only="memory_used_gb" hidden>
+        <div class="mh"><span class="k">Memory</span><b><span data-field="memory_used_gb">—</span> <small>/ <span data-field="memory_limit_gb">—</span></small></b><small><span class="k">highest</span> <span data-field="memory_peak_gb">—</span></small></div>
+        <div class="track" id="membar" aria-hidden="true"><i></i><s></s><u></u></div>
+      </div>
+      <div class="meter" data-help="cost" data-only="cost_usd" hidden>
+        <div class="mh"><span class="k">Cost</span><b><span data-field="cost_usd">—</span> <small>/ <span data-field="cost_cap_usd">—</span></small></b><small data-field="cost_per_hour_usd">—</small></div>
+        <div class="track" id="costbar" aria-hidden="true"><i></i><s></s></div>
+        <small data-only="cost_projected_usd" hidden><span class="k">at the planned end</span> <b data-field="cost_projected_usd">—</b></small>
+      </div>
+    </div>
+  </section>
+
+  <!-- one row of chart controls, scoping every chart below -->
+  <div class="toolbar" role="toolbar" aria-label="Chart controls">
+    <div class="seg small" role="group" aria-label="x axis">
+      <button data-x="step" aria-pressed="true">Steps</button><button data-x="pass" aria-pressed="false">Passes</button>
+    </div>
+    <label class="ctl" data-help="smoothing"><span class="k">Smoothing</span><input type="range" id="smooth" min="0" max="0.98" step="0.02" value="0.6"><output id="smoothv" for="smooth">0.60</output></label>
+    <label class="ctl" data-help="log_scale"><input type="checkbox" id="logloss" checked><span>Log scale (loss, gradient)</span></label>
+    <button class="ghost" id="resetzoom" type="button" hidden>Reset zoom</button>
+    <span class="hint" id="zoomhint">drag across a chart to zoom · double-click to reset · arrow keys read values</span>
+  </div>
+
+  <!-- why: the learning curves beside the checks they produced -->
+  <section class="duo">
+    <div class="panel chart" data-chart="loss">
+      <div class="ph"><h2 data-help="loss_chart">Is it learning?</h2><span class="unit">loss per token · lower is better</span>
+        <span class="legend"><span data-help="loss_chart"><i class="lk train"></i>train <b data-field="train_loss_latest">—</b></span><span data-help="loss_chart"><i class="lk dev"></i>dev <b data-field="dev_loss_latest">—</b></span></span></div>
+      <div class="plot" id="c-loss"></div>
+    </div>
+    <div class="panel checks" aria-label="Checks">
+      <div class="ph"><h2 data-help="check_at_step">Check at step</h2><span class="unit">dev score · chrF++ · newest first</span>
+        <span class="legend"><span data-help="dev_score_best"><span class="k">best</span> <b data-field="dev_score_best_check">—</b></span></span></div>
+      <div class="tablewrap checkscroll" tabindex="0" role="region" aria-label="Checks, newest first">
+        <table class="ctable" id="checktable">
+          <thead><tr><th scope="col" class="n">#</th><th scope="col" class="n">Step</th><th scope="col">Dev score</th><th scope="col" class="n">Change</th><th scope="col" class="n">Dev loss</th><th scope="col">Saved</th></tr></thead>
+          <tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- the vital signs: small multiples on one step axis -->
+  <section class="vitals" aria-label="Training signals">
+    <div class="panel chart small" data-chart="lr">
+      <div class="ph"><h2 data-help="learning_rate">Learning rate</h2><span class="legend"><span data-help="learning_rate"><span class="k">now</span> <b data-field="learning_rate_now">—</b></span></span></div>
+      <div class="sub"><span data-help="learning_rate"><span class="k">peak</span> <span data-field="learning_rate_peak">—</span></span> <span data-help="learning_rate"><span class="k">· warm-up</span> <span data-field="warmup_steps">—</span></span></div>
+      <div class="plot" id="c-lr"></div>
+    </div>
+    <div class="panel chart small" data-chart="grad">
+      <div class="ph"><h2 data-help="grad_norm">Gradient norm</h2><span class="legend"><span data-help="grad_norm"><span class="k">latest</span> <b data-field="grad_norm_latest">—</b></span></span></div>
+      <div class="sub"><span class="k">update size before clipping</span></div>
+      <div class="plot" id="c-grad"></div>
+    </div>
+    <div class="panel chart small" data-chart="speed">
+      <div class="ph"><h2 data-help="speed">Speed</h2><span class="legend"><span data-help="speed"><span class="k">recent</span> <b data-field="sec_per_step">—</b></span></span></div>
+      <div class="sub"><span class="k">seconds per step, checks included</span></div>
+      <div class="plot" id="c-speed"></div>
+    </div>
+    <div class="panel chart small" data-chart="mem">
+      <div class="ph"><h2 data-help="memory">Memory</h2><span class="legend"><span data-help="memory"><span class="k">now</span> <b data-field="memory_used_gb">—</b></span></span></div>
+      <div class="sub"><span data-help="memory"><span class="k">limit</span> <span data-field="memory_limit_gb">—</span></span> <span data-help="memory"><span class="k">· highest</span> <span data-field="memory_peak_gb">—</span></span></div>
+      <div class="plot" id="c-mem"></div>
+    </div>
+  </section>
+
+  <section class="quad">
+    <div class="panel kvpanel">
+      <div class="ph"><h2 data-help="settings">Training setup</h2></div>
+      <dl class="kv" id="settings"></dl>
+    </div>
+    <div class="panel kvpanel">
+      <div class="ph"><h2 data-help="test_reads">Guardrails</h2></div>
+      <dl class="kv">
+        <div data-help="dev_reads"><dt>Dev pair reads</dt><dd data-field="dev_reads">—</dd></div>
+        <div data-help="test_reads"><dt>Test sets</dt><dd data-field="test_sets">—</dd></div>
+        <div data-help="test_reads"><dt>Test reads since start</dt><dd data-field="test_reads_since_start">—</dd></div>
+        <div data-help="leak_audit"><dt>Leak audit</dt><dd data-field="leak_exact_matches">—</dd></div>
+        <div data-help="preregistrations"><dt>Predictions written down</dt><dd data-field="preregistrations">—</dd></div>
+        <div data-help="too_long"><dt>Cut by the length limit</dt><dd data-field="too_long_pairs">—</dd></div>
+      </dl>
+    </div>
+    <div class="panel kvpanel">
+      <div class="ph"><h2 data-help="checkpoints">Checkpoints</h2></div>
+      <dl class="kv">
+        <div data-help="checkpoints"><dt>On disk</dt><dd data-field="checkpoints_on_disk">—</dd></div>
+        <div data-help="checkpoints"><dt>Disk used</dt><dd data-field="checkpoints_gb">—</dd></div>
+        <div data-help="checkpoints"><dt>Best during training</dt><dd data-field="best_checkpoint">—</dd></div>
+        <div data-help="final_dev_score"><dt>Kept</dt><dd data-field="kept_checkpoint">—</dd></div>
+        <div data-help="final_dev_score"><dt>Final dev score</dt><dd><span data-field="final_dev_score" data-unknown="after training">—</span> <small data-field="final_dev_score_ci" data-only="final_dev_score_ci" hidden></small></dd></div>
+      </dl>
+      <ul class="ckpts" id="ckpts"></ul>
+    </div>
+    <div class="panel log">
+      <div class="ph"><h2 data-help="status">Activity</h2><span class="unit" id="evcount"></span></div>
+      <ol class="events" id="events" tabindex="0" aria-label="Activity, newest first"></ol>
+    </div>
+  </section>
+
+  <footer class="foot"><b>Read-only by design.</b> An agent drives this run — to change anything, talk to the agent. The stop button is the only control.
+    <span class="machine">Machine-readable: <a href="/hud.json">/hud.json</a> · <a href="/hud.json?help=1">tooltips</a> · <a href="/status">/status</a> · <a href="/runs">/runs</a></span></footer>
+</main>
+
+<main id="view-runs" role="tabpanel" aria-labelledby="tab-runs" tabindex="-1" hidden>
+  <section class="panel forestpanel">
+    <div class="ph"><h2 data-help="runs_forest">Which run is better?</h2><span class="unit">dev score · chrF++ · 95% range</span>
+      <span class="legend"><span><i class="lk final solid"></i>final (95%)</span><span><i class="lk final"></i>best quick check</span><span><i class="lk zone"></i>top run's range</span></span></div>
+    <div class="forest" id="forest" role="img" aria-label="Each run's final dev score with its 95% range"></div>
+  </section>
+  <section class="runstop">
+    <div class="panel chart" data-chart="runs">
+      <div class="ph"><h2 data-help="runs_chart">Dev score of each run</h2><span class="unit">chrF++</span>
+        <div class="seg small" role="group" aria-label="x axis of the runs charts" data-help="runs_x"><button data-x="step" aria-pressed="true">Steps</button><button data-x="pass" aria-pressed="false">Passes</button></div></div>
+      <div class="legend under"><span><i class="lk dev"></i>selected run</span><span><i class="lk other"></i>other runs</span></div>
+      <div class="plot" id="c-runs"></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><h2 data-help="runs_multiples">Each run's dev score</h2><span class="unit">same scales · click to pick a run</span></div>
+      <div class="multiples" id="multiples"></div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="ph"><h2 data-help="runs_table">Runs</h2><span class="unit" id="runsroots"></span></div>
+    <div class="tablewrap"><table class="runs" id="runstable">
+      <thead><tr><th scope="col">Run</th><th scope="col">Status</th><th scope="col">Where</th><th scope="col">Model</th><th scope="col" class="n">Pairs</th><th scope="col">Dev set</th><th scope="col" class="n">Steps</th><th scope="col" class="n">Best check</th><th scope="col" class="n">Final (95%)</th><th scope="col">Started</th></tr></thead>
+      <tbody></tbody></table></div>
+  </section>
+</main>
+
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<div id="ctip" class="ctip" hidden></div>
+<script>/*__PANEL_JS__*/</script>
+</body>
+</html>

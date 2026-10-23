@@ -1,0 +1,107 @@
+{
+  "id": "eval-menyo20k-test-v1",
+  "type": "multiway",
+  "name": "MENYO-20k — English↔Yorùbá multi-domain (test)",
+  "version": "1.0",
+  "languages": [
+    "eng",
+    "yor"
+  ],
+  "description": "MENYO-20k — the held-out multi-domain English↔Yorùbá test split (6,633 sentences with verified diacritics): news (47%), TED talk transcripts (30%), book + proverbs (19%), software/digital strings (4%) — proportions measured from the per-domain test files at the pinned commit, which partition the combined split exactly. Both directions scored. Fetched on demand from the pinned commit; Champollion never hosts the content. Contamination HIGH — public since 2021, in frontier-model crawls, AND the MAFAND-MT yor test set derives from a MENYO-20k re-split (cross-contamination: the two are not independent evidence). License CC BY-NC 4.0 (verified at the pin) → non-commercial lanes only; cleared by the license review of 2026-08-24 into the NC research lane: benchmarkable; never in a commercial, prize, or API lane; remote evaluation only over no-train channels.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "mixed",
+    "domainDistribution": {
+      "news": 0.4677,
+      "subtitles": 0.3015,
+      "literary": 0.1897,
+      "ui": 0.0412
+    },
+    "explicitPairs": [
+      {
+        "source": "eng",
+        "target": "yor",
+        "srcCode": "en",
+        "tgtCode": "yo",
+        "size": 6633,
+        "sha256": "353901cabeeb1929f25f572a35e11394e32ca1d68c39675ce3e22e0f55a150a0"
+      },
+      {
+        "source": "yor",
+        "target": "eng",
+        "srcCode": "yo",
+        "tgtCode": "en",
+        "size": 6633,
+        "sha256": "12134cdc53753a7c51e4330532835e2993a8d95ddb1337905633361a8baa3684"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "MENYO-20k test",
+      "size": 13266,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out benchmark test split (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/uds-lsv/menyo-20k_MT",
+    "instructions": "Single file data/test.tsv fetched from the pinned commit (immutable); pairing.mode tsv-columns pairs the English and Yoruba columns of the same row. Both directions are scored.",
+    "sha256": null,
+    "revision": "0f2b019c2264a90813559c2e1cd7143054a4c36c",
+    "filePattern": "data/test.tsv",
+    "format": "parallel-text",
+    "pairing": {
+      "mode": "tsv-columns",
+      "hasHeader": true,
+      "columns": {
+        "en": "English",
+        "yo": "Yoruba"
+      }
+    }
+  },
+  "source": {
+    "publisher": "Masakhane / Saarland University (uds-lsv)",
+    "url": "https://github.com/uds-lsv/menyo-20k_MT",
+    "paper": "https://aclanthology.org/2021.mtsummit-research.6/",
+    "citation": "Adelani et al. (2021). The Effect of Domain and Diacritics in Yoruba–English Neural Machine Translation. MT Summit 2021.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-NC-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out benchmark test split; not licensed for training. doNotTrain protects benchmark integrity.",
+    "notes": "Verified at the pinned commit: the repo LICENSE is CC BY-NC 4.0. NC → non-commercial lanes only (license_use.py commercial lane is STRICT). Champollion never hosts the content."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out benchmark: training on it defeats its purpose. CC BY-NC 4.0 → kept out of every commercial / prize / API lane. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "MENYO-20k test set — public since 2021 and in frontier-model training crawls; additionally the MAFAND-MT yor test set derives from a MENYO-20k re-split (per the lafand-mt README), so MENYO-20k and MAFAND yor scores are cross-contaminated and must never be read as independent evidence for the same system. Scores are valid only for relative method-vs-method comparison on this exact corpus. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "cleared",
+    "lane": "nc-research",
+    "basis": "CC BY-NC 4.0, stated and verified at the pinned revision. Plain standard SPDX non-commercial license: benchmarkable; excluded from every commercial, prize, and API lane; remote evaluation only over channels that do not train on inputs (transmission_policy no-train lane). The measured cross-contamination with the MAFAND yor test set stays recorded on the card; scores across the two are never treated as independent evidence."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/uds-lsv/menyo-20k_MT at commit 0f2b019c2264; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/menyo20k.json.",
+    "pinnedPairs": 2
+  }
+}

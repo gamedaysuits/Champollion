@@ -1,0 +1,97 @@
+---
+title: "Dalhin ang mayroon kayo"
+slug: /bring-your-data
+description: "Dalhin ang inyong mga pangungusap, mga listahan ng salita, at mga tala kung paano ninyo iniingatan ang mga ito — at magpasya, para sa bawat file, kung kanino ito pagmamay-ari at kung paano ito maaaring gamitin."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Dalhin ang anumang mayroon kayo
+
+Natututo ang isang tagasalin mula sa **mga pares**: isang pangungusap sa isang wika, at ang parehong
+pangungusap sa kabilang wika. Ang pahinang ito ay tungkol sa pagdadala ng inyong materyal — at tungkol sa
+mga itatanong sa inyo para sa bawat file, na higit na mahalaga kaysa sa anupamang bagay
+sa rails.
+
+## Ang kayang basahin ng mga tool
+
+Dalhin po ang inyong mga file kung paano ninyo iniingatan ang mga ito. Hindi ninyo kailangang mag-convert ng anuman.
+
+| Mayroon kayo | Binabasa ng mga tool |
+|---|---|
+| Isang spreadsheet ng mga pangungusap at salin | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` o plain text |
+| Isang talahanayan sa isang Word document | Ang mga row ng talahanayan |
+| Isang diksyunaryo na ginawa sa Toolbox o FieldWorks (mga programang ginagamit ng maraming lingguwista) | Ang mga salita — at ang mga halimbawang pangungusap nito, bilang mga pares |
+| Mga recording na naisulat sa ELAN (isang programa para sa pag-transcribe ng mga recording) | Ang mga naisulat na linya at ang kanilang mga salin, bilang mga pares |
+| Isang listahan ng mga salita | Bawat salita at ang salin nito |
+| Mga tala tungkol sa balarila | Iniingatan sa sariling lugar, upang sangguniin ng mga tao at ng mga tool |
+| Banal na Kasulatan | Kung hihilingin lamang ninyo, at walang tagasalin na matututo mula rito hanggang sa pumayag ang mga taong nag-iingat nito |
+
+Binabasa ang inyong mga file kung nasaan ang mga ito. Kung hindi nakasaad sa mga column ng spreadsheet kung aling
+wika ang alin, tatanungin kayo ng mga tool — hinding-hindi manghuhula ang mga ito mula sa nilalaman.
+
+Naghahanap din ang mga tool ng mga row na mukhang may mali — isang salin na lumaktaw sa
+ibabang linya, dalawang column na nagkapalit, isang salin na nakopya mula sa kabilang bahagi, ang
+parehong pares nang dalawang beses, isang salin na higit na mahaba o maikli kaysa sa karaniwan — at sasabihin
+sa inyo kung aling mga row, ayon sa numero. Hinding-hindi magbabago o mag-aalis ng anuman ang mga ito; ang isang taong
+may alam sa datos ang magpapasya.
+
+## Nagbibilang ang mga tool. Hindi nila binabasa ang inyong mga salita sa kaninuman.
+
+Kapag pumasok ang isang file, sasabihin sa inyo ng mga tool kung ilang pares ang kanilang natagpuan at kung aling
+mga column ang kanilang ginamit. Iyon lamang ang ipinapakita sa inyong AI assistant: mga bilang at mga pangalan
+ng column, hinding-hindi ang mismong mga pangungusap.
+
+## Ang mga tanong para sa bawat file
+
+Bago matuto ang anuman mula sa isang file, nagtatanong ang rails sa mga taong nag-iingat nito:
+
+- **Kanino ito pag-aari?** Sa inyong sariling mga salita — isang pamilya, isang guro, isang
+  tanggapan ng komunidad.
+- **Kaninong mga salita ang naririto?** Ang mga taong nagsabi o nagsulat ng mga pangungusap. Nasa mga
+  kuwaderno ng isang lola ang kaniyang mga salita, kahit na ang apo niyang lalaki ang nag-type ng mga ito.
+- **Pumayag ba sila sa paggamit ng mga ito?** *Oo*, *hindi pa*, o *may ilan na tumanggi*.
+  Patuloy na magtatanong ang rails hanggang sa masagot ito. Ang mga salita mula sa mga taong hindi pa
+  sumasang-ayon, o tumanggi, ay hinding-hindi gagamitin upang magturo sa isang tagasalin.
+- **Maaari bang matuto rito ang isang tagasalin?**
+- **Maaari ba itong umalis kailanman sa computer na ito?** Nagsisimula ang mga file bilang pribado — nakatago sa
+  computer na ito — hanggang sa sumagot kayo.
+
+Isinusulat ang mga sagot sa isang maliit na tala sa tabi ng file, at sinusunod ito ng bawat
+tool. Pagkatapos ng inyong unang sagot, magagawa lamang ng mga tool na gawing mas mahigpit ang mga panuntunan, hinding-hindi
+mas maluwag. Ang nag-iisang eksepsiyon: ang isang tagapagsalita na hindi pa natatanong ay maaari pa ring
+pumayag.
+
+Itinatanong ng inyong assistant ang mga tanong na ito; hinding-hindi nito dapat sagutin ang mga ito para sa inyo. Kung
+hindi pa ninyo alam — halimbawa, kailangan pa ninyong magtanong sa isang tiya — sabihing *hindi pa*. Isinasantabi
+ng rails ang file na iyon at nagpapatuloy, at magtatanong muli kalaunan, nang may paggalang.
+
+## Ang inyong makikita
+
+Sa aming pagsasanay sa pagpapatakbo ng mga tool — isang paglalarawan na may mga inimbentong pangungusap —
+nagdala ang isang pamilya ng apat na file: <WalkFact of="trainingFiles.0.pairs" />
+pares ng pangungusap mula sa spreadsheet ng isang lolo, <WalkFact of="trainingFiles.1.pairs" />
+mula sa spreadsheet ng isang tiya, isang listahan ng <WalkFact of="lexicon.pairs" /> salita, at
+<WalkFact of="test.pairs" /> mga pangungusap na sinuri ng isang tagapagsalita, para sa pagsubok. Sa bawat
+pagkakataon, iniulat ng assistant ang bilang, at pagkatapos ay nagtanong kung kanino pag-aari
+ang file at kung maaaring matuto rito ang isang tagasalin.
+
+## Mga pangungusap mula sa ibang mga lugar
+
+Kung gagamit kayo ng mga pangungusap na hindi kayo ang sumulat — mula sa isang aklat, website, o inilathalang
+koleksyon — may sariling mga panuntunan ang mga ito. Ang ilan ay maaaring basahin ngunit hindi maaaring ibahagi;
+ang ilan naman ay hindi maaaring gamitin upang magturo ng anuman. Dalhin ang mga ito sa parehong paraan, at sagutin
+din nang tapat ang mga tanong para sa kanila: pananagutin sila ng mga tool batay sa inyong sagot.
+Kung hindi karaniwan o hindi malinaw ang lisensya ng isang koleksyon, hindi ito ipapadala ng mga tool sa
+isang panlabas na serbisyo ng AI hanggang sa pumayag ang mga may-ari nito.
+
+**Susunod:** [Isantabi ang inyong mga pansubok na pangungusap →](/docs/your-test-sentences)
+
+## Magbasa pa
+
+- [Mga panuntunan sa datos at pagpapadala](/docs/agents/data-rules) — bawat field ng
+  tala sa tabi ng bawat file, at kung ano ang ginagawa ng bawat tool dito.
+- [Pagpapatakbo sa rails mula sa shell](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, kasama ang bawat opsyon.
+- [Pagpaparehistro ng test set](/docs/network/sovereignty/registering-corpora) —
+  ang apat na antas ng exposure, para sa mga set na maaari ninyong ibahagi kalaunan.

@@ -1,0 +1,41 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "opus-corpora",
+  "upstream": "https://opus.nlpl.eu/opusapi?corpora=True",
+  "license": "LicenseRef-OPUS-Per-Corpus",
+  "licenseUrl": "https://opus.nlpl.eu/",
+  "citation": "OPUS parallel corpus index (Tiedemann, J. 2012, \"Parallel Data, Tools and Interfaces in OPUS\"), retrieved 2026-08-07.",
+  "pin": {
+    "kind": "release",
+    "value": "2026-08-07",
+    "doi": null,
+    "date": "2026-08-07"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "opus-index.json",
+      "bytes": 16626104,
+      "sha256": "1b13cf5dd8438a4e3f59bcee27ab4fe4814e3c3a56bb6335cb3264a6cfdfdefd",
+      "url": "https://opus.nlpl.eu/opusapi",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/opus-corpora.mjs",
+  "notes": "1215 corpora, 1213 with at least one pair, 128,015 language pairs. METADATA ONLY: alignment counts, token counts, versions and archive sizes — no sentence crosses the wire, which is what lets a corpus card exist under the rule that corpus CONTENT is never tracked. LICENCE is per corpus and NOT uniform: OPUS aggregates hundreds of independently licensed collections, so the index licence is a LicenseRef and each corpus's own terms must be resolved before its content is used for anything. A partial sweep throws rather than pinning: a short index recorded as complete would assert that corpora do not exist. DEDUPE: OPUS returns one row per (pair × build format) unfiltered — 5,355 rows for GlobalVoices's 854 pairs — so the query filters to the moses build, which is exactly one row per pair. 5 collection(s) publish no moses build and fell back to the unfiltered query deduped on (source, target), because how many pairs a corpus has must not depend on which archives its publisher chose to build. UNPUBLISHED SIZES: 24,934 of 128,015 pairs list no alignment count. OPUS sends an empty string there, which is stored as null and never as 0 — \"not published\" and \"measured, and empty\" are different facts, and Ubuntu (23,988 pairs) publishes no counts at all. SELF-PAIRS: 186 rows list the same code on both sides (Tatoeba has crk-crk). They are monolingual entries in a parallel index and are kept here verbatim, because the pin records what OPUS published; the handler is where they stop being treated as translation pairs.",
+  "corpora": 1215,
+  "corporaWithPairs": 1213,
+  "pairs": 128015,
+  "pairsWithoutPublishedSize": 24934,
+  "selfPairs": 186,
+  "fellBackToUnfiltered": [
+    "DocHPLT",
+    "MPC1",
+    "Mozilla-I10n",
+    "Nunavut_Hansard",
+    "komi"
+  ],
+  "fetchedAt": "2026-08-07T00:21:59.384Z"
+}

@@ -1,0 +1,72 @@
+.head { padding-block: 56px 30px; border-bottom: 1px solid var(--hairline); }
+.kicker {
+  font-family: var(--font-rails-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rail);
+  margin: 0 0 14px;
+}
+.h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 1.06;
+  margin: 0 0 16px;
+  max-width: 22ch;
+}
+.langRow { display: flex; flex-wrap: wrap; gap: 14px; margin: 6px 0 10px; }
+.field { display: flex; flex-direction: column; gap: 5px; font-size: 0.86rem; color: var(--text-secondary); }
+.field input {
+  font: inherit;
+  font-size: 1rem;
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  min-width: 260px;
+}
+.field input:focus-visible { outline: 2px solid var(--rail); outline-offset: 1px; }
+.hint { font-size: 0.88rem; color: var(--text-secondary); max-width: 70ch; margin: 0; }
+
+.promptBox { position: relative; max-width: 860px; }
+.prompt {
+  font-family: var(--font-rails-mono);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--surface-1);
+  border: 1px solid var(--rail-line);
+  border-radius: 6px;
+  padding: 14px 16px 48px;
+  margin: 0;
+  color: var(--text-primary);
+}
+.copy {
+  position: absolute;
+  inset-block-end: 10px;
+  inset-inline-end: 10px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 5px;
+  border: 1px solid var(--rail);
+  background: var(--rail);
+  color: var(--surface-0);
+  cursor: pointer;
+}
+.note { margin-top: 18px; max-width: 860px; }
+.steps { margin: 0 0 18px; padding-inline-start: 22px; max-width: 860px; }
+.steps li { margin-bottom: 14px; }
+.stepT { display: block; margin-bottom: 6px; color: var(--text-secondary); }
+.p { margin: 0 0 10px; }
+.p:last-child { margin-bottom: 0; }
+
+@media (max-width: 480px) {
+  .head { padding-block: 34px 22px; }
+  .field, .field input { min-width: 0; width: 100%; }
+  .langRow { flex-direction: column; }
+}

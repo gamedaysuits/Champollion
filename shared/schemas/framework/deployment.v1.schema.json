@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/deployment/1.json",
+  "title": "deployment/1 — what is deployed: one method, its gates, for one pair",
+  "description": "A deployment is the eval pipeline on source-only input (founder, 2026-10-09): the SAME document is tested on a test set (mt-eval run --deployment), run over a file (mt-eval translate --deployment) and served (mt-eval serve --deployment), so what was measured is what ships. Paths are relative to the project's root (where the rails run commands). It names no score: a measured number is a run result, kept with the run.",
+  "type": "object",
+  "required": ["$schema", "id", "pair", "method"],
+  "additionalProperties": false,
+  "patternProperties": { "^x-": {} },
+  "properties": {
+    "$schema": { "enum": ["https://champollion.dev/schemas/deployment/1.json"] },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "description": { "type": "string" },
+    "pair": {
+      "type": "object",
+      "required": ["source", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "minLength": 1, "description": "The source language's code (ISO 639-3 or BCP-47)." },
+        "target": { "type": "string", "minLength": 1 },
+        "target_script": { "type": "string", "pattern": "^[A-Z][a-z]{3}$", "description": "The script the output is written in (ISO 15924), for a gate that checks it — a server has no references to read it from." }
+      }
+    },
+    "method": {
+      "description": "The method: an engine name (lexicon, local-model, …) or a method plugin's folder, with the model or dictionary it runs. Served only if it runs in this process.",
+      "type": "object",
+      "required": ["method"],
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "method": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "description": "The model, model folder or dictionary file it runs." }
+      }
+    },
+    "gates": { "type": "string", "minLength": 1, "description": "A gate-chain/1 file: every segment is gated before it ships (and before it is scored)." },
+    "serve": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "host": { "type": "string", "minLength": 1, "description": "Default 127.0.0.1 (this machine only). Another host needs a token from the environment." },
+        "port": { "type": "integer", "minimum": 1, "maximum": 65535 }
+      }
+    }
+  }
+}

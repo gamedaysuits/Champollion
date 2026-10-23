@@ -1,0 +1,97 @@
+---
+title: "Mang những gì bạn có"
+slug: /bring-your-data
+description: "Đưa vào các câu, danh sách từ và ghi chú đúng như cách bạn đang lưu — và quyết định, với mỗi tệp, nó thuộc về ai và có thể được sử dụng như thế nào."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Mang những gì bạn có
+
+Một bộ dịch học từ các **cặp**: một câu trong một ngôn ngữ, và chính câu đó
+trong ngôn ngữ kia. Trang này nói về việc đưa các cặp câu của bạn vào — và về những
+câu hỏi bạn sẽ được hỏi cho từng tệp, những điều quan trọng hơn bất cứ thứ gì khác
+trên các thanh dẫn.
+
+## Những gì các công cụ có thể đọc
+
+Hãy mang theo các tệp đúng như bạn đang lưu giữ. Bạn không cần phải chuyển đổi bất cứ thứ gì.
+
+| Bạn có | Các công cụ đọc |
+|---|---|
+| Một bảng tính gồm các câu và bản dịch | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` hoặc văn bản thuần |
+| Một bảng trong tài liệu Word | Các hàng của bảng |
+| Một từ điển được lập bằng Toolbox hoặc FieldWorks (các chương trình mà nhiều nhà ngôn ngữ học sử dụng) | Các từ — và các câu ví dụ trong đó, dưới dạng các cặp |
+| Bản ghi âm được chép lại trong ELAN (chương trình dùng để phiên âm các bản ghi âm) | Các dòng được ghi chép lại và bản dịch tương ứng, dưới dạng các cặp |
+| Một danh sách từ | Từng từ và bản dịch của từ đó |
+| Ghi chú về ngữ pháp | Được giữ ở nơi riêng, để con người và các công cụ tham khảo |
+| Kinh sách | Chỉ khi bạn yêu cầu, và không bộ dịch nào học từ đó cho đến khi những người nắm giữ cho phép |
+
+Các tệp của bạn được đọc ngay tại nơi chúng được lưu. Nếu các cột của bảng tính không ghi rõ
+ngôn ngữ nào là ngôn ngữ nào, các công cụ sẽ hỏi bạn — chúng không bao giờ tự đoán từ nội dung.
+
+Các công cụ cũng tìm kiếm những hàng có vẻ bị lỗi — một bản dịch bị tụt xuống
+một dòng, hai cột bị tráo đổi, một bản dịch bị sao chép từ phía bên kia,
+cùng một cặp xuất hiện hai lần, một bản dịch dài hoặc ngắn hơn bình thường rất nhiều — và cho
+bạn biết cụ thể các hàng đó bằng số thứ tự. Chúng không bao giờ thay đổi hoặc xóa bỏ bất cứ thứ gì; người
+hiểu rõ dữ liệu sẽ là người quyết định.
+
+## Các công cụ chỉ đếm. Chúng không đọc các từ của bạn cho bất kỳ ai.
+
+Khi một tệp được đưa vào, các công cụ sẽ báo cho bạn biết họ đã tìm thấy bao nhiêu cặp câu và
+đã dùng những cột nào. Đó là tất cả những gì trợ lý AI của bạn được thấy: số lượng và tên
+cột, tuyệt đối không bao giờ là chính các câu văn.
+
+## Những câu hỏi cho từng tệp
+
+Trước khi có bất cứ thứ gì học từ một tệp, các thanh dẫn sẽ hỏi những người nắm giữ tệp đó:
+
+- **Tệp này thuộc về ai?** Theo cách diễn đạt của riêng bạn — một gia đình, một giáo viên, một
+  văn phòng cộng đồng.
+- **Lời của ai nằm trong đó?** Những người đã nói hoặc viết các câu văn đó. Những cuốn sổ tay
+  của một người bà lưu giữ lời của bà, ngay cả khi người cháu trai là người gõ lại.
+- **Họ đã đồng ý cho sử dụng chưa?** *Có*, *chưa*, hoặc *một số người từ chối*.
+  Các thanh dẫn sẽ tiếp tục hỏi cho đến khi có câu trả lời. Lời nói từ những người chưa
+  đồng ý, hoặc đã từ chối, không bao giờ được dùng để dạy cho bộ dịch.
+- **Bộ dịch có được phép học từ tệp này không?**
+- **Tệp này có bao giờ được phép rời khỏi máy tính này không?** Ban đầu, các tệp luôn ở trạng thái riêng tư — được giữ trên
+  máy tính này — cho đến khi bạn trả lời.
+
+Các câu trả lời được ghi lại trong một ghi chú nhỏ bên cạnh tệp, và mọi công cụ đều tuân
+theo ghi chú đó. Sau câu trả lời đầu tiên của bạn, các công cụ chỉ có thể làm cho các quy tắc nghiêm ngặt hơn, chứ không bao giờ
+lỏng lẻo hơn. Ngoại lệ duy nhất: một người nói tiếng chưa được hỏi trước đó vẫn có thể nói
+đồng ý.
+
+Trợ lý của bạn sẽ hỏi những câu hỏi này; nó không bao giờ được tự ý trả lời thay bạn. Nếu bạn
+chưa biết — chẳng hạn, bạn vẫn cần hỏi một người cô dì — hãy trả lời là *chưa*. Các thanh dẫn
+sẽ gác tệp đó sang một bên và tiếp tục công việc, rồi sẽ hỏi lại sau một cách nhẹ nhàng.
+
+## Những gì bạn sẽ thấy
+
+Trong lượt chạy thử nghiệm các công cụ của chúng tôi — một ví dụ minh họa với các câu giả định —
+một gia đình đã đưa vào bốn tệp: <WalkFact of="trainingFiles.0.pairs" />
+cặp câu từ bảng tính của một người ông, <WalkFact of="trainingFiles.1.pairs" />
+từ bảng tính của một người cô dì, một danh sách gồm <WalkFact of="lexicon.pairs" /> từ, và
+<WalkFact of="test.pairs" /> câu mà một người nói tiếng đã kiểm tra, dùng để thử nghiệm. Mỗi
+lần, trợ lý đều báo cáo số lượng, rồi hỏi xem tệp đó thuộc về ai
+và liệu bộ dịch có thể học từ đó hay không.
+
+## Các câu văn từ những nơi khác
+
+Nếu bạn sử dụng những câu văn không phải do mình viết — từ một cuốn sách, một trang web, một tuyển tập
+đã xuất bản — chúng sẽ đi kèm với những quy tắc riêng. Một số câu có thể được đọc nhưng không được chia sẻ;
+một số câu không được dùng để dạy bất cứ thứ gì. Hãy đưa chúng vào theo cùng một cách, và trả lời
+các câu hỏi một cách trung thực cho cả những câu này: các công cụ sẽ ràng buộc chúng theo câu trả lời của bạn.
+Khi giấy phép của một tuyển tập khác thường hoặc không rõ ràng, các công cụ sẽ không gửi nó tới
+một dịch vụ AI bên ngoài cho đến khi những người sở hữu tuyển tập đó đồng ý.
+
+**Tiếp theo:** [Dành riêng các câu thử nghiệm của bạn →](/docs/your-test-sentences)
+
+## Tìm hiểu sâu hơn
+
+- [Quy tắc dữ liệu và truyền tải](/docs/agents/data-rules) — từng trường của
+  ghi chú bên cạnh mỗi tệp, và những gì mỗi công cụ thực hiện với ghi chú đó.
+- [Điều khiển các thanh dẫn từ shell](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, cùng mọi tùy chọn.
+- [Đăng ký một tập thử nghiệm](/docs/network/sovereignty/registering-corpora) —
+  bốn cấp độ công khai, dành cho các tập dữ liệu mà bạn có thể chia sẻ sau này.

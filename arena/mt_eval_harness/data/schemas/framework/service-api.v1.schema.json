@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/service-api/1.json",
+  "title": "service-api/1 — the /translate contract",
+  "description": "The one contract between a translation service and what calls it. Servers: nmt-forge serve, mt-eval serve, or anyone's (a method of kind `service`). Client: the champollion CLI's `api` method (sync, translate, serve). POST /translate takes a translate_request and answers 200 with a translate_response (207 when some keys failed, listed under `errors`), or an error_response (400 a request it cannot take, 401 a missing or wrong token, 404 an unknown route, 413 too large, 500 the method failed — never a partial answer). GET /health answers a health document. A field a server does not use is ignored, never refused. What a service writes can carry what it learned from: a server whose health says output_local_only true puts output_local_only true in the meta of every translate_response, and a client writes such output only where the data's holders agreed. Held to shared/test-fixtures/framework/service-api-vectors.json.",
+  "$defs": {
+    "translate_request": {
+      "type": "object",
+      "required": ["keys"],
+      "properties": {
+        "keys": {
+          "description": "key → the source string to translate. Keys are the caller's (app message ids); values that are not non-empty strings come back under `errors`.",
+          "type": "object"
+        },
+        "source_locale": { "type": "string", "description": "Optional: the server refuses a language it does not translate from." },
+        "target_locale": { "type": "string", "description": "Optional: the server refuses a language it does not translate into." },
+        "method": { "type": "string", "description": "The method the caller expects; a server serving one method may ignore it." },
+        "text_format": { "enum": ["markdown"], "description": "Set for document text (Markdown); unset for app strings. A server that does not know it treats the text as plain." },
+        "instructions": {
+          "type": "object",
+          "description": "key → a note for that key (plural form, a gate's retry reason). Sent only to a server declared to follow them (accepts_instructions).",
+          "patternProperties": { "^": { "type": "string" } }
+        }
+      }
+    },
+    "translate_response": {
+      "type": "object",
+      "required": ["translations", "meta"],
+      "properties": {
+        "translations": {
+          "description": "key → the translation, for every key that did not fail.",
+          "type": "object",
+          "patternProperties": { "^": { "type": "string" } }
+        },
+        "errors": {
+          "description": "key → why that key was not translated (status 207).",
+          "type": "object",
+          "patternProperties": { "^": { "$ref": "#/$defs/message" } }
+        },
+        "meta": {
+          "description": "What produced the answer. Open: a server adds its own fields (cost_usd, note, decode_hook).",
+          "type": "object",
+          "properties": {
+            "method": { "type": "string" },
+            "model": { "type": "string" },
+            "output_gates": { "type": "string" },
+            "output_local_only": { "type": ["boolean", "null"] },
+            "cost_usd": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "error_response": {
+      "type": "object",
+      "required": ["error"],
+      "properties": { "error": { "$ref": "#/$defs/message" } }
+    },
+    "message": {
+      "type": "object",
+      "required": ["message"],
+      "properties": { "message": { "type": "string", "minLength": 1 } }
+    },
+    "health": {
+      "type": "object",
+      "required": ["status", "pair", "output_gates", "output_local_only"],
+      "properties": {
+        "status": { "enum": ["ok"] },
+        "pair": { "type": "string", "minLength": 1, "description": "source→target, as the server names them." },
+        "output_gates": { "type": "string", "minLength": 1, "description": "What the server checks in what it returns, said in words — 'none — …' when it checks nothing." },
+        "output_local_only": {
+          "type": ["boolean", "null"],
+          "description": "true: what it writes may repeat sentences marked local-only, so it stays on this machine unless the data's holders agree. false: nothing it learned from is marked so. null: not known (said as such, never guessed)."
+        },
+        "output_local_only_why": { "type": "string" },
+        "holders_agreed_by": {
+          "type": ["string", "null"],
+          "description": "Who among the data's holders agreed that local-only output may be served on an address other machines reach; null when it is not (a local-only server is refused that address without it)."
+        },
+        "model": { "type": ["string", "null"] },
+        "method": { "type": "string" }
+      }
+    }
+  }
+}

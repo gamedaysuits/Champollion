@@ -1,0 +1,63 @@
+{
+  "code": "family-turkic",
+  "extends": null,
+  "name": "Turkic Family",
+  "script": null,
+  "dir": "ltr",
+  "formality": {
+    "system": "T-V",
+    "description": "Most Turkic languages have a T-V pronominal distinction: informal singular (sen/sin) vs. formal/plural (siz/siz). Formality is also expressed through verb endings that agree with the chosen pronoun. Some languages (Uzbek, Kazakh) distinguish additional levels of deference.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Turkic languages have no grammatical gender whatsoever — no gendered pronouns, no gendered agreement, no gendered nouns. The third-person pronoun (o/ol/u) is gender-neutral. When translating from gendered source languages, gender information is simply lost unless explicitly stated."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "one",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "vowelHarmony": "All Turkic languages have vowel harmony — suffixes change their vowels to harmonize with the root vowel (front/back, rounded/unrounded). Suffix forms are predictable but MT systems frequently generate disharmonic forms. Each language has its own harmony rules and exceptions.",
+    "extensiveAgglutination": "Turkic languages are highly agglutinative — verbs and nouns can carry long chains of suffixes encoding tense, aspect, mood, person, number, negation, causative, passive, reciprocal, and more. A single Turkish word like 'Avrupalılaştıramadıklarımızdanmışsınızcasına' is grammatically valid.",
+    "definitenessWithoutArticles": "Turkic languages lack definite/indefinite articles. Definiteness is conveyed through word order (definite objects precede the verb), accusative case marking (definite direct objects take accusative), and context. Translating English 'a' vs. 'the' requires structural decisions, not simple word substitution.",
+    "relativeClauses": "Turkic languages form relative clauses using participles placed before the noun, similar to Dravidian. The equivalent of 'the book that I read' is '[my reading] book'. This prenominal participial strategy differs fundamentally from English postnominal relative clauses.",
+    "caseSystem": "Most Turkic languages have 6–7 cases (nominative, accusative, dative, locative, ablative, genitive, and sometimes instrumental). Case suffixes interact with vowel harmony and consonant alternation rules.",
+    "wordOrderFlexibility": "While basic word order is SOV, word order is pragmatically flexible. Focused or emphasized elements move to immediately pre-verbal position. Topic elements can be fronted. This pragmatic reordering is not random — it encodes information structure."
+  },
+  "classification": {
+    "family": "Turkic",
+    "familyGlottocode": "turk1311",
+    "ancestry": [
+      "Turkic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Family card for Turkic (~52 members). Covers Oghuz (Turkish, Azerbaijani, Turkmen), Kipchak (Kazakh, Kyrgyz, Tatar), Karluk (Uzbek, Uyghur), Siberian (Sakha/Yakut, Tuvan), and others. Script is null because members use Latin (Turkish, Azerbaijani), Cyrillic (Kazakh, Kyrgyz, Tatar), and Arabic (Uyghur, Ottoman) scripts. Most languages are shifting toward Latin.",
+  "regions": [
+    {
+      "country": "Central and Western Asia (widespread)",
+      "countryCode": null,
+      "officialStatus": null,
+      "region": "Turkey, Central Asia (Kazakhstan–Turkmenistan), Azerbaijan, Siberia, Xinjiang",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

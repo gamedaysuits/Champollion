@@ -1,0 +1,61 @@
+---
+title: "Mettez de côté vos phrases de test"
+slug: /your-test-sentences
+description: "Pourquoi chaque traducteur doit être évalué sur des phrases qu'il n'a jamais apprises, comment choisir de bonnes phrases de test et comment les rails les protègent."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Mettre de côté vos phrases de test
+
+Avant qu'un traducteur n'apprenne quoi que ce soit, vous mettez de côté quelques phrases pour le tester. C'est l'étape la plus importante sur les rails. Chaque résultat que vous observerez sera mesuré sur ces phrases — si elles sont incorrectes, tous les résultats seront faux.
+
+## Pourquoi cela compte
+
+Imaginez évaluer un élève avec les questions exactes de ses devoirs. Il paraîtrait brillant, et vous n'apprendriez rien sur ce qu'il sait réellement faire. C'est la même chose pour un traducteur. Testé sur des phrases à partir desquelles il a appris, il s'en souvient simplement.
+
+Les phrases de test sont donc gardées à part : aucun traducteur n'apprend jamais à partir d'elles, et elles ne servent qu'à évaluer.
+
+## Choisir de bonnes phrases de test
+
+- **Vérifiées par une personne locutrice fluide.** Chaque phrase et sa traduction doivent être correctes, de la manière dont votre communauté les formule.
+- **De vraies phrases que vous souhaiteriez voir traduites.** Des propos du quotidien que vous diriez à la maison, que vous écririez dans une note ou que vous enseigneriez en classe — le genre de phrases auxquelles le traducteur est destiné.
+- **Un mélange.** Des questions, des affirmations, des demandes ; des phrases courtes et d'autres plus longues.
+- **Non copiées des phrases avec lesquelles vous enseignerez.** Rédigez-les à neuf, ou tirez-les d'une source distincte.
+- **Orthographiées de la même manière que le reste.** Mettez-vous d'accord sur une graphie commune avant de commencer.
+- **Autant que votre locuteur ou locutrice peut en vérifier.** Quelques dizaines constituent un début ; avec si peu, chaque résultat reste approximatif, et les outils affichent une large fourchette plutôt qu'un chiffre unique. Quelques centaines permettent de discerner des écarts plus fins.
+
+## Comment les rails les protègent
+
+Vous les rangez dans leur propre espace — l'étagère de test — et les outils les marquent :
+
+- privées : conservées sur cet ordinateur, à moins que les personnes qui les détiennent n'en décident autrement,
+- exclues de tout apprentissage,
+- tenues à l'écart de ce que les outils affichent.
+
+Ensuite, avant que l'apprentissage ne commence, chaque phrase à partir de laquelle le traducteur apprendrait est comparée aux phrases de test. Les copies et les quasi-copies sont mises de côté, afin que le traducteur ne puisse pas être crédité pour sa mémoire.
+
+Et chaque fois que les outils d'entraînement évaluent les phrases de test, cela est consigné par écrit. Au quotidien, les progrès sont jugés sur un ensemble distinct de **phrases de pratique**, afin que les phrases de test restent préservées pour les moments déterminants.
+
+## Ce que vous verrez
+
+Dans le parcours enregistré — une illustration avec des phrases inventées — la famille a mis de côté <WalkFact of="test.pairs" /> phrases vérifiées. Lorsque les outils ont comparé les autres phrases à celles-ci, ils ont constaté que <WalkFact of="twins.n" /> d'entre elles, soit environ <WalkFact of="twins.pct" /> sur 100, avaient une quasi-copie parmi les phrases avec lesquelles la famille prévoyait d'enseigner. Ces quasi-copies ont été mises de côté avant tout enseignement. Sans cette étape, le premier score aurait paru meilleur qu'il ne l'était en réalité.
+
+## Partager un ensemble de test plus tard
+
+Vos phrases de test peuvent rester indéfiniment sur votre ordinateur — c'est le comportement par défaut. Si vous souhaitez un jour que d'autres personnes puissent se mesurer à elles, les outils peuvent enregistrer l'ensemble selon l'un des quatre niveaux suivants :
+
+- **Conservé ici** — jamais enregistré ; rien ne quitte cet ordinateur.
+- **Répertorié en privé** — seule une description de l'ensemble est partagée, jamais les phrases. Les résultats peuvent être publiés sans que quiconque ne voie les données.
+- **Répertorié publiquement** — une description, accompagnée d'un renvoi vers l'endroit où l'ensemble est déjà publié. Uniquement pour les ensembles dont la licence le permet. Champollion n'héberge jamais les phrases.
+- **Scellé** — verrouillé sur votre ordinateur à l'aide d'une clé, afin que d'autres puissent tester leurs traducteurs dessus sans jamais le voir.
+
+[Héberger un test scellé](/docs/host-a-sealed-test) explique ce dernier point.
+
+**Étape suivante :** [Votre premier traducteur →](/docs/your-first-translator)
+
+## Approfondir
+
+- [Règles de mesure](/docs/agents/measurement) — ensembles de test, de pratique (dev) et scellés ; comment les consultations sont enregistrées ; ce qu'une prédiction débloque.
+- [Les garde-fous, un par un](/docs/guardrails) — quasi-copies et indiscrétions, racontés sous forme de récits.
+- [Enregistrer un ensemble de test](/docs/network/sovereignty/registering-corpora) — les niveaux d'exposition en détail.

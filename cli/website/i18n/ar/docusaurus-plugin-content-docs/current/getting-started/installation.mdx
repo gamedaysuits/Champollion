@@ -1,0 +1,132 @@
+---
+sidebar_position: 1
+title: "التثبيت"
+related:
+  - label: "Quick Start"
+    to: /docs/getting-started/quick-start
+    kind: guide
+    note: "First translated locale in minutes"
+  - label: "Configuration"
+    to: /docs/getting-started/configuration
+    kind: reference
+  - label: "CI/CD"
+    to: /docs/guides/ci-cd
+    kind: guide
+    note: "Keep translations current on every push"
+  - label: "CLI Reference"
+    to: /docs/reference/cli
+    kind: reference
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# التثبيت
+
+:::note[الترخيص]
+أداة CLI لـ champollion متاحة المصدر بموجب
+[ترخيص PolyForm غير التجاري 1.0.0](https://github.com/gamedaysuits/Champollion/blob/main/cli/LICENSE): مجانية للاستخدام والتعديل والمشاركة
+للأغراض غير التجارية — المشاريع الشخصية، والبحوث، والتدريس، والاستخدام من جانب
+الجمعيات الخيرية، والمدارس، والمستشفيات والعيادات العامة، والجهات الحكومية. استخدامها لغرض تجاري غير
+مشمول بهذا الترخيص: فمنتج أي شركة ربحية، مثل واجهة متجر، يُعد استخداماً تجارياً.
+بيئة التقييم الكامنة وراء [لوحة الصدارة والنشر](/docs/reference/leaderboard) مفتوحة المصدر (AGPL-3.0-or-later، مع استثناء للمكونات الإضافية).
+ترخيص كل حزمة بكلمات بسيطة مع أمثلة: [من يمكنه استخدام هذا](/docs/getting-started/who-may-use-this).
+:::
+
+## المتطلبات
+
+- **Node.js 20.11+** (دعم ESM الأصلي)
+- مفتاح API للترجمة (راجع أدناه)
+
+## التثبيت
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+
+```bash
+npm install --save-dev champollion
+```
+
+  </TabItem>
+  <TabItem value="npx" label="npx (no install)">
+
+```bash
+npx champollion sync
+```
+
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add -D champollion
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```bash
+yarn add --dev champollion
+```
+
+  </TabItem>
+</Tabs>
+
+## الحصول على مفتاح API
+
+يحتاج Champollion إلى واجهة خلفية للترجمة. اختر إحداها:
+
+| المزود | متغير البيئة | الأنسب لـ |
+|----------|---------------------|----------|
+| **OpenRouter** (موصى به) | `OPENROUTER_API_KEY` | المشاريع الكثيفة المحتوى، Markdown، أكثر من 200 نموذج |
+| **Gemini** (الخطة المجانية) | `GEMINI_API_KEY` | انطلاقة بتكلفة معدومة، جودة جيدة |
+| **OpenAI** | `OPENAI_API_KEY` | الوصول المباشر إلى OpenAI |
+| **Anthropic** | `ANTHROPIC_API_KEY` | الوصول المباشر إلى Claude، النصوص ذات الفروق الدقيقة |
+| **DeepL** | `DEEPL_API_KEY` | اللغات الأوروبية، خيارات رسمية مدمجة |
+| **Google Translate** | `GOOGLE_TRANSLATE_API_KEY` | كميات ضخمة من أزواج المفاتيح والقيم، 194 لغة |
+| **Microsoft Translator** | `MICROSOFT_TRANSLATOR_API_KEY` | Azure، 135 لغة |
+| **LibreTranslate** | `LIBRETRANSLATE_API_URL` | استضافة ذاتية، الخصوصية أولاً |
+| **Tilde MT** | `TILDE_API_KEY` | لغات البلطيق واللغات الأوروبية، مستضاف في الاتحاد الأوروبي |
+| **Translated (Lara)** | `LARA_ACCESS_KEY_ID` + `LARA_ACCESS_KEY_SECRET` | ترجمة آلية احترافية، 200 لغة |
+| **نموذج على جهازك الخاص** (Ollama، أو LM Studio، أو vLLM، أو نموذج قمت بتدريبه واستضافته) | لا شيء (`LOCAL_API_BASE` عندما لا يكون على العنوان الافتراضي لـ Ollama) | لا حاجة لمفتاح؛ لا شيء يغادر جهازك |
+
+<Tabs>
+  <TabItem value="openrouter" label="OpenRouter (recommended)" default>
+
+يوفر [OpenRouter](https://openrouter.ai) واجهة API موحدة لأكثر من 200 نموذج من نماذج LLM. تتوفر فئة مجانية.
+
+```bash
+# Sign up at https://openrouter.ai, then:
+export OPENROUTER_API_KEY=sk-or-v1-...
+```
+
+أو أضفه إلى `.env.local`:
+
+```bash
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+```
+
+الأنسب لـ: المشاريع الغنية بالمحتوى، وترجمة Markdown، والمشاريع التي تتطلب حماية واعية بالمحتوى (كتل الأكواد البرمجية، والأكواد القصيرة، ومتغيرات الاستيفاء).
+
+  </TabItem>
+  <TabItem value="google" label="Google Translate">
+
+```bash
+export GOOGLE_TRANSLATE_API_KEY=...
+```
+
+الأنسب لـ: أزواج السلاسل النصية بنظام المفتاح والقيمة ذات الحجم الكبير (194 لغة). **لا يُوصى به** لمحتوى Markdown — لا يدرك Google Translate كتل الأكواد البرمجية، أو الأكواد القصيرة، أو متغيرات الاستيفاء.
+
+:::tip[التعرف التلقائي الذكي]
+إذا تم تعيين `GOOGLE_TRANSLATE_API_KEY` فقط (دون وجود مفتاح OpenRouter)، يتحول Champollion تلقائيًا إلى Google Translate. لا يلزم أي تغيير في الإعدادات.
+:::
+
+  </TabItem>
+</Tabs>
+
+## التحقق من التثبيت
+
+```bash
+npx champollion --help
+```
+
+يجب أن تشاهد قائمة بالأوامر المتاحة. أنت الآن جاهز لـ [البدء السريع](/docs/getting-started/quick-start).

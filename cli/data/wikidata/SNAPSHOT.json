@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "wikidata",
+  "upstream": "https://query.wikidata.org/sparql",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "citation": "Wikidata contributors. 2026-08-05. Native labels (P1705) by ISO 639-3 (P220), retrieved via the Wikidata Query Service.",
+  "pin": {
+    "kind": "query",
+    "value": "q00d43aa54efc",
+    "doi": null,
+    "date": "2026-08-05"
+  },
+  "files": [
+    {
+      "path": "native-labels.json",
+      "bytes": 142608,
+      "sha256": "2863c54fd180e8c4f72ac1df277a40d00a920f106b0d176c2381bf2a213c076a",
+      "url": "https://query.wikidata.org/sparql",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/wikidata.mjs",
+  "notes": "Wikidata is edited continuously and has no release to pin to, so the pin is the sha256 of the exact SPARQL text (00d43aa54efccd52…) plus the result checksum and the retrieval date. A re-fetch returning different bytes is a NEW release, not a drift failure — this snapshot does not claim the query is reproducible byte-for-byte. 1627 native labels over 1188 ISO 639-3 codes.",
+  "fetchedAt": "2026-08-05T07:41:48.330Z"
+}

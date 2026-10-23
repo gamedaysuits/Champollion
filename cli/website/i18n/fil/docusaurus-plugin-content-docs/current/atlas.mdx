@@ -1,0 +1,162 @@
+---
+title: "The Atlas"
+description: "Ang Atlas ay ang index ng wika ng Champollion — isang cited card bawat wika. Kung ano ang isinasaad ng isang card, kung ano ang ipinagbabawal na isaad nito, kung saan ito mababasa, at kung paano ito iwawasto."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Ang mga bilang ay nagre-render sa pamamagitan ng SSOTCount (mga build-time read ng mga machine SSOT sa pamamagitan ng docusaurus.config.js customFields) — hindi kailanman tina-type nang mano-mano, alinsunod sa pamantayan ng pagpapakita ng SSOT. Ang mga pigura na walang customFields SSOT (mga sign-language at conlang floor, mga kabuuang at-risk) ay NAKA-LINK sa gated na pahina na nagmamay-ari sa kanila, at hindi kailanman inuulit dito. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# Ang Atlas
+
+**Ang Atlas ang indeks ng wika: isang kard bawat wika, kung saan pinapangalanan ng bawat halaga
+ang pinagmulang sanggunian nito.**
+
+Ito ang batayang sanggunian na pinagtitibayan ng buong Champollion. Binabasa ito ng
+[CLI](/docs/intro) upang malaman kung paano kumikilos ang isang wika. Binabasa ito ng
+[leaderboard](/docs/reference/leaderboard) upang malaman kung ang isang benchmark
+ay benchmark *ng ano*, at iginuguhit sa ibabaw nito ang network map. At kapaki-pakinabang ito nang buo sa sarili
+nito: tinitipon ng isang kard, sa iisang lugar at may nakapangalang sanggunian para sa bawat isa, ang mga siniping katotohanan
+tungkol sa isang wika na kalat-kalat kung wala ito.
+
+Ang mga card ay binuo mula sa kanilang mga source, hindi isinulat nang mano-mano. Wala pong umuupo at nagta-type ng mga alam nila tungkol sa isang wika.
+
+---
+
+## Ang Champollion ay isang index, hindi isang tagahatol
+
+Ito po ang panuntunan na sinusunod ng buong Atlas, at mas mahigpit po ito kaysa sa pakinggan.
+
+Ang bawat value sa isang card ay nag-cite ng source nito at nag-uulat kung ano ang **talagang sinasabi** ng source na iyon — hindi kung ano ang sa tingin namin ay totoo, hindi isang itinamang bersyon, hindi isang rounded na pigura. Kapag hindi nagkakasundo ang mga source, ipinapakita ng card ang **lahat ng ito, na may kaukulang attribution**. Ang mga bilang ng speaker ay palaging hindi nagkakatugma: may isang numero ang Wikidata, iba ang sa Ethnologue, pangatlo ang sa national census, at pang-apat ang sa regional survey. Dala ng isang card ang bawat isa sa mga ito kasama ang source at petsa nito. Hindi po namin kinukuha ang average ng mga ito, hindi po kami naghahatol sa pagitan nila, at hindi po namin tahimik na pinipili kung alin ang pinakamagandang basahin.
+
+Ang dahilan po ay hindi pagpapakumbaba. Ang isang card na gumawa ng sariling consensus ay magiging isang bago at hindi ma-cite na claim tungkol sa wika ng isang tao, na inimbento namin. Ang pagpapanatili ng hindi pagkakasundo ay nagpapanatili sa card na maaaring suriin laban sa mundo, at iniiwan nito ang paghahatol kung saan ito nararapat — sa mambabasa, at sa komunidad na nagmamay-ari ng wika.
+
+May tatlong panuntunan sa pagbasa na sumusunod, at mahalaga po itong malaman bago ninyo gamitin ang isang card para sa anuman:
+
+- **Nangangahulugang hindi alam ang nawawalang field, hindi hindi naaangkop.** Ang isang field na walang siniping sangguniang
+  nagpapatotoo ay hindi isinasama sa kard: wala pa po kaming nahanap na sanggunian para rito. Isa po itong paanyaya, hindi hatol. Kung saan tunay
+  na hindi naaangkop ang isang field, hayagang sinasabi ito ng kard sa pamamagitan ng mga salita.
+- **Sinasabi ng mga hinangong halaga na hinango ang mga ito.** Anumang kinakalkula ng Champollion — isang
+  median, isang composite, isang recoded flag, isang bilang na kinuha mula sa isang dataset — ay
+  tinatatakan ng `champollion-derived` na may kalakip na talang nagpapangalan kung saan ito hinango (*from*).
+  Hindi kailanman ito inilalagay sa ilalim ng pangalan ng upstream dataset, dahil katumbas po iyon ng paglalagay
+  ng aming kalkulasyon sa bibig ng iba.
+- **Mas matimbang ang pagsipi kaysa sa saklaw.** Ang isang kard na may mas kaunting mga field ngunit may maayos na sanggunian
+  ay mas kapaki-pakinabang kaysa sa isang punong kard na pinuno lamang mula sa mga tersiyaryong sanggunian. Ang Wikipedia,
+  tekstong binuo ng LLM, at sariling kaalaman ay hindi mga pangunahing sanggunian dito, at hindi
+  tinatanggap bilang ganoon.
+
+Itinatakda ng [Citation Procedure](/docs/reference/language-card-citation-procedure) kung aling source ang awtoritatibo para sa aling uri ng claim, at sa anong pagkakasunod-sunod.
+
+---
+
+## Kung ano ang iginigiit ng isang card — at kung ano ang hindi nito kailanman iginigiit
+
+Ang isang card ay gumagawa ng eksaktong dalawang uri ng pahayag.
+
+**1. Mga katangian ng wika.** Klasipikasyon at pamilya, phonological inventory, typology, script at orthography, vitality at endangerment status, mga pagtatantya ng speaker. Bawat isa ay cited, bawat isa ay may label na derived o asserted.
+
+**2. Pag-iral ng isang resource.** Na ang isang corpus, isang model, isang FST, isang diksyunaryo, isang metric plugin o isang translation method ay *umiiral* para sa wikang ito, at sa anong access level. Ito po ay isang capability claim, hindi isang quality claim.
+
+At mayroon pong isang mahigpit na hangganan na hindi nito tinatawid:
+
+:::danger[Hindi kailanman inilalagay ang mga nasukat na marka sa kard ng wika]
+Ang anumang **nasukat na marka ng output ng pamamaraan** — chrF++, BLEU, COMET, TER, FST
+acceptance rate, "percent morphologically valid" — ay isang **resulta ng pagpapatakbo (run result)**, na nakaugnay sa
+isang partikular na pamamaraan, dataset, at sukatan. Nabibilang ito sa
+[leaderboard](/leaderboard) ([kung paano gumagana ang paglalathala](/docs/reference/leaderboard)), na nakakabit sa isang
+run card na may fingerprint. Ito ay **ipinagbabawal sa kard ng wika**, at tinatanggihan
+ng isang linter ang anumang kard na naglalaman nito.
+:::
+
+Ang pagkakaiba ay tulad ng pagkakaiba sa pagitan ng "may umiiral na FST para sa wikang ito" — isang
+katotohanan tungkol sa mundo, totoo o mali anuman ang sabihin natin — at "ang pamamaraang ito ay may markang
+0.82 FST acceptance" — isang pagsukat, na totoo lamang para sa isang pagpapatakbo, isang bersyon ng dataset,
+at isang bersyon ng pamamaraan. Pagsamahin ang dalawa at ang kard ay tahimik na magiging isang pahayag ukol sa
+kalidad ng isang wika, nang permanente, nang walang pagpapatakbo sa likod nito at walang paraan upang bawiin
+ito. Kaya hindi po pinagsasama ang mga ito. Sinasabi sa inyo ng Atlas kung **ano ang umiiral**; sinasabi naman ng
+leaderboard sa inyo kung **gaano ito kahusay gumagana**.
+
+Dalawa pang invariant ang ipinapatupad sa parehong paraan: ang isang tone claim ay hindi dapat sumalungat sa sariling phonological inventory ng card, at ang ipinapakitang bilang ng speaker ay dapat katumbas ng isa sa mga cited na pagtatantya sa card (o may tatak bilang aming sariling derivation). Ang buong schema, kasama ang bawat field at mga panuntunan nito, ay ang [Language Card Specification](/docs/reference/language-card-spec).
+
+---
+
+## Ano ang nilalaman nito, at saan ito nagmula
+
+Binuo ang mga kard mula sa <SSOTCount field="licensedSourceCount" /> na mga rehistradong
+upstream source kung saan indibidwal na sinusubaybayan ang mga lisensya — dahil maipamamahagi lamang muli ang isang kard kung
+ang lahat ng naroroon ay maaari ring ipamahagi muli, at ang mga di-komersyal na sanggunian ay sadyang ibinubukod mula sa mga komersyal
+na gamit ayon sa pagkakaayos nito sa halip na sa pamamagitan lamang ng mabubuting hangarin.
+
+Kasama po sa catalogue ang mga sign language bilang mga natural na wika, kasama ang mga constructed language na kinikilala ng ISO 639-3, hindi kasama ang mga programming language, at nagbe-benchmark ng mga indibidwal na wika sa halip na mga macrolanguage umbrella — dahil ang mga translation resource ay variety-specific, at ang isang score na nakakabit sa isang umbrella code ay magiging isang claim tungkol sa mga variety na walang sinumang nag-evaluate. Kung saan hindi nagkakasundo ang mga taxonomy, ipinapakita ng card ang hindi pagkakasundo sa halip na pumili ng panalo. Ang bawat isa sa mga pagpipiliang iyon ay ipinapaliwanag, kasama ang mga kahihinatnan nito, sa [What Counts as a Language Here?](/docs/network/context/what-counts-as-a-language).
+
+**Ang saklaw ay hindi kalidad, at ang pag-iral ay hindi saklaw.** Ang isang kard na naglilista ng tatlong
+resource para sa isang wika ay nagsasabi sa inyo na may tatlong bagay na umiiral — hindi nangangahulugang magagamit
+ang alinman sa mga ito, at hindi nangangahulugang nasisilbihan ang wika. Kung paano binibilang ng proyekto
+ang saklaw, at kung ano ang tinatanggihan nitong bilangin, ang paksa ng mga naunang
+seksyon ng pahinang ito sa itaas.
+
+---
+
+## Saan ito mababasa
+
+| Bahagi | Ang ibinibigay nito sa inyo |
+|---|---|
+| [Ang Language Atlas](/languages) | Ang mga kard mismo — maghanap, mag-filter ayon sa pamilya, rehiyon, sigla, at pagiging masalimuot, at buksan nang buo ang anumang kard |
+| [Ang Indeks](/catalogue) | Lahat ng nakakatalogo, ayon sa wika: mga benchmark, resource, pamamaraan, mga serbisyo ng pagsasalin ng tao, at isang hiwalay na antas para sa pagsipi lamang ng mga resultang inilathala sa labas |
+| [Glosaryo](/glossary) | Payak na mga kahulugan para sa bawat terminong ginagamit ng isang kard |
+| [Pagsasaayos](/docs/getting-started/configuration) | Ang kayang isalin ng CLI sa ngayon, na higit na mas maliit na hanay kaysa sa nakakatalogo sa Atlas |
+
+Ang mga machine-readable na entry point ay `/llms.txt` at `/llms-full.txt`; maaaring direktang hanapin ng mga agent ang mga card sa pamamagitan ng [MCP server](/docs/network/getting-started/mcp-server).
+
+---
+
+## Kapag mali ang isang card
+
+Ipagpalagay po ninyo na ang ilan sa mga ito ay mali. Ang isang index na ganito kalaki, na binuo mula sa mga source na hindi nagkakasundo sa isa't isa, ay maglalaman ng mga error — at ang mga pinakamahalaga ay karaniwang hindi nakikita sa amin at halata sa isang speaker.
+
+**Ang bawat card ay may dalang "Suggest a correction or addition" na link**, na nagbubukas ng correction form kung saan naka-pre-fill na ang wika. Magdala po ng source kung mayroon kayo; para sa isang community removal o restriction request, hindi kinakailangan ang citation at pinangangasiwaan ito nang may prayoridad.
+
+Ang mga pagwawasto ay inilalapat **sa generator, hindi sa card**. Ang mga card ay muling binubuo mula sa kanilang mga source, kaya ang isang hand-edit ay tahimik na mao-overwrite sa susunod na build — ang pag-aayos sa source ang nagpapapermanente sa isang pagwawasto, at karaniwang inaayos nito ang parehong depekto sa bawat iba pang card na nagbabahagi ng source na iyon. Mas mabagal po ito kaysa sa pag-edit ng isang file at ito lamang ang bersyon na tumatagal. Ang mga mekanika ay nasa [Submit to the Index](/docs/network/getting-started/submit-to-the-index).
+
+**Kung kayo po ay miyembro o awtoridad ng komunidad** at nais ninyong paghigpitan,
+baguhin, o alisin ang data tungkol sa inyong wika, hindi po kailangang bigyang-katwiran sa amin ang kahilingang
+iyon at hindi ito mapupunta sa isang pampublikong pila kung mas nanaisin ninyong huwag. Ang data ng wika
+ay biodata: dala nito ang pagkakakilanlan at mga ugnayan ng mga taong nagsasalita nito,
+at hindi ito makabuluhang maa-anonymize. Kami po ay **nagsusumikap para sa soberanya, hindi sertipikado sa soberanya** — itinatayo namin ang mga mekanismo at inilalarawan ang mga ito nang tapat, at
+kung iginagalang ba ng mga ito ang pagmamay-ari at kontrol ng komunidad sa data ng wika ay isang
+pagpapasiyang nauukol sa mga kasangkot na komunidad,
+hindi sa amin. Ang buong paninindigan ay nasa
+[Inyong mga salita, inyong mga panuntunan](/docs/your-words-your-rules).
+
+---
+
+## Susunod na basahin
+
+- **Nais ninyong maghanap ng isang wika** → [i-browse ang Atlas](/languages).
+- **Nais ninyong malaman kung ano ang ibig sabihin ng isang field** → [Espesipikasyon ng Kard ng Wika](/docs/reference/language-card-spec).
+- **Nais ninyong malaman kung bakit may pahayag sa isang kard** → [Pamamaraan ng Pagsipi](/docs/reference/language-card-citation-procedure).
+- **Nais ninyong bumuo ng pamamaraan para sa isang wikang kulang sa serbisyo** → [Kung ano ito](/docs/what-is-champollion).
+- **Nais ninyong malaman kung gaano talaga kahusay magsalin ang anuman** → wala po rito iyon.
+  Nasa [leaderboard](/leaderboard) po ito ([kung paano gumagana ang paglalathala](/docs/reference/leaderboard)).

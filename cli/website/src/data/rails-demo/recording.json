@@ -1,0 +1,644 @@
+{
+  "_comment": "RECORDED, not written: the rails walked by a scripted person (no AI) through the MCP rails profile — this checkout's champollion CLI and nmt-forge, the dummy training backend. Every command here ran. Invented language (\"Our language\", qaa); paths, run ids, hashes, times and pids normalised. Made by scripts/rails_acceptance/record_demo.mjs; checked by its --check. Never edit by hand.",
+  "recorded_with": {
+    "champollion": "0.6.0",
+    "champollion-mcp-server": "0.4.0"
+  },
+  "pair": {
+    "source": "eng",
+    "target": "qaa",
+    "target_name": "Our language"
+  },
+  "steps": [
+    {
+      "kind": "tool",
+      "tool": "start_project",
+      "args": {
+        "folder": "family",
+        "from": "English",
+        "to": "qaa",
+        "target_name": "Our language",
+        "purpose": "family phrasebook",
+        "parent_dir": "~",
+        "confirmed": true
+      },
+      "result": {
+        "project": "~/family",
+        "languages": {
+          "source": {
+            "code": "eng",
+            "name": "English"
+          },
+          "target": {
+            "code": "qaa",
+            "name": "Our language"
+          }
+        },
+        "next": {
+          "project": "~/family",
+          "stage": "2/6 Gather your data",
+          "step": {
+            "id": "add-pairs:<hash>",
+            "mode": "use_tool",
+            "say": "Bring in each file the person named, now, with add_data — from where it is (any path; never ask them to move it). Call it with just the path first: it reads the layout itself (a header naming the languages decides the columns) and asks only when it cannot tell — then ask the person what it asks. It reports counts and columns, never sentences.",
+            "why": "A translation model learns from pairs. They stay on this computer; nothing is uploaded.",
+            "tool": "add_data",
+            "for_the_person": "Bring in the sentence pairs you have — a spreadsheet (.xlsx, .ods, .csv), a .tsv or .txt, or a table in a Word document. Run `champollion data add <file>` with the file where it is (or drop it in inbox/ first); it asks which column is English and which is Our language when the header does not say. A word list (a dictionary) comes in the same way with `--into lexicon` — a Toolbox or LIFT (FieldWorks) dictionary too, whose example sentences can also come in as pairs. An ELAN (.eaf) file gives pairs from its transcription and translation tiers; grammar notes go in data/grammar/.",
+            "call": {
+              "tool": "add_data",
+              "arguments": {
+                "project_dir": "~/family",
+                "path": "<each file the person named, where it is>"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "2/6 Gather your data",
+      "step": {
+        "ref": "add-pairs",
+        "mode": "use_tool",
+        "say": "Bring in each file the person named, now, with add_data — from where it is (any path; never ask them to move it). Call it with just the path first: it reads the layout itself (a header naming the languages decides the columns) and asks only when it cannot tell — then ask the person what it asks. It reports counts and columns, never sentences."
+      }
+    },
+    {
+      "kind": "person",
+      "did": "put grandpa.tsv, aunt.tsv and words.tsv in inbox/"
+    },
+    {
+      "kind": "tool",
+      "tool": "add_data",
+      "args": {
+        "project_dir": "~/family",
+        "path": "inbox/grandpa.tsv"
+      },
+      "result": {
+        "result": "inbox/grandpa.tsv → data/parallel/grandpa.tsv: 40 pair(s) (tsv, sheet \"grandpa.tsv\", A → B, first row a header)\n  marked local-only for now (the project's default) — its holders decide the rest: champollion next\n  The original grandpa.tsv is untouched."
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "add_data",
+      "args": {
+        "project_dir": "~/family",
+        "path": "inbox/aunt.tsv"
+      },
+      "result": {
+        "result": "inbox/aunt.tsv → data/parallel/aunt.tsv: 30 pair(s) (tsv, sheet \"aunt.tsv\", A → B, first row a header)\n  marked local-only for now (the project's default) — its holders decide the rest: champollion next\n  The original aunt.tsv is untouched."
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "add_data",
+      "args": {
+        "project_dir": "~/family",
+        "path": "inbox/words.tsv",
+        "into": "lexicon"
+      },
+      "result": {
+        "result": "inbox/words.tsv → data/lexicon/words.tsv: 12 pair(s) (tsv, sheet \"words.tsv\", A → B, first row a header)\n  marked local-only for now (the project's default) — its holders decide the rest: champollion next\n  The original words.tsv is untouched."
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "2/6 Gather your data",
+      "step": {
+        "ref": "terms",
+        "mode": "ask_user",
+        "say": "Ask the person who holds data/parallel/aunt.tsv — never answer for them. Words of people who have not agreed yet (not-yet), or who said no, are never trained on: training is not-allowed for them. The answer is written beside the file, and every tool obeys it.",
+        "question": "For data/parallel/aunt.tsv: whose words are in it — who said or wrote them — and did they all agree to this? Who holds it, may a model be trained on it, and may its text ever be sent to an outside AI service (a hosted model), or must it stay on this computer? If some of it is not for training (stories or words that are not to be shared), take that out of the file first, or say not-allowed.",
+        "answers": [
+          "speakers",
+          "speakers_agreed",
+          "owner",
+          "training",
+          "transmission"
+        ],
+        "command": "champollion data mark data/parallel/aunt.tsv --speakers \"{speakers}\" --speakers-agreed {speakers_agreed} --owner \"{owner}\" --training {training} --{transmission}"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "terms:<hash>",
+        "answers": {
+          "speakers": "our own",
+          "speakers_agreed": "yes",
+          "owner": "the family",
+          "training": "allowed",
+          "transmission": "local-only"
+        }
+      },
+      "ran": [
+        {
+          "command": "champollion data mark data/parallel/aunt.tsv --speakers our own --speakers-agreed yes --owner the family --training allowed --local-only",
+          "exit_code": 0,
+          "output": "data/parallel/aunt.tsv: local-only (stays on this computer) · training allowed · held by the family · words of our own\n  written to data/parallel/aunt.tsv.champollion.json — every tool obeys it.\n  Next: champollion next"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "2/6 Gather your data",
+      "step": {
+        "ref": "terms",
+        "mode": "ask_user",
+        "say": "Ask the person who holds data/parallel/grandpa.tsv — never answer for them. Words of people who have not agreed yet (not-yet), or who said no, are never trained on: training is not-allowed for them. The answer is written beside the file, and every tool obeys it.",
+        "question": "For data/parallel/grandpa.tsv: whose words are in it — who said or wrote them — and did they all agree to this? Who holds it, may a model be trained on it, and may its text ever be sent to an outside AI service (a hosted model), or must it stay on this computer? If some of it is not for training (stories or words that are not to be shared), take that out of the file first, or say not-allowed.",
+        "answers": [
+          "speakers",
+          "speakers_agreed",
+          "owner",
+          "training",
+          "transmission"
+        ],
+        "command": "champollion data mark data/parallel/grandpa.tsv --speakers \"{speakers}\" --speakers-agreed {speakers_agreed} --owner \"{owner}\" --training {training} --{transmission}"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "terms:<hash>",
+        "answers": {
+          "speakers": "our own",
+          "speakers_agreed": "yes",
+          "owner": "the family",
+          "training": "allowed",
+          "transmission": "local-only"
+        }
+      },
+      "ran": [
+        {
+          "command": "champollion data mark data/parallel/grandpa.tsv --speakers our own --speakers-agreed yes --owner the family --training allowed --local-only",
+          "exit_code": 0,
+          "output": "data/parallel/grandpa.tsv: local-only (stays on this computer) · training allowed · held by the family · words of our own\n  written to data/parallel/grandpa.tsv.champollion.json — every tool obeys it.\n  Next: champollion next"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "2/6 Gather your data",
+      "step": {
+        "ref": "terms",
+        "mode": "ask_user",
+        "say": "Ask the person who holds data/lexicon/words.tsv — never answer for them. Words of people who have not agreed yet (not-yet), or who said no, are never trained on: training is not-allowed for them. The answer is written beside the file, and every tool obeys it.",
+        "question": "For data/lexicon/words.tsv: whose words are in it — who said or wrote them — and did they all agree to this? Who holds it, may a model be trained on it, and may its text ever be sent to an outside AI service (a hosted model), or must it stay on this computer? If some of it is not for training (stories or words that are not to be shared), take that out of the file first, or say not-allowed.",
+        "answers": [
+          "speakers",
+          "speakers_agreed",
+          "owner",
+          "training",
+          "transmission"
+        ],
+        "command": "champollion data mark data/lexicon/words.tsv --speakers \"{speakers}\" --speakers-agreed {speakers_agreed} --owner \"{owner}\" --training {training} --{transmission}"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "terms:<hash>",
+        "answers": {
+          "speakers": "our own",
+          "speakers_agreed": "yes",
+          "owner": "the family",
+          "training": "allowed",
+          "transmission": "local-only"
+        }
+      },
+      "ran": [
+        {
+          "command": "champollion data mark data/lexicon/words.tsv --speakers our own --speakers-agreed yes --owner the family --training allowed --local-only",
+          "exit_code": 0,
+          "output": "data/lexicon/words.tsv: role resource · local-only (stays on this computer) · training allowed · held by the family · words of our own\n  written to data/lexicon/words.tsv.champollion.json — every tool obeys it.\n  Next: champollion next"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "3/6 Protect your test set",
+      "step": {
+        "ref": "test-file",
+        "mode": "use_tool",
+        "say": "Bring in the file of sentences a fluent speaker checked, now, with add_data and into: \"test\" — from where it is, with just the path first (it reads the layout itself and asks only when it cannot tell)."
+      }
+    },
+    {
+      "kind": "person",
+      "did": "put checked.tsv (sentences a fluent speaker checked) in inbox/"
+    },
+    {
+      "kind": "tool",
+      "tool": "add_data",
+      "args": {
+        "project_dir": "~/family",
+        "path": "inbox/checked.tsv",
+        "into": "test"
+      },
+      "result": {
+        "result": "inbox/checked.tsv → data/test/checked.tsv: 14 pair(s) (tsv, sheet \"checked.tsv\", A → B, first row a header)\n  marked local-only for now (a test set) — its holders decide the rest: champollion next\n  The original checked.tsv is untouched."
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "workshop",
+        "mode": "auto",
+        "say": "Set up the training workshop inside this project (a .forge/ folder and a starter config.json).",
+        "command": "nmt-forge init qaa --dir . --pair eng-qaa --no-card --name \"Our language\" --model auto"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "workshop:<hash>"
+      },
+      "ran": [
+        {
+          "command": "nmt-forge init qaa --dir . --pair eng-qaa --no-card --name Our language --model auto",
+          "exit_code": 0,
+          "output": "initialized . for Our language (qaa)\n  card:       none — ISO 639-3 private-use code (qaa–qtz): no card exists for it (initialized with --no-card)\n  config:     config.json\n  workspace:  .forge\n  model:      cpu-tiny — backend hf-scratch\n              needs: CPU only · no download · `python3 -m pip install 'nmt-forge[hf]'`\n              expect: on ~1–2k pairs: chrF++ roughly 5–30 (the top end only for highly templated data) — memorized phrases and your data's templates, not general translation\n              chosen: NMT_FORGE_AUTO_PRESET chose cpu-tiny\n  time budget: no time budget is set (forge never invents one): a few minutes into `nmt-forge run`, the measured wall-clock projection is printed — ask your user how long they accept and add \"time_budget_hours\": <hours> to config.json → model; until then only forge's 24h safety ceiling applies\n  next steps: NEXT_STEPS.md\n\nNEXT: cd . && nmt-forge status"
+        }
+      ]
+    },
+    {
+      "kind": "person",
+      "did": "edited config.json: model.backend = dummy (a test double: no torch)"
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "register-test",
+        "mode": "auto",
+        "say": "Tell the workshop which file is the test set, so every look at it is counted.",
+        "command": "nmt-forge registry add project-test data/test/checked.tsv --role test"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "register-test:<hash>"
+      },
+      "ran": [
+        {
+          "command": "nmt-forge registry add project-test data/test/checked.tsv --role test",
+          "exit_code": 0,
+          "output": "registered 'project-test' as role=test — 14 rows, sha256 <hash>…, fields source→target\n      sentences withheld from output: local-only corpus (the data's steward marked it local-only (corpus metadata) — only a model on this machine may see it)\n  read log: ~/family/data/test/checked.tsv.reads.jsonl — every mt-eval run / compare on this file from now on is counted\n  Register a test set with forge BEFORE any benchmark run on it (mt-eval run, the MCP run_benchmark): its read log starts at registration, so only reads after it are counted\n  no earlier mt-eval run of this file found (searched the harness's default log folders: no harness log folder); a run written to another --output-dir cannot be seen\n  (~/family/.forge/eval-registry.json)"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "one-corpus",
+        "mode": "auto",
+        "say": "Training reads one file of pairs, and data/parallel/ holds several: join them into one. It keeps the strictest of their terms, leaves out exact repeats, and moves the originals to data/combined-from/ — nothing is deleted. A file its holders said no model may learn from is not joined: it moves to data/not-for-training/, kept.",
+        "command": "champollion data combine"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "one-corpus:<hash>"
+      },
+      "ran": [
+        {
+          "command": "champollion data combine",
+          "exit_code": 0,
+          "output": "2 files → data/parallel/combined.tsv: 70 pair(s)\n  terms: local-only · training allowed · held by the family — the strictest of the files'\n  the originals moved to data/combined-from/ (with their sidecars); nothing was deleted\n  Next: champollion next"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "screen",
+        "mode": "auto",
+        "say": "Screen the training pairs against the test sentences: a pair that copies a test answer, or nearly does, is set aside; a pair that only shares a sentence frame with one is kept to learn from, and counted, so the score can be read with and without those test sentences.",
+        "command": "nmt-forge leak-audit data/parallel/combined.tsv --clean-to data/clean/combined.clean.jsonl"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "screen:<hash>"
+      },
+      "ran": [
+        {
+          "command": "nmt-forge leak-audit data/parallel/combined.tsv --clean-to data/clean/combined.clean.jsonl",
+          "exit_code": 0,
+          "output": "KEPT on purpose (reported, never removed): 10 row(s)\n  • similar prompt, different answer: the source near-duplicates (but is not identical to) an eval source and the target is a different answer — a minimal contrast. An IDENTICAL prompt is dropped whatever its answer\n      project-test (test): 10\n      e.g. line 2 → project-test row 10 (overlap 0.62)\n      e.g. line 6 → project-test row 2 (overlap 0.62)\n      e.g. line 8 → project-test row 4 (overlap 0.62)\n\nTEST ROWS WITH A NEAR-TWIN IN THE TRAINING DATA (what your test score will measure):\n  project-test: 5 of 14 test rows (36%) have a near-twin in the training data — after training, the strict score on the other 9 rows is the generalization number (export reports it next to the full score)\n  → nothing to fix before training: most test rows have no near-twin, so the strict score on them measures new sentences, and export reports it beside the full score. An option, not a step: a model with no twin of any test row — for a test set that is a fixed, separate file, `nmt-forge leak-audit <corpus> --clean-to <corpus.notwins.jsonl> --drop-test-twins` drops the training rows that are near-twins (it says how many go) and writes that model's config; for a test set carved from your corpus, `nmt-forge split <corpus> --test N --dev M --seed S --out data/split --near-dupe 0.6` holds out whole templates\n\nHow to read this: overlap = shared words ÷ all words (Jaccard, diacritics folded); near-duplicates start at 60%. Exact = identical after case/punctuation/spacing normalization. Same corpus + same registered sets ⇒ the same result, every run.\nCleaned: 70 row(s) kept → data/clean/combined.clean.jsonl (audit manifest: data/clean/combined.clean.audit.json)\n  the written files keep combined.tsv's terms (transmission local-only): a .champollion.json sidecar next to each\n\nnext: write the preregistration for project-test BEFORE any benchmark run on it (mt-eval run / run_benchmark is a scoring read; a preregistration written after one is refused) — one per model you will train: nmt-forge prereg template --out predictions.json && nmt-forge prereg new <id> --eval-set project-test --predictions predictions.json. (This audit's reads of the test set are audit reads: they never block a preregistration.)"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "predict",
+        "mode": "ask_user",
+        "say": "Nothing trains until this is written: ask the people what they expect before any score exists, and write it down in their words, not yours. The result is checked against it later.",
+        "question": "Before any score exists: what do they expect the first model to do on their checked sentences, and why? The score will be chrF++, from 0 to 100 — how much of each checked translation the model's output shares, letter by letter. No number is suggested here, so the guess stays theirs.",
+        "answers": [
+          "expect",
+          "why"
+        ],
+        "command": "nmt-forge prereg new first-model --eval-set project-test --expect \"{expect}\" --rationale \"{why}\""
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "predict:<hash>",
+        "answers": {
+          "expect": "chrF++ below 20: a phrasebook at best",
+          "why": "a few dozen pairs and a tiny model"
+        }
+      },
+      "ran": [
+        {
+          "command": "nmt-forge prereg new first-model --eval-set project-test --expect chrF++ below 20: a phrasebook at best --rationale a few dozen pairs and a tiny model",
+          "exit_code": 0,
+          "output": "preregistered → ~/family/.forge/preregistrations/first-model.json (1 prediction(s) bound to 'project-test')\nmodel: name each preregistration after the model it predicts ('first-model' here); export judges a model against it with `nmt-forge export <run manifest> --prereg first-model --out <dir>` (MCP: forge_export prereg: \"first-model\")"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "split",
+        "mode": "auto",
+        "say": "Set aside 18 of the screened pairs as a dev set (the convention: one in ten, at least 50 — a quarter when there are fewer than 200 — at most 500; below 50 no round can be judged on them; seed 42 so it can be repeated) — the model is tuned on them, never on the test set, and rounds are judged on them. Near-copies (60% alike or more) stay on one side, so the dev set is not answered from memory — the same rule every later round's screen applies (groups are capped at 10, so a file written from templates still splits). A small dev set can only see big differences; it grows later from the speaker's practice sentences. To choose another size, run the command with your own --dev.",
+        "command": "nmt-forge split data/clean/combined.clean.jsonl --test 0 --dev 18 --seed 42 --near-dupe 0.6 --max-group 10 --out data/split --register project"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "split:<hash>"
+      },
+      "ran": [
+        {
+          "command": "nmt-forge split data/clean/combined.clean.jsonl --test 0 --dev 18 --seed 42 --near-dupe 0.6 --max-group 10 --out data/split --register project",
+          "exit_code": 0,
+          "output": "split data/clean/combined.clean.jsonl: 70 rows in 18 share-groups (largest 7)\n  train 51 · dev 19 · test 0  → data/split/\n  verified: 0 shared canonical source/target keys across sides\n  the written files keep combined.clean.jsonl's terms (transmission local-only): a .champollion.json sidecar next to each\n  dev: no dev row has a near-twin in the training data (Jaccard ≥ 0.6) — checkpoint selection measures unseen sentences\n  overshoot (whole groups, never trimmed): {'test': 0, 'dev': 1}\n  test side: none (--test 0) — your test set is a separate file; register it with role=test (nmt-forge registry add <name> <file> --role test)\n  registered project-dev (role=dev)\n  near-dupe carve (Jaccard ≥ 0.6, groups capped at 10): largest group = 7 rows (10% of the corpus)\n\nTEST ROWS WITH A NEAR-TWIN IN THE TRAINING DATA (what your test score will measure):\n  project-test: 4 of 14 test rows (29%) have a near-twin in the training data — after training, the strict score on the other 10 rows is the generalization number (export reports it next to the full score)\n  → nothing to fix before training: most test rows have no near-twin, so the strict score on them measures new sentences, and export reports it beside the full score. An option, not a step: a model with no twin of any test row — for a test set that is a fixed, separate file, `nmt-forge leak-audit <corpus> --clean-to <corpus.notwins.jsonl> --drop-test-twins` drops the training rows that are near-twins (it says how many go) and writes that model's config; for a test set carved from your corpus, `nmt-forge split <corpus> --test N --dev M --seed S --out data/split --near-dupe 0.6` holds out whole templates"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "floor",
+        "mode": "auto",
+        "say": "Measure the dictionary floor: what looking each word up in your word list scores on the dev sentences. It runs on this computer and records only counts and scores. A trained model is worth using only where it beats this.",
+        "command": "nmt-forge floor data/lexicon/words.tsv"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "floor:<hash>"
+      },
+      "ran": [
+        {
+          "command": "nmt-forge floor data/lexicon/words.tsv",
+          "exit_code": 0,
+          "output": "⚠️  WARNING: Only 19 entries in this sample — bootstrap CIs for chrf++ may have poor coverage below 30 entries.\n  ⚠️  WARNING: Only 19 entries in this sample — bootstrap CIs for bleu may have poor coverage below 30 entries.\n  ⚠️  WARNING: Only 19 entries in this sample — bootstrap CIs for exact_match may have poor coverage below 30 entries.\ndictionary floor on dev set project-dev (19 sentences, words.tsv): chrF++ 19.03 [18.74, 19.33] — the dictionary reached 57 of 171 source words (33%)\n  word-for-word lookup, nothing else: a trained model is worth using only where it beats this on the same dev set (`nmt-forge status` puts the two side by side)\n  recorded in the workshop's ledger — counts and scores, never a word of the dictionary or the dev set"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "forge-ready-to-train",
+        "mode": "confirm",
+        "say": "evals are registered, dev is fenced, predictions are preregistered — preflight checks every gate the run will hit (including the training extra), then train through the guarded loop (leak-audit, schedule floor, checkpoint selection all run inside). --detach runs it as a bounded background job (stopped and written down if it stalls); leave it off to train in the foreground of a terminal. It runs on this computer; nothing is sent anywhere or billed. How long: the first minutes print a measured projection; it stops at 24 hours at the latest, and sooner if it stalls.",
+        "command": "nmt-forge preflight run --config config.json && nmt-forge run config.json --detach"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "forge-ready-to-train:<hash>",
+        "confirmed": true
+      },
+      "ran": [
+        {
+          "command": "nmt-forge preflight run --config config.json",
+          "exit_code": 0,
+          "output": "\n  ✓ config: config.json parses (config hash <hash>)\n  ✓ workspace-match: config.workspace → ~/family/.forge\n  ✓ no-run-in-progress: no run in progress\n  ✓ dev-fence: config data.dev = 'project-dev': registered, role=dev, unchanged, 19 row(s), no row shared with a test/sealed set; no row of the 1 training file(s) is a dev row\n  ✓ training-data: 1 gold + 0 synthetic file(s) present\n  ✓ backend-installed: backend 'dummy' needs no extra\n  ✓ selection-plugins: no selection plugins\n  ✓ test-near-twins: project-test: 4 of 14 test rows (29%) have a near-twin in the training data — after training, the strict score on the other 10 rows is the generalization number (export reports it next to the full score) (compared with data/split/train.jsonl)\n  ✓ dev-near-twins: project-dev: no dev row has a near-twin in the training data (Jaccard ≥ 0.6) — checkpoint selection measures unseen sentences\n  ✓ leak-audit: 1 lane(s) audited against 1 test/sealed set(s), as run audits them: no answer leaks (template siblings are kept and reported)\n  ✓ training-mix: the mix run builds passes every data guard (validity floor, lane tags, kind cap)\n  ✓ generation-headroom: decode.max_new_tokens 384 ≥ 3 (longest dev reference 2 tokens × 1.5)\n  ✓ schedule-sanity: regime, early-stop floor and eval cadence are derived from the config's data mix — no flags needed (never a refusal)\n\nALL GATES PASS"
+        },
+        {
+          "command": "nmt-forge run config.json --detach",
+          "exit_code": 0,
+          "output": "training started in the background as job train-<hash>-094245\n  bounds: no sign of life for 15 min at the start, no progress for 10 min (or 30x the step time), or past 24 h -> stopped and written down\n  progress: nmt-forge jobs   (or nmt-forge status)\n  stop it:  nmt-forge jobs stop train-<hash>-094245"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "forge-training",
+        "mode": "wait",
+        "say": "a training run is in progress: run 'qaa-nmt-cpu-tiny' (pid <n> on <host>, started <time>) — WAIT for it to finish. Do NOT start another run: two runs fight for the same CPU/GPU and memory, and `nmt-forge run` refuses while this one holds ~/family/.forge/run.lock. Run `nmt-forge status` again after the training process has exited (when you launched it in the background, wait on that process or its log — do not poll on a timer); status will then name the next step. Its run directory (checkpoints) is ~/family/.forge/runs/qaa-nmt-cpu-tiny-<hash>. It runs as background job train-<hash>-094245 (select); its supervisor stops it if it stalls or passes its deadline, and writes down why — `nmt-forge jobs` shows it.",
+        "command": "nmt-forge status"
+      }
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family",
+        "wait_seconds": 30
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "forge-ready-to-score",
+        "mode": "auto",
+        "say": "a trained run exists — `export` decodes your test battery with the dev-selected checkpoint, scores it (prereg-gated, CI'd, with the Diagnosis), writes an mt-eval RunLog + TestReport into export/evaluation/ (your test sentences — never deployed), and packages the model you can serve into export/model/ — one step. (`nmt-forge evaluate <manifest>` is the score-only half of it.) 5 of 14 sentences in project-test have a near-twin in the training data: scoring now is the default — export reports the score on all 14 and on the 9 with none (the number to quote for new sentences). A twin-free model is an option afterwards, not a step before: `nmt-forge leak-audit <training corpus> --clean-to <corpus>.notwins.jsonl --drop-test-twins`. This run's backend wrote no model weights, so the export is the evaluation only (--no-model): there is no model to serve from it.",
+        "command": "nmt-forge export ~/family/.forge/runs/qaa-nmt-cpu-tiny-<hash>/run-manifest.json --no-model --out export/"
+      },
+      "warnings": [
+        "run qaa-nmt-cpu-tiny: dev chrF++ 5.97 [5.25, 6.61] does not beat the dictionary floor on the same dev set, chrF++ 19.03 [18.74, 19.33] — on these sentences the model is not shown to do better than looking words up (the intervals overlap, or it is lower). More pairs to learn from, or a different model, before it is put to use"
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "forge-ready-to-score",
+        "mode": "auto",
+        "say": "a trained run exists — `export` decodes your test battery with the dev-selected checkpoint, scores it (prereg-gated, CI'd, with the Diagnosis), writes an mt-eval RunLog + TestReport into export/evaluation/ (your test sentences — never deployed), and packages the model you can serve into export/model/ — one step. (`nmt-forge evaluate <manifest>` is the score-only half of it.) 5 of 14 sentences in project-test have a near-twin in the training data: scoring now is the default — export reports the score on all 14 and on the 9 with none (the number to quote for new sentences). A twin-free model is an option afterwards, not a step before: `nmt-forge leak-audit <training corpus> --clean-to <corpus>.notwins.jsonl --drop-test-twins`. This run's backend wrote no model weights, so the export is the evaluation only (--no-model): there is no model to serve from it.",
+        "command": "nmt-forge export ~/family/.forge/runs/qaa-nmt-cpu-tiny-<hash>/run-manifest.json --no-model --out export/"
+      },
+      "warnings": [
+        "run qaa-nmt-cpu-tiny: dev chrF++ 5.97 [5.25, 6.61] does not beat the dictionary floor on the same dev set, chrF++ 19.03 [18.74, 19.33] — on these sentences the model is not shown to do better than looking words up (the intervals overlap, or it is lower). More pairs to learn from, or a different model, before it is put to use"
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "forge-ready-to-score:<hash>"
+      },
+      "ran": [
+        {
+          "command": "nmt-forge export ~/family/.forge/runs/qaa-nmt-cpu-tiny-<hash>/run-manifest.json --no-model --out export/",
+          "exit_code": 0,
+          "output": "  ⚠ SCORE CAVEAT (mt-eval-harness): outputs average 3.5× the reference length and 14 of 14 scored entries (100%) are over 2× (the scoring spec's inflation bound) — the outputs carry text beyond a translation (leaked examples, notes or repeats); read the scores as measuring that, and check a few outputs before trusting them.\n    → for a test score that measures translation: when the test set is a fixed, separate file (registered, not carved from your corpus), drop the training rows that are near-twins of it — `nmt-forge leak-audit <corpus> --clean-to <corpus.notwins.jsonl> --drop-test-twins` says how many go and what the score will then measure — and retrain on the cleaned file (this test set has been scored once, so preregister the new run with `nmt-forge prereg new <id> --eval-set <set> --predictions <file> --allow-after-reads`; the ledger records both reads); or get test sentences written independently of the training material and register them as a new test set. Test set carved from your corpus: re-split with `--near-dupe 0.6` (whole templates on one side)\n  judged against preregistration first-model (the only preregistration valid for this run)\n  prereg first-model: 0 held, 0 failed, 1 for a human to judge\n    #1 chrf++ [overall]: predicted \"chrF++ below 20: a phrasebook at best\"; observed 7.86 [7.21, 8.51] → MANUAL — a human compares (record it: nmt-forge prereg verdict first-model --prediction 1 --held|--missed --by <name>)\n        (free-text prediction — a human compares it with the observed score)\n  mt-eval metrics computed: chrF++, BLEU, TER, exact match, spBLEU, chrF, code_switching, hallucination, writing_style\n  NOT computed: COMET — unbabel-comet is not installed, and the harness computes COMET only when it is\n    compute it: mt-eval setup --comet && mt-eval test export/evaluation/runlog.json --output export/evaluation/runlog_report_full.json\n  NOT computed: terminology — no glossary was given, and terminology adherence needs one\n    compute it: mt-eval test export/evaluation/runlog.json --output export/evaluation/runlog_report_full.json --glossary <glossary.json>\n  evaluation (your test sentences — NEVER copy it with the model): export/evaluation\n    every file in it keeps the test set's terms (transmission local-only, training not-allowed) as a .champollion.json sidecar\n    battery report: export/evaluation/battery-hyps-battery.json\n    mt-eval TestReport: export/evaluation/runlog_report.json\n    hypotheses (for `nmt-forge compare --hyps-a/--hyps-b`): export/evaluation/battery-hyps.jsonl"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "judge",
+        "mode": "ask_user",
+        "say": "The people who made the prediction judge it now. Their verdict is written beside the score, whatever it is.",
+        "question": "Before the model is used: they predicted \"chrF++ below 20: a phrasebook at best\", and it scored chrF++ 7.86 [7.21, 8.51] on their checked sentences. They wrote 20; it scored 7.9. Did the prediction hold? (Their answer, not yours.)",
+        "answers": [
+          "verdict",
+          "by"
+        ],
+        "command": "nmt-forge prereg verdict first-model --prediction 1 --{verdict} --by \"{by}\""
+      },
+      "warnings": [
+        "before the model is put to use, the people who made the prediction judge it: they predicted \"chrF++ below 20: a phrasebook at best\"; the model scored chrF++ 7.86 [7.21, 8.51] on the test set. Did the prediction hold? Their answer is recorded beside the score, whatever it is. Record it: nmt-forge prereg verdict first-model --prediction 1 --held|missed --by \"<who judged>\"",
+        "run qaa-nmt-cpu-tiny: dev chrF++ 5.97 [5.25, 6.61] does not beat the dictionary floor on the same dev set, chrF++ 19.03 [18.74, 19.33] — on these sentences the model is not shown to do better than looking words up (the intervals overlap, or it is lower). More pairs to learn from, or a different model, before it is put to use"
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "run_next_step",
+      "args": {
+        "project_dir": "~/family",
+        "step_id": "judge:<hash>",
+        "answers": {
+          "verdict": "held",
+          "by": "Grandpa"
+        }
+      },
+      "ran": [
+        {
+          "command": "nmt-forge prereg verdict first-model --prediction 1 --held --by Grandpa",
+          "exit_code": 0,
+          "output": "recorded: prereg first-model prediction #1 (chrf++: \"chrF++ below 20: a phrasebook at best\") → HELD — human verdict by Grandpa, <time>\n  ledger entry <hash> (tamper-evident: nmt-forge ledger verify)\n  see: nmt-forge prereg check first-model"
+        }
+      ]
+    },
+    {
+      "kind": "tool",
+      "tool": "project_status",
+      "args": {
+        "project_dir": "~/family"
+      },
+      "stage": "5/6 Build and test a model",
+      "step": {
+        "ref": "forge-evaluated-no-model",
+        "mode": "human_only",
+        "say": "run qaa-nmt-cpu-tiny has no model weights (its backend is a test double): its evaluation is in ~/family/export, and there is no model to serve. To build one you can use, put a real model back in config.json (the preset `nmt-forge init` wrote, e.g. cpu-tiny) and train again"
+      },
+      "warnings": [
+        "run qaa-nmt-cpu-tiny: dev chrF++ 5.97 [5.25, 6.61] does not beat the dictionary floor on the same dev set, chrF++ 19.03 [18.74, 19.33] — on these sentences the model is not shown to do better than looking words up (the intervals overlap, or it is lower). More pairs to learn from, or a different model, before it is put to use"
+      ]
+    }
+  ]
+}

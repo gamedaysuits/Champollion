@@ -1,0 +1,95 @@
+---
+title: "Uw eerste vertaler"
+slug: /your-first-translator
+description: "Uw eerste vertaler stap voor stap trainen: de controles voordat deze begint, de voorspelling die u als eerste schrijft, het woordenboek dat deze moet verslaan en hoe u het eerste resultaat leest."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Uw eerste vertaler
+
+Dit is het spannende gedeelte: de eerste keer dat een vertaler leert van uw
+zinnen, en u deze uitprobeert. Het is ook waar de rails het voorzichtigst zijn, omdat
+het eerste resultaat het resultaat is dat mensen onthouden.
+
+## Voordat het aanleren begint
+
+Uw assistent doorloopt deze stappen op volgorde. Het meeste doet hij gewoon zelf; hij stopt
+en vraagt het u wanneer een stap aan u is.
+
+1. **Installeer de trainingstools** — eenmalig, en uitsluitend met uw toestemming. Ze worden
+   gedownload naar uw computer.
+2. **Verzamel de zinnen in één bestand** — de tools voegen uw bestanden samen,
+   behouden de strengste van hun regels en laten exacte herhalingen weg. Bestanden waarvan
+   geen vertaler mag leren, worden opzij gezet, niet verwijderd.
+3. **Controleer aan de hand van de testzinnen** — kopieën en bijna-kopieën van uw
+   testzinnen worden opzij gezet.
+4. **Schrijf op wat u verwacht** — voordat er enig resultaat is, in uw eigen
+   woorden. *"Hoogstens een taalgids"* is een prima voorspelling. De rails
+   gaan pas verder wanneer het is opgeschreven.
+5. **Zet oefenzinnen opzij** — een kwart van uw zinnen zolang u
+   er minder dan 200 hebt, daarna 50, en daarna één op de tien zodra dat meer is, apart gehouden zodat de vertaler kan worden gecontroleerd terwijl deze leert, zonder aan
+   de testzinnen te komen.
+6. **Meet het woordenboek** — als u een woordenlijst hebt meegebracht, bekijken de tools
+   eerst hoe ver simpelweg elk woord opzoeken u brengt. Uw vertaler is alleen
+   het gebruiken waard waar deze dat overtreft.
+
+## Aanleren
+
+Vervolgens leert de vertaler. Dit draait op uw computer en er wordt niets
+verzonden. De tools kijken naar het geheugen van uw computer en kiezen wat deze
+aankan: op een nieuwere Mac, of met een NVIDIA-videokaart, het sterkere type
+vertaler (of een lichtere versie daarvan, met minder geheugen); op andere
+computers een veel kleinere. Er leert slechts één vertaler tegelijk op een
+computer.
+
+Het kan even duren — een paar minuten voor een kleine, een paar uur voor het
+sterkere type. Hij houdt zichzelf in de gaten: als hij bij de start geen teken van
+leven vertoont, stopt met vooruitgang boeken, of langer dan een dag bezig is,
+stopt hij en geeft hij aan waarom. Niets draait oneindig door.
+
+## Het eerste resultaat
+
+Wanneer hij klaar is, wordt de vertaler getest op uw testzinnen, en ziet u
+een **score**: een getal op een schaal van 100 voor hoe dicht de vertalingen in de
+buurt komen van de manier waarop uw spreker ze heeft gezegd. Daarnaast tonen de tools
+een bereik — hoe zeker ze zijn — en elke waarschuwing die van toepassing is, woord voor woord.
+
+Daarna kunt u hem zelf uitproberen, in uw webbrowser, met uw eigen zinnen.
+
+## Wat u te zien krijgt
+
+Bij onze proefsessie met de tools — verzonnen zinnen en een namaakvertaler
+zodat de sessie slechts seconden duurt — voorspelde de familie *"hooguit een
+taalgids"*. Vervolgens:
+
+- Het opzoeken van woorden in hun woordenlijst scoorde ongeveer <WalkFact of="floor.score" round />
+  op 100 bij <WalkFact of="floor.devSentences" /> oefenzinnen.
+- De eerste vertaler scoorde ongeveer <WalkFact of="devModel.score" round /> op
+  dezelfde oefenzinnen — **lager dan de woordenlijst.**
+- De tools gaven dit duidelijk aan en waarschuwden dat <WalkFact of="smallSample.n" />
+  oefenzinnen te weinig is om iets anders dan grote verschillen aan te tonen.
+- De voorspelling bleek te kloppen, en de grootvader legde dit vast.
+
+Dat is een echte les, geen mislukking. Met enkele tientallen zinnen wint een
+woordenlijst in het begin vaak. De rails zorgen ervoor dat u dat *weet*, in plaats van
+dat u te horen krijgt dat hij klaar is — en de rondes die volgen zijn de manier
+om hem te overtreffen.
+
+## Wanneer het een taalgids is
+
+Dat is het in het begin bijna altijd: goed met zinnen die lijken op de zinnen
+waarvan hij heeft geleerd, en onzeker bij alles wat nieuw is. Het kan nog steeds
+nuttig zijn — voor concepten die een spreker corrigeert, of voor zinnen die u
+steeds weer opnieuw gebruikt. En het is het begin van de rondes die hem beter maken.
+
+**Volgende:** [De getallen lezen →](/docs/reading-the-numbers)
+
+## Meer informatie
+
+- [Trainen met nmt-forge](/docs/agents/training) — presets, achtergrondtaken,
+  de adviseur en wat elke waarschuwing betekent.
+- [Meetregels](/docs/agents/measurement) — chrF++, bereiken, de
+  woordenboekondergrens en voorspellingen, precies zoals ze zijn.
+- [De getallen lezen](/docs/reading-the-numbers) — elk getal, in duidelijke
+  taal.

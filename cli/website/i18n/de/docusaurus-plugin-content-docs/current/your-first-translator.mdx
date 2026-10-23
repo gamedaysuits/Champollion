@@ -1,0 +1,95 @@
+---
+title: "Ihr erster Übersetzer"
+slug: /your-first-translator
+description: "Ihren ersten Übersetzer Schritt für Schritt anlernen: die Prüfungen vor dem Start, die Vorhersage, die Sie zuerst schreiben, das Wörterbuch, das es zu schlagen gilt, und wie Sie sein erstes Ergebnis lesen."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Ihr erster Übersetzer
+
+Hier beginnt der spannende Teil: das erste Mal, dass ein Übersetzer aus Ihren
+Sätzen lernt und Sie ihn ausprobieren. Hier sind auch die Leitplanken am vorsichtigsten,
+denn das erste Ergebnis ist dasjenige, an das sich die Menschen erinnern.
+
+## Bevor das Training beginnt
+
+Ihr Assistent geht diese Schritte der Reihe nach durch. Das meiste erledigt er
+einfach selbst; er hält an und fragt Sie, wo ein Schritt bei Ihnen liegt.
+
+1. **Installieren Sie die Trainingswerkzeuge** — einmalig und nur mit Ihrem
+   Einverständnis. Sie werden auf Ihren Computer heruntergeladen.
+2. **Führen Sie die Sätze in einer Datei zusammen** — die Werkzeuge führen Ihre Dateien zusammen,
+   behalten die strengste ihrer Regeln bei und lassen exakte Wiederholungen aus. Dateien, von denen
+   kein Übersetzer lernen darf, werden beiseitegelegt, nicht gelöscht.
+3. **Gleichen Sie mit den Testsätzen ab** — Kopien und Beinahe-Kopien Ihrer Testsätze
+   werden beiseitegelegt.
+4. **Schreiben Sie auf, was Sie erwarten** — bevor irgendein Ergebnis vorliegt, in Ihren eigenen
+   Worten. *„Bestenfalls ein Sprachführer“* ist eine völlig berechtigte Vorhersage. Die Schienen
+   bewegen sich erst weiter, wenn dies aufgeschrieben ist.
+5. **Legen Sie Übungssätze beiseite** — ein Viertel Ihrer Sätze, solange Sie
+   weniger als 200 haben, danach 50, und ein Zehntel, sobald es mehr sind; zurückgehalten, damit der Übersetzer beim Lernen überprüft werden kann, ohne die Testsätze
+   zu berühren.
+6. **Messen Sie das Wörterbuch** — wenn Sie eine Wortliste mitgebracht haben, prüfen die Werkzeuge
+   zunächst, wie weit Sie allein durch das bloße Nachschlagen jedes Wortes kommen. Der Einsatz Ihres Übersetzers lohnt
+   sich nur dort, wo er dieses Ergebnis übertrifft.
+
+## Das Training
+
+Dann lernt der Übersetzer. Er läuft auf Ihrem Computer, und es wird nichts irgendwohin
+gesendet. Die Werkzeuge prüfen den Arbeitsspeicher Ihres Computers und wählen aus,
+was er bewältigen kann: auf einem neueren Mac oder mit einer NVIDIA-Grafikkarte
+die stärkere Art von Übersetzer (oder eine leichtere Version davon mit weniger
+Speicherbedarf); auf anderen Computern ein deutlich kleinerer. Auf einem Computer
+lernt jeweils nur ein Übersetzer zur gleichen Zeit.
+
+Das kann eine Weile dauern — einige Minuten bei einem kleinen, ein paar Stunden bei
+der stärkeren Art. Er überwacht sich selbst: Zeigt er zu Beginn kein Lebenszeichen,
+macht keine Fortschritte mehr oder läuft länger als einen Tag, bricht er ab und nennt
+den Grund. Nichts läuft ewig.
+
+## Das erste Ergebnis
+
+Wenn er fertig ist, wird der Übersetzer anhand Ihrer Testsätze geprüft, und Sie sehen
+eine **Punktzahl**: eine Zahl von 100 dafür, wie nah seine Übersetzungen an die Art
+herankommen, wie Ihre Sprachsprecher sie formuliert haben. Daneben zeigen die Werkzeuge
+eine Spanne an — wie sicher sie sich sind — sowie jede zutreffende Warnung, Wort für Wort.
+
+Anschließend können Sie ihn selbst in Ihrem Webbrowser mit Ihren eigenen Sätzen
+ausprobieren.
+
+## Was Sie sehen werden
+
+In unserem Probelauf der Werkzeuge — mit erfundenen Sätzen und einem Schein-Übersetzer,
+damit der Durchlauf nur Sekunden dauert — sagte die Familie *„höchstens ein Sprachführer“*
+voraus. Dann:
+
+- Das Nachschlagen von Wörtern in ihrer Wortliste erreichte etwa <WalkFact of="floor.score" round />
+  von 100 Punkten bei <WalkFact of="floor.devSentences" /> Übungssätzen.
+- Der erste Übersetzer erreichte etwa <WalkFact of="devModel.score" round /> bei
+  denselben Übungssätzen — **unterhalb der Wortliste.**
+- Die Werkzeuge benannten dies deutlich und warnten, dass <WalkFact of="smallSample.n" />
+  Übungssätze zu wenig sind, um etwas anderes als große Unterschiede zu zeigen.
+- Die Vorhersage behielt recht, und der Großvater hielt sie fest.
+
+Das ist eine echte Erkenntnis, kein Misserfolg. Bei ein paar Dutzend Sätzen gewinnt
+anfangs oft eine Wortliste. Die Leitplanken stellen sicher, dass Sie das *wissen*,
+anstatt gesagt zu bekommen, er sei bereit — und die folgenden Runden sind der Weg,
+wie Sie daran vorbeiziehen.
+
+## Wenn es ein Sprachführer ist
+
+Das ist er anfangs fast immer: gut bei Sätzen, die denen ähneln, aus denen er gelernt
+hat, und unsicher bei allem Neuen. Er kann dennoch nützlich sein — für Entwürfe, die
+von Sprechern korrigiert werden, oder für Redewendungen, die Sie immer wieder
+verwenden. Und es ist der Beginn der Runden, die ihn verbessern.
+
+**Weiter:** [Die Zahlen lesen →](/docs/reading-the-numbers)
+
+## Weiterführende Informationen
+
+- [Training mit nmt-forge](/docs/agents/training) — Voreinstellungen,
+  Hintergrund-Aufträge, der Berater und die Bedeutung jeder Warnung.
+- [Messregeln](/docs/agents/measurement) — chrF++, Spannen, die Wörterbuch-Untergrenze
+  und Vorhersagen, ganz genau.
+- [Die Zahlen lesen](/docs/reading-the-numbers) — jede Zahl in einfachen Worten.

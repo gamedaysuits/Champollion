@@ -1,0 +1,801 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "git": {
+    "deploymentEnabled": false
+  },
+  "redirects": [
+    {
+      "source": "/give",
+      "destination": "/run_queue",
+      "permanent": true
+    },
+    {
+      "source": "/leaderboard",
+      "has": [
+        {
+          "type": "host",
+          "value": "mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/leaderboard?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/leaderboard",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/leaderboard?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/docs/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/docs/network/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/docs/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/docs/network/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/arena/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mtevalarena.org"
+        }
+      ],
+      "destination": "https://champollion.dev/arena/:path*?utm_source=mtevalarena.org&utm_medium=redirect",
+      "permanent": true
+    },
+    {
+      "source": "/arena/docs/:path*",
+      "destination": "/docs/network/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/arena/docs",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/arena/:locale/docs/:path*",
+      "destination": "/:locale/docs/network/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/arena/:locale/docs",
+      "destination": "/:locale/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/mesh",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mesh/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-preview",
+      "destination": "/vision",
+      "permanent": false
+    },
+    {
+      "source": "/arena/landscape",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/arena/landscape/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/arena/language-tree",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/arena/language-tree/:path*",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/trading-cards",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/trading-cards/:path*",
+      "destination": "/languages",
+      "permanent": true
+    },
+    {
+      "source": "/contests",
+      "destination": "/shared-tasks",
+      "permanent": false
+    },
+    {
+      "source": "/contests/:path*",
+      "destination": "/shared-tasks",
+      "permanent": false
+    },
+    {
+      "source": "/docs/network/audiences/for-translation-vendors",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/for-researchers",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/for-speakers",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/press",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/for-funders",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/audiences/:path*",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/audiences/:path*",
+      "destination": "/:locale/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/register-a-corpus",
+      "destination": "/docs/network/sovereignty/registering-corpora",
+      "permanent": true
+    },
+    {
+      "source": "/docs/build-mt-for-your-language",
+      "destination": "/docs/agents/shell",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/build-mt-for-your-language",
+      "destination": "/:locale/docs/agents/shell",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/corpus-creation",
+      "destination": "/docs/your-test-sentences",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/corpus-creation",
+      "destination": "/:locale/docs/your-test-sentences",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/getting-started/train-your-first-model",
+      "destination": "/docs/your-first-translator",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/getting-started/train-your-first-model",
+      "destination": "/:locale/docs/your-first-translator",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/train-your-own-model",
+      "destination": "/docs/your-first-translator",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/train-your-own-model",
+      "destination": "/:locale/docs/your-first-translator",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/serving-a-method",
+      "destination": "/docs/put-it-to-work",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/guides/serving-a-method",
+      "destination": "/:locale/docs/put-it-to-work",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/getting-started/deploy-to-production",
+      "destination": "/docs/put-it-to-work",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/getting-started/deploy-to-production",
+      "destination": "/:locale/docs/put-it-to-work",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/perspectives/from-benchmark-to-daily-use",
+      "destination": "/docs/put-it-to-work",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/perspectives/from-benchmark-to-daily-use",
+      "destination": "/:locale/docs/put-it-to-work",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/sovereignty/data-sovereignty",
+      "destination": "/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/sovereignty/data-sovereignty",
+      "destination": "/:locale/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/sovereignty/derived-artifacts",
+      "destination": "/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/sovereignty/derived-artifacts",
+      "destination": "/:locale/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/community/for-language-communities",
+      "destination": "/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/community/for-language-communities",
+      "destination": "/:locale/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/community/contact-objections-takedown",
+      "destination": "/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/community/contact-objections-takedown",
+      "destination": "/:locale/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/sovereignty",
+      "destination": "/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/sovereignty",
+      "destination": "/:locale/docs/your-words-your-rules",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/perspectives/how-speakers-get-paid",
+      "destination": "/docs/working-with-speakers",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/perspectives/how-speakers-get-paid",
+      "destination": "/:locale/docs/working-with-speakers",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/sovereignty/economic-model",
+      "destination": "/docs/getting-started/who-may-use-this",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/sovereignty/economic-model",
+      "destination": "/:locale/docs/getting-started/who-may-use-this",
+      "permanent": true
+    },
+    {
+      "source": "/docs/concepts/architecture",
+      "destination": "/docs/agents/rails-model",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/concepts/architecture",
+      "destination": "/:locale/docs/agents/rails-model",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/agent-guide",
+      "destination": "/docs/agents/serving",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/guides/agent-guide",
+      "destination": "/:locale/docs/agents/serving",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/getting-started/agent-guide",
+      "destination": "/docs/agents/measurement",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/getting-started/agent-guide",
+      "destination": "/:locale/docs/agents/measurement",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/getting-started/training-honestly",
+      "destination": "/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/getting-started/training-honestly",
+      "destination": "/:locale/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/getting-started/diagnosing-training",
+      "destination": "/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/getting-started/diagnosing-training",
+      "destination": "/:locale/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/getting-started",
+      "destination": "/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/getting-started",
+      "destination": "/:locale/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/back-translation",
+      "destination": "/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/back-translation",
+      "destination": "/:locale/docs/agents/training",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/coached-llm-prompting",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/coached-llm-prompting",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/few-shot-prompting",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/few-shot-prompting",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/dictionary-augmented-llm",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/dictionary-augmented-llm",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/fst-gated-pipeline",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/fst-gated-pipeline",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/rule-based-hybrid",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/rule-based-hybrid",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/fine-tuned-model",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/fine-tuned-model",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/chained-models",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/chained-models",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/partial-translation",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/partial-translation",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials/evolutionary-approach",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials/evolutionary-approach",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/tutorials",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/tutorials",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/tutorials/build-a-plugin",
+      "destination": "/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/tutorials/build-a-plugin",
+      "destination": "/:locale/docs/agents/methods",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/specifications/corpus-partnership",
+      "destination": "/docs/network/sovereignty/registering-corpora",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/specifications/corpus-partnership",
+      "destination": "/:locale/docs/network/sovereignty/registering-corpora",
+      "permanent": true
+    },
+    {
+      "source": "/docs/arena",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/arena",
+      "destination": "/:locale/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network",
+      "destination": "/:locale/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/how-it-works",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/how-it-works",
+      "destination": "/:locale/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/who-benefits",
+      "destination": "/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/who-benefits",
+      "destination": "/:locale/docs/reference/leaderboard",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/community/low-resource-languages",
+      "destination": "/docs/what-is-champollion",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/community/low-resource-languages",
+      "destination": "/:locale/docs/what-is-champollion",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/context/history-of-language-and-computation",
+      "destination": "/docs/network/context/mt-training-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/context/history-of-language-and-computation",
+      "destination": "/:locale/docs/network/context/mt-training-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/context/mt-field-briefing",
+      "destination": "/docs/network/context/mt-training-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/context/mt-field-briefing",
+      "destination": "/:locale/docs/network/context/mt-training-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/context/microeval-methodology",
+      "destination": "/docs/network/specifications/scoring",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/context/microeval-methodology",
+      "destination": "/:locale/docs/network/specifications/scoring",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/context/mt-evaluation-landscape",
+      "destination": "/docs/network/specifications/scoring",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/context/mt-evaluation-landscape",
+      "destination": "/:locale/docs/network/specifications/scoring",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/context/coverage-counting",
+      "destination": "/docs/atlas",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/context/coverage-counting",
+      "destination": "/:locale/docs/atlas",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/context/coverage-gap-estimate",
+      "destination": "/docs/atlas",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/context/coverage-gap-estimate",
+      "destination": "/:locale/docs/atlas",
+      "permanent": true
+    },
+    {
+      "source": "/docs/reference/supported-languages",
+      "destination": "/docs/getting-started/configuration",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/reference/supported-languages",
+      "destination": "/:locale/docs/getting-started/configuration",
+      "permanent": true
+    },
+    {
+      "source": "/docs/tutorials/translate-30-languages",
+      "destination": "/docs/getting-started/configuration",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/tutorials/translate-30-languages",
+      "destination": "/:locale/docs/getting-started/configuration",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/framework-integration",
+      "destination": "/docs/integrations/frameworks",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/guides/framework-integration",
+      "destination": "/:locale/docs/integrations/frameworks",
+      "permanent": true
+    },
+    {
+      "source": "/docs/tutorials/hugo-multilingual-site",
+      "destination": "/docs/integrations/frameworks",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/tutorials/hugo-multilingual-site",
+      "destination": "/:locale/docs/integrations/frameworks",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/enterprise",
+      "destination": "/docs/getting-started/who-may-use-this",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/guides/enterprise",
+      "destination": "/:locale/docs/getting-started/who-may-use-this",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/comparison",
+      "destination": "/docs/translate-an-app-or-website",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/guides/comparison",
+      "destination": "/:locale/docs/translate-an-app-or-website",
+      "permanent": true
+    },
+    {
+      "source": "/docs/guides/bridge",
+      "destination": "/docs/agents/serving",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/guides/bridge",
+      "destination": "/:locale/docs/agents/serving",
+      "permanent": true
+    },
+    {
+      "source": "/docs/concepts/content-resilience",
+      "destination": "/docs/concepts/how-sync-works",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/concepts/content-resilience",
+      "destination": "/:locale/docs/concepts/how-sync-works",
+      "permanent": true
+    },
+    {
+      "source": "/docs/concepts/context-rollover",
+      "destination": "/docs/concepts/how-sync-works",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/concepts/context-rollover",
+      "destination": "/:locale/docs/concepts/how-sync-works",
+      "permanent": true
+    },
+    {
+      "source": "/docs/concepts/research-papers-feed",
+      "destination": "/docs/concepts/how-sync-works",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/concepts/research-papers-feed",
+      "destination": "/:locale/docs/concepts/how-sync-works",
+      "permanent": true
+    },
+    {
+      "source": "/docs/network/specifications/language-cards",
+      "destination": "/docs/reference/language-card-spec",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(fr|de|nl|fil|es|zh|ja|ko|pt|th|vi|ar)/docs/network/specifications/language-cards",
+      "destination": "/:locale/docs/reference/language-card-spec",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/(queue|queue-preview|registry|mesh|corpus-wishlist).json",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/(llms-full.txt|run_queue)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ]
+}

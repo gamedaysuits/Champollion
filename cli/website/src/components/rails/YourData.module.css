@@ -1,0 +1,108 @@
+.head { padding-block: 56px 26px; border-bottom: 1px solid var(--hairline); }
+.kicker {
+  font-family: var(--font-rails-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--guard);
+  margin: 0 0 14px;
+}
+.h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 1.06;
+  margin: 0 0 16px;
+}
+
+.figure { margin: 0; max-width: 1040px; }
+.flowQ { font-family: var(--font-display); font-weight: 600; font-size: 1.22rem; line-height: 1.3; color: var(--text-primary); margin: 0 0 20px; }
+/* 1fr | arrows | 1fr: the line between your computer and the outside is the
+   exact centre, so ONE dashed rule runs through every lane */
+.flow { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 16.5rem) minmax(0, 1fr); row-gap: 14px; align-items: stretch; }
+.flow::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed var(--guard-line); transform: translateX(-1px); }
+.colHead { font-family: var(--font-rails-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px; }
+.colHeadLine { position: relative; z-index: 1; justify-self: center; text-align: center; color: var(--guard); background: var(--surface-0); padding: 0 8px; text-transform: none; letter-spacing: 0.02em; }
+.colHeadOut { padding-inline-start: 14px; }
+
+.stays { background: var(--surface-1); border: 1px solid var(--border-medium); border-radius: 8px; padding: 12px 16px; }
+.staysTitle { font-family: var(--font-rails-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 6px; }
+.staysList { margin: 0; padding-inline-start: 18px; color: var(--text-primary); font-size: 0.95rem; line-height: 1.55; }
+
+.what { display: flex; align-items: center; border-radius: 8px; padding: 12px 16px; font-weight: 600; font-size: 0.97rem; line-height: 1.4; color: var(--text-primary); background: var(--surface-2); border: 1px solid var(--border-medium); }
+.what_guard { background: var(--guard-subtle); border-color: var(--guard); }
+.what_gap { background: none; border: 1px dashed var(--slate); }
+.what_in { background: none; border-color: var(--hairline); color: var(--text-secondary); font-weight: 500; }
+
+.where { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 8px 4px 8px 14px; }
+.whereName { font-weight: 600; color: var(--text-primary); line-height: 1.35; }
+.whereWhen { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.45; }
+.whereAlso { margin-top: 6px; }
+/* the shared destination is named once on wide screens (the cell above spans two lanes) */
+.whereRepeat { display: none; }
+
+/* the tag sits ON its arrow: the shaft runs out from both sides of what crosses */
+.cross { position: relative; z-index: 1; display: grid; place-items: center; padding: 0 10px; }
+.cross > * { grid-area: 1 / 1; }
+.crossStop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.arrow { display: flex; align-items: center; width: 100%; color: var(--slate); }
+.shaft { flex: 1; height: 0; border-top: 2px solid currentColor; }
+.tip { flex: none; width: 10px; height: 10px; fill: currentColor; }
+.arrow_guard { color: var(--guard); }
+.arrow_guard .shaft { border-top-width: 3px; }
+.arrow_gap .shaft { border-top-style: dashed; }
+.arrow_in { flex-direction: row-reverse; }
+.arrow_in .tip { transform: rotate(180deg); }
+/* never crosses: the line stops AT the border, with a bar */
+.arrow_stop { width: 50%; align-self: flex-start; color: var(--text-secondary); }
+.stopBar { flex: none; width: 3px; height: 16px; background: currentColor; border-radius: 1px; }
+.tag { font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; line-height: 1.3; text-align: center; padding: 3px 9px; border-radius: 999px; border: 1px solid currentColor; background: var(--surface-0); color: var(--slate); max-width: calc(100% - 36px); }
+.tag_guard { color: var(--guard); font-weight: 600; }
+.tag_gap { color: var(--text-primary); border-style: dashed; }
+.tag_stop { color: var(--text-secondary); }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 720px) {
+  .flow { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+  .flow::before, .colHead { display: none; }
+  .whereRepeat { display: flex; }
+  .stays, .what { margin-top: 16px; }
+  .cross, .crossStop { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; padding: 6px 0 6px 22px; }
+  .arrow { flex-direction: column; width: auto; height: 30px; }
+  .shaft { border-top: none; border-left: 2px solid currentColor; width: 0; }
+  .arrow_guard .shaft { border-left-width: 3px; }
+  .arrow_gap .shaft { border-left-style: dashed; }
+  .tip { transform: rotate(90deg); }
+  .arrow_in { flex-direction: column-reverse; }
+  .arrow_in .tip { transform: rotate(-90deg); }
+  .arrow_stop { width: auto; height: 18px; align-self: center; }
+  .stopBar { width: 16px; height: 3px; }
+  .where { padding: 2px 0 0 0; }
+}
+.caption { margin-top: 10px; font-size: 0.86rem; color: var(--text-secondary); }
+
+.tableWrap { overflow-x: auto; margin: 6px 0 20px; }
+.table { width: 100%; border-collapse: collapse; display: table; font-size: 0.93rem; line-height: 1.5; }
+.table th, .table td { border: none; border-bottom: 1px solid var(--hairline); padding: 10px 12px 10px 0; text-align: start; vertical-align: top; }
+.table thead th { font-family: var(--font-rails-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
+.table tbody th { color: var(--text-primary); font-weight: 600; min-width: 170px; }
+.table td { color: var(--text-secondary); }
+.table tr { background: none !important; }
+
+.p { margin: 0 0 10px; }
+.p:last-child { margin-bottom: 0; }
+.tiers { margin: 10px 0 18px; padding-inline-start: 20px; max-width: 900px; line-height: 1.6; color: var(--text-secondary); }
+.tiers li { margin-bottom: 10px; }
+.tiers strong { color: var(--text-primary); }
+.tierKey { font-family: var(--font-rails-mono); font-size: 0.78rem; color: var(--rail); }
+.keys { color: var(--guard); }
+
+@media (max-width: 720px) {
+  .table thead { display: none; }
+  .table, .table tbody, .table tr, .table th, .table td { display: block; width: 100%; }
+  .table tr { border-bottom: 1px solid var(--hairline); padding-block: 8px; }
+  .table th, .table td { border: none; padding: 2px 0; }
+}
+@media (max-width: 480px) {
+  .head { padding-block: 34px 20px; }
+}

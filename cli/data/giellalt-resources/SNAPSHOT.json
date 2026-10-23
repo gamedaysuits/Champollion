@@ -1,0 +1,49 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "giellalt-resources",
+  "upstream": "https://api.github.com/orgs/giellalt/repos?per_page=100&type=public ; https://api.github.com/orgs/UAlbertaALTLab/repos?per_page=100&type=public",
+  "license": "LicenseRef-GitHub-Repository-Metadata",
+  "licenseUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+  "citation": "GiellaLT and UAlbertaALTLab language-resource repositories, retrieved 2026-08-06.",
+  "pin": {
+    "kind": "release",
+    "value": "2026-08-06",
+    "doi": null,
+    "date": "2026-08-06"
+  },
+  "pinQuality": "self-attested",
+  "files": [
+    {
+      "path": "resources.json",
+      "bytes": 135244,
+      "sha256": "c34718f422fe6424f6bc0df51bb22fa1ae94fcaeb29f1dda33f4ef2bfe08d41a",
+      "url": "https://api.github.com/orgs/giellalt/repos?per_page=100&type=public ; https://api.github.com/orgs/UAlbertaALTLab/repos?per_page=100&type=public",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/giellalt-resources.mjs",
+  "notes": "452 language-keyed repositories out of 519 public ones across giellalt and UAlbertaALTLab; 0 archived. By kind: analyser=158, corpus=103, dictionary=109, keyboard=78, speech=4. REPLACES cli/shared/curated-fsts.json (four languages by hand) and the dictionary half of curated-dictionary-flags.json. FIVE CONVENTIONS, not one: an earlier version of this fetcher read lang-* only, which was a THIRD of the catalogue — dictionaries, corpora, keyboards and speech resources were all invisible. EXISTENCE ONLY: that a repository exists, who publishes it, and whether it is archived — never that it compiles, covers a grammar, or is accurate, which would be claims about quality the card boundary forbids. DICTIONARIES ARE DIRECTED: dict-sme-nob and dict-nob-sme are both published and are not interchangeable. Licence is recorded PER REPOSITORY rather than assumed uniform, because the project's own boundary forbids bundling GPL/AGPL code into proprietary CLI paths and that decision needs the actual terms; 184 carry terms GitHub cannot identify, including most Indigenous North American entries, where no permission beyond pointing at them is inferred. PIN QUALITY: GitHub publishes no release for an org listing, so the snapshot is the pin.",
+  "resources": 452,
+  "byKind": {
+    "analyser": 158,
+    "corpus": 103,
+    "dictionary": 109,
+    "keyboard": 78,
+    "speech": 4
+  },
+  "archived": 0,
+  "licenceUnestablished": 184,
+  "licences": {
+    "LGPL-3.0": 70,
+    "NOASSERTION": 73,
+    "AGPL-3.0": 2,
+    "GPL-3.0": 21,
+    "(none declared)": 111,
+    "GPL-2.0": 3,
+    "CC-BY-4.0": 94,
+    "MIT": 78
+  },
+  "fetchedAt": "2026-08-06T23:45:59.284Z"
+}

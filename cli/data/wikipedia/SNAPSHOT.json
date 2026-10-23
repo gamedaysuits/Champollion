@@ -1,0 +1,28 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "wikipedia",
+  "upstream": "https://meta.wikimedia.org/w/api.php?action=sitematrix&format=json&formatversion=2",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+  "citation": "Wikimedia Foundation. 2026-08-05. Sitematrix — the list of Wikipedia language editions.",
+  "pin": {
+    "kind": "query",
+    "value": "sitematrix-2026-08-05",
+    "doi": null,
+    "date": "2026-08-05"
+  },
+  "files": [
+    {
+      "path": "editions.json",
+      "bytes": 47164,
+      "sha256": "ec08139ac2359afc3ae06008cb69be846fccfb3b2a6987b2cf3c2159574528ce",
+      "url": "https://meta.wikimedia.org/w/api.php?action=sitematrix&format=json&formatversion=2",
+      "upstreamChecksum": null,
+      "upstreamVerified": false
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/wikipedia.mjs",
+  "notes": "A live endpoint with no release, so the pin is the retrieval date plus the result checksum; a re-fetch returning different bytes is a NEW release, not a drift failure. Closed wikis are excluded — a closed edition is not a resource anyone can contribute to. Article counts are deliberately NOT fetched. 348 open editions.",
+  "fetchedAt": "2026-08-05T07:50:45.587Z"
+}

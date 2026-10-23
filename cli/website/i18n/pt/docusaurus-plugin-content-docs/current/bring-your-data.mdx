@@ -1,0 +1,103 @@
+---
+title: "Traga o que você tem"
+slug: /bring-your-data
+description: "Traga suas frases, listas de palavras e anotações do jeito que você as guarda — e decida, para cada arquivo, a quem ele pertence e como pode ser usado."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Traga o que você tem
+
+Um tradutor aprende com **pares**: uma frase em um idioma e a mesma frase no
+outro. Esta página explica como trazer os seus — e sobre as perguntas que serão
+feitas para cada arquivo, que importam mais do que qualquer outra coisa nos
+trilhos.
+
+## O que as ferramentas conseguem ler
+
+Traga seus arquivos do jeito que você os guarda. Você não precisa converter nada.
+
+| O que você tem | O que as ferramentas leem |
+|---|---|
+| Uma planilha de frases e traduções | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` ou texto sem formatação |
+| Uma tabela em um documento do Word | As linhas da tabela |
+| Um dicionário feito no Toolbox ou FieldWorks (programas que muitos linguistas usam) | As palavras — e suas frases de exemplo, como pares |
+| Gravações transcritas no ELAN (um programa para transcrever gravações) | As linhas transcritas e suas traduções, como pares |
+| Uma lista de palavras | Cada palavra e sua tradução |
+| Notas sobre a gramática | Guardadas em seu próprio lugar, para consulta de pessoas e ferramentas |
+| Escrituras | Apenas se você pedir, e nenhum tradutor aprende com elas até que as pessoas que as guardam autorizem |
+
+Seus arquivos são lidos onde estão. Se as colunas de uma planilha não indicarem
+qual idioma é qual, as ferramentas perguntam a você — elas nunca adivinham a
+partir do conteúdo.
+
+As ferramentas também procuram linhas que pareçam erradas — uma tradução que
+escorregou uma linha para baixo, duas colunas invertidas, uma tradução copiada
+do outro lado, o mesmo par repetido, uma tradução muito mais longa ou mais curta
+do que o habitual — e informam quais linhas são essas, pelo número. Elas nunca
+alteram nem removem nada; quem conhece os dados é quem decide.
+
+## As ferramentas contam. Elas não leem suas palavras para ninguém.
+
+Quando um arquivo entra, as ferramentas informam quantos pares encontraram e
+quais colunas usaram. Isso é tudo o que é mostrado ao seu assistente de IA:
+contagens e nomes de colunas, nunca as frases em si.
+
+## As perguntas para cada arquivo
+
+Antes que qualquer coisa aprenda com um arquivo, os trilhos perguntam às
+pessoas que o guardam:
+
+- **A quem ele pertence?** Com suas próprias palavras — uma família, um
+  professor, um escritório comunitário.
+- **De quem são as palavras nele?** As pessoas que disseram ou escreveram as
+  frases. Os cadernos de uma avó guardam as palavras dela, mesmo que o neto as
+  tenha digitado.
+- **Elas concordaram com o uso?** *Sim*, *ainda não* ou *algumas disseram não*.
+  Os trilhos continuam perguntando até que isso seja respondido. Palavras de
+  pessoas que ainda não concordaram, ou que disseram não, nunca são usadas para
+  ensinar um tradutor.
+- **Um tradutor pode aprender com ele?**
+- **Ele pode sair deste computador em algum momento?** Os arquivos começam
+  privados — mantidos neste computador — até que você responda.
+
+As respostas são registradas em uma pequena nota ao lado do arquivo, e todas as
+ferramentas a respeitam. Após sua primeira resposta, as ferramentas só podem
+tornar as regras mais rígidas, nunca mais brandas. A única exceção: um falante
+que ainda não havia sido consultado ainda pode dizer sim.
+
+Seu assistente faz essas perguntas; ele nunca deve respondê-las por você. Se
+você ainda não souber — por exemplo, se ainda precisar perguntar a uma tia —,
+diga *ainda não*. Os trilhos deixam esse arquivo de lado e seguem em frente, e
+perguntam de novo mais tarde, com calma.
+
+## O que você verá
+
+Em nossa simulação prática das ferramentas — uma demonstração com frases
+inventadas —, uma família trouxe quatro arquivos: <WalkFact of="trainingFiles.0.pairs" />
+pares de frases da planilha de um avô, <WalkFact of="trainingFiles.1.pairs" />
+da de uma tia, uma lista de <WalkFact of="lexicon.pairs" /> palavras e
+<WalkFact of="test.pairs" /> frases revisadas por um falante, para testes. A cada
+vez, o assistente informou a contagem e depois perguntou a quem o arquivo
+pertencia e se um tradutor poderia aprender com ele.
+
+## Frases de outros lugares
+
+Se você usar frases que não escreveu — de um livro, de um site, de uma coleção
+publicada —, elas vêm com suas próprias regras. Algumas podem ser lidas, mas não
+compartilhadas; outras não podem ser usadas para ensinar nada. Traga-as da mesma
+maneira e responda às perguntas com sinceridade sobre elas também: as
+ferramentas vão seguir à risca o que você responder. Quando a licença de uma
+coleção for incomum ou pouco clara, as ferramentas não a enviarão a um serviço
+externo de IA até que seus detentores tenham dito sim.
+
+**A seguir:** [Separe suas frases de teste →](/docs/your-test-sentences)
+
+## Aprofunde-se
+
+- [Regras de dados e transmissão](/docs/agents/data-rules) — cada campo da
+  nota ao lado de cada arquivo e o que cada ferramenta faz com ele.
+- [Operando os trilhos pelo shell](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, com todas as opções.
+- [Registrando um conjunto de teste](/docs/network/sovereignty/registering-corpora) —
+  os quatro níveis de exposição para conjuntos que você possa compartilhar depois.

@@ -1,0 +1,35 @@
+{
+  "$schema": "./schemas/domain-taxonomy.schema.json",
+  "version": "1.0.0",
+  "description": "Closed SSOT for Champollion translation-domain codes. The 17 content codes below are the ONLY domains a corpus card may declare for dev.domain / test.domain / pairGeneration.domain. The classifier (arena/scripts/corpora-builder/corpora_builder/domain_classifier.py VALID_DOMAINS) and the corpora-card schema (cli/shared/schemas/corpora-card.schema.json) both reference this list — keep all three in sync. This taxonomy is what unblocks the per-pair 'general' score (pool a pair's domain corpora, score once, pie-chart the composition) and domain-specific routing.",
+  "domains": {
+    "ui": "User-interface strings — buttons, menus, settings, dialogs, notifications, app chrome.",
+    "legal": "Legal and judicial text — contracts, statutes, court proceedings, clauses, compliance.",
+    "medical": "Clinical and healthcare text — diagnoses, treatments, prescriptions, patient care.",
+    "financial": "Banking, accounting, and investment text — transactions, balances, audits, markets.",
+    "edu": "Educational material — lessons, textbooks, curricula, classroom and academic learning content.",
+    "ecommerce": "Online-retail text — products, carts, orders, shipping, returns, customer reviews.",
+    "marketing": "Promotional and brand text — campaigns, slogans, advertising and persuasion copy.",
+    "gov": "Government and public-administration text — policy, legislation, civic services, enforcement.",
+    "scientific": "Research and academic science — hypotheses, methods, results, abstracts, papers.",
+    "religious": "Religious and devotional text — scripture, prayer, worship, ritual. LABEL ONLY (see notes.religious).",
+    "support": "Customer/technical support text — troubleshooting, help, tickets, FAQs, escalations.",
+    "subtitles": "Film/TV subtitles and spoken dialogue — short lines, stage directions, transcribed speech.",
+    "news": "Journalism and reporting — articles, press releases, current events, citizen journalism.",
+    "literary": "Literary prose and poetry — novels, verse, narrative fiction, descriptive prose.",
+    "conv": "Everyday conversational text — casual dialogue, social posts, general-purpose sentences.",
+    "tech": "Software and engineering text — APIs, servers, protocols, configuration, infrastructure.",
+    "humanitarian": "Crisis-response and humanitarian text — public-health, disaster, and aid information (e.g. TICO-19, Gamayun / CLEAR Global)."
+  },
+  "composite": {
+    "mixed": {
+      "definition": "No single dominant content domain — the corpus spans several. 'mixed' is a COMPOSITION MARKER, not a content domain, and is NEVER itself a coverage credit. A domain of 'mixed' MUST be accompanied by a domainDistribution that breaks the corpus down into the content codes above; 'mixed' as a bare label (no distribution) is not permitted.",
+      "requiresDistribution": true
+    }
+  },
+  "notes": {
+    "religious": "'religious' stays in the vocabulary for honest LABELING only and is NEVER a coverage credit. Bible / religious sources are excluded from scoring elsewhere (colonial-data doctrine), so labelling a corpus 'religious' documents what it is without ever earning it ranking eligibility.",
+    "humanitarian": "Added beyond the 16 keyword-classifiable codes. It is assigned as a deliberate card fact (TICO-19, Gamayun), never auto-classified — the keyword classifier has no 'humanitarian' keywords, so it only ever appears when an author labels it.",
+    "mixed-vs-content": "Exactly the 17 content codes are valid as a sole/primary domain. 'mixed' is the one allowed non-content value and only with a domainDistribution. Anything else hard-fails the registry build (arena/scripts/build_registry.py)."
+  }
+}

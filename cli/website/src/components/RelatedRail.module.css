@@ -1,0 +1,130 @@
+/* ====================================================================
+   RelatedRail — onward-links rail at the bottom of doc pages.
+   House style (cli/website/DESIGN.md): triad hairline above the rail,
+   compact glass cards, transform/opacity-only motion with a
+   prefers-reduced-motion fallback. Tokens fall back to Infima vars so
+   the same file works across all locales of the single site (the former
+   arena/website copy is retired after the 2026-06-20 Arena merge).
+   ==================================================================== */
+
+.rail {
+  margin-top: 3rem;
+}
+
+/* The triad rule — architectural accent only, never a data encoding. */
+.rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+  background: linear-gradient(
+    90deg,
+    var(--vital-safe) 0%,
+    var(--vital-vulnerable) 50%,
+    var(--vital-endangered) 100%
+  );
+}
+
+.kicker {
+  font-family: var(--font-display, var(--ifm-heading-font-family, serif));
+  font-optical-sizing: auto;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.8rem;
+  color: var(--ifm-font-color-base);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 0.65rem;
+}
+
+.item {
+  margin: 0;
+}
+
+/* Compact glass card */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  height: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--ifm-background-surface-color);
+  background: color-mix(
+    in srgb,
+    var(--ifm-background-surface-color) 72%,
+    transparent
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  transition:
+    transform 0.18s var(--ease-out, ease),
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+/* Kind chip — badge-grade radius (DESIGN.md §5), accent tint */
+.kind {
+  align-self: flex-start;
+  padding: 0.08rem 0.45rem;
+  border-radius: var(--radius-sm, 6px);
+  background: var(--accent-subtle, rgba(15, 118, 110, 0.1));
+  color: var(--ifm-color-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.ext {
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
+.note {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ifm-font-color-secondary, var(--text-secondary));
+}
+
+@media (max-width: 480px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  .card:hover,
+  .card:focus-visible {
+    transform: none;
+  }
+}

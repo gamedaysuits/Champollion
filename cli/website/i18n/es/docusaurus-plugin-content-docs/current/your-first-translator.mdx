@@ -1,0 +1,84 @@
+---
+title: "Su primer traductor"
+slug: /your-first-translator
+description: "Cómo enseñarle a su primer traductor, paso a paso: las revisiones antes de empezar, la predicción que usted escribe primero, el diccionario que tiene que superar y cómo leer su primer resultado."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Su primer traductor
+
+Esta es la parte emocionante: la primera vez que un traductor aprende de sus
+oraciones y usted lo prueba. También es donde los rieles son más cuidadosos, porque
+el primer resultado es el que la gente recuerda.
+
+## Antes de comenzar la enseñanza
+
+Su asistente recorre estos pasos en orden. La mayoría simplemente los hace; se detiene
+y le pregunta cuando un paso le corresponde a usted.
+
+1. **Instale las herramientas de entrenamiento** — una sola vez y solo con su consentimiento. Se descargan en su computadora.
+2. **Reúna las oraciones en un solo archivo** — las herramientas combinan sus archivos, conservan la más estricta de sus reglas y omiten las repeticiones exactas. Los archivos a partir de los cuales ningún traductor deba aprender se apartan, no se eliminan.
+3. **Compare con las oraciones de prueba** — las copias y copias casi idénticas de sus oraciones de prueba se hacen a un lado.
+4. **Escriba lo que espera** — antes de que exista cualquier resultado, con sus propias palabras. *«En el mejor de los casos, una guía de frases»* es una predicción perfectamente válida. Los rieles no avanzarán hasta que esté escrito.
+5. **Aparte oraciones de práctica** — una cuarta parte de sus oraciones mientras tenga menos de 200, luego 50 y después una de cada diez una vez que supere esa cifra; se reservan para poder revisar el traductor a medida que aprende sin tocar las oraciones de prueba.
+6. **Mida el diccionario** — si incluyó una lista de palabras, las herramientas primero comprueban qué tan lejos se llega con solo buscar cada palabra. Vale la pena usar su traductor únicamente allí donde supere eso.
+
+## Enseñanza
+
+Luego el traductor aprende. Se ejecuta en su computadora y no se envía nada
+a ningún lado. Las herramientas revisan la memoria de su computadora y eligen lo que
+puede manejar: en una Mac más reciente, o con una tarjeta gráfica NVIDIA, el tipo de
+traductor más potente (o una versión más ligera de este, con menos memoria); en otras
+computadoras, uno mucho más pequeño. Solo un traductor aprende a la vez en una
+computadora.
+
+Puede tomar un tiempo: minutos para uno pequeño, unas pocas horas para el tipo
+más potente. Se supervisa a sí mismo: si no muestra señales de vida al inicio, deja
+de avanzar o se pasa de un día, se detiene y explica el motivo. Nada se ejecuta
+para siempre.
+
+## El primer resultado
+
+Cuando termina, el traductor se evalúa con sus oraciones de prueba y usted ve
+una **puntuación**: un número sobre 100 que indica qué tan cerca estuvieron sus traducciones
+de la forma en que las dijo su hablante. Junto a ella, las herramientas muestran un rango —qué tan
+seguras están— y cada advertencia que corresponda, palabra por palabra.
+
+Luego puede probarlo usted mismo, en su navegador web, con sus propias oraciones.
+
+## Lo que verá
+
+En nuestra prueba práctica de las herramientas —con oraciones inventadas y un
+traductor simulado para que la ejecución tome segundos—, la familia predijo *«un libro de frases en
+el mejor de los casos»*. Luego:
+
+- Buscar palabras en su lista de palabras obtuvo cerca de <WalkFact of="floor.score" round />
+  de 100 en <WalkFact of="floor.devSentences" /> oraciones de práctica.
+- El primer traductor obtuvo cerca de <WalkFact of="devModel.score" round /> en
+  las mismas oraciones de práctica: **por debajo de la lista de palabras.**
+- Las herramientas lo dijeron con total claridad y advirtieron que <WalkFact of="smallSample.n" />
+  oraciones de práctica son muy pocas para mostrar algo más que grandes diferencias.
+- La predicción se cumplió y el abuelo la registró.
+
+Esa es una lección real, no un fracaso. Con unas pocas decenas de oraciones, una lista de palabras
+suele ganar al principio. Los rieles se aseguran de que usted *sepa* eso, en lugar de que le
+digan que está listo, y las rondas que siguen son la forma de superarlo.
+
+## Cuando es un libro de frases
+
+Casi siempre lo es al principio: bueno con oraciones como las que aprendió,
+e inseguro con cualquier cosa nueva. Aún así puede ser útil: para borradores que un
+hablante corrige, o para frases que usted usa una y otra vez. Y es el comienzo
+de las rondas que lo hacen mejorar.
+
+**Siguiente:** [Cómo leer los números →](/docs/reading-the-numbers)
+
+## Para profundizar
+
+- [Entrenamiento con nmt-forge](/docs/agents/training) — preajustes, tareas
+  en segundo plano, el asesor y qué significa cada advertencia.
+- [Reglas de medición](/docs/agents/measurement) — chrF++, rangos, el
+  piso del diccionario y las predicciones, con exactitud.
+- [Cómo leer los números](/docs/reading-the-numbers) — cada número, en palabras
+  sencillas.

@@ -1,0 +1,170 @@
+{
+  "id": "eval-wmt16-news-test-v1",
+  "type": "multiway",
+  "name": "WMT2016 News Translation — blind test set",
+  "version": "1.0",
+  "languages": [
+    "ces",
+    "deu",
+    "eng",
+    "fin",
+    "ron",
+    "rus",
+    "tur"
+  ],
+  "description": "WMT2016 News Translation blind test set, fetched on demand via sacreBLEU (`sacrebleu -t wmt16 -l <pair> --echo src,ref`; pinned sacreBLEU 2.6.0). One of the field's canonical HELD-OUT blind sets — the clean tier that complements our public dev splits. Covers news journalism. Scored against the PRIMARY reference (ref[0]); each sacreBLEU langpair is a distinct directed corpus (en-de → eng→deu, de-en → deu→eng). Domain 'news' (the WMT News Translation task).",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "unidirectional",
+    "doNotTrain": true,
+    "domain": "news",
+    "explicitPairs": [
+      {
+        "source": "ces",
+        "target": "eng",
+        "srcCode": "cs",
+        "tgtCode": "en",
+        "size": 2999,
+        "sha256": "4199fa1a69f3ecea2e4f75d85fa1fdba51c81df3895fe4e1cd210292a59af639"
+      },
+      {
+        "source": "deu",
+        "target": "eng",
+        "srcCode": "de",
+        "tgtCode": "en",
+        "size": 2999,
+        "sha256": "787a781e0721f6da4eb336fa387bfcc90f91accf09e9aa0e8acc7d53e31332c4"
+      },
+      {
+        "source": "eng",
+        "target": "ces",
+        "srcCode": "en",
+        "tgtCode": "cs",
+        "size": 2999,
+        "sha256": "9c653d36ebeff0d68dde36352b7e5892662f3d07e31ad88909fed6dfcde82665"
+      },
+      {
+        "source": "eng",
+        "target": "deu",
+        "srcCode": "en",
+        "tgtCode": "de",
+        "size": 2999,
+        "sha256": "06cb2a318ddf0797386b0bd8b28453d5c274f50499cc571aac536fa9f052723c"
+      },
+      {
+        "source": "eng",
+        "target": "fin",
+        "srcCode": "en",
+        "tgtCode": "fi",
+        "size": 3000,
+        "sha256": "943acad0b5b0d2240926481a8b1d088cbbf8ff71c629398c34e0c187713164ac"
+      },
+      {
+        "source": "eng",
+        "target": "ron",
+        "srcCode": "en",
+        "tgtCode": "ro",
+        "size": 1999,
+        "sha256": "17df46ae465ecbd8d3a1515e572c154f3ff693a8e12c30a85b3c3ecc3d113e5b"
+      },
+      {
+        "source": "eng",
+        "target": "rus",
+        "srcCode": "en",
+        "tgtCode": "ru",
+        "size": 2998,
+        "sha256": "4739c4a77b7647b154935b7449cdf9a81ce56935b97f7dbd9cb4c989031f7ab9"
+      },
+      {
+        "source": "eng",
+        "target": "tur",
+        "srcCode": "en",
+        "tgtCode": "tr",
+        "size": 3000,
+        "sha256": "01af406ed49385acea5ba506dbd0dc5f4e4ea06f7f3a1e10beb070de6343c40a"
+      },
+      {
+        "source": "fin",
+        "target": "eng",
+        "srcCode": "fi",
+        "tgtCode": "en",
+        "size": 3000,
+        "sha256": "e41be45351d92ba7e26d0f828f5aeabe2c20074c0389076e965acd91a82a45a8"
+      },
+      {
+        "source": "ron",
+        "target": "eng",
+        "srcCode": "ro",
+        "tgtCode": "en",
+        "size": 1999,
+        "sha256": "3c41cf4abeb1a63d6bc11a3591abb4a342bd52229b9961b37ea95275ba24a8fe"
+      },
+      {
+        "source": "rus",
+        "target": "eng",
+        "srcCode": "ru",
+        "tgtCode": "en",
+        "size": 2998,
+        "sha256": "d878953af72ecb5533cdb1fc2e15ce6502e244957225fad244afdbae1081f76f"
+      },
+      {
+        "source": "tur",
+        "target": "eng",
+        "srcCode": "tr",
+        "tgtCode": "en",
+        "size": 3000,
+        "sha256": "ff51f751fdbf48c6f94a6235bc17ffa494d0b99418a7d844efaa1a115e3fe8f5"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "WMT2016 News Translation test",
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out blind references (relative-comparison-only)",
+      "size": 33990
+    }
+  ],
+  "download": {
+    "method": "manual",
+    "url": "https://www.statmt.org/wmt16/",
+    "instructions": "Fetched on demand via sacreBLEU: `sacrebleu -t wmt16 -l <langpair> --echo src,ref` (pinned sacreBLEU 2.6.0). sacreBLEU verifies the upstream archive md5; Champollion never hosts the content.",
+    "sha256": null,
+    "revision": "sacrebleu-2.6.0",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "WMT (Conference on Machine Translation)",
+    "url": "https://www.statmt.org/wmt16/",
+    "paper": "https://aclanthology.org/venues/wmt/",
+    "citation": "Findings of the 2016 Conference on Machine Translation (WMT16). statmt.org/wmt16.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "LicenseRef-WMT-Research-Use",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Released for research evaluation; not licensed for unrestricted AI training. doNotTrain protects benchmark integrity.",
+    "notes": "WMT shared-task test data is distributed for RESEARCH use; the references are professionally produced but the underlying sources and terms are not blanket-permissive. Tagged commercial=false / redistribution=false so it stays out of every prize, commercial, and API lane (license_use.py). Champollion never hosts the content — sacreBLEU fetches it from source on demand. transmissionPolicy 'no-train' (founder decision 2026-07-19, docs/IP_TRANSMISSION_REVIEW_2026-07-19.md §6): WMT distributes these test sets FOR research evaluation — evaluation is the license's stated purpose, so remote model-API evaluation proceeds without a per-dataset upstream ask, restricted to no-train channels (docs/DATA_BOUNDARIES.md §'Transmission to model APIs')."
+  },
+  "transmissionPolicy": "no-train",
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out WMT benchmark: training on it defeats its purpose. Research-use license — kept out of every commercial / prize / API lane; the content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "WMT2016 News Translation test set — public since 2016 and in essentially every frontier model's training crawl. Maximally memorized, so its scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute translation quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-24",
+    "populatedFrom": "sacreBLEU 2.6.0 DATASETS['wmt16']; per-pair size = built segment count, sha256 = sha of the deterministic built corpus. Generated by build_wmt_general_cards.py.",
+    "pinnedPairs": 12
+  }
+}

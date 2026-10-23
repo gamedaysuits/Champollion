@@ -1,0 +1,95 @@
+---
+title: Set aside your test sentences
+slug: /your-test-sentences
+description: "Why every translator must be judged on sentences it never learned from, how to choose good test sentences, and how the rails protect them."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Set aside your test sentences
+
+Before any translator learns anything, you set aside a few sentences to test
+it with. This is the most important step on the rails. Every result you'll
+ever see is measured on these sentences — so if they're wrong, every result is
+wrong.
+
+## Why it matters
+
+Imagine testing a student with the exact questions from their homework. They'd
+look brilliant, and you'd learn nothing about what they can really do. A
+translator is the same. Tested on sentences it learned from, it simply
+remembers them.
+
+So the test sentences are kept apart: no translator ever learns from them, and
+they're used only to judge.
+
+## Choosing good test sentences
+
+- **Checked by a fluent speaker.** Each sentence and its translation should be
+  right, in the way your community says it.
+- **Real sentences you'd want translated.** Everyday things you'd say at home,
+  write in a note, or teach in a class — the kinds of sentences the translator
+  is for.
+- **A mix.** Questions, statements, requests; short ones and longer ones.
+- **Not copied from the sentences you'll teach with.** Write them fresh, or
+  take them from a separate source.
+- **Spelled the same way as the rest.** Agree on one way to spell the
+  language before you start.
+- **As many as your speaker can check.** A few dozen is a start; with so few,
+  every result is rough, and the tools show you a wide range instead of a
+  single number. A few hundred let you see smaller differences.
+
+## How the rails protect them
+
+You put them in their own place — the test shelf — and the tools mark them:
+
+- private: kept on this computer, unless the people who hold them decide
+  otherwise,
+- never to be learned from,
+- kept out of what the tools print.
+
+Then, before teaching starts, every sentence the translator would learn from
+is checked against the test sentences. Copies and near-copies are set aside,
+so the translator can't get credit for memory.
+
+And every time the training tools score the test sentences, it's written
+down. Day to
+day, progress is judged on a separate set of **practice sentences**, so the
+test sentences stay fresh for the moments that matter.
+
+## What you'll see
+
+In the recorded walk — an illustration with invented sentences — the family
+set aside <WalkFact of="test.pairs" /> checked sentences. When the tools checked
+the other sentences against them, they found that <WalkFact of="twins.n" /> of them, about <WalkFact of="twins.pct" />
+in 100, had a near-copy among the sentences the family meant to teach with.
+Those near-copies were set aside before any teaching began. Without that step,
+the first score would have looked better than it was.
+
+## Sharing a test set later
+
+Your test sentences can stay on your computer forever — that's the default.
+If you ever want others to be able to measure against them, the tools can
+register the set at one of four levels:
+
+- **Kept here** — never registered; nothing leaves this computer.
+- **Listed privately** — only a description of the set is shared, never the
+  sentences. Results can be published without anyone seeing the data.
+- **Listed publicly** — a description, plus a pointer to where the set is
+  already published. Only for sets whose licence allows it. Champollion never
+  hosts the sentences.
+- **Sealed** — locked on your computer with a key, so others can try their
+  translators on it without ever seeing it.
+
+[Host a sealed test](/docs/host-a-sealed-test) explains the last one.
+
+**Next:** [Your first translator →](/docs/your-first-translator)
+
+## Go deeper
+
+- [Measurement rules](/docs/agents/measurement) — test, practice (dev) and
+  sealed sets; how reads are logged; what a prediction unlocks.
+- [The guardrails, one by one](/docs/guardrails) — near-copies and peeking,
+  told as stories.
+- [Registering a test set](/docs/network/sovereignty/registering-corpora) —
+  the exposure levels in detail.

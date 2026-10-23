@@ -1,0 +1,151 @@
+{
+  "id": "eval-nictsap-test-v1",
+  "type": "multiway",
+  "name": "SAP Software Documentation (NICT-SAP task) — IT domain (test)",
+  "version": "1.0",
+  "languages": [
+    "eng",
+    "hin",
+    "ind",
+    "tha",
+    "zsm"
+  ],
+  "description": "SAP Software Documentation — the held-out IT-domain test split used by the WAT NICT-SAP shared task: English ↔ Hindi, Indonesian, Malay, Thai (~2k segments per direction) drawn from SAP Help Portal product documentation, with document-structure metadata upstream (unused by this sentence-level recipe). Both directions scored. The repo also ships en↔ja/ko/vi/zh/zf test data — excluded as out of the intake scope, addable by extending the recipe. Fetched on demand from the pinned commit; Champollion never hosts the content. Domain: tech. Contamination HIGH — public since 2020, in frontier-model crawls — so scores are relative-comparison-only. License CC BY-NC 4.0, 'research purposes only' (verified at the pin) → non-commercial lanes only; cleared by the license review of 2026-08-24 into the NC research lane: benchmarkable; never in a commercial, prize, or API lane; remote evaluation only over no-train channels.",
+  "pairGeneration": {
+    "mode": "explicit",
+    "segment": "test",
+    "direction": "bidirectional",
+    "doNotTrain": true,
+    "domain": "tech",
+    "explicitPairs": [
+      {
+        "source": "eng",
+        "target": "hin",
+        "srcCode": "en",
+        "tgtCode": "hi",
+        "size": 2073,
+        "sha256": "d00eb6a7141e0f81f96111d3da6ce2d7e80f36f07acf78d7f0d530fa514c6920"
+      },
+      {
+        "source": "hin",
+        "target": "eng",
+        "srcCode": "hi",
+        "tgtCode": "en",
+        "size": 2073,
+        "sha256": "eae0c6af60451a1a636f99290b97c636022776987175c5f3edc0b6c5d9425c06",
+        "filePattern": "software_documentation/test_data/{tgt_code}{src_code}/software_documentation.test.{tgt_code}{src_code}.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "ind",
+        "srcCode": "en",
+        "tgtCode": "id",
+        "size": 2037,
+        "sha256": "cb1d0d16639133b28adb034dec1237b5102151a51202114959694708e2a0049e"
+      },
+      {
+        "source": "ind",
+        "target": "eng",
+        "srcCode": "id",
+        "tgtCode": "en",
+        "size": 2037,
+        "sha256": "078e3e8023e76c93f96ed7d9236fa4fa83c3704dbaf3ce4fd56e78184ca98678",
+        "filePattern": "software_documentation/test_data/{tgt_code}{src_code}/software_documentation.test.{tgt_code}{src_code}.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "zsm",
+        "srcCode": "en",
+        "tgtCode": "ms",
+        "size": 2050,
+        "sha256": "af369f590262ff87cd4aaff6826671cbc7957d92d6b2f990112bb3e800df27fd"
+      },
+      {
+        "source": "zsm",
+        "target": "eng",
+        "srcCode": "ms",
+        "tgtCode": "en",
+        "size": 2050,
+        "sha256": "dea2f64f92c1d123da590a2f6b8fcbfe91ed19b4064a9ab6970b991714c1550b",
+        "filePattern": "software_documentation/test_data/{tgt_code}{src_code}/software_documentation.test.{tgt_code}{src_code}.{lang_code}"
+      },
+      {
+        "source": "eng",
+        "target": "tha",
+        "srcCode": "en",
+        "tgtCode": "th",
+        "size": 2050,
+        "sha256": "5c06f1dd218260fa67de17f1a2cae7f85f5fe645d916da52d63fcfa917697c1f"
+      },
+      {
+        "source": "tha",
+        "target": "eng",
+        "srcCode": "th",
+        "tgtCode": "en",
+        "size": 2050,
+        "sha256": "68fdf243d9fb35ee33e458718661e301bc74e471ed1f25bfb59aed423088eb6d",
+        "filePattern": "software_documentation/test_data/{tgt_code}{src_code}/software_documentation.test.{tgt_code}{src_code}.{lang_code}"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "test",
+      "name": "SAP software documentation test",
+      "size": 16420,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — held-out benchmark test split (relative-comparison-only)"
+    }
+  ],
+  "download": {
+    "method": "github",
+    "builder": "lineparallel",
+    "url": "https://github.com/SAP/software-documentation-data-set-for-machine-translation",
+    "instructions": "Per-pair software_documentation/test_data/{pair}/software_documentation.test.{pair}.{code} fetched from the pinned commit (immutable), line-parallel two-file pairing. Both directions are scored.",
+    "sha256": null,
+    "revision": "2a6f9a8152f7c91588a06420833c31be02348746",
+    "filePattern": "software_documentation/test_data/{src_code}{tgt_code}/software_documentation.test.{src_code}{tgt_code}.{lang_code}",
+    "format": "parallel-text"
+  },
+  "source": {
+    "publisher": "SAP SE",
+    "url": "https://github.com/SAP/software-documentation-data-set-for-machine-translation",
+    "paper": "https://arxiv.org/abs/2008.04550",
+    "citation": "Buschbeck and Exel (2020). A Parallel Evaluation Data Set of Software Documentation with Document Structure Annotation. arXiv:2008.04550. (Served as the IT-domain eval set of the WAT NICT-SAP shared task — cite the WAT overview papers when reporting task results.)",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-NC-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": "Held-out benchmark test split; 'research purposes only' per the upstream README. doNotTrain protects benchmark integrity.",
+    "notes": "Verified at the pinned commit: LICENSE + LICENSES/CC-BY-NC-4.0.txt are CC BY-NC 4.0 and the README states 'The data may be used for research purposes only.' NC → non-commercial lanes only (license_use.py commercial lane is STRICT). Champollion never hosts the content."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "discouraged",
+    "commercialUse": "prohibited-by-license",
+    "redistribution": "prohibited",
+    "communityNotes": "Held-out benchmark: training on it defeats its purpose. CC BY-NC 4.0 + 'research purposes only' → kept out of every commercial / prize / API lane. Content is fetched from source, never hosted."
+  },
+  "contamination": {
+    "risk": "HIGH",
+    "reasoning": "SAP software-documentation test set — public since 2020 (WAT NICT-SAP shared-task use) and in frontier-model training crawls. Scores are valid only for relative method-vs-method comparison on this exact corpus, never as absolute quality. Forced HIGH here and via build_registry.HELD_OUT_BENCHMARK_FAMILIES.",
+    "knownInTrainingOf": []
+  },
+  "licenseReviewed": true,
+  "licenseReview": {
+    "reviewedAt": "2026-08-24",
+    "verdict": "cleared",
+    "lane": "nc-research",
+    "basis": "CC BY-NC 4.0, stated and verified at the pinned revision. Plain standard SPDX non-commercial license: benchmarkable; excluded from every commercial, prize, and API lane; remote evaluation only over channels that do not train on inputs (transmission_policy no-train lane). The upstream README further characterizes the set as 'research purposes only'; Champollion's use — held-out research evaluation — is within scope under both readings, and the narrower reading is recorded here."
+  },
+  "_provenance": {
+    "addedAt": "2026-07-07",
+    "populatedFrom": "https://github.com/SAP/software-documentation-data-set-for-machine-translation at commit 2a6f9a8152f7; per-pair size = built entry_count, sha256 = sha of the deterministic built corpus. Generated by build_recipe_cards.py from recipes/nictsap.json.",
+    "pinnedPairs": 8,
+    "excluded": {
+      "ja+ko+vi+zh+zf": "One shared rationale (deliberately ONE map entry, not five code-keyed ones — per-code prose values pattern-match corpus_content_scan's indexed-translations detector): enja/enko/envi/enzh/enzf test data exists upstream but is out of the intake scope (the probe verdict scoped the WAT NICT-SAP task languages en↔hi/id/ms/th); addable later by extending pairs. 'zf' is additionally SAP's non-ISO internal code for Traditional Chinese and would need a code-bridge decision before landing."
+    }
+  }
+}

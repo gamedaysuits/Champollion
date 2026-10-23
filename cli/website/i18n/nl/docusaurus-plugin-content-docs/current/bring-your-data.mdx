@@ -1,0 +1,102 @@
+---
+title: "Breng wat u hebt"
+slug: /bring-your-data
+description: "Breng uw zinnen, woordenlijsten en notities in zoals u ze bewaart — en bepaal voor elk bestand van wie het is en hoe het gebruikt mag worden."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Breng mee wat u hebt
+
+Een vertaler leert van **paren**: een zin in de ene taal en dezelfde zin in de
+andere. Deze pagina gaat over het inbrengen van uw materiaal — en over de
+vragen die u bij elk bestand worden gesteld, die belangrijker zijn dan al het
+andere op de rails.
+
+## Wat de tools kunnen lezen
+
+Lever uw bestanden aan zoals u ze bewaart. U hoeft niets te converteren.
+
+| U hebt | De tools lezen |
+|---|---|
+| Een spreadsheet met zinnen en vertalingen | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` of platte tekst |
+| Een tabel in een Word-document | De rijen van de tabel |
+| Een woordenboek gemaakt in Toolbox of FieldWorks (programma's die veel taalkundigen gebruiken) | De woorden — en de voorbeeldzinnen ervan, als paren |
+| Opnamen uitgeschreven in ELAN (een programma voor het transcriberen van opnamen) | De uitgeschreven regels en hun vertalingen, als paren |
+| Een woordenlijst | Elk woord en de bijbehorende vertaling |
+| Aantekeningen over de grammatica | Bewaard op hun eigen plek, zodat mensen en tools ze kunnen raadplegen |
+| Schriftteksten | Alleen als u daarom vraagt, en geen enkele vertaler leert ervan totdat de mensen die het in beheer hebben dat toestaan |
+
+Uw bestanden worden gelezen waar ze staan. Als de kolommen van een spreadsheet niet
+aangeven welke taal welke is, vragen de tools het aan u — ze raden het nooit op
+basis van de inhoud.
+
+De tools zoeken ook naar rijen die niet lijken te kloppen — een vertaling die een regel
+naar beneden is verschoven, twee omgewisselde kolommen, een vertaling die van de
+andere kant is gekopieerd, hetzelfde paar twee keer, een vertaling die veel langer of
+korter is dan gebruikelijk — en vertellen u per regelnummer om welke rijen het gaat.
+Ze wijzigen of verwijderen nooit iets; iemand die de gegevens kent, beslist.
+
+## De tools tellen. Ze lezen uw woorden aan niemand voor.
+
+Wanneer een bestand binnenkomt, laten de tools u weten hoeveel paren ze hebben
+gevonden en welke kolommen ze hebben gebruikt. Dat is alles wat uw AI-assistent
+te zien krijgt: aantallen en kolomnamen, nooit de zinnen zelf.
+
+## De vragen voor elk bestand
+
+Voordat er iets leert van een bestand, vragen de rails aan de mensen die het in beheer hebben:
+
+- **Aan wie behoort het toe?** In uw eigen woorden — een familie, een leraar, een
+  gemeenschapskantoor.
+- **Wiens woorden staan erin?** De mensen die de zinnen hebben uitgesproken of
+  geschreven. De schrijfschriften van een grootmoeder bevatten haar woorden, zelfs
+  als haar kleinzoon ze heeft getypt.
+- **Hebben zij ingestemd met het gebruik ervan?** *Ja*, *nog niet*, of *sommigen zeiden nee*.
+  De rails blijven dit vragen totdat het beantwoord is. Woorden van mensen die
+  nog niet hebben ingestemd, of die nee hebben gezegd, worden nooit gebruikt om
+  een vertaler van te laten leren.
+- **Mag een vertaler ervan leren?**
+- **Mag het ooit deze computer verlaten?** Bestanden zijn aanvankelijk privé — bewaard
+  op deze computer — totdat u antwoord geeft.
+
+De antwoorden worden opgeschreven in een kleine notitie naast het bestand, en elke
+tool houdt zich daaraan. Na uw eerste antwoord kunnen de tools de regels alleen
+maar strenger maken, nooit soepeler. De enige uitzondering: een spreker aan wie het
+nog niet was gevraagd, kan alsnog ja zeggen.
+
+Uw assistent stelt deze vragen; deze mag ze nooit voor u beantwoorden. Als u het
+nog niet weet — bijvoorbeeld omdat u het nog aan een tante moet vragen — zegt u
+*nog niet*. De rails leggen dat bestand terzijde en gaan door, en vragen het later
+rustig opnieuw.
+
+## Wat u te zien krijgt
+
+In onze proefsessie met de tools — een voorbeeld met verzonnen zinnen —
+bracht een familie vier bestanden in: <WalkFact of="trainingFiles.0.pairs" />
+zinnenparen uit de spreadsheet van een grootvader, <WalkFact of="trainingFiles.1.pairs" />
+uit die van een tante, een woordenlijst van <WalkFact of="lexicon.pairs" /> woorden en
+<WalkFact of="test.pairs" /> zinnen die een spreker had gecontroleerd, om te testen. Telkens
+rapporteerde de assistent het aantal en vroeg vervolgens van wie het bestand
+was en of een vertaler ervan mocht leren.
+
+## Zinnen van elders
+
+Als u zinnen gebruikt die u niet zelf hebt geschreven — uit een boek, van een
+website, uit een gepubliceerde verzameling — gelden daarvoor hun eigen regels.
+Sommige mogen worden gelezen maar niet worden gedeeld; sommige mogen nergens
+voor worden gebruikt om van te leren. Breng ze op dezelfde manier in en beantwoord
+de vragen ook daarvoor naar waarheid: de tools houden zich aan uw antwoord.
+Wanneer de licentie van een verzameling ongebruikelijk of onduidelijk is, sturen de
+tools deze niet naar een externe AI-dienst totdat de eigenaren daar ja op hebben gezegd.
+
+**Volgende:** [Zet uw testzinnen apart →](/docs/your-test-sentences)
+
+## Meer informatie
+
+- [Gegevens- en overdrachtsregels](/docs/agents/data-rules) — elk veld van de
+  notitie naast elk bestand, en wat elke tool ermee doet.
+- [De rails aansturen vanuit de shell](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, met alle opties.
+- [Een testset registreren](/docs/network/sovereignty/registering-corpora) —
+  de vier niveaus van openbaarheid, voor sets die u later mogelijk deelt.

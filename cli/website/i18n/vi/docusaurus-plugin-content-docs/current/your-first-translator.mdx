@@ -1,0 +1,97 @@
+---
+title: "Trình dịch đầu tiên của bạn"
+slug: /your-first-translator
+description: "Dạy trình dịch đầu tiên của bạn, từng bước một: những bước kiểm tra trước khi bắt đầu, dự đoán bạn viết trước, cuốn từ điển nó phải vượt qua, và cách đọc kết quả đầu tiên của nó."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Trình dịch đầu tiên của bạn
+
+Đây là phần thú vị nhất: lần đầu tiên một trình dịch học từ các câu của bạn,
+và bạn dùng thử nó. Đây cũng là nơi các rào chắn hoạt động cẩn thận nhất,
+bởi kết quả đầu tiên chính là kết quả mà mọi người sẽ nhớ mãi.
+
+## Trước khi quá trình huấn luyện bắt đầu
+
+Trợ lý của bạn sẽ lần lượt thực hiện các bước này theo thứ tự. Hầu hết các
+bước nó sẽ tự làm; nó sẽ dừng lại và hỏi bạn ở những bước cần đến bạn.
+
+1. **Cài đặt các công cụ huấn luyện** — một lần duy nhất, và chỉ khi bạn đồng ý. Chúng được
+   tải về máy tính của bạn.
+2. **Gom các câu vào một tệp** — các công cụ sẽ kết hợp các tệp của bạn lại,
+   giữ lại các quy tắc nghiêm ngặt nhất của chúng, và loại bỏ những câu trùng lặp y hệt. Các tệp mà
+   trình dịch không được phép học theo sẽ được gạt sang một bên, chứ không bị xóa.
+3. **Đối chiếu với các câu kiểm tra** — các bản sao y và gần giống với các câu kiểm tra
+   của bạn sẽ được tách riêng ra.
+4. **Ghi lại những gì bạn kỳ vọng** — bằng chính lời của bạn, trước khi có
+   bất kỳ kết quả nào. *"Cùng lắm là một cuốn sổ tay đàm thoại"* cũng là một dự đoán hoàn toàn ổn. Đường ray
+   sẽ không đi tiếp cho đến khi điều này được viết ra.
+5. **Dành riêng các câu luyện tập** — một phần tư số câu khi bạn
+   có ít hơn 200 câu, sau đó là 50 câu, rồi đến một phần mười khi có nhiều hơn thế, được giữ lại để có thể kiểm tra trình dịch trong lúc nó học mà không đụng tới
+   các câu kiểm tra.
+6. **Đo lường từ điển** — nếu bạn có mang theo danh sách từ, các công cụ trước tiên
+   sẽ xem việc chỉ đơn thuần tra cứu từng từ mang lại kết quả tới đâu. Trình dịch chỉ đáng
+   được sử dụng khi nó làm tốt hơn mức đó.
+
+## Huấn luyện
+
+Sau đó, trình dịch sẽ học. Nó chạy trên máy tính của bạn và không có gì được
+gửi đi đâu cả. Các công cụ sẽ nhìn vào bộ nhớ máy tính của bạn và chọn những
+gì máy có thể xử lý: trên một máy Mac đời mới hơn, hoặc với một card đồ họa
+NVIDIA, loại trình dịch mạnh hơn (hoặc một phiên bản nhẹ hơn của nó, tốn ít
+bộ nhớ hơn); trên các máy tính khác, một loại nhỏ hơn nhiều. Chỉ có một trình
+dịch học tại một thời điểm trên một máy tính.
+
+Quá trình này có thể mất một lúc — vài phút cho loại nhỏ, vài giờ cho loại
+mạnh hơn. Nó tự theo dõi chính nó: nếu nó không có dấu hiệu hoạt động nào lúc
+bắt đầu, ngừng tiến triển, hoặc chạy quá một ngày, nó sẽ dừng lại và cho biết
+lý do. Không có gì chạy mãi mãi.
+
+## Kết quả đầu tiên
+
+Khi hoàn tất, trình dịch được kiểm tra trên các câu kiểm tra của bạn, và bạn
+thấy một **điểm số**: một con số trên thang điểm 100 thể hiện mức độ bản dịch
+của nó sát với cách mà người nói tiếng bản ngữ của bạn đã nói. Bên cạnh đó,
+các công cụ hiển thị một khoảng ước tính — mức độ chắc chắn của chúng — và
+từng cảnh báo thích hợp, nguyên văn từng từ.
+
+Sau đó, bạn có thể tự mình dùng thử, ngay trong trình duyệt web của bạn, với
+những câu của chính bạn.
+
+## Những gì bạn sẽ thấy
+
+Trong lần chạy thử nghiệm của chúng tôi với các công cụ — các câu giả định,
+và một trình dịch tượng trưng để quá trình chạy chỉ mất vài giây — gia đình
+đã dự đoán *"nhiều nhất chỉ như một cuốn sổ tay đàm thoại"*. Sau đó:
+
+- Việc tra từ trong danh sách từ vựng của họ đạt khoảng <WalkFact of="floor.score" round />
+  trên 100 điểm với <WalkFact of="floor.devSentences" /> câu luyện tập.
+- Trình dịch đầu tiên đạt khoảng <WalkFact of="devModel.score" round /> trên
+  cùng các câu luyện tập đó — **thấp hơn cả danh sách từ vựng.**
+- Các công cụ đã nói rõ điều đó, và cảnh báo rằng <WalkFact of="smallSample.n" />
+  câu luyện tập là quá ít để chỉ ra bất cứ điều gì ngoài những khác biệt lớn.
+- Dự đoán đã đúng, và người ông đã ghi nhận lại điều đó.
+
+Đó là một bài học thực tế, không phải là một thất bại. Với vài chục câu,
+một danh sách từ vựng lúc đầu thường thắng thế. Các rào chắn đảm bảo rằng
+bạn *biết* điều đó, thay vì được bảo rằng nó đã sẵn sàng — và các vòng tiếp
+theo chính là cách để bạn vượt qua nó.
+
+## Khi nó là một cuốn sổ tay đàm thoại
+
+Ban đầu hầu như lúc nào cũng vậy: tốt với những câu giống như những câu nó
+đã học, và chập chờn với bất cứ điều gì mới. Nó vẫn có thể hữu ích — cho
+các bản nháp mà người nói ngôn ngữ đó sẽ sửa lại, hoặc cho các cụm từ bạn
+dùng đi dùng lại nhiều lần. Và đó là sự khởi đầu của các vòng giúp nó tốt hơn.
+
+**Tiếp theo:** [Đọc các con số →](/docs/reading-the-numbers)
+
+## Tìm hiểu sâu hơn
+
+- [Huấn luyện với nmt-forge](/docs/agents/training) — các cấu hình mẫu, tác vụ
+  chạy ngầm, cố vấn, và ý nghĩa của từng cảnh báo.
+- [Quy tắc đo lường](/docs/agents/measurement) — chrF++, các khoảng ước tính,
+  mức sàn từ điển và các dự đoán, một cách chính xác.
+- [Đọc các con số](/docs/reading-the-numbers) — từng con số, bằng những từ ngữ
+  giản dị.

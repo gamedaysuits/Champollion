@@ -1,0 +1,94 @@
+---
+title: "Seu primeiro tradutor"
+slug: /your-first-translator
+description: "Ensinando seu primeiro tradutor, passo a passo: as verificações antes de começar, a previsão que você escreve primeiro, o dicionário que ele precisa superar e como ler seu primeiro resultado."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Seu primeiro tradutor
+
+Esta é a parte emocionante: a primeira vez que um tradutor aprende com as suas
+frases e você o experimenta. É também onde os trilhos têm mais cuidado, porque
+o primeiro resultado é aquele que as pessoas lembram.
+
+## Antes de começar o ensino
+
+Seu assistente segue estes passos em ordem. A maior parte ele simplesmente faz; ele para
+e pergunta quando uma etapa cabe a você.
+
+1. **Instale as ferramentas de treinamento** — uma única vez e apenas com a sua autorização. Elas são
+   baixadas no seu computador.
+2. **Reúna as frases em um único arquivo** — as ferramentas combinam seus arquivos,
+   mantêm as regras mais rigorosas deles e deixam de fora repetições exatas. Arquivos com os quais
+   nenhum tradutor pode aprender são colocados de lado, não excluídos.
+3. **Compare com as frases de teste** — cópias e quase cópias das suas frases
+   de teste são colocadas de lado.
+4. **Escreva o que você espera** — antes que qualquer resultado exista, com as suas próprias
+   palavras. *"No máximo um guia de conversação"* é uma previsão perfeitamente válida. Os trilhos
+   não avançam até que isso esteja escrito.
+5. **Separe frases de prática** — um quarto das suas frases enquanto você
+   tiver menos de 200, depois 50, e depois uma em cada dez quando passar disso, reservadas para que o tradutor possa ser avaliado enquanto aprende, sem mexer
+   nas frases de teste.
+6. **Meça o dicionário** — se você trouxe uma lista de palavras, as ferramentas primeiro
+   veem até onde a simples consulta de cada palavra leva você. Só vale a pena usar o seu
+   tradutor onde ele superar isso.
+
+## O ensino
+
+Depois, o tradutor aprende. Ele roda no seu computador e nada é enviado
+para lugar nenhum. As ferramentas verificam a memória do seu computador e escolhem o que ele
+consegue aguentar: em um Mac mais novo ou com uma placa de vídeo NVIDIA, o tipo mais forte de
+tradutor (ou uma versão mais leve dele, com menos memória); em outros
+computadores, um bem menor. Apenas um tradutor aprende por vez em um
+computador.
+
+Isso pode levar algum tempo — minutos para um pequeno, algumas horas para o tipo
+mais forte. Ele monitora a si mesmo: se não der sinal de vida no início, parar
+de progredir ou ultrapassar um dia, ele para e explica o porquê. Nada roda
+para sempre.
+
+## O primeiro resultado
+
+Quando termina, o tradutor é testado nas suas frases de teste e você vê
+uma **pontuação**: um número de 0 a 100 indicando o quão perto as traduções dele chegaram da
+forma como o seu falante as disse. Ao lado, as ferramentas mostram um intervalo — o quanto elas têm
+certeza — e cada aviso aplicável, palavra por palavra.
+
+Depois, você mesmo pode testá-lo, no seu navegador de internet, com as suas próprias frases.
+
+## O que você verá
+
+Na nossa execução de treino das ferramentas — com frases inventadas e um tradutor
+de mentira para que o processo levasse segundos —, a família previu *"no máximo um guia de
+conversação"*. Depois:
+
+- Consultar as palavras na lista de palavras alcançou cerca de <WalkFact of="floor.score" round />
+  de 100 em <WalkFact of="floor.devSentences" /> frases de treino.
+- O primeiro tradutor marcou cerca de <WalkFact of="devModel.score" round /> nas
+  mesmas frases de treino — **abaixo da lista de palavras.**
+- As ferramentas disseram isso com clareza e avisaram que <WalkFact of="smallSample.n" />
+  frases de treino é pouco demais para mostrar qualquer coisa além de grandes diferenças.
+- A previsão se confirmou, e o avô a registrou.
+
+Essa é uma lição real, não um fracasso. Com algumas dezenas de frases, uma lista de palavras
+muitas vezes vence no começo. Os trilhos garantem que você *saiba* disso, em vez de ouvir
+que está pronto — e as rodadas seguintes são a forma de superá-la.
+
+## Quando é um guia de conversação
+
+Quase sempre é assim no início: bom com frases parecidas com aquelas com as quais aprendeu
+e instável com qualquer coisa nova. Ainda assim, pode ser útil — para rascunhos que um
+falante corrige ou para frases que você usa repetidamente. E é o começo
+das rodadas que o tornam melhor.
+
+**A seguir:** [Lendo os números →](/docs/reading-the-numbers)
+
+## Aprofunde-se
+
+- [Treinamento com o nmt-forge](/docs/agents/training) — predefinições, tarefas
+  em segundo plano, o orientador e o que significa cada aviso.
+- [Regras de medição](/docs/agents/measurement) — chrF++, intervalos, o
+  piso do dicionário e previsões, com exatidão.
+- [Lendo os números](/docs/reading-the-numbers) — cada número, em palavras
+  simples.

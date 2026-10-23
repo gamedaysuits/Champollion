@@ -1,0 +1,18 @@
+{
+ "champollionSealed": "1",
+ "cardId": "eval-parity-synth-v1",
+ "custodianGroupId": "parity-fixture-group",
+ "cipher": "x25519-hkdf-sha256+aes-256-gcm",
+ "aad": "champollion-sealed:v1|card=eval-parity-synth-v1|group=parity-fixture-group",
+ "thresholdKeyId": "a53ab51aac79a1b4",
+ "envelope": {
+  "ephemeralPublicKey": "MCowBQYDK2VuAyEAN0ZSl+p/8a2+hl++knu80/UVJcxZuClV2v3/pGNj+FI=",
+  "salt": "mqz4HGrv6iYmKVjtKzMv+g==",
+  "iv": "suz3kXOAP8ARcM3A",
+  "authTag": "0cqUWovvt7WOl216LV9q9w=="
+ },
+ "ciphertext": "+e/5G0WHj5/AXzY1G5dCZHSvDKTOBDZYZwNlyI22Ex0vXNcdl1xdxGV9byjmvEN+uc1vwMIOKvvgI7jbTM1JpiMK7gR8roWNmZVhPLAJSoITN1B8MZj0V+VGIVtbk/AVgiVTjxymRhe0zoX40MHlgbZTE7xE7X1d+O8+xjylLuDongXVe/rHXTqENd6jaMIYAMrUd1g0EZX1OjECRDb826XEygmZcrFWrumkbm0hYOCNXjXh273mLDVwwpzEfGSGJA7mEQr10KSJawj5pCVHWWgptEj3xzBEALnbAGJlCuRo4Jf13q2/olLO0rSmvfU2dKT7xjRHOJ0=",
+ "ciphertextDigest": "38a1c0cc101de69cd25a18a8acf0fe6abae0baa32ae8d83d85a8ae8152b07371",
+ "createdAt": "2026-07-19T00:00:00Z",
+ "_note": "Ciphertext-only sealed corpus. Decryptable ONLY by the custodian group's threshold key (3-of-5 in Wave 2). Champollion holds zero shares and cannot decrypt this. Never tracked in git or hosted in plaintext."
+}

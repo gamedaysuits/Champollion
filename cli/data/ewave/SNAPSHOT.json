@@ -1,0 +1,56 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "ewave",
+  "upstream": "https://zenodo.org/records/11169",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "eWAVE 2.0 — Kortmann, Bernd; Lunkenheimer, Kerstin; Forkel, Robert",
+  "pin": {
+    "kind": "doi",
+    "value": "v2013",
+    "doi": "10.5281/zenodo.11169",
+    "date": "2014-08-05"
+  },
+  "files": [
+    {
+      "path": "CHANGES.txt",
+      "bytes": 28,
+      "sha256": "3e4c1d373122c0162c95bcbd5b504203daa0cef8021d4249d8167bc7352af36e",
+      "url": "https://zenodo.org/api/records/11169/files/ewave-v2013.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "ewave-v2013.zip:clld-ewave-68043d8/CHANGES.txt"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 13,
+      "sha256": "31c201ec02a0842f2317d3d7860a8767ab89e4812c2e00b3c4607bbcac21730b",
+      "url": "https://zenodo.org/api/records/11169/files/ewave-v2013.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "ewave-v2013.zip:clld-ewave-68043d8/README.txt"
+    },
+    {
+      "path": "data/README.txt",
+      "bytes": 12,
+      "sha256": "2f73349cfc4630255319c6c8dfc1b46a8996ace9d14d8e07563b165915918ec2",
+      "url": "https://zenodo.org/api/records/11169/files/ewave-v2013.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "ewave-v2013.zip:clld-ewave-68043d8/data/README.txt"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 740,
+      "sha256": "24d47b2e8bb76394a27effa038a1157d4f9c1242cadc8d56bd58029d349483c3",
+      "url": "https://zenodo.org/api/records/11169/files/ewave-v2013.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "ewave-v2013.zip:clld-ewave-68043d8/requirements.txt"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from ewave-v2013.zip, whose md5 matched Zenodo's published checksum (md5:d2e0bc3fcfa8df35ebbba651057dccbd). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T19:02:55.188Z"
+}

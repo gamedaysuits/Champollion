@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "dravlex",
+  "upstream": "https://zenodo.org/records/13149853",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Kolipakam et al.'s \"DravLex:\" from 2018 — Kolipakam, Vishnupriya",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.1",
+    "doi": "10.5281/zenodo.13149853",
+    "date": "2024-08-01"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 146373,
+      "sha256": "5565e33c9b1bdbd032f7c820910d1db2f366fdc8e615aef51fa50bde149d5e33",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13413,
+      "sha256": "1fd7444b617072607b0edfbf13d0aee60d5c18df86ec9b4282a2f68feff3f8ae",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 246913,
+      "sha256": "3c5d64117f6e532ebfb1b71947f817bab53c1d06b348c0336f51da4ecc60a37d",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 229219,
+      "sha256": "462082fcc4a9d8db506a94d46f60723c3979687359fed10c293d3ee705d05a2c",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 1693,
+      "sha256": "e1ed487b4d330612338b9f96c79abc3399268b904643ff9d5b9d241cb8a1e07c",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "8a40d31522ebc8348150d12284ee8ac89f276db965bc98dd89c9562a4a0d7829",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 2527,
+      "sha256": "dcf49e6300dbf05899d877570549fdc290c53594c8ad15513a4524d2531ca721",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 882,
+      "sha256": "080cabf883b4ec8f9fef967eb713ea4ed0cda498a0db3b2667bb1408da0f7a26",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 1301,
+      "sha256": "6b42dbfb9c437d240f518ead736a31b84349a21a357de3164cfd130c945f1edf",
+      "url": "https://zenodo.org/api/records/13149853/files/lexibank/dravlex-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dravlex-v1.1.zip:lexibank-dravlex-0afb2cd/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/dravlex-v1.1.zip, whose md5 matched Zenodo's published checksum (md5:7eec43dab500ce40438e9c42e63cad61). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:49:43.678Z"
+}

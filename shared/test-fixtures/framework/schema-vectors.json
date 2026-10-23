@@ -1,0 +1,638 @@
+{
+  "_comment": "Conformance vectors for the framework document readers. BOTH runtimes must return exactly `expect` (version, errors, warnings) for each doc: cli/lib/framework/index.js checkDocument() and arena/mt_eval_harness/framework check_document(). Change a reader, re-check every expectation by eye — never regenerate blindly.",
+  "cases": [
+    {
+      "name": "set/0 minimal local-only mark",
+      "type": "set",
+      "doc": {
+        "transmission": "local-only"
+      },
+      "expect": {
+        "version": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/0 written by register-corpus",
+      "type": "set",
+      "doc": {
+        "id": "school-crk-test",
+        "name": "Teacher-checked sentences",
+        "license": "LicenseRef-Community-Private",
+        "tier": "local-only",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "rows": 120,
+        "card": "school-crk-test.json",
+        "registeredAt": "2026-10-03T12:00:00Z",
+        "transmission": "local-only"
+      },
+      "expect": {
+        "version": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/0 carried to a derived file",
+      "type": "set",
+      "doc": {
+        "transmission": "local-only",
+        "segment": "held_out",
+        "license": "CC-BY-4.0",
+        "derived_from": "test.tsv",
+        "written_by": "nmt-forge split"
+      },
+      "expect": {
+        "version": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/0 hand-written extra key is a warning",
+      "type": "set",
+      "doc": {
+        "transmission": "local-only",
+        "note": "grandpa checked these"
+      },
+      "expect": {
+        "version": 0,
+        "errors": [],
+        "warnings": [
+          "$: unknown key 'note' — kept (this sidecar predates set/1), but set/1 refuses it: rename it 'x-note' or remove it"
+        ]
+      }
+    },
+    {
+      "name": "set/0 any transmission but local-only is an error",
+      "type": "set",
+      "doc": {
+        "transmission": "public"
+      },
+      "expect": {
+        "version": 0,
+        "errors": [
+          "$.transmission: \"public\" not in enum [\"local-only\"]"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 full",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "role": "test",
+        "kind": "parallel",
+        "pair": {
+          "source": "eng",
+          "target": "qaa"
+        },
+        "fields": {
+          "source": "english",
+          "target": "ours"
+        },
+        "transmission": "local-only",
+        "terms": {
+          "training": "not-allowed",
+          "owner": "the family",
+          "consent_record": "../consent/test.md"
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 x- note is allowed",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "role": "train",
+        "x-note": "from the 1998 word list"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 local-only output written outside its project, as its holders agreed",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "transmission": "local-only",
+        "holders_agreed": { "by": "the family, at the 2026-10-11 meeting", "date": "2026-10-11" },
+        "derived_from": "input.txt",
+        "written_by": "mt-eval translate"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 holders_agreed says who agreed",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "transmission": "local-only",
+        "holders_agreed": { "date": "11 October", "where": "Dropbox" }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.holders_agreed: missing required property 'by'",
+          "$.holders_agreed: unexpected property 'where'",
+          "$.holders_agreed.date: '11 October' does not match pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 unknown key is an error",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "role": "train",
+        "note": "x"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$: unexpected property 'note'"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 bad values",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "role": "holdout",
+        "sha256": "ABC",
+        "terms": {
+          "training": "maybe",
+          "owner": ""
+        },
+        "rows": -1
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.role: \"holdout\" not in enum [\"train\",\"dev\",\"test\",\"sealed\",\"input\",\"resource\"]",
+          "$.terms.training: \"maybe\" not in enum [\"allowed\",\"not-allowed\"]",
+          "$.terms.owner: string shorter than minLength 1",
+          "$.sha256: 'ABC' does not match pattern /^[0-9a-f]{64}$/",
+          "$.rows: -1 < minimum 0"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set/1 pair code must be a code",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "pair": {
+          "source": "English",
+          "target": "crk"
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.pair.source: 'English' does not match pattern /^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set wrong $schema url",
+      "type": "set",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/9.json"
+      },
+      "expect": {
+        "version": null,
+        "errors": [
+          "$.$schema: \"https://champollion.dev/schemas/set/9.json\" not in enum [\"https://champollion.dev/schemas/set/1.json\"]"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "set not an object",
+      "type": "set",
+      "doc": [
+        "transmission",
+        "local-only"
+      ],
+      "expect": {
+        "version": null,
+        "errors": [
+          "$: expected type object, got array"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "project language",
+      "type": "project",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/project/1.json",
+        "kind": "language",
+        "name": "eng-qaa",
+        "pair": {
+          "source": "eng",
+          "target": "qaa"
+        },
+        "purpose": "school newsletter",
+        "defaults": {
+          "transmission": "local-only",
+          "training": "ask",
+          "share_scores": "ask"
+        },
+        "created_with": "champollion 0.6.0",
+        "x-team": "family"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "project language without a pair",
+      "type": "project",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/project/1.json",
+        "kind": "language",
+        "name": "eng-qaa"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$: a language project must name its pair (pair.source and pair.target)"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "project app needs no pair",
+      "type": "project",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/project/1.json",
+        "kind": "app",
+        "name": "band office site"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "project missing $schema and bad kind",
+      "type": "project",
+      "doc": {
+        "kind": "model",
+        "name": ""
+      },
+      "expect": {
+        "version": null,
+        "errors": [
+          "$: missing required property '$schema'",
+          "$.kind: \"model\" not in enum [\"language\",\"task\",\"service\",\"app\"]",
+          "$.name: string shorter than minLength 1"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "project bad defaults and unknown key",
+      "type": "project",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/project/1.json",
+        "kind": "service",
+        "name": "s",
+        "pair": {
+          "source": "eng",
+          "target": "crk"
+        },
+        "defaults": {
+          "training": "yes"
+        },
+        "owner": "me"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$: unexpected property 'owner'",
+          "$.defaults.training: \"yes\" not in enum [\"allowed\",\"not-allowed\",\"ask\"]"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "gate-chain/1 with a fallback",
+      "type": "gate-chain",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/gate-chain/1.json",
+        "id": "no-english-left",
+        "gates": [
+          {
+            "id": "g",
+            "kind": "metric-threshold",
+            "metric": "code_switching",
+            "field": "code_switching_rate",
+            "on_refuse": "fallback",
+            "max": 0
+          }
+        ],
+        "fallback": {
+          "method": "lexicon",
+          "model": "data/lexicon/words.tsv"
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "gate-chain/1 gate with no bound",
+      "type": "gate-chain",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/gate-chain/1.json",
+        "id": "c",
+        "gates": [
+          {
+            "id": "g",
+            "kind": "metric-threshold",
+            "metric": "code_switching",
+            "field": "code_switching_rate",
+            "on_refuse": "drop"
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.gates[0]: a metric-threshold gate needs min and/or max"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "gate-chain/1 falls back to nothing named",
+      "type": "gate-chain",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/gate-chain/1.json",
+        "id": "c",
+        "gates": [
+          {
+            "id": "g",
+            "kind": "metric-threshold",
+            "metric": "code_switching",
+            "field": "code_switching_rate",
+            "on_refuse": "fallback",
+            "max": 0
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.gates[0]: on_refuse fallback needs the chain's fallback (\"fallback\": {\"method\": \"lexicon\", \"model\": \"<dictionary>\"})"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "gate-chain/1 one gate id twice",
+      "type": "gate-chain",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/gate-chain/1.json",
+        "id": "c",
+        "gates": [
+          {
+            "id": "a",
+            "kind": "metric-threshold",
+            "metric": "code_switching",
+            "field": "code_switching_rate",
+            "on_refuse": "drop",
+            "max": 0
+          },
+          {
+            "id": "a",
+            "kind": "metric-threshold",
+            "metric": "code_switching",
+            "field": "code_switching_rate",
+            "on_refuse": "drop",
+            "min": 1
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.gates[0]: gate id 'a' appears twice",
+          "$.gates[1]: gate id 'a' appears twice"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "gate-chain/1 unknown on_refuse",
+      "type": "gate-chain",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/gate-chain/1.json",
+        "id": "c",
+        "gates": [
+          {
+            "id": "g",
+            "kind": "metric-threshold",
+            "metric": "code_switching",
+            "field": "code_switching_rate",
+            "on_refuse": "retry",
+            "max": 0
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.gates[0].on_refuse: \"retry\" not in enum [\"drop\",\"keep-source\",\"flag\",\"fallback\"]"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "gate-chain/1 no gates",
+      "type": "gate-chain",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/gate-chain/1.json",
+        "id": "c",
+        "gates": []
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.gates: array shorter than minItems 1"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "deployment/1 minimal",
+      "type": "deployment",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/deployment/1.json",
+        "id": "eng-xyz-words",
+        "pair": {
+          "source": "eng",
+          "target": "xyz"
+        },
+        "method": {
+          "method": "lexicon",
+          "model": "data/lexicon/words.tsv"
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "deployment/1 full",
+      "type": "deployment",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/deployment/1.json",
+        "id": "eng-xyz-words",
+        "pair": {
+          "source": "eng",
+          "target": "xyz",
+          "target_script": "Latn"
+        },
+        "method": {
+          "method": "lexicon",
+          "model": "data/lexicon/words.tsv"
+        },
+        "gates": "gates/no-english.json",
+        "serve": {
+          "host": "127.0.0.1",
+          "port": 8379
+        },
+        "description": "the family's phrasebook",
+        "x-note": "kept"
+      },
+      "expect": {
+        "version": 1,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "deployment/1 names a score",
+      "type": "deployment",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/deployment/1.json",
+        "id": "eng-xyz-words",
+        "pair": {
+          "source": "eng",
+          "target": "xyz"
+        },
+        "method": {
+          "method": "lexicon",
+          "model": "data/lexicon/words.tsv"
+        },
+        "chrf": 31.2
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$: unexpected property 'chrf'"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "deployment/1 script not ISO 15924",
+      "type": "deployment",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/deployment/1.json",
+        "id": "eng-xyz-words",
+        "pair": {
+          "source": "eng",
+          "target": "xyz",
+          "target_script": "latin"
+        },
+        "method": {
+          "method": "lexicon",
+          "model": "data/lexicon/words.tsv"
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.pair.target_script: 'latin' does not match pattern /^[A-Z][a-z]{3}$/"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "deployment/1 port out of range",
+      "type": "deployment",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/deployment/1.json",
+        "id": "eng-xyz-words",
+        "pair": {
+          "source": "eng",
+          "target": "xyz"
+        },
+        "method": {
+          "method": "lexicon",
+          "model": "data/lexicon/words.tsv"
+        },
+        "serve": {
+          "port": 70000
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$.serve.port: 70000 > maximum 65535"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "deployment/1 no method",
+      "type": "deployment",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/deployment/1.json",
+        "id": "eng-xyz-words",
+        "pair": {
+          "source": "eng",
+          "target": "xyz"
+        }
+      },
+      "expect": {
+        "version": 1,
+        "errors": [
+          "$: missing required property 'method'"
+        ],
+        "warnings": []
+      }
+    }
+  ]
+}

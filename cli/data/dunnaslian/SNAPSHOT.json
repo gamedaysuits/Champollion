@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "dunnaslian",
+  "upstream": "https://zenodo.org/records/13149878",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Dunn et al.'s \"Aslian Languages\" from 2013 — Michael Dunn",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.1",
+    "doi": "10.5281/zenodo.13149878",
+    "date": "2024-08-01"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 457730,
+      "sha256": "a17bb97427fb448d06887a42eec5ab4538fee984790d6d38e369f305d7369c96",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 12932,
+      "sha256": "f1d81e236586b30cb61b5738a81d9358f9e501a109cb7f1e5413e66da348ef9d",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 417819,
+      "sha256": "02136bbe16c842cca1f3394cc9782768f7fc1a6d59c9dc3c353c391a7da61aca",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 560190,
+      "sha256": "f00622eeb5284ae7f6db374c96c28ced00cbf3321e321fb93d9b116a50aafd8b",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 2708,
+      "sha256": "e6ff7a687df6a2ade184dd04b0be8041e019aa405237b39ce9d22e69dfb75d89",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "ba217bc6888457afe073559dfcbb4d465cef874beb1b42bc87628320e3b7dc18",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 3974,
+      "sha256": "737d5388997ee16f2197bc64ba9c26ce18da351df4bec847e670f87de199ee9f",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 882,
+      "sha256": "080cabf883b4ec8f9fef967eb713ea4ed0cda498a0db3b2667bb1408da0f7a26",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 271,
+      "sha256": "0d6742e2b8a7ab52cb7f577514583aa63db95a1500997ca3b07c8331a2ce53ae",
+      "url": "https://zenodo.org/api/records/13149878/files/lexibank/dunnaslian-v1.1.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/dunnaslian-v1.1.zip:lexibank-dunnaslian-2cbc181/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/dunnaslian-v1.1.zip, whose md5 matched Zenodo's published checksum (md5:68b2c681f27d7acd6d782d194a0140bb). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:49:45.353Z"
+}

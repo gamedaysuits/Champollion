@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/set/1.json",
+  "title": "Data set sidecar (set/1)",
+  "description": "`<file>.champollion.json` beside ANY data file (TSV, JSONL, JSON, text, a word list): who holds it, what it is for, and where its text may go. One format read by every tool (mt-eval, nmt-forge, the champollion CLI, the MCP server) — the steward sidecar, given a schema. A sidecar can only make a file STRICTER: it never loosens what a corpus envelope or a registry entry says. A sidecar written before set/1 (no `$schema`) is read as set/0 — the same fields, without the new ones — and stays valid. Unknown keys are refused; put your own notes under an `x-` key.",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {}
+  },
+  "properties": {
+    "$schema": {
+      "description": "Which schema this sidecar follows. Absent on a sidecar written before set/1.",
+      "type": "string",
+      "enum": ["https://champollion.dev/schemas/set/1.json"]
+    },
+    "transmission": {
+      "description": "local-only = only a model on this machine may ever see the text; every tool refuses to send it anywhere. The only restriction value a sidecar sets.",
+      "type": "string",
+      "enum": ["local-only"]
+    },
+    "role": {
+      "description": "What the file is for in the project. train = may be learned from; dev = tuning and model selection; test = the protected set scores are reported on; sealed = a test set no one outside its holders sees; input = text to translate (deployment: source only, nothing to score); resource = a dictionary, glossary or grammar the methods use.",
+      "type": "string",
+      "enum": ["train", "dev", "test", "sealed", "input", "resource"]
+    },
+    "kind": {
+      "description": "What the file holds: sentence pairs, one-language text, a word list or dictionary, grammar notes, or a terminology glossary.",
+      "type": "string",
+      "enum": ["parallel", "monolingual", "lexicon", "grammar", "glossary"]
+    },
+    "pair": {
+      "description": "The direction the file's columns run (source → target), in the language cards' codes.",
+      "type": "object",
+      "required": ["source", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "$ref": "#/$defs/langCode" },
+        "target": { "$ref": "#/$defs/langCode" }
+      }
+    },
+    "fields": {
+      "description": "Which column or JSON field holds which side, when the file does not use `source`/`target`.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "minLength": 1 }
+      }
+    },
+    "terms": {
+      "description": "What the people who hold this data said about its use, recorded where every tool can read it.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "training": {
+          "description": "not-allowed = no tool may train a model on this file (enforced by nmt-forge's training mix); allowed = it may be learned from.",
+          "type": "string",
+          "enum": ["allowed", "not-allowed"]
+        },
+        "owner": {
+          "description": "Who holds this data, in the holder's own words.",
+          "type": "string",
+          "minLength": 1
+        },
+        "speakers": {
+          "description": "Whose words the file holds — the people who said or wrote them — in the holder's own words (a family chat or an elder's notebooks hold other people's words).",
+          "type": "string",
+          "minLength": 1
+        },
+        "speakers_agreed": {
+          "description": "Whether the people whose words these are agreed to their use: yes; not-yet (not asked yet — no model may learn from it until they agree); some-said-no (no model may learn from this file — take their words out into another file first).",
+          "type": "string",
+          "enum": ["yes", "not-yet", "some-said-no"]
+        },
+        "consent_record": {
+          "description": "Path (relative to this file's folder) of the consent note that records who agreed to what, and when.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "id": { "description": "The registered corpus id (written by `champollion network register-corpus`); read verbatim, never re-derived.", "type": "string", "minLength": 1 },
+    "name": { "description": "The registered display name.", "type": "string" },
+    "license": { "description": "The licence the holder states (an SPDX id or a LicenseRef-*).", "type": "string" },
+    "tier": { "description": "The registration tier `register-corpus` recorded.", "type": "string", "enum": ["local-only", "private", "sealed", "public"] },
+    "segment": { "description": "The corpus segment, as in a JSON envelope (e.g. `held_out`).", "type": "string" },
+    "sha256": { "description": "SHA-256 of the data file when it was registered; a changed file no longer gets the card's id or grade.", "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "rows": { "description": "Rows counted at registration.", "type": "integer", "minimum": 0 },
+    "card": { "description": "Path (relative to this file's folder) of the corpora card registered for it.", "type": "string" },
+    "registeredAt": { "description": "When `register-corpus` registered the file (ISO 8601).", "type": "string" },
+    "derived_from": { "description": "The protected file this one was derived from (a split, a cleaned copy, a run's outputs); its marks were carried here.", "type": "string" },
+    "holders_agreed": {
+      "description": "Who among the data's holders agreed that this file — the output of a method whose output is local-only — could be written where it is, outside its project, and when (written by `mt-eval translate --holders-agreed-by`). It loosens nothing: the file stays local-only for every tool.",
+      "type": "object",
+      "required": ["by"],
+      "additionalProperties": false,
+      "properties": {
+        "by": { "description": "Who agreed, as they were named.", "type": "string", "minLength": 1 },
+        "date": { "description": "When it was recorded (YYYY-MM-DD).", "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      }
+    },
+    "written_by": { "description": "The tool command that wrote this sidecar.", "type": "string" }
+  },
+  "$defs": {
+    "langCode": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    }
+  }
+}

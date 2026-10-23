@@ -1,0 +1,97 @@
+{
+  "code": "genus-philippine",
+  "extends": "family-austronesian",
+  "name": "Philippine Languages (Genus Template)",
+  "dir": "ltr",
+  "script": "Latn",
+  "formality": {
+    "system": "none",
+    "description": "Philippine languages generally lack European-style T-V distinction. Respect is expressed through po/ho particles, pronoun choice (2nd person plural for singular formal), and vocabulary selection.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Philippine languages have no grammatical gender. Pronouns (siya/niya) are gender-neutral. No special inclusive conventions needed."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      }
+    },
+    "capitalization": {
+      "hasCase": true
+    },
+    "plurals": {
+      "categories": [
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "focusSystem": "Philippine languages use a voice/focus system (also called 'trigger' or 'alignment') where verbal morphology marks the semantic role of the syntactically prominent argument. This is NOT like active/passive voice — it's a fundamentally different system that most MT models handle poorly.",
+    "spanishSubstrate": "Extensive Spanish loanwords integrated into core vocabulary (numbers, days, months, food, religion, government). Code-mixing with Spanish-derived terms is the norm, not an error.",
+    "englishCodeswitching": "Taglish/Bislish/etc. (mixing with English) is ubiquitous in modern spoken and written language. Pure monolingual text can sound overly formal or archaic.",
+    "reduplication": "Productive reduplication for plurality, diminution, intensity, and aspect. Both full and partial reduplication are morphologically significant."
+  },
+  "contactInfluences": [
+    {
+      "source": "Spanish",
+      "sourceIso639_3": "spa",
+      "type": "superstrate",
+      "domains": [
+        "religion",
+        "government",
+        "food",
+        "kinship",
+        "calendar"
+      ],
+      "depth": "deep",
+      "period": "1565–1898",
+      "notes": "333 years of colonization. Thousands of fully nativized loanwords."
+    },
+    {
+      "source": "English",
+      "sourceIso639_3": "eng",
+      "type": "superstrate",
+      "domains": [
+        "education",
+        "technology",
+        "business",
+        "government",
+        "media"
+      ],
+      "depth": "deep",
+      "period": "1898–present",
+      "notes": "Co-official language. Taglish/Bislish code-switching is the default register in urban areas."
+    },
+    {
+      "source": "Malay",
+      "sourceIso639_3": "msa",
+      "type": "substrate",
+      "domains": [
+        "trade",
+        "maritime"
+      ],
+      "depth": "moderate",
+      "period": "pre-colonial–1565",
+      "notes": "Shared Austronesian vocabulary. Trade pidgin influence in southern Philippines."
+    }
+  ],
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus template for Philippine Austronesian languages. All Philippine languages share the focus/trigger system, extensive Spanish/English contact influence, and Latin script.",
+  "regions": [
+    {
+      "country": null,
+      "countryCode": "XX",
+      "officialStatus": null,
+      "region": null,
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

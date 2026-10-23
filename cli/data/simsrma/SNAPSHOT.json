@@ -1,0 +1,101 @@
+{
+  "$schema": "../../shared/schemas/source-snapshot.schema.json",
+  "source": "simsrma",
+  "upstream": "https://zenodo.org/records/13168246",
+  "license": "CC-BY-4.0",
+  "licenseUrl": null,
+  "citation": "CLDF dataset derived from Sims' \"Diachrony of Tone in Proto-Rma\" from 2020 — Nathaniel Sims",
+  "pin": {
+    "kind": "doi",
+    "value": "v1.3",
+    "doi": "10.5281/zenodo.13168246",
+    "date": "2024-08-02"
+  },
+  "files": [
+    {
+      "path": ".transcription-report.json",
+      "bytes": 213766,
+      "sha256": "5185ee4ad7edec9c62c16a661615ae343e650c9780c5241573ee1d0cf6915ead",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/.transcription-report.json"
+    },
+    {
+      "path": "cldf-metadata.json",
+      "bytes": 13493,
+      "sha256": "dfe0d018b57d5220f43edb8194fe7eb40d75f3ad846608302d67e002232c941e",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/cldf-metadata.json"
+    },
+    {
+      "path": "cognates.csv",
+      "bytes": 91417,
+      "sha256": "d8f28e53aeedf8e6fa65105d61b3897a23cc8bd5fb95cd8bd00eef079407ca04",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/cognates.csv"
+    },
+    {
+      "path": "forms.csv",
+      "bytes": 122963,
+      "sha256": "c8266b195cb23ed820f070e874c1fd9052060c22c95e8a7351fa3db9c7f828eb",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/forms.csv"
+    },
+    {
+      "path": "languages.csv",
+      "bytes": 897,
+      "sha256": "ff93fbdf8604d6e994d5b6e8caf7bdc2745f8a0532a768a6012771fe32808f2e",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/languages.csv"
+    },
+    {
+      "path": "lingpy-rcParams.json",
+      "bytes": 7637,
+      "sha256": "5921fe5332f34c4df6d4e3cb5284a616f68e9084cfedb4f29bd146ad5b001800",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/lingpy-rcParams.json"
+    },
+    {
+      "path": "parameters.csv",
+      "bytes": 13104,
+      "sha256": "770020b281609c433c6b61b84fb904c26bb3bb4aa56822c7e56ff50af99a1833",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/parameters.csv"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 898,
+      "sha256": "a33db989b2ce460996d1e61fd5e4c0cc50ad99a41f638ff57db161d4c2ff1579",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/requirements.txt"
+    },
+    {
+      "path": "sources.bib",
+      "bytes": 257,
+      "sha256": "a07fce55d210bcb4596049d3e4699b6e20f522acbe8156ba02c0f63a8f81d01b",
+      "url": "https://zenodo.org/api/records/13168246/files/lexibank/simsrma-v1.3.zip/content",
+      "upstreamChecksum": null,
+      "upstreamVerified": false,
+      "derivedFrom": "lexibank/simsrma-v1.3.zip:lexibank-simsrma-cba6dee/cldf/sources.bib"
+    }
+  ],
+  "verified": true,
+  "fetchedBy": "cli/scripts/fetchers/cldf-zenodo.mjs",
+  "notes": "Extracted from lexibank/simsrma-v1.3.zip, whose md5 matched Zenodo's published checksum (md5:e435f0bc0415984dfdc3a60a7ee9201e). The per-file sha256 values below are ours, computed on extraction — their provenance is the verified archive named in `derivedFrom`, not an independent attestation by the publisher.",
+  "fetchedAt": "2026-08-02T18:59:14.902Z"
+}

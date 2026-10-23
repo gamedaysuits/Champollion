@@ -1,0 +1,58 @@
+{
+  "contract": "https://champollion.dev/schemas/service-api/1.json",
+  "about": "Requests every service-api/1 server answers the same way, run against nmt-forge serve and mt-eval serve (and usable against anyone's: mt_eval_harness.framework.service_api.run_vectors). In request bodies, {source} and {target} are the server's own pair, {other} a language it does not translate into, and {word} a source string it can translate. `body` names the part of service-api.v1.schema.json the answer must match; `translated` and `errors` list the keys that must come back under each (and no others).",
+  "local_only_rule": "A server whose /health says output_local_only true puts output_local_only true in the meta of every translate_response.",
+  "cases": [
+    {
+      "name": "translates every key",
+      "request": { "method": "POST", "path": "/translate",
+        "body": { "source_locale": "{source}", "target_locale": "{target}", "keys": { "hero.title": "{word}", "nav.home": "{word}" } } },
+      "expect": { "status": 200, "body": "translate_response", "translated": ["hero.title", "nav.home"], "errors": [] }
+    },
+    {
+      "name": "a value that is not a non-empty string is reported; the rest are translated",
+      "request": { "method": "POST", "path": "/translate",
+        "body": { "target_locale": "{target}", "keys": { "ok": "{word}", "blank": "   ", "number": 5 } } },
+      "expect": { "status": 207, "body": "translate_response", "translated": ["ok"], "errors": ["blank", "number"] }
+    },
+    {
+      "name": "fields the server does not use are ignored, never refused",
+      "request": { "method": "POST", "path": "/translate",
+        "body": { "source_locale": "{source}", "target_locale": "{target}", "method": "whatever-the-caller-calls-it",
+          "text_format": "markdown", "instructions": { "a": "a note for this key" }, "x-future": 1,
+          "keys": { "a": "{word}" } } },
+      "expect": { "status": 200, "body": "translate_response", "translated": ["a"], "errors": [] }
+    },
+    {
+      "name": "no locales named: the server's own pair",
+      "request": { "method": "POST", "path": "/translate", "body": { "keys": { "a": "{word}" } } },
+      "expect": { "status": 200, "body": "translate_response", "translated": ["a"], "errors": [] }
+    },
+    {
+      "name": "keys must be an object",
+      "request": { "method": "POST", "path": "/translate", "body": { "keys": ["{word}"] } },
+      "expect": { "status": 400, "body": "error_response" }
+    },
+    {
+      "name": "the body must be JSON",
+      "request": { "method": "POST", "path": "/translate", "raw": "{\"keys\": " },
+      "expect": { "status": 400, "body": "error_response" }
+    },
+    {
+      "name": "a language it does not translate into is refused, with the reason",
+      "request": { "method": "POST", "path": "/translate",
+        "body": { "source_locale": "{source}", "target_locale": "{other}", "keys": { "a": "{word}" } } },
+      "expect": { "status": 400, "body": "error_response" }
+    },
+    {
+      "name": "an unknown route",
+      "request": { "method": "POST", "path": "/nowhere", "body": { "keys": { "a": "{word}" } } },
+      "expect": { "status": 404, "body": "error_response" }
+    },
+    {
+      "name": "health says what is served, what it checks, and whether its output may leave",
+      "request": { "method": "GET", "path": "/health" },
+      "expect": { "status": 200, "body": "health" }
+    }
+  ]
+}

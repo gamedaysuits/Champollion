@@ -1,0 +1,162 @@
+---
+title: "O Atlas"
+description: "O Atlas é o índice de idiomas do Champollion — um cartão citado por idioma. O que um cartão afirma, o que é proibido afirmar, onde lê-lo e como corrigi-lo."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* As contagens são renderizadas através do SSOTCount (leituras em tempo de compilação dos SSOTs da máquina via customFields do docusaurus.config.js) — nunca digitadas manualmente, de acordo com o padrão de exibição SSOT. Os números sem um SSOT customFields (pisos de línguas de sinais e conlangs, totais em risco) são VINCULADOS à página restrita que os possui, nunca repetidos aqui. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# O Atlas
+
+**O Atlas é o índice de idiomas: um cartão por idioma, onde cada valor
+indica a fonte de onde veio.**
+
+É a camada de referência sobre a qual o restante do Champollion se apoia. A
+[CLI](/docs/intro) o lê para saber como um idioma se comporta. O
+[leaderboard](/docs/reference/leaderboard) o lê para saber do que um benchmark
+é benchmark, e o mapa de rede é desenhado sobre ele. E ele é útil inteiramente por
+conta própria: um cartão reúne, em um só lugar e com cada fonte indicada, fatos
+citados sobre um idioma que, de outra forma, estariam dispersos.
+
+Os cartões são gerados a partir de suas fontes, não escritos à mão. Ninguém se senta e digita o que sabe sobre um idioma.
+
+---
+
+## O Champollion é um índice, não um árbitro
+
+Esta é a regra que todo o Atlas foi construído para obedecer, e é mais rigorosa do que parece.
+
+Cada valor em um cartão cita sua fonte e relata o que essa fonte **realmente diz** — não o que achamos ser verdade, não uma versão corrigida, não um número arredondado. Quando as fontes discordam, o cartão mostra **todas elas, com suas devidas atribuições**. As contagens de falantes discordam constantemente: o Wikidata diz um número, o Ethnologue outro, um censo nacional um terceiro, uma pesquisa regional um quarto. Um cartão carrega cada um deles com sua fonte e sua data. Não fazemos a média deles, não julgamos entre eles e não escolhemos silenciosamente o que soa melhor.
+
+O motivo não é modéstia. Um cartão que fabricasse um consenso seria uma afirmação nova e não citável sobre o idioma de alguém, inventada por nós. Preservar a discordância mantém o cartão verificável em relação ao mundo e deixa o julgamento onde ele pertence — com o leitor e com a comunidade a qual o idioma pertence.
+
+Três regras de leitura se seguem, e vale a pena conhecê-las antes de você usar um cartão para qualquer coisa:
+
+- **Um campo ausente significa desconhecido, não inaplicável.** Um campo que
+  nenhuma fonte citada confirma fica de fora do cartão: ainda não encontramos uma fonte para ele. Isso é um convite, não um veredito. Onde um
+  campo genuinamente não se aplica, o cartão diz isso por extenso.
+- **Valores derivados indicam que são derivados.** Tudo o que o Champollion calcula — uma
+  mediana, um composto, uma flag recodificada, uma contagem extraída de um conjunto de dados — é
+  marcado com `champollion-derived` acompanhado de uma nota informando do que foi derivado.
+  Isso nunca é registrado sob o nome do conjunto de dados original, pois isso colocaria
+  nossos cálculos na boca de terceiros.
+- **Citação supera cobertura.** Um cartão com menos campos, porém com fontes sólidas, é
+  mais saudável do que um cartão completo preenchido com fontes terciárias. A Wikipédia,
+  textos gerados por LLM e conhecimento próprio não são fontes primárias aqui e
+  não são aceitos como tal.
+
+O [Procedimento de Citação](/docs/reference/language-card-citation-procedure) estabelece qual fonte é oficial para qual tipo de afirmação e em qual ordem.
+
+---
+
+## O que um cartão afirma — e o que ele nunca afirma
+
+Um cartão faz exatamente dois tipos de declaração.
+
+**1. Propriedades do idioma.** Classificação e família, inventário fonológico, tipologia, sistema de escrita e ortografia, vitalidade e status de risco de extinção, estimativas de falantes. Cada um citado, cada um rotulado como derivado ou afirmado.
+
+**2. Existência de um recurso.** Que um corpus, um modelo, um FST, um dicionário, um plugin de métrica ou um método de tradução *existe* para este idioma, e em qual nível de acesso. Esta é uma afirmação de capacidade, não uma afirmação de qualidade.
+
+E há uma linha rígida que ele não cruza:
+
+:::danger[Pontuações medidas nunca constam em um cartão de idioma]
+Qualquer **pontuação medida da saída de um método** — chrF++, BLEU, COMET, TER,
+taxa de aceitação de FST, "porcentagem morfologicamente válida" — é um **resultado de execução**, vinculado a
+um método, conjunto de dados e métrica específicos. Ela pertence ao
+[leaderboard](/leaderboard) ([como funciona a publicação](/docs/reference/leaderboard)), vinculada a um
+cartão de execução com identificador exclusivo (fingerprint). Ela é **proibida em um cartão de idioma**, e um linter
+rejeita qualquer cartão que contenha uma.
+:::
+
+A distinção é a diferença entre "existe um FST para este idioma" — um
+fato sobre o mundo, verdadeiro ou falso independentemente de nós — e "este método atinge
+0,82 de aceitação de FST" — uma medição, verdadeira apenas para uma execução, uma versão do conjunto de dados
+e uma versão do método. Confundir os dois transforma silenciosamente um cartão em uma afirmação de qualidade
+sobre um idioma, em caráter permanente, sem nenhuma execução por trás e sem como
+retratá-la. Por isso, eles não se misturam. O Atlas informa a você **o que existe**; o
+leaderboard informa **o quão bem funciona**.
+
+Mais duas invariantes são aplicadas da mesma forma: uma afirmação de tom não deve contradizer o próprio inventário fonológico do cartão, e uma contagem de falantes exibida deve ser igual a uma das estimativas citadas no cartão (ou ser carimbada como nossa própria derivação). O esquema completo, com cada campo e suas regras, é a [Especificação do Cartão de Idioma](/docs/reference/language-card-spec).
+
+---
+
+## O que há nele e de onde vem
+
+Os cartões são construídos a partir de <SSOTCount field="licensedSourceCount" /> fontes originais
+registradas cujas licenças são rastreadas individualmente — porque um cartão só pode ser redistribuído se
+tudo nele também puder, e fontes não comerciais são isoladas de fluxos
+comerciais por concepção, e não por boas intenções.
+
+O catálogo inclui línguas de sinais como as línguas naturais que são, inclui as línguas construídas (conlangs) que a ISO 639-3 reconhece, exclui linguagens de programação e avalia idiomas individuais em vez de guarda-chuvas de macrolínguas — porque os recursos de tradução são específicos de cada variedade, e uma pontuação anexada a um código guarda-chuva seria uma afirmação sobre variedades que ninguém avaliou. Onde as taxonomias discordam, o cartão mostra a discordância em vez de escolher um vencedor. Cada uma dessas escolhas é argumentada, com suas consequências, em [O que conta como um idioma aqui?](/docs/network/context/what-counts-as-a-language).
+
+**Cobertura não é qualidade, e existência não é cobertura.** Um cartão que lista três
+recursos para um idioma está dizendo que três coisas existem — não que qualquer uma
+delas seja utilizável, nem que o idioma esteja atendido. Como o projeto contabiliza a
+cobertura, e o que ele se recusa a contabilizar, é o assunto das seções
+anteriores desta página.
+
+---
+
+## Onde ler
+
+| Interface | O que ela oferece |
+|---|---|
+| [O Atlas de Idiomas](/languages) | Os próprios cartões — pesquise, filtre por família, região, vitalidade e complexidade, e abra qualquer cartão na íntegra |
+| [O Índice](/catalogue) | Tudo o que foi catalogado, por idioma: benchmarks, recursos, métodos, serviços de tradução humana e um nível isolado apenas para citação de resultados publicados externamente |
+| [Glossário](/glossary) | Definições em linguagem simples para cada termo usado em um cartão |
+| [Configuração](/docs/getting-started/configuration) | O que a CLI consegue traduzir hoje, que é um conjunto bem menor do que o Atlas cataloga |
+
+Os pontos de entrada legíveis por máquina são `/llms.txt` e `/llms-full.txt`; os agentes podem pesquisar os cartões diretamente através do [servidor MCP](/docs/network/getting-started/mcp-server).
+
+---
+
+## Quando um cartão está errado
+
+Presuma que alguns deles estão. Um índice desse tamanho, montado a partir de fontes que discordam entre si, conterá erros — e os que mais importam geralmente são invisíveis para nós e óbvios para um falante.
+
+**Todo cartão carrega um link "Sugerir uma correção ou adição"**, que abre o formulário de correção com o idioma pré-preenchido. Traga uma fonte se você tiver uma; para uma solicitação de remoção ou restrição da comunidade, nenhuma citação é necessária e ela é tratada com prioridade.
+
+As correções são aplicadas **no gerador, não no cartão**. Os cartões são regenerados a partir de suas fontes, então uma edição manual seria silenciosamente substituída na próxima compilação — corrigir a fonte é o que torna uma correção permanente, e isso geralmente corrige o mesmo defeito em todos os outros cartões que compartilham essa fonte. Isso é mais lento do que editar um arquivo e é a única versão que dura. A mecânica está em [Enviar para o Índice](/docs/network/getting-started/submit-to-the-index).
+
+**Se você é membro ou autoridade de uma comunidade** e deseja que os dados sobre o seu idioma
+sejam restritos, alterados ou removidos, esse pedido não precisa ser justificado para nós
+e não entra em uma fila pública se você preferir que não entre. Dados de idiomas
+são biodados: carregam a identidade e as relações das pessoas que os falam,
+e não podem ser anonimizados de forma significativa. Somos **aspirantes à soberania, não certificados em soberania** — nós construímos os mecanismos e os descrevemos com honestidade, e
+determinar se eles respeitam a propriedade e o controle comunitário dos dados de idiomas é uma
+decisão que cabe às comunidades
+envolvidas, não a nós. Nossa posição completa está em
+[Suas palavras, suas regras](/docs/your-words-your-rules).
+
+---
+
+## Leia a seguir
+
+- **Você quer pesquisar um idioma** → [navegue pelo Atlas](/languages).
+- **Você quer saber o que significa um campo** → [Especificação do Cartão de Idioma](/docs/reference/language-card-spec).
+- **Você quer saber por que uma afirmação está em um cartão** → [Procedimento de Citação](/docs/reference/language-card-citation-procedure).
+- **Você quer criar um método para um idioma subatendido** → [O que é este projeto](/docs/what-is-champollion).
+- **Você quer saber com que eficácia algo realmente traduz** → isso não está aqui.
+  Está no [leaderboard](/leaderboard) ([como funciona a publicação](/docs/reference/leaderboard)).

@@ -1,0 +1,48 @@
+{
+  "id": "ref-ntrex-128",
+  "type": "reference",
+  "name": "NTREX-128",
+  "version": "1.0",
+  "description": "News Test References for Machine Translation evaluation, covering 128 languages. Created by Microsoft Research. Source sentences are from WMT19 English news test set, professionally translated into 128 languages. Designed as a reusable, freely available MT evaluation benchmark.",
+  "source": {
+    "publisher": "Microsoft Research",
+    "url": "https://github.com/MicrosoftTranslator/NTREX",
+    "paper": "https://arxiv.org/abs/2204.09498",
+    "citation": "Federmann et al. (2022). NTREX-128 — News Test References for MT Evaluation of 128 Languages.",
+    "fundedBy": "Microsoft"
+  },
+  "license": {
+    "spdx": "CC-BY-SA-4.0",
+    "commercial": false,
+    "redistribution": true,
+    "aiTraining": "Permitted with attribution under CC-BY-SA-4.0 terms.",
+    "notes": null
+  },
+  "languages": ["afr", "amh", "arb", "asm", "azj", "bel", "ben", "bos", "bul", "cat", "ceb", "ces", "ckb", "cmn", "cym", "dan", "deu", "ell", "eng", "est", "eus", "fas", "fil", "fin", "fra", "gle", "glg", "guj", "hat", "hau", "heb", "hin", "hrv", "hun", "hye", "ibo", "ind", "isl", "ita", "jav", "jpn", "kan", "kat", "kaz", "khm", "kin", "kir", "kor", "lao", "lav", "lit", "ltz", "mal", "mar", "mkd", "mlt", "mon", "mri", "msa", "mya", "nep", "nld", "nno", "nob", "nya", "ori", "pan", "pbt", "pol", "por", "prs", "que", "ron", "run", "rus", "sin", "slk", "slv", "sna", "som", "sot", "spa", "sqi", "srp", "ssw", "sun", "swa", "swe", "tam", "tel", "tgk", "tha", "tir", "ton", "tsn", "tur", "ukr", "urd", "uzb", "vie", "wol", "xho", "yor", "zul"],
+  "segments": [
+    {
+      "id": "test",
+      "name": "Test",
+      "size": 1997,
+      "sizeUnit": "sentences",
+      "purpose": "MT evaluation — one-directional from English source"
+    }
+  ],
+  "download": {
+    "method": "url",
+    "url": "https://github.com/MicrosoftTranslator/NTREX.git",
+    "instructions": "Fetch per-language reference files at the pinned commit via https://raw.githubusercontent.com/MicrosoftTranslator/NTREX/{revision}/NTREX-128/newstest2019-ref.{lang}.txt (one sentence per line). The pin makes every fetch byte-stable; no clone needed.",
+    "sha256": null,
+    "revision": "468c6b69c7f6a75d31d4743d9daba2af566cc18d"
+  },
+  "contamination": {
+    "risk": "MEDIUM",
+    "reasoning": "Based on WMT19 English news test set (publicly available since 2019). Less commonly used than FLORES+ but still a public benchmark. Source sentences from WMT may appear in training data; translations are less likely to be contaminated.",
+    "knownInTrainingOf": []
+  },
+  "_provenance": {
+    "addedAt": "2026-06-09",
+    "lastUpdated": null,
+    "populatedFrom": "NTREX GitHub repository README (https://github.com/MicrosoftTranslator/NTREX), paper (arXiv:2204.09498). Language list from repository file listing."
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/method/1.json",
+  "title": "method/1 — one translation method, as every tool reads it",
+  "description": "A method's own description: what it is, how it runs (kind and that kind's one setting), what it translates, how it decodes, the card the leaderboard shows, and the measured evidence for it. Written as methods/<id>/method.json in a project, by `nmt-forge export` into a model folder, by `mt-eval export` and `champollion serve --emit-manifest`; read by the champollion CLI, the eval harness and the MCP server natively. Before method/1 three unrelated documents were all called method.json (the CLI plugin manifest with `type`, the harness plugin manifest with `entry_point`, forge's export); the readers still accept those as method/0 with a warning. Kind-specific settings (engine, model, model_dir, dictionary, entry_point, service.endpoint) are required by the readers, with identical messages in both runtimes. Notes of your own go under x- keys.",
+  "type": "object",
+  "required": ["$schema", "id", "name", "kind"],
+  "additionalProperties": false,
+  "patternProperties": { "^x-": {} },
+  "properties": {
+    "$schema": { "type": "string", "enum": ["https://champollion.dev/schemas/method/1.json"] },
+    "id": {
+      "description": "Stable identifier: lowercase words joined by hyphens (the run card's method_id).",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": { "description": "What people call it.", "type": "string", "minLength": 1 },
+    "version": {
+      "description": "The method's own version (semver).",
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-+][0-9A-Za-z.-]+)?$"
+    },
+    "kind": {
+      "description": "How it runs. llm: a general model prompted to translate (model, provider). llm-coached: the same with the coaching file. mt-api: a registered MT engine (engine). local-model: an open model run in this process (model). nmt-checkpoint: a model trained here (model_dir; used through its service). lexicon: word-for-word lookup in a dictionary (dictionary). python: a plugin class (entry_point). service: any server speaking the /translate contract, service-api/1 (service.endpoint). human: people translate.",
+      "type": "string",
+      "enum": ["llm", "llm-coached", "mt-api", "local-model", "nmt-checkpoint", "lexicon", "python", "service", "human"]
+    },
+    "description": { "type": "string" },
+    "author": { "type": "string" },
+    "pairs": {
+      "description": "What it translates: source → target, in the language cards' codes. A pair without a source translates from any input language.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/pair" }
+    },
+    "engine": { "description": "kind mt-api: the engine's registry name (shared/method-registry.json).", "type": "string", "minLength": 1 },
+    "provider": { "description": "kind llm / llm-coached: the provider (openrouter, openai, anthropic, gemini, local).", "type": "string", "minLength": 1 },
+    "model": { "description": "kind llm / llm-coached / local-model: the model id (an exact slug — never an alias), a Hugging Face id or a local directory.", "type": "string", "minLength": 1 },
+    "model_dir": { "description": "kind nmt-checkpoint: the model folder, relative to this file ('.' = the folder this file is in).", "type": "string", "minLength": 1 },
+    "dictionary": { "description": "kind lexicon: the dictionary file, relative to this file.", "type": "string", "minLength": 1 },
+    "entry_point": {
+      "description": "kind python: the plugin class, module:Class.",
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_.]*:[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "service": {
+      "description": "Where it answers: kind service (required), nmt-checkpoint (how it is served).",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "endpoint": { "type": "string", "pattern": "^https?://" },
+        "accepts_instructions": {
+          "description": "Does it follow per-key instructions (a feedback retry)? A trained NMT model does not.",
+          "type": "boolean"
+        },
+        "token_env": { "description": "The environment variable holding its bearer token — never the token.", "type": "string", "pattern": "^[A-Z_][A-Z0-9_]*$" }
+      }
+    },
+    "coaching": {
+      "description": "kind llm-coached: the coaching the model is sent (a file is held to its own terms). Paths are the method's own folder's and stay inside it.",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "file": { "type": "string", "minLength": 1, "description": "Free-text coaching, sent as the system prompt." },
+        "prompt": { "type": "string" },
+        "dir": { "type": "string", "minLength": 1, "description": "A folder of structured coaching per target locale (<locale>.json: grammar_rules, style_notes, dictionary), used for this method's pairs in place of a project's .champollion/coaching/ — and held to its files' terms the same way." }
+      }
+    },
+    "decode": {
+      "description": "How it decodes. Absent = the runtime's documented default.",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "temperature": { "type": "number", "minimum": 0, "maximum": 2 },
+        "batch_size": { "type": "integer", "minimum": 1, "maximum": 100000 },
+        "max_tokens": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "card": {
+      "description": "What the leaderboard shows about it (the harness's method-card vocabulary).",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "class": { "type": "string", "enum": ["raw-llm", "coached-llm", "pipeline", "custom-plugin", "api", "human"] },
+        "paradigm": { "type": "string", "enum": ["rule-based", "statistical", "neural-nmt", "llm", "hybrid", "human", "unknown"] },
+        "tools_used": { "type": "array", "items": { "type": "string" } },
+        "open_source": { "type": "boolean" },
+        "open_source_url": { "type": "string" },
+        "prompt_published": { "type": "boolean" },
+        "license": { "type": "string" },
+        "commercial_ready": { "type": "boolean" },
+        "homepage": { "type": "string" }
+      }
+    },
+    "dependency_class": {
+      "description": "kind python: S self-contained, O open external, A1/A2 API-dependent, X closed (the methods spec).",
+      "type": "string",
+      "enum": ["S", "O", "A1", "A2", "X"]
+    },
+    "dependencies": {
+      "description": "kind python: the dependency manifest (the methods spec).",
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "resources": { "type": "array", "items": { "type": "object" } },
+        "flags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "evidence": {
+      "description": "Measured runs behind it — numbers only, never a sentence: the set, the metric, the score with its 95% CI.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/evidence" }
+    },
+    "runtimes": {
+      "description": "Where it runs: cli (the champollion CLI, in-process or over HTTP) and/or engine (the eval harness).",
+      "type": "array",
+      "items": { "type": "string", "enum": ["cli", "engine"] }
+    },
+    "written_by": { "description": "The command that wrote this file.", "type": "string" }
+  },
+  "$defs": {
+    "langCode": { "type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$" },
+    "pair": {
+      "type": "object",
+      "required": ["target"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "$ref": "#/$defs/langCode" },
+        "target": { "$ref": "#/$defs/langCode" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["dataset", "metric", "score"],
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "dataset": { "type": "string", "minLength": 1 },
+        "pair": { "$ref": "#/$defs/pair" },
+        "metric": { "type": "string", "minLength": 1 },
+        "score": { "type": "number" },
+        "ci": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+        "n": { "type": "integer", "minimum": 0 },
+        "date": { "type": "string" },
+        "run": { "type": "string" }
+      }
+    }
+  }
+}

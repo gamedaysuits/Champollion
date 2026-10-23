@@ -1,0 +1,44 @@
+{
+  "_comment": "Is the rails release out? The rails pages describe commands (`champollion new`, `next`, `data`, the MCP server's rails profile, `nmt-forge floor`, `mt-eval translate/serve`) that the packages published on 2026-10-11 do NOT have, at the SAME version numbers as this tree. While `railsReleased` is false, every rails page says so (a 'Not released yet' notice), and each file in `preReleaseFiles` (llms.txt and for-agents.md are served even behind the pre-launch gate; the gate page's own copy is middleware.js) carries its `marker` — with the published versions where `versions` is true; scripts/check-site-claims.mjs fails if either is missing. At release, set `railsReleased` to true AND fill `railsVersions` with the versions that carry the rails: the build then pins them in the commands it shows (an agent prompt can never fetch an older server), refuses to build with a version missing, and the check fails until every marker is gone. `published` records what `npm view` / PyPI returned on `checked`.",
+  "railsReleased": true,
+  "checked": "2026-10-18",
+  "published": {
+    "champollion": "0.6.0",
+    "champollion-mcp-server": "0.4.0",
+    "nmt-forge": "0.3.0",
+    "mt-eval-harness": "0.4.0"
+  },
+  "railsVersions": {
+    "champollion": "0.6.0",
+    "champollion-mcp-server": "0.4.0",
+    "nmt-forge": "0.3.0",
+    "mt-eval-harness": "0.4.0"
+  },
+  "preReleaseFiles": [
+    {
+      "path": "static/llms.txt",
+      "marker": "Pre-release:",
+      "versions": true
+    },
+    {
+      "path": "static/llms-full.txt",
+      "marker": "Pre-release:",
+      "versions": true
+    },
+    {
+      "path": "src/pages/for-agents.md",
+      "marker": "Pre-release:",
+      "versions": true
+    },
+    {
+      "path": "docs/network/getting-started/mcp-server.md",
+      "marker": "Pre-release:",
+      "versions": false
+    },
+    {
+      "path": "middleware.js",
+      "marker": "That release is being prepared",
+      "versions": false
+    }
+  ]
+}

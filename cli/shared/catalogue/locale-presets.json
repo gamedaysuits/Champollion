@@ -1,0 +1,9 @@
+{
+  "_comment": "Quick-pick groups of app UI locales that `champollion init` expands (`--langs european,ja`). A convenience for app developers choosing which locale files to create — not a statement about any language, its region or its speakers. Edit HERE, never in code: init.js, its wizard hint and `champollion help init` all read this file (bundled into the CLI by `npm run sync:shared`). Codes are CLDR locale codes, in the order init writes them.",
+  "presets": {
+    "european": ["fr", "de", "es", "it", "pt", "nl"],
+    "asian": ["ja", "zh", "ko"],
+    "global": ["fr", "es", "de", "ja", "zh", "ko", "pt", "ar"],
+    "nordic": ["da", "fi", "nb", "sv"]
+  }
+}

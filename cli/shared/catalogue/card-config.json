@@ -1,0 +1,6091 @@
+{
+  "_doc": "The AUTHORED config kernel — product decisions, never facts, never cited (gate 3, founder 2026-08-07→09). scriptConverter keys drive lib/scripts.js conversion; conlangs are whole product-defined locales; formality/registers entries here are the hand-enriched ones the runtime merges when a card carries none.",
+  "version": 1,
+  "scriptConverter": {
+    "crk": "crk",
+    "srp": "sr",
+    "tlh": "tlh",
+    "x-elvish-s": "x-elvish-s",
+    "x-kryptonian": "x-kryptonian"
+  },
+  "conlangs": {
+    "x-elvish-s": {
+      "code": "x-elvish-s",
+      "name": "Sindarin (Tolkien Elvish)",
+      "nativeName": "Sindarin",
+      "alternateNames": [],
+      "iso639_3": null,
+      "iso639_1": null,
+      "bcp47": "x-elvish-s",
+      "aliases": [],
+      "isoScope": null,
+      "isoType": null,
+      "macrolanguage": null,
+      "extends": null,
+      "glottocode": null,
+      "classification": null,
+      "isIsolate": false,
+      "macroarea": null,
+      "coordinates": null,
+      "countries": [],
+      "regions": null,
+      "arealContext": null,
+      "script": "Latn",
+      "scriptUnicodeName": "Latin",
+      "scripts": [
+        {
+          "code": "Latn",
+          "name": "Latin",
+          "source": "cldr"
+        }
+      ],
+      "dir": "ltr",
+      "scriptConverter": "x-elvish-s",
+      "orthographicStatus": "developing",
+      "speakerEstimates": [],
+      "vitality": null,
+      "documentationDepth": null,
+      "digitalPresence": null,
+      "dialectCount": null,
+      "formality": {
+        "system": "register-levels",
+        "description": "Sindarin is J.R.R. Tolkien's Elvish language. It has a formal/informal distinction through verb mutation and pronoun choice, but the corpus is small enough that only a general register is practical for translation. Sindarin uses Latin script for working translation; Tengwar script is available via converter.",
+        "default": "standard"
+      },
+      "registers": null,
+      "gender": {
+        "grammatical": false,
+        "inclusiveGuidance": null
+      },
+      "codeSwitching": null,
+      "linguisticChallenges": null,
+      "contactInfluences": [],
+      "rules": {
+        "typography": {
+          "usesSpaces": true,
+          "punctuationSpacing": {
+            "doublePunctuation": "none"
+          }
+        },
+        "capitalization": {
+          "hasCase": true
+        },
+        "plurals": {}
+      },
+      "typologicalProfile": null,
+      "phonologicalInventory": null,
+      "encyclopedic": null,
+      "culturalAphorism": null,
+      "varieties": [],
+      "resources": {
+        "corpora": [],
+        "models": [],
+        "tools": [
+          {
+            "type": "mt-api",
+            "name": "llm translation API",
+            "description": "Supported by llm for machine translation (verified date unknown).",
+            "source": "api-verification"
+          }
+        ],
+        "fsts": []
+      },
+      "databaseCoverage": {
+        "grambank": false,
+        "wals": false,
+        "phoible": false,
+        "cldr": false,
+        "linguameta": false,
+        "glottolog": false,
+        "opus": false,
+        "universalDependencies": false,
+        "commonVoice": false,
+        "totalDatabases": 0
+      },
+      "corpusAvailability": null,
+      "keyboardSupport": null,
+      "methodSupport": {
+        "googleTranslate": {
+          "supported": false
+        },
+        "deepl": {
+          "supported": false
+        },
+        "microsoftTranslator": {
+          "supported": false
+        },
+        "libreTranslate": {
+          "supported": false
+        },
+        "nllb": {
+          "supported": false
+        },
+        "llm": {
+          "supported": true
+        }
+      },
+      "metricModelSupport": null,
+      "metricPlugins": null,
+      "omt1600": null,
+      "evalDatasets": [],
+      "pipelineReadiness": {
+        "score": 10,
+        "tier": "minimal",
+        "components": {
+          "commonVoice": false,
+          "wikipedia": false,
+          "opus": false,
+          "lexibank": false,
+          "ud": false,
+          "keyboard": false,
+          "resources": true,
+          "googleTranslate": false,
+          "deepl": false,
+          "nllb": false
+        },
+        "source": "derived"
+      },
+      "dataSources": [
+        "cleanup-phase0",
+        "derived"
+      ],
+      "supportTier": "developing",
+      "humanReviewed": null,
+      "notes": "Tengwar script requires a CSUR-compatible font (PUA U+E000–E07F). Mode of Beleriand is used for the deterministic converter.",
+      "firstDocumented": null,
+      "lastDocumented": null,
+      "_generated": null,
+      "_fieldSources": {
+        "code": "iso639-3-2024",
+        "name": "iso639-3-2024",
+        "isIsolate": "glottolog-5.3",
+        "script": "cldr",
+        "dir": "derived-from-script",
+        "rules": "manual-curation",
+        "scripts": [
+          "cldr"
+        ],
+        "methodSupport": "api-verification-2026",
+        "formality": "manual-curation",
+        "gender": "manual-curation",
+        "resources": "cleanup-resources-phase0",
+        "pipelineReadiness": "derived",
+        "orthographicStatus": "derived:cldr+script+keyboard",
+        "databaseCoverage": "derived-from-local-database-snapshots",
+        "scriptUnicodeName": "derived:script",
+        "contactInfluences": "manual-curation",
+        "evalDatasets": "manual-curation",
+        "notes": "manual-curation",
+        "orthographies": "derived:scripts+orthographic-status (conventions: curated-orthography-conventions.json)"
+      },
+      "numeralSystem": null,
+      "colexificationProfile": null,
+      "archivePresence": null,
+      "modality": null,
+      "taxonomyNotes": null,
+      "nativeNameVerdict": "plausible",
+      "orthographies": [
+        {
+          "script": "Latn",
+          "canonicalForMt": true,
+          "source": "cldr"
+        }
+      ]
+    },
+    "x-kryptonian": {
+      "code": "x-kryptonian",
+      "name": "Kryptonian",
+      "nativeName": "Kryptonian",
+      "alternateNames": [],
+      "iso639_3": null,
+      "iso639_1": null,
+      "bcp47": "x-kryptonian",
+      "aliases": [],
+      "isoScope": null,
+      "isoType": null,
+      "macrolanguage": null,
+      "extends": null,
+      "glottocode": null,
+      "classification": null,
+      "isIsolate": false,
+      "macroarea": null,
+      "coordinates": null,
+      "countries": [],
+      "regions": null,
+      "arealContext": null,
+      "script": "Latn",
+      "scriptUnicodeName": "Latin",
+      "scripts": [
+        {
+          "code": "Latn",
+          "name": "Latin",
+          "source": "cldr"
+        }
+      ],
+      "dir": "ltr",
+      "scriptConverter": "x-kryptonian",
+      "orthographicStatus": "developing",
+      "speakerEstimates": [],
+      "vitality": null,
+      "documentationDepth": null,
+      "digitalPresence": null,
+      "dialectCount": null,
+      "formality": {
+        "system": "none",
+        "description": "Constructed language or stylistic variant — no formality system. Tone is defined entirely by the register preset.",
+        "default": "standard"
+      },
+      "registers": {
+        "standard": {
+          "label": "Standard",
+          "description": "No grammaticalized politeness distinctions. A single register serves all social contexts, though lexical choices may vary by formality.",
+          "prompt": "Use standard register. This language does not grammaticalize politeness distinctions. Write clearly and naturally.",
+          "isDefault": true,
+          "source": "derived-from-formality (unknown)"
+        }
+      },
+      "gender": null,
+      "codeSwitching": null,
+      "linguisticChallenges": null,
+      "contactInfluences": [],
+      "rules": {
+        "typography": {
+          "usesSpaces": true,
+          "punctuationSpacing": {
+            "doublePunctuation": "none"
+          }
+        },
+        "capitalization": {
+          "hasCase": true
+        },
+        "plurals": {}
+      },
+      "typologicalProfile": null,
+      "phonologicalInventory": null,
+      "encyclopedic": null,
+      "culturalAphorism": null,
+      "varieties": [],
+      "resources": {
+        "corpora": [],
+        "models": [],
+        "tools": [
+          {
+            "type": "mt-api",
+            "name": "llm translation API",
+            "description": "Supported by llm for machine translation (verified date unknown).",
+            "source": "api-verification"
+          }
+        ],
+        "fsts": []
+      },
+      "databaseCoverage": {
+        "grambank": false,
+        "wals": false,
+        "phoible": false,
+        "cldr": false,
+        "linguameta": false,
+        "glottolog": false,
+        "opus": false,
+        "universalDependencies": false,
+        "commonVoice": false,
+        "totalDatabases": 0
+      },
+      "corpusAvailability": null,
+      "keyboardSupport": null,
+      "methodSupport": {
+        "googleTranslate": {
+          "supported": false
+        },
+        "deepl": {
+          "supported": false
+        },
+        "microsoftTranslator": {
+          "supported": false
+        },
+        "libreTranslate": {
+          "supported": false
+        },
+        "nllb": {
+          "supported": false
+        },
+        "llm": {
+          "supported": true
+        }
+      },
+      "metricModelSupport": null,
+      "metricPlugins": null,
+      "omt1600": null,
+      "evalDatasets": [],
+      "pipelineReadiness": {
+        "score": 10,
+        "tier": "minimal",
+        "components": {
+          "commonVoice": false,
+          "wikipedia": false,
+          "opus": false,
+          "lexibank": false,
+          "ud": false,
+          "keyboard": false,
+          "resources": true,
+          "googleTranslate": false,
+          "deepl": false,
+          "nllb": false
+        },
+        "source": "derived"
+      },
+      "dataSources": [
+        "cleanup-phase0",
+        "derived"
+      ],
+      "supportTier": "developing",
+      "humanReviewed": null,
+      "notes": "Kryptonian 'script' is a 1:1 Latin cipher rendered via custom PUA font (U+E100–E119). The converter is font-based, not linguistic.",
+      "firstDocumented": null,
+      "lastDocumented": null,
+      "_generated": null,
+      "_fieldSources": {
+        "code": "iso639-3-2024",
+        "name": "iso639-3-2024",
+        "isIsolate": "glottolog-5.3",
+        "script": "cldr",
+        "dir": "derived-from-script",
+        "rules": "manual-curation",
+        "scripts": [
+          "cldr"
+        ],
+        "methodSupport": "api-verification-2026",
+        "formality": "manual-curation",
+        "registers": "derived-from-formality (unknown)",
+        "resources": "cleanup-resources-phase0",
+        "pipelineReadiness": "derived",
+        "orthographicStatus": "derived:cldr+script+keyboard",
+        "databaseCoverage": "derived-from-local-database-snapshots",
+        "scriptUnicodeName": "derived:script",
+        "contactInfluences": "manual-curation",
+        "evalDatasets": "manual-curation",
+        "notes": "manual-curation",
+        "orthographies": "derived:scripts+orthographic-status (conventions: curated-orthography-conventions.json)"
+      },
+      "numeralSystem": null,
+      "colexificationProfile": null,
+      "archivePresence": null,
+      "modality": null,
+      "taxonomyNotes": null,
+      "nativeNameVerdict": "suspect",
+      "orthographies": [
+        {
+          "script": "Latn",
+          "canonicalForMt": true,
+          "source": "cldr"
+        }
+      ]
+    },
+    "x-pirate": {
+      "code": "x-pirate",
+      "name": "Pirate English",
+      "nativeName": "Pirate English",
+      "alternateNames": [],
+      "iso639_3": null,
+      "iso639_1": null,
+      "bcp47": "x-pirate",
+      "aliases": [],
+      "isoScope": null,
+      "isoType": null,
+      "macrolanguage": null,
+      "extends": null,
+      "glottocode": null,
+      "classification": null,
+      "isIsolate": false,
+      "macroarea": null,
+      "coordinates": null,
+      "countries": [],
+      "regions": null,
+      "arealContext": null,
+      "script": "Latn",
+      "scriptUnicodeName": "Latin",
+      "scripts": [
+        {
+          "code": "Latn",
+          "name": "Latin",
+          "source": "cldr"
+        }
+      ],
+      "dir": "ltr",
+      "scriptConverter": null,
+      "orthographicStatus": "developing",
+      "speakerEstimates": [],
+      "vitality": null,
+      "documentationDepth": null,
+      "digitalPresence": null,
+      "dialectCount": null,
+      "formality": {
+        "system": "none",
+        "description": "Constructed language or stylistic variant — no formality system. Tone is defined entirely by the register preset.",
+        "default": "standard"
+      },
+      "registers": {
+        "standard": {
+          "label": "Standard Pirate",
+          "description": "Classic pirate English with nautical metaphors and Arr vocabulary.",
+          "prompt": "Pirate English. Translate into stereotypical pirate dialect with nautical vocabulary, 'ye' for 'you', 'me' for 'my', 'Arr' interjections, and seafaring metaphors. Keep UI meaning clear — the joke should enhance, not obscure, the interface. Error messages should still be understandable."
+        },
+        "full-send": {
+          "label": "Full Send Pirate",
+          "description": "Maximum pirate. Every sentence gets the full treatment. For themed apps and Talk Like a Pirate Day.",
+          "prompt": "Maximum pirate English. Every response gets the full treatment — nautical slang, sea shanty rhythm, treasure metaphors, weather references. 'Loading' becomes 'Haulin' anchor', 'Error' becomes 'Blimey!'. Fun trumps clarity."
+        }
+      },
+      "gender": null,
+      "codeSwitching": null,
+      "linguisticChallenges": null,
+      "contactInfluences": [],
+      "rules": {
+        "typography": {
+          "usesSpaces": true,
+          "punctuationSpacing": {
+            "doublePunctuation": "none"
+          }
+        },
+        "capitalization": {
+          "hasCase": true
+        },
+        "plurals": {}
+      },
+      "typologicalProfile": null,
+      "phonologicalInventory": null,
+      "encyclopedic": null,
+      "culturalAphorism": null,
+      "varieties": [],
+      "resources": {
+        "corpora": [],
+        "models": [],
+        "tools": [
+          {
+            "type": "mt-api",
+            "name": "llm translation API",
+            "description": "Supported by llm for machine translation (verified date unknown).",
+            "source": "api-verification"
+          }
+        ],
+        "fsts": []
+      },
+      "databaseCoverage": {
+        "grambank": false,
+        "wals": false,
+        "phoible": false,
+        "cldr": false,
+        "linguameta": false,
+        "glottolog": false,
+        "opus": false,
+        "universalDependencies": false,
+        "commonVoice": false,
+        "totalDatabases": 0
+      },
+      "corpusAvailability": null,
+      "keyboardSupport": null,
+      "methodSupport": {
+        "googleTranslate": {
+          "supported": false
+        },
+        "deepl": {
+          "supported": false
+        },
+        "microsoftTranslator": {
+          "supported": false
+        },
+        "libreTranslate": {
+          "supported": false
+        },
+        "nllb": {
+          "supported": false
+        },
+        "llm": {
+          "supported": true
+        }
+      },
+      "metricModelSupport": null,
+      "metricPlugins": null,
+      "omt1600": null,
+      "evalDatasets": [],
+      "pipelineReadiness": {
+        "score": 10,
+        "tier": "minimal",
+        "components": {
+          "commonVoice": false,
+          "wikipedia": false,
+          "opus": false,
+          "lexibank": false,
+          "ud": false,
+          "keyboard": false,
+          "resources": true,
+          "googleTranslate": false,
+          "deepl": false,
+          "nllb": false
+        },
+        "source": "derived"
+      },
+      "dataSources": [
+        "cleanup-phase0",
+        "derived"
+      ],
+      "supportTier": "developing",
+      "humanReviewed": null,
+      "notes": "Register-only conlang — English with pirate style transformation. No script conversion needed.",
+      "firstDocumented": null,
+      "lastDocumented": null,
+      "_generated": null,
+      "_fieldSources": {
+        "code": "iso639-3-2024",
+        "name": "iso639-3-2024",
+        "isIsolate": "glottolog-5.3",
+        "script": "cldr",
+        "dir": "derived-from-script",
+        "rules": "manual-curation",
+        "scripts": [
+          "cldr"
+        ],
+        "methodSupport": "api-verification-2026",
+        "formality": "manual-curation",
+        "registers": "manual-curation",
+        "resources": "cleanup-resources-phase0",
+        "pipelineReadiness": "derived",
+        "orthographicStatus": "derived:cldr+script+keyboard",
+        "databaseCoverage": "derived-from-local-database-snapshots",
+        "scriptUnicodeName": "derived:script",
+        "contactInfluences": "manual-curation",
+        "evalDatasets": "manual-curation",
+        "notes": "manual-curation",
+        "orthographies": "derived:scripts+orthographic-status (conventions: curated-orthography-conventions.json)"
+      },
+      "numeralSystem": null,
+      "colexificationProfile": null,
+      "archivePresence": null,
+      "modality": null,
+      "taxonomyNotes": null,
+      "nativeNameVerdict": "suspect",
+      "orthographies": [
+        {
+          "script": "Latn",
+          "canonicalForMt": true,
+          "source": "cldr"
+        }
+      ]
+    },
+    "x-shakespeare": {
+      "code": "x-shakespeare",
+      "name": "Shakespearean English",
+      "nativeName": "Shakespearean English",
+      "alternateNames": [],
+      "iso639_3": null,
+      "iso639_1": null,
+      "bcp47": "x-shakespeare",
+      "aliases": [],
+      "isoScope": null,
+      "isoType": null,
+      "macrolanguage": null,
+      "extends": null,
+      "glottocode": null,
+      "classification": null,
+      "isIsolate": false,
+      "macroarea": null,
+      "coordinates": null,
+      "countries": [],
+      "regions": null,
+      "arealContext": null,
+      "script": "Latn",
+      "scriptUnicodeName": "Latin",
+      "scripts": [
+        {
+          "code": "Latn",
+          "name": "Latin",
+          "source": "cldr"
+        }
+      ],
+      "dir": "ltr",
+      "scriptConverter": null,
+      "orthographicStatus": "developing",
+      "speakerEstimates": [],
+      "vitality": null,
+      "documentationDepth": null,
+      "digitalPresence": null,
+      "dialectCount": null,
+      "formality": {
+        "system": "none",
+        "description": "Constructed language or stylistic variant — no formality system. Tone is defined entirely by the register preset.",
+        "default": "standard"
+      },
+      "registers": {
+        "standard": {
+          "label": "Standard",
+          "description": "No grammaticalized politeness distinctions. A single register serves all social contexts, though lexical choices may vary by formality.",
+          "prompt": "Use standard register. This language does not grammaticalize politeness distinctions. Write clearly and naturally.",
+          "isDefault": true,
+          "source": "derived-from-formality (unknown)"
+        }
+      },
+      "gender": null,
+      "codeSwitching": null,
+      "linguisticChallenges": null,
+      "contactInfluences": [],
+      "rules": {
+        "typography": {
+          "usesSpaces": true,
+          "punctuationSpacing": {
+            "doublePunctuation": "none"
+          }
+        },
+        "capitalization": {
+          "hasCase": true
+        },
+        "plurals": {}
+      },
+      "typologicalProfile": null,
+      "phonologicalInventory": null,
+      "encyclopedic": null,
+      "culturalAphorism": null,
+      "varieties": [],
+      "resources": {
+        "corpora": [],
+        "models": [],
+        "tools": [
+          {
+            "type": "mt-api",
+            "name": "llm translation API",
+            "description": "Supported by llm for machine translation (verified date unknown).",
+            "source": "api-verification"
+          }
+        ],
+        "fsts": []
+      },
+      "databaseCoverage": {
+        "grambank": false,
+        "wals": false,
+        "phoible": false,
+        "cldr": false,
+        "linguameta": false,
+        "glottolog": false,
+        "opus": false,
+        "universalDependencies": false,
+        "commonVoice": false,
+        "totalDatabases": 0
+      },
+      "corpusAvailability": null,
+      "keyboardSupport": null,
+      "methodSupport": {
+        "googleTranslate": {
+          "supported": false
+        },
+        "deepl": {
+          "supported": false
+        },
+        "microsoftTranslator": {
+          "supported": false
+        },
+        "libreTranslate": {
+          "supported": false
+        },
+        "nllb": {
+          "supported": false
+        },
+        "llm": {
+          "supported": true
+        }
+      },
+      "metricModelSupport": null,
+      "metricPlugins": null,
+      "omt1600": null,
+      "evalDatasets": [],
+      "pipelineReadiness": {
+        "score": 10,
+        "tier": "minimal",
+        "components": {
+          "commonVoice": false,
+          "wikipedia": false,
+          "opus": false,
+          "lexibank": false,
+          "ud": false,
+          "keyboard": false,
+          "resources": true,
+          "googleTranslate": false,
+          "deepl": false,
+          "nllb": false
+        },
+        "source": "derived"
+      },
+      "dataSources": [
+        "cleanup-phase0",
+        "derived"
+      ],
+      "supportTier": "developing",
+      "humanReviewed": null,
+      "notes": "Register-only conlang — English with Early Modern English style transformation.",
+      "firstDocumented": null,
+      "lastDocumented": null,
+      "_generated": null,
+      "_fieldSources": {
+        "code": "iso639-3-2024",
+        "name": "iso639-3-2024",
+        "isIsolate": "glottolog-5.3",
+        "script": "cldr",
+        "dir": "derived-from-script",
+        "rules": "manual-curation",
+        "scripts": [
+          "cldr"
+        ],
+        "methodSupport": "api-verification-2026",
+        "formality": "manual-curation",
+        "registers": "derived-from-formality (unknown)",
+        "resources": "cleanup-resources-phase0",
+        "pipelineReadiness": "derived",
+        "orthographicStatus": "derived:cldr+script+keyboard",
+        "databaseCoverage": "derived-from-local-database-snapshots",
+        "scriptUnicodeName": "derived:script",
+        "contactInfluences": "manual-curation",
+        "evalDatasets": "manual-curation",
+        "notes": "manual-curation",
+        "orthographies": "derived:scripts+orthographic-status (conventions: curated-orthography-conventions.json)"
+      },
+      "numeralSystem": null,
+      "colexificationProfile": null,
+      "archivePresence": null,
+      "modality": null,
+      "taxonomyNotes": null,
+      "nativeNameVerdict": "suspect",
+      "orthographies": [
+        {
+          "script": "Latn",
+          "canonicalForMt": true,
+          "source": "cldr"
+        }
+      ]
+    },
+    "x-yoda": {
+      "code": "x-yoda",
+      "name": "Yoda-speak",
+      "nativeName": "Yoda-speak",
+      "alternateNames": [],
+      "iso639_3": null,
+      "iso639_1": null,
+      "bcp47": "x-yoda",
+      "aliases": [],
+      "isoScope": null,
+      "isoType": null,
+      "macrolanguage": null,
+      "extends": null,
+      "glottocode": null,
+      "classification": null,
+      "isIsolate": false,
+      "macroarea": null,
+      "coordinates": null,
+      "countries": [],
+      "regions": null,
+      "arealContext": null,
+      "script": "Latn",
+      "scriptUnicodeName": "Latin",
+      "scripts": [
+        {
+          "code": "Latn",
+          "name": "Latin",
+          "source": "cldr"
+        }
+      ],
+      "dir": "ltr",
+      "scriptConverter": null,
+      "orthographicStatus": "developing",
+      "speakerEstimates": [],
+      "vitality": null,
+      "documentationDepth": null,
+      "digitalPresence": null,
+      "dialectCount": null,
+      "formality": {
+        "system": "none",
+        "description": "Constructed language or stylistic variant — no formality system. Tone is defined entirely by the register preset.",
+        "default": "standard"
+      },
+      "registers": {
+        "standard": {
+          "label": "Standard",
+          "description": "No grammaticalized politeness distinctions. A single register serves all social contexts, though lexical choices may vary by formality.",
+          "prompt": "Use standard register. This language does not grammaticalize politeness distinctions. Write clearly and naturally.",
+          "isDefault": true,
+          "source": "derived-from-formality (unknown)"
+        }
+      },
+      "gender": null,
+      "codeSwitching": null,
+      "linguisticChallenges": null,
+      "contactInfluences": [],
+      "rules": {
+        "typography": {
+          "usesSpaces": true,
+          "punctuationSpacing": {
+            "doublePunctuation": "none"
+          }
+        },
+        "capitalization": {
+          "hasCase": true
+        },
+        "plurals": {}
+      },
+      "typologicalProfile": null,
+      "phonologicalInventory": null,
+      "encyclopedic": null,
+      "culturalAphorism": null,
+      "varieties": [],
+      "resources": {
+        "corpora": [],
+        "models": [],
+        "tools": [
+          {
+            "type": "mt-api",
+            "name": "llm translation API",
+            "description": "Supported by llm for machine translation (verified date unknown).",
+            "source": "api-verification"
+          }
+        ],
+        "fsts": []
+      },
+      "databaseCoverage": {
+        "grambank": false,
+        "wals": false,
+        "phoible": false,
+        "cldr": false,
+        "linguameta": false,
+        "glottolog": false,
+        "opus": false,
+        "universalDependencies": false,
+        "commonVoice": false,
+        "totalDatabases": 0
+      },
+      "corpusAvailability": null,
+      "keyboardSupport": null,
+      "methodSupport": {
+        "googleTranslate": {
+          "supported": false
+        },
+        "deepl": {
+          "supported": false
+        },
+        "microsoftTranslator": {
+          "supported": false
+        },
+        "libreTranslate": {
+          "supported": false
+        },
+        "nllb": {
+          "supported": false
+        },
+        "llm": {
+          "supported": true
+        }
+      },
+      "metricModelSupport": null,
+      "metricPlugins": null,
+      "omt1600": null,
+      "evalDatasets": [],
+      "pipelineReadiness": {
+        "score": 10,
+        "tier": "minimal",
+        "components": {
+          "commonVoice": false,
+          "wikipedia": false,
+          "opus": false,
+          "lexibank": false,
+          "ud": false,
+          "keyboard": false,
+          "resources": true,
+          "googleTranslate": false,
+          "deepl": false,
+          "nllb": false
+        },
+        "source": "derived"
+      },
+      "dataSources": [
+        "cleanup-phase0",
+        "derived"
+      ],
+      "supportTier": "developing",
+      "humanReviewed": null,
+      "notes": "Register-only conlang — English with Yoda's OSV syntax transformation.",
+      "firstDocumented": null,
+      "lastDocumented": null,
+      "_generated": null,
+      "_fieldSources": {
+        "code": "iso639-3-2024",
+        "name": "iso639-3-2024",
+        "isIsolate": "glottolog-5.3",
+        "script": "cldr",
+        "dir": "derived-from-script",
+        "rules": "manual-curation",
+        "scripts": [
+          "cldr"
+        ],
+        "methodSupport": "api-verification-2026",
+        "formality": "manual-curation",
+        "registers": "derived-from-formality (unknown)",
+        "resources": "cleanup-resources-phase0",
+        "pipelineReadiness": "derived",
+        "orthographicStatus": "derived:cldr+script+keyboard",
+        "databaseCoverage": "derived-from-local-database-snapshots",
+        "scriptUnicodeName": "derived:script",
+        "contactInfluences": "manual-curation",
+        "evalDatasets": "manual-curation",
+        "notes": "manual-curation",
+        "orthographies": "derived:scripts+orthographic-status (conventions: curated-orthography-conventions.json)"
+      },
+      "numeralSystem": null,
+      "colexificationProfile": null,
+      "archivePresence": null,
+      "modality": null,
+      "taxonomyNotes": null,
+      "nativeNameVerdict": "suspect",
+      "orthographies": [
+        {
+          "script": "Latn",
+          "canonicalForMt": true,
+          "source": "cldr"
+        }
+      ]
+    }
+  },
+  "formality": {},
+  "aliasRouting": {
+    "_why": "Product ROUTING decisions, not facts. CLDR keeps `no` as its own locale (likelySubtags no→no-Latn-NO) and its nob→nb alias is reason 'overlong', not 'macrolanguage' — so no fetched source says no=Bokmål. Routing `no` to nob is a pre-existing product decision (Bokmål is what `no` content overwhelmingly is, and it is the tag vendors publish), relocated here from the old corpus's alias table. The 94 macrolanguage variety pins remain a founder decision; this file records only what the product already did.",
+    "no": "nob"
+  },
+  "evalConfig": {
+    "_why": "OUR evaluation wiring — which LYSS package, plugin classes and eval packs the harness loads per language. Product configuration under gate 3: declared, never cited as a fact about the language.",
+    "amh": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      },
+      "evalDatasets": [
+        "eval-amh-arb-globalvoices-test-v1",
+        "eval-amh-ben-globalvoices-test-v1",
+        "eval-amh-deu-globalvoices-test-v1",
+        "eval-amh-ell-globalvoices-test-v1",
+        "eval-amh-fra-globalvoices-test-v1",
+        "eval-amh-ita-globalvoices-test-v1",
+        "eval-amh-mlg-globalvoices-test-v1",
+        "eval-amh-por-globalvoices-test-v1",
+        "eval-amh-rus-globalvoices-test-v1",
+        "eval-amh-spa-globalvoices-test-v1",
+        "eval-amh-swh-globalvoices-test-v1",
+        "eval-bouquet-dev-v1",
+        "eval-eng-amh-globalvoices-test-v1",
+        "eval-eng-amh-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "crk": {
+      "evalStandard": {
+        "package": "champollion-lyss",
+        "import": "champollion_lyss",
+        "pip": "champollion-lyss>=0.1,<0.2",
+        "description": "Champollion-LYSS measurement plugins — Cree LYSS linter + semantic validator. Fetched on demand from PyPI; the harness core ships no language-specific scorer code.",
+        "ipNotice": "Plains Cree (nêhiyawêwin) data sovereignty — please read.\n\nThe Cree LYSS validation standard and any Plains Cree language data are treated as the property of the nêhiyaw language community and are offered for NON-COMMERCIAL, community-benefit use (sovereignty-aspirant — community ownership and control of language data; relational-trust governance in progress).\n\nGloss data is fetched live from the public itwêwina API (itwewina.altlab.app) and cached locally for your own use only. The underlying dictionary content (Wolvengrey CW, Maskwacîs MD, AECD) is NOT openly licensed — do not commit, redistribute, publish, or bundle the cache. The Cree FST (GiellaLT/ALTLab, AGPL) is downloaded and invoked as a separate tool, never bundled.\n\nBy installing and running this standard you agree to respect these terms. Set CHAMPOLLION_LYSS_ACCEPT_IP=1 to acknowledge in automation."
+      },
+      "evalMetrics": {
+        "lyss-eq": {
+          "module": "champollion_lyss.crk.metrics",
+          "class": "CrkLinterMetric",
+          "description": "LYSS deterministic variant-class equivalence linter"
+        },
+        "lyss-sem": {
+          "module": "champollion_lyss.crk.metrics",
+          "class": "CrkSemanticMetric",
+          "description": "LYSS FST-based semantic validator with spaCy overlap",
+          "dependencies": [
+            "spacy>=3.7"
+          ],
+          "spacy_models": [
+            "en_core_web_md"
+          ]
+        },
+        "lyss-chrf": {
+          "module": "champollion_lyss.crk.metrics",
+          "class": "CrkLintedChrF",
+          "description": "LYSS-normalized chrF++ — lint-verdict EXACT/EQUIVALENT scores 100, MISS falls back to canonical chrF++; comparator lane, not comparable to published chrF++"
+        }
+      },
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4",
+          "requests": "requests>=2.28",
+          "spacy": "spacy>=3.7"
+        },
+        "postInstall": [
+          {
+            "command": "spacy download en_core_web_md",
+            "label": "spaCy English model (for LYSS-sem)"
+          }
+        ],
+        "requiresFst": true,
+        "description": "LYSS equivalence linter + FST morphological validation"
+      },
+      "evalDatasets": [
+        "eval-eng-crk-edtekla-dev-v1",
+        "eval-eng-crk-edtekla-prize-v1",
+        "eval-eng-crk-edtekla-textbook"
+      ]
+    },
+    "eng": {
+      "metricPlugins": {
+        "formalityMarkers": true
+      },
+      "evalDatasets": [
+        "eval-afr-eng-tatoeba-dev-v1",
+        "eval-alt-test-v1",
+        "eval-ara-eng-tatoeba-dev-v1",
+        "eval-arabench-test-v1",
+        "eval-arq-eng-tatoeba-dev-v1",
+        "eval-arz-eng-tatoeba-dev-v1",
+        "eval-asm-eng-tatoeba-dev-v1",
+        "eval-awa-eng-tatoeba-dev-v1",
+        "eval-aze-eng-tatoeba-dev-v1",
+        "eval-bel-eng-tatoeba-dev-v1",
+        "eval-ben-eng-tatoeba-dev-v1",
+        "eval-ber-eng-tatoeba-dev-v1",
+        "eval-bouquet-dev-v1",
+        "eval-bre-eng-tatoeba-dev-v1",
+        "eval-bsd-test-v1",
+        "eval-bul-eng-tatoeba-dev-v1",
+        "eval-cat-eng-tatoeba-dev-v1",
+        "eval-cbk-eng-tatoeba-dev-v1",
+        "eval-ceb-eng-tatoeba-dev-v1",
+        "eval-ces-eng-tatoeba-dev-v1",
+        "eval-cha-eng-tatoeba-dev-v1",
+        "eval-chv-eng-tatoeba-dev-v1",
+        "eval-cor-eng-tatoeba-dev-v1",
+        "eval-cym-eng-tatoeba-dev-v1",
+        "eval-dan-eng-tatoeba-dev-v1",
+        "eval-deu-eng-tatoeba-dev-v1",
+        "eval-dtp-eng-tatoeba-dev-v1",
+        "eval-ell-eng-tatoeba-dev-v1",
+        "eval-eng-amh-globalvoices-test-v1",
+        "eval-eng-amh-tatoeba-dev-v1",
+        "eval-eng-ara-tatoeba-dev-v1",
+        "eval-eng-arb-globalvoices-test-v1",
+        "eval-eng-arb-tatoeba-dev-v1",
+        "eval-eng-aze-tatoeba-dev-v1",
+        "eval-eng-bel-tatoeba-dev-v1",
+        "eval-eng-ben-globalvoices-test-v1",
+        "eval-eng-ben-tatoeba-dev-v1",
+        "eval-eng-ber-tatoeba-dev-v1",
+        "eval-eng-bos-tatoeba-dev-v1",
+        "eval-eng-bul-globalvoices-test-v1",
+        "eval-eng-bul-tatoeba-dev-v1",
+        "eval-eng-cat-globalvoices-test-v1",
+        "eval-eng-cat-tatoeba-dev-v1",
+        "eval-eng-ceb-tatoeba-dev-v1",
+        "eval-eng-ces-globalvoices-test-v1",
+        "eval-eng-ces-tatoeba-dev-v1",
+        "eval-eng-ckb-tatoeba-dev-v1",
+        "eval-eng-cmn-tatoeba-dev-v1",
+        "eval-eng-cor-tatoeba-dev-v1",
+        "eval-eng-crk-edtekla-dev-v1",
+        "eval-eng-crk-edtekla-prize-v1",
+        "eval-eng-crk-edtekla-textbook",
+        "eval-eng-cym-tatoeba-dev-v1",
+        "eval-eng-dan-globalvoices-test-v1",
+        "eval-eng-dan-tatoeba-dev-v1",
+        "eval-eng-deu-globalvoices-test-v1",
+        "eval-eng-deu-tatoeba-dev-v1",
+        "eval-eng-dtp-tatoeba-dev-v1",
+        "eval-eng-ell-globalvoices-test-v1",
+        "eval-eng-ell-tatoeba-dev-v1",
+        "eval-eng-epo-globalvoices-test-v1",
+        "eval-eng-epo-tatoeba-dev-v1",
+        "eval-eng-est-tatoeba-dev-v1",
+        "eval-eng-eus-tatoeba-dev-v1",
+        "eval-eng-fao-tatoeba-dev-v1",
+        "eval-eng-fas-globalvoices-test-v1",
+        "eval-eng-fil-globalvoices-test-v1",
+        "eval-eng-fin-tatoeba-dev-v1",
+        "eval-eng-fra-globalvoices-test-v1",
+        "eval-eng-fra-tatoeba-dev-v1",
+        "eval-eng-fry-tatoeba-dev-v1",
+        "eval-eng-gla-tatoeba-dev-v1",
+        "eval-eng-gle-tatoeba-dev-v1",
+        "eval-eng-glg-tatoeba-dev-v1",
+        "eval-eng-gos-tatoeba-dev-v1",
+        "eval-eng-got-tatoeba-dev-v1",
+        "eval-eng-grc-tatoeba-dev-v1",
+        "eval-eng-gsw-tatoeba-dev-v1",
+        "eval-eng-guj-tatoeba-dev-v1",
+        "eval-eng-hau-gamayun-test-v1",
+        "eval-eng-hau-tatoeba-dev-v1",
+        "eval-eng-haw-tatoeba-dev-v1",
+        "eval-eng-heb-globalvoices-test-v1",
+        "eval-eng-heb-tatoeba-dev-v1",
+        "eval-eng-hil-tatoeba-dev-v1",
+        "eval-eng-hin-globalvoices-test-v1",
+        "eval-eng-hin-tatoeba-dev-v1",
+        "eval-eng-hoc-tatoeba-dev-v1",
+        "eval-eng-hrv-tatoeba-dev-v1",
+        "eval-eng-hrx-tatoeba-dev-v1",
+        "eval-eng-hun-globalvoices-test-v1",
+        "eval-eng-hun-tatoeba-dev-v1",
+        "eval-eng-hye-tatoeba-dev-v1",
+        "eval-eng-ibo-tatoeba-dev-v1",
+        "eval-eng-ido-tatoeba-dev-v1",
+        "eval-eng-ile-tatoeba-dev-v1",
+        "eval-eng-ilo-tatoeba-dev-v1",
+        "eval-eng-ina-tatoeba-dev-v1",
+        "eval-eng-ind-globalvoices-test-v1",
+        "eval-eng-ind-tatoeba-dev-v1",
+        "eval-eng-isl-tatoeba-dev-v1",
+        "eval-eng-ita-globalvoices-test-v1",
+        "eval-eng-ita-tatoeba-dev-v1",
+        "eval-eng-jav-tatoeba-dev-v1",
+        "eval-eng-jbo-tatoeba-dev-v1",
+        "eval-eng-jpn-tatoeba-dev-v1",
+        "eval-eng-kab-tatoeba-dev-v1",
+        "eval-eng-kan-tatoeba-dev-v1",
+        "eval-eng-kat-tatoeba-dev-v1",
+        "eval-eng-kaz-tatoeba-dev-v1",
+        "eval-eng-kha-tatoeba-dev-v1",
+        "eval-eng-khm-globalvoices-test-v1",
+        "eval-eng-khm-tatoeba-dev-v1",
+        "eval-eng-kmr-tatoeba-dev-v1",
+        "eval-eng-knc-gamayun-test-v1",
+        "eval-eng-kor-globalvoices-test-v1",
+        "eval-eng-kor-tatoeba-dev-v1",
+        "eval-eng-kur-tatoeba-dev-v1",
+        "eval-eng-kzj-tatoeba-dev-v1",
+        "eval-eng-lad-tatoeba-dev-v1",
+        "eval-eng-lao-tatoeba-dev-v1",
+        "eval-eng-lat-tatoeba-dev-v1",
+        "eval-eng-lav-tatoeba-dev-v1",
+        "eval-eng-lfn-tatoeba-dev-v1",
+        "eval-eng-lin-gamayun-test-v1",
+        "eval-eng-lit-tatoeba-dev-v1",
+        "eval-eng-ltz-tatoeba-dev-v1",
+        "eval-eng-lug-tatoeba-dev-v1",
+        "eval-eng-lzh-tatoeba-dev-v1",
+        "eval-eng-mal-tatoeba-dev-v1",
+        "eval-eng-mar-tatoeba-dev-v1",
+        "eval-eng-max-tatoeba-dev-v1",
+        "eval-eng-mkd-globalvoices-test-v1",
+        "eval-eng-mkd-tatoeba-dev-v1",
+        "eval-eng-mlg-globalvoices-test-v1",
+        "eval-eng-mlt-tatoeba-dev-v1",
+        "eval-eng-mon-tatoeba-dev-v1",
+        "eval-eng-mri-tatoeba-dev-v1",
+        "eval-eng-mya-globalvoices-test-v1",
+        "eval-eng-mya-tatoeba-dev-v1",
+        "eval-eng-nds-tatoeba-dev-v1",
+        "eval-eng-nld-globalvoices-test-v1",
+        "eval-eng-nld-tatoeba-dev-v1",
+        "eval-eng-nno-tatoeba-dev-v1",
+        "eval-eng-nob-tatoeba-dev-v1",
+        "eval-eng-nov-tatoeba-dev-v1",
+        "eval-eng-npi-globalvoices-test-v1",
+        "eval-eng-nst-tatoeba-dev-v1",
+        "eval-eng-oci-tatoeba-dev-v1",
+        "eval-eng-orv-tatoeba-dev-v1",
+        "eval-eng-ota-tatoeba-dev-v1",
+        "eval-eng-pag-tatoeba-dev-v1",
+        "eval-eng-pam-tatoeba-dev-v1",
+        "eval-eng-pan-tatoeba-dev-v1",
+        "eval-eng-pes-tatoeba-dev-v1",
+        "eval-eng-pmn-tatoeba-dev-v1",
+        "eval-eng-pms-tatoeba-dev-v1",
+        "eval-eng-pol-globalvoices-test-v1",
+        "eval-eng-por-globalvoices-test-v1",
+        "eval-eng-por-tatoeba-dev-v1",
+        "eval-eng-prg-tatoeba-dev-v1",
+        "eval-eng-que-tatoeba-dev-v1",
+        "eval-eng-rhg-gamayun-test-v1",
+        "eval-eng-rom-tatoeba-dev-v1",
+        "eval-eng-ron-globalvoices-test-v1",
+        "eval-eng-ron-tatoeba-dev-v1",
+        "eval-eng-run-tatoeba-dev-v1",
+        "eval-eng-rus-globalvoices-test-v1",
+        "eval-eng-rus-tatoeba-dev-v1",
+        "eval-eng-sin-tatoeba-dev-v1",
+        "eval-eng-slv-tatoeba-dev-v1",
+        "eval-eng-sme-tatoeba-dev-v1",
+        "eval-eng-sna-tatoeba-dev-v1",
+        "eval-eng-spa-globalvoices-test-v1",
+        "eval-eng-spa-tatoeba-dev-v1",
+        "eval-eng-sqi-globalvoices-test-v1",
+        "eval-eng-sqi-tatoeba-dev-v1",
+        "eval-eng-srp-globalvoices-test-v1",
+        "eval-eng-srp-tatoeba-dev-v1",
+        "eval-eng-swe-globalvoices-test-v1",
+        "eval-eng-swe-tatoeba-dev-v1",
+        "eval-eng-swh-gamayun-test-v1",
+        "eval-eng-swh-globalvoices-test-v1",
+        "eval-eng-swh-tatoeba-dev-v1",
+        "eval-eng-tam-tatoeba-dev-v1",
+        "eval-eng-tat-tatoeba-dev-v1",
+        "eval-eng-tel-tatoeba-dev-v1",
+        "eval-eng-tgl-tatoeba-dev-v1",
+        "eval-eng-tha-tatoeba-dev-v1",
+        "eval-eng-tir-gamayun-test-v1",
+        "eval-eng-tir-tatoeba-dev-v1",
+        "eval-eng-tlh-tatoeba-dev-v1",
+        "eval-eng-tok-tatoeba-dev-v1",
+        "eval-eng-tuk-tatoeba-dev-v1",
+        "eval-eng-tur-globalvoices-test-v1",
+        "eval-eng-tur-tatoeba-dev-v1",
+        "eval-eng-tzl-tatoeba-dev-v1",
+        "eval-eng-uig-tatoeba-dev-v1",
+        "eval-eng-ukr-tatoeba-dev-v1",
+        "eval-eng-urd-globalvoices-test-v1",
+        "eval-eng-urd-tatoeba-dev-v1",
+        "eval-eng-uzb-tatoeba-dev-v1",
+        "eval-eng-vie-tatoeba-dev-v1",
+        "eval-eng-vol-tatoeba-dev-v1",
+        "eval-eng-war-tatoeba-dev-v1",
+        "eval-eng-wuu-tatoeba-dev-v1",
+        "eval-eng-xal-tatoeba-dev-v1",
+        "eval-eng-xho-tatoeba-dev-v1",
+        "eval-eng-yid-tatoeba-dev-v1",
+        "eval-eng-yor-tatoeba-dev-v1",
+        "eval-eng-yue-tatoeba-dev-v1",
+        "eval-eng-zlm-tatoeba-dev-v1",
+        "eval-eng-zsm-tatoeba-dev-v1",
+        "eval-eng-zul-tatoeba-dev-v1",
+        "eval-eng-zza-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-loresmt2021-test-v1",
+        "eval-mafand-test-v1",
+        "eval-menyo20k-test-v1",
+        "eval-nictsap-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-nusax-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1",
+        "eval-turkicxwmt-test-v1",
+        "eval-wmt14-news-test-v1",
+        "eval-wmt15-news-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "eus": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      },
+      "evalDatasets": [
+        "eval-deu-eus-tatoeba-dev-v1",
+        "eval-eng-eus-tatoeba-dev-v1",
+        "eval-eus-jpn-tatoeba-dev-v1",
+        "eval-eus-rus-tatoeba-dev-v1",
+        "eval-eus-spa-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-eus-tatoeba-dev-v1",
+        "eval-jpn-eus-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-eus-tatoeba-dev-v1",
+        "eval-spa-eus-tatoeba-dev-v1"
+      ]
+    },
+    "fin": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      },
+      "evalDatasets": [
+        "eval-ain-fin-tatoeba-dev-v1",
+        "eval-dan-fin-tatoeba-dev-v1",
+        "eval-deu-fin-tatoeba-dev-v1",
+        "eval-eng-fin-tatoeba-dev-v1",
+        "eval-epo-fin-tatoeba-dev-v1",
+        "eval-est-fin-tatoeba-dev-v1",
+        "eval-fin-cmn-tatoeba-dev-v1",
+        "eval-fin-fkv-tatoeba-dev-v1",
+        "eval-fin-fra-tatoeba-dev-v1",
+        "eval-fin-heb-tatoeba-dev-v1",
+        "eval-fin-hun-tatoeba-dev-v1",
+        "eval-fin-ita-tatoeba-dev-v1",
+        "eval-fin-jpn-tatoeba-dev-v1",
+        "eval-fin-kor-tatoeba-dev-v1",
+        "eval-fin-kur-tatoeba-dev-v1",
+        "eval-fin-lat-tatoeba-dev-v1",
+        "eval-fin-nld-tatoeba-dev-v1",
+        "eval-fin-nno-tatoeba-dev-v1",
+        "eval-fin-nob-tatoeba-dev-v1",
+        "eval-fin-pol-tatoeba-dev-v1",
+        "eval-fin-por-tatoeba-dev-v1",
+        "eval-fin-rus-tatoeba-dev-v1",
+        "eval-fin-spa-tatoeba-dev-v1",
+        "eval-fin-swe-tatoeba-dev-v1",
+        "eval-fin-tur-tatoeba-dev-v1",
+        "eval-fin-yue-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-fin-tatoeba-dev-v1",
+        "eval-swe-fin-tatoeba-dev-v1",
+        "eval-wmt15-news-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "fra": {
+      "metricPlugins": {
+        "formalityMarkers": true
+      },
+      "evalDatasets": [
+        "eval-amh-fra-globalvoices-test-v1",
+        "eval-ara-fra-tatoeba-dev-v1",
+        "eval-arb-fra-globalvoices-test-v1",
+        "eval-arq-fra-tatoeba-dev-v1",
+        "eval-ary-fra-tatoeba-dev-v1",
+        "eval-avk-fra-tatoeba-dev-v1",
+        "eval-bel-fra-tatoeba-dev-v1",
+        "eval-ben-fra-globalvoices-test-v1",
+        "eval-ber-fra-tatoeba-dev-v1",
+        "eval-bre-fra-tatoeba-dev-v1",
+        "eval-bul-fra-globalvoices-test-v1",
+        "eval-bul-fra-tatoeba-dev-v1",
+        "eval-cat-fra-globalvoices-test-v1",
+        "eval-cat-fra-tatoeba-dev-v1",
+        "eval-ces-fra-globalvoices-test-v1",
+        "eval-ces-fra-tatoeba-dev-v1",
+        "eval-cor-fra-tatoeba-dev-v1",
+        "eval-dan-fra-globalvoices-test-v1",
+        "eval-dan-fra-tatoeba-dev-v1",
+        "eval-deu-fra-globalvoices-test-v1",
+        "eval-deu-fra-tatoeba-dev-v1",
+        "eval-ell-fra-globalvoices-test-v1",
+        "eval-ell-fra-tatoeba-dev-v1",
+        "eval-eng-fra-globalvoices-test-v1",
+        "eval-eng-fra-tatoeba-dev-v1",
+        "eval-epo-fra-globalvoices-test-v1",
+        "eval-epo-fra-tatoeba-dev-v1",
+        "eval-fas-fra-globalvoices-test-v1",
+        "eval-fil-fra-globalvoices-test-v1",
+        "eval-fin-fra-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-avk-tatoeba-dev-v1",
+        "eval-fra-ber-tatoeba-dev-v1",
+        "eval-fra-bos-tatoeba-dev-v1",
+        "eval-fra-cat-tatoeba-dev-v1",
+        "eval-fra-cmn-tatoeba-dev-v1",
+        "eval-fra-dan-tatoeba-dev-v1",
+        "eval-fra-deu-tatoeba-dev-v1",
+        "eval-fra-epo-tatoeba-dev-v1",
+        "eval-fra-eus-tatoeba-dev-v1",
+        "eval-fra-gcf-tatoeba-dev-v1",
+        "eval-fra-hau-tatoeba-dev-v1",
+        "eval-fra-heb-globalvoices-test-v1",
+        "eval-fra-heb-tatoeba-dev-v1",
+        "eval-fra-hin-globalvoices-test-v1",
+        "eval-fra-hrv-tatoeba-dev-v1",
+        "eval-fra-hun-globalvoices-test-v1",
+        "eval-fra-hun-tatoeba-dev-v1",
+        "eval-fra-ido-tatoeba-dev-v1",
+        "eval-fra-ile-tatoeba-dev-v1",
+        "eval-fra-ina-tatoeba-dev-v1",
+        "eval-fra-ind-globalvoices-test-v1",
+        "eval-fra-ind-tatoeba-dev-v1",
+        "eval-fra-ita-globalvoices-test-v1",
+        "eval-fra-ita-tatoeba-dev-v1",
+        "eval-fra-jbo-tatoeba-dev-v1",
+        "eval-fra-jpn-tatoeba-dev-v1",
+        "eval-fra-kab-tatoeba-dev-v1",
+        "eval-fra-khm-globalvoices-test-v1",
+        "eval-fra-kor-globalvoices-test-v1",
+        "eval-fra-kor-tatoeba-dev-v1",
+        "eval-fra-lat-tatoeba-dev-v1",
+        "eval-fra-lfn-tatoeba-dev-v1",
+        "eval-fra-ltz-tatoeba-dev-v1",
+        "eval-fra-lzh-tatoeba-dev-v1",
+        "eval-fra-mkd-globalvoices-test-v1",
+        "eval-fra-mlg-globalvoices-test-v1",
+        "eval-fra-mya-globalvoices-test-v1",
+        "eval-fra-nds-tatoeba-dev-v1",
+        "eval-fra-nld-globalvoices-test-v1",
+        "eval-fra-nld-tatoeba-dev-v1",
+        "eval-fra-nnb-gamayun-test-v1",
+        "eval-fra-nno-tatoeba-dev-v1",
+        "eval-fra-nob-tatoeba-dev-v1",
+        "eval-fra-npi-globalvoices-test-v1",
+        "eval-fra-oci-tatoeba-dev-v1",
+        "eval-fra-pcd-tatoeba-dev-v1",
+        "eval-fra-pol-globalvoices-test-v1",
+        "eval-fra-pol-tatoeba-dev-v1",
+        "eval-fra-por-globalvoices-test-v1",
+        "eval-fra-por-tatoeba-dev-v1",
+        "eval-fra-ron-globalvoices-test-v1",
+        "eval-fra-ron-tatoeba-dev-v1",
+        "eval-fra-run-tatoeba-dev-v1",
+        "eval-fra-rus-globalvoices-test-v1",
+        "eval-fra-rus-tatoeba-dev-v1",
+        "eval-fra-slv-tatoeba-dev-v1",
+        "eval-fra-spa-tatoeba-dev-v1",
+        "eval-fra-sqi-globalvoices-test-v1",
+        "eval-fra-srp-globalvoices-test-v1",
+        "eval-fra-srp-tatoeba-dev-v1",
+        "eval-fra-swc-gamayun-test-v1",
+        "eval-fra-swe-globalvoices-test-v1",
+        "eval-fra-swe-tatoeba-dev-v1",
+        "eval-fra-swh-globalvoices-test-v1",
+        "eval-fra-tat-tatoeba-dev-v1",
+        "eval-fra-tgl-tatoeba-dev-v1",
+        "eval-fra-tlh-tatoeba-dev-v1",
+        "eval-fra-tok-tatoeba-dev-v1",
+        "eval-fra-tur-globalvoices-test-v1",
+        "eval-fra-tur-tatoeba-dev-v1",
+        "eval-fra-uig-tatoeba-dev-v1",
+        "eval-fra-ukr-tatoeba-dev-v1",
+        "eval-fra-urd-globalvoices-test-v1",
+        "eval-fra-vie-tatoeba-dev-v1",
+        "eval-fra-wuu-tatoeba-dev-v1",
+        "eval-fra-yid-tatoeba-dev-v1",
+        "eval-fra-yue-tatoeba-dev-v1",
+        "eval-fra-zlm-tatoeba-dev-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-pes-fra-tatoeba-dev-v1",
+        "eval-spa-fra-globalvoices-test-v1",
+        "eval-spa-fra-tatoeba-dev-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt14-news-test-v1",
+        "eval-wmt15-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "iku": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      }
+    },
+    "nob": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      },
+      "evalDatasets": [
+        "eval-dan-nob-tatoeba-dev-v1",
+        "eval-deu-nob-tatoeba-dev-v1",
+        "eval-eng-nob-tatoeba-dev-v1",
+        "eval-epo-nob-tatoeba-dev-v1",
+        "eval-fin-nob-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-nob-tatoeba-dev-v1",
+        "eval-hrv-nob-tatoeba-dev-v1",
+        "eval-hun-nob-tatoeba-dev-v1",
+        "eval-ita-nob-tatoeba-dev-v1",
+        "eval-jpn-nob-tatoeba-dev-v1",
+        "eval-lat-nob-tatoeba-dev-v1",
+        "eval-nld-nob-tatoeba-dev-v1",
+        "eval-nno-nob-tatoeba-dev-v1",
+        "eval-nob-cmn-tatoeba-dev-v1",
+        "eval-nob-nno-tatoeba-dev-v1",
+        "eval-nob-pol-tatoeba-dev-v1",
+        "eval-nob-por-tatoeba-dev-v1",
+        "eval-nob-rus-tatoeba-dev-v1",
+        "eval-nob-spa-tatoeba-dev-v1",
+        "eval-nob-swe-tatoeba-dev-v1",
+        "eval-nob-ukr-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-srp-nob-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "que": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      }
+    },
+    "sma": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      }
+    },
+    "sme": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      },
+      "evalDatasets": [
+        "eval-eng-sme-tatoeba-dev-v1"
+      ]
+    },
+    "smj": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      }
+    },
+    "smn": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      }
+    },
+    "sms": {
+      "evalPack": {
+        "pythonDeps": {
+          "pyhfst": "pyhfst>=1.4"
+        },
+        "requiresFst": true,
+        "description": "FST morphological validation"
+      }
+    },
+    "xnr": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "szl": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "azj": {
+      "evalDatasets": [
+        "eval-aze-eng-tatoeba-dev-v1",
+        "eval-aze-spa-tatoeba-dev-v1",
+        "eval-aze-tur-tatoeba-dev-v1",
+        "eval-eng-aze-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-tur-aze-tatoeba-dev-v1",
+        "eval-turkicxwmt-test-v1"
+      ]
+    },
+    "nus": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "mkd": {
+      "evalDatasets": [
+        "eval-arb-mkd-globalvoices-test-v1",
+        "eval-ben-mkd-globalvoices-test-v1",
+        "eval-bul-mkd-globalvoices-test-v1",
+        "eval-cat-mkd-globalvoices-test-v1",
+        "eval-ces-mkd-globalvoices-test-v1",
+        "eval-dan-mkd-globalvoices-test-v1",
+        "eval-deu-mkd-globalvoices-test-v1",
+        "eval-ell-mkd-globalvoices-test-v1",
+        "eval-eng-mkd-globalvoices-test-v1",
+        "eval-eng-mkd-tatoeba-dev-v1",
+        "eval-epo-mkd-globalvoices-test-v1",
+        "eval-fas-mkd-globalvoices-test-v1",
+        "eval-fil-mkd-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-mkd-globalvoices-test-v1",
+        "eval-hun-mkd-globalvoices-test-v1",
+        "eval-ind-mkd-globalvoices-test-v1",
+        "eval-ita-mkd-globalvoices-test-v1",
+        "eval-khm-mkd-globalvoices-test-v1",
+        "eval-kor-mkd-globalvoices-test-v1",
+        "eval-mkd-mya-globalvoices-test-v1",
+        "eval-mkd-nld-globalvoices-test-v1",
+        "eval-mkd-pol-globalvoices-test-v1",
+        "eval-mkd-por-globalvoices-test-v1",
+        "eval-mkd-ron-globalvoices-test-v1",
+        "eval-mkd-rus-globalvoices-test-v1",
+        "eval-mkd-spa-tatoeba-dev-v1",
+        "eval-mkd-sqi-globalvoices-test-v1",
+        "eval-mkd-srp-globalvoices-test-v1",
+        "eval-mkd-swe-globalvoices-test-v1",
+        "eval-mkd-swh-globalvoices-test-v1",
+        "eval-mkd-tur-globalvoices-test-v1",
+        "eval-mkd-urd-globalvoices-test-v1",
+        "eval-mlg-mkd-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-spa-mkd-globalvoices-test-v1"
+      ]
+    },
+    "ind": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-arb-ind-globalvoices-test-v1",
+        "eval-ben-ind-globalvoices-test-v1",
+        "eval-bouquet-dev-v1",
+        "eval-bul-ind-globalvoices-test-v1",
+        "eval-cat-ind-globalvoices-test-v1",
+        "eval-ces-ind-globalvoices-test-v1",
+        "eval-deu-ind-globalvoices-test-v1",
+        "eval-deu-ind-tatoeba-dev-v1",
+        "eval-dtp-ind-tatoeba-dev-v1",
+        "eval-ell-ind-globalvoices-test-v1",
+        "eval-eng-ind-globalvoices-test-v1",
+        "eval-eng-ind-tatoeba-dev-v1",
+        "eval-epo-ind-tatoeba-dev-v1",
+        "eval-fas-ind-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-ind-globalvoices-test-v1",
+        "eval-fra-ind-tatoeba-dev-v1",
+        "eval-hun-ind-globalvoices-test-v1",
+        "eval-ind-cmn-tatoeba-dev-v1",
+        "eval-ind-ita-globalvoices-test-v1",
+        "eval-ind-kor-globalvoices-test-v1",
+        "eval-ind-max-tatoeba-dev-v1",
+        "eval-ind-min-tatoeba-dev-v1",
+        "eval-ind-mkd-globalvoices-test-v1",
+        "eval-ind-mlg-globalvoices-test-v1",
+        "eval-ind-mya-globalvoices-test-v1",
+        "eval-ind-nld-globalvoices-test-v1",
+        "eval-ind-pol-globalvoices-test-v1",
+        "eval-ind-por-globalvoices-test-v1",
+        "eval-ind-ron-globalvoices-test-v1",
+        "eval-ind-rus-globalvoices-test-v1",
+        "eval-ind-spa-tatoeba-dev-v1",
+        "eval-ind-sqi-globalvoices-test-v1",
+        "eval-ind-srp-globalvoices-test-v1",
+        "eval-ind-swe-globalvoices-test-v1",
+        "eval-ind-swh-globalvoices-test-v1",
+        "eval-ind-tur-globalvoices-test-v1",
+        "eval-ind-urd-globalvoices-test-v1",
+        "eval-ind-zlm-tatoeba-dev-v1",
+        "eval-ita-ind-tatoeba-dev-v1",
+        "eval-jav-ind-tatoeba-dev-v1",
+        "eval-jpn-ind-tatoeba-dev-v1",
+        "eval-max-ind-tatoeba-dev-v1",
+        "eval-min-ind-tatoeba-dev-v1",
+        "eval-nictsap-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-nusatranslation-test-v1",
+        "eval-nusax-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-ind-globalvoices-test-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-zlm-ind-tatoeba-dev-v1"
+      ]
+    },
+    "ven": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bns": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "lug": {
+      "evalDatasets": [
+        "eval-eng-lug-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "apd": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "fij": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "tur": {
+      "evalDatasets": [
+        "eval-ara-tur-tatoeba-dev-v1",
+        "eval-arb-tur-globalvoices-test-v1",
+        "eval-aze-tur-tatoeba-dev-v1",
+        "eval-ben-tur-globalvoices-test-v1",
+        "eval-bul-tur-globalvoices-test-v1",
+        "eval-bul-tur-tatoeba-dev-v1",
+        "eval-cat-tur-globalvoices-test-v1",
+        "eval-ces-tur-globalvoices-test-v1",
+        "eval-chv-tur-tatoeba-dev-v1",
+        "eval-crh-tur-tatoeba-dev-v1",
+        "eval-dan-tur-tatoeba-dev-v1",
+        "eval-deu-tur-globalvoices-test-v1",
+        "eval-deu-tur-tatoeba-dev-v1",
+        "eval-ell-tur-globalvoices-test-v1",
+        "eval-ell-tur-tatoeba-dev-v1",
+        "eval-eng-tur-globalvoices-test-v1",
+        "eval-eng-tur-tatoeba-dev-v1",
+        "eval-epo-tur-tatoeba-dev-v1",
+        "eval-fas-tur-globalvoices-test-v1",
+        "eval-fin-tur-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-tur-globalvoices-test-v1",
+        "eval-fra-tur-tatoeba-dev-v1",
+        "eval-heb-tur-tatoeba-dev-v1",
+        "eval-hrv-tur-tatoeba-dev-v1",
+        "eval-hun-tur-globalvoices-test-v1",
+        "eval-hun-tur-tatoeba-dev-v1",
+        "eval-ina-tur-tatoeba-dev-v1",
+        "eval-ind-tur-globalvoices-test-v1",
+        "eval-ita-tur-globalvoices-test-v1",
+        "eval-ita-tur-tatoeba-dev-v1",
+        "eval-jpn-tur-tatoeba-dev-v1",
+        "eval-kmr-tur-tatoeba-dev-v1",
+        "eval-kur-tur-tatoeba-dev-v1",
+        "eval-lfn-tur-tatoeba-dev-v1",
+        "eval-lit-tur-tatoeba-dev-v1",
+        "eval-mkd-tur-globalvoices-test-v1",
+        "eval-mlg-tur-globalvoices-test-v1",
+        "eval-nld-tur-globalvoices-test-v1",
+        "eval-nld-tur-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-ota-tur-tatoeba-dev-v1",
+        "eval-pol-tur-globalvoices-test-v1",
+        "eval-pol-tur-tatoeba-dev-v1",
+        "eval-por-tur-globalvoices-test-v1",
+        "eval-por-tur-tatoeba-dev-v1",
+        "eval-ron-tur-globalvoices-test-v1",
+        "eval-ron-tur-tatoeba-dev-v1",
+        "eval-rus-tur-globalvoices-test-v1",
+        "eval-rus-tur-tatoeba-dev-v1",
+        "eval-spa-tur-globalvoices-test-v1",
+        "eval-spa-tur-tatoeba-dev-v1",
+        "eval-srp-tur-globalvoices-test-v1",
+        "eval-swe-tur-tatoeba-dev-v1",
+        "eval-swh-tur-globalvoices-test-v1",
+        "eval-tat-tur-tatoeba-dev-v1",
+        "eval-tur-ara-tatoeba-dev-v1",
+        "eval-tur-aze-tatoeba-dev-v1",
+        "eval-tur-bul-tatoeba-dev-v1",
+        "eval-tur-chv-tatoeba-dev-v1",
+        "eval-tur-cmn-tatoeba-dev-v1",
+        "eval-tur-heb-tatoeba-dev-v1",
+        "eval-tur-jpn-tatoeba-dev-v1",
+        "eval-tur-kur-tatoeba-dev-v1",
+        "eval-tur-lit-tatoeba-dev-v1",
+        "eval-tur-ota-tatoeba-dev-v1",
+        "eval-tur-tat-tatoeba-dev-v1",
+        "eval-tur-uig-tatoeba-dev-v1",
+        "eval-tur-ukr-tatoeba-dev-v1",
+        "eval-tur-uzb-tatoeba-dev-v1",
+        "eval-tur-yid-tatoeba-dev-v1",
+        "eval-turkicxwmt-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "alz": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "kin": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "agr": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1"
+      ]
+    },
+    "brx": {
+      "evalDatasets": [
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ben": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-amh-ben-globalvoices-test-v1",
+        "eval-arb-ben-globalvoices-test-v1",
+        "eval-ben-cat-globalvoices-test-v1",
+        "eval-ben-ces-globalvoices-test-v1",
+        "eval-ben-dan-globalvoices-test-v1",
+        "eval-ben-deu-globalvoices-test-v1",
+        "eval-ben-ell-globalvoices-test-v1",
+        "eval-ben-eng-tatoeba-dev-v1",
+        "eval-ben-epo-globalvoices-test-v1",
+        "eval-ben-fas-globalvoices-test-v1",
+        "eval-ben-fil-globalvoices-test-v1",
+        "eval-ben-fra-globalvoices-test-v1",
+        "eval-ben-hin-globalvoices-test-v1",
+        "eval-ben-hun-globalvoices-test-v1",
+        "eval-ben-ind-globalvoices-test-v1",
+        "eval-ben-ita-globalvoices-test-v1",
+        "eval-ben-khm-globalvoices-test-v1",
+        "eval-ben-kor-globalvoices-test-v1",
+        "eval-ben-mkd-globalvoices-test-v1",
+        "eval-ben-mlg-globalvoices-test-v1",
+        "eval-ben-mya-globalvoices-test-v1",
+        "eval-ben-nld-globalvoices-test-v1",
+        "eval-ben-npi-globalvoices-test-v1",
+        "eval-ben-pol-globalvoices-test-v1",
+        "eval-ben-por-globalvoices-test-v1",
+        "eval-ben-ron-globalvoices-test-v1",
+        "eval-ben-rus-globalvoices-test-v1",
+        "eval-ben-spa-globalvoices-test-v1",
+        "eval-ben-sqi-globalvoices-test-v1",
+        "eval-ben-srp-globalvoices-test-v1",
+        "eval-ben-swe-globalvoices-test-v1",
+        "eval-ben-swh-globalvoices-test-v1",
+        "eval-ben-tur-globalvoices-test-v1",
+        "eval-ben-urd-globalvoices-test-v1",
+        "eval-bul-ben-globalvoices-test-v1",
+        "eval-eng-ben-globalvoices-test-v1",
+        "eval-eng-ben-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "sin": {
+      "evalDatasets": [
+        "eval-eng-sin-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bfq": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "dik": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "kal": {
+      "evalDatasets": [
+        "eval-smol-sent-v1"
+      ]
+    },
+    "smo": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "urd": {
+      "evalDatasets": [
+        "eval-arb-urd-globalvoices-test-v1",
+        "eval-ben-urd-globalvoices-test-v1",
+        "eval-cat-urd-globalvoices-test-v1",
+        "eval-deu-urd-globalvoices-test-v1",
+        "eval-ell-urd-globalvoices-test-v1",
+        "eval-eng-urd-globalvoices-test-v1",
+        "eval-eng-urd-tatoeba-dev-v1",
+        "eval-fas-urd-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-urd-globalvoices-test-v1",
+        "eval-hin-urd-tatoeba-dev-v1",
+        "eval-hun-urd-globalvoices-test-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ind-urd-globalvoices-test-v1",
+        "eval-ita-urd-globalvoices-test-v1",
+        "eval-kor-urd-globalvoices-test-v1",
+        "eval-mkd-urd-globalvoices-test-v1",
+        "eval-mlg-urd-globalvoices-test-v1",
+        "eval-nld-urd-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-urd-globalvoices-test-v1",
+        "eval-por-urd-globalvoices-test-v1",
+        "eval-rus-urd-globalvoices-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-urd-globalvoices-test-v1",
+        "eval-srp-urd-globalvoices-test-v1",
+        "eval-swh-urd-globalvoices-test-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "cym": {
+      "evalDatasets": [
+        "eval-cym-eng-tatoeba-dev-v1",
+        "eval-eng-cym-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "ces": {
+      "evalDatasets": [
+        "eval-arb-ces-globalvoices-test-v1",
+        "eval-ben-ces-globalvoices-test-v1",
+        "eval-bul-ces-globalvoices-test-v1",
+        "eval-cat-ces-globalvoices-test-v1",
+        "eval-ces-dan-globalvoices-test-v1",
+        "eval-ces-deu-globalvoices-test-v1",
+        "eval-ces-deu-tatoeba-dev-v1",
+        "eval-ces-ell-globalvoices-test-v1",
+        "eval-ces-eng-tatoeba-dev-v1",
+        "eval-ces-epo-globalvoices-test-v1",
+        "eval-ces-epo-tatoeba-dev-v1",
+        "eval-ces-fas-globalvoices-test-v1",
+        "eval-ces-fra-globalvoices-test-v1",
+        "eval-ces-fra-tatoeba-dev-v1",
+        "eval-ces-hun-globalvoices-test-v1",
+        "eval-ces-hun-tatoeba-dev-v1",
+        "eval-ces-ind-globalvoices-test-v1",
+        "eval-ces-ita-globalvoices-test-v1",
+        "eval-ces-ita-tatoeba-dev-v1",
+        "eval-ces-kor-globalvoices-test-v1",
+        "eval-ces-lat-tatoeba-dev-v1",
+        "eval-ces-mkd-globalvoices-test-v1",
+        "eval-ces-mlg-globalvoices-test-v1",
+        "eval-ces-nld-globalvoices-test-v1",
+        "eval-ces-pol-globalvoices-test-v1",
+        "eval-ces-pol-tatoeba-dev-v1",
+        "eval-ces-por-globalvoices-test-v1",
+        "eval-ces-ron-globalvoices-test-v1",
+        "eval-ces-rus-globalvoices-test-v1",
+        "eval-ces-rus-tatoeba-dev-v1",
+        "eval-ces-slv-tatoeba-dev-v1",
+        "eval-ces-spa-globalvoices-test-v1",
+        "eval-ces-spa-tatoeba-dev-v1",
+        "eval-ces-srp-globalvoices-test-v1",
+        "eval-ces-swh-globalvoices-test-v1",
+        "eval-ces-tur-globalvoices-test-v1",
+        "eval-ces-ukr-tatoeba-dev-v1",
+        "eval-eng-ces-globalvoices-test-v1",
+        "eval-eng-ces-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-wmt14-news-test-v1",
+        "eval-wmt15-news-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "pap": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "gle": {
+      "evalDatasets": [
+        "eval-eng-gle-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-loresmt2021-test-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "prg": {
+      "evalDatasets": [
+        "eval-eng-prg-tatoeba-dev-v1"
+      ]
+    },
+    "bra": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "vol": {
+      "evalDatasets": [
+        "eval-deu-vol-tatoeba-dev-v1",
+        "eval-eng-vol-tatoeba-dev-v1",
+        "eval-epo-vol-tatoeba-dev-v1"
+      ]
+    },
+    "arq": {
+      "evalDatasets": [
+        "eval-arq-ber-tatoeba-dev-v1",
+        "eval-arq-eng-tatoeba-dev-v1",
+        "eval-arq-fra-tatoeba-dev-v1",
+        "eval-arq-kab-tatoeba-dev-v1"
+      ]
+    },
+    "aiq": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1"
+      ]
+    },
+    "epo": {
+      "evalDatasets": [
+        "eval-afr-epo-tatoeba-dev-v1",
+        "eval-ara-epo-tatoeba-dev-v1",
+        "eval-arb-epo-globalvoices-test-v1",
+        "eval-bel-epo-tatoeba-dev-v1",
+        "eval-ben-epo-globalvoices-test-v1",
+        "eval-ber-epo-tatoeba-dev-v1",
+        "eval-bul-epo-tatoeba-dev-v1",
+        "eval-cat-epo-globalvoices-test-v1",
+        "eval-cat-epo-tatoeba-dev-v1",
+        "eval-ces-epo-globalvoices-test-v1",
+        "eval-ces-epo-tatoeba-dev-v1",
+        "eval-cmn-epo-tatoeba-dev-v1",
+        "eval-cor-epo-tatoeba-dev-v1",
+        "eval-dan-epo-tatoeba-dev-v1",
+        "eval-deu-epo-globalvoices-test-v1",
+        "eval-deu-epo-tatoeba-dev-v1",
+        "eval-ell-epo-globalvoices-test-v1",
+        "eval-ell-epo-tatoeba-dev-v1",
+        "eval-eng-epo-globalvoices-test-v1",
+        "eval-eng-epo-tatoeba-dev-v1",
+        "eval-epo-cmn-tatoeba-dev-v1",
+        "eval-epo-fin-tatoeba-dev-v1",
+        "eval-epo-fra-globalvoices-test-v1",
+        "eval-epo-fra-tatoeba-dev-v1",
+        "eval-epo-glg-tatoeba-dev-v1",
+        "eval-epo-heb-tatoeba-dev-v1",
+        "eval-epo-hrv-tatoeba-dev-v1",
+        "eval-epo-hun-tatoeba-dev-v1",
+        "eval-epo-ido-tatoeba-dev-v1",
+        "eval-epo-ile-tatoeba-dev-v1",
+        "eval-epo-ina-tatoeba-dev-v1",
+        "eval-epo-ind-tatoeba-dev-v1",
+        "eval-epo-isl-tatoeba-dev-v1",
+        "eval-epo-ita-globalvoices-test-v1",
+        "eval-epo-ita-tatoeba-dev-v1",
+        "eval-epo-jbo-tatoeba-dev-v1",
+        "eval-epo-jpn-tatoeba-dev-v1",
+        "eval-epo-lad-tatoeba-dev-v1",
+        "eval-epo-lat-tatoeba-dev-v1",
+        "eval-epo-lfn-tatoeba-dev-v1",
+        "eval-epo-lit-tatoeba-dev-v1",
+        "eval-epo-mkd-globalvoices-test-v1",
+        "eval-epo-mlg-globalvoices-test-v1",
+        "eval-epo-nds-tatoeba-dev-v1",
+        "eval-epo-nld-globalvoices-test-v1",
+        "eval-epo-nld-tatoeba-dev-v1",
+        "eval-epo-nno-tatoeba-dev-v1",
+        "eval-epo-nob-tatoeba-dev-v1",
+        "eval-epo-oci-tatoeba-dev-v1",
+        "eval-epo-pes-tatoeba-dev-v1",
+        "eval-epo-pol-globalvoices-test-v1",
+        "eval-epo-pol-tatoeba-dev-v1",
+        "eval-epo-por-globalvoices-test-v1",
+        "eval-epo-por-tatoeba-dev-v1",
+        "eval-epo-ron-tatoeba-dev-v1",
+        "eval-epo-rus-globalvoices-test-v1",
+        "eval-epo-rus-tatoeba-dev-v1",
+        "eval-epo-slv-tatoeba-dev-v1",
+        "eval-epo-spa-tatoeba-dev-v1",
+        "eval-epo-srp-globalvoices-test-v1",
+        "eval-epo-srp-tatoeba-dev-v1",
+        "eval-epo-swe-globalvoices-test-v1",
+        "eval-epo-swe-tatoeba-dev-v1",
+        "eval-epo-swh-globalvoices-test-v1",
+        "eval-epo-tgl-tatoeba-dev-v1",
+        "eval-epo-tlh-tatoeba-dev-v1",
+        "eval-epo-tok-tatoeba-dev-v1",
+        "eval-epo-tur-tatoeba-dev-v1",
+        "eval-epo-ukr-tatoeba-dev-v1",
+        "eval-epo-vie-tatoeba-dev-v1",
+        "eval-epo-vol-tatoeba-dev-v1",
+        "eval-epo-yid-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-epo-tatoeba-dev-v1",
+        "eval-heb-epo-tatoeba-dev-v1",
+        "eval-hun-epo-tatoeba-dev-v1",
+        "eval-ita-epo-tatoeba-dev-v1",
+        "eval-jpn-epo-tatoeba-dev-v1",
+        "eval-lit-epo-tatoeba-dev-v1",
+        "eval-nld-epo-tatoeba-dev-v1",
+        "eval-por-epo-tatoeba-dev-v1",
+        "eval-ron-epo-tatoeba-dev-v1",
+        "eval-rus-epo-tatoeba-dev-v1",
+        "eval-slv-epo-tatoeba-dev-v1",
+        "eval-spa-epo-tatoeba-dev-v1",
+        "eval-ukr-epo-tatoeba-dev-v1",
+        "eval-vie-epo-tatoeba-dev-v1"
+      ]
+    },
+    "bew": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1"
+      ]
+    },
+    "abl": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1"
+      ]
+    },
+    "egl": {
+      "evalDatasets": [
+        "eval-egl-ita-tatoeba-dev-v1"
+      ]
+    },
+    "tuk": {
+      "evalDatasets": [
+        "eval-eng-tuk-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "chv": {
+      "evalDatasets": [
+        "eval-chv-eng-tatoeba-dev-v1",
+        "eval-chv-rus-tatoeba-dev-v1",
+        "eval-chv-tur-tatoeba-dev-v1",
+        "eval-rus-chv-tatoeba-dev-v1",
+        "eval-tur-chv-tatoeba-dev-v1"
+      ]
+    },
+    "kea": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "swe": {
+      "evalDatasets": [
+        "eval-arb-swe-globalvoices-test-v1",
+        "eval-ben-swe-globalvoices-test-v1",
+        "eval-bul-swe-globalvoices-test-v1",
+        "eval-cat-swe-globalvoices-test-v1",
+        "eval-dan-swe-globalvoices-test-v1",
+        "eval-dan-swe-tatoeba-dev-v1",
+        "eval-deu-swe-globalvoices-test-v1",
+        "eval-deu-swe-tatoeba-dev-v1",
+        "eval-ell-swe-globalvoices-test-v1",
+        "eval-ell-swe-tatoeba-dev-v1",
+        "eval-eng-swe-globalvoices-test-v1",
+        "eval-eng-swe-tatoeba-dev-v1",
+        "eval-epo-swe-globalvoices-test-v1",
+        "eval-epo-swe-tatoeba-dev-v1",
+        "eval-fas-swe-globalvoices-test-v1",
+        "eval-fil-swe-globalvoices-test-v1",
+        "eval-fin-swe-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-swe-globalvoices-test-v1",
+        "eval-fra-swe-tatoeba-dev-v1",
+        "eval-hun-swe-globalvoices-test-v1",
+        "eval-hun-swe-tatoeba-dev-v1",
+        "eval-ind-swe-globalvoices-test-v1",
+        "eval-ita-swe-globalvoices-test-v1",
+        "eval-ita-swe-tatoeba-dev-v1",
+        "eval-jbo-swe-tatoeba-dev-v1",
+        "eval-jpn-swe-tatoeba-dev-v1",
+        "eval-kor-swe-globalvoices-test-v1",
+        "eval-mkd-swe-globalvoices-test-v1",
+        "eval-mlg-swe-globalvoices-test-v1",
+        "eval-nld-swe-globalvoices-test-v1",
+        "eval-nob-swe-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-swe-globalvoices-test-v1",
+        "eval-pol-swe-tatoeba-dev-v1",
+        "eval-por-swe-globalvoices-test-v1",
+        "eval-por-swe-tatoeba-dev-v1",
+        "eval-rus-swe-globalvoices-test-v1",
+        "eval-rus-swe-tatoeba-dev-v1",
+        "eval-spa-swe-globalvoices-test-v1",
+        "eval-spa-swe-tatoeba-dev-v1",
+        "eval-sqi-swe-globalvoices-test-v1",
+        "eval-srp-swe-globalvoices-test-v1",
+        "eval-swe-cmn-tatoeba-dev-v1",
+        "eval-swe-dan-tatoeba-dev-v1",
+        "eval-swe-fin-tatoeba-dev-v1",
+        "eval-swe-swh-globalvoices-test-v1",
+        "eval-swe-tur-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "ayl": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "war": {
+      "evalDatasets": [
+        "eval-eng-war-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "pms": {
+      "evalDatasets": [
+        "eval-eng-pms-tatoeba-dev-v1",
+        "eval-ita-pms-tatoeba-dev-v1"
+      ]
+    },
+    "kaa": {
+      "evalDatasets": [
+        "eval-turkicxwmt-test-v1"
+      ]
+    },
+    "sat": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-hoc-sat-tatoeba-dev-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "aar": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "hch": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1"
+      ]
+    },
+    "ile": {
+      "evalDatasets": [
+        "eval-deu-ile-tatoeba-dev-v1",
+        "eval-eng-ile-tatoeba-dev-v1",
+        "eval-epo-ile-tatoeba-dev-v1",
+        "eval-fra-ile-tatoeba-dev-v1"
+      ]
+    },
+    "nde": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "frr": {
+      "evalDatasets": [
+        "eval-deu-frr-tatoeba-dev-v1"
+      ]
+    },
+    "plt": {
+      "evalDatasets": [
+        "eval-amh-mlg-globalvoices-test-v1",
+        "eval-arb-mlg-globalvoices-test-v1",
+        "eval-ben-mlg-globalvoices-test-v1",
+        "eval-bul-mlg-globalvoices-test-v1",
+        "eval-cat-mlg-globalvoices-test-v1",
+        "eval-ces-mlg-globalvoices-test-v1",
+        "eval-dan-mlg-globalvoices-test-v1",
+        "eval-deu-mlg-globalvoices-test-v1",
+        "eval-ell-mlg-globalvoices-test-v1",
+        "eval-eng-mlg-globalvoices-test-v1",
+        "eval-epo-mlg-globalvoices-test-v1",
+        "eval-fas-mlg-globalvoices-test-v1",
+        "eval-fil-mlg-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-mlg-globalvoices-test-v1",
+        "eval-heb-mlg-globalvoices-test-v1",
+        "eval-hin-mlg-globalvoices-test-v1",
+        "eval-hun-mlg-globalvoices-test-v1",
+        "eval-ind-mlg-globalvoices-test-v1",
+        "eval-ita-mlg-globalvoices-test-v1",
+        "eval-khm-mlg-globalvoices-test-v1",
+        "eval-kor-mlg-globalvoices-test-v1",
+        "eval-mlg-mkd-globalvoices-test-v1",
+        "eval-mlg-mya-globalvoices-test-v1",
+        "eval-mlg-nld-globalvoices-test-v1",
+        "eval-mlg-npi-globalvoices-test-v1",
+        "eval-mlg-pol-globalvoices-test-v1",
+        "eval-mlg-por-globalvoices-test-v1",
+        "eval-mlg-ron-globalvoices-test-v1",
+        "eval-mlg-rus-globalvoices-test-v1",
+        "eval-mlg-sqi-globalvoices-test-v1",
+        "eval-mlg-srp-globalvoices-test-v1",
+        "eval-mlg-swe-globalvoices-test-v1",
+        "eval-mlg-swh-globalvoices-test-v1",
+        "eval-mlg-tur-globalvoices-test-v1",
+        "eval-mlg-urd-globalvoices-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-mlg-globalvoices-test-v1"
+      ]
+    },
+    "src": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "gaa": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ewe": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "mar": {
+      "evalDatasets": [
+        "eval-eng-mar-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-hin-mar-tatoeba-dev-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-jpn-mar-tatoeba-dev-v1",
+        "eval-loresmt2021-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "prs": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "lit": {
+      "evalDatasets": [
+        "eval-deu-lit-tatoeba-dev-v1",
+        "eval-eng-lit-tatoeba-dev-v1",
+        "eval-epo-lit-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ita-lit-tatoeba-dev-v1",
+        "eval-jpn-lit-tatoeba-dev-v1",
+        "eval-lit-epo-tatoeba-dev-v1",
+        "eval-lit-pol-tatoeba-dev-v1",
+        "eval-lit-rus-tatoeba-dev-v1",
+        "eval-lit-spa-tatoeba-dev-v1",
+        "eval-lit-tur-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-lit-tatoeba-dev-v1",
+        "eval-tur-lit-tatoeba-dev-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "mag": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-loresmt2020-test-v1",
+        "eval-smol-doc-v1"
+      ]
+    },
+    "kmb": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "kat": {
+      "evalDatasets": [
+        "eval-eng-kat-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-kat-rus-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-kat-tatoeba-dev-v1"
+      ]
+    },
+    "grc": {
+      "evalDatasets": [
+        "eval-eng-grc-tatoeba-dev-v1"
+      ]
+    },
+    "jbo": {
+      "evalDatasets": [
+        "eval-cmn-jbo-tatoeba-dev-v1",
+        "eval-deu-jbo-tatoeba-dev-v1",
+        "eval-eng-jbo-tatoeba-dev-v1",
+        "eval-epo-jbo-tatoeba-dev-v1",
+        "eval-fra-jbo-tatoeba-dev-v1",
+        "eval-jbo-cmn-tatoeba-dev-v1",
+        "eval-jbo-jpn-tatoeba-dev-v1",
+        "eval-jbo-rus-tatoeba-dev-v1",
+        "eval-jbo-spa-tatoeba-dev-v1",
+        "eval-jbo-swe-tatoeba-dev-v1",
+        "eval-jpn-jbo-tatoeba-dev-v1",
+        "eval-rus-jbo-tatoeba-dev-v1"
+      ]
+    },
+    "vec": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "shp": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1"
+      ]
+    },
+    "ote": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1"
+      ]
+    },
+    "ban": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "mri": {
+      "evalDatasets": [
+        "eval-eng-mri-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "kam": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "sjp": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "mya": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-arb-mya-globalvoices-test-v1",
+        "eval-ben-mya-globalvoices-test-v1",
+        "eval-cat-mya-globalvoices-test-v1",
+        "eval-deu-mya-globalvoices-test-v1",
+        "eval-ell-mya-globalvoices-test-v1",
+        "eval-eng-mya-globalvoices-test-v1",
+        "eval-eng-mya-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-mya-globalvoices-test-v1",
+        "eval-ind-mya-globalvoices-test-v1",
+        "eval-ita-mya-globalvoices-test-v1",
+        "eval-kor-mya-globalvoices-test-v1",
+        "eval-mkd-mya-globalvoices-test-v1",
+        "eval-mlg-mya-globalvoices-test-v1",
+        "eval-mya-nld-globalvoices-test-v1",
+        "eval-mya-pol-globalvoices-test-v1",
+        "eval-mya-rus-globalvoices-test-v1",
+        "eval-mya-swh-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-mya-globalvoices-test-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "bug": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "swh": {
+      "evalDatasets": [
+        "eval-amh-swh-globalvoices-test-v1",
+        "eval-arb-swh-globalvoices-test-v1",
+        "eval-ben-swh-globalvoices-test-v1",
+        "eval-bul-swh-globalvoices-test-v1",
+        "eval-cat-swh-globalvoices-test-v1",
+        "eval-ces-swh-globalvoices-test-v1",
+        "eval-dan-swh-globalvoices-test-v1",
+        "eval-deu-swh-globalvoices-test-v1",
+        "eval-ell-swh-globalvoices-test-v1",
+        "eval-eng-swh-gamayun-test-v1",
+        "eval-eng-swh-globalvoices-test-v1",
+        "eval-eng-swh-tatoeba-dev-v1",
+        "eval-epo-swh-globalvoices-test-v1",
+        "eval-fas-swh-globalvoices-test-v1",
+        "eval-fil-swh-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-swh-globalvoices-test-v1",
+        "eval-hun-swh-globalvoices-test-v1",
+        "eval-ind-swh-globalvoices-test-v1",
+        "eval-ita-swh-globalvoices-test-v1",
+        "eval-kor-swh-globalvoices-test-v1",
+        "eval-mafand-test-v1",
+        "eval-mkd-swh-globalvoices-test-v1",
+        "eval-mlg-swh-globalvoices-test-v1",
+        "eval-mya-swh-globalvoices-test-v1",
+        "eval-nld-swh-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-swh-globalvoices-test-v1",
+        "eval-por-swh-globalvoices-test-v1",
+        "eval-rus-swh-globalvoices-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-swh-globalvoices-test-v1",
+        "eval-sqi-swh-globalvoices-test-v1",
+        "eval-srp-swh-globalvoices-test-v1",
+        "eval-swe-swh-globalvoices-test-v1",
+        "eval-swh-tur-globalvoices-test-v1",
+        "eval-swh-urd-globalvoices-test-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "lim": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "spv": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "lus": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "snd": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1"
+      ]
+    },
+    "mak": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1"
+      ]
+    },
+    "cgg": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "pcd": {
+      "evalDatasets": [
+        "eval-fra-pcd-tatoeba-dev-v1"
+      ]
+    },
+    "por": {
+      "evalDatasets": [
+        "eval-amh-por-globalvoices-test-v1",
+        "eval-arb-por-globalvoices-test-v1",
+        "eval-ben-por-globalvoices-test-v1",
+        "eval-bul-por-globalvoices-test-v1",
+        "eval-cat-por-globalvoices-test-v1",
+        "eval-cat-por-tatoeba-dev-v1",
+        "eval-ces-por-globalvoices-test-v1",
+        "eval-dan-por-globalvoices-test-v1",
+        "eval-dan-por-tatoeba-dev-v1",
+        "eval-deu-por-globalvoices-test-v1",
+        "eval-deu-por-tatoeba-dev-v1",
+        "eval-ell-por-globalvoices-test-v1",
+        "eval-ell-por-tatoeba-dev-v1",
+        "eval-eng-por-globalvoices-test-v1",
+        "eval-eng-por-tatoeba-dev-v1",
+        "eval-epo-por-globalvoices-test-v1",
+        "eval-epo-por-tatoeba-dev-v1",
+        "eval-fas-por-globalvoices-test-v1",
+        "eval-fil-por-globalvoices-test-v1",
+        "eval-fin-por-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-por-globalvoices-test-v1",
+        "eval-fra-por-tatoeba-dev-v1",
+        "eval-glg-por-tatoeba-dev-v1",
+        "eval-grn-por-tatoeba-dev-v1",
+        "eval-heb-por-tatoeba-dev-v1",
+        "eval-hin-por-globalvoices-test-v1",
+        "eval-hun-por-globalvoices-test-v1",
+        "eval-hun-por-tatoeba-dev-v1",
+        "eval-ina-por-tatoeba-dev-v1",
+        "eval-ind-por-globalvoices-test-v1",
+        "eval-ita-por-globalvoices-test-v1",
+        "eval-ita-por-tatoeba-dev-v1",
+        "eval-jpn-por-tatoeba-dev-v1",
+        "eval-khm-por-globalvoices-test-v1",
+        "eval-kor-por-globalvoices-test-v1",
+        "eval-lat-por-tatoeba-dev-v1",
+        "eval-lfn-por-tatoeba-dev-v1",
+        "eval-mkd-por-globalvoices-test-v1",
+        "eval-mlg-por-globalvoices-test-v1",
+        "eval-nds-por-tatoeba-dev-v1",
+        "eval-nld-por-globalvoices-test-v1",
+        "eval-nld-por-tatoeba-dev-v1",
+        "eval-nob-por-tatoeba-dev-v1",
+        "eval-npi-por-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-por-globalvoices-test-v1",
+        "eval-pol-por-tatoeba-dev-v1",
+        "eval-por-cat-tatoeba-dev-v1",
+        "eval-por-cmn-tatoeba-dev-v1",
+        "eval-por-dan-tatoeba-dev-v1",
+        "eval-por-epo-tatoeba-dev-v1",
+        "eval-por-glg-tatoeba-dev-v1",
+        "eval-por-ita-tatoeba-dev-v1",
+        "eval-por-jpn-tatoeba-dev-v1",
+        "eval-por-nld-tatoeba-dev-v1",
+        "eval-por-ron-globalvoices-test-v1",
+        "eval-por-ron-tatoeba-dev-v1",
+        "eval-por-rus-globalvoices-test-v1",
+        "eval-por-rus-tatoeba-dev-v1",
+        "eval-por-spa-tatoeba-dev-v1",
+        "eval-por-sqi-globalvoices-test-v1",
+        "eval-por-srp-globalvoices-test-v1",
+        "eval-por-swe-globalvoices-test-v1",
+        "eval-por-swe-tatoeba-dev-v1",
+        "eval-por-swh-globalvoices-test-v1",
+        "eval-por-tgl-tatoeba-dev-v1",
+        "eval-por-tok-tatoeba-dev-v1",
+        "eval-por-tur-globalvoices-test-v1",
+        "eval-por-tur-tatoeba-dev-v1",
+        "eval-por-ukr-tatoeba-dev-v1",
+        "eval-por-urd-globalvoices-test-v1",
+        "eval-por-yid-tatoeba-dev-v1",
+        "eval-spa-por-globalvoices-test-v1",
+        "eval-spa-por-tatoeba-dev-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "crh": {
+      "evalDatasets": [
+        "eval-crh-tur-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "lao": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-eng-lao-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "lad": {
+      "evalDatasets": [
+        "eval-deu-lad-tatoeba-dev-v1",
+        "eval-eng-lad-tatoeba-dev-v1",
+        "eval-epo-lad-tatoeba-dev-v1",
+        "eval-heb-lad-tatoeba-dev-v1",
+        "eval-ina-lad-tatoeba-dev-v1",
+        "eval-lad-lat-tatoeba-dev-v1",
+        "eval-lad-lfn-tatoeba-dev-v1",
+        "eval-lad-spa-tatoeba-dev-v1",
+        "eval-lad-yid-tatoeba-dev-v1",
+        "eval-yid-lad-tatoeba-dev-v1"
+      ]
+    },
+    "cbk": {
+      "evalDatasets": [
+        "eval-cbk-eng-tatoeba-dev-v1"
+      ]
+    },
+    "mui": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1"
+      ]
+    },
+    "hac": {
+      "evalDatasets": [
+        "eval-smol-sent-v1"
+      ]
+    },
+    "mni": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "kas": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bci": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ssw": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "slv": {
+      "evalDatasets": [
+        "eval-ces-slv-tatoeba-dev-v1",
+        "eval-deu-slv-tatoeba-dev-v1",
+        "eval-dsb-slv-tatoeba-dev-v1",
+        "eval-eng-slv-tatoeba-dev-v1",
+        "eval-epo-slv-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-slv-tatoeba-dev-v1",
+        "eval-hsb-slv-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-slv-tatoeba-dev-v1",
+        "eval-slv-cmn-tatoeba-dev-v1",
+        "eval-slv-epo-tatoeba-dev-v1",
+        "eval-slv-ukr-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "che": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "heb": {
+      "evalDatasets": [
+        "eval-ara-heb-tatoeba-dev-v1",
+        "eval-arb-heb-globalvoices-test-v1",
+        "eval-cmn-heb-tatoeba-dev-v1",
+        "eval-deu-heb-globalvoices-test-v1",
+        "eval-deu-heb-tatoeba-dev-v1",
+        "eval-ell-heb-globalvoices-test-v1",
+        "eval-eng-heb-globalvoices-test-v1",
+        "eval-eng-heb-tatoeba-dev-v1",
+        "eval-epo-heb-tatoeba-dev-v1",
+        "eval-fin-heb-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-heb-globalvoices-test-v1",
+        "eval-fra-heb-tatoeba-dev-v1",
+        "eval-heb-cmn-tatoeba-dev-v1",
+        "eval-heb-epo-tatoeba-dev-v1",
+        "eval-heb-hun-tatoeba-dev-v1",
+        "eval-heb-ina-tatoeba-dev-v1",
+        "eval-heb-ita-globalvoices-test-v1",
+        "eval-heb-ita-tatoeba-dev-v1",
+        "eval-heb-jpn-tatoeba-dev-v1",
+        "eval-heb-lad-tatoeba-dev-v1",
+        "eval-heb-lat-tatoeba-dev-v1",
+        "eval-heb-lfn-tatoeba-dev-v1",
+        "eval-heb-lzh-tatoeba-dev-v1",
+        "eval-heb-mlg-globalvoices-test-v1",
+        "eval-heb-nld-tatoeba-dev-v1",
+        "eval-heb-pol-globalvoices-test-v1",
+        "eval-heb-pol-tatoeba-dev-v1",
+        "eval-heb-por-tatoeba-dev-v1",
+        "eval-heb-rus-globalvoices-test-v1",
+        "eval-heb-rus-tatoeba-dev-v1",
+        "eval-heb-spa-tatoeba-dev-v1",
+        "eval-heb-tur-tatoeba-dev-v1",
+        "eval-heb-ukr-tatoeba-dev-v1",
+        "eval-heb-yid-tatoeba-dev-v1",
+        "eval-ita-heb-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-heb-tatoeba-dev-v1",
+        "eval-rus-heb-tatoeba-dev-v1",
+        "eval-spa-heb-globalvoices-test-v1",
+        "eval-tur-heb-tatoeba-dev-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "cat": {
+      "evalDatasets": [
+        "eval-arb-cat-globalvoices-test-v1",
+        "eval-ben-cat-globalvoices-test-v1",
+        "eval-bul-cat-globalvoices-test-v1",
+        "eval-cat-ces-globalvoices-test-v1",
+        "eval-cat-dan-globalvoices-test-v1",
+        "eval-cat-deu-globalvoices-test-v1",
+        "eval-cat-deu-tatoeba-dev-v1",
+        "eval-cat-ell-globalvoices-test-v1",
+        "eval-cat-eng-tatoeba-dev-v1",
+        "eval-cat-epo-globalvoices-test-v1",
+        "eval-cat-epo-tatoeba-dev-v1",
+        "eval-cat-fas-globalvoices-test-v1",
+        "eval-cat-fra-globalvoices-test-v1",
+        "eval-cat-fra-tatoeba-dev-v1",
+        "eval-cat-hun-globalvoices-test-v1",
+        "eval-cat-ind-globalvoices-test-v1",
+        "eval-cat-ita-globalvoices-test-v1",
+        "eval-cat-ita-tatoeba-dev-v1",
+        "eval-cat-khm-globalvoices-test-v1",
+        "eval-cat-kor-globalvoices-test-v1",
+        "eval-cat-mkd-globalvoices-test-v1",
+        "eval-cat-mlg-globalvoices-test-v1",
+        "eval-cat-mya-globalvoices-test-v1",
+        "eval-cat-nld-globalvoices-test-v1",
+        "eval-cat-nld-tatoeba-dev-v1",
+        "eval-cat-pol-globalvoices-test-v1",
+        "eval-cat-por-globalvoices-test-v1",
+        "eval-cat-por-tatoeba-dev-v1",
+        "eval-cat-ron-globalvoices-test-v1",
+        "eval-cat-rus-globalvoices-test-v1",
+        "eval-cat-spa-globalvoices-test-v1",
+        "eval-cat-spa-tatoeba-dev-v1",
+        "eval-cat-sqi-globalvoices-test-v1",
+        "eval-cat-srp-globalvoices-test-v1",
+        "eval-cat-swe-globalvoices-test-v1",
+        "eval-cat-swh-globalvoices-test-v1",
+        "eval-cat-tur-globalvoices-test-v1",
+        "eval-cat-ukr-tatoeba-dev-v1",
+        "eval-cat-urd-globalvoices-test-v1",
+        "eval-deu-cat-tatoeba-dev-v1",
+        "eval-eng-cat-globalvoices-test-v1",
+        "eval-eng-cat-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-cat-tatoeba-dev-v1",
+        "eval-ita-cat-tatoeba-dev-v1",
+        "eval-nld-cat-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-cat-tatoeba-dev-v1",
+        "eval-spa-cat-tatoeba-dev-v1",
+        "eval-ukr-cat-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "zul": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1",
+        "eval-eng-zul-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "tum": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "gsw": {
+      "evalDatasets": [
+        "eval-eng-gsw-tatoeba-dev-v1"
+      ]
+    },
+    "lep": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "nst": {
+      "evalDatasets": [
+        "eval-eng-nst-tatoeba-dev-v1"
+      ]
+    },
+    "arb": {
+      "evalDatasets": [
+        "eval-amh-arb-globalvoices-test-v1",
+        "eval-ara-ber-tatoeba-dev-v1",
+        "eval-ara-deu-tatoeba-dev-v1",
+        "eval-ara-ell-tatoeba-dev-v1",
+        "eval-ara-eng-tatoeba-dev-v1",
+        "eval-ara-epo-tatoeba-dev-v1",
+        "eval-ara-fra-tatoeba-dev-v1",
+        "eval-ara-heb-tatoeba-dev-v1",
+        "eval-ara-ita-tatoeba-dev-v1",
+        "eval-ara-jpn-tatoeba-dev-v1",
+        "eval-ara-kab-tatoeba-dev-v1",
+        "eval-ara-pol-tatoeba-dev-v1",
+        "eval-ara-rus-tatoeba-dev-v1",
+        "eval-ara-spa-tatoeba-dev-v1",
+        "eval-ara-tur-tatoeba-dev-v1",
+        "eval-arabench-test-v1",
+        "eval-arb-ben-globalvoices-test-v1",
+        "eval-arb-bul-globalvoices-test-v1",
+        "eval-arb-cat-globalvoices-test-v1",
+        "eval-arb-ces-globalvoices-test-v1",
+        "eval-arb-dan-globalvoices-test-v1",
+        "eval-arb-deu-globalvoices-test-v1",
+        "eval-arb-ell-globalvoices-test-v1",
+        "eval-arb-epo-globalvoices-test-v1",
+        "eval-arb-fas-globalvoices-test-v1",
+        "eval-arb-fil-globalvoices-test-v1",
+        "eval-arb-fra-globalvoices-test-v1",
+        "eval-arb-heb-globalvoices-test-v1",
+        "eval-arb-hin-globalvoices-test-v1",
+        "eval-arb-hun-globalvoices-test-v1",
+        "eval-arb-ind-globalvoices-test-v1",
+        "eval-arb-ita-globalvoices-test-v1",
+        "eval-arb-kor-globalvoices-test-v1",
+        "eval-arb-mkd-globalvoices-test-v1",
+        "eval-arb-mlg-globalvoices-test-v1",
+        "eval-arb-mya-globalvoices-test-v1",
+        "eval-arb-nld-globalvoices-test-v1",
+        "eval-arb-npi-globalvoices-test-v1",
+        "eval-arb-pol-globalvoices-test-v1",
+        "eval-arb-por-globalvoices-test-v1",
+        "eval-arb-ron-globalvoices-test-v1",
+        "eval-arb-rus-globalvoices-test-v1",
+        "eval-arb-spa-globalvoices-test-v1",
+        "eval-arb-sqi-globalvoices-test-v1",
+        "eval-arb-srp-globalvoices-test-v1",
+        "eval-arb-swe-globalvoices-test-v1",
+        "eval-arb-swh-globalvoices-test-v1",
+        "eval-arb-tur-globalvoices-test-v1",
+        "eval-arb-urd-globalvoices-test-v1",
+        "eval-ell-ara-tatoeba-dev-v1",
+        "eval-eng-ara-tatoeba-dev-v1",
+        "eval-eng-arb-globalvoices-test-v1",
+        "eval-eng-arb-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-ara-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-tico19-test-v1",
+        "eval-tur-ara-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "orv": {
+      "evalDatasets": [
+        "eval-eng-orv-tatoeba-dev-v1",
+        "eval-orv-ukr-tatoeba-dev-v1",
+        "eval-ukr-orv-tatoeba-dev-v1"
+      ]
+    },
+    "bul": {
+      "evalDatasets": [
+        "eval-arb-bul-globalvoices-test-v1",
+        "eval-bul-ben-globalvoices-test-v1",
+        "eval-bul-cat-globalvoices-test-v1",
+        "eval-bul-ces-globalvoices-test-v1",
+        "eval-bul-cmn-tatoeba-dev-v1",
+        "eval-bul-dan-globalvoices-test-v1",
+        "eval-bul-deu-globalvoices-test-v1",
+        "eval-bul-deu-tatoeba-dev-v1",
+        "eval-bul-ell-globalvoices-test-v1",
+        "eval-bul-eng-tatoeba-dev-v1",
+        "eval-bul-epo-tatoeba-dev-v1",
+        "eval-bul-fil-globalvoices-test-v1",
+        "eval-bul-fra-globalvoices-test-v1",
+        "eval-bul-fra-tatoeba-dev-v1",
+        "eval-bul-hun-globalvoices-test-v1",
+        "eval-bul-ind-globalvoices-test-v1",
+        "eval-bul-ita-globalvoices-test-v1",
+        "eval-bul-ita-tatoeba-dev-v1",
+        "eval-bul-jpn-tatoeba-dev-v1",
+        "eval-bul-mkd-globalvoices-test-v1",
+        "eval-bul-mlg-globalvoices-test-v1",
+        "eval-bul-nld-globalvoices-test-v1",
+        "eval-bul-pol-globalvoices-test-v1",
+        "eval-bul-por-globalvoices-test-v1",
+        "eval-bul-rus-globalvoices-test-v1",
+        "eval-bul-rus-tatoeba-dev-v1",
+        "eval-bul-spa-globalvoices-test-v1",
+        "eval-bul-spa-tatoeba-dev-v1",
+        "eval-bul-sqi-globalvoices-test-v1",
+        "eval-bul-srp-globalvoices-test-v1",
+        "eval-bul-swe-globalvoices-test-v1",
+        "eval-bul-swh-globalvoices-test-v1",
+        "eval-bul-tur-globalvoices-test-v1",
+        "eval-bul-tur-tatoeba-dev-v1",
+        "eval-bul-ukr-tatoeba-dev-v1",
+        "eval-eng-bul-globalvoices-test-v1",
+        "eval-eng-bul-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ita-bul-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-bul-tatoeba-dev-v1",
+        "eval-tur-bul-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "swc": {
+      "evalDatasets": [
+        "eval-fra-swc-gamayun-test-v1"
+      ]
+    },
+    "tok": {
+      "evalDatasets": [
+        "eval-deu-tok-tatoeba-dev-v1",
+        "eval-eng-tok-tatoeba-dev-v1",
+        "eval-epo-tok-tatoeba-dev-v1",
+        "eval-fra-tok-tatoeba-dev-v1",
+        "eval-ita-tok-tatoeba-dev-v1",
+        "eval-jpn-tok-tatoeba-dev-v1",
+        "eval-lat-tok-tatoeba-dev-v1",
+        "eval-nld-tok-tatoeba-dev-v1",
+        "eval-pol-tok-tatoeba-dev-v1",
+        "eval-por-tok-tatoeba-dev-v1",
+        "eval-rus-tok-tatoeba-dev-v1",
+        "eval-spa-tok-tatoeba-dev-v1",
+        "eval-tok-yid-tatoeba-dev-v1",
+        "eval-yid-tok-tatoeba-dev-v1"
+      ]
+    },
+    "pol": {
+      "evalDatasets": [
+        "eval-ara-pol-tatoeba-dev-v1",
+        "eval-arb-pol-globalvoices-test-v1",
+        "eval-bel-pol-tatoeba-dev-v1",
+        "eval-ben-pol-globalvoices-test-v1",
+        "eval-bul-pol-globalvoices-test-v1",
+        "eval-cat-pol-globalvoices-test-v1",
+        "eval-ces-pol-globalvoices-test-v1",
+        "eval-ces-pol-tatoeba-dev-v1",
+        "eval-dan-pol-globalvoices-test-v1",
+        "eval-deu-pol-globalvoices-test-v1",
+        "eval-deu-pol-tatoeba-dev-v1",
+        "eval-ell-pol-globalvoices-test-v1",
+        "eval-eng-pol-globalvoices-test-v1",
+        "eval-epo-pol-globalvoices-test-v1",
+        "eval-epo-pol-tatoeba-dev-v1",
+        "eval-fas-pol-globalvoices-test-v1",
+        "eval-fil-pol-globalvoices-test-v1",
+        "eval-fin-pol-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-pol-globalvoices-test-v1",
+        "eval-fra-pol-tatoeba-dev-v1",
+        "eval-heb-pol-globalvoices-test-v1",
+        "eval-heb-pol-tatoeba-dev-v1",
+        "eval-hin-pol-globalvoices-test-v1",
+        "eval-hrv-pol-tatoeba-dev-v1",
+        "eval-hun-pol-globalvoices-test-v1",
+        "eval-hun-pol-tatoeba-dev-v1",
+        "eval-ind-pol-globalvoices-test-v1",
+        "eval-ita-pol-globalvoices-test-v1",
+        "eval-ita-pol-tatoeba-dev-v1",
+        "eval-kor-pol-globalvoices-test-v1",
+        "eval-lat-pol-tatoeba-dev-v1",
+        "eval-lit-pol-tatoeba-dev-v1",
+        "eval-mkd-pol-globalvoices-test-v1",
+        "eval-mlg-pol-globalvoices-test-v1",
+        "eval-mya-pol-globalvoices-test-v1",
+        "eval-nld-pol-globalvoices-test-v1",
+        "eval-nld-pol-tatoeba-dev-v1",
+        "eval-nob-pol-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-bel-tatoeba-dev-v1",
+        "eval-pol-cmn-tatoeba-dev-v1",
+        "eval-pol-heb-tatoeba-dev-v1",
+        "eval-pol-por-globalvoices-test-v1",
+        "eval-pol-por-tatoeba-dev-v1",
+        "eval-pol-ron-globalvoices-test-v1",
+        "eval-pol-ron-tatoeba-dev-v1",
+        "eval-pol-rus-globalvoices-test-v1",
+        "eval-pol-rus-tatoeba-dev-v1",
+        "eval-pol-sqi-globalvoices-test-v1",
+        "eval-pol-srp-globalvoices-test-v1",
+        "eval-pol-swe-globalvoices-test-v1",
+        "eval-pol-swe-tatoeba-dev-v1",
+        "eval-pol-swh-globalvoices-test-v1",
+        "eval-pol-tok-tatoeba-dev-v1",
+        "eval-pol-tur-globalvoices-test-v1",
+        "eval-pol-tur-tatoeba-dev-v1",
+        "eval-pol-ukr-tatoeba-dev-v1",
+        "eval-pol-urd-globalvoices-test-v1",
+        "eval-spa-pol-globalvoices-test-v1",
+        "eval-srp-pol-tatoeba-dev-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "afr": {
+      "evalDatasets": [
+        "eval-afr-deu-tatoeba-dev-v1",
+        "eval-afr-eng-tatoeba-dev-v1",
+        "eval-afr-epo-tatoeba-dev-v1",
+        "eval-afr-nld-tatoeba-dev-v1",
+        "eval-afr-rus-tatoeba-dev-v1",
+        "eval-afr-spa-tatoeba-dev-v1",
+        "eval-bouquet-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-afr-tatoeba-dev-v1"
+      ]
+    },
+    "bos": {
+      "evalDatasets": [
+        "eval-bos-cmn-tatoeba-dev-v1",
+        "eval-bos-ita-tatoeba-dev-v1",
+        "eval-bos-spa-tatoeba-dev-v1",
+        "eval-deu-bos-tatoeba-dev-v1",
+        "eval-eng-bos-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-bos-tatoeba-dev-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "ltg": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "lzh": {
+      "evalDatasets": [
+        "eval-cmn-lzh-tatoeba-dev-v1",
+        "eval-eng-lzh-tatoeba-dev-v1",
+        "eval-fra-lzh-tatoeba-dev-v1",
+        "eval-heb-lzh-tatoeba-dev-v1",
+        "eval-rus-lzh-tatoeba-dev-v1"
+      ]
+    },
+    "ike": {
+      "evalDatasets": [
+        "eval-wmt20-news-test-v1"
+      ]
+    },
+    "gcf": {
+      "evalDatasets": [
+        "eval-fra-gcf-tatoeba-dev-v1"
+      ]
+    },
+    "fil": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-arb-fil-globalvoices-test-v1",
+        "eval-ben-fil-globalvoices-test-v1",
+        "eval-bul-fil-globalvoices-test-v1",
+        "eval-deu-fil-globalvoices-test-v1",
+        "eval-ell-fil-globalvoices-test-v1",
+        "eval-eng-fil-globalvoices-test-v1",
+        "eval-fas-fil-globalvoices-test-v1",
+        "eval-fil-fra-globalvoices-test-v1",
+        "eval-fil-hun-globalvoices-test-v1",
+        "eval-fil-ita-globalvoices-test-v1",
+        "eval-fil-mkd-globalvoices-test-v1",
+        "eval-fil-mlg-globalvoices-test-v1",
+        "eval-fil-nld-globalvoices-test-v1",
+        "eval-fil-pol-globalvoices-test-v1",
+        "eval-fil-por-globalvoices-test-v1",
+        "eval-fil-rus-globalvoices-test-v1",
+        "eval-fil-srp-globalvoices-test-v1",
+        "eval-fil-swe-globalvoices-test-v1",
+        "eval-fil-swh-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-fil-globalvoices-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "hrx": {
+      "evalDatasets": [
+        "eval-deu-hrx-tatoeba-dev-v1",
+        "eval-eng-hrx-tatoeba-dev-v1"
+      ]
+    },
+    "lua": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "bbc": {
+      "evalDatasets": [
+        "eval-nusax-test-v1"
+      ]
+    },
+    "abs": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1"
+      ]
+    },
+    "mal": {
+      "evalDatasets": [
+        "eval-eng-mal-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "fur": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "dzo": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "cmn": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-bel-cmn-tatoeba-dev-v1",
+        "eval-bos-cmn-tatoeba-dev-v1",
+        "eval-bul-cmn-tatoeba-dev-v1",
+        "eval-cmn-bel-tatoeba-dev-v1",
+        "eval-cmn-epo-tatoeba-dev-v1",
+        "eval-cmn-heb-tatoeba-dev-v1",
+        "eval-cmn-hin-tatoeba-dev-v1",
+        "eval-cmn-jbo-tatoeba-dev-v1",
+        "eval-cmn-jpn-tatoeba-dev-v1",
+        "eval-cmn-kor-tatoeba-dev-v1",
+        "eval-cmn-lzh-tatoeba-dev-v1",
+        "eval-cmn-tlh-tatoeba-dev-v1",
+        "eval-cmn-ukr-tatoeba-dev-v1",
+        "eval-cmn-vie-tatoeba-dev-v1",
+        "eval-cmn-wuu-tatoeba-dev-v1",
+        "eval-cmn-yue-tatoeba-dev-v1",
+        "eval-dan-cmn-tatoeba-dev-v1",
+        "eval-deu-cmn-tatoeba-dev-v1",
+        "eval-dtp-cmn-tatoeba-dev-v1",
+        "eval-eng-cmn-tatoeba-dev-v1",
+        "eval-epo-cmn-tatoeba-dev-v1",
+        "eval-fin-cmn-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-cmn-tatoeba-dev-v1",
+        "eval-heb-cmn-tatoeba-dev-v1",
+        "eval-hin-cmn-tatoeba-dev-v1",
+        "eval-hrv-cmn-tatoeba-dev-v1",
+        "eval-hun-cmn-tatoeba-dev-v1",
+        "eval-ind-cmn-tatoeba-dev-v1",
+        "eval-ita-cmn-tatoeba-dev-v1",
+        "eval-jbo-cmn-tatoeba-dev-v1",
+        "eval-jpn-cmn-tatoeba-dev-v1",
+        "eval-kor-cmn-tatoeba-dev-v1",
+        "eval-nld-cmn-tatoeba-dev-v1",
+        "eval-nob-cmn-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-cmn-tatoeba-dev-v1",
+        "eval-por-cmn-tatoeba-dev-v1",
+        "eval-rus-cmn-tatoeba-dev-v1",
+        "eval-slv-cmn-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-spa-cmn-tatoeba-dev-v1",
+        "eval-srp-cmn-tatoeba-dev-v1",
+        "eval-swe-cmn-tatoeba-dev-v1",
+        "eval-tlh-cmn-tatoeba-dev-v1",
+        "eval-tur-cmn-tatoeba-dev-v1",
+        "eval-uig-cmn-tatoeba-dev-v1",
+        "eval-ukr-cmn-tatoeba-dev-v1",
+        "eval-vie-cmn-tatoeba-dev-v1",
+        "eval-wuu-cmn-tatoeba-dev-v1",
+        "eval-yue-cmn-tatoeba-dev-v1",
+        "eval-zlm-cmn-tatoeba-dev-v1"
+      ]
+    },
+    "wbr": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "knc": {
+      "evalDatasets": [
+        "eval-eng-knc-gamayun-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "lij": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ita-lij-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bgq": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "hye": {
+      "evalDatasets": [
+        "eval-eng-hye-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-hye-rus-tatoeba-dev-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "ain": {
+      "evalDatasets": [
+        "eval-ain-fin-tatoeba-dev-v1"
+      ]
+    },
+    "fry": {
+      "evalDatasets": [
+        "eval-eng-fry-tatoeba-dev-v1",
+        "eval-fry-nld-tatoeba-dev-v1",
+        "eval-nld-fry-tatoeba-dev-v1"
+      ]
+    },
+    "yue": {
+      "evalDatasets": [
+        "eval-cmn-yue-tatoeba-dev-v1",
+        "eval-deu-yue-tatoeba-dev-v1",
+        "eval-dtp-yue-tatoeba-dev-v1",
+        "eval-eng-yue-tatoeba-dev-v1",
+        "eval-fin-yue-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-yue-tatoeba-dev-v1",
+        "eval-jpn-yue-tatoeba-dev-v1",
+        "eval-kor-yue-tatoeba-dev-v1",
+        "eval-rus-yue-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-ukr-yue-tatoeba-dev-v1",
+        "eval-yue-cmn-tatoeba-dev-v1",
+        "eval-zlm-yue-tatoeba-dev-v1"
+      ]
+    },
+    "shn": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "min": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ind-min-tatoeba-dev-v1",
+        "eval-min-ind-tatoeba-dev-v1",
+        "eval-nusatranslation-test-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "zsm": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-eng-zsm-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-nictsap-test-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "ckb": {
+      "evalDatasets": [
+        "eval-ckb-kmr-tatoeba-dev-v1",
+        "eval-eng-ckb-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-kmr-ckb-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "rus": {
+      "evalDatasets": [
+        "eval-afr-rus-tatoeba-dev-v1",
+        "eval-amh-rus-globalvoices-test-v1",
+        "eval-ara-rus-tatoeba-dev-v1",
+        "eval-arb-rus-globalvoices-test-v1",
+        "eval-bel-rus-tatoeba-dev-v1",
+        "eval-ben-rus-globalvoices-test-v1",
+        "eval-bua-rus-tatoeba-dev-v1",
+        "eval-bub-rus-tatoeba-dev-v1",
+        "eval-bul-rus-globalvoices-test-v1",
+        "eval-bul-rus-tatoeba-dev-v1",
+        "eval-cat-rus-globalvoices-test-v1",
+        "eval-ces-rus-globalvoices-test-v1",
+        "eval-ces-rus-tatoeba-dev-v1",
+        "eval-chv-rus-tatoeba-dev-v1",
+        "eval-cor-rus-tatoeba-dev-v1",
+        "eval-dan-rus-globalvoices-test-v1",
+        "eval-dan-rus-tatoeba-dev-v1",
+        "eval-deu-rus-globalvoices-test-v1",
+        "eval-deu-rus-tatoeba-dev-v1",
+        "eval-ell-rus-globalvoices-test-v1",
+        "eval-ell-rus-tatoeba-dev-v1",
+        "eval-eng-rus-globalvoices-test-v1",
+        "eval-eng-rus-tatoeba-dev-v1",
+        "eval-epo-rus-globalvoices-test-v1",
+        "eval-epo-rus-tatoeba-dev-v1",
+        "eval-est-rus-tatoeba-dev-v1",
+        "eval-eus-rus-tatoeba-dev-v1",
+        "eval-fas-rus-globalvoices-test-v1",
+        "eval-fil-rus-globalvoices-test-v1",
+        "eval-fin-rus-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-rus-globalvoices-test-v1",
+        "eval-fra-rus-tatoeba-dev-v1",
+        "eval-heb-rus-globalvoices-test-v1",
+        "eval-heb-rus-tatoeba-dev-v1",
+        "eval-hin-rus-globalvoices-test-v1",
+        "eval-hrv-rus-tatoeba-dev-v1",
+        "eval-hun-rus-globalvoices-test-v1",
+        "eval-hun-rus-tatoeba-dev-v1",
+        "eval-hye-rus-tatoeba-dev-v1",
+        "eval-ina-rus-tatoeba-dev-v1",
+        "eval-ind-rus-globalvoices-test-v1",
+        "eval-isl-rus-tatoeba-dev-v1",
+        "eval-ita-rus-globalvoices-test-v1",
+        "eval-ita-rus-tatoeba-dev-v1",
+        "eval-jbo-rus-tatoeba-dev-v1",
+        "eval-jpn-rus-tatoeba-dev-v1",
+        "eval-kab-rus-tatoeba-dev-v1",
+        "eval-kat-rus-tatoeba-dev-v1",
+        "eval-kaz-rus-tatoeba-dev-v1",
+        "eval-kor-rus-globalvoices-test-v1",
+        "eval-kor-rus-tatoeba-dev-v1",
+        "eval-lat-rus-tatoeba-dev-v1",
+        "eval-lav-rus-tatoeba-dev-v1",
+        "eval-lfn-rus-tatoeba-dev-v1",
+        "eval-lit-rus-tatoeba-dev-v1",
+        "eval-loresmt2020-test-v1",
+        "eval-mhr-rus-tatoeba-dev-v1",
+        "eval-mkd-rus-globalvoices-test-v1",
+        "eval-mlg-rus-globalvoices-test-v1",
+        "eval-mya-rus-globalvoices-test-v1",
+        "eval-nds-rus-tatoeba-dev-v1",
+        "eval-nld-rus-globalvoices-test-v1",
+        "eval-nld-rus-tatoeba-dev-v1",
+        "eval-nob-rus-tatoeba-dev-v1",
+        "eval-npi-rus-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-oss-rus-tatoeba-dev-v1",
+        "eval-pol-rus-globalvoices-test-v1",
+        "eval-pol-rus-tatoeba-dev-v1",
+        "eval-por-rus-globalvoices-test-v1",
+        "eval-por-rus-tatoeba-dev-v1",
+        "eval-ron-rus-globalvoices-test-v1",
+        "eval-ron-rus-tatoeba-dev-v1",
+        "eval-run-rus-tatoeba-dev-v1",
+        "eval-rus-ara-tatoeba-dev-v1",
+        "eval-rus-bel-tatoeba-dev-v1",
+        "eval-rus-bua-tatoeba-dev-v1",
+        "eval-rus-bul-tatoeba-dev-v1",
+        "eval-rus-chv-tatoeba-dev-v1",
+        "eval-rus-cmn-tatoeba-dev-v1",
+        "eval-rus-dan-tatoeba-dev-v1",
+        "eval-rus-ell-tatoeba-dev-v1",
+        "eval-rus-epo-tatoeba-dev-v1",
+        "eval-rus-est-tatoeba-dev-v1",
+        "eval-rus-eus-tatoeba-dev-v1",
+        "eval-rus-fin-tatoeba-dev-v1",
+        "eval-rus-heb-tatoeba-dev-v1",
+        "eval-rus-hun-tatoeba-dev-v1",
+        "eval-rus-ina-tatoeba-dev-v1",
+        "eval-rus-isl-tatoeba-dev-v1",
+        "eval-rus-jbo-tatoeba-dev-v1",
+        "eval-rus-jpn-tatoeba-dev-v1",
+        "eval-rus-kab-tatoeba-dev-v1",
+        "eval-rus-kat-tatoeba-dev-v1",
+        "eval-rus-kaz-tatoeba-dev-v1",
+        "eval-rus-kor-tatoeba-dev-v1",
+        "eval-rus-lat-tatoeba-dev-v1",
+        "eval-rus-lav-tatoeba-dev-v1",
+        "eval-rus-lfn-tatoeba-dev-v1",
+        "eval-rus-lit-tatoeba-dev-v1",
+        "eval-rus-lzh-tatoeba-dev-v1",
+        "eval-rus-nds-tatoeba-dev-v1",
+        "eval-rus-oss-tatoeba-dev-v1",
+        "eval-rus-ron-tatoeba-dev-v1",
+        "eval-rus-run-tatoeba-dev-v1",
+        "eval-rus-sah-tatoeba-dev-v1",
+        "eval-rus-slv-tatoeba-dev-v1",
+        "eval-rus-spa-tatoeba-dev-v1",
+        "eval-rus-sqi-globalvoices-test-v1",
+        "eval-rus-srp-globalvoices-test-v1",
+        "eval-rus-swe-globalvoices-test-v1",
+        "eval-rus-swe-tatoeba-dev-v1",
+        "eval-rus-swh-globalvoices-test-v1",
+        "eval-rus-tat-tatoeba-dev-v1",
+        "eval-rus-tlh-tatoeba-dev-v1",
+        "eval-rus-tok-tatoeba-dev-v1",
+        "eval-rus-tur-globalvoices-test-v1",
+        "eval-rus-tur-tatoeba-dev-v1",
+        "eval-rus-uig-tatoeba-dev-v1",
+        "eval-rus-ukr-tatoeba-dev-v1",
+        "eval-rus-urd-globalvoices-test-v1",
+        "eval-rus-uzb-tatoeba-dev-v1",
+        "eval-rus-vie-tatoeba-dev-v1",
+        "eval-rus-xal-tatoeba-dev-v1",
+        "eval-rus-yid-tatoeba-dev-v1",
+        "eval-rus-yue-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-rus-globalvoices-test-v1",
+        "eval-spa-rus-tatoeba-dev-v1",
+        "eval-srp-rus-tatoeba-dev-v1",
+        "eval-tico19-test-v1",
+        "eval-turkicxwmt-test-v1",
+        "eval-wmt14-news-test-v1",
+        "eval-wmt15-news-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "pan": {
+      "evalDatasets": [
+        "eval-eng-pan-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "ilo": {
+      "evalDatasets": [
+        "eval-eng-ilo-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "fao": {
+      "evalDatasets": [
+        "eval-dan-fao-tatoeba-dev-v1",
+        "eval-eng-fao-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "hil": {
+      "evalDatasets": [
+        "eval-eng-hil-tatoeba-dev-v1"
+      ]
+    },
+    "tyv": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "max": {
+      "evalDatasets": [
+        "eval-eng-max-tatoeba-dev-v1",
+        "eval-ind-max-tatoeba-dev-v1",
+        "eval-max-ind-tatoeba-dev-v1"
+      ]
+    },
+    "zlm": {
+      "evalDatasets": [
+        "eval-deu-zlm-tatoeba-dev-v1",
+        "eval-dtp-zlm-tatoeba-dev-v1",
+        "eval-eng-zlm-tatoeba-dev-v1",
+        "eval-fra-zlm-tatoeba-dev-v1",
+        "eval-ind-zlm-tatoeba-dev-v1",
+        "eval-ita-zlm-tatoeba-dev-v1",
+        "eval-jpn-zlm-tatoeba-dev-v1",
+        "eval-kzj-zlm-tatoeba-dev-v1",
+        "eval-zlm-cmn-tatoeba-dev-v1",
+        "eval-zlm-ind-tatoeba-dev-v1",
+        "eval-zlm-spa-tatoeba-dev-v1",
+        "eval-zlm-yue-tatoeba-dev-v1"
+      ]
+    },
+    "rmy": {
+      "evalDatasets": [
+        "eval-eng-rom-tatoeba-dev-v1"
+      ]
+    },
+    "ayr": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "dan": {
+      "evalDatasets": [
+        "eval-arb-dan-globalvoices-test-v1",
+        "eval-ben-dan-globalvoices-test-v1",
+        "eval-bul-dan-globalvoices-test-v1",
+        "eval-cat-dan-globalvoices-test-v1",
+        "eval-ces-dan-globalvoices-test-v1",
+        "eval-dan-cmn-tatoeba-dev-v1",
+        "eval-dan-deu-globalvoices-test-v1",
+        "eval-dan-deu-tatoeba-dev-v1",
+        "eval-dan-ell-globalvoices-test-v1",
+        "eval-dan-eng-tatoeba-dev-v1",
+        "eval-dan-epo-tatoeba-dev-v1",
+        "eval-dan-fao-tatoeba-dev-v1",
+        "eval-dan-fas-globalvoices-test-v1",
+        "eval-dan-fin-tatoeba-dev-v1",
+        "eval-dan-fra-globalvoices-test-v1",
+        "eval-dan-fra-tatoeba-dev-v1",
+        "eval-dan-hun-globalvoices-test-v1",
+        "eval-dan-hun-tatoeba-dev-v1",
+        "eval-dan-ita-globalvoices-test-v1",
+        "eval-dan-ita-tatoeba-dev-v1",
+        "eval-dan-jpn-tatoeba-dev-v1",
+        "eval-dan-kor-globalvoices-test-v1",
+        "eval-dan-mkd-globalvoices-test-v1",
+        "eval-dan-mlg-globalvoices-test-v1",
+        "eval-dan-nld-globalvoices-test-v1",
+        "eval-dan-nld-tatoeba-dev-v1",
+        "eval-dan-nob-tatoeba-dev-v1",
+        "eval-dan-pol-globalvoices-test-v1",
+        "eval-dan-por-globalvoices-test-v1",
+        "eval-dan-por-tatoeba-dev-v1",
+        "eval-dan-rus-globalvoices-test-v1",
+        "eval-dan-rus-tatoeba-dev-v1",
+        "eval-dan-spa-globalvoices-test-v1",
+        "eval-dan-spa-tatoeba-dev-v1",
+        "eval-dan-sqi-globalvoices-test-v1",
+        "eval-dan-srp-globalvoices-test-v1",
+        "eval-dan-swe-globalvoices-test-v1",
+        "eval-dan-swe-tatoeba-dev-v1",
+        "eval-dan-swh-globalvoices-test-v1",
+        "eval-dan-tur-tatoeba-dev-v1",
+        "eval-dan-yid-tatoeba-dev-v1",
+        "eval-deu-dan-tatoeba-dev-v1",
+        "eval-eng-dan-globalvoices-test-v1",
+        "eval-eng-dan-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-dan-tatoeba-dev-v1",
+        "eval-hun-dan-tatoeba-dev-v1",
+        "eval-ita-dan-tatoeba-dev-v1",
+        "eval-nld-dan-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-dan-tatoeba-dev-v1",
+        "eval-rus-dan-tatoeba-dev-v1",
+        "eval-spa-dan-tatoeba-dev-v1",
+        "eval-swe-dan-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "kri": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "apc": {
+      "evalDatasets": [
+        "eval-arabench-test-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "arz": {
+      "evalDatasets": [
+        "eval-arabench-test-v1",
+        "eval-arz-eng-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "nij": {
+      "evalDatasets": [
+        "eval-nusax-test-v1"
+      ]
+    },
+    "haw": {
+      "evalDatasets": [
+        "eval-eng-haw-tatoeba-dev-v1"
+      ]
+    },
+    "acm": {
+      "evalDatasets": [
+        "eval-acm-jpn-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "lfn": {
+      "evalDatasets": [
+        "eval-deu-lfn-tatoeba-dev-v1",
+        "eval-eng-lfn-tatoeba-dev-v1",
+        "eval-epo-lfn-tatoeba-dev-v1",
+        "eval-fra-lfn-tatoeba-dev-v1",
+        "eval-heb-lfn-tatoeba-dev-v1",
+        "eval-ido-lfn-tatoeba-dev-v1",
+        "eval-ina-lfn-tatoeba-dev-v1",
+        "eval-lad-lfn-tatoeba-dev-v1",
+        "eval-lat-lfn-tatoeba-dev-v1",
+        "eval-lfn-por-tatoeba-dev-v1",
+        "eval-lfn-rus-tatoeba-dev-v1",
+        "eval-lfn-spa-tatoeba-dev-v1",
+        "eval-lfn-tlh-tatoeba-dev-v1",
+        "eval-lfn-tur-tatoeba-dev-v1",
+        "eval-lfn-yid-tatoeba-dev-v1",
+        "eval-rus-lfn-tatoeba-dev-v1",
+        "eval-yid-lfn-tatoeba-dev-v1"
+      ]
+    },
+    "cni": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1"
+      ]
+    },
+    "kfy": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "dgo": {
+      "evalDatasets": [
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-smol-doc-v1"
+      ]
+    },
+    "bzd": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1"
+      ]
+    },
+    "ndc": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "sgj": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "tir": {
+      "evalDatasets": [
+        "eval-eng-tir-gamayun-test-v1",
+        "eval-eng-tir-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "rhg": {
+      "evalDatasets": [
+        "eval-eng-rhg-gamayun-test-v1"
+      ]
+    },
+    "jav": {
+      "evalDatasets": [
+        "eval-eng-jav-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-jav-ind-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-nusatranslation-test-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "sun": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-nusatranslation-test-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "umb": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "srp": {
+      "evalDatasets": [
+        "eval-arb-srp-globalvoices-test-v1",
+        "eval-ben-srp-globalvoices-test-v1",
+        "eval-bul-srp-globalvoices-test-v1",
+        "eval-cat-srp-globalvoices-test-v1",
+        "eval-ces-srp-globalvoices-test-v1",
+        "eval-dan-srp-globalvoices-test-v1",
+        "eval-deu-srp-globalvoices-test-v1",
+        "eval-deu-srp-tatoeba-dev-v1",
+        "eval-ell-srp-globalvoices-test-v1",
+        "eval-eng-srp-globalvoices-test-v1",
+        "eval-eng-srp-tatoeba-dev-v1",
+        "eval-epo-srp-globalvoices-test-v1",
+        "eval-epo-srp-tatoeba-dev-v1",
+        "eval-fas-srp-globalvoices-test-v1",
+        "eval-fil-srp-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-srp-globalvoices-test-v1",
+        "eval-fra-srp-tatoeba-dev-v1",
+        "eval-hun-srp-globalvoices-test-v1",
+        "eval-ind-srp-globalvoices-test-v1",
+        "eval-ita-srp-globalvoices-test-v1",
+        "eval-kor-srp-globalvoices-test-v1",
+        "eval-mkd-srp-globalvoices-test-v1",
+        "eval-mlg-srp-globalvoices-test-v1",
+        "eval-nld-srp-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-srp-globalvoices-test-v1",
+        "eval-por-srp-globalvoices-test-v1",
+        "eval-rus-srp-globalvoices-test-v1",
+        "eval-spa-srp-globalvoices-test-v1",
+        "eval-sqi-srp-globalvoices-test-v1",
+        "eval-srp-cmn-tatoeba-dev-v1",
+        "eval-srp-ita-tatoeba-dev-v1",
+        "eval-srp-jpn-tatoeba-dev-v1",
+        "eval-srp-nob-tatoeba-dev-v1",
+        "eval-srp-pol-tatoeba-dev-v1",
+        "eval-srp-rus-tatoeba-dev-v1",
+        "eval-srp-spa-tatoeba-dev-v1",
+        "eval-srp-swe-globalvoices-test-v1",
+        "eval-srp-swh-globalvoices-test-v1",
+        "eval-srp-tur-globalvoices-test-v1",
+        "eval-srp-ukr-tatoeba-dev-v1",
+        "eval-srp-urd-globalvoices-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "lvs": {
+      "evalDatasets": [
+        "eval-deu-lav-tatoeba-dev-v1",
+        "eval-eng-lav-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-lav-rus-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-lav-tatoeba-dev-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "tha": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-eng-tha-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-nictsap-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "sag": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "ceb": {
+      "evalDatasets": [
+        "eval-ceb-deu-tatoeba-dev-v1",
+        "eval-ceb-eng-tatoeba-dev-v1",
+        "eval-deu-ceb-tatoeba-dev-v1",
+        "eval-eng-ceb-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "kmr": {
+      "evalDatasets": [
+        "eval-ckb-kmr-tatoeba-dev-v1",
+        "eval-deu-kur-tatoeba-dev-v1",
+        "eval-eng-kmr-tatoeba-dev-v1",
+        "eval-eng-kur-tatoeba-dev-v1",
+        "eval-fin-kur-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-kmr-ckb-tatoeba-dev-v1",
+        "eval-kmr-tur-tatoeba-dev-v1",
+        "eval-kur-tur-tatoeba-dev-v1",
+        "eval-tico19-test-v1",
+        "eval-tur-kur-tatoeba-dev-v1"
+      ]
+    },
+    "npi": {
+      "evalDatasets": [
+        "eval-arb-npi-globalvoices-test-v1",
+        "eval-ben-npi-globalvoices-test-v1",
+        "eval-deu-npi-globalvoices-test-v1",
+        "eval-ell-npi-globalvoices-test-v1",
+        "eval-eng-npi-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-npi-globalvoices-test-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ita-npi-globalvoices-test-v1",
+        "eval-mlg-npi-globalvoices-test-v1",
+        "eval-npi-por-globalvoices-test-v1",
+        "eval-npi-rus-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-npi-globalvoices-test-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "hat": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "bfy": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "cls": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "jpn": {
+      "evalDatasets": [
+        "eval-acm-jpn-tatoeba-dev-v1",
+        "eval-alt-test-v1",
+        "eval-ara-jpn-tatoeba-dev-v1",
+        "eval-bsd-test-v1",
+        "eval-bul-jpn-tatoeba-dev-v1",
+        "eval-cmn-jpn-tatoeba-dev-v1",
+        "eval-dan-jpn-tatoeba-dev-v1",
+        "eval-deu-jpn-tatoeba-dev-v1",
+        "eval-dtp-jpn-tatoeba-dev-v1",
+        "eval-eng-jpn-tatoeba-dev-v1",
+        "eval-epo-jpn-tatoeba-dev-v1",
+        "eval-eus-jpn-tatoeba-dev-v1",
+        "eval-fin-jpn-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-jpn-tatoeba-dev-v1",
+        "eval-heb-jpn-tatoeba-dev-v1",
+        "eval-hrv-jpn-tatoeba-dev-v1",
+        "eval-hun-jpn-tatoeba-dev-v1",
+        "eval-isl-jpn-tatoeba-dev-v1",
+        "eval-ita-jpn-tatoeba-dev-v1",
+        "eval-jbo-jpn-tatoeba-dev-v1",
+        "eval-jpn-cmn-tatoeba-dev-v1",
+        "eval-jpn-dtp-tatoeba-dev-v1",
+        "eval-jpn-epo-tatoeba-dev-v1",
+        "eval-jpn-eus-tatoeba-dev-v1",
+        "eval-jpn-ind-tatoeba-dev-v1",
+        "eval-jpn-jbo-tatoeba-dev-v1",
+        "eval-jpn-kor-tatoeba-dev-v1",
+        "eval-jpn-lit-tatoeba-dev-v1",
+        "eval-jpn-mar-tatoeba-dev-v1",
+        "eval-jpn-nds-tatoeba-dev-v1",
+        "eval-jpn-nld-tatoeba-dev-v1",
+        "eval-jpn-nob-tatoeba-dev-v1",
+        "eval-jpn-por-tatoeba-dev-v1",
+        "eval-jpn-rus-tatoeba-dev-v1",
+        "eval-jpn-spa-tatoeba-dev-v1",
+        "eval-jpn-swe-tatoeba-dev-v1",
+        "eval-jpn-tlh-tatoeba-dev-v1",
+        "eval-jpn-tok-tatoeba-dev-v1",
+        "eval-jpn-tur-tatoeba-dev-v1",
+        "eval-jpn-ukr-tatoeba-dev-v1",
+        "eval-jpn-vie-tatoeba-dev-v1",
+        "eval-jpn-yue-tatoeba-dev-v1",
+        "eval-jpn-zlm-tatoeba-dev-v1",
+        "eval-nld-jpn-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-jpn-tatoeba-dev-v1",
+        "eval-rus-jpn-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-jpn-tatoeba-dev-v1",
+        "eval-srp-jpn-tatoeba-dev-v1",
+        "eval-tur-jpn-tatoeba-dev-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "deu": {
+      "evalDatasets": [
+        "eval-afr-deu-tatoeba-dev-v1",
+        "eval-amh-deu-globalvoices-test-v1",
+        "eval-ara-deu-tatoeba-dev-v1",
+        "eval-arb-deu-globalvoices-test-v1",
+        "eval-bel-deu-tatoeba-dev-v1",
+        "eval-ben-deu-globalvoices-test-v1",
+        "eval-ber-deu-tatoeba-dev-v1",
+        "eval-bul-deu-globalvoices-test-v1",
+        "eval-bul-deu-tatoeba-dev-v1",
+        "eval-cat-deu-globalvoices-test-v1",
+        "eval-cat-deu-tatoeba-dev-v1",
+        "eval-ceb-deu-tatoeba-dev-v1",
+        "eval-ces-deu-globalvoices-test-v1",
+        "eval-ces-deu-tatoeba-dev-v1",
+        "eval-cor-deu-tatoeba-dev-v1",
+        "eval-dan-deu-globalvoices-test-v1",
+        "eval-dan-deu-tatoeba-dev-v1",
+        "eval-deu-ber-tatoeba-dev-v1",
+        "eval-deu-bos-tatoeba-dev-v1",
+        "eval-deu-cat-tatoeba-dev-v1",
+        "eval-deu-ceb-tatoeba-dev-v1",
+        "eval-deu-cmn-tatoeba-dev-v1",
+        "eval-deu-dan-tatoeba-dev-v1",
+        "eval-deu-dsb-tatoeba-dev-v1",
+        "eval-deu-ell-globalvoices-test-v1",
+        "eval-deu-ell-tatoeba-dev-v1",
+        "eval-deu-eng-tatoeba-dev-v1",
+        "eval-deu-epo-globalvoices-test-v1",
+        "eval-deu-epo-tatoeba-dev-v1",
+        "eval-deu-est-tatoeba-dev-v1",
+        "eval-deu-eus-tatoeba-dev-v1",
+        "eval-deu-fas-globalvoices-test-v1",
+        "eval-deu-fil-globalvoices-test-v1",
+        "eval-deu-fin-tatoeba-dev-v1",
+        "eval-deu-fra-globalvoices-test-v1",
+        "eval-deu-fra-tatoeba-dev-v1",
+        "eval-deu-frr-tatoeba-dev-v1",
+        "eval-deu-gos-tatoeba-dev-v1",
+        "eval-deu-heb-globalvoices-test-v1",
+        "eval-deu-heb-tatoeba-dev-v1",
+        "eval-deu-hin-globalvoices-test-v1",
+        "eval-deu-hrv-tatoeba-dev-v1",
+        "eval-deu-hrx-tatoeba-dev-v1",
+        "eval-deu-hsb-tatoeba-dev-v1",
+        "eval-deu-hun-globalvoices-test-v1",
+        "eval-deu-hun-tatoeba-dev-v1",
+        "eval-deu-ido-tatoeba-dev-v1",
+        "eval-deu-ile-tatoeba-dev-v1",
+        "eval-deu-ina-tatoeba-dev-v1",
+        "eval-deu-ind-globalvoices-test-v1",
+        "eval-deu-ind-tatoeba-dev-v1",
+        "eval-deu-isl-tatoeba-dev-v1",
+        "eval-deu-ita-globalvoices-test-v1",
+        "eval-deu-ita-tatoeba-dev-v1",
+        "eval-deu-jbo-tatoeba-dev-v1",
+        "eval-deu-jpn-tatoeba-dev-v1",
+        "eval-deu-kab-tatoeba-dev-v1",
+        "eval-deu-kor-globalvoices-test-v1",
+        "eval-deu-kor-tatoeba-dev-v1",
+        "eval-deu-kur-tatoeba-dev-v1",
+        "eval-deu-lad-tatoeba-dev-v1",
+        "eval-deu-lat-tatoeba-dev-v1",
+        "eval-deu-lav-tatoeba-dev-v1",
+        "eval-deu-lfn-tatoeba-dev-v1",
+        "eval-deu-lit-tatoeba-dev-v1",
+        "eval-deu-ltz-tatoeba-dev-v1",
+        "eval-deu-mkd-globalvoices-test-v1",
+        "eval-deu-mlg-globalvoices-test-v1",
+        "eval-deu-mya-globalvoices-test-v1",
+        "eval-deu-nds-tatoeba-dev-v1",
+        "eval-deu-nld-globalvoices-test-v1",
+        "eval-deu-nld-tatoeba-dev-v1",
+        "eval-deu-nno-tatoeba-dev-v1",
+        "eval-deu-nob-tatoeba-dev-v1",
+        "eval-deu-npi-globalvoices-test-v1",
+        "eval-deu-pes-tatoeba-dev-v1",
+        "eval-deu-pol-globalvoices-test-v1",
+        "eval-deu-pol-tatoeba-dev-v1",
+        "eval-deu-por-globalvoices-test-v1",
+        "eval-deu-por-tatoeba-dev-v1",
+        "eval-deu-ron-globalvoices-test-v1",
+        "eval-deu-ron-tatoeba-dev-v1",
+        "eval-deu-run-tatoeba-dev-v1",
+        "eval-deu-rus-globalvoices-test-v1",
+        "eval-deu-rus-tatoeba-dev-v1",
+        "eval-deu-slv-tatoeba-dev-v1",
+        "eval-deu-spa-globalvoices-test-v1",
+        "eval-deu-spa-tatoeba-dev-v1",
+        "eval-deu-sqi-globalvoices-test-v1",
+        "eval-deu-srp-globalvoices-test-v1",
+        "eval-deu-srp-tatoeba-dev-v1",
+        "eval-deu-swe-globalvoices-test-v1",
+        "eval-deu-swe-tatoeba-dev-v1",
+        "eval-deu-swg-tatoeba-dev-v1",
+        "eval-deu-swh-globalvoices-test-v1",
+        "eval-deu-tat-tatoeba-dev-v1",
+        "eval-deu-tgl-tatoeba-dev-v1",
+        "eval-deu-tlh-tatoeba-dev-v1",
+        "eval-deu-tok-tatoeba-dev-v1",
+        "eval-deu-tur-globalvoices-test-v1",
+        "eval-deu-tur-tatoeba-dev-v1",
+        "eval-deu-ukr-tatoeba-dev-v1",
+        "eval-deu-urd-globalvoices-test-v1",
+        "eval-deu-vie-tatoeba-dev-v1",
+        "eval-deu-vol-tatoeba-dev-v1",
+        "eval-deu-yid-tatoeba-dev-v1",
+        "eval-deu-yue-tatoeba-dev-v1",
+        "eval-deu-zlm-tatoeba-dev-v1",
+        "eval-eng-deu-globalvoices-test-v1",
+        "eval-eng-deu-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-deu-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-spa-deu-tatoeba-dev-v1",
+        "eval-wmt14-news-test-v1",
+        "eval-wmt15-news-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "vie": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-cmn-vie-tatoeba-dev-v1",
+        "eval-deu-vie-tatoeba-dev-v1",
+        "eval-eng-vie-tatoeba-dev-v1",
+        "eval-epo-vie-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-vie-tatoeba-dev-v1",
+        "eval-ita-vie-tatoeba-dev-v1",
+        "eval-jpn-vie-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-vie-tatoeba-dev-v1",
+        "eval-spa-vie-tatoeba-dev-v1",
+        "eval-tat-vie-tatoeba-dev-v1",
+        "eval-vie-cmn-tatoeba-dev-v1",
+        "eval-vie-epo-tatoeba-dev-v1",
+        "eval-vie-tat-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "ibo": {
+      "evalDatasets": [
+        "eval-eng-ibo-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "cjk": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "nqo": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "hrv": {
+      "evalDatasets": [
+        "eval-deu-hrv-tatoeba-dev-v1",
+        "eval-eng-hrv-tatoeba-dev-v1",
+        "eval-epo-hrv-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-hrv-tatoeba-dev-v1",
+        "eval-hrv-cmn-tatoeba-dev-v1",
+        "eval-hrv-ita-tatoeba-dev-v1",
+        "eval-hrv-jpn-tatoeba-dev-v1",
+        "eval-hrv-nob-tatoeba-dev-v1",
+        "eval-hrv-pol-tatoeba-dev-v1",
+        "eval-hrv-rus-tatoeba-dev-v1",
+        "eval-hrv-spa-tatoeba-dev-v1",
+        "eval-hrv-tur-tatoeba-dev-v1",
+        "eval-hrv-ukr-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "luo": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "tgk": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "bre": {
+      "evalDatasets": [
+        "eval-bre-eng-tatoeba-dev-v1",
+        "eval-bre-fra-tatoeba-dev-v1"
+      ]
+    },
+    "ekk": {
+      "evalDatasets": [
+        "eval-deu-est-tatoeba-dev-v1",
+        "eval-eng-est-tatoeba-dev-v1",
+        "eval-est-fin-tatoeba-dev-v1",
+        "eval-est-rus-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-est-tatoeba-dev-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "gla": {
+      "evalDatasets": [
+        "eval-eng-gla-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-gla-spa-tatoeba-dev-v1"
+      ]
+    },
+    "pcm": {
+      "evalDatasets": [
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "quy": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1",
+        "eval-eng-que-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-que-tatoeba-dev-v1"
+      ]
+    },
+    "azb": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "wol": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "pam": {
+      "evalDatasets": [
+        "eval-eng-pam-tatoeba-dev-v1"
+      ]
+    },
+    "bod": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bak": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-turkicxwmt-test-v1"
+      ]
+    },
+    "nnb": {
+      "evalDatasets": [
+        "eval-fra-nnb-gamayun-test-v1"
+      ]
+    },
+    "bxr": {
+      "evalDatasets": [
+        "eval-bua-rus-tatoeba-dev-v1",
+        "eval-rus-bua-tatoeba-dev-v1"
+      ]
+    },
+    "uzn": {
+      "evalDatasets": [
+        "eval-eng-uzb-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-uzb-tatoeba-dev-v1",
+        "eval-tur-uzb-tatoeba-dev-v1",
+        "eval-turkicxwmt-test-v1"
+      ]
+    },
+    "mfe": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ell": {
+      "evalDatasets": [
+        "eval-amh-ell-globalvoices-test-v1",
+        "eval-ara-ell-tatoeba-dev-v1",
+        "eval-arb-ell-globalvoices-test-v1",
+        "eval-ben-ell-globalvoices-test-v1",
+        "eval-bul-ell-globalvoices-test-v1",
+        "eval-cat-ell-globalvoices-test-v1",
+        "eval-ces-ell-globalvoices-test-v1",
+        "eval-dan-ell-globalvoices-test-v1",
+        "eval-deu-ell-globalvoices-test-v1",
+        "eval-deu-ell-tatoeba-dev-v1",
+        "eval-ell-ara-tatoeba-dev-v1",
+        "eval-ell-eng-tatoeba-dev-v1",
+        "eval-ell-epo-globalvoices-test-v1",
+        "eval-ell-epo-tatoeba-dev-v1",
+        "eval-ell-fas-globalvoices-test-v1",
+        "eval-ell-fil-globalvoices-test-v1",
+        "eval-ell-fra-globalvoices-test-v1",
+        "eval-ell-fra-tatoeba-dev-v1",
+        "eval-ell-heb-globalvoices-test-v1",
+        "eval-ell-hin-globalvoices-test-v1",
+        "eval-ell-hun-globalvoices-test-v1",
+        "eval-ell-ind-globalvoices-test-v1",
+        "eval-ell-ita-globalvoices-test-v1",
+        "eval-ell-ita-tatoeba-dev-v1",
+        "eval-ell-kor-globalvoices-test-v1",
+        "eval-ell-mkd-globalvoices-test-v1",
+        "eval-ell-mlg-globalvoices-test-v1",
+        "eval-ell-mya-globalvoices-test-v1",
+        "eval-ell-nld-globalvoices-test-v1",
+        "eval-ell-nld-tatoeba-dev-v1",
+        "eval-ell-npi-globalvoices-test-v1",
+        "eval-ell-pol-globalvoices-test-v1",
+        "eval-ell-por-globalvoices-test-v1",
+        "eval-ell-por-tatoeba-dev-v1",
+        "eval-ell-ron-globalvoices-test-v1",
+        "eval-ell-rus-globalvoices-test-v1",
+        "eval-ell-rus-tatoeba-dev-v1",
+        "eval-ell-spa-globalvoices-test-v1",
+        "eval-ell-spa-tatoeba-dev-v1",
+        "eval-ell-sqi-globalvoices-test-v1",
+        "eval-ell-srp-globalvoices-test-v1",
+        "eval-ell-swe-globalvoices-test-v1",
+        "eval-ell-swe-tatoeba-dev-v1",
+        "eval-ell-swh-globalvoices-test-v1",
+        "eval-ell-tur-globalvoices-test-v1",
+        "eval-ell-tur-tatoeba-dev-v1",
+        "eval-ell-urd-globalvoices-test-v1",
+        "eval-eng-ell-globalvoices-test-v1",
+        "eval-eng-ell-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-ell-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "bub": {
+      "evalDatasets": [
+        "eval-bub-rus-tatoeba-dev-v1"
+      ]
+    },
+    "dje": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "nso": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "sna": {
+      "evalDatasets": [
+        "eval-eng-sna-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "abq": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ary": {
+      "evalDatasets": [
+        "eval-arabench-test-v1",
+        "eval-ary-fra-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "sah": {
+      "evalDatasets": [
+        "eval-rus-sah-tatoeba-dev-v1",
+        "eval-turkicxwmt-test-v1",
+        "eval-wmt22-general-test-v1"
+      ]
+    },
+    "pmn": {
+      "evalDatasets": [
+        "eval-eng-pmn-tatoeba-dev-v1"
+      ]
+    },
+    "kor": {
+      "evalDatasets": [
+        "eval-arb-kor-globalvoices-test-v1",
+        "eval-ben-kor-globalvoices-test-v1",
+        "eval-cat-kor-globalvoices-test-v1",
+        "eval-ces-kor-globalvoices-test-v1",
+        "eval-cmn-kor-tatoeba-dev-v1",
+        "eval-dan-kor-globalvoices-test-v1",
+        "eval-deu-kor-globalvoices-test-v1",
+        "eval-deu-kor-tatoeba-dev-v1",
+        "eval-ell-kor-globalvoices-test-v1",
+        "eval-eng-kor-globalvoices-test-v1",
+        "eval-eng-kor-tatoeba-dev-v1",
+        "eval-fas-kor-globalvoices-test-v1",
+        "eval-fin-kor-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-kor-globalvoices-test-v1",
+        "eval-fra-kor-tatoeba-dev-v1",
+        "eval-hun-kor-globalvoices-test-v1",
+        "eval-hun-kor-tatoeba-dev-v1",
+        "eval-ind-kor-globalvoices-test-v1",
+        "eval-ita-kor-globalvoices-test-v1",
+        "eval-jpn-kor-tatoeba-dev-v1",
+        "eval-kor-cmn-tatoeba-dev-v1",
+        "eval-kor-mkd-globalvoices-test-v1",
+        "eval-kor-mlg-globalvoices-test-v1",
+        "eval-kor-mya-globalvoices-test-v1",
+        "eval-kor-nld-globalvoices-test-v1",
+        "eval-kor-pol-globalvoices-test-v1",
+        "eval-kor-por-globalvoices-test-v1",
+        "eval-kor-rus-globalvoices-test-v1",
+        "eval-kor-rus-tatoeba-dev-v1",
+        "eval-kor-spa-tatoeba-dev-v1",
+        "eval-kor-sqi-globalvoices-test-v1",
+        "eval-kor-srp-globalvoices-test-v1",
+        "eval-kor-swe-globalvoices-test-v1",
+        "eval-kor-swh-globalvoices-test-v1",
+        "eval-kor-urd-globalvoices-test-v1",
+        "eval-kor-yue-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-kor-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-kor-globalvoices-test-v1",
+        "eval-spa-kor-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "nya": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "tsn": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bho": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-loresmt2020-test-v1"
+      ]
+    },
+    "khm": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-ben-khm-globalvoices-test-v1",
+        "eval-cat-khm-globalvoices-test-v1",
+        "eval-eng-khm-globalvoices-test-v1",
+        "eval-eng-khm-tatoeba-dev-v1",
+        "eval-fas-khm-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-khm-globalvoices-test-v1",
+        "eval-ita-khm-globalvoices-test-v1",
+        "eval-khm-mkd-globalvoices-test-v1",
+        "eval-khm-mlg-globalvoices-test-v1",
+        "eval-khm-por-globalvoices-test-v1",
+        "eval-khm-spa-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-khm-globalvoices-test-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt20-news-test-v1"
+      ]
+    },
+    "tso": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ina": {
+      "evalDatasets": [
+        "eval-deu-ina-tatoeba-dev-v1",
+        "eval-eng-ina-tatoeba-dev-v1",
+        "eval-epo-ina-tatoeba-dev-v1",
+        "eval-fra-ina-tatoeba-dev-v1",
+        "eval-heb-ina-tatoeba-dev-v1",
+        "eval-ido-ina-tatoeba-dev-v1",
+        "eval-ina-ita-tatoeba-dev-v1",
+        "eval-ina-lad-tatoeba-dev-v1",
+        "eval-ina-lat-tatoeba-dev-v1",
+        "eval-ina-lfn-tatoeba-dev-v1",
+        "eval-ina-nld-tatoeba-dev-v1",
+        "eval-ina-por-tatoeba-dev-v1",
+        "eval-ina-rus-tatoeba-dev-v1",
+        "eval-ina-spa-tatoeba-dev-v1",
+        "eval-ina-tlh-tatoeba-dev-v1",
+        "eval-ina-tur-tatoeba-dev-v1",
+        "eval-ina-yid-tatoeba-dev-v1",
+        "eval-rus-ina-tatoeba-dev-v1",
+        "eval-yid-ina-tatoeba-dev-v1"
+      ]
+    },
+    "hoc": {
+      "evalDatasets": [
+        "eval-eng-hoc-tatoeba-dev-v1",
+        "eval-hoc-sat-tatoeba-dev-v1"
+      ]
+    },
+    "gos": {
+      "evalDatasets": [
+        "eval-deu-gos-tatoeba-dev-v1",
+        "eval-eng-gos-tatoeba-dev-v1",
+        "eval-gos-nld-tatoeba-dev-v1",
+        "eval-nld-gos-tatoeba-dev-v1"
+      ]
+    },
+    "fkv": {
+      "evalDatasets": [
+        "eval-fin-fkv-tatoeba-dev-v1"
+      ]
+    },
+    "lub": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "xho": {
+      "evalDatasets": [
+        "eval-bouquet-dev-v1",
+        "eval-eng-xho-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt21-news-test-v1"
+      ]
+    },
+    "ido": {
+      "evalDatasets": [
+        "eval-deu-ido-tatoeba-dev-v1",
+        "eval-eng-ido-tatoeba-dev-v1",
+        "eval-epo-ido-tatoeba-dev-v1",
+        "eval-fra-ido-tatoeba-dev-v1",
+        "eval-ido-ina-tatoeba-dev-v1",
+        "eval-ido-ita-tatoeba-dev-v1",
+        "eval-ido-lat-tatoeba-dev-v1",
+        "eval-ido-lfn-tatoeba-dev-v1",
+        "eval-ido-spa-tatoeba-dev-v1",
+        "eval-ido-yid-tatoeba-dev-v1",
+        "eval-yid-ido-tatoeba-dev-v1"
+      ]
+    },
+    "hne": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "brh": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "kik": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "noe": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "dov": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "isl": {
+      "evalDatasets": [
+        "eval-deu-isl-tatoeba-dev-v1",
+        "eval-eng-isl-tatoeba-dev-v1",
+        "eval-epo-isl-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-isl-ita-tatoeba-dev-v1",
+        "eval-isl-jpn-tatoeba-dev-v1",
+        "eval-isl-rus-tatoeba-dev-v1",
+        "eval-isl-spa-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-isl-tatoeba-dev-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "hin": {
+      "evalDatasets": [
+        "eval-alt-test-v1",
+        "eval-arb-hin-globalvoices-test-v1",
+        "eval-ben-hin-globalvoices-test-v1",
+        "eval-cmn-hin-tatoeba-dev-v1",
+        "eval-deu-hin-globalvoices-test-v1",
+        "eval-ell-hin-globalvoices-test-v1",
+        "eval-eng-hin-globalvoices-test-v1",
+        "eval-eng-hin-tatoeba-dev-v1",
+        "eval-fas-hin-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-hin-globalvoices-test-v1",
+        "eval-hin-cmn-tatoeba-dev-v1",
+        "eval-hin-ita-globalvoices-test-v1",
+        "eval-hin-mar-tatoeba-dev-v1",
+        "eval-hin-mlg-globalvoices-test-v1",
+        "eval-hin-pol-globalvoices-test-v1",
+        "eval-hin-por-globalvoices-test-v1",
+        "eval-hin-rus-globalvoices-test-v1",
+        "eval-hin-urd-tatoeba-dev-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-loresmt2020-test-v1",
+        "eval-nictsap-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-hin-globalvoices-test-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt14-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "ory": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "ota": {
+      "evalDatasets": [
+        "eval-eng-ota-tatoeba-dev-v1",
+        "eval-ota-tur-tatoeba-dev-v1",
+        "eval-tur-ota-tatoeba-dev-v1"
+      ]
+    },
+    "ahr": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "tar": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1"
+      ]
+    },
+    "kha": {
+      "evalDatasets": [
+        "eval-eng-kha-tatoeba-dev-v1"
+      ]
+    },
+    "nbl": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "als": {
+      "evalDatasets": [
+        "eval-arb-sqi-globalvoices-test-v1",
+        "eval-ben-sqi-globalvoices-test-v1",
+        "eval-bul-sqi-globalvoices-test-v1",
+        "eval-cat-sqi-globalvoices-test-v1",
+        "eval-dan-sqi-globalvoices-test-v1",
+        "eval-deu-sqi-globalvoices-test-v1",
+        "eval-ell-sqi-globalvoices-test-v1",
+        "eval-eng-sqi-globalvoices-test-v1",
+        "eval-eng-sqi-tatoeba-dev-v1",
+        "eval-fas-sqi-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-sqi-globalvoices-test-v1",
+        "eval-hun-sqi-globalvoices-test-v1",
+        "eval-ind-sqi-globalvoices-test-v1",
+        "eval-ita-sqi-globalvoices-test-v1",
+        "eval-kor-sqi-globalvoices-test-v1",
+        "eval-mkd-sqi-globalvoices-test-v1",
+        "eval-mlg-sqi-globalvoices-test-v1",
+        "eval-nld-sqi-globalvoices-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-sqi-globalvoices-test-v1",
+        "eval-por-sqi-globalvoices-test-v1",
+        "eval-rus-sqi-globalvoices-test-v1",
+        "eval-spa-sqi-globalvoices-test-v1",
+        "eval-sqi-srp-globalvoices-test-v1",
+        "eval-sqi-swe-globalvoices-test-v1",
+        "eval-sqi-swh-globalvoices-test-v1"
+      ]
+    },
+    "ron": {
+      "evalDatasets": [
+        "eval-arb-ron-globalvoices-test-v1",
+        "eval-ben-ron-globalvoices-test-v1",
+        "eval-cat-ron-globalvoices-test-v1",
+        "eval-ces-ron-globalvoices-test-v1",
+        "eval-deu-ron-globalvoices-test-v1",
+        "eval-deu-ron-tatoeba-dev-v1",
+        "eval-ell-ron-globalvoices-test-v1",
+        "eval-eng-ron-globalvoices-test-v1",
+        "eval-eng-ron-tatoeba-dev-v1",
+        "eval-epo-ron-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-ron-globalvoices-test-v1",
+        "eval-fra-ron-tatoeba-dev-v1",
+        "eval-hun-ron-globalvoices-test-v1",
+        "eval-ind-ron-globalvoices-test-v1",
+        "eval-ita-ron-globalvoices-test-v1",
+        "eval-ita-ron-tatoeba-dev-v1",
+        "eval-mkd-ron-globalvoices-test-v1",
+        "eval-mlg-ron-globalvoices-test-v1",
+        "eval-nld-ron-globalvoices-test-v1",
+        "eval-nld-ron-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-ron-globalvoices-test-v1",
+        "eval-pol-ron-tatoeba-dev-v1",
+        "eval-por-ron-globalvoices-test-v1",
+        "eval-por-ron-tatoeba-dev-v1",
+        "eval-ron-epo-tatoeba-dev-v1",
+        "eval-ron-rus-globalvoices-test-v1",
+        "eval-ron-rus-tatoeba-dev-v1",
+        "eval-ron-spa-tatoeba-dev-v1",
+        "eval-ron-tur-globalvoices-test-v1",
+        "eval-ron-tur-tatoeba-dev-v1",
+        "eval-rus-ron-tatoeba-dev-v1",
+        "eval-spa-ron-globalvoices-test-v1",
+        "eval-wmt16-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "aeb": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "mhr": {
+      "evalDatasets": [
+        "eval-mhr-rus-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "tpi": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "trp": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "dhd": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "kir": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-turkicxwmt-test-v1"
+      ]
+    },
+    "oss": {
+      "evalDatasets": [
+        "eval-oss-rus-tatoeba-dev-v1",
+        "eval-rus-oss-tatoeba-dev-v1"
+      ]
+    },
+    "bjn": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "fon": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ydd": {
+      "evalDatasets": [
+        "eval-dan-yid-tatoeba-dev-v1",
+        "eval-deu-yid-tatoeba-dev-v1",
+        "eval-eng-yid-tatoeba-dev-v1",
+        "eval-epo-yid-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-yid-tatoeba-dev-v1",
+        "eval-heb-yid-tatoeba-dev-v1",
+        "eval-ido-yid-tatoeba-dev-v1",
+        "eval-ina-yid-tatoeba-dev-v1",
+        "eval-ita-yid-tatoeba-dev-v1",
+        "eval-lad-yid-tatoeba-dev-v1",
+        "eval-lat-yid-tatoeba-dev-v1",
+        "eval-lfn-yid-tatoeba-dev-v1",
+        "eval-nld-yid-tatoeba-dev-v1",
+        "eval-por-yid-tatoeba-dev-v1",
+        "eval-rus-yid-tatoeba-dev-v1",
+        "eval-spa-yid-tatoeba-dev-v1",
+        "eval-tlh-yid-tatoeba-dev-v1",
+        "eval-tok-yid-tatoeba-dev-v1",
+        "eval-tur-yid-tatoeba-dev-v1",
+        "eval-yid-ido-tatoeba-dev-v1",
+        "eval-yid-ina-tatoeba-dev-v1",
+        "eval-yid-lad-tatoeba-dev-v1",
+        "eval-yid-lat-tatoeba-dev-v1",
+        "eval-yid-lfn-tatoeba-dev-v1",
+        "eval-yid-tlh-tatoeba-dev-v1",
+        "eval-yid-tok-tatoeba-dev-v1"
+      ]
+    },
+    "hau": {
+      "evalDatasets": [
+        "eval-eng-hau-gamayun-test-v1",
+        "eval-eng-hau-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-hau-tatoeba-dev-v1",
+        "eval-mafand-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt21-news-test-v1"
+      ]
+    },
+    "nno": {
+      "evalDatasets": [
+        "eval-deu-nno-tatoeba-dev-v1",
+        "eval-eng-nno-tatoeba-dev-v1",
+        "eval-epo-nno-tatoeba-dev-v1",
+        "eval-fin-nno-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-nno-tatoeba-dev-v1",
+        "eval-nno-nob-tatoeba-dev-v1",
+        "eval-nno-spa-tatoeba-dev-v1",
+        "eval-nob-nno-tatoeba-dev-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "sot": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "tzl": {
+      "evalDatasets": [
+        "eval-eng-tzl-tatoeba-dev-v1"
+      ]
+    },
+    "kan": {
+      "evalDatasets": [
+        "eval-eng-kan-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "bam": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "gug": {
+      "evalDatasets": [
+        "eval-americasnlp2021-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-grn-por-tatoeba-dev-v1",
+        "eval-grn-spa-tatoeba-dev-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "lmo": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "avk": {
+      "evalDatasets": [
+        "eval-avk-fra-tatoeba-dev-v1",
+        "eval-avk-spa-tatoeba-dev-v1",
+        "eval-fra-avk-tatoeba-dev-v1"
+      ]
+    },
+    "mtr": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "xal": {
+      "evalDatasets": [
+        "eval-eng-xal-tatoeba-dev-v1",
+        "eval-rus-xal-tatoeba-dev-v1"
+      ]
+    },
+    "bel": {
+      "evalDatasets": [
+        "eval-bel-cmn-tatoeba-dev-v1",
+        "eval-bel-deu-tatoeba-dev-v1",
+        "eval-bel-eng-tatoeba-dev-v1",
+        "eval-bel-epo-tatoeba-dev-v1",
+        "eval-bel-fra-tatoeba-dev-v1",
+        "eval-bel-ita-tatoeba-dev-v1",
+        "eval-bel-lat-tatoeba-dev-v1",
+        "eval-bel-nld-tatoeba-dev-v1",
+        "eval-bel-pol-tatoeba-dev-v1",
+        "eval-bel-rus-tatoeba-dev-v1",
+        "eval-bel-spa-tatoeba-dev-v1",
+        "eval-bel-ukr-tatoeba-dev-v1",
+        "eval-cmn-bel-tatoeba-dev-v1",
+        "eval-eng-bel-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-pol-bel-tatoeba-dev-v1",
+        "eval-rus-bel-tatoeba-dev-v1",
+        "eval-ukr-bel-tatoeba-dev-v1"
+      ]
+    },
+    "slk": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "lin": {
+      "evalDatasets": [
+        "eval-eng-lin-gamayun-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "fuc": {
+      "evalDatasets": [
+        "eval-smol-sent-v1"
+      ]
+    },
+    "kng": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "pbt": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt20-news-test-v1"
+      ]
+    },
+    "wuu": {
+      "evalDatasets": [
+        "eval-cmn-wuu-tatoeba-dev-v1",
+        "eval-eng-wuu-tatoeba-dev-v1",
+        "eval-fra-wuu-tatoeba-dev-v1",
+        "eval-ita-wuu-tatoeba-dev-v1",
+        "eval-spa-wuu-tatoeba-dev-v1",
+        "eval-wuu-cmn-tatoeba-dev-v1"
+      ]
+    },
+    "pnb": {
+      "evalDatasets": [
+        "eval-smol-sent-v1"
+      ]
+    },
+    "fuv": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "twi": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "got": {
+      "evalDatasets": [
+        "eval-eng-got-tatoeba-dev-v1"
+      ]
+    },
+    "acq": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "glk": {
+      "evalDatasets": [
+        "eval-smol-sent-v1"
+      ]
+    },
+    "yor": {
+      "evalDatasets": [
+        "eval-eng-yor-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-menyo20k-test-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "pag": {
+      "evalDatasets": [
+        "eval-eng-pag-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "ltz": {
+      "evalDatasets": [
+        "eval-deu-ltz-tatoeba-dev-v1",
+        "eval-eng-ltz-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-ltz-tatoeba-dev-v1",
+        "eval-ltz-nld-tatoeba-dev-v1",
+        "eval-nld-ltz-tatoeba-dev-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "kab": {
+      "evalDatasets": [
+        "eval-ara-kab-tatoeba-dev-v1",
+        "eval-arq-kab-tatoeba-dev-v1",
+        "eval-deu-kab-tatoeba-dev-v1",
+        "eval-eng-kab-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-kab-tatoeba-dev-v1",
+        "eval-kab-rus-tatoeba-dev-v1",
+        "eval-kab-spa-tatoeba-dev-v1",
+        "eval-rus-kab-tatoeba-dev-v1"
+      ]
+    },
+    "ach": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "scn": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1"
+      ]
+    },
+    "tcy": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "bhp": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1"
+      ]
+    },
+    "awa": {
+      "evalDatasets": [
+        "eval-awa-eng-tatoeba-dev-v1",
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "cmn-Hant": {
+      "evalDatasets": [
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "swg": {
+      "evalDatasets": [
+        "eval-deu-swg-tatoeba-dev-v1"
+      ]
+    },
+    "gom": {
+      "evalDatasets": [
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1"
+      ]
+    },
+    "kru": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "pes": {
+      "evalDatasets": [
+        "eval-arb-fas-globalvoices-test-v1",
+        "eval-ben-fas-globalvoices-test-v1",
+        "eval-bouquet-dev-v1",
+        "eval-cat-fas-globalvoices-test-v1",
+        "eval-ces-fas-globalvoices-test-v1",
+        "eval-dan-fas-globalvoices-test-v1",
+        "eval-deu-fas-globalvoices-test-v1",
+        "eval-deu-pes-tatoeba-dev-v1",
+        "eval-ell-fas-globalvoices-test-v1",
+        "eval-eng-fas-globalvoices-test-v1",
+        "eval-eng-pes-tatoeba-dev-v1",
+        "eval-epo-pes-tatoeba-dev-v1",
+        "eval-fas-fil-globalvoices-test-v1",
+        "eval-fas-fra-globalvoices-test-v1",
+        "eval-fas-hin-globalvoices-test-v1",
+        "eval-fas-hun-globalvoices-test-v1",
+        "eval-fas-ind-globalvoices-test-v1",
+        "eval-fas-ita-globalvoices-test-v1",
+        "eval-fas-khm-globalvoices-test-v1",
+        "eval-fas-kor-globalvoices-test-v1",
+        "eval-fas-mkd-globalvoices-test-v1",
+        "eval-fas-mlg-globalvoices-test-v1",
+        "eval-fas-nld-globalvoices-test-v1",
+        "eval-fas-pol-globalvoices-test-v1",
+        "eval-fas-por-globalvoices-test-v1",
+        "eval-fas-rus-globalvoices-test-v1",
+        "eval-fas-sqi-globalvoices-test-v1",
+        "eval-fas-srp-globalvoices-test-v1",
+        "eval-fas-swe-globalvoices-test-v1",
+        "eval-fas-swh-globalvoices-test-v1",
+        "eval-fas-tur-globalvoices-test-v1",
+        "eval-fas-urd-globalvoices-test-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-pes-fra-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-fas-globalvoices-test-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "nds": {
+      "evalDatasets": [
+        "eval-deu-nds-tatoeba-dev-v1",
+        "eval-eng-nds-tatoeba-dev-v1",
+        "eval-epo-nds-tatoeba-dev-v1",
+        "eval-fra-nds-tatoeba-dev-v1",
+        "eval-ita-nds-tatoeba-dev-v1",
+        "eval-jpn-nds-tatoeba-dev-v1",
+        "eval-nds-nld-tatoeba-dev-v1",
+        "eval-nds-por-tatoeba-dev-v1",
+        "eval-nds-rus-tatoeba-dev-v1",
+        "eval-nds-spa-tatoeba-dev-v1",
+        "eval-rus-nds-tatoeba-dev-v1"
+      ]
+    },
+    "hun": {
+      "evalDatasets": [
+        "eval-arb-hun-globalvoices-test-v1",
+        "eval-ben-hun-globalvoices-test-v1",
+        "eval-bul-hun-globalvoices-test-v1",
+        "eval-cat-hun-globalvoices-test-v1",
+        "eval-ces-hun-globalvoices-test-v1",
+        "eval-ces-hun-tatoeba-dev-v1",
+        "eval-dan-hun-globalvoices-test-v1",
+        "eval-dan-hun-tatoeba-dev-v1",
+        "eval-deu-hun-globalvoices-test-v1",
+        "eval-deu-hun-tatoeba-dev-v1",
+        "eval-ell-hun-globalvoices-test-v1",
+        "eval-eng-hun-globalvoices-test-v1",
+        "eval-eng-hun-tatoeba-dev-v1",
+        "eval-epo-hun-tatoeba-dev-v1",
+        "eval-fas-hun-globalvoices-test-v1",
+        "eval-fil-hun-globalvoices-test-v1",
+        "eval-fin-hun-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-hun-globalvoices-test-v1",
+        "eval-fra-hun-tatoeba-dev-v1",
+        "eval-heb-hun-tatoeba-dev-v1",
+        "eval-hun-cmn-tatoeba-dev-v1",
+        "eval-hun-dan-tatoeba-dev-v1",
+        "eval-hun-epo-tatoeba-dev-v1",
+        "eval-hun-ind-globalvoices-test-v1",
+        "eval-hun-ita-globalvoices-test-v1",
+        "eval-hun-ita-tatoeba-dev-v1",
+        "eval-hun-jpn-tatoeba-dev-v1",
+        "eval-hun-kor-globalvoices-test-v1",
+        "eval-hun-kor-tatoeba-dev-v1",
+        "eval-hun-lat-tatoeba-dev-v1",
+        "eval-hun-mkd-globalvoices-test-v1",
+        "eval-hun-mlg-globalvoices-test-v1",
+        "eval-hun-nld-globalvoices-test-v1",
+        "eval-hun-nld-tatoeba-dev-v1",
+        "eval-hun-nob-tatoeba-dev-v1",
+        "eval-hun-pol-globalvoices-test-v1",
+        "eval-hun-pol-tatoeba-dev-v1",
+        "eval-hun-por-globalvoices-test-v1",
+        "eval-hun-por-tatoeba-dev-v1",
+        "eval-hun-ron-globalvoices-test-v1",
+        "eval-hun-rus-globalvoices-test-v1",
+        "eval-hun-rus-tatoeba-dev-v1",
+        "eval-hun-spa-tatoeba-dev-v1",
+        "eval-hun-sqi-globalvoices-test-v1",
+        "eval-hun-srp-globalvoices-test-v1",
+        "eval-hun-swe-globalvoices-test-v1",
+        "eval-hun-swe-tatoeba-dev-v1",
+        "eval-hun-swh-globalvoices-test-v1",
+        "eval-hun-tur-globalvoices-test-v1",
+        "eval-hun-tur-tatoeba-dev-v1",
+        "eval-hun-ukr-tatoeba-dev-v1",
+        "eval-hun-urd-globalvoices-test-v1",
+        "eval-ita-hun-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-hun-tatoeba-dev-v1",
+        "eval-spa-hun-globalvoices-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "mjl": {
+      "evalDatasets": [
+        "eval-smol-doc-v1"
+      ]
+    },
+    "cha": {
+      "evalDatasets": [
+        "eval-cha-eng-tatoeba-dev-v1"
+      ]
+    },
+    "ars": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "jdt": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "mad": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "nld": {
+      "evalDatasets": [
+        "eval-afr-nld-tatoeba-dev-v1",
+        "eval-arb-nld-globalvoices-test-v1",
+        "eval-bel-nld-tatoeba-dev-v1",
+        "eval-ben-nld-globalvoices-test-v1",
+        "eval-bul-nld-globalvoices-test-v1",
+        "eval-cat-nld-globalvoices-test-v1",
+        "eval-cat-nld-tatoeba-dev-v1",
+        "eval-ces-nld-globalvoices-test-v1",
+        "eval-dan-nld-globalvoices-test-v1",
+        "eval-dan-nld-tatoeba-dev-v1",
+        "eval-deu-nld-globalvoices-test-v1",
+        "eval-deu-nld-tatoeba-dev-v1",
+        "eval-ell-nld-globalvoices-test-v1",
+        "eval-ell-nld-tatoeba-dev-v1",
+        "eval-eng-nld-globalvoices-test-v1",
+        "eval-eng-nld-tatoeba-dev-v1",
+        "eval-epo-nld-globalvoices-test-v1",
+        "eval-epo-nld-tatoeba-dev-v1",
+        "eval-fas-nld-globalvoices-test-v1",
+        "eval-fil-nld-globalvoices-test-v1",
+        "eval-fin-nld-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-nld-globalvoices-test-v1",
+        "eval-fra-nld-tatoeba-dev-v1",
+        "eval-fry-nld-tatoeba-dev-v1",
+        "eval-gos-nld-tatoeba-dev-v1",
+        "eval-heb-nld-tatoeba-dev-v1",
+        "eval-hun-nld-globalvoices-test-v1",
+        "eval-hun-nld-tatoeba-dev-v1",
+        "eval-ina-nld-tatoeba-dev-v1",
+        "eval-ind-nld-globalvoices-test-v1",
+        "eval-ita-nld-globalvoices-test-v1",
+        "eval-ita-nld-tatoeba-dev-v1",
+        "eval-jpn-nld-tatoeba-dev-v1",
+        "eval-kor-nld-globalvoices-test-v1",
+        "eval-lat-nld-tatoeba-dev-v1",
+        "eval-ltz-nld-tatoeba-dev-v1",
+        "eval-mkd-nld-globalvoices-test-v1",
+        "eval-mlg-nld-globalvoices-test-v1",
+        "eval-mya-nld-globalvoices-test-v1",
+        "eval-nds-nld-tatoeba-dev-v1",
+        "eval-nld-cat-tatoeba-dev-v1",
+        "eval-nld-cmn-tatoeba-dev-v1",
+        "eval-nld-dan-tatoeba-dev-v1",
+        "eval-nld-epo-tatoeba-dev-v1",
+        "eval-nld-fry-tatoeba-dev-v1",
+        "eval-nld-gos-tatoeba-dev-v1",
+        "eval-nld-jpn-tatoeba-dev-v1",
+        "eval-nld-ltz-tatoeba-dev-v1",
+        "eval-nld-nob-tatoeba-dev-v1",
+        "eval-nld-pol-globalvoices-test-v1",
+        "eval-nld-pol-tatoeba-dev-v1",
+        "eval-nld-por-globalvoices-test-v1",
+        "eval-nld-por-tatoeba-dev-v1",
+        "eval-nld-ron-globalvoices-test-v1",
+        "eval-nld-ron-tatoeba-dev-v1",
+        "eval-nld-rus-globalvoices-test-v1",
+        "eval-nld-rus-tatoeba-dev-v1",
+        "eval-nld-spa-tatoeba-dev-v1",
+        "eval-nld-sqi-globalvoices-test-v1",
+        "eval-nld-srp-globalvoices-test-v1",
+        "eval-nld-swe-globalvoices-test-v1",
+        "eval-nld-swh-globalvoices-test-v1",
+        "eval-nld-tok-tatoeba-dev-v1",
+        "eval-nld-tur-globalvoices-test-v1",
+        "eval-nld-tur-tatoeba-dev-v1",
+        "eval-nld-ukr-tatoeba-dev-v1",
+        "eval-nld-urd-globalvoices-test-v1",
+        "eval-nld-yid-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-nld-tatoeba-dev-v1",
+        "eval-spa-nld-globalvoices-test-v1",
+        "eval-spa-nld-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "glg": {
+      "evalDatasets": [
+        "eval-eng-glg-tatoeba-dev-v1",
+        "eval-epo-glg-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-glg-por-tatoeba-dev-v1",
+        "eval-glg-spa-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-glg-tatoeba-dev-v1",
+        "eval-spa-glg-tatoeba-dev-v1"
+      ]
+    },
+    "som": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "mlt": {
+      "evalDatasets": [
+        "eval-eng-mlt-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ita-mlt-tatoeba-dev-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "oci": {
+      "evalDatasets": [
+        "eval-eng-oci-tatoeba-dev-v1",
+        "eval-epo-oci-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-oci-tatoeba-dev-v1"
+      ]
+    },
+    "dip": {
+      "evalDatasets": [
+        "eval-tico19-test-v1"
+      ]
+    },
+    "diq": {
+      "evalDatasets": [
+        "eval-eng-zza-tatoeba-dev-v1"
+      ]
+    },
+    "uig": {
+      "evalDatasets": [
+        "eval-eng-uig-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-uig-tatoeba-dev-v1",
+        "eval-rus-uig-tatoeba-dev-v1",
+        "eval-tur-uig-tatoeba-dev-v1",
+        "eval-uig-cmn-tatoeba-dev-v1"
+      ]
+    },
+    "tat": {
+      "evalDatasets": [
+        "eval-deu-tat-tatoeba-dev-v1",
+        "eval-eng-tat-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-tat-tatoeba-dev-v1",
+        "eval-rus-tat-tatoeba-dev-v1",
+        "eval-spa-tat-tatoeba-dev-v1",
+        "eval-tat-tur-tatoeba-dev-v1",
+        "eval-tat-vie-tatoeba-dev-v1",
+        "eval-tur-tat-tatoeba-dev-v1",
+        "eval-vie-tat-tatoeba-dev-v1"
+      ]
+    },
+    "run": {
+      "evalDatasets": [
+        "eval-deu-run-tatoeba-dev-v1",
+        "eval-eng-run-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-run-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-run-rus-tatoeba-dev-v1",
+        "eval-run-spa-tatoeba-dev-v1",
+        "eval-rus-run-tatoeba-dev-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ast": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "liv": {
+      "evalDatasets": [
+        "eval-wmt22-general-test-v1"
+      ]
+    },
+    "bbj": {
+      "evalDatasets": [
+        "eval-mafand-test-v1"
+      ]
+    },
+    "tgl": {
+      "evalDatasets": [
+        "eval-deu-tgl-tatoeba-dev-v1",
+        "eval-eng-tgl-tatoeba-dev-v1",
+        "eval-epo-tgl-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-tgl-tatoeba-dev-v1",
+        "eval-por-tgl-tatoeba-dev-v1",
+        "eval-spa-tgl-tatoeba-dev-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "tiv": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "dsb": {
+      "evalDatasets": [
+        "eval-deu-dsb-tatoeba-dev-v1",
+        "eval-dsb-hsb-tatoeba-dev-v1",
+        "eval-dsb-slv-tatoeba-dev-v1",
+        "eval-hsb-dsb-tatoeba-dev-v1"
+      ]
+    },
+    "guj": {
+      "evalDatasets": [
+        "eval-eng-guj-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "lat": {
+      "evalDatasets": [
+        "eval-bel-lat-tatoeba-dev-v1",
+        "eval-ces-lat-tatoeba-dev-v1",
+        "eval-deu-lat-tatoeba-dev-v1",
+        "eval-eng-lat-tatoeba-dev-v1",
+        "eval-epo-lat-tatoeba-dev-v1",
+        "eval-fin-lat-tatoeba-dev-v1",
+        "eval-fra-lat-tatoeba-dev-v1",
+        "eval-heb-lat-tatoeba-dev-v1",
+        "eval-hun-lat-tatoeba-dev-v1",
+        "eval-ido-lat-tatoeba-dev-v1",
+        "eval-ina-lat-tatoeba-dev-v1",
+        "eval-ita-lat-tatoeba-dev-v1",
+        "eval-lad-lat-tatoeba-dev-v1",
+        "eval-lat-lfn-tatoeba-dev-v1",
+        "eval-lat-nld-tatoeba-dev-v1",
+        "eval-lat-nob-tatoeba-dev-v1",
+        "eval-lat-pol-tatoeba-dev-v1",
+        "eval-lat-por-tatoeba-dev-v1",
+        "eval-lat-rus-tatoeba-dev-v1",
+        "eval-lat-spa-tatoeba-dev-v1",
+        "eval-lat-tlh-tatoeba-dev-v1",
+        "eval-lat-tok-tatoeba-dev-v1",
+        "eval-lat-ukr-tatoeba-dev-v1",
+        "eval-lat-yid-tatoeba-dev-v1",
+        "eval-rus-lat-tatoeba-dev-v1",
+        "eval-ukr-lat-tatoeba-dev-v1",
+        "eval-yid-lat-tatoeba-dev-v1"
+      ]
+    },
+    "ton": {
+      "evalDatasets": [
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "efi": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "hsb": {
+      "evalDatasets": [
+        "eval-deu-hsb-tatoeba-dev-v1",
+        "eval-dsb-hsb-tatoeba-dev-v1",
+        "eval-hsb-dsb-tatoeba-dev-v1",
+        "eval-hsb-slv-tatoeba-dev-v1"
+      ]
+    },
+    "kac": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "ukr": {
+      "evalDatasets": [
+        "eval-bel-ukr-tatoeba-dev-v1",
+        "eval-bul-ukr-tatoeba-dev-v1",
+        "eval-cat-ukr-tatoeba-dev-v1",
+        "eval-ces-ukr-tatoeba-dev-v1",
+        "eval-cmn-ukr-tatoeba-dev-v1",
+        "eval-deu-ukr-tatoeba-dev-v1",
+        "eval-eng-ukr-tatoeba-dev-v1",
+        "eval-epo-ukr-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-ukr-tatoeba-dev-v1",
+        "eval-heb-ukr-tatoeba-dev-v1",
+        "eval-hrv-ukr-tatoeba-dev-v1",
+        "eval-hun-ukr-tatoeba-dev-v1",
+        "eval-ita-ukr-tatoeba-dev-v1",
+        "eval-jpn-ukr-tatoeba-dev-v1",
+        "eval-lat-ukr-tatoeba-dev-v1",
+        "eval-nld-ukr-tatoeba-dev-v1",
+        "eval-nob-ukr-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-orv-ukr-tatoeba-dev-v1",
+        "eval-pol-ukr-tatoeba-dev-v1",
+        "eval-por-ukr-tatoeba-dev-v1",
+        "eval-rus-ukr-tatoeba-dev-v1",
+        "eval-slv-ukr-tatoeba-dev-v1",
+        "eval-spa-ukr-tatoeba-dev-v1",
+        "eval-srp-ukr-tatoeba-dev-v1",
+        "eval-tur-ukr-tatoeba-dev-v1",
+        "eval-ukr-bel-tatoeba-dev-v1",
+        "eval-ukr-cat-tatoeba-dev-v1",
+        "eval-ukr-cmn-tatoeba-dev-v1",
+        "eval-ukr-epo-tatoeba-dev-v1",
+        "eval-ukr-lat-tatoeba-dev-v1",
+        "eval-ukr-orv-tatoeba-dev-v1",
+        "eval-ukr-yue-tatoeba-dev-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    },
+    "khk": {
+      "evalDatasets": [
+        "eval-eng-mon-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "dyu": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "ktu": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "kaz": {
+      "evalDatasets": [
+        "eval-eng-kaz-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-kaz-rus-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-rus-kaz-tatoeba-dev-v1",
+        "eval-turkicxwmt-test-v1",
+        "eval-wmt19-news-test-v1"
+      ]
+    },
+    "rej": {
+      "evalDatasets": [
+        "eval-nusatranslation-test-v1"
+      ]
+    },
+    "ita": {
+      "evalDatasets": [
+        "eval-amh-ita-globalvoices-test-v1",
+        "eval-ara-ita-tatoeba-dev-v1",
+        "eval-arb-ita-globalvoices-test-v1",
+        "eval-bel-ita-tatoeba-dev-v1",
+        "eval-ben-ita-globalvoices-test-v1",
+        "eval-bos-ita-tatoeba-dev-v1",
+        "eval-bul-ita-globalvoices-test-v1",
+        "eval-bul-ita-tatoeba-dev-v1",
+        "eval-cat-ita-globalvoices-test-v1",
+        "eval-cat-ita-tatoeba-dev-v1",
+        "eval-ces-ita-globalvoices-test-v1",
+        "eval-ces-ita-tatoeba-dev-v1",
+        "eval-cor-ita-tatoeba-dev-v1",
+        "eval-dan-ita-globalvoices-test-v1",
+        "eval-dan-ita-tatoeba-dev-v1",
+        "eval-deu-ita-globalvoices-test-v1",
+        "eval-deu-ita-tatoeba-dev-v1",
+        "eval-egl-ita-tatoeba-dev-v1",
+        "eval-ell-ita-globalvoices-test-v1",
+        "eval-ell-ita-tatoeba-dev-v1",
+        "eval-eng-ita-globalvoices-test-v1",
+        "eval-eng-ita-tatoeba-dev-v1",
+        "eval-epo-ita-globalvoices-test-v1",
+        "eval-epo-ita-tatoeba-dev-v1",
+        "eval-fas-ita-globalvoices-test-v1",
+        "eval-fil-ita-globalvoices-test-v1",
+        "eval-fin-ita-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-ita-globalvoices-test-v1",
+        "eval-fra-ita-tatoeba-dev-v1",
+        "eval-heb-ita-globalvoices-test-v1",
+        "eval-heb-ita-tatoeba-dev-v1",
+        "eval-hin-ita-globalvoices-test-v1",
+        "eval-hrv-ita-tatoeba-dev-v1",
+        "eval-hun-ita-globalvoices-test-v1",
+        "eval-hun-ita-tatoeba-dev-v1",
+        "eval-ido-ita-tatoeba-dev-v1",
+        "eval-ina-ita-tatoeba-dev-v1",
+        "eval-ind-ita-globalvoices-test-v1",
+        "eval-isl-ita-tatoeba-dev-v1",
+        "eval-ita-bul-tatoeba-dev-v1",
+        "eval-ita-cat-tatoeba-dev-v1",
+        "eval-ita-cmn-tatoeba-dev-v1",
+        "eval-ita-dan-tatoeba-dev-v1",
+        "eval-ita-epo-tatoeba-dev-v1",
+        "eval-ita-heb-tatoeba-dev-v1",
+        "eval-ita-hun-tatoeba-dev-v1",
+        "eval-ita-ind-tatoeba-dev-v1",
+        "eval-ita-jpn-tatoeba-dev-v1",
+        "eval-ita-khm-globalvoices-test-v1",
+        "eval-ita-kor-globalvoices-test-v1",
+        "eval-ita-lat-tatoeba-dev-v1",
+        "eval-ita-lij-tatoeba-dev-v1",
+        "eval-ita-lit-tatoeba-dev-v1",
+        "eval-ita-mkd-globalvoices-test-v1",
+        "eval-ita-mlg-globalvoices-test-v1",
+        "eval-ita-mlt-tatoeba-dev-v1",
+        "eval-ita-mya-globalvoices-test-v1",
+        "eval-ita-nds-tatoeba-dev-v1",
+        "eval-ita-nld-globalvoices-test-v1",
+        "eval-ita-nld-tatoeba-dev-v1",
+        "eval-ita-nob-tatoeba-dev-v1",
+        "eval-ita-npi-globalvoices-test-v1",
+        "eval-ita-pms-tatoeba-dev-v1",
+        "eval-ita-pol-globalvoices-test-v1",
+        "eval-ita-pol-tatoeba-dev-v1",
+        "eval-ita-por-globalvoices-test-v1",
+        "eval-ita-por-tatoeba-dev-v1",
+        "eval-ita-ron-globalvoices-test-v1",
+        "eval-ita-ron-tatoeba-dev-v1",
+        "eval-ita-rus-globalvoices-test-v1",
+        "eval-ita-rus-tatoeba-dev-v1",
+        "eval-ita-spa-tatoeba-dev-v1",
+        "eval-ita-sqi-globalvoices-test-v1",
+        "eval-ita-srp-globalvoices-test-v1",
+        "eval-ita-swe-globalvoices-test-v1",
+        "eval-ita-swe-tatoeba-dev-v1",
+        "eval-ita-swh-globalvoices-test-v1",
+        "eval-ita-tok-tatoeba-dev-v1",
+        "eval-ita-tur-globalvoices-test-v1",
+        "eval-ita-tur-tatoeba-dev-v1",
+        "eval-ita-ukr-tatoeba-dev-v1",
+        "eval-ita-urd-globalvoices-test-v1",
+        "eval-ita-vie-tatoeba-dev-v1",
+        "eval-ita-wuu-tatoeba-dev-v1",
+        "eval-ita-yid-tatoeba-dev-v1",
+        "eval-ita-zlm-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-ita-tatoeba-dev-v1",
+        "eval-spa-ita-globalvoices-test-v1",
+        "eval-spa-ita-tatoeba-dev-v1",
+        "eval-srp-ita-tatoeba-dev-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "spa": {
+      "evalDatasets": [
+        "eval-afr-spa-tatoeba-dev-v1",
+        "eval-americasnlp2021-test-v1",
+        "eval-amh-spa-globalvoices-test-v1",
+        "eval-ara-spa-tatoeba-dev-v1",
+        "eval-arb-spa-globalvoices-test-v1",
+        "eval-avk-spa-tatoeba-dev-v1",
+        "eval-aze-spa-tatoeba-dev-v1",
+        "eval-bel-spa-tatoeba-dev-v1",
+        "eval-ben-spa-globalvoices-test-v1",
+        "eval-ber-spa-tatoeba-dev-v1",
+        "eval-bos-spa-tatoeba-dev-v1",
+        "eval-bouquet-dev-v1",
+        "eval-bul-spa-globalvoices-test-v1",
+        "eval-bul-spa-tatoeba-dev-v1",
+        "eval-cat-spa-globalvoices-test-v1",
+        "eval-cat-spa-tatoeba-dev-v1",
+        "eval-ces-spa-globalvoices-test-v1",
+        "eval-ces-spa-tatoeba-dev-v1",
+        "eval-cor-spa-tatoeba-dev-v1",
+        "eval-dan-spa-globalvoices-test-v1",
+        "eval-dan-spa-tatoeba-dev-v1",
+        "eval-deu-spa-globalvoices-test-v1",
+        "eval-deu-spa-tatoeba-dev-v1",
+        "eval-ell-spa-globalvoices-test-v1",
+        "eval-ell-spa-tatoeba-dev-v1",
+        "eval-eng-spa-globalvoices-test-v1",
+        "eval-eng-spa-tatoeba-dev-v1",
+        "eval-epo-spa-tatoeba-dev-v1",
+        "eval-eus-spa-tatoeba-dev-v1",
+        "eval-fin-spa-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-fra-spa-tatoeba-dev-v1",
+        "eval-gla-spa-tatoeba-dev-v1",
+        "eval-glg-spa-tatoeba-dev-v1",
+        "eval-grn-spa-tatoeba-dev-v1",
+        "eval-heb-spa-tatoeba-dev-v1",
+        "eval-hrv-spa-tatoeba-dev-v1",
+        "eval-hun-spa-tatoeba-dev-v1",
+        "eval-ido-spa-tatoeba-dev-v1",
+        "eval-ina-spa-tatoeba-dev-v1",
+        "eval-ind-spa-tatoeba-dev-v1",
+        "eval-isl-spa-tatoeba-dev-v1",
+        "eval-ita-spa-tatoeba-dev-v1",
+        "eval-jbo-spa-tatoeba-dev-v1",
+        "eval-jpn-spa-tatoeba-dev-v1",
+        "eval-kab-spa-tatoeba-dev-v1",
+        "eval-khm-spa-tatoeba-dev-v1",
+        "eval-kor-spa-tatoeba-dev-v1",
+        "eval-lad-spa-tatoeba-dev-v1",
+        "eval-lat-spa-tatoeba-dev-v1",
+        "eval-lfn-spa-tatoeba-dev-v1",
+        "eval-lit-spa-tatoeba-dev-v1",
+        "eval-mkd-spa-tatoeba-dev-v1",
+        "eval-nds-spa-tatoeba-dev-v1",
+        "eval-nld-spa-tatoeba-dev-v1",
+        "eval-nno-spa-tatoeba-dev-v1",
+        "eval-nob-spa-tatoeba-dev-v1",
+        "eval-ntrex-test-v1",
+        "eval-por-spa-tatoeba-dev-v1",
+        "eval-ron-spa-tatoeba-dev-v1",
+        "eval-run-spa-tatoeba-dev-v1",
+        "eval-rus-spa-tatoeba-dev-v1",
+        "eval-smol-sent-v1",
+        "eval-spa-afr-tatoeba-dev-v1",
+        "eval-spa-ber-tatoeba-dev-v1",
+        "eval-spa-cat-tatoeba-dev-v1",
+        "eval-spa-cmn-tatoeba-dev-v1",
+        "eval-spa-dan-tatoeba-dev-v1",
+        "eval-spa-deu-tatoeba-dev-v1",
+        "eval-spa-epo-tatoeba-dev-v1",
+        "eval-spa-eus-tatoeba-dev-v1",
+        "eval-spa-fas-globalvoices-test-v1",
+        "eval-spa-fil-globalvoices-test-v1",
+        "eval-spa-fra-globalvoices-test-v1",
+        "eval-spa-fra-tatoeba-dev-v1",
+        "eval-spa-glg-tatoeba-dev-v1",
+        "eval-spa-heb-globalvoices-test-v1",
+        "eval-spa-hin-globalvoices-test-v1",
+        "eval-spa-hun-globalvoices-test-v1",
+        "eval-spa-ind-globalvoices-test-v1",
+        "eval-spa-ita-globalvoices-test-v1",
+        "eval-spa-ita-tatoeba-dev-v1",
+        "eval-spa-jpn-tatoeba-dev-v1",
+        "eval-spa-khm-globalvoices-test-v1",
+        "eval-spa-kor-globalvoices-test-v1",
+        "eval-spa-kor-tatoeba-dev-v1",
+        "eval-spa-mkd-globalvoices-test-v1",
+        "eval-spa-mlg-globalvoices-test-v1",
+        "eval-spa-mya-globalvoices-test-v1",
+        "eval-spa-nld-globalvoices-test-v1",
+        "eval-spa-nld-tatoeba-dev-v1",
+        "eval-spa-npi-globalvoices-test-v1",
+        "eval-spa-pol-globalvoices-test-v1",
+        "eval-spa-por-globalvoices-test-v1",
+        "eval-spa-por-tatoeba-dev-v1",
+        "eval-spa-que-tatoeba-dev-v1",
+        "eval-spa-ron-globalvoices-test-v1",
+        "eval-spa-rus-globalvoices-test-v1",
+        "eval-spa-rus-tatoeba-dev-v1",
+        "eval-spa-sqi-globalvoices-test-v1",
+        "eval-spa-srp-globalvoices-test-v1",
+        "eval-spa-swe-globalvoices-test-v1",
+        "eval-spa-swe-tatoeba-dev-v1",
+        "eval-spa-swh-globalvoices-test-v1",
+        "eval-spa-tat-tatoeba-dev-v1",
+        "eval-spa-tgl-tatoeba-dev-v1",
+        "eval-spa-tlh-tatoeba-dev-v1",
+        "eval-spa-tok-tatoeba-dev-v1",
+        "eval-spa-tur-globalvoices-test-v1",
+        "eval-spa-tur-tatoeba-dev-v1",
+        "eval-spa-ukr-tatoeba-dev-v1",
+        "eval-spa-urd-globalvoices-test-v1",
+        "eval-spa-vie-tatoeba-dev-v1",
+        "eval-spa-wuu-tatoeba-dev-v1",
+        "eval-spa-yid-tatoeba-dev-v1",
+        "eval-srp-spa-tatoeba-dev-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1",
+        "eval-zlm-spa-tatoeba-dev-v1"
+      ]
+    },
+    "nov": {
+      "evalDatasets": [
+        "eval-eng-nov-tatoeba-dev-v1"
+      ]
+    },
+    "gaz": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1"
+      ]
+    },
+    "mai": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1"
+      ]
+    },
+    "cor": {
+      "evalDatasets": [
+        "eval-cor-deu-tatoeba-dev-v1",
+        "eval-cor-eng-tatoeba-dev-v1",
+        "eval-cor-epo-tatoeba-dev-v1",
+        "eval-cor-fra-tatoeba-dev-v1",
+        "eval-cor-ita-tatoeba-dev-v1",
+        "eval-cor-rus-tatoeba-dev-v1",
+        "eval-cor-spa-tatoeba-dev-v1",
+        "eval-eng-cor-tatoeba-dev-v1"
+      ]
+    },
+    "tlh": {
+      "evalDatasets": [
+        "eval-cmn-tlh-tatoeba-dev-v1",
+        "eval-deu-tlh-tatoeba-dev-v1",
+        "eval-eng-tlh-tatoeba-dev-v1",
+        "eval-epo-tlh-tatoeba-dev-v1",
+        "eval-fra-tlh-tatoeba-dev-v1",
+        "eval-ina-tlh-tatoeba-dev-v1",
+        "eval-jpn-tlh-tatoeba-dev-v1",
+        "eval-lat-tlh-tatoeba-dev-v1",
+        "eval-lfn-tlh-tatoeba-dev-v1",
+        "eval-rus-tlh-tatoeba-dev-v1",
+        "eval-spa-tlh-tatoeba-dev-v1",
+        "eval-tlh-cmn-tatoeba-dev-v1",
+        "eval-tlh-yid-tatoeba-dev-v1",
+        "eval-yid-tlh-tatoeba-dev-v1"
+      ]
+    },
+    "tel": {
+      "evalDatasets": [
+        "eval-eng-tel-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "kbp": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "mos": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-mafand-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "dtp": {
+      "evalDatasets": [
+        "eval-dtp-cmn-tatoeba-dev-v1",
+        "eval-dtp-eng-tatoeba-dev-v1",
+        "eval-dtp-ind-tatoeba-dev-v1",
+        "eval-dtp-jpn-tatoeba-dev-v1",
+        "eval-dtp-yue-tatoeba-dev-v1",
+        "eval-dtp-zlm-tatoeba-dev-v1",
+        "eval-eng-dtp-tatoeba-dev-v1",
+        "eval-jpn-dtp-tatoeba-dev-v1"
+      ]
+    },
+    "sus": {
+      "evalDatasets": [
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "bem": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1"
+      ]
+    },
+    "tam": {
+      "evalDatasets": [
+        "eval-eng-tam-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1",
+        "eval-smol-doc-v1",
+        "eval-smol-sent-v1",
+        "eval-tico19-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt24pp-test-v1"
+      ]
+    },
+    "afb": {
+      "evalDatasets": [
+        "eval-arabench-test-v1"
+      ]
+    },
+    "asm": {
+      "evalDatasets": [
+        "eval-asm-eng-tatoeba-dev-v1",
+        "eval-flores-devtest-v1",
+        "eval-in22-conv-v1",
+        "eval-in22-gen-v1",
+        "eval-ntrex-test-v1"
+      ]
+    },
+    "ace": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1",
+        "eval-nusax-test-v1"
+      ]
+    },
+    "tzm": {
+      "evalDatasets": [
+        "eval-flores-devtest-v1"
+      ]
+    },
+    "cmn-Hans": {
+      "evalDatasets": [
+        "eval-tico19-test-v1",
+        "eval-wmt17-news-test-v1",
+        "eval-wmt18-news-test-v1",
+        "eval-wmt19-news-test-v1",
+        "eval-wmt20-news-test-v1",
+        "eval-wmt21-news-test-v1",
+        "eval-wmt22-general-test-v1",
+        "eval-wmt23-general-test-v1",
+        "eval-wmt24-general-test-v1",
+        "eval-wmt24pp-test-v1",
+        "eval-wmt25-general-test-v1"
+      ]
+    }
+  }
+}

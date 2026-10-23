@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "Curated per-dictionary capability/redistribution flags consumed by scripts/derive-dictionaries.mjs.",
+    "Keyed by language code, then by a case-insensitive substring of the dictionary name as it",
+    "appears on the card. Flags: machineReadable (structured/API access exists), redistributable",
+    "(false = pointer-only: content must never be copied into corpora, cards, exports, or public",
+    "repos), license (SPDX-ish string, only when actually known). Every entry MUST cite its basis",
+    "in the source string. Only record what is documented — omitted flags mean unknown, and the",
+    "deriver writes nothing it cannot cite (index, not arbiter).",
+    "Data-over-code (docs/AGENTS.md §1): language-specific facts live in this file, never",
+    "hardcoded in the deriver."
+  ],
+  "flags": {
+    "crk": {
+      "itwêwina": {
+        "machineReadable": true,
+        "redistributable": false,
+        "source": "manual-curation (the card's own evalStandard.ipNotice: gloss data is fetched live from the public itwêwina API, and the underlying dictionary content — Wolvengrey CW, Maskwacîs MD, AECD — is NOT openly licensed and must never be redistributed. Founder ruling 2026-07-19: redistribution consent will not be sought and is not needed — the dictionary is INDEXED as a cited resource, pointer-only, permanently; CLAUDE.md Wolvengrey boundary)"
+      },
+      "Wolvengrey": {
+        "machineReadable": false,
+        "redistributable": false,
+        "source": "print dictionary (University of Regina Press, uofrpress.ca/Books/C/Cree-Words); rights-holder Arok Wolvengrey (First Nations University of Canada) — no public license — indexed pointer-only, permanently (founder ruling 2026-07-19; CLAUDE.md Wolvengrey boundary; shared/licenses.json wolvengrey-itwewina UNLICENSED)"
+      },
+      "Maskwacîs": {
+        "redistributable": false,
+        "source": "Maskwachees Cultural College dictionary (1998/2009, named in giellalt/lang-crk LICENSE); served via the itwêwina API — content not openly licensed, pointer-only (lyss NOTICE; shared/licenses.json)"
+      },
+      "Alberta Elders'": {
+        "redistributable": false,
+        "source": "Alberta Elders' Cree Dictionary (Earle Waugh, ed.); served via the itwêwina API — content not openly licensed, pointer-only (lyss NOTICE; shared/licenses.json)"
+      }
+    }
+  }
+}

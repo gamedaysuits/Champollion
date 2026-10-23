@@ -1,0 +1,106 @@
+/* /get-involved — the four-role funnel page. */
+
+.pageHeader {
+  padding: 4rem 0 2.2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.8rem;
+}
+
+.pageTitle {
+  font-family: var(--font-display, Fraunces, serif);
+  font-optical-sizing: auto;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 620;
+  letter-spacing: -0.014em;
+  margin: 0 0 0.9rem;
+}
+
+.pageSubtitle {
+  max-width: 40em;
+  margin: 0 auto 1.3rem;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+}
+
+.ncBanner {
+  display: inline-block;
+  max-width: 46em;
+  margin: 0 auto;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 40%, transparent);
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-base);
+}
+
+.contentWrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.2rem 4rem;
+}
+
+.roleSection {
+  padding: 2rem 0 0.6rem;
+  /* Anchor landings clear the fixed navbar. */
+  scroll-margin-top: 84px;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.roleSection:first-of-type {
+  border-top: 0;
+}
+
+.roleTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.roleIcon {
+  font-size: 1.25rem;
+  color: var(--ifm-color-primary);
+}
+
+.roleNeed {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0.8rem;
+}
+
+.roleSteps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.roleSteps a {
+  font-weight: 600;
+}
+
+.contactBand {
+  margin-top: 2.6rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: 14px;
+  background: var(--ifm-hover-overlay);
+  text-align: center;
+}
+
+.contactBand p {
+  margin: 0;
+  font-size: 0.95rem;
+}

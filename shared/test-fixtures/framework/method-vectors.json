@@ -1,0 +1,721 @@
+{
+  "_comment": "method/1 conformance vectors: one method.json, one reading, in both runtimes (cli/lib/framework/method.js readMethodDocument, arena/mt_eval_harness/framework/method.py read_method_document). For a method/0 document `view` is its method/1 view without the x-v0 copy of the original (always present, always the input). Expectations were generated from the CLI reader and reviewed by hand; regenerate only on purpose.",
+  "cases": [
+    {
+      "name": "method/1 lexicon: the dictionary is its one setting",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "grandpa-words",
+        "name": "Grandpa's words",
+        "kind": "lexicon",
+        "dictionary": "../../data/lexicon/words.tsv",
+        "pairs": [
+          {
+            "source": "eng",
+            "target": "qaa"
+          }
+        ],
+        "runtimes": [
+          "engine"
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1 lexicon without its dictionary",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "grandpa-words",
+        "name": "Grandpa's words",
+        "kind": "lexicon"
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$: kind lexicon must name its dictionary"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1 service without its endpoint",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "school-server",
+        "name": "School server",
+        "kind": "service",
+        "service": {
+          "accepts_instructions": false
+        }
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$: kind service must name its service.endpoint"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1 nmt-checkpoint as forge exports it",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "nmt-forge-first-model",
+        "name": "nmt-forge-first-model",
+        "version": "1.0.0",
+        "kind": "nmt-checkpoint",
+        "model_dir": ".",
+        "service": {
+          "endpoint": "http://127.0.0.1:8378/translate",
+          "accepts_instructions": false
+        },
+        "pairs": [
+          {
+            "source": "eng",
+            "target": "crk"
+          }
+        ],
+        "decode": {
+          "max_tokens": 256
+        },
+        "card": {
+          "class": "pipeline",
+          "paradigm": "neural-nmt"
+        },
+        "evidence": [
+          {
+            "dataset": "project-test",
+            "metric": "chrf++",
+            "score": 31.4,
+            "ci": [
+              28.1,
+              34.6
+            ],
+            "n": 50
+          }
+        ],
+        "runtimes": [
+          "cli",
+          "engine"
+        ],
+        "written_by": "nmt-forge export"
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1: an unknown key is refused; x- notes are kept",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "a",
+        "name": "A",
+        "kind": "human",
+        "foo": 1,
+        "x-note": "ours"
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$: unexpected property 'foo'"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1: the id is lowercase words joined by hyphens",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "Grandpa Words",
+        "name": "G",
+        "kind": "human"
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$.id: 'Grandpa Words' does not match pattern /^[a-z0-9]+(-[a-z0-9]+)*$/"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1: evidence carries a two-number interval",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "a",
+        "name": "A",
+        "kind": "human",
+        "evidence": [
+          {
+            "dataset": "t",
+            "metric": "chrf++",
+            "score": 1,
+            "ci": [
+              0,
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$.evidence[0].ci: array longer than maxItems 2"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1: a kind outside the list (even an Object.prototype key)",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "a",
+        "name": "A",
+        "kind": "constructor"
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$.kind: \"constructor\" not in enum [\"llm\",\"llm-coached\",\"mt-api\",\"local-model\",\"nmt-checkpoint\",\"lexicon\",\"python\",\"service\",\"human\"]"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "another document type's $schema is not a method",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/set/1.json",
+        "id": "a",
+        "name": "A",
+        "kind": "human"
+      },
+      "expect": {
+        "version": null,
+        "shape": null,
+        "errors": [
+          "$.$schema: \"https://champollion.dev/schemas/set/1.json\" not in enum [\"https://champollion.dev/schemas/method/1.json\"]"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "not an object",
+      "doc": [
+        "method"
+      ],
+      "expect": {
+        "version": null,
+        "shape": null,
+        "errors": [
+          "$: expected type object, got array"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/0: forge's exported CLI manifest (type api)",
+      "doc": {
+        "name": "nmt-forge-first-model",
+        "type": "api",
+        "version": "1.0.0",
+        "description": "a model trained with nmt-forge",
+        "endpoint": "http://127.0.0.1:8378/translate",
+        "locales": [
+          "crk"
+        ],
+        "acceptsInstructions": false,
+        "provenance": {
+          "resources": [
+            {
+              "name": "nmt-forge model",
+              "license": "own data",
+              "type": "model"
+            }
+          ],
+          "commercialReady": false,
+          "flags": [
+            "license-unclear"
+          ]
+        },
+        "benchmarks": {
+          "crk": {
+            "date": "2026-10-09",
+            "corpus_size": 50,
+            "exact_match_rate": 0.02
+          }
+        }
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "nmt-forge-first-model",
+          "name": "nmt-forge-first-model",
+          "version": "1.0.0",
+          "description": "a model trained with nmt-forge",
+          "kind": "service",
+          "service": {
+            "endpoint": "http://127.0.0.1:8378/translate",
+            "accepts_instructions": false
+          },
+          "provenance": {
+            "resources": [
+              {
+                "name": "nmt-forge model",
+                "license": "own data",
+                "type": "model"
+              }
+            ],
+            "flags": [
+              "license-unclear"
+            ]
+          },
+          "card": {
+            "commercial_ready": false
+          },
+          "pairs": [
+            {
+              "target": "crk"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: a coached CLI plugin; a locale that is not a code is left out",
+      "doc": {
+        "name": "crk-coached",
+        "type": "llm-coached",
+        "version": "0.2.0",
+        "locales": [
+          "crk",
+          "unknown"
+        ],
+        "config": {
+          "model": "google/gemini-3.8-flash",
+          "coachingFile": "coaching/crk.json",
+          "temperature": 0.2,
+          "batchSize": 40,
+          "register": "plain"
+        }
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0",
+          "$.locales: \"unknown\" is not a language code — left out"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "crk-coached",
+          "name": "crk-coached",
+          "version": "0.2.0",
+          "kind": "llm-coached",
+          "model": "google/gemini-3.8-flash",
+          "coaching": {
+            "file": "coaching/crk.json"
+          },
+          "decode": {
+            "temperature": 0.2,
+            "batch_size": 40
+          },
+          "pairs": [
+            {
+              "target": "crk"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: a CLI engine plugin",
+      "doc": {
+        "name": "deepl-fr",
+        "type": "deepl",
+        "version": "1.0.0",
+        "locales": [
+          "fr"
+        ]
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "deepl-fr",
+          "name": "deepl-fr",
+          "version": "1.0.0",
+          "kind": "mt-api",
+          "engine": "deepl",
+          "pairs": [
+            {
+              "target": "fr"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: a CLI llm plugin that names no model",
+      "doc": {
+        "name": "plain-llm",
+        "type": "llm",
+        "version": "1.0.0",
+        "locales": [
+          "de"
+        ]
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0",
+          "$: kind llm must name its model"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "plain-llm",
+          "name": "plain-llm",
+          "version": "1.0.0",
+          "kind": "llm",
+          "pairs": [
+            {
+              "target": "de"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: a CLI type no tool knows",
+      "doc": {
+        "name": "x",
+        "type": "external",
+        "version": "1.0.0",
+        "locales": [
+          "fr"
+        ]
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [
+          "$.type: \"external\" is not a method type (known: llm, llm-coached, api, google-translate, deepl, microsoft-translator, libretranslate, openai, anthropic, gemini)",
+          "$: missing required property 'kind'"
+        ],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "x",
+          "name": "x",
+          "version": "1.0.0",
+          "pairs": [
+            {
+              "target": "fr"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: a CLI type that is an Object.prototype key",
+      "doc": {
+        "name": "x",
+        "type": "constructor",
+        "version": "1.0.0",
+        "locales": [
+          "fr"
+        ]
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [
+          "$.type: \"constructor\" is not a method type (known: llm, llm-coached, api, google-translate, deepl, microsoft-translator, libretranslate, openai, anthropic, gemini)",
+          "$: missing required property 'kind'"
+        ],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "x",
+          "name": "x",
+          "version": "1.0.0",
+          "pairs": [
+            {
+              "target": "fr"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: the harness's passthrough example",
+      "doc": {
+        "name": "Passthrough (wiring example)",
+        "method_id": "example-passthrough-v1",
+        "class": "custom-plugin",
+        "paradigm": "rule-based",
+        "entry_point": "passthrough:PassthroughMethod",
+        "author": "Champollion examples",
+        "description": "Returns the source text unchanged."
+      },
+      "expect": {
+        "version": 0,
+        "shape": "harness-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a harness plugin manifest) and is read as method/0"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "example-passthrough-v1",
+          "name": "Passthrough (wiring example)",
+          "description": "Returns the source text unchanged.",
+          "author": "Champollion examples",
+          "kind": "python",
+          "entry_point": "passthrough:PassthroughMethod",
+          "card": {
+            "class": "custom-plugin",
+            "paradigm": "rule-based"
+          }
+        }
+      }
+    },
+    {
+      "name": "method/0: a harness plugin with pairs, a non-semver version and no method_id",
+      "doc": {
+        "name": "CRK Decomp-Recomp Pipeline",
+        "entry_point": "crk_plugin.method:CrkMethod",
+        "version": "0.1",
+        "supported_pairs": [
+          "eng>crk",
+          "crk"
+        ],
+        "dependency_class": "S",
+        "dependencies": [
+          {
+            "name": "fst",
+            "access": "bundled"
+          }
+        ],
+        "metric_plugins": [
+          {
+            "entry_point": "m:M"
+          }
+        ]
+      },
+      "expect": {
+        "version": 0,
+        "shape": "harness-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a harness plugin manifest) and is read as method/0",
+          "$.version: \"0.1\" is not semver — left out",
+          "$.supported_pairs: \"crk\" is not 'source>target' — left out"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "crk-decomp-recomp-pipeline",
+          "name": "CRK Decomp-Recomp Pipeline",
+          "kind": "python",
+          "entry_point": "crk_plugin.method:CrkMethod",
+          "dependency_class": "S",
+          "dependencies": [
+            {
+              "name": "fst",
+              "access": "bundled"
+            }
+          ],
+          "pairs": [
+            {
+              "source": "eng",
+              "target": "crk"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/0: an entry_point that is not module:Class",
+      "doc": {
+        "name": "bad",
+        "entry_point": 5
+      },
+      "expect": {
+        "version": 0,
+        "shape": "harness-plugin",
+        "errors": [
+          "$.entry_point: expected type string, got integer"
+        ],
+        "warnings": [
+          "$: this method.json predates method/1 (a harness plugin manifest) and is read as method/0",
+          "$: kind python must name its entry_point"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "bad",
+          "name": "bad",
+          "kind": "python",
+          "entry_point": 5
+        }
+      }
+    },
+    {
+      "name": "method/0: both shapes at once",
+      "doc": {
+        "name": "both",
+        "type": "api",
+        "entry_point": "a:B"
+      },
+      "expect": {
+        "version": null,
+        "shape": null,
+        "errors": [
+          "$: has both type (a CLI plugin manifest) and entry_point (a harness plugin manifest) — keep one"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/0: neither shape",
+      "doc": {
+        "name": "nothing"
+      },
+      "expect": {
+        "version": null,
+        "shape": null,
+        "errors": [
+          "$: not a method document: no $schema (method/1), no type (a CLI plugin manifest) and no entry_point (a harness plugin manifest)"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/0: a coached plugin with its coaching folder (as mt-eval export wrote it)",
+      "doc": {
+        "name": "xyz-coached",
+        "type": "llm-coached",
+        "version": "1.0.0",
+        "locales": [
+          "xyz"
+        ],
+        "config": {
+          "model": "google/gemini-3.8-flash",
+          "temperature": 0
+        },
+        "coaching": {
+          "dir": "coaching"
+        }
+      },
+      "expect": {
+        "version": 0,
+        "shape": "cli-plugin",
+        "errors": [],
+        "warnings": [
+          "$: this method.json predates method/1 (a CLI plugin manifest) and is read as method/0"
+        ],
+        "view": {
+          "$schema": "https://champollion.dev/schemas/method/1.json",
+          "id": "xyz-coached",
+          "name": "xyz-coached",
+          "version": "1.0.0",
+          "kind": "llm-coached",
+          "model": "google/gemini-3.8-flash",
+          "coaching": {
+            "dir": "coaching"
+          },
+          "decode": {
+            "temperature": 0
+          },
+          "pairs": [
+            {
+              "target": "xyz"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "method/1: llm-coached with a coaching folder",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "xyz-coached",
+        "name": "xyz coached",
+        "kind": "llm-coached",
+        "model": "google/gemini-3.8-flash",
+        "coaching": {
+          "dir": "coaching"
+        },
+        "pairs": [
+          {
+            "source": "eng",
+            "target": "xyz"
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "method/1: an empty coaching folder name",
+      "doc": {
+        "$schema": "https://champollion.dev/schemas/method/1.json",
+        "id": "xyz-coached",
+        "name": "xyz coached",
+        "kind": "llm-coached",
+        "model": "google/gemini-3.8-flash",
+        "coaching": {
+          "dir": ""
+        },
+        "pairs": [
+          {
+            "target": "xyz"
+          }
+        ]
+      },
+      "expect": {
+        "version": 1,
+        "shape": "method/1",
+        "errors": [
+          "$.coaching.dir: string shorter than minLength 1"
+        ],
+        "warnings": []
+      }
+    }
+  ]
+}

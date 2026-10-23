@@ -1,0 +1,97 @@
+---
+title: Bring what you have
+slug: /bring-your-data
+description: "Bring in your sentences, word lists and notes as you keep them — and decide, for each file, who it belongs to and how it may be used."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Bring what you have
+
+A translator learns from **pairs**: a sentence in one language, and the same
+sentence in the other. This page is about bringing yours in — and about the
+questions you'll be asked for each file, which matter more than anything else
+on the rails.
+
+## What the tools can read
+
+Bring your files as you keep them. You don't need to convert anything.
+
+| You have | The tools read |
+|---|---|
+| A spreadsheet of sentences and translations | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` or plain text |
+| A table in a Word document | The table's rows |
+| A dictionary made in Toolbox or FieldWorks (programs many linguists use) | The words — and its example sentences, as pairs |
+| Recordings written down in ELAN (a program for transcribing recordings) | The written-down lines and their translations, as pairs |
+| A word list | Each word and its translation |
+| Notes about the grammar | Kept in their own place, for people and tools to refer to |
+| Scripture | Only if you ask, and no translator learns from it until the people who hold it say so |
+
+Your files are read where they are. If a spreadsheet's columns don't say which
+language is which, the tools ask you — they never guess from the contents.
+
+The tools also look for rows that seem wrong — a translation that slipped down
+a line, two columns swapped, a translation copied from the other side, the
+same pair twice, a translation far longer or shorter than usual — and tell
+you which rows, by number. They never change or remove anything; someone who
+knows the data decides.
+
+## The tools count. They don't read your words out to anyone.
+
+When a file comes in, the tools tell you how many pairs they found and which
+columns they used. That's all your AI assistant is shown: counts and column
+names, never the sentences themselves.
+
+## The questions for each file
+
+Before anything learns from a file, the rails ask the people who hold it:
+
+- **Who does it belong to?** In your own words — a family, a teacher, a
+  community office.
+- **Whose words are in it?** The people who said or wrote the sentences. A
+  grandmother's notebooks hold her words, even if her grandson typed them.
+- **Have they agreed to their use?** *Yes*, *not yet*, or *some said no*.
+  The rails keep asking until this is answered. Words from people who haven't
+  agreed yet, or who said no, are never used to teach a translator.
+- **May a translator learn from it?**
+- **May it ever leave this computer?** Files start out private — kept on this
+  computer — until you answer.
+
+The answers are written in a small note beside the file, and every tool obeys
+it. After your first answer, the tools can only make the rules stricter, never
+looser. The one exception: a speaker who hadn't been asked yet can still say
+yes.
+
+Your assistant asks these questions; it must never answer them for you. If you
+don't know yet — say, you still need to ask an aunt — say *not yet*. The rails
+set that file aside and carry on, and ask again later, gently.
+
+## What you'll see
+
+In our practice run of the tools — an illustration with invented sentences —
+a family brought in four files: <WalkFact of="trainingFiles.0.pairs" />
+sentence pairs from a grandfather's spreadsheet, <WalkFact of="trainingFiles.1.pairs" />
+from an aunt's, a word list of <WalkFact of="lexicon.pairs" /> words, and
+<WalkFact of="test.pairs" /> sentences a speaker had checked, for testing. Each
+time, the assistant reported the count, and then asked who the file belonged
+to and whether a translator could learn from it.
+
+## Sentences from other places
+
+If you use sentences you didn't write — from a book, a website, a published
+collection — they come with their own rules. Some may be read but not shared;
+some may not be used to teach anything. Bring them in the same way, and answer
+the questions honestly for them too: the tools will hold them to your answer.
+When a collection's licence is unusual or unclear, the tools won't send it to
+an outside AI service until its owners have said yes.
+
+**Next:** [Set aside your test sentences →](/docs/your-test-sentences)
+
+## Go deeper
+
+- [Data and transmission rules](/docs/agents/data-rules) — every field of the
+  note beside each file, and what each tool does with it.
+- [Driving the rails from the shell](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, with every option.
+- [Registering a test set](/docs/network/sovereignty/registering-corpora) —
+  the four levels of exposure, for sets you may share later.

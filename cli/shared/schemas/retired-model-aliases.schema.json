@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/retired-model-aliases.schema.json",
+  "title": "Champollion retired model aliases (shared/retired-model-aliases.json)",
+  "description": "Short model names Champollion USED to accept, each with the exact provider slug it used to stand for. Founder ruling 2026-10-05: exact slugs only, no aliasing — every name in `retired` is REFUSED with a message naming its slug; it never resolves. The bundled mini-schema validator does not support additionalProperties-as-schema, so per-entry validation iterates `retired` against $defs.aliasName / $defs.modelId (see cli/test/shared-ssot-schemas.test.js).",
+  "type": "object",
+  "required": ["_comment", "retired"],
+  "properties": {
+    "_comment": {
+      "type": "string",
+      "description": "Human note: why these names are retired."
+    },
+    "retired": {
+      "type": "object",
+      "description": "Retired short name → the exact slug it used to stand for (used ONLY in the refusal message)."
+    }
+  },
+  "$defs": {
+    "aliasName": {
+      "type": "string",
+      "description": "Retired short name: lowercase alphanumerics and hyphens.",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "minLength": 2
+    },
+    "modelId": {
+      "type": "string",
+      "description": "Exact provider-qualified model slug: <provider>/<model>, never a floating id (no leading '~', no '-latest').",
+      "pattern": "^[a-z0-9-]+/[A-Za-z0-9._-]+$",
+      "minLength": 3
+    }
+  }
+}

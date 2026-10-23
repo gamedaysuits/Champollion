@@ -1,0 +1,98 @@
+---
+title: "Apportez ce que vous avez"
+slug: /bring-your-data
+description: "Apportez vos phrases, listes de mots et notes telles que vous les conservez — et décidez, pour chaque fichier, à qui il appartient et comment il peut être utilisé."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Apportez ce que vous avez
+
+Un traducteur apprend à partir de **paires** : une phrase dans une langue, et la même
+phrase dans l'autre. Cette page vous explique comment intégrer les vôtres — ainsi que les
+questions qui vous seront posées pour chaque fichier, qui comptent plus que tout le reste
+sur les rails.
+
+## Ce que les outils peuvent lire
+
+Apportez vos fichiers tels que vous les conservez. Vous n'avez rien besoin de convertir.
+
+| Vous avez | Les outils lisent |
+|---|---|
+| Une feuille de calcul contenant des phrases et des traductions | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` ou texte brut |
+| Un tableau dans un document Word | Les lignes du tableau |
+| Un dictionnaire créé dans Toolbox ou FieldWorks (des logiciels utilisés par de nombreux linguistes) | Les mots — ainsi que ses phrases d'exemple, sous forme de paires |
+| Des enregistrements transcrits dans ELAN (un logiciel pour transcrire des enregistrements) | Les lignes transcrites et leurs traductions, sous forme de paires |
+| Une liste de mots | Chaque mot et sa traduction |
+| Des notes grammaticales | Conservées à leur propre place, pour que les personnes et les outils puissent s'y référer |
+| Des textes sacrés | Uniquement si vous le demandez, et aucun traducteur n'apprend à partir de ceux-ci tant que les personnes qui les détiennent n'ont pas donné leur accord |
+
+Vos fichiers sont lus là où ils se trouvent. Si les colonnes d'une feuille de calcul
+n'indiquent pas quelle langue correspond à laquelle, les outils vous le demandent — ils
+ne devinent jamais à partir du contenu.
+
+Les outils recherchent également les lignes qui semblent erronées — une traduction décalée
+d'une ligne, deux colonnes inversées, une traduction copiée de l'autre côté, la
+même paire présente deux fois, une traduction beaucoup plus longue ou plus courte que d'habitude — et
+vous indiquent de quelles lignes il s'agit, par leur numéro. Ils ne modifient ni ne suppriment
+jamais rien ; c'est une personne qui connaît les données qui décide.
+
+## Les outils comptent. Ils ne lisent vos mots à personne.
+
+Lorsqu'un fichier est importé, les outils vous indiquent le nombre de paires trouvées et les
+colonnes utilisées. C'est tout ce qui est montré à votre assistant d'IA : des décomptes et des
+noms de colonnes, jamais les phrases elles-mêmes.
+
+## Les questions pour chaque fichier
+
+Avant que quoi que ce soit n'apprenne à partir d'un fichier, les rails demandent aux personnes qui le détiennent :
+
+- **À qui appartient-il ?** Dans vos propres mots — une famille, un enseignant, un
+  bureau communautaire.
+- **De qui sont les mots qu'il contient ?** Les personnes qui ont prononcé ou écrit les phrases. Les
+  cahiers d'une grand-mère contiennent ses mots, même si son petit-fils les a saisis au clavier.
+- **Ont-elles consenti à leur utilisation ?** *Oui*, *pas encore*, ou *certaines personnes ont dit non*.
+  Les rails continuent de poser la question jusqu'à ce qu'une réponse soit donnée. Les mots des personnes qui n'ont pas
+  encore consenti, ou qui ont dit non, ne sont jamais utilisés pour entraîner un traducteur.
+- **Un traducteur peut-il apprendre à partir de celui-ci ?**
+- **Peut-il quitter cet ordinateur un jour ?** Les fichiers sont privés au départ — conservés sur cet
+  ordinateur — jusqu'à ce que vous répondiez.
+
+Les réponses sont consignées dans une courte note à côté du fichier, et chaque outil s'y
+conforme. Après votre première réponse, les outils ne peuvent que rendre les règles plus strictes, jamais
+plus souples. La seule exception : un locuteur à qui la question n'avait pas encore été posée peut toujours
+dire oui.
+
+Votre assistant pose ces questions ; il ne doit en aucun cas y répondre à votre place. Si vous
+ne savez pas encore — par exemple, si vous devez encore demander à une tante —, indiquez *pas encore*. Les rails
+mettent ce fichier de côté et poursuivent leur travail, puis reposent la question plus tard, avec délicatesse.
+
+## Ce que vous verrez
+
+Lors de notre essai pratique des outils — une illustration avec des phrases inventées —,
+une famille a apporté quatre fichiers : <WalkFact of="trainingFiles.0.pairs" />
+paires de phrases provenant de la feuille de calcul d'un grand-père, <WalkFact of="trainingFiles.1.pairs" />
+provenant de celle d'une tante, une liste de <WalkFact of="lexicon.pairs" /> mots et
+<WalkFact of="test.pairs" /> phrases vérifiées par un locuteur, pour les tests. À chaque
+fois, l'assistant a indiqué le décompte, puis a demandé à qui appartenait le fichier
+et si un traducteur pouvait apprendre à partir de celui-ci.
+
+## Des phrases provenant d'autres sources
+
+Si vous utilisez des phrases que vous n'avez pas écrites — provenant d'un livre, d'un site web, d'un
+recueil publié —, elles sont assorties de leurs propres règles. Certaines peuvent être lues mais non partagées ;
+d'autres ne peuvent être utilisées pour aucun apprentissage. Intégrez-les de la même manière, et répondez
+honnêtement aux questions pour elles également : les outils s'en tiendront rigoureusement à votre réponse.
+Lorsque la licence d'un recueil est inhabituelle ou peu claire, les outils ne l'enverront pas à
+un service d'IA externe tant que ses propriétaires n'auront pas donné leur accord.
+
+**Suivant :** [Mettre de côté vos phrases de test →](/docs/your-test-sentences)
+
+## Pour aller plus loin
+
+- [Règles relatives aux données et à la transmission](/docs/agents/data-rules) — chaque champ de la
+  note à côté de chaque fichier, et ce que chaque outil en fait.
+- [Piloter les rails depuis le shell](/docs/agents/shell) — `champollion data
+  add` and `champollion data mark`, avec toutes les options.
+- [Enregistrer un jeu de test](/docs/network/sovereignty/registering-corpora) —
+  les quatre niveaux d'exposition, pour les jeux que vous pourriez partager plus tard.

@@ -1,0 +1,870 @@
+{
+  "comet/empty-prediction": {
+    "attached_per_entry": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "corpus_score": 0.2,
+    "n_entries": 3,
+    "scored_hypotheses": [
+      "A",
+      "",
+      "C"
+    ]
+  },
+  "fingerprint/collision-across-providers": {
+    "same_card_id": false,
+    "same_fingerprint": false
+  },
+  "llm/anthropic/temp0": {
+    "headers": {
+      "Content-Type": "application/json",
+      "anthropic-version": "2023-06-01",
+      "x-api-key": "<redacted>"
+    },
+    "json": {
+      "max_tokens": 13680,
+      "messages": [
+        {
+          "content": "Hello, world.",
+          "role": "user"
+        }
+      ],
+      "model": "claude-haiku-4-5",
+      "system": "SYSTEM PROMPT",
+      "temperature": 0.0
+    },
+    "method": "POST",
+    "url": "https://api.anthropic.com/v1/messages"
+  },
+  "llm/anthropic/temp0.01": {
+    "headers": {
+      "Content-Type": "application/json",
+      "anthropic-version": "2023-06-01",
+      "x-api-key": "<redacted>"
+    },
+    "json": {
+      "max_tokens": 13680,
+      "messages": [
+        {
+          "content": "Hello, world.",
+          "role": "user"
+        }
+      ],
+      "model": "claude-sonnet-4",
+      "system": "SYSTEM PROMPT",
+      "temperature": 0.01
+    },
+    "method": "POST",
+    "url": "https://api.anthropic.com/v1/messages"
+  },
+  "llm/gemini/temp0": {
+    "headers": {},
+    "json": {
+      "contents": [
+        {
+          "parts": [
+            {
+              "text": "Hello, world."
+            }
+          ],
+          "role": "user"
+        }
+      ],
+      "generationConfig": {
+        "maxOutputTokens": 13680,
+        "temperature": 0.0
+      },
+      "systemInstruction": {
+        "parts": [
+          {
+            "text": "SYSTEM PROMPT"
+          }
+        ]
+      }
+    },
+    "method": "POST",
+    "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=%3Credacted%3E"
+  },
+  "llm/local/temp0": {
+    "headers": {
+      "Authorization": "<redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "max_tokens": 13680,
+      "messages": [
+        {
+          "content": "SYSTEM PROMPT",
+          "role": "system"
+        },
+        {
+          "content": "Hello, world.",
+          "role": "user"
+        }
+      ],
+      "model": "llama3.1",
+      "temperature": 0.0
+    },
+    "method": "POST",
+    "url": "http://localhost:11434/v1/chat/completions"
+  },
+  "llm/openai/temp0": {
+    "headers": {
+      "Authorization": "<redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "max_tokens": 13680,
+      "messages": [
+        {
+          "content": "SYSTEM PROMPT",
+          "role": "system"
+        },
+        {
+          "content": "Hello, world.",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-4o",
+      "temperature": 0.0
+    },
+    "method": "POST",
+    "url": "https://api.openai.com/v1/chat/completions"
+  },
+  "llm/openrouter/temp0": {
+    "headers": {
+      "Authorization": "<redacted>",
+      "Content-Type": "application/json",
+      "HTTP-Referer": "https://github.com/gamedaysuits/Champollion"
+    },
+    "json": {
+      "max_tokens": 13680,
+      "messages": [
+        {
+          "content": [
+            {
+              "cache_control": {
+                "type": "ephemeral"
+              },
+              "text": "SYSTEM PROMPT",
+              "type": "text"
+            }
+          ],
+          "role": "system"
+        },
+        {
+          "content": "Hello, world.",
+          "role": "user"
+        }
+      ],
+      "model": "google/gemini-3.1-pro-preview",
+      "temperature": 0.0
+    },
+    "method": "POST",
+    "url": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "llm/openrouter/temp0/restricted-corpus": {
+    "headers": {
+      "Authorization": "<redacted>",
+      "Content-Type": "application/json",
+      "HTTP-Referer": "https://github.com/gamedaysuits/Champollion"
+    },
+    "json": {
+      "max_tokens": 13680,
+      "messages": [
+        {
+          "content": [
+            {
+              "cache_control": {
+                "type": "ephemeral"
+              },
+              "text": "SYSTEM PROMPT",
+              "type": "text"
+            }
+          ],
+          "role": "system"
+        },
+        {
+          "content": "Hello, world.",
+          "role": "user"
+        }
+      ],
+      "model": "google/gemini-3.1-pro-preview",
+      "provider": {
+        "data_collection": "deny"
+      },
+      "temperature": 0.0
+    },
+    "method": "POST",
+    "url": "https://openrouter.ai/api/v1/chat/completions"
+  },
+  "mt/apertium": [
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 0"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 1"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 2"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 3"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 4"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 5"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 6"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 7"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 8"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 9"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 10"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 11"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 12"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 13"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 14"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 15"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 16"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 17"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 18"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 19"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 20"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 21"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 22"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 23"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 24"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 25"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 26"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 27"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 28"
+      },
+      "url": "https://apy.example/translate"
+    },
+    {
+      "headers": {
+        "User-Agent": "Champollion-MT-Eval/0.1 (+https://champollion.dev; MT eval harness)"
+      },
+      "method": "GET",
+      "params": {
+        "langpair": "en|fr",
+        "markUnknown": "no",
+        "q": "sentence 29"
+      },
+      "url": "https://apy.example/translate"
+    }
+  ],
+  "mt/deepl": [
+    {
+      "headers": {
+        "Authorization": "<redacted>",
+        "Content-Type": "application/json"
+      },
+      "json": {
+        "source_lang": "EN",
+        "target_lang": "FR",
+        "text": [
+          "sentence 0",
+          "sentence 1",
+          "sentence 2",
+          "sentence 3",
+          "sentence 4",
+          "sentence 5",
+          "sentence 6",
+          "sentence 7",
+          "sentence 8",
+          "sentence 9",
+          "sentence 10",
+          "sentence 11",
+          "sentence 12",
+          "sentence 13",
+          "sentence 14",
+          "sentence 15",
+          "sentence 16",
+          "sentence 17",
+          "sentence 18",
+          "sentence 19",
+          "sentence 20",
+          "sentence 21",
+          "sentence 22",
+          "sentence 23",
+          "sentence 24",
+          "sentence 25",
+          "sentence 26",
+          "sentence 27",
+          "sentence 28",
+          "sentence 29"
+        ]
+      },
+      "method": "POST",
+      "url": "https://api-free.deepl.com/v2/translate"
+    }
+  ],
+  "mt/google-translate": [
+    {
+      "headers": {
+        "Content-Type": "application/json",
+        "x-goog-api-key": "<redacted>"
+      },
+      "json": {
+        "format": "text",
+        "q": [
+          "sentence 0",
+          "sentence 1",
+          "sentence 2",
+          "sentence 3",
+          "sentence 4",
+          "sentence 5",
+          "sentence 6",
+          "sentence 7",
+          "sentence 8",
+          "sentence 9",
+          "sentence 10",
+          "sentence 11",
+          "sentence 12",
+          "sentence 13",
+          "sentence 14",
+          "sentence 15",
+          "sentence 16",
+          "sentence 17",
+          "sentence 18",
+          "sentence 19",
+          "sentence 20",
+          "sentence 21",
+          "sentence 22",
+          "sentence 23",
+          "sentence 24",
+          "sentence 25",
+          "sentence 26",
+          "sentence 27",
+          "sentence 28",
+          "sentence 29"
+        ],
+        "source": "en",
+        "target": "fr"
+      },
+      "method": "POST",
+      "url": "https://translation.googleapis.com/language/translate/v2"
+    }
+  ],
+  "mt/libretranslate": [
+    {
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "json": {
+        "format": "text",
+        "q": [
+          "sentence 0",
+          "sentence 1",
+          "sentence 2",
+          "sentence 3",
+          "sentence 4",
+          "sentence 5",
+          "sentence 6",
+          "sentence 7",
+          "sentence 8",
+          "sentence 9",
+          "sentence 10",
+          "sentence 11",
+          "sentence 12",
+          "sentence 13",
+          "sentence 14",
+          "sentence 15",
+          "sentence 16",
+          "sentence 17",
+          "sentence 18",
+          "sentence 19",
+          "sentence 20",
+          "sentence 21",
+          "sentence 22",
+          "sentence 23",
+          "sentence 24",
+          "sentence 25",
+          "sentence 26",
+          "sentence 27",
+          "sentence 28",
+          "sentence 29"
+        ],
+        "source": "en",
+        "target": "fr"
+      },
+      "method": "POST",
+      "url": "https://lt.example/translate"
+    }
+  ],
+  "mt/microsoft-translator": [
+    {
+      "headers": {
+        "Content-Type": "application/json; charset=UTF-8",
+        "Ocp-Apim-Subscription-Key": "<redacted>"
+      },
+      "json": [
+        {
+          "Text": "sentence 0"
+        },
+        {
+          "Text": "sentence 1"
+        },
+        {
+          "Text": "sentence 2"
+        },
+        {
+          "Text": "sentence 3"
+        },
+        {
+          "Text": "sentence 4"
+        },
+        {
+          "Text": "sentence 5"
+        },
+        {
+          "Text": "sentence 6"
+        },
+        {
+          "Text": "sentence 7"
+        },
+        {
+          "Text": "sentence 8"
+        },
+        {
+          "Text": "sentence 9"
+        },
+        {
+          "Text": "sentence 10"
+        },
+        {
+          "Text": "sentence 11"
+        },
+        {
+          "Text": "sentence 12"
+        },
+        {
+          "Text": "sentence 13"
+        },
+        {
+          "Text": "sentence 14"
+        },
+        {
+          "Text": "sentence 15"
+        },
+        {
+          "Text": "sentence 16"
+        },
+        {
+          "Text": "sentence 17"
+        },
+        {
+          "Text": "sentence 18"
+        },
+        {
+          "Text": "sentence 19"
+        },
+        {
+          "Text": "sentence 20"
+        },
+        {
+          "Text": "sentence 21"
+        },
+        {
+          "Text": "sentence 22"
+        },
+        {
+          "Text": "sentence 23"
+        },
+        {
+          "Text": "sentence 24"
+        },
+        {
+          "Text": "sentence 25"
+        },
+        {
+          "Text": "sentence 26"
+        },
+        {
+          "Text": "sentence 27"
+        },
+        {
+          "Text": "sentence 28"
+        },
+        {
+          "Text": "sentence 29"
+        }
+      ],
+      "method": "POST",
+      "url": "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr"
+    }
+  ],
+  "mt/tilde": [
+    {
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Api-Key": "<redacted>"
+      },
+      "json": {
+        "domain": "general",
+        "srcLang": "en",
+        "termCollections": [],
+        "text": [
+          "sentence 0",
+          "sentence 1",
+          "sentence 2",
+          "sentence 3",
+          "sentence 4",
+          "sentence 5",
+          "sentence 6",
+          "sentence 7",
+          "sentence 8",
+          "sentence 9",
+          "sentence 10",
+          "sentence 11",
+          "sentence 12",
+          "sentence 13",
+          "sentence 14",
+          "sentence 15",
+          "sentence 16",
+          "sentence 17",
+          "sentence 18",
+          "sentence 19",
+          "sentence 20",
+          "sentence 21",
+          "sentence 22",
+          "sentence 23",
+          "sentence 24"
+        ],
+        "trgLang": "fr"
+      },
+      "method": "POST",
+      "url": "https://translate.tilde.ai/api/translate/text"
+    },
+    {
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Api-Key": "<redacted>"
+      },
+      "json": {
+        "domain": "general",
+        "srcLang": "en",
+        "termCollections": [],
+        "text": [
+          "sentence 25",
+          "sentence 26",
+          "sentence 27",
+          "sentence 28",
+          "sentence 29"
+        ],
+        "trgLang": "fr"
+      },
+      "method": "POST",
+      "url": "https://translate.tilde.ai/api/translate/text"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Lima instance: the SOVEREIGN (air-gapped) evaluation node.
+#
+# No mounts, no port forwards. Software arrives ONLY via the offline bundle
+# (`mt-eval node bundle`) carried in with `limactl copy` — the USB stick — and
+# bracketed by `mt-eval node manifest write/verify`. The instance is
+# provisioned ONLINE once (apt, docker-ce, the pre-pulled base image), then
+# darkened with guest/airgap-dark.sh before any ceremony or sealed run.
+#
+# Honest limit: this is a software-darkened VM on an online host with a
+# hypervisor console. It rehearses the software discipline (fail-closed
+# egress check, --network=none containers, hash-chained ledger, signed
+# manifests) — not the physical discipline of node-spec §1.
+base: template://ubuntu-24.04
+vmType: vz
+cpus: 4
+memory: "6GiB"
+disk: "30GiB"
+mounts: []
+ssh:
+  loadDotSSHPubKeys: false
+containerd:
+  system: false
+  user: false
+hostResolver:
+  enabled: true

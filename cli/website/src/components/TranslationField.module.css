@@ -1,0 +1,249 @@
+/* ===================================================================
+   TranslationField — the Landing v3 full-bleed hero background.
+
+   The wrapper fills the hero; the canvas paints the living pipeline;
+   the frozen flow is the SSR / reduced-motion / no-JS composition and
+   stays in the accessibility tree when the canvas runs.
+
+   Motion rules (DESIGN.md §5): the canvas is the one sanctioned rAF
+   layer (Morph v2 lineage); everything else here is transform/opacity
+   only. The scroll recede uses CSS scroll-driven animation where
+   supported (JS rAF fallback in the component), and is disabled under
+   prefers-reduced-motion.
+   =================================================================== */
+
+.field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* The gradient field — a quiet aurora through the vitality triad,
+     full-bleed, both themes. Decorative ≤8%-tint washes (DESIGN.md). */
+  background:
+    radial-gradient(ellipse 60% 44% at 12% 4%, var(--vital-safe-bg) 0%, transparent 68%),
+    radial-gradient(ellipse 52% 40% at 88% 10%, var(--vital-vulnerable-bg) 0%, transparent 70%),
+    radial-gradient(ellipse 64% 46% at 50% 100%, var(--vital-endangered-bg) 0%, transparent 74%);
+}
+
+/* Scroll recede — the field gracefully steps back as the page scrolls
+   (Landing v3: "design the seam"). CSS scroll-driven where supported;
+   the component installs a rAF fallback elsewhere. */
+@supports (animation-timeline: scroll()) {
+  @media not (prefers-reduced-motion: reduce) {
+    .field {
+      animation: fieldRecede linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 90vh;
+    }
+  }
+}
+
+@keyframes fieldRecede {
+  to {
+    opacity: 0.15;
+    transform: translate3d(0, -40px, 0);
+  }
+}
+
+/* The seam: the field dissolves into the page color at its base, so
+   the funnels section below reads as composed, not stacked. */
+.field::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 130px;
+  background: linear-gradient(180deg, transparent, var(--ifm-background-color));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------------------------------------------------
+   The frozen flow — one real source → model output + score
+   --------------------------------------------------------------- */
+.frozen {
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(920px, calc(100% - 3rem));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  margin: 0;
+}
+
+/* When the canvas is live, the frozen flow leaves the visual layer but
+   stays for screen readers — no information lives only in pixels. */
+.fieldFx .frozen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.frozenCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.frozenSource {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.frozenTarget {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* ONE type scale for all field text (Landing v3 doctrine 3). */
+.frozenText {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ifm-font-color-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.frozenMeta {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ifm-font-color-secondary);
+}
+
+.frozenRef {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.85;
+}
+
+.frozenChip {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--accent-muted, var(--ifm-color-primary));
+  background: var(--accent-subtle);
+  border-radius: 6px;
+  padding: 0.14rem 0.45rem;
+  white-space: nowrap;
+}
+
+/* The dissolution trail between the two states: a dotted drift that
+   thins mid-flight — the transformation zone, frozen. */
+.frozenTrail {
+  flex: 1;
+  height: 14px;
+  min-width: 60px;
+  background-image: radial-gradient(
+    circle at 2px 7px,
+    var(--ifm-color-primary) 1.2px,
+    transparent 1.6px
+  );
+  background-size: 11px 14px;
+  background-repeat: repeat-x;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 18%,
+    rgba(0, 0, 0, 0.35) 50%,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 18%,
+    rgba(0, 0, 0, 0.35) 50%,
+    #000 82%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* ---------------------------------------------------------------
+   Provenance legend — always-visible honesty line
+   --------------------------------------------------------------- */
+.legend {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 0.9rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: var(--ifm-font-color-secondary);
+  background: var(--surface-glass);
+  border: 1px solid var(--border-subtle);
+  pointer-events: auto;
+  max-width: calc(100% - 2rem);
+}
+
+/* ---------------------------------------------------------------
+   Mobile — the field simplifies; the frozen flow stacks
+   --------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* The static flow mirrors the animated mobile pipeline: source pinned
+     to the top lane, target to the bottom lane, the pinned copy
+     between them. Trail + reference give way to the tight viewport
+     (the reference still ships to screen readers on desktop builds and
+     in the data; nothing on mobile asserts more than it shows). */
+  .frozen {
+    top: auto;
+    left: 0;
+    transform: none;
+    inset: 7% 1.25rem 17.5%;
+    width: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .frozenTrail,
+  .frozenRef {
+    display: none;
+  }
+  .frozenText {
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+  .legend {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.45;
+  }
+}

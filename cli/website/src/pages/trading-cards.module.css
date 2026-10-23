@@ -1,0 +1,472 @@
+/**
+ * Trading Cards Page — CSS Module
+ *
+ * Page-level layout only. Card rendering is handled by LanguageCard.module.css
+ * and the detail panel by DetailPanel.module.css.
+ */
+
+/* ========================================================================
+   PAGE HEADER
+   ======================================================================== */
+
+.pageHeader {
+  background: linear-gradient(135deg, #0c0e0d 0%, #1b211e 60%, #0c0e0d 100%);
+  padding: 3rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(63, 193, 192, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated shimmer across the header */
+.pageHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(63, 193, 192, 0.03) 25%,
+    rgba(63, 193, 192, 0.06) 50%,
+    rgba(63, 193, 192, 0.03) 75%,
+    transparent 100%
+  );
+  animation: headerShimmer 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes headerShimmer {
+  0%, 100% { transform: translateX(-25%); }
+  50% { transform: translateX(25%); }
+}
+
+.pageTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #E8EAE8, #3FC1C0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: #9AA5A0;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:global([data-theme='light']) .pageHeader {
+  background: linear-gradient(135deg, #f0f0f8 0%, #e8e4f8 60%, #f0f0f8 100%);
+  border-bottom-color: rgba(15, 118, 110, 0.15);
+}
+
+:global([data-theme='light']) .pageTitle {
+  background: linear-gradient(135deg, #1F2421, #0F766E);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+:global([data-theme='light']) .pageSubtitle {
+  color: #5B6661;
+}
+
+
+/* ========================================================================
+   STATS BAR
+   ======================================================================== */
+
+.statsBar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.statPill {
+  background: rgba(63, 193, 192, 0.08);
+  border: 1px solid rgba(63, 193, 192, 0.15);
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  color: #b0b0c8;
+}
+
+.statPill strong {
+  color: #3FC1C0;
+  margin-right: 0.3rem;
+}
+
+.statPillContest {
+  background: rgba(255, 149, 0, 0.08);
+  border-color: rgba(255, 149, 0, 0.2);
+}
+
+.statPillContest strong {
+  color: #ffb347;
+}
+
+:global([data-theme='light']) .statPill {
+  background: rgba(15, 118, 110, 0.06);
+  border-color: rgba(15, 118, 110, 0.15);
+  color: #5B6661;
+}
+
+:global([data-theme='light']) .statPill strong {
+  color: #0F766E;
+}
+
+
+/* ========================================================================
+   CONTENT + FILTERS
+   ======================================================================== */
+
+.contentWrapper {
+  padding: 2rem 0 4rem;
+}
+
+.filtersBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filterPill {
+  background: rgba(63, 193, 192, 0.06);
+  border: 1px solid rgba(63, 193, 192, 0.12);
+  border-radius: 20px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  color: #9AA5A0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterPill:hover {
+  background: rgba(63, 193, 192, 0.12);
+  color: #c4bffe;
+}
+
+.filterPillActive {
+  background: rgba(63, 193, 192, 0.18);
+  border-color: rgba(63, 193, 192, 0.35);
+  color: #d5d2ff;
+}
+
+:global([data-theme='light']) .filterPill {
+  background: rgba(15, 118, 110, 0.04);
+  border-color: rgba(15, 118, 110, 0.12);
+  color: #5B6661;
+}
+
+:global([data-theme='light']) .filterPillActive {
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.3);
+  color: #4E40C4;
+}
+
+.searchWrapper {
+  position: relative;
+}
+
+.searchInput {
+  background: rgba(63, 193, 192, 0.06);
+  border: 1px solid rgba(63, 193, 192, 0.12);
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+  width: 220px;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: rgba(63, 193, 192, 0.4);
+}
+
+.clearSearch {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #9AA5A0;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.sortSelect {
+  background: rgba(63, 193, 192, 0.06);
+  border: 1px solid rgba(63, 193, 192, 0.12);
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  max-width: 15rem;
+}
+
+/* ========================================================================
+   GENEALOGICAL DRILL-DOWN CHIP (set by clicking an ancestry node)
+   ======================================================================== */
+
+.ancestryFilterBar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.25rem;
+  padding: 0.5rem 0.9rem;
+  background: rgba(63, 193, 192, 0.08);
+  border: 1px solid rgba(63, 193, 192, 0.25);
+  border-radius: 10px;
+}
+
+.ancestryFilterLabel {
+  font-size: 0.82rem;
+  color: #9AA5A0;
+}
+
+.ancestryFilterValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.ancestryFilterCount {
+  font-size: 0.8rem;
+  color: #9AA5A0;
+}
+
+.ancestryFilterClear {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid rgba(63, 193, 192, 0.35);
+  border-radius: 16px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ancestryFilterClear:hover {
+  background: rgba(63, 193, 192, 0.18);
+}
+
+
+/* ========================================================================
+   CONTEST FILTER TOGGLE GROUP
+   ======================================================================== */
+
+.contestFilterGroup {
+  display: flex;
+  gap: 0.3rem;
+  background: rgba(63, 193, 192, 0.04);
+  border: 1px solid rgba(63, 193, 192, 0.1);
+  border-radius: 22px;
+  padding: 0.2rem;
+}
+
+.contestFilterBtn {
+  background: transparent;
+  border: none;
+  border-radius: 18px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  color: #9AA5A0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.contestFilterBtn:hover {
+  color: #c4bffe;
+  background: rgba(63, 193, 192, 0.08);
+}
+
+.contestFilterBtnActive {
+  background: rgba(63, 193, 192, 0.15);
+  color: #d5d2ff;
+  font-weight: 600;
+}
+
+/* Open filter gets warm accent when active */
+.contestFilterBtnOpen.contestFilterBtnActive {
+  background: rgba(255, 149, 0, 0.15);
+  color: #ffb347;
+}
+
+:global([data-theme='light']) .contestFilterGroup {
+  background: rgba(15, 118, 110, 0.03);
+  border-color: rgba(15, 118, 110, 0.1);
+}
+
+:global([data-theme='light']) .contestFilterBtn {
+  color: #5B6661;
+}
+
+:global([data-theme='light']) .contestFilterBtnActive {
+  background: rgba(15, 118, 110, 0.12);
+  color: #4E40C4;
+}
+
+:global([data-theme='light']) .contestFilterBtnOpen.contestFilterBtnActive {
+  background: rgba(232, 140, 0, 0.12);
+  color: #c47700;
+}
+
+
+/* ========================================================================
+   CARD GRID
+   ======================================================================== */
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+
+/* ========================================================================
+   LOADING SKELETON
+   ======================================================================== */
+
+.loadingContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeletonCard {
+  height: 220px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient shimmer sweep */
+.skeletonCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(63, 193, 192, 0.04) 20%,
+    rgba(63, 193, 192, 0.08) 40%,
+    rgba(196, 191, 254, 0.06) 60%,
+    rgba(63, 193, 192, 0.04) 80%,
+    transparent 100%
+  );
+  animation: skeletonShimmer 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes skeletonShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+:global([data-theme='light']) .skeletonCard {
+  background: rgba(15, 118, 110, 0.04);
+  border-color: rgba(15, 118, 110, 0.08);
+}
+
+:global([data-theme='light']) .skeletonCard::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(15, 118, 110, 0.04) 20%,
+    rgba(15, 118, 110, 0.08) 40%,
+    rgba(15, 118, 110, 0.06) 60%,
+    rgba(15, 118, 110, 0.04) 80%,
+    transparent 100%
+  );
+}
+
+
+/* ========================================================================
+   EMPTY STATE
+   ======================================================================== */
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #9AA5A0;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 768px) {
+  .cardsGrid,
+  .loadingContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .filtersBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .searchInput {
+    width: 100%;
+    /* 16px font so iOS doesn't zoom the page on focus. */
+    font-size: 1rem;
+    min-height: 40px;
+  }
+
+  /* The segmented contest control's three nowrap buttons exceed 375px —
+     let it wrap instead of stretching the page past the viewport. */
+  .contestFilterGroup {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 14px;
+  }
+
+  /* Thumb-sized filter targets. */
+  .filterPill,
+  .contestFilterBtn {
+    min-height: 40px;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .sortSelect {
+    min-height: 40px;
+    font-size: 1rem;
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "_comment": "How the readers of method/1 (cli/lib/framework/method.js, arena/mt_eval_harness/framework/method.py) read a method.json written before it — DATA, so the two runtimes cannot map an old document differently. Two old shapes: the CLI plugin manifest (it has `type`, one of cli_types) and the harness plugin manifest (it has `entry_point`). `kind_requires` is the one setting each method/1 kind must name: an error in a method/1 document, a warning in an old one (old documents must keep working). Held to shared/test-fixtures/framework/method-vectors.json in both runtimes.",
+  "cli_types": {
+    "llm": { "kind": "llm" },
+    "llm-coached": { "kind": "llm-coached" },
+    "api": { "kind": "service" },
+    "google-translate": { "kind": "mt-api", "engine": "google-translate" },
+    "deepl": { "kind": "mt-api", "engine": "deepl" },
+    "microsoft-translator": { "kind": "mt-api", "engine": "microsoft-translator" },
+    "libretranslate": { "kind": "mt-api", "engine": "libretranslate" },
+    "openai": { "kind": "llm", "provider": "openai" },
+    "anthropic": { "kind": "llm", "provider": "anthropic" },
+    "gemini": { "kind": "llm", "provider": "gemini" }
+  },
+  "kind_requires": {
+    "mt-api": "engine",
+    "llm": "model",
+    "llm-coached": "model",
+    "local-model": "model",
+    "nmt-checkpoint": "model_dir",
+    "lexicon": "dictionary",
+    "python": "entry_point",
+    "service": "service.endpoint"
+  },
+  "harness_card_fields": ["class", "paradigm", "tools_used", "open_source", "prompt_published"]
+}

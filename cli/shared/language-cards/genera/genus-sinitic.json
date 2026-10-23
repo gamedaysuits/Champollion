@@ -1,0 +1,63 @@
+{
+  "code": "genus-sinitic",
+  "extends": "family-sino-tibetan",
+  "name": "Sinitic (Chinese) Languages",
+  "script": "Hani",
+  "dir": "ltr",
+  "formality": {
+    "system": "register-levels",
+    "description": "Sinitic languages express formality through vocabulary choice, discourse style, and specific honorific/humble forms rather than pronominal T-V systems. Mandarin nǐ/nín (你/您) is a T-V distinction, but most other Sinitic varieties rely primarily on lexical register (formal vs. colloquial word choice, classical vs. vernacular vocabulary). Written Chinese formal register draws heavily on Classical Chinese (文言文) vocabulary.",
+    "default": "professional"
+  },
+  "gender": {
+    "grammatical": false,
+    "inclusiveGuidance": "Sinitic languages have no grammatical gender. In spoken Mandarin, the third-person pronoun tā is gender-neutral. Written Mandarin introduced gendered characters in the 20th century (他 masculine, 她 feminine, 它 non-human), but these are orthographic conventions, not grammatical gender — they are pronounced identically. Other Sinitic varieties generally do not have even this orthographic distinction."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": false,
+      "punctuationSpacing": {
+        "doublePunctuation": "fullwidth"
+      },
+      "fullwidthPunctuation": true
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {}
+  },
+  "linguisticChallenges": {
+    "classifierSelection": "Every noun requires a specific classifier (量词/measure word) when counted or used with demonstratives. Mandarin has 100+ classifiers; Cantonese has a similarly large set. Using the wrong classifier (e.g., *一个马 instead of 一匹马) is a clear non-native error. The general classifier 个/個 is overused by MT and signals poor quality.",
+    "characterVariants": "Written Chinese uses two standard character sets: Simplified Chinese (简体字, mainland China/Singapore) and Traditional Chinese (繁體字, Taiwan/Hong Kong/Macau). These are NOT interchangeable — using the wrong variant for the target region is unacceptable. Beyond Simplified/Traditional, there are variant characters (異體字) and region-specific preferences.",
+    "topicProminence": "Sinitic languages are fundamentally topic-prominent — the topic of a sentence is fronted and may have no grammatical role in the comment. English SVO translations must restructure topic-comment sentences, not just reorder words.",
+    "proDrop": "Subject and object pronouns are routinely dropped when recoverable from context. Over-generating pronouns (a common MT error from English-trained models) sounds extremely unnatural in Chinese.",
+    "tonalDiacriticsInRomanization": "When romanized output is needed (Pinyin for Mandarin, Jyutping for Cantonese), tone marks are essential for disambiguation. Omitting tone marks creates massive ambiguity — Mandarin has ~400 unique syllables but ~1,300+ with tone distinctions.",
+    "measureWords": "Beyond classifiers, Chinese uses specific measure words for uncountable quantities that differ from English conventions. Quantities that are countable in English may require measure words in Chinese, and vice versa.",
+    "analyticGrammar": "Sinitic languages are analytic/isolating — no inflection, no conjugation, no declension. Tense, aspect, and mood are expressed through particles (了, 着, 过, 会, 要) and adverbs, not verb forms. This means translation from inflected languages requires explicit particle insertion."
+  },
+  "classification": {
+    "family": "Sino-Tibetan",
+    "familyGlottocode": "sino1245",
+    "genus": "Sinitic",
+    "genusGlottocode": "sini1245",
+    "ancestry": [
+      "Sino-Tibetan",
+      "Sinitic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3"
+  ],
+  "notes": "Genus card for Sinitic (Chinese) languages (Mandarin, Cantonese/Yue, Wu/Shanghainese, Min, Hakka, Gan, Xiang, etc.). Script is 'Hani' (Han/CJK characters) — all varieties use Chinese characters as primary script. The macrolanguage-zho.json card provides specific properties for the Chinese macrolanguage grouping.",
+  "regions": [
+    {
+      "country": "China and global Chinese diaspora",
+      "countryCode": "CN",
+      "officialStatus": null,
+      "region": "China, Taiwan, Hong Kong, Macau, Singapore, Malaysia, global diaspora",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null
+}

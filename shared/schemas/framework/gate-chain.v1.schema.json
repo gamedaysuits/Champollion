@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://champollion.dev/schemas/gate-chain/1.json",
+  "title": "gate-chain/1 — checks between a method's output and what ships",
+  "description": "An ordered list of gates the eval engine applies to every translated segment before it is scored or shipped (mt-eval run / test / translate --gates). People bring their own gates (founder, 2026-10-10): a gate of kind metric-threshold reads one per-segment value from a metric plugin — any plugin the harness loads, e.g. an FST validity check — and compares it with min and/or max. The first gate that refuses a segment decides what ships instead: drop (nothing), keep-source (the source text), flag (the output, marked) or fallback (the chain's fallback method's translation, if the gates accept it — else nothing). A segment the plugin cannot score is refused (no value). What is measured is what ships: the headline scores the gated output, the ungated score is reported beside it, and the refusal rate is a number of its own. Retrying a refused segment with the gate's reason comes later.",
+  "type": "object",
+  "required": ["$schema", "id", "gates"],
+  "additionalProperties": false,
+  "patternProperties": { "^x-": {} },
+  "properties": {
+    "$schema": { "enum": ["https://champollion.dev/schemas/gate-chain/1.json"] },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "description": { "type": "string" },
+    "gates": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/gate" } },
+    "fallback": {
+      "description": "What translates a segment a gate refuses with on_refuse fallback: a method that runs on this machine (a dictionary: lexicon; a model: local-model), so nothing leaves it. Its output is checked by the same gates; refused again, nothing ships. For serving and translating only: a command that scores (mt-eval run / test) refuses a chain that falls back, because the score would be partly this method's and partly the fallback's under one name (founder, 2026-10-11) — measure the fallback as a method of its own.",
+      "type": "object",
+      "required": ["method"],
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "method": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "description": "The dictionary (lexicon) or model (local-model) it runs." }
+      }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "required": ["id", "kind", "metric", "field", "on_refuse"],
+      "additionalProperties": false,
+      "patternProperties": { "^x-": {} },
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+        "kind": { "enum": ["metric-threshold"] },
+        "metric": { "type": "string", "minLength": 1, "description": "The metric plugin's name (MetricPlugin.name)." },
+        "field": { "type": "string", "minLength": 1, "description": "The key in the plugin's per-segment result (a number, or true/false read as 1/0)." },
+        "min": { "type": "number", "description": "Refuse a segment whose value is below this." },
+        "max": { "type": "number", "description": "Refuse a segment whose value is above this." },
+        "on_refuse": { "enum": ["drop", "keep-source", "flag", "fallback"] },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}

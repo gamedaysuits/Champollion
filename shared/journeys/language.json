@@ -1,0 +1,258 @@
+{
+  "_comment": "The rails for a language project, as DATA: the ordered steps `champollion next` walks (cli/lib/framework/journey.js), and the MCP rails profile and a future GUI read. Each step names the check that says it is DONE (`done_when`, one of a closed set of checks over the project's files — the evaluator refuses an unknown one), what to tell the person (`say`, plain words), why it matters, and the exact command when there is one. The first step not done is THE next step. Nothing here runs anything: `next` is read-only. When the work reaches training, `delegate` hands over to nmt-forge's own advisor (nmt-forge status --json) instead of restating its ladder here. `{placeholders}` are filled from the project file and the files found.",
+  "kind": "language",
+  "stages": [
+    { "id": "start", "title": "Start the project" },
+    { "id": "gather", "title": "Gather your data" },
+    { "id": "protect", "title": "Protect your test set" },
+    { "id": "tools", "title": "Install the training tools" },
+    { "id": "build", "title": "Build and test a model" },
+    { "id": "improve", "title": "Make it better, round by round" }
+  ],
+  "steps": [
+    {
+      "id": "project-file",
+      "stage": "start",
+      "done_when": { "check": "project_valid" },
+      "mode": "human_only",
+      "say": "This folder's champollion.project.json is missing or not valid. `champollion validate` says what is wrong; `champollion new` starts a project.",
+      "why": "Every tool reads the project file to know the language pair and what the people building this decided.",
+      "command": "champollion validate ."
+    },
+    {
+      "id": "add-pairs",
+      "stage": "gather",
+      "done_when": { "check": "data_files", "dir": "data/parallel", "min": 1 },
+      "mode": "human_only",
+      "say": "Bring in the sentence pairs you have — a spreadsheet (.xlsx, .ods, .csv), a .tsv or .txt, or a table in a Word document. Run `champollion data add <file>` with the file where it is (or drop it in inbox/ first); it asks which column is {source_name} and which is {target_name} when the header does not say. A word list (a dictionary) comes in the same way with `--into lexicon` — a Toolbox or LIFT (FieldWorks) dictionary too, whose example sentences can also come in as pairs. An ELAN (.eaf) file gives pairs from its transcription and translation tiers; grammar notes go in data/grammar/.",
+      "agent": "Bring in each file the person named, now, with add_data — from where it is (any path; never ask them to move it). Call it with just the path first: it reads the layout itself (a header naming the languages decides the columns) and asks only when it cannot tell — then ask the person what it asks. It reports counts and columns, never sentences.",
+      "agent_tool": "add_data",
+      "why": "A translation model learns from pairs. They stay on this computer; nothing is uploaded."
+    },
+    {
+      "id": "terms",
+      "stage": "gather",
+      "done_when": { "check": "every_data_file_has_terms", "dirs": ["data/parallel", "data/lexicon", "data/grammar", "data/monolingual"] },
+      "mode": "ask_user",
+      "question": "For {file}: whose words are in it — who said or wrote them — and did they all agree to this? Who holds it, may a model be trained on it, and may its text ever be sent to an outside AI service (a hosted model), or must it stay on this computer? If some of it is not for training (stories or words that are not to be shared), take that out of the file first, or say not-allowed.",
+      "answers": {
+        "speakers": { "type": "string", "say": "whose words are in it, in the person's words (\"my own\", \"grandpa\", \"the family chat\")" },
+        "speakers_agreed": { "enum": ["yes", "not-yet", "some-said-no"] },
+        "owner": { "type": "string", "say": "who holds this data, in their own words" },
+        "training": { "enum": ["allowed", "not-allowed"] },
+        "transmission": { "enum": ["local-only", "may-leave"] }
+      },
+      "command": "champollion data mark {file} --speakers \"{speakers}\" --speakers-agreed {speakers_agreed} --owner \"{owner}\" --training {training} --{transmission}",
+      "say": "Ask the person who holds {file} — never answer for them. Words of people who have not agreed yet (not-yet), or who said no, are never trained on: training is not-allowed for them. The answer is written beside the file, and every tool obeys it.",
+      "why": "The people who hold the data decide how it is used. A file marked local-only is refused by every tool that would send it anywhere."
+    },
+    {
+      "id": "test-file",
+      "stage": "protect",
+      "done_when": { "check": "data_files", "dir": "data/test", "min": 1 },
+      "mode": "human_only",
+      "say": "Put the sentences a fluent speaker checked — the ones you will judge every model on — in data/test/, as a .tsv like the others (`champollion data add <file> --into test`). Keep them out of data/parallel/: a model must never learn from its own test.",
+      "agent": "Bring in the file of sentences a fluent speaker checked, now, with add_data and into: \"test\" — from where it is, with just the path first (it reads the layout itself and asks only when it cannot tell).",
+      "agent_tool": "add_data",
+      "why": "A score means something only on sentences the model never saw, checked by someone who knows the language."
+    },
+    {
+      "id": "one-test-file",
+      "stage": "protect",
+      "done_when": { "check": "single_file", "dir": "data/test" },
+      "mode": "human_only",
+      "say": "data/test/ holds more than one file. Keep one test file: put all the checked sentences into one .tsv, bring it in with `champollion data add <file> --into test --replace`, and move the others out of data/test/.",
+      "why": "The workshop registers one test set and screens training against it; a second test file would be neither counted nor screened."
+    },
+    {
+      "id": "test-marked",
+      "stage": "protect",
+      "done_when": { "check": "protected_test_set", "dir": "data/test" },
+      "mode": "auto",
+      "command": "champollion data mark {test_file} --role test --training not-allowed --local-only",
+      "say": "Mark {test_file} as the protected test set: only models on this computer may see it, and no model may train on it.",
+      "why": "Tools then keep its sentences out of what they print, refuse hosted models for it, and count every time they score or screen it."
+    },
+    {
+      "id": "forge-installed",
+      "stage": "tools",
+      "done_when": { "check": "tool_on_path", "tool": "nmt-forge", "min_version": "0.3.0" },
+      "mode": "confirm",
+      "command": "uv tool install --python 3.12 nmt-forge",
+      "say": "Install the training tools (nmt-forge, which brings the mt-eval measuring tools with it). This downloads them from PyPI — ask first. It needs uv: if `uv --version` fails, install it from https://docs.astral.sh/uv/ first.",
+      "why": "nmt-forge trains and proves models with guardrails; it is a separate install from champollion.",
+      "outdated": {
+        "command": "uv tool install --upgrade --python 3.12 nmt-forge",
+        "say": "The training tools here are nmt-forge {found}, and these rails need {need} or newer: upgrade them. This downloads from PyPI — ask first. (If nmt-forge was installed another way than uv, upgrade it that way.)"
+      }
+    },
+    {
+      "id": "workshop",
+      "stage": "build",
+      "done_when": { "check": "path_exists", "path": ".forge" },
+      "mode": "auto",
+      "command": "nmt-forge init {forge_init_args}",
+      "say": "Set up the training workshop inside this project (a .forge/ folder and a starter config.json).",
+      "why": "The workshop keeps the hash-chained record of every split, prediction and look at the test set."
+    },
+    {
+      "id": "register-test",
+      "stage": "build",
+      "done_when": { "check": "forge_test_registered" },
+      "mode": "auto",
+      "command": "nmt-forge registry add project-test {test_file} --role test",
+      "say": "Tell the workshop which file is the test set, so every look at it is counted.",
+      "why": "A test set read too often stops measuring anything; the workshop counts and refuses."
+    },
+    {
+      "id": "one-corpus",
+      "stage": "build",
+      "done_when": { "check": "single_file", "dir": "data/parallel" },
+      "mode": "auto",
+      "command": "champollion data combine",
+      "say": "Training reads one file of pairs, and data/parallel/ holds several: join them into one. It keeps the strictest of their terms, leaves out exact repeats, and moves the originals to data/combined-from/ — nothing is deleted. A file its holders said no model may learn from is not joined: it moves to data/not-for-training/, kept.",
+      "why": "Screening for near-copies of the test sentences and carving a dev set both need all the training pairs in one place."
+    },
+    {
+      "id": "screen",
+      "stage": "build",
+      "done_when": { "check": "forge_ledger_event", "event": "audit-verdict" },
+      "mode": "auto",
+      "command": "nmt-forge leak-audit {corpus} --clean-to data/clean/{corpus_stem}.clean.jsonl",
+      "say": "Screen the training pairs against the test sentences: a pair that copies a test answer, or nearly does, is set aside; a pair that only shares a sentence frame with one is kept to learn from, and counted, so the score can be read with and without those test sentences.",
+      "why": "A model that has seen a test sentence (or one nearly the same) scores on memory, not translation. The screen counts them and writes a clean copy."
+    },
+    {
+      "id": "enough-to-train",
+      "stage": "build",
+      "done_when": { "check": "screened_rows", "dir": "data/clean", "min": 20 },
+      "mode": "human_only",
+      "say": "The screen left {found} training pair(s) — at least {need} are needed to train (some to learn from, some to tune on). The rest repeat, or nearly repeat, a sentence in the checked test set, and a model may not learn from those. Only the people can choose: add training sentences that are not in the checked set (champollion data add <file>, then champollion data combine), or check other sentences as the test set. Then screen again: nmt-forge leak-audit data/parallel/combined.tsv --clean-to data/clean/combined.clean.jsonl",
+      "why": "A model trained on its own test sentences scores on memory, not translation. The screen set them aside, and too little was left to train on — a choice about their data, so it is theirs."
+    },
+    {
+      "id": "predict",
+      "stage": "build",
+      "done_when": { "check": "forge_ledger_event", "event": "prereg" },
+      "mode": "ask_user",
+      "question": "Before any score exists: what do they expect the first model to do on their checked sentences, and why? The score will be chrF++, from 0 to 100 — how much of each checked translation the model's output shares, letter by letter. No number is suggested here, so the guess stays theirs.",
+      "answers": {
+        "expect": { "type": "string", "say": "what they expect, exactly as they said it — a number they chose, or their own words — never reworded, narrowed or suggested" },
+        "why": { "type": "string", "say": "one sentence on why" }
+      },
+      "command": "nmt-forge prereg new first-model --eval-set {test_set} --expect \"{expect}\" --rationale \"{why}\"",
+      "say": "Nothing trains until this is written: ask the people what they expect before any score exists, and write it down in their words, not yours. The result is checked against it later.",
+      "why": "A prediction written after seeing the score proves nothing; written before, it keeps everyone honest about what the model can do."
+    },
+    {
+      "id": "split",
+      "stage": "build",
+      "done_when": { "check": "forge_role_registered", "role": "dev" },
+      "mode": "auto",
+      "command": "nmt-forge split data/clean/{corpus_stem}.clean.jsonl --test 0 --dev {dev_n} --seed 42 --near-dupe 0.6 --max-group {dev_max_group} --out data/split --register project",
+      "say": "Set aside {dev_n} of the screened pairs as a dev set (the convention: one in ten, at least 50 — a quarter when there are fewer than 200 — at most 500; below 50 no round can be judged on them; seed 42 so it can be repeated) — the model is tuned on them, never on the test set, and rounds are judged on them. Near-copies (60% alike or more) stay on one side, so the dev set is not answered from memory — the same rule every later round's screen applies (groups are capped at {dev_max_group}, so a file written from templates still splits). A small dev set can only see big differences; it grows later from the speaker's practice sentences. To choose another size, run the command with your own --dev.",
+      "why": "Picking the best checkpoint needs sentences the model did not learn from and that are not the test set; using the test set for that would spoil it."
+    },
+    {
+      "id": "floor",
+      "stage": "build",
+      "when": { "check": "data_files", "dir": "data/lexicon", "min": 1 },
+      "done_when": { "check": "forge_ledger_event", "event": "floor" },
+      "mode": "auto",
+      "command": "nmt-forge floor {lexicon_files}",
+      "say": "Measure the dictionary floor: what looking each word up in your word list scores on the dev sentences. It runs on this computer and records only counts and scores. A trained model is worth using only where it beats this.",
+      "why": "A score means little on its own. Beside the floor it says whether training learned anything the dictionary does not already give."
+    },
+    {
+      "id": "forge",
+      "stage": "build",
+      "delegate": "nmt-forge",
+      "say": "From here the training workshop's own advisor names each step: screen for near-copies, write down predictions, split, train, prove and export.",
+      "why": "One advisor for the training stages, so the rails and the workshop never disagree."
+    },
+    {
+      "id": "improve-time",
+      "stage": "improve",
+      "done_when": { "check": "path_exists", "path": "improve/time.json" },
+      "mode": "ask_user",
+      "question": "A model is in use. Making it better is rounds of: the speaker checks its translations and fixes the wrong ones, and it learns again from everything. How much time can the speaker give — sentences or hours a week, and in all? Their own words.",
+      "answers": {
+        "per_week": { "type": "string", "say": "what they can give a week, exactly as they said it" },
+        "total": { "type": "string", "say": "what they can give in all, exactly as they said it" }
+      },
+      "command": "champollion improve time --per-week \"{per_week}\" --total \"{total}\"",
+      "say": "Ask how much time the speaker can give. Each round is sized by it, and once the rounds show a trend the rails say what that time looks like it can buy — plainly, when it looks like too little. Never pressure.",
+      "why": "A working model takes many sentences; the people decide how many they can give, and deserve to know what that time can buy."
+    },
+    {
+      "id": "improve-wishlist",
+      "stage": "improve",
+      "done_when": { "check": "path_exists", "path": "improve/round-{round}/wishlist.md" },
+      "mode": "auto",
+      "command": "champollion improve wishlist",
+      "say": "{round_result}Make round {round}'s wishlist: a printable sheet (improve/round-{round}/wishlist.md) of what would help the model most — words it has never seen, the kinds of sentence it gets wrong on the dev set, and open prompts. It runs on this computer; the sheet is for the people, and only counts are printed.",
+      "why": "Sentences aimed at what the model gets wrong teach it more than the same number of sentences picked at random — and a quarter of the sheet stays open, so the people still write what they need."
+    },
+    {
+      "id": "improve-sentences",
+      "stage": "improve",
+      "done_when": { "check": "lines_in_file", "path": "improve/round-{round}/to-translate.txt", "min": 20 },
+      "mode": "human_only",
+      "say": "{time_note}Round {round}: write 20 or more English sentences you would really want translated — as many as the speaker can check this week (they said: {per_week}) — things you would say at home, write in a note, teach in a class — one per line, in improve/round-{round}/to-translate.txt. The wishlist beside it (wishlist.md) says what would help most — use it as much or as little as you like. Real sentences you need, not test sentences: the model drafts them and the speaker checks the drafts.",
+      "why": "The speaker's checks of the model's own translations are the measure that matters, and their fixes are the most useful sentences there are: each one is exactly where the model goes wrong."
+    },
+    {
+      "id": "improve-sheet",
+      "stage": "improve",
+      "done_when": { "check": "path_exists", "path": "improve/round-{round}/review.csv" },
+      "mode": "auto",
+      "command": "champollion improve sheet",
+      "say": "Have the model in use draft each sentence onto a sheet the speaker can mark (improve/round-{round}/review.csv). While the practice (dev) set is small, rows have no draft — one in two until it holds 50 sentences, then one in four: the speaker writes them, and they grow the practice set. When a newer model is waiting (last round saw no measurable gain), it drafts half the other rows, at random and unmarked, so the speaker judges both blind. From the second round, about one row in ten comes back from an earlier sheet, on purpose — the sheet says so at the top, not which rows: the speaker marks them fresh, and how often they agree with their own earlier marks tells how far the marks can be trusted (never counted in the round's share, never trained on again). It runs on this computer; nothing is printed.",
+      "why": "The speaker judges the model on what the family actually wants to say."
+    },
+    {
+      "id": "improve-marks",
+      "stage": "improve",
+      "done_when": { "check": "review_marked", "path": "improve/round-{round}", "min_share": 0.9 },
+      "mode": "human_only",
+      "say": "The speaker reads each draft on improve/round-{round}/review.csv and marks the \"Right?\" column: Y if it is right, N if it is wrong — then writes how it is said in the next column — ? if unsure. A row that says it has no draft is a practice sentence: the speaker writes how it is said in that same column. Open it in a spreadsheet, or print it and type the marks in after; save it as it is (or as review.xlsx beside it).",
+      "why": "Only a speaker can say whether a translation is right. Their Y and N are the progress measure; their fixes become training sentences; their practice sentences, never trained on, let the next round show whether a new model is better."
+    },
+    {
+      "id": "improve-read-marks",
+      "stage": "improve",
+      "done_when": { "check": "path_exists", "path": "improve/round-{round}/marks.json" },
+      "mode": "auto",
+      "command": "champollion improve marks",
+      "say": "Read the speaker's marks: how many drafts were right, the fixes and confirmed drafts as new training pairs (the people are asked who holds them, next), and the practice sentences, kept for the practice set.",
+      "why": "Counted and kept as a record, round by round — the family sees its progress in the speaker's own judgement."
+    },
+    {
+      "id": "improve-report",
+      "stage": "improve",
+      "done_when": { "check": "path_exists", "path": "improve/round-{round}/report.json" },
+      "mode": "auto",
+      "command": "champollion improve report",
+      "say": "Write round {round}'s report — how it is going, measured; whether the gains are real; what to do next. Tell the people what it says: the progress first, each number with its unit and what it was measured on, then its next steps as things they can do.",
+      "why": "A round is worth the speaker's time only when they can see what it bought, and what would help most next — honestly, never more than the numbers say."
+    },
+    {
+      "id": "improve-prepare",
+      "stage": "improve",
+      "done_when": { "check": "improve_prepared" },
+      "mode": "auto",
+      "command": "champollion improve prepare",
+      "say": "Grow the practice (dev) set with the speaker's practice sentences (where the people's answers allow), then screen everything gathered so far into round {round}'s training file — copies of test sentences set aside, the dev sentences kept out (rounds are judged on them) — and point the training config at it.",
+      "why": "A model that learned its own test or dev sentences scores on memory, not translation."
+    },
+    {
+      "id": "improve-train",
+      "stage": "improve",
+      "done_when": { "check": "forge_trained_on_current" },
+      "mode": "confirm",
+      "command": "nmt-forge preflight run --config config.json && nmt-forge run config.json --detach",
+      "say": "Train round {round}'s model on everything so far. It is judged against the model in use on the dev sentences, sentence by sentence, and put to use only if it is measurably better.",
+      "why": "More sentences of the right kinds is how a model gets better; the comparison keeps everyone honest about whether it did."
+    }
+  ]
+}

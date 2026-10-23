@@ -1,0 +1,119 @@
+{
+  "code": "macrolanguage-ara",
+  "extends": "genus-semitic",
+  "name": "Arabic Macrolanguage",
+  "isoScope": "M",
+  "macrolanguage": "ara",
+  "script": "Arab",
+  "dir": "rtl",
+  "formality": {
+    "system": "register-levels",
+    "description": "Arabic formality operates on two axes: MSA/dialect register choice and within-register politeness. MSA is inherently formal. Dialects have their own politeness systems using plural forms for singular formal address (inta/intu), honorific titles, and elaborate greeting protocols. All varieties share the cultural emphasis on respectful address through titles and kinship terms.",
+    "default": "formal"
+  },
+  "gender": {
+    "grammatical": true,
+    "inclusiveGuidance": "All Arabic varieties have a pervasive masculine/feminine gender system affecting nouns, verbs, adjectives, pronouns, demonstratives, and numerals. Second-person pronouns distinguish gender of the addressee. Numerals 3–10 show reverse gender agreement (feminine numeral with masculine noun). Default to masculine for unknown referents in all varieties."
+  },
+  "rules": {
+    "typography": {
+      "usesSpaces": true,
+      "punctuationSpacing": {
+        "doublePunctuation": "none"
+      },
+      "mirrored": true
+    },
+    "capitalization": {
+      "hasCase": false
+    },
+    "plurals": {
+      "categories": [
+        "zero",
+        "one",
+        "two",
+        "few",
+        "many",
+        "other"
+      ]
+    }
+  },
+  "linguisticChallenges": {
+    "diglossia": "Arabic exhibits extreme diglossia — Modern Standard Arabic (MSA/fuṣḥā) is the written/formal standard across all regions, while daily communication uses mutually varying regional dialects (Egyptian, Levantine, Gulf, Maghreb, etc.). MT must determine target register: MSA for formal/written content, dialect for conversational content. Mixing registers sounds jarring.",
+    "rootMorphology": "All Arabic varieties share the triconsonantal root system. The root k-t-b yields: kataba 'wrote', kitāb 'book', kātib 'writer', maktaba 'library', iktitāb 'subscription'. Understanding root extraction is essential for morphological analysis and dictionary lookup.",
+    "brokenPlurals": "Arabic uses both 'sound' plurals (suffixed: -āt feminine, -ūn/-īn masculine) and 'broken' plurals (internal vowel changes: kitāb→kutub, walad→awlād). There are 30+ broken plural patterns. The choice between sound and broken plural is lexically determined and unpredictable.",
+    "shortVowelOmission": "Standard Arabic script omits short vowels (harakat/tashkeel). The word كتب can be read as kataba, kutiba, kutub, or kattaba. Context disambiguation is essential. Fully vowelized text is rare outside Quran, children's texts, and language learning materials.",
+    "constructState": "The iḍāfa (construct state) links nouns in genitive chains: bayt ar-rajul 'house of the man'. The first noun loses its definite article and final vowel. Chains can extend to 3+ nouns. This structure is used for possession, description, and compound nouns.",
+    "dualNumber": "Arabic preserves a productive dual number (singular/dual/plural) in nouns, verbs, pronouns, and adjectives. The dual form is mandatory for exactly two referents. Most target languages only have singular/plural and must paraphrase the dual.",
+    "dialectalMorphology": "Each major dialect region has its own morphological patterns, phonology, vocabulary, and syntax that differ substantially from MSA and from each other. Egyptian biyiktib vs. Levantine byuktob vs. Gulf yiktib for 'he writes'. Do NOT mix dialectal features."
+  },
+  "classification": {
+    "family": "Afro-Asiatic",
+    "familyGlottocode": "afro1255",
+    "genus": "Semitic",
+    "genusGlottocode": "semi1276",
+    "ancestry": [
+      "Afro-Asiatic",
+      "Semitic",
+      "Central Semitic",
+      "Arabic"
+    ]
+  },
+  "dataSources": [
+    "glottolog-5.3",
+    "iso639-3-2024"
+  ],
+  "notes": "Macrolanguage card for Arabic (ara). Covers 28+ member varieties: Egyptian (arz), Levantine (apc/ajp), Gulf (afb), Moroccan (ary), Algerian (arq), Tunisian (aeb), Iraqi (acm), Sudanese (apd), Modern Standard Arabic (arb), and others. All share Arabic script, RTL direction, root-based morphology, M/F gender, and construct state. Diglossia between MSA and dialects is the central challenge.",
+  "regions": [
+    {
+      "country": "Arab world (widespread)",
+      "countryCode": null,
+      "officialStatus": "official",
+      "region": "Middle East, North Africa (22 Arab League countries), plus diaspora communities worldwide",
+      "speakerEstimate": null,
+      "coordinates": null
+    }
+  ],
+  "culturalAphorism": null,
+  "iso639_3": "ara",
+  "_fieldSources": {
+    "iso639_3": "iso639-3-2024",
+    "isoType": "iso639-3-2024",
+    "modality": "derived:glottolog-sign-family+iso639-3-refname",
+    "members": "iso639-3-2024",
+    "supportTier": "derived:taxonomy-hub-policy (docs/LANGUAGE_TAXONOMY.md)"
+  },
+  "isoType": "L",
+  "modality": "spoken",
+  "taxonomyNotes": null,
+  "members": [
+    "aao",
+    "abh",
+    "abv",
+    "acm",
+    "acq",
+    "acw",
+    "acx",
+    "acy",
+    "adf",
+    "aeb",
+    "aec",
+    "afb",
+    "apc",
+    "apd",
+    "arb",
+    "arq",
+    "ars",
+    "ary",
+    "arz",
+    "auz",
+    "avl",
+    "ayh",
+    "ayl",
+    "ayn",
+    "ayp",
+    "pga",
+    "shu",
+    "ssh"
+  ],
+  "supportTier": "cataloged"
+}

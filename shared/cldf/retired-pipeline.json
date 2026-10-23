@@ -1,0 +1,114 @@
+{
+  "_doc": "The card pipeline retired on 2026-08-05, and why. Git history is the archive — every deleted file is recoverable by path from the commit recorded here. This manifest exists because a git deletion records WHEN something went and never records what it was for.",
+  "retiredOn": "2026-08-05",
+  "parentCommit": "1fda22da9184a20e27d4d469b7a5699fe8db4a51",
+  "reason": "The previous corpus was written by ~93 scripts, most merge-only. A wrong value could never be corrected by re-running, a retracted upstream claim was never removed, and re-running reproduced nothing because every script no-opped. The thirteen fix-/decontaminate-/cleanup- scripts are the accumulated cost. Wholesale projection makes them structurally unnecessary: the way to change a card is now to change an extractor and rebuild. Leaving them on disk is not neutral — each one can still be run, and each mutates the live corpus in place.",
+  "notArchivedYet": {
+    "cli/shared/language-cards/": "Still served by the CLI, harness and website. Replaced at CUTOVER, not before. The new corpus is already built beside it, and cli/test/cldf-atlas.test.js already forbids any atlas script from reading it back in."
+  },
+  "archivedFiles": [
+    {
+      "from": "shared/curated-facts/language-facts.json",
+      "why": "The previous corpus read back in as a source. Stamped _migratedFrom, author \"champollion-curation\" on every entry, and 1,854 \"experts\" whose values are archives rather than people. Archived, never migrated.",
+      "bytes": 1862172,
+      "archivedTo": "build/archive-2026-08-05/language-facts.json"
+    }
+  ],
+  "deletedScripts": [
+    "cleanup-areal-to-context.mjs",
+    "cleanup-method-support.mjs",
+    "cleanup-resources.mjs",
+    "cleanup-template-registers.mjs",
+    "decontaminate-bookkeeping-prose.mjs",
+    "decontaminate-counterfeit-facts.mjs",
+    "decontaminate-grambank-fields.mjs",
+    "decontaminate-grambank-prose.mjs",
+    "enrich-alternate-names.mjs",
+    "enrich-cards-from-cldr.mjs",
+    "enrich-contact-influences.mjs",
+    "enrich-contacts-from-wold.mjs",
+    "enrich-corpus-availability.mjs",
+    "enrich-countries-from-glottolog.mjs",
+    "enrich-descriptions-from-linguameta.mjs",
+    "enrich-dialect-count-from-glottolog.mjs",
+    "enrich-digital-presence.mjs",
+    "enrich-documentation-dates.mjs",
+    "enrich-documentation-depth.mjs",
+    "enrich-formality-from-wals.mjs",
+    "enrich-from-elcat.mjs",
+    "enrich-from-linguameta-phoible.mjs",
+    "enrich-from-wave2-databases.py",
+    "enrich-gender-from-grambank.mjs",
+    "enrich-grambank-v2.mjs",
+    "enrich-keyboard-support.mjs",
+    "enrich-native-names.mjs",
+    "enrich-nativename-from-cldr.mjs",
+    "enrich-nativename-from-wikidata.mjs",
+    "enrich-omt1600-coverage.mjs",
+    "enrich-opus-details.mjs",
+    "enrich-opus-full.mjs",
+    "enrich-panlex-lexical-coverage.mjs",
+    "enrich-phoible-phonemes.mjs",
+    "enrich-phoible-v2.mjs",
+    "enrich-script-unicode-names.mjs",
+    "enrich-scripts-from-linguameta.mjs",
+    "enrich-tatoeba.mjs",
+    "enrich-tier3-batch.mjs",
+    "enrich-ud-treebanks.mjs",
+    "enrich-vitality-from-linguameta.mjs",
+    "enrich-wals-typology-supplement.mjs",
+    "enrich-wikipedia-articles.mjs",
+    "enrich-wikipedia-presence.mjs",
+    "enrich-wikipedia.mjs",
+    "fix-endonym-authenticity.mjs",
+    "fix-source-attribution.mjs",
+    "normalize-properties.mjs",
+    "stamp-field-sources.mjs"
+  ],
+  "keptBecauseStillReferenced": [
+    {
+      "file": "enrich-cards-bulk.mjs",
+      "referrers": [
+        "cli/test/enrich-cards-bulk.test.js"
+      ]
+    },
+    {
+      "file": "enrich-documentation-med.mjs",
+      "referrers": [
+        "cli/scripts/download-glottolog-med.mjs"
+      ]
+    },
+    {
+      "file": "enrich-grammars-from-glottolog.mjs",
+      "referrers": [
+        "cli/scripts/download-glottolog-grammar-sources.mjs"
+      ]
+    },
+    {
+      "file": "enrich-metric-model-support.mjs",
+      "referrers": [
+        "arena/mt_eval_harness/language_cards.py",
+        "arena/mt_eval_harness/metrics_comet.py"
+      ]
+    },
+    {
+      "file": "fix-card-corruption.mjs",
+      "referrers": [
+        "cli/scripts/lint-language-cards.mjs"
+      ]
+    },
+    {
+      "file": "normalize-family-names-to-glottolog.mjs",
+      "referrers": [
+        "cli/scripts/card-integrity-rules.mjs"
+      ]
+    }
+  ],
+  "deletedTests": [],
+  "deletedExtractors": [
+    {
+      "file": "cli/scripts/extractors/curated-language.mjs",
+      "why": "Read the archived laundering file. Dead once it was archived."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+---
+title: "Bringen Sie mit, was Sie haben"
+slug: /bring-your-data
+description: "Bringen Sie Ihre Sätze, Wortlisten und Notizen so ein, wie Sie sie haben – und entscheiden Sie für jede Datei, wem sie gehört und wie sie verwendet werden darf."
+---
+
+import WalkFact from '@site/src/components/docs/WalkFact';
+
+# Bringen Sie mit, was Sie haben
+
+Ein Übersetzer lernt aus **Paaren**: ein Satz in einer Sprache und derselbe
+Satz in der anderen. Auf dieser Seite geht es darum, Ihre Daten einzubringen – und um die
+Fragen, die Ihnen zu jeder Datei gestellt werden und die wichtiger sind als alles
+andere auf den Schienen.
+
+## Was die Werkzeuge lesen können
+
+Bringen Sie Ihre Dateien so mit, wie Sie sie aufbewahren. Sie müssen nichts konvertieren.
+
+| Sie haben | Die Werkzeuge lesen |
+|---|---|
+| Eine Tabelle mit Sätzen und Übersetzungen | Excel (`.xlsx`), LibreOffice (`.ods`), `.csv`, `.tsv` oder reinen Text |
+| Eine Tabelle in einem Word-Dokument | Die Zeilen der Tabelle |
+| Ein Wörterbuch aus Toolbox oder FieldWorks (Programme, die viele Sprachwissenschaftler nutzen) | Die Wörter – und die Beispielsätze als Paare |
+| In ELAN aufgeschriebene Tonaufnahmen (ein Programm zum Transkribieren von Aufnahmen) | Die niedergeschriebenen Zeilen und ihre Übersetzungen als Paare |
+| Eine Wortliste | Jedes Wort und seine Übersetzung |
+| Notizen zur Grammatik | Werden an einem eigenen Ort aufbewahrt, damit Menschen und Werkzeuge darauf Bezug nehmen können |
+| Heilige Schriften | Nur wenn Sie darum bitten, und kein Übersetzer lernt daraus, bis die Personen, die sie verwahren, zustimmen |
+
+Ihre Dateien werden dort gelesen, wo sie liegen. Wenn die Spalten einer Tabelle nicht angeben,
+welche Sprache welche ist, fragen die Werkzeuge nach – sie raten niemals anhand des Inhalts.
+
+Die Werkzeuge suchen auch nach Zeilen, die fehlerhaft wirken – eine Übersetzung, die um eine
+Zeile nach unten gerutscht ist, zwei vertauschte Spalten, eine von der anderen Seite kopierte Übersetzung,
+dasselbe Paar doppelt, eine Übersetzung, die viel länger oder kürzer als üblich ist – und teilen
+Ihnen anhand der Zeilennummer mit, um welche Zeilen es sich handelt. Sie ändern oder entfernen niemals etwas; jemand,
+der die Daten kennt, entscheidet.
+
+## Die Werkzeuge zählen. Sie lesen Ihre Worte niemandem vor.
+
+Wenn eine Datei eingeht, teilen die Werkzeuge Ihnen mit, wie viele Paare sie gefunden haben und welche
+Spalten verwendet wurden. Das ist alles, was Ihrem KI-Assistenten gezeigt wird: Anzahlen und Spaltennamen,
+niemals die Sätze selbst.
+
+## Die Fragen zu jeder Datei
+
+Bevor irgendetwas aus einer Datei lernt, fragen die Schienen die Personen, die sie verwahren:
+
+- **Wem gehört sie?** In Ihren eigenen Worten – einer Familie, einer Lehrkraft, einem
+  Gemeindebüro.
+- **Wessen Worte stehen darin?** Die Personen, die die Sätze gesprochen oder aufgeschrieben haben. Die
+  Notizbücher einer Großmutter enthalten ihre Worte, selbst wenn ihr Enkel sie abgetippt hat.
+- **Haben sie der Nutzung zugestimmt?** *Ja*, *noch nicht* oder *einige sagten Nein*.
+  Die Schienen fragen so lange nach, bis dies beantwortet ist. Worte von Personen, die noch nicht
+  zugestimmt oder die Nein gesagt haben, werden niemals verwendet, um einen Übersetzer anzulernen.
+- **Darf ein Übersetzer daraus lernen?**
+- **Darf sie jemals diesen Computer verlassen?** Dateien sind zunächst privat – sie verbleiben auf diesem
+  Computer –, bis Sie antworten.
+
+Die Antworten werden in einer kleinen Notiz neben der Datei festgehalten, und jedes Werkzeug hält sich
+daran. Nach Ihrer ersten Antwort können die Werkzeuge die Regeln nur noch strenger fassen, niemals
+lockerer. Die einzige Ausnahme: Eine sprechende Person, die noch nicht gefragt wurde, kann später noch
+Ja sagen.
+
+Ihr Assistent stellt diese Fragen; er darf sie niemals für Sie beantworten. Wenn Sie
+es noch nicht wissen – etwa weil Sie noch eine Tante fragen müssen –, sagen Sie *noch nicht*. Die Schienen
+legen diese Datei beiseite, fahren fort und fragen später behutsam noch einmal nach.
+
+## Was Sie sehen werden
+
+In unserem Probelauf der Werkzeuge – einem Beispiel mit erfundenen Sätzen –
+brachte eine Familie vier Dateien ein: <WalkFact of="trainingFiles.0.pairs" />
+Satzpaare aus der Tabelle eines Großvaters, <WalkFact of="trainingFiles.1.pairs" />
+aus der einer Tante, eine Wortliste mit <WalkFact of="lexicon.pairs" /> Wörtern und
+<WalkFact of="test.pairs" /> Sätze, die von einer sprechenden Person geprüft worden waren, zum Testen. Jedes
+Mal meldete der Assistent die Anzahl und fragte anschließend, wem die Datei gehörte
+und ob ein Übersetzer daraus lernen dürfe.
+
+## Sätze aus anderen Quellen
+
+Wenn Sie Sätze verwenden, die Sie nicht selbst verfasst haben – aus einem Buch, einer Website, einer veröffentlichten
+Sammlung –, bringen diese ihre eigenen Regeln mit. Manche dürfen gelesen, aber nicht geteilt werden;
+manche dürfen nicht verwendet werden, um etwas anzulernen. Bringen Sie sie auf dieselbe Weise ein und beantworten
+Sie die Fragen auch für diese ehrlich: Die Werkzeuge werden sich an Ihre Antwort halten.
+Wenn die Lizenz einer Sammlung ungewöhnlich oder unklar ist, senden die Werkzeuge sie nicht an
+einen externen KI-Dienst, solange die Eigentümer nicht zugestimmt haben.
+
+**Weiter:** [Legen Sie Ihre Testsätze beiseite →](/docs/your-test-sentences)
+
+## Weiterführende Informationen
+
+- [Daten- und Übertragungsregeln](/docs/agents/data-rules) – jedes Feld der
+  Notiz neben jeder Datei und was jedes Werkzeug damit tut.
+- [Steuerung der Schienen über die Shell](/docs/agents/shell) – `champollion data
+  add` and `champollion data mark` mit allen Optionen.
+- [Registrieren eines Testsets](/docs/network/sovereignty/registering-corpora) –
+  die vier Freigabestufen für Sets, die Sie später eventuell teilen.

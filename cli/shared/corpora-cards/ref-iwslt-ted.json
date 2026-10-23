@@ -1,0 +1,47 @@
+{
+  "id": "ref-iwslt-ted",
+  "type": "reference",
+  "name": "IWSLT TED Talks (WIT3)",
+  "version": "2016",
+  "description": "Transcribed and translated TED talk subtitles via WIT3/FBK. 109 languages, spoken/presentation domain. NOT used for evaluation due to CC-BY-NC-ND 4.0 license — the NonCommercial clause restricts commercial benchmarking and the NoDerivatives clause limits redistribution. The official download server (wit3.fbk.eu) is also frequently unreliable.",
+  "quarantine": true,
+  "quarantineReason": "type:reference catalogue card — already excluded from every registry by build_registry (reference cards emit no entries). Marked quarantine:true as belt-and-suspenders defense-in-depth: CC-BY-NC-ND-4.0 (NonCommercial + NoDerivatives) means it must never enter a commercial, prize, or runnable lane, matching the EdTeKLA quarantine convention.",
+  "languages": [
+    "afr", "amh", "arb", "asm", "aze", "bel", "ben", "bos", "bul", "cat",
+    "ces", "cmn", "dan", "deu", "ell", "eng", "epo", "est", "eus", "fas",
+    "fin", "fra", "gle", "glg", "guj", "hau", "heb", "hin", "hrv", "hat",
+    "hun", "hye", "ind", "ibo", "isl", "ita", "jpn", "kat", "kaz", "khm",
+    "kan", "kor", "kur", "kir", "lao", "lit", "lav", "mkd", "mal", "mon",
+    "mar", "msa", "mlt", "mya", "nob", "npi", "nld", "nno", "oci", "pan",
+    "pol", "pbt", "por", "ron", "rus", "sin", "slk", "slv", "som", "sqi",
+    "srp", "swe", "swh", "tam", "tel", "tgk", "tha", "tgl", "tur", "tat",
+    "uig", "ukr", "urd", "uzb", "vie"
+  ],
+  "source": {
+    "publisher": "FBK (Fondazione Bruno Kessler)",
+    "url": "https://wit3.fbk.eu/",
+    "paper": "https://aclanthology.org/2012.eamt-1.60/",
+    "citation": "Cettolo et al. (2012). WIT3: Web Inventory of Transcribed and Translated Talks.",
+    "fundedBy": null
+  },
+  "license": {
+    "spdx": "CC-BY-NC-ND-4.0",
+    "commercial": false,
+    "redistribution": false,
+    "aiTraining": null,
+    "notes": "NonCommercial and NoDerivatives clauses prevent use in commercial benchmarking and redistribution. Inherited from TED Conferences' content licensing."
+  },
+  "doNotTrain": true,
+  "usageRestrictions": {
+    "training": "restricted",
+    "evaluation": "restricted — NC clause prevents commercial benchmarking",
+    "commercialUse": "prohibited by CC-BY-NC-ND-4.0",
+    "communityNotes": "wit3.fbk.eu download server is frequently offline. HuggingFace mirror (IWSLT/ted_talks_iwslt) is more reliable but inherits the same license."
+  },
+  "_provenance": {
+    "addedAt": "2026-06-14",
+    "lastUpdated": null,
+    "populatedFrom": "IWSLT/WIT3 documentation, HuggingFace dataset card, license analysis",
+    "reason_excluded": "CC-BY-NC-ND-4.0 license: NonCommercial clause restricts commercial use of benchmark scores; NoDerivatives clause limits redistribution; unstable download server."
+  }
+}

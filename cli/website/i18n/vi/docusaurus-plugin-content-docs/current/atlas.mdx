@@ -1,0 +1,121 @@
+---
+title: "The Atlas"
+description: "Atlas là chỉ mục ngôn ngữ của Champollion — mỗi ngôn ngữ có một thẻ trích dẫn. Những gì một thẻ khẳng định, những gì thẻ đó bị cấm khẳng định, nơi đọc và cách chỉnh sửa thẻ."
+related:
+  - label: "Browse the Atlas"
+    to: /languages
+    kind: atlas
+    note: "The cards themselves — search, filter, compare"
+  - label: "Language Card Specification"
+    to: /docs/reference/language-card-spec
+    kind: spec
+    note: "The canonical schema every card conforms to"
+  - label: "Language Card Citation Procedure"
+    to: /docs/reference/language-card-citation-procedure
+    kind: reference
+    note: "How a claim earns its place on a card"
+  - label: "What Counts as a Language Here?"
+    to: /docs/network/context/what-counts-as-a-language
+    kind: doc
+    note: "Sign languages, macrolanguages, conlangs — and who decides"
+  - label: "Submit to the Index"
+    to: /docs/network/getting-started/submit-to-the-index
+    kind: guide
+    note: "Correct a card, or add something we are missing"
+---
+
+{/* Các số đếm được render thông qua SSOTCount (đọc các SSOT của máy tại thời điểm build thông qua customFields của docusaurus.config.js) — không bao giờ được nhập thủ công, theo tiêu chuẩn hiển thị SSOT. Các số liệu không có SSOT customFields (ngôn ngữ ký hiệu và ngôn ngữ nhân tạo, tổng số ngôn ngữ có nguy cơ tuyệt chủng) được LIÊN KẾT đến trang có kiểm soát sở hữu chúng, không bao giờ được nêu lại ở đây. */}
+
+import SSOTCount from '@site/src/components/SSOTCount';
+
+# The Atlas
+
+**Atlas là chỉ mục ngôn ngữ: mỗi ngôn ngữ một thẻ, nơi mọi giá trị
+đều nêu rõ nguồn gốc xuất xứ.**
+
+Đây là lớp tham chiếu làm nền tảng cho toàn bộ phần còn lại của Champollion. [CLI](/docs/intro) đọc lớp này để biết cách một ngôn ngữ hoạt động. [Bảng xếp hạng](/docs/reference/leaderboard) đọc nó để biết một bài kiểm chuẩn là kiểm chuẩn *cho* cái gì, và bản đồ mạng lưới được dựng lên từ đó. Bản thân nó cũng hoàn toàn hữu ích khi đứng độc lập: một tấm thẻ tập hợp tại một nơi duy nhất các dữ kiện có trích dẫn nguồn về một ngôn ngữ, vốn dĩ thường nằm rải rác khắp nơi.
+
+Các thẻ được tạo ra từ các nguồn của chúng, không phải được viết thủ công. Không ai ngồi xuống và gõ những gì họ biết về một ngôn ngữ.
+
+---
+
+## Champollion là một chỉ mục, không phải là người phân xử
+
+Đây là quy tắc mà toàn bộ The Atlas được xây dựng để tuân theo, và nó nghiêm ngặt hơn bạn tưởng.
+
+Mọi giá trị trên thẻ đều trích dẫn nguồn của nó và báo cáo những gì nguồn đó **thực sự nói** — không phải những gì chúng tôi nghĩ là đúng, không phải một phiên bản đã được sửa chữa, không phải một con số đã được làm tròn. Khi các nguồn không thống nhất, thẻ sẽ hiển thị **tất cả chúng, kèm theo nguồn trích dẫn**. Số lượng người nói liên tục có sự bất đồng: Wikidata nói một con số, Ethnologue một con số khác, điều tra dân số quốc gia một con số thứ ba, khảo sát khu vực một con số thứ tư. Một thẻ mang theo từng con số đó cùng với nguồn và ngày tháng của nó. Chúng tôi không lấy trung bình, chúng tôi không phân xử giữa chúng, và chúng tôi không âm thầm chọn con số nghe có vẻ hợp lý nhất.
+
+Lý do không phải là sự khiêm tốn. Một thẻ tự tạo ra sự đồng thuận sẽ là một tuyên bố mới và không thể trích dẫn về ngôn ngữ của ai đó, do chúng tôi bịa ra. Việc giữ nguyên sự bất đồng giúp thẻ có thể được kiểm chứng với thế giới, và nó để lại quyền phán xét cho những người xứng đáng — đó là người đọc, và cộng đồng sở hữu ngôn ngữ đó.
+
+Dưới đây là ba quy tắc đọc, và bạn nên biết chúng trước khi sử dụng thẻ cho bất kỳ việc gì:
+
+- **Trường bị thiếu có nghĩa là chưa biết, không phải không áp dụng.** Một trường không có nguồn trích dẫn nào khẳng định sẽ được để trống trên thẻ: chúng tôi chưa tìm được nguồn cho trường đó. Đó là một lời mời đóng góp, không phải lời phán quyết. Trường hợp một trường thực sự không áp dụng, thẻ sẽ nêu rõ bằng chữ.
+- **Các giá trị phái sinh được ghi rõ là phái sinh.** Bất kỳ điều gì Champollion tính toán — trung vị, chỉ số tổng hợp, cờ mã hóa lại, số lượng trích xuất từ tập dữ liệu — đều được đóng dấu `champollion-derived` kèm theo ghi chú nêu rõ nó được phái sinh *từ* đâu. Giá trị này không bao giờ được xếp dưới tên của tập dữ liệu nguồn, vì làm vậy chẳng khác nào gán phép tính của chúng tôi cho người khác.
+- **Trích dẫn quan trọng hơn độ bao phủ.** Một thẻ có ít trường hơn nhưng có nguồn dẫn tốt sẽ lành mạnh hơn một thẻ đầy ắp thông tin chắp vá từ các nguồn cấp ba. Wikipedia, văn bản do LLM tạo ra và kiến thức chủ quan không phải là nguồn sơ cấp ở đây, và không được chấp nhận làm nguồn dẫn.
+
+[Quy trình Trích dẫn](/docs/reference/language-card-citation-procedure) quy định nguồn nào có thẩm quyền cho loại tuyên bố nào, và theo thứ tự nào.
+
+---
+
+## Những gì một thẻ khẳng định — và những gì nó không bao giờ khẳng định
+
+Một thẻ đưa ra chính xác hai loại tuyên bố.
+
+**1. Các thuộc tính của ngôn ngữ.** Phân loại và ngữ hệ, hệ thống âm vị, loại hình học, chữ viết và chính tả, sức sống và tình trạng nguy cấp, ước tính số người nói. Mỗi thuộc tính đều được trích dẫn, được dán nhãn là dẫn xuất hoặc được khẳng định.
+
+**2. Sự tồn tại của một tài nguyên.** Rằng một ngữ liệu, một mô hình, một FST, một từ điển, một plugin số liệu hoặc một phương pháp dịch thuật *tồn tại* cho ngôn ngữ này, và ở mức độ truy cập nào. Đây là một tuyên bố về khả năng, không phải là một tuyên bố về chất lượng.
+
+Và có một ranh giới cứng rắn mà nó không vượt qua:
+
+:::danger[Điểm đo lường không bao giờ xuất hiện trên thẻ ngôn ngữ]
+Mọi **điểm số đo lường đầu ra của phương pháp** — chrF++, BLEU, COMET, TER, tỷ lệ chấp nhận FST, "phần trăm hợp lệ về mặt hình thái học" — đều là **kết quả lượt chạy**, gắn liền với một phương pháp, tập dữ liệu và chỉ số đo lường cụ thể. Điểm số đó thuộc về [bảng xếp hạng](/leaderboard) ([cách thức xuất bản](/docs/reference/leaderboard)), được đính kèm vào một thẻ lượt chạy có dấu vân tay định danh. Điểm số này **bị cấm trên thẻ ngôn ngữ**, và công cụ linter sẽ từ chối bất kỳ thẻ nào chứa thông tin này.
+:::
+
+Sự phân biệt này là ranh giới giữa "ngôn ngữ này có một FST" — một dữ kiện thực tế về thế giới, đúng hoặc sai độc lập với chúng tôi — và "phương pháp này đạt điểm chấp nhận FST 0,82" — một phép đo lường, chỉ đúng đối với một lượt chạy, một phiên bản tập dữ liệu và một phiên bản phương pháp cụ thể. Gộp chung hai điều này lại, thẻ ngôn ngữ sẽ âm thầm biến thành một tuyên bố về chất lượng của ngôn ngữ đó, một cách vĩnh viễn, mà không có lượt chạy nào chứng thực và không có cách nào rút lại. Vì vậy chúng tôi không gộp chúng. Atlas cho bạn biết **những gì đang tồn tại**; bảng xếp hạng cho bạn biết **hiệu quả hoạt động ra sao**.
+
+Hai bất biến nữa cũng được thực thi theo cách tương tự: một tuyên bố về thanh điệu không được mâu thuẫn với hệ thống âm vị của chính thẻ đó, và số lượng người nói được hiển thị phải bằng một trong những ước tính được trích dẫn trên thẻ (hoặc được đóng dấu là dẫn xuất của riêng chúng tôi). Lược đồ đầy đủ, với mọi trường và các quy tắc của nó, nằm ở [Đặc tả Thẻ Ngôn ngữ](/docs/reference/language-card-spec).
+
+---
+
+## Có gì trong đó, và nó đến từ đâu
+
+Các thẻ được xây dựng từ <SSOTCount field="licensedSourceCount" /> nguồn thượng nguồn đã đăng ký có giấy phép được theo dõi riêng biệt — bởi vì một thẻ chỉ có thể tái phân phối nếu mọi nội dung trên đó đều được phép, và các nguồn phi thương mại được ngăn cách khỏi luồng thương mại ngay từ thiết kế cấu trúc chứ không chỉ dựa vào thiện chí.
+
+Danh mục này bao gồm các ngôn ngữ ký hiệu như những ngôn ngữ tự nhiên vốn có của chúng, bao gồm các ngôn ngữ nhân tạo mà ISO 639-3 công nhận, loại trừ các ngôn ngữ lập trình, và benchmark các ngôn ngữ riêng lẻ thay vì các nhóm ngôn ngữ vĩ mô (macrolanguage umbrellas) — bởi vì các tài nguyên dịch thuật mang tính đặc thù theo từng biến thể, và một điểm số gắn với một mã nhóm sẽ là một tuyên bố về các biến thể mà không ai đánh giá. Khi các hệ thống phân loại không thống nhất, thẻ sẽ hiển thị sự bất đồng đó thay vì chọn ra một người chiến thắng. Mỗi lựa chọn đó đều được lập luận, cùng với các hệ quả của nó, trong [Điều gì được tính là một Ngôn ngữ ở đây?](/docs/network/context/what-counts-as-a-language).
+
+**Độ bao phủ không phải là chất lượng, và sự tồn tại không đồng nghĩa với độ bao phủ.** Một thẻ liệt kê ba tài nguyên cho một ngôn ngữ đang cho bạn biết ba thứ đó tồn tại — chứ không phải bất kỳ thứ nào trong số đó đều dùng được, và cũng không phải ngôn ngữ đó đã được hỗ trợ. Cách dự án tính toán độ bao phủ, và những gì dự án từ chối tính, là nội dung của các phần ở trên của trang này.
+
+---
+
+## Đọc nó ở đâu
+
+| Khu vực | Nội dung cung cấp |
+|---|---|
+| [Atlas ngôn ngữ](/languages) | Chính các tấm thẻ — tìm kiếm, lọc theo ngữ hệ, khu vực, sức sống và độ phức tạp, đồng thời mở toàn bộ bất kỳ thẻ nào |
+| [Chỉ mục](/catalogue) | Toàn bộ danh mục theo ngôn ngữ: bài kiểm chuẩn, tài nguyên, phương pháp, dịch vụ dịch thuật do con người thực hiện, và một tầng kết quả được xuất bản bên ngoài riêng biệt chỉ dùng để trích dẫn |
+| [Bảng thuật ngữ](/glossary) | Định nghĩa dễ hiểu cho mọi thuật ngữ mà thẻ sử dụng |
+| [Cấu hình](/docs/getting-started/configuration) | Những gì CLI có thể dịch hiện nay, vốn là một tập hợp nhỏ hơn nhiều so với những gì Atlas lập danh mục |
+
+Các điểm truy cập có thể đọc bằng máy là `/llms.txt` và `/llms-full.txt`; các agent có thể tìm kiếm các thẻ trực tiếp thông qua [máy chủ MCP](/docs/network/getting-started/mcp-server).
+
+---
+
+## Khi một thẻ bị sai
+
+Hãy giả định rằng một số trong số chúng bị sai. Một chỉ mục có quy mô như thế này, được tập hợp từ các nguồn không thống nhất với nhau, sẽ chứa các lỗi — và những lỗi quan trọng nhất thường vô hình đối với chúng tôi nhưng lại hiển nhiên đối với người bản ngữ.
+
+**Mọi thẻ đều có liên kết "Đề xuất sửa đổi hoặc bổ sung"**, liên kết này sẽ mở biểu mẫu sửa đổi với ngôn ngữ được điền sẵn. Hãy mang theo nguồn nếu bạn có; đối với yêu cầu gỡ bỏ hoặc hạn chế từ cộng đồng, không cần trích dẫn và nó sẽ được xử lý ưu tiên.
+
+Các sửa đổi được áp dụng **tại trình tạo (generator), không phải trên thẻ**. Các thẻ được tạo lại từ các nguồn của chúng, vì vậy một chỉnh sửa thủ công sẽ bị ghi đè âm thầm ở lần build tiếp theo — sửa nguồn mới là cách làm cho một sửa đổi trở nên vĩnh viễn, và nó thường sửa luôn cùng một lỗi trên mọi thẻ khác chia sẻ nguồn đó. Việc này chậm hơn so với chỉnh sửa một tệp nhưng đây là phiên bản duy nhất tồn tại lâu dài. Cơ chế hoạt động nằm ở [Gửi lên Chỉ mục](/docs/network/getting-started/submit-to-the-index).
+
+**Nếu bạn là thành viên hoặc người có thẩm quyền trong cộng đồng** và muốn dữ liệu về ngôn ngữ của mình bị hạn chế, thay đổi hoặc xóa bỏ, yêu cầu đó không cần phải giải trình với chúng tôi và sẽ không bị đưa vào hàng đợi công khai nếu bạn không muốn. Dữ liệu ngôn ngữ là dữ liệu sinh học: nó mang bản sắc và các mối quan hệ của những người nói ngôn ngữ đó, và không thể ẩn danh hóa một cách có ý nghĩa. Chúng tôi **hướng tới chủ quyền, chứ không phải được chứng nhận chủ quyền** — chúng tôi xây dựng các cơ chế và mô tả chúng một cách trung thực, và việc các cơ chế đó có tôn trọng quyền sở hữu cũng như quyền kiểm soát dữ liệu ngôn ngữ của cộng đồng hay không là phán quyết thuộc về các cộng đồng liên quan, chứ không phải của chúng tôi. Lập trường đầy đủ có tại [Từ ngữ của bạn, quy tắc của bạn](/docs/your-words-your-rules).
+
+---
+
+## Đọc tiếp
+
+- **Bạn muốn tra cứu một ngôn ngữ** → [duyệt xem Atlas](/languages).
+- **Bạn muốn biết một trường có nghĩa là gì** → [Đặc tả thẻ ngôn ngữ](/docs/reference/language-card-spec).
+- **Bạn muốn biết tại sao một nhận định xuất hiện trên thẻ** → [Quy trình trích dẫn](/docs/reference/language-card-citation-procedure).
+- **Bạn muốn xây dựng một phương pháp cho một ngôn ngữ chưa được phục vụ đầy đủ** → [Dự án này là gì](/docs/what-is-champollion).
+- **Bạn muốn biết thực tế bản dịch tốt đến mức nào** → điều đó không có ở đây. Nó nằm ở [bảng xếp hạng](/leaderboard) ([cách thức xuất bản](/docs/reference/leaderboard)).

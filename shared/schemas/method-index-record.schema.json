@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://champollion.dev/schemas/method-index-record.schema.json",
+  "title": "Champollion Method Index Record",
+  "description": "The public index record of a contest method: a deterministic projection of its bundle manifest (arena/mt_eval_harness/method_index.py) that keeps what the method is, who owns it, under what licence and how it decodes, plus the bundle's sha256 — and drops the contest binding, the qualifier receipt and the developer email. The record's canonical bytes (sorted keys, no whitespace, UTF-8) are minted once, by the harness; a node's signed score manifest carries their sha256 as indexEntrySha256. Consumers verify that sha over the bytes they are given; they never re-serialize.",
+  "type": "object",
+  "required": ["indexRecordVersion", "lane", "method", "owner", "licence", "languagePair", "methodSha256"],
+  "additionalProperties": false,
+  "properties": {
+    "indexRecordVersion": { "const": 1 },
+    "lane": {
+      "type": "string",
+      "enum": ["declarative-model", "method-execution"],
+      "description": "declarative-model = Lane A (weights run by the node's trusted engine, no participant code); method-execution = Lane B (code run in a --network=none sandbox)."
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "class": { "type": ["string", "null"] },
+        "paradigm": { "type": ["string", "null"] }
+      }
+    },
+    "owner": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "Display identity only. Never an email.",
+      "properties": {
+        "name": { "type": ["string", "null"], "not": { "type": "string", "pattern": "@" } },
+        "affiliation": { "type": ["string", "null"] }
+      }
+    },
+    "licence": { "type": "string", "minLength": 1, "description": "The weights/code licence the participant declared (SPDX id or LicenseRef-*)." },
+    "weightsPublic": { "type": ["boolean", "null"] },
+    "parameterCount": { "type": ["integer", "null"], "minimum": 1 },
+    "track": { "type": ["string", "null"], "enum": ["constrained", "unconstrained", null] },
+    "trainingData": { "type": ["string", "null"], "maxLength": 2000 },
+    "languagePair": {
+      "type": "object",
+      "required": ["source", "target"],
+      "additionalProperties": false,
+      "description": "The pair measured. Index entries are keyed to the variety measured and never compared across test sets.",
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "minLength": 1 }
+      }
+    },
+    "methodSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "model": {
+      "type": "object",
+      "description": "Lane A only: the decoding the node's engine applies.",
+      "additionalProperties": false,
+      "properties": {
+        "architecture": { "type": ["string", "null"] },
+        "srcLang": { "type": ["string", "null"] },
+        "tgtLang": { "type": ["string", "null"] },
+        "generation": { "type": "object" }
+      }
+    },
+    "requirements": { "type": "object", "description": "Lane B only: the resources the method declared." },
+    "imageDigest": { "type": ["string", "null"], "description": "Lane B only: the built image the node ran." }
+  }
+}
